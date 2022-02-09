@@ -1623,7 +1623,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                 resets.append({})
 
                 # Turn the reset string into a list.
-                reset_list = my_line.split(" ")
+                reset_list = my_line.split()
 
                 # Mobile inventory and mobile equipped resets depend
                 # on knowing what the last mobile reset was. This
@@ -1654,8 +1654,6 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                     reset_vnum = "o" + reset_list[2]
                     location = last_mobile
                 elif type == "D":
-                    # For door resets, purge the list of any "" instances.
-                    reset_list.remove("")
                     type = "door"
                     location = "r" + reset_list[2]
                     if reset_list[3] == 0:
@@ -1972,7 +1970,14 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
         # an instance of the mobile/object. For objects that reset in
         # containers, we will later teleport to the room to create the
         # reset itself.
-        output.write("tel %s\n" % reset_location)
+        
+        if reset_type == "object, in mobile inventory" or reset_type\
+                == "object, equipped":
+            location = last_mobile_vnum
+        else:
+            location = reset_location
+        
+        output.write("tel %s\n" % location)
         output.write("#\n")
 
         # Create the instance of the thing, unless it is a door, or a portal,
@@ -2015,9 +2020,12 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
             # last mobile to be reset.
             if reset_type == "mobile":
 
-                # Store the mobile's level for use on an object not loaded on a
-                # mobile, if necessary.
-                last_mobile_level = object.level
+                # Store the mobile's level, reduced by two, for use on an 
+                # object not loaded on a mobile, if necessary.
+                last_mobile_level = object.level - 2
+                # Store the mobile's vnum for objects resetting in its
+                # inventory or equipped to it.
+                last_mobile_vnum = reset_vnum
 
                 # If the object is a mobile, use its own level.
                 level = object.level
@@ -2097,7 +2105,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                 output.write("#\n")
                 output.write("tag %s = %s:area name\n" % (
                                                           reset_vnum,
-                                                          area_name
+                                                          area_name.lower()
                                                           ))
                 output.write("#\n")
 
@@ -2158,7 +2166,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                 output.write("#\n")
                 output.write("tag %s = %s:area name\n" % (
                                                           reset_vnum,
-                                                          area_name
+                                                          area_name.lower()
                                                           ))
                 output.write("#\n")
                 if object.extra_description:
@@ -2228,7 +2236,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                         output.write("set %s/weight_maximum = %d\n"
                                      % (reset_vnum, value_0)
                                      )
-                        output.write("#")
+                        output.write("#\n")
                     elif object.item_type == "drink container\n":
                         output.write("set %s/capacity_maximum = %d\n"
                                      % (reset_vnum, value_0)
@@ -2254,7 +2262,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                         output.write("#\n")
                 if object.value_1:
                     if object.item_type in ("scroll", "pill", "potion"):
-                        output.write("set %s/spell_name_1 = %s\n" % (
+                        output.write("set %s/spell_name_1 = \"%s\"\n" % (
                                                             reset_vnum,
                                                             object.value_1
                                                             ))
@@ -2314,7 +2322,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                         output.write("#\n")
                 if object.value_2:
                     if object.item_type in ("scroll", "pill", "potion"):
-                        output.write("set %s/spell_name_2 = %s\n"
+                        output.write("set %s/spell_name_2 = \"%s\"\n"
                                      % (reset_vnum, object.value_2)
                                      )
                         output.write("#\n")
@@ -2374,7 +2382,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                         output.write("#\n")
                     elif object.item_type == "container":
                         key = "o" + object.value_2
-                        output.write("set %s/key = %s\n" % (reset_vnum, key))
+                        output.write("set %s/key = \"%s\"\n" % (reset_vnum, key))
                         output.write("#\n")
                     elif object.item_type == "drink container":
                         drink = int(object.value_2)
@@ -2424,18 +2432,18 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                             drink = "brandy"
                         elif drink == 22:
                             drink = "special hot chocolate"
-                        output.write("set %s/liquid_type = %s\n"
+                        output.write("set %s/liquid_type = \"%s\"\n"
                                      % (reset_vnum, drink)
                                      )
                         output.write("#\n")
                 if object.value_3:
                     if object.item_type in ("scroll", "pill", "potion"):
-                        output.write("set %s/spell_name_3 = %s\n"
+                        output.write("set %s/spell_name_3 = \"%s\"\n"
                                      % (reset_vnum, object.value_3)
                                      )
                         output.write("#\n")
                     elif object.item_type in ("wand", "staff"):
-                        output.write("set %s/spell_name = %s\n"
+                        output.write("set %s/spell_name = \"%s\"\n"
                                      % (reset_vnum, object.value_3)
                                      )
                         output.write("#\n")
@@ -2469,7 +2477,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                             weapon_type = "suction"
                         elif weapon_type == 13:
                             weapon_type = "chop"
-                        output.write("set %s/weapon_type = %s\n"
+                        output.write("set %s/weapon_type = \"%s\"\n"
                                      % (reset_vnum, weapon_type)
                                      )
                         output.write("#\n")
@@ -2595,7 +2603,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
         # Reset for objects in mobile inventory
         if reset_type == "object, in mobile inventory":
-            output.write("set %s/reset_objects[\"%s\"] = \"inventory\"\n" % (
+            output.write("set %s/reset_objects[\"%s\"] = {\"location\":\"inventory\"}\n" % (
                                                                     last_mnum,
                                                                     reset_vnum
                                                                     ))
@@ -2603,14 +2611,14 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
         # Reset for objects equipped to mobiles
         elif reset_type == "object, equipped":
-            output.write("set %s/reset_objects[\"%s\"] = \"equipped\"\n"
+            output.write("set %s/reset_objects[\"%s\"] = {\"location\":\"equipped\"}\n"
                          % (reset_location, reset_vnum)
                          )
             output.write("#\n")
 
         # Reset for objects in room inventory
         elif reset_type == "object, room":
-            output.write("set %s/reset_objects[\"%s\"] = \"inventory\"\n"
+            output.write("set %s/reset_objects[\"%s\"] = {\"location\":\"inventory\"}\n"
                          % (reset_location, reset_vnum)
                          )
             output.write("#\n")
@@ -2622,7 +2630,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
             output.write("#\n")
             # Now create the reset.
 
-            output.write("set %s/reset_objects[\"%s\"] = \"%s\"\n"
+            output.write("set %s/reset_objects[\"%s\"] = {\"location\":\"%s\"}\n"
                          % (last_container_room, reset_vnum, reset_location)
                          )
             output.write("#\n")
