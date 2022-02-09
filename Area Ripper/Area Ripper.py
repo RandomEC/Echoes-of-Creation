@@ -131,7 +131,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
             pass
 
         # Pound sign denotes a new object
-        elif my_line[0] == "#" and section_end == True:
+        elif my_line[0] == "#" and section_end:
 
             # Tell the program which section of the afile it is in.
             if my_line[1:5] == "AREA":
@@ -142,7 +142,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                 index = 0
                 line_break = 0
 
-                for index in range(0,area_list_size):
+                for index in range(0, area_list_size):
                     if area_list[index] == "-":
                         line_break = index + 1
 
@@ -1784,19 +1784,22 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
 
                 if special_function_list[0] == "M":
                     mnum = "m" + special_function_list[1]
-                    mobiles[mnum].special_function = special_function_list[2][5:]
+                    mobiles[mnum].special_function\
+                        = special_function_list[2][5:]
                 elif special_function_list[0] == "O":
                     onum = "o" + special_function_list[1]
-                    objects[onum].special_function = special_function_list[2][6:]
+                    objects[onum].special_function\
+                        = special_function_list[2][6:]
 
 with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
-    # Now we are going to build out the batch file by iterating through each room
+    # Now we are going to build out the batch file by iterating through each
+    # room.
 
     # First we need to dig all the rooms, using the vnums with a leading R to
-    # create unique aliases for each so that we can do the next step and link all
-    # in one go, and preserve the ability to use M and O with vnums for mobiles
-    # and objects.
+    # create unique aliases for each so that we can do the next step and link
+    # all in one go, and preserve the ability to use M and O with vnums for
+    # mobiles and objects.
 
     total_rooms = len(rooms)
     door_list = []
@@ -1807,10 +1810,14 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
         output.write("dig/tel %s; %s\n" % (rooms[room].name, rooms[room].vnum))
         output.write("#\n")
-        output.write("tag %s = %s, category = area names\n" % (rooms[room].vnum,
-                                                      area_name.lower()))
+        output.write("tag %s = %s, category = area names\n"
+                     % (rooms[room].vnum, area_name.lower())
+                     )
         output.write("#\n")
-        output.write('desc %s = %s\n' % (rooms[room].vnum, rooms[room].description))
+        output.write('desc %s = %s\n' % (
+                                         rooms[room].vnum,
+                                         rooms[room].description
+                                         ))
         output.write("#\n")
         output.write("desc/edit %s\n" % rooms[room].vnum)
         output.write("#\n")
@@ -1818,20 +1825,24 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
         output.write("#\n")
         output.write(":wq\n")
         output.write("#\n")
-        output.write('set %s/terrain = "%s"\n' % (rooms[room].vnum, rooms[room].terrain))
+        output.write('set %s/terrain = "%s"\n' % (
+                                                  rooms[room].vnum,
+                                                  rooms[room].terrain
+                                                  ))
         output.write("#\n")
 
         if rooms[room].extra_description:
 
-            output.write("set %s/extra_description = {%s}\n" % (rooms[room].vnum,
-                                                        rooms[room].extra_description
-                                                        ))
+            output.write("set %s/extra_description = {%s}\n"
+                         % (rooms[room].vnum, rooms[room].extra_description)
+                         )
             output.write("#\n")
 
         if rooms[room].room_flags:
 
             output.write("set %s/room_flags = %s\n" % (rooms[room].vnum,
-                                               rooms[room].room_flags))
+                                                       rooms[room].room_flags
+                                                       ))
             output.write("#\n")
 
     for index in range(total_rooms):
@@ -1857,8 +1868,8 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
                     aliases = "; ".join(rooms[room].doors[door]["keywords"])
 
-                # this comparison is to make sure that only one set of doors gets
-                # opened.
+                # this comparison is to make sure that only one set of doors
+                # gets opened.
 
                 room_set = ""
                 room1 = int(rooms[room].vnum[1:])
@@ -1884,16 +1895,16 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                     elif door == "down":
                         opposite_door = "up"
 
-                    output.write('open %s; %s, %s = R%s\n' % (door,
-                                                     aliases,
-                                                     opposite_door,
-                                                     rooms[room].
-                                                     doors[door]["destination"]
-                                                     ))
+                    output.write('open %s; %s, %s = R%s\n'
+                                 % (
+                                    door,
+                                    aliases,
+                                    opposite_door,
+                                    rooms[room].doors[door]["destination"]
+                                    ))
                     output.write("#\n")
-                    output.write("tag %s = %s, category = area names\n" % (vnum,
-                                                                  area_name.lower()
-                                                                  ))
+                    output.write("tag %s = %s, category = area names\n"
+                                 % (vnum, area_name.lower()))
                     output.write("#\n")
                     door_list.append(room_set)
 
@@ -1901,33 +1912,37 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
                     output.write("alias %s = %s\n" % (door, aliases))
                     output.write("#\n")
-                    output.write("tag %s = %s, category = area names\n" % (vnum,
-                                                                  area_name.lower()
-                                                                  ))
+                    output.write("tag %s = %s, category = area names\n"
+                                 % (vnum, area_name.lower()))
                     output.write("#\n")
 
                 if rooms[room].doors[door]["description"]:
-                    output.write("desc %s = %s\n" % (door,
-                                            rooms[room].doors[door]["description"]
-                                            ))
+                    output.write("desc %s = %s\n"
+                                 % (
+                                    door,
+                                    rooms[room].doors[door]["description"]
+                                    )
+                                 )
                     output.write("#\n")
 
                 if int(rooms[room].doors[door]["key"]) >= 0:
-                    output.write("set %s/key = %s\n" % (door,
-                                               rooms[room].doors[door]["key"]
-                                               ))
+                    output.write("set %s/key = %s\n"
+                                 % (door, rooms[room].doors[door]["key"])
+                                 )
                     output.write("#\n")
 
                 # Cycle through and make the door bashproof, pickproof and
                 # passproof, as applicable.
                 if rooms[room].doors[door]["locks"]:
                     for lock in rooms[room].doors[door]["locks"]:
-                        output.write("objectlock %s = \"%s:false()\"\n" % (door, lock))
+                        output.write("objectlock %s = \"%s:false()\"\n"
+                                     % (door, lock)
+                                     )
                         output.write("#\n")
 
     reset = 0
     reset_length = len(resets)
-    for reset in range(0,reset_length):
+    for reset in range(0, reset_length):
 
         # 1. Get the reset data.
 
@@ -1963,7 +1978,10 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
         # Create the instance of the thing, unless it is a door, or a portal,
         # which is just a door in hiding. We'll take the information
         # for portals and make an exit later.
-        if reset_type == "mobile" or (object.item_type and object.item_type != "portal"):
+        if reset_type == "mobile" or (
+                                      object.item_type and
+                                      object.item_type != "portal"
+                                      ):
 
             # Turn keywords string into a semicolon-delineated list, as that is
             # the syntax for aliases, which is what they'll be.
@@ -1972,26 +1990,29 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
             # Generalize the mobile/object as "object".
             if reset_type == "mobile":
-                output.write("create/drop %s;%s:characters.Mobile\n" %
-                      (object.short_description, keyword_string))
+                output.write("create/drop %s;%s:characters.Mobile\n"
+                             % (object.short_description, keyword_string))
             else:
                 output.write("create/drop %s;%s:objects.%s\n"
-                      % (
-                          object.short_description,
-                          keyword_string,
-                          object.item_type.capitalize()
-                         )
-                      )
+                             % (
+                                object.short_description,
+                                keyword_string,
+                                object.item_type.capitalize()
+                                )
+                             )
 
             output.write("#\n")
 
             # Set the long description for the object/mobile.
-            output.write("desc %s = %s\n" % (reset_vnum, object.long_description))
+            output.write("desc %s = %s\n" % (
+                                             reset_vnum,
+                                             object.long_description
+                                             ))
             output.write("#\n")
 
-            # Setting level is slightly complex, as objects in Diku muds took their
-            # level from either the mobile that they reset on, or the last mobile
-            # to be reset.
+            # Setting level is slightly complex, as objects in Diku muds took
+            # their level from either the mobile that they reset on, or the
+            # last mobile to be reset.
             if reset_type == "mobile":
 
                 # Store the mobile's level for use on an object not loaded on a
@@ -2008,8 +2029,8 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                     # Get the level from the mobile it resets on.
                     level = mobiles[reset_location].level
 
-                # If the object does not reset on a mobile, get the level of the
-                # last mob.
+                # If the object does not reset on a mobile, get the level of
+                # the last mob.
                 else:
                     level = last_mobile_level
 
@@ -2026,10 +2047,9 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
             # Not everything has a look description so check before setting.
             if object.look_description:
-                output.write("set %s/look_description = \"%s\"\n" % (
-                                                        reset_vnum,
-                                                        object.look_description
-                                                        ))
+                output.write("set %s/look_description = \"%s\"\n"
+                             % (reset_vnum, object.look_description)
+                             )
                 output.write("#\n")
 
             # Now, set the mobile-specific characteristics.
@@ -2037,20 +2057,29 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
                 last_mnum = reset_vnum
                 if object.act_flags:
-                    output.write("set %s/act_flags = %s\n" % (reset_vnum, object.act_flags))
+                    output.write("set %s/act_flags = %s\n" % (
+                                                              reset_vnum,
+                                                              object.act_flags
+                                                              ))
                     output.write("#\n")
 
-                output.write("set %s/alignment = %d\n" % (reset_vnum, object.alignment))
+                output.write("set %s/alignment = %d\n" % (
+                                                          reset_vnum,
+                                                          object.alignment
+                                                          ))
                 output.write("#\n")
-                output.write("set %s/sex = \"%s\"\n" % (reset_vnum, object.sex))
+                output.write("set %s/sex = \"%s\"\n" % (
+                                                        reset_vnum,
+                                                        object.sex
+                                                        ))
                 output.write("#\n")
 
                 # Turn the affected flags list into a dictionary. All of the
-                # affects that would be on mobiles are all boolean affects, so all
-                # we need to know is that they are on the mobile. So the
-                # dictionary is all keys of the affect and a blank string. Other
-                # affects will need the dictionary structure, which is why we use
-                # it here.
+                # affects that would be on mobiles are all boolean affects, so
+                # all we need to know is that they are on the mobile. So the
+                # dictionary is all keys of the affect and a blank string.
+                # Other affects will need the dictionary structure, which is
+                # why we use it here.
                 if object.affected_flags:
                     affects_dictionary = {}
                     for affect in object.affected_flags:
@@ -2061,59 +2090,81 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                                                          ))
                     output.write("#\n")
 
-                output.write("set %s/race = \"%s\"\n" % (reset_vnum, object.race.lower()))
+                output.write("set %s/race = \"%s\"\n" % (
+                                                         reset_vnum,
+                                                         object.race.lower()
+                                                         ))
                 output.write("#\n")
-                output.write("tag %s = %s:area name\n" % (reset_vnum, area_name))
+                output.write("tag %s = %s:area name\n" % (
+                                                          reset_vnum,
+                                                          area_name
+                                                          ))
                 output.write("#\n")
 
-                # Setting hitpoints for mobiles is a factor of the mobile's level.
-                # Set both max hp and current hitpoints to it.
+                # Setting hitpoints for mobiles is a factor of the mobile's
+                # level. Set both max hp and current hitpoints to it.
                 level = object.level
-                hitpoints = level*8 + random.randint(int(level/4), (level*level))
-                output.write("set %s/hitpoints[maximum] = %d\n" % (reset_vnum, hitpoints))
+                hitpoints = level*8 + random.randint(
+                                                     int(level/4),
+                                                     (level*level)
+                                                     )
+                output.write("set %s/hitpoints[maximum] = %d\n" % (
+                                                                   reset_vnum,
+                                                                   hitpoints
+                                                                   ))
                 output.write("#\n")
                 output.write("set %s/position = \"standing\"\n" % reset_vnum)
                 output.write("#\n")
 
                 # Special functions and shopkeepers are both things not every
-                # mobile will have. So, check to make sure that they are on things
-                # before setting it.
+                # mobile will have. So, check to make sure that they are on
+                # things before setting it.
                 if mobiles[reset_vnum].special_function:
                     output.write("set %s/special_function = \"%s\"\n"
-                          % (reset_vnum, object.special_function)
-                          )
+                                 % (reset_vnum, object.special_function)
+                                 )
                     output.write("#\n")
                 if mobiles[reset_vnum].shopkeeper:
-                    output.write("set %s/shopkeeper = %s\n" % (
-                                                      reset_vnum,
-                                                      object.shopkeeper
-                                                      ))
+                    output.write("set %s/shopkeeper = %s\n"
+                                 % (reset_vnum, object.shopkeeper)
+                                 )
                     output.write("#\n")
 
-            # Deal with object-specific characteristics for all non-portal objects.
+            # Deal with object-specific characteristics for all non-portal
+            # objects.
             else:
 
                 if object.item_type:
-                    output.write("set %s/item_type = \"%s\"\n" % (reset_vnum, object.item_type))
+                    output.write("set %s/item_type = \"%s\"\n"
+                                 % (reset_vnum, object.item_type)
+                                 )
                     output.write("#\n")
                 if object.wear_location:
-                    output.write("set %s/wear_location = \"%s\"\n" % (
-                                                         reset_vnum,
-                                                         object.wear_location
-                                                         ))
+                    output.write("set %s/wear_location = \"%s\"\n"
+                                 % (reset_vnum, object.wear_location)
+                                 )
                     output.write("#\n")
 
                 # If can't be taken, set so can't be picked up except by Admin
                 if not object.can_take:
-                    output.write("objectlock %s = \"get:perm(Admin)\"\n" % reset_vnum)
+                    output.write("objectlock %s = \"get:perm(Admin)\"\n"
+                                 % reset_vnum
+                                 )
                     output.write("#\n")
-                output.write("set %s/weight = %d\n" % (reset_vnum, object.weight))
+                output.write("set %s/weight = %d\n" % (
+                                                       reset_vnum,
+                                                       object.weight
+                                                       ))
                 output.write("#\n")
-                output.write("tag %s = %s:area name\n" % (reset_vnum, area_name))
+                output.write("tag %s = %s:area name\n" % (
+                                                          reset_vnum,
+                                                          area_name
+                                                          ))
                 output.write("#\n")
                 if object.extra_description:
                     output.write("set %s/extra_descriptions = %s\n"
-                          % (reset_vnum, object.extra_description))
+                                 % (reset_vnum, object.extra_description)
+                                 )
                     output.write("#\n")
                 alignment_restriction = []
                 if "anti neutral" in object.extra_flags:
@@ -2124,26 +2175,33 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                     alignment_restriction.append("evil")
                 if alignment_restriction:
                     output.write("set %s/alignment_restriction = %s\n"
-                          % (reset_vnum, alignment_restriction)
-                          )
+                                 % (reset_vnum, alignment_restriction)
+                                 )
                     output.write("#\n")
                 extra_flags = []
                 for flag in object.extra_flags:
                     if flag not in ["anti neutral", "anti good", "anti evil"]:
                         extra_flags.append(flag)
                 if extra_flags:
-                    output.write("set %s/extra_flags = %s\n" % (reset_vnum, extra_flags))
+                    output.write("set %s/extra_flags = %s\n" % (
+                                                                reset_vnum,
+                                                                extra_flags
+                                                                ))
                     output.write("#\n")
                 if object.special_function:
                     output.write("set %s/special_function = %s\n"
-                          % (reset_vnum, object.special_function)
-                          )
+                                 % (reset_vnum, object.special_function)
+                                 )
                     output.write("#\n")
                 if object.apply:
                     for apply_type in object.apply:
                         output.write("set %s/stat_modifiers[%s] = %d\n"
-                              % (reset_vnum, apply_type, object.apply[apply_type])
-                              )
+                                     % (
+                                        reset_vnum,
+                                        apply_type,
+                                        object.apply[apply_type]
+                                        )
+                                     )
                         output.write("#\n")
                 if object.value_0:
                     value_0 = int(object.value_0)
@@ -2154,33 +2212,45 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                                             "staff",
                                             "potion"
                                             ):
-                        output.write("set %s/spell_level = %d\n" % (reset_vnum, value_0))
+                        output.write("set %s/spell_level = %d\n"
+                                     % (reset_vnum, value_0)
+                                     )
                         output.write("#\n")
-                        output.write("set %s/spell_level_base = %d\n" % (
-                                                                reset_vnum,
-                                                                value_0
-                                                                ))
+                        output.write("set %s/spell_level_base = %d\n"
+                                     % (reset_vnum, value_0))
                         output.write("#\n")
                     elif object.item_type == "furniture":
-                        output.write("set %s/people_maximum = %d\n" % (reset_vnum, value_0))
+                        output.write("set %s/people_maximum = %d\n"
+                                     % (reset_vnum, value_0)
+                                     )
                         output.write("#\n")
                     elif object.item_type == "container":
-                        output.write("set %s/weight_maximum = %d\n" % (reset_vnum, value_0))
+                        output.write("set %s/weight_maximum = %d\n"
+                                     % (reset_vnum, value_0)
+                                     )
                         output.write("#")
                     elif object.item_type == "drink container\n":
-                        output.write("set %s/capacity_maximum = %d\n" % (
+                        output.write("set %s/capacity_maximum = %d\n"
+                                     % (reset_vnum, value_0)
+                                     )
+                        output.write("#\n")
+                    elif object.item_type == "food":
+                        output.write("set %s/hours_fed = %d\n" % (
+                                                                  reset_vnum,
+                                                                  value_0
+                                                                  ))
+                        output.write("#\n")
+                    elif object.item_type == "money":
+                        output.write("set %s/value = %d\n" % (
+                                                              reset_vnum,
+                                                              value_0
+                                                              ))
+                        output.write("#\n")
+                    elif object.item_type == "scuba":
+                        output.write("set %s/charges = %d\n" % (
                                                                 reset_vnum,
                                                                 value_0
                                                                 ))
-                        output.write("#\n")
-                    elif object.item_type == "food":
-                        output.write("set %s/hours_fed = %d\n" % (reset_vnum, value_0))
-                        output.write("#\n")
-                    elif object.item_type == "money":
-                        output.write("set %s/value = %d\n" % (reset_vnum, value_0))
-                        output.write("#\n")
-                    elif object.item_type == "scuba":
-                        output.write("set %s/charges = %d\n" % (reset_vnum, value_0))
                         output.write("#\n")
                 if object.value_1:
                     if object.item_type in ("scroll", "pill", "potion"):
@@ -2203,7 +2273,9 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                         output.write("#\n")
                     elif object.item_type == "furniture":
                         value_1 = int(object.value_1)
-                        output.write("set %s/weight_maximum = %d\n" % (reset_vnum, value_1))
+                        output.write("set %s/weight_maximum = %d\n"
+                                     % (reset_vnum, value_1)
+                                     )
                         output.write("#\n")
                     elif object.item_type == "container":
                         last_container_room = reset_location
@@ -2220,44 +2292,43 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                             value_1 -= 2
                         if value_1 >= 1:
                             container_state_list.append("closeable")
-                        output.write("set %s/state = %s\n" % (
-                                                     reset_vnum,
-                                                     container_state_list
-                                                     ))
+                        output.write("set %s/state = %s\n"
+                                     % (reset_vnum, container_state_list)
+                                     )
                         output.write("#\n")
-                        output.write("set %s/state_base = %s\n" % (
-                                                          reset_vnum,
-                                                          container_state_list
-                                                          ))
+                        output.write("set %s/state_base = %s\n"
+                                     % (reset_vnum, container_state_list)
+                                     )
                         output.write("#\n")
                     elif object.item_type == "drink container":
                         value_1 = int(object.value_1)
-                        output.write("set %s/capacity_current = %d\n" % (
-                                                                reset_vnum,
-                                                                value_1
-                                                                ))
+                        output.write("set %s/capacity_current = %d\n"
+                                     % (reset_vnum, value_1)
+                                     )
                         output.write("#\n")
                     elif object.item_type == "scuba":
                         value_1 = int(object.value_1)
-                        output.write("set %s/charge_maximum = %d\n" % (reset_vnum, value_1))
+                        output.write("set %s/charge_maximum = %d\n"
+                                     % (reset_vnum, value_1)
+                                     )
                         output.write("#\n")
                 if object.value_2:
                     if object.item_type in ("scroll", "pill", "potion"):
-                        output.write("set %s/spell_name_2 = %s\n" % (
-                                                            reset_vnum,
-                                                            object.value_2
-                                                            ))
+                        output.write("set %s/spell_name_2 = %s\n"
+                                     % (reset_vnum, object.value_2)
+                                     )
                         output.write("#\n")
                     elif object.item_type in ("wand", "staff"):
                         value_2 = int(object.value_2)
-                        output.write("set %s/charges_current = %d\n" % (
-                                                               reset_vnum,
-                                                               value_2
-                                                               ))
+                        output.write("set %s/charges_current = %d\n"
+                                     % (reset_vnum, value_2)
+                                     )
                         output.write("#\n")
                     elif object.item_type == "light":
                         value_2 = int(object.value_2)
-                        output.write("set %s/light_hours= %d\n" % (reset_vnum, value_2))
+                        output.write("set %s/light_hours= %d\n"
+                                     % (reset_vnum, value_2)
+                                     )
                         output.write("#\n")
                     elif object.item_type == "furniture":
                         value_2 = int(object.value_2)
@@ -2298,8 +2369,8 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                         if value_2 >= 1:
                             furniture_position_list.append("stand at")
                         output.write("set %s/use_positions = %s\n"
-                              % (reset_vnum, furniture_position_list)
-                              )
+                                     % (reset_vnum, furniture_position_list)
+                                     )
                         output.write("#\n")
                     elif object.item_type == "container":
                         key = "o" + object.value_2
@@ -2353,20 +2424,20 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                             drink = "brandy"
                         elif drink == 22:
                             drink = "special hot chocolate"
-                        output.write("set %s/liquid_type = %s\n" % (reset_vnum, drink))
+                        output.write("set %s/liquid_type = %s\n"
+                                     % (reset_vnum, drink)
+                                     )
                         output.write("#\n")
                 if object.value_3:
                     if object.item_type in ("scroll", "pill", "potion"):
-                        output.write("set %s/spell_name_3 = %s\n" % (
-                                                            reset_vnum,
-                                                            object.value_3
-                                                            ))
+                        output.write("set %s/spell_name_3 = %s\n"
+                                     % (reset_vnum, object.value_3)
+                                     )
                         output.write("#\n")
                     elif object.item_type in ("wand", "staff"):
-                        output.write("set %s/spell_name = %s\n" % (
-                                                          reset_vnum,
-                                                          object.value_3
-                                                          ))
+                        output.write("set %s/spell_name = %s\n"
+                                     % (reset_vnum, object.value_3)
+                                     )
                         output.write("#\n")
                     elif object.item_type == "weapon":
                         weapon_type = object.value_3
@@ -2398,21 +2469,22 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                             weapon_type = "suction"
                         elif weapon_type == 13:
                             weapon_type = "chop"
-                        output.write("set %s/weapon_type = %s\n" % (
-                                                           reset_vnum,
-                                                           weapon_type
-                                                           ))
+                        output.write("set %s/weapon_type = %s\n"
+                                     % (reset_vnum, weapon_type)
+                                     )
                         output.write("#\n")
                     elif object.item_type == "furniture":
                         heal_mana_gain = int(object.value_3)
-                        output.write("set %s/heal_mana_gain = %d\n" % (
-                                                              reset_vnum,
-                                                              heal_mana_gain
-                                                              ))
+                        output.write("set %s/heal_mana_gain = %d\n"
+                                     % (reset_vnum, heal_mana_gain)
+                                     )
                         output.write("#\n")
                     elif object.item_type in ("drink container", "food"):
                         poison = int(object.value_3)
-                        output.write("set %s/poison = %d\n" % (reset_vnum, poison))
+                        output.write("set %s/poison = %d\n" % (
+                                                               reset_vnum,
+                                                               poison
+                                                               ))
                         output.write("#\n")
                 if object.item_type == "armor":
                     armor = rules.set_armor(level)
@@ -2420,9 +2492,15 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                     output.write("#\n")
                 if object.item_type == "weapon":
                     damage_low, damage_high = rules.set_weapon_low_high(level)
-                    output.write("set %s/damage_low = %d\n" % (reset_vnum, damage_low))
+                    output.write("set %s/damage_low = %d\n" % (
+                                                               reset_vnum,
+                                                               damage_low
+                                                               ))
                     output.write("#\n")
-                    output.write("set %s/damage_low = %d\n" % (reset_vnum, damage_low))
+                    output.write("set %s/damage_low = %d\n" % (
+                                                               reset_vnum,
+                                                               damage_low
+                                                               ))
                     output.write("#\n")
 
         elif object.item_type == "portal":
@@ -2455,15 +2533,13 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
             if room_set not in door_list:
 
-                output.write('open portal; %s, portal = R%s\n' % (door,
-                                                         aliases,
-                                                         opposite_door,
-                                                         object.value_3
-                                                         ))
+                output.write('open portal; %s, portal = R%s\n'
+                             % (door, aliases, opposite_door, object.value_3)
+                             )
                 output.write("#\n")
-                output.write("tag %s = %s, category = area names\n" % (vnum,
-                                                              area_name.lower()
-                                                              ))
+                output.write("tag %s = %s, category = area names\n"
+                             % (vnum, area_name.lower())
+                             )
                 output.write("#\n")
                 door_list.append(room_set)
 
@@ -2471,26 +2547,26 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
                 output.write("alias portal = %s\n" % (aliases))
                 output.write("#\n")
-                output.write("tag %s = %s, category = area names\n" % (vnum,
-                                                              area_name.lower()
-                                                              ))
+                output.write("tag %s = %s, category = area names\n"
+                             % (vnum, area_name.lower())
+                             )
                 output.write("#\n")
 
             if object.long_description:
                 output.write("desc %s = %s\n" % (vnum,
-                                        object.long_description
-                                        ))
+                                                 object.long_description
+                                                 ))
                 output.write("#\n")
 
         # Check here if object needs to be equipped to mobile, and do so, if
         # necessary.
 
         if reset_type == "object, equipped":
-            # set eq_slot on mobile equal to object - may need to add
-            # functionality to do this. Maybe make a new switch on set - set/equip
-            # that calls equip on object, and make set/remove a thing as well.
+            # Set eq_slot on mobile equal to object.
             # Set equipped equal to True on object.
             output.write("set/equip %s = %s\n" % (reset_location, reset_vnum))
+            output.write("#\n")
+            output.write("set %s/equipped = True" % reset_vnum)
             output.write("#\n")
 
         # 3. Create the reset for the object/mobile that was just created. For
@@ -2507,12 +2583,14 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
             else:
                 state_list.append("lockable")
                 state_list.append("locked")
-            output.write("set %s/door_attributes = %s\n" % (reset_direction, state_list))
+            output.write("set %s/door_attributes = %s\n" % (
+                                                            reset_direction,
+                                                            state_list
+                                                            ))
             output.write("#\n")
-            output.write("set %s/reset_door_attributes = %s\n" % (
-                                                         reset_direction,
-                                                         state_list
-                                                         ))
+            output.write("set %s/reset_door_attributes = %s\n"
+                         % (reset_direction, state_list)
+                         )
             output.write("#\n")
 
         # Reset for objects in mobile inventory
@@ -2525,18 +2603,16 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
         # Reset for objects equipped to mobiles
         elif reset_type == "object, equipped":
-            output.write("set %s/reset_objects[\"%s\"] = \"equipped\"\n" % (
-                                                                   reset_location,
-                                                                   reset_vnum
-                                                                   ))
+            output.write("set %s/reset_objects[\"%s\"] = \"equipped\"\n"
+                         % (reset_location, reset_vnum)
+                         )
             output.write("#\n")
 
         # Reset for objects in room inventory
         elif reset_type == "object, room":
-            output.write("set %s/reset_objects[\"%s\"] = \"inventory\"\n" % (
-                                                                    reset_location,
-                                                                    reset_vnum
-                                                                    ))
+            output.write("set %s/reset_objects[\"%s\"] = \"inventory\"\n"
+                         % (reset_location, reset_vnum)
+                         )
             output.write("#\n")
 
         # Reset for objects in a container in a room
@@ -2546,9 +2622,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
             output.write("#\n")
             # Now create the reset.
 
-            output.write("set %s/reset_objects[\"%s\"] = \"%s\"\n" % (
-                                                             last_container_room,
-                                                             reset_vnum,
-                                                             reset_location
-                                                             ))
+            output.write("set %s/reset_objects[\"%s\"] = \"%s\"\n"
+                         % (last_container_room, reset_vnum, reset_location)
+                         )
             output.write("#\n")
