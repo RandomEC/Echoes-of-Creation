@@ -2572,7 +2572,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
         if reset_type == "object, equipped":
             # Set eq_slot on mobile equal to object.
             # Set equipped equal to True on object.
-            output.write("set/equip %s = %s\n" % (reset_location, reset_vnum))
+            output.write("set/equip %s = %s\n" % (last_mobile_vnum, reset_vnum))
             output.write("#\n")
             output.write("set %s/equipped = True" % reset_vnum)
             output.write("#\n")
@@ -2604,7 +2604,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
         # Reset for objects in mobile inventory
         if reset_type == "object, in mobile inventory":
             output.write("set %s/reset_objects[\"%s\"] = {\"location\":\"inventory\"}\n" % (
-                                                                    last_mnum,
+                                                                    last_mobile_vnum,
                                                                     reset_vnum
                                                                     ))
             output.write("#\n")
@@ -2612,7 +2612,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
         # Reset for objects equipped to mobiles
         elif reset_type == "object, equipped":
             output.write("set %s/reset_objects[\"%s\"] = {\"location\":\"equipped\"}\n"
-                         % (reset_location, reset_vnum)
+                         % (last_mobile_vnum, reset_vnum)
                          )
             output.write("#\n")
 
