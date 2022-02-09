@@ -1,4 +1,5 @@
-# Command to run in IDLE is exec(open('C:/Users/bradm/mudstuff/mygame/Area Ripper/Object Ripper.py').read())
+# Command to run in IDLE is exec(open('C:/Users/bradm/mudstuff/mygame/
+# Area Ripper/Area Ripper.py').read())
 #
 # Be sure that before you try to use, you make sure that if you have done this
 # before (or if you already use unique numbers to refer to your rooms) that
@@ -9,10 +10,9 @@
 # Need to handle tagging separately.
 
 import random
-from C:/Users/bradm/mudstuff/mygame/world import rules 
+from mygame.world import rules
 
-with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
-
+with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
 
     class Object:
         def __init__(self):
@@ -34,7 +34,6 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
             self.can_take = False
             self.special_function = []
 
-
     class Mobile:
         def __init__(self):
             self.name = ""
@@ -49,7 +48,8 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
             self.level = 0
             self.sex = "neuter"
             self.race = ""
-
+            self.item_type = ""
+            self.shopkeeper = {}
 
     class Room:
         def __init__(self):
@@ -98,9 +98,9 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
                          }
                 }
 
-
     area_name = ""
     afile_section = ""
+    starting_vnum = 6201
     section_end = True
     resets = []
     reset_index = 0
@@ -127,38 +127,57 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
 
         # if the line is empty, ignore it
         if not my_line:
+
             pass
 
         # Pound sign denotes a new object
-        elif my_line[0] == "#" and section_end = True:
+        elif my_line[0] == "#" and section_end == True:
 
             # Tell the program which section of the afile it is in.
-            if my_line[1:] == "AREA":
-                afile_section = "area"
+            if my_line[1:5] == "AREA":
+
+                area_string = my_line[:-1]
+                area_list = area_string.split()
+                area_list_size = len(area_list)
+                index = 0
+                line_break = 0
+
+                for index in range(0,area_list_size):
+                    if area_list[index] == "-":
+                        line_break = index + 1
+
+                area_name = " ".join(area_list[line_break:])
+
             elif my_line[1:] == "HELPS":
                 afile_section = "helps"
+                section_end = False
             elif my_line[1:] == "RECALL":
                 afile_section = "recall"
+                section_end = False
             elif my_line[1:] == "MOBILES":
                 afile_section = "mobiles"
+                section_end = False
             elif my_line[1:] == "OBJECTS":
                 afile_section = "objects"
+                section_end = False
             elif my_line[1:] == "ROOMS":
                 afile_section = "rooms"
+                section_end = False
             elif my_line[1:] == "RESETS":
                 afile_section = "resets"
+                section_end = False
             elif my_line[1:] == "SHOPS":
                 afile_section = "shops"
+                section_end = False
             elif my_line[1:] == "SPECIALS":
                 afile_section = "specials"
+                section_end = False
             elif my_line[1:] == "GAMES":
                 afile_section = "games"
-            
-            # Since you have started a new section, set section_end
-            # back to False.
-            section_end = False
-        
+                section_end = False
+
         elif afile_section == "rooms":
+
             if my_line == "#0":
                 section_end = True
 
@@ -372,7 +391,8 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
 
                             # set the description
                             rooms[object_number-1].\
-                                doors[door_direction]["description"] = temp_string
+                                doors[door_direction]["description"]\
+                                = temp_string
 
                         # clear the temp_string
                         temp_string = ""
@@ -428,26 +448,28 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
                     if locks == 1:
                         locks = tuple()
                     elif locks == 2:
-                        locks = ("pickproof",)
+                        locks = ("pick",)
                     elif locks == 3:
-                        locks = ("bashproof",)
+                        locks = ("bash",)
                     elif locks == 4:
-                        locks = ("pickproof", "bashproof",)
+                        locks = ("pick", "bash",)
                     elif locks == 5:
-                        locks = ("passproof",)
+                        locks = ("pass",)
                     elif locks == 6:
-                        locks = ("pickproof", "passproof")
+                        locks = ("pick", "pass")
                     elif locks == 7:
-                        locks = ("bashproof", "passproof",)
+                        locks = ("bash", "pass",)
                     else:
-                        locks = ("pickproof", "bashproof", "passproof",)
+                        locks = ("pick", "bash", "pass",)
 
-                    rooms[object_number-1].doors[door_direction]["locks"] = locks
+                    rooms[object_number-1].doors[door_direction]["locks"]\
+                        = locks
 
                     rooms[object_number-1].doors[door_direction]["key"]\
                         = locks_key_destination[1]
 
-                    rooms[object_number-1].doors[door_direction]["destination"]\
+                    rooms[object_number-1].\
+                        doors[door_direction]["destination"]\
                         = locks_key_destination[2]
 
                     # done with this door
@@ -467,7 +489,8 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
                         temp_string = temp_string + " " + my_line[:-1]
 
                         # set the keywords
-                        rooms[object_number-1].extra_description[temp_string] = ""
+                        rooms[object_number-1].extra_description[temp_string]\
+                            = ""
 
                         # set the keywords value for finding in dictionary for
                         # description
@@ -511,8 +534,8 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
             else:
                 pass
 
-        
         elif afile_section == "mobiles":
+
             if my_line == "#0":
                 section_end = True
 
@@ -551,9 +574,9 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
 
             elif mobile_data == "keywords":
 
-                # See if you are at the end of the keywords. Really only doing this
-                # check in case the area author put the ~ on the line after the
-                # keywords, instead of at the end of it.
+                # See if you are at the end of the keywords. Really only doing
+                # this check in case the area author put the ~ on the line
+                # after the keywords, instead of at the end of it.
                 if my_line[-1] == "~":
 
                     # If so, strip the ~.
@@ -638,7 +661,8 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
                     # Clear the temp_string.
                     temp_string = ""
 
-                    # Tell the function the next data to get is look description.
+                    # Tell the function the next data to get is look
+                    # description.
                     mobile_data = "look description"
 
                 else:
@@ -683,19 +707,20 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
 
             elif mobile_data == "act affected alignment":
 
-                # Turn the string into a list of form "act flags, affected flags,
-                # alignment".
+                # Turn the string into a list of form "act flags, affected
+                # flags, alignment".
 
                 stat_list = my_line.split(" ")
                 act_flags_list = list()
 
                 act_flags = int(stat_list[0])
 
-                # Act flags were originally a binary number that indicated whether
-                # a flag was active by activating that bit. We turn it into a list
-                # by taking off each successive power of two. Many of these were
-                # unused on Castle Arcanum, and, so, are blank below. If they carry
-                # data for the MUD you are importing from, fill in below.
+                # Act flags were originally a binary number that indicated
+                # whether a flag was active by activating that bit. We turn it
+                # into a list by taking off each successive power of two. Many
+                # of these were unused on Castle Arcanum, and, so, are blank
+                # below. If they carry data for the MUD you are importing
+                # from, fill in below.
 
                 if(act_flags >= 8388608):
                     act_flags = act_flags - 8388608
@@ -902,18 +927,18 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
                 else:
                     mobiles[mnum].sex = "neuter"
 
-
-        
         elif afile_section == "objects":
+
             if my_line == "#0":
                 section_end = True
-                
+
             # some files have the item-type, extra-flags, wear-flags triad as
             # a three-line list instead of one line. This accommodates that.
             elif extended_flags_format == 1:
 
-                # Extra flags used to be a binary, where they used each bit as a flag to know if the
-                # flag was active. We disaggregate into a list.
+                # Extra flags used to be a binary, where they used each bit as
+                # a flag to know if the flag was active. We disaggregate into
+                # a list.
                 extra_flags_list = list()
                 extra_flags = int(my_line)
                 if extra_flags >= 262114:
@@ -971,7 +996,7 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
                     extra_flags = extra_flags - 2
                     extra_flags_list.append("hum")
                 if extra_flags >= 1:
-                    extra_flags = extra_flags - 1;
+                    extra_flags = extra_flags - 1
                     extra_flags_list.append("glow")
 
                 # stick the newly-made list into the object.
@@ -982,10 +1007,11 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
                 extended_flags_format += 1
 
             elif extended_flags_format == 2:
-                # Wear flags used to be a binary, where they used each bit as a flag to know if the
-                # flag was active. We split off the ability to take the item, and disaggregate the 
-                # rest into a list. We won't allow multiple wear locations, so we will take the 
-                # lowest allowable wear slot at the end.
+                # Wear flags used to be a binary, where they used each bit as
+                # a flag to know if the flag was active. We split off the
+                # ability to take the item, and disaggregate the rest into a
+                # list. We won't allow multiple wear locations, so we will
+                # take the lowest allowable wear slot at the end.
                 wear_flags_list = list()
                 wear_flags = int(my_line)
                 if wear_flags >= 2097152:
@@ -1053,7 +1079,7 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
                     wear_flags_list.append("finger")
                 if wear_flags >= 1:
                     objects[onum].can_take = True
-                
+
                 # if there is a wear slot, take the lowest numbered one and
                 # put it on the object.
                 if wear_flags_list:
@@ -1067,26 +1093,26 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
                 # remove the pound sign
                 temp_string = my_line[1:]
 
-                # turn the vnum string into an onum and store
+                # Turn the vnum string into an onum and store.
                 onum = "o" + temp_string
 
-                # create a new Object object with the key of that onum
+                # Create a new Object object with the key of that onum.
                 objects[onum] = Object()
 
-                # store the onum in the Object itself, as well
+                # Store the onum in the Object itself, as well.
                 objects[onum].vnum = onum
 
-                # tell the function the next data to get is keywords
+                # Tell the function the next data to get is keywords.
                 object_data = "keywords"
 
-                # clear temp_string
+                # Clear temp_string.
                 temp_string = ""
 
             elif object_data == "keywords":
 
-                # see if you are at the end of the keywords, really only doing this
-                # check in case they put the ~ on the line after the keywords,
-                # instead of at the end of it.
+                # See if you are at the end of the keywords, really only doing
+                # this check in case they put the ~ on the line after the
+                # keywords, instead of at the end of it.
                 if my_line[-1] == "~":
 
                     # if so, strip the ~
@@ -1097,14 +1123,15 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
 
                     # make sure string has content
                     if temp_string:
-                        
+
                         # set the description
                         objects[onum].keywords = temp_string
 
                     # clear the temp_string
                     temp_string = ""
 
-                    # tell the function the next data to get is room_flags and terrain
+                    # tell the function the next data to get is room_flags and
+                    # terrain
                     object_data = "short description"
 
                 else:
@@ -1130,14 +1157,15 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
 
                     # make sure string has content
                     if temp_string:
-                        
-                        # set the description
+
+                        # Set the description.
                         objects[onum].short_description = temp_string
 
-                    # clear the temp_string
+                    # Clear the temp_string.
                     temp_string = ""
 
-                    # tell the function the next data to get is room_flags and terrain
+                    # Tell the function the next data to get is the long
+                    # description.
                     object_data = "long description"
 
                 else:
@@ -1150,7 +1178,7 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
 
             elif object_data == "long description":
 
-                # see if you are at the end of the long description.
+                # See if you are at the end of the long description.
                 if my_line[-1] == "~":
 
                     # if so, strip the ~
@@ -1159,16 +1187,17 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
                     else:
                         temp_string = my_line[:-1]
 
-                    # make sure string has content
+                    # Make sure string has content.
                     if temp_string:
-                        
-                        # set the description
+
+                        # Set the description.
                         objects[onum].long_description = temp_string
 
-                    # clear the temp_string
+                    # Clear the temp_string.
                     temp_string = ""
 
-                    # tell the function the next data to get is look description
+                    # Tell the function the next data to get is the look
+                    # description.
                     object_data = "look description"
 
                 else:
@@ -1181,8 +1210,9 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
 
             elif object_data == "look description":
 
-                # most area files won't have a look description for objects, but some will. 
-                # In any event, there WILL be a ~ where one should be, so we may as well 
+                # Most area files won't have a look description for objects,
+                # but some will. In any event, there WILL be a ~ where one
+                # should be if there WAS a look description, so we may as well
                 # handle it the same way, which will cover both cases anyway.
                 if my_line[-1] == "~":
 
@@ -1194,19 +1224,20 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
 
                     # make sure string has content
                     if temp_string:
-                        
-                        # set the description
+
+                        # Set the description
                         objects[onum].look_description = temp_string
 
-                    # clear the temp_string
+                    # Clear the temp_string
                     temp_string = ""
 
-                    # tell the function the next data to get is room_flags and terrain
+                    # Tell the function the next data to get is item type,
+                    # extra flags and wear flags.
                     object_data = "type extra wear"
 
                 else:
 
-                    # if no ~, add to what you have so far
+                    # If no terminal ~, add to what you have so far.
                     if temp_string:
                         temp_string = temp_string + " " + my_line
                     else:
@@ -1214,14 +1245,15 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
 
             elif object_data == "type extra wear":
 
-                # Turn the string into a list of form "item type, extra flags, wear flag"
+                # Turn the string into a list of form "item type, extra flags,
+                # wear flag"
                 stat_list = my_line.split(" ")
                 act_flags_list = list()
-                
+
                 item_type = int(stat_list[0])
 
                 # Item type was a number. We'll convert it into a string.
-                
+
                 if item_type == 1:
                     item_type = "light"
                 elif item_type == 2:
@@ -1268,7 +1300,7 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
                     item_type = "scroll"
                 else:
                     item_type = "trash"
-                
+
                 # Stick the item type into the object.
                 objects[onum].item_type = item_type
 
@@ -1276,8 +1308,9 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
                     extended_flags_format = 1
 
                 else:
-                    # Extra flags used to be a binary, where they used each bit as a flag to know if the
-                    # flag was active. We disaggregate into a list.
+                    # Extra flags used to be a binary, where they used each
+                    # bit as a flag to know if the flag was active. We will
+                    # disaggregate this into a list.
                     extra_flags_list = list()
                     extra_flags = int(stat_list[1])
                     if extra_flags >= 262114:
@@ -1335,17 +1368,18 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
                         extra_flags = extra_flags - 2
                         extra_flags_list.append("hum")
                     if extra_flags >= 1:
-                        extra_flags = extra_flags - 1;
+                        extra_flags = extra_flags - 1
                         extra_flags_list.append("glow")
 
                     # stick the newly-made list into the object.
                     if extra_flags_list:
                         objects[onum].extra_flags = extra_flags_list
 
-                    # Wear flags used to be a binary, where they used each bit as a flag to know if the
-                    # flag was active. We split off the ability to take the item, and disaggregate the 
-                    # rest into a list. We won't allow multiple wear locations, so we will take the 
-                    # lowest allowable wear slot at the end.
+                    # Wear flags used to be a binary, where they used each bit
+                    # as a flag to know if the flag was active. We split off
+                    # the ability to take the item, and disaggregate the rest
+                    # into a list. We won't allow multiple wear locations, so
+                    # we will take the lowest allowable wear slot at the end.
                     wear_flags_list = list()
                     wear_flags = int(stat_list[2])
                     if wear_flags >= 2097152:
@@ -1413,43 +1447,43 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
                         wear_flags_list.append("finger")
                     if wear_flags >= 1:
                         objects[onum].can_take = True
-                    
-                    # if there is a wear slot, take the lowest numbered one and
+
+                    # If there is a wear slot, take the lowest numbered one and
                     # put it on the object.
                     if wear_flags_list:
                         objects[onum].wear_location = wear_flags_list[-1]
 
-                # tell the function the next data to get is item values
+                # Tell the function the next data to get is item values.
                 object_data = "values"
 
             elif object_data == "values":
 
-                # again, split the line on spaces
+                # Again, split the line on spaces.
                 stat_list = my_line.split("~")
 
-                # store the value_0 in the mobile object            
+                # Store the value_0 in the mobile object.
                 objects[onum].value_0 = stat_list[0].strip()
 
-                # store the value_0 in the mobile object            
+                # Store the value_0 in the mobile object.
                 objects[onum].value_1 = stat_list[1].strip()
 
-                # store the value_0 in the mobile object            
+                # Store the value_0 in the mobile object.
                 objects[onum].value_2 = stat_list[2].strip()
 
-                # store the value_0 in the mobile object            
+                # Store the value_0 in the mobile object.
                 objects[onum].value_3 = stat_list[3].strip()
 
-                # tell the function the next data to get is the weight.
+                # Tell the function the next data to get is the weight.
                 object_data = "weight"
 
             # Take the weight off this line and discard the rest, which have
             # unknown historical use.
             elif object_data == "weight":
 
-                # again, split the line on spaces
+                # Again, split the line on spaces.
                 stat_list = my_line.split(" ")
 
-                # store the weight in the mobile object            
+                # Store the weight in the mobile object.
                 objects[onum].weight = int(stat_list[0])
 
                 object_data = ""
@@ -1468,7 +1502,7 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
                         if my_line == "E":
                             program = False
                             extra_line = 1
-                    
+
                     elif my_line[0] == "@":
                         spec_fun_string = my_line[1:]
                         if spec_fun_string[-1] == "~":
@@ -1491,22 +1525,24 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
                                 temp_string = temp_string + " " + my_line[:-1]
                             else:
                                 temp_string = my_line[:-1]
-                            
-                            # set the keywords
+
+                            # Set the keywords.
                             objects[onum].extra_description[temp_string] = ""
 
-                            # set the keywords value for finding in dictionary below for description
+                            # Set the keywords value for finding in dictionary
+                            # below for description.
                             keywords = temp_string
-                    
-                            # clear the temp_string
+
+                            # Clear the temp_string.
                             temp_string = ""
 
-                            # tell the function the next data to get is the extra description
+                            # Tell the function the next data to get is the
+                            # extra description itself.
                             extra_line = 2
-                        
+
                         else:
 
-                            # if no ~, add to what you have so far
+                            # If no terminal ~, add to what you have so far.
                             if temp_string:
                                 temp_string = temp_string + " " + my_line
                             else:
@@ -1514,42 +1550,39 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
 
                 elif extra_line == 2:
 
-                    # see if you are at the end of the extra description
+                    # See if you are at the end of the extra description.
                     if my_line[-1] == "~":
 
-                        # if so, strip the ~
+                        # If so, strip the ~.
                         if temp_string:
                             temp_string = temp_string + " " + my_line[:-1]
                         else:
                             temp_string = my_line[:-1]
 
-                        # set the description
+                        # Set the description.
                         objects[onum].extra_description[keywords] = temp_string
-                
-                        # clear the temp_string
+
+                        # Clear the temp_string.
                         temp_string = ""
 
-                        # done with this extra description
+                        # Done with this extra description.
                         extra_line = 0
-                    
+
                     else:
 
-                        # if no ~, add to what you have so far
+                        # If no ~, add to what you have so far.
                         temp_string = temp_string + " " + my_line
 
             elif my_line == "A" or apply_line > 0:
 
                 if apply_line == 0:
                     apply_line = 1
-                    print("Test 0")
 
                 elif apply_line == 1:
-                    print("Test 1")
 
-                    # again, split the line on spaces
+                    # Again, split the line on spaces.
                     stat_list = my_line.split(" ")
-                    print("test")
-                    
+
                     apply_type = int(stat_list[0])
                     if apply_type == 1:
                         apply_type = "strength"
@@ -1575,271 +1608,853 @@ with open ("C:/Users/bradm/mudstuff/smurf_objects.txt","rt") as myfile:
                         apply_type = "damroll"
                     elif apply_type == 24:
                         apply_type = "saving throw"
-                    
+
                     apply_value = int(stat_list[1])
-                    
-                    # set the apply type for this apply.
+
+                    # Set the apply type for this apply.
                     objects[onum].apply[apply_type] = apply_value
                     apply_line = 0
-        
+
         elif afile_section == "resets":
             if my_line == "S":
                 section_end = True
-        
-            # Create a new dictionary for each reset.
-            resets[reset_index] = {}
-
-            # Turn the reset string into a list.
-            reset_list = my_line.split(" ")
-
-            # For door resets, purge the list of any "" instances.
-            reset_list.remove("")
-
-            # Mobile inventory and mobile equipped resets depend
-            # on knowing what the last mobile reset was. This 
-            # tracks that.
-            last_mobile = ""
-
-            type = reset_list[0]
-            if type == "M":
-                type = "mobile"
-                reset_vnum = "m" + reset_list[2]
-                last_mobile = reset_vnum
-                world_limit = reset_list[3]
-                location = "r" + reset_list[4]
-            elif type == "O":
-                type = "object, room"
-                reset_vnum = "o" + reset_list[2]
-                location = "r" + reset_list[4]
-            elif type == "P":
-                type = "object, in container"
-                reset_vnum = "o" + reset_list[2]
-                location = "o" + reset_list[4]
-            elif type == "G":
-                type = "object, in mobile inventory"
-                reset_vnum = "o" + reset_list[2]
-                location = last_mobile
-            elif type == "E":
-                type = "object, equipped"
-                reset_vnum = "o" + reset_list[2]
-                location = last_mobile
-            elif type == "D":
-                type = "door"
-                location = "r" + reset_list[2]
-                if reset_list[3] == 0:
-                    direction = "north"
-                elif reset_list[3] == 1:
-                    direction = "east"
-                elif reset_list[3] == 2:
-                    direction = "south"
-                elif reset_list[3] == 3:
-                    direction = "west"
-                elif reset_list[3] == 4:
-                    direction = "up"
-                else:
-                    direction = "down"
-                
-                if reset_list[4] == 0:
-                    state = "open"
-                elif reset_list[4] == 1:
-                    state = "closed"
-                else:
-                    state = "locked"
-
-            resets[reset_index]["type"] = type
-            if type != "door":
-                resets[reset_index]["vnum to reset"] = reset_vnum
             else:
-                resets[reset_index]["door direction"] = direction
-                resets[reset_index]["door state"] = state
-            if type == "mobile":
-                resets[reset_index]["world limit"] = world_limit
-            resets[reset_index]["location"] = location
+                # Create a new dictionary for each reset.
+                resets.append({})
 
-            # When implementing these resets, keep track of the level
-            # of the last mobile reset. Objects reset into a room or
-            # container get their level set as the last mobile's level
-            # minus 2!
+                # Turn the reset string into a list.
+                reset_list = my_line.split(" ")
 
-            reset_index += 1
+                # Mobile inventory and mobile equipped resets depend
+                # on knowing what the last mobile reset was. This
+                # tracks that.
+                last_mobile = ""
 
-        elif afile_section == "shops"
+                type = reset_list[0]
+                if type == "M":
+                    type = "mobile"
+                    reset_vnum = "m" + reset_list[2]
+                    last_mobile = reset_vnum
+                    world_limit = reset_list[3]
+                    location = "r" + reset_list[4]
+                elif type == "O":
+                    type = "object, room"
+                    reset_vnum = "o" + reset_list[2]
+                    location = "r" + reset_list[4]
+                elif type == "P":
+                    type = "object, in container"
+                    reset_vnum = "o" + reset_list[2]
+                    location = "o" + reset_list[4]
+                elif type == "G":
+                    type = "object, in mobile inventory"
+                    reset_vnum = "o" + reset_list[2]
+                    location = last_mobile
+                elif type == "E":
+                    type = "object, equipped"
+                    reset_vnum = "o" + reset_list[2]
+                    location = last_mobile
+                elif type == "D":
+                    # For door resets, purge the list of any "" instances.
+                    reset_list.remove("")
+                    type = "door"
+                    location = "r" + reset_list[2]
+                    if reset_list[3] == 0:
+                        direction = "north"
+                    elif reset_list[3] == 1:
+                        direction = "east"
+                    elif reset_list[3] == 2:
+                        direction = "south"
+                    elif reset_list[3] == 3:
+                        direction = "west"
+                    elif reset_list[3] == 4:
+                        direction = "up"
+                    else:
+                        direction = "down"
+
+                    if reset_list[4] == 0:
+                        state = "open"
+                    elif reset_list[4] == 1:
+                        state = "closed"
+                    else:
+                        state = "locked"
+
+                resets[reset_index]["type"] = type
+                if type != "door":
+                    resets[reset_index]["vnum to reset"] = reset_vnum
+                else:
+                    resets[reset_index]["door direction"] = direction
+                    resets[reset_index]["door state"] = state
+                if type == "mobile":
+                    resets[reset_index]["world limit"] = world_limit
+                resets[reset_index]["location"] = location
+
+                # When implementing these resets, keep track of the level
+                # of the last mobile reset. Objects reset into a room or
+                # container get their level set as the last mobile's level
+                # minus 2!
+
+                reset_index += 1
+
+        elif afile_section == "shops":
             if my_line == "0":
                 section_end = True
-        
-        
-            # Turn the string into a list of form "mob, item_type_0,
-            # item_type_1, item_type_2, item_type_3, sell_percentage,
-            # buy_percentage, open, close.
+            else:
+                # Turn the string into a list of form "mob, item_type_0,
+                # item_type_1, item_type_2, item_type_3, sell_percentage,
+                # buy_percentage, open, close.
 
-            shops_list = my_line.split(" ")
+                shops_list = my_line.split(" ")
 
-            # Get the mnum of the shopkeeper mobile.
-            mnum = "m" + shops_list[0]
+                # Get the mnum of the shopkeeper mobile.
+                mnum = "m" + shops_list[0]
 
-            # Iterate through shops_list item types and turn from numbers
-            # into text.
-            for index in range(1,5):
-                
-                item_type = int(shops_list[index])
-                
-                if item_type == 1:
-                    item_type = "light"
-                elif item_type == 2:
-                    item_type = "scroll"
-                elif item_type == 3:
-                    item_type = "wand"
-                elif item_type == 4:
-                    item_type = "staff"
-                elif item_type == 5:
-                    item_type = "scroll"
-                elif item_type == 8:
-                    item_type = "treasure"
-                elif item_type == 9:
-                    item_type = "armor"
-                elif item_type == 10:
-                    item_type = "potion"
-                elif item_type == 12:
-                    item_type = "furniture"
-                elif item_type == 15:
-                    item_type = "container"
-                elif item_type == 17:
-                    item_type = "drink container"
-                elif item_type == 18:
-                    item_type = "key"
-                elif item_type == 19:
-                    item_type = "food"
-                elif item_type == 20:
-                    item_type = "money"
-                elif item_type == 22:
-                    item_type = "boat"
-                elif item_type == 23:
-                    item_type = "corpse npc"
-                elif item_type == 24:
-                    item_type = "corpse pc"
-                elif item_type == 25:
-                    item_type = "fountain"
-                elif item_type == 26:
-                    item_type = "pill"
-                elif item_type == 27:
-                    item_type = "fly"
-                elif item_type == 28:
-                    item_type = "portal"
-                elif item_type == 29:
-                    item_type = "scroll"
-                else:
-                    item_type = "trash"
+                # Iterate through shops_list item types and turn from numbers
+                # into text.
+                for index in range(1, 5):
 
-                shops_list[index] = item_type
+                    item_type = int(shops_list[index])
 
-            # Populate the shopkeeper dictionary for that mobile.
-            mobiles[mnum].shopkeeper["item will buy 1"] = shops_list[1]
-            mobiles[mnum].shopkeeper["item will buy 2"] = shops_list[2]
-            mobiles[mnum].shopkeeper["item will buy 3"] = shops_list[3]
-            mobiles[mnum].shopkeeper["item will buy 4"] = shops_list[4]
-            mobiles[mnum].shopkeeper["sell percentage"] = shops_list[5]
-            mobiles[mnum].shopkeeper["buy percentage"] = shops_list[6]
-            mobiles[mnum].shopkeeper["opening hour"] = shops_list[7]
-            mobiles[mnum].shopkeeper["closing hour"] = shops_list[8]
+                    if item_type == 1:
+                        item_type = "light"
+                    elif item_type == 2:
+                        item_type = "scroll"
+                    elif item_type == 3:
+                        item_type = "wand"
+                    elif item_type == 4:
+                        item_type = "staff"
+                    elif item_type == 5:
+                        item_type = "scroll"
+                    elif item_type == 8:
+                        item_type = "treasure"
+                    elif item_type == 9:
+                        item_type = "armor"
+                    elif item_type == 10:
+                        item_type = "potion"
+                    elif item_type == 12:
+                        item_type = "furniture"
+                    elif item_type == 15:
+                        item_type = "container"
+                    elif item_type == 17:
+                        item_type = "drink container"
+                    elif item_type == 18:
+                        item_type = "key"
+                    elif item_type == 19:
+                        item_type = "food"
+                    elif item_type == 20:
+                        item_type = "money"
+                    elif item_type == 22:
+                        item_type = "boat"
+                    elif item_type == 23:
+                        item_type = "corpse npc"
+                    elif item_type == 24:
+                        item_type = "corpse pc"
+                    elif item_type == 25:
+                        item_type = "fountain"
+                    elif item_type == 26:
+                        item_type = "pill"
+                    elif item_type == 27:
+                        item_type = "fly"
+                    elif item_type == 28:
+                        item_type = "portal"
+                    elif item_type == 29:
+                        item_type = "scroll"
+                    else:
+                        item_type = "trash"
 
-        elif afile_section == "specials"
-            if my_line == "#0":
+                    shops_list[index] = item_type
+
+                # Populate the shopkeeper dictionary for that mobile.
+                mobiles[mnum].shopkeeper["item will buy 1"] = shops_list[1]
+                mobiles[mnum].shopkeeper["item will buy 2"] = shops_list[2]
+                mobiles[mnum].shopkeeper["item will buy 3"] = shops_list[3]
+                mobiles[mnum].shopkeeper["item will buy 4"] = shops_list[4]
+                mobiles[mnum].shopkeeper["sell percentage"] = shops_list[5]
+                mobiles[mnum].shopkeeper["buy percentage"] = shops_list[6]
+                mobiles[mnum].shopkeeper["opening hour"] = shops_list[7]
+                mobiles[mnum].shopkeeper["closing hour"] = shops_list[8]
+
+        elif afile_section == "specials":
+            if my_line == "S":
                 section_end = True
-        
+            else:
+                # Turn the string into a list of form "letter, vnum,
+                # special_function".
 
-            # Turn the string into a list of form "letter, vnum,
-            # special_function".
+                special_function_list = my_line.split(" ")
 
-            special_function_list = my_line.split(" ")
+                if special_function_list[0] == "M":
+                    mnum = "m" + special_function_list[1]
+                    mobiles[mnum].special_function = special_function_list[2][5:]
+                elif special_function_list[0] == "O":
+                    onum = "o" + special_function_list[1]
+                    objects[onum].special_function = special_function_list[2][6:]
 
-            if special_function_list[0] == "M":
-                mnum = "m" + special_function_list[1]
-                mobiles[mnum].special_function = special_function_list[2][5:]
-            elif special_function_list[0] == "O":
-                onum = "o" + special_function_list[1]
-                objects[onum].special_function = special_function_list[2][6:]
+with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
-# Now we are going to build out the batch file by iterating through each room
+    # Now we are going to build out the batch file by iterating through each room
 
-# First we need to dig all the rooms, using the vnums with a leading R to
-# create unique aliases for each so that we can do the next step and link all
-# in one go, and preserve the ability to use M and O with vnums for mobiles
-# and objects.
+    # First we need to dig all the rooms, using the vnums with a leading R to
+    # create unique aliases for each so that we can do the next step and link all
+    # in one go, and preserve the ability to use M and O with vnums for mobiles
+    # and objects.
 
-total_rooms = len(rooms)
-door_list = []
+    total_rooms = len(rooms)
+    door_list = []
 
-for index in range(total_rooms):
+    for index in range(total_rooms):
 
-    room = index - 1
+        room = index - 1
 
-    print("dig/tel %s; R%s" % (rooms[room].name, rooms[room].vnum))
-    print("#")
-    print("tag %s = %s, category = area names" % (rooms[room].vnum,
-                                                  area_name.lower()))
-    print("#")
-    print('desc R%s = %s' % (rooms[room].vnum, rooms[room].description))
-    print("#")
-    print("desc/edit R%s" % rooms[room].vnum)
-    print("#")
-    print(":j l")
-    print("#")
-    print(":wq")
-    print("#")
-    print('set R%s/terrain = "%s"' % (rooms[room].vnum, rooms[room].terrain))
-    print("#")
+        output.write("dig/tel %s; R%s\n" % (rooms[room].name, rooms[room].vnum))
+        output.write("#\n")
+        output.write("tag %s = %s, category = area names\n" % (rooms[room].vnum,
+                                                      area_name.lower()))
+        output.write("#\n")
+        output.write('desc %s = %s\n' % (rooms[room].vnum, rooms[room].description))
+        output.write("#\n")
+        output.write("desc/edit %s\n" % rooms[room].vnum)
+        output.write("#\n")
+        output.write(":j l\n")
+        output.write("#\n")
+        output.write(":wq\n")
+        output.write("#\n")
+        output.write('set %s/terrain = "%s"\n' % (rooms[room].vnum, rooms[room].terrain))
+        output.write("#\n")
 
-    if rooms[room].extra_description:
+        if rooms[room].extra_description:
 
-        extra_string = ""
+            extra_string = ""
 
-        for keyword in rooms[room].extra_description:
-            extra_string = extra_string \
-                           + ('"%s":"%s"' %
-                              (keyword,
-                               rooms[room].extra_description[keyword]
-                               ))
+            for keyword in rooms[room].extra_description:
+                extra_string = extra_string \
+                               + ('"%s":"%s"' %
+                                  (keyword,
+                                   rooms[room].extra_description[keyword]
+                                   ))
 
-        print("set R%s/extra_description = {%s}" % (rooms[room].vnum,
-                                                    extra_string
-                                                    ))
-        print("#")
+            output.write("set %s/extra_description = {%s}\n" % (rooms[room].vnum,
+                                                        extra_string
+                                                        ))
+            output.write("#\n")
 
-    if rooms[room].room_flags:
+        if rooms[room].room_flags:
 
-        print("set R%s/room_flags = %s" % (rooms[room].vnum,
-                                           rooms[room].room_flags))
-        print("#")
+            output.write("set %s/room_flags = %s\n" % (rooms[room].vnum,
+                                               rooms[room].room_flags))
+            output.write("#\n")
 
-for index in range(total_rooms):
+    for index in range(total_rooms):
 
-    room = index - 1
-    print("tel R%s" % rooms[room].vnum)
-    print("#")
+        room = index - 1
+        output.write("tel %s\n" % rooms[room].vnum)
+        output.write("#\n")
 
-    for door in rooms[room].doors:
+        for door in rooms[room].doors:
 
-        if rooms[room].doors[door]["destination"]:
+            if rooms[room].doors[door]["destination"]:
 
+                # Assigning vnum and one letter direction alias to door.
+                vnum = ("e%s" % (starting_vnum + exit_number))
+                exit_number += 1
+                door_and_vnum = [door[0], vnum]
+                aliases = "; ".join(door_and_vnum)
+                # if the door has its own keywords, add those to the above.
+                if rooms[room].doors[door]["keywords"] != " " \
+                        and rooms[room].doors[door]["keywords"] != "":
+
+                    rooms[room].doors[door]["keywords"].append(aliases)
+
+                    aliases = "; ".join(rooms[room].doors[door]["keywords"])
+
+                # this comparison is to make sure that only one set of doors gets
+                # opened.
+
+                room_set = ""
+                room1 = int(rooms[room].vnum[1:])
+                room2 = int(rooms[room].doors[door]["destination"])
+
+                if room1 < room2:
+                    room_set = ("%d, %d" % (room1, room2))
+                else:
+                    room_set = ("%d, %d" % (room2, room1))
+
+                if room_set not in door_list:
+
+                    if door == "north":
+                        opposite_door = "south"
+                    elif door == "east":
+                        opposite_door = "west"
+                    elif door == "south":
+                        opposite_door = "north"
+                    elif door == "west":
+                        opposite_door = "east"
+                    elif door == "up":
+                        opposite_door = "down"
+                    elif door == "down":
+                        opposite_door = "up"
+
+                    output.write('open %s; %s, %s = R%s\n' % (door,
+                                                     aliases,
+                                                     opposite_door,
+                                                     rooms[room].
+                                                     doors[door]["destination"]
+                                                     ))
+                    output.write("#\n")
+                    output.write("tag %s = %s, category = area names\n" % (vnum,
+                                                                  area_name.lower()
+                                                                  ))
+                    output.write("#\n")
+                    door_list.append(room_set)
+
+                else:
+
+                    output.write("alias %s = %s\n" % (door, aliases))
+                    output.write("#\n")
+                    output.write("tag %s = %s, category = area names\n" % (vnum,
+                                                                  area_name.lower()
+                                                                  ))
+                    output.write("#\n")
+
+                if rooms[room].doors[door]["description"]:
+                    output.write("desc %s = %s\n" % (door,
+                                            rooms[room].doors[door]["description"]
+                                            ))
+                    output.write("#\n")
+
+                if int(rooms[room].doors[door]["key"]) >= 0:
+                    output.write("set %s/key = %s\n" % (door,
+                                               rooms[room].doors[door]["key"]
+                                               ))
+                    output.write("#\n")
+
+                # Cycle through and make the door bashproof, pickproof and
+                # passproof, as applicable.
+                if rooms[room].doors[door]["locks"]:
+                    for lock in rooms[room].doors[door]["locks"]:
+                        output.write("objectlock %s = %s:false()\n" % (door, lock))
+                        output.write("#\n")
+
+    reset = 0
+    reset_length = len(resets)
+    for reset in range(0,reset_length):
+
+        # 1. Get the reset data.
+
+        # First, the data that all resets have.
+        reset_location = resets[reset]["location"]
+        reset_type = resets[reset]["type"]
+
+        # Get the data specific to certain types of resets.
+        if resets[reset]["type"] != "door":
+
+            # Both mobiles and objects have a vnum.
+            reset_vnum = resets[reset]["vnum to reset"]
+
+            # Use the vnum to get the actual object in memory that you are
+            # placing and creating a reset for.
+            if resets[reset]["type"] == "mobile":
+                object = mobiles[reset_vnum]
+            else:
+                object = objects[reset_vnum]
+
+        # And if it is a door, get the door-specific data.
+        else:
+            reset_direction = resets[reset]["door direction"]
+            reset_state = resets[reset]["door state"]
+
+        # 2. Teleport to the location that the object resets to, and create
+        # an instance of the mobile/object. For objects that reset in
+        # containers, we will later teleport to the room to create the
+        # reset itself.
+        output.write("tel %s\n" % reset_location)
+        output.write("#\n")
+
+        # Create the instance of the thing, unless it is a door, or a portal,
+        # which is just a door in hiding. We'll take the information
+        # for portals and make an exit later.
+        if reset_type == "mobile" or (object.item_type and object.item_type != "portal"):
+
+            # Turn keywords string into a semicolon-delineated list, as that is
+            # the syntax for aliases, which is what they'll be.
+            keyword_list = object.keywords.split(" ")
+            keyword_string = ";".join(keyword_list)
+
+            # Generalize the mobile/object as "object".
+            if type == "mobile":
+                output.write("create/drop %s;%s:characters.Mobile\n" %
+                      (object.short_description, keyword_string))
+            else:
+                output.write("create/drop %s;%s:objects.%s\n"
+                      % (
+                          object.short_description,
+                          keyword_string,
+                          object.item_type.capitalize()
+                         )
+                      )
+
+            output.write("#\n")
+
+            # Set the long description for the object/mobile.
+            output.write("desc %s = %s\n" % (reset_vnum, object.long_description))
+            output.write("#\n")
+
+            # Setting level is slightly complex, as objects in Diku muds took their
+            # level from either the mobile that they reset on, or the last mobile
+            # to be reset.
+            if reset_type == "mobile":
+
+                # Store the mobile's level for use on an object not loaded on a
+                # mobile, if necessary.
+                last_mobile_level = object.level
+
+                # If the object is a mobile, use its own level.
+                level = object.level
+
+            else:
+                # Check to see if the object resets on a mobile.
+                if reset_location and reset_location[0] == "m":
+
+                    # Get the level from the mobile it resets on.
+                    level = mobiles[reset_location].level
+
+                # If the object does not reset on a mobile, get the level of the
+                # last mob.
+                else:
+                    level = last_mobile_level
+
+            # Use the level you got above to set level.
+            output.write("set %s/level = %d\n" % (reset_vnum, level))
+            output.write("#\n")
+
+            # Objects and mobiles also get a base level so that some variation
+            # can be put in their level when they are reset.
+            output.write("set %s/level_base = %d\n" % (reset_vnum, level))
+            output.write("#\n")
+            output.write("set %s/vnum = %s\n" % (reset_vnum, reset_vnum))
+            output.write("#\n")
+
+            # Not everything has a look description so check before setting.
+            if object.look_description:
+                output.write("set %s/look_description = %s\n" % (
+                                                        reset_vnum,
+                                                        object.look_description
+                                                        ))
+                output.write("#\n")
+
+            # Now, set the mobile-specific characteristics.
+            if reset_type == "mobile":
+
+                if object.act_flags:
+                    output.write("set %s/act_flags = %s\n" % (reset_vnum, object.act_flags))
+                    output.write("#\n")
+
+                output.write("set %s/alignment = %d\n" % (reset_vnum, object.alignment))
+                output.write("#\n")
+                output.write("set %s/sex = %s\n" % (reset_vnum, object.sex))
+                output.write("#\n")
+
+                # Turn the affected flags list into a dictionary. All of the
+                # affects that would be on mobiles are all boolean affects, so all
+                # we need to know is that they are on the mobile. So the
+                # dictionary is all keys of the affect and a blank string. Other
+                # affects will need the dictionary structure, which is why we use
+                # it here.
+                if object.affected_flags:
+                    affects_dictionary = {}
+                    for affect in object.affected_flags:
+                        affects_dictionary[affect] = ""
+                    output.write("set %s/spell_affects = %s\n" % (
+                                                         reset_vnum,
+                                                         affects_dictionary
+                                                         ))
+                output.write("#\n")
+
+                output.write("set %s/race = %s\n" % (reset_vnum, object.race))
+                output.write("#\n")
+                output.write("tag %s = %s:area name\n" % (reset_vnum, area_name))
+                output.write("#\n")
+
+                # Setting hitpoints for mobiles is a factor of the mobile's level.
+                # Set both max hp and current hitpoints to it.
+                level = object.level
+                hitpoints = level*8 + random.randint(int(level/4), (level*level))
+                output.write("set %s/hitpoints[maximum] = %d\n" % (reset_vnum, hitpoints))
+                output.write("#\n")
+                output.write("set %s/position = \"standing\"\n" % reset_vnum)
+                output.write("#\n")
+
+                # Special functions and shopkeepers are both things not every
+                # mobile will have. So, check to make sure that they are on things
+                # before setting it.
+                if mobiles[reset_vnum].special_function:
+                    output.write("set %s/special_function = %s\n"
+                          % (reset_vnum, object.special_function)
+                          )
+                    output.write("#\n")
+                if mobiles[reset_vnum].shopkeeper:
+                    output.write("set %s/shopkeeper = %s\n" % (
+                                                      reset_vnum,
+                                                      object.shopkeeper
+                                                      ))
+                    output.write("#\n")
+
+            # Deal with object-specific characteristics for all non-portal objects.
+            else:
+
+                if object.item_type:
+                    output.write("set %s/item_type = %s\n" % (reset_vnum, object.item_type))
+                    output.write("#\n")
+                if object.wear_location:
+                    output.write("set %s/wear_location = %s\n" % (
+                                                         reset_vnum,
+                                                         object.wear_location
+                                                         ))
+                    output.write("#\n")
+
+                # If can't be taken, set so can't be picked up except by Admin
+                if not object.can_take:
+                    output.write("objectlock %s = \"get:perm(Admin)\"\n" % reset_vnum)
+                    output.write("#\n")
+                output.write("set %s/weight = %d\n" % (reset_vnum, object.weight))
+                output.write("#\n")
+                output.write("tag %s = %s:area name\n" % (reset_vnum, area_name))
+                output.write("#\n")
+                if object.extra_description:
+                    output.write("set %s/extra_descriptions = %s\n"
+                          % (reset_vnum, object.extra_description))
+                    output.write("#\n")
+                alignment_restriction = []
+                if "anti neutral" in object.extra_flags:
+                    alignment_restriction.append("neutral")
+                if "anti good" in object.extra_flags:
+                    alignment_restriction.append("good")
+                if "anti evil" in object.extra_flags:
+                    alignment_restriction.append("evil")
+                if alignment_restriction:
+                    output.write("set %s/alignment_restriction = %s\n"
+                          % (reset_vnum, alignment_restriction)
+                          )
+                    output.write("#\n")
+                extra_flags = []
+                for flag in object.extra_flags:
+                    if flag not in ["anti neutral", "anti good", "anti evil"]:
+                        extra_flags.append(flag)
+                if extra_flags:
+                    output.write("set %s/extra_flags = %s\n" % (reset_vnum, extra_flags))
+                    output.write("#\n")
+                if object.special_function:
+                    output.write("set %s/special_function = %s\n"
+                          % (reset_vnum, object.special_function)
+                          )
+                    output.write("#\n")
+                if object.apply:
+                    for apply_type in object.apply:
+                        output.write("set %s/stat_modifiers[%s] = %d\n"
+                              % (reset_vnum, apply_type, object.apply[apply_type])
+                              )
+                        output.write("#\n")
+                if object.value_0:
+                    value_0 = int(object.value_0)
+                    if object.item_type in (
+                                            "scroll",
+                                            "pill",
+                                            "wand",
+                                            "staff",
+                                            "potion"
+                                            ):
+                        output.write("set %s/spell_level = %d\n" % (reset_vnum, value_0))
+                        output.write("#\n")
+                        output.write("set %s/spell_level_base = %d\n" % (
+                                                                reset_vnum,
+                                                                value_0
+                                                                ))
+                        output.write("#\n")
+                    elif object.item_type == "furniture":
+                        output.write("set %s/people_maximum = %d\n" % (reset_vnum, value_0))
+                        output.write("#\n")
+                    elif object.item_type == "container":
+                        output.write("set %s/weight_maximum = %d\n" % (reset_vnum, value_0))
+                        output.write("#")
+                    elif object.item_type == "drink container\n":
+                        output.write("set %s/capacity_maximum = %d\n" % (
+                                                                reset_vnum,
+                                                                value_0
+                                                                ))
+                        output.write("#\n")
+                    elif object.item_type == "food":
+                        output.write("set %s/hours_fed = %d\n" % (reset_vnum, value_0))
+                        output.write("#\n")
+                    elif object.item_type == "money":
+                        output.write("set %s/value = %d\n" % (reset_vnum, value_0))
+                        output.write("#\n")
+                    elif object.item_type == "scuba":
+                        output.write("set %s/charges = %d\n" % (reset_vnum, value_0))
+                        output.write("#\n")
+                if object.value_1:
+                    if object.item_type in ("scroll", "pill", "potion"):
+                        output.write("set %s/spell_name_1 = %s\n" % (
+                                                            reset_vnum,
+                                                            object.value_1
+                                                            ))
+                        output.write("#\n")
+                    elif object.item_type in ("wand", "staff"):
+                        value_1 = int(object.value_1)
+                        output.write("set %s/charges_maximum = %d\n" % (
+                                                               reset_vnum,
+                                                               value_1
+                                                               ))
+                        output.write("#\n")
+                        output.write("set %s/charges_maximum_base = %d\n" % (
+                                                                    reset_vnum,
+                                                                    value_1
+                                                                    ))
+                        output.write("#\n")
+                    elif object.item_type == "furniture":
+                        value_1 = int(object.value_1)
+                        output.write("set %s/weight_maximum = %d\n" % (reset_vnum, value_1))
+                        output.write("#\n")
+                    elif object.item_type == "container":
+                        last_container_room = reset_location
+                        value_1 = int(object.value_1)
+                        container_state_list = []
+                        if value_1 >= 8:
+                            container_state_list.append("locked")
+                            value_1 -= 8
+                        if value_1 >= 4:
+                            container_state_list.append("closed")
+                            value_1 -= 4
+                        if value_1 >= 2:
+                            container_state_list.append("pickproof")
+                            value_1 -= 2
+                        if value_1 >= 1:
+                            container_state_list.append("closeable")
+                        output.write("set %s/state = %s\n" % (
+                                                     reset_vnum,
+                                                     container_state_list
+                                                     ))
+                        output.write("#\n")
+                        output.write("set %s/state_base = %s\n" % (
+                                                          reset_vnum,
+                                                          container_state_list
+                                                          ))
+                        output.write("#\n")
+                    elif object.item_type == "drink container":
+                        value_1 = int(object.value_1)
+                        output.write("set %s/capacity_current = %d\n" % (
+                                                                reset_vnum,
+                                                                value_1
+                                                                ))
+                        output.write("#\n")
+                    elif object.item_type == "scuba":
+                        value_1 = int(object.value_1)
+                        output.write("set %s/charge_maximum = %d\n" % (reset_vnum, value_1))
+                        output.write("#\n")
+                if object.value_2:
+                    if object.item_type in ("scroll", "pill", "potion"):
+                        output.write("set %s/spell_name_2 = %s\n" % (
+                                                            reset_vnum,
+                                                            object.value_2
+                                                            ))
+                        output.write("#\n")
+                    elif object.item_type in ("wand", "staff"):
+                        value_2 = int(object.value_2)
+                        output.write("set %s/charges_current = %d\n" % (
+                                                               reset_vnum,
+                                                               value_2
+                                                               ))
+                        output.write("#\n")
+                    elif object.item_type == "light":
+                        value_2 = int(object.value_2)
+                        output.write("set %s/light_hours= %d\n" % (reset_vnum, value_2))
+                        output.write("#\n")
+                    elif object.item_type == "furniture":
+                        value_2 = int(object.value_2)
+                        furniture_position_list = []
+                        if value_2 >= 2048:
+                            furniture_position_list.append("sleep in")
+                            value_2 -= 2048
+                        if value_2 >= 1024:
+                            furniture_position_list.append("sleep on")
+                            value_2 -= 1024
+                        if value_2 >= 512:
+                            furniture_position_list.append("sleep at")
+                            value_2 -= 512
+                        if value_2 >= 256:
+                            furniture_position_list.append("rest in")
+                            value_2 -= 256
+                        if value_2 >= 128:
+                            furniture_position_list.append("rest on")
+                            value_2 -= 128
+                        if value_2 >= 64:
+                            furniture_position_list.append("rest at")
+                            value_2 -= 64
+                        if value_2 >= 32:
+                            furniture_position_list.append("sit in")
+                            value_2 -= 32
+                        if value_2 >= 16:
+                            furniture_position_list.append("sit on")
+                            value_2 -= 16
+                        if value_2 >= 8:
+                            furniture_position_list.append("sit at")
+                            value_2 -= 8
+                        if value_2 >= 4:
+                            furniture_position_list.append("stand in")
+                            value_2 -= 4
+                        if value_2 >= 2:
+                            furniture_position_list.append("stand on")
+                            value_2 -= 2
+                        if value_2 >= 1:
+                            furniture_position_list.append("stand at")
+                        output.write("set %s/use_positions = %s\n"
+                              % (reset_vnum, furniture_position_list)
+                              )
+                        output.write("#\n")
+                    elif object.item_type == "container":
+                        key = "o" + object.value_2
+                        output.write("set %s/key = %s\n" % (reset_vnum, key))
+                        output.write("#\n")
+                    elif object.item_type == "drink container":
+                        drink = int(object.value_2)
+                        if drink == 0:
+                            drink = "water"
+                        elif drink == 1:
+                            drink = "beer"
+                        elif drink == 2:
+                            drink = "wine"
+                        elif drink == 3:
+                            drink = "ale"
+                        elif drink == 4:
+                            drink = "dark ale"
+                        elif drink == 5:
+                            drink = "whiskey"
+                        elif drink == 6:
+                            drink = "lemonade"
+                        elif drink == 7:
+                            drink = "firebreather"
+                        elif drink == 8:
+                            drink = "local specialty"
+                        elif drink == 9:
+                            drink = "slime mold juice"
+                        elif drink == 10:
+                            drink = "milk"
+                        elif drink == 11:
+                            drink = "tea"
+                        elif drink == 12:
+                            drink = "coffee"
+                        elif drink == 13:
+                            drink = "blood"
+                        elif drink == 14:
+                            drink = "salt water"
+                        elif drink == 15:
+                            drink = "Coke"
+                        elif drink == 16:
+                            drink = "Dr. Pepper"
+                        elif drink == 17:
+                            drink = "Mountain Dew"
+                        elif drink == 18:
+                            drink = "Diet Coke"
+                        elif drink == 19:
+                            drink = "Sprite"
+                        elif drink == 20:
+                            drink = "hot chocolate"
+                        elif drink == 21:
+                            drink = "brandy"
+                        elif drink == 22:
+                            drink = "special hot chocolate"
+                        output.write("set %s/liquid_type = %s\n" % (reset_vnum, drink))
+                        output.write("#\n")
+                if object.value_3:
+                    if object.item_type in ("scroll", "pill", "potion"):
+                        output.write("set %s/spell_name_3 = %s\n" % (
+                                                            reset_vnum,
+                                                            object.value_3
+                                                            ))
+                        output.write("#\n")
+                    elif object.item_type in ("wand", "staff"):
+                        output.write("set %s/spell_name = %s\n" % (
+                                                          reset_vnum,
+                                                          object.value_3
+                                                          ))
+                        output.write("#\n")
+                    elif object.item_type == "weapon":
+                        weapon_type = object.value_3
+                        if weapon_type == 0:
+                            weapon_type = "hit"
+                        elif weapon_type == 1:
+                            weapon_type = "slice"
+                        elif weapon_type == 2:
+                            weapon_type = "stab"
+                        elif weapon_type == 3:
+                            weapon_type = "slash"
+                        elif weapon_type == 4:
+                            weapon_type = "whip"
+                        elif weapon_type == 5:
+                            weapon_type = "claw"
+                        elif weapon_type == 6:
+                            weapon_type = "blast"
+                        elif weapon_type == 7:
+                            weapon_type = "pound"
+                        elif weapon_type == 8:
+                            weapon_type = "crush"
+                        elif weapon_type == 9:
+                            weapon_type = "grep"
+                        elif weapon_type == 10:
+                            weapon_type = "bite"
+                        elif weapon_type == 11:
+                            weapon_type = "pierce"
+                        elif weapon_type == 12:
+                            weapon_type = "suction"
+                        elif weapon_type == 13:
+                            weapon_type = "chop"
+                        output.write("set %s/weapon_type = %s\n" % (
+                                                           reset_vnum,
+                                                           weapon_type
+                                                           ))
+                        output.write("#\n")
+                    elif object.item_type == "furniture":
+                        heal_mana_gain = int(object.value_3)
+                        output.write("set %s/heal_mana_gain = %d\n" % (
+                                                              reset_vnum,
+                                                              heal_mana_gain
+                                                              ))
+                        output.write("#\n")
+                    elif object.item_type in ("drink container", "food"):
+                        poison = int(object.value_3)
+                        output.write("set %s/poison = %d\n" % (reset_vnum, poison))
+                        output.write("#\n")
+                if object.item_type == "armor":
+                    armor = rules.set_armor(level)
+                    output.write("set %s/armor = %d\n" % (reset_vnum, armor))
+                    output.write("#\n")
+                if object.item_type == "weapon":
+                    damage_low, damage_high = rules.set_weapon_low_high(level)
+                    output.write("set %s/damage_low = %d\n" % (reset_vnum, damage_low))
+                    output.write("#\n")
+                    output.write("set %s/damage_low = %d\n" % (reset_vnum, damage_low))
+                    output.write("#\n")
+
+        elif object.item_type == "portal":
+
+            # We are going to turn portals into just a special door.
             # Assigning vnum and one letter direction alias to door.
             vnum = ("e%s" % (starting_vnum + exit_number))
             exit_number += 1
-            door_and_vnum = list(door[0], vnum)
+            door_and_vnum = list("portal", vnum)
             aliases = "; ".join(door_and_vnum)
+
             # if the door has its own keywords, add those to the above.
-            if rooms[room].doors[door]["keywords"] != " " \
-                    and rooms[room].doors[door]["keywords"] != "":
-
-                rooms[room].doors[door]["keywords"].append(aliases)
-
-                aliases = "; ".join(rooms[room].doors[door]["keywords"])
+            if object.keywords:
+                keywords = object.keywords
+                keywords.append(aliases)
+                aliases = "; ".join(keywords)
 
             # this comparison is to make sure that only one set of doors gets
             # opened.
 
             room_set = ""
-            room1 = int(rooms[room].vnum)
-            room2 = int(rooms[room].doors[door]["destination"])
+
+            room1 = int(reset_location[1:])
+            room2 = int(object.value_3)
 
             if room1 < room2:
                 room_set = ("%d, %d" % (room1, room2))
@@ -1848,578 +2463,100 @@ for index in range(total_rooms):
 
             if room_set not in door_list:
 
-                if door == "north":
-                    opposite_door = "south"
-                elif door == "east":
-                    opposite_door = "west"
-                elif door == "south":
-                    opposite_door = "north"
-                elif door == "west":
-                    opposite_door = "east"
-                elif door == "up":
-                    opposite_door = "down"
-                elif door == "down":
-                    opposite_door = "up"
-
-                print('open %s; %s, %s = R%s' % (door,
-                                                 aliases,
-                                                 opposite_door,
-                                                 rooms[room].
-                                                 doors[door]["destination"]
-                                                 ))
-                print("#")
-                print("tag %s = %s, category = area names" % (vnum,
+                output.write('open portal; %s, portal = R%s\n' % (door,
+                                                         aliases,
+                                                         opposite_door,
+                                                         object.value_3
+                                                         ))
+                output.write("#\n")
+                output.write("tag %s = %s, category = area names\n" % (vnum,
                                                               area_name.lower()
                                                               ))
-                print("#")
+                output.write("#\n")
                 door_list.append(room_set)
 
             else:
 
-                print("alias %s = %s" % (door, aliases))
-                print("#")
-                print("tag %s = %s, category = area names" % (vnum,
+                output.write("alias portal = %s\n" % (aliases))
+                output.write("#\n")
+                output.write("tag %s = %s, category = area names\n" % (vnum,
                                                               area_name.lower()
                                                               ))
-                print("#")
+                output.write("#\n")
 
-            if rooms[room].doors[door]["description"]:
-                print("desc %s = %s" % (door,
-                                        rooms[room].doors[door]["description"]
+            if object.long_description:
+                output.write("desc %s = %s\n" % (vnum,
+                                        object.long_description
                                         ))
-                print("#")
+                output.write("#\n")
 
-            if int(rooms[room].doors[door]["key"]) >= 0:
-                print("set %s/key = %s" % (door,
-                                           rooms[room].doors[door]["key"]
-                                           ))
-                print("#")
+        # Check here if object needs to be equipped to mobile, and do so, if
+        # necessary.
 
-            if rooms[room].doors[door]["locks"]:
-                print("set %s/locks = %s" % (door,
-                                             rooms[room].doors[door]["locks"]
-                                             ))
-                print("#")
+        if reset_type == "object, equipped":
+            # set eq_slot on mobile equal to object - may need to add
+            # functionality to do this. Maybe make a new switch on set - set/equip
+            # that calls equip on object, and make set/remove a thing as well.
+            # Set equipped equal to True on object.
+            output.write("set/equip %s = %s\n" % (reset_location, reset_vnum))
+            output.write("#\n")
 
-        
+        # 3. Create the reset for the object/mobile that was just created. For
+        # mobiles, doors and objects that do not reset in containers, the
+        # reset can be created where we currently are.
 
-
-
-for reset in reset_list:
-
-    # 1. Get the reset data.
-
-    # First, the data that all resets have.
-    reset_location = reset_list[reset]["location"]
-    reset_type = reset_list[reset]["type"]
-
-    # Get the data specific to certain types of resets.
-    if reset_list[reset]["type"] != "door":
-
-        # Both mobiles and objects have a vnum.
-        reset_vnum = reset_list[reset]["vnum to reset"]
-
-        # Use the vnum to get the actual object in memory that you are
-        # placing and creating a reset for.
-        if reset_list[reset]["type"] == "mobile":
-            object = mobiles[reset_vnum]
-        else:
-            object = objects[reset_vnum]
-            
-    # And if it is a door, get the door-specific data.
-    else:
-        reset_direction = resets[reset_index]["door direction"]
-        reset_state = resets[reset_index]["door state"]        
-    
-    # 2. Teleport to the location that the object resets to, and create
-    # an instance of the mobile/object. For objects that reset in
-    # containers, we will later teleport to the room to create the
-    # reset itself.
-    print("tel %s" % reset_location)
-    print("#")
-
-    # Create the instance of the thing, unless it is a door, or a portal,
-    # which is just a door in hiding. We'll take the information
-    # for portals and make an exit later.
-    if reset_type != "door" and object.item_type != "portal":
-
-        # Turn keywords string into a semicolon-delineated list, as that is
-        # the syntax for aliases, which is what they'll be.
-        keyword_list = object.keywords.split(" ")
-        keyword_string = ";".join(keyword_list)
-
-        # Generalize the mobile/object as "object".
-        if type == "mobile":
-            print("create/drop %s;%s:characters.Mobile" % (object.short_description, keyword_string))
-        else:
-            print("create/drop %s;%s:objects.%s" % (object.short_description, keyword_string, object.item_type.capitalize()))
-
-        print("#")
-
-        # Set the long description for the object/mobile.
-        print("desc %s = %s" % (reset_vnum, object.long_description))
-        print("#")
-
-        # Setting level is slightly complex, as objects in Diku muds took their
-        # level from either the mobile that they reset on, or the last mobile to
-        # be reset.
-        if reset_type == "mobile":
-            
-            # Store the mobile's level for use on an object not loaded on a
-            # mobile, if necessary.
-            last_mobile_level = object.level
-            
-            # If the object is a mobile, use its own level.
-            level = object.level
-    
-        else:
-            # Check to see if the object resets on a mobile.
-            if reset_location[0] == "m":
-                
-                # Get the level from the mobile it resets on.
-                level = mobiles[reset_location].level
-
-            # If the object does not reset on a mobile, get the level of the
-            # last mob.
+        # Reset for doors
+        if reset_type == "door":
+            state_list = []
+            if reset_state == "open":
+                state_list.append("open")
+            elif reset_state == "closed":
+                state_list.append("closeable")
             else:
-                level = last_mobile_level
+                state_list.append("lockable")
+                state_list.append("locked")
+            output.write("set %s/door_attributes = %s\n" % (reset_direction, state_list))
+            output.write("#\n")
+            output.write("set %s/reset_door_attributes = %s\n" % (
+                                                         reset_direction,
+                                                         state_list
+                                                         ))
+            output.write("#\n")
 
-        # Use the level you got above to set level.
-        print("set %s/level = %d" % (reset_vnum, level))
-        print("#")
+        # Reset for objects in mobile inventory
+        if reset_type == "object, in mobile inventory":
+            output.write("set %s/reset_objects[\"%s\"] = \"inventory\"\n" % (
+                                                                    reset_location,
+                                                                    reset_vnum
+                                                                    ))
+            output.write("#\n")
 
-        # Objects and mobiles also get a base level so that some variation
-        # can be put in their level when they are reset.
-        print("set %s/level_base = %d" % (reset_vnum, level))
-        print("#")
-        print("set %s/vnum = %s" % (reset_vnum, reset_vnum))
-        print("#")
+        # Reset for objects equipped to mobiles
+        elif reset_type == "object, equipped":
+            output.write("set %s/reset_objects[\"%s\"] = \"equipped\"\n" % (
+                                                                   reset_location,
+                                                                   reset_vnum
+                                                                   ))
+            output.write("#\n")
 
-        # Not everything has a look description so check before setting.
-        if object.look_description:
-            print("set %s/look_description = %s" % (reset_vnum, object.look_description))
-            print("#")
+        # Reset for objects in room inventory
+        elif reset_type == "object, room":
+            output.write("set %s/reset_objects[\"%s\"] = \"inventory\"\n" % (
+                                                                    reset_location,
+                                                                    reset_vnum
+                                                                    ))
+            output.write("#\n")
 
-        # Now, set the mobile-specific characteristics.
-        if type == "mobile":
+        # Reset for objects in a container in a room
+        elif reset_type == "object, in container":
+            # Teleport to the room the container is in to do the reset.
+            output.write("tel %s.location\n" % reset_location)
+            output.write("#\n")
+            # Now create the reset.
 
-            if object.act_flags:
-                print("set %s/act_flags = %s" % (reset_vnum, object.act_flags))
-                print("#")
-                
-            print("set %s/alignment = %d" % (reset_vnum, object.alignment))
-            print("#")
-            print("set %s/sex = %s" % (reset_vnum, object.sex))
-            print("#")
-
-            # Turn the affected flags list into a dictionary. All of the affects that
-            # would be on mobiles are all boolean affects, so all we need to know is
-            # that they are on the mobile. So the dictionary is all keys of the affect
-            # and a blank string.
-            if object.affected_flags:
-                affects_dictionary = {}
-                for affect in object.affected_flags:
-                    affects_dictionary[affect] = ""
-            print("set %s/spell_affects = %s" % (reset_vnum, affects_dictionary))
-            print("#")
-            
-            print("set %s/race = %s" % (reset_vnum, object.race))
-            print("#")
-            print("tag %s = %s:area name" % (reset_vnum, area_name))
-            print("#")
-
-            # Setting hitpoints for mobiles is a factor of the mobile's level. Set
-            # both max hp and current hitpoints to it.
-            level = object.level
-            hitpoints = level*8 + random.randint((level/4),(level*level))
-            print("set %s/hitpoints[maximum] = %d" % (reset_vnum, hitpoints))
-            print("#")
-            print("set %s/position = \"standing\"" % reset_vnum)
-            print("#")
-
-            # Special functions and shopkeepers are both things not every mobile
-            # will have. So, check to make sure that they are on things before
-            # setting it.
-            if mobiles[reset_vnum].special_function:
-                print("set %s/special_function = %s" % (reset_vnum, object.special_function))
-                print("#")
-            if mobiles[reset_vnum].shopkeeper:
-                print("set %s/shopkeeper = %s" % (reset_vnum, object.shopkeeper))
-                print("#")
-
-        # Deal with object-specific characteristics for all non-portal objects.
-        else:
-
-            
-            if object.item_type:
-                print("set %s/item_type = %s" % (reset_vnum, object.item_type))
-                print("#")
-            if object.wear_location:
-                print("set %s/wear_location = %s" % (reset_vnum, object.wear_location))
-                print("#")
-            print("set %s/weight = %d" % (reset_vnum, object.weight))
-            print("#")
-            if object.extra_descriptions:
-                print("set %s/extra_descriptions = %s" % (reset_vnum, object.extra_description))
-                print("#")
-            alignment_restriction = []
-            if "anti neutral" in object.extra_flags:
-                alignment_restriction.append("neutral")
-            if "anti good" in object.extra_flags:
-                alignment_restriction.append("good")
-            if "anti evil" in object.extra_flags:
-                alignment_restriction.append("evil")
-            if alignment_restriction:
-                print("set %s/alignment_restriction = %s" % (reset_vnum, alignment_restriction))
-                print("#")
-            extra_flags = []
-            for flag in object.extra_flags:
-                if flag not in ["anti neutral", "anti good", "anti evil"]:
-                    extra_flags.append(flag)
-            if extra_flags:
-                print("set %s/extra_flags = %s" % (reset_vnum, extra_flags))
-                print("#")
-            if object.special_function:
-                print("set %s/special_function = %s" % (reset_vnum, object.special_function))
-                print("#")
-            if object.apply:
-                for apply_type in object.apply:
-                    print("set %s/stat_modifiers[%s] = %d" % (reset_vnum, apply_type, object.apply[apply_type]))
-                    print("#")
-            if object.value_0:
-                value_0 = int(object.value_0)
-                if object.item_type in ("scroll", "pill", "wand", "staff", "potion"):
-                    print("set %s/spell_level = %d" % (reset_vnum, value_0))
-                    print("#")
-                    print("set %s/spell_level_base = %d" % (reset_vnum, value_0))
-                    print("#")
-                elif object.item_type == "furniture":
-                    print("set %s/people_maximum = %d" % (reset_vnum, value_0))
-                    print("#")
-                elif object.item_type == "container":
-                    print("set %s/weight_maximum = %d" % (reset_vnum, value_0))
-                    print("#")
-                elif object.item_type == "drink container":
-                    print("set %s/capacity_maximum = %d" % (reset_vnum, value_0))
-                    print("#")
-                elif object.item_type == "food":
-                    print("set %s/hours_fed = %d" % (reset_vnum, value_0))
-                    print("#")
-                elif object.item_type == "money":
-                    print("set %s/value = %d" % (reset_vnum, value_0))
-                    print("#")
-                elif object.item_type == "scuba":
-                    print("set %s/charges = %d" % (reset_vnum, value_0))
-                    print("#")
-            if object.value_1:
-                if object.item_type in ("scroll", "pill", "potion"):
-                    print("set %s/spell_name_1 = %s" % (reset_vnum, object.value_1))
-                    print("#")
-                elif object.item_type in ("wand", "staff"):
-                    value_1 = int(object.value_1)
-                    print("set %s/charges_maximum = %d" % (reset_vnum, value_1))
-                    print("#")
-                    print("set %s/charges_maximum_base = %d" % (reset_vnum, value_1))
-                    print("#")
-                elif object.item_type == "furniture":
-                    value_1 = int(object.value_1)
-                    print("set %s/weight_maximum = %d" % (reset_vnum, value_1))
-                    print("#")
-                elif object.item_type == "container":
-                    last_container_room = reset_location
-                    value_1 = int(object.value_1)
-                    container_state_list = []
-                    if value_1 >= 8:
-                        container_state_list.append("locked")
-                        value_1 -= 8
-                    if value_1 >= 4:
-                        container_state_list.append("closed")
-                        value_1 -= 4
-                    if value_1 >= 2:
-                        container_state_list.append("pickproof")
-                        value_1 -= 2
-                    if value_1 >= 1:
-                        container_state_list.append("closeable")
-                    print("set %s/state = %s" % (reset_vnum, container_state_list))
-                    print("#")
-                elif object.item_type == "drink container":
-                    value_1 = int(object.value_1)
-                    print("set %s/capacity_current = %d" % (reset_vnum, value_1))
-                    print("#")
-                elif object.item_type == "scuba":
-                    value_1 = int(object.value_1)
-                    print("set %s/charge_maximum = %d" % (reset_vnum, value_1))
-                    print("#")
-            if object.value_2:
-                if object.item_type in ("scroll", "pill", "potion"):
-                    print("set %s/spell_name_2 = %s" % (reset_vnum, object.value_2))
-                    print("#")
-                elif object.item_type in ("wand", "staff"):
-                    value_2 = int(object.value_2)
-                    print("set %s/charges_current = %d" % (reset_vnum, value_2))
-                    print("#")
-                elif object.item_type == "light":
-                    value_2 = int(object.value_2)
-                    print("set %s/light_hours= %d" % (reset_vnum, value_2))
-                    print("#")
-                elif object.item_type == "furniture":
-                    value_2 = int(object.value_2)
-                    furniture_position_list = []
-                    if value_2 >= 2048:
-                        furniture_position_list.append("sleep in")
-                        value_2 -= 2048
-                    if value_2 >= 1024:
-                        furniture_position_list.append("sleep on")
-                        value_2 -= 1024
-                    if value_2 >= 512:
-                        furniture_position_list.append("sleep at")
-                        value_2 -= 512
-                    if value_2 >= 256:
-                        furniture_position_list.append("rest in")
-                        value_2 -= 256
-                    if value_2 >= 128:
-                        furniture_position_list.append("rest on")
-                        value_2 -= 128
-                    if value_2 >= 64:
-                        furniture_position_list.append("rest at")
-                        value_2 -= 64
-                    if value_2 >= 32:
-                        furniture_position_list.append("sit in")
-                        value_2 -= 32
-                    if value_2 >= 16:
-                        furniture_position_list.append("sit on")
-                        value_2 -= 16
-                    if value_2 >= 8:
-                        furniture_position_list.append("sit at")
-                        value_2 -= 8
-                    if value_2 >= 4:
-                        furniture_position_list.append("stand in")
-                        value_2 -= 4
-                    if value_2 >= 2:
-                        furniture_position_list.append("stand on")
-                        value_2 -= 2
-                    if value_2 >= 1:
-                        furniture_position_list.append("stand at")
-                    print("set %s/use_positions = %s" % (reset_vnum, furniture_position_list))
-                    print("#")
-                elif object.item_type == "container":
-                    key = "o" + object.value_2
-                    print("set %s/key = %s" % (reset_vnum, key))
-                    print("#")
-                elif object.item_type == "drink container":
-                    drink = int(object.value_2)
-                    if drink == 0:
-                        drink = "water"
-                    elif drink == 1:
-                        drink = "beer"
-                    elif drink == 2:
-                        drink = "wine"
-                    elif drink == 3:
-                        drink = "ale"
-                    elif drink == 4:
-                        drink = "dark ale"
-                    elif drink == 5:
-                        drink = "whiskey"
-                    elif drink == 6:
-                        drink = "lemonade"
-                    elif drink == 7:
-                        drink = "firebreather"
-                    elif drink == 8:
-                        drink = "local specialty"
-                    elif drink == 9:
-                        drink = "slime mold juice"
-                    elif drink == 10:
-                        drink = "milk"
-                    elif drink == 11:
-                        drink = "tea"
-                    elif drink == 12:
-                        drink = "coffee"
-                    elif drink == 13:
-                        drink = "blood"
-                    elif drink == 14:
-                        drink = "salt water"
-                    elif drink == 15:
-                        drink = "Coke"
-                    elif drink == 16:
-                        drink = "Dr. Pepper"
-                    elif drink == 17:
-                        drink = "Mountain Dew"
-                    elif drink == 18:
-                        drink = "Diet Coke"
-                    elif drink == 19:
-                        drink = "Sprite"
-                    elif drink == 20:
-                        drink = "hot chocolate"
-                    elif drink == 21:
-                        drink = "brandy"
-                    elif drink == 22:
-                        drink = "special hot chocolate"
-                    print("set %s/liquid_type = %s" % (reset_vnum, drink))
-                    print("#")
-            if object.value_3:
-                if object.item_type in ("scroll", "pill", "potion"):
-                    print("set %s/spell_name_3 = %s" % (reset_vnum, object.value_3))
-                    print("#")
-                elif object.item_type in ("wand", "staff"):
-                    print("set %s/spell_name = %s" % (reset_vnum, object.countvalue_3))
-                    print("#")
-                elif object.item_type == "weapon":
-                    weapon_type = object.value_3
-                    if weapon_type == 0:
-                        weapon_type = "hit"
-                    elif weapon_type == 1:
-                        weapon_type = "slice"
-                    elif weapon_type == 2:
-                        weapon_type = "stab"
-                    elif weapon_type == 3:
-                        weapon_type = "slash"
-                    elif weapon_type == 4:
-                        weapon_type = "whip"
-                    elif weapon_type == 5:
-                        weapon_type = "claw"
-                    elif weapon_type == 6:
-                        weapon_type = "blast"
-                    elif weapon_type == 7:
-                        weapon_type = "pound"
-                    elif weapon_type == 8:
-                        weapon_type = "crush"
-                    elif weapon_type == 9:
-                        weapon_type = "grep"
-                    elif weapon_type == 10:
-                        weapon_type = "bite"
-                    elif weapon_type == 11:
-                        weapon_type = "pierce"
-                    elif weapon_type == 12:
-                        weapon_type = "suction"
-                    elif weapon_type == 13:
-                        weapon_type = "chop"
-                    print("set %s/weapon_type = %s" % (reset_vnum, weapon_type))
-                    print("#")
-                elif object.item_type == "furniture":
-                    heal_mana_gain = int(object.value_3)
-                    print("set %s/heal_mana_gain = %d" % (reset_vnum, heal_mana_gain))
-                    print("#")
-                elif object.item_type in ("drink container", "food"):
-                    poison = int(object.value_3)
-                    print("set %s/poison = %d" % (reset_vnum, poison))
-                    print("#")
-            if object.item_type == "armor":
-                armor = rules.set_armor(level)
-                print("set %s/armor = %d" % (reset_vnum, armor))
-                print("#")
-            if object.item_type == "weapon":
-                damage_low, damage_high = rules.set_weapon_low_high(level)
-                print("set %s/damage_low = %d" % (reset_vnum, damage_low))
-                print("#")
-                print("set %s/damage_low = %d" % (reset_vnum, damage_low))
-                print("#")
-
-    elif object.item_type == "portal":
-
-        # We are going to turn portals into just a special door.
-        # Assigning vnum and one letter direction alias to door.
-        vnum = ("e%s" % (starting_vnum + exit_number))
-        exit_number += 1
-        door_and_vnum = list("portal", vnum)
-        aliases = "; ".join(door_and_vnum)
-
-        # if the door has its own keywords, add those to the above.
-        if object.keywords:
-            keywords = object.keywords
-            keywords.append(aliases)
-            aliases = "; ".join(rooms[room].doors[door]["keywords"])
-
-        # this comparison is to make sure that only one set of doors gets
-        # opened.
-
-        room_set = ""
-
-        room1 = int(reset_location[1:])
-        room2 = int(object.value_3)
-
-        if room1 < room2:
-            room_set = ("%d, %d" % (room1, room2))
-        else:
-            room_set = ("%d, %d" % (room2, room1))
-
-        if room_set not in door_list:
-
-            print('open portal; %s, portal = R%s' % (door,
-                                         aliases,
-                                         opposite_door,
-                                         object.value_3
-                                         ))
-            print("#")
-            print("tag %s = %s, category = area names" % (vnum,
-                                                          area_name.lower()
-                                                          ))
-            print("#")
-            door_list.append(room_set)
-
-        else:
-
-            print("alias portal = %s" % (aliases))
-            print("#")
-            print("tag %s = %s, category = area names" % (vnum,
-                                                          area_name.lower()
-                                                          ))
-            print("#")
-
-        if object.long_description:
-            print("desc %s = %s" % (vnum,
-                                    object.long_description
-                                    ))
-            print("#")
-
-
-    # Check here if object needs to be equipped to mobile, and do so, if
-    # necessary.
-
-    if reset_type == "object, equipped":
-        # set eq_slot on mobile equal to object - may need to add functionality to do this.
-        # Maybe make a new switch on set - set/equip that calls equip on object, and make
-        # set/remove a thing as well.
-        # set equipped equal to True on object
-
-    # 3. Create the reset for the object/mobile that was just created. For
-    # mobiles, doors and objects that do not reset in containers, the
-    # reset can be created where we currently are.
-    
-    # Reset for doors
-    if reset_type == "door":
-        state_list = []
-        if reset_state == "open":
-            state_list.append("open")
-        elif reset_state == "closed":
-            state_list.append("closeable")
-        else:
-            state_list.append("lockable")
-            state_list.append("locked")
-        print("set %s/door_attributes = %s" % (reset_direction, state_list))
-        print("#")
-        print("set %s/reset_door_attributes = %s" % (reset_direction, state_list))
-        print("#")
-    
-    # Reset for objects in mobile inventory
-    if reset_type == "object, in mobile inventory":
-        print("set %s/reset_objects[\"%s\"] = \"inventory\"" % (reset_location, reset_vnum))
-        print("#")
-        
-    # Reset for objects equipped to mobiles
-    elif reset_type == "object, equipped":
-        print("set %s/reset_objects[\"%s\"] = \"equipped\"" % (reset_location, reset_vnum))
-        print("#")
-
-    # Reset for objects in room inventory
-    elif reset_type == "object, room":
-        print("set %s/reset_objects[\"%s\"] = \"inventory\"" % (reset_location, reset_vnum))
-        print("#")
-        
-    # Reset for objects in a container in a room
-    elif reset_type == "object, in container"
-        # Teleport to the room the container is in to do the reset.
-        print("tel %s.location" % reset_location)
-        print("#")
-        # Now create the reset.
-        print("set $s/reset_objects[\"%s\"] = \"%s\"" % (last_container_room, reset_vnum, reset_location))
-        print("#")
+            output.write("set %s/reset_objects[\"%s\"] = \"%s\"\n" % (
+                                                             last_container_room,
+                                                             reset_vnum,
+                                                             reset_location
+                                                             ))
+            output.write("#\n")
