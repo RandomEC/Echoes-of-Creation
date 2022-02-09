@@ -1805,7 +1805,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
         room = index - 1
 
-        output.write("dig/tel %s; R%s\n" % (rooms[room].name, rooms[room].vnum))
+        output.write("dig/tel %s; %s\n" % (rooms[room].name, rooms[room].vnum))
         output.write("#\n")
         output.write("tag %s = %s, category = area names\n" % (rooms[room].vnum,
                                                       area_name.lower()))
@@ -1823,17 +1823,8 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
         if rooms[room].extra_description:
 
-            extra_string = ""
-
-            for keyword in rooms[room].extra_description:
-                extra_string = extra_string \
-                               + ('"%s":"%s"' %
-                                  (keyword,
-                                   rooms[room].extra_description[keyword]
-                                   ))
-
             output.write("set %s/extra_description = {%s}\n" % (rooms[room].vnum,
-                                                        extra_string
+                                                        rooms[room].extra_description
                                                         ))
             output.write("#\n")
 
@@ -1931,7 +1922,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                 # passproof, as applicable.
                 if rooms[room].doors[door]["locks"]:
                     for lock in rooms[room].doors[door]["locks"]:
-                        output.write("objectlock %s = %s:false()\n" % (door, lock))
+                        output.write("objectlock %s = \"%s:false()\"\n" % (door, lock))
                         output.write("#\n")
 
     reset = 0
@@ -1980,7 +1971,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
             keyword_string = ";".join(keyword_list)
 
             # Generalize the mobile/object as "object".
-            if type == "mobile":
+            if reset_type == "mobile":
                 output.write("create/drop %s;%s:characters.Mobile\n" %
                       (object.short_description, keyword_string))
             else:
@@ -2035,7 +2026,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
             # Not everything has a look description so check before setting.
             if object.look_description:
-                output.write("set %s/look_description = %s\n" % (
+                output.write("set %s/look_description = \"%s\"\n" % (
                                                         reset_vnum,
                                                         object.look_description
                                                         ))
@@ -2050,7 +2041,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
                 output.write("set %s/alignment = %d\n" % (reset_vnum, object.alignment))
                 output.write("#\n")
-                output.write("set %s/sex = %s\n" % (reset_vnum, object.sex))
+                output.write("set %s/sex = \"%s\"\n" % (reset_vnum, object.sex))
                 output.write("#\n")
 
                 # Turn the affected flags list into a dictionary. All of the
@@ -2069,7 +2060,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                                                          ))
                 output.write("#\n")
 
-                output.write("set %s/race = %s\n" % (reset_vnum, object.race))
+                output.write("set %s/race = \"%s\"\n" % (reset_vnum, object.race.lower()))
                 output.write("#\n")
                 output.write("tag %s = %s:area name\n" % (reset_vnum, area_name))
                 output.write("#\n")
@@ -2087,7 +2078,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                 # mobile will have. So, check to make sure that they are on things
                 # before setting it.
                 if mobiles[reset_vnum].special_function:
-                    output.write("set %s/special_function = %s\n"
+                    output.write("set %s/special_function = \"%s\"\n"
                           % (reset_vnum, object.special_function)
                           )
                     output.write("#\n")
