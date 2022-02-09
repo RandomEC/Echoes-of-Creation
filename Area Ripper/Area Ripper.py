@@ -2021,7 +2021,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
             # can be put in their level when they are reset.
             output.write("set %s/level_base = %d\n" % (reset_vnum, level))
             output.write("#\n")
-            output.write("set %s/vnum = %s\n" % (reset_vnum, reset_vnum))
+            output.write("set %s/vnum = \"%s\"\n" % (reset_vnum, reset_vnum))
             output.write("#\n")
 
             # Not everything has a look description so check before setting.
@@ -2035,6 +2035,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
             # Now, set the mobile-specific characteristics.
             if reset_type == "mobile":
 
+                last_mnum = reset_vnum
                 if object.act_flags:
                     output.write("set %s/act_flags = %s\n" % (reset_vnum, object.act_flags))
                     output.write("#\n")
@@ -2058,7 +2059,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                                                          reset_vnum,
                                                          affects_dictionary
                                                          ))
-                output.write("#\n")
+                    output.write("#\n")
 
                 output.write("set %s/race = \"%s\"\n" % (reset_vnum, object.race.lower()))
                 output.write("#\n")
@@ -2093,10 +2094,10 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
             else:
 
                 if object.item_type:
-                    output.write("set %s/item_type = %s\n" % (reset_vnum, object.item_type))
+                    output.write("set %s/item_type = \"%s\"\n" % (reset_vnum, object.item_type))
                     output.write("#\n")
                 if object.wear_location:
-                    output.write("set %s/wear_location = %s\n" % (
+                    output.write("set %s/wear_location = \"%s\"\n" % (
                                                          reset_vnum,
                                                          object.wear_location
                                                          ))
@@ -2517,7 +2518,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
         # Reset for objects in mobile inventory
         if reset_type == "object, in mobile inventory":
             output.write("set %s/reset_objects[\"%s\"] = \"inventory\"\n" % (
-                                                                    reset_location,
+                                                                    last_mnum,
                                                                     reset_vnum
                                                                     ))
             output.write("#\n")
