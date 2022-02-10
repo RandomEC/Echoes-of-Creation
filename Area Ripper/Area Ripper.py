@@ -216,7 +216,10 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                 if my_line[-1] == "~":
 
                     # if so, strip the ~
-                    temp_string = temp_string + " " + my_line[:-1]
+                    if temp_string:
+                        temp_string = temp_string + " " + my_line[:-1]
+                    else:
+                        temp_string = my_line[:-1]
 
                     # make sure string has content
                     if temp_string:
@@ -234,7 +237,10 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                 else:
 
                     # if no ~, add to what you have so far
-                    temp_string = temp_string + " " + my_line
+                    if temp_string:
+                        temp_string = temp_string + " " + my_line
+                    else:
+                        temp_string = my_line
 
             elif room_data == "room flags terrain":
 
@@ -384,7 +390,10 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                     if my_line[-1] == "~":
 
                         # if so, strip the ~
-                        temp_string = temp_string + " " + my_line[:-1]
+                        if temp_string:
+                            temp_string = temp_string + " " + my_line[:-1]
+                        else:
+                            temp_string = my_line[:-1]
 
                         # make sure string has content
                         if temp_string:
@@ -404,7 +413,10 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                     else:
 
                         # if no ~, add to what you have so far
-                        temp_string = temp_string + " " + my_line
+                        if temp_string:
+                            temp_string = temp_string + " " + my_line
+                        else:
+                            temp_string = my_line
 
                 elif door_line == 2:
 
@@ -415,7 +427,10 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                         my_line = my_line[:-1]
 
                         if my_line != "" and my_line != " ":
-                            temp_string = temp_string + " " + my_line
+                            if temp_string:
+                                temp_string = temp_string + " " + my_line
+                            else:
+                                temp_string = my_line
 
                         # make sure string has content
                         if temp_string:
@@ -435,7 +450,10 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                     else:
 
                         # if no ~, add to what you have so far
-                        temp_string = temp_string + " " + my_line
+                        if temp_string:
+                            temp_string = temp_string + " " + my_line
+                        else:
+                            temp_string = my_line
 
                 elif door_line == 3:
 
@@ -486,7 +504,10 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                     if my_line[-1] == "~":
 
                         # if so, strip the ~
-                        temp_string = temp_string + " " + my_line[:-1]
+                        if temp_string:
+                            temp_string = temp_string + " " + my_line[:-1]
+                        else:
+                            temp_string = my_line[:-1]
 
                         # set the keywords
                         rooms[object_number-1].extra_description[temp_string]\
@@ -506,7 +527,10 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                     else:
 
                         # if no ~, add to what you have so far
-                        temp_string = temp_string + " " + my_line
+                        if temp_string:
+                            temp_string = temp_string + " " + my_line
+                        else:
+                            temp_string = my_line
 
                 elif extra_line == 2:
 
@@ -514,7 +538,10 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                     if my_line[-1] == "~":
 
                         # if so, strip the ~
-                        temp_string = temp_string + " " + my_line[:-1]
+                        if temp_string:
+                            temp_string = temp_string + " " + my_line[:-1]
+                        else:
+                            temp_string = my_line[:-1]
 
                         # set the description
                         rooms[object_number-1].extra_description[keywords]\
@@ -529,7 +556,10 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                     else:
 
                         # if no ~, add to what you have so far
-                        temp_string = temp_string + " " + my_line
+                        if temp_string:
+                            temp_string = temp_string + " " + my_line
+                        else:
+                            temp_string = my_line
 
             else:
                 pass
@@ -1263,7 +1293,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                 elif item_type == 4:
                     item_type = "staff"
                 elif item_type == 5:
-                    item_type = "scroll"
+                    item_type = "weapon"
                 elif item_type == 8:
                     item_type = "treasure"
                 elif item_type == 9:
@@ -1893,7 +1923,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                     elif door == "down":
                         opposite_door = "up"
 
-                    output.write('open %s; %s, %s = R%s\n'
+                    output.write('open %s; %s, %s = r%s\n'
                                  % (
                                     door,
                                     aliases,
@@ -1923,8 +1953,8 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                                  )
                     output.write("#\n")
 
-                if int(rooms[room].doors[door]["key"]) >= 0:
-                    output.write("set %s/key = %s\n"
+                if int(rooms[room].doors[door]["key"]) > 0:
+                    output.write("set %s/key = \"o%s\"\n"
                                  % (door, rooms[room].doors[door]["key"])
                                  )
                     output.write("#\n")
@@ -2296,7 +2326,10 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                             container_state_list.append("closed")
                             value_1 -= 4
                         if value_1 >= 2:
-                            container_state_list.append("pickproof")
+                            output.write("objectlock %s = \"pick:false()\"\n"
+                                         % reset_vnum
+                                         )
+                            output.write("#\n")
                             value_1 -= 2
                         if value_1 >= 1:
                             container_state_list.append("closeable")
@@ -2381,9 +2414,10 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                                      )
                         output.write("#\n")
                     elif object.item_type == "container":
-                        key = "o" + object.value_2
-                        output.write("set %s/key = \"%s\"\n" % (reset_vnum, key))
-                        output.write("#\n")
+                        if int(object.value_2) > 0:
+                            key = "o" + object.value_2
+                            output.write("set %s/key = \"%s\"\n" % (reset_vnum, key))
+                            output.write("#\n")
                     elif object.item_type == "drink container":
                         drink = int(object.value_2)
                         if drink == 0:
@@ -2448,7 +2482,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                                      )
                         output.write("#\n")
                     elif object.item_type == "weapon":
-                        weapon_type = object.value_3
+                        weapon_type = int(object.value_3)
                         if weapon_type == 0:
                             weapon_type = "hit"
                         elif weapon_type == 1:
@@ -2505,9 +2539,9 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                                                                damage_low
                                                                ))
                     output.write("#\n")
-                    output.write("set %s/damage_low = %d\n" % (
+                    output.write("set %s/damage_high = %d\n" % (
                                                                reset_vnum,
-                                                               damage_low
+                                                               damage_high
                                                                ))
                     output.write("#\n")
 
@@ -2574,7 +2608,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
             # Set equipped equal to True on object.
             output.write("set/equip %s = %s\n" % (last_mobile_vnum, reset_vnum))
             output.write("#\n")
-            output.write("set %s/equipped = True" % reset_vnum)
+            output.write("set %s/equipped = True\n" % reset_vnum)
             output.write("#\n")
 
         # 3. Create the reset for the object/mobile that was just created. For
