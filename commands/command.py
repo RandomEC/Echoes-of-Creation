@@ -1140,3 +1140,53 @@ class CmdLock(MuxCommand):
             caller.msg("You are not allowed to do that.")
             return
         caller.msg("\n".join(obj.locks.all()))
+
+class CmdPut(MuxCommand):
+    """
+    Put something in a container.
+    Usage:
+      put <inventory obj> <in||=> <target>
+    Puts an item from your inventory in a container,
+    placing it in its inventory.
+    """
+
+    key = "put"
+    rhs_split = ("=", " in ")  # Prefer = delimiter, but allow " to " usage.
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement put"""
+
+        caller = self.caller
+        if not self.args or not self.rhs:
+            caller.msg("Usage: put <inventory object> in <target>")
+            return
+        to_put = caller.search(
+            self.lhs,
+            location=caller,
+            nofound_string="You aren't carrying %s." % self.lhs,
+            multimatch_string="You carry more than one %s:" % self.lhs,
+        )
+        target = caller.search(self.rhs)
+        if not (to_put and target):
+            return
+        if target == caller:
+            caller.msg("You keep %s to yourself." % to_put.key)
+            return
+        if not to_put.location == caller:
+            caller.msg("You are not holding %s." % to_put.key)
+            return
+
+        # calling at_before_give hook method
+        if not to_put.at_before_put(caller, target):
+            return
+
+        # give object
+        success = to_put.move_to(target, quiet=True)
+        if not success:
+            caller.msg("This could not be put there.")
+        else:
+            caller.msg("You put %s in %s." % (to_put.key, target.key))
+            # Call the object script's at_give() method.
+            to_put.at_put(caller, target)
