@@ -1659,6 +1659,11 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                 # on knowing what the last mobile reset was. This
                 # tracks that.
                 last_mobile = ""
+                
+                # Regardless of where the object is reset, it will be
+                # necessary to know what room it is in to set the
+                # first instance of the object.
+                last_room = ""
 
                 type = reset_list[0]
                 if type == "M":
@@ -1667,25 +1672,34 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                     last_mobile = reset_vnum
                     world_limit = reset_list[3]
                     location = "r" + reset_list[4]
+                    room = location
+                    last_room = room
                 elif type == "O":
                     type = "object, room"
                     reset_vnum = "o" + reset_list[2]
                     location = "r" + reset_list[4]
+                    room = location
+                    last_room = room
                 elif type == "P":
                     type = "object, in container"
                     reset_vnum = "o" + reset_list[2]
                     location = "o" + reset_list[4]
+                    room = last_room
                 elif type == "G":
                     type = "object, in mobile inventory"
                     reset_vnum = "o" + reset_list[2]
                     location = last_mobile
+                    room = last_room
                 elif type == "E":
                     type = "object, equipped"
                     reset_vnum = "o" + reset_list[2]
                     location = last_mobile
+                    room = last_room
                 elif type == "D":
                     type = "door"
                     location = "r" + reset_list[2]
+                    room = location
+                    last_room = room
                     if reset_list[3] == 0:
                         direction = "north"
                     elif reset_list[3] == 1:
@@ -1706,7 +1720,11 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                     else:
                         state = "locked"
 
+                # All resets have these three.
                 resets[reset_index]["type"] = type
+                resets[reset_index]["room"] = room
+                resets[reset_index]["location"] = location
+                
                 if type != "door":
                     resets[reset_index]["vnum to reset"] = reset_vnum
                 else:
@@ -1714,13 +1732,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                     resets[reset_index]["door state"] = state
                 if type == "mobile":
                     resets[reset_index]["world limit"] = world_limit
-                resets[reset_index]["location"] = location
-
-                # When implementing these resets, keep track of the level
-                # of the last mobile reset. Objects reset into a room or
-                # container get their level set as the last mobile's level
-                # minus 2!
-
+                
                 reset_index += 1
 
         elif afile_section == "shops":
@@ -1977,6 +1989,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
         # First, the data that all resets have.
         reset_location = resets[reset]["location"]
         reset_type = resets[reset]["type"]
+        reset_room = resets[reset]["room"]
 
         # Get the data specific to certain types of resets.
         if resets[reset]["type"] != "door":
@@ -2001,13 +2014,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
         # containers, we will later teleport to the room to create the
         # reset itself.
         
-        if reset_type == "object, in mobile inventory" or reset_type\
-                == "object, equipped":
-            location = last_mobile_vnum
-        else:
-            location = reset_location
-        
-        output.write("tel %s\n" % location)
+        output.write("tel %s\n" % reset_room)
         output.write("#\n")
 
         # First, deal with turning portals into specially-named doors.
@@ -2081,19 +2088,26 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
             keyword_string = ";".join(keyword_list)
 
             # Generalize the mobile/object as "object".
+            # Objects will be dropped or otherwise distributed later.
             if reset_type == "mobile":
                 output.write("create/drop %s;%s:characters.Mobile\n"
                              % (object.short_description, keyword_string))
+                output.write("#\n")
             else:
-                output.write("create/drop %s;%s:objects.%s\n"
+                output.write("create %s;%s:objects.%s\n"
                              % (
                                 object.short_description,
                                 keyword_string,
                                 object.item_type.capitalize()
                                 )
                              )
-
-            output.write("#\n")
+                output.write("#\n")
+                
+                output.write("sethome %s = %s\n" % (
+                                                    reset_vnum,
+                                                    reset_location
+                                                    ))
+                output.write("#\n")
 
             # Set the long description for the object/mobile.
             output.write("desc %s = %s\n" % (
@@ -2109,10 +2123,10 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
                 # Store the mobile's level, reduced by two, for use on an 
                 # object not loaded on a mobile, if necessary.
-                last_mobile_level = object.level - 2
-                # Store the mobile's vnum for objects resetting in its
-                # inventory or equipped to it.
-                last_mobile_vnum = reset_vnum
+                if object.level - 2 < 1:
+                    last_mobile_level = 1
+                else:
+                    last_mobile_level = object.level - 2
 
                 # If the object is a mobile, use its own level.
                 level = object.level
@@ -2373,7 +2387,6 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                                      )
                         output.write("#\n")
                     elif object.item_type == "container":
-                        last_container_room = reset_location
                         value_1 = int(object.value_1)
                         container_state_list = []
                         if value_1 >= 8:
@@ -2602,17 +2615,30 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                                                                ))
                     output.write("#\n")
 
-        # Check here if object needs to be equipped to mobile, and do so, if
-        # necessary.
+        # Check here where the object needs to be.
 
         if reset_type == "object, equipped":
-            # Set eq_slot on mobile equal to object.
-            # Set equipped equal to True on object.
-            output.write("set/equip %s = %s\n" % (last_mobile_vnum, reset_vnum))
+            # Give the object to the mobile, set eq_slot on mobile equal to
+            # object, and set equipped equal to True on object.
+            output.write("give %s to %s\n" % (reset_vnum, reset_location))
+            output.write("#\n")
+            output.write("set/equip %s = %s\n" % (reset_location, reset_vnum))
             output.write("#\n")
             output.write("set %s/equipped = True\n" % reset_vnum)
             output.write("#\n")
-
+        elif reset_type == "object, in mobile inventory":
+            # Give the object to the mobile.
+            output.write("give %s to %s\n" % (reset_vnum, reset_location))
+            output.write("#\n")
+        elif reset_type == "object, room":
+            # Drop the object.
+            output.write("drop %s\n" % reset_vnum)
+            output.write("#\n")
+        elif reset_type == "object, in container":
+            # Put the object in the container.
+            output.write("put %s in %s\n" % (reset_vnum, reset_location))
+            output.write("#\n")
+            
         # 3. Create the reset for the object/mobile that was just created. For
         # mobiles, doors and objects that do not reset in containers, the
         # reset can be created where we currently are.
@@ -2639,16 +2665,15 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
         # Reset for objects in mobile inventory
         if reset_type == "object, in mobile inventory":
-            output.write("set %s/reset_objects[\"%s\"] = {\"location\":\"inventory\"}\n" % (
-                                                                    last_mobile_vnum,
-                                                                    reset_vnum
-                                                                    ))
+            output.write("set %s/reset_objects[\"%s\"] = {\"location\":\"inventory\"}\n"
+                         % (reset_location, reset_vnum)
+                         )
             output.write("#\n")
 
         # Reset for objects equipped to mobiles
         elif reset_type == "object, equipped":
             output.write("set %s/reset_objects[\"%s\"] = {\"location\":\"equipped\"}\n"
-                         % (last_mobile_vnum, reset_vnum)
+                         % (reset_location, reset_vnum)
                          )
             output.write("#\n")
 
@@ -2661,12 +2686,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
         # Reset for objects in a container in a room
         elif reset_type == "object, in container":
-            # Teleport to the room the container is in to do the reset.
-            output.write("tel %s.location\n" % reset_location)
-            output.write("#\n")
-            # Now create the reset.
-
             output.write("set %s/reset_objects[\"%s\"] = {\"location\":\"%s\"}\n"
-                         % (last_container_room, reset_vnum, reset_location)
+                         % (reset_room, reset_vnum, reset_location)
                          )
             output.write("#\n")
