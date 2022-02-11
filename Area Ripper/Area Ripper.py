@@ -2121,8 +2121,8 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
             # last mobile to be reset.
             if reset_type == "mobile":
 
-                # Store the mobile's level, reduced by two, for use on an 
-                # object not loaded on a mobile, if necessary.
+                # Store the mobile's level, reduced by two, for use on the 
+                # next objects, whatever they are.
                 if object.level - 2 < 1:
                     last_mobile_level = 1
                 else:
@@ -2132,16 +2132,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                 level = object.level
 
             else:
-                # Check to see if the object resets on a mobile.
-                if reset_location and reset_location[0] == "m":
-
-                    # Get the level from the mobile it resets on.
-                    level = mobiles[reset_location].level
-
-                # If the object does not reset on a mobile, get the level of
-                # the last mob.
-                else:
-                    level = last_mobile_level
+                level = last_mobile_level
 
             # Use the level you got above to set level.
             output.write("set %s/level = %d\n" % (reset_vnum, level))
