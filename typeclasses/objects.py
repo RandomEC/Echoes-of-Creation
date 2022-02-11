@@ -711,7 +711,7 @@ class Scuba(Item):
 
     def at_object_creation(self):
         self.db.object_type = "item"
-        self.db.item_type = "staff"
+        self.db.item_type = "scuba"
         self.db.vnum = 0
         self.db.level = 1
         self.db.extra_flags = []
@@ -720,3 +720,20 @@ class Scuba(Item):
         # Both of the below are in mud hours.
         self.db.charge_maximum = 0
         self.db.charge_current = 0
+
+class Key(Item):
+
+    """
+
+    This is the class for key items that players can use to unlock
+    doors.
+
+    """
+
+    def at_object_creation(self):
+        self.db.object_type = "item"
+        self.db.item_type = "key"
+        self.db.vnum = 0
+        self.db.level = 1
+        self.db.extra_flags = []
+        self.db.extra_descriptions = {}
