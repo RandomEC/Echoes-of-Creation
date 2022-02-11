@@ -77,6 +77,7 @@ class Character(DefaultCharacter):
         self.db.sex = ""
         self.db.alignment = 0
         self.db.position = ""
+        self.db.character_type = ""
 
         # set race-based stats
         self.db.race = ""
@@ -398,6 +399,7 @@ class Mobile(Character):
         self.db.act_flags = []
         self.db.talk = ""
         self.db.shop = {}
+        self.db.character_type = "mobile"
 
     def at_reset(self):
         
@@ -538,6 +540,7 @@ class Player(Character):
 
         self.db.age = 18
         self.db.wimpy = 4
+        self.db.character_type = "player"
 
         # set item stats
         self.db.items = 2
