@@ -997,12 +997,13 @@ class CmdDestroy(MuxCommand):
             for obj in objs:
                 # All code under the if statement below added to clean up equipment being deleted
                 # that is equipped.
-                if obj.db.equipped:
-                    mobile = obj.location
-                    for wear_location in mobile.db.eq_slots:
-                        if mobile.db.eq_slots[wear_location] == obj:
-                            mobile.db.eq_slots[wear_location] = ""
-                results.append(delobj(obj))
+                #if obj.db.equipped:
+                #    location = obj.location
+                #    if location.eq_slots:
+                #        for wear_location in location.db.eq_slots:
+                #            if location.db.eq_slots[wear_location] == obj:
+                #                location.db.eq_slots[wear_location] = ""
+               results.append(delobj(obj))
 
             if results:
                 caller.msg("".join(results).strip())
