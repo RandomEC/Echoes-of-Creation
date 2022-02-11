@@ -2010,13 +2010,67 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
         output.write("tel %s\n" % location)
         output.write("#\n")
 
-        if reset_type == "door":
-            pass
-        # Create the instance of the thing, unless it is a door, or a portal,
+        # First, deal with turning portals into specially-named doors.
+        if reset_type != "mobile" and reset_type != "door" and object.item_type == "portal":
+
+            # We are going to turn portals into just a special door.
+            # Assigning vnum and one letter direction alias to door.
+            vnum = ("e%s" % (starting_vnum + exit_number))
+            exit_number += 1
+            door_and_vnum = list("portal", vnum)
+            aliases = "; ".join(door_and_vnum)
+
+            # if the door has its own keywords, add those to the above.
+            if object.keywords:
+                keywords = object.keywords
+                keywords.append(aliases)
+                aliases = "; ".join(keywords)
+
+            # this comparison is to make sure that only one set of doors gets
+            # opened.
+
+            room_set = ""
+
+            room1 = int(reset_location[1:])
+            room2 = int(object.value_3)
+
+            if room1 < room2:
+                room_set = ("%d, %d" % (room1, room2))
+            else:
+                room_set = ("%d, %d" % (room2, room1))
+
+            if room_set not in door_list:
+
+                output.write('open portal; %s, portal = R%s\n'
+                             % (door, aliases, opposite_door, object.value_3)
+                             )
+                output.write("#\n")
+                output.write("tag %s = %s, category = area names\n"
+                             % (vnum, area_name.lower())
+                             )
+                output.write("#\n")
+                door_list.append(room_set)
+
+            else:
+
+                output.write("alias portal = %s\n" % (aliases))
+                output.write("#\n")
+                output.write("tag %s = %s, category = area names\n"
+                             % (vnum, area_name.lower())
+                             )
+                output.write("#\n")
+
+            if object.long_description:
+                output.write("desc %s = %s\n" % (vnum,
+                                                 object.long_description
+                                                 ))
+                output.write("#\n")
+        
+        # Next, create the instance of the thing, unless it is a door, or a portal,
         # which is just a door in hiding. We'll take the information
         # for portals and make an exit later.
         elif reset_type == "mobile" or (
-                                      object.item_type and
+                                      reset_type != "door" and
                                       object.item_type != "portal"
                                       ):
 
@@ -2547,61 +2601,6 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                                                                damage_high
                                                                ))
                     output.write("#\n")
-
-        elif object.item_type == "portal":
-
-            # We are going to turn portals into just a special door.
-            # Assigning vnum and one letter direction alias to door.
-            vnum = ("e%s" % (starting_vnum + exit_number))
-            exit_number += 1
-            door_and_vnum = list("portal", vnum)
-            aliases = "; ".join(door_and_vnum)
-
-            # if the door has its own keywords, add those to the above.
-            if object.keywords:
-                keywords = object.keywords
-                keywords.append(aliases)
-                aliases = "; ".join(keywords)
-
-            # this comparison is to make sure that only one set of doors gets
-            # opened.
-
-            room_set = ""
-
-            room1 = int(reset_location[1:])
-            room2 = int(object.value_3)
-
-            if room1 < room2:
-                room_set = ("%d, %d" % (room1, room2))
-            else:
-                room_set = ("%d, %d" % (room2, room1))
-
-            if room_set not in door_list:
-
-                output.write('open portal; %s, portal = R%s\n'
-                             % (door, aliases, opposite_door, object.value_3)
-                             )
-                output.write("#\n")
-                output.write("tag %s = %s, category = area names\n"
-                             % (vnum, area_name.lower())
-                             )
-                output.write("#\n")
-                door_list.append(room_set)
-
-            else:
-
-                output.write("alias portal = %s\n" % (aliases))
-                output.write("#\n")
-                output.write("tag %s = %s, category = area names\n"
-                             % (vnum, area_name.lower())
-                             )
-                output.write("#\n")
-
-            if object.long_description:
-                output.write("desc %s = %s\n" % (vnum,
-                                                 object.long_description
-                                                 ))
-                output.write("#\n")
 
         # Check here if object needs to be equipped to mobile, and do so, if
         # necessary.
