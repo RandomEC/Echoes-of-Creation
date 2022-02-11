@@ -24,6 +24,7 @@ from commands.command import CmdOpen
 from commands.command import CmdRepop
 from commands.command import CmdDestroy
 from commands.command import CmdLock
+from commands.command import CmdPut
 from commands.equipment_commands import CmdWear
 from commands.equipment_commands import CmdWield
 from commands.equipment_commands import CmdRemove
@@ -69,6 +70,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdRepop())
         self.add(CmdDestroy())
         self.add(CmdLock())
+        self.add(CmdPut())
 
 class AccountCmdSet(default_cmds.AccountCmdSet):
     """
