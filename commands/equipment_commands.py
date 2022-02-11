@@ -2,17 +2,19 @@ from commands.command import MuxCommand
 
 class CmdWear(MuxCommand):
     """
-    Wear armor that is in your inventory. Weapons cannot be equipped this
-    way, you need to use wield.
+    Wear or hold, as appropriate, armor that is in your inventory. Weapons
+    cannot be equipped this way, you need to use wield.
     
     Usage:
       wear <obj>
+      hold <obj>
       
     Takes an object from your inventory and puts it in the appropriate wear
     slot.
     """
 
     key = "wear"
+    aliases = ["hold"]
     locks = "cmd:all()"
     arg_regex = r"\s|$"
 
