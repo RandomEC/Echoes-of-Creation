@@ -179,8 +179,8 @@ class CmdRemove(MuxCommand):
     Usage:
       remove <obj>
       
-    Takes an object from your inventory and puts it in the appropriate wear
-    slot.
+    Takes an object that you have equipped and returns it to
+    your inventory.
     """
 
     key = "remove"
@@ -366,6 +366,252 @@ class CmdIdentify(MuxCommand):
                 
                 caller.msg("%-15s %s%s" % ((attribute.capitalize() + ":"), parity, item.db.stat_modifiers[attribute]))
 
+
+class CmdWearTo(MuxCommand):
+    """
+    Equip an item of armor to a mobile. Weapons cannot be
+    equipped this way, you need to use wieldto.
+
+    Usage:
+      wearto <obj> = <mobile>
+
+    Takes an object from your inventory and puts it in the appropriate wear
+    slot on a mobile.
+    """
+
+    key = "wearto"
+    locks = "cmd:perm(Builder)"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """implements the command."""
+
+        caller = self.caller
+
+        if not self.args:
+            caller.msg("What do you want to be worn by who?")
+            return
+
+        if not self.rhs:
+            caller.msg("Who do you want to wear it?")
+            return
+
+        if not self.lhs:
+            caller.msg("What do you want them to wear?")
+            return
+
+        eq = caller.search(self.lhs, location=caller)
+        mobile = caller.search(self.rhs, location=caller.location)
+
+        if not eq:
+            caller.msg("You do not appear to have a %s." % self.args)
+            return
+
+        if not mobile:
+            caller.msg("They don't appear to be here.")
+            return
+
+        # check to make sure equipment has valid wear location. Need to check wrist, neck and
+        # finger separately as there are two wear locations for each in the character.db.eq_slots
+        # dictionary.
+
+        wear_location = eq.db.wear_location
+
+        if wear_location == "wield":
+            caller.msg("You cannot wear a weapon. Wield it instead.")
+            return
+        elif not (
+                wear_location in mobile.db.eq_slots.keys() or wear_location == "wrist" or wear_location == "finger" or wear_location == "neck"):
+
+            caller.msg("That cannot be worn.")
+            return
+
+        # check to make sure character is not already wearing the equipment.
+
+        if eq.db.equipped:
+            caller.msg("You are already wearing that!")
+            return
+
+        # give object
+        success = eq.move_to(mobile, quiet=True)
+        if not success:
+            caller.msg("This could not be given.")
+            return
+        else:
+            caller.msg("You give %s to %s." % (eq.key, mobile.key))
+            caller.location.msg_contents("%s gives %s to %s." % (caller.key, eq.key, mobile.key), exclude=caller)
+
+        success = eq.wear_to(mobile)
+        if not success:
+            caller.msg("The mobile could not wear this.")
+            return
+        else:
+            eq.move_to
+            if (mobile.db.sex == "male"):
+                possessive = "his"
+            elif (mobile.db.sex == "female"):
+                possessive = "her"
+            else:
+                possessive = "its"
+
+            wear_location = eq.db.wear_location
+
+            if wear_location == "light":
+                room_wear_string = "%s holds %s as a %s." % (mobile.name, eq.name, wear_location)
+            elif wear_location == "neck" or wear_location == "wrist" or wear_location == "waist":
+                room_wear_string = "%s wears %s around %s %s." % (mobile.name, eq.name, possessive, wear_location)
+            elif wear_location == "about body":
+                room_wear_string = "%s wears %s about %s body." % (mobile.name, eq.name, possessive)
+            elif wear_location == "pride":
+                room_wear_string = "%s pins on %s and wears it with pride." % (mobile.name, eq.name)
+            elif wear_location == "shield":
+                room_wear_string = "%s holds %s as a shield." % (mobile.name, eq.name)
+            elif wear_location == "held, in hands":
+                room_wear_string = "%s holds %s in %s hands." % (mobile.name, eq.name, possessive)
+            else:
+                room_wear_string = "%s wears %s on %s %s." % (mobile.name, eq.name, possessive, wear_location)
+
+            caller.location.msg_contents(room_wear_string)
+
+        if not eq.at_after_equip(caller):
+            return
+
+
+class CmdWieldTo(MuxCommand):
+    """
+    Give a weapon that is in your inventory to a mobile to wield. Armor
+    cannot be equipped this way, you need to use wear.
+
+    Usage:
+      wieldto <obj> = <mobile>
+
+    Takes a weapon from your inventory and puts it in the appropriate wear
+    slot on a mobile.
+    """
+
+    key = "wieldto"
+    locks = "cmd:perm(Builder)"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """implements the command."""
+
+        caller = self.caller
+
+        if not self.args:
+            caller.msg("What do you want to be wielded by who?")
+            return
+
+        if not self.rhs:
+            caller.msg("Who do you want to wield it?")
+            return
+
+        if not self.lhs:
+            caller.msg("What do you want them to wield?")
+            return
+
+        eq = caller.search(self.lhs, location=caller)
+        mobile = caller.search(self.rhs, location=caller.location)
+
+        if not eq:
+            caller.msg("You do not appear to have a %s." % self.args)
+            return
+
+        if not mobile:
+            caller.msg("They don't appear to be here.")
+            return
+
+        # check to make sure character is not already wielding the weapon.
+
+        if eq.db.equipped:
+            caller.msg("You are already wielding that!")
+            return
+
+        # give object
+        success = eq.move_to(mobile, quiet=True)
+        if not success:
+            caller.msg("This could not be given.")
+            return
+        else:
+            caller.msg("You give %s to %s." % (eq.key, mobile.key))
+            caller.location.msg_contents("%s gives %s to %s." % (caller.key, eq.key, mobile.key), exclude=caller)
+
+        success = eq.wield_to(mobile)
+        if not success:
+            caller.msg("The mobile cannot wield this.")
+            return
+        else:
+            caller.msg("%s wield %s as a weapon." % (mobile.key, eq.key))
+            caller.location.msg_contents(
+                "%s wields a %s as a weapon." % (mobile.key, eq.key), exclude=caller
+            )
+
+
+class CmdRemoveFrom(MuxCommand):
+    """
+    Remove armor or weapons that are equipped to a mobile.
+
+    Usage:
+      removefrom <obj> = <mobile>
+
+    Removes armor or a weapon equipped to a mobile and puts it
+    in your inventory.
+    """
+
+    key = "removefrom"
+    aliases = ["remfrom"]
+    locks = "cmd:perm(Builder)"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """implements the command."""
+
+        caller = self.caller
+
+        if not self.args:
+            caller.msg("What do you want to be removed from who?")
+            return
+
+        if not self.rhs:
+            caller.msg("Who do you want to remove it?")
+            return
+
+        if not self.lhs:
+            caller.msg("What do you want them to remove?")
+            return
+
+        mobile = caller.search(self.rhs, location=caller.location)
+        eq = caller.search(self.lhs, location=mobile)
+
+        if not eq:
+            caller.msg("%s does not appear to have a %s." % (self.rhs, self.lhs))
+            return
+
+        if not mobile:
+            caller.msg("They don't appear to be here.")
+            return
+
+        if eq not in mobile.db.eq_slots.values():
+            caller.msg("%s is not using a %s as armor or a weapon." % (mobile.key, self.lhs))
+            return
+
+        success = eq.remove_from(mobile)
+        if not success:
+            caller.msg("%s cannot remove this." % mobile.key)
+        else:
+            caller.msg("%s removes %s from its %s." % (mobile.key, eq.name, eq.db.wear_location))
+            caller.location.msg_contents(
+                "%s removes a %s from his %s." % (mobile.name, eq.name, eq.db.wear_location), exclude=caller
+            )
+
+        # give object
+        success = eq.move_to(caller, quiet=True)
+        if not success:
+            caller.msg("This could not be given.")
+            return
+        else:
+            caller.msg("%s gives %s to you." % (mobile.key, eq.key))
+            caller.location.msg_contents("%s gives %s to %s." % (mobile.key, eq.key, caller.key), exclude=caller)
 
 
 

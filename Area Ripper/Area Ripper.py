@@ -1655,30 +1655,26 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                 # Turn the reset string into a list.
                 reset_list = my_line.split()
 
-                # Mobile inventory and mobile equipped resets depend
-                # on knowing what the last mobile reset was. This
-                # tracks that.
-                last_mobile = ""
-                
-                # Regardless of where the object is reset, it will be
-                # necessary to know what room it is in to set the
-                # first instance of the object.
-                last_room = ""
-
                 type = reset_list[0]
                 if type == "M":
                     type = "mobile"
                     reset_vnum = "m" + reset_list[2]
+                    # Preserve the last mobile's vnum for object
+                    # reset purposes.
                     last_mobile = reset_vnum
                     world_limit = reset_list[3]
                     location = "r" + reset_list[4]
                     room = location
+                    # Preserve the last room vnum for object
+                    # reset purposes.
                     last_room = room
                 elif type == "O":
                     type = "object, room"
                     reset_vnum = "o" + reset_list[2]
                     location = "r" + reset_list[4]
                     room = location
+                    # Preserve the last room vnum for object
+                    # reset purposes.
                     last_room = room
                 elif type == "P":
                     type = "object, in container"
@@ -1699,23 +1695,25 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                     type = "door"
                     location = "r" + reset_list[2]
                     room = location
+                    # Preserve the last room vnum for object
+                    # reset purposes.
                     last_room = room
-                    if reset_list[3] == 0:
+                    if int(reset_list[3]) == 0:
                         direction = "north"
-                    elif reset_list[3] == 1:
+                    elif int(reset_list[3]) == 1:
                         direction = "east"
-                    elif reset_list[3] == 2:
+                    elif int(reset_list[3]) == 2:
                         direction = "south"
-                    elif reset_list[3] == 3:
+                    elif int(reset_list[3]) == 3:
                         direction = "west"
-                    elif reset_list[3] == 4:
+                    elif int(reset_list[3]) == 4:
                         direction = "up"
                     else:
                         direction = "down"
 
-                    if reset_list[4] == 0:
+                    if int(reset_list[4]) == 0:
                         state = "open"
-                    elif reset_list[4] == 1:
+                    elif int(reset_list[4]) == 1:
                         state = "closed"
                     else:
                         state = "locked"
@@ -1873,7 +1871,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
         if rooms[room].extra_description:
 
-            output.write("set %s/extra_description = {%s}\n"
+            output.write("set %s/extra_description = %s\n"
                          % (rooms[room].vnum, rooms[room].extra_description)
                          )
             output.write("#\n")
@@ -1935,7 +1933,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                     elif door == "down":
                         opposite_door = "up"
 
-                    output.write('open %s; %s, %s = r%s\n'
+                    output.write('openexit %s; %s, %s = r%s\n'
                                  % (
                                     door,
                                     aliases,
@@ -1949,7 +1947,10 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                     door_list.append(room_set)
 
                 else:
-
+                    # If you are setting aliases this way, commas are the
+                    # delineator instead.
+                    alias_list = aliases.split("; ")
+                    aliases = ", ".join(alias_list)
                     output.write("alias %s = %s\n" % (door, aliases))
                     output.write("#\n")
                     output.write("tag %s = %s, category = area names\n"
@@ -2048,7 +2049,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
 
             if room_set not in door_list:
 
-                output.write('open portal; %s, portal = R%s\n'
+                output.write('openexit portal; %s, portal = R%s\n'
                              % (door, aliases, opposite_door, object.value_3)
                              )
                 output.write("#\n")
@@ -2606,30 +2607,30 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
                                                                ))
                     output.write("#\n")
 
-        # Check here where the object needs to be.
+                # Check here where the object needs to be.
 
-        if reset_type == "object, equipped":
-            # Give the object to the mobile, set eq_slot on mobile equal to
-            # object, and set equipped equal to True on object.
-            output.write("give %s to %s\n" % (reset_vnum, reset_location))
-            output.write("#\n")
-            output.write("set/equip %s = %s\n" % (reset_location, reset_vnum))
-            output.write("#\n")
-            output.write("set %s/equipped = True\n" % reset_vnum)
-            output.write("#\n")
-        elif reset_type == "object, in mobile inventory":
-            # Give the object to the mobile.
-            output.write("give %s to %s\n" % (reset_vnum, reset_location))
-            output.write("#\n")
-        elif reset_type == "object, room":
-            # Drop the object.
-            output.write("drop %s\n" % reset_vnum)
-            output.write("#\n")
-        elif reset_type == "object, in container":
-            # Put the object in the container.
-            output.write("put %s in %s\n" % (reset_vnum, reset_location))
-            output.write("#\n")
-            
+                if reset_type == "object, equipped":
+                    # Give the object to the mobile, set eq_slot on mobile equal to
+                    # object, and set equipped equal to True on object.
+                    if object.item_type == "armor":
+                        output.write("wearto %s = %s\n" % (reset_vnum, reset_location))
+                        output.write("#\n")
+                    elif object.item_type == "weapon":
+                        output.write("wieldto %s = %s\n" % (reset_vnum, reset_location))
+                        output.write("#\n")
+                elif reset_type == "object, in mobile inventory":
+                    # Give the object to the mobile.
+                    output.write("give %s = %s\n" % (reset_vnum, reset_location))
+                    output.write("#\n")
+                elif reset_type == "object, room":
+                    # Drop the object.
+                    output.write("drop %s\n" % reset_vnum)
+                    output.write("#\n")
+                elif reset_type == "object, in container":
+                    # Put the object in the container.
+                    output.write("put %s = %s\n" % (reset_vnum, reset_location))
+                    output.write("#\n")
+
         # 3. Create the reset for the object/mobile that was just created. For
         # mobiles, doors and objects that do not reset in containers, the
         # reset can be created where we currently are.

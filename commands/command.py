@@ -5,6 +5,7 @@ Commands describe the input the account can do to the game.
 
 """
 
+import re
 from evennia.commands.command import Command as BaseCommand
 from evennia.utils import evtable
 from evennia.commands.default.building import ObjManipCommand
@@ -998,19 +999,19 @@ class CmdDestroy(MuxCommand):
                 # All code under the if statement below added to 1) clean up equipped status on
                 # equipment on mobiles being deleted, and 2) clean up equipment slots on 
                 # equipment being deleted.
-                if obj.db.eq_slots:
+                if obj.db.character_type == "mobile":
                     if not all(wear_location == "" for wear_location in obj.db.eq_slots.values()):
-                        for wear_location in obj.db.eq_slots):
-                            if wear_location:
+                        for wear_location in obj.db.eq_slots:
+                            if obj.db.eq_slots[wear_location]:
                                 equipment = obj.db.eq_slots[wear_location]
                                 equipment.db.equipped = False
-                if obj.db.equipped:
+                elif obj.db.equipped:
                     wearer = obj.location
-                    if wearer.eq_slots:
+                    if hasattr(wearer, eq_slots):
                         for wear_location in wearer.db.eq_slots:
                             if wearer.db.eq_slots[wear_location] == obj:
-                                wearer.db.eq_slots[wear_location] = ""
-               results.append(delobj(obj))
+                               wearer.db.eq_slots[wear_location] = ""
+                results.append(delobj(obj))
 
             if results:
                 caller.msg("".join(results).strip())
@@ -1145,13 +1146,13 @@ class CmdPut(MuxCommand):
     """
     Put something in a container.
     Usage:
-      put <inventory obj> <in||=> <target>
+      put <inventory obj> <=> <target>
     Puts an item from your inventory in a container,
     placing it in its inventory.
     """
 
     key = "put"
-    rhs_split = ("=", " in ")  # Prefer = delimiter, but allow " to " usage.
+    rhs_split = ("=")
     locks = "cmd:all()"
     arg_regex = r"\s|$"
 
@@ -1160,7 +1161,7 @@ class CmdPut(MuxCommand):
 
         caller = self.caller
         if not self.args or not self.rhs:
-            caller.msg("Usage: put <inventory object> in <target>")
+            caller.msg("Usage: put <inventory object> = <target>")
             return
         to_put = caller.search(
             self.lhs,
@@ -1178,15 +1179,245 @@ class CmdPut(MuxCommand):
             caller.msg("You are not holding %s." % to_put.key)
             return
 
-        # calling at_before_give hook method
-        if not to_put.at_before_put(caller, target):
-            return
-
         # give object
         success = to_put.move_to(target, quiet=True)
         if not success:
             caller.msg("This could not be put there.")
         else:
             caller.msg("You put %s in %s." % (to_put.key, target.key))
-            # Call the object script's at_give() method.
-            to_put.at_put(caller, target)
+
+class CmdTag(MuxCommand):
+    """
+    handles the tags of an object, defaults to objects in the room.
+    Usage:
+      tag[/del] <obj> [= <tag>[:<category>]]
+      tag/search <tag>[:<category]
+    Switches:
+      global - attempts to set a tag on an object not in the room.
+      search - return all objects with a given Tag
+      del - remove the given tag. If no tag is specified,
+            clear all tags on object.
+    Manipulates and lists tags on objects. Tags allow for quick
+    grouping of and searching for objects.  If only <obj> is given,
+    list all tags on the object.  If /search is used, list objects
+    with the given tag.
+    The category can be used for grouping tags themselves, but it
+    should be used with restrain - tags on their own are usually
+    enough to for most grouping schemes.
+    """
+
+    key = "tag"
+    aliases = ["tags"]
+    options = ("search", "del", "global")
+    locks = "cmd:perm(tag) or perm(Builder)"
+    help_category = "Building"
+    arg_regex = r"(/\w+?(\s|$))|\s|$"
+
+    def func(self):
+        """Implement the tag functionality"""
+
+        if not self.args:
+            self.caller.msg("Usage: tag[/switches] <obj> [= <tag>[:<category>]]")
+            return
+        if "search" in self.switches:
+            # search by tag
+            tag = self.args
+            category = None
+            if ":" in tag:
+                tag, category = [part.strip() for part in tag.split(":", 1)]
+            objs = search.search_tag(tag, category=category)
+            nobjs = len(objs)
+            if nobjs > 0:
+                catstr = (
+                    " (category: '|w%s|n')" % category
+                    if category
+                    else ("" if nobjs == 1 else " (may have different tag categories)")
+                )
+                matchstr = ", ".join(o.get_display_name(self.caller) for o in objs)
+
+                string = "Found |w%i|n object%s with tag '|w%s|n'%s:\n %s" % (
+                    nobjs,
+                    "s" if nobjs > 1 else "",
+                    tag,
+                    catstr,
+                    matchstr,
+                )
+            else:
+                string = "No objects found with tag '%s%s'." % (
+                    tag,
+                    " (category: %s)" % category if category else "",
+                )
+            self.caller.msg(string)
+            return
+        if "del" in self.switches:
+            # remove one or all tags
+            obj = self.caller.search(self.lhs, global_search=True)
+            if not obj:
+                return
+            if self.rhs:
+                # remove individual tag
+                tag = self.rhs
+                category = None
+                if ":" in tag:
+                    tag, category = [part.strip() for part in tag.split(":", 1)]
+                if obj.tags.get(tag, category=category):
+                    obj.tags.remove(tag, category=category)
+                    string = "Removed tag '%s'%s from %s." % (
+                        tag,
+                        " (category: %s)" % category if category else "",
+                        obj,
+                    )
+                else:
+                    string = "No tag '%s'%s to delete on %s." % (
+                        tag,
+                        " (category: %s)" % category if category else "",
+                        obj,
+                    )
+            else:
+                # no tag specified, clear all tags
+                old_tags = [
+                    "%s%s" % (tag, " (category: %s)" % category if category else "")
+                    for tag, category in obj.tags.all(return_key_and_category=True)
+                ]
+                if old_tags:
+                    obj.tags.clear()
+                    string = "Cleared all tags from %s: %s" % (obj, ", ".join(sorted(old_tags)))
+                else:
+                    string = "No Tags to clear on %s." % obj
+            self.caller.msg(string)
+            return
+        # no search/deletion, global search
+        if "global" in self.switches:
+            if self.rhs:
+                # = is found; command args are of the form obj = tag
+                obj = self.caller.search(self.lhs, global_search=True)
+                if not obj:
+                    return
+                tag = self.rhs
+                category = None
+                if ":" in tag:
+                    tag, category = [part.strip() for part in tag.split(":", 1)]
+                # create the tag
+                obj.tags.add(tag, category=category)
+                string = "Added tag '%s'%s to %s." % (
+                    tag,
+                    " (category: %s)" % category if category else "",
+                    obj,
+                )
+                self.caller.msg(string)
+            else:
+                # no = found - list tags on object
+                obj = self.caller.search(self.args, global_search=True)
+                if not obj:
+                    return
+                tagtuples = obj.tags.all(return_key_and_category=True)
+                ntags = len(tagtuples)
+                tags = [tup[0] for tup in tagtuples]
+                categories = [" (category: %s)" % tup[1] if tup[1] else "" for tup in tagtuples]
+                if ntags:
+                    string = "Tag%s on %s: %s" % (
+                        "s" if ntags > 1 else "",
+                        obj,
+                        ", ".join(sorted("'%s'%s" % (tags[i], categories[i]) for i in range(ntags))),
+                    )
+                else:
+                    string = "No tags attached to %s." % obj
+                self.caller.msg(string)
+        else:
+            # Standard default tagging in room.
+            if self.rhs:
+                # = is found; command args are of the form obj = tag
+                obj = self.caller.search(self.lhs, global_search=False)
+                if not obj:
+                    return
+                tag = self.rhs
+                category = None
+                if ":" in tag:
+                    tag, category = [part.strip() for part in tag.split(":", 1)]
+                # create the tag
+                obj.tags.add(tag, category=category)
+                string = "Added tag '%s'%s to %s." % (
+                    tag,
+                    " (category: %s)" % category if category else "",
+                    obj,
+                )
+                self.caller.msg(string)
+            else:
+                # no = found - list tags on object
+                obj = self.caller.search(self.args, global_search=False)
+                if not obj:
+                    return
+                tagtuples = obj.tags.all(return_key_and_category=True)
+                ntags = len(tagtuples)
+                tags = [tup[0] for tup in tagtuples]
+                categories = [" (category: %s)" % tup[1] if tup[1] else "" for tup in tagtuples]
+                if ntags:
+                    string = "Tag%s on %s: %s" % (
+                        "s" if ntags > 1 else "",
+                        obj,
+                        ", ".join(sorted("'%s'%s" % (tags[i], categories[i]) for i in range(ntags))),
+                    )
+                else:
+                    string = "No tags attached to %s." % obj
+                self.caller.msg(string)
+
+class CmdSetHome(MuxCommand):
+    """
+    set an object's home location
+    Usage:
+      sethome <obj> [= <home_location>]
+      sethom <obj>
+    Switches:
+      global - attempts to set home on an object not in the room.
+    The "home" location is a "safety" location for objects; they
+    will be moved there if their current location ceases to exist. All
+    objects should always have a home location for this reason.
+    It is also a convenient target of the "home" command.
+    If no location is given, just view the object's home location.
+    """
+
+    key = "sethome"
+    locks = "cmd:perm(sethome) or perm(Builder)"
+    help_category = "Building"
+
+    def func(self):
+        """implement the command"""
+        if not self.args:
+            string = "Usage: sethome <obj> [= <home_location>]"
+            self.caller.msg(string)
+            return
+
+        if "global" in self.switches:
+            obj = self.caller.search(self.lhs, global_search=True)
+        else:
+            obj = self.caller.search(self.lhs, global_search=False)
+        if not obj:
+            return
+        if not self.rhs:
+            # just view
+            home = obj.home
+            if not home:
+                string = "This object has no home location set!"
+            else:
+                string = "%s's current home is %s(%s)." % (obj, home, home.dbref)
+        else:
+            # set a home location
+            if "global" in self.switches:
+                new_home = self.caller.search(self.rhs, global_search=True)
+            else:
+                new_home = self.caller.search(self.rhs, global_search=False)
+            if not new_home:
+                return
+            old_home = obj.home
+            obj.home = new_home
+            if old_home:
+                string = "Home location of %s was changed from %s(%s) to %s(%s)." % (
+                    obj,
+                    old_home,
+                    old_home.dbref,
+                    new_home,
+                    new_home.dbref,
+                )
+            else:
+                string = "Home location of %s was set to %s(%s)." % (obj, new_home, new_home.dbref)
+        self.caller.msg(string)

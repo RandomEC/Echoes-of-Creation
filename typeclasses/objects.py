@@ -538,7 +538,7 @@ class Wand(Armor):
     def at_object_creation(self):
         super().at_object_creation()
         self.db.item_type = "wand"
-        self.db.wear_location = "held"
+        self.db.wear_location = "held, in hands"
         self.db.spell_level = 1
         self.db.spell_level_base = 1
         self.db.charges_maximum = 0
@@ -558,7 +558,7 @@ class Staff(Armor):
     def at_object_creation(self):
         super().at_object_creation()
         self.db.item_type = "staff"
-        self.db.wear_location = "held"
+        self.db.wear_location = "held, in hands"
         self.db.spell_level = 1
         self.db.spell_level_base = 1
         self.db.charges_maximum = 0
@@ -733,6 +733,39 @@ class Key(Item):
     def at_object_creation(self):
         self.db.object_type = "item"
         self.db.item_type = "key"
+        self.db.vnum = 0
+        self.db.level = 1
+        self.db.extra_flags = []
+        self.db.extra_descriptions = {}
+
+class Trash(Item):
+
+    """
+
+    This is the class for trash items.
+
+    """
+
+    def at_object_creation(self):
+        self.db.object_type = "item"
+        self.db.item_type = "trash"
+        self.db.vnum = 0
+        self.db.level = 1
+        self.db.extra_flags = []
+        self.db.extra_descriptions = {}
+
+class Fountain(Item):
+
+    """
+
+    This is the class for fountain items that players can use to fill
+    water or drink.
+
+    """
+
+    def at_object_creation(self):
+        self.db.object_type = "item"
+        self.db.item_type = "fountain"
         self.db.vnum = 0
         self.db.level = 1
         self.db.extra_flags = []

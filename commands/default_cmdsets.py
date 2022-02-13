@@ -25,11 +25,16 @@ from commands.command import CmdRepop
 from commands.command import CmdDestroy
 from commands.command import CmdLock
 from commands.command import CmdPut
+from commands.command import CmdTag
+from commands.command import CmdSetHome
 from commands.equipment_commands import CmdWear
 from commands.equipment_commands import CmdWield
 from commands.equipment_commands import CmdRemove
 from commands.equipment_commands import CmdEquipment
 from commands.equipment_commands import CmdIdentify
+from commands.equipment_commands import CmdWearTo
+from commands.equipment_commands import CmdWieldTo
+from commands.equipment_commands import CmdRemoveFrom
 from commands.door_commands import CmdDoorOpen
 from commands.door_commands import CmdDoorClose
 from commands.door_commands import CmdDoorUnlock
@@ -71,6 +76,11 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdDestroy())
         self.add(CmdLock())
         self.add(CmdPut())
+        self.add(CmdWearTo())
+        self.add(CmdWieldTo())
+        self.add(CmdRemoveFrom())
+        self.add(CmdTag())
+        self.add(CmdSetHome())
 
 class AccountCmdSet(default_cmds.AccountCmdSet):
     """
