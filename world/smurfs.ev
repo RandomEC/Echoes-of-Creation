@@ -1,0 +1,2814 @@
+dig/tel The Trophy Room; r6231
+#
+tag r6231 = smurf village, category = area names
+#
+desc r6231 = The room is unfurnished, except for a display case centered on the east wall. The walls are covered with murals depicting various encounters between the smurfs (victors) and Gargamel and Azreal (losers). 
+#
+desc/edit r6231
+#
+:j l
+#
+:wq
+#
+set r6231/terrain = "inside"
+#
+set r6231/room_flags = ['no astral in', 'no summon to', 'no teleport in', 'indoors']
+#
+dig/tel Dimly Lit Path; r6201
+#
+tag r6201 = smurf village, category = area names
+#
+desc r6201 = This path is made of crushed granite with curious blue streaks in it. The path continues north to a village, and south it fades into the woods, and seems kind of blurry and indistinct. 
+#
+desc/edit r6201
+#
+:j l
+#
+:wq
+#
+set r6201/terrain = "forest"
+#
+set r6201/room_flags = ['no mob']
+#
+dig/tel Dimly Lit Path; r6202
+#
+tag r6202 = smurf village, category = area names
+#
+desc r6202 = This section of the road is badly worn and frequently traversed.  There is faint singing to the north.  The road back to the forest lies to the south. 
+#
+desc/edit r6202
+#
+:j l
+#
+:wq
+#
+set r6202/terrain = "forest"
+#
+set r6202/room_flags = ['no mob']
+#
+dig/tel Dimly Lit Path; r6203
+#
+tag r6203 = smurf village, category = area names
+#
+desc r6203 = This section of the road is badly worn and frequently traversed.  Singing is getting stronger to the north.  The road back to the forest lies to the south. 
+#
+desc/edit r6203
+#
+:j l
+#
+:wq
+#
+set r6203/terrain = "forest"
+#
+dig/tel Entrance to Smurf Village; r6204
+#
+tag r6204 = smurf village, category = area names
+#
+desc r6204 = You stand at the entrance to a tiny village.  You can see across the whole village easily.  Little blue creatures with white hats and boots and little fluffy tails scamper about.  They sing continuously.  The singing is getting on your nerves and you have the urge to squash them. 
+#
+desc/edit r6204
+#
+:j l
+#
+:wq
+#
+set r6204/terrain = "field"
+#
+dig/tel Smurfy Road; r6205
+#
+tag r6205 = smurf village, category = area names
+#
+desc r6205 = You are way too big to be using this road.  But who cares.  Who's gonna stop you?  These little blue smurfs?  The singing is growing intense.  Your ears are starting to ring.  Smurfy Road continues to the north, west, and east. There is still time to turn back and go south. 
+#
+desc/edit r6205
+#
+:j l
+#
+:wq
+#
+set r6205/terrain = "city"
+#
+dig/tel Smurfy Road; r6206
+#
+tag r6206 = smurf village, category = area names
+#
+desc r6206 = You continue to travel down Smurfy Road.  Isn't it just smurfy?  Smurfy road continues its smurfy path to the smurfy north, smurfy west, and smurfy south. A smurfy home lies to the smurfy east. 
+#
+desc/edit r6206
+#
+:j l
+#
+:wq
+#
+set r6206/terrain = "city"
+#
+dig/tel Smurfy Road; r6207
+#
+tag r6207 = smurf village, category = area names
+#
+desc r6207 = Oh boy, another smurfy road!  Smurfy Road goes north and south here.  There is a smurfy, mushroom home to the west.  A beautiful smurfberry patch is to the east. 
+#
+desc/edit r6207
+#
+:j l
+#
+:wq
+#
+set r6207/terrain = "city"
+#
+dig/tel Smurfy Road; r6208
+#
+tag r6208 = smurf village, category = area names
+#
+desc r6208 = Smurfy Road continues to smurf here.  It smurfs to the south and smurfs to an end to the north.  A smurfberry patch is to the east.  A stone path lies to the west. 
+#
+desc/edit r6208
+#
+:j l
+#
+:wq
+#
+set r6208/terrain = "city"
+#
+dig/tel Smurfy Road; r6209
+#
+tag r6209 = smurf village, category = area names
+#
+desc r6209 = A smurfy well lies here in the middle of Smurfy Road.  A fence separates the smurfs from harm to the north.  A berry patch is to the east.  Smurfy Road continues to the south and west. 
+#
+desc/edit r6209
+#
+:j l
+#
+:wq
+#
+set r6209/terrain = "city"
+#
+set r6209/extra_description = {'smurfy well': "A small well is here.  Just the right size if you're a smurf.  But big enough for you to get some water from.  I'm sure the smurfs wont mind. The well has a bucket for hauling up water to drink. ", 'bucket': 'The smurfy bucket is filled with cool refreshing water. '}
+#
+dig/tel Smurfy Road; r6210
+#
+tag r6210 = smurf village, category = area names
+#
+desc r6210 = A corner of smurfy road is where you stand.  A smurfy fence blocks passage to the east or south.  A smurfy home is to the south.  Smurfy Road goes back to the west. 
+#
+desc/edit r6210
+#
+:j l
+#
+:wq
+#
+set r6210/terrain = "city"
+#
+dig/tel Smurfy Road; r6211
+#
+tag r6211 = smurf village, category = area names
+#
+desc r6211 = Western corner of Smurfy Road.  You can continue to smurf down the road to the east and north.  You can also smurf into a smurfy home to the south. 
+#
+desc/edit r6211
+#
+:j l
+#
+:wq
+#
+set r6211/terrain = "city"
+#
+dig/tel Smurfy Road; r6212
+#
+tag r6212 = smurf village, category = area names
+#
+desc r6212 = There's no place like smurf.  There's no place like smurf.  Sorry wrong movie.  A smurfy home is to the west.  Smurfette's house iis to the north but you can't get in from here.  Smurfy Road continues to the south and east. 
+#
+desc/edit r6212
+#
+:j l
+#
+:wq
+#
+set r6212/terrain = "city"
+#
+dig/tel Stone Path; r6213
+#
+tag r6213 = smurf village, category = area names
+#
+desc r6213 = You are walking along a cute little stone path.  To the south lies Papa Smurf's house.  A Smurfy house is to the west.  Smurfy road is to the east. Everything is so peaceful here.  You could stay forever. 
+#
+desc/edit r6213
+#
+:j l
+#
+:wq
+#
+set r6213/terrain = "city"
+#
+dig/tel Stone Path; r6232
+#
+tag r6232 = smurf village, category = area names
+#
+desc r6232 = You are walking along a cute little stone path.  To the south lies Smurfette's house.  More Smurfy houses lie to the west.  Some smurfs clearly like to be off on their own a bit. 
+#
+desc/edit r6232
+#
+:j l
+#
+:wq
+#
+set r6232/terrain = "city"
+#
+dig/tel Smurfy Road; r6214
+#
+tag r6214 = smurf village, category = area names
+#
+desc r6214 = Yet another part of Smurfy Road.  Hey, if you go west it's the last section of Smurfy Road.  You can go back to the smurfy well to the east. 
+#
+desc/edit r6214
+#
+:j l
+#
+:wq
+#
+set r6214/terrain = "city"
+#
+dig/tel Smurfy Road; r6215
+#
+tag r6215 = smurf village, category = area names
+#
+desc r6215 = The last piece of Smurfy Road.  You can go back to Smurfy Road to the east. A nice, beautiful, smurfy, mushroom home is to the south.  In the distance to the north you can see Gargamel's Castle. 
+#
+desc/edit r6215
+#
+:j l
+#
+:wq
+#
+set r6215/terrain = "city"
+#
+dig/tel Smurfberry Patch; r6216
+#
+tag r6216 = smurf village, category = area names
+#
+desc r6216 = Delicious smurfberries grow here.  You could probably eat a year's worth of smurfberries in one sitting.  Smurfy Road is back to the west.  Another smurfberry patch is to the north. 
+#
+desc/edit r6216
+#
+:j l
+#
+:wq
+#
+set r6216/terrain = "city"
+#
+dig/tel Smurfberry Patch; r6217
+#
+tag r6217 = smurf village, category = area names
+#
+desc r6217 = Another patch of smurfberries is growing here.  The smell is driving your nostrils crazy.  It almost, ALMOST, makes you forget all the singing going on.  Smurfy Road is to the west, while smurfberry patches are to the north and south. 
+#
+desc/edit r6217
+#
+:j l
+#
+:wq
+#
+set r6217/terrain = "city"
+#
+dig/tel Smurfberry Patch; r6218
+#
+tag r6218 = smurf village, category = area names
+#
+desc r6218 = The northernmost of the smurfberry patches grows here.  It looks just as scrumptious as all the rest.  Just take a few; they'll never know.  Smurfy Road is to the west.  A smurfberry patch is to the south. 
+#
+desc/edit r6218
+#
+:j l
+#
+:wq
+#
+set r6218/terrain = "city"
+#
+dig/tel Brainy Smurf's Home; r6219
+#
+tag r6219 = smurf village, category = area names
+#
+desc r6219 = You rip the roof of the home to get a good look inside.  You see many smurfy books.  The print is so small you couldn't even read it with a magnifying glass.  I wonder if Brainy Smurf minds if you destroy his home?  Smurfy Road is back to the north. 
+#
+desc/edit r6219
+#
+:j l
+#
+:wq
+#
+set r6219/terrain = "city"
+#
+dig/tel Handy Smurf's Home; r6220
+#
+tag r6220 = smurf village, category = area names
+#
+desc r6220 = This home was well built.  Of course, until you rip it apart, you big meanie, you.  Tools are all over the place.  Too small for you to use.  Smurfy Road is back to the west. 
+#
+desc/edit r6220
+#
+:j l
+#
+:wq
+#
+set r6220/terrain = "city"
+#
+dig/tel Hefty Smurf's Home; r6221
+#
+tag r6221 = smurf village, category = area names
+#
+desc r6221 = Hefty is anything but wimpy.  So is his house.  It actually took you a couple of minutes to destroy his house.  Better watch out -- he might be a little mad at you.  Smurfy Road is back to the north. 
+#
+desc/edit r6221
+#
+:j l
+#
+:wq
+#
+set r6221/terrain = "city"
+#
+dig/tel Sleepy Smurf's Home; r6222
+#
+tag r6222 = smurf village, category = area names
+#
+desc r6222 = Be vewy vewy quiet.  Sleepy Smurf is probably sleeping.  You see so many beds you can't even tell if he is here.  Maybe you should quietly go back to Smurfy Road to the east. 
+#
+desc/edit r6222
+#
+:j l
+#
+:wq
+#
+set r6222/terrain = "city"
+#
+dig/tel Grumpy Smurf's Home; r6223
+#
+tag r6223 = smurf village, category = area names
+#
+desc r6223 = This is Grumpy Smurf's home.  He is pissed at you.  Of course, he is pissed at everyone.  So don't take it bad.  Maybe you'd better leave before he really gets mad.  Smurfy Road to the east is your only salvation. 
+#
+desc/edit r6223
+#
+:j l
+#
+:wq
+#
+set r6223/terrain = "city"
+#
+dig/tel Jokey Smurf's Home; r6224
+#
+tag r6224 = smurf village, category = area names
+#
+desc r6224 = You pull the top of his house and it explodes in your face.  That Jokey Smurf, what a kidder.  You can hear his laughter as you wipe the ashes off your face.  You better get even.  Smurfy Road is to the north. 
+#
+desc/edit r6224
+#
+:j l
+#
+:wq
+#
+set r6224/terrain = "city"
+#
+dig/tel Papa Smurf's Home; r6225
+#
+tag r6225 = smurf village, category = area names
+#
+desc r6225 = This is the home of the leader of the smurfs. Papa Smurf has a nicely decorated home. He takes pride in his work. You could get to know him ... or just squash him.  If Papa Smurf is not here he is probably visiting Smurfette. 
+#
+desc/edit r6225
+#
+:j l
+#
+:wq
+#
+set r6225/terrain = "city"
+#
+dig/tel Path to Gargamel's Castle; r6226
+#
+tag r6226 = smurf village, category = area names
+#
+desc r6226 = You are walking along a path to Gargamel's Castle to the north. Smurfy Road lies to the south. 
+#
+desc/edit r6226
+#
+:j l
+#
+:wq
+#
+set r6226/terrain = "city"
+#
+dig/tel Outside Gargamel's Castle; r6227
+#
+tag r6227 = smurf village, category = area names
+#
+desc r6227 = You are standing outside Gargamel's Castle.  You can hear him screaming at Azreal from inside.  You can also hear him cursing out those wretched smurfs. His Castle is to the north while Smurfy Road is to the south. 
+#
+desc/edit r6227
+#
+:j l
+#
+:wq
+#
+set r6227/terrain = "city"
+#
+dig/tel Gargamel's Castle; r6228
+#
+tag r6228 = smurf village, category = area names
+#
+desc r6228 = This is Gargamel's Castle.  His big black kettle is in the middle of the room. Where else would he put it?  The place has only one room. 
+#
+desc/edit r6228
+#
+:j l
+#
+:wq
+#
+set r6228/terrain = "field"
+#
+set r6228/room_flags = ['no teleport in', 'no summon from']
+#
+dig/tel Smurfette's House; r6229
+#
+tag r6229 = smurf village, category = area names
+#
+desc r6229 = Perhaps it is due to being the only female smurf, but Smurfette's house seems a little OVERLY girly.  Every surface that could possibly be pink is. If there's a piece of fabric, it has lace on it. Perfume hangs heavy in the air, a welcome escape from the ever-present scent of smurfberries, to be honest. The only exit is to the east. 
+#
+desc/edit r6229
+#
+:j l
+#
+:wq
+#
+set r6229/terrain = "city"
+#
+dig/tel Papa Smurf's Back Room; r6230
+#
+tag r6230 = smurf village, category = area names
+#
+desc r6230 = This is a small closet which opens off of the south end of Papa's living area. There's not much here, but then, Papa never was one for variety in outfits. A shelf hangs at knee-level (waist-level for smurfs) on the south wall. 
+#
+desc/edit r6230
+#
+:j l
+#
+:wq
+#
+set r6230/terrain = "inside"
+#
+set r6230/room_flags = ['indoors', 'dark']
+#
+tel r6231
+#
+openexit west; w; e6201, east = r6230
+#
+tag e6201 = smurf village, category = area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6201
+#
+openexit north; n; e6202, south = r6202
+#
+tag e6202 = smurf village, category = area names
+#
+desc north = The path continues toward the village. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e6203, north = r13338
+#
+tag e6203 = smurf village, category = area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r6202
+#
+openexit north; n; e6204, south = r6203
+#
+tag e6204 = smurf village, category = area names
+#
+desc north = The path continues toward the village. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s, e6205
+#
+tag e6205 = smurf village, category = area names
+#
+desc south = The dimly lit path. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r6203
+#
+openexit north; n; e6206, south = r6204
+#
+tag e6206 = smurf village, category = area names
+#
+desc north = The entrance to smurf village. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s, e6207
+#
+tag e6207 = smurf village, category = area names
+#
+desc south = The dimly lit path. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r6204
+#
+openexit north; n; e6208, south = r6205
+#
+tag e6208 = smurf village, category = area names
+#
+desc north = Smurfy Road 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s, e6209
+#
+tag e6209 = smurf village, category = area names
+#
+desc south = Dimly Lit Path 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r6205
+#
+openexit north; n; e6210, south = r6206
+#
+tag e6210 = smurf village, category = area names
+#
+desc north = Smurfy Road 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e6211, west = r6210
+#
+tag e6211 = smurf village, category = area names
+#
+desc east = Smurfy Road 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s, e6212
+#
+tag e6212 = smurf village, category = area names
+#
+desc south = Entrance to smurf village 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e6213, east = r6211
+#
+tag e6213 = smurf village, category = area names
+#
+desc west = Smurfy Road 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6206
+#
+openexit north; n; e6214, south = r6207
+#
+tag e6214 = smurf village, category = area names
+#
+desc north = Smurfy Road 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e6215, west = r6220
+#
+tag e6215 = smurf village, category = area names
+#
+desc east = Smurfy Home 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s, e6216
+#
+tag e6216 = smurf village, category = area names
+#
+desc south = Smurfy Road 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e6217, east = r6212
+#
+tag e6217 = smurf village, category = area names
+#
+desc west = Smurfy Road 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6207
+#
+openexit north; n; e6218, south = r6208
+#
+tag e6218 = smurf village, category = area names
+#
+desc north = Smurfy Road 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e6219, west = r6216
+#
+tag e6219 = smurf village, category = area names
+#
+desc east = Smurfberry Patch 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s, e6220
+#
+tag e6220 = smurf village, category = area names
+#
+desc south = Smurfy Road 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e6221, east = r6229
+#
+tag e6221 = smurf village, category = area names
+#
+desc west = A Smurfy Home 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6208
+#
+openexit north; n; e6222, south = r6209
+#
+tag e6222 = smurf village, category = area names
+#
+desc north = Smurfy Road 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e6223, west = r6217
+#
+tag e6223 = smurf village, category = area names
+#
+desc east = Smurfberry patch 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s, e6224
+#
+tag e6224 = smurf village, category = area names
+#
+desc south = Smurfy Road 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e6225, east = r6232
+#
+tag e6225 = smurf village, category = area names
+#
+desc west = A stone path 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6209
+#
+openexit east; e; e6226, west = r6218
+#
+tag e6226 = smurf village, category = area names
+#
+desc east = Smurfberry Patch 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s, e6227
+#
+tag e6227 = smurf village, category = area names
+#
+desc south = Smurfy Road 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e6228, east = r6214
+#
+tag e6228 = smurf village, category = area names
+#
+desc west = Smurfy Road 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6210
+#
+openexit south; s; e6229, north = r6219
+#
+tag e6229 = smurf village, category = area names
+#
+desc south = Smurfy Home 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w, e6230
+#
+tag e6230 = smurf village, category = area names
+#
+desc west = Smurfy Road 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6211
+#
+openexit north; n; e6231, south = r6212
+#
+tag e6231 = smurf village, category = area names
+#
+desc north = Smurfy Road 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e, e6232
+#
+tag e6232 = smurf village, category = area names
+#
+desc east = Smurfy Road 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e6233, north = r6221
+#
+tag e6233 = smurf village, category = area names
+#
+desc south = Smurfy Home 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r6212
+#
+alias east = e, e6234
+#
+tag e6234 = smurf village, category = area names
+#
+desc east = Smurfy Road 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s, e6235
+#
+tag e6235 = smurf village, category = area names
+#
+desc south = Smurfy Road 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e6236, east = r6222
+#
+tag e6236 = smurf village, category = area names
+#
+desc west = Smurfy Home 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6213
+#
+openexit east; e; e6237, west = r6232
+#
+tag e6237 = smurf village, category = area names
+#
+desc east = Smurfy Road 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; door; s; e6238, north = r6225
+#
+tag e6238 = smurf village, category = area names
+#
+desc south = Papa Smurf's House 
+#
+set south/key = "o6207"
+#
+openexit west; w; e6239, east = r6223
+#
+tag e6239 = smurf village, category = area names
+#
+desc west = Smurfy House 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6232
+#
+alias east = e, e6240
+#
+tag e6240 = smurf village, category = area names
+#
+desc east = Smurfy Road 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w, e6241
+#
+tag e6241 = smurf village, category = area names
+#
+desc west = Smurfy Road 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6214
+#
+alias east = e, e6242
+#
+tag e6242 = smurf village, category = area names
+#
+desc east = Smurfy Road 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e6243, east = r6215
+#
+tag e6243 = smurf village, category = area names
+#
+desc west = Smurfy Road 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6215
+#
+openexit north; n; e6244, south = r6226
+#
+tag e6244 = smurf village, category = area names
+#
+desc north = Path to Gargamel's Castle 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e, e6245
+#
+tag e6245 = smurf village, category = area names
+#
+desc east = Smurfy Road 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e6246, east = r6224
+#
+tag e6246 = smurf village, category = area names
+#
+desc west = Smurfy Home 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6216
+#
+openexit north; n; e6247, south = r6217
+#
+tag e6247 = smurf village, category = area names
+#
+desc north = Smurfberry Patch 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias west = w, e6248
+#
+tag e6248 = smurf village, category = area names
+#
+desc west = Smurfy Road 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6217
+#
+openexit north; n; e6249, south = r6218
+#
+tag e6249 = smurf village, category = area names
+#
+desc north = Smurfberry Patch 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s, e6250
+#
+tag e6250 = smurf village, category = area names
+#
+desc south = Smurfberry Patch 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w, e6251
+#
+tag e6251 = smurf village, category = area names
+#
+desc west = Smurfy Road 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6218
+#
+alias south = s, e6252
+#
+tag e6252 = smurf village, category = area names
+#
+desc south = Smurfberry Patch 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w, e6253
+#
+tag e6253 = smurf village, category = area names
+#
+desc west = Smurfy Road 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6219
+#
+alias north = n, e6254
+#
+tag e6254 = smurf village, category = area names
+#
+desc north = Smurfy Road 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r6220
+#
+alias west = w, e6255
+#
+tag e6255 = smurf village, category = area names
+#
+desc west = Smurfy Road 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6221
+#
+alias north = n, e6256
+#
+tag e6256 = smurf village, category = area names
+#
+desc north = Smurfy Road 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r6222
+#
+alias east = e, e6257
+#
+tag e6257 = smurf village, category = area names
+#
+desc east = Smurfy Road 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r6223
+#
+alias east = e, e6258
+#
+tag e6258 = smurf village, category = area names
+#
+desc east = Smurfy Road 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r6224
+#
+alias east = e, e6259
+#
+tag e6259 = smurf village, category = area names
+#
+desc east = Smurfy Road 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r6225
+#
+alias north = door, n, e6260
+#
+tag e6260 = smurf village, category = area names
+#
+desc north = Stone Path 
+#
+set north/key = "o6207"
+#
+openexit south; s; e6261, north = r6230
+#
+tag e6261 = smurf village, category = area names
+#
+set south/key = "o6207"
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r6226
+#
+openexit north; n; e6262, south = r6227
+#
+tag e6262 = smurf village, category = area names
+#
+desc north = Outside Gargamel's Castle 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s, e6263
+#
+tag e6263 = smurf village, category = area names
+#
+desc south = Smurfy Road 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r6227
+#
+openexit north; door; n; e6264, south = r6228
+#
+tag e6264 = smurf village, category = area names
+#
+desc north = Gargamel's Castle 
+#
+set north/key = "o6209"
+#
+alias south = s, e6265
+#
+tag e6265 = smurf village, category = area names
+#
+desc south = Path to Gargamel's Castle 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r6228
+#
+alias south = door, s, e6266
+#
+tag e6266 = smurf village, category = area names
+#
+desc south = Outside Gargamel's Castle 
+#
+set south/key = "o109"
+#
+tel r6229
+#
+alias east = e, e6267
+#
+tag e6267 = smurf village, category = area names
+#
+desc east = Smurfy Road 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r6230
+#
+alias north = n, e6268
+#
+tag e6268 = smurf village, category = area names
+#
+set north/key = "o6207"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r6204
+#
+create/drop a smurf;smurf;m6201:characters.Mobile
+#
+desc m6201 = A smurf is singing and walking along. 
+#
+set m6201/level = 6
+#
+set m6201/level_base = 6
+#
+set m6201/vnum = "m6201"
+#
+set m6201/look_description = "A cute little blue smurf with a white hat and white boots.  You have a sudden urge to crush him. "
+#
+set m6201/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m6201/alignment = 100
+#
+set m6201/sex = "male"
+#
+set m6201/race = "animal"
+#
+tag m6201 = smurf village:area name
+#
+set m6201/hitpoints[maximum] = 75
+#
+set m6201/position = "standing"
+#
+set m6201/special_function = "thief"
+#
+tel r6204
+#
+create a smurf hat;smurf;hat;o6202:objects.Armor
+#
+sethome o6202 = m6201
+#
+desc o6202 = A smurf hat has been left here.
+#
+set o6202/level = 4
+#
+set o6202/level_base = 4
+#
+set o6202/vnum = "o6202"
+#
+set o6202/item_type = "armor"
+#
+set o6202/wear_location = "head"
+#
+set o6202/weight = 2
+#
+tag o6202 = smurf village:area name
+#
+set o6202/armor = 4
+#
+wearto o6202 = m6201
+#
+set m6201/reset_objects["o6202"] = {"location":"equipped"}
+#
+tel r6205
+#
+create/drop a smurf;smurf;m6201:characters.Mobile
+#
+desc m6201 = A smurf is singing and walking along. 
+#
+set m6201/level = 6
+#
+set m6201/level_base = 6
+#
+set m6201/vnum = "m6201"
+#
+set m6201/look_description = "A cute little blue smurf with a white hat and white boots.  You have a sudden urge to crush him. "
+#
+set m6201/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m6201/alignment = 100
+#
+set m6201/sex = "male"
+#
+set m6201/race = "animal"
+#
+tag m6201 = smurf village:area name
+#
+set m6201/hitpoints[maximum] = 60
+#
+set m6201/position = "standing"
+#
+set m6201/special_function = "thief"
+#
+tel r6207
+#
+create/drop a smurf;smurf;m6201:characters.Mobile
+#
+desc m6201 = A smurf is singing and walking along. 
+#
+set m6201/level = 6
+#
+set m6201/level_base = 6
+#
+set m6201/vnum = "m6201"
+#
+set m6201/look_description = "A cute little blue smurf with a white hat and white boots.  You have a sudden urge to crush him. "
+#
+set m6201/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m6201/alignment = 100
+#
+set m6201/sex = "male"
+#
+set m6201/race = "animal"
+#
+tag m6201 = smurf village:area name
+#
+set m6201/hitpoints[maximum] = 71
+#
+set m6201/position = "standing"
+#
+set m6201/special_function = "thief"
+#
+tel r6208
+#
+create/drop a smurf;smurf;m6201:characters.Mobile
+#
+desc m6201 = A smurf is singing and walking along. 
+#
+set m6201/level = 6
+#
+set m6201/level_base = 6
+#
+set m6201/vnum = "m6201"
+#
+set m6201/look_description = "A cute little blue smurf with a white hat and white boots.  You have a sudden urge to crush him. "
+#
+set m6201/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m6201/alignment = 100
+#
+set m6201/sex = "male"
+#
+set m6201/race = "animal"
+#
+tag m6201 = smurf village:area name
+#
+set m6201/hitpoints[maximum] = 77
+#
+set m6201/position = "standing"
+#
+set m6201/special_function = "thief"
+#
+tel r6208
+#
+create a smurf hat;smurf;hat;o6202:objects.Armor
+#
+sethome o6202 = m6201
+#
+desc o6202 = A smurf hat has been left here.
+#
+set o6202/level = 4
+#
+set o6202/level_base = 4
+#
+set o6202/vnum = "o6202"
+#
+set o6202/item_type = "armor"
+#
+set o6202/wear_location = "head"
+#
+set o6202/weight = 2
+#
+tag o6202 = smurf village:area name
+#
+set o6202/armor = 2
+#
+wearto o6202 = m6201
+#
+set m6201/reset_objects["o6202"] = {"location":"equipped"}
+#
+tel r6209
+#
+create/drop a smurf;smurf;m6201:characters.Mobile
+#
+desc m6201 = A smurf is singing and walking along. 
+#
+set m6201/level = 6
+#
+set m6201/level_base = 6
+#
+set m6201/vnum = "m6201"
+#
+set m6201/look_description = "A cute little blue smurf with a white hat and white boots.  You have a sudden urge to crush him. "
+#
+set m6201/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m6201/alignment = 100
+#
+set m6201/sex = "male"
+#
+set m6201/race = "animal"
+#
+tag m6201 = smurf village:area name
+#
+set m6201/hitpoints[maximum] = 57
+#
+set m6201/position = "standing"
+#
+set m6201/special_function = "thief"
+#
+tel r6209
+#
+create the smurfy bucket;bucket;o6221:objects.Fountain
+#
+sethome o6221 = r6209
+#
+desc o6221 = A smurfy bucket sits here, full of clear, smurfy water!
+#
+set o6221/level = 4
+#
+set o6221/level_base = 4
+#
+set o6221/vnum = "o6221"
+#
+set o6221/item_type = "fountain"
+#
+objectlock o6221 = "get:perm(Admin)"
+#
+set o6221/weight = 0
+#
+tag o6221 = smurf village:area name
+#
+drop o6221
+#
+set r6209/reset_objects["o6221"] = {"location":"inventory"}
+#
+tel r6209
+#
+create a smurf well;well;o6208:objects.Container
+#
+sethome o6208 = r6209
+#
+desc o6208 = A small smurfy well is here.
+#
+set o6208/level = 4
+#
+set o6208/level_base = 4
+#
+set o6208/vnum = "o6208"
+#
+set o6208/item_type = "container"
+#
+objectlock o6208 = "get:perm(Admin)"
+#
+set o6208/weight = 500
+#
+tag o6208 = smurf village:area name
+#
+set o6208/weight_maximum = 50
+#
+objectlock o6208 = "pick:false()"
+#
+set o6208/state = ['locked', 'closed', 'closeable']
+#
+set o6208/state_base = ['locked', 'closed', 'closeable']
+#
+drop o6208
+#
+set r6209/reset_objects["o6208"] = {"location":"inventory"}
+#
+tel r6209
+#
+create a soggy piece of paper;piece;paper;soggy;o6211:objects.Trash
+#
+sethome o6211 = o6208
+#
+desc o6211 = You've found a water-soaked piece of paper.
+#
+set o6211/level = 4
+#
+set o6211/level_base = 4
+#
+set o6211/vnum = "o6211"
+#
+set o6211/item_type = "trash"
+#
+set o6211/weight = 5
+#
+tag o6211 = smurf village:area name
+#
+set o6211/extra_descriptions = {'piece paper soggy': " It's hard to make out much of what was once written here, since the ink has run all over. You can only discern a few phrases.", 'phrase phrases': '"... Papa\'s magic box...his back room ...the Trophy..."'}
+#
+put o6211 = o6208
+#
+set r6209/reset_objects["o6211"] = {"location":"o6208"}
+#
+tel r6210
+#
+create/drop a smurf;smurf;m6201:characters.Mobile
+#
+desc m6201 = A smurf is singing and walking along. 
+#
+set m6201/level = 6
+#
+set m6201/level_base = 6
+#
+set m6201/vnum = "m6201"
+#
+set m6201/look_description = "A cute little blue smurf with a white hat and white boots.  You have a sudden urge to crush him. "
+#
+set m6201/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m6201/alignment = 100
+#
+set m6201/sex = "male"
+#
+set m6201/race = "animal"
+#
+tag m6201 = smurf village:area name
+#
+set m6201/hitpoints[maximum] = 70
+#
+set m6201/position = "standing"
+#
+set m6201/special_function = "thief"
+#
+tel r6210
+#
+create a smurf hat;smurf;hat;o6202:objects.Armor
+#
+sethome o6202 = m6201
+#
+desc o6202 = A smurf hat has been left here.
+#
+set o6202/level = 4
+#
+set o6202/level_base = 4
+#
+set o6202/vnum = "o6202"
+#
+set o6202/item_type = "armor"
+#
+set o6202/wear_location = "head"
+#
+set o6202/weight = 2
+#
+tag o6202 = smurf village:area name
+#
+set o6202/armor = 4
+#
+wearto o6202 = m6201
+#
+set m6201/reset_objects["o6202"] = {"location":"equipped"}
+#
+tel r6211
+#
+create/drop a smurf;smurf;m6201:characters.Mobile
+#
+desc m6201 = A smurf is singing and walking along. 
+#
+set m6201/level = 6
+#
+set m6201/level_base = 6
+#
+set m6201/vnum = "m6201"
+#
+set m6201/look_description = "A cute little blue smurf with a white hat and white boots.  You have a sudden urge to crush him. "
+#
+set m6201/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m6201/alignment = 100
+#
+set m6201/sex = "male"
+#
+set m6201/race = "animal"
+#
+tag m6201 = smurf village:area name
+#
+set m6201/hitpoints[maximum] = 75
+#
+set m6201/position = "standing"
+#
+set m6201/special_function = "thief"
+#
+tel r6212
+#
+create/drop a smurf;smurf;m6201:characters.Mobile
+#
+desc m6201 = A smurf is singing and walking along. 
+#
+set m6201/level = 6
+#
+set m6201/level_base = 6
+#
+set m6201/vnum = "m6201"
+#
+set m6201/look_description = "A cute little blue smurf with a white hat and white boots.  You have a sudden urge to crush him. "
+#
+set m6201/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m6201/alignment = 100
+#
+set m6201/sex = "male"
+#
+set m6201/race = "animal"
+#
+tag m6201 = smurf village:area name
+#
+set m6201/hitpoints[maximum] = 61
+#
+set m6201/position = "standing"
+#
+set m6201/special_function = "thief"
+#
+tel r6212
+#
+create a smurf hat;smurf;hat;o6202:objects.Armor
+#
+sethome o6202 = m6201
+#
+desc o6202 = A smurf hat has been left here.
+#
+set o6202/level = 4
+#
+set o6202/level_base = 4
+#
+set o6202/vnum = "o6202"
+#
+set o6202/item_type = "armor"
+#
+set o6202/wear_location = "head"
+#
+set o6202/weight = 2
+#
+tag o6202 = smurf village:area name
+#
+set o6202/armor = 3
+#
+wearto o6202 = m6201
+#
+set m6201/reset_objects["o6202"] = {"location":"equipped"}
+#
+tel r6213
+#
+create/drop Papa Smurf;papa;smurf;m6210:characters.Mobile
+#
+desc m6210 = Papa Smurf is practicing magic here. 
+#
+set m6210/level = 12
+#
+set m6210/level_base = 12
+#
+set m6210/vnum = "m6210"
+#
+set m6210/look_description = "Yep, it's Papa Smurf all right.  Red hat and boots and the funny little white beard.  Papa Smurf treats his fellow smurfs with dignity and respect.  That is why Papa Smurf is so popular with the other smurfs. "
+#
+set m6210/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m6210/alignment = 100
+#
+set m6210/sex = "male"
+#
+set m6210/race = "animal"
+#
+tag m6210 = smurf village:area name
+#
+set m6210/hitpoints[maximum] = 129
+#
+set m6210/position = "standing"
+#
+set m6210/special_function = "cast_mage"
+#
+tel r6213
+#
+create a pink potion;pink;potion;o6205:objects.Potion
+#
+sethome o6205 = m6210
+#
+desc o6205 = A pink potion is barely visible on the ground.
+#
+set o6205/level = 10
+#
+set o6205/level_base = 10
+#
+set o6205/vnum = "o6205"
+#
+set o6205/item_type = "potion"
+#
+set o6205/weight = 2
+#
+tag o6205 = smurf village:area name
+#
+set o6205/spell_level = 6
+#
+set o6205/spell_level_base = 6
+#
+set o6205/spell_name_1 = "armor"
+#
+set o6205/spell_name_2 = "cure poison"
+#
+give o6205 = m6210
+#
+set m6210/reset_objects["o6205"] = {"location":"inventory"}
+#
+tel r6213
+#
+create a small key;key;o6209:objects.Key
+#
+sethome o6209 = m6210
+#
+desc o6209 = A key to Gargamel's door lies here.
+#
+set o6209/level = 10
+#
+set o6209/level_base = 10
+#
+set o6209/vnum = "o6209"
+#
+set o6209/item_type = "key"
+#
+set o6209/weight = 2
+#
+tag o6209 = smurf village:area name
+#
+give o6209 = m6210
+#
+set m6210/reset_objects["o6209"] = {"location":"inventory"}
+#
+tel r6213
+#
+set south/door_attributes = ['lockable', 'locked']
+#
+set south/reset_door_attributes = ['lockable', 'locked']
+#
+tel r6216
+#
+create/drop a smurf;smurf;m6202:characters.Mobile
+#
+desc m6202 = A smurf is here, picking berries. 
+#
+set m6202/level = 2
+#
+set m6202/level_base = 2
+#
+set m6202/vnum = "m6202"
+#
+set m6202/look_description = "A small smurf is quietly picking berries.  He seems to hardly notice you. "
+#
+set m6202/act_flags = ['wimpy', 'sentinel', 'npc']
+#
+set m6202/alignment = 100
+#
+set m6202/sex = "male"
+#
+set m6202/race = "animal"
+#
+tag m6202 = smurf village:area name
+#
+set m6202/hitpoints[maximum] = 17
+#
+set m6202/position = "standing"
+#
+set m6202/special_function = "thief"
+#
+tel r6216
+#
+create a bunch of smurfberries;bunch;berries;smurfberries;o6200:objects.Pill
+#
+sethome o6200 = m6202
+#
+desc o6200 = A bunch of delicious looking smurfberries lie here.
+#
+set o6200/level = 1
+#
+set o6200/level_base = 1
+#
+set o6200/vnum = "o6200"
+#
+set o6200/item_type = "pill"
+#
+set o6200/weight = 2
+#
+tag o6200 = smurf village:area name
+#
+set o6200/spell_level = 8
+#
+set o6200/spell_level_base = 8
+#
+set o6200/spell_name_1 = "change sex"
+#
+give o6200 = m6202
+#
+set m6202/reset_objects["o6200"] = {"location":"inventory"}
+#
+tel r6217
+#
+create/drop a smurf;smurf;m6202:characters.Mobile
+#
+desc m6202 = A smurf is here, picking berries. 
+#
+set m6202/level = 2
+#
+set m6202/level_base = 2
+#
+set m6202/vnum = "m6202"
+#
+set m6202/look_description = "A small smurf is quietly picking berries.  He seems to hardly notice you. "
+#
+set m6202/act_flags = ['wimpy', 'sentinel', 'npc']
+#
+set m6202/alignment = 100
+#
+set m6202/sex = "male"
+#
+set m6202/race = "animal"
+#
+tag m6202 = smurf village:area name
+#
+set m6202/hitpoints[maximum] = 16
+#
+set m6202/position = "standing"
+#
+set m6202/special_function = "thief"
+#
+tel r6217
+#
+create a bunch of smurfberries;bunch;berries;smurfberries;o6200:objects.Pill
+#
+sethome o6200 = m6202
+#
+desc o6200 = A bunch of delicious looking smurfberries lie here.
+#
+set o6200/level = 1
+#
+set o6200/level_base = 1
+#
+set o6200/vnum = "o6200"
+#
+set o6200/item_type = "pill"
+#
+set o6200/weight = 2
+#
+tag o6200 = smurf village:area name
+#
+set o6200/spell_level = 8
+#
+set o6200/spell_level_base = 8
+#
+set o6200/spell_name_1 = "change sex"
+#
+give o6200 = m6202
+#
+set m6202/reset_objects["o6200"] = {"location":"inventory"}
+#
+tel r6218
+#
+create/drop a smurf;smurf;m6202:characters.Mobile
+#
+desc m6202 = A smurf is here, picking berries. 
+#
+set m6202/level = 2
+#
+set m6202/level_base = 2
+#
+set m6202/vnum = "m6202"
+#
+set m6202/look_description = "A small smurf is quietly picking berries.  He seems to hardly notice you. "
+#
+set m6202/act_flags = ['wimpy', 'sentinel', 'npc']
+#
+set m6202/alignment = 100
+#
+set m6202/sex = "male"
+#
+set m6202/race = "animal"
+#
+tag m6202 = smurf village:area name
+#
+set m6202/hitpoints[maximum] = 17
+#
+set m6202/position = "standing"
+#
+set m6202/special_function = "thief"
+#
+tel r6218
+#
+create a bunch of smurfberries;bunch;berries;smurfberries;o6200:objects.Pill
+#
+sethome o6200 = m6202
+#
+desc o6200 = A bunch of delicious looking smurfberries lie here.
+#
+set o6200/level = 1
+#
+set o6200/level_base = 1
+#
+set o6200/vnum = "o6200"
+#
+set o6200/item_type = "pill"
+#
+set o6200/weight = 2
+#
+tag o6200 = smurf village:area name
+#
+set o6200/spell_level = 8
+#
+set o6200/spell_level_base = 8
+#
+set o6200/spell_name_1 = "change sex"
+#
+give o6200 = m6202
+#
+set m6202/reset_objects["o6200"] = {"location":"inventory"}
+#
+tel r6219
+#
+create/drop Brainy Smurf;brainy;smurf;m6203:characters.Mobile
+#
+desc m6203 = Brainy Smurf is here, mumbling something to himself. 
+#
+set m6203/level = 2
+#
+set m6203/level_base = 2
+#
+set m6203/vnum = "m6203"
+#
+set m6203/look_description = "Brainy Smurf has on his usual glasses.  Brainy Smurf isn't liked much by the other smurfs.  They fear his knowledge.  Knowledge is power! "
+#
+set m6203/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m6203/alignment = 100
+#
+set m6203/sex = "male"
+#
+set m6203/race = "animal"
+#
+tag m6203 = smurf village:area name
+#
+set m6203/hitpoints[maximum] = 16
+#
+set m6203/position = "standing"
+#
+set m6203/special_function = "thief"
+#
+tel r6219
+#
+create Brainy Smurf's glasses;glasses;o6201:objects.Armor
+#
+sethome o6201 = m6203
+#
+desc o6201 = An odd pair of glasses has been left here.
+#
+set o6201/level = 1
+#
+set o6201/level_base = 1
+#
+set o6201/vnum = "o6201"
+#
+set o6201/item_type = "armor"
+#
+set o6201/wear_location = "head"
+#
+set o6201/weight = 2
+#
+tag o6201 = smurf village:area name
+#
+set o6201/extra_flags = ['glow']
+#
+set o6201/stat_modifiers[wisdom] = 1
+#
+set o6201/armor = 1
+#
+wearto o6201 = m6203
+#
+set m6203/reset_objects["o6201"] = {"location":"equipped"}
+#
+tel r6220
+#
+create/drop Handy Smurf;handy;smurf;m6204:characters.Mobile
+#
+desc m6204 = Handy Smurf is building something here. 
+#
+set m6204/level = 2
+#
+set m6204/level_base = 2
+#
+set m6204/vnum = "m6204"
+#
+set m6204/look_description = "Handy is always building something.  He never takes a break.  Why don't you give him a break, like all of his bones. "
+#
+set m6204/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m6204/alignment = 100
+#
+set m6204/sex = "male"
+#
+set m6204/race = "animal"
+#
+tag m6204 = smurf village:area name
+#
+set m6204/hitpoints[maximum] = 20
+#
+set m6204/position = "standing"
+#
+set m6204/special_function = "thief"
+#
+tel r6220
+#
+create a small axe;axe;small;o6203:objects.Weapon
+#
+sethome o6203 = m6204
+#
+desc o6203 = A small axe has been dropped here.
+#
+set o6203/level = 1
+#
+set o6203/level_base = 1
+#
+set o6203/vnum = "o6203"
+#
+set o6203/item_type = "weapon"
+#
+set o6203/wear_location = "wield"
+#
+set o6203/weight = 2
+#
+tag o6203 = smurf village:area name
+#
+set o6203/weapon_type = "slash"
+#
+set o6203/damage_low = 1
+#
+set o6203/damage_high = 7
+#
+wieldto o6203 = m6204
+#
+set m6204/reset_objects["o6203"] = {"location":"equipped"}
+#
+tel r6220
+#
+create a toolbox;toolbox;o6215:objects.Container
+#
+sethome o6215 = m6204
+#
+desc o6215 = A toolbox sits here.
+#
+set o6215/level = 1
+#
+set o6215/level_base = 1
+#
+set o6215/vnum = "o6215"
+#
+set o6215/item_type = "container"
+#
+set o6215/weight = 5
+#
+tag o6215 = smurf village:area name
+#
+set o6215/weight_maximum = 20
+#
+set o6215/state = ['closed', 'closeable']
+#
+set o6215/state_base = ['closed', 'closeable']
+#
+give o6215 = m6204
+#
+set m6204/reset_objects["o6215"] = {"location":"inventory"}
+#
+tel r6220
+#
+create Handy Smurf's T-square;t-square;o6216:objects.Armor
+#
+sethome o6216 = m6204
+#
+desc o6216 = Handy Smurf's T-square sits here.
+#
+set o6216/level = 1
+#
+set o6216/level_base = 1
+#
+set o6216/vnum = "o6216"
+#
+set o6216/item_type = "armor"
+#
+set o6216/wear_location = "hold"
+#
+set o6216/weight = 2
+#
+tag o6216 = smurf village:area name
+#
+set o6216/extra_descriptions = {'t-square': "It's a T-shaped piece of metal used to set 90-degree angles."}
+#
+set o6216/armor = 2
+#
+give o6216 = m6204
+#
+set m6204/reset_objects["o6216"] = {"location":"inventory"}
+#
+tel r6221
+#
+create/drop Hefty Smurf;hefty;smurf;m6206:characters.Mobile
+#
+desc m6206 = Hefty Smurf is lifting weights here. 
+#
+set m6206/level = 2
+#
+set m6206/level_base = 2
+#
+set m6206/vnum = "m6206"
+#
+set m6206/look_description = "Hefty is a total health nut.  He lifts weights, eats right, and exercises all the time.  Won't do him much good when he's DEAD. "
+#
+set m6206/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m6206/alignment = 100
+#
+set m6206/sex = "male"
+#
+set m6206/race = "animal"
+#
+tag m6206 = smurf village:area name
+#
+set m6206/hitpoints[maximum] = 16
+#
+set m6206/position = "standing"
+#
+set m6206/special_function = "thief"
+#
+tel r6221
+#
+create a small axe;axe;small;o6203:objects.Weapon
+#
+sethome o6203 = m6206
+#
+desc o6203 = A small axe has been dropped here.
+#
+set o6203/level = 1
+#
+set o6203/level_base = 1
+#
+set o6203/vnum = "o6203"
+#
+set o6203/item_type = "weapon"
+#
+set o6203/wear_location = "wield"
+#
+set o6203/weight = 2
+#
+tag o6203 = smurf village:area name
+#
+set o6203/weapon_type = "slash"
+#
+set o6203/damage_low = 3
+#
+set o6203/damage_high = 5
+#
+wieldto o6203 = m6206
+#
+set m6206/reset_objects["o6203"] = {"location":"equipped"}
+#
+tel r6221
+#
+create Hefty Smurf's pill bottle;pill;bottle;o6213:objects.Container
+#
+sethome o6213 = m6206
+#
+desc o6213 = An empty bottle has been discarded here.
+#
+set o6213/level = 1
+#
+set o6213/level_base = 1
+#
+set o6213/vnum = "o6213"
+#
+set o6213/item_type = "container"
+#
+set o6213/weight = 1
+#
+tag o6213 = smurf village:area name
+#
+set o6213/extra_descriptions = {'bottle': "The bottle is empty. There's a small label on the outside.", 'label': ' The label reads "Steroids: Use with caution. Not safe for non-therapeutic use."'}
+#
+set o6213/weight_maximum = 1
+#
+set o6213/state = ['closeable']
+#
+set o6213/state_base = ['closeable']
+#
+give o6213 = m6206
+#
+set m6206/reset_objects["o6213"] = {"location":"inventory"}
+#
+tel r6222
+#
+create/drop Sleepy Smurf;sleepy;smurf;m6205:characters.Mobile
+#
+desc m6205 = Sleepy Smurf is sleep walking here. 
+#
+set m6205/level = 3
+#
+set m6205/level_base = 3
+#
+set m6205/vnum = "m6205"
+#
+set m6205/look_description = "Sleepy never gets enough sleep.  You would think he goes to college.  I wonder if he has ever stayed up a whole night without sleeping. "
+#
+set m6205/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m6205/alignment = 100
+#
+set m6205/sex = "male"
+#
+set m6205/race = "animal"
+#
+tag m6205 = smurf village:area name
+#
+set m6205/hitpoints[maximum] = 24
+#
+set m6205/position = "standing"
+#
+set m6205/special_function = "thief"
+#
+tel r6222
+#
+create Sleepy Smurf's blue flannel pajamas;pajamas;pjs;o6210:objects.Armor
+#
+sethome o6210 = m6205
+#
+desc o6210 = A pair of blue flannel pajamas lies here.
+#
+set o6210/level = 1
+#
+set o6210/level_base = 1
+#
+set o6210/vnum = "o6210"
+#
+set o6210/item_type = "armor"
+#
+set o6210/wear_location = "body"
+#
+set o6210/weight = 3
+#
+tag o6210 = smurf village:area name
+#
+set o6210/extra_descriptions = {'pjs pajamas': 'The blue pajamas are printed with pictures of (what else?) smurfs.'}
+#
+set o6210/armor = 1
+#
+wearto o6210 = m6205
+#
+set m6205/reset_objects["o6210"] = {"location":"equipped"}
+#
+tel r6223
+#
+create/drop Grumpy Smurf;grumpy;smurf;m6207:characters.Mobile
+#
+desc m6207 = Grumpy Smurf is here, swearing. 
+#
+set m6207/level = 3
+#
+set m6207/level_base = 3
+#
+set m6207/vnum = "m6207"
+#
+set m6207/look_description = "Grumpy has never been happy in his whole life.  So why don't you just end it? "
+#
+set m6207/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m6207/alignment = 100
+#
+set m6207/sex = "male"
+#
+set m6207/race = "animal"
+#
+tag m6207 = smurf village:area name
+#
+set m6207/hitpoints[maximum] = 31
+#
+set m6207/position = "standing"
+#
+set m6207/special_function = "thief"
+#
+tel r6223
+#
+create Grumpy Smurf's swatter;swatter;o6212:objects.Weapon
+#
+sethome o6212 = m6207
+#
+desc o6212 = Grumpy Smurf's swatter is here on the ground.
+#
+set o6212/level = 1
+#
+set o6212/level_base = 1
+#
+set o6212/vnum = "o6212"
+#
+set o6212/item_type = "weapon"
+#
+set o6212/wear_location = "wield"
+#
+set o6212/weight = 4
+#
+tag o6212 = smurf village:area name
+#
+set o6212/extra_descriptions = {'swatter': "Grumpy's swatter can kill either flies, or YOU!"}
+#
+set o6212/weapon_type = "pierce"
+#
+set o6212/damage_low = 2
+#
+set o6212/damage_high = 6
+#
+wieldto o6212 = m6207
+#
+set m6207/reset_objects["o6212"] = {"location":"equipped"}
+#
+tel r6224
+#
+create/drop Jokey Smurf;jokey;smurf;m6208:characters.Mobile
+#
+desc m6208 = Jokey Smurf is here, wearing an odd belt. 
+#
+set m6208/level = 1
+#
+set m6208/level_base = 1
+#
+set m6208/vnum = "m6208"
+#
+set m6208/look_description = "Jokey loves to give people presents.  Too bad the presents explode when opened. Oh well, to each his own. "
+#
+set m6208/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m6208/alignment = 100
+#
+set m6208/sex = "male"
+#
+set m6208/race = "animal"
+#
+tag m6208 = smurf village:area name
+#
+set m6208/hitpoints[maximum] = 8
+#
+set m6208/position = "standing"
+#
+set m6208/special_function = "thief"
+#
+tel r6224
+#
+create Jokey Smurf's whoopie cushion;whoopie;cushion;belt;o6214:objects.Armor
+#
+sethome o6214 = m6208
+#
+desc o6214 = A belt is here. There's a small cushion attached to its middle.
+#
+set o6214/level = 1
+#
+set o6214/level_base = 1
+#
+set o6214/vnum = "o6214"
+#
+set o6214/item_type = "armor"
+#
+set o6214/wear_location = "waist"
+#
+set o6214/weight = 5
+#
+tag o6214 = smurf village:area name
+#
+set o6214/extra_descriptions = {'cushion belt': ' You squeeze the cushion, and it emits a very loud (and very unpleasant) sound. You can almost smell the associated odor.'}
+#
+set o6214/armor = 1
+#
+wearto o6214 = m6208
+#
+set m6208/reset_objects["o6214"] = {"location":"equipped"}
+#
+tel r6225
+#
+set north/door_attributes = ['lockable', 'locked']
+#
+set north/reset_door_attributes = ['lockable', 'locked']
+#
+tel r6225
+#
+set south/door_attributes = ['lockable', 'locked']
+#
+set south/reset_door_attributes = ['lockable', 'locked']
+#
+tel r6227
+#
+set north/door_attributes = ['lockable', 'locked']
+#
+set north/reset_door_attributes = ['lockable', 'locked']
+#
+tel r6228
+#
+create/drop Gargamel;gargamel;m6211:characters.Mobile
+#
+desc m6211 = Gargamel is here, cursing out the smurfs. 
+#
+set m6211/level = 13
+#
+set m6211/level_base = 13
+#
+set m6211/vnum = "m6211"
+#
+set m6211/look_description = "Gargamel has never done anything right in his life.  He has caught smurfs before but always lets them escape.  He brings true meaning to the word moron. "
+#
+set m6211/act_flags = ['sentinel', 'npc']
+#
+set m6211/alignment = -100
+#
+set m6211/sex = "male"
+#
+set m6211/race = "human"
+#
+tag m6211 = smurf village:area name
+#
+set m6211/hitpoints[maximum] = 125
+#
+set m6211/position = "standing"
+#
+set m6211/special_function = "cast_cleric"
+#
+tel r6228
+#
+create a small wand;wand;o6206:objects.Wand
+#
+sethome o6206 = m6211
+#
+desc o6206 = A small wand lies on the ground.
+#
+set o6206/level = 11
+#
+set o6206/level_base = 11
+#
+set o6206/vnum = "o6206"
+#
+set o6206/item_type = "wand"
+#
+set o6206/wear_location = "hold"
+#
+set o6206/weight = 2
+#
+tag o6206 = smurf village:area name
+#
+set o6206/spell_level = 5
+#
+set o6206/spell_level_base = 5
+#
+set o6206/charges_maximum = 1
+#
+set o6206/charges_maximum_base = 1
+#
+set o6206/charges_current = 1
+#
+set o6206/spell_name = "burning hands"
+#
+set m6211/reset_objects["o6206"] = {"location":"equipped"}
+#
+tel r6228
+#
+create/drop Azreal;azreal;cat;m6212:characters.Mobile
+#
+desc m6212 = Azreal is here, licking himself. 
+#
+set m6212/level = 10
+#
+set m6212/level_base = 10
+#
+set m6212/vnum = "m6212"
+#
+set m6212/look_description = "Gargamel's worthless cat.  He is almost as dumb as Gargamel.  He should just grab a smurf in his teeth and chew away. "
+#
+set m6212/act_flags = ['wimpy', 'sentinel', 'npc']
+#
+set m6212/alignment = -100
+#
+set m6212/sex = "male"
+#
+set m6212/race = "animal"
+#
+tag m6212 = smurf village:area name
+#
+set m6212/hitpoints[maximum] = 83
+#
+set m6212/position = "standing"
+#
+set m6212/special_function = "poison"
+#
+tel r6228
+#
+set south/door_attributes = ['lockable', 'locked']
+#
+set south/reset_door_attributes = ['lockable', 'locked']
+#
+tel r6229
+#
+create/drop Smurfette;smurfette;smurf;m6209:characters.Mobile
+#
+desc m6209 = Smurfette is here, looking beautiful. 
+#
+set m6209/level = 3
+#
+set m6209/level_base = 3
+#
+set m6209/vnum = "m6209"
+#
+set m6209/look_description = "Smurfette is the cutest little smurf you've ever seen.  She is forever popular among the other smurfs, being the only girl in town! "
+#
+set m6209/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m6209/alignment = 100
+#
+set m6209/sex = "female"
+#
+set m6209/race = "animal"
+#
+tag m6209 = smurf village:area name
+#
+set m6209/hitpoints[maximum] = 30
+#
+set m6209/position = "standing"
+#
+set m6209/special_function = "thief"
+#
+tel r6229
+#
+create a small necklace;necklace;o6204:objects.Armor
+#
+sethome o6204 = m6209
+#
+desc o6204 = A small necklace is lying on the ground.
+#
+set o6204/level = 1
+#
+set o6204/level_base = 1
+#
+set o6204/vnum = "o6204"
+#
+set o6204/item_type = "armor"
+#
+set o6204/wear_location = "neck"
+#
+set o6204/weight = 2
+#
+tag o6204 = smurf village:area name
+#
+set o6204/extra_flags = ['glow']
+#
+set o6204/stat_modifiers[intelligence] = 1
+#
+set o6204/armor = 2
+#
+wearto o6204 = m6209
+#
+set m6209/reset_objects["o6204"] = {"location":"equipped"}
+#
+tel r6229
+#
+create a tiny key;key;o6207:objects.Key
+#
+sethome o6207 = m6209
+#
+desc o6207 = A tiny key is lying on the ground.
+#
+set o6207/level = 1
+#
+set o6207/level_base = 1
+#
+set o6207/vnum = "o6207"
+#
+set o6207/item_type = "key"
+#
+set o6207/weight = 2
+#
+tag o6207 = smurf village:area name
+#
+give o6207 = m6209
+#
+set m6209/reset_objects["o6207"] = {"location":"inventory"}
+#
+tel r6230
+#
+create Papa's magic box;box;magic;o6217:objects.Container
+#
+sethome o6217 = r6230
+#
+desc o6217 = A wooden box rests on the shelf.
+#
+set o6217/level = 1
+#
+set o6217/level_base = 1
+#
+set o6217/vnum = "o6217"
+#
+set o6217/item_type = "container"
+#
+objectlock o6217 = "get:perm(Admin)"
+#
+set o6217/weight = 5
+#
+tag o6217 = smurf village:area name
+#
+set o6217/extra_descriptions = {"box magic Papa's Papa": ' The sides of the box are made of fine dark wood, polished to a high sheen. The interior is lined with blue felt.', 'blue felt lining interior': ' You inspect the felt lining and see several impressions at the bottom of the box, apparently made by items that have been placed there in the past.', 'impression impressions bottom': ' There are six separate impressions. Five are of indistinct shape, but the sixth is clearly shaped like the letter "T".', 'shelf': 'The shelf has a box resting upon it.', 'wood': " You don't recognize the type of wood used to make the box, but the grain of the wood contains whorls which make you dizzy when you look closely at them.", 'whorl whorls grain': 'You become dizzy and somewhat disoriented.'}
+#
+set o6217/extra_flags = ['magic', 'hum', 'glow']
+#
+set o6217/special_function = ['machine']
+#
+set o6217/weight_maximum = 100
+#
+set o6217/state = ['closed', 'closeable']
+#
+set o6217/state_base = ['closed', 'closeable']
+#
+drop o6217
+#
+set r6230/reset_objects["o6217"] = {"location":"inventory"}
+#
+tel r6230
+#
+set north/door_attributes = ['lockable', 'locked']
+#
+set north/reset_door_attributes = ['lockable', 'locked']
+#
+tel r6231
+#
+create the trophy case;case;trophy;display;o6218:objects.Container
+#
+sethome o6218 = r6231
+#
+desc o6218 = The trophy case contains a single object mounted on a stand.
+#
+set o6218/level = 1
+#
+set o6218/level_base = 1
+#
+set o6218/vnum = "o6218"
+#
+set o6218/item_type = "container"
+#
+objectlock o6218 = "get:perm(Admin)"
+#
+set o6218/weight = 0
+#
+tag o6218 = smurf village:area name
+#
+set o6218/extra_descriptions = {'case trophy display': 'There is a brass plate mounted on the outside of the case just below the door.', 'brass plate door': 'The brass plate bears an inscription.', 'inscription': ' "Behold in awe our finest accomplishment. And tell your children the story of how their ancestors snuck into Gargamel\'s Castle while he and Azreal slept, stole the source of his greatest powers, and revealed him as a pot-bellied fool. Smurfs forever!"', 'stand object': "It's Gargamel's magic girdle!"}
+#
+set o6218/weight_maximum = 100
+#
+set o6218/state = ['closed', 'closeable']
+#
+set o6218/state_base = ['closed', 'closeable']
+#
+drop o6218
+#
+set r6231/reset_objects["o6218"] = {"location":"inventory"}
+#
+tel r6231
+#
+create Gargamel's girdle;girdle;magic;Gargamel's;o6219:objects.Armor
+#
+sethome o6219 = o6218
+#
+desc o6219 = Gargamel's girdle rests here.
+#
+set o6219/level = 1
+#
+set o6219/level_base = 1
+#
+set o6219/vnum = "o6219"
+#
+set o6219/item_type = "armor"
+#
+set o6219/wear_location = "waist"
+#
+set o6219/weight = 4
+#
+tag o6219 = smurf village:area name
+#
+set o6219/extra_descriptions = {'magic girdle': " The girdle would provide excellent support for one's midsection. Attached to the inside is a small tag.", 'small tag inside': '"Property of Gargamel. If found, please return to owner."'}
+#
+set o6219/extra_flags = ['magic', 'glow']
+#
+set o6219/special_function = ['one_owner']
+#
+set o6219/stat_modifiers[wisdom] = 1
+#
+set o6219/stat_modifiers[saving throw] = -3
+#
+set o6219/armor = 2
+#
+put o6219 = o6218
+#
+set r6231/reset_objects["o6219"] = {"location":"o6218"}
+#
