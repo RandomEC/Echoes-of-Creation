@@ -1005,12 +1005,12 @@ class CmdDestroy(MuxCommand):
                             if obj.db.eq_slots[wear_location]:
                                 equipment = obj.db.eq_slots[wear_location]
                                 equipment.db.equipped = False
-                elif obj.db.equipped:
-                    wearer = obj.location
-                    if hasattr(wearer, eq_slots):
-                        for wear_location in wearer.db.eq_slots:
-                            if wearer.db.eq_slots[wear_location] == obj:
-                               wearer.db.eq_slots[wear_location] = ""
+                #elif obj.db.equipped:
+                #    wearer = obj.location
+                #    if hasattr(wearer, eq_slots):
+                #        for wear_location in wearer.db.eq_slots:
+                #            if wearer.db.eq_slots[wear_location] == obj:
+                #               wearer.db.eq_slots[wear_location] = ""
                 results.append(delobj(obj))
 
             if results:
