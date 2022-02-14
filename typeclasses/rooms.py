@@ -155,7 +155,7 @@ class Room(DefaultRoom):
             return ""
         # get and identify all objects
         visible = (con for con in self.contents if con != looker and con.access(looker, "view"))
-        exits, users, things = [], [], defaultdict(list)
+        exits, users, mobiles, objects, things = [], [], [], [], defaultdict(list)
         for con in visible:
             key = con.get_display_name(looker)
             if con.destination:
@@ -172,16 +172,37 @@ class Room(DefaultRoom):
                 exits.append(keystring)
             elif con.has_account:
                 users.append("|c%s|n" % key)
+            # Below added to address mobiles and objects.
+            elif "mobile" in con.tags.all()
+                mobiles.append("|Y%s|n" % con.db.desc)
+            elif "object" in con.tags.all()
+                objects.append("|R%s|n" % con.db.desc)
             else:
                 # things can be pluralized
                 things[key].append(con)
         # get description, build string
         string = "|M%s|n\n" % self.get_display_name(looker)
+        # Exits moved up from default Evennia.
+        if exits:
+            string += "|wExits:|n " + list_to_string(exits) + "\n"
         desc = self.db.desc
         if desc:
-            string += "|C%s|n" % desc
-        if exits:
-            string += "\n|wExits:|n " + list_to_string(exits)
+            string += "|C%s|n\n" % desc
+        if mobiles:
+            mobile_string = ""
+            index = 0
+            length = len(mobiles)
+            for index in range(0, length):
+                mobile_string = mobile_string + ("|Y%s|n\n" % mobiles[index])
+            string += "\n" + mobile_string
+        if objects:
+            object_string = ""
+            index = 0
+            length = len(objects)
+            for index in range(0, length):
+                object_string = object_string + ("|R%s|n\n" % objects[index])
+            string += "\n" + object_string
+        # Below remains just in case we want to use it again.
         if users or things:
             # handle pluralization of things (never pluralize users)
             thing_strings = []
