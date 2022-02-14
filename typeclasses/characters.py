@@ -95,6 +95,7 @@ class Character(DefaultCharacter):
             "arms":"",
             "wrist, left":"",
             "wrist, right":"",
+            "hands":"",
             "finger, left":"",
             "finger, right":"",
             "waist":"",

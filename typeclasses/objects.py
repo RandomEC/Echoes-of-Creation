@@ -631,9 +631,10 @@ class Container(Item):
         self.db.extra_flags = []
         self.db.extra_descriptions = {}
         self.db.weight_maximum = 0
-
-        # state options are "closable", "pickproof", "closed" and "locked"
-        self.db.state = []
+        self.db.closable = False
+        self.db.lockable = False
+        self.db.locked = False
+        self.db.closed = False
         self.db.key = -1
 
 class Drink_Container(Item):
@@ -721,7 +722,7 @@ class Scuba(Item):
         self.db.charge_maximum = 0
         self.db.charge_current = 0
 
-class Key(Item):
+class Key(Armor):
 
     """
 
@@ -731,6 +732,7 @@ class Key(Item):
     """
 
     def at_object_creation(self):
+        super().at_object_creation()
         self.db.object_type = "item"
         self.db.item_type = "key"
         self.db.vnum = 0
@@ -754,18 +756,53 @@ class Trash(Item):
         self.db.extra_flags = []
         self.db.extra_descriptions = {}
 
-class Fountain(Item):
+class Treasure(Armor):
 
     """
 
-    This is the class for fountain items that players can use to fill
-    water or drink.
+    This is the class for treasure items. Can sometimes be worn
+    or used.
+
+    """
+
+    def at_object_creation(self):
+        super().at_object_creation()
+        self.db.object_type = "item"
+        self.db.item_type = "treasure"
+        self.db.vnum = 0
+        self.db.level = 1
+        self.db.extra_flags = []
+        self.db.extra_descriptions = {}
+        self.db.wear_location = ""
+
+class Boat(Item):
+
+    """
+
+    This is the class for boat items that players can use to traverse
+    water.
 
     """
 
     def at_object_creation(self):
         self.db.object_type = "item"
-        self.db.item_type = "fountain"
+        self.db.item_type = "boat"
+        self.db.vnum = 0
+        self.db.level = 1
+        self.db.extra_flags = []
+        self.db.extra_descriptions = {}
+
+class Fly(Item):
+
+    """
+
+    This is the class for items that players can use to fly.
+
+    """
+
+    def at_object_creation(self):
+        self.db.object_type = "item"
+        self.db.item_type = "fly"
         self.db.vnum = 0
         self.db.level = 1
         self.db.extra_flags = []

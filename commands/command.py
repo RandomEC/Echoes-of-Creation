@@ -1153,7 +1153,7 @@ class CmdPut(MuxCommand):
 
     key = "put"
     rhs_split = ("=")
-    locks = "cmd:all()"
+    locks = "cmd:perm(Builder) or (objattr(closed, False) and objattr(item_type, \"container\"))"
     arg_regex = r"\s|$"
 
     def func(self):
@@ -1421,3 +1421,95 @@ class CmdSetHome(MuxCommand):
             else:
                 string = "Home location of %s was set to %s(%s)." % (obj, new_home, new_home.dbref)
         self.caller.msg(string)
+
+class CmdTalk(MuxCommand):
+    """
+    Talk to a mobile to see what they have to say.
+    Usage:
+      talk <mobile>
+    Talks to a mobile.
+    """
+
+    key = "talk"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement talk"""
+
+        caller = self.caller
+        if not self.args:
+            caller.msg("Who do you want to talk to?")
+            return
+
+        to_talk = caller.search(
+            self.args,
+            location=caller.location,
+            nofound_string="There is no %s here." % self.args,
+            multimatch_string="There is more than one %s here:" % self.args,
+        )
+
+        if to_talk == caller:
+            caller.msg("You mutter away to yourself quietly.")
+            return
+        if not to_talk.is_typeclass("typeclasses.characters.Mobile"):
+            caller.msg("Try talking to a mobile.")
+            return
+        else:
+            if to_talk.db.character_type != "mobile":
+                caller.msg("Talk cannot be used on other players. Try say or tell.")
+                return
+            else:
+                # Talk to the mobile.
+                if to_talk.db.talk:
+                    caller.msg('You strike up a conversation with %s.\n%s says, "%s"' % (to_talk.key, (to_talk.key[0].upper() + to_talk.key[1:]), to_talk.db.talk))
+                else:
+                    caller.msg("%s chatters along about nothing for a while." % to_talk.key)
+
+class CmdInspect(MuxCommand):
+    """
+    Look more closely at an aspect of a room, object or mobile.
+    Usage:
+      inspect <room aspect>
+      inspect <object> = <object aspect>
+      inspect <mobile> = <mobile aspect>
+    Looks at extra descriptions that are on rooms, objects or mobiles.
+    """
+
+    key = "inspect"
+    rhs_split = ("=")
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement inspect"""
+
+        caller = self.caller
+        if not self.args:
+            caller.msg("Usage: inspect <room aspect> OR inspect <object> = <object aspect>")
+            return
+
+        if not self.rhs:
+            room = caller.location
+            for extra_keywords_string in room.db.extra_description:
+                extra_keywords_list = extra_keywords_string.split()
+                if self.args in extra_keywords_list:
+                    caller.msg("You inspect the %s:\n%s" % (self.args, room.db.extra_description[extra_keywords_string]))
+                    return
+
+            caller.msg("You see nothing special about the %s." % self.args)
+            return
+        else:
+            object = caller.search(self.lhs, location=(caller or caller.location))
+            aspect = self.rhs
+
+            if not object:
+                caller.msg("There is no %s here." % self.lhs)
+            else:
+                for extra_keywords_string in object.db.extra_descriptions:
+                    extra_keywords_list = extra_keywords_string.split()
+                    if self.rhs in extra_keywords_list:
+                        caller.msg("You closely inpsect the %s on the %s:\n%s" % (self.rhs, self.lhs, object.db.extra_descriptions[extra_keywords_string]))
+                        return
+                caller.msg("You see nothing special about the %s on the %s." % (self.rhs, self.lhs))
+                return

@@ -9,10 +9,12 @@
 
 # Need to handle tagging separately.
 
+# Test comment
+
 import random
 from mygame.world import rules
 
-with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
+with open("C:/Users/bradm/mudstuff/school.txt", "rt") as myfile:
 
     class Object:
         def __init__(self):
@@ -49,6 +51,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
             self.sex = "neuter"
             self.race = ""
             self.item_type = ""
+            self.special_function = []
             self.shopkeeper = {}
 
     class Room:
@@ -100,7 +103,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
 
     area_name = ""
     afile_section = ""
-    starting_vnum = 6201
+    starting_vnum = 3600
     section_end = True
     resets = []
     reset_index = 0
@@ -1435,7 +1438,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                         wear_flags_list.append("pride")
                     if wear_flags >= 16384:
                         wear_flags = wear_flags - 16384
-                        wear_flags_list.append("hold")
+                        wear_flags_list.append("held, in hands")
                     if wear_flags >= 8192:
                         wear_flags = wear_flags - 8192
                         wear_flags_list.append("wield")
@@ -1646,6 +1649,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                     apply_line = 0
 
         elif afile_section == "resets":
+
             if my_line == "S":
                 section_end = True
             else:
@@ -1829,7 +1833,7 @@ with open("C:/Users/bradm/mudstuff/smurfs.txt", "rt") as myfile:
                     objects[onum].special_function\
                         = special_function_list[2][6:]
 
-with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
+with open("C:/Users/bradm/mudstuff/mygame/world/training tower.ev", "w") as output:
 
     # Now we are going to build out the batch file by iterating through each
     # room.
@@ -2025,12 +2029,12 @@ with open("C:/Users/bradm/mudstuff/smurfs.ev", "w") as output:
             # Assigning vnum and one letter direction alias to door.
             vnum = ("e%s" % (starting_vnum + exit_number))
             exit_number += 1
-            door_and_vnum = list("portal", vnum)
+            door_and_vnum = ["portal", vnum]
             aliases = "; ".join(door_and_vnum)
 
             # if the door has its own keywords, add those to the above.
             if object.keywords:
-                keywords = object.keywords
+                keywords = object.keywords.split()
                 keywords.append(aliases)
                 aliases = "; ".join(keywords)
 
