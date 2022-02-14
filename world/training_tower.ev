@@ -38,7 +38,7 @@ dig/tel At the Portal; r3700
 #
 tag r3700 = training tower, category = area names
 #
-desc r3700 = You are standing in an alcove, which seems somehow disconnected from the everyday world you are used to.  An aura of adventure and enchantment pervades the room.  There is a parchment here.  |GREAD PARCHMENT|W.  When you are finished, type |GENTER PORTAL|W to begin your life at the Echoes of Creation. |W 
+desc r3700 = You are standing in an alcove, which seems somehow disconnected from the everyday world you are used to.  An aura of adventure and enchantment pervades the room.  There is a parchment here.  |GINSPECT PARCHMENT|W.  When you are finished, type |GPORTAL|W to begin your life at the Echoes of Creation. |W 
 #
 desc/edit r3700
 #
@@ -48,7 +48,7 @@ desc/edit r3700
 #
 set r3700/terrain = "inside"
 #
-set r3700/extra_description = {'parchment': "Welcome to Echoes of Creation!  Echoes of Creation is put together a bit differently from most mudworlds. Type |GHELP|W for an informational menu, or |GHELP FEATURES|W for a preview of some of the things you'll find here. |GSCORE|W, |GAFFECTS|W, |GEQUIPMENT|W, and |GINVENTORY|W (|GSC|W, |GAFF|W, |GEQ|W, |GI|W will suffice) will tell you about yourself.  To begin your adventure, |GENTER PORTAL|W. "}
+set r3700/extra_description = {'parchment': "Welcome to Echoes of Creation!  Echoes of Creation is put together a bit differently from most mudworlds. Type |GHELP|W for an informational menu, or |GHELP FEATURES|W for a preview of some of the things you'll find here. |GSCORE|W, |GAFFECTS|W, |GEQUIPMENT|W, and |GINVENTORY|W (|GSC|W, |GAFF|W, |GEQ|W, |GI|W will suffice) will tell you about yourself.  |GLOOK|W will give you another look at the room.  To begin your adventure, type |GPORTAL|W. "}
 #
 set r3700/room_flags = ['no astral out', 'no recall', 'safe', 'indoors', 'no mob']
 #
@@ -56,7 +56,7 @@ dig/tel Tower Portal; r3701
 #
 tag r3701 = training tower, category = area names
 #
-desc r3701 = You have stepped through a portal from the mundane world into the top of the Training Tower of Eden's Grove.  Memories of your "other" life rapidly slip away, and you sense that both adventure and glory await you in this strange and wondrous place.  There is a scroll mounted on the wall before you.  You can |GREAD SCROLL|W to see what it says. You can see what looks like an enormously long slide here, spiraling around what appears to be the entirety of the Tower! Maybe you'd better read the scroll before taking it!|W 
+desc r3701 = You have stepped through a portal from the mundane world into the top of the Training Tower of Eden's Grove.  Memories of your "other" life rapidly slip away, and you sense that both adventure and glory await you in this strange and wondrous place.  There is a scroll mounted on the wall before you.  You can |GINSPECT SCROLL|W to see what it says. You can see what looks like an enormously long slide here, spiraling around what appears to be the entirety of the Tower! Maybe you'd better read the scroll before taking it!|W 
 #
 desc/edit r3701
 #
@@ -66,7 +66,7 @@ desc/edit r3701
 #
 set r3701/terrain = "inside"
 #
-set r3701/extra_description = {'scroll': "To move around in the world, simply type |GNORTH|W, |GWEST|W, |GEAST|W, |GSOUTH|W, |GUP|W or |GDOWN|W. Abbreviations may also be used - |GN|W, |GW|W, |GE|W, |GS|W, |GU|W, |GD|W.  If there is a door present, you may have to |GOPEN|W the door before you can proceed. Some doors might be locked, in which case you will need the correct key with which to |GUNLOCK|W them. (|GUNLOCK direction|W and |GOPEN direction|W, such as |GUNLOCK SOUTH|W, allow you to be specific.) If you have been here before and wish to go directly to the Practice Yard, type |GENTER SLIDE|W. But if you're new, GO |GWEST|W, YOUNG ONE, GO |GWEST|W!!!!! "}
+set r3701/extra_description = {'scroll': "To move around in the world, simply type |GNORTH|W, |GWEST|W, |GEAST|W, |GSOUTH|W, |GUP|W or |GDOWN|W. Abbreviations may also be used - |GN|W, |GW|W, |GE|W, |GS|W, |GU|W, |GD|W.  If there is a door present, you may have to |GOPEN|W the door before you can proceed. Some doors might be locked, in which case you will need the correct key with which to |GUNLOCK|W them. (|GUNLOCK direction|W and |GOPEN direction|W, such as |GUNLOCK SOUTH|W, allow you to be specific.) If you have been here before and wish to go directly to the Practice Yard, type |GSLIDE|W. But if you're new, GO |GEAST|W, YOUNG ONE, GO |GEAST|W!!!!! "}
 #
 set r3701/room_flags = ['special', 'indoors', 'no mob']
 #
@@ -886,7 +886,7 @@ dig/tel Top of the Tower; r3756
 #
 tag r3756 = training tower, category = area names
 #
-desc r3756 = You are standing at the very top of the Training Tower, which was built to acclimate new visitors to the castle.  This room is rather plain and bare. The walls are gray stone.  There are no windows, but the room seems to glow with a magical light that is adequate for you to see by.  Make sure you |GREAD SCROLL|W before moving |GDOWN|W through the training tower. |W 
+desc r3756 = You are standing at the very top of the Training Tower, which was built to acclimate new visitors to being Seekers, the daring individuals that explore the portals newly forming in this realm.  This room is rather plain and bare. The walls are gray stone.  There are no windows, but the room seems to glow with a magical light that is adequate for you to see by.  Make sure you |GREAD SCROLL|W before moving |GDOWN|W through the training tower. |W 
 #
 desc/edit r3756
 #
@@ -2864,7 +2864,7 @@ alias portal = portal; portal; e3760
 #
 tag e3760 = training tower, category = area names
 #
-desc e3760 = A portal leading to Castle Arcanum shimmers here.
+desc e3760 = A portal leading to the Echoes of Creation shimmers here.
 #
 set r3700/reset_objects["o3717"] = {"location":"inventory"}
 #
@@ -2880,7 +2880,7 @@ set m3722/level_base = 89
 #
 set m3722/vnum = "m3722"
 #
-set m3722/look_description = "Jenny was elected by the Castle residents to be the official greeter. Perhaps it was her elfish smile, perhaps her sweet disposition, or perhaps because she occasionally kisses Gomez, and he got to count the ballots. Whatever the reason, whatever the season, she's delighted to see you here. "
+set m3722/look_description = "Jenny was elected by the residents of Eden's Grove to be the official greeter of the Tower. Perhaps it was her elfish smile, or perhaps her sweet disposition. Whatever the reason, whatever the season, she's delighted to see you here. "
 #
 set m3722/talk = "Welcome to Echoes of Creation! Alas, I'm not a real person. But I'm very happy to see you here nonetheless, and I'm sure you'll like the players you'll meet. Please make yourself at home. You might want to INSPECT PARCHMENT. Then you'll be ready to enter PORTAL and begin."
 #
