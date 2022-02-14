@@ -808,3 +808,75 @@ class Fly(Item):
         self.db.level = 1
         self.db.extra_flags = []
         self.db.extra_descriptions = {}
+
+class Combat(Object):
+    """
+    
+    This is the class for instances of combat in rooms of the MUD.
+    
+    """
+    from evennia import TICKER_HANDLER as tickerhandler
+    
+    def at_object_creation(self):
+        self.db.combatants = {}
+        self.db.rounds = 0
+        tickerhandler.add(2, self.at_repeat)
+    
+    def at_repeat(self):
+        pass
+    
+    def _init_character(self, character):
+        """
+        This initializes handler back-reference.        
+        """
+        combatant.ndb.combat_handler = self
+    
+    # Note: Another way to implement a combat handler would be to use a normal
+    # Python object and handle time-keeping with the TickerHandler. This would
+    # require either adding custom hook methods on the character or to implement
+    # a custom child of the TickerHandler class to track turns. Whereas the
+    # TickerHandler is easy to use, a Script offers more power in this case.
+    
+        def at_repeat(self):
+        """
+        This is called every self.interval seconds (turn timeout) or
+        when force_repeat is called (because everyone has entered their
+        commands). We know this by checking the existence of the
+        `normal_turn_end` NAttribute, set just before calling
+        force_repeat.
+
+        """
+        if self.ndb.normal_turn_end:
+            # we get here because the turn ended normally
+            # (force_repeat was called) - no msg output
+            del self.ndb.normal_turn_end
+        else:
+            # turn timeout
+            self.msg_all("Turn timer timed out. Continuing.")
+        self.end_turn()
+
+    # Combat-handler methods
+
+    def add_combatant(self, combatant):
+        "Add combatant to handler"
+        dbref = combatant.id
+        self.db.characters[dbref] = character
+        self.db.action_count[dbref] = 0
+        self.db.turn_actions[dbref] = [("defend", character, None),
+                                       ("defend", character, None)]
+        # set up back-reference
+        self._init_character(character)
+
+    def remove_character(self, character):
+        "Remove combatant from handler"
+        if character.id in self.db.characters:
+            self._cleanup_character(character)
+        if not self.db.characters:
+            # if no more characters in battle, kill this handler
+            self.stop()
+
+    def msg_all(self, message):
+        "Send message to all combatants"
+        for character in self.db.characters.values():
+            character.msg(message)
+
