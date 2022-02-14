@@ -860,10 +860,8 @@ class Combat(Object):
     def add_combatant(self, combatant):
         "Add combatant to handler"
         dbref = combatant.id
-        self.db.characters[dbref] = character
-        self.db.action_count[dbref] = 0
-        self.db.turn_actions[dbref] = [("defend", character, None),
-                                       ("defend", character, None)]
+        self.db.combatants[dbref] = combatant
+        
         # set up back-reference
         self._init_character(character)
 
