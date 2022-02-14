@@ -186,6 +186,7 @@ class Item(Object):
         self.db.extra_descriptions = {}
         self.db.alignment_restriction = []
         self.db.cost = 0
+        self.tags.add("object")
 
         # This lock added to enable the use of nodrop items
 
