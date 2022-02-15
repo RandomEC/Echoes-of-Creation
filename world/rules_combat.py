@@ -71,3 +71,162 @@ def get_warskill(combatant):
         warskill_factor = combatant.db.level/101
         warskill = int(120*warskill_factor)
         return warskill
+
+def get_damagestring(attacker, victim, damage):
+    if "mobile" in victim.tags.all():
+        if damage < 1:
+            damagestring = "miss"
+        elif damage < 4:
+            damagestring = "scratch"
+        elif damage < 7:
+            damagestring = "graze"
+        elif damage < 10:
+            damagestring = "bruise"
+        elif damage < 13:
+            damagestring = "injure"
+        elif damage < 16:
+            damagestring = "wound"
+        elif damage < 22:
+            damagestring = "clobber"
+        elif damage < 28:
+            damagestring = "maul"
+        elif damage < 34:
+            damagestring = "devastate"
+        elif damage < 43:
+            damagestring = "MUTILATE"
+        elif damage < 52:
+            damagestring = "MASSACRE"
+        elif damage < 61:
+            damagestring = "DISEMBOWEL"
+        elif damage < 70:
+            damagestring = "EVISCERATE"
+        elif damage < 82:
+            damagestring = "do EXTRAORDINARY damage to"
+        elif damage < 94:
+            damagestring = "***OBLITERATE***"
+        elif damage < 118:
+            damagestring = "***DEMOLISH***"
+        elif damage < 142:
+            damagestring = "***SLAUGHTER***"
+        elif damage < 166:
+            damagestring = "do TERRIFIC damage to"
+        elif damage < 201:
+            damagestring = "***PULVERIZE***"
+        elif damage < 236:
+            damagestring = "***>PULVERIZE<***"
+        elif damage < 271:
+            damagestring = "do HORRIFIC damage to"
+        elif damage < 323:
+            damagestring = "do unspeakable things to"
+        elif damage < 375:
+            damagestring = "do UNSPEAKABLE things to"
+        elif damage < 427:
+            damagestring = "do incredible damage to"
+        elif damage < 503:
+            damagestring = "do INCREDIBLE damage to"
+        elif damage < 579:
+            damagestring = "do unbelievable damage to"
+        elif damage < 664:
+            damagestring = "do UNBELIEVABLE damage to"
+        elif damage < 749:
+            damagestring = "do inconceivable damage to"
+        elif damage < 846:
+            damagestring = "do INCONCEIVABLE damage to"
+        elif damage < 1000:
+            damagestring = "do colossal damage to"
+        elif damage < 1220:
+            damagestring = "do COLOSSAL damage to"
+        elif damage < 2105:
+            damagestring = "do GHASTLY damage to"
+        elif damage < 3007:
+            damagestring = "do HORRENDOUS damage to"
+        elif damage < 3846:
+            damagestring = "do PHENOMENAL damage to"
+        elif damage < 7981:
+            damagestring = "do MIND-NUMBING damage to"
+        elif damage < 16404:
+            damagestring = "do OBSCENE damage to"
+        elif damage < 32097:
+            damagestring = "do EARTH-SHATTERING damage to"
+        else:
+            damagestring = "**>*>*>*VAPORIZE*<*<*<**"
+    if "player" in victim.tags.all():
+        if damage < 1:
+            damagestring = "misses"
+        elif damage < 4:
+            damagestring = "scratches"
+        elif damage < 7:
+            damagestring = "grazes"
+        elif damage < 10:
+            damagestring = "bruises"
+        elif damage < 13:
+            damagestring = "injures"
+        elif damage < 16:
+            damagestring = "wounds"
+        elif damage < 22:
+            damagestring = "clobbers"
+        elif damage < 28:
+            damagestring = "mauls"
+        elif damage < 34:
+            damagestring = "devastates"
+        elif damage < 43:
+            damagestring = "MUTILATES"
+        elif damage < 52:
+            damagestring = "MASSACRES"
+        elif damage < 61:
+            damagestring = "DISEMBOWELS"
+        elif damage < 70:
+            damagestring = "EVISCERATES"
+        elif damage < 82:
+            damagestring = "does EXTRAORDINARY damage to"
+        elif damage < 94:
+            damagestring = "***OBLITERATES***"
+        elif damage < 118:
+            damagestring = "***DEMOLISHES***"
+        elif damage < 142:
+            damagestring = "***SLAUGHTERS***"
+        elif damage < 166:
+            damagestring = "does TERRIFIC damage to"
+        elif damage < 201:
+            damagestring = "***PULVERIZES***"
+        elif damage < 236:
+            damagestring = "***>PULVERIZES<***"
+        elif damage < 271:
+            damagestring = "does HORRIFIC damage to"
+        elif damage < 323:
+            damagestring = "does unspeakable things to"
+        elif damage < 375:
+            damagestring = "does UNSPEAKABLE things to"
+        elif damage < 427:
+            damagestring = "does incredible damage to"
+        elif damage < 503:
+            damagestring = "does INCREDIBLE damage to"
+        elif damage < 579:
+            damagestring = "does unbelievable damage to"
+        elif damage < 664:
+            damagestring = "does UNBELIEVABLE damage to"
+        elif damage < 749:
+            damagestring = "does inconceivable damage to"
+        elif damage < 846:
+            damagestring = "does INCONCEIVABLE damage to"
+        elif damage < 1000:
+            damagestring = "does colossal damage to"
+        elif damage < 1220:
+            damagestring = "does COLOSSAL damage to"
+        elif damage < 2105:
+            damagestring = "does GHASTLY damage to"
+        elif damage < 3007:
+            damagestring = "does HORRENDOUS damage to"
+        elif damage < 3846:
+            damagestring = "does PHENOMENAL damage to"
+        elif damage < 7981:
+            damagestring = "does MIND-NUMBING damage to"
+        elif damage < 16404:
+            damagestring = "does OBSCENE damage to"
+        elif damage < 32097:
+            damagestring = "does EARTH-SHATTERING damage to"
+        else:
+            damagestring = "**>*>*>*VAPORIZES*<*<*<**"
+            
+            
+            
