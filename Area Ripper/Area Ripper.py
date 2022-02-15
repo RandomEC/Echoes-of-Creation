@@ -2205,6 +2205,8 @@ with open("C:/Users/bradm/mudstuff/mygame/world/training tower.ev", "w") as outp
                                                           area_name.lower()
                                                           ))
                 output.write("#\n")
+                output.write("tag %s = mobile\n" % reset_vnum)
+                output.write("#\n")
 
                 # Setting hitpoints for mobiles is a factor of the mobile's
                 # level. Set both max hp and current hitpoints to it.
@@ -2265,6 +2267,8 @@ with open("C:/Users/bradm/mudstuff/mygame/world/training tower.ev", "w") as outp
                                                           reset_vnum,
                                                           area_name.lower()
                                                           ))
+                output.write("#\n")
+                output.write("tag %s = object\n" % reset_vnum)
                 output.write("#\n")
                 if object.extra_description:
                     output.write("set %s/extra_descriptions = %s\n"
