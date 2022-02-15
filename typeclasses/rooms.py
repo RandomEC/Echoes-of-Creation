@@ -5,10 +5,12 @@ Rooms are simple containers that has no location of their own.
 
 """
 
+from collections import defaultdict
+
 from evennia import DefaultRoom
 from evennia.utils import search
 from world import rules
-
+from evennia.utils.utils import list_to_string
 
 class Room(DefaultRoom):
     """
@@ -173,9 +175,9 @@ class Room(DefaultRoom):
             elif con.has_account:
                 users.append("|c%s|n" % key)
             # Below added to address mobiles and objects.
-            elif "mobile" in con.tags.all()
+            elif "mobile" in con.tags.all():
                 mobiles.append("|Y%s|n" % con.db.desc)
-            elif "object" in con.tags.all()
+            elif "object" in con.tags.all():
                 objects.append("|R%s|n" % con.db.desc)
             else:
                 # things can be pluralized
@@ -193,15 +195,15 @@ class Room(DefaultRoom):
             index = 0
             length = len(mobiles)
             for index in range(0, length):
-                mobile_string = mobile_string + ("|Y%s|n\n" % mobiles[index])
-            string += "\n" + mobile_string
+                mobile_string = mobile_string + ("    |Y%s|n\n" % mobiles[index])
+            string += mobile_string
         if objects:
             object_string = ""
             index = 0
             length = len(objects)
             for index in range(0, length):
-                object_string = object_string + ("|R%s|n\n" % objects[index])
-            string += "\n" + object_string
+                object_string = object_string + ("    |R%s|n\n" % objects[index])
+            string += object_string
         # Below remains just in case we want to use it again.
         if users or things:
             # handle pluralization of things (never pluralize users)

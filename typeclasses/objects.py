@@ -515,6 +515,7 @@ class Scroll(Item):
     """
 
     def at_object_creation(self):
+        super().at_object_creation()
         self.db.object_type = "item"
         self.db.item_type = "scroll"
         self.db.vnum = 0
@@ -577,6 +578,7 @@ class Potion(Item):
     """
 
     def at_object_creation(self):
+        super().at_object_creation()
         self.db.object_type = "item"
         self.db.item_type = "potion"
         self.db.vnum = 0
@@ -599,6 +601,7 @@ class Furniture(Item):
     """
 
     def at_object_creation(self):
+        super().at_object_creation()
         self.db.object_type = "item"
         self.db.item_type = "furniture"
         self.db.vnum = 0
@@ -625,6 +628,7 @@ class Container(Item):
     """
 
     def at_object_creation(self):
+        super().at_object_creation()
         self.db.object_type = "item"
         self.db.item_type = "container"
         self.db.vnum = 0
@@ -647,6 +651,7 @@ class Drink_Container(Item):
     """
 
     def at_object_creation(self):
+        super().at_object_creation()
         self.db.object_type = "item"
         self.db.item_type = "drink_container"
         self.db.vnum = 0
@@ -671,6 +676,7 @@ class Food(Item):
     """
 
     def at_object_creation(self):
+        super().at_object_creation()
         self.db.object_type = "item"
         self.db.item_type = "food"
         self.db.vnum = 0
@@ -690,6 +696,7 @@ class Pill(Item):
     """
 
     def at_object_creation(self):
+        super().at_object_creation()
         self.db.object_type = "item"
         self.db.item_type = "pill"
         self.db.vnum = 0
@@ -712,6 +719,7 @@ class Scuba(Item):
     """
 
     def at_object_creation(self):
+        super().at_object_creation()
         self.db.object_type = "item"
         self.db.item_type = "scuba"
         self.db.vnum = 0
@@ -750,6 +758,7 @@ class Trash(Item):
     """
 
     def at_object_creation(self):
+        super().at_object_creation()
         self.db.object_type = "item"
         self.db.item_type = "trash"
         self.db.vnum = 0
@@ -786,6 +795,7 @@ class Boat(Item):
     """
 
     def at_object_creation(self):
+        super().at_object_creation()
         self.db.object_type = "item"
         self.db.item_type = "boat"
         self.db.vnum = 0
@@ -802,6 +812,7 @@ class Fly(Item):
     """
 
     def at_object_creation(self):
+        super().at_object_creation()
         self.db.object_type = "item"
         self.db.item_type = "fly"
         self.db.vnum = 0
@@ -837,7 +848,7 @@ class Combat(Object):
     # a custom child of the TickerHandler class to track turns. Whereas the
     # TickerHandler is easy to use, a Script offers more power in this case.
     
-        def at_repeat(self):
+    def at_repeat(self):
         """
         This is called every self.interval seconds (turn timeout) or
         when force_repeat is called (because everyone has entered their
