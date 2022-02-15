@@ -1468,12 +1468,13 @@ class CmdTalk(MuxCommand):
 
 class CmdInspect(MuxCommand):
     """
-    Look more closely at an aspect of a room, object or mobile.
+    Look more closely at an aspect of a room or object.
     Usage:
       inspect <room aspect>
       inspect <object> = <object aspect>
-      inspect <mobile> = <mobile aspect>
-    Looks at extra descriptions that are on rooms, objects or mobiles.
+    Looks at extra descriptions that are on rooms or objects. Remember
+    that this is not a replacement for using "look" at the objects
+    themselves.
     """
 
     key = "inspect"
@@ -1509,7 +1510,7 @@ class CmdInspect(MuxCommand):
                 for extra_keywords_string in object.db.extra_descriptions:
                     extra_keywords_list = extra_keywords_string.split()
                     if self.rhs in extra_keywords_list:
-                        caller.msg("You closely inpsect the %s on the %s:\n%s" % (self.rhs, self.lhs, object.db.extra_descriptions[extra_keywords_string]))
+                        caller.msg("You closely inspect the %s on the %s:\n%s" % (self.rhs, self.lhs, object.db.extra_descriptions[extra_keywords_string]))
                         return
                 caller.msg("You see nothing special about the %s on the %s." % (self.rhs, self.lhs))
                 return

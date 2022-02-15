@@ -49,8 +49,8 @@ class Exit(DefaultExit):
 
         # choices for this are open, closeable, locked, lockable, bashproof,
         # pickproof, passproof
-        self.db.door_attributes = list()
-        self.db.reset_door_attributes = list()
+        self.db.door_attributes = ["open",]
+        self.db.reset_door_attributes = ["open",]
 
         # locks that go along with the above attributes
         self.locks.add("traverse: is_open();open: can_open();close: can_close();lock: can_lock();unlock: can_unlock()")
