@@ -95,6 +95,7 @@ class Character(DefaultCharacter):
             "arms":"",
             "wrist, left":"",
             "wrist, right":"",
+            "hands":"",
             "finger, left":"",
             "finger, right":"",
             "waist":"",
@@ -400,6 +401,7 @@ class Mobile(Character):
         self.db.talk = ""
         self.db.shop = {}
         self.db.character_type = "mobile"
+        self.tags.add("mobile")
 
     def at_reset(self):
         
@@ -552,6 +554,8 @@ class Player(Character):
         self.db.immortal_cloak = 0
         self.db.immortal_ghost = 0
         self.db.holy_light = False
+        
+        self.tags.add("player")
         
     def check_key(self,key_vnum): 
         """

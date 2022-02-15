@@ -186,6 +186,7 @@ class Item(Object):
         self.db.extra_descriptions = {}
         self.db.alignment_restriction = []
         self.db.cost = 0
+        self.tags.add("object")
 
         # This lock added to enable the use of nodrop items
 
@@ -631,9 +632,10 @@ class Container(Item):
         self.db.extra_flags = []
         self.db.extra_descriptions = {}
         self.db.weight_maximum = 0
-
-        # state options are "closable", "pickproof", "closed" and "locked"
-        self.db.state = []
+        self.db.closable = False
+        self.db.lockable = False
+        self.db.locked = False
+        self.db.closed = False
         self.db.key = -1
 
 class Drink_Container(Item):
@@ -721,7 +723,7 @@ class Scuba(Item):
         self.db.charge_maximum = 0
         self.db.charge_current = 0
 
-class Key(Item):
+class Key(Armor):
 
     """
 
@@ -731,6 +733,7 @@ class Key(Item):
     """
 
     def at_object_creation(self):
+        super().at_object_creation()
         self.db.object_type = "item"
         self.db.item_type = "key"
         self.db.vnum = 0
@@ -754,19 +757,124 @@ class Trash(Item):
         self.db.extra_flags = []
         self.db.extra_descriptions = {}
 
-class Fountain(Item):
+class Treasure(Armor):
 
     """
 
-    This is the class for fountain items that players can use to fill
-    water or drink.
+    This is the class for treasure items. Can sometimes be worn
+    or used.
+
+    """
+
+    def at_object_creation(self):
+        super().at_object_creation()
+        self.db.object_type = "item"
+        self.db.item_type = "treasure"
+        self.db.vnum = 0
+        self.db.level = 1
+        self.db.extra_flags = []
+        self.db.extra_descriptions = {}
+        self.db.wear_location = ""
+
+class Boat(Item):
+
+    """
+
+    This is the class for boat items that players can use to traverse
+    water.
 
     """
 
     def at_object_creation(self):
         self.db.object_type = "item"
-        self.db.item_type = "fountain"
+        self.db.item_type = "boat"
         self.db.vnum = 0
         self.db.level = 1
         self.db.extra_flags = []
         self.db.extra_descriptions = {}
+
+class Fly(Item):
+
+    """
+
+    This is the class for items that players can use to fly.
+
+    """
+
+    def at_object_creation(self):
+        self.db.object_type = "item"
+        self.db.item_type = "fly"
+        self.db.vnum = 0
+        self.db.level = 1
+        self.db.extra_flags = []
+        self.db.extra_descriptions = {}
+
+class Combat(Object):
+    """
+    
+    This is the class for instances of combat in rooms of the MUD.
+    
+    """
+    from evennia import TICKER_HANDLER as tickerhandler
+    
+    def at_object_creation(self):
+        self.db.combatants = {}
+        self.db.rounds = 0
+        tickerhandler.add(2, self.at_repeat)
+    
+    def at_repeat(self):
+        pass
+    
+    def _init_character(self, character):
+        """
+        This initializes handler back-reference.        
+        """
+        combatant.ndb.combat_handler = self
+    
+    # Note: Another way to implement a combat handler would be to use a normal
+    # Python object and handle time-keeping with the TickerHandler. This would
+    # require either adding custom hook methods on the character or to implement
+    # a custom child of the TickerHandler class to track turns. Whereas the
+    # TickerHandler is easy to use, a Script offers more power in this case.
+    
+        def at_repeat(self):
+        """
+        This is called every self.interval seconds (turn timeout) or
+        when force_repeat is called (because everyone has entered their
+        commands). We know this by checking the existence of the
+        `normal_turn_end` NAttribute, set just before calling
+        force_repeat.
+
+        """
+        if self.ndb.normal_turn_end:
+            # we get here because the turn ended normally
+            # (force_repeat was called) - no msg output
+            del self.ndb.normal_turn_end
+        else:
+            # turn timeout
+            self.msg_all("Turn timer timed out. Continuing.")
+        self.end_turn()
+
+    # Combat-handler methods
+
+    def add_combatant(self, combatant):
+        "Add combatant to handler"
+        dbref = combatant.id
+        self.db.combatants[dbref] = combatant
+        
+        # set up back-reference
+        self._init_character(character)
+
+    def remove_character(self, character):
+        "Remove combatant from handler"
+        if character.id in self.db.characters:
+            self._cleanup_character(character)
+        if not self.db.characters:
+            # if no more characters in battle, kill this handler
+            self.stop()
+
+    def msg_all(self, message):
+        "Send message to all combatants"
+        for character in self.db.characters.values():
+            character.msg(message)
+

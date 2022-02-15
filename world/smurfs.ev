@@ -2198,7 +2198,7 @@ set o6216/vnum = "o6216"
 #
 set o6216/item_type = "armor"
 #
-set o6216/wear_location = "hold"
+set o6216/wear_location = "held, in hands"
 #
 set o6216/weight = 2
 #
@@ -2554,7 +2554,7 @@ set o6206/vnum = "o6206"
 #
 set o6206/item_type = "wand"
 #
-set o6206/wear_location = "hold"
+set o6206/wear_location = "held, in hands"
 #
 set o6206/weight = 2
 #
