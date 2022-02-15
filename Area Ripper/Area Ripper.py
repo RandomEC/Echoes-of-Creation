@@ -1948,6 +1948,14 @@ with open("C:/Users/bradm/mudstuff/mygame/world/training tower.ev", "w") as outp
                     output.write("tag %s = %s, category = area names\n"
                                  % (vnum, area_name.lower()))
                     output.write("#\n")
+                    # Set the door as open by default, may be modified by
+                    # resets later.
+                    output.write("set %s/door_attributes = \"open\"\n" % vnum)
+                    output.write("#\n")
+                    output.write("set %s/reset_door_attributes = \"open\"\n"
+                                 % vnum
+                                 )
+                    output.write("#\n")
                     door_list.append(room_set)
 
                 else:
@@ -1960,7 +1968,15 @@ with open("C:/Users/bradm/mudstuff/mygame/world/training tower.ev", "w") as outp
                     output.write("tag %s = %s, category = area names\n"
                                  % (vnum, area_name.lower()))
                     output.write("#\n")
-
+                    # Set the door as open by default, may be modified by
+                    # resets later.
+                    output.write("set %s/door_attributes = \"open\"\n" % vnum)
+                    output.write("#\n")
+                    output.write("set %s/reset_door_attributes = \"open\"\n"
+                                 % vnum
+                                 )
+                    output.write("#\n")
+                    
                 if rooms[room].doors[door]["description"]:
                     output.write("desc %s = %s\n"
                                  % (
