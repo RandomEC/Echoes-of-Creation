@@ -272,6 +272,10 @@ class Character(DefaultCharacter):
                         modifier += -105
                     elif dexterity < 26:
                         modifier += -120
+                    
+                    if "mobile" in self.tags.all():
+                        level_bonus = int((self.db.level-1)*(-500)/100)
+                        modifer += level_bonus
 
                 if attribute_name == "hitroll":
 
