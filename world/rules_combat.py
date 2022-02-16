@@ -1,6 +1,23 @@
 import random
 from world import rules_race
 
+def get_ac(combatant): # MOVE THIS TO CHARACTER CLASS FETCH COMMAND
+    if combatant.db.type == "mobile":
+        # On CA, mobile armor was interpolated between 100 and -400
+        ac = 100 + int((combatant.level-1)*(-500)/100)
+    else:
+        return combatant.get_modified_attribute("armor class")
+
+def get_avoidskill(victim):
+    if victim.get_affect_status("blindness"):
+        blind_penalty = 60
+    else:
+        blind_penalty = 0
+
+    avoidskill = get_warskill(victim) + (100 - get_ac(victim)/3) - blind_penalty + 10*(victim.get_modified_attribute("dexterity") - 10)
+    if avoidskill > 1:
+        return avoidskill
+
 def do_attack(attacker, victim):
     hit = True
     damage = 1
