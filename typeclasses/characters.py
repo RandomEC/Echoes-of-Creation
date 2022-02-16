@@ -346,8 +346,17 @@ class Character(DefaultCharacter):
     def damroll(self):
         return get_modified_attribute("damroll")
     
+    @property
     def armor_class(self):
         return get_modified_attribute("armor class")
+    
+    @property
+    def size(self)
+        if "size" in rules_race.get_race(attacker.race):
+            size = rules_race.get_race(attacker.race)["size"]
+        else:
+            size = 2
+        return size
     
     @property        
     def race(self):
