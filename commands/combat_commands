@@ -9,14 +9,27 @@ class Combat(Object):
     
     """
     from evennia import TICKER_HANDLER as tickerhandler
-    
+
+    x = 1
+
     def at_object_creation(self):
         self.db.combatants = {}
         self.db.rounds = 0
         tickerhandler.add(2, self.at_repeat)
-    
+
+    def at_stop(self):
+        # Called just before the script is stopped/destroyed.
+        for combatant in list(self.db.combatants.values()):
+            # note: the list() call above disconnects list from database
+            self._cleanup_combatant(combatant)
+
+
     def at_repeat(self):
-        pass
+        print("This is pass number %s." % x)
+        x += 1
+        if x > 4:
+            self.at_stop()
+
     
     def _init_combatant(self, combatant):
         """
@@ -101,6 +114,7 @@ class CmdAttack(MuxCommand):
         combat.add.combatant(victim, attacker)
         combat.db.location = attacker.location
         combat.key = ("combat_handler_%s" % attacker.location.vnum)
+        combat.desc = "This is a combat instance."
 
     def func(self):
         """Implement attack"""
