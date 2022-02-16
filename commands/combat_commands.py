@@ -1,6 +1,9 @@
+from evennia import create_object
+from evennia import TICKER_HANDLER as tickerhandler
 from commands.command import MuxCommand
 from typeclasses.objects import Object
 from world import rules_combat
+
 
 class Combat(Object):
     """
@@ -8,14 +11,12 @@ class Combat(Object):
     This is the class for instances of combat in rooms of the MUD.
     
     """
-    from evennia import TICKER_HANDLER as tickerhandler
-
-    x = 1
 
     def at_object_creation(self):
         self.db.combatants = {}
         self.db.rounds = 0
         tickerhandler.add(2, self.at_repeat)
+        self.x = 1
 
     def at_stop(self):
         # Called just before the script is stopped/destroyed.
@@ -23,11 +24,15 @@ class Combat(Object):
             # note: the list() call above disconnects list from database
             self._cleanup_combatant(combatant)
 
+    def msg_all(self, message):
+        "Send message to all combatants"
+        for combatant in self.db.combatants:
+            self.db.combatants[combatant]["combatant"].msg(message)
 
     def at_repeat(self):
-        print("This is pass number %s." % x)
-        x += 1
-        if x > 4:
+        self.msg_all("This is pass number %s." % self.x)
+        self.x += 1
+        if self.x > 4:
             self.at_stop()
 
     
@@ -43,30 +48,12 @@ class Combat(Object):
     # a custom child of the TickerHandler class to track turns. Whereas the
     # TickerHandler is easy to use, a Script offers more power in this case.
     
-    def at_repeat(self):
-        """
-        This is called every self.interval seconds (turn timeout) or
-        when force_repeat is called (because everyone has entered their
-        commands). We know this by checking the existence of the
-        `normal_turn_end` NAttribute, set just before calling
-        force_repeat.
-
-        """
-        if self.ndb.normal_turn_end:
-            # we get here because the turn ended normally
-            # (force_repeat was called) - no msg output
-            del self.ndb.normal_turn_end
-        else:
-            # turn timeout
-            self.msg_all("Turn timer timed out. Continuing.")
-        self.end_turn()
-
     # Combat-handler methods
 
     def add_combatant(self, combatant, combatant_target):
-        "Add combatant to handler"
+        # Add combatant to handler
         dbref = combatant.id
-        self.db.combatants[dbref] = {"combatant":combatant, "target":combatant_target}
+        self.db.combatants[dbref] = {"combatant": combatant, "target": combatant_target}
         
         # set up back-reference
         self._init_combatant(combatant)
@@ -76,7 +63,7 @@ class Combat(Object):
         Remove combatant from handler and clean
         it of the back-reference.
         """
-        dbref = character.id
+        dbref = combatant.id
         del self.db.combatants[dbref]
         del combatant.ndb.combat_handler
         
@@ -87,13 +74,6 @@ class Combat(Object):
         if not self.db.combatants:
             # if no more combatants in battle, kill this handler
             self.stop()
-
-    def msg_all(self, message):
-        "Send message to all combatants"
-        for character in self.db.characters.values():
-            character.msg(message)
-
-
 
 class CmdAttack(MuxCommand):
     """
@@ -107,13 +87,14 @@ class CmdAttack(MuxCommand):
     locks = "cmd:all()"
     arg_regex = r"\s|$"
 
-    def create_combat(attacker, victim):
+    def create_combat(self, attacker, victim):
         """Create a combat, if needed"""
-        combat = Combat()
+        attacker.msg("And here.")
+        combat = create_object("commands.combat_commands.Combat", key=("combat_handler_%s" % attacker.location.db.vnum))
+        attacker.msg(combat.key)
         combat.add_combatant(attacker, victim)
-        combat.add.combatant(victim, attacker)
-        combat.db.location = attacker.location
-        combat.key = ("combat_handler_%s" % attacker.location.vnum)
+        combat.add_combatant(victim, attacker)
+        combat.location = attacker.location
         combat.desc = "This is a combat instance."
 
     def func(self):
@@ -124,9 +105,9 @@ class CmdAttack(MuxCommand):
             attacker.msg("Usage: attack <mobile>")
             return
 
-        victim = attacker.search(self.args, location=caller.location)
+        victim = attacker.search(self.args, location=attacker.location)
         if not victim:
-            attacker.msg("There is no %s here to attack. % self.args)
+            attacker.msg("There is no %s here to attack." % self.args)
             return
         elif "player" in victim.tags.all():
             attacker.msg("You cannot attack another player!")
@@ -135,4 +116,4 @@ class CmdAttack(MuxCommand):
         if attacker.db.combat_handler or victim.db.combat_handler:
             pass
         else:
-            create_combat(attacker, victim)
+            self.create_combat(attacker, victim)

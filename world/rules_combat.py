@@ -50,7 +50,7 @@ def get_hit_chance(attacker, victim):
 
 def get_hitskill(attacker, victim):
     # Make sure that hitroll does not include hitroll from weapon if can't wield it.
-    hitskill = get_warskill(attacker) + attacker..get_modified_attribute("hitroll") + get_race_hitbonus(attacker, victim) + 10*(attacker.get_modified_attribute("dexterity") - 10)
+    hitskill = get_warskill(attacker) + attacker.get_modified_attribute("hitroll") + get_race_hitbonus(attacker, victim) + 10*(attacker.get_modified_attribute("dexterity") - 10)
     if hitskill > 1:
         return hitskill
     else:
