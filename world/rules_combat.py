@@ -1,23 +1,6 @@
 import random
 from world import rules_race
 
-def get_ac(combatant): # MOVE THIS TO CHARACTER CLASS FETCH COMMAND
-    if combatant.db.type == "mobile":
-        # On CA, mobile armor was interpolated between 100 and -400
-        ac = 100 + int((combatant.level-1)*(-500)/100)
-    else:
-        return combatant.get_modified_attribute("armor class")
-
-def get_avoidskill(victim):
-    if victim.get_affect_status("blindness"):
-        blind_penalty = 60
-    else:
-        blind_penalty = 0
-
-    avoidskill = get_warskill(victim) + (100 - get_ac(victim)/3) - blind_penalty + 10*(victim.get_modified_attribute("dexterity") - 10)
-    if avoidskill > 1:
-        return avoidskill
-
 def do_attack(attacker, victim):
     hit = True
     damage = 1
@@ -82,13 +65,6 @@ def do_single_hit(attacker, victim):
         return True
     else:
         return False
-    
-def get_ac(combatant): # MOVE THIS TO CHARACTER CLASS FETCH COMMAND
-    if combatant.db.type == "mobile":
-        # On CA, mobile armor was interpolated between 100 and -400
-        ac = 100 + int((combatant.level-1)*(-500)/100)
-    else:
-        return combatant.get_modified_attribute("armor class")
 
 def get_avoidskill(victim):
     if victim.get_affect_status("blindness"):
@@ -269,7 +245,7 @@ def get_hit_chance(attacker, victim):
 
 def get_hitskill(attacker, victim):
     # Make sure that hitroll does not include hitroll from weapon if can't wield it.
-    hitskill = get_warskill(attacker) + attacker.get_modified_attribute("hitroll") + get_race_hitbonus(attacker, victim) + 10*(attacker.get_modified_attribute("dexterity") - 10)
+    hitskill = get_warskill(attacker) + attacker.hitroll + get_race_hitbonus(attacker, victim) + 10*(attacker.dexterity - 10)
     if hitskill > 1:
         return hitskill
     else:
