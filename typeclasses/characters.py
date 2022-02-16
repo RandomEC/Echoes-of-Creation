@@ -163,15 +163,6 @@ class Character(DefaultCharacter):
     def moves_current(self):
         return self.moves_maximum - self.db.moves["spent"]
 
-    def race_current(self):
-        """
-        Method that will check to see if there is a spell affect
-        changing race, and, if not, will return base race.
-        """
-        
-        # once we implement spell affects, check for them here on race
-        return self.db.race
-
     def get_affect_status(self, affect_name):
         """
         Method that returns a boolean for whether the affect is currently
@@ -214,7 +205,7 @@ class Character(DefaultCharacter):
 
         return base_attribute
 
-    def get_modified_attribute(self, caller, attribute_name):
+    def get_modified_attribute(self, attribute_name):
         """
         Method to access an attribute, access all of the modifiers of that
         attribute (trains, equipment, and affects), and return the overall
@@ -321,8 +312,54 @@ class Character(DefaultCharacter):
         # then, with everything else
         
         else:
-            return caller.db.attributes[attribute_name] + modifier
+            return self.db.attributes[attribute_name] + modifier
 
+    # All of the below properties are designed for ease of reference to the current
+    # status of the relevant attribute, inclusive of trains (as applicable), equipment,
+    # and spell affects.
+    
+    @property
+    def strength(self):
+        return get_modified_attribute("strength")
+    
+    @property
+    def dexterity(self):
+        return get_modified_attribute("dexterity")
+    
+    @property
+    def intelligence(self):
+        return get_modified_attribute("intelligence")
+    
+    @property
+    def wisdom(self):
+        return get_modified_attribute("wisdom")
+    
+    @property
+    def constitution(self):
+        return get_modified_attribute("constitution")
+        
+    @property
+    def hitroll(self):
+        return get_modified_attribute("hitroll")
+    
+    @property
+    def damroll(self):
+        return get_modified_attribute("damroll")
+    
+    def armor_class(self):
+        return get_modified_attribute("armor class")
+    
+    @property        
+    def race(self):
+        """
+        Method that will check to see if there is a spell affect
+        changing race, and, if not, will return base race.
+        """
+        
+        # once we implement spell affects, check for them here on race
+        return self.db.race
+
+        
     def get_score_info(self): # add caller into score command
         """
         Simple access method to return ability scores as a tuple
@@ -336,9 +373,9 @@ class Character(DefaultCharacter):
             self.mana_maximum, self.moves_current, self.moves_maximum\
             , self.db.sex, self.db.race.capitalize(), self.db.died, self.db.kills, \
             self.db.damage_maximum, self.db.kill_experience_maximum, \
-            self.get_modified_attribute(self,"hitroll"), self.db.experience_total, self.db.experience_spent\
-            , self.get_modified_attribute(self,"damroll"), self.db.gold, self.db.bank_balance, \
-            self.get_modified_attribute(self,"armor class"), self.db.alignment, self.get_modified_attribute(self,"saving throw"), \
+            self.get_modified_attribute("hitroll"), self.db.experience_total, self.db.experience_spent\
+            , self.get_modified_attribute("damroll"), self.db.gold, self.db.bank_balance, \
+            self.get_modified_attribute("armor class"), self.db.alignment, self.get_modified_attribute("saving throw"), \
             self.db.staff_position, self.db.immortal_invisible, \
             self.db.immortal_cloak, self.db.immortal_ghost, self.db.holy_light,\
             self.db.level, self.db.age, self.db.wimpy, self.db.items,\
