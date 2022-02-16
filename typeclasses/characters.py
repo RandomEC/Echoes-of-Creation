@@ -359,6 +359,12 @@ class Character(DefaultCharacter):
         # once we implement spell affects, check for them here on race
         return self.db.race
 
+    def take_damage(self, damage):
+        """
+        Method to use to do damage to a character.
+        """
+        
+        self.db.hitpoints["damaged"] += damage
         
     def get_score_info(self): # add caller into score command
         """
