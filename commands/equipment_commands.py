@@ -130,10 +130,9 @@ class CmdWear(MuxCommand):
                 caller.msg("The object you are currently wearing in that location is cursed, and cannot be removed.")
                 return
             else:
+                # If the eq in the slot is not cursed.
                 wear_location = check_cursed_remove(caller, wear_location)
-            
-            # If the eq in the slot is not cursed, or is open
-            else:
+
                 eq = caller.db.eq_slots[wear_location]
                 success = eq.remove_from(caller)
                 if not success:
@@ -236,6 +235,32 @@ class CmdWield(MuxCommand):
                 caller.msg("You can't wear equipment more than five levels above your level.")
             return
 
+        # Check for whether the character is already wearing something in that slot.
+ 
+        wear_location = "wielded, primary"
+
+        # If there is no location open for the eq to be worn, we must try to remove.
+        if not check_wear_location(caller, wear_location):
+
+            if not check_cursed_remove(caller, wear_location):
+                caller.msg("The object you are currently wearing in that location is cursed, and cannot be removed.")
+                return
+            
+            # If the eq in the slot is not cursed.
+            else:
+                eq = caller.db.eq_slots[wear_location]
+                success = eq.remove_from(caller)
+                if not success:
+                    caller.msg("You cannot remove this.")
+                else:
+                    caller.msg("You remove %s from your %s." % (eq.name,eq.db.wear_location))
+                    caller.location.msg_contents(
+                        "%s removes a %s from his %s." % (caller.name, eq.name, eq.db.wear_location), exclude=callercaller.msg("You remove %s from your %s." % (eq.name,eq.db.wear_location))
+                        caller.location.msg_contents(
+                            "%s removes a %s from his %s." % (caller.name, eq.name, eq.db.wear_location), exclude=caller
+                        )
+
+                        
         success = weapon.wield_to(caller)
         if not success:
             caller.msg("You cannot wield this.")
