@@ -31,9 +31,17 @@ class Combat(Object):
 
     def at_repeat(self):
         self.msg_all("This is pass number %s." % self.x)
+        for combatant in self.db.combatants:
+            attacker = self.db.combatants[combatant]["combatant"]
+            victim = self.db.combatants[combatant]["target"]
+            attack_output_string = rules_combat.do_attack(attacker, victim)
+            print(attack_output_string)
+            print("%s's current hitpoints are %d" % (victim, victim.hitpoints_current))
+        
         self.x += 1
         if self.x > 4:
             self.at_stop()
+            self.delete()
 
     
     def _init_combatant(self, combatant):
