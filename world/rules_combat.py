@@ -3,13 +3,15 @@ from world import rules_race
 
 def do_attack(attacker, victim):
     hit = True
-    damage = 1
-    
+    damage = 6
+    damage_string = get_damagestring(attacker, victim, damage)
+    damage_type = get_damagetype(attacker)
+
     if hit:
         victim.take_damage(damage)
-        return "%s does %d damage to %s" % (attacker.key.capitalize(), damage, victim.key)
+        return "You |g%s|n %s with your %s." % (damage_string, victim.key, damage_type)
     else:
-        return "%s misses %s" % (attacker.key.capitalize(), victim.key)
+        return "You miss %s with your %s." % (victim.key, damage_type)
 
 def do_damage(attacker, weapon_slot):
     
@@ -233,7 +235,21 @@ def get_damagestring(attacker, victim, damage):
             damagestring = "does EARTH-SHATTERING damage to"
         else:
             damagestring = "**>*>*>*VAPORIZES*<*<*<**"
-            
+
+    return damagestring
+
+def get_damagetype(attacker):
+    if attacker.db.eq_slots["wielded, primary"]:
+        weapon = attacker.db.eq_slots["wielded, primary"]
+        damagetype = weapon.db.weapon_type
+    else:
+        if "damage message" in rules_race.get_race(attacker.race):
+            damagetype = rules_race.get_race(attacker.race)["damage message"]
+        else:
+            damagetype = "punch"
+
+    return damagetype
+
 def get_hit_chance(attacker, victim):
     hit_chance = int(100 * (get_hitskill(attacker, victim) + attacker.db.level - victim.db.level)/(get_hitskill(attacker, victim) + get_avoidskill(victim)))
     if hit_chance > 95:

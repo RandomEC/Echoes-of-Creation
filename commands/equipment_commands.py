@@ -18,7 +18,9 @@ def check_wear_location(caller, wear_location):
     return True
 
 def check_cursed_remove(caller, wear_location):
+
     if wear_location != "wrist" and wear_location != "neck" and wear_location != "finger":
+        eq = caller.db.eq_slots[wear_location]
         if not eq.access(caller, "remove"):
             return False
         else:
@@ -133,17 +135,19 @@ class CmdWear(MuxCommand):
                 # If the eq in the slot is not cursed.
                 wear_location = check_cursed_remove(caller, wear_location)
 
-                eq = caller.db.eq_slots[wear_location]
-                success = eq.remove_from(caller)
+                eq_current = caller.db.eq_slots[wear_location]
+                success = eq_current.remove_from(caller)
                 if not success:
                     caller.msg("You cannot remove this.")
                 else:
-                    caller.msg("You remove %s from your %s." % (eq.name,eq.db.wear_location))
-                    caller.location.msg_contents(
-                        "%s removes a %s from his %s." % (caller.name, eq.name, eq.db.wear_location), exclude=callercaller.msg("You remove %s from your %s." % (eq.name,eq.db.wear_location))
-                        caller.location.msg_contents(
-                            "%s removes a %s from his %s." % (caller.name, eq.name, eq.db.wear_location), exclude=caller
-                        )
+                    caller.msg("You remove %s from your %s." % (eq_current.name, eq_current.db.wear_location))
+                    caller.location.msg_contents("%s removes a %s from his %s."
+                                                 % (
+                                                    caller.name,
+                                                    eq_current.name,
+                                                    eq_current.db.wear_location
+                                                    ), exclude=caller
+                                                 )
 
         # If a location is open, just wear it.
         success = eq.wear_to(caller)
@@ -254,13 +258,14 @@ class CmdWield(MuxCommand):
                     caller.msg("You cannot remove this.")
                 else:
                     caller.msg("You remove %s from your %s." % (eq.name,eq.db.wear_location))
-                    caller.location.msg_contents(
-                        "%s removes a %s from his %s." % (caller.name, eq.name, eq.db.wear_location), exclude=callercaller.msg("You remove %s from your %s." % (eq.name,eq.db.wear_location))
-                        caller.location.msg_contents(
-                            "%s removes a %s from his %s." % (caller.name, eq.name, eq.db.wear_location), exclude=caller
-                        )
+                    caller.location.msg_contents("%s removes a %s from his %s."
+                                                 % (
+                                                    caller.name,
+                                                    eq.name,
+                                                    eq.db.wear_location
+                                                    ), exclude=caller
+                                                 )
 
-                        
         success = weapon.wield_to(caller)
         if not success:
             caller.msg("You cannot wield this.")

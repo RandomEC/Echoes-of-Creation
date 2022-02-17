@@ -35,8 +35,9 @@ class Combat(Object):
             attacker = self.db.combatants[combatant]["combatant"]
             victim = self.db.combatants[combatant]["target"]
             attack_output_string = rules_combat.do_attack(attacker, victim)
-            print(attack_output_string)
-            print("%s's current hitpoints are %d" % (victim, victim.hitpoints_current))
+            attacker.msg(attack_output_string)
+            victim.msg(attack_output_string)
+            attacker.msg("%s's current hitpoints are %d" % (victim, victim.hitpoints_current))
         
         self.x += 1
         if self.x > 4:
@@ -62,7 +63,7 @@ class Combat(Object):
         # Add combatant to handler
         dbref = combatant.id
         self.db.combatants[dbref] = {"combatant": combatant, "target": combatant_target}
-        
+
         # set up back-reference
         self._init_combatant(combatant)
 
@@ -97,9 +98,7 @@ class CmdAttack(MuxCommand):
 
     def create_combat(self, attacker, victim):
         """Create a combat, if needed"""
-        attacker.msg("And here.")
         combat = create_object("commands.combat_commands.Combat", key=("combat_handler_%s" % attacker.location.db.vnum))
-        attacker.msg(combat.key)
         combat.add_combatant(attacker, victim)
         combat.add_combatant(victim, attacker)
         combat.location = attacker.location

@@ -195,7 +195,7 @@ class Character(DefaultCharacter):
         from world import rules_race
 
         # get the dictionary for the current race of the character
-        race_stats = rules_race.get_race(self.race_current())
+        race_stats = rules_race.get_race(self.race)
 
         # check to see if the race has a modifier for this stat
         if "attribute modifier" in race_stats and attribute_name in race_stats["attribute modifier"]:
@@ -354,54 +354,54 @@ class Character(DefaultCharacter):
     # All of the below properties are designed for ease of reference to the current
     # status of the relevant attribute, inclusive of trains (as applicable), equipment,
     # and spell affects.
-    
+
     @property
     def strength(self):
-        return get_modified_attribute("strength")
-    
+        return self.get_modified_attribute("strength")
+
     @property
     def dexterity(self):
-        return get_modified_attribute("dexterity")
-    
+        return self.get_modified_attribute("dexterity")
+
     @property
     def intelligence(self):
-        return get_modified_attribute("intelligence")
-    
+        return self.get_modified_attribute("intelligence")
+
     @property
     def wisdom(self):
-        return get_modified_attribute("wisdom")
-    
+        return self.get_modified_attribute("wisdom")
+
     @property
     def constitution(self):
-        return get_modified_attribute("constitution")
-        
+        return self.get_modified_attribute("constitution")
+
     @property
     def hitroll(self):
-        return get_modified_attribute("hitroll")
-    
+        return self.get_modified_attribute("hitroll")
+
     @property
     def damroll(self):
-        return get_modified_attribute("damroll")
-    
+        return self.get_modified_attribute("damroll")
+
     @property
     def armor_class(self):
-        return get_modified_attribute("armor class")
-    
+        return self.get_modified_attribute("armor class")
+
     @property
-    def size(self)
+    def size(self):
         if "size" in rules_race.get_race(attacker.race):
             size = rules_race.get_race(attacker.race)["size"]
         else:
             size = 2
         return size
-    
-    @property        
+
+    @property
     def race(self):
         """
         Method that will check to see if there is a spell affect
         changing race, and, if not, will return base race.
         """
-        
+
         # once we implement spell affects, check for them here on race
         return self.db.race
 
@@ -423,7 +423,7 @@ class Character(DefaultCharacter):
             self.get_base_attribute("constitution"), self.hitpoints_current, \
             self.hitpoints_maximum, self.mana_current, \
             self.mana_maximum, self.moves_current, self.moves_maximum\
-            , self.db.sex, self.db.race.capitalize(), self.db.died, self.db.kills, \
+            , self.db.sex, self.race.capitalize(), self.db.died, self.db.kills, \
             self.db.damage_maximum, self.db.kill_experience_maximum, \
             self.get_modified_attribute("hitroll"), self.db.experience_total, self.db.experience_spent\
             , self.get_modified_attribute("damroll"), self.db.gold, self.db.bank_balance, \
