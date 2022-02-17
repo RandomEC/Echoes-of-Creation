@@ -1,7 +1,24 @@
 import random
 from world import rules_race
 
-def do_attack(attacker, victim):
+def do_all_attacks(attacker, victim):
+    """
+    This does all the passive attacks for all relevant weapon slots for one
+    attacker on one victim, which should be ALL attacks for that attacker.
+    """
+    
+    attacker_string, victim_string, room_string = do_attack_round(attacker, victim, "wielded, primary")
+    
+    if attacker.db.eq_slots["wielded, primary"] and attacker.db.eq_slots["wielded, secondary"]:
+        new_attacker_string, new_victim_string, new_room_string = do_attack_round(attacker, victim, "wielded, secondary")
+        attacker_string += new_attacker_string
+        victim_string += new_victim_string
+        room_string += new_room_string
+    
+    return (attacker_string, victim_string, room_string)
+
+def do_attack(attacker, victim, eq_slot):
+    
     hit = True
     damage = 1
     
@@ -10,6 +27,81 @@ def do_attack(attacker, victim):
         return "%s does %d damage to %s" % (attacker.key.capitalize(), damage, victim.key)
     else:
         return "%s misses %s" % (attacker.key.capitalize(), victim.key)
+
+def do_attack_round(attacker, victim, eq_slot):
+    """
+    This does all the attacks for one attacker against one victim, with one 
+    weapon slot.
+    """
+    attacker_string = ""
+    victim_string = ""
+    room_string = ""
+    
+    # If primary weapon, first hit is free.
+    if eq_slot = "wielded, primary":
+        attacker_string, victim_string, room_string = do_attack(attacker, victim)
+    else:
+        if "mobile" in attacker.tags.all():
+            if random.randint(1,100) < attacker.db.level:
+                attacker_string, victim_string, room_string = do_attack(attacker, victim)
+        else:
+            # Save hero for dual skill implementation.
+            pass
+    
+    # Check for second attack.
+    if eq_slot = "wielded, primary":
+        if "mobile" in attacker.tags.all():
+            if random.randint(1,100) < attacker.db.level:
+                new_attacker_string, new_victim_string, new_room_string = damage_string += do_attack(attacker, victim, eq_slot)
+                attacker_string += new_attacker_string
+                victim_string += new_victim_string
+                room_string += new_room_string
+        else:
+            # Wait to build out hero until skills built
+            pass
+    if eq_slot = "wielded, secondary":
+        if "mobile" in attacker.tags.all():
+            if random.randint(1,100) < attacker.db.level:
+                new_attacker_string, new_victim_string, new_room_string = damage_string += do_attack(attacker, victim, eq_slot)
+                attacker_string += new_attacker_string
+                victim_string += new_victim_string
+                room_string += new_room_string
+        else:
+            # Wait to build out hero until skills built
+            pass
+        
+
+    # Check for third attack.
+    if eq_slot = "wielded, primary":
+        if "mobile" in attacker.tags.all():
+            if random.randint(1,100) < attacker.db.level:
+                new_attacker_string, new_victim_string, new_room_string = damage_string += do_attack(attacker, victim, eq_slot)
+                attacker_string += new_attacker_string
+                victim_string += new_victim_string
+                room_string += new_room_string
+        else:
+            # Wait to build out hero until skills built
+            pass
+    if eq_slot = "wielded, secondary":
+        if "mobile" in attacker.tags.all():
+            if random.randint(1,100) < attacker.db.level:
+                new_attacker_string, new_victim_string, new_room_string = damage_string += do_attack(attacker, victim, eq_slot)
+                attacker_string += new_attacker_string
+                victim_string += new_victim_string
+                room_string += new_room_string
+        else:
+            # Wait to build out hero until skills built
+            pass
+    
+    # Check for fourth attack, for mobiles only.
+    if "mobile" in attacker.tags.all():
+        if random.randint(1,100) < (attacker.db.level / 2):
+            new_attacker_string, new_victim_string, new_room_string = damage_string += do_attack(attacker, victim, eq_slot)
+            attacker_string += new_attacker_string
+            victim_string += new_victim_string
+            room_string += new_room_string
+            
+    return (attacker_string, victim_string, room_string)
 
 def do_damage(attacker, weapon_slot):
     
