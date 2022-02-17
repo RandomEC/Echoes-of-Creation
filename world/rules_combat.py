@@ -1,7 +1,55 @@
 import random
 from world import rules_race
 
-def do_attack(attacker, victim):
+def check_death(victim):
+    """
+    This checks for death of the victim, and, if it finds a death, returns
+    a boolean True.
+    """
+    if victim.hitpoints_current <= 0:
+        return True
+    else:
+        return False
+        
+def do_all_attacks(attacker, victim):
+    """
+    This calls do_attack_round for all relevant weapon slots for one
+    attacker on one victim, which should be ALL attacks for that
+    attacker.
+    """
+    
+    attacker_string, victim_string, room_string = do_attack_round(attacker, victim, "wielded, primary")
+    
+    if attacker.db.eq_slots["wielded, primary"] and attacker.db.eq_slots["wielded, secondary"]:
+        new_attacker_string, new_victim_string, new_room_string = do_attack_round(attacker, victim, "wielded, secondary")
+        attacker_string += new_attacker_string
+        victim_string += new_victim_string
+        room_string += new_room_string
+    
+    if check_death(victim):
+        # Build a string for reporting death to characters, and add to output strings
+        # Create a corpse.
+        # Move all items in inventory of victim to corpse, if mobile.
+        # Transfer victim. To None if mobile, to home if player.
+        # Clear affects on victim
+        # Reset hitpoints on victim - full if mobile, 5% if player?
+        # Award xp to player if mobile death
+        # Award gold to player if mobile death
+        pass
+    
+    # In combat handler, need to use these strings to create the full output block
+    # reporting the results of everyone's attacks to all players only.
+    return (attacker_string, victim_string, room_string)
+
+def do_attack(attacker, victim, eq_slot):
+    """
+    This function implements the effects of a single hit. It
+    both calls the take_damage method on the victim, doing the
+    damage, and returns a tuple of strings of output for the
+    attacker, the victim, and those watching in the room for
+    that single hit attempt.
+    """
+    
     hit = True
     damage = 6
     damage_string = get_damagestring(attacker, victim, damage)
@@ -13,7 +61,89 @@ def do_attack(attacker, victim):
     else:
         return "You miss %s with your %s." % (victim.key, damage_type)
 
-def do_damage(attacker, weapon_slot):
+def do_attack_round(attacker, victim, eq_slot):
+    """
+    This determines how many hit attempts will occur for one attacker
+    against one victim, with one weapon slot, and then calls do_attack
+    for each. It assembles the output for each hit attempt for the
+    attacker, victim and those in the room, and returns a tuple of
+    those values.
+    """
+    attacker_string = ""
+    victim_string = ""
+    room_string = ""
+    
+    # If primary weapon, first hit is free.
+    if eq_slot = "wielded, primary":
+        attacker_string, victim_string, room_string = do_attack(attacker, victim)
+    else:
+        if "mobile" in attacker.tags.all():
+            if random.randint(1,100) < attacker.db.level:
+                attacker_string, victim_string, room_string = do_attack(attacker, victim)
+        else:
+            # Save hero for dual skill implementation.
+            pass
+    
+    # Check for second attack.
+    if eq_slot = "wielded, primary":
+        if "mobile" in attacker.tags.all():
+            if random.randint(1,100) < attacker.db.level:
+                new_attacker_string, new_victim_string, new_room_string = damage_string += do_attack(attacker, victim, eq_slot)
+                attacker_string += new_attacker_string
+                victim_string += new_victim_string
+                room_string += new_room_string
+        else:
+            # Wait to build out hero until skills built
+            pass
+    if eq_slot = "wielded, secondary":
+        if "mobile" in attacker.tags.all():
+            if random.randint(1,100) < attacker.db.level:
+                new_attacker_string, new_victim_string, new_room_string = damage_string += do_attack(attacker, victim, eq_slot)
+                attacker_string += new_attacker_string
+                victim_string += new_victim_string
+                room_string += new_room_string
+        else:
+            # Wait to build out hero until skills built
+            pass
+        
+
+    # Check for third attack.
+    if eq_slot = "wielded, primary":
+        if "mobile" in attacker.tags.all():
+            if random.randint(1,100) < attacker.db.level:
+                new_attacker_string, new_victim_string, new_room_string = damage_string += do_attack(attacker, victim, eq_slot)
+                attacker_string += new_attacker_string
+                victim_string += new_victim_string
+                room_string += new_room_string
+        else:
+            # Wait to build out hero until skills built
+            pass
+    if eq_slot = "wielded, secondary":
+        if "mobile" in attacker.tags.all():
+            if random.randint(1,100) < attacker.db.level:
+                new_attacker_string, new_victim_string, new_room_string = damage_string += do_attack(attacker, victim, eq_slot)
+                attacker_string += new_attacker_string
+                victim_string += new_victim_string
+                room_string += new_room_string
+        else:
+            # Wait to build out hero until skills built
+            pass
+    
+    # Check for fourth attack, for mobiles only.
+    if "mobile" in attacker.tags.all():
+        if random.randint(1,100) < (attacker.db.level / 2):
+            new_attacker_string, new_victim_string, new_room_string = damage_string += do_attack(attacker, victim, eq_slot)
+            attacker_string += new_attacker_string
+            victim_string += new_victim_string
+            room_string += new_room_string
+            
+    return (attacker_string, victim_string, room_string)
+
+def do_damage(attacker, eq_slot):
+    """
+    This is called on a successful hit, and returns the total
+    damage for that hit.
+    """
     
     if "mobile" in attacker.tags.all():
         damage_low = int(attacker.db.level*3/4)
@@ -24,23 +154,26 @@ def do_damage(attacker, weapon_slot):
         
         # If mobile is wielding a weapon, they get a 50% bonus.
         if attacker.db.eq_slots["wielded, primary"]:
-            damage *= 1.5
+            damage = int(damage * 1.5)
 
         # Get a bonus to damage from damroll.
-        dam_bonus = attacker.damroll
+        dam_bonus = int(attacker.damroll)
         
         damage += dam_bonus
 
     else:
-        if attacker.db.eq_slots[weapon_slot]:
-            weapon = attacker.db.eq_slots[weapon_slot]
+        if attacker.db.eq_slots[eq_slot]:
+            weapon = attacker.db.eq_slots[eq_slot]
             damage = random.randint(weapon.db.damage_low, weapon.db.damage_high)
         
-            dam_bonus = attacker.damroll
+            dam_bonus = int(attacker.damroll)
             
-            # Subtract out damroll from weapon not being used in the attack, if
+            # You only get the damroll bonus for the weapon you are using
+            # on the attack. As a result, we subtract out the damroll
+            # from the weapon not being used in the attack, if there is
             # more than one.
-            if weapon_slot == "wielded, primary":
+            
+            if eq_slot == "wielded, primary":
                 if attacker.db.eq_slots["wielded, secondary"]:
                     eq = attacker.db.eq_slots["wielded, secondary"]
                     dam_bonus -= eq.db.stat_modifiers["damroll"]
@@ -62,6 +195,11 @@ def do_damage(attacker, weapon_slot):
     return damage
 
 def do_single_hit(attacker, victim):
+    """
+    This function simply evaluates whether the attempted hit actually
+    hits.
+    """
+    
     hit_chance = get_hit_chance(attacker, victim)
     if random.randint(1,100) <= hit_chance:
         return True
