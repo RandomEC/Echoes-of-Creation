@@ -27,15 +27,60 @@ def do_all_attacks(attacker, victim):
         room_string += new_room_string
     
     if check_death(victim):
-        # Build a string for reporting death to characters, and add to output strings
-        # Create a corpse.
-        # Move all items in inventory of victim to corpse, if mobile.
-        # Transfer victim. To None if mobile, to home if player.
-        # Clear affects on victim
-        # Reset hitpoints on victim - full if mobile, 5% if player?
-        # Award xp to player if mobile death
-        # Award gold to player if mobile death
-        pass
+        # Build a string for reporting death to characters, and add to output strings.
+        attacker_string += ("With your final %s, %s falls to the ground, DEAD!!!" % (get_damagetype(attacker), victim.key))
+        victim_string += "You have been KILLED!!!"
+        room_string += ("%s has been KILLED by %s!!!" % ((victim.key[0].upper() + victim.key[1:0]), attacker.key))
+                
+        if "mobile" in victim.tags.all():
+            # Create corpse.
+            corpse = create_object("objects.NPC_Corpse", key=("corpse of %s" % victim.key))
+            corpse.desc = ("The corpse of %s lies here." % victim.key)
+            
+            # Move all victim items to corpse.
+            for item in victim.contents:
+                if item.equipped:
+                    item.remove_from(victim)
+                # Eventually, will want the below to have , quiet = True after done testing.
+                item.move_to(corpse)
+            
+            # Move victim to None location to be reset later.
+            victim.location = None
+            
+            # Reinstate base spell affects.
+            victim.db.spell_affects = victim.db.spell_affects_reset
+            
+            # Refill hitpoints.
+            victim.db.hitpoints["damaged"] = 0
+            
+            # Award xp.
+            attacker.db.experience_total += victim.db.experience_current
+            attacker_string += ("You receive %s experience as a result of your kill!" % victim.db.experience_current)
+            
+            # Figure out how to calculate gold on mobile and award.
+            
+            # attacker_string += ("You receive |y%s gold|n as a result of your kill!" % victim.)
+        
+        else:
+            # Create corpse.
+            corpse = create_object("objects.PC_Corpse", key=("corpse of %s" % victim.key))
+            corpse.desc = ("The corpse of %s lies here." % victim.key)
+            
+            # Heroes keep their items.
+            
+            # Move hero to their home location.
+            victim.move_to(victim.home, quiet=True)
+            
+            # Clear spell affects.
+            victim.db.spell_affects = {}
+            
+            # Refill hitpoints.
+            victim.db.hitpoints["damaged"] = 0
+            
+            # Do xp penalty, after figuring out how much it should be.
+            # victim_string += ("You lose %s experience as a result of your death! %s 
+            
+            # Do gold penalty, after figuring out how much it should be.
     
     # In combat handler, need to use these strings to create the full output block
     # reporting the results of everyone's attacks to all players only.
