@@ -15,13 +15,14 @@ class Combat(Object):
     def at_object_creation(self):
         self.db.combatants = {}
         self.db.rounds = 0
-        tickerhandler.add(2, self.at_repeat)
         self.x = 1
+        tickerhandler.add(2, self.at_repeat)
 
     def at_stop(self):
         # Called just before the script is stopped/destroyed.
-        for combatant in list(self.db.combatants.values()):
+        for dbref in list(self.db.combatants.values()):
             # note: the list() call above disconnects list from database
+            combatant = dbref["combatant"]
             self._cleanup_combatant(combatant)
 
     def msg_all(self, message):
@@ -31,20 +32,31 @@ class Combat(Object):
 
     def at_repeat(self):
         self.msg_all("This is pass number %s." % self.x)
+        self.clear_messages()
         for combatant in self.db.combatants:
             attacker = self.db.combatants[combatant]["combatant"]
             victim = self.db.combatants[combatant]["target"]
-            attack_output_string = rules_combat.do_attack(attacker, victim)
-            attacker.msg(attack_output_string)
-            victim.msg(attack_output_string)
-            attacker.msg("%s's current hitpoints are %d" % (victim, victim.hitpoints_current))
-        
+            attacker_string, victim_string, room_string = rules_combat.do_attack_round(attacker, victim, "wielded, primary")
+            attacker.msg("Past do_attack_round.")
+            self.db.combatants[attacker]["combat message"] += (attacker_string + "\n")
+            self.db.combatants[victim]["combat message"] += (victim_string + "\n")
+            for combatant in self.db.combatants:
+                if combatant != attacker and combatant != victim:
+                    self.db.combatants[combatant]["combat message"] += (room_string + "\n")
+
+        for combatant in self.db.combatants:
+            if "player" in combatant.tags.all():
+                combatant.msg(self.db.combatants[combatant]["combat message"])
+
         self.x += 1
         if self.x > 4:
             self.at_stop()
             self.delete()
 
-    
+    def clear_messages(self):
+        for combatant in self.db.combatants:
+            self.db.combatants[combatant]["combat message"] = ""
+
     def _init_combatant(self, combatant):
         """
         This initializes handler back-reference.        
@@ -61,8 +73,7 @@ class Combat(Object):
 
     def add_combatant(self, combatant, combatant_target):
         # Add combatant to handler
-        dbref = combatant.id
-        self.db.combatants[dbref] = {"combatant": combatant, "target": combatant_target}
+        self.db.combatants[combatant] = {"combatant": combatant, "target": combatant_target, "combat message": ""}
 
         # set up back-reference
         self._init_combatant(combatant)

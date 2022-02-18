@@ -41,7 +41,7 @@ def do_all_attacks(attacker, victim):
     # reporting the results of everyone's attacks to all players only.
     return (attacker_string, victim_string, room_string)
 
-def do_attack(attacker, victim, eq_slot):
+def do_attack(attacker, victim):
     """
     This function implements the effects of a single hit. It
     both calls the take_damage method on the victim, doing the
@@ -52,14 +52,19 @@ def do_attack(attacker, victim, eq_slot):
     
     hit = True
     damage = 6
-    damage_string = get_damagestring(attacker, victim, damage)
     damage_type = get_damagetype(attacker)
+
+    attacker.msg("In do_attack.")
 
     if hit:
         victim.take_damage(damage)
-        return "You |g%s|n %s with your %s." % (damage_string, victim.key, damage_type)
+        attacker_string = ("You |g%s|n %s with your %s." % (get_damagestring("attacker", damage), victim.key, damage_type))
+        victim_string = ("%s |r%s|n you with its %s." % (attacker.key, get_damagestring("victim", damage), damage_type))
+        room_string = ("%s %s %s with its %s." % (attacker.key, get_damagestring("victim", damage), victim.key, damage_type))
     else:
         return "You miss %s with your %s." % (victim.key, damage_type)
+
+    return (attacker_string, victim_string, room_string)
 
 def do_attack_round(attacker, victim, eq_slot):
     """
@@ -72,33 +77,33 @@ def do_attack_round(attacker, victim, eq_slot):
     attacker_string = ""
     victim_string = ""
     room_string = ""
-    
+
     # If primary weapon, first hit is free.
-    if eq_slot = "wielded, primary":
+    if eq_slot == "wielded, primary":
         attacker_string, victim_string, room_string = do_attack(attacker, victim)
     else:
         if "mobile" in attacker.tags.all():
-            if random.randint(1,100) < attacker.db.level:
+            if random.randint(1, 100) < attacker.db.level:
                 attacker_string, victim_string, room_string = do_attack(attacker, victim)
         else:
             # Save hero for dual skill implementation.
             pass
     
     # Check for second attack.
-    if eq_slot = "wielded, primary":
+    if eq_slot == "wielded, primary":
         if "mobile" in attacker.tags.all():
-            if random.randint(1,100) < attacker.db.level:
-                new_attacker_string, new_victim_string, new_room_string = damage_string += do_attack(attacker, victim, eq_slot)
+            if random.randint(1, 100) < attacker.db.level:
+                new_attacker_string, new_victim_string, new_room_string = do_attack(attacker, victim, eq_slot)
                 attacker_string += new_attacker_string
                 victim_string += new_victim_string
                 room_string += new_room_string
         else:
             # Wait to build out hero until skills built
             pass
-    if eq_slot = "wielded, secondary":
+    if eq_slot == "wielded, secondary":
         if "mobile" in attacker.tags.all():
-            if random.randint(1,100) < attacker.db.level:
-                new_attacker_string, new_victim_string, new_room_string = damage_string += do_attack(attacker, victim, eq_slot)
+            if random.randint(1, 100) < attacker.db.level:
+                new_attacker_string, new_victim_string, new_room_string = do_attack(attacker, victim, eq_slot)
                 attacker_string += new_attacker_string
                 victim_string += new_victim_string
                 room_string += new_room_string
@@ -108,20 +113,20 @@ def do_attack_round(attacker, victim, eq_slot):
         
 
     # Check for third attack.
-    if eq_slot = "wielded, primary":
+    if eq_slot == "wielded, primary":
         if "mobile" in attacker.tags.all():
-            if random.randint(1,100) < attacker.db.level:
-                new_attacker_string, new_victim_string, new_room_string = damage_string += do_attack(attacker, victim, eq_slot)
+            if random.randint(1, 100) < attacker.db.level:
+                new_attacker_string, new_victim_string, new_room_string = do_attack(attacker, victim, eq_slot)
                 attacker_string += new_attacker_string
                 victim_string += new_victim_string
                 room_string += new_room_string
         else:
             # Wait to build out hero until skills built
             pass
-    if eq_slot = "wielded, secondary":
+    if eq_slot == "wielded, secondary":
         if "mobile" in attacker.tags.all():
-            if random.randint(1,100) < attacker.db.level:
-                new_attacker_string, new_victim_string, new_room_string = damage_string += do_attack(attacker, victim, eq_slot)
+            if random.randint(1, 100) < attacker.db.level:
+                new_attacker_string, new_victim_string, new_room_string = do_attack(attacker, victim, eq_slot)
                 attacker_string += new_attacker_string
                 victim_string += new_victim_string
                 room_string += new_room_string
@@ -132,7 +137,7 @@ def do_attack_round(attacker, victim, eq_slot):
     # Check for fourth attack, for mobiles only.
     if "mobile" in attacker.tags.all():
         if random.randint(1,100) < (attacker.db.level / 2):
-            new_attacker_string, new_victim_string, new_room_string = damage_string += do_attack(attacker, victim, eq_slot)
+            new_attacker_string, new_victim_string, new_room_string = do_attack(attacker, victim, eq_slot)
             attacker_string += new_attacker_string
             victim_string += new_victim_string
             room_string += new_room_string
@@ -218,8 +223,8 @@ def get_avoidskill(victim):
     else:
         return 1
 
-def get_damagestring(attacker, victim, damage):
-    if "mobile" in victim.tags.all():
+def get_damagestring(combatant, damage):
+    if combatant == "attacker":
         if damage < 1:
             damagestring = "miss"
         elif damage < 4:
@@ -296,7 +301,7 @@ def get_damagestring(attacker, victim, damage):
             damagestring = "do EARTH-SHATTERING damage to"
         else:
             damagestring = "**>*>*>*VAPORIZE*<*<*<**"
-    if "player" in victim.tags.all():
+    if combatant == "victim":
         if damage < 1:
             damagestring = "misses"
         elif damage < 4:
