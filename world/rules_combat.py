@@ -74,8 +74,8 @@ def do_all_attacks(attacker, victim):
             # Clear spell affects.
             victim.db.spell_affects = {}
             
-            # Refill hitpoints.
-            victim.db.hitpoints["damaged"] = 0
+            # Refill hitpoints to 1.
+            victim.db.hitpoints["damaged"] = victim.hitpoints_maximum - 1
             
             # Do xp penalty, after figuring out how much it should be.
             # victim_string += ("You lose %s experience as a result of your death! %s 
