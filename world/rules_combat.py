@@ -438,6 +438,35 @@ def get_damagetype(attacker):
 
     return damagetype
 
+def get_health_string(combatant):
+    health_percent = int(100 * combatant.hitpoints_current / combatant.hitpoints_maximum)
+    if health_percent == 100:
+        return "is in perfect health"
+    elif health_percent > 90:
+        return "is slightly scratched"
+    elif health_percent > 80:
+        return "has a few bruises"
+    elif health_percent > 70:
+        return "has some cuts"
+    elif health_percent > 60:
+        return "has several wounds"
+    elif health_percent > 50:
+        return "has many nasty wounds"
+    elif health_percent > 40:
+        return "is bleeding freely"
+    elif health_percent > 30:
+        return "is covered in blood"
+    elif health_percent > 20:
+        return "is leaking guts"
+    elif health_percent > 10:
+        return "is almost dead"
+    elif health_percent > 0:
+        return "is DYING"
+    elif health_percent <= 0:
+        return "is DEAD!!!"
+    
+    
+
 def get_hit_chance(attacker, victim):
     hit_chance = int(100 * (get_hitskill(attacker, victim) + attacker.db.level - victim.db.level)/(get_hitskill(attacker, victim) + get_avoidskill(victim)))
     if hit_chance > 95:
