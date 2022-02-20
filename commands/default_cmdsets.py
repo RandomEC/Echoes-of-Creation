@@ -41,7 +41,7 @@ from commands.door_commands import CmdDoorOpen
 from commands.door_commands import CmdDoorClose
 from commands.door_commands import CmdDoorUnlock
 from commands.door_commands import CmdDoorLock
-
+from commands.combat_commands import CmdAttack
 
 class CharacterCmdSet(default_cmds.CharacterCmdSet):
     """
@@ -85,6 +85,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdSetHome())
         self.add(CmdTalk())
         self.add(CmdInspect())
+        self.add(CmdAttack())
 
 class AccountCmdSet(default_cmds.AccountCmdSet):
     """

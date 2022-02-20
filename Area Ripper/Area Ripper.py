@@ -14,7 +14,7 @@
 import random
 from mygame.world import rules
 
-with open("C:/Users/bradm/mudstuff/school.txt", "rt") as myfile:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.txt", "rt") as myfile:
 
     class Object:
         def __init__(self):
@@ -1833,7 +1833,7 @@ with open("C:/Users/bradm/mudstuff/school.txt", "rt") as myfile:
                     objects[onum].special_function\
                         = special_function_list[2][6:]
 
-with open("C:/Users/bradm/mudstuff/mygame/world/training tower.ev", "w") as output:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as output:
 
     # Now we are going to build out the batch file by iterating through each
     # room.
@@ -1948,6 +1948,14 @@ with open("C:/Users/bradm/mudstuff/mygame/world/training tower.ev", "w") as outp
                     output.write("tag %s = %s, category = area names\n"
                                  % (vnum, area_name.lower()))
                     output.write("#\n")
+                    # Set the door as open by default, may be modified by
+                    # resets later.
+                    output.write("set %s/door_attributes = \"open\"\n" % vnum)
+                    output.write("#\n")
+                    output.write("set %s/reset_door_attributes = \"open\"\n"
+                                 % vnum
+                                 )
+                    output.write("#\n")
                     door_list.append(room_set)
 
                 else:
@@ -1960,7 +1968,15 @@ with open("C:/Users/bradm/mudstuff/mygame/world/training tower.ev", "w") as outp
                     output.write("tag %s = %s, category = area names\n"
                                  % (vnum, area_name.lower()))
                     output.write("#\n")
-
+                    # Set the door as open by default, may be modified by
+                    # resets later.
+                    output.write("set %s/door_attributes = \"open\"\n" % vnum)
+                    output.write("#\n")
+                    output.write("set %s/reset_door_attributes = \"open\"\n"
+                                 % vnum
+                                 )
+                    output.write("#\n")
+                    
                 if rooms[room].doors[door]["description"]:
                     output.write("desc %s = %s\n"
                                  % (
@@ -2205,6 +2221,8 @@ with open("C:/Users/bradm/mudstuff/mygame/world/training tower.ev", "w") as outp
                                                           area_name.lower()
                                                           ))
                 output.write("#\n")
+                output.write("tag %s = mobile\n" % reset_vnum)
+                output.write("#\n")
 
                 # Setting hitpoints for mobiles is a factor of the mobile's
                 # level. Set both max hp and current hitpoints to it.
@@ -2265,6 +2283,8 @@ with open("C:/Users/bradm/mudstuff/mygame/world/training tower.ev", "w") as outp
                                                           reset_vnum,
                                                           area_name.lower()
                                                           ))
+                output.write("#\n")
+                output.write("tag %s = object\n" % reset_vnum)
                 output.write("#\n")
                 if object.extra_description:
                     output.write("set %s/extra_descriptions = %s\n"
@@ -2616,7 +2636,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/training tower.ev", "w") as outp
                 if reset_type == "object, equipped":
                     # Give the object to the mobile, set eq_slot on mobile equal to
                     # object, and set equipped equal to True on object.
-                    if object.item_type == "armor":
+                    if object.item_type == "armor" or object.item_type == "key" or object.item_type == "treasure":
                         output.write("wearto %s = %s\n" % (reset_vnum, reset_location))
                         output.write("#\n")
                     elif object.item_type == "weapon":
@@ -2674,7 +2694,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/training tower.ev", "w") as outp
             output.write("#\n")
 
         # Reset for objects in room inventory
-        elif reset_type == "object, room":
+        elif reset_type == "object, room" and object.item_type != "portal":
             output.write("set %s/reset_objects[\"%s\"] = {\"location\":\"inventory\"}\n"
                          % (reset_location, reset_vnum)
                          )

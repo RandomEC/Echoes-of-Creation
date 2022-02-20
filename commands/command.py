@@ -238,17 +238,11 @@ class CmdScore(MuxCommand):
         experience_to_level = experience_total
         experience_in_level = experience_total
 
-        modified_strength = caller.get_modified_attribute(caller, "strength")
-        modified_intelligence = caller.get_modified_attribute(
-                                                              caller,
-                                                              "intelligence"
-                                                              )
-        modified_wisdom = caller.get_modified_attribute(caller, "wisdom")
-        modified_dexterity = caller.get_modified_attribute(caller, "dexterity")
-        modified_constitution = caller.get_modified_attribute(
-                                                              caller,
-                                                              "constitution"
-                                                              )
+        modified_strength = caller.get_modified_attribute("strength")
+        modified_intelligence = caller.get_modified_attribute("intelligence")
+        modified_wisdom = caller.get_modified_attribute("wisdom")
+        modified_dexterity = caller.get_modified_attribute("dexterity")
+        modified_constitution = caller.get_modified_attribute("constitution")
 
         hit_points_string = ("%s/%s" % (hitpoints_current, hitpoints_maximum))
         mana_string = ("%s/%s" % (mana_current, mana_maximum))

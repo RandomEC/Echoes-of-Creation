@@ -1,0 +1,6298 @@
+dig/tel Binky's Kitchen; r4469
+#
+tag r4469 = the circus, category = area names
+#
+desc r4469 = A rather small room really, but the aromas drifting to you make your mouth water.  A feast fit for a king, or an immortal is spread upon the table before you.  You feel compelled to sit and at least taste some of the deli- cacies.  Somehow, you know that everything you find here will be very filling, yet completely fat free. 
+#
+desc/edit r4469
+#
+:j l
+#
+:wq
+#
+set r4469/terrain = "city"
+#
+set r4469/room_flags = ['no mob']
+#
+dig/tel The Path to the Circus; r4401
+#
+tag r4401 = the circus, category = area names
+#
+desc r4401 = You hear music and laughter coming from ahead of you.  Posters hang from the trees, advertisements for the Circus that has just arrived in town. 
+#
+desc/edit r4401
+#
+:j l
+#
+:wq
+#
+set r4401/terrain = "city"
+#
+set r4401/extra_description = {'poster': 'The poster reads:  Come one, come all!!  See the greatest show in the 4th realm!!  See the Bearded Lady!!  Ivan the strongman!!  Laugh at the antics of the crazy Klawson Klowns!! '}
+#
+dig/tel The Entrance to the Circus; r4402
+#
+tag r4402 = the circus, category = area names
+#
+desc r4402 = Ahead you see the Circus laid out in all its glory.  Freak shows, games booths, and dwarfing them all, the Big Top.  A ticket booth is set here. You will need a ticket to enter the Big Top. 
+#
+desc/edit r4402
+#
+:j l
+#
+:wq
+#
+set r4402/terrain = "city"
+#
+dig/tel The Path to the Big Top; r4403
+#
+tag r4403 = the circus, category = area names
+#
+desc r4403 = This way to the Big Top is lined with people.  They seem to be having a good time.  Everyone that is, except the people waiting in line for the Big Top.  They seem annoyed at you as you push your way past them.  To the west you see games booths. 
+#
+desc/edit r4403
+#
+:j l
+#
+:wq
+#
+set r4403/terrain = "city"
+#
+dig/tel The Game Booths; r4404
+#
+tag r4404 = the circus, category = area names
+#
+desc r4404 = This area seems deserted.  The booths are boarded up, and the only Circus employee you see is sitting on a counter, muttering obscenities at the Mayor and City Council.  He makes it a point to let you know that he knows you are there, and he is ignoring you on purpose. 
+#
+desc/edit r4404
+#
+:j l
+#
+:wq
+#
+set r4404/terrain = "city"
+#
+dig/tel The Game Booths; r4405
+#
+tag r4405 = the circus, category = area names
+#
+desc r4405 = This area seems deserted.  The booths are boarded up, and the only Circus employee you see is sitting on a counter, muttering obscenities at the Mayor and City Council.  He makes it a point to let you know that he knows you are there, and he is ignoring you on purpose. 
+#
+desc/edit r4405
+#
+:j l
+#
+:wq
+#
+set r4405/terrain = "city"
+#
+dig/tel The Path to the Big Top; r4406
+#
+tag r4406 = the circus, category = area names
+#
+desc r4406 = This way to the Big Top is lined with people.  They seem to be having a good time.  Everyone that is, except the people waiting in line for the Big Top.  They seem annoyed at you as you push your way past them.  To the east you see the freak shows.  To the west you see a vendor. 
+#
+desc/edit r4406
+#
+:j l
+#
+:wq
+#
+set r4406/terrain = "city"
+#
+dig/tel The Cotton Candy Vendor; r4407
+#
+tag r4407 = the circus, category = area names
+#
+desc r4407 = The smell of cotton candy makes your mouth water.  Be careful about eating too much, all that sugar may make you hyper. 
+#
+desc/edit r4407
+#
+:j l
+#
+:wq
+#
+set r4407/terrain = "city"
+#
+dig/tel The Entrance to the Freak Shows; r4408
+#
+tag r4408 = the circus, category = area names
+#
+desc r4408 = This area is filled with posters of the attractions the Circus has to offer to the curious.  You are invited to watch feats of strength from the strong man, gasp as a man swallows a sword, see a real, Bearded Lady, be amazed by the midget's feats of acrobatics, and be dazzled by the great magical powers of the Illusionist. 
+#
+desc/edit r4408
+#
+:j l
+#
+:wq
+#
+set r4408/terrain = "city"
+#
+dig/tel The Tent of the Bearded Lady; r4409
+#
+tag r4409 = the circus, category = area names
+#
+desc r4409 = This tent consists of chairs for you to rest in, and a rickety wooden stage up front.  You hear the stage creak as you enter, and you understand why when you see who is standing on it.  She is bearded all right.  And big. Very big.  Colossally huge.  You don't seem to have any problem finding a seat. The place is deserted of spectators. 
+#
+desc/edit r4409
+#
+:j l
+#
+:wq
+#
+set r4409/terrain = "inside"
+#
+set r4409/room_flags = ['indoors']
+#
+dig/tel The Tent of the Illusionist; r4410
+#
+tag r4410 = the circus, category = area names
+#
+desc r4410 = This tent is darkened at first.  Then it gradually lightens, although you do not see the source of the light.  You do hear a loud breathing sound though.  You think it may be coming from right behind you.  You think this because you can feel very warm breath on the back of your neck.  You turn, and see a very large, very evil looking creature.  It's a Dragon.  It opens its mouth, but does not attack.  Instead it just laughs at you mercilessly. The Dragon snorts a cloud of smoke at you. 
+#
+desc/edit r4410
+#
+:j l
+#
+:wq
+#
+set r4410/terrain = "inside"
+#
+set r4410/extra_description = {'Dragon': 'The Dragon looks incredibly powerful.  You are in awe of it, not believing that something so powerful, so huge, could be controlled by man.  Let alone fit in this tent.  Fit in this tent?  Hey, wait a minute, is it shimmering a little, or are your eyes playing tricks on you? '}
+#
+set r4410/room_flags = ['indoors']
+#
+dig/tel The Midget's Tent; r4411
+#
+tag r4411 = the circus, category = area names
+#
+desc r4411 = This tent has a mat laid out, no doubt where the Midget performs his acrobatics.  You overhear another member of the audience telling his friend, 'I'd watch out for that Midget.  I hear that a new rash of robberies broke out right after the Circus came to town.  Wouldn't surprise me if he is the one responsible.' 
+#
+desc/edit r4411
+#
+:j l
+#
+:wq
+#
+set r4411/terrain = "inside"
+#
+set r4411/room_flags = ['indoors']
+#
+dig/tel The Sword Swallower's Tent; r4412
+#
+tag r4412 = the circus, category = area names
+#
+desc r4412 = This tent is decorated with many deadly looking weapons.  A warrior could find any kind of weapon he ever dreamed of in here.  A stage at the front is obviously where the Sword Swallower performs his acts of bravery. Several rickety chairs sit in front of the stage, looking as if they might not hold the weight of the next customer to sit down. 
+#
+desc/edit r4412
+#
+:j l
+#
+:wq
+#
+set r4412/terrain = "inside"
+#
+set r4412/room_flags = ['indoors']
+#
+dig/tel The Strongman's Tent; r4413
+#
+tag r4413 = the circus, category = area names
+#
+desc r4413 = This tent is the largest one in The Circus besides the Big Top.  It is decorated with pictures and drawings of huge men lifting huge weights. You see heavy objects at the front of the room, that must be part of the act. If Ivan the Strongman can lift those, then he really must be strong. 
+#
+desc/edit r4413
+#
+:j l
+#
+:wq
+#
+set r4413/terrain = "inside"
+#
+set r4413/room_flags = ['indoors']
+#
+dig/tel The Path to the Big Top; r4414
+#
+tag r4414 = the circus, category = area names
+#
+desc r4414 = This way to the Big Top is lined with people.  They seem to be having a good time.  Everyone that is, except the people waiting in line for the Big Top.  They seem annoyed at you as you push your way past them.  To the east and west you see games booths. 
+#
+desc/edit r4414
+#
+:j l
+#
+:wq
+#
+set r4414/terrain = "city"
+#
+dig/tel The Entrance to the Big Top.; r4415
+#
+tag r4415 = the circus, category = area names
+#
+desc r4415 = You've finally made it to the front of the line!  The entrance to the Big Top is in front of you.  You see a turnstile to the south, the only thing blocking you from the magic of The Circus that lies inside. 
+#
+desc/edit r4415
+#
+:j l
+#
+:wq
+#
+set r4415/terrain = "city"
+#
+set r4415/extra_description = {'turnstile': "There's no way past the Ticket Taker, except to have a ticket. "}
+#
+dig/tel Entryway between the Grandstands; r4416
+#
+tag r4416 = the circus, category = area names
+#
+desc r4416 = The noise of the crowd greets you as you enter the Big Top.  The sounds and smells that greet you take you back to the time when you were a child, in wonder and awe of the Circus that came to your town.  You can hear the trumpet of an elephant somewhere, and the roar of a lion.  The applause of the crowd is momentarily deafening.  To the west and east you see under the Grand Stands, but can't get there from here. 
+#
+desc/edit r4416
+#
+:j l
+#
+:wq
+#
+set r4416/terrain = "inside"
+#
+set r4416/room_flags = ['indoors']
+#
+dig/tel Under the Grandstands; r4417
+#
+tag r4417 = the circus, category = area names
+#
+desc r4417 = You are under the grandstands.  Popcorn and peanut shells litter the floor. You can climb up the supports into the stands from here. 
+#
+desc/edit r4417
+#
+:j l
+#
+:wq
+#
+set r4417/terrain = "inside"
+#
+set r4417/room_flags = ['indoors']
+#
+dig/tel In the Grandstands; r4418
+#
+tag r4418 = the circus, category = area names
+#
+desc r4418 = You find yourself in a crowd of people enjoying the show.  The people behind you yell at you to sit down.  If you don't sit down soon, there may be a fight.  You may climb down below the stands, or exit by the stairs and get a good look at the Big Top. 
+#
+desc/edit r4418
+#
+:j l
+#
+:wq
+#
+set r4418/terrain = "inside"
+#
+set r4418/room_flags = ['indoors']
+#
+dig/tel First Look at the Big Top; r4419
+#
+tag r4419 = the circus, category = area names
+#
+desc r4419 = You receive your first good look at the Big Top.  The size of this tent was amazing from the outside, but is even more breathtaking from the inside.  You feel as if you are in a different world, where the sky is only a little closer.  You see 3 Rings spread out in front of you.  A high wire extends between poles at a dizzying height.  The 1st Ring appears to hold a cage which contains several large lions.  The 2nd Ring is filled with clowns who are trying to fit into a small cart.  In the 3rd Ring, a man is preparing to put on a blind fold, while his assistant stands against a target. He has a rack of knives next to him.  You may enter the 2nd Ring to the south. To the east and west are the Grandstands, and the Entryway is to the north. 
+#
+desc/edit r4419
+#
+:j l
+#
+:wq
+#
+set r4419/terrain = "inside"
+#
+set r4419/room_flags = ['indoors']
+#
+dig/tel In the Grandstands; r4420
+#
+tag r4420 = the circus, category = area names
+#
+desc r4420 = You find yourself in a crowd of people enjoying the show.  The people behind you yell at you to sit down.  If you don't sit down soon, there may be a fight.  You may climb down below the stands, or exit by the stairs and get a good look at the Big Top. The monorail platform is just west of here. 
+#
+desc/edit r4420
+#
+:j l
+#
+:wq
+#
+set r4420/terrain = "inside"
+#
+set r4420/room_flags = ['indoors']
+#
+dig/tel Under the Grandstands; r4421
+#
+tag r4421 = the circus, category = area names
+#
+desc r4421 = You are under the grandstands.  Popcorn and peanut shells litter the floor. You can climb up the supports into the stands from here. 
+#
+desc/edit r4421
+#
+:j l
+#
+:wq
+#
+set r4421/terrain = "inside"
+#
+set r4421/room_flags = ['indoors']
+#
+dig/tel The 2nd Ring - You'd better read the description of this room. ; r4422
+#
+tag r4422 = the circus, category = area names
+#
+desc r4422 = You are in the 2nd Ring.  You see a rickety carriage, which a line of clowns are trying to squeeze into.  You've already seen many more fit into it than could possibly fit.  The 1st Ring is to the west and the 3rd Ring is to the east.  A ladder on a pole here provides access to the tightrope above. To the north is the first look a visitor to the Big Top has.  You notice that the 1st ring is a cage which contains several HUNGRY Lions.  Entering it would be fairly suicidal.  It is a good thing it is locked! 
+#
+desc/edit r4422
+#
+:j l
+#
+:wq
+#
+set r4422/terrain = "inside"
+#
+set r4422/room_flags = ['indoors']
+#
+dig/tel The 3rd Ring; r4423
+#
+tag r4423 = the circus, category = area names
+#
+desc r4423 = A target is set up in this Ring for the knife thrower.  Up close, you can see many red smears which have not quite been cleaned from the target. You see the crowd looking at you, probably wondering what your act is.  The only exit is to the 2nd Ring to the west. 
+#
+desc/edit r4423
+#
+:j l
+#
+:wq
+#
+set r4423/terrain = "inside"
+#
+set r4423/room_flags = ['no teleport in', 'indoors']
+#
+dig/tel The 1st Ring; r4424
+#
+tag r4424 = the circus, category = area names
+#
+desc r4424 = This is a cage, which contains several large stands that the lions are supposed to sit on when they are not eating foolish people who walk into this room.  A few hoops are in the cage, one of which is flaming.  You think that only an idiot would be in here with the lions.  With the lions?  Hey, YOU ARE IN HERE WITH THE LIONS!!!  YOU'D BETTER RUN!!!!!! 
+#
+desc/edit r4424
+#
+:j l
+#
+:wq
+#
+set r4424/terrain = "inside"
+#
+set r4424/room_flags = ['indoors']
+#
+dig/tel On the High Wire; r4425
+#
+tag r4425 = the circus, category = area names
+#
+desc r4425 = You try to balance on the wire, and try not to look down the 80 feet to the ground below.  It is good thing your training as adventurer has given you a little better sense of balance than most people.  DIRECTLY below you is the Lion's Cage.  If you survived the fall, YOU WOULD SURELY DIE when the Lions got ahold of you.  You note that the door is closed to the cage, so you would have very little chance of running away if you did fall into the cage.  As you take your eyes off the ground below, you see the end of the wire immediately to your west. 
+#
+desc/edit r4425
+#
+:j l
+#
+:wq
+#
+set r4425/terrain = "inside"
+#
+set r4425/room_flags = ['indoors']
+#
+dig/tel On the Platform Way, Way Up in the Air; r4427
+#
+tag r4427 = the circus, category = area names
+#
+desc r4427 = You hug the pole as you realize just how high you are.  Your only choices are to go back down, or try to walk the high wire to the west.  Of course, the wire goes above the lion's cage, which has an open top.  Even if you did survive the fall, the lions would ensure that you probably wouldn't feel like adventuring again. 
+#
+desc/edit r4427
+#
+:j l
+#
+:wq
+#
+set r4427/terrain = "inside"
+#
+set r4427/room_flags = ['indoors']
+#
+dig/tel The End of the Highwire; r4428
+#
+tag r4428 = the circus, category = area names
+#
+desc r4428 = You made it safely.  Now you may climb down and sneak out the back entrance of the Big Top.  Or you can brave the Tightrope again.  You hear the noises of animals outside the Big Top.  Below you is the trapdoor down, which, thankfully, DOESN'T lead to the lions. 
+#
+desc/edit r4428
+#
+:j l
+#
+:wq
+#
+set r4428/terrain = "inside"
+#
+set r4428/room_flags = ['indoors']
+#
+dig/tel Behind the Big Top; r4429
+#
+tag r4429 = the circus, category = area names
+#
+desc r4429 = This is where the show behind the show goes on.  There are a lot of workers preparing the next act, moving animals around, and doing too much to take much notice of you.  The workers are taking the animals to the pens to the south.  You see some of the performers' wagons off to the east.  From inside, you hear applause from the crowd. 
+#
+desc/edit r4429
+#
+:j l
+#
+:wq
+#
+set r4429/terrain = "city"
+#
+dig/tel Path to the Animal Pens; r4429
+#
+tag r4429 = the circus, category = area names
+#
+desc r4429 = The sounds of the circus animals are far more clear from here. It sounds like this circus is the proud owner of more large and scary animals than just the lions out in the Big Top. Continuing on this well-worn path will lead you to the pens. 
+#
+desc/edit r4429
+#
+:j l
+#
+:wq
+#
+set r4429/terrain = "city"
+#
+dig/tel The Animal Pens; r4430
+#
+tag r4430 = the circus, category = area names
+#
+desc r4430 = From here you may enter the animal pens.  You see a large sign that says the following: WELCOME TO THE ANIMAL PENS!!!! Please feel free to pet and play with any of the animals.  They are all very friendly, and never hurt the public.  Especially the Bear.  Feel free to enter his cage and pet him. - The Owner Penned underneath this is a note that says:  Beware the Bear!!! You may enter the Elephant Pen to the west, the Bear Pen to the south, or the Horse Corral to the east.  Or you may return north. 
+#
+desc/edit r4430
+#
+:j l
+#
+:wq
+#
+set r4430/terrain = "city"
+#
+dig/tel The Elephant Pen; r4431
+#
+tag r4431 = the circus, category = area names
+#
+desc r4431 = The first thing you notice in this pen is the rather pungent odor.  Oh my, you seem to have stepped in an extremely large pile of droppings.  Maybe you should leave to the east? 
+#
+desc/edit r4431
+#
+:j l
+#
+:wq
+#
+set r4431/terrain = "city"
+#
+dig/tel The Bear Pen; r4432
+#
+tag r4432 = the circus, category = area names
+#
+desc r4432 = This room is rather dark, and it doesn't seem to have been cleaned very well lately.  The Circus Owner found that he could let some of his security guards go and save the price of feeding the bear if he just put up a sign inviting visitors to visit the friendly bear.  It appears you fell for it. 
+#
+desc/edit r4432
+#
+:j l
+#
+:wq
+#
+set r4432/terrain = "inside"
+#
+set r4432/room_flags = ['indoors', 'dark']
+#
+dig/tel The Horse Corral; r4433
+#
+tag r4433 = the circus, category = area names
+#
+desc r4433 = This corral is where the show horses are kept when they are not performing.  It is rather small for the amount of horses that are kept here. 
+#
+desc/edit r4433
+#
+:j l
+#
+:wq
+#
+set r4433/terrain = "city"
+#
+dig/tel The Row of Wagons; r4434
+#
+tag r4434 = the circus, category = area names
+#
+desc r4434 = You are between the two rows of wagons where the performers live. To the north is the Strongman's Wagon, to the south the Bearded Lady's Wagon.  You may also continue east or west. 
+#
+desc/edit r4434
+#
+:j l
+#
+:wq
+#
+set r4434/terrain = "city"
+#
+dig/tel The Strongman's Wagon; r4435
+#
+tag r4435 = the circus, category = area names
+#
+desc r4435 = This wagon seems pretty small to you, so it must be tiny for Ivan. The furnishings are spartan, and you see nothing of value.  You might want to consider leaving before Ivan returns. 
+#
+desc/edit r4435
+#
+:j l
+#
+:wq
+#
+set r4435/terrain = "inside"
+#
+set r4435/room_flags = ['indoors']
+#
+dig/tel The Bearded Lady's Wagon; r4436
+#
+tag r4436 = the circus, category = area names
+#
+desc r4436 = This is the filthiest place you think you have ever seen.  The floor is covered with hair clippings.  In the corner are several bottles entitled Miracle Stu's Wonderful Hair Tonic!!  It appears the Bearded Lady must go through that stuff like it is water. 
+#
+desc/edit r4436
+#
+:j l
+#
+:wq
+#
+set r4436/terrain = "inside"
+#
+set r4436/room_flags = ['indoors']
+#
+dig/tel The Sword Swallower's Wagon; r4437
+#
+tag r4437 = the circus, category = area names
+#
+desc r4437 = This trailer is kept immaculately clean.  You see a knife sharpening kit, as well as several rubber swords that are standing in a small display case. 
+#
+desc/edit r4437
+#
+:j l
+#
+:wq
+#
+set r4437/terrain = "inside"
+#
+set r4437/room_flags = ['indoors']
+#
+dig/tel The Row of Wagons; r4438
+#
+tag r4438 = the circus, category = area names
+#
+desc r4438 = You are between the two rows of wagons where the performers live. To the north is the Sword Swallower's Wagon, to the south is the Midget's Wagon.  You may also continue east or west. 
+#
+desc/edit r4438
+#
+:j l
+#
+:wq
+#
+set r4438/terrain = "city"
+#
+dig/tel The Midget's Tiny Wagon; r4439
+#
+tag r4439 = the circus, category = area names
+#
+desc r4439 = The cheap Circus Owner believes in rewarding people according to their stature.  Accordingly, this wagon is so small that even the Midget thinks that it is a tight fit.  The poor Midget is also the poorest paid of all the Freaks.  But that doesn't bother him.  He has a second profession that he practices on the side to make a little extra cash.  He also keeps a rather large guard dog in his trailer to discourage visitors. 
+#
+desc/edit r4439
+#
+:j l
+#
+:wq
+#
+set r4439/terrain = "inside"
+#
+set r4439/room_flags = ['indoors']
+#
+dig/tel The Row of Wagons; r4440
+#
+tag r4440 = the circus, category = area names
+#
+desc r4440 = You are between the two rows of wagons where the performers live. To the north is the Illusionist's Wagon, to the south is a very large Wagon.  You may also go back to the west, or enter a wagon to the east. 
+#
+desc/edit r4440
+#
+:j l
+#
+:wq
+#
+set r4440/terrain = "city"
+#
+dig/tel The Illusionist's Wagon; r4441
+#
+tag r4441 = the circus, category = area names
+#
+desc r4441 = This wagon seems much larger on the inside that it does on the outside.  You see a spacious, king-sized bed, a large table and kitchenette, and a separate sitting room.  The longer that you look though, you see that all the objects in the room have a slight shimmer to them.  Closer examination reveals that the bed is a cot, the table a nightstand, and the sitting room is a chair.  It appears the Illusionist tries to fool even himself sometimes. 
+#
+desc/edit r4441
+#
+:j l
+#
+:wq
+#
+set r4441/terrain = "inside"
+#
+set r4441/room_flags = ['indoors']
+#
+dig/tel The Circus Owner's Wagon; r4442
+#
+tag r4442 = the circus, category = area names
+#
+desc r4442 = This is by far the biggest and nicest wagon.  If the furnishings are any indication of the amount of money this man makes, maybe you should go into his line of work.  The walls are covered with walnut colored wood siding, and the furniture is of the finest workmanship.  Paintings hang on the walls, and there is even a medium sized icebox to keep the Owner's food fresh. 
+#
+desc/edit r4442
+#
+:j l
+#
+:wq
+#
+set r4442/terrain = "inside"
+#
+set r4442/room_flags = ['indoors', 'dark']
+#
+dig/tel The Secret Room; r4443
+#
+tag r4443 = the circus, category = area names
+#
+desc r4443 = This is a small area in the back of the Circus Owner's Wagon.  You see that this must be where he keeps the money that he makes off his employee's hard work.  There are several objects of value in here, but you know you would not be able to make it off The Circus property with them, so you'd better just take the coins.  Most things here you couldn't sell easily, except the artwork. 
+#
+desc/edit r4443
+#
+:j l
+#
+:wq
+#
+set r4443/terrain = "inside"
+#
+set r4443/room_flags = ['indoors', 'dark']
+#
+dig/tel The Clown's Room below the 2nd Ring; r4444
+#
+tag r4444 = the circus, category = area names
+#
+desc r4444 = This room has been cunningly hollowed out below the 2nd Ring, giving the clown's a place to hide after they supposedly hid in the cart.  This place is very hot.  That doesn't surprise you, as it is filled with clowns. 
+#
+desc/edit r4444
+#
+:j l
+#
+:wq
+#
+set r4444/terrain = "inside"
+#
+set r4444/room_flags = ['indoors', 'dark']
+#
+dig/tel Behind the Big Top; r4445
+#
+tag r4445 = the circus, category = area names
+#
+desc r4445 = This is where the show behind the show goes on.  There are a lot of workers preparing the next act, moving animals around, and doing too much to take much notice of you. 
+#
+desc/edit r4445
+#
+:j l
+#
+:wq
+#
+set r4445/terrain = "city"
+#
+dig/tel Behind the Big Top; r4446
+#
+tag r4446 = the circus, category = area names
+#
+desc r4446 = This is where the show behind the show goes on.  There are a lot of workers preparing the next act, moving animals around, and doing too much to take much notice of you. 
+#
+desc/edit r4446
+#
+:j l
+#
+:wq
+#
+set r4446/terrain = "city"
+#
+dig/tel Behind the Big Top; r4447
+#
+tag r4447 = the circus, category = area names
+#
+desc r4447 = This is where the show behind the show goes on.  There are a lot of workers preparing the next act, moving animals around, and doing too much to take much notice of you. 
+#
+desc/edit r4447
+#
+:j l
+#
+:wq
+#
+set r4447/terrain = "city"
+#
+dig/tel The Tightrope Walkers Wagon; r4448
+#
+tag r4448 = the circus, category = area names
+#
+desc r4448 = This wagon like most of the others shows how poorly the performers are paid.  The tightrope walkers are forced to (or choose to?) sleep in tiny hammocks, that you probably couldn't even fit in. 
+#
+desc/edit r4448
+#
+:j l
+#
+:wq
+#
+set r4448/terrain = "inside"
+#
+set r4448/room_flags = ['indoors']
+#
+tel r4469
+#
+tel r4401
+#
+openexit north; n; e3600, south = r12211
+#
+tag e3600 = the circus, category = area names
+#
+set e3600/door_attributes = "open"
+#
+set e3600/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3601, north = r4402
+#
+tag e3601 = the circus, category = area names
+#
+set e3601/door_attributes = "open"
+#
+set e3601/reset_door_attributes = "open"
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r4402
+#
+alias north = n, e3602
+#
+tag e3602 = the circus, category = area names
+#
+set e3602/door_attributes = "open"
+#
+set e3602/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3603, north = r4403
+#
+tag e3603 = the circus, category = area names
+#
+set e3603/door_attributes = "open"
+#
+set e3603/reset_door_attributes = "open"
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r4403
+#
+alias north = n, e3604
+#
+tag e3604 = the circus, category = area names
+#
+set e3604/door_attributes = "open"
+#
+set e3604/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3605, north = r4406
+#
+tag e3605 = the circus, category = area names
+#
+set e3605/door_attributes = "open"
+#
+set e3605/reset_door_attributes = "open"
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3606, east = r4404
+#
+tag e3606 = the circus, category = area names
+#
+set e3606/door_attributes = "open"
+#
+set e3606/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r4404
+#
+alias east = e, e3607
+#
+tag e3607 = the circus, category = area names
+#
+set e3607/door_attributes = "open"
+#
+set e3607/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3608, east = r4405
+#
+tag e3608 = the circus, category = area names
+#
+set e3608/door_attributes = "open"
+#
+set e3608/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r4405
+#
+alias east = e, e3609
+#
+tag e3609 = the circus, category = area names
+#
+set e3609/door_attributes = "open"
+#
+set e3609/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r4406
+#
+alias north = n, e3610
+#
+tag e3610 = the circus, category = area names
+#
+set e3610/door_attributes = "open"
+#
+set e3610/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3611, west = r4408
+#
+tag e3611 = the circus, category = area names
+#
+set e3611/door_attributes = "open"
+#
+set e3611/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3612, north = r4414
+#
+tag e3612 = the circus, category = area names
+#
+set e3612/door_attributes = "open"
+#
+set e3612/reset_door_attributes = "open"
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3613, east = r4407
+#
+tag e3613 = the circus, category = area names
+#
+set e3613/door_attributes = "open"
+#
+set e3613/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r4407
+#
+alias east = e, e3614
+#
+tag e3614 = the circus, category = area names
+#
+set e3614/door_attributes = "open"
+#
+set e3614/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r4408
+#
+openexit north; n; e3615, south = r4473
+#
+tag e3615 = the circus, category = area names
+#
+set e3615/door_attributes = "open"
+#
+set e3615/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3616, west = r4409
+#
+tag e3616 = the circus, category = area names
+#
+set e3616/door_attributes = "open"
+#
+set e3616/reset_door_attributes = "open"
+#
+desc east = You see the Bearded Lady's tent. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3617, north = r4413
+#
+tag e3617 = the circus, category = area names
+#
+set e3617/door_attributes = "open"
+#
+set e3617/reset_door_attributes = "open"
+#
+desc south = You see the Strongman's tent. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w, e3618
+#
+tag e3618 = the circus, category = area names
+#
+set e3618/door_attributes = "open"
+#
+set e3618/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r4409
+#
+openexit east; e; e3619, west = r4410
+#
+tag e3619 = the circus, category = area names
+#
+set e3619/door_attributes = "open"
+#
+set e3619/reset_door_attributes = "open"
+#
+desc east = You see the Illusionist's tent. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3620, north = r4412
+#
+tag e3620 = the circus, category = area names
+#
+set e3620/door_attributes = "open"
+#
+set e3620/reset_door_attributes = "open"
+#
+desc south = You see the Sword Swallower's tent. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w, e3621
+#
+tag e3621 = the circus, category = area names
+#
+set e3621/door_attributes = "open"
+#
+set e3621/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r4410
+#
+openexit south; s; e3622, north = r4411
+#
+tag e3622 = the circus, category = area names
+#
+set e3622/door_attributes = "open"
+#
+set e3622/reset_door_attributes = "open"
+#
+desc south = You see the Midget's tent. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w, e3623
+#
+tag e3623 = the circus, category = area names
+#
+set e3623/door_attributes = "open"
+#
+set e3623/reset_door_attributes = "open"
+#
+desc west = You see the Bearded Lady's tent. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r4411
+#
+alias north = n, e3624
+#
+tag e3624 = the circus, category = area names
+#
+set e3624/door_attributes = "open"
+#
+set e3624/reset_door_attributes = "open"
+#
+desc north = You see the Illusionist's Tent. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit west; w; e3625, east = r4412
+#
+tag e3625 = the circus, category = area names
+#
+set e3625/door_attributes = "open"
+#
+set e3625/reset_door_attributes = "open"
+#
+desc west = You see the Sword Swallower's Tent. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r4412
+#
+alias north = n, e3626
+#
+tag e3626 = the circus, category = area names
+#
+set e3626/door_attributes = "open"
+#
+set e3626/reset_door_attributes = "open"
+#
+desc north = You see the Bearded Lady's Tent. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e, e3627
+#
+tag e3627 = the circus, category = area names
+#
+set e3627/door_attributes = "open"
+#
+set e3627/reset_door_attributes = "open"
+#
+desc east = You see the Midget's Tent. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3628, east = r4413
+#
+tag e3628 = the circus, category = area names
+#
+set e3628/door_attributes = "open"
+#
+set e3628/reset_door_attributes = "open"
+#
+desc west = You see the Strongman's Tent. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r4413
+#
+alias north = n, e3629
+#
+tag e3629 = the circus, category = area names
+#
+set e3629/door_attributes = "open"
+#
+set e3629/reset_door_attributes = "open"
+#
+desc north = You see the Entrance to the Freak Shows. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e, e3630
+#
+tag e3630 = the circus, category = area names
+#
+set e3630/door_attributes = "open"
+#
+set e3630/reset_door_attributes = "open"
+#
+desc east = You see the Sword Swallower's Tent. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r4414
+#
+alias north = n, e3631
+#
+tag e3631 = the circus, category = area names
+#
+set e3631/door_attributes = "open"
+#
+set e3631/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3632, north = r4415
+#
+tag e3632 = the circus, category = area names
+#
+set e3632/door_attributes = "open"
+#
+set e3632/reset_door_attributes = "open"
+#
+desc south = You see the Entrance to the Big Top. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r4415
+#
+alias north = n, e3633
+#
+tag e3633 = the circus, category = area names
+#
+set e3633/door_attributes = "open"
+#
+set e3633/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3634, north = r4416
+#
+tag e3634 = the circus, category = area names
+#
+set e3634/door_attributes = "open"
+#
+set e3634/reset_door_attributes = "open"
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r4416
+#
+alias north = n, e3635
+#
+tag e3635 = the circus, category = area names
+#
+set e3635/door_attributes = "open"
+#
+set e3635/reset_door_attributes = "open"
+#
+desc north = You see the exit from the Circus. To get back in, you'll need to have a ticket. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3636, north = r4419
+#
+tag e3636 = the circus, category = area names
+#
+set e3636/door_attributes = "open"
+#
+set e3636/reset_door_attributes = "open"
+#
+desc south = You see your first good look at the Big Top ahead. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r4417
+#
+openexit west; w; e3637, east = r4416
+#
+tag e3637 = the circus, category = area names
+#
+set e3637/door_attributes = "open"
+#
+set e3637/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+openexit up; u; e3638, down = r4418
+#
+tag e3638 = the circus, category = area names
+#
+set e3638/door_attributes = "open"
+#
+set e3638/reset_door_attributes = "open"
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r4418
+#
+openexit west; w; e3639, east = r4419
+#
+tag e3639 = the circus, category = area names
+#
+set e3639/door_attributes = "open"
+#
+set e3639/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+alias down = d, e3640
+#
+tag e3640 = the circus, category = area names
+#
+set e3640/door_attributes = "open"
+#
+set e3640/reset_door_attributes = "open"
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r4419
+#
+alias north = n, e3641
+#
+tag e3641 = the circus, category = area names
+#
+set e3641/door_attributes = "open"
+#
+set e3641/reset_door_attributes = "open"
+#
+desc north = You see the Entryway. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e, e3642
+#
+tag e3642 = the circus, category = area names
+#
+set e3642/door_attributes = "open"
+#
+set e3642/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3643, north = r4422
+#
+tag e3643 = the circus, category = area names
+#
+set e3643/door_attributes = "open"
+#
+set e3643/reset_door_attributes = "open"
+#
+desc south = You see the 2nd Ring. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3644, east = r4420
+#
+tag e3644 = the circus, category = area names
+#
+set e3644/door_attributes = "open"
+#
+set e3644/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r4420
+#
+alias east = e, e3645
+#
+tag e3645 = the circus, category = area names
+#
+set e3645/door_attributes = "open"
+#
+set e3645/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit down; d; e3646, up = r4421
+#
+tag e3646 = the circus, category = area names
+#
+set e3646/door_attributes = "open"
+#
+set e3646/reset_door_attributes = "open"
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r4421
+#
+openexit east; e; e3647, west = r4416
+#
+tag e3647 = the circus, category = area names
+#
+set e3647/door_attributes = "open"
+#
+set e3647/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias up = u, e3648
+#
+tag e3648 = the circus, category = area names
+#
+set e3648/door_attributes = "open"
+#
+set e3648/reset_door_attributes = "open"
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r4422
+#
+alias north = n, e3649
+#
+tag e3649 = the circus, category = area names
+#
+set e3649/door_attributes = "open"
+#
+set e3649/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3650, west = r4423
+#
+tag e3650 = the circus, category = area names
+#
+set e3650/door_attributes = "open"
+#
+set e3650/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; door; w; e3651, east = r4424
+#
+tag e3651 = the circus, category = area names
+#
+set e3651/door_attributes = "open"
+#
+set e3651/reset_door_attributes = "open"
+#
+set west/key = "o4436"
+#
+objectlock west = "pick:false()"
+#
+openexit up; u; e3652, down = r4427
+#
+tag e3652 = the circus, category = area names
+#
+set e3652/door_attributes = "open"
+#
+set e3652/reset_door_attributes = "open"
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+openexit down; d; e3653, up = r4444
+#
+tag e3653 = the circus, category = area names
+#
+set e3653/door_attributes = "open"
+#
+set e3653/reset_door_attributes = "open"
+#
+desc down = You can't see into the car, you'll just have to go in. 
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r4423
+#
+alias west = w, e3654
+#
+tag e3654 = the circus, category = area names
+#
+set e3654/door_attributes = "open"
+#
+set e3654/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r4424
+#
+alias east = door, e, e3655
+#
+tag e3655 = the circus, category = area names
+#
+set e3655/door_attributes = "open"
+#
+set e3655/reset_door_attributes = "open"
+#
+set east/key = "o4436"
+#
+objectlock east = "pick:false()"
+#
+openexit south; s; e3656, north = r0
+#
+tag e3656 = the circus, category = area names
+#
+set e3656/door_attributes = "open"
+#
+set e3656/reset_door_attributes = "open"
+#
+alias west = w, e3657
+#
+tag e3657 = the circus, category = area names
+#
+set e3657/door_attributes = "open"
+#
+set e3657/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+openexit down; hole; d; e3658, up = r4469
+#
+tag e3658 = the circus, category = area names
+#
+set e3658/door_attributes = "open"
+#
+set e3658/reset_door_attributes = "open"
+#
+set down/key = "o4414"
+#
+objectlock down = "bash:false()"
+#
+tel r4425
+#
+openexit east; e; e3659, west = r4427
+#
+tag e3659 = the circus, category = area names
+#
+set e3659/door_attributes = "open"
+#
+set e3659/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3660, east = r4428
+#
+tag e3660 = the circus, category = area names
+#
+set e3660/door_attributes = "open"
+#
+set e3660/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+openexit down; d; e3661, up = r4424
+#
+tag e3661 = the circus, category = area names
+#
+set e3661/door_attributes = "open"
+#
+set e3661/reset_door_attributes = "open"
+#
+desc down = The Lion's Cage.  A suicidal move. 
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r4427
+#
+alias west = w, e3662
+#
+tag e3662 = the circus, category = area names
+#
+set e3662/door_attributes = "open"
+#
+set e3662/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+alias down = d, e3663
+#
+tag e3663 = the circus, category = area names
+#
+set e3663/door_attributes = "open"
+#
+set e3663/reset_door_attributes = "open"
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r4428
+#
+alias east = e, e3664
+#
+tag e3664 = the circus, category = area names
+#
+set e3664/door_attributes = "open"
+#
+set e3664/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit down; trapdoor; d; e3665, up = r4429
+#
+tag e3665 = the circus, category = area names
+#
+set e3665/door_attributes = "open"
+#
+set e3665/reset_door_attributes = "open"
+#
+tel r4429
+#
+openexit east; e; e3666, west = r4434
+#
+tag e3666 = the circus, category = area names
+#
+set e3666/door_attributes = "open"
+#
+set e3666/reset_door_attributes = "open"
+#
+desc east = You see the Row of Trailers. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3667, north = r4430
+#
+tag e3667 = the circus, category = area names
+#
+set e3667/door_attributes = "open"
+#
+set e3667/reset_door_attributes = "open"
+#
+desc south = You see the Animal Pens. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3668, east = r4445
+#
+tag e3668 = the circus, category = area names
+#
+set e3668/door_attributes = "open"
+#
+set e3668/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+alias up = door, u, e3669
+#
+tag e3669 = the circus, category = area names
+#
+set e3669/door_attributes = "open"
+#
+set e3669/reset_door_attributes = "open"
+#
+tel r4429
+#
+openexit north; n; e3670, south = r4429
+#
+tag e3670 = the circus, category = area names
+#
+set e3670/door_attributes = "open"
+#
+set e3670/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s, e3671
+#
+tag e3671 = the circus, category = area names
+#
+set e3671/door_attributes = "open"
+#
+set e3671/reset_door_attributes = "open"
+#
+desc south = You see the Animal Pens. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r4430
+#
+openexit north; n; e3672, south = r4426
+#
+tag e3672 = the circus, category = area names
+#
+set e3672/door_attributes = "open"
+#
+set e3672/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; door; e; e3673, west = r4433
+#
+tag e3673 = the circus, category = area names
+#
+set e3673/door_attributes = "open"
+#
+set e3673/reset_door_attributes = "open"
+#
+openexit south; door; s; e3674, north = r4432
+#
+tag e3674 = the circus, category = area names
+#
+set e3674/door_attributes = "open"
+#
+set e3674/reset_door_attributes = "open"
+#
+openexit west; door; w; e3675, east = r4431
+#
+tag e3675 = the circus, category = area names
+#
+set e3675/door_attributes = "open"
+#
+set e3675/reset_door_attributes = "open"
+#
+tel r4431
+#
+alias east = door, e, e3676
+#
+tag e3676 = the circus, category = area names
+#
+set e3676/door_attributes = "open"
+#
+set e3676/reset_door_attributes = "open"
+#
+tel r4432
+#
+alias north = door, n, e3677
+#
+tag e3677 = the circus, category = area names
+#
+set e3677/door_attributes = "open"
+#
+set e3677/reset_door_attributes = "open"
+#
+tel r4433
+#
+alias west = door, w, e3678
+#
+tag e3678 = the circus, category = area names
+#
+set e3678/door_attributes = "open"
+#
+set e3678/reset_door_attributes = "open"
+#
+tel r4434
+#
+openexit north; door; n; e3679, south = r4435
+#
+tag e3679 = the circus, category = area names
+#
+set e3679/door_attributes = "open"
+#
+set e3679/reset_door_attributes = "open"
+#
+openexit east; e; e3680, west = r4438
+#
+tag e3680 = the circus, category = area names
+#
+set e3680/door_attributes = "open"
+#
+set e3680/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; door; s; e3681, north = r4436
+#
+tag e3681 = the circus, category = area names
+#
+set e3681/door_attributes = "open"
+#
+set e3681/reset_door_attributes = "open"
+#
+alias west = w, e3682
+#
+tag e3682 = the circus, category = area names
+#
+set e3682/door_attributes = "open"
+#
+set e3682/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r4435
+#
+alias south = door, s, e3683
+#
+tag e3683 = the circus, category = area names
+#
+set e3683/door_attributes = "open"
+#
+set e3683/reset_door_attributes = "open"
+#
+tel r4436
+#
+alias north = door, n, e3684
+#
+tag e3684 = the circus, category = area names
+#
+set e3684/door_attributes = "open"
+#
+set e3684/reset_door_attributes = "open"
+#
+tel r4437
+#
+openexit south; door; s; e3685, north = r4438
+#
+tag e3685 = the circus, category = area names
+#
+set e3685/door_attributes = "open"
+#
+set e3685/reset_door_attributes = "open"
+#
+tel r4438
+#
+alias north = door, n, e3686
+#
+tag e3686 = the circus, category = area names
+#
+set e3686/door_attributes = "open"
+#
+set e3686/reset_door_attributes = "open"
+#
+openexit east; e; e3687, west = r4440
+#
+tag e3687 = the circus, category = area names
+#
+set e3687/door_attributes = "open"
+#
+set e3687/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; door; s; e3688, north = r4439
+#
+tag e3688 = the circus, category = area names
+#
+set e3688/door_attributes = "open"
+#
+set e3688/reset_door_attributes = "open"
+#
+alias west = w, e3689
+#
+tag e3689 = the circus, category = area names
+#
+set e3689/door_attributes = "open"
+#
+set e3689/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r4439
+#
+alias north = door, n, e3690
+#
+tag e3690 = the circus, category = area names
+#
+set e3690/door_attributes = "open"
+#
+set e3690/reset_door_attributes = "open"
+#
+tel r4440
+#
+openexit north; door; n; e3691, south = r4441
+#
+tag e3691 = the circus, category = area names
+#
+set e3691/door_attributes = "open"
+#
+set e3691/reset_door_attributes = "open"
+#
+openexit east; door; e; e3692, west = r4448
+#
+tag e3692 = the circus, category = area names
+#
+set e3692/door_attributes = "open"
+#
+set e3692/reset_door_attributes = "open"
+#
+openexit south; door; s; e3693, north = r4442
+#
+tag e3693 = the circus, category = area names
+#
+set e3693/door_attributes = "open"
+#
+set e3693/reset_door_attributes = "open"
+#
+alias west = w, e3694
+#
+tag e3694 = the circus, category = area names
+#
+set e3694/door_attributes = "open"
+#
+set e3694/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r4441
+#
+alias south = door, s, e3695
+#
+tag e3695 = the circus, category = area names
+#
+set e3695/door_attributes = "open"
+#
+set e3695/reset_door_attributes = "open"
+#
+tel r4442
+#
+alias north = door, n, e3696
+#
+tag e3696 = the circus, category = area names
+#
+set e3696/door_attributes = "open"
+#
+set e3696/reset_door_attributes = "open"
+#
+openexit south; icebox; s; e3697, north = r4443
+#
+tag e3697 = the circus, category = area names
+#
+set e3697/door_attributes = "open"
+#
+set e3697/reset_door_attributes = "open"
+#
+tel r4443
+#
+alias north = secret, n, e3698
+#
+tag e3698 = the circus, category = area names
+#
+set e3698/door_attributes = "open"
+#
+set e3698/reset_door_attributes = "open"
+#
+tel r4444
+#
+alias up = u, e3699
+#
+tag e3699 = the circus, category = area names
+#
+set e3699/door_attributes = "open"
+#
+set e3699/reset_door_attributes = "open"
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r4445
+#
+alias east = e, e3700
+#
+tag e3700 = the circus, category = area names
+#
+set e3700/door_attributes = "open"
+#
+set e3700/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3701, east = r4446
+#
+tag e3701 = the circus, category = area names
+#
+set e3701/door_attributes = "open"
+#
+set e3701/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r4446
+#
+alias east = e, e3702
+#
+tag e3702 = the circus, category = area names
+#
+set e3702/door_attributes = "open"
+#
+set e3702/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3703, east = r4447
+#
+tag e3703 = the circus, category = area names
+#
+set e3703/door_attributes = "open"
+#
+set e3703/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r4447
+#
+alias east = e, e3704
+#
+tag e3704 = the circus, category = area names
+#
+set e3704/door_attributes = "open"
+#
+set e3704/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r4448
+#
+alias west = door, w, e3705
+#
+tag e3705 = the circus, category = area names
+#
+set e3705/door_attributes = "open"
+#
+set e3705/reset_door_attributes = "open"
+#
+tel r4402
+#
+create/drop the Ticket Clerk;ticket;clerk;m4400:characters.Mobile
+#
+desc m4400 = The Ticket Clerk extends his hand for your money. 
+#
+set m4400/level = 35
+#
+set m4400/level_base = 35
+#
+set m4400/vnum = "m4400"
+#
+set m4400/look_description = "The ticket clerk is bored, but is not so bored that he really wants to talk to you.  So are you going to buy a ticket or what???? "
+#
+set m4400/act_flags = ['sentinel', 'npc']
+#
+set m4400/alignment = 250
+#
+set m4400/sex = "male"
+#
+set m4400/race = "human"
+#
+tag m4400 = the circus:area name
+#
+tag m4400 = mobile
+#
+set m4400/hitpoints[maximum] = 291
+#
+set m4400/position = "standing"
+#
+set m4400/shopkeeper = {'item will buy 1': 'trash', 'item will buy 2': 'trash', 'item will buy 3': 'trash', 'item will buy 4': 'trash', 'sell percentage': '0', 'buy percentage': '100', 'opening hour': '50', 'closing hour': '0'}
+#
+tel r4402
+#
+create a ticket;ticket;circusticket;o4400:objects.Key
+#
+sethome o4400 = m4400
+#
+desc o4400 = An unwanted scrap of paper lies here.
+#
+set o4400/level = 33
+#
+set o4400/level_base = 33
+#
+set o4400/vnum = "o4400"
+#
+set o4400/item_type = "key"
+#
+set o4400/weight = 1
+#
+tag o4400 = the circus:area name
+#
+tag o4400 = object
+#
+give o4400 = m4400
+#
+set m4400/reset_objects["o4400"] = {"location":"inventory"}
+#
+tel r4402
+#
+create a note;note;o4429:objects.Furniture
+#
+sethome o4429 = r4402
+#
+desc o4429 = A sign hangs by the ticket booth.
+#
+set o4429/level = 33
+#
+set o4429/level_base = 33
+#
+set o4429/vnum = "o4429"
+#
+set o4429/item_type = "furniture"
+#
+objectlock o4429 = "get:perm(Admin)"
+#
+set o4429/weight = 1
+#
+tag o4429 = the circus:area name
+#
+tag o4429 = object
+#
+set o4429/extra_descriptions = {'sign': ' The sign says:     type BUY TICKET to buy a ticket for the Big Top. '}
+#
+set o4429/people_maximum = 0
+#
+set o4429/weight_maximum = 0
+#
+set o4429/use_positions = []
+#
+set o4429/heal_mana_gain = 0
+#
+drop o4429
+#
+set r4402/reset_objects["o4429"] = {"location":"inventory"}
+#
+tel r4403
+#
+create/drop a small child;child;small;m4401:characters.Mobile
+#
+desc m4401 = A small child waits in line for the Big Top. 
+#
+set m4401/level = 3
+#
+set m4401/level_base = 3
+#
+set m4401/vnum = "m4401"
+#
+set m4401/look_description = "He is standing in line, whining and complaining that his feet hurt.  Why don't you put him out of your misery? "
+#
+set m4401/act_flags = ['sentinel', 'npc']
+#
+set m4401/alignment = 1000
+#
+set m4401/sex = "male"
+#
+set m4401/race = "human"
+#
+tag m4401 = the circus:area name
+#
+tag m4401 = mobile
+#
+set m4401/hitpoints[maximum] = 27
+#
+set m4401/position = "standing"
+#
+tel r4403
+#
+create/drop the child's mother;woman;mother;mom;m4403:characters.Mobile
+#
+desc m4403 = The child's mother stands here, patiently waiting in line. 
+#
+set m4403/level = 6
+#
+set m4403/level_base = 6
+#
+set m4403/vnum = "m4403"
+#
+set m4403/look_description = "The mother is tired of taking care of her son, and wishes she was in a bath at home right now. "
+#
+set m4403/act_flags = ['sentinel', 'npc']
+#
+set m4403/alignment = 0
+#
+set m4403/sex = "female"
+#
+set m4403/race = "human"
+#
+tag m4403 = the circus:area name
+#
+tag m4403 = mobile
+#
+set m4403/hitpoints[maximum] = 82
+#
+set m4403/position = "standing"
+#
+tel r4404
+#
+create/drop the child's mother;woman;mother;mom;m4403:characters.Mobile
+#
+desc m4403 = The child's mother stands here, patiently waiting in line. 
+#
+set m4403/level = 6
+#
+set m4403/level_base = 6
+#
+set m4403/vnum = "m4403"
+#
+set m4403/look_description = "The mother is tired of taking care of her son, and wishes she was in a bath at home right now. "
+#
+set m4403/act_flags = ['sentinel', 'npc']
+#
+set m4403/alignment = 0
+#
+set m4403/sex = "female"
+#
+set m4403/race = "human"
+#
+tag m4403 = the circus:area name
+#
+tag m4403 = mobile
+#
+set m4403/hitpoints[maximum] = 57
+#
+set m4403/position = "standing"
+#
+tel r4404
+#
+create/drop an animal keeper;keeper;m4421:characters.Mobile
+#
+desc m4421 = An animal keeper is here, taking care of the animals. 
+#
+set m4421/level = 8
+#
+set m4421/level_base = 8
+#
+set m4421/vnum = "m4421"
+#
+set m4421/look_description = "She loves her work, and takes good care of the animals, despite the cheap supplies bought for them by the Circus Owner. "
+#
+set m4421/act_flags = ['stay area', 'npc']
+#
+set m4421/alignment = 1000
+#
+set m4421/sex = "female"
+#
+set m4421/spell_affects = {'protect': ''}
+#
+set m4421/race = "human"
+#
+tag m4421 = the circus:area name
+#
+tag m4421 = mobile
+#
+set m4421/hitpoints[maximum] = 112
+#
+set m4421/position = "standing"
+#
+tel r4404
+#
+create a letter;sign;o4415:objects.Furniture
+#
+sethome o4415 = r4404
+#
+desc o4415 = A letter is posted on the games booths.
+#
+set o4415/level = 6
+#
+set o4415/level_base = 6
+#
+set o4415/vnum = "o4415"
+#
+set o4415/item_type = "furniture"
+#
+objectlock o4415 = "get:perm(Admin)"
+#
+set o4415/weight = 40
+#
+tag o4415 = the circus:area name
+#
+tag o4415 = object
+#
+set o4415/extra_descriptions = {'letter': " The letter reads:  This area has been closed by order of the Mayor of Eden's Grove, because of dishonest activities perpetrated by the persons running the games. Another example of how your government cares for you. - Captain of the Watch "}
+#
+set o4415/people_maximum = 0
+#
+set o4415/weight_maximum = 0
+#
+set o4415/use_positions = []
+#
+set o4415/heal_mana_gain = 0
+#
+drop o4415
+#
+set r4404/reset_objects["o4415"] = {"location":"inventory"}
+#
+tel r4405
+#
+create/drop a small child;child;small;m4401:characters.Mobile
+#
+desc m4401 = A small child waits in line for the Big Top. 
+#
+set m4401/level = 3
+#
+set m4401/level_base = 3
+#
+set m4401/vnum = "m4401"
+#
+set m4401/look_description = "He is standing in line, whining and complaining that his feet hurt.  Why don't you put him out of your misery? "
+#
+set m4401/act_flags = ['sentinel', 'npc']
+#
+set m4401/alignment = 1000
+#
+set m4401/sex = "male"
+#
+set m4401/race = "human"
+#
+tag m4401 = the circus:area name
+#
+tag m4401 = mobile
+#
+set m4401/hitpoints[maximum] = 27
+#
+set m4401/position = "standing"
+#
+tel r4405
+#
+create a letter;sign;o4415:objects.Furniture
+#
+sethome o4415 = r4405
+#
+desc o4415 = A letter is posted on the games booths.
+#
+set o4415/level = 1
+#
+set o4415/level_base = 1
+#
+set o4415/vnum = "o4415"
+#
+set o4415/item_type = "furniture"
+#
+objectlock o4415 = "get:perm(Admin)"
+#
+set o4415/weight = 40
+#
+tag o4415 = the circus:area name
+#
+tag o4415 = object
+#
+set o4415/extra_descriptions = {'letter': " The letter reads:  This area has been closed by order of the Mayor of Eden's Grove, because of dishonest activities perpetrated by the persons running the games. Another example of how your government cares for you. - Captain of the Watch "}
+#
+set o4415/people_maximum = 0
+#
+set o4415/weight_maximum = 0
+#
+set o4415/use_positions = []
+#
+set o4415/heal_mana_gain = 0
+#
+drop o4415
+#
+set r4405/reset_objects["o4415"] = {"location":"inventory"}
+#
+tel r4406
+#
+create/drop a small child;child;small;m4401:characters.Mobile
+#
+desc m4401 = A small child waits in line for the Big Top. 
+#
+set m4401/level = 3
+#
+set m4401/level_base = 3
+#
+set m4401/vnum = "m4401"
+#
+set m4401/look_description = "He is standing in line, whining and complaining that his feet hurt.  Why don't you put him out of your misery? "
+#
+set m4401/act_flags = ['sentinel', 'npc']
+#
+set m4401/alignment = 1000
+#
+set m4401/sex = "male"
+#
+set m4401/race = "human"
+#
+tag m4401 = the circus:area name
+#
+tag m4401 = mobile
+#
+set m4401/hitpoints[maximum] = 31
+#
+set m4401/position = "standing"
+#
+tel r4406
+#
+create/drop the child's mother;woman;mother;mom;m4403:characters.Mobile
+#
+desc m4403 = The child's mother stands here, patiently waiting in line. 
+#
+set m4403/level = 6
+#
+set m4403/level_base = 6
+#
+set m4403/vnum = "m4403"
+#
+set m4403/look_description = "The mother is tired of taking care of her son, and wishes she was in a bath at home right now. "
+#
+set m4403/act_flags = ['sentinel', 'npc']
+#
+set m4403/alignment = 0
+#
+set m4403/sex = "female"
+#
+set m4403/race = "human"
+#
+tag m4403 = the circus:area name
+#
+tag m4403 = mobile
+#
+set m4403/hitpoints[maximum] = 59
+#
+set m4403/position = "standing"
+#
+tel r4407
+#
+create/drop the cotton candy vendor;vendor;m4427:characters.Mobile
+#
+desc m4427 = The cotton candy vendor waits to take your money. 
+#
+set m4427/level = 4
+#
+set m4427/level_base = 4
+#
+set m4427/vnum = "m4427"
+#
+set m4427/look_description = "He is wearing a colorful pair of overalls and a bright painter's cap.  He makes cotton candy in a big tub, where all the kids can watch him. "
+#
+set m4427/act_flags = ['sentinel', 'npc']
+#
+set m4427/alignment = 1000
+#
+set m4427/sex = "male"
+#
+set m4427/race = "human"
+#
+tag m4427 = the circus:area name
+#
+tag m4427 = mobile
+#
+set m4427/hitpoints[maximum] = 41
+#
+set m4427/position = "standing"
+#
+set m4427/shopkeeper = {'item will buy 1': 'trash', 'item will buy 2': 'trash', 'item will buy 3': 'trash', 'item will buy 4': 'trash', 'sell percentage': '0', 'buy percentage': '100', 'opening hour': '50', 'closing hour': '0'}
+#
+tel r4407
+#
+create cotton candy;candy;o4401:objects.Pill
+#
+sethome o4401 = m4427
+#
+desc o4401 = Some pink fluffy candy lies here.
+#
+set o4401/level = 2
+#
+set o4401/level_base = 2
+#
+set o4401/vnum = "o4401"
+#
+set o4401/item_type = "pill"
+#
+set o4401/weight = 1
+#
+tag o4401 = the circus:area name
+#
+tag o4401 = object
+#
+set o4401/spell_level = 1
+#
+set o4401/spell_level_base = 1
+#
+set o4401/spell_name_1 = "refresh"
+#
+set o4401/spell_name_2 = "refresh"
+#
+give o4401 = m4427
+#
+set m4427/reset_objects["o4401"] = {"location":"inventory"}
+#
+tel r4408
+#
+create/drop little Bobby;bobby;boy;m4404:characters.Mobile
+#
+desc m4404 = Little Bobby is lost, and is looking for his mommy. 
+#
+set m4404/level = 2
+#
+set m4404/level_base = 2
+#
+set m4404/vnum = "m4404"
+#
+set m4404/look_description = "Bobby is scared, he should never have ran off to look at the Bearded Lady. Besides being lost, he is now psychologically scarred. "
+#
+set m4404/act_flags = ['wimpy', 'stay area', 'scavenger', 'npc']
+#
+set m4404/alignment = 1000
+#
+set m4404/sex = "male"
+#
+set m4404/race = "human"
+#
+tag m4404 = the circus:area name
+#
+tag m4404 = mobile
+#
+set m4404/hitpoints[maximum] = 19
+#
+set m4404/position = "standing"
+#
+tel r4408
+#
+create/drop the Geek;geek;garbage;disposal;m4453:characters.Mobile
+#
+desc m4453 = The Geek stands here, ready to eat anything you give him. 
+#
+set m4453/level = 10
+#
+set m4453/level_base = 10
+#
+set m4453/vnum = "m4453"
+#
+set m4453/act_flags = ['stay area', 'npc']
+#
+set m4453/alignment = 0
+#
+set m4453/sex = "male"
+#
+set m4453/spell_affects = {'detect invis': ''}
+#
+set m4453/race = "human"
+#
+tag m4453 = the circus:area name
+#
+tag m4453 = mobile
+#
+set m4453/hitpoints[maximum] = 146
+#
+set m4453/position = "standing"
+#
+tel r4409
+#
+create/drop the Bearded Lady;bearded;lady;m4406:characters.Mobile
+#
+desc m4406 = The Bearded Lady is here. 
+#
+set m4406/level = 4
+#
+set m4406/level_base = 4
+#
+set m4406/vnum = "m4406"
+#
+set m4406/look_description = "The Bearded Lady is kind of scary looking.  She looks at you with lust in her eyes.   RUN!!!! "
+#
+set m4406/act_flags = ['sentinel', 'npc']
+#
+set m4406/alignment = 0
+#
+set m4406/sex = "female"
+#
+set m4406/race = "human"
+#
+tag m4406 = the circus:area name
+#
+tag m4406 = mobile
+#
+set m4406/hitpoints[maximum] = 44
+#
+set m4406/position = "standing"
+#
+tel r4409
+#
+create a hairy key;key;hairy;o4402:objects.Key
+#
+sethome o4402 = m4406
+#
+desc o4402 = A key lies here, covered with hair clippings.
+#
+set o4402/level = 2
+#
+set o4402/level_base = 2
+#
+set o4402/vnum = "o4402"
+#
+set o4402/item_type = "key"
+#
+set o4402/wear_location = "hold"
+#
+set o4402/weight = 1
+#
+tag o4402 = the circus:area name
+#
+tag o4402 = object
+#
+wearto o4402 = m4406
+#
+set m4406/reset_objects["o4402"] = {"location":"equipped"}
+#
+tel r4410
+#
+create/drop the Illusionist;Illusionist;mage;m4407:characters.Mobile
+#
+desc m4407 = The Illusionist is here, doing tricks to amaze the crowd. 
+#
+set m4407/level = 4
+#
+set m4407/level_base = 4
+#
+set m4407/vnum = "m4407"
+#
+set m4407/look_description = "He puts on quite a show.  If you couldn't see the wires on half of his creations, you might actually be amazed. "
+#
+set m4407/act_flags = ['sentinel', 'npc']
+#
+set m4407/alignment = 0
+#
+set m4407/sex = "male"
+#
+set m4407/spell_affects = {'detect hidden': '', 'detect invis': ''}
+#
+set m4407/race = "elf"
+#
+tag m4407 = the circus:area name
+#
+tag m4407 = mobile
+#
+set m4407/hitpoints[maximum] = 46
+#
+set m4407/position = "standing"
+#
+tel r4410
+#
+create a shimmering key;key;shimmering;o4405:objects.Key
+#
+sethome o4405 = m4407
+#
+desc o4405 = An object lies here, shimmering, so that you aren't sure what it is.
+#
+set o4405/level = 2
+#
+set o4405/level_base = 2
+#
+set o4405/vnum = "o4405"
+#
+set o4405/item_type = "key"
+#
+set o4405/wear_location = "hold"
+#
+set o4405/weight = 1
+#
+tag o4405 = the circus:area name
+#
+tag o4405 = object
+#
+wearto o4405 = m4407
+#
+set m4407/reset_objects["o4405"] = {"location":"equipped"}
+#
+tel r4411
+#
+create/drop the Midget;midget;m4408:characters.Mobile
+#
+desc m4408 = A Midget is here, doing acrobatics to amuse the crowd. 
+#
+set m4408/level = 3
+#
+set m4408/level_base = 3
+#
+set m4408/vnum = "m4408"
+#
+set m4408/look_description = "The Midget acts very silly, but you see a cunning gleam in his eye.  This is one to watch out for. "
+#
+set m4408/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4408/alignment = -300
+#
+set m4408/sex = "male"
+#
+set m4408/spell_affects = {'infrared': ''}
+#
+set m4408/race = "dwarf"
+#
+tag m4408 = the circus:area name
+#
+tag m4408 = mobile
+#
+set m4408/hitpoints[maximum] = 32
+#
+set m4408/position = "standing"
+#
+tel r4411
+#
+create a small key;key;small;o4404:objects.Key
+#
+sethome o4404 = m4408
+#
+desc o4404 = A small key lies here.
+#
+set o4404/level = 1
+#
+set o4404/level_base = 1
+#
+set o4404/vnum = "o4404"
+#
+set o4404/item_type = "key"
+#
+set o4404/wear_location = "hold"
+#
+set o4404/weight = 1
+#
+tag o4404 = the circus:area name
+#
+tag o4404 = object
+#
+wearto o4404 = m4408
+#
+set m4408/reset_objects["o4404"] = {"location":"equipped"}
+#
+tel r4411
+#
+create the midget's purse;purse;o4411:objects.Container
+#
+sethome o4411 = m4408
+#
+desc o4411 = A small purse lies here.
+#
+set o4411/level = 1
+#
+set o4411/level_base = 1
+#
+set o4411/vnum = "o4411"
+#
+set o4411/item_type = "container"
+#
+set o4411/wear_location = "hold"
+#
+set o4411/weight = 1
+#
+tag o4411 = the circus:area name
+#
+tag o4411 = object
+#
+set o4411/weight_maximum = 30
+#
+set o4411/state = ['closed', 'closeable']
+#
+set o4411/state_base = ['closed', 'closeable']
+#
+give o4411 = m4408
+#
+set m4408/reset_objects["o4411"] = {"location":"inventory"}
+#
+tel r4411
+#
+create a bunch of coins;bunch;coins;o4437:objects.Money
+#
+sethome o4437 = o4411
+#
+desc o4437 = A bunch of coins lies here.
+#
+set o4437/level = 1
+#
+set o4437/level_base = 1
+#
+set o4437/vnum = "o4437"
+#
+set o4437/item_type = "money"
+#
+set o4437/weight = 1
+#
+tag o4437 = the circus:area name
+#
+tag o4437 = object
+#
+set o4437/value = 50
+#
+put o4437 = o4411
+#
+set r4411/reset_objects["o4437"] = {"location":"o4411"}
+#
+tel r4412
+#
+create/drop the Sword Swallower;swallower;m4410:characters.Mobile
+#
+desc m4410 = The Sword Swallower is in the act of swallowing an entire bastard sword. 
+#
+set m4410/level = 12
+#
+set m4410/level_base = 12
+#
+set m4410/vnum = "m4410"
+#
+set m4410/look_description = "This guy has eaten more swords than you have even seen.  He probably knows how to use his sword as well. "
+#
+set m4410/act_flags = ['sentinel', 'npc']
+#
+set m4410/alignment = 0
+#
+set m4410/sex = "male"
+#
+set m4410/race = "human"
+#
+tag m4410 = the circus:area name
+#
+tag m4410 = mobile
+#
+set m4410/hitpoints[maximum] = 236
+#
+set m4410/position = "standing"
+#
+tel r4412
+#
+create a slender key;key;slender;o4406:objects.Key
+#
+sethome o4406 = m4410
+#
+desc o4406 = A very thin key lies here.
+#
+set o4406/level = 10
+#
+set o4406/level_base = 10
+#
+set o4406/vnum = "o4406"
+#
+set o4406/item_type = "key"
+#
+set o4406/wear_location = "hold"
+#
+set o4406/weight = 1
+#
+tag o4406 = the circus:area name
+#
+tag o4406 = object
+#
+wearto o4406 = m4410
+#
+set m4410/reset_objects["o4406"] = {"location":"equipped"}
+#
+tel r4413
+#
+create/drop Ivan;Ivan;strongman;man;strong;m4409:characters.Mobile
+#
+desc m4409 = Ivan the Strongman poses for the crowd. 
+#
+set m4409/level = 6
+#
+set m4409/level_base = 6
+#
+set m4409/vnum = "m4409"
+#
+set m4409/look_description = "Ivan really is an impressive figure of a man.  You will want to think twice before tangling with him. "
+#
+set m4409/act_flags = ['wimpy', 'stay area', 'scavenger', 'sentinel', 'npc']
+#
+set m4409/alignment = 100
+#
+set m4409/sex = "male"
+#
+set m4409/spell_affects = {'mute': '', 'protect': ''}
+#
+set m4409/race = "giant"
+#
+tag m4409 = the circus:area name
+#
+tag m4409 = mobile
+#
+set m4409/hitpoints[maximum] = 77
+#
+set m4409/position = "standing"
+#
+tel r4413
+#
+create a huge key;key;o4403:objects.Key
+#
+sethome o4403 = m4409
+#
+desc o4403 = A humongous, heavy key lies here.
+#
+set o4403/level = 4
+#
+set o4403/level_base = 4
+#
+set o4403/vnum = "o4403"
+#
+set o4403/item_type = "key"
+#
+set o4403/wear_location = "hold"
+#
+set o4403/weight = 1
+#
+tag o4403 = the circus:area name
+#
+tag o4403 = object
+#
+wearto o4403 = m4409
+#
+set m4409/reset_objects["o4403"] = {"location":"equipped"}
+#
+tel r4413
+#
+create a barbell;barbell;o4414:objects.Furniture
+#
+sethome o4414 = r4413
+#
+desc o4414 = A huge barbell lies here.
+#
+set o4414/level = 4
+#
+set o4414/level_base = 4
+#
+set o4414/vnum = "o4414"
+#
+set o4414/item_type = "furniture"
+#
+set o4414/wear_location = "hold"
+#
+set o4414/weight = 120
+#
+tag o4414 = the circus:area name
+#
+tag o4414 = object
+#
+set o4414/people_maximum = 0
+#
+set o4414/weight_maximum = 0
+#
+set o4414/use_positions = []
+#
+set o4414/heal_mana_gain = 0
+#
+drop o4414
+#
+set r4413/reset_objects["o4414"] = {"location":"inventory"}
+#
+tel r4414
+#
+create/drop a small child;child;small;m4401:characters.Mobile
+#
+desc m4401 = A small child waits in line for the Big Top. 
+#
+set m4401/level = 3
+#
+set m4401/level_base = 3
+#
+set m4401/vnum = "m4401"
+#
+set m4401/look_description = "He is standing in line, whining and complaining that his feet hurt.  Why don't you put him out of your misery? "
+#
+set m4401/act_flags = ['sentinel', 'npc']
+#
+set m4401/alignment = 1000
+#
+set m4401/sex = "male"
+#
+set m4401/race = "human"
+#
+tag m4401 = the circus:area name
+#
+tag m4401 = mobile
+#
+set m4401/hitpoints[maximum] = 30
+#
+set m4401/position = "standing"
+#
+tel r4414
+#
+create/drop the child's father;dad;father;man;m4402:characters.Mobile
+#
+desc m4402 = The child's father is here. 
+#
+set m4402/level = 3
+#
+set m4402/level_base = 3
+#
+set m4402/vnum = "m4402"
+#
+set m4402/look_description = "The child's father seems irked that you have been pushing past the others in line. "
+#
+set m4402/act_flags = ['sentinel', 'npc']
+#
+set m4402/alignment = 0
+#
+set m4402/sex = "male"
+#
+set m4402/race = "human"
+#
+tag m4402 = the circus:area name
+#
+tag m4402 = mobile
+#
+set m4402/hitpoints[maximum] = 31
+#
+set m4402/position = "standing"
+#
+tel r4414
+#
+create/drop the child's mother;woman;mother;mom;m4403:characters.Mobile
+#
+desc m4403 = The child's mother stands here, patiently waiting in line. 
+#
+set m4403/level = 6
+#
+set m4403/level_base = 6
+#
+set m4403/vnum = "m4403"
+#
+set m4403/look_description = "The mother is tired of taking care of her son, and wishes she was in a bath at home right now. "
+#
+set m4403/act_flags = ['sentinel', 'npc']
+#
+set m4403/alignment = 0
+#
+set m4403/sex = "female"
+#
+set m4403/race = "human"
+#
+tag m4403 = the circus:area name
+#
+tag m4403 = mobile
+#
+set m4403/hitpoints[maximum] = 49
+#
+set m4403/position = "standing"
+#
+tel r4415
+#
+create/drop a small child;child;small;m4401:characters.Mobile
+#
+desc m4401 = A small child waits in line for the Big Top. 
+#
+set m4401/level = 3
+#
+set m4401/level_base = 3
+#
+set m4401/vnum = "m4401"
+#
+set m4401/look_description = "He is standing in line, whining and complaining that his feet hurt.  Why don't you put him out of your misery? "
+#
+set m4401/act_flags = ['sentinel', 'npc']
+#
+set m4401/alignment = 1000
+#
+set m4401/sex = "male"
+#
+set m4401/race = "human"
+#
+tag m4401 = the circus:area name
+#
+tag m4401 = mobile
+#
+set m4401/hitpoints[maximum] = 24
+#
+set m4401/position = "standing"
+#
+tel r4415
+#
+create/drop the child's father;dad;father;man;m4402:characters.Mobile
+#
+desc m4402 = The child's father is here. 
+#
+set m4402/level = 3
+#
+set m4402/level_base = 3
+#
+set m4402/vnum = "m4402"
+#
+set m4402/look_description = "The child's father seems irked that you have been pushing past the others in line. "
+#
+set m4402/act_flags = ['sentinel', 'npc']
+#
+set m4402/alignment = 0
+#
+set m4402/sex = "male"
+#
+set m4402/race = "human"
+#
+tag m4402 = the circus:area name
+#
+tag m4402 = mobile
+#
+set m4402/hitpoints[maximum] = 28
+#
+set m4402/position = "standing"
+#
+tel r4415
+#
+create/drop the child's mother;woman;mother;mom;m4403:characters.Mobile
+#
+desc m4403 = The child's mother stands here, patiently waiting in line. 
+#
+set m4403/level = 6
+#
+set m4403/level_base = 6
+#
+set m4403/vnum = "m4403"
+#
+set m4403/look_description = "The mother is tired of taking care of her son, and wishes she was in a bath at home right now. "
+#
+set m4403/act_flags = ['sentinel', 'npc']
+#
+set m4403/alignment = 0
+#
+set m4403/sex = "female"
+#
+set m4403/race = "human"
+#
+tag m4403 = the circus:area name
+#
+tag m4403 = mobile
+#
+set m4403/hitpoints[maximum] = 65
+#
+set m4403/position = "standing"
+#
+tel r4415
+#
+create/drop Bobby's mother;mother;woman;m4405:characters.Mobile
+#
+desc m4405 = Bobby's mother is here, frantically calling out her son's name. 
+#
+set m4405/level = 7
+#
+set m4405/level_base = 7
+#
+set m4405/vnum = "m4405"
+#
+set m4405/look_description = "Bobby's mother is looking quite worried.  If you see Bobby, you will tell her, won't you? "
+#
+set m4405/act_flags = ['wimpy', 'stay area', 'scavenger', 'npc']
+#
+set m4405/alignment = 1000
+#
+set m4405/sex = "female"
+#
+set m4405/race = "human"
+#
+tag m4405 = the circus:area name
+#
+tag m4405 = mobile
+#
+set m4405/hitpoints[maximum] = 69
+#
+set m4405/position = "standing"
+#
+tel r4415
+#
+create/drop the Ticket Taker;ticket;taker;m4452:characters.Mobile
+#
+desc m4452 = The Ticket Taker waits for you to give him your ticket. 
+#
+set m4452/level = 3
+#
+set m4452/level_base = 3
+#
+set m4452/vnum = "m4452"
+#
+set m4452/look_description = "This fellow tried it all: alligator wrestler, knife thrower, clown, acrobat, fat lady, elephant-droppings collector.  And failed every time. This was the only job left.  If you have a ticket, you might just give his life meaning, and he'd let you by. "
+#
+set m4452/act_flags = ['no kill', 'sentinel', 'npc']
+#
+set m4452/alignment = -900
+#
+set m4452/sex = "male"
+#
+set m4452/spell_affects = {'infrared': '', 'detect hidden': '', 'detect invis': ''}
+#
+set m4452/race = "dwarf"
+#
+tag m4452 = the circus:area name
+#
+tag m4452 = mobile
+#
+set m4452/hitpoints[maximum] = 24
+#
+set m4452/position = "standing"
+#
+tel r4417
+#
+create/drop a member of the audience;member;audience;m4411:characters.Mobile
+#
+desc m4411 = A member of the audience goes "Ooooh!   Ahhhhh!" 
+#
+set m4411/level = 10
+#
+set m4411/level_base = 10
+#
+set m4411/vnum = "m4411"
+#
+set m4411/look_description = "This person is so interested in the show, he doesn't even realize you are here. "
+#
+set m4411/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4411/alignment = 0
+#
+set m4411/sex = "male"
+#
+set m4411/race = "human"
+#
+tag m4411 = the circus:area name
+#
+tag m4411 = mobile
+#
+set m4411/hitpoints[maximum] = 175
+#
+set m4411/position = "standing"
+#
+tel r4418
+#
+create/drop a member of the audience;member;audience;m4411:characters.Mobile
+#
+desc m4411 = A member of the audience goes "Ooooh!   Ahhhhh!" 
+#
+set m4411/level = 10
+#
+set m4411/level_base = 10
+#
+set m4411/vnum = "m4411"
+#
+set m4411/look_description = "This person is so interested in the show, he doesn't even realize you are here. "
+#
+set m4411/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4411/alignment = 0
+#
+set m4411/sex = "male"
+#
+set m4411/race = "human"
+#
+tag m4411 = the circus:area name
+#
+tag m4411 = mobile
+#
+set m4411/hitpoints[maximum] = 107
+#
+set m4411/position = "standing"
+#
+tel r4418
+#
+create/drop a member of the audience;member;audience;m4411:characters.Mobile
+#
+desc m4411 = A member of the audience goes "Ooooh!   Ahhhhh!" 
+#
+set m4411/level = 10
+#
+set m4411/level_base = 10
+#
+set m4411/vnum = "m4411"
+#
+set m4411/look_description = "This person is so interested in the show, he doesn't even realize you are here. "
+#
+set m4411/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4411/alignment = 0
+#
+set m4411/sex = "male"
+#
+set m4411/race = "human"
+#
+tag m4411 = the circus:area name
+#
+tag m4411 = mobile
+#
+set m4411/hitpoints[maximum] = 173
+#
+set m4411/position = "standing"
+#
+tel r4419
+#
+create/drop a member of the audience;member;audience;m4411:characters.Mobile
+#
+desc m4411 = A member of the audience goes "Ooooh!   Ahhhhh!" 
+#
+set m4411/level = 10
+#
+set m4411/level_base = 10
+#
+set m4411/vnum = "m4411"
+#
+set m4411/look_description = "This person is so interested in the show, he doesn't even realize you are here. "
+#
+set m4411/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4411/alignment = 0
+#
+set m4411/sex = "male"
+#
+set m4411/race = "human"
+#
+tag m4411 = the circus:area name
+#
+tag m4411 = mobile
+#
+set m4411/hitpoints[maximum] = 123
+#
+set m4411/position = "standing"
+#
+tel r4419
+#
+create/drop the Ringmaster;ringmaster;master;m4415:characters.Mobile
+#
+desc m4415 = The Ringmaster is introducing the next act. 
+#
+set m4415/level = 9
+#
+set m4415/level_base = 9
+#
+set m4415/vnum = "m4415"
+#
+set m4415/look_description = "The Ringmaster is dressed in a red coat, and is wearing a big black top hat. He was probably hired because he has a voice you could hear over a roaring dragon (which, incidentally, is allegedly the next act). "
+#
+set m4415/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m4415/alignment = 0
+#
+set m4415/sex = "male"
+#
+set m4415/spell_affects = {'protect': ''}
+#
+set m4415/race = "halfelf"
+#
+tag m4415 = the circus:area name
+#
+tag m4415 = mobile
+#
+set m4415/hitpoints[maximum] = 130
+#
+set m4415/position = "standing"
+#
+tel r4419
+#
+create a tophat;tophat;hat;o4421:objects.Armor
+#
+sethome o4421 = m4415
+#
+desc o4421 = The Ringmaster's tophat lies here.
+#
+set o4421/level = 7
+#
+set o4421/level_base = 7
+#
+set o4421/vnum = "o4421"
+#
+set o4421/item_type = "armor"
+#
+set o4421/wear_location = "head"
+#
+set o4421/weight = 1
+#
+tag o4421 = the circus:area name
+#
+tag o4421 = object
+#
+set o4421/stat_modifiers[mana] = 10
+#
+set o4421/stat_modifiers[armor class] = 1
+#
+set o4421/armor = 4
+#
+wearto o4421 = m4415
+#
+set m4415/reset_objects["o4421"] = {"location":"equipped"}
+#
+tel r4420
+#
+create/drop a member of the audience;member;audience;m4411:characters.Mobile
+#
+desc m4411 = A member of the audience goes "Ooooh!   Ahhhhh!" 
+#
+set m4411/level = 10
+#
+set m4411/level_base = 10
+#
+set m4411/vnum = "m4411"
+#
+set m4411/look_description = "This person is so interested in the show, he doesn't even realize you are here. "
+#
+set m4411/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4411/alignment = 0
+#
+set m4411/sex = "male"
+#
+set m4411/race = "human"
+#
+tag m4411 = the circus:area name
+#
+tag m4411 = mobile
+#
+set m4411/hitpoints[maximum] = 94
+#
+set m4411/position = "standing"
+#
+tel r4420
+#
+create/drop a member of the audience;member;audience;m4411:characters.Mobile
+#
+desc m4411 = A member of the audience goes "Ooooh!   Ahhhhh!" 
+#
+set m4411/level = 10
+#
+set m4411/level_base = 10
+#
+set m4411/vnum = "m4411"
+#
+set m4411/look_description = "This person is so interested in the show, he doesn't even realize you are here. "
+#
+set m4411/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4411/alignment = 0
+#
+set m4411/sex = "male"
+#
+set m4411/race = "human"
+#
+tag m4411 = the circus:area name
+#
+tag m4411 = mobile
+#
+set m4411/hitpoints[maximum] = 104
+#
+set m4411/position = "standing"
+#
+tel r4420
+#
+create/drop a member of the audience;member;audience;m4411:characters.Mobile
+#
+desc m4411 = A member of the audience goes "Ooooh!   Ahhhhh!" 
+#
+set m4411/level = 10
+#
+set m4411/level_base = 10
+#
+set m4411/vnum = "m4411"
+#
+set m4411/look_description = "This person is so interested in the show, he doesn't even realize you are here. "
+#
+set m4411/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4411/alignment = 0
+#
+set m4411/sex = "male"
+#
+set m4411/race = "human"
+#
+tag m4411 = the circus:area name
+#
+tag m4411 = mobile
+#
+set m4411/hitpoints[maximum] = 103
+#
+set m4411/position = "standing"
+#
+tel r4422
+#
+create/drop a red-nosed clown;clown;red;m4412:characters.Mobile
+#
+desc m4412 = A red-nosed clown is ready to throw a pie in your face. 
+#
+set m4412/level = 7
+#
+set m4412/level_base = 7
+#
+set m4412/vnum = "m4412"
+#
+set m4412/look_description = "The clown is laughing and throwing pies, and generally being a nuisance. He turns towards you with a pie.  DUCK! "
+#
+set m4412/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4412/alignment = 500
+#
+set m4412/sex = "male"
+#
+set m4412/race = "human"
+#
+tag m4412 = the circus:area name
+#
+tag m4412 = mobile
+#
+set m4412/hitpoints[maximum] = 87
+#
+set m4412/position = "standing"
+#
+tel r4422
+#
+create a red clown nose;nose;red;o4439:objects.Armor
+#
+sethome o4439 = m4412
+#
+desc o4439 = A red nose like a clown might wear, lies forgotten upon the ground.
+#
+set o4439/level = 5
+#
+set o4439/level_base = 5
+#
+set o4439/vnum = "o4439"
+#
+set o4439/item_type = "armor"
+#
+set o4439/wear_location = "head"
+#
+set o4439/weight = 1
+#
+tag o4439 = the circus:area name
+#
+tag o4439 = object
+#
+set o4439/stat_modifiers[intelligence] = -2
+#
+set o4439/stat_modifiers[wisdom] = -1
+#
+set o4439/armor = 3
+#
+wearto o4439 = m4412
+#
+set m4412/reset_objects["o4439"] = {"location":"equipped"}
+#
+tel r4422
+#
+create/drop a clown with big shoes;clown;big;m4413:characters.Mobile
+#
+desc m4413 = A clown with big shoes is trying to get into a small cart. 
+#
+set m4413/level = 2
+#
+set m4413/level_base = 2
+#
+set m4413/vnum = "m4413"
+#
+set m4413/look_description = "The clown is trying to fit his shoes into the cart.  It will be a tight fit. "
+#
+set m4413/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4413/alignment = 500
+#
+set m4413/sex = "male"
+#
+set m4413/race = "halfdwarf"
+#
+tag m4413 = the circus:area name
+#
+tag m4413 = mobile
+#
+set m4413/hitpoints[maximum] = 16
+#
+set m4413/position = "standing"
+#
+tel r4422
+#
+create big clown shoes;clown;shoes;o4420:objects.Armor
+#
+sethome o4420 = m4413
+#
+desc o4420 = A huge pair of shoes lies here, apparently forgotten.
+#
+set o4420/level = 1
+#
+set o4420/level_base = 1
+#
+set o4420/vnum = "o4420"
+#
+set o4420/item_type = "armor"
+#
+set o4420/wear_location = "feet"
+#
+set o4420/weight = 4
+#
+tag o4420 = the circus:area name
+#
+tag o4420 = object
+#
+set o4420/stat_modifiers[moves] = -20
+#
+set o4420/stat_modifiers[dexterity] = -1
+#
+set o4420/armor = 3
+#
+wearto o4420 = m4413
+#
+set m4413/reset_objects["o4420"] = {"location":"equipped"}
+#
+tel r4422
+#
+set west/door_attributes = ['lockable', 'locked']
+#
+set west/reset_door_attributes = ['lockable', 'locked']
+#
+tel r4423
+#
+create/drop the knife thrower;thrower;m4416:characters.Mobile
+#
+desc m4416 = The knife thrower is getting ready to throw 4 knives at his assistant. 
+#
+set m4416/level = 9
+#
+set m4416/level_base = 9
+#
+set m4416/vnum = "m4416"
+#
+set m4416/look_description = "He is getting ready to put on a blindfold.  He has spent years of practice, and is completely confident in his skills.  He also has a handkerchief he keeps wiping his face with.  You here him mumble, 'maybe I shouldn't have stopped by the Grunting Boar before my act'. "
+#
+set m4416/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m4416/alignment = 0
+#
+set m4416/sex = "male"
+#
+set m4416/race = "human"
+#
+tag m4416 = the circus:area name
+#
+tag m4416 = mobile
+#
+set m4416/hitpoints[maximum] = 77
+#
+set m4416/position = "standing"
+#
+tel r4423
+#
+create a sharp knife;knife;o4416:objects.Weapon
+#
+sethome o4416 = m4416
+#
+desc o4416 = A sharp, well balanced knife lies on the ground.
+#
+set o4416/level = 7
+#
+set o4416/level_base = 7
+#
+set o4416/vnum = "o4416"
+#
+set o4416/item_type = "weapon"
+#
+set o4416/wear_location = "wield"
+#
+set o4416/weight = 1
+#
+tag o4416 = the circus:area name
+#
+tag o4416 = object
+#
+set o4416/stat_modifiers[dexterity] = 1
+#
+set o4416/weapon_type = "stab"
+#
+set o4416/damage_low = 4
+#
+set o4416/damage_high = 12
+#
+wieldto o4416 = m4416
+#
+set m4416/reset_objects["o4416"] = {"location":"equipped"}
+#
+tel r4423
+#
+create drugged food;drugged;food;o4431:objects.Pill
+#
+sethome o4431 = m4416
+#
+desc o4431 = A delicious looking dinner lies here.
+#
+set o4431/level = 7
+#
+set o4431/level_base = 7
+#
+set o4431/vnum = "o4431"
+#
+set o4431/item_type = "pill"
+#
+set o4431/weight = 1
+#
+tag o4431 = the circus:area name
+#
+tag o4431 = object
+#
+set o4431/spell_level = 36
+#
+set o4431/spell_level_base = 36
+#
+set o4431/spell_name_1 = "sleep"
+#
+set o4431/spell_name_2 = "weaken"
+#
+set o4431/spell_name_3 = "poison"
+#
+give o4431 = m4416
+#
+set m4416/reset_objects["o4431"] = {"location":"inventory"}
+#
+tel r4423
+#
+create/drop the knife thrower's assistant;assistant;m4417:characters.Mobile
+#
+desc m4417 = The knife thrower's assistant is asleep against the target. 
+#
+set m4417/level = 4
+#
+set m4417/level_base = 4
+#
+set m4417/vnum = "m4417"
+#
+set m4417/look_description = "The assistant dreams a drugged sleep.  It seems she thought she would be helping with the animals, until a slight mishap last night during the knife throwers rehearsal last night.  She did wonder why the dashing knife thrower invited her out to dinner. "
+#
+set m4417/act_flags = ['sentinel', 'npc']
+#
+set m4417/alignment = 0
+#
+set m4417/sex = "female"
+#
+set m4417/spell_affects = {'sleep': ''}
+#
+set m4417/race = "human"
+#
+tag m4417 = the circus:area name
+#
+tag m4417 = mobile
+#
+set m4417/hitpoints[maximum] = 40
+#
+set m4417/position = "standing"
+#
+tel r4423
+#
+create a blindfold;blindfold;o4417:objects.Armor
+#
+sethome o4417 = m4417
+#
+desc o4417 = A strip of black cloth lies here.
+#
+set o4417/level = 2
+#
+set o4417/level_base = 2
+#
+set o4417/vnum = "o4417"
+#
+set o4417/item_type = "armor"
+#
+set o4417/wear_location = "head"
+#
+set o4417/weight = 1
+#
+tag o4417 = the circus:area name
+#
+tag o4417 = object
+#
+set o4417/stat_modifiers[hitroll] = -10
+#
+set o4417/stat_modifiers[moves] = -50
+#
+set o4417/armor = 4
+#
+wearto o4417 = m4417
+#
+set m4417/reset_objects["o4417"] = {"location":"equipped"}
+#
+tel r4424
+#
+create/drop the lion tamer;tamer;m4418:characters.Mobile
+#
+desc m4418 = The lion tamer is putting his head in a lion's mouth. 
+#
+set m4418/level = 10
+#
+set m4418/level_base = 10
+#
+set m4418/vnum = "m4418"
+#
+set m4418/look_description = "He is a dashing man, who seems at home with the deadly beasts.  He controls the animals with whip and force of mind. "
+#
+set m4418/act_flags = ['sentinel', 'npc']
+#
+set m4418/alignment = 500
+#
+set m4418/sex = "male"
+#
+set m4418/spell_affects = {'mute': ''}
+#
+set m4418/race = "human"
+#
+tag m4418 = the circus:area name
+#
+tag m4418 = mobile
+#
+set m4418/hitpoints[maximum] = 99
+#
+set m4418/position = "standing"
+#
+tel r4424
+#
+create a whip;whip;o4418:objects.Weapon
+#
+sethome o4418 = m4418
+#
+desc o4418 = A leather whip is lying on the ground.
+#
+set o4418/level = 8
+#
+set o4418/level_base = 8
+#
+set o4418/vnum = "o4418"
+#
+set o4418/item_type = "weapon"
+#
+set o4418/wear_location = "wield"
+#
+set o4418/weight = 1
+#
+tag o4418 = the circus:area name
+#
+tag o4418 = object
+#
+set o4418/stat_modifiers[hitroll] = 1
+#
+set o4418/stat_modifiers[hitpoints] = 3
+#
+set o4418/stat_modifiers[wisdom] = -1
+#
+set o4418/weapon_type = "whip"
+#
+set o4418/damage_low = 5
+#
+set o4418/damage_high = 10
+#
+wieldto o4418 = m4418
+#
+set m4418/reset_objects["o4418"] = {"location":"equipped"}
+#
+tel r4424
+#
+create/drop a ferocious Lion;lion;m4419:characters.Mobile
+#
+desc m4419 = A ferocious Lion leaps from his stand to attack you! 
+#
+set m4419/level = 1
+#
+set m4419/level_base = 1
+#
+set m4419/vnum = "m4419"
+#
+set m4419/look_description = "This is the King of the Beasts, and you understand why as he tears a chunk of flesh from your body! "
+#
+set m4419/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+#
+set m4419/alignment = -1000
+#
+set m4419/sex = "neuter"
+#
+set m4419/race = "bear"
+#
+tag m4419 = the circus:area name
+#
+tag m4419 = mobile
+#
+set m4419/hitpoints[maximum] = 8
+#
+set m4419/position = "standing"
+#
+tel r4424
+#
+create/drop a ferocious Lion;lion;m4419:characters.Mobile
+#
+desc m4419 = A ferocious Lion leaps from his stand to attack you! 
+#
+set m4419/level = 1
+#
+set m4419/level_base = 1
+#
+set m4419/vnum = "m4419"
+#
+set m4419/look_description = "This is the King of the Beasts, and you understand why as he tears a chunk of flesh from your body! "
+#
+set m4419/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+#
+set m4419/alignment = -1000
+#
+set m4419/sex = "neuter"
+#
+set m4419/race = "bear"
+#
+tag m4419 = the circus:area name
+#
+tag m4419 = mobile
+#
+set m4419/hitpoints[maximum] = 9
+#
+set m4419/position = "standing"
+#
+tel r4424
+#
+create/drop a ferocious Lion;lion;m4419:characters.Mobile
+#
+desc m4419 = A ferocious Lion leaps from his stand to attack you! 
+#
+set m4419/level = 1
+#
+set m4419/level_base = 1
+#
+set m4419/vnum = "m4419"
+#
+set m4419/look_description = "This is the King of the Beasts, and you understand why as he tears a chunk of flesh from your body! "
+#
+set m4419/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+#
+set m4419/alignment = -1000
+#
+set m4419/sex = "neuter"
+#
+set m4419/race = "bear"
+#
+tag m4419 = the circus:area name
+#
+tag m4419 = mobile
+#
+set m4419/hitpoints[maximum] = 8
+#
+set m4419/position = "standing"
+#
+tel r4424
+#
+set east/door_attributes = ['lockable', 'locked']
+#
+set east/reset_door_attributes = ['lockable', 'locked']
+#
+tel r4424
+#
+set south/door_attributes = ['closeable']
+#
+set south/reset_door_attributes = ['closeable']
+#
+tel r4424
+#
+set down/door_attributes = ['lockable', 'locked']
+#
+set down/reset_door_attributes = ['lockable', 'locked']
+#
+tel r4425
+#
+create/drop a tightrope walker;walker;tightrope;m4420:characters.Mobile
+#
+desc m4420 = A tightrope walker balances on the wire. 
+#
+set m4420/level = 10
+#
+set m4420/level_base = 10
+#
+set m4420/vnum = "m4420"
+#
+set m4420/look_description = "The only way past him seems to be to push him off.  You wouldn't do that, would you? "
+#
+set m4420/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m4420/alignment = 200
+#
+set m4420/sex = "male"
+#
+set m4420/race = "human"
+#
+tag m4420 = the circus:area name
+#
+tag m4420 = mobile
+#
+set m4420/hitpoints[maximum] = 119
+#
+set m4420/position = "standing"
+#
+tel r4425
+#
+create tightrope walker's pole;pole;o4419:objects.Furniture
+#
+sethome o4419 = m4420
+#
+desc o4419 = A long pole lies here.
+#
+set o4419/level = 8
+#
+set o4419/level_base = 8
+#
+set o4419/vnum = "o4419"
+#
+set o4419/item_type = "furniture"
+#
+set o4419/wear_location = "hold"
+#
+set o4419/weight = 1
+#
+tag o4419 = the circus:area name
+#
+tag o4419 = object
+#
+set o4419/extra_flags = ['glow']
+#
+set o4419/stat_modifiers[dexterity] = 1
+#
+set o4419/stat_modifiers[moves] = 8
+#
+set o4419/people_maximum = 0
+#
+set o4419/weight_maximum = 0
+#
+set o4419/use_positions = []
+#
+set o4419/heal_mana_gain = 0
+#
+set m4420/reset_objects["o4419"] = {"location":"equipped"}
+#
+tel r4426
+#
+create/drop a tightrope walker;walker;tightrope;m4420:characters.Mobile
+#
+desc m4420 = A tightrope walker balances on the wire. 
+#
+set m4420/level = 10
+#
+set m4420/level_base = 10
+#
+set m4420/vnum = "m4420"
+#
+set m4420/look_description = "The only way past him seems to be to push him off.  You wouldn't do that, would you? "
+#
+set m4420/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m4420/alignment = 200
+#
+set m4420/sex = "male"
+#
+set m4420/race = "human"
+#
+tag m4420 = the circus:area name
+#
+tag m4420 = mobile
+#
+set m4420/hitpoints[maximum] = 96
+#
+set m4420/position = "standing"
+#
+tel r4426
+#
+create tightrope walker's pole;pole;o4419:objects.Furniture
+#
+sethome o4419 = m4420
+#
+desc o4419 = A long pole lies here.
+#
+set o4419/level = 8
+#
+set o4419/level_base = 8
+#
+set o4419/vnum = "o4419"
+#
+set o4419/item_type = "furniture"
+#
+set o4419/wear_location = "hold"
+#
+set o4419/weight = 1
+#
+tag o4419 = the circus:area name
+#
+tag o4419 = object
+#
+set o4419/extra_flags = ['glow']
+#
+set o4419/stat_modifiers[dexterity] = 1
+#
+set o4419/stat_modifiers[moves] = 8
+#
+set o4419/people_maximum = 0
+#
+set o4419/weight_maximum = 0
+#
+set o4419/use_positions = []
+#
+set o4419/heal_mana_gain = 0
+#
+set m4420/reset_objects["o4419"] = {"location":"equipped"}
+#
+tel r4428
+#
+set down/door_attributes = ['closeable']
+#
+set down/reset_door_attributes = ['closeable']
+#
+tel r4429
+#
+create/drop a red-nosed clown;clown;red;m4412:characters.Mobile
+#
+desc m4412 = A red-nosed clown is ready to throw a pie in your face. 
+#
+set m4412/level = 7
+#
+set m4412/level_base = 7
+#
+set m4412/vnum = "m4412"
+#
+set m4412/look_description = "The clown is laughing and throwing pies, and generally being a nuisance. He turns towards you with a pie.  DUCK! "
+#
+set m4412/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4412/alignment = 500
+#
+set m4412/sex = "male"
+#
+set m4412/race = "human"
+#
+tag m4412 = the circus:area name
+#
+tag m4412 = mobile
+#
+set m4412/hitpoints[maximum] = 83
+#
+set m4412/position = "standing"
+#
+tel r4429
+#
+create a red clown nose;nose;red;o4439:objects.Armor
+#
+sethome o4439 = m4412
+#
+desc o4439 = A red nose like a clown might wear, lies forgotten upon the ground.
+#
+set o4439/level = 5
+#
+set o4439/level_base = 5
+#
+set o4439/vnum = "o4439"
+#
+set o4439/item_type = "armor"
+#
+set o4439/wear_location = "head"
+#
+set o4439/weight = 1
+#
+tag o4439 = the circus:area name
+#
+tag o4439 = object
+#
+set o4439/stat_modifiers[intelligence] = -2
+#
+set o4439/stat_modifiers[wisdom] = -1
+#
+set o4439/armor = 3
+#
+wearto o4439 = m4412
+#
+set m4412/reset_objects["o4439"] = {"location":"equipped"}
+#
+tel r4429
+#
+set up/door_attributes = ['closeable']
+#
+set up/reset_door_attributes = ['closeable']
+#
+tel r4430
+#
+create/drop an animal keeper;keeper;m4421:characters.Mobile
+#
+desc m4421 = An animal keeper is here, taking care of the animals. 
+#
+set m4421/level = 8
+#
+set m4421/level_base = 8
+#
+set m4421/vnum = "m4421"
+#
+set m4421/look_description = "She loves her work, and takes good care of the animals, despite the cheap supplies bought for them by the Circus Owner. "
+#
+set m4421/act_flags = ['stay area', 'npc']
+#
+set m4421/alignment = 1000
+#
+set m4421/sex = "female"
+#
+set m4421/spell_affects = {'protect': ''}
+#
+set m4421/race = "human"
+#
+tag m4421 = the circus:area name
+#
+tag m4421 = mobile
+#
+set m4421/hitpoints[maximum] = 87
+#
+set m4421/position = "standing"
+#
+tel r4430
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r4430
+#
+set south/door_attributes = ['closeable']
+#
+set south/reset_door_attributes = ['closeable']
+#
+tel r4430
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r4431
+#
+create/drop an elephant;elephant;m4422:characters.Mobile
+#
+desc m4422 = An elephant nudges you with his trunk, asking for peanuts. 
+#
+set m4422/level = 6
+#
+set m4422/level_base = 6
+#
+set m4422/vnum = "m4422"
+#
+set m4422/look_description = "This is a gigantic animal!  But he seems pretty docile.  Good thing.  You probably would not want to get him angry. "
+#
+set m4422/act_flags = ['sentinel', 'npc']
+#
+set m4422/alignment = 0
+#
+set m4422/sex = "neuter"
+#
+set m4422/race = "animal"
+#
+tag m4422 = the circus:area name
+#
+tag m4422 = mobile
+#
+set m4422/hitpoints[maximum] = 61
+#
+set m4422/position = "standing"
+#
+tel r4431
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r4432
+#
+create/drop a trained bear;bear;m4423:characters.Mobile
+#
+desc m4423 = The trained bear hasn't been fed in a week.  Look out! 
+#
+set m4423/level = 6
+#
+set m4423/level_base = 6
+#
+set m4423/vnum = "m4423"
+#
+set m4423/look_description = "The bear hasn't been fed for a long time.  The Circus Owner figures he can save a lot of money by feeding the bear with unwary adventurers like yourself. "
+#
+set m4423/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m4423/alignment = 0
+#
+set m4423/sex = "neuter"
+#
+set m4423/race = "bear"
+#
+tag m4423 = the circus:area name
+#
+tag m4423 = mobile
+#
+set m4423/hitpoints[maximum] = 82
+#
+set m4423/position = "standing"
+#
+tel r4432
+#
+create/drop a trained bear;bear;m4423:characters.Mobile
+#
+desc m4423 = The trained bear hasn't been fed in a week.  Look out! 
+#
+set m4423/level = 6
+#
+set m4423/level_base = 6
+#
+set m4423/vnum = "m4423"
+#
+set m4423/look_description = "The bear hasn't been fed for a long time.  The Circus Owner figures he can save a lot of money by feeding the bear with unwary adventurers like yourself. "
+#
+set m4423/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m4423/alignment = 0
+#
+set m4423/sex = "neuter"
+#
+set m4423/race = "bear"
+#
+tag m4423 = the circus:area name
+#
+tag m4423 = mobile
+#
+set m4423/hitpoints[maximum] = 64
+#
+set m4423/position = "standing"
+#
+tel r4432
+#
+set north/door_attributes = ['closeable']
+#
+set north/reset_door_attributes = ['closeable']
+#
+tel r4433
+#
+create/drop a horse;horse;m4424:characters.Mobile
+#
+desc m4424 = A trained horse is here, prancing in anticipation. 
+#
+set m4424/level = 2
+#
+set m4424/level_base = 2
+#
+set m4424/vnum = "m4424"
+#
+set m4424/look_description = "The horse has been trained by the bareback rider.  These are magnificent animals, although they look like they could use more food.  More evidence of the cheapness of the Circus Owner. "
+#
+set m4424/act_flags = ['sentinel', 'npc']
+#
+set m4424/alignment = 0
+#
+set m4424/sex = "neuter"
+#
+set m4424/race = "animal"
+#
+tag m4424 = the circus:area name
+#
+tag m4424 = mobile
+#
+set m4424/hitpoints[maximum] = 17
+#
+set m4424/position = "standing"
+#
+tel r4433
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r4434
+#
+create/drop an animal keeper;keeper;m4421:characters.Mobile
+#
+desc m4421 = An animal keeper is here, taking care of the animals. 
+#
+set m4421/level = 8
+#
+set m4421/level_base = 8
+#
+set m4421/vnum = "m4421"
+#
+set m4421/look_description = "She loves her work, and takes good care of the animals, despite the cheap supplies bought for them by the Circus Owner. "
+#
+set m4421/act_flags = ['stay area', 'npc']
+#
+set m4421/alignment = 1000
+#
+set m4421/sex = "female"
+#
+set m4421/spell_affects = {'protect': ''}
+#
+set m4421/race = "human"
+#
+tag m4421 = the circus:area name
+#
+tag m4421 = mobile
+#
+set m4421/hitpoints[maximum] = 93
+#
+set m4421/position = "standing"
+#
+tel r4434
+#
+set north/door_attributes = ['closeable']
+#
+set north/reset_door_attributes = ['closeable']
+#
+tel r4434
+#
+set south/door_attributes = ['closeable']
+#
+set south/reset_door_attributes = ['closeable']
+#
+tel r4435
+#
+create a chest;chest;o4424:objects.Container
+#
+sethome o4424 = r4435
+#
+desc o4424 = The strongman's huge chest lies here. 
+#
+set o4424/level = 6
+#
+set o4424/level_base = 6
+#
+set o4424/vnum = "o4424"
+#
+set o4424/item_type = "container"
+#
+objectlock o4424 = "get:perm(Admin)"
+#
+set o4424/weight = 1
+#
+tag o4424 = the circus:area name
+#
+tag o4424 = object
+#
+set o4424/weight_maximum = 100
+#
+set o4424/state = ['locked', 'closed', 'closeable']
+#
+set o4424/state_base = ['locked', 'closed', 'closeable']
+#
+set o4424/key = "o4403"
+#
+drop o4424
+#
+set r4435/reset_objects["o4424"] = {"location":"inventory"}
+#
+tel r4435
+#
+create the strongman's bracers;bracers;strongman;o4407:objects.Armor
+#
+sethome o4407 = o4424
+#
+desc o4407 = A pair of large bracers lies here.
+#
+set o4407/level = 6
+#
+set o4407/level_base = 6
+#
+set o4407/vnum = "o4407"
+#
+set o4407/item_type = "armor"
+#
+set o4407/wear_location = "arms"
+#
+set o4407/weight = 8
+#
+tag o4407 = the circus:area name
+#
+tag o4407 = object
+#
+set o4407/stat_modifiers[strength] = 1
+#
+set o4407/stat_modifiers[hitpoints] = 4
+#
+set o4407/armor = 2
+#
+put o4407 = o4424
+#
+set r4435/reset_objects["o4407"] = {"location":"o4424"}
+#
+tel r4435
+#
+set south/door_attributes = ['closeable']
+#
+set south/reset_door_attributes = ['closeable']
+#
+tel r4436
+#
+create a chest;chest;o4422:objects.Container
+#
+sethome o4422 = r4436
+#
+desc o4422 = A chest lies here, buried in a pile of hair.
+#
+set o4422/level = 6
+#
+set o4422/level_base = 6
+#
+set o4422/vnum = "o4422"
+#
+set o4422/item_type = "container"
+#
+objectlock o4422 = "get:perm(Admin)"
+#
+set o4422/weight = 1
+#
+tag o4422 = the circus:area name
+#
+tag o4422 = object
+#
+set o4422/weight_maximum = 100
+#
+set o4422/state = ['locked', 'closed', 'closeable']
+#
+set o4422/state_base = ['locked', 'closed', 'closeable']
+#
+set o4422/key = "o4402"
+#
+drop o4422
+#
+set r4436/reset_objects["o4422"] = {"location":"inventory"}
+#
+tel r4436
+#
+create a razor;razor;o4413:objects.Weapon
+#
+sethome o4413 = o4422
+#
+desc o4413 = A razor lies here.
+#
+set o4413/level = 6
+#
+set o4413/level_base = 6
+#
+set o4413/vnum = "o4413"
+#
+set o4413/item_type = "weapon"
+#
+set o4413/wear_location = "wield"
+#
+set o4413/weight = 1
+#
+tag o4413 = the circus:area name
+#
+tag o4413 = object
+#
+set o4413/extra_flags = ['magic']
+#
+set o4413/stat_modifiers[damroll] = 2
+#
+set o4413/stat_modifiers[armor class] = 3
+#
+set o4413/weapon_type = "stab"
+#
+set o4413/damage_low = 4
+#
+set o4413/damage_high = 12
+#
+put o4413 = o4422
+#
+set r4436/reset_objects["o4413"] = {"location":"o4422"}
+#
+tel r4436
+#
+set north/door_attributes = ['closeable']
+#
+set north/reset_door_attributes = ['closeable']
+#
+tel r4437
+#
+create another chest;chest;o4426:objects.Container
+#
+sethome o4426 = r4437
+#
+desc o4426 = A chest sits in the corner.
+#
+set o4426/level = 6
+#
+set o4426/level_base = 6
+#
+set o4426/vnum = "o4426"
+#
+set o4426/item_type = "container"
+#
+objectlock o4426 = "get:perm(Admin)"
+#
+set o4426/weight = 1
+#
+tag o4426 = the circus:area name
+#
+tag o4426 = object
+#
+set o4426/weight_maximum = 100
+#
+set o4426/state = ['locked', 'closed', 'closeable']
+#
+set o4426/state_base = ['locked', 'closed', 'closeable']
+#
+set o4426/key = "o4406"
+#
+drop o4426
+#
+set r4437/reset_objects["o4426"] = {"location":"inventory"}
+#
+tel r4437
+#
+create the sword swallower's sword;sword;bastard;o4410:objects.Weapon
+#
+sethome o4410 = o4426
+#
+desc o4410 = A rubber bastard sword is here.
+#
+set o4410/level = 6
+#
+set o4410/level_base = 6
+#
+set o4410/vnum = "o4410"
+#
+set o4410/item_type = "weapon"
+#
+set o4410/wear_location = "wield"
+#
+set o4410/weight = 0
+#
+tag o4410 = the circus:area name
+#
+tag o4410 = object
+#
+set o4410/stat_modifiers[hitroll] = 1
+#
+set o4410/stat_modifiers[damroll] = -1
+#
+set o4410/weapon_type = "slice"
+#
+set o4410/damage_low = 4
+#
+set o4410/damage_high = 10
+#
+put o4410 = o4426
+#
+set r4437/reset_objects["o4410"] = {"location":"o4426"}
+#
+tel r4437
+#
+set south/door_attributes = ['closeable']
+#
+set south/reset_door_attributes = ['closeable']
+#
+tel r4438
+#
+set north/door_attributes = ['closeable']
+#
+set north/reset_door_attributes = ['closeable']
+#
+tel r4438
+#
+set south/door_attributes = ['closeable']
+#
+set south/reset_door_attributes = ['closeable']
+#
+tel r4439
+#
+create a chest;chest;o4425:objects.Container
+#
+sethome o4425 = r4439
+#
+desc o4425 = A small chest lies here.
+#
+set o4425/level = 6
+#
+set o4425/level_base = 6
+#
+set o4425/vnum = "o4425"
+#
+set o4425/item_type = "container"
+#
+objectlock o4425 = "get:perm(Admin)"
+#
+set o4425/weight = 1
+#
+tag o4425 = the circus:area name
+#
+tag o4425 = object
+#
+set o4425/weight_maximum = 100
+#
+set o4425/state = ['locked', 'closed', 'closeable']
+#
+set o4425/state_base = ['locked', 'closed', 'closeable']
+#
+set o4425/key = "o4404"
+#
+drop o4425
+#
+set r4439/reset_objects["o4425"] = {"location":"inventory"}
+#
+tel r4439
+#
+create a bunch of coins;bunch;coins;o4438:objects.Money
+#
+sethome o4438 = o4425
+#
+desc o4438 = A bunch of coins lies here.
+#
+set o4438/level = 6
+#
+set o4438/level_base = 6
+#
+set o4438/vnum = "o4438"
+#
+set o4438/item_type = "money"
+#
+set o4438/weight = 1
+#
+tag o4438 = the circus:area name
+#
+tag o4438 = object
+#
+set o4438/value = 100
+#
+put o4438 = o4425
+#
+set r4439/reset_objects["o4438"] = {"location":"o4425"}
+#
+tel r4439
+#
+create a small, thin sword;sword;small;o4408:objects.Weapon
+#
+sethome o4408 = o4425
+#
+desc o4408 = A small sword lies here.
+#
+set o4408/level = 6
+#
+set o4408/level_base = 6
+#
+set o4408/vnum = "o4408"
+#
+set o4408/item_type = "weapon"
+#
+set o4408/wear_location = "wield"
+#
+set o4408/weight = 1
+#
+tag o4408 = the circus:area name
+#
+tag o4408 = object
+#
+set o4408/stat_modifiers[hitroll] = 3
+#
+set o4408/stat_modifiers[armor class] = 8
+#
+set o4408/weapon_type = "pierce"
+#
+set o4408/damage_low = 4
+#
+set o4408/damage_high = 10
+#
+put o4408 = o4425
+#
+set r4439/reset_objects["o4408"] = {"location":"o4425"}
+#
+tel r4439
+#
+create/drop a guard dog;dog;guard;m4429:characters.Mobile
+#
+desc m4429 = A guard dog growls at you, then attacks. 
+#
+set m4429/level = 2
+#
+set m4429/level_base = 2
+#
+set m4429/vnum = "m4429"
+#
+set m4429/look_description = "He looks like he has been purposely abused to keep him mean.  Maybe if you gave him a pie, he would be your friend? "
+#
+set m4429/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+#
+set m4429/alignment = -500
+#
+set m4429/sex = "male"
+#
+set m4429/spell_affects = {'detect hidden': '', 'detect invis': ''}
+#
+set m4429/race = "animal"
+#
+tag m4429 = the circus:area name
+#
+tag m4429 = mobile
+#
+set m4429/hitpoints[maximum] = 17
+#
+set m4429/position = "standing"
+#
+tel r4439
+#
+set north/door_attributes = ['closeable']
+#
+set north/reset_door_attributes = ['closeable']
+#
+tel r4440
+#
+create/drop an animal keeper;keeper;m4421:characters.Mobile
+#
+desc m4421 = An animal keeper is here, taking care of the animals. 
+#
+set m4421/level = 8
+#
+set m4421/level_base = 8
+#
+set m4421/vnum = "m4421"
+#
+set m4421/look_description = "She loves her work, and takes good care of the animals, despite the cheap supplies bought for them by the Circus Owner. "
+#
+set m4421/act_flags = ['stay area', 'npc']
+#
+set m4421/alignment = 1000
+#
+set m4421/sex = "female"
+#
+set m4421/spell_affects = {'protect': ''}
+#
+set m4421/race = "human"
+#
+tag m4421 = the circus:area name
+#
+tag m4421 = mobile
+#
+set m4421/hitpoints[maximum] = 107
+#
+set m4421/position = "standing"
+#
+tel r4440
+#
+set north/door_attributes = ['closeable']
+#
+set north/reset_door_attributes = ['closeable']
+#
+tel r4440
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r4440
+#
+set south/door_attributes = ['closeable']
+#
+set south/reset_door_attributes = ['closeable']
+#
+tel r4441
+#
+create a chest;chest;o4423:objects.Container
+#
+sethome o4423 = r4441
+#
+desc o4423 = A shimmering object sits in the corner.
+#
+set o4423/level = 6
+#
+set o4423/level_base = 6
+#
+set o4423/vnum = "o4423"
+#
+set o4423/item_type = "container"
+#
+objectlock o4423 = "get:perm(Admin)"
+#
+set o4423/weight = 1
+#
+tag o4423 = the circus:area name
+#
+tag o4423 = object
+#
+set o4423/weight_maximum = 100
+#
+set o4423/state = ['locked', 'closed', 'closeable']
+#
+set o4423/state_base = ['locked', 'closed', 'closeable']
+#
+set o4423/key = "o4405"
+#
+drop o4423
+#
+set r4441/reset_objects["o4423"] = {"location":"inventory"}
+#
+tel r4441
+#
+create a pointy translucent staff;staff;translucent;o4409:objects.Weapon
+#
+sethome o4409 = o4423
+#
+desc o4409 = A long, thin, shimmering object lies here.
+#
+set o4409/level = 6
+#
+set o4409/level_base = 6
+#
+set o4409/vnum = "o4409"
+#
+set o4409/item_type = "weapon"
+#
+set o4409/wear_location = "wield"
+#
+set o4409/weight = 0
+#
+tag o4409 = the circus:area name
+#
+tag o4409 = object
+#
+set o4409/extra_flags = ['magic']
+#
+set o4409/stat_modifiers[mana] = 2
+#
+set o4409/stat_modifiers[damroll] = 1
+#
+set o4409/weapon_type = "pound"
+#
+set o4409/damage_low = 4
+#
+set o4409/damage_high = 10
+#
+put o4409 = o4423
+#
+set r4441/reset_objects["o4409"] = {"location":"o4423"}
+#
+tel r4441
+#
+set south/door_attributes = ['closeable']
+#
+set south/reset_door_attributes = ['closeable']
+#
+tel r4442
+#
+create/drop a poor horse;unicorn;horse;white;m4425:characters.Mobile
+#
+desc m4425 = A poor white horse is here, about to have a horn implanted in it's head. 
+#
+set m4425/level = 5
+#
+set m4425/level_base = 5
+#
+set m4425/vnum = "m4425"
+#
+set m4425/look_description = "This poor animal had the unfortunate luck of being white.  Just what the Circus Owner was looking for. "
+#
+set m4425/act_flags = ['sentinel', 'npc']
+#
+set m4425/alignment = 0
+#
+set m4425/sex = "neuter"
+#
+set m4425/race = "animal"
+#
+tag m4425 = the circus:area name
+#
+tag m4425 = mobile
+#
+set m4425/hitpoints[maximum] = 42
+#
+set m4425/position = "standing"
+#
+tel r4442
+#
+create/drop the Circus Owner;owner;m4426:characters.Mobile
+#
+desc m4426 = The greedy Circus owner is about to cut into the poor horse. 
+#
+set m4426/level = 10
+#
+set m4426/level_base = 10
+#
+set m4426/vnum = "m4426"
+#
+set m4426/look_description = "This man has no scruples.  When the Owner got the thought of putting a horn on a regular horse and passing it off as a Unicorn, he almost wet his pants with delight.  This man is in trouble if animal-lovers ever find out, but until then, he will probably keep making a LOT of money. "
+#
+set m4426/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4426/alignment = -1000
+#
+set m4426/sex = "male"
+#
+set m4426/race = "drow"
+#
+tag m4426 = the circus:area name
+#
+tag m4426 = mobile
+#
+set m4426/hitpoints[maximum] = 112
+#
+set m4426/position = "standing"
+#
+tel r4442
+#
+create a scalpel;scalpel;o4448:objects.Weapon
+#
+sethome o4448 = m4426
+#
+desc o4448 = A thin knife with a sharp blade lies here.
+#
+set o4448/level = 8
+#
+set o4448/level_base = 8
+#
+set o4448/vnum = "o4448"
+#
+set o4448/item_type = "weapon"
+#
+set o4448/wear_location = "wield"
+#
+set o4448/weight = 1
+#
+tag o4448 = the circus:area name
+#
+tag o4448 = object
+#
+set o4448/extra_flags = ['magic']
+#
+set o4448/stat_modifiers[damroll] = 3
+#
+set o4448/stat_modifiers[hitroll] = -3
+#
+set o4448/weapon_type = "slice"
+#
+set o4448/damage_low = 4
+#
+set o4448/damage_high = 12
+#
+wieldto o4448 = m4426
+#
+set m4426/reset_objects["o4448"] = {"location":"equipped"}
+#
+tel r4442
+#
+create a paper;slip;paper;o4427:objects.Key
+#
+sethome o4427 = m4426
+#
+desc o4427 = A piece of wadded up paper has been left on the ground.
+#
+set o4427/level = 8
+#
+set o4427/level_base = 8
+#
+set o4427/vnum = "o4427"
+#
+set o4427/item_type = "key"
+#
+set o4427/weight = 1
+#
+tag o4427 = the circus:area name
+#
+tag o4427 = object
+#
+give o4427 = m4426
+#
+set m4426/reset_objects["o4427"] = {"location":"inventory"}
+#
+tel r4442
+#
+set north/door_attributes = ['closeable']
+#
+set north/reset_door_attributes = ['closeable']
+#
+tel r4442
+#
+set south/door_attributes = ['closeable']
+#
+set south/reset_door_attributes = ['closeable']
+#
+tel r4443
+#
+create a combination safe;safe;o4428:objects.Container
+#
+sethome o4428 = r4443
+#
+desc o4428 = A painting hangs on the wall, but it doesn't appear that valuable. Stick to the cash.
+#
+set o4428/level = 8
+#
+set o4428/level_base = 8
+#
+set o4428/vnum = "o4428"
+#
+set o4428/item_type = "container"
+#
+objectlock o4428 = "get:perm(Admin)"
+#
+set o4428/weight = 1
+#
+tag o4428 = the circus:area name
+#
+tag o4428 = object
+#
+set o4428/extra_descriptions = {'painting': ' Behind the painting you find a safe!  It has a combination lock.  You can probably never guess the combination. '}
+#
+set o4428/weight_maximum = 100
+#
+set o4428/state = ['locked', 'closed', 'closeable']
+#
+set o4428/state_base = ['locked', 'closed', 'closeable']
+#
+set o4428/key = "o4427"
+#
+drop o4428
+#
+set r4443/reset_objects["o4428"] = {"location":"inventory"}
+#
+tel r4443
+#
+create a bunch of coins;bunch;coins;o4412:objects.Money
+#
+sethome o4412 = o4428
+#
+desc o4412 = A bunch of coins lies here.
+#
+set o4412/level = 8
+#
+set o4412/level_base = 8
+#
+set o4412/vnum = "o4412"
+#
+set o4412/item_type = "money"
+#
+set o4412/weight = 1
+#
+tag o4412 = the circus:area name
+#
+tag o4412 = object
+#
+set o4412/value = 700
+#
+put o4412 = o4428
+#
+set r4443/reset_objects["o4412"] = {"location":"o4428"}
+#
+tel r4444
+#
+create/drop a red-nosed clown;clown;red;m4412:characters.Mobile
+#
+desc m4412 = A red-nosed clown is ready to throw a pie in your face. 
+#
+set m4412/level = 7
+#
+set m4412/level_base = 7
+#
+set m4412/vnum = "m4412"
+#
+set m4412/look_description = "The clown is laughing and throwing pies, and generally being a nuisance. He turns towards you with a pie.  DUCK! "
+#
+set m4412/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4412/alignment = 500
+#
+set m4412/sex = "male"
+#
+set m4412/race = "human"
+#
+tag m4412 = the circus:area name
+#
+tag m4412 = mobile
+#
+set m4412/hitpoints[maximum] = 95
+#
+set m4412/position = "standing"
+#
+tel r4444
+#
+create a red clown nose;nose;red;o4439:objects.Armor
+#
+sethome o4439 = m4412
+#
+desc o4439 = A red nose like a clown might wear, lies forgotten upon the ground.
+#
+set o4439/level = 5
+#
+set o4439/level_base = 5
+#
+set o4439/vnum = "o4439"
+#
+set o4439/item_type = "armor"
+#
+set o4439/wear_location = "head"
+#
+set o4439/weight = 1
+#
+tag o4439 = the circus:area name
+#
+tag o4439 = object
+#
+set o4439/stat_modifiers[intelligence] = -2
+#
+set o4439/stat_modifiers[wisdom] = -1
+#
+set o4439/armor = 3
+#
+wearto o4439 = m4412
+#
+set m4412/reset_objects["o4439"] = {"location":"equipped"}
+#
+tel r4444
+#
+create/drop a red-nosed clown;clown;red;m4412:characters.Mobile
+#
+desc m4412 = A red-nosed clown is ready to throw a pie in your face. 
+#
+set m4412/level = 7
+#
+set m4412/level_base = 7
+#
+set m4412/vnum = "m4412"
+#
+set m4412/look_description = "The clown is laughing and throwing pies, and generally being a nuisance. He turns towards you with a pie.  DUCK! "
+#
+set m4412/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4412/alignment = 500
+#
+set m4412/sex = "male"
+#
+set m4412/race = "human"
+#
+tag m4412 = the circus:area name
+#
+tag m4412 = mobile
+#
+set m4412/hitpoints[maximum] = 61
+#
+set m4412/position = "standing"
+#
+tel r4444
+#
+create a red clown nose;nose;red;o4439:objects.Armor
+#
+sethome o4439 = m4412
+#
+desc o4439 = A red nose like a clown might wear, lies forgotten upon the ground.
+#
+set o4439/level = 5
+#
+set o4439/level_base = 5
+#
+set o4439/vnum = "o4439"
+#
+set o4439/item_type = "armor"
+#
+set o4439/wear_location = "head"
+#
+set o4439/weight = 1
+#
+tag o4439 = the circus:area name
+#
+tag o4439 = object
+#
+set o4439/stat_modifiers[intelligence] = -2
+#
+set o4439/stat_modifiers[wisdom] = -1
+#
+set o4439/armor = 3
+#
+wearto o4439 = m4412
+#
+set m4412/reset_objects["o4439"] = {"location":"equipped"}
+#
+tel r4444
+#
+create/drop a clown with big shoes;clown;big;m4413:characters.Mobile
+#
+desc m4413 = A clown with big shoes is trying to get into a small cart. 
+#
+set m4413/level = 2
+#
+set m4413/level_base = 2
+#
+set m4413/vnum = "m4413"
+#
+set m4413/look_description = "The clown is trying to fit his shoes into the cart.  It will be a tight fit. "
+#
+set m4413/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4413/alignment = 500
+#
+set m4413/sex = "male"
+#
+set m4413/race = "halfdwarf"
+#
+tag m4413 = the circus:area name
+#
+tag m4413 = mobile
+#
+set m4413/hitpoints[maximum] = 16
+#
+set m4413/position = "standing"
+#
+tel r4444
+#
+create big clown shoes;clown;shoes;o4420:objects.Armor
+#
+sethome o4420 = m4413
+#
+desc o4420 = A huge pair of shoes lies here, apparently forgotten.
+#
+set o4420/level = 1
+#
+set o4420/level_base = 1
+#
+set o4420/vnum = "o4420"
+#
+set o4420/item_type = "armor"
+#
+set o4420/wear_location = "feet"
+#
+set o4420/weight = 4
+#
+tag o4420 = the circus:area name
+#
+tag o4420 = object
+#
+set o4420/stat_modifiers[moves] = -20
+#
+set o4420/stat_modifiers[dexterity] = -1
+#
+set o4420/armor = 1
+#
+wearto o4420 = m4413
+#
+set m4413/reset_objects["o4420"] = {"location":"equipped"}
+#
+tel r4444
+#
+create/drop a big clown;clown;big;m4414:characters.Mobile
+#
+desc m4414 = A big clown is getting ready to throw confetti at you. 
+#
+set m4414/level = 4
+#
+set m4414/level_base = 4
+#
+set m4414/vnum = "m4414"
+#
+set m4414/look_description = "The big clown has a bucket full of confetti.  Or is it water?  Better stay away from him until you know. "
+#
+set m4414/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4414/alignment = 300
+#
+set m4414/sex = "male"
+#
+set m4414/race = "giant"
+#
+tag m4414 = the circus:area name
+#
+tag m4414 = mobile
+#
+set m4414/hitpoints[maximum] = 36
+#
+set m4414/position = "standing"
+#
+tel r4444
+#
+create a bucket;bucket;o4430:objects.Container
+#
+sethome o4430 = m4414
+#
+desc o4430 = A colorful bucket lies here.
+#
+set o4430/level = 2
+#
+set o4430/level_base = 2
+#
+set o4430/vnum = "o4430"
+#
+set o4430/item_type = "container"
+#
+set o4430/wear_location = "hold"
+#
+set o4430/weight = 1
+#
+tag o4430 = the circus:area name
+#
+tag o4430 = object
+#
+set o4430/weight_maximum = 15
+#
+set o4430/state = []
+#
+set o4430/state_base = []
+#
+set m4414/reset_objects["o4430"] = {"location":"equipped"}
+#
+tel r4444
+#
+create/drop a big clown;clown;big;m4414:characters.Mobile
+#
+desc m4414 = A big clown is getting ready to throw confetti at you. 
+#
+set m4414/level = 4
+#
+set m4414/level_base = 4
+#
+set m4414/vnum = "m4414"
+#
+set m4414/look_description = "The big clown has a bucket full of confetti.  Or is it water?  Better stay away from him until you know. "
+#
+set m4414/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4414/alignment = 300
+#
+set m4414/sex = "male"
+#
+set m4414/race = "giant"
+#
+tag m4414 = the circus:area name
+#
+tag m4414 = mobile
+#
+set m4414/hitpoints[maximum] = 46
+#
+set m4414/position = "standing"
+#
+tel r4444
+#
+create a bucket;bucket;o4430:objects.Container
+#
+sethome o4430 = m4414
+#
+desc o4430 = A colorful bucket lies here.
+#
+set o4430/level = 2
+#
+set o4430/level_base = 2
+#
+set o4430/vnum = "o4430"
+#
+set o4430/item_type = "container"
+#
+set o4430/wear_location = "hold"
+#
+set o4430/weight = 1
+#
+tag o4430 = the circus:area name
+#
+tag o4430 = object
+#
+set o4430/weight_maximum = 15
+#
+set o4430/state = []
+#
+set o4430/state_base = []
+#
+set m4414/reset_objects["o4430"] = {"location":"equipped"}
+#
+tel r4445
+#
+create/drop an animal keeper;keeper;m4421:characters.Mobile
+#
+desc m4421 = An animal keeper is here, taking care of the animals. 
+#
+set m4421/level = 8
+#
+set m4421/level_base = 8
+#
+set m4421/vnum = "m4421"
+#
+set m4421/look_description = "She loves her work, and takes good care of the animals, despite the cheap supplies bought for them by the Circus Owner. "
+#
+set m4421/act_flags = ['stay area', 'npc']
+#
+set m4421/alignment = 1000
+#
+set m4421/sex = "female"
+#
+set m4421/spell_affects = {'protect': ''}
+#
+set m4421/race = "human"
+#
+tag m4421 = the circus:area name
+#
+tag m4421 = mobile
+#
+set m4421/hitpoints[maximum] = 70
+#
+set m4421/position = "standing"
+#
+tel r4446
+#
+create/drop a red-nosed clown;clown;red;m4412:characters.Mobile
+#
+desc m4412 = A red-nosed clown is ready to throw a pie in your face. 
+#
+set m4412/level = 7
+#
+set m4412/level_base = 7
+#
+set m4412/vnum = "m4412"
+#
+set m4412/look_description = "The clown is laughing and throwing pies, and generally being a nuisance. He turns towards you with a pie.  DUCK! "
+#
+set m4412/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+#
+set m4412/alignment = 500
+#
+set m4412/sex = "male"
+#
+set m4412/race = "human"
+#
+tag m4412 = the circus:area name
+#
+tag m4412 = mobile
+#
+set m4412/hitpoints[maximum] = 79
+#
+set m4412/position = "standing"
+#
+tel r4446
+#
+create a red clown nose;nose;red;o4439:objects.Armor
+#
+sethome o4439 = m4412
+#
+desc o4439 = A red nose like a clown might wear, lies forgotten upon the ground.
+#
+set o4439/level = 5
+#
+set o4439/level_base = 5
+#
+set o4439/vnum = "o4439"
+#
+set o4439/item_type = "armor"
+#
+set o4439/wear_location = "head"
+#
+set o4439/weight = 1
+#
+tag o4439 = the circus:area name
+#
+tag o4439 = object
+#
+set o4439/stat_modifiers[intelligence] = -2
+#
+set o4439/stat_modifiers[wisdom] = -1
+#
+set o4439/armor = 3
+#
+wearto o4439 = m4412
+#
+set m4412/reset_objects["o4439"] = {"location":"equipped"}
+#
+tel r4447
+#
+create/drop an animal keeper;keeper;m4421:characters.Mobile
+#
+desc m4421 = An animal keeper is here, taking care of the animals. 
+#
+set m4421/level = 8
+#
+set m4421/level_base = 8
+#
+set m4421/vnum = "m4421"
+#
+set m4421/look_description = "She loves her work, and takes good care of the animals, despite the cheap supplies bought for them by the Circus Owner. "
+#
+set m4421/act_flags = ['stay area', 'npc']
+#
+set m4421/alignment = 1000
+#
+set m4421/sex = "female"
+#
+set m4421/spell_affects = {'protect': ''}
+#
+set m4421/race = "human"
+#
+tag m4421 = the circus:area name
+#
+tag m4421 = mobile
+#
+set m4421/hitpoints[maximum] = 89
+#
+set m4421/position = "standing"
+#
+tel r4448
+#
+create/drop a tightrope walker;walker;tightrope;m4420:characters.Mobile
+#
+desc m4420 = A tightrope walker balances on the wire. 
+#
+set m4420/level = 10
+#
+set m4420/level_base = 10
+#
+set m4420/vnum = "m4420"
+#
+set m4420/look_description = "The only way past him seems to be to push him off.  You wouldn't do that, would you? "
+#
+set m4420/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m4420/alignment = 200
+#
+set m4420/sex = "male"
+#
+set m4420/race = "human"
+#
+tag m4420 = the circus:area name
+#
+tag m4420 = mobile
+#
+set m4420/hitpoints[maximum] = 172
+#
+set m4420/position = "standing"
+#
+tel r4448
+#
+create tightrope walker's pole;pole;o4419:objects.Furniture
+#
+sethome o4419 = m4420
+#
+desc o4419 = A long pole lies here.
+#
+set o4419/level = 8
+#
+set o4419/level_base = 8
+#
+set o4419/vnum = "o4419"
+#
+set o4419/item_type = "furniture"
+#
+set o4419/wear_location = "hold"
+#
+set o4419/weight = 1
+#
+tag o4419 = the circus:area name
+#
+tag o4419 = object
+#
+set o4419/extra_flags = ['glow']
+#
+set o4419/stat_modifiers[dexterity] = 1
+#
+set o4419/stat_modifiers[moves] = 8
+#
+set o4419/people_maximum = 0
+#
+set o4419/weight_maximum = 0
+#
+set o4419/use_positions = []
+#
+set o4419/heal_mana_gain = 0
+#
+set m4420/reset_objects["o4419"] = {"location":"equipped"}
+#
+tel r4448
+#
+create a key;key;o4441:objects.Key
+#
+sethome o4441 = m4420
+#
+desc o4441 = A small key lies in the dirt.
+#
+set o4441/level = 8
+#
+set o4441/level_base = 8
+#
+set o4441/vnum = "o4441"
+#
+set o4441/item_type = "key"
+#
+set o4441/weight = 1
+#
+tag o4441 = the circus:area name
+#
+tag o4441 = object
+#
+give o4441 = m4420
+#
+set m4420/reset_objects["o4441"] = {"location":"inventory"}
+#
+tel r4448
+#
+create a chest;chest;o4440:objects.Container
+#
+sethome o4440 = r4448
+#
+desc o4440 = A chest sits under the hammock.
+#
+set o4440/level = 8
+#
+set o4440/level_base = 8
+#
+set o4440/vnum = "o4440"
+#
+set o4440/item_type = "container"
+#
+objectlock o4440 = "get:perm(Admin)"
+#
+set o4440/weight = 1
+#
+tag o4440 = the circus:area name
+#
+tag o4440 = object
+#
+set o4440/weight_maximum = 100
+#
+set o4440/state = ['locked', 'closed', 'closeable']
+#
+set o4440/state_base = ['locked', 'closed', 'closeable']
+#
+set o4440/key = "o4441"
+#
+drop o4440
+#
+set r4448/reset_objects["o4440"] = {"location":"inventory"}
+#
+tel r4448
+#
+create a clear potion;clear;potion;o4442:objects.Potion
+#
+sethome o4442 = o4440
+#
+desc o4442 = A clear vial of fluid sits here.
+#
+set o4442/level = 8
+#
+set o4442/level_base = 8
+#
+set o4442/vnum = "o4442"
+#
+set o4442/item_type = "potion"
+#
+set o4442/wear_location = "hold"
+#
+set o4442/weight = 3
+#
+tag o4442 = the circus:area name
+#
+tag o4442 = object
+#
+set o4442/extra_flags = ['no drop', 'magic']
+#
+set o4442/spell_level = 30
+#
+set o4442/spell_level_base = 30
+#
+set o4442/spell_name_1 = "fly"
+#
+set o4442/spell_name_2 = "remove curse"
+#
+set o4442/spell_name_3 = "continual light"
+#
+put o4442 = o4440
+#
+set r4448/reset_objects["o4442"] = {"location":"o4440"}
+#
+tel r4448
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r4469
+#
+create Binky's refrigerator;refrigerator;frig;fridge;o4449:objects.Container
+#
+sethome o4449 = r4469
+#
+desc o4449 = Binky's refrigerator sits here, packed full of goodies.
+#
+set o4449/level = 8
+#
+set o4449/level_base = 8
+#
+set o4449/vnum = "o4449"
+#
+set o4449/item_type = "container"
+#
+set o4449/wear_location = "finger"
+#
+objectlock o4449 = "get:perm(Admin)"
+#
+set o4449/weight = 20
+#
+tag o4449 = the circus:area name
+#
+tag o4449 = object
+#
+set o4449/extra_flags = ['magic', 'hum']
+#
+set o4449/weight_maximum = 999
+#
+set o4449/state = ['closed', 'closeable']
+#
+set o4449/state_base = ['closed', 'closeable']
+#
+drop o4449
+#
+set r4469/reset_objects["o4449"] = {"location":"inventory"}
+#
+tel r4469
+#
+create a delicious BigMac;bigmac;food;o4434:objects.Food
+#
+sethome o4434 = o4449
+#
+desc o4434 = Some food lies here, wrapped in paper.
+#
+set o4434/level = 8
+#
+set o4434/level_base = 8
+#
+set o4434/vnum = "o4434"
+#
+set o4434/item_type = "food"
+#
+set o4434/weight = 1
+#
+tag o4434 = the circus:area name
+#
+tag o4434 = object
+#
+set o4434/hours_fed = 100
+#
+set o4434/poison = 0
+#
+put o4434 = o4449
+#
+set r4469/reset_objects["o4434"] = {"location":"o4449"}
+#
+tel r4469
+#
+create a can of Coke;coke;can;o4435:objects.Drink container
+#
+sethome o4435 = o4449
+#
+desc o4435 = A can of Coke lies here.
+#
+set o4435/level = 8
+#
+set o4435/level_base = 8
+#
+set o4435/vnum = "o4435"
+#
+set o4435/item_type = "drink container"
+#
+set o4435/weight = 1
+#
+tag o4435 = the circus:area name
+#
+tag o4435 = object
+#
+set o4435/capacity_current = 96
+#
+set o4435/liquid_type = "Coke"
+#
+set o4435/poison = 0
+#
+put o4435 = o4449
+#
+set r4469/reset_objects["o4435"] = {"location":"o4449"}
+#
+tel r4469
+#
+create a slice of Tombstone Sausage and Pepperoni pizza;pizza;food;o4432:objects.Food
+#
+sethome o4432 = o4449
+#
+desc o4432 = A slice of pizza lies here, piping hot.
+#
+set o4432/level = 8
+#
+set o4432/level_base = 8
+#
+set o4432/vnum = "o4432"
+#
+set o4432/item_type = "food"
+#
+set o4432/weight = 1
+#
+tag o4432 = the circus:area name
+#
+tag o4432 = object
+#
+set o4432/hours_fed = 100
+#
+set o4432/poison = 0
+#
+put o4432 = o4449
+#
+set r4469/reset_objects["o4432"] = {"location":"o4449"}
+#
+tel r4469
+#
+create a juicy steak;steak;food;o4433:objects.Food
+#
+sethome o4433 = o4449
+#
+desc o4433 = A juicy steak dinner lies here.
+#
+set o4433/level = 8
+#
+set o4433/level_base = 8
+#
+set o4433/vnum = "o4433"
+#
+set o4433/item_type = "food"
+#
+set o4433/weight = 1
+#
+tag o4433 = the circus:area name
+#
+tag o4433 = object
+#
+set o4433/hours_fed = 100
+#
+set o4433/poison = 0
+#
+put o4433 = o4449
+#
+set r4469/reset_objects["o4433"] = {"location":"o4449"}
+#
+tel r4469
+#
+create a roast;roast;pheasant;food;o4443:objects.Food
+#
+sethome o4443 = r4469
+#
+desc o4443 = Delicious roast pheasant tempts your taste buds.
+#
+set o4443/level = 8
+#
+set o4443/level_base = 8
+#
+set o4443/vnum = "o4443"
+#
+set o4443/item_type = "food"
+#
+set o4443/weight = 1
+#
+tag o4443 = the circus:area name
+#
+tag o4443 = object
+#
+set o4443/hours_fed = 100
+#
+set o4443/poison = 0
+#
+drop o4443
+#
+set r4469/reset_objects["o4443"] = {"location":"inventory"}
+#
+tel r4469
+#
+create a slice of turkey;turkey;food;o4444:objects.Food
+#
+sethome o4444 = r4469
+#
+desc o4444 = A plump turkey sits on the table.
+#
+set o4444/level = 8
+#
+set o4444/level_base = 8
+#
+set o4444/vnum = "o4444"
+#
+set o4444/item_type = "food"
+#
+set o4444/weight = 1
+#
+tag o4444 = the circus:area name
+#
+tag o4444 = object
+#
+set o4444/hours_fed = 100
+#
+set o4444/poison = 0
+#
+drop o4444
+#
+set r4469/reset_objects["o4444"] = {"location":"inventory"}
+#
+tel r4469
+#
+create homemade stuffing;stuffing;food;o4445:objects.Food
+#
+sethome o4445 = r4469
+#
+desc o4445 = A bowl of homemade stuffing sits upon the table.
+#
+set o4445/level = 8
+#
+set o4445/level_base = 8
+#
+set o4445/vnum = "o4445"
+#
+set o4445/item_type = "food"
+#
+set o4445/weight = 1
+#
+tag o4445 = the circus:area name
+#
+tag o4445 = object
+#
+set o4445/hours_fed = 100
+#
+set o4445/poison = 0
+#
+drop o4445
+#
+set r4469/reset_objects["o4445"] = {"location":"inventory"}
+#
+tel r4469
+#
+create a slice of cherry pie;cherry;pie;food;o4446:objects.Food
+#
+sethome o4446 = r4469
+#
+desc o4446 = Some Cherry Pie A La Mode on the table makes your mouth water.
+#
+set o4446/level = 8
+#
+set o4446/level_base = 8
+#
+set o4446/vnum = "o4446"
+#
+set o4446/item_type = "food"
+#
+set o4446/weight = 1
+#
+tag o4446 = the circus:area name
+#
+tag o4446 = object
+#
+set o4446/hours_fed = 100
+#
+set o4446/poison = 0
+#
+drop o4446
+#
+set r4469/reset_objects["o4446"] = {"location":"inventory"}
+#
+tel r4469
+#
+create a wineskin;wineskin;o4447:objects.Drink container
+#
+sethome o4447 = r4469
+#
+desc o4447 = A wineskin filled with Chardonnay sits upon the table.
+#
+set o4447/level = 8
+#
+set o4447/level_base = 8
+#
+set o4447/vnum = "o4447"
+#
+set o4447/item_type = "drink container"
+#
+set o4447/weight = 1
+#
+tag o4447 = the circus:area name
+#
+tag o4447 = object
+#
+set o4447/capacity_current = 30
+#
+set o4447/liquid_type = "wine"
+#
+set o4447/poison = 0
+#
+drop o4447
+#
+set r4469/reset_objects["o4447"] = {"location":"inventory"}
+#
+tel r4469
+#
+create/drop Binky's chef;chef;m4450:characters.Mobile
+#
+desc m4450 = Binky's chef stands here, ready to carve the turkey. 
+#
+set m4450/level = 10
+#
+set m4450/level_base = 10
+#
+set m4450/vnum = "m4450"
+#
+set m4450/act_flags = ['sentinel', 'npc']
+#
+set m4450/alignment = 0
+#
+set m4450/sex = "male"
+#
+set m4450/race = "human"
+#
+tag m4450 = the circus:area name
+#
+tag m4450 = mobile
+#
+set m4450/hitpoints[maximum] = 147
+#
+set m4450/position = "standing"
+#
+tel r4469
+#
+create a carving knife;carving;knife;o4450:objects.Weapon
+#
+sethome o4450 = m4450
+#
+desc o4450 = A very sharp knife gleams from the floor.
+#
+set o4450/level = 8
+#
+set o4450/level_base = 8
+#
+set o4450/vnum = "o4450"
+#
+set o4450/item_type = "weapon"
+#
+set o4450/wear_location = "wield"
+#
+set o4450/weight = 1
+#
+tag o4450 = the circus:area name
+#
+tag o4450 = object
+#
+set o4450/stat_modifiers[constitution] = 1
+#
+set o4450/stat_modifiers[damroll] = 1
+#
+set o4450/weapon_type = "pierce"
+#
+set o4450/damage_low = 5
+#
+set o4450/damage_high = 12
+#
+wieldto o4450 = m4450
+#
+set m4450/reset_objects["o4450"] = {"location":"equipped"}
+#

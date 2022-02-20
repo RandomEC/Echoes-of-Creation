@@ -2852,6 +2852,10 @@ set m3728/race = "human"
 #
 tag m3728 = training tower:area name
 #
+tag m3728 = mobile
+#
+set m3728/spell_affects_reset = {'detect hidden': '', 'detect invis': ''}
+#
 set m3728/hitpoints[maximum] = 4844
 #
 set m3728/position = "standing"
@@ -2865,8 +2869,6 @@ alias portal = portal; portal; e3760
 tag e3760 = training tower, category = area names
 #
 desc e3760 = A portal leading to the Echoes of Creation shimmers here.
-#
-set r3700/reset_objects["o3717"] = {"location":"inventory"}
 #
 tel r3700
 #
@@ -2891,6 +2893,10 @@ set m3722/alignment = 1000
 set m3722/sex = "female"
 #
 set m3722/spell_affects = {'detect invis': ''}
+#
+tag m3722 = mobile
+#
+set m3722/spell_affects_reset = {'detect invis': ''}
 #
 set m3722/race = "human"
 #
@@ -2923,6 +2929,10 @@ set m3721/alignment = 1000
 set m3721/sex = "male"
 #
 set m3721/spell_affects = {'detect hidden': '', 'detect invis': ''}
+#
+tag m3721 = mobile
+#
+set m3721/spell_affects_reset = {'detect hidden': '', 'detect invis': ''}
 #
 set m3721/race = "human"
 #
@@ -2962,6 +2972,10 @@ set m3726/sex = "male"
 #
 set m3726/spell_affects = {'detect invis': ''}
 #
+tag m3726 = mobile
+#
+set m3726/spell_affects_reset = {'detect invis': ''}
+#
 set m3726/race = "human"
 #
 tag m3726 = training tower:area name
@@ -2994,6 +3008,10 @@ set m3725/sex = "female"
 #
 set m3725/spell_affects = {'detect invis': ''}
 #
+tag m3725 = mobile
+#
+set m3725/spell_affects_reset = {'detect invis': ''}
+#
 set m3725/race = "human"
 #
 tag m3725 = training tower:area name
@@ -3023,6 +3041,10 @@ set m3729/alignment = 1000
 set m3729/sex = "male"
 #
 set m3729/spell_affects = {'detect invis': ''}
+#
+tag m3729 = mobile
+#
+set m3729/spell_affects_reset = {'detect invis': ''}
 #
 set m3729/race = "human"
 #
@@ -3056,6 +3078,10 @@ set m3727/sex = "male"
 #
 set m3727/spell_affects = {'detect invis': ''}
 #
+tag m3727 = mobile
+#
+set m3727/spell_affects_reset = {'detect invis': ''}
+#
 set m3727/race = "human"
 #
 tag m3727 = training tower:area name
@@ -3085,6 +3111,10 @@ set m3702/alignment = 0
 set m3702/sex = "neuter"
 #
 set m3702/spell_affects = {'detect invis': ''}
+#
+tag m3702 = mobile
+#
+set m3702/spell_affects_reset = {'detect invis': ''}
 #
 set m3702/race = "golem"
 #
@@ -3118,6 +3148,10 @@ set m3708/sex = "female"
 #
 set m3708/spell_affects = {'sanctuary': '', 'detect invis': ''}
 #
+tag m3708 = mobile
+#
+set m3708/spell_affects_reset = {'sanctuary': '', 'detect invis': ''}
+#
 set m3708/race = "human"
 #
 tag m3708 = training tower:area name
@@ -3149,6 +3183,8 @@ objectlock o3719 = "get:perm(Admin)"
 set o3719/weight = 100
 #
 tag o3719 = training tower:area name
+#
+tag o3719 = object
 #
 set o3719/extra_flags = ['glow']
 #
@@ -3186,6 +3222,8 @@ set m3705/sex = "male"
 #
 set m3705/race = "minotaur"
 #
+tag m3705 = mobile
+#
 tag m3705 = training tower:area name
 #
 set m3705/hitpoints[maximum] = 33
@@ -3213,6 +3251,8 @@ set o3707/wear_location = "legs"
 set o3707/weight = 5
 #
 tag o3707 = training tower:area name
+#
+tag o3707 = object
 #
 set o3707/extra_descriptions = {'patched knit cotton leggings': 'These leggings have thick patches at the knees for reinforcement.'}
 #
@@ -3244,6 +3284,8 @@ set o3712/weight = 5
 #
 tag o3712 = training tower:area name
 #
+tag o3712 = object
+#
 set o3712/extra_descriptions = {'braided rope belt': 'A length of narrow braided rope ties about the waist as a belt.'}
 #
 set o3712/armor = 2
@@ -3273,6 +3315,8 @@ objectlock o3723 = "get:perm(Admin)"
 set o3723/weight = 5
 #
 tag o3723 = training tower:area name
+#
+tag o3723 = object
 #
 set o3723/weight_maximum = 10
 #
@@ -3308,6 +3352,8 @@ set m3706/race = "tabaxi"
 #
 tag m3706 = training tower:area name
 #
+tag m3706 = mobile
+#
 set m3706/hitpoints[maximum] = 18
 #
 set m3706/position = "standing"
@@ -3333,6 +3379,8 @@ set o3708/wear_location = "feet"
 set o3708/weight = 5
 #
 tag o3708 = training tower:area name
+#
+tag o3708 = object
 #
 set o3708/extra_descriptions = {'suede moccasins': 'These moccasins are not fancy but look well-made and comfortable.'}
 #
@@ -3364,6 +3412,8 @@ set o3713/weight = 5
 #
 tag o3713 = training tower:area name
 #
+tag 03713 = object
+#
 set o3713/extra_descriptions = {'red bracer': 'This bracer is made of a thin strip of leather, dyed bright red.'}
 #
 set o3713/armor = 2
@@ -3391,6 +3441,8 @@ set o3720/item_type = "food"
 set o3720/weight = 5
 #
 tag o3720 = training tower:area name
+#
+tag o3720 = object
 #
 set o3720/hours_fed = 8
 #
@@ -3424,6 +3476,8 @@ set m3704/race = "goblin"
 #
 tag m3704 = training tower:area name
 #
+tag m3704 = mobile
+#
 set m3704/hitpoints[maximum] = 9
 #
 set m3704/position = "standing"
@@ -3449,6 +3503,8 @@ set o3706/wear_location = "head"
 set o3706/weight = 5
 #
 tag o3706 = training tower:area name
+#
+tag o3706 = object
 #
 set o3706/extra_descriptions = {'felt hat feather': 'This jaunty felt hat has a red feather tucked in its band.'}
 #
@@ -3480,6 +3536,8 @@ set o3711/weight = 5
 #
 tag o3711 = training tower:area name
 #
+tag o3711 = object
+#
 set o3711/extra_descriptions = {'long wool flannel cloak': ' This simple cloak also serves as a warm blanket for sleeping outdoors.'}
 #
 set o3711/armor = 3
@@ -3509,6 +3567,8 @@ objectlock o3721 = "get:perm(Admin)"
 set o3721/weight = 5
 #
 tag o3721 = training tower:area name
+#
+tag o3721 = object
 #
 set o3721/extra_descriptions = {'table': 'The table lists badly to one side.'}
 #
@@ -3548,6 +3608,8 @@ set m3703/race = "kobold"
 #
 tag m3703 = training tower:area name
 #
+tag m3703 = mobile
+#
 set m3703/hitpoints[maximum] = 8
 #
 set m3703/position = "standing"
@@ -3573,6 +3635,8 @@ set o3705/wear_location = "neck"
 set o3705/weight = 5
 #
 tag o3705 = training tower:area name
+#
+tag o3705 = object
 #
 set o3705/extra_descriptions = {'muffler wool': 'This red plaid scarf readily identifies the castle newcomers.'}
 #
@@ -3603,6 +3667,8 @@ set o3705/wear_location = "neck"
 set o3705/weight = 5
 #
 tag o3705 = training tower:area name
+#
+tag o3705 = object
 #
 set o3705/extra_descriptions = {'muffler wool': 'This red plaid scarf readily identifies the castle newcomers.'}
 #
@@ -3640,6 +3706,10 @@ set m3717/sex = "male"
 #
 set m3717/spell_affects = {'sanctuary': '', 'detect invis': ''}
 #
+tag m3717 = mobile
+#
+set m3717/spell_affects_reset = {'sanctuary': '', 'detect invis': ''}
+#
 set m3717/race = "human"
 #
 tag m3717 = training tower:area name
@@ -3669,6 +3739,8 @@ set o3718/item_type = "food"
 set o3718/weight = 1
 #
 tag o3718 = training tower:area name
+#
+tag o3718 = object
 #
 set o3718/hours_fed = 20
 #
@@ -3700,6 +3772,10 @@ set m3707/sex = "male"
 #
 set m3707/spell_affects = {'infrared': ''}
 #
+tag m3707 = mobile
+#
+set m3707/spell_affects_reset = {'infrared': ''}
+#
 set m3707/race = "human"
 #
 tag m3707 = training tower:area name
@@ -3729,6 +3805,8 @@ set o3709/wear_location = "hands"
 set o3709/weight = 5
 #
 tag o3709 = training tower:area name
+#
+tag o3709 = object
 #
 set o3709/extra_descriptions = {'knit gloves': 'These gloves have padded palms to help improve your grip.'}
 #
@@ -3760,6 +3838,8 @@ set o3710/weight = 5
 #
 tag o3710 = training tower:area name
 #
+tag o3710 = object
+#
 set o3710/extra_descriptions = {'quilted sleeves': ' These sleeves are made of 3 layers of fabric quilted together to protect the arms.'}
 #
 set o3710/armor = 2
@@ -3784,9 +3864,15 @@ set o3714/vnum = "o3714"
 #
 set o3714/item_type = "key"
 #
+set o3714/wear_location = "held, in hands"
+#
 set o3714/weight = 1
 #
 tag o3714 = training tower:area name
+#
+tag o3714 = object
+#
+wearto o3714 = m3707
 #
 set m3707/reset_objects["o3714"] = {"location":"equipped"}
 #
@@ -3811,6 +3897,8 @@ set o3713/wear_location = "wrist"
 set o3713/weight = 5
 #
 tag o3713 = training tower:area name
+#
+tag o3713 = object
 #
 set o3713/extra_descriptions = {'red bracer': 'This bracer is made of a thin strip of leather, dyed bright red.'}
 #
@@ -3844,6 +3932,10 @@ set m3720/sex = "male"
 #
 set m3720/spell_affects = {'infrared': ''}
 #
+tag m3720 = mobile
+#
+set m3720/spell_affects_reset = {'infrared': ''}
+#
 set m3720/race = "human"
 #
 tag m3720 = training tower:area name
@@ -3868,11 +3960,13 @@ set o3715/vnum = "o3715"
 #
 set o3715/item_type = "treasure"
 #
-set o3715/wear_location = "hold"
+set o3715/wear_location = "held, in hands"
 #
 set o3715/weight = 1
 #
 tag o3715 = training tower:area name
+#
+tag o3715 = object
 #
 set o3715/extra_descriptions = {'certificate': ' This document shows that you have completed your training. It also has magical effects on your abilities if you hold it! '}
 #
@@ -3881,6 +3975,8 @@ set o3715/extra_flags = ['magic']
 set o3715/stat_modifiers[wisdom] = 1
 #
 set o3715/stat_modifiers[constitution] = 1
+#
+wearto o3715 = m3720
 #
 set m3720/reset_objects["o3715"] = {"location":"equipped"}
 #
@@ -3914,6 +4010,8 @@ set m3713/race = "object"
 #
 tag m3713 = training tower:area name
 #
+tag m3713 = mobile
+#
 set m3713/hitpoints[maximum] = 9
 #
 set m3713/position = "standing"
@@ -3942,6 +4040,8 @@ set m3712/race = "object"
 #
 tag m3712 = training tower:area name
 #
+tag m3712 = mobile
+#
 set m3712/hitpoints[maximum] = 19
 #
 set m3712/position = "standing"
@@ -3969,6 +4069,8 @@ set m3709/sex = "neuter"
 set m3709/race = "object"
 #
 tag m3709 = training tower:area name
+#
+tag m3709 = mobile
 #
 set m3709/hitpoints[maximum] = 33
 #
@@ -4004,6 +4106,8 @@ set m3710/race = "object"
 #
 tag m3710 = training tower:area name
 #
+tag m3710 = mobile
+#
 set m3710/hitpoints[maximum] = 35
 #
 set m3710/position = "standing"
@@ -4031,6 +4135,8 @@ set m3711/sex = "neuter"
 set m3711/race = "object"
 #
 tag m3711 = training tower:area name
+#
+tag m3711 = mobile
 #
 set m3711/hitpoints[maximum] = 81
 #
@@ -4066,6 +4172,8 @@ set m3714/race = "human"
 #
 tag m3714 = training tower:area name
 #
+tag m3714 = mobile
+#
 set m3714/hitpoints[maximum] = 70
 #
 set m3714/position = "standing"
@@ -4096,6 +4204,8 @@ set m3715/race = "human"
 #
 tag m3715 = training tower:area name
 #
+tag m3715 = mobile
+#
 set m3715/hitpoints[maximum] = 41
 #
 set m3715/position = "standing"
@@ -4123,6 +4233,8 @@ set m3716/sex = "male"
 set m3716/race = "human"
 #
 tag m3716 = training tower:area name
+#
+tag m3716 = mobile
 #
 set m3716/hitpoints[maximum] = 19
 #
@@ -4158,6 +4270,10 @@ set m3723/sex = "male"
 #
 set m3723/spell_affects = {'detect invis': ''}
 #
+tag m3723 = mobile
+#
+set m3723/spell_affects_reset = {'detect invis': ''}
+#
 set m3723/race = "human"
 #
 tag m3723 = training tower:area name
@@ -4189,6 +4305,10 @@ set m3718/alignment = 1000
 set m3718/sex = "male"
 #
 set m3718/spell_affects = {'sanctuary': '', 'detect invis': ''}
+#
+tag m3718 = mobile
+#
+set m3718/spell_affects_reset = {'sanctuary': '', 'detect invis': ''}
 #
 set m3718/race = "human"
 #
@@ -4222,6 +4342,10 @@ set m3719/sex = "female"
 #
 set m3719/spell_affects = {'sanctuary': '', 'detect invis': ''}
 #
+tag m3719 = mobile
+#
+set m3719/spell_affects_reset = {'sanctuary': '', 'detect invis': ''}
+#
 set m3719/race = "human"
 #
 tag m3719 = training tower:area name
@@ -4251,6 +4375,8 @@ objectlock o3722 = "get:perm(Admin)"
 set o3722/weight = 5
 #
 tag o3722 = training tower:area name
+#
+tag o3722 = object
 #
 set o3722/people_maximum = 0
 #
@@ -4292,6 +4418,8 @@ set o3719/weight = 100
 #
 tag o3719 = training tower:area name
 #
+tag o3719 = object
+#
 set o3719/extra_flags = ['glow']
 #
 set o3719/people_maximum = 1
@@ -4330,6 +4458,10 @@ set m3708/sex = "female"
 #
 set m3708/spell_affects = {'sanctuary': '', 'detect invis': ''}
 #
+tag m3708 = mobile
+#
+set m3708/spell_affects_reset = {'sanctuary': '', 'detect invis': ''}
+#
 set m3708/race = "human"
 #
 tag m3708 = training tower:area name
@@ -4359,6 +4491,8 @@ set o3720/item_type = "food"
 set o3720/weight = 5
 #
 tag o3720 = training tower:area name
+#
+tag o3720 = object
 #
 set o3720/hours_fed = 8
 #
@@ -4392,6 +4526,8 @@ set m3706/race = "tabaxi"
 #
 tag m3706 = training tower:area name
 #
+tag m3706 = mobile
+#
 set m3706/hitpoints[maximum] = 17
 #
 set m3706/position = "standing"
@@ -4417,6 +4553,8 @@ set o3708/wear_location = "feet"
 set o3708/weight = 5
 #
 tag o3708 = training tower:area name
+#
+tag o3708 = object
 #
 set o3708/extra_descriptions = {'suede moccasins': 'These moccasins are not fancy but look well-made and comfortable.'}
 #
@@ -4447,6 +4585,8 @@ set o3713/wear_location = "wrist"
 set o3713/weight = 5
 #
 tag o3713 = training tower:area name
+#
+tag o3713 = object
 #
 set o3713/extra_descriptions = {'red bracer': 'This bracer is made of a thin strip of leather, dyed bright red.'}
 #
@@ -4480,6 +4620,8 @@ set m3703/race = "kobold"
 #
 tag m3703 = training tower:area name
 #
+tag m3703 = mobile
+#
 set m3703/hitpoints[maximum] = 9
 #
 set m3703/position = "standing"
@@ -4505,6 +4647,8 @@ set o3705/wear_location = "neck"
 set o3705/weight = 5
 #
 tag o3705 = training tower:area name
+#
+tag o3705 = object
 #
 set o3705/extra_descriptions = {'muffler wool': 'This red plaid scarf readily identifies the castle newcomers.'}
 #
@@ -4535,6 +4679,8 @@ set o3705/wear_location = "neck"
 set o3705/weight = 5
 #
 tag o3705 = training tower:area name
+#
+tag o3705 = object
 #
 set o3705/extra_descriptions = {'muffler wool': 'This red plaid scarf readily identifies the castle newcomers.'}
 #
@@ -4568,6 +4714,8 @@ set m3705/race = "minotaur"
 #
 tag m3705 = training tower:area name
 #
+tag m3705 = mobile
+#
 set m3705/hitpoints[maximum] = 24
 #
 set m3705/position = "standing"
@@ -4593,6 +4741,8 @@ set o3707/wear_location = "legs"
 set o3707/weight = 5
 #
 tag o3707 = training tower:area name
+#
+tag o3707 = object
 #
 set o3707/extra_descriptions = {'patched knit cotton leggings': 'These leggings have thick patches at the knees for reinforcement.'}
 #
@@ -4624,6 +4774,8 @@ set o3712/weight = 5
 #
 tag o3712 = training tower:area name
 #
+tag o3712 = object
+#
 set o3712/extra_descriptions = {'braided rope belt': 'A length of narrow braided rope ties about the waist as a belt.'}
 #
 set o3712/armor = 2
@@ -4653,6 +4805,8 @@ objectlock o3723 = "get:perm(Admin)"
 set o3723/weight = 5
 #
 tag o3723 = training tower:area name
+#
+tag o3723 = object
 #
 set o3723/weight_maximum = 10
 #
@@ -4688,6 +4842,8 @@ set m3704/race = "goblin"
 #
 tag m3704 = training tower:area name
 #
+tag m3704 = mobile
+#
 set m3704/hitpoints[maximum] = 8
 #
 set m3704/position = "standing"
@@ -4713,6 +4869,8 @@ set o3706/wear_location = "head"
 set o3706/weight = 5
 #
 tag o3706 = training tower:area name
+#
+tag o3706 = object
 #
 set o3706/extra_descriptions = {'felt hat feather': 'This jaunty felt hat has a red feather tucked in its band.'}
 #
@@ -4744,6 +4902,8 @@ set o3711/weight = 5
 #
 tag o3711 = training tower:area name
 #
+tag o3711 = object
+#
 set o3711/extra_descriptions = {'long wool flannel cloak': ' This simple cloak also serves as a warm blanket for sleeping outdoors.'}
 #
 set o3711/armor = 2
@@ -4773,6 +4933,8 @@ objectlock o3721 = "get:perm(Admin)"
 set o3721/weight = 5
 #
 tag o3721 = training tower:area name
+#
+tag o3721 = object
 #
 set o3721/extra_descriptions = {'table': 'The table lists badly to one side.'}
 #
@@ -4811,6 +4973,10 @@ set m3724/alignment = 1000
 set m3724/sex = "male"
 #
 set m3724/spell_affects = {'detect invis': ''}
+#
+tag m3724 = mobile
+#
+set m3724/spell_affects_reset = {'detect invis': ''}
 #
 set m3724/race = "human"
 #

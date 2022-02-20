@@ -1,5 +1,61 @@
 from commands.command import MuxCommand
 
+def check_wear_location(caller, wear_location):
+    # Checks the relevant wear location(s), and returns True if empty
+
+    if wear_location == "wrist":
+        if caller.db.eq_slots["wrist, left"] and caller.db.eq_slots["wrist, right"]:
+            return False                
+    elif wear_location == "neck":
+        if caller.db.eq_slots["neck, first"] and caller.db.eq_slots["neck, second"]:
+            return False
+    elif wear_location == "finger":
+        if caller.db.eq_slots["finger, left"] and caller.db.eq_slots["finger, right"]:
+            return False
+    else:
+        if caller.db.eq_slots[wear_location]:
+            return False
+    return True
+
+def check_cursed_remove(caller, wear_location):
+
+    if wear_location != "wrist" and wear_location != "neck" and wear_location != "finger":
+        eq = caller.db.eq_slots[wear_location]
+        if not eq.access(caller, "remove"):
+            return False
+        else:
+            return wear_location
+    elif wear_location == "wrist":
+        eq = caller.db.eq_slots["wrist, left"]
+        if not eq.access(caller, "remove"):
+            eq = caller.db.eq_slots["wrist, right"]
+            if not eq.access(caller, "remove"):
+                return False
+            else:
+                return "wrist, right"
+        else:
+            return "wrist, left"
+    elif wear_location == "neck":
+        eq = caller.db.eq_slots["neck, first"]
+        if not eq.access(caller, "remove"):
+            eq = caller.db.eq_slots["neck, second"]
+            if not eq.access(caller, "remove"):
+                return False
+            else:
+                return "neck, second"
+        else:
+            return "neck, first"
+    elif wear_location == "finger":
+        eq = caller.db.eq_slots["finger, left"]
+        if not eq.access(caller, "remove"):
+            eq = caller.db.eq_slots["finger, right"]
+            if not eq.access(caller, "remove"):
+                return False
+            else:
+                return "finger, right"
+        else:
+            return "finger, left"
+
 class CmdWear(MuxCommand):
     """
     Wear or hold, as appropriate, armor that is in your inventory. Weapons
@@ -65,10 +121,35 @@ class CmdWear(MuxCommand):
                 caller.msg("You can't wear equipment more than five levels above your level.")
             return
 
-        # calling at_before_get hook method
-       # if not obj.at_before_get(caller):
-       #     return
+        # Check for whether the character is already wearing something in that slot.
+ 
+        wear_location = eq.db.wear_location
 
+        # If there is no location open for the eq to be worn, we must try to remove.
+        if not check_wear_location(caller, wear_location):
+
+            if not check_cursed_remove(caller, wear_location):
+                caller.msg("The object you are currently wearing in that location is cursed, and cannot be removed.")
+                return
+            else:
+                # If the eq in the slot is not cursed.
+                wear_location = check_cursed_remove(caller, wear_location)
+
+                eq_current = caller.db.eq_slots[wear_location]
+                success = eq_current.remove_from(caller)
+                if not success:
+                    caller.msg("You cannot remove this.")
+                else:
+                    caller.msg("You remove %s from your %s." % (eq_current.name, eq_current.db.wear_location))
+                    caller.location.msg_contents("%s removes a %s from his %s."
+                                                 % (
+                                                    caller.name,
+                                                    eq_current.name,
+                                                    eq_current.db.wear_location
+                                                    ), exclude=caller
+                                                 )
+
+        # If a location is open, just wear it.
         success = eq.wear_to(caller)
         if not success:
             caller.msg("You cannot wear this.")
@@ -79,8 +160,6 @@ class CmdWear(MuxCommand):
                 possessive = "her"
             else:
                 possessive = "its"
-            
-            wear_location = eq.db.wear_location
             
             if wear_location == "light":
                 room_wear_string = "%s holds %s as a %s." % (caller.name, eq.name, wear_location)
@@ -160,6 +239,33 @@ class CmdWield(MuxCommand):
                 caller.msg("You can't wear equipment more than five levels above your level.")
             return
 
+        # Check for whether the character is already wearing something in that slot.
+ 
+        wear_location = "wielded, primary"
+
+        # If there is no location open for the eq to be worn, we must try to remove.
+        if not check_wear_location(caller, wear_location):
+
+            if not check_cursed_remove(caller, wear_location):
+                caller.msg("The object you are currently wearing in that location is cursed, and cannot be removed.")
+                return
+            
+            # If the eq in the slot is not cursed.
+            else:
+                eq = caller.db.eq_slots[wear_location]
+                success = eq.remove_from(caller)
+                if not success:
+                    caller.msg("You cannot remove this.")
+                else:
+                    caller.msg("You remove %s from your %s." % (eq.name,eq.db.wear_location))
+                    caller.location.msg_contents("%s removes a %s from his %s."
+                                                 % (
+                                                    caller.name,
+                                                    eq.name,
+                                                    eq.db.wear_location
+                                                    ), exclude=caller
+                                                 )
+
         success = weapon.wield_to(caller)
         if not success:
             caller.msg("You cannot wield this.")
@@ -226,11 +332,7 @@ class CmdRemove(MuxCommand):
             else:
                 caller.msg("This object is cursed, and cannot be removed.")
             return
-        
-        # calling at_before_get hook method
-       # if not obj.at_before_get(caller):
-       #     return
-
+ 
         success = eq.remove_from(caller)
         if not success:
             caller.msg("You cannot remove this.")

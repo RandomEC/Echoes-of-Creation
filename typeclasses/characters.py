@@ -10,6 +10,7 @@ creation commands.
 from evennia import DefaultCharacter
 from evennia.utils import evtable
 from evennia.utils import search
+from world import rules_race
 from world import rules
 
 class Character(DefaultCharacter):
@@ -163,15 +164,6 @@ class Character(DefaultCharacter):
     def moves_current(self):
         return self.moves_maximum - self.db.moves["spent"]
 
-    def race_current(self):
-        """
-        Method that will check to see if there is a spell affect
-        changing race, and, if not, will return base race.
-        """
-        
-        # once we implement spell affects, check for them here on race
-        return self.db.race
-
     def get_affect_status(self, affect_name):
         """
         Method that returns a boolean for whether the affect is currently
@@ -180,41 +172,42 @@ class Character(DefaultCharacter):
         False.
         """
 
-        for spell in self.db.spell_affects:
-            if affect_name in self.db.spell_affects[spell]:
-                return True
-
-        from world import rules_race
+        if affect_name in self.db.spell_affects.keys():
+            return True
 
         # get the dictionary for the current race of the character
-        race_stats = rules_race.get_race(self.race_current())
+        race_stats = rules_race.get_race(self.race)
 
-        if affect_name in race_stats["inherent affects"]:
-            return True
+        if "inherent affects" in race_stats.keys():
+            if affect_name in race_stats["inherent affects"]:
+                return True
+            else:
+                return False
         else:
             return False
         
 
     def get_base_attribute(self, attribute_name):
         """
-        Method to access an base attribute, and the modifiers that are
+        Method to access a base attribute, and the modifiers that are
         considered "inherent" - race and trains.
         """
 
-        from world import rules_race
-
         # get the dictionary for the current race of the character
-        race_stats = rules_race.get_race(self.race_current())
+        race_stats = rules_race.get_race(self.race)
 
         # check to see if the race has a modifier for this stat
         if "attribute modifier" in race_stats and attribute_name in race_stats["attribute modifier"]:
-            base_attribute = self.db.attributes[attribute_name] + race_stats["attribute modifier"][attribute_name] + self.db.attribute_trains[attribute_name]
+            base_attribute = self.db.attributes[attribute_name] + race_stats["attribute modifier"][attribute_name]
         else:
-            base_attribute = self.db.attributes[attribute_name] + self.db.attribute_trains[attribute_name]
+            base_attribute = self.db.attributes[attribute_name]
+
+        if "player" in self.tags.all():
+            base_attribute += self.db.attribute_trains[attribute_name]
 
         return base_attribute
 
-    def get_modified_attribute(self, caller, attribute_name):
+    def get_modified_attribute(self, attribute_name):
         """
         Method to access an attribute, access all of the modifiers of that
         attribute (trains, equipment, and affects), and return the overall
@@ -241,9 +234,12 @@ class Character(DefaultCharacter):
                         multiplier = 2
                     else:
                         multiplier = 1
-                    modifier = modifier - (equipment.db.armor*multiplier)
 
-                    dexterity = self.get_modified_attribute(self, "dexterity")
+                    # The other wear locations don't have armor, and will choke on this.
+                    if self.db.item_type == "armor" or self.db.item_type == "light":
+                        modifier = modifier - (equipment.db.armor*multiplier)
+
+                    dexterity = self.dexterity
 
                     if dexterity < 1:
                         modifier += 60
@@ -281,10 +277,14 @@ class Character(DefaultCharacter):
                         modifier += -105
                     elif dexterity < 26:
                         modifier += -120
+                    
+                    if "mobile" in self.tags.all():
+                        level_bonus = int((self.db.level-1)*(-500)/100)
+                        modifier += level_bonus
 
                 if attribute_name == "hitroll":
 
-                    strength = self.get_modified_attribute(self, "strength")
+                    strength = self.strength
 
                     if strength < 2:
                         modifier += -5
@@ -312,6 +312,39 @@ class Character(DefaultCharacter):
                         modifier += 8
                     elif strength < 26:
                         modifier += 10
+                    
+                if attribute_name == "damroll":
+                    strength = self.strength
+
+                    if strength < 2:
+                        modifier += -4
+                    elif strength < 3:
+                        modifier += -2
+                    elif strength < 6:
+                        modifier += -1
+                    elif strength < 14:
+                        modifier += 0
+                    elif strength < 16:
+                        modifier += 1
+                    elif strength < 17:
+                        modifier += 2
+                    elif strength < 18:
+                        modifier += 3
+                    elif strength < 19:
+                        modifier += 4
+                    elif strength < 20:
+                        modifier += 5
+                    elif strength < 21:
+                        modifier += 6
+                    elif strength < 23:
+                        modifier += 7
+                    elif strength < 24:
+                        modifier += 8
+                    elif strength < 25:
+                        modifier += 10
+                    elif strength < 26:
+                        modifier += 12
+                    
 
         # assemble modifier with base stat, first for the "trainable" stats, which have an extra modifier for that
 
@@ -321,8 +354,70 @@ class Character(DefaultCharacter):
         # then, with everything else
         
         else:
-            return caller.db.attributes[attribute_name] + modifier
+            return self.db.attributes[attribute_name] + modifier
 
+    # All of the below properties are designed for ease of reference to the current
+    # status of the relevant attribute, inclusive of trains (as applicable), equipment,
+    # and spell affects.
+
+    @property
+    def strength(self):
+        return self.get_modified_attribute("strength")
+
+    @property
+    def dexterity(self):
+        self.msg("")
+        return self.get_modified_attribute("dexterity")
+
+    @property
+    def intelligence(self):
+        return self.get_modified_attribute("intelligence")
+
+    @property
+    def wisdom(self):
+        return self.get_modified_attribute("wisdom")
+
+    @property
+    def constitution(self):
+        return self.get_modified_attribute("constitution")
+
+    @property
+    def hitroll(self):
+        return self.get_modified_attribute("hitroll")
+
+    @property
+    def damroll(self):
+        return self.get_modified_attribute("damroll")
+
+    @property
+    def armor_class(self):
+        return self.get_modified_attribute("armor class")
+
+    @property
+    def size(self):
+        if "size" in rules_race.get_race(self.race).keys():
+            size = rules_race.get_race(self.race)["size"]
+        else:
+            size = 2
+        return size
+
+    @property
+    def race(self):
+        """
+        Method that will check to see if there is a spell affect
+        changing race, and, if not, will return base race.
+        """
+
+        # once we implement spell affects, check for them here on race
+        return self.db.race
+
+    def take_damage(self, damage):
+        """
+        Method to use to do damage to a character.
+        """
+        
+        self.db.hitpoints["damaged"] += damage
+        
     def get_score_info(self): # add caller into score command
         """
         Simple access method to return ability scores as a tuple
@@ -334,11 +429,11 @@ class Character(DefaultCharacter):
             self.get_base_attribute("constitution"), self.hitpoints_current, \
             self.hitpoints_maximum, self.mana_current, \
             self.mana_maximum, self.moves_current, self.moves_maximum\
-            , self.db.sex, self.db.race.capitalize(), self.db.died, self.db.kills, \
+            , self.db.sex, self.race.capitalize(), self.db.died, self.db.kills, \
             self.db.damage_maximum, self.db.kill_experience_maximum, \
-            self.get_modified_attribute(self,"hitroll"), self.db.experience_total, self.db.experience_spent\
-            , self.get_modified_attribute(self,"damroll"), self.db.gold, self.db.bank_balance, \
-            self.get_modified_attribute(self,"armor class"), self.db.alignment, self.get_modified_attribute(self,"saving throw"), \
+            self.get_modified_attribute("hitroll"), self.db.experience_total, self.db.experience_spent\
+            , self.get_modified_attribute("damroll"), self.db.gold, self.db.bank_balance, \
+            self.get_modified_attribute("armor class"), self.db.alignment, self.get_modified_attribute("saving throw"), \
             self.db.staff_position, self.db.immortal_invisible, \
             self.db.immortal_cloak, self.db.immortal_ghost, self.db.holy_light,\
             self.db.level, self.db.age, self.db.wimpy, self.db.items,\
@@ -402,12 +497,19 @@ class Mobile(Character):
         self.db.shop = {}
         self.db.character_type = "mobile"
         self.tags.add("mobile")
+        self.db.spell_affects_reset = {}
 
     def at_reset(self):
         
         # Check to see if mobile is dead, and at "none".
         if self.location == None:
             self.move_to(self.home, quiet = True)
+
+        # Reset spell affects on the mobile.
+        self.db.spell_affects = self.db.spell_affects_reset
+
+        # Heal it up.
+        self.db.hitpoints["damaged"] = 0
 
         # Fuzz up the mobile's level.
         self.db.level = rules.fuzz_number(self.db.level_base)        

@@ -1,0 +1,2632 @@
+dig/tel The End?; r6631
+#
+tag r6631 = dwarven daycare, category = area names
+#
+desc r6631 = The end of the maze known as the Lair.  This is a plain room with unpainted walls and no other decorations.  There are a few splotches of spilled paint on the floor.  The air smells a little less stale here. 
+#
+desc/edit r6631
+#
+:j l
+#
+:wq
+#
+set r6631/terrain = "field"
+#
+set r6631/room_flags = ['no teleport in', 'no summon from', 'indoors', 'dark']
+#
+dig/tel Daycare Foyer; r6601
+#
+tag r6601 = dwarven daycare, category = area names
+#
+desc r6601 = A simple building from the outside, this room begins to show the depth that hides within.  This is where parents may drop off or pick up their children.  A small mat has been placed on the boarded ground to avoid foot tracks from the path outside.  Several windows line the northern wall. Potted plants reside in each corner.  An easel stands just almost in the rooms center.  There is a sign above the doorway to the east and there is an exit to the south. 
+#
+desc/edit r6601
+#
+:j l
+#
+:wq
+#
+set r6601/terrain = "inside"
+#
+set r6601/extra_description = {'sign': "^YNanny's Office^x ", 'easel': '^GWELCOME^x ^Wto the Dwarven Daycare^x Revamp:  Keegan '}
+#
+set r6601/room_flags = ['indoors', 'no mob']
+#
+dig/tel Story Time; r6602
+#
+tag r6602 = dwarven daycare, category = area names
+#
+desc r6602 = A compact room with soft colored walls is the gathering place for story times.  A sturdy rocker sits undisturbed in the center while a few bean bags have been tossed around it.  A cushioned bench sits directly in front of the rocker and a bookshelf, made of tree branches, overflowing with various children's books is behind.  The smell of food floats gently in the air from the east.  The wails of an angry child come from the west while laughter filters in from the south. 
+#
+desc/edit r6602
+#
+:j l
+#
+:wq
+#
+set r6602/terrain = "inside"
+#
+set r6602/room_flags = ['indoors']
+#
+dig/tel Dining Hall; r6603
+#
+tag r6603 = dwarven daycare, category = area names
+#
+desc r6603 = A quiet section of the daycare reserved for meal times.  Many small tables, each with at least three chairs, are arranged hastily, filling the room.  A rolling wooden cart, used for serving the meals, sits near the east door. 
+#
+desc/edit r6603
+#
+:j l
+#
+:wq
+#
+set r6603/terrain = "inside"
+#
+set r6603/room_flags = ['indoors']
+#
+dig/tel Fun Time; r6604
+#
+tag r6604 = dwarven daycare, category = area names
+#
+desc r6604 = The young tykes are mostly limited to play in this room.  Wooden crates and cabinets, for storing the various toys, take up nearly all the wall space.  A large rug, barely visible under the mass of dragged out toys, hides the many scratches and dents from previous play sessions.  From building blocks to dress-up dolls most of the children find something to briefly entertain themselves. 
+#
+desc/edit r6604
+#
+:j l
+#
+:wq
+#
+set r6604/terrain = "inside"
+#
+set r6604/extra_description = {'chalkboard board': "A large green chalkboard covers this wall.  Above the board is the alphabet. On the board is written: 'Assignment: Go explore Tanglewood.  There are beautiful butterflies there that wait to be seen.' "}
+#
+set r6604/room_flags = ['indoors']
+#
+dig/tel Arts 'N Crafts; r6605
+#
+tag r6605 = dwarven daycare, category = area names
+#
+desc r6605 = For the more imaginative youngsters an arts and crafts center was made. All the decorations of this room have been left up to the children.  The once white walls have been adorned with tiny painted shapes like circles, squares and triangles and even some hand and foot prints.  One wall is dedicated solely to finger paintings.  Two half-moon tables allow the young artists to explore their creativity.  A counter runs along the wall for storing of paints, paper, molding clay and other useful art tools. 
+#
+desc/edit r6605
+#
+:j l
+#
+:wq
+#
+set r6605/terrain = "inside"
+#
+set r6605/room_flags = ['indoors']
+#
+dig/tel Girls Room; r6606
+#
+tag r6606 = dwarven daycare, category = area names
+#
+desc r6606 = Tucked off in the corner of the daycare building is the girls restroom. The heavy smell of scented soaps overpowers the calm pink walls and shining tile floor.  A cream colored tub sits under a skylight by the far wall.  A little potty sits in the near corner. 
+#
+desc/edit r6606
+#
+:j l
+#
+:wq
+#
+set r6606/terrain = "inside"
+#
+set r6606/room_flags = ['indoors']
+#
+dig/tel Stairwell; r6607
+#
+tag r6607 = dwarven daycare, category = area names
+#
+desc r6607 = The room is void except for the beginnings of a staircase with a rug runner.  A rickety wooden railing surrounds the stairs on three sides.  A sconce on each wall provide the only light.  Even with activity all about the daycare, it is eerily quiet here. 
+#
+desc/edit r6607
+#
+:j l
+#
+:wq
+#
+set r6607/terrain = "inside"
+#
+set r6607/room_flags = ['indoors']
+#
+dig/tel The Playground; r6608
+#
+tag r6608 = dwarven daycare, category = area names
+#
+desc r6608 = The wire fence continues around the northwest corner of the playground. There is a small square concrete pad on the west side.  Tattered jump ropes and broken chalk lie on the pad.  A hopscotch grid has been permanently painted onto the surface.  Only a few clumps of grass grow here and there, the rest has been worn down to the dirt. 
+#
+desc/edit r6608
+#
+:j l
+#
+:wq
+#
+set r6608/terrain = "field"
+#
+dig/tel The Playground; r6609
+#
+tag r6609 = dwarven daycare, category = area names
+#
+desc r6609 = Even with signs of tampering the wire fence stands strong.  This section of the playground contains nothing but a giant sand box.  Toys have been tossed all around, several buried over half-way in the sand.  Mounds have been created in several places for use as a mountain or volcano.  Some children have even created complex and detailed villages, while others have created bog and swamp scenes. 
+#
+desc/edit r6609
+#
+:j l
+#
+:wq
+#
+set r6609/terrain = "field"
+#
+set r6609/extra_description = {'>room_trap_random 1': 'The wind briefly howls and blowing some of the sand buildings down.  ', 'village': 'Extraordinary work shows off in this village that bears resemblance to the Dwarven Kingdom.  Buildings, paths, and even people have been recreated with great detail. '}
+#
+dig/tel The Playground; r6610
+#
+tag r6610 = dwarven daycare, category = area names
+#
+desc r6610 = A large wire fence surrounds the entire playground keep children from wandering off.  There are two slides and a swing set in this area.  One slide is a straight downward run while the other corkscrews several times. The swing is deteriorating and looks as if any amount of weight will cause it to fall, but still has three seats in good condition.  The grass has grown up around the slides but is totally worn away from the ladders and the landings.  The swing has no grass around it at all. 
+#
+desc/edit r6610
+#
+:j l
+#
+:wq
+#
+set r6610/terrain = "field"
+#
+dig/tel The Playground; r6611
+#
+tag r6611 = dwarven daycare, category = area names
+#
+desc r6611 = The grass has been left low cut here.  An empty field for the children to use for whatever games they can come up with such as tag or dodge ball.  A few leather balls sit up against fence on the far side.  Most of the time this field is used for group activities that the nannies hold. 
+#
+desc/edit r6611
+#
+:j l
+#
+:wq
+#
+set r6611/terrain = "field"
+#
+dig/tel Basement; r6612
+#
+tag r6612 = dwarven daycare, category = area names
+#
+desc r6612 = The staircase quickly ends into the basement.  This portion of the building is hardly used and so has little light.  There is a slight chill to the stagnant air.  Cobwebs and dirt block much of the view of the walls. Most of the children know this room as the entrance to the maze and they stay away.  To the east the surroundings change but the light does not. 
+#
+desc/edit r6612
+#
+:j l
+#
+:wq
+#
+set r6612/terrain = "field"
+#
+set r6612/room_flags = ['indoors', 'dark']
+#
+dig/tel Mini-Maze; r6613
+#
+tag r6613 = dwarven daycare, category = area names
+#
+desc r6613 = A narrow passage continues on into the dim lighting.  Through the darkness, some colorful pictures can be seen on the wooden walls.  The old air thickens slightly. 
+#
+desc/edit r6613
+#
+:j l
+#
+:wq
+#
+set r6613/terrain = "field"
+#
+set r6613/extra_description = {'pictures': 'The pictures in this room depict various landscapes around the realm, forests, caverns, castles, mountains and plains. '}
+#
+set r6613/room_flags = ['indoors', 'dark']
+#
+dig/tel Mini-Maze; r6614
+#
+tag r6614 = dwarven daycare, category = area names
+#
+desc r6614 = A narrow passage continues on into the dim lighting.  Through the darkness, some colorful pictures can be seen on the wooden walls.  The old air thickens slightly. 
+#
+desc/edit r6614
+#
+:j l
+#
+:wq
+#
+set r6614/terrain = "field"
+#
+set r6614/extra_description = {'pictures': 'The pictures here old attempts at art by the children.  Among them are fingerpaintings and crayon drawings.  There is one of quite violence depicting a slaughtered dwarven guard. '}
+#
+set r6614/room_flags = ['indoors', 'dark']
+#
+dig/tel Mini-Maze; r6615
+#
+tag r6615 = dwarven daycare, category = area names
+#
+desc r6615 = A narrow passage continues on into the dim lighting.  Through the darkness, some colorful pictures can be seen on the wooden walls.  The old air thickens slightly. 
+#
+desc/edit r6615
+#
+:j l
+#
+:wq
+#
+set r6615/terrain = "field"
+#
+set r6615/extra_description = {'pictures': 'Snow White is the theme among these pictures.  There is a rather large one with all the seven dwarves coming home from work and one of the wicked stepmother disguised as an ugly old lady holding an apple.  The most catching of all is a beautiful painting of Snow White herself. '}
+#
+set r6615/room_flags = ['indoors', 'dark']
+#
+dig/tel Mini-Maze; r6616
+#
+tag r6616 = dwarven daycare, category = area names
+#
+desc r6616 = A narrow passage continues on into the dim lighting.  Through the darkness, some colorful pictures can be seen on the wooden walls.  The old air thickens slightly. 
+#
+desc/edit r6616
+#
+:j l
+#
+:wq
+#
+set r6616/terrain = "field"
+#
+set r6616/extra_description = {'pictures': 'Among the pictures here are an old gnome chief sitting on the throne of his hut, reindeer resting in stables, and a scene of a little mushroom village. '}
+#
+set r6616/room_flags = ['indoors', 'dark']
+#
+dig/tel Mini-Maze; r6617
+#
+tag r6617 = dwarven daycare, category = area names
+#
+desc r6617 = A narrow passage continues on into the dim lighting.  Through the darkness, some colorful pictures can be seen on the wooden walls.  The old air thickens slightly. 
+#
+desc/edit r6617
+#
+:j l
+#
+:wq
+#
+set r6617/terrain = "inside"
+#
+set r6617/extra_description = {'pictures': 'There are only two pictures here.  One shows an angry beast growling toward the sky.  The other picture, seemingly opposing the other, is that of a young child with a gleam in his eye and a sword in his hand. '}
+#
+set r6617/room_flags = ['indoors', 'dark']
+#
+dig/tel Mini-Maze; r6618
+#
+tag r6618 = dwarven daycare, category = area names
+#
+desc r6618 = A narrow passage continues on into the dim lighting.  Through the darkness, some colorful pictures can be seen on the wooden walls.  The old air is thick, and smells of mold. 
+#
+desc/edit r6618
+#
+:j l
+#
+:wq
+#
+set r6618/terrain = "inside"
+#
+set r6618/extra_description = {'pictures': 'On one wall there is a large picture of a can of paint and several brushes lying beside it.  The other picture is a realistic take on the arts and crafts room upstairs, teacher and all. '}
+#
+set r6618/room_flags = ['indoors', 'dark']
+#
+dig/tel Mini-Maze; r6619
+#
+tag r6619 = dwarven daycare, category = area names
+#
+desc r6619 = A narrow passage continues on into the dim lighting.  Through the darkness, some colorful pictures can be seen on the wooden walls.  The old air thickens slightly. 
+#
+desc/edit r6619
+#
+:j l
+#
+:wq
+#
+set r6619/terrain = "inside"
+#
+set r6619/extra_description = {'pictures': 'The pictures of this room form a mural.  It depicts several dwarves standing in awe before a huge fierce dragon.  The dragon taking up nearly all three of the walls.  There is a small inscription towards the bottom that reads, Shakes. '}
+#
+set r6619/room_flags = ['indoors', 'dark']
+#
+dig/tel First Aid; r6620
+#
+tag r6620 = dwarven daycare, category = area names
+#
+desc r6620 = Nothing more than a niche, the first aid station is a busy place.  The air almost takes on a sterile smell.  One wall is nothing but cabinets from floor to ceiling.  Each door and compartment holds various bandages, ointments and healing tools to handle most any accident.  On the other wall there is a cot and a water station.  There is ample light from the several lanterns hanging from the ceiling. 
+#
+desc/edit r6620
+#
+:j l
+#
+:wq
+#
+set r6620/terrain = "inside"
+#
+set r6620/room_flags = ['indoors']
+#
+dig/tel Hallway; r6621
+#
+tag r6621 = dwarven daycare, category = area names
+#
+desc r6621 = A detailed and delicate candelabra hangs from the ceiling to light the way.  Most of the floor is covered by a decorative rung.  Two masterfully painted pictures are the only wall fixtures.  This short hallway allows passage in all directions. 
+#
+desc/edit r6621
+#
+:j l
+#
+:wq
+#
+set r6621/terrain = "inside"
+#
+set r6621/extra_description = {'pictures': 'The two pictures are of a former King and Queen of the lands.  The King is a stout looking dwarf with a long beard in braids and dark brown hair to his shoulders.  The Queen is a regal dwarf with emerald green eyes.  Both appear to be happy with little signs of old age or stress. '}
+#
+set r6621/room_flags = ['indoors']
+#
+dig/tel Nap Room; r6622
+#
+tag r6622 = dwarven daycare, category = area names
+#
+desc r6622 = Throughout the day, each child is given time for a nap.  This rather large room contains no windows and has minimal light.  The walls are a dull brown to aid in drifting the little ones off to sleep.  Numerous cots and hay pallets provide the slightly comfortable beds. 
+#
+desc/edit r6622
+#
+:j l
+#
+:wq
+#
+set r6622/terrain = "inside"
+#
+set r6622/room_flags = ['indoors']
+#
+dig/tel Boys Room; r6623
+#
+tag r6623 = dwarven daycare, category = area names
+#
+desc r6623 = The dark blue colors of the boys restroom help to hide the uncleanliness. The normally white tub is marred by dirt from continuous bath taking.  The little potty sits off to the back corner with a trail of littered paper coming from it.  The smell of filth wades heavily in the air.  Low lit lanterns provide enough light without giving way to the disarray. 
+#
+desc/edit r6623
+#
+:j l
+#
+:wq
+#
+set r6623/terrain = "inside"
+#
+set r6623/room_flags = ['indoors']
+#
+dig/tel Nanny's Office; r6624
+#
+tag r6624 = dwarven daycare, category = area names
+#
+desc r6624 = Neat and meticulous, the nanny's office is well in order.  A hardwood desk with a plain chair, faces out from the wall.  Two leather cushioned chairs are turned toward the desk.  All papers and files are organized and arranged on the desk surface.  A three drawer filing cabinet stands against the southern wall with plaques hanging on both sides.  An elaborate candelabra hangs in the center of the room.  There is a sign on the door to the east. 
+#
+desc/edit r6624
+#
+:j l
+#
+:wq
+#
+set r6624/terrain = "field"
+#
+set r6624/extra_description = {'sign': '^WCLOSET^x ^RKEEP OUT^x ', 'plaque': 'Hanging loosely on the wall, these two plaques are the completion certificates of the two nannies.  They show proof that the nannies have taken proper training and should know what they are doing. '}
+#
+set r6624/room_flags = ['indoors']
+#
+dig/tel Tiny closet; r6625
+#
+tag r6625 = dwarven daycare, category = area names
+#
+desc r6625 = A thick accumulation of dust covers everything in the closet.  A lantern hanging to one side of the door reveals how cramped this space is.  Flimsy wooden shelves line three walls and two cabinets stand back-to-back in the center.  The stale musty air is the result of no windows and no one being in here for quite some time. 
+#
+desc/edit r6625
+#
+:j l
+#
+:wq
+#
+set r6625/terrain = "inside"
+#
+set r6625/room_flags = ['indoors']
+#
+dig/tel Messy Kitchen; r6626
+#
+tag r6626 = dwarven daycare, category = area names
+#
+desc r6626 = An average sized room, the kitchen is more than sufficient for the daycare's needs.  The room is well lit and is kept fairly clean.  There are plenty of cabinets to hold the numerous pots and pans and dishes.  A small circular stove, for healthy warm meals, sits along the eastern wall. Scarred from consistent use, the counter and its top are in need of repair. A window on the east wall allows a view of the outside playground. 
+#
+desc/edit r6626
+#
+:j l
+#
+:wq
+#
+set r6626/terrain = "inside"
+#
+set r6626/room_flags = ['indoors']
+#
+dig/tel Patio; r6627
+#
+tag r6627 = dwarven daycare, category = area names
+#
+desc r6627 = A rectangular wooden deck supplies a platform for observing the children on the playground and a place to hold outside activities.  Several boards of the deck and the two steps to the ground are worn from constant traffic.  At times the patio becomes a haven from the hectic pace of the inside and nature's song and fresh air is a welcome break. 
+#
+desc/edit r6627
+#
+:j l
+#
+:wq
+#
+set r6627/terrain = "field"
+#
+tel r6631
+#
+openexit north; n; e3600, south = r6618
+#
+tag e3600 = dwarven daycare, category = area names
+#
+set e3600/door_attributes = "open"
+#
+set e3600/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r6601
+#
+openexit east; e; e3601, west = r6624
+#
+tag e3601 = dwarven daycare, category = area names
+#
+set e3601/door_attributes = "open"
+#
+set e3601/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3602, north = r6602
+#
+tag e3602 = dwarven daycare, category = area names
+#
+set e3602/door_attributes = "open"
+#
+set e3602/reset_door_attributes = "open"
+#
+desc south = You see a large room full of noisy brats. 
+#
+openexit west; w; e3603, east = r6500
+#
+tag e3603 = dwarven daycare, category = area names
+#
+set e3603/door_attributes = "open"
+#
+set e3603/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6602
+#
+alias north = n, e3604
+#
+tag e3604 = dwarven daycare, category = area names
+#
+set e3604/door_attributes = "open"
+#
+set e3604/reset_door_attributes = "open"
+#
+desc north = You see the drop off. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3605, west = r6626
+#
+tag e3605 = dwarven daycare, category = area names
+#
+set e3605/door_attributes = "open"
+#
+set e3605/reset_door_attributes = "open"
+#
+desc east = You see an extremely messy kitchen. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3606, north = r6604
+#
+tag e3606 = dwarven daycare, category = area names
+#
+set e3606/door_attributes = "open"
+#
+set e3606/reset_door_attributes = "open"
+#
+desc south = You see a large room full of noisy brats. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3607, east = r6603
+#
+tag e3607 = dwarven daycare, category = area names
+#
+set e3607/door_attributes = "open"
+#
+set e3607/reset_door_attributes = "open"
+#
+desc west = You see a large room full of noisy brats. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6603
+#
+alias east = e, e3608
+#
+tag e3608 = dwarven daycare, category = area names
+#
+set e3608/door_attributes = "open"
+#
+set e3608/reset_door_attributes = "open"
+#
+desc east = You see a large room full of noisy brats. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3609, north = r6605
+#
+tag e3609 = dwarven daycare, category = area names
+#
+set e3609/door_attributes = "open"
+#
+set e3609/reset_door_attributes = "open"
+#
+desc south = You see a large room full of noisy brats. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3610, east = r6606
+#
+tag e3610 = dwarven daycare, category = area names
+#
+set e3610/door_attributes = "open"
+#
+set e3610/reset_door_attributes = "open"
+#
+desc west = You see a messy bathroom. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6604
+#
+alias north = n, e3611
+#
+tag e3611 = dwarven daycare, category = area names
+#
+set e3611/door_attributes = "open"
+#
+set e3611/reset_door_attributes = "open"
+#
+desc north = You see a large room full of noisy brats. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3612, west = r6627
+#
+tag e3612 = dwarven daycare, category = area names
+#
+set e3612/door_attributes = "open"
+#
+set e3612/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3613, north = r6621
+#
+tag e3613 = dwarven daycare, category = area names
+#
+set e3613/door_attributes = "open"
+#
+set e3613/reset_door_attributes = "open"
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3614, east = r6605
+#
+tag e3614 = dwarven daycare, category = area names
+#
+set e3614/door_attributes = "open"
+#
+set e3614/reset_door_attributes = "open"
+#
+desc west = You see a large room full of noisy brats. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6605
+#
+alias north = n, e3615
+#
+tag e3615 = dwarven daycare, category = area names
+#
+set e3615/door_attributes = "open"
+#
+set e3615/reset_door_attributes = "open"
+#
+desc north = You see a large room full of noisy brats. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e, e3616
+#
+tag e3616 = dwarven daycare, category = area names
+#
+set e3616/door_attributes = "open"
+#
+set e3616/reset_door_attributes = "open"
+#
+desc east = You see a large room full of noisy brats. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3617, north = r6620
+#
+tag e3617 = dwarven daycare, category = area names
+#
+set e3617/door_attributes = "open"
+#
+set e3617/reset_door_attributes = "open"
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3618, east = r6607
+#
+tag e3618 = dwarven daycare, category = area names
+#
+set e3618/door_attributes = "open"
+#
+set e3618/reset_door_attributes = "open"
+#
+desc west = You see a staircase leading down into darkness. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6606
+#
+alias east = e, e3619
+#
+tag e3619 = dwarven daycare, category = area names
+#
+set e3619/door_attributes = "open"
+#
+set e3619/reset_door_attributes = "open"
+#
+desc east = You see a large room full of noisy brats. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r6607
+#
+alias east = e, e3620
+#
+tag e3620 = dwarven daycare, category = area names
+#
+set e3620/door_attributes = "open"
+#
+set e3620/reset_door_attributes = "open"
+#
+desc east = You see a large room full of noisy brats. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit down; d; e3621, up = r6612
+#
+tag e3621 = dwarven daycare, category = area names
+#
+set e3621/door_attributes = "open"
+#
+set e3621/reset_door_attributes = "open"
+#
+desc down = You see the entrance to something. 
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r6608
+#
+openexit east; e; e3622, west = r6609
+#
+tag e3622 = dwarven daycare, category = area names
+#
+set e3622/door_attributes = "open"
+#
+set e3622/reset_door_attributes = "open"
+#
+desc east = You see the playground. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3623, north = r6610
+#
+tag e3623 = dwarven daycare, category = area names
+#
+set e3623/door_attributes = "open"
+#
+set e3623/reset_door_attributes = "open"
+#
+desc south = You see the playground. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r6609
+#
+openexit south; s; e3624, north = r6611
+#
+tag e3624 = dwarven daycare, category = area names
+#
+set e3624/door_attributes = "open"
+#
+set e3624/reset_door_attributes = "open"
+#
+desc south = You see the playground. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w, e3625
+#
+tag e3625 = dwarven daycare, category = area names
+#
+set e3625/door_attributes = "open"
+#
+set e3625/reset_door_attributes = "open"
+#
+desc west = You see the playground. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6610
+#
+alias north = n, e3626
+#
+tag e3626 = dwarven daycare, category = area names
+#
+set e3626/door_attributes = "open"
+#
+set e3626/reset_door_attributes = "open"
+#
+desc north = You see the playground. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3627, west = r6611
+#
+tag e3627 = dwarven daycare, category = area names
+#
+set e3627/door_attributes = "open"
+#
+set e3627/reset_door_attributes = "open"
+#
+desc east = You see the playground. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3628, east = r6627
+#
+tag e3628 = dwarven daycare, category = area names
+#
+set e3628/door_attributes = "open"
+#
+set e3628/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6611
+#
+alias north = n, e3629
+#
+tag e3629 = dwarven daycare, category = area names
+#
+set e3629/door_attributes = "open"
+#
+set e3629/reset_door_attributes = "open"
+#
+desc north = You see the playground. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias west = w, e3630
+#
+tag e3630 = dwarven daycare, category = area names
+#
+set e3630/door_attributes = "open"
+#
+set e3630/reset_door_attributes = "open"
+#
+desc west = You see the playground. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6612
+#
+openexit east; e; e3631, west = r6613
+#
+tag e3631 = dwarven daycare, category = area names
+#
+set e3631/door_attributes = "open"
+#
+set e3631/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias up = u, e3632
+#
+tag e3632 = dwarven daycare, category = area names
+#
+set e3632/door_attributes = "open"
+#
+set e3632/reset_door_attributes = "open"
+#
+desc up = You see some stairs. 
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r6613
+#
+openexit east; e; e3633, west = r6614
+#
+tag e3633 = dwarven daycare, category = area names
+#
+set e3633/door_attributes = "open"
+#
+set e3633/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3634, north = r6615
+#
+tag e3634 = dwarven daycare, category = area names
+#
+set e3634/door_attributes = "open"
+#
+set e3634/reset_door_attributes = "open"
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w, e3635
+#
+tag e3635 = dwarven daycare, category = area names
+#
+set e3635/door_attributes = "open"
+#
+set e3635/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6614
+#
+openexit south; s; e3636, north = r6616
+#
+tag e3636 = dwarven daycare, category = area names
+#
+set e3636/door_attributes = "open"
+#
+set e3636/reset_door_attributes = "open"
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w, e3637
+#
+tag e3637 = dwarven daycare, category = area names
+#
+set e3637/door_attributes = "open"
+#
+set e3637/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6615
+#
+alias north = n, e3638
+#
+tag e3638 = dwarven daycare, category = area names
+#
+set e3638/door_attributes = "open"
+#
+set e3638/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3639, west = r6616
+#
+tag e3639 = dwarven daycare, category = area names
+#
+set e3639/door_attributes = "open"
+#
+set e3639/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r6616
+#
+alias north = n, e3640
+#
+tag e3640 = dwarven daycare, category = area names
+#
+set e3640/door_attributes = "open"
+#
+set e3640/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3641, north = r6617
+#
+tag e3641 = dwarven daycare, category = area names
+#
+set e3641/door_attributes = "open"
+#
+set e3641/reset_door_attributes = "open"
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w, e3642
+#
+tag e3642 = dwarven daycare, category = area names
+#
+set e3642/door_attributes = "open"
+#
+set e3642/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6617
+#
+alias north = n, e3643
+#
+tag e3643 = dwarven daycare, category = area names
+#
+set e3643/door_attributes = "open"
+#
+set e3643/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3644, west = r6619
+#
+tag e3644 = dwarven daycare, category = area names
+#
+set e3644/door_attributes = "open"
+#
+set e3644/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3645, north = r6618
+#
+tag e3645 = dwarven daycare, category = area names
+#
+set e3645/door_attributes = "open"
+#
+set e3645/reset_door_attributes = "open"
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r6618
+#
+alias north = n, e3646
+#
+tag e3646 = dwarven daycare, category = area names
+#
+set e3646/door_attributes = "open"
+#
+set e3646/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s, e3647
+#
+tag e3647 = dwarven daycare, category = area names
+#
+set e3647/door_attributes = "open"
+#
+set e3647/reset_door_attributes = "open"
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r6619
+#
+alias west = w, e3648
+#
+tag e3648 = dwarven daycare, category = area names
+#
+set e3648/door_attributes = "open"
+#
+set e3648/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6620
+#
+alias north = n, e3649
+#
+tag e3649 = dwarven daycare, category = area names
+#
+set e3649/door_attributes = "open"
+#
+set e3649/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3650, west = r6621
+#
+tag e3650 = dwarven daycare, category = area names
+#
+set e3650/door_attributes = "open"
+#
+set e3650/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r6621
+#
+alias north = n, e3651
+#
+tag e3651 = dwarven daycare, category = area names
+#
+set e3651/door_attributes = "open"
+#
+set e3651/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3652, west = r6622
+#
+tag e3652 = dwarven daycare, category = area names
+#
+set e3652/door_attributes = "open"
+#
+set e3652/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3653, north = r6623
+#
+tag e3653 = dwarven daycare, category = area names
+#
+set e3653/door_attributes = "open"
+#
+set e3653/reset_door_attributes = "open"
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w, e3654
+#
+tag e3654 = dwarven daycare, category = area names
+#
+set e3654/door_attributes = "open"
+#
+set e3654/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6622
+#
+alias west = w, e3655
+#
+tag e3655 = dwarven daycare, category = area names
+#
+set e3655/door_attributes = "open"
+#
+set e3655/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6623
+#
+alias north = n, e3656
+#
+tag e3656 = dwarven daycare, category = area names
+#
+set e3656/door_attributes = "open"
+#
+set e3656/reset_door_attributes = "open"
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r6624
+#
+openexit east; e; e3657, west = r6625
+#
+tag e3657 = dwarven daycare, category = area names
+#
+set e3657/door_attributes = "open"
+#
+set e3657/reset_door_attributes = "open"
+#
+alias west = w, e3658
+#
+tag e3658 = dwarven daycare, category = area names
+#
+set e3658/door_attributes = "open"
+#
+set e3658/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6625
+#
+alias west = w, e3659
+#
+tag e3659 = dwarven daycare, category = area names
+#
+set e3659/door_attributes = "open"
+#
+set e3659/reset_door_attributes = "open"
+#
+tel r6626
+#
+alias west = w, e3660
+#
+tag e3660 = dwarven daycare, category = area names
+#
+set e3660/door_attributes = "open"
+#
+set e3660/reset_door_attributes = "open"
+#
+desc west = You see a large room full of noisy brats. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6627
+#
+alias east = e, e3661
+#
+tag e3661 = dwarven daycare, category = area names
+#
+set e3661/door_attributes = "open"
+#
+set e3661/reset_door_attributes = "open"
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w, e3662
+#
+tag e3662 = dwarven daycare, category = area names
+#
+set e3662/door_attributes = "open"
+#
+set e3662/reset_door_attributes = "open"
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6602
+#
+create/drop a teddy bear;teddy;bear;m6601:characters.Mobile
+#
+desc m6601 = A cute and fuzzy teddy bear stands here. 
+#
+set m6601/level = 4
+#
+set m6601/level_base = 4
+#
+set m6601/vnum = "m6601"
+#
+set m6601/look_description = "This is a tiny little bear.  It has white fuzzy fabric and a heart on it's chest.  For some reason or another it seems alive.  Every so often it wanders around the room and tries out all the furniture.  Perhaps looking for the best place to rest when there are no children around. "
+#
+set m6601/act_flags = ['stay area', 'scavenger', 'sentinel', 'npc']
+#
+set m6601/alignment = 500
+#
+set m6601/sex = "male"
+#
+set m6601/race = "object"
+#
+tag m6601 = dwarven daycare:area name
+#
+tag m6601 = mobile
+#
+set m6601/hitpoints[maximum] = 41
+#
+set m6601/position = "standing"
+#
+set m6601/special_function = "thief"
+#
+tel r6603
+#
+create/drop Elmira;elmira;m6609:characters.Mobile
+#
+desc m6609 = Elmira is hugging and cuddling a teddybear. 
+#
+set m6609/level = 6
+#
+set m6609/level_base = 6
+#
+set m6609/vnum = "m6609"
+#
+set m6609/look_description = "Elmira is here squeezing a teddy bear to death.  She has red hair and a button nose.  There seems a slight cruelty in her eyes as she cradles the bear. "
+#
+set m6609/act_flags = ['stay area', 'scavenger', 'sentinel', 'npc']
+#
+set m6609/alignment = -200
+#
+set m6609/sex = "female"
+#
+set m6609/race = "human"
+#
+tag m6609 = dwarven daycare:area name
+#
+tag m6609 = mobile
+#
+set m6609/hitpoints[maximum] = 51
+#
+set m6609/position = "standing"
+#
+tel r6603
+#
+create a blue hair bow;bow;hair;blue;o6655:objects.Armor
+#
+sethome o6655 = m6609
+#
+desc o6655 = A blue hair bow catches your attention.
+#
+set o6655/level = 4
+#
+set o6655/level_base = 4
+#
+set o6655/vnum = "o6655"
+#
+set o6655/item_type = "armor"
+#
+set o6655/wear_location = "head"
+#
+set o6655/weight = 5
+#
+tag o6655 = dwarven daycare:area name
+#
+tag o6655 = object
+#
+set o6655/extra_descriptions = {'bow hair blue': " Aw, isn't it so cute?  Maybe you should try it on. Is that Mr. Skullhead? "}
+#
+set o6655/stat_modifiers[dexterity] = 1
+#
+set o6655/stat_modifiers[6] = 1
+#
+set o6655/armor = 4
+#
+wearto o6655 = m6609
+#
+set m6609/reset_objects["o6655"] = {"location":"equipped"}
+#
+tel r6604
+#
+create/drop An elven youth;elf;elven;youth;m6610:characters.Mobile
+#
+desc m6610 = An elven youth is here playing. 
+#
+set m6610/level = 4
+#
+set m6610/level_base = 4
+#
+set m6610/vnum = "m6610"
+#
+set m6610/look_description = "The elf is a cute toddler wearing overalls and small brown leather shoes. He has pointy little ears and sparkling gleam in his eyes.  He is so set in his play time that he notices little else occurring around him.  As his imagination runs wild, he encompasses more and more toys of the room into his story. "
+#
+set m6610/act_flags = ['stay area', 'scavenger', 'sentinel', 'npc']
+#
+set m6610/alignment = -200
+#
+set m6610/sex = "male"
+#
+set m6610/race = "elf"
+#
+tag m6610 = dwarven daycare:area name
+#
+tag m6610 = mobile
+#
+set m6610/hitpoints[maximum] = 34
+#
+set m6610/position = "standing"
+#
+tel r6604
+#
+create blue jean overalls;overalls;blue;jean;o6648:objects.Armor
+#
+sethome o6648 = m6610
+#
+desc o6648 = A pair of blue jean overalls lies on the ground here.
+#
+set o6648/level = 2
+#
+set o6648/level_base = 2
+#
+set o6648/vnum = "o6648"
+#
+set o6648/item_type = "armor"
+#
+set o6648/wear_location = "body"
+#
+set o6648/weight = 7
+#
+tag o6648 = dwarven daycare:area name
+#
+tag o6648 = object
+#
+set o6648/extra_descriptions = {'overalls blue jean': ' A pair of denim blue overalls.  How cute! '}
+#
+set o6648/armor = 2
+#
+wearto o6648 = m6610
+#
+set m6610/reset_objects["o6648"] = {"location":"equipped"}
+#
+tel r6605
+#
+create/drop the teacher;teacher;m6612:characters.Mobile
+#
+desc m6612 = A teacher stands before the chalkboard preparing her lecture. 
+#
+set m6612/level = 8
+#
+set m6612/level_base = 8
+#
+set m6612/vnum = "m6612"
+#
+set m6612/look_description = "Standing here is a retired school teacher.  She is even old compared to dwarven standards.  Wearing a blue dress, she has her white hair pulled tightly back into a bun.  Small wire rimmed glasses perch on her nose. "
+#
+set m6612/act_flags = ['no kill', 'healer', 'sentinel', 'npc']
+#
+set m6612/alignment = 400
+#
+set m6612/sex = "female"
+#
+set m6612/spell_affects = {'sanctuary': ''}
+#
+set m6612/race = "dwarf"
+#
+tag m6612 = dwarven daycare:area name
+#
+tag m6612 = mobile
+#
+set m6612/hitpoints[maximum] = 114
+#
+set m6612/position = "standing"
+#
+tel r6606
+#
+create/drop a Dwarven child;Dwarven;child;m6604:characters.Mobile
+#
+desc m6604 = A Dwarven child scurries about. 
+#
+set m6604/level = 3
+#
+set m6604/level_base = 3
+#
+set m6604/vnum = "m6604"
+#
+set m6604/look_description = "A fragile looking little dwarven girl.  Whether out of being lost, alone, bored or hungry, she has tears rolling down her cheeks.  With a startle, she whines loudly as if she's angry. "
+#
+set m6604/act_flags = ['stay area', 'scavenger', 'sentinel', 'npc']
+#
+set m6604/alignment = -400
+#
+set m6604/sex = "female"
+#
+set m6604/race = "dwarf"
+#
+tag m6604 = dwarven daycare:area name
+#
+tag m6604 = mobile
+#
+set m6604/hitpoints[maximum] = 29
+#
+set m6604/position = "standing"
+#
+set m6604/special_function = "thief"
+#
+tel r6606
+#
+create a pair of earrings.;earrings;o6602:objects.Armor
+#
+sethome o6602 = m6604
+#
+desc o6602 = A golden pair of earrings lie here.
+#
+set o6602/level = 1
+#
+set o6602/level_base = 1
+#
+set o6602/vnum = "o6602"
+#
+set o6602/item_type = "armor"
+#
+set o6602/wear_location = "head"
+#
+set o6602/weight = 1
+#
+tag o6602 = dwarven daycare:area name
+#
+tag o6602 = object
+#
+set o6602/stat_modifiers[dexterity] = 1
+#
+set o6602/armor = 2
+#
+wearto o6602 = m6604
+#
+set m6604/reset_objects["o6602"] = {"location":"equipped"}
+#
+tel r6607
+#
+create/drop a toy soldier;soldier;toy;m6603:characters.Mobile
+#
+desc m6603 = A toy soldier stands guard here. 
+#
+set m6603/level = 3
+#
+set m6603/level_base = 3
+#
+set m6603/vnum = "m6603"
+#
+set m6603/look_description = "A prim and proper soldier is at his post.  A toy with life-like appearance, it scans the area for possible target practice.  With any movement, it's head will turn in hopes of finding new prey.  It's armor is polished to a bright shine and it's gun has been well cleaned.  It stands with an evil twinkle in it's eyes. "
+#
+set m6603/act_flags = ['stay area', 'scavenger', 'sentinel', 'npc']
+#
+set m6603/alignment = -300
+#
+set m6603/sex = "male"
+#
+set m6603/race = "object"
+#
+tag m6603 = dwarven daycare:area name
+#
+tag m6603 = mobile
+#
+set m6603/hitpoints[maximum] = 24
+#
+set m6603/position = "standing"
+#
+set m6603/special_function = "thief"
+#
+tel r6607
+#
+create a toy gun;gun;toy;o6647:objects.Weapon
+#
+sethome o6647 = m6603
+#
+desc o6647 = A toy gun with a sharp bayonet lies here.
+#
+set o6647/level = 1
+#
+set o6647/level_base = 1
+#
+set o6647/vnum = "o6647"
+#
+set o6647/item_type = "weapon"
+#
+set o6647/wear_location = "wield"
+#
+set o6647/weight = 5
+#
+tag o6647 = dwarven daycare:area name
+#
+tag o6647 = object
+#
+set o6647/extra_descriptions = {'gun toy': ' This gun is just a toy.  You open it up to see the bullets, and you discover they are merely little plastic beads.  Probably the only reason they hurt you is the speed they were going at. '}
+#
+set o6647/weapon_type = "pound"
+#
+set o6647/damage_low = 1
+#
+set o6647/damage_high = 8
+#
+wieldto o6647 = m6603
+#
+set m6603/reset_objects["o6647"] = {"location":"equipped"}
+#
+tel r6609
+#
+create a dragon toy;dragon;toy;o6603:objects.Furniture
+#
+sethome o6603 = r6609
+#
+desc o6603 = A toy dragon is partially buried in the sand.
+#
+set o6603/level = 1
+#
+set o6603/level_base = 1
+#
+set o6603/vnum = "o6603"
+#
+set o6603/item_type = "furniture"
+#
+objectlock o6603 = "get:perm(Admin)"
+#
+set o6603/weight = 25
+#
+tag o6603 = dwarven daycare:area name
+#
+tag o6603 = object
+#
+set o6603/people_maximum = 0
+#
+set o6603/weight_maximum = 0
+#
+set o6603/use_positions = []
+#
+set o6603/heal_mana_gain = 0
+#
+drop o6603
+#
+set r6609/reset_objects["o6603"] = {"location":"inventory"}
+#
+tel r6609
+#
+create/drop An elven youth;elf;elven;youth;m6610:characters.Mobile
+#
+desc m6610 = An elven youth is here playing. 
+#
+set m6610/level = 4
+#
+set m6610/level_base = 4
+#
+set m6610/vnum = "m6610"
+#
+set m6610/look_description = "The elf is a cute toddler wearing overalls and small brown leather shoes. He has pointy little ears and sparkling gleam in his eyes.  He is so set in his play time that he notices little else occurring around him.  As his imagination runs wild, he encompasses more and more toys of the room into his story. "
+#
+set m6610/act_flags = ['stay area', 'scavenger', 'sentinel', 'npc']
+#
+set m6610/alignment = -200
+#
+set m6610/sex = "male"
+#
+set m6610/race = "elf"
+#
+tag m6610 = dwarven daycare:area name
+#
+tag m6610 = mobile
+#
+set m6610/hitpoints[maximum] = 46
+#
+set m6610/position = "standing"
+#
+tel r6609
+#
+create blue jean overalls;overalls;blue;jean;o6648:objects.Armor
+#
+sethome o6648 = m6610
+#
+desc o6648 = A pair of blue jean overalls lies on the ground here.
+#
+set o6648/level = 2
+#
+set o6648/level_base = 2
+#
+set o6648/vnum = "o6648"
+#
+set o6648/item_type = "armor"
+#
+set o6648/wear_location = "body"
+#
+set o6648/weight = 7
+#
+tag o6648 = dwarven daycare:area name
+#
+tag o6648 = object
+#
+set o6648/extra_descriptions = {'overalls blue jean': ' A pair of denim blue overalls.  How cute! '}
+#
+set o6648/armor = 2
+#
+wearto o6648 = m6610
+#
+set m6610/reset_objects["o6648"] = {"location":"equipped"}
+#
+tel r6610
+#
+create/drop an old doll;doll;old;m6605:characters.Mobile
+#
+desc m6605 = An old doll has been left on the ground. 
+#
+set m6605/level = 2
+#
+set m6605/level_base = 2
+#
+set m6605/vnum = "m6605"
+#
+set m6605/look_description = "This old doll has seen better days.  It has been hugged and played with so often that it is falling apart.  There is still a hint of life left in it's eyes.  Tattered and torn, the doll remains one of the most liked toys in the daycare. "
+#
+set m6605/act_flags = ['stay area', 'scavenger', 'sentinel', 'npc']
+#
+set m6605/alignment = -2
+#
+set m6605/sex = "neuter"
+#
+set m6605/race = "object"
+#
+tag m6605 = dwarven daycare:area name
+#
+tag m6605 = mobile
+#
+set m6605/hitpoints[maximum] = 20
+#
+set m6605/position = "standing"
+#
+set m6605/special_function = "thief"
+#
+tel r6610
+#
+create a pink ice ring;ring;pink;ice;o6601:objects.Armor
+#
+sethome o6601 = m6605
+#
+desc o6601 = A pink ice ring draws your eye.
+#
+set o6601/level = 1
+#
+set o6601/level_base = 1
+#
+set o6601/vnum = "o6601"
+#
+set o6601/item_type = "armor"
+#
+set o6601/wear_location = "finger"
+#
+set o6601/weight = 8
+#
+tag o6601 = dwarven daycare:area name
+#
+tag o6601 = object
+#
+set o6601/extra_descriptions = {'ring ice pink': ' This ring holds some magic powers.  For as it feels as cold as ice when you put it on, it will never melt.  It is a light colored pink and shines a bit in the light. '}
+#
+set o6601/stat_modifiers[strength] = 1
+#
+set o6601/stat_modifiers[hitpoints] = 1
+#
+set o6601/armor = 2
+#
+give o6601 = m6605
+#
+set m6605/reset_objects["o6601"] = {"location":"inventory"}
+#
+tel r6612
+#
+create/drop the spoiled brat;brat;spoiled;m6608:characters.Mobile
+#
+desc m6608 = A spoiled brat is crying here. 
+#
+set m6608/level = 4
+#
+set m6608/level_base = 4
+#
+set m6608/vnum = "m6608"
+#
+set m6608/look_description = "This little one is used to getting what he wants.  He is screaming and kicking now because the nannies would not give him a lollipop.  He has been sent down here as punishment and to be allowed to reflect upon his actions. Even now, with soiled clothes, a runny nose and watery eyes, he only cares that he didn't get his treat. "
+#
+set m6608/act_flags = ['healer', 'stay area', 'scavenger', 'sentinel', 'npc']
+#
+set m6608/alignment = -400
+#
+set m6608/sex = "male"
+#
+set m6608/race = "dwarf"
+#
+tag m6608 = dwarven daycare:area name
+#
+tag m6608 = mobile
+#
+set m6608/hitpoints[maximum] = 37
+#
+set m6608/position = "standing"
+#
+set m6608/special_function = "thief"
+#
+tel r6612
+#
+create a rotten steak;steak;rotten;o6645:objects.Food
+#
+sethome o6645 = m6608
+#
+desc o6645 = A dry steak lies on the floor.
+#
+set o6645/level = 2
+#
+set o6645/level_base = 2
+#
+set o6645/vnum = "o6645"
+#
+set o6645/item_type = "food"
+#
+set o6645/weight = 5
+#
+tag o6645 = dwarven daycare:area name
+#
+tag o6645 = object
+#
+set o6645/extra_descriptions = {'steak rotten': ' Ug, who let this steak go to waste.  A few weeks ago it might have been edible.  You probably should not eat this. '}
+#
+set o6645/hours_fed = 4
+#
+set o6645/poison = 1
+#
+give o6645 = m6608
+#
+set m6608/reset_objects["o6645"] = {"location":"inventory"}
+#
+tel r6612
+#
+create/drop the armed guard;guard;m6607:characters.Mobile
+#
+desc m6607 = An armed guard stands here surveying the room. 
+#
+set m6607/level = 4
+#
+set m6607/level_base = 4
+#
+set m6607/vnum = "m6607"
+#
+set m6607/look_description = "Mimicking the dwarven guards of the kingdom, this boy has dressed up in a guards uniform.  Through the helmet an angry scowl shows through.  He stands ready to protect whatever he sees as value down here.  He just might be watching over some sort of secret within the depths of the basement. "
+#
+set m6607/act_flags = ['stay area', 'scavenger', 'sentinel', 'npc']
+#
+set m6607/alignment = -800
+#
+set m6607/sex = "male"
+#
+set m6607/spell_affects = {'detect invis': ''}
+#
+set m6607/race = "dwarf"
+#
+tag m6607 = dwarven daycare:area name
+#
+tag m6607 = mobile
+#
+set m6607/hitpoints[maximum] = 48
+#
+set m6607/position = "standing"
+#
+tel r6618
+#
+create a small metal helmet;helmet;metal;small;o6652:objects.Armor
+#
+sethome o6652 = m6607
+#
+desc o6652 = A small metal helmet lies on the ground here.
+#
+set o6652/level = 2
+#
+set o6652/level_base = 2
+#
+set o6652/vnum = "o6652"
+#
+set o6652/item_type = "armor"
+#
+set o6652/wear_location = "head"
+#
+set o6652/weight = 7
+#
+tag o6652 = dwarven daycare:area name
+#
+tag o6652 = object
+#
+set o6652/extra_descriptions = {'helmet metal small': ' This helmet looks like it could offer some protection.  It is made out of some fairly soft shiny metal. '}
+#
+set o6652/armor = 2
+#
+wearto o6652 = m6607
+#
+set m6607/reset_objects["o6652"] = {"location":"equipped"}
+#
+tel r6618
+#
+create a small metal sword;sword;metal;o6651:objects.Weapon
+#
+sethome o6651 = m6607
+#
+desc o6651 = A small metal sword has been impaled into the ground.
+#
+set o6651/level = 2
+#
+set o6651/level_base = 2
+#
+set o6651/vnum = "o6651"
+#
+set o6651/item_type = "weapon"
+#
+set o6651/wear_location = "wield"
+#
+set o6651/weight = 10
+#
+tag o6651 = dwarven daycare:area name
+#
+tag o6651 = object
+#
+set o6651/extra_descriptions = {'sword metal': ' This sword actually looks like it could hurt someone.  It is about a foot and a half long.  It has a long thin blade.  Its hilt is made out of wood. '}
+#
+set o6651/stat_modifiers[damroll] = 1
+#
+set o6651/weapon_type = "slice"
+#
+set o6651/damage_low = 2
+#
+set o6651/damage_high = 8
+#
+wieldto o6651 = m6607
+#
+set m6607/reset_objects["o6651"] = {"location":"equipped"}
+#
+tel r6620
+#
+create/drop the dwarven youth;youth;dwarven;dwarf;m6600:characters.Mobile
+#
+desc m6600 = A young dwarf plays with a toy axe. 
+#
+set m6600/level = 5
+#
+set m6600/level_base = 5
+#
+set m6600/vnum = "m6600"
+#
+set m6600/look_description = "This is a young but not totally harmless child.  He has short cropped hair and dark brown eyes.  His mischievous nature comes out with the waving of his toy axe.  He feels that this is his domain and no one shall infringe upon it. "
+#
+set m6600/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m6600/alignment = -150
+#
+set m6600/sex = "male"
+#
+set m6600/race = "dwarf"
+#
+tag m6600 = dwarven daycare:area name
+#
+tag m6600 = mobile
+#
+set m6600/hitpoints[maximum] = 43
+#
+set m6600/position = "standing"
+#
+set m6600/special_function = "thief"
+#
+tel r6620
+#
+create a toy axe;axe;toy;o6600:objects.Weapon
+#
+sethome o6600 = m6600
+#
+desc o6600 = An axe made of plastic lies here.
+#
+set o6600/level = 3
+#
+set o6600/level_base = 3
+#
+set o6600/vnum = "o6600"
+#
+set o6600/item_type = "weapon"
+#
+set o6600/wear_location = "wield"
+#
+set o6600/weight = 15
+#
+tag o6600 = dwarven daycare:area name
+#
+tag o6600 = object
+#
+set o6600/extra_descriptions = {'axe toy': ' This axe is made out of black colored plastic.  It prolly would not be a great weapon for fighting the larger creatures in the realms. '}
+#
+set o6600/weapon_type = "slash"
+#
+set o6600/damage_low = 4
+#
+set o6600/damage_high = 7
+#
+wieldto o6600 = m6600
+#
+set m6600/reset_objects["o6600"] = {"location":"equipped"}
+#
+tel r6620
+#
+create/drop the nanny;nanny;m6606:characters.Mobile
+#
+desc m6606 = An old wrinkled nanny stands here, looking over the little ones. 
+#
+set m6606/level = 6
+#
+set m6606/level_base = 6
+#
+set m6606/vnum = "m6606"
+#
+set m6606/look_description = "An old dwarven lady who has been hunched over with age.  There is still enough fight left in her to tackle the daily chore of watching over the children.  Her gray hair is pulled back into a ponytail and she is wearing a pink shawl around her shoulders. "
+#
+set m6606/act_flags = ['healer', 'stay area', 'npc']
+#
+set m6606/alignment = 10
+#
+set m6606/sex = "female"
+#
+set m6606/race = "dwarf"
+#
+tag m6606 = dwarven daycare:area name
+#
+tag m6606 = mobile
+#
+set m6606/hitpoints[maximum] = 70
+#
+set m6606/position = "standing"
+#
+set m6606/special_function = "cast_cleric"
+#
+tel r6620
+#
+create an amber potion;potion;amber;o6646:objects.Potion
+#
+sethome o6646 = m6606
+#
+desc o6646 = An amber potion sits in a corner.
+#
+set o6646/level = 4
+#
+set o6646/level_base = 4
+#
+set o6646/vnum = "o6646"
+#
+set o6646/item_type = "potion"
+#
+set o6646/weight = 1
+#
+tag o6646 = dwarven daycare:area name
+#
+tag o6646 = object
+#
+set o6646/extra_descriptions = {'potion amber': ' An amber colored potion.  It is fairly translucent.  There is a label on the container.  Perhaps you should read it. ', 'container label': ' In case of headaches or other physical aches or pains, take two of these and call a doctor in the morning. '}
+#
+set o6646/spell_level = 30
+#
+set o6646/spell_level_base = 30
+#
+set o6646/spell_name_1 = "cure light"
+#
+set o6646/spell_name_2 = "armor"
+#
+give o6646 = m6606
+#
+set m6606/reset_objects["o6646"] = {"location":"inventory"}
+#
+tel r6620
+#
+create a pink shawl;shawl;pink;o6654:objects.Armor
+#
+sethome o6654 = m6606
+#
+desc o6654 = A pink shawl lies on the ground here.
+#
+set o6654/level = 4
+#
+set o6654/level_base = 4
+#
+set o6654/vnum = "o6654"
+#
+set o6654/item_type = "armor"
+#
+set o6654/wear_location = "neck"
+#
+set o6654/weight = 5
+#
+tag o6654 = dwarven daycare:area name
+#
+tag o6654 = object
+#
+set o6654/extra_descriptions = {'shawl pink': ' This shawl looks hand-woven, probably by a nanny.  Pink fringe lines the entire shawl.  It looks warm and serviceable. '}
+#
+set o6654/armor = 3
+#
+wearto o6654 = m6606
+#
+set m6606/reset_objects["o6654"] = {"location":"equipped"}
+#
+tel r6622
+#
+create/drop a teddy bear;teddy;bear;m6601:characters.Mobile
+#
+desc m6601 = A cute and fuzzy teddy bear stands here. 
+#
+set m6601/level = 4
+#
+set m6601/level_base = 4
+#
+set m6601/vnum = "m6601"
+#
+set m6601/look_description = "This is a tiny little bear.  It has white fuzzy fabric and a heart on it's chest.  For some reason or another it seems alive.  Every so often it wanders around the room and tries out all the furniture.  Perhaps looking for the best place to rest when there are no children around. "
+#
+set m6601/act_flags = ['stay area', 'scavenger', 'sentinel', 'npc']
+#
+set m6601/alignment = 500
+#
+set m6601/sex = "male"
+#
+set m6601/race = "object"
+#
+tag m6601 = dwarven daycare:area name
+#
+tag m6601 = mobile
+#
+set m6601/hitpoints[maximum] = 33
+#
+set m6601/position = "standing"
+#
+set m6601/special_function = "thief"
+#
+tel r6623
+#
+create/drop a toy soldier;soldier;toy;m6603:characters.Mobile
+#
+desc m6603 = A toy soldier stands guard here. 
+#
+set m6603/level = 3
+#
+set m6603/level_base = 3
+#
+set m6603/vnum = "m6603"
+#
+set m6603/look_description = "A prim and proper soldier is at his post.  A toy with life-like appearance, it scans the area for possible target practice.  With any movement, it's head will turn in hopes of finding new prey.  It's armor is polished to a bright shine and it's gun has been well cleaned.  It stands with an evil twinkle in it's eyes. "
+#
+set m6603/act_flags = ['stay area', 'scavenger', 'sentinel', 'npc']
+#
+set m6603/alignment = -300
+#
+set m6603/sex = "male"
+#
+set m6603/race = "object"
+#
+tag m6603 = dwarven daycare:area name
+#
+tag m6603 = mobile
+#
+set m6603/hitpoints[maximum] = 29
+#
+set m6603/position = "standing"
+#
+set m6603/special_function = "thief"
+#
+tel r6623
+#
+create a toy gun;gun;toy;o6647:objects.Weapon
+#
+sethome o6647 = m6603
+#
+desc o6647 = A toy gun with a sharp bayonet lies here.
+#
+set o6647/level = 1
+#
+set o6647/level_base = 1
+#
+set o6647/vnum = "o6647"
+#
+set o6647/item_type = "weapon"
+#
+set o6647/wear_location = "wield"
+#
+set o6647/weight = 5
+#
+tag o6647 = dwarven daycare:area name
+#
+tag o6647 = object
+#
+set o6647/extra_descriptions = {'gun toy': ' This gun is just a toy.  You open it up to see the bullets, and you discover they are merely little plastic beads.  Probably the only reason they hurt you is the speed they were going at. '}
+#
+set o6647/weapon_type = "pound"
+#
+set o6647/damage_low = 2
+#
+set o6647/damage_high = 7
+#
+wieldto o6647 = m6603
+#
+set m6603/reset_objects["o6647"] = {"location":"equipped"}
+#
+tel r6623
+#
+create a tin suit of armor;armor;suit;tin;o6649:objects.Armor
+#
+sethome o6649 = m6603
+#
+desc o6649 = A tin suit of armor lies on the ground here.
+#
+set o6649/level = 1
+#
+set o6649/level_base = 1
+#
+set o6649/vnum = "o6649"
+#
+set o6649/item_type = "armor"
+#
+set o6649/wear_location = "body"
+#
+set o6649/weight = 10
+#
+tag o6649 = dwarven daycare:area name
+#
+tag o6649 = object
+#
+set o6649/extra_descriptions = {'armor suit tin': ' This suit of armor looks like it could actually protect you from head to toe.  How useful! '}
+#
+set o6649/armor = 2
+#
+wearto o6649 = m6603
+#
+set m6603/reset_objects["o6649"] = {"location":"equipped"}
+#
+tel r6624
+#
+create/drop a dwarven nanny;nanny;m6613:characters.Mobile
+#
+desc m6613 = A dwarven nanny is here shuffling paperwork. 
+#
+set m6613/level = 6
+#
+set m6613/level_base = 6
+#
+set m6613/vnum = "m6613"
+#
+set m6613/look_description = "The dwarven nanny is more round than tall.  Her hair is finely braided to the back.  She occupies her time mainly with insuring all the daycare's paperwork is in order.  The wrinkles in her forehead show the signs of heavy thought.  She is proud of the work she does and has a distaste for those who are not as orderly. "
+#
+set m6613/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m6613/alignment = 150
+#
+set m6613/sex = "female"
+#
+set m6613/race = "dwarf"
+#
+tag m6613 = dwarven daycare:area name
+#
+tag m6613 = mobile
+#
+set m6613/hitpoints[maximum] = 72
+#
+set m6613/position = "standing"
+#
+tel r6624
+#
+create a linen robe;robe;linen;o6621:objects.Armor
+#
+sethome o6621 = m6613
+#
+desc o6621 = A linen robe is crumpled into a ball here.
+#
+set o6621/level = 4
+#
+set o6621/level_base = 4
+#
+set o6621/vnum = "o6621"
+#
+set o6621/item_type = "armor"
+#
+set o6621/wear_location = "about body"
+#
+set o6621/weight = 5
+#
+tag o6621 = dwarven daycare:area name
+#
+tag o6621 = object
+#
+set o6621/extra_descriptions = {'robe linen': ' A cream colored linen robe.  It is lightweight and will offer a little bit of protection against the cold. '}
+#
+set o6621/stat_modifiers[wisdom] = 1
+#
+set o6621/stat_modifiers[mana] = 5
+#
+set o6621/armor = 3
+#
+wearto o6621 = m6613
+#
+set m6613/reset_objects["o6621"] = {"location":"equipped"}
+#
+tel r6624
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r6625
+#
+create/drop a creepy bug;bug;m6602:characters.Mobile
+#
+desc m6602 = A creepy bug crawls from behind a cabinet. 
+#
+set m6602/level = 2
+#
+set m6602/level_base = 2
+#
+set m6602/vnum = "m6602"
+#
+set m6602/look_description = "The bug has found a home in the dim and dusty closet.  A slender black body with six legs, it crawls along seemingly with no fear.  Two minuscule feelers probe out in front of it's triangular head, surveying it's surroundings. "
+#
+set m6602/act_flags = ['stay area', 'scavenger', 'sentinel', 'npc']
+#
+set m6602/alignment = 300
+#
+set m6602/sex = "male"
+#
+set m6602/race = "insect"
+#
+tag m6602 = dwarven daycare:area name
+#
+tag m6602 = mobile
+#
+set m6602/hitpoints[maximum] = 18
+#
+set m6602/position = "standing"
+#
+set m6602/special_function = "thief"
+#
+tel r6625
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r6626
+#
+create/drop an old doll;doll;old;m6605:characters.Mobile
+#
+desc m6605 = An old doll has been left on the ground. 
+#
+set m6605/level = 2
+#
+set m6605/level_base = 2
+#
+set m6605/vnum = "m6605"
+#
+set m6605/look_description = "This old doll has seen better days.  It has been hugged and played with so often that it is falling apart.  There is still a hint of life left in it's eyes.  Tattered and torn, the doll remains one of the most liked toys in the daycare. "
+#
+set m6605/act_flags = ['stay area', 'scavenger', 'sentinel', 'npc']
+#
+set m6605/alignment = -2
+#
+set m6605/sex = "neuter"
+#
+set m6605/race = "object"
+#
+tag m6605 = dwarven daycare:area name
+#
+tag m6605 = mobile
+#
+set m6605/hitpoints[maximum] = 18
+#
+set m6605/position = "standing"
+#
+set m6605/special_function = "thief"
+#
+tel r6627
+#
+create/drop a Dwarven child;Dwarven;child;m6604:characters.Mobile
+#
+desc m6604 = A Dwarven child scurries about. 
+#
+set m6604/level = 3
+#
+set m6604/level_base = 3
+#
+set m6604/vnum = "m6604"
+#
+set m6604/look_description = "A fragile looking little dwarven girl.  Whether out of being lost, alone, bored or hungry, she has tears rolling down her cheeks.  With a startle, she whines loudly as if she's angry. "
+#
+set m6604/act_flags = ['stay area', 'scavenger', 'sentinel', 'npc']
+#
+set m6604/alignment = -400
+#
+set m6604/sex = "female"
+#
+set m6604/race = "dwarf"
+#
+tag m6604 = dwarven daycare:area name
+#
+tag m6604 = mobile
+#
+set m6604/hitpoints[maximum] = 25
+#
+set m6604/position = "standing"
+#
+set m6604/special_function = "thief"
+#
+tel r6631
+#
+create/drop A little monster;monster;five;headed;boy;brat;m6611:characters.Mobile
+#
+desc m6611 = A huge five headed monster is here! 
+#
+set m6611/level = 7
+#
+set m6611/level_base = 7
+#
+set m6611/vnum = "m6611"
+#
+set m6611/look_description = "This is actually a very badly behaved little boy.  He is down here because he is stubborn and just doesn't care to listen to the nannies anymore.  He has taken his bad attitude further by becoming this monster and continually terrorizing anyone that comes near him. "
+#
+set m6611/act_flags = ['sentinel', 'npc']
+#
+set m6611/alignment = -500
+#
+set m6611/sex = "male"
+#
+set m6611/race = "dwarf"
+#
+tag m6611 = dwarven daycare:area name
+#
+tag m6611 = mobile
+#
+set m6611/hitpoints[maximum] = 66
+#
+set m6611/position = "standing"
+#
+set m6611/special_function = "cast_mage"
+#
+tel r6631
+#
+create a pot of fingerpaint;paint;fingerpaint;pot;o6657:objects.Potion
+#
+sethome o6657 = m6611
+#
+desc o6657 = A pot of brightly-colored fingerpaint sits here.
+#
+set o6657/level = 5
+#
+set o6657/level_base = 5
+#
+set o6657/vnum = "o6657"
+#
+set o6657/item_type = "potion"
+#
+set o6657/weight = 1
+#
+tag o6657 = dwarven daycare:area name
+#
+tag o6657 = object
+#
+set o6657/extra_descriptions = {'paint fingerpaint pot': ' The color of the paint reminds you of butterflies. '}
+#
+set o6657/extra_flags = ['glow']
+#
+set o6657/spell_level = 4
+#
+set o6657/spell_level_base = 4
+#
+set o6657/spell_name_1 = "change sex"
+#
+give o6657 = m6611
+#
+set m6611/reset_objects["o6657"] = {"location":"inventory"}
+#
