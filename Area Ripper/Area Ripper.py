@@ -14,7 +14,7 @@
 import random
 from mygame.world import rules
 
-with open("C:/Users/bradm/mudstuff/school.txt", "rt") as myfile:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.txt", "rt") as myfile:
 
     class Object:
         def __init__(self):
@@ -1833,7 +1833,7 @@ with open("C:/Users/bradm/mudstuff/school.txt", "rt") as myfile:
                     objects[onum].special_function\
                         = special_function_list[2][6:]
 
-with open("C:/Users/bradm/mudstuff/mygame/world/training tower.ev", "w") as output:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as output:
 
     # Now we are going to build out the batch file by iterating through each
     # room.
@@ -2636,7 +2636,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/training tower.ev", "w") as outp
                 if reset_type == "object, equipped":
                     # Give the object to the mobile, set eq_slot on mobile equal to
                     # object, and set equipped equal to True on object.
-                    if object.item_type == "armor":
+                    if object.item_type == "armor" or object.item_type == "key" or object.item_type == "treasure":
                         output.write("wearto %s = %s\n" % (reset_vnum, reset_location))
                         output.write("#\n")
                     elif object.item_type == "weapon":
@@ -2694,7 +2694,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/training tower.ev", "w") as outp
             output.write("#\n")
 
         # Reset for objects in room inventory
-        elif reset_type == "object, room":
+        elif reset_type == "object, room" and object.item_type != "portal":
             output.write("set %s/reset_objects[\"%s\"] = {\"location\":\"inventory\"}\n"
                          % (reset_location, reset_vnum)
                          )
