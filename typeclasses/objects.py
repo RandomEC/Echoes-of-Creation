@@ -820,3 +820,26 @@ class Fly(Item):
         self.db.extra_flags = []
         self.db.extra_descriptions = {}
 
+class NPC_Corpse(Container):
+
+    """
+
+    This is the class for mobile corpses.
+
+    """
+
+    def at_object_creation(self):
+        super().at_object_creation()
+
+
+class PC_Corpse(Container):
+    """
+
+    This is the class for player corpses.
+
+    """
+
+    def at_object_creation(self):
+        super().at_object_creation()
+        self.db.gold = 0
+        self.db.experience = 0

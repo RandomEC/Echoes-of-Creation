@@ -10,6 +10,7 @@ creation commands.
 from evennia import DefaultCharacter
 from evennia.utils import evtable
 from evennia.utils import search
+from world import rules_race
 from world import rules
 
 class Character(DefaultCharacter):
@@ -171,37 +172,38 @@ class Character(DefaultCharacter):
         False.
         """
 
-        for spell in self.db.spell_affects:
-            if affect_name in self.db.spell_affects[spell]:
-                return True
-
-        from world import rules_race
+        if affect_name in self.db.spell_affects.keys():
+            return True
 
         # get the dictionary for the current race of the character
-        race_stats = rules_race.get_race(self.race_current())
+        race_stats = rules_race.get_race(self.race)
 
-        if affect_name in race_stats["inherent affects"]:
-            return True
+        if "inherent affects" in race_stats.keys():
+            if affect_name in race_stats["inherent affects"]:
+                return True
+            else:
+                return False
         else:
             return False
         
 
     def get_base_attribute(self, attribute_name):
         """
-        Method to access an base attribute, and the modifiers that are
+        Method to access a base attribute, and the modifiers that are
         considered "inherent" - race and trains.
         """
-
-        from world import rules_race
 
         # get the dictionary for the current race of the character
         race_stats = rules_race.get_race(self.race)
 
         # check to see if the race has a modifier for this stat
         if "attribute modifier" in race_stats and attribute_name in race_stats["attribute modifier"]:
-            base_attribute = self.db.attributes[attribute_name] + race_stats["attribute modifier"][attribute_name] + self.db.attribute_trains[attribute_name]
+            base_attribute = self.db.attributes[attribute_name] + race_stats["attribute modifier"][attribute_name]
         else:
-            base_attribute = self.db.attributes[attribute_name] + self.db.attribute_trains[attribute_name]
+            base_attribute = self.db.attributes[attribute_name]
+
+        if "player" in self.tags.all():
+            base_attribute += self.db.attribute_trains[attribute_name]
 
         return base_attribute
 
@@ -232,7 +234,10 @@ class Character(DefaultCharacter):
                         multiplier = 2
                     else:
                         multiplier = 1
-                    modifier = modifier - (equipment.db.armor*multiplier)
+
+                    # The other wear locations don't have armor, and will choke on this.
+                    if self.db.item_type == "armor" or self.db.item_type == "light":
+                        modifier = modifier - (equipment.db.armor*multiplier)
 
                     dexterity = self.dexterity
 
@@ -275,7 +280,7 @@ class Character(DefaultCharacter):
                     
                     if "mobile" in self.tags.all():
                         level_bonus = int((self.db.level-1)*(-500)/100)
-                        modifer += level_bonus
+                        modifier += level_bonus
 
                 if attribute_name == "hitroll":
 
@@ -361,6 +366,7 @@ class Character(DefaultCharacter):
 
     @property
     def dexterity(self):
+        self.msg("")
         return self.get_modified_attribute("dexterity")
 
     @property
@@ -389,8 +395,8 @@ class Character(DefaultCharacter):
 
     @property
     def size(self):
-        if "size" in rules_race.get_race(attacker.race):
-            size = rules_race.get_race(attacker.race)["size"]
+        if "size" in rules_race.get_race(self.race).keys():
+            size = rules_race.get_race(self.race)["size"]
         else:
             size = 2
         return size
@@ -491,12 +497,19 @@ class Mobile(Character):
         self.db.shop = {}
         self.db.character_type = "mobile"
         self.tags.add("mobile")
+        self.db.spell_affects_reset = {}
 
     def at_reset(self):
         
         # Check to see if mobile is dead, and at "none".
         if self.location == None:
             self.move_to(self.home, quiet = True)
+
+        # Reset spell affects on the mobile.
+        self.db.spell_affects = self.db.spell_affects_reset
+
+        # Heal it up.
+        self.db.hitpoints["damaged"] = 0
 
         # Fuzz up the mobile's level.
         self.db.level = rules.fuzz_number(self.db.level_base)        

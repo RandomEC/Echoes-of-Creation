@@ -1,92 +1,86 @@
 import random
+from evennia import create_object
 from world import rules_race
 
-def check_death(victim):
+def do_death(attacker, victim):
     """
-    This checks for death of the victim, and, if it finds a death, returns
-    a boolean True.
+    This handles the death and returns some output.
     """
-    if victim.hitpoints_current <= 0:
-        return True
+
+    # Build a string for reporting death to characters, and add to output strings.
+    attacker_string = ("With your final %s, %s falls to the ground, DEAD!!!\n" % (get_damagetype(attacker), victim.key))
+    victim_string = "You have been |rKILLED|n!!!\n You awaken again in your home.\n"
+    room_string = ("%s has been KILLED by %s!!!\n" % ((victim.key[0].upper() + victim.key[1:0]), attacker.key))
+
+    if "mobile" in victim.tags.all():
+
+        # Create corpse.
+        corpse = create_object("objects.NPC_Corpse", key=("corpse of %s" % victim.key))
+        corpse.db.desc = ("The corpse of %s lies here." % victim.key)
+        corpse.location = attacker.location
+
+        # Move all victim items to corpse.
+        for item in victim.contents:
+            if item.equipped:
+                item.remove_from(victim)
+            # Eventually, will want the below to have , quiet = True after done testing.
+            item.move_to(corpse)
+
+        # Move victim to None location to be reset later.
+        victim.location = None
+
+        # Award xp.
+        attacker.db.experience_total += victim.db.experience_current
+        attacker_string += ("You receive %s experience as a result of your kill!\n" % victim.db.experience_current)
+
+        # Figure out how to calculate gold on mobile and award.
+
+        # attacker_string += ("You receive |y%s gold|n as a result of your kill!" % victim.)
+
     else:
-        return False
-        
-def do_all_attacks(attacker, victim):
+        # Create corpse.
+        corpse = create_object("objects.PC_Corpse", key=("corpse of %s" % victim.key))
+        corpse.db.desc = ("The corpse of %s lies here." % victim.key)
+        corpse.location = attacker.location
+
+        # Heroes keep their items.
+
+        # Clear spell affects.
+        victim.db.spell_affects = {}
+
+        # Do xp penalty, after figuring out how much it should be.
+        # victim_string += ("You lose %s experience as a result of your death! %s
+
+        # Do gold penalty, after figuring out how much it should be.
+
+    return (attacker_string, victim_string, room_string)
+
+def do_one_character_attacks(attacker, victim):
     """
-    This calls do_attack_round for all relevant weapon slots for one
+    This calls do_one_weapon_attacks for all relevant weapon slots for one
     attacker on one victim, which should be ALL attacks for that
     attacker.
     """
     
-    attacker_string, victim_string, room_string = do_attack_round(attacker, victim, "wielded, primary")
+    attacker_string, victim_string, room_string = do_one_weapon_attacks(attacker, victim, "wielded, primary")
     
     if attacker.db.eq_slots["wielded, primary"] and attacker.db.eq_slots["wielded, secondary"]:
-        new_attacker_string, new_victim_string, new_room_string = do_attack_round(attacker, victim, "wielded, secondary")
+        new_attacker_string, new_victim_string, new_room_string = do_one_weapon_attacks(attacker, victim, "wielded, secondary")
         attacker_string += new_attacker_string
         victim_string += new_victim_string
         room_string += new_room_string
-    
-    if check_death(victim):
-        # Build a string for reporting death to characters, and add to output strings.
-        attacker_string += ("With your final %s, %s falls to the ground, DEAD!!!" % (get_damagetype(attacker), victim.key))
-        victim_string += "You have been KILLED!!!"
-        room_string += ("%s has been KILLED by %s!!!" % ((victim.key[0].upper() + victim.key[1:0]), attacker.key))
-                
-        if "mobile" in victim.tags.all():
-            # Create corpse.
-            corpse = create_object("objects.NPC_Corpse", key=("corpse of %s" % victim.key))
-            corpse.desc = ("The corpse of %s lies here." % victim.key)
-            
-            # Move all victim items to corpse.
-            for item in victim.contents:
-                if item.equipped:
-                    item.remove_from(victim)
-                # Eventually, will want the below to have , quiet = True after done testing.
-                item.move_to(corpse)
-            
-            # Move victim to None location to be reset later.
-            victim.location = None
-            
-            # Reinstate base spell affects.
-            victim.db.spell_affects = victim.db.spell_affects_reset
-            
-            # Refill hitpoints.
-            victim.db.hitpoints["damaged"] = 0
-            
-            # Award xp.
-            attacker.db.experience_total += victim.db.experience_current
-            attacker_string += ("You receive %s experience as a result of your kill!" % victim.db.experience_current)
-            
-            # Figure out how to calculate gold on mobile and award.
-            
-            # attacker_string += ("You receive |y%s gold|n as a result of your kill!" % victim.)
-        
-        else:
-            # Create corpse.
-            corpse = create_object("objects.PC_Corpse", key=("corpse of %s" % victim.key))
-            corpse.desc = ("The corpse of %s lies here." % victim.key)
-            
-            # Heroes keep their items.
-            
-            # Move hero to their home location.
-            victim.move_to(victim.home, quiet=True)
-            
-            # Clear spell affects.
-            victim.db.spell_affects = {}
-            
-            # Refill hitpoints to 1.
-            victim.db.hitpoints["damaged"] = victim.hitpoints_maximum - 1
-            
-            # Do xp penalty, after figuring out how much it should be.
-            # victim_string += ("You lose %s experience as a result of your death! %s 
-            
-            # Do gold penalty, after figuring out how much it should be.
-    
+
+    if victim.hitpoints_current <= 0:
+        new_attacker_string, new_victim_string, new_room_string = do_death(attacker, victim)
+        attacker_string += new_attacker_string
+        victim_string += new_victim_string
+        room_string += new_room_string
+
     # In combat handler, need to use these strings to create the full output block
     # reporting the results of everyone's attacks to all players only.
     return (attacker_string, victim_string, room_string)
 
-def do_attack(attacker, victim):
+def do_attack(attacker, victim, eq_slot):
     """
     This function implements the effects of a single hit. It
     both calls the take_damage method on the victim, doing the
@@ -94,24 +88,24 @@ def do_attack(attacker, victim):
     attacker, the victim, and those watching in the room for
     that single hit attempt.
     """
-    
-    hit = True
-    damage = 6
-    damage_type = get_damagetype(attacker)
 
-    attacker.msg("In do_attack.")
+    hit = True # hit_check(attacker, victim)
+    damage = 10 # do_damage(attacker, eq_slot)
+    damage_type = get_damagetype(attacker)
 
     if hit:
         victim.take_damage(damage)
-        attacker_string = ("You |g%s|n %s with your %s." % (get_damagestring("attacker", damage), victim.key, damage_type))
-        victim_string = ("%s |r%s|n you with its %s." % (attacker.key, get_damagestring("victim", damage), damage_type))
-        room_string = ("%s %s %s with its %s." % (attacker.key, get_damagestring("victim", damage), victim.key, damage_type))
+        attacker_string = ("You |g%s|n %s with your %s.\n" % (get_damagestring("attacker", damage), victim.key, damage_type))
+        victim_string = ("%s |r%s|n you with its %s.\n" % (attacker.key, get_damagestring("victim", damage), damage_type))
+        room_string = ("%s %s %s with its %s.\n" % (attacker.key, get_damagestring("victim", damage), victim.key, damage_type))
     else:
-        return "You miss %s with your %s." % (victim.key, damage_type)
+        attacker_string = ("You miss %s with your %s.\n" % (victim.key, damage_type))
+        victim_string = ("%s misses you with its %s.\n" % (attacker.key, damage_type))
+        room_string = ("%s misses %s with its %s.\n" % (attacker.key, victim.key, damage_type))
 
     return (attacker_string, victim_string, room_string)
 
-def do_attack_round(attacker, victim, eq_slot):
+def do_one_weapon_attacks(attacker, victim, eq_slot):
     """
     This determines how many hit attempts will occur for one attacker
     against one victim, with one weapon slot, and then calls do_attack
@@ -125,11 +119,11 @@ def do_attack_round(attacker, victim, eq_slot):
 
     # If primary weapon, first hit is free.
     if eq_slot == "wielded, primary":
-        attacker_string, victim_string, room_string = do_attack(attacker, victim)
+        attacker_string, victim_string, room_string = do_attack(attacker, victim, eq_slot)
     else:
         if "mobile" in attacker.tags.all():
             if random.randint(1, 100) < attacker.db.level:
-                attacker_string, victim_string, room_string = do_attack(attacker, victim)
+                attacker_string, victim_string, room_string = do_attack(attacker, victim, eq_slot)
         else:
             # Save hero for dual skill implementation.
             pass
@@ -145,7 +139,7 @@ def do_attack_round(attacker, victim, eq_slot):
         else:
             # Wait to build out hero until skills built
             pass
-    if eq_slot == "wielded, secondary":
+    else:
         if "mobile" in attacker.tags.all():
             if random.randint(1, 100) < attacker.db.level:
                 new_attacker_string, new_victim_string, new_room_string = do_attack(attacker, victim, eq_slot)
@@ -155,7 +149,6 @@ def do_attack_round(attacker, victim, eq_slot):
         else:
             # Wait to build out hero until skills built
             pass
-        
 
     # Check for third attack.
     if eq_slot == "wielded, primary":
@@ -168,7 +161,7 @@ def do_attack_round(attacker, victim, eq_slot):
         else:
             # Wait to build out hero until skills built
             pass
-    if eq_slot == "wielded, secondary":
+    else:
         if "mobile" in attacker.tags.all():
             if random.randint(1, 100) < attacker.db.level:
                 new_attacker_string, new_victim_string, new_room_string = do_attack(attacker, victim, eq_slot)
@@ -181,12 +174,12 @@ def do_attack_round(attacker, victim, eq_slot):
     
     # Check for fourth attack, for mobiles only.
     if "mobile" in attacker.tags.all():
-        if random.randint(1,100) < (attacker.db.level / 2):
+        if random.randint(1, 100) < (attacker.db.level / 2):
             new_attacker_string, new_victim_string, new_room_string = do_attack(attacker, victim, eq_slot)
             attacker_string += new_attacker_string
             victim_string += new_victim_string
             room_string += new_room_string
-            
+
     return (attacker_string, victim_string, room_string)
 
 def do_damage(attacker, eq_slot):
@@ -244,14 +237,14 @@ def do_damage(attacker, eq_slot):
     
     return damage
 
-def do_single_hit(attacker, victim):
+def hit_check(attacker, victim):
     """
     This function simply evaluates whether the attempted hit actually
     hits.
     """
-    
+
     hit_chance = get_hit_chance(attacker, victim)
-    if random.randint(1,100) <= hit_chance:
+    if random.randint(1, 100) <= hit_chance:
         return True
     else:
         return False
@@ -262,7 +255,11 @@ def get_avoidskill(victim):
     else:
         blind_penalty = 0
 
-    avoidskill = get_warskill(victim) + (100 - get_ac(victim)/3) - blind_penalty + 10*(victim.get_modified_attribute("dexterity") - 10)
+    ws = get_warskill(victim)
+    ac = victim.armor_class
+    dex = victim.dexterity
+
+    avoidskill = get_warskill(victim) + (100 - victim.armor_class/3) - blind_penalty + 10*(victim.dexterity - 10)
     if avoidskill > 1:
         return avoidskill
     else:
@@ -439,35 +436,36 @@ def get_damagetype(attacker):
     return damagetype
 
 def get_health_string(combatant):
+    combatant.msg("here")
+
     health_percent = int(100 * combatant.hitpoints_current / combatant.hitpoints_maximum)
     if health_percent == 100:
-        return "is in perfect health"
+        return "is in |gperfect health|n."
     elif health_percent > 90:
-        return "is slightly scratched"
+        return "is |gslightly scratched|n."
     elif health_percent > 80:
-        return "has a few bruises"
+        return "has |ga few bruises|n."
     elif health_percent > 70:
-        return "has some cuts"
+        return "has |gsome cuts|n."
     elif health_percent > 60:
-        return "has several wounds"
+        return "has |yseveral wounds|n."
     elif health_percent > 50:
-        return "has many nasty wounds"
+        return "has |ymany nasty wounds|n."
     elif health_percent > 40:
-        return "is bleeding freely"
+        return "is |ybleeding freely|n."
     elif health_percent > 30:
-        return "is covered in blood"
+        return "is |ycovered in blood|n."
     elif health_percent > 20:
-        return "is leaking guts"
+        return "is |rleaking guts|n."
     elif health_percent > 10:
-        return "is almost dead"
+        return "is |ralmost dead|n."
     elif health_percent > 0:
-        return "is DYING"
+        return "is |rDYING|n."
     elif health_percent <= 0:
-        return "is DEAD!!!"
-    
-    
+        return "is |rDEAD!!!|n"
 
 def get_hit_chance(attacker, victim):
+
     hit_chance = int(100 * (get_hitskill(attacker, victim) + attacker.db.level - victim.db.level)/(get_hitskill(attacker, victim) + get_avoidskill(victim)))
     if hit_chance > 95:
         return 95
@@ -489,7 +487,7 @@ def get_race_hitbonus(attacker, victim):
     return hitbonus
 
 def get_warskill(combatant):
-    if combatant.db.type == "mobile":
+    if "mobile" in combatant.tags.all():
         warskill_factor = combatant.db.level/101
         warskill = int(120*warskill_factor)
         return warskill
@@ -499,7 +497,3 @@ def get_warskill(combatant):
         warskill_factor = combatant.db.level/101
         warskill = int(120*warskill_factor)
         return warskill
-
-
-            
-            
