@@ -8,7 +8,6 @@ creation commands.
 
 """
 from evennia import DefaultCharacter
-from evennia.utils import evtable
 from evennia.utils import search
 from world import rules_race
 from world import rules
@@ -445,8 +444,7 @@ class Character(DefaultCharacter):
         string.
         """
 
-        wear_location_list = []
-        equipment_list = []
+        equipment_output = ""
 
         for wear_location in self.db.eq_slots:
             if self.db.eq_slots[wear_location]:
@@ -466,13 +464,13 @@ class Character(DefaultCharacter):
                     wear_string = ""
                 else:
                     wear_string = "worn on "
-                
-                wear_location_list.append(wear_string + wear_location + ":")
-                equipment_list.append(self.db.eq_slots[wear_location])
 
-        table = evtable.EvTable(table=[wear_location_list, equipment_list], border = "none")
+                output_string = wear_string + wear_location + ":"
+                space_buffer = 26 - len(output_string)
+                output_string = output_string + " " * space_buffer + self.db.eq_slots[wear_location].key + "\n"
+                equipment_output += output_string
 
-        return table
+        return equipment_output
         
 class Mobile(Character):
     """
@@ -488,6 +486,7 @@ class Mobile(Character):
         super().at_object_creation()
         self.db.gold = 0
         self.db.level_base = 0
+        self.db.look_description = ""
         self.db.experience_current = 0
         self.db.experience_total = 0
         self.db.reset_objects = {}
@@ -589,6 +588,36 @@ class Mobile(Character):
                             new_object.wear_to(self)
                         else:
                             new_object.wield_to(self)
+
+    def return_appearance(self, looker, **kwargs):
+        """
+        This formats a description for mobiles. It is the hook a 'look' command
+        should call.
+        Args:
+            looker (Object): Object doing the looking.
+            **kwargs (dict): Arbitrary, optional arguments for users
+                overriding the call (unused by default).
+        """
+        if not looker:
+            return ""
+
+        # get description, build string
+        string = "|c%s, the %s:|n\n" % (self.get_display_name(looker), self.race)
+        desc = self.db.desc
+        look_desc = self.db.look_description
+        if look_desc:
+            string += "%s\n" % look_desc
+        else:
+            string += "%s\n" % desc
+
+        if not all(value == "" for value in self.db.eq_slots.values()):
+
+            equipment_list = self.get_equipment_table()
+
+            string += "%s is wearing:\n%s" % ((self.key[0].upper() + self.key[1:]), equipment_list)
+
+        return string
+
 
 class Player(Character):
     """

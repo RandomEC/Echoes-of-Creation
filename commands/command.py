@@ -589,20 +589,6 @@ class CmdLook(MuxCommand):
         # Check to see if the target is a character (or mobile), and if so
         # get and show their equipment.
 
-        if target.db.eq_slots:
-
-            equipment_table = target.get_equipment_table()
-
-            if target == caller:
-                name = "You are"
-            else:
-                name = ("%s is" % target.key)
-
-            caller.msg("%s wearing:\n" % name)
-
-            caller.msg(equipment_table)
-
-
 class CmdDrop(MuxCommand):
     """
     drop something
