@@ -1458,6 +1458,7 @@ class CmdInspect(MuxCommand):
     """
 
     key = "inspect"
+    alias = "read"
     rhs_split = ("=")
     locks = "cmd:all()"
     arg_regex = r"\s|$"
