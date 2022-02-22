@@ -1133,7 +1133,7 @@ class CmdPut(MuxCommand):
 
     key = "put"
     rhs_split = ("=")
-    locks = "cmd:perm(Builder) or (objattr(closed, False) and objattr(item_type, \"container\"))"
+    locks = "cmd:all()"
     arg_regex = r"\s|$"
 
     def func(self):
@@ -1149,17 +1149,28 @@ class CmdPut(MuxCommand):
             nofound_string="You aren't carrying %s." % self.lhs,
             multimatch_string="You carry more than one %s:" % self.lhs,
         )
-        target = caller.search(self.rhs)
+        target = caller.search(self.rhs, location=[caller, caller.location])
+
+        if not target:
+            caller.msg("There is no %s here to put %s in." % (self.rhs, to_put.key))
+
         if not (to_put and target):
             return
-        if target == caller:
-            caller.msg("You keep %s to yourself." % to_put.key)
-            return
-        if not to_put.location == caller:
-            caller.msg("You are not holding %s." % to_put.key)
+        if "object" not in target.tags.all() or target.db.item_type != "container":
+            caller.msg("%s is not a container." % (target.key[0].upper() + target.key[1:]))
             return
 
-        # give object
+        # Check to see if the locks for put are met, and give corrective
+        # output if not.
+        if not target.access(caller, "put"):
+            if "locked" in target.db.state:
+                caller.msg("%s is locked." % (target.key[0].upper() + target.key[1:]))
+            elif "open" not in target.db.state:
+                caller.msg("%s is closed." % (target.key[0].upper() + target.key[1:]))
+            return
+
+
+        # Put object in the container.
         success = to_put.move_to(target, quiet=True)
         if not success:
             caller.msg("This could not be put there.")

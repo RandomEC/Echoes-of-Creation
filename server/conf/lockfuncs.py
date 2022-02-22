@@ -44,55 +44,90 @@ def equipment_level_check(accessing_obj, accessed_obj, *args, **kwargs):
 
 def is_open(accessing_obj, accessed_obj, *args, **kwargs):
     """
-    Lock function for checking whether a door is open.
+    Lock function for checking whether a door or container is open.
     """
 
-    if "open" in accessed_obj.db.door_attributes:
-        return True
+    if "object" in accessed_obj.tags.all():
+        if "open" in accessed_obj.db.state:
+            return True
+        else:
+            return False
     else:
-        return False
+        if "open" in accessed_obj.db.door_attributes:
+            return True
+        else:
+            return False
 
 def can_open(accessing_obj, accessed_obj, *args, **kwargs):
     """
-    Lock function for checking whether a character can open a door.
+    Lock function for checking whether a character can open a door or
+    container.
     """
 
-    if not "open" in accessed_obj.db.door_attributes and not "locked" in \
-       accessed_obj.db.door_attributes:
+    if "object" in accessed_obj.tags.all():
+        if not "open" in accessed_obj.db.state and not "locked" in \
+                accessed_obj.db.state:
             return True
-    return False
+        return False
+    else:
+        if not "open" in accessed_obj.db.door_attributes and not "locked" in \
+           accessed_obj.db.door_attributes:
+                return True
+        return False
 
 def can_close(accessing_obj, accessed_obj, *args, **kwargs):
     """
-    Lock function for checking whether a character can close a door.
+    Lock function for checking whether a character can close a door or
+    container.
     """
 
-    if "open" in accessed_obj.db.door_attributes and "closeable" in \
-       accessed_obj.db.door_attributes:
-        return True
-    return False
+    if "object" in accessed_obj.tags.all():
+        if "open" in accessed_obj.db.state and "closeable" in \
+                accessed_obj.db.state:
+            return True
+        return False
+    else:
+        if "open" in accessed_obj.db.door_attributes and "closeable" in \
+           accessed_obj.db.door_attributes:
+            return True
+        return False
 
 def can_lock(accessing_obj, accessed_obj, *args, **kwargs):
     """
     Lock function for checking whether a character can unlock a door.
     """
 
-    if not "open" in accessed_obj.db.door_attributes \
-       and not "locked" in accessed_obj.db.door_attributes \
-       and "lockable" in accessed_obj.db.door_attributes \
-       and accessing_obj.check_key(accessed_obj.db.key):
-        return True
-    else:
+    if "object" in accessed_obj.tags.all():
+        if not "open" in accessed_obj.db.state \
+                and not "locked" in accessed_obj.db.state \
+                and "lockable" in accessed_obj.db.state \
+                and accessing_obj.check_key(accessed_obj.db.key):
+            return True
         return False
+    else:
+        if not "open" in accessed_obj.db.door_attributes \
+           and not "locked" in accessed_obj.db.door_attributes \
+           and "lockable" in accessed_obj.db.door_attributes \
+           and accessing_obj.check_key(accessed_obj.db.key):
+            return True
+        else:
+            return False
 
 def can_unlock(accessing_obj, accessed_obj, *args, **kwargs):
     """
     Lock function for checking whether a character can unlock a door.
     """
 
-    if not "open" in accessed_obj.db.door_attributes \
-       and "locked" in accessed_obj.db.door_attributes \
-       and accessing_obj.check_key(accessed_obj.db.key):
-        return True
-    else:
+    if "object" in accessed_obj.tags.all():
+        if not "open" in accessed_obj.db.state \
+                and "locked" in accessed_obj.db.state \
+                and accessing_obj.check_key(accessed_obj.db.key):
+            return True
         return False
+    else:
+        if not "open" in accessed_obj.db.door_attributes \
+           and "locked" in accessed_obj.db.door_attributes \
+           and accessing_obj.check_key(accessed_obj.db.key):
+            return True
+        else:
+            return False
