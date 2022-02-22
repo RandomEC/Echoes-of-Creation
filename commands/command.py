@@ -76,6 +76,8 @@ class MuxCommand(Command):
     the command, so make sure to document consistently here.
     """
 
+    self.delimiter = "="
+    
     def has_perm(self, srcobj):
         """
         This is called by the cmdhandler to determine
@@ -169,8 +171,9 @@ class MuxCommand(Command):
         # check for arg1, arg2, ... = argA, argB, ... constructs
         lhs, rhs = args, None
         lhslist, rhslist = [arg.strip() for arg in args.split(',')], []
-        if args and '=' in args:
-            lhs, rhs = [arg.strip() for arg in args.split('=', 1)]
+        # if args and '=' in args:
+        if args and self.delimiter in args:
+            lhs, rhs = [arg.strip() for arg in args.split(self.delimiter, 1)]
             lhslist = [arg.strip() for arg in lhs.split(',')]
             rhslist = [arg.strip() for arg in rhs.split(',')]
 
