@@ -28,7 +28,7 @@ desc/edit r6601
 #
 set r6601/terrain = "inside"
 #
-set r6601/extra_description = {'sign': "^YNanny's Office^x ", 'easel': '^GWELCOME^x ^Wto the Dwarven Daycare^x Revamp:  Keegan '}
+set r6601/extra_description = {'sign': "|yNanny's Office|n ", 'easel': '|gWELCOME|n |wto the Dwarven Daycare|n Revamp:  Keegan '}
 #
 set r6601/room_flags = ['indoors', 'no mob']
 #
@@ -410,7 +410,7 @@ desc/edit r6624
 #
 set r6624/terrain = "field"
 #
-set r6624/extra_description = {'sign': '^WCLOSET^x ^RKEEP OUT^x ', 'plaque': 'Hanging loosely on the wall, these two plaques are the completion certificates of the two nannies.  They show proof that the nannies have taken proper training and should know what they are doing. '}
+set r6624/extra_description = {'sign': '|wCLOSET|n |rKEEP OUT|n ', 'plaque': 'Hanging loosely on the wall, these two plaques are the completion certificates of the two nannies.  They show proof that the nannies have taken proper training and should know what they are doing. '}
 #
 set r6624/room_flags = ['indoors']
 #
