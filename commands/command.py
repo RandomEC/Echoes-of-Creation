@@ -1509,3 +1509,106 @@ class CmdInspect(MuxCommand):
                         return
                 caller.msg("You see nothing special about the %s on the %s." % (self.rhs, self.lhs))
                 return
+            
+class CmdGet(MuxCommand):
+    """
+    Pick up something, or get something from a container.
+    Usage:
+      get <object>
+      get <object> from <container>
+    Picks up an object from your location or a container and puts it in
+    your inventory.
+    """
+
+    key = "get"
+    self.delimiter = "from"
+    aliases = "grab"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """implements the command."""
+
+        caller = self.caller
+
+        if not self.args:
+            caller.msg("Get what?")
+            return
+
+        # Process getting from a container.
+        if self.rhs:
+            if not self.lhs:
+                caller.msg("Get what from %s?" % self.rhs)
+                return
+            container = caller.search(self.rhs, location=[location, caller.location])
+            
+            if not container:
+                caller.msg("There is no %s here to get items from." % self.rhs)
+                return
+            if container.db.item_type != "container":
+                caller.msg("%s is not a container." % (container.key[0].upper() + container.key[1:]))
+                return
+            
+            if not container.access(caller, "put"):
+                if "open" not in container.db.state:
+                    caller.msg("You can neither see in nor access %s while it is closed."
+                               % container.key
+                               )
+                return
+            
+            obj = caller.search(self.lhs, location=container)
+            if not obj:
+                caller.msg("There is no %s in the %s." % (self.lhs, container.key))
+                return
+
+            if not obj.access(caller, "get"):
+                if obj.db.get_err_msg:
+                    caller.msg(obj.db.get_err_msg)
+                else:
+                    caller.msg("You can't get that.")
+                return
+
+            # calling at_before_get hook method
+            if not obj.at_before_get(caller):
+                return
+
+            success = obj.move_to(caller, quiet=True)
+            if not success:
+                caller.msg("%s can't be picked up." % (obj.key[0].upper() + obj.key[1:]))
+            else:
+                caller.msg("You get %s from %s." % (obj.name, container.key))
+                caller.location.msg_contents(
+                    "%s gets %s from %s." % (caller.name, obj.name, container.key), exclude=caller
+                )
+                # calling at_get hook method
+                obj.at_get(caller)
+        
+        # If just a regular get command.
+        else:
+            obj = caller.search(self.args, location=caller.location)
+            if not obj:
+                return
+            if caller == obj:
+                caller.msg("You can't get yourself.")
+                return
+            if not obj.access(caller, "get"):
+                if obj.db.get_err_msg:
+                    caller.msg(obj.db.get_err_msg)
+                else:
+                    caller.msg("You can't get that.")
+                return
+
+            # calling at_before_get hook method
+            if not obj.at_before_get(caller):
+                return
+
+            success = obj.move_to(caller, quiet=True)
+            if not success:
+                caller.msg("This can't be picked up.")
+            else:
+                caller.msg("You pick up %s." % obj.name)
+                caller.location.msg_contents(
+                    "%s picks up %s." % (caller.name, obj.name), exclude=caller
+                )
+                # calling at_get hook method
+                obj.at_get(caller)
