@@ -2,6 +2,31 @@ import random
 from evennia import create_object
 from world import rules_race
 
+def modify_experience(attacker, victim, experience)
+    """
+    This function adjusts the experience available from the mobile,
+    applies the appropriate modifiers to experience based on the
+    player's attributes, and updates the player's xp, all for a
+    single hit.
+    """
+    
+    # Modify experience award based on relative alignment.
+    alignment_difference = abs(attacker.db.alignment - victim.db.alignment)
+    if alignment_difference >= 1000:
+        experience_modified = experience_raw * 1.25
+    elif alignment_difference < 500:
+        experience_modified = experience_raw * 0.75
+    else:
+        experience_modified = experience_raw
+        
+    # Modify experience award based on racial hatreds or affection.
+    if "hate list" in rules_race.get_race(attacker).keys() and victim.race in rules_race.get_race(attacker)["hate list"]:
+        experience_modified *= 1.1
+    elif victim.race == attacker.race:
+        experience_modified *= 0.875
+    
+    return int(experience_modified)
+
 def do_death(attacker, victim):
     """
     This handles the death and returns some output.
@@ -9,7 +34,7 @@ def do_death(attacker, victim):
 
     # Build a string for reporting death to characters, and add to output strings.
     attacker_string = ("With your final %s, %s falls to the ground, DEAD!!!\n" % (get_damagetype(attacker), victim.key))
-    victim_string = "You have been |rKILLED|n!!!\n You awaken again in your home.\n"
+    victim_string = "You have been |rKILLED|n!!!\n You awaken again at your home location.\n"
     room_string = ("%s has been KILLED by %s!!!\n" % ((victim.key[0].upper() + victim.key[1:0]), attacker.key))
 
     if "mobile" in victim.tags.all():
@@ -30,9 +55,13 @@ def do_death(attacker, victim):
         victim.location = None
 
         # Award xp.
-        attacker.db.experience_total += victim.db.experience_current
-        attacker_string += ("You receive %s experience as a result of your kill!\n" % victim.db.experience_current)
+        experience_modified = modify_experience(attacker, victim, victim.db.experience_current)
+        attacker.db.experience_total += experience_modified
+        attacker_string += ("You receive %s experience as a result of your kill!\n" % experience_modified)
 
+        # Update alignment.
+        
+        
         # Figure out how to calculate gold on mobile and award.
 
         # attacker_string += ("You receive |y%s gold|n as a result of your kill!" % victim.)
@@ -89,13 +118,30 @@ def do_attack(attacker, victim, eq_slot):
     that single hit attempt.
     """
 
-    hit = True # hit_check(attacker, victim)
-    damage = 10 # do_damage(attacker, eq_slot)
+    hit = hit_check(attacker, victim)
+    damage = do_damage(attacker, eq_slot)
     damage_type = get_damagetype(attacker)
 
+    # Experience awarded for a hit is dependent on damage done as a percent
+    # of total hitpoints.
+    percent_damage = damage / victim.hitpoints_maximum
+    
+    # Don't give out all the experience through single hits, to preserve
+    # some to be awarded on kill.
+    experience_raw = int(0.85 * percent_damage * victim.db.experience_total)
+    
+    # Reduce the mobile's current experience based on the pre-modification
+    # award.
+    victim.db.experience_current -= experience_raw
+
+    # Attacker experience is modified by alignment and race.
+    experience_modified = modify_experience(attacker, victim, experience)
+    
+    attacker.db.experience_total += experience_modified
+    
     if hit:
         victim.take_damage(damage)
-        attacker_string = ("You |g%s|n %s with your %s.\n" % (get_damagestring("attacker", damage), victim.key, damage_type))
+        attacker_string = ("You |g%s|n %s with your %s.\nYou gain %d experience points from your attack.\n" % (get_damagestring("attacker", damage), victim.key, damage_type, experience_modified))
         victim_string = ("%s |r%s|n you with its %s.\n" % (attacker.key, get_damagestring("victim", damage), damage_type))
         room_string = ("%s %s %s with its %s.\n" % (attacker.key, get_damagestring("victim", damage), victim.key, damage_type))
     else:
