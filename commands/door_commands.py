@@ -407,7 +407,13 @@ class CmdDoorUnlock(MuxCommand):
             # If the door attributes currently include locked, remove it.
             if "locked" in door.db.door_attributes:
                 door.db.door_attributes.remove("locked")
-                caller.msg("*Click* You unlock the %s." % door.key)
+                if door.key == "north" or door.key == "east" or door.key \
+                        == "south" or door.key == "west":
+                    caller.msg("*Click* You unlock the door to the %s." % door.key)
+                elif door.key == "up" or door.key == "down":
+                    caller.msg("*Click* You unlock the door %s." % door.key)
+                else:
+                    caller.msg("*Click* You unlock the %s." % door.key)
 
             # The next section of code is to deal with the fact that each "exit"
             # is actually two paired exits, and does the same to the door in the

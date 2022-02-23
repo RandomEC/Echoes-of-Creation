@@ -504,90 +504,98 @@ class Mobile(Character):
         if self.location == None:
             self.move_to(self.home, quiet = True)
 
-        # Reset spell affects on the mobile.
-        self.db.spell_affects = self.db.spell_affects_reset
+            # Reset spell affects on the mobile.
+            self.db.spell_affects = self.db.spell_affects_reset
 
-        # Heal it up.
-        self.db.hitpoints["damaged"] = 0
+            # Heal it up.
+            self.db.hitpoints["damaged"] = 0
 
-        # Fuzz up the mobile's level.
-        self.db.level = rules.fuzz_number(self.db.level_base)        
+            # Fuzz up the mobile's level.
+            self.db.level = rules.fuzz_number(self.db.level_base)
 
-        # Check to see if there are objects that should be reset to it. This
-        # dictionary takes the form of
-        # reset_objects = {
-        #     <onum>:{
-        #         "location":<equipped, inventory, onum of container>
-        #            }
-        #                 }
-        if self.db.reset_objects:
+            # Check to see if there are objects that should be reset to it. This
+            # dictionary takes the form of
+            # reset_objects = {
+            #     <onum>:{
+            #         "location":<equipped, inventory, onum of container>
+            #            }
+            #                 }
+            if self.db.reset_objects:
 
-            # Iterate through the onums reset to this mobile.
-            for reset_object in self.db.reset_objects:
+                # Iterate through the onums reset to this mobile.
+                for reset_object in self.db.reset_objects:
 
-                reset_object = reset_object.lower()
-                new_object = ""
+                    reset_object = reset_object.lower()
+                    new_object = ""
 
-                # Search the mobile's inventory for the object already existing.
-                for object in self.contents:
-                    aliases = object.aliases.get()
-                    if aliases:
-                        if reset_object in aliases:
-                            new_object = object
+                    # Search the mobile's inventory for the object already existing.
+                    for object in self.contents:
+                        aliases = object.aliases.get()
+                        if aliases:
+                            if reset_object in aliases:
+                                new_object = object
 
-                # If the object does not already exist on the mobile/in the room,
-                # continue on.
-                if not new_object:
-
-
-                    # First, search for all objects of that type and pull out
-                    # any that are at "None".
-                    object_candidates = search.search_object(reset_object)
-
-                    for object in object_candidates:
-                        if not object.location:
-                            new_object = object
-
-                    # If it is not in "None", find the existing object in the world
-                    # and copy it.
+                    # If the object does not already exist on the mobile/in the room,
+                    # continue on.
                     if not new_object:
 
-                        object_to_copy = object_candidates[0]
-                        new_object = object_to_copy.copy()
-                        new_object.key = object_to_copy.key
-                        new_object.alias = object_to_copy.aliases
-                        if new_object.db.equipped:
-                            new_object.db.equipped = False
-                        new_object.home = self
 
-                    # Either way, bring the new object to the mobile.
-                    new_object.location = self
+                        # First, search for all objects of that type and pull out
+                        # any that are at "None".
+                        object_candidates = search.search_object(reset_object)
 
-                # Clear any enchantment/poison/other affects.
-                new_object.db.spell_affects = {}
+                        for object in object_candidates:
+                            if not object.location:
+                                new_object = object
 
-                # Set level, other values, and/or fuzz numbers as necessary
-                new_object.db.level = self.db.level
-                if new_object.db.item_type == "armor":
-                    new_object.db.armor = rules.set_armor(new_object.db.level)
-                elif new_object.db.item_type == "weapon":
-                    new_object.db.damage_low, new_object.db.damage_high = rules.set_weapon_low_high(new_object.db.level)
-                elif new_object.db.item_type == "scroll":
-                    new_object.db.spell_level = rules.fuzz_number(new_object.db.spell_level_base)
-                elif new_object.db.item_type == "wand" or new_object.db.item_type == "staff":
-                    new_object.db.spell_level = rules.fuzz_number(new_object.db.spell_level_base)
-                    new_object.db.charges_maximum = rules.fuzz_number(new_object.db.charges_maximum_base)
-                    new_object.db.charges_current = new_object.db.charges_maximum
-                elif new_object.db.item_type == "potion" or new_object.db.item_type == "pill":
-                    new_object.db.spell_level = rules.fuzz_number(rules.fuzz_number(new_object.db.spell_level_base))
+                        # If it is not in "None", find the existing object in the world
+                        # and copy it.
+                        if not new_object:
 
-                # If it should be equipped, equip it.
-                if self.db.reset_objects[reset_object]["location"] == "equipped":
-                    if not new_object.db.equipped:
-                        if new_object.db.item_type == "armor" or new_object.db.item_type == "light":
-                            new_object.wear_to(self)
-                        else:
-                            new_object.wield_to(self)
+                            object_to_copy = object_candidates[0]
+                            new_object = object_to_copy.copy()
+                            new_object.key = object_to_copy.key
+                            new_object.alias = object_to_copy.aliases
+                            if new_object.db.equipped:
+                                new_object.db.equipped = False
+                            new_object.home = self
+
+                        # Either way, bring the new object to the mobile.
+                        new_object.location = self
+
+                    # Clear any enchantment/poison/other affects.
+                    new_object.db.spell_affects = {}
+
+                    # Set level, other values, and/or fuzz numbers as necessary
+                    new_object.db.level = self.db.level
+                    if new_object.db.item_type == "armor":
+                        new_object.db.armor = rules.set_armor(new_object.db.level)
+                    elif new_object.db.item_type == "weapon":
+                        new_object.db.damage_low, new_object.db.damage_high = rules.set_weapon_low_high(new_object.db.level)
+                    elif new_object.db.item_type == "scroll":
+                        new_object.db.spell_level = rules.fuzz_number(new_object.db.spell_level_base)
+                    elif new_object.db.item_type == "wand" or new_object.db.item_type == "staff":
+                        new_object.db.spell_level = rules.fuzz_number(new_object.db.spell_level_base)
+                        new_object.db.charges_maximum = rules.fuzz_number(new_object.db.charges_maximum_base)
+                        new_object.db.charges_current = new_object.db.charges_maximum
+                    elif new_object.db.item_type == "potion" or new_object.db.item_type == "pill":
+                        new_object.db.spell_level = rules.fuzz_number(rules.fuzz_number(new_object.db.spell_level_base))
+
+                    # If it should be equipped, equip it.
+                    if self.db.reset_objects[reset_object]["location"] == "equipped":
+                        if not new_object.db.equipped:
+                            if new_object.db.item_type == "armor" or new_object.db.item_type == "light":
+                                new_object.wear_to(self)
+                            else:
+                                new_object.wield_to(self)
+
+            self.db.experience_total = rules.calculate_experience(self)
+            self.db.experience_current = self.db.experience_total
+
+        # If it wasn't dead, just reset spell affects.
+        else:
+            # Reset spell affects on the mobile.
+            self.db.spell_affects = self.db.spell_affects_reset
 
     def return_appearance(self, looker, **kwargs):
         """

@@ -76,7 +76,7 @@ class MuxCommand(Command):
     the command, so make sure to document consistently here.
     """
 
-    self.delimiter = "="
+    delimiter = "="
     
     def has_perm(self, srcobj):
         """
@@ -1135,7 +1135,7 @@ class CmdPut(MuxCommand):
     """
 
     key = "put"
-    rhs_split = ("=")
+    delimiter = " in "
     locks = "cmd:all()"
     arg_regex = r"\s|$"
 
@@ -1152,6 +1152,13 @@ class CmdPut(MuxCommand):
             nofound_string="You aren't carrying %s." % self.lhs,
             multimatch_string="You carry more than one %s:" % self.lhs,
         )
+
+        # For ease of programming reasons, you cannot put a container in
+        # another container.
+        if to_put.db.item_type == "container":
+            caller.msg("You cannot put a container in another container.")
+            return
+
         target = caller.search(self.rhs, location=[caller, caller.location])
 
         if not target:
@@ -1521,7 +1528,7 @@ class CmdGet(MuxCommand):
     """
 
     key = "get"
-    self.delimiter = "from"
+    delimiter = " from "
     aliases = "grab"
     locks = "cmd:all()"
     arg_regex = r"\s|$"
@@ -1540,7 +1547,7 @@ class CmdGet(MuxCommand):
             if not self.lhs:
                 caller.msg("Get what from %s?" % self.rhs)
                 return
-            container = caller.search(self.rhs, location=[location, caller.location])
+            container = caller.search(self.rhs, location=[caller, caller.location])
             
             if not container:
                 caller.msg("There is no %s here to get items from." % self.rhs)
