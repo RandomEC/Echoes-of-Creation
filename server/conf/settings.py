@@ -33,6 +33,9 @@ MULTISESSION_MODE = 2
 # Typeclass for character objects linked to an account (fallback)
 BASE_CHARACTER_TYPECLASS = "typeclasses.characters.Player"
 
+# Added to cleanup command parsing.
+COMMAND_DEFAULT_ARG_REGEX = r'^[ /]+.*$|$'
+
 ######################################################################
 # Evennia base server config
 ######################################################################
