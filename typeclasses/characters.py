@@ -472,6 +472,48 @@ class Character(DefaultCharacter):
 
         return equipment_output
         
+    def gain_hitpoints(self):
+        """
+        This method handles the passive regaining of hitpoints when
+        injured.
+        """
+        
+        if "mobile" in self.tags.all():
+            hp_gain = self.db.level * 3 / 2
+        else:
+            if self.db.level < 5:
+                hp_gain = self.db.level
+            else:
+                hp_gain = 5
+            
+            if self.db.position == "sleeping":
+                hp_gain += self.constitution * 2
+            elif self.db.position == "resting":
+                hp_gain += self.constitution
+            
+            # Hitpoint gain is impacted by thirst and hunger. If you are full,
+            # you get a bonus to gain. If you are starving and parched, you
+            # get no benefit. Sliding scale between.
+            
+            # hunger_modifier = self.db.hunger/20
+            # thirst_modifier = self.db.thirst/20
+            # total_food_modifier = 1 + hunger_modifier + thirst_modifier
+            
+            # hp_gain *= total_food_modifier
+            
+            # Need to accommodate furniture, poisoning, and
+            # enhanced healing in here once coded.
+        
+        if rules_race.get_race(self)["heal modifier"]:
+            hp_gain += rules_race.get_race(self)["heal modifier"]
+        
+        hp_gain = int(hp_gain)
+        
+        if hp_gain > self.db.hitpoints["damaged"]:
+            self.db.hitpoints["damaged"] = 0
+        else:
+            self.db.hitpoints["damaged"] -= hp_gain
+        
 class Mobile(Character):
     """
     The Mobile class is intended to be used for the npcs on the MUD, and inherits from the
