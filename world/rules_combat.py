@@ -4,10 +4,8 @@ from world import rules_race
 
 def modify_experience(attacker, victim, experience)
     """
-    This function adjusts the experience available from the mobile,
-    applies the appropriate modifiers to experience based on the
-    player's attributes, and updates the player's xp, all for a
-    single hit.
+    This function applies the appropriate modifiers to experience
+    # based on the player's attributes.
     """
     
     # Modify experience award based on relative alignment.
@@ -55,12 +53,19 @@ def do_death(attacker, victim):
         victim.location = None
 
         # Award xp.
-        experience_modified = modify_experience(attacker, victim, victim.db.experience_current)
-        attacker.db.experience_total += experience_modified
-        attacker_string += ("You receive %s experience as a result of your kill!\n" % experience_modified)
+        if "player" in attacker.tags.all():
+            experience_modified = modify_experience(attacker, victim, victim.db.experience_current)
+            attacker.db.experience_total += experience_modified
+            attacker_string += ("You receive %s experience as a result of your kill!\n" % experience_modified)
 
         # Update alignment.
-        
+        if "player" in attacker.tags.all():
+            if victim.db.alignment > 0:
+                directional_modifier = 1
+            else:
+                directional_modifier = -1
+                
+            attacker.db.alignment = ceil(attacker.db.alignment - victim.db.alignment * (1000 + directional_modifier * attacker.db.alignment)*(1000 + abs(attacker.db.alignment))/50000000)
         
         # Figure out how to calculate gold on mobile and award.
 
