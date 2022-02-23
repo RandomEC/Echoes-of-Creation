@@ -1,11 +1,11 @@
-from random import randint
+import random
 
 def fuzz_number(number):
     """
     This function simply adds slight variation to a number.
     """
     
-    random_number = randint(1, 4)
+    random_number = random.randint(1, 4)
     if random_number < 2:
         return number - 1
     elif random_number >3:
@@ -68,5 +68,10 @@ def calculate_experience(mobile):
             
         elif "cast_adept" in mobile.db.special_function:
             experience *= 0.5
-           
+    
+    # Finally, randomize slightly, and check for a floor of 50.
+    experience = int(random.uniform(0.9, 1.1) * experience)
+    if experience < 50:
+        experience = 50
+    
     return experience
