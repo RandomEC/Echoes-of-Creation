@@ -16,7 +16,8 @@ def get_race(race):
                 "wisdom":0,
                 "dexterity":0,
                 "constitution":0
-                }
+                },
+            "heal modifier":0
             },
         "human":{
             "size":3,
@@ -132,7 +133,8 @@ def get_race(race):
                 "constitution":1
                 },
             "damage message":"fist",
-            "hate list":("elf","halfelf","dwarf","halfdwarf","hobbit","vampire","werewolf","gnome")
+            "hate list":("elf","halfelf","dwarf","halfdwarf","hobbit","vampire","werewolf","gnome"),
+            "heal modifier":3
             },
 
         "ogre":{
@@ -146,7 +148,8 @@ def get_race(race):
                 "constitution":1
                 },
             "damage message":"fist",
-            "hate list":("elf","halfelf","dwarf","halfdwarf","hobbit","vampire","werewolf","gnome")
+            "hate list":("elf","halfelf","dwarf","halfdwarf","hobbit","vampire","werewolf","gnome"),
+            "heal modifier":2
             },
         
         "orc":{
@@ -161,7 +164,8 @@ def get_race(race):
                 "intelligence":-1,
                 "constitution":1
                 },
-            "hate list":("elf","halfelf","dwarf","halfdwarf","hobbit","vampire","werewolf","gnome")
+            "hate list":("elf","halfelf","dwarf","halfdwarf","hobbit","vampire","werewolf","gnome"),
+            "heal modifier":2
             },
 
         "kobold":{
@@ -189,7 +193,8 @@ def get_race(race):
                 "constitution":1
                 },
             "damage message":"fist",
-            "hate list":("elf","halfelf","dwarf","halfdwarf","hobbit","vampire","werewolf","gnome")
+            "hate list":("elf","halfelf","dwarf","halfdwarf","hobbit","vampire","werewolf","gnome"),
+            "heal modifier":3
             },
 
         "troll":{
@@ -205,7 +210,8 @@ def get_race(race):
                 "constitution":1
                 },
             "damage message":"fist",
-            "hate list":("human","elf","halfelf","dwarf","halfdwarf","hobbit","vampire","werewolf","gnome")
+            "hate list":("human","elf","halfelf","dwarf","halfdwarf","hobbit","vampire","werewolf","gnome"),
+            "heal modifier":10
             },
         
         "hobgoblin":{
@@ -250,7 +256,8 @@ def get_race(race):
                 "detect alignment",
                 "infravision",
                 "fly"
-                )
+                ),
+            "heal modifier":15
             },
                     
         "demon":{
@@ -267,7 +274,8 @@ def get_race(race):
                 "dexterity":-1,
                 "constitution":3,
                 },
-            "damage message":"claw"
+            "damage message":"claw",
+            "heal modifier":3
             },
             
         "animal":{
@@ -305,7 +313,8 @@ def get_race(race):
                 "dexterity":3,
                 "constitution":3
                 },
-            "damage message":"smite"
+            "damage message":"smite",
+            "heal modifier":20
             },
             
         "undead":{
@@ -459,7 +468,8 @@ def get_race(race):
                 "constitution":2
                 },
             "damage message":"claw",
-            "hate list":("human","elf","halfelf","drow","dwarf","halfdwarf","hobbit","giant","ogre","orc","kobold","minotaur","troll","hobgoblin","werewolf","goblin","faerie","gnome")
+            "hate list":("human","elf","halfelf","drow","dwarf","halfdwarf","hobbit","giant","ogre","orc","kobold","minotaur","troll","hobgoblin","werewolf","goblin","faerie","gnome"),
+            "heal modifier":10
             },
             
         "werewolf":{
@@ -478,7 +488,8 @@ def get_race(race):
                 "detect alignment",
                 "infravision"
                 ),
-            "hate list":("human","elf","halfelf","drow","dwarf","halfdwarf","hobbit","giant","ogre","orc","kobold","minotaur","troll","hobgoblin","werewolf","goblin","faerie","gnome")
+            "hate list":("human","elf","halfelf","drow","dwarf","halfdwarf","hobbit","giant","ogre","orc","kobold","minotaur","troll","hobgoblin","werewolf","goblin","faerie","gnome"),
+            "heal modifier":10
             },
 
         "goblin":{
@@ -698,7 +709,8 @@ def get_race(race):
                 "constitution":1
                 },
             "damage message":"claw",
-            "hate list":("dwarf","elf","gnome","halfelf","hobbit","human")
+            "hate list":("dwarf","elf","gnome","halfelf","hobbit","human"),
+            "heal modifier":3
             },
         
         "tabaxi":{
@@ -745,7 +757,8 @@ def get_race(race):
                 "strength":2,
                 "dexterity":-1,
                 "constitution":-1
-                }
+                },
+            "heal modifier":3
             },
             
         "grugach":{
@@ -874,7 +887,8 @@ def get_race(race):
                 "detect invisible",
                 "swim",
                 "fly"
-                )
+                ),
+            "heal modifier":3
             },
             
         "dog":{
@@ -907,7 +921,8 @@ def get_race(race):
                 "dexterity":-2,
                 "constitution":1
                 },
-            "hate list":("human","elf","halfelf","dwarf","gnome","hobbit")
+            "hate list":("human","elf","halfelf","dwarf","gnome","hobbit"),
+            "heal modifier":10
             },
         
         "amphibian":{
@@ -930,7 +945,8 @@ def get_race(race):
                 "strength":2,
                 "dexterity":-2
                 },
-            "hate list":("elf","hobbit","dwarf","human","halfelf")
+            "hate list":("elf","hobbit","dwarf","human","halfelf"),
+            "heal modifier":2
             },
         
         "automaton":{
@@ -966,7 +982,8 @@ def get_race(race):
             "size":1,
             "inherent affects":(
                 "infravision",
-                )
+                ),
+            "heal modifier":2
             },
             
         "leprechaun":{
@@ -1085,7 +1102,8 @@ def get_race(race):
                 "protection",
                 "fly"
                 ),
-            "size":6
+            "size":6,
+            "heal modifier":10
             },
             
         "titan":{
@@ -1095,7 +1113,8 @@ def get_race(race):
                 "strength":5
                 },
             "damage message":"pound",
-            "hate list":("demon","halfdemon")
+            "hate list":("demon","halfdemon"),
+            "heal modifier":15
             },
             
         "treant":{
