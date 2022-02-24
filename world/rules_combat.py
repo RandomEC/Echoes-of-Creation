@@ -534,6 +534,9 @@ def get_health_string(combatant):
 def get_hit_chance(attacker, victim):
 
     hit_chance = int(100 * (get_hitskill(attacker, victim) + attacker.db.level - victim.db.level)/(get_hitskill(attacker, victim) + get_avoidskill(victim)))
+
+    victim.msg("Hit chance = %d" % hit_chance)
+
     if hit_chance > 95:
         return 95
     elif hit_chance < 5:
