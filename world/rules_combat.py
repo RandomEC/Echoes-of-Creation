@@ -129,6 +129,7 @@ def do_attack(attacker, victim, eq_slot):
     hit = hit_check(attacker, victim)
     damage = do_damage(attacker, eq_slot)
     damage_type = get_damagetype(attacker)
+    experience_modified = 0
 
     if hit:
 
@@ -163,7 +164,7 @@ def do_attack(attacker, victim, eq_slot):
         victim_string = ("%s |r%s|n you with its %s.\n" % (attacker.key, get_damagestring("victim", damage), damage_type))
         room_string = ("%s %s %s with its %s.\n" % (attacker.key, get_damagestring("victim", damage), victim.key, damage_type))
 
-        if experience_modified > 0:
+        if "player" in attacker.tags.all() and experience_modified > 0:
             attacker_string += ("You gain %d experience points from your attack.\n" % experience_modified)
     else:
         attacker_string = ("You miss %s with your %s.\n" % (victim.key, damage_type))
