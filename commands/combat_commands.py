@@ -126,6 +126,8 @@ class Combat(Object):
             self.at_stop()
             self.delete()
 
+        self.db.rounds += 1
+
     def clear_messages(self):
         for combatant in self.db.combatants:
             self.db.combatants[combatant]["combat message"] = ""

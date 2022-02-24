@@ -1,8 +1,9 @@
 import random
+import math
 from evennia import create_object
 from world import rules_race
 
-def modify_experience(attacker, victim, experience)
+def modify_experience(attacker, victim, experience):
     """
     This function applies the appropriate modifiers to experience
     # based on the player's attributes.
@@ -11,15 +12,17 @@ def modify_experience(attacker, victim, experience)
     # Modify experience award based on relative alignment.
     alignment_difference = abs(attacker.db.alignment - victim.db.alignment)
     if alignment_difference >= 1000:
-        experience_modified = experience_raw * 1.25
+        experience_modified = experience * 1.25
     elif alignment_difference < 500:
-        experience_modified = experience_raw * 0.75
+        experience_modified = experience * 0.75
     else:
-        experience_modified = experience_raw
+        experience_modified = experience
         
     # Modify experience award based on racial hatreds or affection.
-    if "hate list" in rules_race.get_race(attacker).keys() and victim.race in rules_race.get_race(attacker)["hate list"]:
-        experience_modified *= 1.1
+
+    if "hate list" in rules_race.get_race(attacker.race):
+        if victim.race in rules_race.get_race(attacker.race)["hate list"]:
+            experience_modified *= 1.1
     elif victim.race == attacker.race:
         experience_modified *= 0.875
     
@@ -44,7 +47,7 @@ def do_death(attacker, victim):
 
         # Move all victim items to corpse.
         for item in victim.contents:
-            if item.equipped:
+            if item.db.equipped:
                 item.remove_from(victim)
             # Eventually, will want the below to have , quiet = True after done testing.
             item.move_to(corpse)
@@ -65,15 +68,15 @@ def do_death(attacker, victim):
             else:
                 directional_modifier = -1
                 
-            attacker.db.alignment = ceil(attacker.db.alignment - victim.db.alignment * (1000 + directional_modifier * attacker.db.alignment)*(1000 + abs(attacker.db.alignment))/50000000)
-        
+            attacker.db.alignment = math.ceil(attacker.db.alignment - victim.db.alignment * (1000 + directional_modifier * attacker.db.alignment)*(1000 + abs(attacker.db.alignment))/50000000)
+
         # Figure out how to calculate gold on mobile and award.
 
         # attacker_string += ("You receive |y%s gold|n as a result of your kill!" % victim.)
 
     else:
         # Create corpse.
-        corpse = create_object("objects.PC_Corpse", key=("corpse of %s" % victim.key))
+        corpse = create_object("objects.PC_Corpse", key=("the corpse of %s" % victim.key))
         corpse.db.desc = ("The corpse of %s lies here." % victim.key)
         corpse.location = attacker.location
 
@@ -127,28 +130,41 @@ def do_attack(attacker, victim, eq_slot):
     damage = do_damage(attacker, eq_slot)
     damage_type = get_damagetype(attacker)
 
-    # Experience awarded for a hit is dependent on damage done as a percent
-    # of total hitpoints.
-    percent_damage = damage / victim.hitpoints_maximum
-    
-    # Don't give out all the experience through single hits, to preserve
-    # some to be awarded on kill.
-    experience_raw = int(0.85 * percent_damage * victim.db.experience_total)
-    
-    # Reduce the mobile's current experience based on the pre-modification
-    # award.
-    victim.db.experience_current -= experience_raw
-
-    # Attacker experience is modified by alignment and race.
-    experience_modified = modify_experience(attacker, victim, experience)
-    
-    attacker.db.experience_total += experience_modified
-    
     if hit:
+
+        if "player" in attacker.tags.all():
+            # Experience awarded for a hit is dependent on damage done as a percent
+            # of total hitpoints.
+            percent_damage = damage / victim.hitpoints_maximum
+
+            if percent_damage > 1:
+                percent_damage = 1
+
+            # Don't give out all the experience through single hits, to preserve
+            # some to be awarded on kill. Amount awarded decreases round by round.
+
+            combat = victim.ndb.combat_handler
+            round = combat.db.rounds
+            round_fraction = (1 / (1 + round / 10))
+
+            experience_raw = int(round_fraction * percent_damage * victim.db.experience_total)
+
+            # Reduce the mobile's current experience based on the pre-modification
+            # award.
+            victim.db.experience_current -= experience_raw
+
+            # Attacker experience is modified by alignment and race.
+            experience_modified = modify_experience(attacker, victim, experience_raw)
+
+            attacker.db.experience_total += experience_modified
+
         victim.take_damage(damage)
-        attacker_string = ("You |g%s|n %s with your %s.\nYou gain %d experience points from your attack.\n" % (get_damagestring("attacker", damage), victim.key, damage_type, experience_modified))
+        attacker_string = ("You |g%s|n %s with your %s.\n" % (get_damagestring("attacker", damage), victim.key, damage_type))
         victim_string = ("%s |r%s|n you with its %s.\n" % (attacker.key, get_damagestring("victim", damage), damage_type))
         room_string = ("%s %s %s with its %s.\n" % (attacker.key, get_damagestring("victim", damage), victim.key, damage_type))
+
+        if experience_modified > 0:
+            attacker_string += ("You gain %d experience points from your attack.\n" % experience_modified)
     else:
         attacker_string = ("You miss %s with your %s.\n" % (victim.key, damage_type))
         victim_string = ("%s misses you with its %s.\n" % (attacker.key, damage_type))
