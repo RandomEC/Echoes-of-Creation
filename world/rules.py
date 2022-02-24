@@ -75,3 +75,45 @@ def calculate_experience(mobile):
         experience = 50
     
     return experience
+
+def gain_hitpoints(character):
+    """
+    This method handles the passive regaining of hitpoints when
+    injured.
+    """
+
+    if "mobile" in self.tags.all():
+        hp_gain = character.db.level * 3 / 2
+    else:
+        if self.db.level < 5:
+            hp_gain = character.db.level
+        else:
+            hp_gain = 5
+
+        if character.db.position == "sleeping":
+            hp_gain += self.constitution * 2
+        elif character.db.position == "resting":
+            hp_gain += self.constitution
+
+        # Hitpoint gain is impacted by thirst and hunger. If you are full,
+        # you get a bonus to gain. If you are starving and parched, you
+        # get no benefit. Sliding scale between.
+
+        # hunger_modifier = character.db.hunger/20
+        # thirst_modifier = character.db.thirst/20
+        # total_food_modifier = 1 + hunger_modifier + thirst_modifier
+
+        # hp_gain *= total_food_modifier
+
+        # Need to accommodate furniture, poisoning, and
+        # enhanced healing in here once coded.
+
+    if rules_race.get_race(character)["heal modifier"]:
+        hp_gain += rules_race.get_race(character)["heal modifier"]
+
+    hp_gain = int(hp_gain)
+
+    if hp_gain > character.db.hitpoints["damaged"]:
+        character.db.hitpoints["damaged"] = 0
+    else:
+        character.db.hitpoints["damaged"] -= hp_gain
