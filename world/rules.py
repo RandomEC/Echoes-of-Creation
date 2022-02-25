@@ -102,11 +102,11 @@ def gain_hitpoints(character):
         # you get a bonus to gain. If you are starving and parched, you
         # get no benefit. Sliding scale between.
 
-        # hunger_modifier = character.db.hunger/20
-        # thirst_modifier = character.db.thirst/20
-        # total_food_modifier = 1 + hunger_modifier + thirst_modifier
+        hunger_modifier = character.db.hunger/16000
+        thirst_modifier = character.db.thirst/16000
+        total_food_modifier = 1 + hunger_modifier + thirst_modifier
 
-        # hp_gain *= total_food_modifier
+        hp_gain *= total_food_modifier
 
         # Need to accommodate furniture, poisoning, and
         # enhanced healing in here once coded.
@@ -144,15 +144,15 @@ def gain_mana(character):
         # you get a bonus to gain. If you are starving and parched, you
         # get no benefit. Sliding scale between.
 
-        # hunger_modifier = character.db.hunger/20
-        # thirst_modifier = character.db.thirst/20
-        # total_food_modifier = 1 + hunger_modifier + thirst_modifier
+        hunger_modifier = character.db.hunger/16000
+        thirst_modifier = character.db.thirst/16000
+        total_food_modifier = 1 + hunger_modifier + thirst_modifier
 
-        # mana_gain *= total_food_modifier
+        mana_gain *= total_food_modifier
 
         # If drunk, you get a further bonus
-        # if character.db.drunk > 0:
-        #     mana_gain *= 2
+        if character.db.drunk > 0:
+            mana_gain *= 2
 
         # Need to accommodate furniture, poisoning, and
         # enhanced healing in here once coded.
@@ -190,15 +190,11 @@ def gain_moves(character):
         # you get a bonus to gain. If you are starving and parched, you
         # get no benefit. Sliding scale between.
 
-        # hunger_modifier = character.db.hunger/20
-        # thirst_modifier = character.db.thirst/20
-        # total_food_modifier = 1 + hunger_modifier + thirst_modifier
+        hunger_modifier = character.db.hunger/16000
+        thirst_modifier = character.db.thirst/16000
+        total_food_modifier = 1 + hunger_modifier + thirst_modifier
 
-        # mana_gain *= total_food_modifier
-
-        # If drunk, you get a further bonus
-        # if character.db.drunk > 0:
-        #     mana_gain *= 2
+        moves_gain *= total_food_modifier
 
         # Need to accommodate furniture, poisoning, and
         # enhanced healing in here once coded.
