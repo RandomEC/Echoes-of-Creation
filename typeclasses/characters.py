@@ -731,8 +731,10 @@ class Player(Character):
         self.db.age = 18
         self.db.wimpy = 4
         self.db.character_type = "player"
-        self.db.hunger = 5
-        self.db.thirst = 5
+        
+        # All three of the below are capped at 4000.
+        self.db.hunger = 4000
+        self.db.thirst = 4000
         self.db.drunk = 0
 
         # set item stats
