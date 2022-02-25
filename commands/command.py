@@ -1619,3 +1619,112 @@ class CmdGet(MuxCommand):
                 )
                 # calling at_get hook method
                 obj.at_get(caller)
+
+class CmdSleep(MuxCommand):
+    """
+    Cause your character to go to sleep.
+    
+    Usage:
+      sleep
+      
+    Causes your character to go to sleep. Sleeping causes an increase in
+    hit point, mana and move regeneration, but leaves you vulnerable to
+    attack.
+    """
+
+    key = "sleep"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """implements the command."""
+
+        caller = self.caller
+
+        if caller.db.position == "fighting":
+            caller.msg("You cannot sleep while you are fighting!")
+            return
+        if caller.db.position == "sleeping":
+            caller.msg("You are sleeping as well as you can already.")
+            return
+        
+        if caller.db.position == "standing":
+            caller.msg("You find a comfortable spot, lay your head down, and drift off to sleep.")
+            caller.location.msg_contents("%s lays down and falls asleep." % (caller.name), exclude=caller)
+        else:
+            caller.msg("More tired than you thought, you lay your head down, and drift off to sleep.")
+            caller.location.msg_contents("%s lays down and falls asleep." % (caller.name), exclude=caller)
+        caller.db.position == "sleeping"
+
+class CmdRest(MuxCommand):
+    """
+    Cause your character to sit down and rest.
+    
+    Usage:
+      rest
+      
+    Causes your character to sit down and rest. Resting causes less of an
+    increase in hit point, mana and move regeneration than sleeping, with
+    the trade-off of no increased risk of damage.
+    """
+
+    key = "rest"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """implements the command."""
+
+        caller = self.caller
+
+        if caller.db.position == "fighting":
+            caller.msg("You cannot rest while you are fighting!")
+            return
+        if caller.db.position == "resting":
+            caller.msg("If you want to rest more, try sleeping.")
+            return
+        
+        if caller.db.position == "standing":
+            caller.msg("You sit down and rest your tired bones.")
+            caller.location.msg_contents("%s sits down and rests." % (caller.name), exclude=caller)
+        else:
+            caller.msg("You wake, sit up and rest.")
+            caller.location.msg_contents("%s awakens and sits up to rest." % (caller.name), exclude=caller)
+        caller.db.position == "resting"
+
+class CmdStand(MuxCommand):
+    """
+    Cause your character to stand up, and stop sleeping or resting.
+    
+    Usage:
+      rest
+      
+    Causes your character to stand up and stop sleeping or resting. Has no
+    effect on a character that is fighting.
+    """
+
+    key = "stand"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """implements the command."""
+
+        caller = self.caller
+
+        if caller.db.position == "fighting":
+            caller.msg("You are already standing and fighting!")
+            return
+        if caller.db.position == "standing":
+            caller.msg("You can't stand any more than you are already.")
+            return
+        
+        if caller.db.position == "sleeping":
+            caller.msg("You wake up and stand up, ready for more.")
+            caller.location.msg_contents("%s wakes up and stands up." % (caller.name), exclude=caller) 
+        elif caller.db.position == "resting":
+            caller.msg("You stop resting and stand up, ready for action.")
+            caller.location.msg_contents("%s stands up." % (caller.name), exclude=caller) 
+        caller.db.position == "standing"
+
+                                
