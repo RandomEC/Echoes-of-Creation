@@ -107,12 +107,15 @@ def do_damage(attacker, eq_slot):
         else:
             damage = random.randint(1, 2) * attacker.size
 
-            # Get a bonus to damage from damroll, since we got here, there is no
+            # Get a bonus to damage from damroll. Since we got here, there is no
             # weapon to worry about.
             dam_bonus = attacker.damroll
 
             damage += dam_bonus
 
+    if victim.db.position == "sleeping":
+        damage *= 2
+            
     return damage
 
 def do_death(attacker, victim):
