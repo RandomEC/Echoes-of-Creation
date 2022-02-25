@@ -11,6 +11,7 @@ from evennia import DefaultCharacter
 from evennia.utils import search
 from world import rules_race
 from world import rules
+from evennia import TICKER_HANDLER as tickerhandler
 
 class Character(DefaultCharacter):
     """
@@ -61,9 +62,9 @@ class Character(DefaultCharacter):
 
         # set mana dictionary
         self.db.mana = {
-            "maximum":100,
-            "spent":0,
-            "trains spent":0
+            "maximum": 100,
+            "spent": 0,
+            "trains spent": 0
             }
 
         # set moves dictionary
@@ -108,6 +109,8 @@ class Character(DefaultCharacter):
             "held, in hands":"",
             "wielded, secondary":""
             }
+
+        tickerhandler.add(30, self.at_update)
 
     @property
     def hitpoints_maximum(self):
@@ -471,7 +474,32 @@ class Character(DefaultCharacter):
                 equipment_output += output_string
 
         return equipment_output
-        
+
+    def at_update(self):
+        """
+        This function updates all that needs updating about the
+        character.
+        """
+
+        if self.db.hitpoints["damaged"] > 0:
+            hp_gain = rules.gain_hitpoints(self)
+            self.db.hitpoints["damaged"] -= hp_gain
+        if self.db.mana["spent"] > 0:
+            mana_gain = rules.gain_mana(self)
+            self.db.mana["spent"] -= mana_gain
+        if self.db.moves["spent"] > 0:
+            moves_gain = rules.gain_moves(self)
+            self.db.moves["spent"] -= moves_gain
+
+        if "mobile" in self.tags.all():
+            if self.db.experience_current != self.db.experience_total:
+                experience_gain = rules.gain_experience(self, hp_gain)
+                gain_left = self.db.experience_total - self.db.experience_current
+
+                if experience_gain > gain_left:
+                    self.db.experience_current += gain_left
+                else:
+                    self.db.experience_current += experience_gain
 
 class Mobile(Character):
     """

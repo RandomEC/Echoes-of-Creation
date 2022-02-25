@@ -3,30 +3,117 @@ import math
 from evennia import create_object
 from world import rules_race
 
-def modify_experience(attacker, victim, experience):
+def do_attack(attacker, victim, eq_slot):
     """
-    This function applies the appropriate modifiers to experience
-    # based on the player's attributes.
+    This function implements the effects of a single hit. It
+    both calls the take_damage method on the victim, doing the
+    damage, and returns a tuple of strings of output for the
+    attacker, the victim, and those watching in the room for
+    that single hit attempt.
     """
-    
-    # Modify experience award based on relative alignment.
-    alignment_difference = abs(attacker.db.alignment - victim.db.alignment)
-    if alignment_difference >= 1000:
-        experience_modified = experience * 1.25
-    elif alignment_difference < 500:
-        experience_modified = experience * 0.75
-    else:
-        experience_modified = experience
-        
-    # Modify experience award based on racial hatreds or affection.
 
-    if "hate list" in rules_race.get_race(attacker.race):
-        if victim.race in rules_race.get_race(attacker.race)["hate list"]:
-            experience_modified *= 1.1
-    elif victim.race == attacker.race:
-        experience_modified *= 0.875
-    
-    return int(experience_modified)
+    hit = hit_check(attacker, victim)
+    damage = do_damage(attacker, eq_slot)
+    damage_type = get_damagetype(attacker)
+    experience_modified = 0
+
+    if hit:
+
+        if "player" in attacker.tags.all():
+            # Experience awarded for a hit is dependent on damage done as a percent
+            # of total hitpoints.
+            percent_damage = damage / victim.hitpoints_maximum
+
+            if percent_damage > 1:
+                percent_damage = 1
+
+            # Don't give out all the experience through single hits, to preserve
+            # some to be awarded on kill. Amount awarded decreases round by round.
+
+            combat = victim.ndb.combat_handler
+            round = combat.db.rounds
+            round_fraction = (1 / (1 + round / 10))
+
+            experience_raw = int(round_fraction * percent_damage * victim.db.experience_total)
+
+            # Reduce the mobile's current experience based on the pre-modification
+            # award.
+            victim.db.experience_current -= experience_raw
+
+            # Attacker experience is modified by alignment and race.
+            experience_modified = int(modify_experience(attacker, victim, experience_raw))
+
+            attacker.db.experience_total += experience_modified
+
+        victim.take_damage(damage)
+        attacker_string = ("You |g%s|n %s with your %s.\n" % (get_damagestring("attacker", damage), victim.key, damage_type))
+        victim_string = ("%s |r%s|n you with its %s.\n" % (attacker.key, get_damagestring("victim", damage), damage_type))
+        room_string = ("%s %s %s with its %s.\n" % (attacker.key, get_damagestring("victim", damage), victim.key, damage_type))
+
+        if "player" in attacker.tags.all() and experience_modified > 0:
+            attacker_string += ("You gain %d experience points from your attack.\n" % experience_modified)
+    else:
+        attacker_string = ("You miss %s with your %s.\n" % (victim.key, damage_type))
+        victim_string = ("%s misses you with its %s.\n" % (attacker.key, damage_type))
+        room_string = ("%s misses %s with its %s.\n" % (attacker.key, victim.key, damage_type))
+
+    return (attacker_string, victim_string, room_string)
+
+
+def do_damage(attacker, eq_slot):
+    """
+    This is called on a successful hit, and returns the total
+    damage for that hit.
+    """
+
+    if "mobile" in attacker.tags.all():
+        damage_low = int(attacker.db.level * 3 / 4)
+        damage_high = int(attacker.db.level * 3 / 2)
+
+        # Damage is a random number between high damage and low damage.
+        damage = random.randint(damage_low, damage_high)
+
+        # If mobile is wielding a weapon, they get a 50% bonus.
+        if attacker.db.eq_slots["wielded, primary"]:
+            damage = int(damage * 1.5)
+
+        # Get a bonus to damage from damroll.
+        dam_bonus = int(attacker.damroll)
+
+        damage += dam_bonus
+
+    else:
+        if attacker.db.eq_slots[eq_slot]:
+            weapon = attacker.db.eq_slots[eq_slot]
+            damage = random.randint(weapon.db.damage_low, weapon.db.damage_high)
+
+            dam_bonus = int(attacker.damroll)
+
+            # You only get the damroll bonus for the weapon you are using
+            # on the attack. As a result, we subtract out the damroll
+            # from the weapon not being used in the attack, if there is
+            # more than one.
+
+            if eq_slot == "wielded, primary":
+                if attacker.db.eq_slots["wielded, secondary"]:
+                    eq = attacker.db.eq_slots["wielded, secondary"]
+                    dam_bonus -= eq.db.stat_modifiers["damroll"]
+            else:
+                eq = attacker.db.eq_slots["wielded, secondary"]
+                dam_bonus -= eq.db.stat_modifiers["damroll"]
+
+            damage += dam_bonus
+
+        else:
+            damage = random.randint(1, 2) * attacker.size
+
+            # Get a bonus to damage from damroll, since we got here, there is no
+            # weapon to worry about.
+            dam_bonus = attacker.damroll
+
+            damage += dam_bonus
+
+    return damage
 
 def do_death(attacker, victim):
     """
@@ -117,62 +204,6 @@ def do_one_character_attacks(attacker, victim):
     # reporting the results of everyone's attacks to all players only.
     return (attacker_string, victim_string, room_string)
 
-def do_attack(attacker, victim, eq_slot):
-    """
-    This function implements the effects of a single hit. It
-    both calls the take_damage method on the victim, doing the
-    damage, and returns a tuple of strings of output for the
-    attacker, the victim, and those watching in the room for
-    that single hit attempt.
-    """
-
-    hit = hit_check(attacker, victim)
-    damage = do_damage(attacker, eq_slot)
-    damage_type = get_damagetype(attacker)
-    experience_modified = 0
-
-    if hit:
-
-        if "player" in attacker.tags.all():
-            # Experience awarded for a hit is dependent on damage done as a percent
-            # of total hitpoints.
-            percent_damage = damage / victim.hitpoints_maximum
-
-            if percent_damage > 1:
-                percent_damage = 1
-
-            # Don't give out all the experience through single hits, to preserve
-            # some to be awarded on kill. Amount awarded decreases round by round.
-
-            combat = victim.ndb.combat_handler
-            round = combat.db.rounds
-            round_fraction = (1 / (1 + round / 10))
-
-            experience_raw = int(round_fraction * percent_damage * victim.db.experience_total)
-
-            # Reduce the mobile's current experience based on the pre-modification
-            # award.
-            victim.db.experience_current -= experience_raw
-
-            # Attacker experience is modified by alignment and race.
-            experience_modified = modify_experience(attacker, victim, experience_raw)
-
-            attacker.db.experience_total += experience_modified
-
-        victim.take_damage(damage)
-        attacker_string = ("You |g%s|n %s with your %s.\n" % (get_damagestring("attacker", damage), victim.key, damage_type))
-        victim_string = ("%s |r%s|n you with its %s.\n" % (attacker.key, get_damagestring("victim", damage), damage_type))
-        room_string = ("%s %s %s with its %s.\n" % (attacker.key, get_damagestring("victim", damage), victim.key, damage_type))
-
-        if "player" in attacker.tags.all() and experience_modified > 0:
-            attacker_string += ("You gain %d experience points from your attack.\n" % experience_modified)
-    else:
-        attacker_string = ("You miss %s with your %s.\n" % (victim.key, damage_type))
-        victim_string = ("%s misses you with its %s.\n" % (attacker.key, damage_type))
-        room_string = ("%s misses %s with its %s.\n" % (attacker.key, victim.key, damage_type))
-
-    return (attacker_string, victim_string, room_string)
-
 def do_one_weapon_attacks(attacker, victim, eq_slot):
     """
     This determines how many hit attempts will occur for one attacker
@@ -249,61 +280,6 @@ def do_one_weapon_attacks(attacker, victim, eq_slot):
             room_string += new_room_string
 
     return (attacker_string, victim_string, room_string)
-
-def do_damage(attacker, eq_slot):
-    """
-    This is called on a successful hit, and returns the total
-    damage for that hit.
-    """
-    
-    if "mobile" in attacker.tags.all():
-        damage_low = int(attacker.db.level*3/4)
-        damage_high = int(attacker.db.level*3/2)
-        
-        # Damage is a random number between high damage and low damage.
-        damage = random.randint(damage_low, damage_high)
-        
-        # If mobile is wielding a weapon, they get a 50% bonus.
-        if attacker.db.eq_slots["wielded, primary"]:
-            damage = int(damage * 1.5)
-
-        # Get a bonus to damage from damroll.
-        dam_bonus = int(attacker.damroll)
-        
-        damage += dam_bonus
-
-    else:
-        if attacker.db.eq_slots[eq_slot]:
-            weapon = attacker.db.eq_slots[eq_slot]
-            damage = random.randint(weapon.db.damage_low, weapon.db.damage_high)
-        
-            dam_bonus = int(attacker.damroll)
-            
-            # You only get the damroll bonus for the weapon you are using
-            # on the attack. As a result, we subtract out the damroll
-            # from the weapon not being used in the attack, if there is
-            # more than one.
-            
-            if eq_slot == "wielded, primary":
-                if attacker.db.eq_slots["wielded, secondary"]:
-                    eq = attacker.db.eq_slots["wielded, secondary"]
-                    dam_bonus -= eq.db.stat_modifiers["damroll"]
-            else: 
-                eq = attacker.db.eq_slots["wielded, secondary"]
-                dam_bonus -= eq.db.stat_modifiers["damroll"]
-                        
-            damage += dam_bonus
-            
-        else:
-            damage = random.randint(1, 2)*attacker.size
-    
-            # Get a bonus to damage from damroll, since we got here, there is no
-            # weapon to worry about.
-            dam_bonus = attacker.damroll
-            
-            damage += dam_bonus
-    
-    return damage
 
 def hit_check(attacker, victim):
     """
@@ -536,8 +512,6 @@ def get_hit_chance(attacker, victim):
 
     hit_chance = int(100 * (get_hitskill(attacker, victim) + attacker.db.level - victim.db.level)/(get_hitskill(attacker, victim) + get_avoidskill(victim)))
 
-    victim.msg("Hit chance = %d" % hit_chance)
-
     if hit_chance > 95:
         return 95
     elif hit_chance < 5:
@@ -568,3 +542,29 @@ def get_warskill(combatant):
         warskill_factor = combatant.db.level/101
         warskill = int(120*warskill_factor)
         return warskill
+
+def modify_experience(attacker, victim, experience):
+    """
+    This function applies the appropriate modifiers to experience
+    # based on the player's attributes.
+    """
+
+    # Modify experience award based on relative alignment.
+    alignment_difference = abs(attacker.db.alignment - victim.db.alignment)
+    if alignment_difference >= 1000:
+        experience_modified = experience * 1.25
+    elif alignment_difference < 500:
+        experience_modified = experience * 0.75
+    else:
+        experience_modified = experience
+
+    # Modify experience award based on racial hatreds or affection.
+
+    if "hate list" in rules_race.get_race(attacker.race):
+        if victim.race in rules_race.get_race(attacker.race)["hate list"]:
+            experience_modified *= 1.1
+    elif victim.race == attacker.race:
+        experience_modified *= 0.875
+
+    return int(experience_modified)
+
