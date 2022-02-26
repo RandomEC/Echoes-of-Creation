@@ -1,6 +1,6 @@
 import random
 import math
-from world import rules_race
+# from world import rules_race
 
 
 def fuzz_number(number):
@@ -94,7 +94,6 @@ def gain_hitpoints(character):
 
     if "mobile" in character.tags.all():
         hp_gain = character.db.level * 3 / 2
-        character.location.msg_contents("In hp_gain = %d" % hp_gain)
     else:
         if character.db.level < 5:
             hp_gain = character.db.level
@@ -125,8 +124,6 @@ def gain_hitpoints(character):
 
     hp_gain = int(hp_gain)
 
-    character.location.msg_contents("End hp_gain")
-
     if hp_gain > character.db.hitpoints["damaged"]:
         return character.db.hitpoints["damaged"]
     else:
@@ -141,7 +138,6 @@ def gain_mana(character):
 
     if "mobile" in character.tags.all():
         mana_gain = character.db.level
-        character.location.msg_contents("In mana_gain")
 
     else:
         if character.db.level < 5:
@@ -177,8 +173,6 @@ def gain_mana(character):
 
     mana_gain = int(mana_gain)
 
-    character.location.msg_contents("End mana_gain")
-
     if mana_gain > character.db.mana["spent"]:
         return character.db.mana["spent"]
     else:
@@ -193,7 +187,6 @@ def gain_moves(character):
 
     if "mobile" in character.tags.all():
         moves_gain = character.db.level
-        character.location.msg_contents("In moves_gain")
 
     else:
         if (character.db.level * 2) > 15:
@@ -224,7 +217,6 @@ def gain_moves(character):
             rules_race.get_race(character.race)["moves modifier"]
 
     moves_gain = int(moves_gain)
-    character.location.msg_contents("End moves_gain")
 
     if moves_gain > character.db.moves["spent"]:
         return character.db.moves["spent"]
@@ -239,13 +231,10 @@ def gain_experience(mobile, hp_gain):
     hit point gain.
     """
 
-    mobile.location.msg_contents("In xp_gain")
-
     percent_hp_recovered = hp_gain / mobile.db.hitpoints["damaged"]
     experience_awarded = math.ceil(mobile.db.experience_total -
                                    mobile.db.experience_current)
 
     experience_gain = int(percent_hp_recovered * experience_awarded)
-    mobile.location.msg_contents("End xp_gain")
 
     return experience_gain

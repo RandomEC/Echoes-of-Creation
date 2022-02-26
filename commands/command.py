@@ -1644,7 +1644,7 @@ class CmdSleep(MuxCommand):
         if caller.db.position == "fighting":
             caller.msg("You cannot sleep while you are fighting!")
             return
-        if caller.db.position == "sleeping":
+        elif caller.db.position == "sleeping":
             caller.msg("You are sleeping as well as you can already.")
             return
         
@@ -1654,7 +1654,8 @@ class CmdSleep(MuxCommand):
         else:
             caller.msg("More tired than you thought, you lay your head down, and drift off to sleep.")
             caller.location.msg_contents("%s lays down and falls asleep." % (caller.name), exclude=caller)
-        caller.db.position == "sleeping"
+
+        caller.db.position = "sleeping"
 
 class CmdRest(MuxCommand):
     """
@@ -1690,7 +1691,7 @@ class CmdRest(MuxCommand):
         else:
             caller.msg("You wake, sit up and rest.")
             caller.location.msg_contents("%s awakens and sits up to rest." % (caller.name), exclude=caller)
-        caller.db.position == "resting"
+        caller.db.position = "resting"
 
 class CmdStand(MuxCommand):
     """
@@ -1725,6 +1726,6 @@ class CmdStand(MuxCommand):
         elif caller.db.position == "resting":
             caller.msg("You stop resting and stand up, ready for action.")
             caller.location.msg_contents("%s stands up." % (caller.name), exclude=caller) 
-        caller.db.position == "standing"
+        caller.db.position = "standing"
 
                                 
