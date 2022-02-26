@@ -483,18 +483,25 @@ class Character(DefaultCharacter):
 
         if self.db.hitpoints["damaged"] > 0:
             hp_gain = rules.gain_hitpoints(self)
+            self.location.msg_contents("hp_gain = %d" % hp_gain)
+
             self.db.hitpoints["damaged"] -= hp_gain
         if self.db.mana["spent"] > 0:
             mana_gain = rules.gain_mana(self)
             self.db.mana["spent"] -= mana_gain
+            self.location.msg_contents("mana_gain = %d" % mana_gain)
+
         if self.db.moves["spent"] > 0:
             moves_gain = rules.gain_moves(self)
             self.db.moves["spent"] -= moves_gain
+            self.location.msg_contents("moves_gain = %d" % moves_gain)
 
         if "mobile" in self.tags.all():
             if self.db.experience_current != self.db.experience_total:
                 experience_gain = rules.gain_experience(self, hp_gain)
                 gain_left = self.db.experience_total - self.db.experience_current
+
+                self.location.msg_contents("xp_gain = %d" % experience_gain)
 
                 if experience_gain > gain_left:
                     self.db.experience_current += gain_left
