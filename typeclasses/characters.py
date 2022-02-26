@@ -508,6 +508,26 @@ class Character(DefaultCharacter):
                 else:
                     self.db.experience_current += experience_gain
 
+    def at_before_move(self, destination):
+        """
+        This hook is called just before trying to move. Anything that would
+        prevent you from moving is dealt with here.
+        """
+    
+        if self.db.position == "fighting":
+            self.msg("You can only move from a fight by successfully fleeing!")
+            return False
+        elif self.db.position == "sleeping":
+            self.msg("What, in your dreams? You are sleeping!")
+            return False
+        elif self.db.position == "sitting" or "resting":
+            self.msg("Perhaps you should try standing first, before moving.")
+            return False
+        
+        # Add movement cost function here, after check for all the reasons why you couldn't move.
+        
+        return True
+                    
 class Mobile(Character):
     """
     The Mobile class is intended to be used for the npcs on the MUD, and inherits from the
@@ -718,8 +738,10 @@ class Player(Character):
         self.db.age = 18
         self.db.wimpy = 4
         self.db.character_type = "player"
-        self.db.hunger = 5
-        self.db.thirst = 5
+        
+        # All three of the below are capped at 4000.
+        self.db.hunger = 4000
+        self.db.thirst = 4000
         self.db.drunk = 0
 
         # set item stats

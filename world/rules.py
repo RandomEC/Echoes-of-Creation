@@ -2,34 +2,38 @@ import random
 import math
 from world import rules_race
 
+
 def fuzz_number(number):
     """
     This function simply adds slight variation to a number.
     """
-    
+
     random_number = random.randint(1, 4)
     if random_number < 2:
         return number - 1
-    elif random_number >3:
+    elif random_number > 3:
         return number + 1
     else:
         return number
+
 
 def set_armor(level):
     """
     This function sets the armor value of a piece of armor.
     """
-    
+
     return round(fuzz_number((level/4) + 2))
+
 
 def set_weapon_low_high(level):
     """
     This function sets the damage range of a weapon.
     """
-    
+
     low = round(fuzz_number(fuzz_number(level/4 + 2)))
     high = round(fuzz_number(fuzz_number(3*level/4 + 6)))
     return low, high
+
 
 def calculate_experience(mobile):
     """
@@ -51,32 +55,36 @@ def calculate_experience(mobile):
 
     if mobile.get_affect_status("flameshield"):
         experience *= 1.4
-    
+
     if mobile.db.eq_slots["wielded, primary"]:
         experience *= 1.25
-    
+
     if mobile.db.eq_slots["wielded, secondary"]:
         experience *= 1.2
 
     if mobile.db.special_function:
-        if ("breath_any" or "cast_psionicist" or "cast_undead" or "breath_gas" or "cast_mage") in mobile.db.special_function:
+        if ("breath_any" or "cast_psionicist" or "cast_undead" or
+                "breath_gas" or "cast_mage") in mobile.db.special_function:
             experience *= 1.33
 
-        elif ("breath_fire" or "breath_frost" or "breath_acid" or "breath_lightning" or "cast_cleric" or "cast_judge" or "cast_ghost") in mobile.db.special_function:
+        elif ("breath_fire" or "breath_frost" or "breath_acid" or
+                "breath_lightning" or "cast_cleric" or "cast_judge" or
+                "cast_ghost") in mobile.db.special_function:
             experience *= 1.2
 
         elif ("poison" or "thief") in mobile.db.special_function:
             experience *= 1.05
-            
+
         elif "cast_adept" in mobile.db.special_function:
             experience *= 0.5
-    
+
     # Finally, randomize slightly, and check for a floor of 50.
     experience = int(random.uniform(0.9, 1.1) * experience)
     if experience < 50:
         experience = 50
-    
+
     return experience
+
 
 def gain_hitpoints(character):
     """
@@ -103,11 +111,11 @@ def gain_hitpoints(character):
         # you get a bonus to gain. If you are starving and parched, you
         # get no benefit. Sliding scale between.
 
-        # hunger_modifier = character.db.hunger/20
-        # thirst_modifier = character.db.thirst/20
-        # total_food_modifier = 1 + hunger_modifier + thirst_modifier
+        hunger_modifier = character.db.hunger/16000
+        thirst_modifier = character.db.thirst/16000
+        total_food_modifier = 1 + hunger_modifier + thirst_modifier
 
-        # hp_gain *= total_food_modifier
+        hp_gain *= total_food_modifier
 
         # Need to accommodate furniture, poisoning, and
         # enhanced healing in here once coded.
@@ -123,6 +131,7 @@ def gain_hitpoints(character):
         return character.db.hitpoints["damaged"]
     else:
         return hp_gain
+
 
 def gain_mana(character):
     """
@@ -149,21 +158,22 @@ def gain_mana(character):
         # you get a bonus to gain. If you are starving and parched, you
         # get no benefit. Sliding scale between.
 
-        # hunger_modifier = character.db.hunger/20
-        # thirst_modifier = character.db.thirst/20
-        # total_food_modifier = 1 + hunger_modifier + thirst_modifier
+        hunger_modifier = character.db.hunger/16000
+        thirst_modifier = character.db.thirst/16000
+        total_food_modifier = 1 + hunger_modifier + thirst_modifier
 
-        # mana_gain *= total_food_modifier
+        mana_gain *= total_food_modifier
 
         # If drunk, you get a further bonus
-        # if character.db.drunk > 0:
-        #     mana_gain *= 2
+        if character.db.drunk > 0:
+            mana_gain *= 2
 
         # Need to accommodate furniture, poisoning, and
         # enhanced healing in here once coded.
 
     if "mana modifier" in rules_race.get_race(character.race):
-        mana_gain += character.db.level * rules_race.get_race(character.race)["mana modifier"]
+        mana_gain += character.db.level * \
+            rules_race.get_race(character.race)["mana modifier"]
 
     mana_gain = int(mana_gain)
 
@@ -173,6 +183,7 @@ def gain_mana(character):
         return character.db.mana["spent"]
     else:
         return mana_gain
+
 
 def gain_moves(character):
     """
@@ -199,21 +210,18 @@ def gain_moves(character):
         # you get a bonus to gain. If you are starving and parched, you
         # get no benefit. Sliding scale between.
 
-        # hunger_modifier = character.db.hunger/20
-        # thirst_modifier = character.db.thirst/20
-        # total_food_modifier = 1 + hunger_modifier + thirst_modifier
+        hunger_modifier = character.db.hunger/16000
+        thirst_modifier = character.db.thirst/16000
+        total_food_modifier = 1 + hunger_modifier + thirst_modifier
 
-        # mana_gain *= total_food_modifier
-
-        # If drunk, you get a further bonus
-        # if character.db.drunk > 0:
-        #     mana_gain *= 2
+        moves_gain *= total_food_modifier
 
         # Need to accommodate furniture, poisoning, and
         # enhanced healing in here once coded.
 
     if "moves modifier" in rules_race.get_race(character.race):
-        moves_gain += character.db.level * rules_race.get_race(character.race)["moves modifier"]
+        moves_gain += character.db.level * \
+            rules_race.get_race(character.race)["moves modifier"]
 
     moves_gain = int(moves_gain)
     character.location.msg_contents("End moves_gain")
@@ -222,6 +230,7 @@ def gain_moves(character):
         return character.db.moves["spent"]
     else:
         return moves_gain
+
 
 def gain_experience(mobile, hp_gain):
     """
@@ -233,10 +242,10 @@ def gain_experience(mobile, hp_gain):
     mobile.location.msg_contents("In xp_gain")
 
     percent_hp_recovered = hp_gain / mobile.db.hitpoints["damaged"]
-    experience_awarded = math.ceil(mobile.db.experience_total - mobile.db.experience_current)
+    experience_awarded = math.ceil(mobile.db.experience_total -
+                                   mobile.db.experience_current)
 
     experience_gain = int(percent_hp_recovered * experience_awarded)
     mobile.location.msg_contents("End xp_gain")
 
     return experience_gain
-
