@@ -46,6 +46,7 @@ class Exit(DefaultExit):
         self.db.key = ""
         self.db.locks = []
         self.db.area_name = ""
+        self.tags.add("exit")
 
         # choices for this are open, closeable, locked, lockable, bashproof,
         # pickproof, passproof

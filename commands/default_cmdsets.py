@@ -29,6 +29,10 @@ from commands.command import CmdTag
 from commands.command import CmdSetHome
 from commands.command import CmdTalk
 from commands.command import CmdInspect
+from commands.command import CmdGet
+from commands.command import CmdSleep
+from commands.command import CmdRest
+from commands.command import CmdStand
 from commands.equipment_commands import CmdWear
 from commands.equipment_commands import CmdWield
 from commands.equipment_commands import CmdRemove
@@ -86,6 +90,10 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdTalk())
         self.add(CmdInspect())
         self.add(CmdAttack())
+        self.add(CmdGet())
+        self.add(CmdSleep())
+        self.add(CmdRest())
+        self.add(CmdStand())
 
 class AccountCmdSet(default_cmds.AccountCmdSet):
     """

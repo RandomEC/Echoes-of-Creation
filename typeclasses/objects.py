@@ -636,11 +636,13 @@ class Container(Item):
         self.db.extra_flags = []
         self.db.extra_descriptions = {}
         self.db.weight_maximum = 0
-        self.db.closable = False
-        self.db.lockable = False
-        self.db.locked = False
-        self.db.closed = False
+        self.db.state = ["open"]
+        self.db.state_base = ["open"]
         self.db.key = -1
+
+        # locks that go along with the above attributes
+        self.locks.add("put: is_open();open: can_open();close: can_close();lock: can_lock();unlock: can_unlock()")
+
 
 class Drink_Container(Item):
 

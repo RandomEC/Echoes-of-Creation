@@ -14,7 +14,7 @@
 import random
 from mygame.world import rules
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.txt", "rt") as myfile:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.txt", "rt") as myfile:
 
     class Object:
         def __init__(self):
@@ -1833,7 +1833,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.txt", "rt") as 
                     objects[onum].special_function\
                         = special_function_list[2][6:]
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as output:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as output:
 
     # Now we are going to build out the batch file by iterating through each
     # room.
@@ -2070,7 +2070,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as ou
             if room_set not in door_list:
 
                 output.write('openexit portal; %s, portal = R%s\n'
-                             % (door, aliases, opposite_door, object.value_3)
+                             % (aliases, object.value_3)
                              )
                 output.write("#\n")
                 output.write("tag %s = %s, category = area names\n"

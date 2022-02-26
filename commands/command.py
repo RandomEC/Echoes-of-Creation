@@ -76,6 +76,8 @@ class MuxCommand(Command):
     the command, so make sure to document consistently here.
     """
 
+    delimiter = "="
+    
     def has_perm(self, srcobj):
         """
         This is called by the cmdhandler to determine
@@ -169,8 +171,9 @@ class MuxCommand(Command):
         # check for arg1, arg2, ... = argA, argB, ... constructs
         lhs, rhs = args, None
         lhslist, rhslist = [arg.strip() for arg in args.split(',')], []
-        if args and '=' in args:
-            lhs, rhs = [arg.strip() for arg in args.split('=', 1)]
+        # if args and '=' in args:
+        if args and self.delimiter in args:
+            lhs, rhs = [arg.strip() for arg in args.split(self.delimiter, 1)]
             lhslist = [arg.strip() for arg in lhs.split(',')]
             rhslist = [arg.strip() for arg in rhs.split(',')]
 
@@ -588,20 +591,6 @@ class CmdLook(MuxCommand):
 
         # Check to see if the target is a character (or mobile), and if so
         # get and show their equipment.
-
-        if target.db.eq_slots:
-
-            equipment_table = target.get_equipment_table()
-
-            if target == caller:
-                name = "You are"
-            else:
-                name = ("%s is" % target.key)
-
-            caller.msg("%s wearing:\n" % name)
-
-            caller.msg(equipment_table)
-
 
 class CmdDrop(MuxCommand):
     """
@@ -1146,8 +1135,8 @@ class CmdPut(MuxCommand):
     """
 
     key = "put"
-    rhs_split = ("=")
-    locks = "cmd:perm(Builder) or (objattr(closed, False) and objattr(item_type, \"container\"))"
+    delimiter = " in "
+    locks = "cmd:all()"
     arg_regex = r"\s|$"
 
     def func(self):
@@ -1163,17 +1152,35 @@ class CmdPut(MuxCommand):
             nofound_string="You aren't carrying %s." % self.lhs,
             multimatch_string="You carry more than one %s:" % self.lhs,
         )
-        target = caller.search(self.rhs)
-        if not (to_put and target):
-            return
-        if target == caller:
-            caller.msg("You keep %s to yourself." % to_put.key)
-            return
-        if not to_put.location == caller:
-            caller.msg("You are not holding %s." % to_put.key)
+
+        # For ease of programming reasons, you cannot put a container in
+        # another container.
+        if to_put.db.item_type == "container":
+            caller.msg("You cannot put a container in another container.")
             return
 
-        # give object
+        target = caller.search(self.rhs, location=[caller, caller.location])
+
+        if not target:
+            caller.msg("There is no %s here to put %s in." % (self.rhs, to_put.key))
+
+        if not (to_put and target):
+            return
+        if "object" not in target.tags.all() or target.db.item_type != "container":
+            caller.msg("%s is not a container." % (target.key[0].upper() + target.key[1:]))
+            return
+
+        # Check to see if the locks for put are met, and give corrective
+        # output if not.
+        if not target.access(caller, "put"):
+            if "locked" in target.db.state:
+                caller.msg("%s is locked." % (target.key[0].upper() + target.key[1:]))
+            elif "open" not in target.db.state:
+                caller.msg("%s is closed." % (target.key[0].upper() + target.key[1:]))
+            return
+
+
+        # Put object in the container.
         success = to_put.move_to(target, quiet=True)
         if not success:
             caller.msg("This could not be put there.")
@@ -1472,6 +1479,7 @@ class CmdInspect(MuxCommand):
     """
 
     key = "inspect"
+    alias = "read"
     rhs_split = ("=")
     locks = "cmd:all()"
     arg_regex = r"\s|$"
@@ -1508,3 +1516,216 @@ class CmdInspect(MuxCommand):
                         return
                 caller.msg("You see nothing special about the %s on the %s." % (self.rhs, self.lhs))
                 return
+            
+class CmdGet(MuxCommand):
+    """
+    Pick up something, or get something from a container.
+    Usage:
+      get <object>
+      get <object> from <container>
+    Picks up an object from your location or a container and puts it in
+    your inventory.
+    """
+
+    key = "get"
+    delimiter = " from "
+    aliases = "grab"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """implements the command."""
+
+        caller = self.caller
+
+        if not self.args:
+            caller.msg("Get what?")
+            return
+
+        # Process getting from a container.
+        if self.rhs:
+            if not self.lhs:
+                caller.msg("Get what from %s?" % self.rhs)
+                return
+            container = caller.search(self.rhs, location=[caller, caller.location])
+            
+            if not container:
+                caller.msg("There is no %s here to get items from." % self.rhs)
+                return
+            if container.db.item_type != "container":
+                caller.msg("%s is not a container." % (container.key[0].upper() + container.key[1:]))
+                return
+            
+            if not container.access(caller, "put"):
+                if "open" not in container.db.state:
+                    caller.msg("You can neither see in nor access %s while it is closed."
+                               % container.key
+                               )
+                return
+            
+            obj = caller.search(self.lhs, location=container)
+            if not obj:
+                caller.msg("There is no %s in the %s." % (self.lhs, container.key))
+                return
+
+            if not obj.access(caller, "get"):
+                if obj.db.get_err_msg:
+                    caller.msg(obj.db.get_err_msg)
+                else:
+                    caller.msg("You can't get that.")
+                return
+
+            # calling at_before_get hook method
+            if not obj.at_before_get(caller):
+                return
+
+            success = obj.move_to(caller, quiet=True)
+            if not success:
+                caller.msg("%s can't be picked up." % (obj.key[0].upper() + obj.key[1:]))
+            else:
+                caller.msg("You get %s from %s." % (obj.name, container.key))
+                caller.location.msg_contents(
+                    "%s gets %s from %s." % (caller.name, obj.name, container.key), exclude=caller
+                )
+                # calling at_get hook method
+                obj.at_get(caller)
+        
+        # If just a regular get command.
+        else:
+            obj = caller.search(self.args, location=caller.location)
+            if not obj:
+                return
+            if caller == obj:
+                caller.msg("You can't get yourself.")
+                return
+            if not obj.access(caller, "get"):
+                if obj.db.get_err_msg:
+                    caller.msg(obj.db.get_err_msg)
+                else:
+                    caller.msg("You can't get that.")
+                return
+
+            # calling at_before_get hook method
+            if not obj.at_before_get(caller):
+                return
+
+            success = obj.move_to(caller, quiet=True)
+            if not success:
+                caller.msg("This can't be picked up.")
+            else:
+                caller.msg("You pick up %s." % obj.name)
+                caller.location.msg_contents(
+                    "%s picks up %s." % (caller.name, obj.name), exclude=caller
+                )
+                # calling at_get hook method
+                obj.at_get(caller)
+
+class CmdSleep(MuxCommand):
+    """
+    Cause your character to go to sleep.
+    
+    Usage:
+      sleep
+      
+    Causes your character to go to sleep. Sleeping causes an increase in
+    hit point, mana and move regeneration, but leaves you vulnerable to
+    attack.
+    """
+
+    key = "sleep"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """implements the command."""
+
+        caller = self.caller
+
+        if caller.db.position == "fighting":
+            caller.msg("You cannot sleep while you are fighting!")
+            return
+        elif caller.db.position == "sleeping":
+            caller.msg("You are sleeping as well as you can already.")
+            return
+        
+        if caller.db.position == "standing":
+            caller.msg("You find a comfortable spot, lay your head down, and drift off to sleep.")
+            caller.location.msg_contents("%s lays down and falls asleep." % (caller.name), exclude=caller)
+        else:
+            caller.msg("More tired than you thought, you lay your head down, and drift off to sleep.")
+            caller.location.msg_contents("%s lays down and falls asleep." % (caller.name), exclude=caller)
+
+        caller.db.position = "sleeping"
+
+class CmdRest(MuxCommand):
+    """
+    Cause your character to sit down and rest.
+    
+    Usage:
+      rest
+      
+    Causes your character to sit down and rest. Resting causes less of an
+    increase in hit point, mana and move regeneration than sleeping, with
+    the trade-off of no increased risk of damage.
+    """
+
+    key = "rest"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """implements the command."""
+
+        caller = self.caller
+
+        if caller.db.position == "fighting":
+            caller.msg("You cannot rest while you are fighting!")
+            return
+        if caller.db.position == "resting":
+            caller.msg("If you want to rest more, try sleeping.")
+            return
+        
+        if caller.db.position == "standing":
+            caller.msg("You sit down and rest your tired bones.")
+            caller.location.msg_contents("%s sits down and rests." % (caller.name), exclude=caller)
+        else:
+            caller.msg("You wake, sit up and rest.")
+            caller.location.msg_contents("%s awakens and sits up to rest." % (caller.name), exclude=caller)
+        caller.db.position = "resting"
+
+class CmdStand(MuxCommand):
+    """
+    Cause your character to stand up, and stop sleeping or resting.
+    
+    Usage:
+      rest
+      
+    Causes your character to stand up and stop sleeping or resting. Has no
+    effect on a character that is fighting.
+    """
+
+    key = "stand"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """implements the command."""
+
+        caller = self.caller
+
+        if caller.db.position == "fighting":
+            caller.msg("You are already standing and fighting!")
+            return
+        if caller.db.position == "standing":
+            caller.msg("You can't stand any more than you are already.")
+            return
+        
+        if caller.db.position == "sleeping":
+            caller.msg("You wake up and stand up, ready for more.")
+            caller.location.msg_contents("%s wakes up and stands up." % (caller.name), exclude=caller) 
+        elif caller.db.position == "resting":
+            caller.msg("You stop resting and stand up, ready for action.")
+            caller.location.msg_contents("%s stands up." % (caller.name), exclude=caller) 
+        caller.db.position = "standing"
+
+                                

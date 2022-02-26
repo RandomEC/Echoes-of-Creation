@@ -12,8 +12,10 @@ just overloads its hooks to have it perform its function.
 
 """
 
+import evennia
 from evennia import DefaultScript
 from evennia.utils import search
+from evennia import TICKER_HANDLER as tickerhandler
 
 class Script(DefaultScript):
     """
@@ -145,3 +147,16 @@ class ResetScript(DefaultScript):
 
 
 
+class UpdateTimerScript(DefaultScript):
+
+    # Start with scripts/start scripts.UpdateTimerScript
+
+    def at_script_creation(self):
+        self.key = "update_timer_script"
+        self.desc = "Adds update timers for Echoes Mobiles"
+        self.persistent = True
+
+        mobiles = evennia.search_tag("mobile")
+
+        for mobile in mobiles:
+            tickerhandler.add(30, mobile.at_update)
