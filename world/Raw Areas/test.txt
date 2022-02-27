@@ -1,0 +1,145 @@
+#AREA {   1  10 } Happiness - Dwarven Daycare~
+
+#MOBILES
+#6600
+youth dwarven dwarf~
+the dwarven youth~
+A young dwarf plays with a toy axe.
+~
+This is a young but not totally harmless child.  He has short cropped
+hair and dark brown eyes.  His mischievous nature comes out with the waving
+of his toy axe.  He feels that this is his domain and no one shall infringe
+upon it.  
+~
+69 0 -150 S
+5 17 6 1d4+30 1d4+3
+50 3
+0 Dwarf~ 1
+>fight_prog 50~
+if rand(50)
+ emote swings his axe wildly at you.
+else
+ emote attempts to kick you with his scrawny legs. 
+endif
+~
+#0
+
+#OBJECTS
+#6600
+axe toy~
+a toy axe~
+An axe made of plastic lies here.~
+~
+5
+0
+8193
+0~ 1~ 6~ 3~
+15 600 0
+E
+axe toy~
+This axe is made out of black colored plastic.  It prolly would not be a
+great weapon for fighting the larger creatures in the realms.
+~
+#6601
+ring pink ice~
+a pink ice ring~
+A pink ice ring draws your eye.~
+~
+9
+0
+3
+1~ 0~ 0~ 0~
+8 7000 0
+A
+1 1
+A
+13 1
+E
+ring ice pink~
+This ring holds some magic powers.  For as it feels as cold as ice when
+you put it on, it will never melt.  It is a light colored pink and shines a
+bit in the light.
+~
+#0
+
+
+
+#ROOMS
+#6601
+Daycare Foyer~
+A simple building from the outside, this room begins to show the depth
+that hides within.  This is where parents may drop off or pick up their
+children.  A small mat has been placed on the boarded ground to avoid foot
+tracks from the path outside.  Several windows line the northern wall. 
+Potted plants reside in each corner.  An easel stands just almost in the
+rooms center.  There is a sign above the doorway to the east and there is an
+exit to the south. 
+~
+0 12 0
+D2
+You see a large room full of noisy brats.
+~
+~
+1 -1 6602
+E
+sign~
+^YNanny's Office^x
+ 
+~
+E
+easel~
+^GWELCOME^x
+ 
+              ^Wto the
+          Dwarven Daycare^x
+ 
+ 
+           Revamp:  Keegan
+ 
+ 
+~
+S
+#6602
+Story Time~
+A compact room with soft colored walls is the gathering place for story
+times.  A sturdy rocker sits undisturbed in the center while a few bean bags
+have been tossed around it.  A cushioned bench sits directly in front of the
+rocker and a bookshelf, made of tree branches, overflowing with various
+children's books is behind.  The smell of food floats gently in the air from
+the east.  The wails of an angry child come from the west while laughter
+filters in from the south. 
+~
+0 8 0
+D0
+You see the drop off.
+~
+~
+0 -1 6601
+S
+#0
+
+#SPECIALS
+M 6600 spec_thief
+S
+
+
+#SHOPS
+0
+
+
+
+
+#RESETS
+M 0 6600 1 6602
+G 0 6600
+M 0 6600 1 6602
+G 0 6600
+E 0 6601 0 6
+M 0 6600 1 6602
+E 0 6601 0 6
+S
+
+
+
+
+#$

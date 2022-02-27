@@ -1,0 +1,292 @@
+dig/tel Story Time; r6602
+#
+tag r6602 = dwarven daycare, category = area names
+#
+desc r6602 = A compact room with soft colored walls is the gathering place for story times.  A sturdy rocker sits undisturbed in the center while a few bean bags have been tossed around it.  A cushioned bench sits directly in front of the rocker and a bookshelf, made of tree branches, overflowing with various children's books is behind.  The smell of food floats gently in the air from the east.  The wails of an angry child come from the west while laughter filters in from the south. 
+#
+desc/edit r6602
+#
+:j l
+#
+:wq
+#
+set r6602/terrain = "inside"
+#
+set r6602/room_flags = ['indoors']
+#
+dig/tel Daycare Foyer; r6601
+#
+tag r6601 = dwarven daycare, category = area names
+#
+desc r6601 = A simple building from the outside, this room begins to show the depth that hides within.  This is where parents may drop off or pick up their children.  A small mat has been placed on the boarded ground to avoid foot tracks from the path outside.  Several windows line the northern wall. Potted plants reside in each corner.  An easel stands just almost in the rooms center.  There is a sign above the doorway to the east and there is an exit to the south. 
+#
+desc/edit r6601
+#
+:j l
+#
+:wq
+#
+set r6601/terrain = "inside"
+#
+set r6601/extra_description = {'sign': "^YNanny's Office^x ", 'easel': '^GWELCOME^x ^Wto the Dwarven Daycare^x Revamp:  Keegan '}
+#
+set r6601/room_flags = ['indoors', 'no mob']
+#
+tel r6602
+#
+openexit north; n; e3600, south = r6601
+#
+tag e3600 = dwarven daycare, category = area names
+#
+set e3600/door_attributes = "open"
+#
+set e3600/reset_door_attributes = "open"
+#
+desc north = You see the drop off. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r6601
+#
+alias south = s, e3601
+#
+tag e3601 = dwarven daycare, category = area names
+#
+set e3601/door_attributes = "open"
+#
+set e3601/reset_door_attributes = "open"
+#
+desc south = You see a large room full of noisy brats. 
+#
+tel r6602
+#
+create/drop the dwarven youth;youth;dwarven;dwarf;m6600:characters.Mobile
+#
+desc m6600 = A young dwarf plays with a toy axe. 
+#
+set m6600/level = 5
+#
+set m6600/level_base = 5
+#
+set m6600/vnum = "m6600"
+#
+set m6600/look_description = "This is a young but not totally harmless child.  He has short cropped hair and dark brown eyes.  His mischievous nature comes out with the waving of his toy axe.  He feels that this is his domain and no one shall infringe upon it. "
+#
+set m6600/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m6600/alignment = -150
+#
+set m6600/sex = "male"
+#
+set m6600/race = "dwarf"
+#
+tag m6600 = dwarven daycare:area name
+#
+tag m6600 = mobile
+#
+set m6600/hitpoints[maximum] = 59
+#
+set m6600/position = "standing"
+#
+set m6600/special_function = "thief"
+#
+tel r6602
+#
+create a toy axe;axe;toy;o6600:objects.Weapon
+#
+sethome o6600 = 1-m6600
+#
+desc o6600 = An axe made of plastic lies here.
+#
+set o6600/level = 3
+#
+set o6600/level_base = 3
+#
+set o6600/vnum = "o6600"
+#
+set o6600/item_type = "weapon"
+#
+set o6600/wear_location = "wield"
+#
+set o6600/weight = 15
+#
+tag o6600 = dwarven daycare:area name
+#
+tag o6600 = object
+#
+set o6600/weapon_type = "slash"
+#
+set o6600/damage_low = 1
+#
+set o6600/damage_high = 8
+#
+give o6600 = 1-m6600
+#
+set 1-m6600/reset_objects["o6600"] = {"location":"inventory"}
+#
+tel r6602
+#
+create/drop the dwarven youth;youth;dwarven;dwarf;m6600:characters.Mobile
+#
+desc 2-m6600 = A young dwarf plays with a toy axe. 
+#
+set 2-m6600/level = 5
+#
+set 2-m6600/level_base = 5
+#
+set 2-m6600/vnum = "m6600"
+#
+set 2-m6600/look_description = "This is a young but not totally harmless child.  He has short cropped hair and dark brown eyes.  His mischievous nature comes out with the waving of his toy axe.  He feels that this is his domain and no one shall infringe upon it. "
+#
+set 2-m6600/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set 2-m6600/alignment = -150
+#
+set 2-m6600/sex = "male"
+#
+set 2-m6600/race = "dwarf"
+#
+tag 2-m6600 = dwarven daycare:area name
+#
+tag 2-m6600 = mobile
+#
+set 2-m6600/hitpoints[maximum] = 55
+#
+set 2-m6600/position = "standing"
+#
+set 2-m6600/special_function = "thief"
+#
+tel r6602
+#
+create a toy axe;axe;toy;o6600:objects.Weapon
+#
+sethome o6600 = 2-m6600
+#
+desc o6600 = An axe made of plastic lies here.
+#
+set o6600/level = 3
+#
+set o6600/level_base = 3
+#
+set o6600/vnum = "o6600"
+#
+set o6600/item_type = "weapon"
+#
+set o6600/wear_location = "wield"
+#
+set o6600/weight = 15
+#
+tag o6600 = dwarven daycare:area name
+#
+tag o6600 = object
+#
+set o6600/weapon_type = "slash"
+#
+set o6600/damage_low = 3
+#
+set o6600/damage_high = 6
+#
+give o6600 = 2-m6600
+#
+set 2-m6600/reset_objects["o6600"] = {"location":"inventory"}
+#
+tel r6602
+#
+create a pink ice ring;ring;pink;ice;o6601:objects.Armor
+#
+sethome o6601 = 2-m6600
+#
+desc o6601 = A pink ice ring draws your eye.
+#
+set o6601/level = 3
+#
+set o6601/level_base = 3
+#
+set o6601/vnum = "o6601"
+#
+set o6601/item_type = "armor"
+#
+set o6601/wear_location = "finger"
+#
+set o6601/weight = 8
+#
+tag o6601 = dwarven daycare:area name
+#
+tag o6601 = object
+#
+set o6601/extra_descriptions = {'ring ice pink': ' This ring holds some magic powers.  For as it feels as cold as ice when you put it on, it will never melt.  It is a light colored pink and shines a bit in the light. '}
+#
+set o6601/armor = 3
+#
+wearto o6601 = 2-m6600
+#
+set 2-m6600/reset_objects["o6601"] = {"location":"equipped"}
+#
+tel r6602
+#
+create/drop the dwarven youth;youth;dwarven;dwarf;m6600:characters.Mobile
+#
+desc 3-m6600 = A young dwarf plays with a toy axe. 
+#
+set 3-m6600/level = 5
+#
+set 3-m6600/level_base = 5
+#
+set 3-m6600/vnum = "m6600"
+#
+set 3-m6600/look_description = "This is a young but not totally harmless child.  He has short cropped hair and dark brown eyes.  His mischievous nature comes out with the waving of his toy axe.  He feels that this is his domain and no one shall infringe upon it. "
+#
+set 3-m6600/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set 3-m6600/alignment = -150
+#
+set 3-m6600/sex = "male"
+#
+set 3-m6600/race = "dwarf"
+#
+tag 3-m6600 = dwarven daycare:area name
+#
+tag 3-m6600 = mobile
+#
+set 3-m6600/hitpoints[maximum] = 53
+#
+set 3-m6600/position = "standing"
+#
+set 3-m6600/special_function = "thief"
+#
+tel r6602
+#
+create a pink ice ring;ring;pink;ice;o6601:objects.Armor
+#
+sethome o6601 = 3-m6600
+#
+desc o6601 = A pink ice ring draws your eye.
+#
+set o6601/level = 3
+#
+set o6601/level_base = 3
+#
+set o6601/vnum = "o6601"
+#
+set o6601/item_type = "armor"
+#
+set o6601/wear_location = "finger"
+#
+set o6601/weight = 8
+#
+tag o6601 = dwarven daycare:area name
+#
+tag o6601 = object
+#
+set o6601/extra_descriptions = {'ring ice pink': ' This ring holds some magic powers.  For as it feels as cold as ice when you put it on, it will never melt.  It is a light colored pink and shines a bit in the light. '}
+#
+set o6601/armor = 2
+#
+wearto o6601 = 3-m6600
+#
+set 3-m6600/reset_objects["o6601"] = {"location":"equipped"}
+#

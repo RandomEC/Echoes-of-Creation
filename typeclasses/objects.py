@@ -409,7 +409,7 @@ class Armor(Equipment):
         elif wear_location == "finger":
             if caller.db.eq_slots["finger, left"] and caller.db.eq_slots["finger, right"]:
                 wear_location = "finger, left"
-            elif not caller.db.eq_slots["finger.left"]:
+            elif not caller.db.eq_slots["finger, left"]:
                 wear_location = "finger, left"
             else:
                 wear_location = "finger, right"

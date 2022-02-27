@@ -14,7 +14,7 @@
 import random
 from mygame.world import rules
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.txt", "rt") as myfile:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/test.txt", "rt") as myfile:
 
     class Object:
         def __init__(self):
@@ -1833,7 +1833,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.txt", "rt") a
                     objects[onum].special_function\
                         = special_function_list[2][6:]
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as output:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/test.ev", "w") as output:
 
     # Now we are going to build out the batch file by iterating through each
     # room.
@@ -2003,6 +2003,13 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
 
     reset = 0
     reset_length = len(resets)
+    # The below list is going to be a list of dictionaries of form
+    # {"mob/object": "", "room": ""}, which we are going to append to
+    # anytime a mob or object just loads directly in a room (i.e. not
+    # in mobile inventory, equipped or in another object).
+    in_room_list = []
+    mobile_object_amount = 0
+
     for reset in range(0, reset_length):
 
         # 1. Get the reset data.
@@ -2012,11 +2019,19 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
         reset_type = resets[reset]["type"]
         reset_room = resets[reset]["room"]
 
+        # The below is the default for when we check if there are
+        # (in the case of objects resetting on mobiles or objects)
+        # multiples of the reset location in the room.
+        index_reset_location = reset_location
+
         # Get the data specific to certain types of resets.
         if resets[reset]["type"] != "door":
 
             # Both mobiles and objects have a vnum.
             reset_vnum = resets[reset]["vnum to reset"]
+
+            # Again, default for multiples in a room.
+            index_reset_vnum = reset_vnum
 
             # Use the vnum to get the actual object in memory that you are
             # placing and creating a reset for.
@@ -2095,8 +2110,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                 output.write("#\n")
         
         # Next, create the instance of the thing, unless it is a door, or a portal,
-        # which is just a door in hiding. We'll take the information
-        # for portals and make an exit later.
+        # which is just a door in hiding.
         elif reset_type == "mobile" or (
                                       reset_type != "door" and
                                       object.item_type != "portal"
@@ -2114,6 +2128,33 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                 output.write("create/drop %s;%s:characters.Mobile\n"
                              % (object.short_description, keyword_string))
                 output.write("#\n")
+
+                # Check whether there is already a mobile with this mnum
+                # in this room.
+
+                if in_room_list:
+                    for dictionary in in_room_list:
+                        # Check if there are previous entries matching this mobile and this room.
+                        if dictionary["mobile/object"] == reset_vnum and dictionary["room"] == reset_location:
+                            # If so, increment the count.
+                            mobile_object_amount += 1
+                    # If the count is greater than 0, we will need to add a number and a dash
+                    # before our vnum so the game refers to it correctly.
+                    if mobile_object_amount > 0:
+
+                        # Before we change the reset_vnum, add this instance to the in_room_list.
+                        in_room_list.append({"mobile/object": reset_vnum, "room": reset_location})
+                        print(in_room_list)
+
+                        # We will need to refer to this object as one more than the number we have found
+                        # already.
+                        index_reset_vnum = ("%d-%s" % ((mobile_object_amount +1), reset_vnum))
+                        # Reset the count.
+                        mobile_object_amount = 0
+                else:
+                    in_room_list.append({"mobile/object": reset_vnum, "room": reset_location})
+                    print(in_room_list)
+
             else:
                 output.write("create %s;%s:objects.%s\n"
                              % (
@@ -2123,16 +2164,58 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                                 )
                              )
                 output.write("#\n")
-                
+
+                if reset_type == "object, room":
+                    if in_room_list:
+                        for dictionary in in_room_list:
+                            # Check if there are previous entries matching this mobile and this room.
+                            if dictionary["mobile/object"] == reset_vnum and dictionary["room"] == reset_location:
+                                # If so, increment the count.
+                                mobile_object_amount += 1
+                        # If the count is greater than 0, we will need to add a number and a dash
+                        # before our vnum so the game refers to it correctly.
+                        if mobile_object_amount > 0:
+                            # Before we change the reset_vnum, add this instance to the in_room_list.
+                            in_room_list.append({"mobile/object": reset_vnum, "room": reset_location})
+                            # We will need to refer to this object as one more than the number we have found
+                            # already.
+                            index_reset_vnum = ("%d-%s" % ((mobile_object_amount +1), reset_vnum))
+                            # Reset the count.
+                            mobile_object_amount = 0
+                        else:
+                            index_reset_vnum = reset_vnum
+                    else:
+                        in_room_list.append({"mobile/object": reset_vnum, "room": reset_location})
+                        print(in_room_list)
+
+                # If it is not an in-room reset, we need to make sure that if there is more than
+                # one of the object or mobile that it resets onto, we get the most-recent one.
+                else:
+                    if in_room_list:
+                        for dictionary in in_room_list:
+                            # Check if there are previous entries matching the object or mobile
+                            # location in this room.
+                            if dictionary["mobile/object"] == reset_location and dictionary["room"] == reset_room:
+                                # If so, increment the count.
+                                mobile_object_amount += 1
+                        # If the count is greater than 0, we will need to add a number and a dash
+                        # before our vnum so the game refers to it correctly.
+                        if mobile_object_amount > 0:
+                            # We will need to refer to the location as the number we have found
+                            # already.
+                            index_reset_location = ("%d-%s" % (mobile_object_amount, reset_location))
+                            # Reset the count.
+                            mobile_object_amount = 0
+
                 output.write("sethome %s = %s\n" % (
-                                                    reset_vnum,
-                                                    reset_location
+                                                    index_reset_vnum,
+                                                    index_reset_location
                                                     ))
                 output.write("#\n")
 
             # Set the long description for the object/mobile.
             output.write("desc %s = %s\n" % (
-                                             reset_vnum,
+                                             index_reset_vnum,
                                              object.long_description
                                              ))
             output.write("#\n")
@@ -2156,20 +2239,20 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                 level = last_mobile_level
 
             # Use the level you got above to set level.
-            output.write("set %s/level = %d\n" % (reset_vnum, level))
+            output.write("set %s/level = %d\n" % (index_reset_vnum, level))
             output.write("#\n")
 
             # Objects and mobiles also get a base level so that some variation
             # can be put in their level when they are reset.
-            output.write("set %s/level_base = %d\n" % (reset_vnum, level))
+            output.write("set %s/level_base = %d\n" % (index_reset_vnum, level))
             output.write("#\n")
-            output.write("set %s/vnum = \"%s\"\n" % (reset_vnum, reset_vnum))
+            output.write("set %s/vnum = \"%s\"\n" % (index_reset_vnum, reset_vnum))
             output.write("#\n")
 
             # Not everything has a look description so check before setting.
             if object.look_description:
                 output.write("set %s/look_description = \"%s\"\n"
-                             % (reset_vnum, object.look_description)
+                             % (index_reset_vnum, object.look_description)
                              )
                 output.write("#\n")
 
@@ -2179,18 +2262,18 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                 last_mnum = reset_vnum
                 if object.act_flags:
                     output.write("set %s/act_flags = %s\n" % (
-                                                              reset_vnum,
+                                                              index_reset_vnum,
                                                               object.act_flags
                                                               ))
                     output.write("#\n")
 
                 output.write("set %s/alignment = %d\n" % (
-                                                          reset_vnum,
+                                                          index_reset_vnum,
                                                           object.alignment
                                                           ))
                 output.write("#\n")
                 output.write("set %s/sex = \"%s\"\n" % (
-                                                        reset_vnum,
+                                                        index_reset_vnum,
                                                         object.sex
                                                         ))
                 output.write("#\n")
@@ -2206,22 +2289,22 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                     for affect in object.affected_flags:
                         affects_dictionary[affect] = ""
                     output.write("set %s/spell_affects = %s\n" % (
-                                                         reset_vnum,
+                                                         index_reset_vnum,
                                                          affects_dictionary
                                                          ))
                     output.write("#\n")
 
                 output.write("set %s/race = \"%s\"\n" % (
-                                                         reset_vnum,
+                                                         index_reset_vnum,
                                                          object.race.lower()
                                                          ))
                 output.write("#\n")
                 output.write("tag %s = %s:area name\n" % (
-                                                          reset_vnum,
+                                                          index_reset_vnum,
                                                           area_name.lower()
                                                           ))
                 output.write("#\n")
-                output.write("tag %s = mobile\n" % reset_vnum)
+                output.write("tag %s = mobile\n" % index_reset_vnum)
                 output.write("#\n")
 
                 # Setting hitpoints for mobiles is a factor of the mobile's
@@ -2232,11 +2315,11 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                                                      (level*level)
                                                      )
                 output.write("set %s/hitpoints[maximum] = %d\n" % (
-                                                                   reset_vnum,
+                                                                   index_reset_vnum,
                                                                    hitpoints
                                                                    ))
                 output.write("#\n")
-                output.write("set %s/position = \"standing\"\n" % reset_vnum)
+                output.write("set %s/position = \"standing\"\n" % index_reset_vnum)
                 output.write("#\n")
 
                 # Special functions and shopkeepers are both things not every
@@ -2244,12 +2327,12 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                 # things before setting it.
                 if mobiles[reset_vnum].special_function:
                     output.write("set %s/special_function = \"%s\"\n"
-                                 % (reset_vnum, object.special_function)
+                                 % (index_reset_vnum, object.special_function)
                                  )
                     output.write("#\n")
                 if mobiles[reset_vnum].shopkeeper:
                     output.write("set %s/shopkeeper = %s\n"
-                                 % (reset_vnum, object.shopkeeper)
+                                 % (index_reset_vnum, object.shopkeeper)
                                  )
                     output.write("#\n")
 
@@ -2259,36 +2342,36 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
 
                 if object.item_type:
                     output.write("set %s/item_type = \"%s\"\n"
-                                 % (reset_vnum, object.item_type)
+                                 % (index_reset_vnum, object.item_type)
                                  )
                     output.write("#\n")
                 if object.wear_location:
                     output.write("set %s/wear_location = \"%s\"\n"
-                                 % (reset_vnum, object.wear_location)
+                                 % (index_reset_vnum, object.wear_location)
                                  )
                     output.write("#\n")
 
                 # If can't be taken, set so can't be picked up except by Admin
                 if not object.can_take:
                     output.write("objectlock %s = \"get:perm(Admin)\"\n"
-                                 % reset_vnum
+                                 % index_reset_vnum
                                  )
                     output.write("#\n")
                 output.write("set %s/weight = %d\n" % (
-                                                       reset_vnum,
+                                                       index_reset_vnum,
                                                        object.weight
                                                        ))
                 output.write("#\n")
                 output.write("tag %s = %s:area name\n" % (
-                                                          reset_vnum,
+                                                          index_reset_vnum,
                                                           area_name.lower()
                                                           ))
                 output.write("#\n")
-                output.write("tag %s = object\n" % reset_vnum)
+                output.write("tag %s = object\n" % index_reset_vnum)
                 output.write("#\n")
                 if object.extra_description:
                     output.write("set %s/extra_descriptions = %s\n"
-                                 % (reset_vnum, object.extra_description)
+                                 % (index_reset_vnum, object.extra_description)
                                  )
                     output.write("#\n")
                 alignment_restriction = []
@@ -2300,7 +2383,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                     alignment_restriction.append("evil")
                 if alignment_restriction:
                     output.write("set %s/alignment_restriction = %s\n"
-                                 % (reset_vnum, alignment_restriction)
+                                 % (index_reset_vnum, alignment_restriction)
                                  )
                     output.write("#\n")
                 extra_flags = []
@@ -2309,20 +2392,20 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                         extra_flags.append(flag)
                 if extra_flags:
                     output.write("set %s/extra_flags = %s\n" % (
-                                                                reset_vnum,
+                                                                index_reset_vnum,
                                                                 extra_flags
                                                                 ))
                     output.write("#\n")
                 if object.special_function:
                     output.write("set %s/special_function = %s\n"
-                                 % (reset_vnum, object.special_function)
+                                 % (index_reset_vnum, object.special_function)
                                  )
                     output.write("#\n")
                 if object.apply:
                     for apply_type in object.apply:
                         output.write("set %s/stat_modifiers[%s] = %d\n"
                                      % (
-                                        reset_vnum,
+                                        index_reset_vnum,
                                         apply_type,
                                         object.apply[apply_type]
                                         )
@@ -2338,68 +2421,68 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                                             "potion"
                                             ):
                         output.write("set %s/spell_level = %d\n"
-                                     % (reset_vnum, value_0)
+                                     % (index_reset_vnum, value_0)
                                      )
                         output.write("#\n")
                         output.write("set %s/spell_level_base = %d\n"
-                                     % (reset_vnum, value_0))
+                                     % (index_reset_vnum, value_0))
                         output.write("#\n")
                     elif object.item_type == "furniture":
                         output.write("set %s/people_maximum = %d\n"
-                                     % (reset_vnum, value_0)
+                                     % (index_reset_vnum, value_0)
                                      )
                         output.write("#\n")
                     elif object.item_type == "container":
                         output.write("set %s/weight_maximum = %d\n"
-                                     % (reset_vnum, value_0)
+                                     % (index_reset_vnum, value_0)
                                      )
                         output.write("#\n")
                     elif object.item_type == "drink container\n":
                         output.write("set %s/capacity_maximum = %d\n"
-                                     % (reset_vnum, value_0)
+                                     % (index_reset_vnum, value_0)
                                      )
                         output.write("#\n")
                     elif object.item_type == "food":
                         output.write("set %s/hours_fed = %d\n" % (
-                                                                  reset_vnum,
+                                                                  index_reset_vnum,
                                                                   value_0
                                                                   ))
                         output.write("#\n")
                     elif object.item_type == "money":
                         output.write("set %s/value = %d\n" % (
-                                                              reset_vnum,
+                                                              index_reset_vnum,
                                                               value_0
                                                               ))
                         output.write("#\n")
                     elif object.item_type == "scuba":
                         output.write("set %s/charges = %d\n" % (
-                                                                reset_vnum,
+                                                                index_reset_vnum,
                                                                 value_0
                                                                 ))
                         output.write("#\n")
                 if object.value_1:
                     if object.item_type in ("scroll", "pill", "potion"):
                         output.write("set %s/spell_name_1 = \"%s\"\n" % (
-                                                            reset_vnum,
+                                                            index_reset_vnum,
                                                             object.value_1
                                                             ))
                         output.write("#\n")
                     elif object.item_type in ("wand", "staff"):
                         value_1 = int(object.value_1)
                         output.write("set %s/charges_maximum = %d\n" % (
-                                                               reset_vnum,
+                                                               index_reset_vnum,
                                                                value_1
                                                                ))
                         output.write("#\n")
                         output.write("set %s/charges_maximum_base = %d\n" % (
-                                                                    reset_vnum,
+                                                                    index_reset_vnum,
                                                                     value_1
                                                                     ))
                         output.write("#\n")
                     elif object.item_type == "furniture":
                         value_1 = int(object.value_1)
                         output.write("set %s/weight_maximum = %d\n"
-                                     % (reset_vnum, value_1)
+                                     % (index_reset_vnum, value_1)
                                      )
                         output.write("#\n")
                     elif object.item_type == "container":
@@ -2413,48 +2496,48 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                             value_1 -= 4
                         if value_1 >= 2:
                             output.write("objectlock %s = \"pick:false()\"\n"
-                                         % reset_vnum
+                                         % index_reset_vnum
                                          )
                             output.write("#\n")
                             value_1 -= 2
                         if value_1 >= 1:
                             container_state_list.append("closeable")
                         output.write("set %s/state = %s\n"
-                                     % (reset_vnum, container_state_list)
+                                     % (index_reset_vnum, container_state_list)
                                      )
                         output.write("#\n")
                         output.write("set %s/state_base = %s\n"
-                                     % (reset_vnum, container_state_list)
+                                     % (index_reset_vnum, container_state_list)
                                      )
                         output.write("#\n")
                     elif object.item_type == "drink container":
                         value_1 = int(object.value_1)
                         output.write("set %s/capacity_current = %d\n"
-                                     % (reset_vnum, value_1)
+                                     % (index_reset_vnum, value_1)
                                      )
                         output.write("#\n")
                     elif object.item_type == "scuba":
                         value_1 = int(object.value_1)
                         output.write("set %s/charge_maximum = %d\n"
-                                     % (reset_vnum, value_1)
+                                     % (index_reset_vnum, value_1)
                                      )
                         output.write("#\n")
                 if object.value_2:
                     if object.item_type in ("scroll", "pill", "potion"):
                         output.write("set %s/spell_name_2 = \"%s\"\n"
-                                     % (reset_vnum, object.value_2)
+                                     % (index_reset_vnum, object.value_2)
                                      )
                         output.write("#\n")
                     elif object.item_type in ("wand", "staff"):
                         value_2 = int(object.value_2)
                         output.write("set %s/charges_current = %d\n"
-                                     % (reset_vnum, value_2)
+                                     % (index_reset_vnum, value_2)
                                      )
                         output.write("#\n")
                     elif object.item_type == "light":
                         value_2 = int(object.value_2)
                         output.write("set %s/light_hours= %d\n"
-                                     % (reset_vnum, value_2)
+                                     % (index_reset_vnum, value_2)
                                      )
                         output.write("#\n")
                     elif object.item_type == "furniture":
@@ -2496,13 +2579,13 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                         if value_2 >= 1:
                             furniture_position_list.append("stand at")
                         output.write("set %s/use_positions = %s\n"
-                                     % (reset_vnum, furniture_position_list)
+                                     % (index_reset_vnum, furniture_position_list)
                                      )
                         output.write("#\n")
                     elif object.item_type == "container":
                         if int(object.value_2) > 0:
                             key = "o" + object.value_2
-                            output.write("set %s/key = \"%s\"\n" % (reset_vnum, key))
+                            output.write("set %s/key = \"%s\"\n" % (index_reset_vnum, key))
                             output.write("#\n")
                     elif object.item_type == "drink container":
                         drink = int(object.value_2)
@@ -2553,18 +2636,18 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                         elif drink == 22:
                             drink = "special hot chocolate"
                         output.write("set %s/liquid_type = \"%s\"\n"
-                                     % (reset_vnum, drink)
+                                     % (index_reset_vnum, drink)
                                      )
                         output.write("#\n")
                 if object.value_3:
                     if object.item_type in ("scroll", "pill", "potion"):
                         output.write("set %s/spell_name_3 = \"%s\"\n"
-                                     % (reset_vnum, object.value_3)
+                                     % (index_reset_vnum, object.value_3)
                                      )
                         output.write("#\n")
                     elif object.item_type in ("wand", "staff"):
                         output.write("set %s/spell_name = \"%s\"\n"
-                                     % (reset_vnum, object.value_3)
+                                     % (index_reset_vnum, object.value_3)
                                      )
                         output.write("#\n")
                     elif object.item_type == "weapon":
@@ -2598,53 +2681,55 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                         elif weapon_type == 13:
                             weapon_type = "chop"
                         output.write("set %s/weapon_type = \"%s\"\n"
-                                     % (reset_vnum, weapon_type)
+                                     % (index_reset_vnum, weapon_type)
                                      )
                         output.write("#\n")
                     elif object.item_type == "furniture":
                         heal_mana_gain = int(object.value_3)
                         output.write("set %s/heal_mana_gain = %d\n"
-                                     % (reset_vnum, heal_mana_gain)
+                                     % (index_reset_vnum, heal_mana_gain)
                                      )
                         output.write("#\n")
                     elif object.item_type in ("drink container", "food"):
                         poison = int(object.value_3)
                         output.write("set %s/poison = %d\n" % (
-                                                               reset_vnum,
+                                                               index_reset_vnum,
                                                                poison
                                                                ))
                         output.write("#\n")
                 if object.item_type == "armor":
                     armor = rules.set_armor(level)
-                    output.write("set %s/armor = %d\n" % (reset_vnum, armor))
+                    output.write("set %s/armor = %d\n" % (index_reset_vnum, armor))
                     output.write("#\n")
                 if object.item_type == "weapon":
                     damage_low, damage_high = rules.set_weapon_low_high(level)
                     output.write("set %s/damage_low = %d\n" % (
-                                                               reset_vnum,
+                                                               index_reset_vnum,
                                                                damage_low
                                                                ))
                     output.write("#\n")
                     output.write("set %s/damage_high = %d\n" % (
-                                                               reset_vnum,
+                                                               index_reset_vnum,
                                                                damage_high
                                                                ))
                     output.write("#\n")
 
-                # Check here where the object needs to be.
+                # Check here where the object needs to be. Shouldn't need to use
+                # index_reset_vnum here as each should be the only one in your
+                # inventory.
 
                 if reset_type == "object, equipped":
                     # Give the object to the mobile, set eq_slot on mobile equal to
                     # object, and set equipped equal to True on object.
                     if object.item_type == "armor" or object.item_type == "key" or object.item_type == "treasure":
-                        output.write("wearto %s = %s\n" % (reset_vnum, reset_location))
+                        output.write("wearto %s = %s\n" % (reset_vnum, index_reset_location))
                         output.write("#\n")
                     elif object.item_type == "weapon":
-                        output.write("wieldto %s = %s\n" % (reset_vnum, reset_location))
+                        output.write("wieldto %s = %s\n" % (reset_vnum, index_reset_location))
                         output.write("#\n")
                 elif reset_type == "object, in mobile inventory":
                     # Give the object to the mobile.
-                    output.write("give %s = %s\n" % (reset_vnum, reset_location))
+                    output.write("give %s = %s\n" % (reset_vnum, index_reset_location))
                     output.write("#\n")
                 elif reset_type == "object, room":
                     # Drop the object.
@@ -2652,7 +2737,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                     output.write("#\n")
                 elif reset_type == "object, in container":
                     # Put the object in the container.
-                    output.write("put %s = %s\n" % (reset_vnum, reset_location))
+                    output.write("put %s = %s\n" % (reset_vnum, index_reset_location))
                     output.write("#\n")
 
         # 3. Create the reset for the object/mobile that was just created. For
@@ -2682,14 +2767,14 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
         # Reset for objects in mobile inventory
         if reset_type == "object, in mobile inventory":
             output.write("set %s/reset_objects[\"%s\"] = {\"location\":\"inventory\"}\n"
-                         % (reset_location, reset_vnum)
+                         % (index_reset_location, reset_vnum)
                          )
             output.write("#\n")
 
         # Reset for objects equipped to mobiles
         elif reset_type == "object, equipped":
             output.write("set %s/reset_objects[\"%s\"] = {\"location\":\"equipped\"}\n"
-                         % (reset_location, reset_vnum)
+                         % (index_reset_location, reset_vnum)
                          )
             output.write("#\n")
 
@@ -2703,6 +2788,6 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
         # Reset for objects in a container in a room
         elif reset_type == "object, in container":
             output.write("set %s/reset_objects[\"%s\"] = {\"location\":\"%s\"}\n"
-                         % (reset_room, reset_vnum, reset_location)
+                         % (reset_room, reset_vnum, index_reset_location)
                          )
             output.write("#\n")
