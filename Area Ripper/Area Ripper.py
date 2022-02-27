@@ -14,7 +14,7 @@
 import random
 from mygame.world import rules
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/test.txt", "rt") as myfile:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.txt", "rt") as myfile:
 
     class Object:
         def __init__(self):
@@ -1833,7 +1833,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/test.txt", "rt") as my
                     objects[onum].special_function\
                         = special_function_list[2][6:]
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/test.ev", "w") as output:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as output:
 
     # Now we are going to build out the batch file by iterating through each
     # room.
@@ -2012,6 +2012,8 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/test.ev", "w") as outp
 
     for reset in range(0, reset_length):
 
+        print(in_room_list)
+
         # 1. Get the reset data.
 
         # First, the data that all resets have.
@@ -2151,6 +2153,8 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/test.ev", "w") as outp
                         index_reset_vnum = ("%d-%s" % ((mobile_object_amount +1), reset_vnum))
                         # Reset the count.
                         mobile_object_amount = 0
+                    else:
+                        in_room_list.append({"mobile/object": reset_vnum, "room": reset_location})
                 else:
                     in_room_list.append({"mobile/object": reset_vnum, "room": reset_location})
                     print(in_room_list)
@@ -2183,7 +2187,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/test.ev", "w") as outp
                             # Reset the count.
                             mobile_object_amount = 0
                         else:
-                            index_reset_vnum = reset_vnum
+                            in_room_list.append({"mobile/object": reset_vnum, "room": reset_location})
                     else:
                         in_room_list.append({"mobile/object": reset_vnum, "room": reset_location})
                         print(in_room_list)

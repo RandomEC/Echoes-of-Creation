@@ -3574,7 +3574,7 @@ tag m6000 = haon dor:area name
 #
 tag m6000 = mobile
 #
-set m6000/hitpoints[maximum] = 63
+set m6000/hitpoints[maximum] = 82
 #
 set m6000/position = "standing"
 #
@@ -3638,9 +3638,9 @@ set o6000/extra_descriptions = {'axe lumber': ' It is a heavy axe of the kind lu
 #
 set o6000/weapon_type = "slice"
 #
-set o6000/damage_low = 2
+set o6000/damage_low = 4
 #
-set o6000/damage_high = 12
+set o6000/damage_high = 9
 #
 wieldto o6000 = m6000
 #
@@ -3704,7 +3704,7 @@ tag o6002 = object
 #
 set o6002/extra_descriptions = {'boots': ' They are fashioned from rough leather that has been oiled frequently to make it stay waterproof.  They look worn but quite functional. '}
 #
-set o6002/armor = 2
+set o6002/armor = 4
 #
 wearto o6002 = m6000
 #
@@ -3950,7 +3950,7 @@ tag m6005 = haon dor:area name
 #
 tag m6005 = mobile
 #
-set m6005/hitpoints[maximum] = 56
+set m6005/hitpoints[maximum] = 61
 #
 set m6005/position = "standing"
 #
@@ -4012,7 +4012,7 @@ tag m6002 = haon dor:area name
 #
 tag m6002 = mobile
 #
-set m6002/hitpoints[maximum] = 148
+set m6002/hitpoints[maximum] = 93
 #
 set m6002/position = "standing"
 #
@@ -4044,7 +4044,7 @@ tag m6004 = haon dor:area name
 #
 tag m6004 = mobile
 #
-set m6004/hitpoints[maximum] = 8
+set m6004/hitpoints[maximum] = 9
 #
 set m6004/position = "standing"
 #
@@ -4108,7 +4108,7 @@ tag m6115 = haon dor:area name
 #
 tag m6115 = mobile
 #
-set m6115/hitpoints[maximum] = 52
+set m6115/hitpoints[maximum] = 61
 #
 set m6115/position = "standing"
 #
@@ -4142,7 +4142,7 @@ set o6114/extra_flags = ['magic']
 #
 set o6114/stat_modifiers[constitution] = 1
 #
-set o6114/armor = 3
+set o6114/armor = 2
 #
 wearto o6114 = m6115
 #
@@ -4240,7 +4240,7 @@ tag m6102 = haon dor:area name
 #
 tag m6102 = mobile
 #
-set m6102/hitpoints[maximum] = 8
+set m6102/hitpoints[maximum] = 9
 #
 set m6102/position = "standing"
 #
@@ -4328,7 +4328,7 @@ tag m6102 = haon dor:area name
 #
 tag m6102 = mobile
 #
-set m6102/hitpoints[maximum] = 9
+set m6102/hitpoints[maximum] = 8
 #
 set m6102/position = "standing"
 #
@@ -4358,7 +4358,7 @@ tag m6102 = haon dor:area name
 #
 tag m6102 = mobile
 #
-set m6102/hitpoints[maximum] = 9
+set m6102/hitpoints[maximum] = 8
 #
 set m6102/position = "standing"
 #
@@ -4420,7 +4420,7 @@ tag m6103 = haon dor:area name
 #
 tag m6103 = mobile
 #
-set m6103/hitpoints[maximum] = 61
+set m6103/hitpoints[maximum] = 53
 #
 set m6103/position = "standing"
 #
@@ -4450,7 +4450,7 @@ tag m6103 = haon dor:area name
 #
 tag m6103 = mobile
 #
-set m6103/hitpoints[maximum] = 56
+set m6103/hitpoints[maximum] = 78
 #
 set m6103/position = "standing"
 #
@@ -4540,7 +4540,7 @@ tag m6100 = haon dor:area name
 #
 tag m6100 = mobile
 #
-set m6100/hitpoints[maximum] = 8
+set m6100/hitpoints[maximum] = 9
 #
 set m6100/position = "standing"
 #
@@ -4570,7 +4570,7 @@ tag m6103 = haon dor:area name
 #
 tag m6103 = mobile
 #
-set m6103/hitpoints[maximum] = 69
+set m6103/hitpoints[maximum] = 53
 #
 set m6103/position = "standing"
 #
@@ -4600,7 +4600,7 @@ tag m6103 = haon dor:area name
 #
 tag m6103 = mobile
 #
-set m6103/hitpoints[maximum] = 57
+set m6103/hitpoints[maximum] = 81
 #
 set m6103/position = "standing"
 #
@@ -4696,9 +4696,9 @@ set o6104/stat_modifiers[hitroll] = -2
 #
 set o6104/weapon_type = "pound"
 #
-set o6104/damage_low = 4
+set o6104/damage_low = 3
 #
-set o6104/damage_high = 9
+set o6104/damage_high = 8
 #
 drop o6104
 #
@@ -4730,7 +4730,7 @@ tag m6101 = haon dor:area name
 #
 tag m6101 = mobile
 #
-set m6101/hitpoints[maximum] = 53
+set m6101/hitpoints[maximum] = 66
 #
 set m6101/position = "standing"
 #
@@ -4760,7 +4760,7 @@ tag m6101 = haon dor:area name
 #
 tag m6101 = mobile
 #
-set m6101/hitpoints[maximum] = 78
+set m6101/hitpoints[maximum] = 58
 #
 set m6101/position = "standing"
 #
@@ -4792,7 +4792,7 @@ tag m6112 = haon dor:area name
 #
 tag m6112 = mobile
 #
-set m6112/hitpoints[maximum] = 163
+set m6112/hitpoints[maximum] = 112
 #
 set m6112/position = "standing"
 #
@@ -4898,7 +4898,7 @@ tag o6111 = object
 #
 set o6111/extra_descriptions = {'shield large': ' It is made from hard wood that has been reinforced with heavy iron bands. '}
 #
-set o6111/armor = 5
+set o6111/armor = 4
 #
 give o6111 = m6112
 #
@@ -4944,7 +4944,7 @@ tag m6116 = haon dor:area name
 #
 tag m6116 = mobile
 #
-set m6116/hitpoints[maximum] = 83
+set m6116/hitpoints[maximum] = 86
 #
 set m6116/position = "standing"
 #
@@ -4984,7 +4984,7 @@ set o6155/weapon_type = "crush"
 #
 set o6155/damage_low = 4
 #
-set o6155/damage_high = 12
+set o6155/damage_high = 13
 #
 wieldto o6155 = m6116
 #

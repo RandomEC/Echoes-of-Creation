@@ -1502,7 +1502,7 @@ tag m3604 = #area { 5 10 } alfa graveyard:area name
 #
 tag m3604 = mobile
 #
-set m3604/hitpoints[maximum] = 62
+set m3604/hitpoints[maximum] = 64
 #
 set m3604/position = "standing"
 #
@@ -1542,7 +1542,7 @@ tag m3604 = #area { 5 10 } alfa graveyard:area name
 #
 tag m3604 = mobile
 #
-set m3604/hitpoints[maximum] = 41
+set m3604/hitpoints[maximum] = 56
 #
 set m3604/position = "standing"
 #
@@ -1630,7 +1630,7 @@ tag m3603 = #area { 5 10 } alfa graveyard:area name
 #
 tag m3603 = mobile
 #
-set m3603/hitpoints[maximum] = 61
+set m3603/hitpoints[maximum] = 54
 #
 set m3603/position = "standing"
 #
@@ -1676,7 +1676,7 @@ tag m3603 = #area { 5 10 } alfa graveyard:area name
 #
 tag m3603 = mobile
 #
-set m3603/hitpoints[maximum] = 62
+set m3603/hitpoints[maximum] = 59
 #
 set m3603/position = "standing"
 #
@@ -1712,9 +1712,9 @@ set o3613/stat_modifiers[hitroll] = 1
 #
 set o3613/weapon_type = "pierce"
 #
-set o3613/damage_low = 1
+set o3613/damage_low = 2
 #
-set o3613/damage_high = 7
+set o3613/damage_high = 8
 #
 wieldto o3613 = m3603
 #
@@ -1754,7 +1754,7 @@ tag m3604 = #area { 5 10 } alfa graveyard:area name
 #
 tag m3604 = mobile
 #
-set m3604/hitpoints[maximum] = 58
+set m3604/hitpoints[maximum] = 46
 #
 set m3604/position = "standing"
 #
@@ -1792,7 +1792,7 @@ tag m3600 = #area { 5 10 } alfa graveyard:area name
 #
 tag m3600 = mobile
 #
-set m3600/hitpoints[maximum] = 9
+set m3600/hitpoints[maximum] = 8
 #
 set m3600/position = "standing"
 #
@@ -1920,9 +1920,9 @@ set o3604/extra_descriptions = {'shovel': ' It is a large metal shovel with a so
 #
 set o3604/weapon_type = "pound"
 #
-set o3604/damage_low = 3
+set o3604/damage_low = 2
 #
-set o3604/damage_high = 8
+set o3604/damage_high = 7
 #
 drop o3604
 #
@@ -1956,9 +1956,9 @@ set o3605/extra_descriptions = {'rake': ' It is a large metal rake with a solid 
 #
 set o3605/weapon_type = "claw"
 #
-set o3605/damage_low = 4
+set o3605/damage_low = 3
 #
-set o3605/damage_high = 7
+set o3605/damage_high = 5
 #
 drop o3605
 #
@@ -2052,7 +2052,7 @@ tag m3602 = #area { 5 10 } alfa graveyard:area name
 #
 tag m3602 = mobile
 #
-set m3602/hitpoints[maximum] = 175
+set m3602/hitpoints[maximum] = 123
 #
 set m3602/position = "standing"
 #
@@ -2088,7 +2088,7 @@ set o3612/stat_modifiers[constitution] = 1
 #
 set o3612/stat_modifiers[hitpoints] = 8
 #
-set o3612/armor = 4
+set o3612/armor = 3
 #
 wearto o3612 = m3602
 #
@@ -2176,7 +2176,7 @@ tag m3605 = #area { 5 10 } alfa graveyard:area name
 #
 tag m3605 = mobile
 #
-set m3605/hitpoints[maximum] = 9
+set m3605/hitpoints[maximum] = 8
 #
 set m3605/position = "standing"
 #
@@ -2216,7 +2216,7 @@ tag m3603 = #area { 5 10 } alfa graveyard:area name
 #
 tag m3603 = mobile
 #
-set m3603/hitpoints[maximum] = 48
+set m3603/hitpoints[maximum] = 41
 #
 set m3603/position = "standing"
 #
@@ -2256,7 +2256,7 @@ tag m3604 = #area { 5 10 } alfa graveyard:area name
 #
 tag m3604 = mobile
 #
-set m3604/hitpoints[maximum] = 42
+set m3604/hitpoints[maximum] = 45
 #
 set m3604/position = "standing"
 #
@@ -2418,7 +2418,7 @@ tag m3601 = #area { 5 10 } alfa graveyard:area name
 #
 tag m3601 = mobile
 #
-set m3601/hitpoints[maximum] = 46
+set m3601/hitpoints[maximum] = 52
 #
 set m3601/position = "standing"
 #
@@ -2542,7 +2542,7 @@ tag m3603 = #area { 5 10 } alfa graveyard:area name
 #
 tag m3603 = mobile
 #
-set m3603/hitpoints[maximum] = 61
+set m3603/hitpoints[maximum] = 50
 #
 set m3603/position = "standing"
 #
