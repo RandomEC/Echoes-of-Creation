@@ -1850,11 +1850,9 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as
 
         room = index - 1
 
-        output.write("dig/tel Placeholdername; %s\n" % rooms[room].vnum)
+        output.write("dig/tel %s; %s\n" % (rooms[room].name, rooms[room].vnum))
         output.write("#\n")
-        output.write("name %s = %s\n" % (rooms[room].vnum, rooms[room].name))
-        output.write("#\n")
-        output.write("tag %s = %s, category = area names\n"
+        output.write("tag %s = %s:area names\n"
                      % (rooms[room].vnum, area_name.lower())
                      )
         output.write("#\n")
@@ -1939,7 +1937,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as
                     elif door == "down":
                         opposite_door = "up"
 
-                    output.write('openexit %s; %s, %s = r%s\n'
+                    output.write('openexit %s; %s^ %s = r%s\n'
                                  % (
                                     door,
                                     aliases,
@@ -1947,7 +1945,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as
                                     rooms[room].doors[door]["destination"]
                                     ))
                     output.write("#\n")
-                    output.write("tag %s = %s, category = area names\n"
+                    output.write("tag %s = %s:area names\n"
                                  % (vnum, area_name.lower()))
                     output.write("#\n")
                     # Set the door as open by default, may be modified by
@@ -1967,7 +1965,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as
                     aliases = "^ ".join(alias_list)
                     output.write("alias %s = %s\n" % (door, aliases))
                     output.write("#\n")
-                    output.write("tag %s = %s, category = area names\n"
+                    output.write("tag %s = %s:area names\n"
                                  % (vnum, area_name.lower()))
                     output.write("#\n")
                     # Set the door as open by default, may be modified by
@@ -2088,11 +2086,11 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as
 
             if room_set not in door_list:
 
-                output.write('openexit portal; %s, portal = R%s\n'
+                output.write('openexit portal; %s^ portal = R%s\n'
                              % (aliases, object.value_3)
                              )
                 output.write("#\n")
-                output.write("tag %s = %s, category = area names\n"
+                output.write("tag %s = %s:area names\n"
                              % (vnum, area_name.lower())
                              )
                 output.write("#\n")
@@ -2100,9 +2098,12 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as
 
             else:
 
+                aliases_list = aliases.split(";")
+                aliases = "^ ".join(alias_list)
+               
                 output.write("alias portal = %s\n" % (aliases))
                 output.write("#\n")
-                output.write("tag %s = %s, category = area names\n"
+                output.write("tag %s = %s:area names\n"
                              % (vnum, area_name.lower())
                              )
                 output.write("#\n")
@@ -2157,12 +2158,10 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as
                 else:
                     in_room_list.append({"mobile/object": reset_vnum, "room": reset_location})
 
-                output.write("create/drop Placeholdername;%s:characters.Mobile\n"
-                             % keyword_string)
+                output.write("create/drop %s;%s:characters.Mobile\n"
+                             % (object.short_description, keyword_string))
                 output.write("#\n")
-                output.write("name %s = %s\n" % (index_reset_vnum, object.short_description))
-                output.write("#\n")
-
+         
                 # Check whether there is already a mobile with this mnum
                 # in this room.
 
@@ -2220,16 +2219,14 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as
                         else:
                             mobile_object_amount = 0
 
-                output.write("create Placeholdername;%s:objects.%s\n"
-                             % (keyword_string,
+                output.write("create %s;%s:objects.%s\n"
+                             % (object.short_description,
+                                keyword_string,
                                 object.item_type.capitalize()
                                 )
                              )
                 output.write("#\n")
-                output.write("name %s = %s\n" % (index_reset_vnum, object.short_description))
-                output.write("#\n")
-
-
+         
                 output.write("sethome %s = %s\n" % (
                                                     index_reset_vnum,
                                                     index_reset_location
