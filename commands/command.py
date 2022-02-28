@@ -1728,4 +1728,119 @@ class CmdStand(MuxCommand):
             caller.location.msg_contents("%s stands up." % (caller.name), exclude=caller) 
         caller.db.position = "standing"
 
-                                
+class CmdSetObjAlias(MuxCommand):
+    """
+    Adding permanent aliases for object
+    Usage:
+      alias <obj> [= [alias[^alias^alias^...]]]
+      alias <obj> =
+      alias/category <obj> = [alias[^alias^...]:<category>
+    Switches:
+      category - requires ending input with :category, to store the
+        given aliases with the given category.
+    Assigns aliases to an object so it can be referenced by more
+    than one name. Assign empty to remove all aliases from object. If
+    assigning a category, all aliases given will be using this category.
+    Observe that this is not the same thing as personal aliases
+    created with the 'nick' command! Aliases set with alias are
+    changing the object in question, making those aliases usable
+    by everyone.
+    """
+
+    key = "alias"
+    aliases = "setobjalias"
+    switch_options = ("category",)
+    locks = "cmd:perm(setobjalias) or perm(Builder)"
+    help_category = "Building"
+
+    def func(self):
+        """Set the aliases."""
+
+        caller = self.caller
+
+        if not self.lhs:
+            string = "Usage: alias <obj> [= [alias[,alias ...]]]"
+            self.caller.msg(string)
+            return
+        objname = self.lhs
+
+        # Find the object to receive aliases
+        obj = caller.search(objname)
+        if not obj:
+            return
+        if self.rhs is None:
+            # no =, so we just list aliases on object.
+            aliases = obj.aliases.all(return_key_and_category=True)
+            if aliases:
+                caller.msg(
+                    "Aliases for %s: %s"
+                    % (
+                        obj.get_display_name(caller),
+                        ", ".join(
+                            "'%s'%s"
+                            % (alias, "" if category is None else "[category:'%s']" % category)
+                            for (alias, category) in aliases
+                        ),
+                    )
+                )
+            else:
+                caller.msg("No aliases exist for '%s'." % obj.get_display_name(caller))
+            return
+
+        if not (obj.access(caller, "control") or obj.access(caller, "edit")):
+            caller.msg("You don't have permission to do that.")
+            return
+
+        if not self.rhs:
+            # we have given an empty =, so delete aliases
+            old_aliases = obj.aliases.all()
+            if old_aliases:
+                caller.msg(
+                    "Cleared aliases from %s: %s"
+                    % (obj.get_display_name(caller), ", ".join(old_aliases))
+                )
+                obj.aliases.clear()
+            else:
+                caller.msg("No aliases to clear.")
+            return
+
+        category = None
+        if "category" in self.switches:
+            if ":" in self.rhs:
+                rhs, category = self.rhs.rsplit(":", 1)
+                category = category.strip()
+            else:
+                caller.msg(
+                    "If specifying the /category switch, the category must be given "
+                    "as :category at the end."
+                )
+        else:
+            rhs = self.rhs
+
+        # merge the old and new aliases (if any)
+        old_aliases = obj.aliases.get(category=category, return_list=True)
+        new_aliases = [alias.strip().lower() for alias in rhs.split(",") if alias.strip()]
+
+        # make the aliases only appear once
+        old_aliases.extend(new_aliases)
+        aliases = list(set(old_aliases))
+
+        # save back to object.
+        obj.aliases.add(aliases, category=category)
+
+        # we need to trigger this here, since this will force
+        # (default) Exits to rebuild their Exit commands with the new
+        # aliases
+        obj.at_cmdset_get(force_init=True)
+
+        # report all aliases on the object
+        caller.msg(
+            "Alias(es) for '%s' set to '%s'%s."
+            % (
+                obj.get_display_name(caller),
+                str(obj.aliases),
+                " (category: '%s')" % category if category else "",
+            )
+        )
+
+        
