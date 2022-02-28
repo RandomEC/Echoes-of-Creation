@@ -33,6 +33,7 @@ from commands.command import CmdGet
 from commands.command import CmdSleep
 from commands.command import CmdRest
 from commands.command import CmdStand
+from commands.command import CmdSetObjAlias
 from commands.equipment_commands import CmdWear
 from commands.equipment_commands import CmdWield
 from commands.equipment_commands import CmdRemove
@@ -94,6 +95,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdSleep())
         self.add(CmdRest())
         self.add(CmdStand())
+        self.add(CmdSetObjAlias())
 
 class AccountCmdSet(default_cmds.AccountCmdSet):
     """
