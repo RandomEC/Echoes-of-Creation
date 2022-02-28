@@ -644,7 +644,7 @@ class Container(Item):
         self.locks.add("put: is_open();open: can_open();close: can_close();lock: can_lock();unlock: can_unlock()")
 
 
-class Drink_Container(Item):
+class Drink_container(Item):
 
     """
 
@@ -800,6 +800,23 @@ class Boat(Item):
         super().at_object_creation()
         self.db.object_type = "item"
         self.db.item_type = "boat"
+        self.db.vnum = 0
+        self.db.level = 1
+        self.db.extra_flags = []
+        self.db.extra_descriptions = {}
+
+class Money(Item):
+
+    """
+
+    This is the class for money items.
+
+    """
+
+    def at_object_creation(self):
+        super().at_object_creation()
+        self.db.object_type = "item"
+        self.db.item_type = "money"
         self.db.vnum = 0
         self.db.level = 1
         self.db.extra_flags = []

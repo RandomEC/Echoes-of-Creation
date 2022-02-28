@@ -14,7 +14,7 @@
 import random
 from mygame.world import rules
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.txt", "rt") as myfile:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.txt", "rt") as myfile:
 
     class Object:
         def __init__(self):
@@ -1070,7 +1070,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.txt", "rt") as 
                     wear_flags_list.append("pride")
                 if wear_flags >= 16384:
                     wear_flags = wear_flags - 16384
-                    wear_flags_list.append("hold")
+                    wear_flags_list.append("held, in hands")
                 if wear_flags >= 8192:
                     wear_flags = wear_flags - 8192
                     wear_flags_list.append("wield")
@@ -1308,7 +1308,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.txt", "rt") as 
                 elif item_type == 15:
                     item_type = "container"
                 elif item_type == 17:
-                    item_type = "drink container"
+                    item_type = "drink_container"
                 elif item_type == 18:
                     item_type = "key"
                 elif item_type == 19:
@@ -1777,7 +1777,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.txt", "rt") as 
                     elif item_type == 15:
                         item_type = "container"
                     elif item_type == 17:
-                        item_type = "drink container"
+                        item_type = "drink_container"
                     elif item_type == 18:
                         item_type = "key"
                     elif item_type == 19:
@@ -1833,7 +1833,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.txt", "rt") as 
                     objects[onum].special_function\
                         = special_function_list[2][6:]
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as output:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as output:
 
     # Now we are going to build out the batch file by iterating through each
     # room.
@@ -1850,7 +1850,9 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as ou
 
         room = index - 1
 
-        output.write("dig/tel %s; %s\n" % (rooms[room].name, rooms[room].vnum))
+        output.write("dig/tel Placeholdername; %s\n" % rooms[room].vnum)
+        output.write("#\n")
+        output.write("name %s = %s\n" % (rooms[room].vnum, rooms[room].name))
         output.write("#\n")
         output.write("tag %s = %s, category = area names\n"
                      % (rooms[room].vnum, area_name.lower())
@@ -2127,48 +2129,50 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as ou
             # Generalize the mobile/object as "object".
             # Objects will be dropped or otherwise distributed later.
             if reset_type == "mobile":
-                output.write("create/drop %s;%s:characters.Mobile\n"
-                             % (object.short_description, keyword_string))
-                output.write("#\n")
 
-                # Check whether there is already a mobile with this mnum
-                # in this room.
-
+                # First, check to see if there are any other instances of this mobile in this room.
                 if in_room_list:
                     for dictionary in in_room_list:
                         # Check if there are previous entries matching this mobile and this room.
                         if dictionary["mobile/object"] == reset_vnum and dictionary["room"] == reset_location:
                             # If so, increment the count.
                             mobile_object_amount += 1
-                    # If the count is greater than 0, we will need to add a number and a dash
-                    # before our vnum so the game refers to it correctly.
+                    # If the count is greater than 0, we will need to add an alias with a dash and a number
+                    # after our vnum to the existing aliases so the game refers to it correctly.
                     if mobile_object_amount > 0:
 
                         # Before we change the reset_vnum, add this instance to the in_room_list.
                         in_room_list.append({"mobile/object": reset_vnum, "room": reset_location})
-                        print(in_room_list)
 
                         # We will need to refer to this object as one more than the number we have found
-                        # already.
-                        index_reset_vnum = ("%d-%s" % ((mobile_object_amount +1), reset_vnum))
+                        # already, and add that to the existing aliases, and change the index_reset_vnum
+                        # to that.
+
+                        index_reset_vnum = ("%s-%d" % (reset_vnum, (mobile_object_amount +1)))
+                        keyword_string += ("; " + index_reset_vnum)
                         # Reset the count.
                         mobile_object_amount = 0
                     else:
                         in_room_list.append({"mobile/object": reset_vnum, "room": reset_location})
                 else:
                     in_room_list.append({"mobile/object": reset_vnum, "room": reset_location})
-                    print(in_room_list)
 
-            else:
-                output.write("create %s;%s:objects.%s\n"
-                             % (
-                                object.short_description,
-                                keyword_string,
-                                object.item_type.capitalize()
-                                )
-                             )
+                output.write("create/drop Placeholdername;%s:characters.Mobile\n"
+                             % keyword_string)
+                output.write("#\n")
+                output.write("name %s = %s\n" % (index_reset_vnum, object.short_description))
                 output.write("#\n")
 
+                # Check whether there is already a mobile with this mnum
+                # in this room.
+
+
+            # Now, handle objects.
+            else:
+
+                # For objects that reset in the room's inventory, we need to
+                # check for multiples, as with mobiles, above, and make an appropriate
+                # additional alias, if so.
                 if reset_type == "object, room":
                     if in_room_list:
                         for dictionary in in_room_list:
@@ -2181,16 +2185,19 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as ou
                         if mobile_object_amount > 0:
                             # Before we change the reset_vnum, add this instance to the in_room_list.
                             in_room_list.append({"mobile/object": reset_vnum, "room": reset_location})
+
                             # We will need to refer to this object as one more than the number we have found
-                            # already.
-                            index_reset_vnum = ("%d-%s" % ((mobile_object_amount +1), reset_vnum))
+                            # already, and add that to the existing aliases, and change the index_reset_vnum
+                            # to that.
+
+                            index_reset_vnum = ("%s-%d" % (reset_vnum, (mobile_object_amount + 1)))
+                            keyword_string += ("; " + index_reset_vnum)
                             # Reset the count.
                             mobile_object_amount = 0
                         else:
                             in_room_list.append({"mobile/object": reset_vnum, "room": reset_location})
                     else:
                         in_room_list.append({"mobile/object": reset_vnum, "room": reset_location})
-                        print(in_room_list)
 
                 # If it is not an in-room reset, we need to make sure that if there is more than
                 # one of the object or mobile that it resets onto, we get the most-recent one.
@@ -2204,12 +2211,24 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as ou
                                 mobile_object_amount += 1
                         # If the count is greater than 0, we will need to add a number and a dash
                         # before our vnum so the game refers to it correctly.
-                        if mobile_object_amount > 0:
+                        if mobile_object_amount > 1:
                             # We will need to refer to the location as the number we have found
                             # already.
-                            index_reset_location = ("%d-%s" % (mobile_object_amount, reset_location))
+                            index_reset_location = ("%s-%d" % (reset_location, mobile_object_amount))
                             # Reset the count.
                             mobile_object_amount = 0
+                        else:
+                            mobile_object_amount = 0
+
+                output.write("create Placeholdername;%s:objects.%s\n"
+                             % (keyword_string,
+                                object.item_type.capitalize()
+                                )
+                             )
+                output.write("#\n")
+                output.write("name %s = %s\n" % (index_reset_vnum, object.short_description))
+                output.write("#\n")
+
 
                 output.write("sethome %s = %s\n" % (
                                                     index_reset_vnum,
@@ -2441,7 +2460,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as ou
                                      % (index_reset_vnum, value_0)
                                      )
                         output.write("#\n")
-                    elif object.item_type == "drink container\n":
+                    elif object.item_type == "drink_container\n":
                         output.write("set %s/capacity_maximum = %d\n"
                                      % (index_reset_vnum, value_0)
                                      )
@@ -2514,7 +2533,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as ou
                                      % (index_reset_vnum, container_state_list)
                                      )
                         output.write("#\n")
-                    elif object.item_type == "drink container":
+                    elif object.item_type == "drink_container":
                         value_1 = int(object.value_1)
                         output.write("set %s/capacity_current = %d\n"
                                      % (index_reset_vnum, value_1)
@@ -2591,7 +2610,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as ou
                             key = "o" + object.value_2
                             output.write("set %s/key = \"%s\"\n" % (index_reset_vnum, key))
                             output.write("#\n")
-                    elif object.item_type == "drink container":
+                    elif object.item_type == "drink_container":
                         drink = int(object.value_2)
                         if drink == 0:
                             drink = "water"
@@ -2694,7 +2713,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as ou
                                      % (index_reset_vnum, heal_mana_gain)
                                      )
                         output.write("#\n")
-                    elif object.item_type in ("drink container", "food"):
+                    elif object.item_type in ("drink_container", "food"):
                         poison = int(object.value_3)
                         output.write("set %s/poison = %d\n" % (
                                                                index_reset_vnum,
@@ -2725,11 +2744,11 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as ou
                 if reset_type == "object, equipped":
                     # Give the object to the mobile, set eq_slot on mobile equal to
                     # object, and set equipped equal to True on object.
-                    if object.item_type == "armor" or object.item_type == "key" or object.item_type == "treasure":
-                        output.write("wearto %s = %s\n" % (reset_vnum, index_reset_location))
-                        output.write("#\n")
-                    elif object.item_type == "weapon":
+                    if object.item_type == "weapon":
                         output.write("wieldto %s = %s\n" % (reset_vnum, index_reset_location))
+                        output.write("#\n")
+                    else:
+                        output.write("wearto %s = %s\n" % (reset_vnum, index_reset_location))
                         output.write("#\n")
                 elif reset_type == "object, in mobile inventory":
                     # Give the object to the mobile.
@@ -2741,7 +2760,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as ou
                     output.write("#\n")
                 elif reset_type == "object, in container":
                     # Put the object in the container.
-                    output.write("put %s = %s\n" % (reset_vnum, index_reset_location))
+                    output.write("put %s in %s\n" % (reset_vnum, index_reset_location))
                     output.write("#\n")
 
         # 3. Create the reset for the object/mobile that was just created. For

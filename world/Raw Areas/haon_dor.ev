@@ -1,4 +1,6 @@
-dig/tel The cultist temple.; r6155
+dig/tel Placeholdername; r6155
+#
+name r6155 = The cultist temple.
 #
 tag r6155 = haon dor, category = area names
 #
@@ -14,7 +16,9 @@ set r6155/terrain = "forest"
 #
 set r6155/room_flags = ['indoors', 'dark']
 #
-dig/tel The edge of the forest; r6000
+dig/tel Placeholdername; r6000
+#
+name r6000 = The edge of the forest
 #
 tag r6000 = haon dor, category = area names
 #
@@ -32,7 +36,9 @@ set r6000/extra_description = {'trail': 'The forest trail winds westwards throug
 #
 set r6000/room_flags = ['no mob']
 #
-dig/tel A trail through the light forest; r6001
+dig/tel Placeholdername; r6001
+#
+name r6001 = A trail through the light forest
 #
 tag r6001 = haon dor, category = area names
 #
@@ -48,7 +54,9 @@ set r6001/terrain = "forest"
 #
 set r6001/extra_description = {'trail': 'The forest trail winds east-west through the trees. ', 'tree trees': 'The trees here are quite young and fresh.  They seem to accommodate many kinds of birds, insects and other small animals. ', 'birds insects animals': 'Very cute little creatures, they seem to enjoy life. '}
 #
-dig/tel A trail through the light forest; r6002
+dig/tel Placeholdername; r6002
+#
+name r6002 = A trail through the light forest
 #
 tag r6002 = haon dor, category = area names
 #
@@ -64,7 +72,9 @@ set r6002/terrain = "forest"
 #
 set r6002/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'trail': 'The forest trail winds east-west through the trees. ', 'tree trees': 'The young, slender trees look beautiful, their fresh, green leaves moving lightly in the wind. '}
 #
-dig/tel A trail through the dense forest; r6003
+dig/tel Placeholdername; r6003
+#
+name r6003 = A trail through the dense forest
 #
 tag r6003 = haon dor, category = area names
 #
@@ -80,7 +90,9 @@ set r6003/terrain = "forest"
 #
 set r6003/extra_description = {'trail': 'The forest trail seems almost fragile compared to the massive trunks. ', 'tree trees': 'The dense crowns of the mature trees leave only a fraction of the sky to be seen through the leaves. '}
 #
-dig/tel A trail through the dense forest; r6004
+dig/tel Placeholdername; r6004
+#
+name r6004 = A trail through the dense forest
 #
 tag r6004 = haon dor, category = area names
 #
@@ -96,7 +108,9 @@ set r6004/terrain = "forest"
 #
 set r6004/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'trail': 'The forest trail seems almost fragile compared to the massive trunks. ', 'tree trees': 'The crowns of the old trees almost cut out all light. '}
 #
-dig/tel A small path in the dense forest; r6005
+dig/tel Placeholdername; r6005
+#
+name r6005 = A small path in the dense forest
 #
 tag r6005 = haon dor, category = area names
 #
@@ -112,7 +126,9 @@ set r6005/terrain = "forest"
 #
 set r6005/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The trees are mostly old beeches and oaks. '}
 #
-dig/tel A small path in the dense forest; r6006
+dig/tel Placeholdername; r6006
+#
+name r6006 = A small path in the dense forest
 #
 tag r6006 = haon dor, category = area names
 #
@@ -128,7 +144,9 @@ set r6006/terrain = "forest"
 #
 set r6006/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The trees are mostly old beeches and oaks. '}
 #
-dig/tel An intersection in the dense forest; r6007
+dig/tel Placeholdername; r6007
+#
+name r6007 = An intersection in the dense forest
 #
 tag r6007 = haon dor, category = area names
 #
@@ -144,7 +162,9 @@ set r6007/terrain = "forest"
 #
 set r6007/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The trees are mostly old beeches and oaks. '}
 #
-dig/tel The forest clearing; r6008
+dig/tel Placeholdername; r6008
+#
+name r6008 = The forest clearing
 #
 tag r6008 = haon dor, category = area names
 #
@@ -160,7 +180,9 @@ set r6008/terrain = "forest"
 #
 set r6008/extra_description = {'log logs': 'Even though the logs have been chopped to shorter pieces, they are quite heavy as they are fresh and still filled with sap. ', 'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'stake stakes': 'The stakes keep the logs from rolling down. ', 'stump stumps': 'There are more stumps than logs and some of the stumps are partly covered in moss. ', 'tree trees': 'The trees are mostly old beeches and oaks. '}
 #
-dig/tel Outside a small cabin in the forest; r6009
+dig/tel Placeholdername; r6009
+#
+name r6009 = Outside a small cabin in the forest
 #
 tag r6009 = haon dor, category = area names
 #
@@ -176,7 +198,9 @@ set r6009/terrain = "forest"
 #
 set r6009/extra_description = {'cabin logs': "It looks simple but comfortable and the slender trees make the whole place seem pretty idyllic.  It's a cabin built from logs.  Wooden logs, not system logs. ", 'path paths': "The path is probably used by the cabin's inhabitants. ", 'tree trees': 'The trees are fairly young, not much more than a hundred years or so. '}
 #
-dig/tel Inside the cabin; r6010
+dig/tel Placeholdername; r6010
+#
+name r6010 = Inside the cabin
 #
 tag r6010 = haon dor, category = area names
 #
@@ -194,7 +218,9 @@ set r6010/extra_description = {'bed': 'It is definitely not the most comfortable
 #
 set r6010/room_flags = ['indoors']
 #
-dig/tel A small path through the light forest; r6011
+dig/tel Placeholdername; r6011
+#
+name r6011 = A small path through the light forest
 #
 tag r6011 = haon dor, category = area names
 #
@@ -210,7 +236,9 @@ set r6011/terrain = "forest"
 #
 set r6011/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The trees are fairly young, not much more than a hundred years or so. '}
 #
-dig/tel An intersection in the dense forest; r6012
+dig/tel Placeholdername; r6012
+#
+name r6012 = An intersection in the dense forest
 #
 tag r6012 = haon dor, category = area names
 #
@@ -226,7 +254,9 @@ set r6012/terrain = "forest"
 #
 set r6012/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The trees are mostly old beeches and oaks. '}
 #
-dig/tel A small path in the dense forest; r6013
+dig/tel Placeholdername; r6013
+#
+name r6013 = A small path in the dense forest
 #
 tag r6013 = haon dor, category = area names
 #
@@ -242,7 +272,9 @@ set r6013/terrain = "forest"
 #
 set r6013/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The trees are mostly old beeches and oaks. '}
 #
-dig/tel An intersection in the dense forest; r6014
+dig/tel Placeholdername; r6014
+#
+name r6014 = An intersection in the dense forest
 #
 tag r6014 = haon dor, category = area names
 #
@@ -258,7 +290,9 @@ set r6014/terrain = "forest"
 #
 set r6014/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The crowns of the old trees leave the forest in an unreal twilight illumination. '}
 #
-dig/tel A small path in the dense forest; r6015
+dig/tel Placeholdername; r6015
+#
+name r6015 = A small path in the dense forest
 #
 tag r6015 = haon dor, category = area names
 #
@@ -274,7 +308,9 @@ set r6015/terrain = "forest"
 #
 set r6015/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The trees are mostly old beeches and oaks. '}
 #
-dig/tel A small path in the dense forest; r6016
+dig/tel Placeholdername; r6016
+#
+name r6016 = A small path in the dense forest
 #
 tag r6016 = haon dor, category = area names
 #
@@ -290,7 +326,9 @@ set r6016/terrain = "forest"
 #
 set r6016/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The trees are mostly old beeches and oaks. '}
 #
-dig/tel A small path in the dense forest; r6017
+dig/tel Placeholdername; r6017
+#
+name r6017 = A small path in the dense forest
 #
 tag r6017 = haon dor, category = area names
 #
@@ -306,7 +344,9 @@ set r6017/terrain = "forest"
 #
 set r6017/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The crowns of the old trees leave the forest in an unreal twilight illumination. '}
 #
-dig/tel An intersection in the light forest; r6018
+dig/tel Placeholdername; r6018
+#
+name r6018 = An intersection in the light forest
 #
 tag r6018 = haon dor, category = area names
 #
@@ -322,7 +362,9 @@ set r6018/terrain = "forest"
 #
 set r6018/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The tall trees are young and slender, not much more than a hundred years or so. '}
 #
-dig/tel A small path in the dense forest; r6019
+dig/tel Placeholdername; r6019
+#
+name r6019 = A small path in the dense forest
 #
 tag r6019 = haon dor, category = area names
 #
@@ -338,7 +380,9 @@ set r6019/terrain = "forest"
 #
 set r6019/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The crowns of the old trees leave the forest in an unreal twilight illumination. '}
 #
-dig/tel A small path in the dense forest; r6020
+dig/tel Placeholdername; r6020
+#
+name r6020 = A small path in the dense forest
 #
 tag r6020 = haon dor, category = area names
 #
@@ -354,7 +398,9 @@ set r6020/terrain = "forest"
 #
 set r6020/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The trees are mostly old beeches and oaks. '}
 #
-dig/tel A small path in the dense forest; r6021
+dig/tel Placeholdername; r6021
+#
+name r6021 = A small path in the dense forest
 #
 tag r6021 = haon dor, category = area names
 #
@@ -370,7 +416,9 @@ set r6021/terrain = "forest"
 #
 set r6021/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The crowns of the old trees leave the forest in an unreal twilight illumination. ', 'cave entrance': 'The irregular opening is eight feet wide and six feet tall.  An acrid smell emanates from within. '}
 #
-dig/tel Inside the cave; r6022
+dig/tel Placeholdername; r6022
+#
+name r6022 = Inside the cave
 #
 tag r6022 = haon dor, category = area names
 #
@@ -388,7 +436,9 @@ set r6022/extra_description = {'debris': 'It consists mostly of gnawed bones mix
 #
 set r6022/room_flags = ['indoors', 'dark']
 #
-dig/tel On a small, grassy field; r6023
+dig/tel Placeholdername; r6023
+#
+name r6023 = On a small, grassy field
 #
 tag r6023 = haon dor, category = area names
 #
@@ -404,11 +454,13 @@ set r6023/terrain = "field"
 #
 set r6023/extra_description = {'grass': 'The tall grass makes a nice hiding place for animals. ', 'path': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees thicket': 'The trees form a close thicket. '}
 #
-dig/tel A narrow trail through the deep, dark forest; r6100
+dig/tel Placeholdername; r6100
+#
+name r6100 = A narrow trail through the deep, dark forest
 #
 tag r6100 = haon dor, category = area names
 #
-desc r6100 = You are on a narrow trail winding its way between the enormous, gray trunks. The crowns of the trees must be very dense, as they leave the forest floor in utter darkness.  The trail leads east and west. 
+desc r6100 = You are on a narrow trail winding its way between the enormous, grey trunks. The crowns of the trees must be very dense, as they leave the forest floor in utter darkness.  The trail leads east and west. 
 #
 desc/edit r6100
 #
@@ -418,15 +470,17 @@ desc/edit r6100
 #
 set r6100/terrain = "forest"
 #
-set r6100/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant gray roots have broken up through its surface. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
+set r6100/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
 #
 set r6100/room_flags = ['indoors', 'dark']
 #
-dig/tel A narrow trail through the deep, dark forest; r6101
+dig/tel Placeholdername; r6101
+#
+name r6101 = A narrow trail through the deep, dark forest
 #
 tag r6101 = haon dor, category = area names
 #
-desc r6101 = You are on a dusty trail winding its way east-west between huge, ancient trees whose gray trunks remind you of ancient pillars in an enormous, deserted hall. To the south, a frail path leads away from the trail. 
+desc r6101 = You are on a dusty trail winding its way east-west between huge, ancient trees whose grey trunks remind you of ancient pillars in a enormous, deserted hall. To the south, a frail path leads away from the trail. 
 #
 desc/edit r6101
 #
@@ -436,11 +490,13 @@ desc/edit r6101
 #
 set r6101/terrain = "forest"
 #
-set r6101/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant gray roots have broken up through its surface. ', 'path': 'The path seems fragile and unsafe compared to the enormous trunks that loom around it. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
+set r6101/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'path': 'The path seems fragile and unsafe compared to the enormous trunks that loom around it. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
 #
 set r6101/room_flags = ['indoors', 'dark']
 #
-dig/tel A narrow trail through the deep, dark forest; r6102
+dig/tel Placeholdername; r6102
+#
+name r6102 = A narrow trail through the deep, dark forest
 #
 tag r6102 = haon dor, category = area names
 #
@@ -454,11 +510,13 @@ desc/edit r6102
 #
 set r6102/terrain = "forest"
 #
-set r6102/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant gray roots have broken up through its surface. ', 'path': 'The path seems fragile and unsafe compared to the enormous trunks that loom around it. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
+set r6102/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'path': 'The path seems fragile and unsafe compared to the enormous trunks that loom around it. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
 #
 set r6102/room_flags = ['indoors', 'dark']
 #
-dig/tel A narrow trail through the deep, dark forest; r6103
+dig/tel Placeholdername; r6103
+#
+name r6103 = A narrow trail through the deep, dark forest
 #
 tag r6103 = haon dor, category = area names
 #
@@ -472,11 +530,13 @@ desc/edit r6103
 #
 set r6103/terrain = "forest"
 #
-set r6103/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant gray roots have broken up through its surface. ', 'trees trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
+set r6103/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'trees trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
 #
 set r6103/room_flags = ['indoors', 'dark']
 #
-dig/tel A small path in the deep, dark forest; r6104
+dig/tel Placeholdername; r6104
+#
+name r6104 = A small path in the deep, dark forest
 #
 tag r6104 = haon dor, category = area names
 #
@@ -490,15 +550,17 @@ desc/edit r6104
 #
 set r6104/terrain = "forest"
 #
-set r6104/extra_description = {'tree trees trunk trunks': 'The ancient gray giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
+set r6104/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
 #
 set r6104/room_flags = ['indoors', 'dark']
 #
-dig/tel A small path in the deep, dark forest; r6105
+dig/tel Placeholdername; r6105
+#
+name r6105 = A small path in the deep, dark forest
 #
 tag r6105 = haon dor, category = area names
 #
-desc r6105 = You are on a narrow path leading through the deep, dark forest.  Ancient gray trees loom all around you.  The path continues north and west. 
+desc r6105 = You are on a narrow path leading through the deep, dark forest.  Ancient grey trees loom all around you.  The path continues north and west. 
 #
 desc/edit r6105
 #
@@ -508,15 +570,17 @@ desc/edit r6105
 #
 set r6105/terrain = "forest"
 #
-set r6105/extra_description = {'tree trees trunk trunks': 'The ancient gray giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
+set r6105/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
 #
 set r6105/room_flags = ['indoors', 'dark']
 #
-dig/tel A junction in the deep, dark forest; r6106
+dig/tel Placeholdername; r6106
+#
+name r6106 = A junction in the deep, dark forest
 #
 tag r6106 = haon dor, category = area names
 #
-desc r6106 = You are by a junction where three paths meet.  Ancient gray trees tower above you on all sides.  Paths lead east, south and west. 
+desc r6106 = You are by a junction where three paths meet.  Ancient grey trees tower above you on all sides.  Paths lead east, south and west. 
 #
 desc/edit r6106
 #
@@ -526,15 +590,17 @@ desc/edit r6106
 #
 set r6106/terrain = "forest"
 #
-set r6106/extra_description = {'tree trees trunk trunks': 'The ancient gray giants seem to observe you silently. ', 'path paths': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
+set r6106/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. ', 'path paths': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
 #
 set r6106/room_flags = ['indoors', 'dark']
 #
-dig/tel A small path in the deep, dark forest; r6107
+dig/tel Placeholdername; r6107
+#
+name r6107 = A small path in the deep, dark forest
 #
 tag r6107 = haon dor, category = area names
 #
-desc r6107 = You are on a narrow path leading through the deep, dark forest.  Ancient gray trees loom all around you.  The path continues north, east, and south. 
+desc r6107 = You are on a narrow path leading through the deep, dark forest.  Ancient grey trees loom all around you.  The path continues north, east, and south. 
 #
 desc/edit r6107
 #
@@ -544,11 +610,13 @@ desc/edit r6107
 #
 set r6107/terrain = "forest"
 #
-set r6107/extra_description = {'tree trees trunk trunks': 'The ancient gray giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
+set r6107/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
 #
 set r6107/room_flags = ['indoors', 'dark']
 #
-dig/tel A narrow trail through the deep, dark forest; r6108
+dig/tel Placeholdername; r6108
+#
+name r6108 = A narrow trail through the deep, dark forest
 #
 tag r6108 = haon dor, category = area names
 #
@@ -562,11 +630,13 @@ desc/edit r6108
 #
 set r6108/terrain = "forest"
 #
-set r6108/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant gray roots have broken up through its surface. ', 'path': 'The path seems fragile and unsafe compared to the enormous trunks that loom around it. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
+set r6108/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'path': 'The path seems fragile and unsafe compared to the enormous trunks that loom around it. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
 #
 set r6108/room_flags = ['indoors', 'dark']
 #
-dig/tel A narrow trail through the deep, dark forest; r6109
+dig/tel Placeholdername; r6109
+#
+name r6109 = A narrow trail through the deep, dark forest
 #
 tag r6109 = haon dor, category = area names
 #
@@ -580,11 +650,13 @@ desc/edit r6109
 #
 set r6109/terrain = "forest"
 #
-set r6109/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant gray roots have broken up through its surface. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
+set r6109/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
 #
 set r6109/room_flags = ['indoors', 'dark']
 #
-dig/tel A narrow trail through the deep, dark forest; r6110
+dig/tel Placeholdername; r6110
+#
+name r6110 = A narrow trail through the deep, dark forest
 #
 tag r6110 = haon dor, category = area names
 #
@@ -598,11 +670,13 @@ desc/edit r6110
 #
 set r6110/terrain = "forest"
 #
-set r6110/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant gray roots have broken up through its surface. ', 'path': 'The path seems fragile and unsafe compared to the enormous trunks that loom around it. ', 'tree trees trunk trunks': 'Some of the trunks to the west are covered in a thin, almost transparent substance.  It looks like small threads woven carefully together. '}
+set r6110/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'path': 'The path seems fragile and unsafe compared to the enormous trunks that loom around it. ', 'tree trees trunk trunks': 'Some of the trunks to the west are covered in a thin, almost transparent substance.  It looks like small threads woven carefully together. '}
 #
 set r6110/room_flags = ['indoors', 'dark']
 #
-dig/tel A narrow trail through the deep, dark forest; r6111
+dig/tel Placeholdername; r6111
+#
+name r6111 = A narrow trail through the deep, dark forest
 #
 tag r6111 = haon dor, category = area names
 #
@@ -616,11 +690,13 @@ desc/edit r6111
 #
 set r6111/terrain = "forest"
 #
-set r6111/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant gray roots have broken up through its surface. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
+set r6111/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
 #
 set r6111/room_flags = ['indoors', 'dark']
 #
-dig/tel A narrow trail through the deep, dark forest; r6112
+dig/tel Placeholdername; r6112
+#
+name r6112 = A narrow trail through the deep, dark forest
 #
 tag r6112 = haon dor, category = area names
 #
@@ -634,15 +710,17 @@ desc/edit r6112
 #
 set r6112/terrain = "forest"
 #
-set r6112/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant gray roots have broken up through its surface. ', 'path': 'The path seems fragile and unsafe compared to the enormous trunks that loom around it. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
+set r6112/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'path': 'The path seems fragile and unsafe compared to the enormous trunks that loom around it. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
 #
 set r6112/room_flags = ['indoors', 'dark']
 #
-dig/tel A small path in the deep, dark forest; r6113
+dig/tel Placeholdername; r6113
+#
+name r6113 = A small path in the deep, dark forest
 #
 tag r6113 = haon dor, category = area names
 #
-desc r6113 = You are on a narrow path leading through the deep, dark forest.  Ancient gray trees loom in all directions.  The path continues south and west. 
+desc r6113 = You are on a narrow path leading through the deep, dark forest.  Ancient grey trees loom in all directions.  The path continues south and west. 
 #
 desc/edit r6113
 #
@@ -652,15 +730,17 @@ desc/edit r6113
 #
 set r6113/terrain = "forest"
 #
-set r6113/extra_description = {'tree trees trunk trunks': 'The ancient gray giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
+set r6113/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
 #
 set r6113/room_flags = ['indoors', 'dark']
 #
-dig/tel A junction in the deep, dark forest; r6114
+dig/tel Placeholdername; r6114
+#
+name r6114 = A junction in the deep, dark forest
 #
 tag r6114 = haon dor, category = area names
 #
-desc r6114 = You are by a junction where three paths meet.  Ancient gray trees tower above you on all sides.  Paths lead north, east and west. 
+desc r6114 = You are by a junction where three paths meet.  Ancient grey trees tower above you on all sides.  Paths lead north, east and west. 
 #
 desc/edit r6114
 #
@@ -670,11 +750,13 @@ desc/edit r6114
 #
 set r6114/terrain = "forest"
 #
-set r6114/extra_description = {'tree trees trunk trunks': 'The ancient gray giants seem to observe you silently. ', 'path paths': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
+set r6114/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. ', 'path paths': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
 #
 set r6114/room_flags = ['indoors', 'dark']
 #
-dig/tel A small path in the deep, dark forest; r6115
+dig/tel Placeholdername; r6115
+#
+name r6115 = A small path in the deep, dark forest
 #
 tag r6115 = haon dor, category = area names
 #
@@ -688,15 +770,17 @@ desc/edit r6115
 #
 set r6115/terrain = "forest"
 #
-set r6115/extra_description = {'tree trees trunk trunks': 'The ancient gray giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
+set r6115/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
 #
 set r6115/room_flags = ['indoors', 'dark']
 #
-dig/tel A small path in the deep, dark forest; r6116
+dig/tel Placeholdername; r6116
+#
+name r6116 = A small path in the deep, dark forest
 #
 tag r6116 = haon dor, category = area names
 #
-desc r6116 = You are on a narrow path leading through the deep, dark forest.  Giant, gray trees loom ominously on all sides.  The path continues east and south. 
+desc r6116 = You are on a narrow path leading through the deep, dark forest.  Giant, grey trees loom ominously on all sides.  The path continues east and south. 
 #
 desc/edit r6116
 #
@@ -706,15 +790,17 @@ desc/edit r6116
 #
 set r6116/terrain = "forest"
 #
-set r6116/extra_description = {'tree trees trunk trunks': 'The ancient gray giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
+set r6116/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
 #
 set r6116/room_flags = ['indoors', 'dark']
 #
-dig/tel A junction in the deep, dark forest; r6117
+dig/tel Placeholdername; r6117
+#
+name r6117 = A junction in the deep, dark forest
 #
 tag r6117 = haon dor, category = area names
 #
-desc r6117 = You are by a junction where three paths meet.  Ancient, gray trees seem to observe you silently from all sides.  Paths lead north, east and west. 
+desc r6117 = You are by a junction where three paths meet.  Ancient, grey trees seem to observe you silently you from all sides.  Paths lead north, east and west. 
 #
 desc/edit r6117
 #
@@ -724,15 +810,17 @@ desc/edit r6117
 #
 set r6117/terrain = "forest"
 #
-set r6117/extra_description = {'tree trees trunk trunks': 'The ancient gray giants seem to observe you silently. ', 'path paths': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
+set r6117/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. ', 'path paths': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
 #
 set r6117/room_flags = ['indoors', 'dark']
 #
-dig/tel A small path in the deep, dark forest; r6118
+dig/tel Placeholdername; r6118
+#
+name r6118 = A small path in the deep, dark forest
 #
 tag r6118 = haon dor, category = area names
 #
-desc r6118 = You are on a narrow path leading through the deep, dark forest.  Ancient, gray trees loom everywhere.  The path continues south and west. 
+desc r6118 = You are on a narrow path leading through the deep, dark forest.  Ancient, grey trees loom everywhere.  The path continues south and west. 
 #
 desc/edit r6118
 #
@@ -742,11 +830,13 @@ desc/edit r6118
 #
 set r6118/terrain = "forest"
 #
-set r6118/extra_description = {'tree trees trunk trunks': 'The ancient gray giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
+set r6118/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
 #
 set r6118/room_flags = ['indoors', 'dark']
 #
-dig/tel A small path in the deep, dark forest; r6119
+dig/tel Placeholdername; r6119
+#
+name r6119 = A small path in the deep, dark forest
 #
 tag r6119 = haon dor, category = area names
 #
@@ -764,11 +854,13 @@ set r6119/extra_description = {'tree trees trunk trunks': 'You feel as if they a
 #
 set r6119/room_flags = ['indoors', 'dark']
 #
-dig/tel On the river bank in the deep, dark forest; r6120
+dig/tel Placeholdername; r6120
+#
+name r6120 = On the river bank in the deep, dark forest
 #
 tag r6120 = haon dor, category = area names
 #
-desc r6120 = You are on a narrow path leading through the deep, dark forest.  To the south a fast river is flowing westwards through the forest.  Ancient gray trees loom on both banks.  The path continues north and west. 
+desc r6120 = You are on a narrow path leading through the deep, dark forest.  To the south a fast river is flowing westwards through the forest.  Ancient grey trees loom on both banks.  The path continues north and west. 
 #
 desc/edit r6120
 #
@@ -782,7 +874,9 @@ set r6120/extra_description = {'river': 'The river flows fast and strong.  It is
 #
 set r6120/room_flags = ['indoors', 'dark']
 #
-dig/tel A dead end path on the river bank in the deep, dark forest; r6121
+dig/tel Placeholdername; r6121
+#
+name r6121 = A dead end path on the river bank in the deep, dark forest
 #
 tag r6121 = haon dor, category = area names
 #
@@ -800,11 +894,13 @@ set r6121/extra_description = {'river': 'The river flows fast and strong.  It is
 #
 set r6121/room_flags = ['indoors', 'dark']
 #
-dig/tel A small path in the deep, dark forest; r6122
+dig/tel Placeholdername; r6122
+#
+name r6122 = A small path in the deep, dark forest
 #
 tag r6122 = haon dor, category = area names
 #
-desc r6122 = You are on a narrow path leading through the deep, dark forest.  Giant, gray trees loom ominously all around.  The path continues east and south. 
+desc r6122 = You are on a narrow path leading through the deep, dark forest.  Giant, grey trees loom ominously all around.  The path continues east and south. 
 #
 desc/edit r6122
 #
@@ -814,15 +910,17 @@ desc/edit r6122
 #
 set r6122/terrain = "forest"
 #
-set r6122/extra_description = {'tree trees trunk trunks': 'The ancient gray giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
+set r6122/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
 #
 set r6122/room_flags = ['indoors', 'dark']
 #
-dig/tel A junction on the river bank in the deep, dark forest; r6123
+dig/tel Placeholdername; r6123
+#
+name r6123 = A junction on the river bank in the deep, dark forest
 #
 tag r6123 = haon dor, category = area names
 #
-desc r6123 = You are by a junction where three paths meet.  Ancient, gray trees seem to observe you silently from all around.  To the south a dark river flows from east to west through the forest.  Paths lead north, east and west. 
+desc r6123 = You are by a junction where three paths meet.  Ancient, grey trees seem to observe you silently you from all around.  To the south a dark river flows from east to west through the forest.  Paths lead north, east and west. 
 #
 desc/edit r6123
 #
@@ -836,7 +934,9 @@ set r6123/extra_description = {'river': 'The river flows fast and strong.  It is
 #
 set r6123/room_flags = ['indoors', 'dark']
 #
-dig/tel A dead end path in the deep, dark forest; r6124
+dig/tel Placeholdername; r6124
+#
+name r6124 = A dead end path in the deep, dark forest
 #
 tag r6124 = haon dor, category = area names
 #
@@ -854,11 +954,13 @@ set r6124/extra_description = {'river': 'The river flows fast and strong.  It is
 #
 set r6124/room_flags = ['indoors', 'dark']
 #
-dig/tel A small path on the river bank in the deep, dark forest; r6125
+dig/tel Placeholdername; r6125
+#
+name r6125 = A small path on the river bank in the deep, dark forest
 #
 tag r6125 = haon dor, category = area names
 #
-desc r6125 = You are on a narrow path leading through the deep, dark forest.  Ancient gray trees loom everywhere.  The path continues north and east. 
+desc r6125 = You are on a narrow path leading through the deep, dark forest.  Ancient grey trees loom everywhere.  The path continues north and east. 
 #
 desc/edit r6125
 #
@@ -872,7 +974,9 @@ set r6125/extra_description = {'river': 'The river flows fast and strong.  It is
 #
 set r6125/room_flags = ['indoors', 'dark']
 #
-dig/tel A narrow trail through the deep, dark forest; r6126
+dig/tel Placeholdername; r6126
+#
+name r6126 = A narrow trail through the deep, dark forest
 #
 tag r6126 = haon dor, category = area names
 #
@@ -886,11 +990,13 @@ desc/edit r6126
 #
 set r6126/terrain = "forest"
 #
-set r6126/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant gray roots have broken up through its surface. ', 'path': 'The path seems fragile and unsafe compared to the enormous trunks that loom around it. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
+set r6126/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'path': 'The path seems fragile and unsafe compared to the enormous trunks that loom around it. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
 #
 set r6126/room_flags = ['indoors', 'dark']
 #
-dig/tel A narrow trail through the deep, dark forest; r6127
+dig/tel Placeholdername; r6127
+#
+name r6127 = A narrow trail through the deep, dark forest
 #
 tag r6127 = haon dor, category = area names
 #
@@ -904,11 +1010,13 @@ desc/edit r6127
 #
 set r6127/terrain = "forest"
 #
-set r6127/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant gray roots have broken up through its surface. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
+set r6127/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
 #
 set r6127/room_flags = ['indoors', 'dark']
 #
-dig/tel A narrow trail through the deep, dark forest; r6128
+dig/tel Placeholdername; r6128
+#
+name r6128 = A narrow trail through the deep, dark forest
 #
 tag r6128 = haon dor, category = area names
 #
@@ -922,11 +1030,13 @@ desc/edit r6128
 #
 set r6128/terrain = "forest"
 #
-set r6128/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant gray roots have broken up through its surface. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
+set r6128/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
 #
 set r6128/room_flags = ['indoors', 'dark']
 #
-dig/tel A narrow trail through the deep, dark forest; r6129
+dig/tel Placeholdername; r6129
+#
+name r6129 = A narrow trail through the deep, dark forest
 #
 tag r6129 = haon dor, category = area names
 #
@@ -940,15 +1050,17 @@ desc/edit r6129
 #
 set r6129/terrain = "forest"
 #
-set r6129/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant gray roots have broken up through its surface. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
+set r6129/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
 #
 set r6129/room_flags = ['indoors', 'dark']
 #
-dig/tel A dusty trail in the deep, dark forest; r6135
+dig/tel Placeholdername; r6135
+#
+name r6135 = A dusty trail in the deep, dark forest
 #
 tag r6135 = haon dor, category = area names
 #
-desc r6135 = You are on a dusty trail leading through the deep, dark forest.  Ancient gray trees loom all around you.  The trail continues north and east. 
+desc r6135 = You are on a dusty trail leading through the deep, dark forest.  Ancient grey trees loom all around you.  The trail continues north and east. 
 #
 desc/edit r6135
 #
@@ -958,15 +1070,17 @@ desc/edit r6135
 #
 set r6135/terrain = "forest"
 #
-set r6135/extra_description = {'tree trees trunk trunks': 'The ancient gray giants seem to observe you silently. '}
+set r6135/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. '}
 #
 set r6135/room_flags = ['indoors', 'dark']
 #
-dig/tel A dusty trail in the deep, dark forest; r6136
+dig/tel Placeholdername; r6136
+#
+name r6136 = A dusty trail in the deep, dark forest
 #
 tag r6136 = haon dor, category = area names
 #
-desc r6136 = You are on a dusty trail leading through the deep, dark forest.  Ancient, gray trees loom everywhere.  The trail continues south and west.  A broad irregular path leads eastwards away from the trail. 
+desc r6136 = You are on a dusty trail leading through the deep, dark forest.  Ancient, grey trees loom everywhere.  The trail continues south and west.  A broad irregular path leads eastwards away from the trail. 
 #
 desc/edit r6136
 #
@@ -976,15 +1090,17 @@ desc/edit r6136
 #
 set r6136/terrain = "forest"
 #
-set r6136/extra_description = {'tree trees trunk trunks': 'To the east the ancient gray giants have many marks as if something with huge claws has been tearing at them in rage. ', 'path': 'The trees standing on the sides of the path have scratch marks on them. ', 'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant gray roots have broken up through its surface. '}
+set r6136/extra_description = {'tree trees trunk trunks': 'To the east the ancient grey giants have many marks as if something with huge claws has been tearing at them in rage. ', 'path': 'The trees standing on the sides of the path have scratch marks on them. ', 'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. '}
 #
 set r6136/room_flags = ['indoors', 'dark']
 #
-dig/tel At the end of the trail through the deep, dark forest; r6137
+dig/tel Placeholdername; r6137
+#
+name r6137 = At the end of the trail through the deep, dark forest
 #
 tag r6137 = haon dor, category = area names
 #
-desc r6137 = You are on a dusty trail leading through the deep, dark forest.  Ancient gray trees loom all around you. The trail comes to a desolate end here, the only exit back the way you came. 
+desc r6137 = You are on a dusty trail leading through the deep, dark forest.  Ancient grey trees loom all around you. The trail comes to a desolate end here, the only exit back the way you came. 
 #
 desc/edit r6137
 #
@@ -994,11 +1110,13 @@ desc/edit r6137
 #
 set r6137/terrain = "forest"
 #
-set r6137/extra_description = {'tree trees trunk trunks': 'The ancient gray giants seem to observe you silently. '}
+set r6137/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. '}
 #
 set r6137/room_flags = ['indoors', 'dark']
 #
-dig/tel Outside a cave in the deep, dark forest; r6142
+dig/tel Placeholdername; r6142
+#
+name r6142 = Outside a cave in the deep, dark forest
 #
 tag r6142 = haon dor, category = area names
 #
@@ -1012,11 +1130,13 @@ desc/edit r6142
 #
 set r6142/terrain = "forest"
 #
-set r6142/extra_description = {'tree trees': 'The ancient gray giants have many marks as if something with huge claws has been tearing at them in rage. ', 'cave opening': 'The disgusting smell of a large reptile emanates from the cave opening. '}
+set r6142/extra_description = {'tree trees': 'The ancient grey giants have many marks as if something with huge claws has been tearing at them in rage. ', 'cave opening': 'The disgusting smell of a large reptile emanates from the cave opening. '}
 #
 set r6142/room_flags = ['indoors', 'dark']
 #
-dig/tel The cave of the Green Dragon; r6143
+dig/tel Placeholdername; r6143
+#
+name r6143 = The cave of the Green Dragon
 #
 tag r6143 = haon dor, category = area names
 #
@@ -1034,11 +1154,13 @@ set r6143/extra_description = {'bone bones floor': 'Most of the bones on the flo
 #
 set r6143/room_flags = ['indoors', 'dark']
 #
-dig/tel A small path in the deep, dark forest; r6144
+dig/tel Placeholdername; r6144
+#
+name r6144 = A small path in the deep, dark forest
 #
 tag r6144 = haon dor, category = area names
 #
-desc r6144 = You are on a narrow path leading through the deep, dark forest.  Ancient, gray trees loom everywhere.  To the north, the forest looks dark, perhaps even sinister.  The path also continues to the south. 
+desc r6144 = You are on a narrow path leading through the deep, dark forest.  Ancient, grey trees loom everywhere.  To the north, the forest looks dark, perhaps even sinister.  The path also continues to the south. 
 #
 desc/edit r6144
 #
@@ -1048,11 +1170,13 @@ desc/edit r6144
 #
 set r6144/terrain = "forest"
 #
-set r6144/extra_description = {'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. ', 'trees trunks': 'The ancient gray giants seem to observe you silently. '}
+set r6144/extra_description = {'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. ', 'trees trunks': 'The ancient grey giants seem to observe you silently. '}
 #
 set r6144/room_flags = ['indoors', 'no mob', 'dark']
 #
-dig/tel The narrow trail.; r6150
+dig/tel Placeholdername; r6150
+#
+name r6150 = The narrow trail.
 #
 tag r6150 = haon dor, category = area names
 #
@@ -1068,11 +1192,13 @@ set r6150/terrain = "forest"
 #
 set r6150/room_flags = ['indoors', 'dark']
 #
-dig/tel The narrow trail.; r6151
+dig/tel Placeholdername; r6151
+#
+name r6151 = The narrow trail.
 #
 tag r6151 = haon dor, category = area names
 #
-desc r6151 = This area of the trail is also very peculiar.  You can see no signs of animal life whatsoever.  The structure of the surrounding trees forces the path to make a sharp turn to the east. 
+desc r6151 = This area of the trail is also very peculiar.  You can see no signs of animal life what so ever.  The structure of the surrounding trees forces the path to make a sharp turn to the east. 
 #
 desc/edit r6151
 #
@@ -1084,7 +1210,9 @@ set r6151/terrain = "forest"
 #
 set r6151/room_flags = ['indoors', 'dark']
 #
-dig/tel The circle of trees.; r6152
+dig/tel Placeholdername; r6152
+#
+name r6152 = The circle of trees.
 #
 tag r6152 = haon dor, category = area names
 #
@@ -1100,7 +1228,9 @@ set r6152/terrain = "forest"
 #
 set r6152/room_flags = ['indoors', 'dark']
 #
-dig/tel Inside the great tree.; r6153
+dig/tel Placeholdername; r6153
+#
+name r6153 = Inside the great tree.
 #
 tag r6153 = haon dor, category = area names
 #
@@ -1116,7 +1246,9 @@ set r6153/terrain = "forest"
 #
 set r6153/room_flags = ['indoors', 'dark']
 #
-dig/tel The underground hallway.; r6154
+dig/tel Placeholdername; r6154
+#
+name r6154 = The underground hallway.
 #
 tag r6154 = haon dor, category = area names
 #
@@ -1142,31 +1274,17 @@ set e3600/door_attributes = "open"
 #
 set e3600/reset_door_attributes = "open"
 #
-desc north = The hallway looks quite grand. 
+desc north = the hallway looks quite grand. 
 #
 tel r6000
 #
-openexit east; e; e3601, west = r8411
+openexit west; w; e3601, east = r6001
 #
 tag e3601 = haon dor, category = area names
 #
 set e3601/door_attributes = "open"
 #
 set e3601/reset_door_attributes = "open"
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-openexit west; w; e3602, east = r6001
-#
-tag e3602 = haon dor, category = area names
-#
-set e3602/door_attributes = "open"
-#
-set e3602/reset_door_attributes = "open"
 #
 desc west = You see the narrow forest trail winding westwards in between the trees. 
 #
@@ -1178,13 +1296,13 @@ objectlock west = "pass:false()"
 #
 tel r6001
 #
-alias east = e, e3603
+alias east = e, e3602
 #
-tag e3603 = haon dor, category = area names
+tag e3602 = haon dor, category = area names
 #
-set e3603/door_attributes = "open"
+set e3602/door_attributes = "open"
 #
-set e3603/reset_door_attributes = "open"
+set e3602/reset_door_attributes = "open"
 #
 desc east = The trail continues eastwards out of the forest. 
 #
@@ -1194,13 +1312,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; w; e3604, east = r6002
+openexit west; w; e3603, east = r6002
 #
-tag e3604 = haon dor, category = area names
+tag e3603 = haon dor, category = area names
 #
-set e3604/door_attributes = "open"
+set e3603/door_attributes = "open"
 #
-set e3604/reset_door_attributes = "open"
+set e3603/reset_door_attributes = "open"
 #
 desc west = You see the narrow forest trail winding westwards in between the trees. 
 #
@@ -1212,13 +1330,13 @@ objectlock west = "pass:false()"
 #
 tel r6002
 #
-alias east = e, e3605
+alias east = e, e3604
 #
-tag e3605 = haon dor, category = area names
+tag e3604 = haon dor, category = area names
 #
-set e3605/door_attributes = "open"
+set e3604/door_attributes = "open"
 #
-set e3605/reset_door_attributes = "open"
+set e3604/reset_door_attributes = "open"
 #
 desc east = The trail continues eastwards through the young trees. 
 #
@@ -1228,13 +1346,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3606, north = r6011
+openexit south; s; e3605, north = r6011
 #
-tag e3606 = haon dor, category = area names
+tag e3605 = haon dor, category = area names
 #
-set e3606/door_attributes = "open"
+set e3605/door_attributes = "open"
 #
-set e3606/reset_door_attributes = "open"
+set e3605/reset_door_attributes = "open"
 #
 desc south = The small path leads south through the young trees. 
 #
@@ -1244,13 +1362,13 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3607, east = r6003
+openexit west; w; e3606, east = r6003
 #
-tag e3607 = haon dor, category = area names
+tag e3606 = haon dor, category = area names
 #
-set e3607/door_attributes = "open"
+set e3606/door_attributes = "open"
 #
-set e3607/reset_door_attributes = "open"
+set e3606/reset_door_attributes = "open"
 #
 desc west = You see the narrow forest trail winding westwards into the dense forest. 
 #
@@ -1262,13 +1380,13 @@ objectlock west = "pass:false()"
 #
 tel r6003
 #
-alias east = e, e3608
+alias east = e, e3607
 #
-tag e3608 = haon dor, category = area names
+tag e3607 = haon dor, category = area names
 #
-set e3608/door_attributes = "open"
+set e3607/door_attributes = "open"
 #
-set e3608/reset_door_attributes = "open"
+set e3607/reset_door_attributes = "open"
 #
 desc east = The trail continues eastwards to the younger part of the forest. 
 #
@@ -1278,13 +1396,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; w; e3609, east = r6004
+openexit west; w; e3608, east = r6004
 #
-tag e3609 = haon dor, category = area names
+tag e3608 = haon dor, category = area names
 #
-set e3609/door_attributes = "open"
+set e3608/door_attributes = "open"
 #
-set e3609/reset_door_attributes = "open"
+set e3608/reset_door_attributes = "open"
 #
 desc west = You see the narrow trail winding westwards through the dense forest. 
 #
@@ -1296,13 +1414,13 @@ objectlock west = "pass:false()"
 #
 tel r6004
 #
-alias east = e, e3610
+alias east = e, e3609
 #
-tag e3610 = haon dor, category = area names
+tag e3609 = haon dor, category = area names
 #
-set e3610/door_attributes = "open"
+set e3609/door_attributes = "open"
 #
-set e3610/reset_door_attributes = "open"
+set e3609/reset_door_attributes = "open"
 #
 desc east = The trail continues eastwards through the dense forest. 
 #
@@ -1312,13 +1430,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3611, north = r6005
+openexit south; s; e3610, north = r6005
 #
-tag e3611 = haon dor, category = area names
+tag e3610 = haon dor, category = area names
 #
-set e3611/door_attributes = "open"
+set e3610/door_attributes = "open"
 #
-set e3611/reset_door_attributes = "open"
+set e3610/reset_door_attributes = "open"
 #
 desc south = The small path leads south through the trees. 
 #
@@ -1328,13 +1446,13 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3612, east = r6100
+openexit west; w; e3611, east = r6100
 #
-tag e3612 = haon dor, category = area names
+tag e3611 = haon dor, category = area names
 #
-set e3612/door_attributes = "open"
+set e3611/door_attributes = "open"
 #
-set e3612/reset_door_attributes = "open"
+set e3611/reset_door_attributes = "open"
 #
 desc west = The narrow trail almost seems to disappear between the enormous trunks. 
 #
@@ -1346,13 +1464,13 @@ objectlock west = "pass:false()"
 #
 tel r6005
 #
-alias north = n, e3613
+alias north = n, e3612
 #
-tag e3613 = haon dor, category = area names
+tag e3612 = haon dor, category = area names
 #
-set e3613/door_attributes = "open"
+set e3612/door_attributes = "open"
 #
-set e3613/reset_door_attributes = "open"
+set e3612/reset_door_attributes = "open"
 #
 desc north = The small path leads north through the trees. 
 #
@@ -1362,13 +1480,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit south; s; e3614, north = r6006
+openexit south; s; e3613, north = r6006
 #
-tag e3614 = haon dor, category = area names
+tag e3613 = haon dor, category = area names
 #
-set e3614/door_attributes = "open"
+set e3613/door_attributes = "open"
 #
-set e3614/reset_door_attributes = "open"
+set e3613/reset_door_attributes = "open"
 #
 desc south = The small path leads south through the trees. 
 #
@@ -1380,13 +1498,13 @@ objectlock south = "pass:false()"
 #
 tel r6006
 #
-alias north = n, e3615
+alias north = n, e3614
 #
-tag e3615 = haon dor, category = area names
+tag e3614 = haon dor, category = area names
 #
-set e3615/door_attributes = "open"
+set e3614/door_attributes = "open"
 #
-set e3615/reset_door_attributes = "open"
+set e3614/reset_door_attributes = "open"
 #
 desc north = The small path leads north through the trees. 
 #
@@ -1396,13 +1514,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3616, west = r6007
+openexit east; e; e3615, west = r6007
 #
-tag e3616 = haon dor, category = area names
+tag e3615 = haon dor, category = area names
 #
-set e3616/door_attributes = "open"
+set e3615/door_attributes = "open"
 #
-set e3616/reset_door_attributes = "open"
+set e3615/reset_door_attributes = "open"
 #
 desc east = The small path leads east through the trees. 
 #
@@ -1414,13 +1532,13 @@ objectlock east = "pass:false()"
 #
 tel r6007
 #
-openexit east; e; e3617, west = r6008
+openexit east; e; e3616, west = r6008
 #
-tag e3617 = haon dor, category = area names
+tag e3616 = haon dor, category = area names
 #
-set e3617/door_attributes = "open"
+set e3616/door_attributes = "open"
 #
-set e3617/reset_door_attributes = "open"
+set e3616/reset_door_attributes = "open"
 #
 desc east = You can barely make out a clearing to the east. 
 #
@@ -1430,13 +1548,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3618, north = r6012
+openexit south; s; e3617, north = r6012
 #
-tag e3618 = haon dor, category = area names
+tag e3617 = haon dor, category = area names
 #
-set e3618/door_attributes = "open"
+set e3617/door_attributes = "open"
 #
-set e3618/reset_door_attributes = "open"
+set e3617/reset_door_attributes = "open"
 #
 desc south = The small path leads south through the trees. 
 #
@@ -1446,13 +1564,13 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w, e3619
+alias west = w, e3618
 #
-tag e3619 = haon dor, category = area names
+tag e3618 = haon dor, category = area names
 #
-set e3619/door_attributes = "open"
+set e3618/door_attributes = "open"
 #
-set e3619/reset_door_attributes = "open"
+set e3618/reset_door_attributes = "open"
 #
 desc west = The small path leads west through the trees. 
 #
@@ -1464,13 +1582,13 @@ objectlock west = "pass:false()"
 #
 tel r6008
 #
-openexit north; n; e3620, south = r6011
+openexit north; n; e3619, south = r6011
 #
-tag e3620 = haon dor, category = area names
+tag e3619 = haon dor, category = area names
 #
-set e3620/door_attributes = "open"
+set e3619/door_attributes = "open"
 #
-set e3620/reset_door_attributes = "open"
+set e3619/reset_door_attributes = "open"
 #
 desc north = The small path leads north through the trees. 
 #
@@ -1480,13 +1598,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3621, west = r6009
+openexit east; e; e3620, west = r6009
 #
-tag e3621 = haon dor, category = area names
+tag e3620 = haon dor, category = area names
 #
-set e3621/door_attributes = "open"
+set e3620/door_attributes = "open"
 #
-set e3621/reset_door_attributes = "open"
+set e3620/reset_door_attributes = "open"
 #
 desc east = The small path leads east through the trees. 
 #
@@ -1496,13 +1614,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias west = w, e3622
+alias west = w, e3621
 #
-tag e3622 = haon dor, category = area names
+tag e3621 = haon dor, category = area names
 #
-set e3622/door_attributes = "open"
+set e3621/door_attributes = "open"
 #
-set e3622/reset_door_attributes = "open"
+set e3621/reset_door_attributes = "open"
 #
 desc west = The small path leads west through the trees. 
 #
@@ -1514,25 +1632,25 @@ objectlock west = "pass:false()"
 #
 tel r6009
 #
-openexit north; door; wooden; n; e3623, south = r6010
+openexit north; door; wooden; n; e3622, south = r6010
+#
+tag e3622 = haon dor, category = area names
+#
+set e3622/door_attributes = "open"
+#
+set e3622/reset_door_attributes = "open"
+#
+desc north = The wooden door is quite sturdy but does not appear to be equipped with a lock. 
+#
+objectlock north = "bash:false()"
+#
+openexit south; s; e3623, north = r6014
 #
 tag e3623 = haon dor, category = area names
 #
 set e3623/door_attributes = "open"
 #
 set e3623/reset_door_attributes = "open"
-#
-desc north = The wooden door is quite sturdy but does not appear to be equipped with a lock. 
-#
-objectlock north = "bash:false()"
-#
-openexit south; s; e3624, north = r6014
-#
-tag e3624 = haon dor, category = area names
-#
-set e3624/door_attributes = "open"
-#
-set e3624/reset_door_attributes = "open"
 #
 desc south = The small path leads south through the dense forest. 
 #
@@ -1542,13 +1660,13 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w, e3625
+alias west = w, e3624
 #
-tag e3625 = haon dor, category = area names
+tag e3624 = haon dor, category = area names
 #
-set e3625/door_attributes = "open"
+set e3624/door_attributes = "open"
 #
-set e3625/reset_door_attributes = "open"
+set e3624/reset_door_attributes = "open"
 #
 desc west = The small path leads west through the light forest. 
 #
@@ -1560,13 +1678,13 @@ objectlock west = "pass:false()"
 #
 tel r6010
 #
-alias south = door, wooden, s, e3626
+alias south = door, wooden, s, e3625
 #
-tag e3626 = haon dor, category = area names
+tag e3625 = haon dor, category = area names
 #
-set e3626/door_attributes = "open"
+set e3625/door_attributes = "open"
 #
-set e3626/reset_door_attributes = "open"
+set e3625/reset_door_attributes = "open"
 #
 desc south = The wooden door leads south. 
 #
@@ -1574,13 +1692,13 @@ objectlock south = "bash:false()"
 #
 tel r6011
 #
-alias north = n, e3627
+alias north = n, e3626
 #
-tag e3627 = haon dor, category = area names
+tag e3626 = haon dor, category = area names
 #
-set e3627/door_attributes = "open"
+set e3626/door_attributes = "open"
 #
-set e3627/reset_door_attributes = "open"
+set e3626/reset_door_attributes = "open"
 #
 desc north = The path leads north through the young trees. 
 #
@@ -1590,13 +1708,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias south = s, e3628
+alias south = s, e3627
 #
-tag e3628 = haon dor, category = area names
+tag e3627 = haon dor, category = area names
 #
-set e3628/door_attributes = "open"
+set e3627/door_attributes = "open"
 #
-set e3628/reset_door_attributes = "open"
+set e3627/reset_door_attributes = "open"
 #
 desc south = The path leads south through the young trees. 
 #
@@ -1608,13 +1726,13 @@ objectlock south = "pass:false()"
 #
 tel r6012
 #
-alias north = n, e3629
+alias north = n, e3628
 #
-tag e3629 = haon dor, category = area names
+tag e3628 = haon dor, category = area names
 #
-set e3629/door_attributes = "open"
+set e3628/door_attributes = "open"
 #
-set e3629/reset_door_attributes = "open"
+set e3628/reset_door_attributes = "open"
 #
 desc north = The small path leads north through the trees. 
 #
@@ -1624,13 +1742,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3630, west = r6013
+openexit east; e; e3629, west = r6013
 #
-tag e3630 = haon dor, category = area names
+tag e3629 = haon dor, category = area names
 #
-set e3630/door_attributes = "open"
+set e3629/door_attributes = "open"
 #
-set e3630/reset_door_attributes = "open"
+set e3629/reset_door_attributes = "open"
 #
 desc east = The small path leads east through the trees. 
 #
@@ -1640,13 +1758,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3631, north = r6021
+openexit south; s; e3630, north = r6021
 #
-tag e3631 = haon dor, category = area names
+tag e3630 = haon dor, category = area names
 #
-set e3631/door_attributes = "open"
+set e3630/door_attributes = "open"
 #
-set e3631/reset_door_attributes = "open"
+set e3630/reset_door_attributes = "open"
 #
 desc south = The small path leads south through the trees. 
 #
@@ -1658,13 +1776,13 @@ objectlock south = "pass:false()"
 #
 tel r6013
 #
-openexit east; e; e3632, west = r6014
+openexit east; e; e3631, west = r6014
 #
-tag e3632 = haon dor, category = area names
+tag e3631 = haon dor, category = area names
 #
-set e3632/door_attributes = "open"
+set e3631/door_attributes = "open"
 #
-set e3632/reset_door_attributes = "open"
+set e3631/reset_door_attributes = "open"
 #
 desc east = The small path leads east through the trees. 
 #
@@ -1674,13 +1792,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias west = w, e3633
+alias west = w, e3632
 #
-tag e3633 = haon dor, category = area names
+tag e3632 = haon dor, category = area names
 #
-set e3633/door_attributes = "open"
+set e3632/door_attributes = "open"
 #
-set e3633/reset_door_attributes = "open"
+set e3632/reset_door_attributes = "open"
 #
 desc west = The small path leads west through the trees. 
 #
@@ -1692,13 +1810,13 @@ objectlock west = "pass:false()"
 #
 tel r6014
 #
-alias north = n, e3634
+alias north = n, e3633
 #
-tag e3634 = haon dor, category = area names
+tag e3633 = haon dor, category = area names
 #
-set e3634/door_attributes = "open"
+set e3633/door_attributes = "open"
 #
-set e3634/reset_door_attributes = "open"
+set e3633/reset_door_attributes = "open"
 #
 desc north = The path leads north to a lighter part of the forest. 
 #
@@ -1708,13 +1826,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3635, west = r6015
+openexit east; e; e3634, west = r6015
 #
-tag e3635 = haon dor, category = area names
+tag e3634 = haon dor, category = area names
 #
-set e3635/door_attributes = "open"
+set e3634/door_attributes = "open"
 #
-set e3635/reset_door_attributes = "open"
+set e3634/reset_door_attributes = "open"
 #
 desc east = The small path leads east through the trees. 
 #
@@ -1724,13 +1842,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias west = w, e3636
+alias west = w, e3635
 #
-tag e3636 = haon dor, category = area names
+tag e3635 = haon dor, category = area names
 #
-set e3636/door_attributes = "open"
+set e3635/door_attributes = "open"
 #
-set e3636/reset_door_attributes = "open"
+set e3635/reset_door_attributes = "open"
 #
 desc west = The small path leads west through the trees. 
 #
@@ -1742,13 +1860,13 @@ objectlock west = "pass:false()"
 #
 tel r6015
 #
-openexit south; s; e3637, north = r6016
+openexit south; s; e3636, north = r6016
 #
-tag e3637 = haon dor, category = area names
+tag e3636 = haon dor, category = area names
 #
-set e3637/door_attributes = "open"
+set e3636/door_attributes = "open"
 #
-set e3637/reset_door_attributes = "open"
+set e3636/reset_door_attributes = "open"
 #
 desc south = The small path leads south through the trees. 
 #
@@ -1758,13 +1876,13 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w, e3638
+alias west = w, e3637
 #
-tag e3638 = haon dor, category = area names
+tag e3637 = haon dor, category = area names
 #
-set e3638/door_attributes = "open"
+set e3637/door_attributes = "open"
 #
-set e3638/reset_door_attributes = "open"
+set e3637/reset_door_attributes = "open"
 #
 desc west = The small path leads west through the trees. 
 #
@@ -1776,13 +1894,13 @@ objectlock west = "pass:false()"
 #
 tel r6016
 #
-alias north = n, e3639
+alias north = n, e3638
 #
-tag e3639 = haon dor, category = area names
+tag e3638 = haon dor, category = area names
 #
-set e3639/door_attributes = "open"
+set e3638/door_attributes = "open"
 #
-set e3639/reset_door_attributes = "open"
+set e3638/reset_door_attributes = "open"
 #
 desc north = The small path leads north through the trees. 
 #
@@ -1792,13 +1910,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit south; s; e3640, north = r6017
+openexit south; s; e3639, north = r6017
 #
-tag e3640 = haon dor, category = area names
+tag e3639 = haon dor, category = area names
 #
-set e3640/door_attributes = "open"
+set e3639/door_attributes = "open"
 #
-set e3640/reset_door_attributes = "open"
+set e3639/reset_door_attributes = "open"
 #
 desc south = The small path leads south through the trees. 
 #
@@ -1810,13 +1928,13 @@ objectlock south = "pass:false()"
 #
 tel r6017
 #
-alias north = n, e3641
+alias north = n, e3640
 #
-tag e3641 = haon dor, category = area names
+tag e3640 = haon dor, category = area names
 #
-set e3641/door_attributes = "open"
+set e3640/door_attributes = "open"
 #
-set e3641/reset_door_attributes = "open"
+set e3640/reset_door_attributes = "open"
 #
 desc north = The small path leads north through the trees. 
 #
@@ -1826,13 +1944,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit west; w; e3642, east = r6018
+openexit west; w; e3641, east = r6018
 #
-tag e3642 = haon dor, category = area names
+tag e3641 = haon dor, category = area names
 #
-set e3642/door_attributes = "open"
+set e3641/door_attributes = "open"
 #
-set e3642/reset_door_attributes = "open"
+set e3641/reset_door_attributes = "open"
 #
 desc west = The small path leads west through the trees to a lighter part of the forest. 
 #
@@ -1844,13 +1962,13 @@ objectlock west = "pass:false()"
 #
 tel r6018
 #
-openexit north; n; e3643, south = r6023
+openexit north; n; e3642, south = r6023
 #
-tag e3643 = haon dor, category = area names
+tag e3642 = haon dor, category = area names
 #
-set e3643/door_attributes = "open"
+set e3642/door_attributes = "open"
 #
-set e3643/reset_door_attributes = "open"
+set e3642/reset_door_attributes = "open"
 #
 desc north = The path leads north to a small, grassy field. 
 #
@@ -1860,13 +1978,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias east = e, e3644
+alias east = e, e3643
 #
-tag e3644 = haon dor, category = area names
+tag e3643 = haon dor, category = area names
 #
-set e3644/door_attributes = "open"
+set e3643/door_attributes = "open"
 #
-set e3644/reset_door_attributes = "open"
+set e3643/reset_door_attributes = "open"
 #
 desc east = The path leads east to a dense part of the forest. 
 #
@@ -1876,13 +1994,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; w; e3645, east = r6019
+openexit west; w; e3644, east = r6019
 #
-tag e3645 = haon dor, category = area names
+tag e3644 = haon dor, category = area names
 #
-set e3645/door_attributes = "open"
+set e3644/door_attributes = "open"
 #
-set e3645/reset_door_attributes = "open"
+set e3644/reset_door_attributes = "open"
 #
 desc west = The path leads west to a dense part of the forest. 
 #
@@ -1894,13 +2012,13 @@ objectlock west = "pass:false()"
 #
 tel r6019
 #
-openexit north; n; e3646, south = r6020
+openexit north; n; e3645, south = r6020
 #
-tag e3646 = haon dor, category = area names
+tag e3645 = haon dor, category = area names
 #
-set e3646/door_attributes = "open"
+set e3645/door_attributes = "open"
 #
-set e3646/reset_door_attributes = "open"
+set e3645/reset_door_attributes = "open"
 #
 desc north = The small path leads north through the trees. 
 #
@@ -1910,13 +2028,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias east = e, e3647
+alias east = e, e3646
 #
-tag e3647 = haon dor, category = area names
+tag e3646 = haon dor, category = area names
 #
-set e3647/door_attributes = "open"
+set e3646/door_attributes = "open"
 #
-set e3647/reset_door_attributes = "open"
+set e3646/reset_door_attributes = "open"
 #
 desc east = The small path leads east through the trees to a lighter part of the forest. 
 #
@@ -1928,13 +2046,13 @@ objectlock east = "pass:false()"
 #
 tel r6020
 #
-alias south = s, e3648
+alias south = s, e3647
 #
-tag e3648 = haon dor, category = area names
+tag e3647 = haon dor, category = area names
 #
-set e3648/door_attributes = "open"
+set e3647/door_attributes = "open"
 #
-set e3648/reset_door_attributes = "open"
+set e3647/reset_door_attributes = "open"
 #
 desc south = The small path leads south through the trees. 
 #
@@ -1944,13 +2062,13 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3649, east = r6021
+openexit west; w; e3648, east = r6021
 #
-tag e3649 = haon dor, category = area names
+tag e3648 = haon dor, category = area names
 #
-set e3649/door_attributes = "open"
+set e3648/door_attributes = "open"
 #
-set e3649/reset_door_attributes = "open"
+set e3648/reset_door_attributes = "open"
 #
 desc west = The small path leads west through the trees. 
 #
@@ -1962,13 +2080,13 @@ objectlock west = "pass:false()"
 #
 tel r6021
 #
-alias north = n, e3650
+alias north = n, e3649
 #
-tag e3650 = haon dor, category = area names
+tag e3649 = haon dor, category = area names
 #
-set e3650/door_attributes = "open"
+set e3649/door_attributes = "open"
 #
-set e3650/reset_door_attributes = "open"
+set e3649/reset_door_attributes = "open"
 #
 desc north = The small path leads north through the trees. 
 #
@@ -1978,13 +2096,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias east = e, e3651
+alias east = e, e3650
 #
-tag e3651 = haon dor, category = area names
+tag e3650 = haon dor, category = area names
 #
-set e3651/door_attributes = "open"
+set e3650/door_attributes = "open"
 #
-set e3651/reset_door_attributes = "open"
+set e3650/reset_door_attributes = "open"
 #
 desc east = The small path leads east through the trees. 
 #
@@ -1994,13 +2112,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; w; e3652, east = r6022
+openexit west; w; e3651, east = r6022
 #
-tag e3652 = haon dor, category = area names
+tag e3651 = haon dor, category = area names
 #
-set e3652/door_attributes = "open"
+set e3651/door_attributes = "open"
 #
-set e3652/reset_door_attributes = "open"
+set e3651/reset_door_attributes = "open"
 #
 desc west = The cave is very dark. 
 #
@@ -2012,13 +2130,13 @@ objectlock west = "pass:false()"
 #
 tel r6022
 #
-alias east = e, e3653
+alias east = e, e3652
 #
-tag e3653 = haon dor, category = area names
+tag e3652 = haon dor, category = area names
 #
-set e3653/door_attributes = "open"
+set e3652/door_attributes = "open"
 #
-set e3653/reset_door_attributes = "open"
+set e3652/reset_door_attributes = "open"
 #
 desc east = The cave opening is to the east. 
 #
@@ -2028,29 +2146,15 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit up; u; e3654, down = r33849
-#
-tag e3654 = haon dor, category = area names
-#
-set e3654/door_attributes = "open"
-#
-set e3654/reset_door_attributes = "open"
-#
-objectlock up = "pick:false()"
-#
-objectlock up = "bash:false()"
-#
-objectlock up = "pass:false()"
-#
 tel r6023
 #
-alias south = s, e3655
+alias south = s, e3653
 #
-tag e3655 = haon dor, category = area names
+tag e3653 = haon dor, category = area names
 #
-set e3655/door_attributes = "open"
+set e3653/door_attributes = "open"
 #
-set e3655/reset_door_attributes = "open"
+set e3653/reset_door_attributes = "open"
 #
 desc south = The small path leads south in between the trees. 
 #
@@ -2062,13 +2166,13 @@ objectlock south = "pass:false()"
 #
 tel r6100
 #
-alias east = e, e3656
+alias east = e, e3654
 #
-tag e3656 = haon dor, category = area names
+tag e3654 = haon dor, category = area names
 #
-set e3656/door_attributes = "open"
+set e3654/door_attributes = "open"
 #
-set e3656/reset_door_attributes = "open"
+set e3654/reset_door_attributes = "open"
 #
 desc east = The narrow trail leads east to a somewhat lighter part of the forest. 
 #
@@ -2078,13 +2182,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; w; e3657, east = r6101
+openexit west; w; e3655, east = r6101
 #
-tag e3657 = haon dor, category = area names
+tag e3655 = haon dor, category = area names
 #
-set e3657/door_attributes = "open"
+set e3655/door_attributes = "open"
 #
-set e3657/reset_door_attributes = "open"
+set e3655/reset_door_attributes = "open"
 #
 desc west = The narrow, dusty trail leads west through the forest. 
 #
@@ -2096,13 +2200,13 @@ objectlock west = "pass:false()"
 #
 tel r6101
 #
-alias east = e, e3658
+alias east = e, e3656
 #
-tag e3658 = haon dor, category = area names
+tag e3656 = haon dor, category = area names
 #
-set e3658/door_attributes = "open"
+set e3656/door_attributes = "open"
 #
-set e3658/reset_door_attributes = "open"
+set e3656/reset_door_attributes = "open"
 #
 desc east = The narrow, dusty trail leads east through the forest. 
 #
@@ -2112,13 +2216,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3659, north = r6104
+openexit south; s; e3657, north = r6104
 #
-tag e3659 = haon dor, category = area names
+tag e3657 = haon dor, category = area names
 #
-set e3659/door_attributes = "open"
+set e3657/door_attributes = "open"
 #
-set e3659/reset_door_attributes = "open"
+set e3657/reset_door_attributes = "open"
 #
 desc south = The path leads south - away from the trail. 
 #
@@ -2128,7 +2232,41 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3660, east = r6102
+openexit west; w; e3658, east = r6102
+#
+tag e3658 = haon dor, category = area names
+#
+set e3658/door_attributes = "open"
+#
+set e3658/reset_door_attributes = "open"
+#
+desc west = The narrow, dusty trail leads west through the forest. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6102
+#
+alias east = e, e3659
+#
+tag e3659 = haon dor, category = area names
+#
+set e3659/door_attributes = "open"
+#
+set e3659/reset_door_attributes = "open"
+#
+desc east = The narrow, dusty trail leads east through the forest. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3660, east = r6103
 #
 tag e3660 = haon dor, category = area names
 #
@@ -2144,49 +2282,15 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-tel r6102
+tel r6103
 #
-alias east = e, e3661
+openexit north; n; e3661, south = r6150
 #
 tag e3661 = haon dor, category = area names
 #
 set e3661/door_attributes = "open"
 #
 set e3661/reset_door_attributes = "open"
-#
-desc east = The narrow, dusty trail leads east through the forest. 
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-openexit west; w; e3662, east = r6103
-#
-tag e3662 = haon dor, category = area names
-#
-set e3662/door_attributes = "open"
-#
-set e3662/reset_door_attributes = "open"
-#
-desc west = The narrow, dusty trail leads west through the forest. 
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r6103
-#
-openexit north; n; e3663, south = r6150
-#
-tag e3663 = haon dor, category = area names
-#
-set e3663/door_attributes = "open"
-#
-set e3663/reset_door_attributes = "open"
 #
 desc north = You see a dark trail north. 
 #
@@ -2196,13 +2300,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias east = e, e3664
+alias east = e, e3662
 #
-tag e3664 = haon dor, category = area names
+tag e3662 = haon dor, category = area names
 #
-set e3664/door_attributes = "open"
+set e3662/door_attributes = "open"
 #
-set e3664/reset_door_attributes = "open"
+set e3662/reset_door_attributes = "open"
 #
 desc east = The narrow, dusty trail leads east through the forest. 
 #
@@ -2212,13 +2316,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3665, north = r6108
+openexit south; s; e3663, north = r6108
 #
-tag e3665 = haon dor, category = area names
+tag e3663 = haon dor, category = area names
 #
-set e3665/door_attributes = "open"
+set e3663/door_attributes = "open"
 #
-set e3665/reset_door_attributes = "open"
+set e3663/reset_door_attributes = "open"
 #
 desc south = The narrow, dusty trail leads south through the forest. 
 #
@@ -2228,29 +2332,15 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3666, east = r17301
-#
-tag e3666 = haon dor, category = area names
-#
-set e3666/door_attributes = "open"
-#
-set e3666/reset_door_attributes = "open"
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
 tel r6104
 #
-alias north = n, e3667
+alias north = n, e3664
 #
-tag e3667 = haon dor, category = area names
+tag e3664 = haon dor, category = area names
 #
-set e3667/door_attributes = "open"
+set e3664/door_attributes = "open"
 #
-set e3667/reset_door_attributes = "open"
+set e3664/reset_door_attributes = "open"
 #
 desc north = The narrow path winds its way through the trees to the north. 
 #
@@ -2260,13 +2350,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit south; s; e3668, north = r6105
+openexit south; s; e3665, north = r6105
 #
-tag e3668 = haon dor, category = area names
+tag e3665 = haon dor, category = area names
 #
-set e3668/door_attributes = "open"
+set e3665/door_attributes = "open"
 #
-set e3668/reset_door_attributes = "open"
+set e3665/reset_door_attributes = "open"
 #
 desc south = The narrow path winds its way through the trees to the south. 
 #
@@ -2278,13 +2368,13 @@ objectlock south = "pass:false()"
 #
 tel r6105
 #
-alias north = n, e3669
+alias north = n, e3666
 #
-tag e3669 = haon dor, category = area names
+tag e3666 = haon dor, category = area names
 #
-set e3669/door_attributes = "open"
+set e3666/door_attributes = "open"
 #
-set e3669/reset_door_attributes = "open"
+set e3666/reset_door_attributes = "open"
 #
 desc north = The narrow path winds its way through the trees to the north. 
 #
@@ -2294,7 +2384,57 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit west; w; e3670, east = r6106
+openexit west; w; e3667, east = r6106
+#
+tag e3667 = haon dor, category = area names
+#
+set e3667/door_attributes = "open"
+#
+set e3667/reset_door_attributes = "open"
+#
+desc west = The narrow path winds its way through the trees to the west. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6106
+#
+alias east = e, e3668
+#
+tag e3668 = haon dor, category = area names
+#
+set e3668/door_attributes = "open"
+#
+set e3668/reset_door_attributes = "open"
+#
+desc east = The narrow path winds its way through the trees to the east. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3669, north = r6117
+#
+tag e3669 = haon dor, category = area names
+#
+set e3669/door_attributes = "open"
+#
+set e3669/reset_door_attributes = "open"
+#
+desc south = The narrow path winds its way through the trees to the south. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3670, east = r6107
 #
 tag e3670 = haon dor, category = area names
 #
@@ -2310,65 +2450,15 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-tel r6106
+tel r6107
 #
-alias east = e, e3671
+openexit north; n; e3671, south = r6108
 #
 tag e3671 = haon dor, category = area names
 #
 set e3671/door_attributes = "open"
 #
 set e3671/reset_door_attributes = "open"
-#
-desc east = The narrow path winds its way through the trees to the east. 
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-openexit south; s; e3672, north = r6117
-#
-tag e3672 = haon dor, category = area names
-#
-set e3672/door_attributes = "open"
-#
-set e3672/reset_door_attributes = "open"
-#
-desc south = The narrow path winds its way through the trees to the south. 
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-openexit west; w; e3673, east = r6107
-#
-tag e3673 = haon dor, category = area names
-#
-set e3673/door_attributes = "open"
-#
-set e3673/reset_door_attributes = "open"
-#
-desc west = The narrow path winds its way through the trees to the west. 
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r6107
-#
-openexit north; n; e3674, south = r6108
-#
-tag e3674 = haon dor, category = area names
-#
-set e3674/door_attributes = "open"
-#
-set e3674/reset_door_attributes = "open"
 #
 desc north = The narrow path winds its way through the trees to the north. 
 #
@@ -2378,13 +2468,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias east = e, e3675
+alias east = e, e3672
 #
-tag e3675 = haon dor, category = area names
+tag e3672 = haon dor, category = area names
 #
-set e3675/door_attributes = "open"
+set e3672/door_attributes = "open"
 #
-set e3675/reset_door_attributes = "open"
+set e3672/reset_door_attributes = "open"
 #
 desc east = The narrow path winds its way through the trees to the east. 
 #
@@ -2396,13 +2486,13 @@ objectlock east = "pass:false()"
 #
 tel r6108
 #
-alias north = n, e3676
+alias north = n, e3673
 #
-tag e3676 = haon dor, category = area names
+tag e3673 = haon dor, category = area names
 #
-set e3676/door_attributes = "open"
+set e3673/door_attributes = "open"
 #
-set e3676/reset_door_attributes = "open"
+set e3673/reset_door_attributes = "open"
 #
 desc north = The narrow, dusty trail leads north through the forest. 
 #
@@ -2412,13 +2502,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias south = s, e3677
+alias south = s, e3674
 #
-tag e3677 = haon dor, category = area names
+tag e3674 = haon dor, category = area names
 #
-set e3677/door_attributes = "open"
+set e3674/door_attributes = "open"
 #
-set e3677/reset_door_attributes = "open"
+set e3674/reset_door_attributes = "open"
 #
 desc south = The path leads south - away from the trail. 
 #
@@ -2428,13 +2518,13 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3678, east = r6109
+openexit west; w; e3675, east = r6109
 #
-tag e3678 = haon dor, category = area names
+tag e3675 = haon dor, category = area names
 #
-set e3678/door_attributes = "open"
+set e3675/door_attributes = "open"
 #
-set e3678/reset_door_attributes = "open"
+set e3675/reset_door_attributes = "open"
 #
 desc west = The narrow, dusty trail leads west through the forest. 
 #
@@ -2445,6 +2535,56 @@ objectlock west = "bash:false()"
 objectlock west = "pass:false()"
 #
 tel r6109
+#
+alias east = e, e3676
+#
+tag e3676 = haon dor, category = area names
+#
+set e3676/door_attributes = "open"
+#
+set e3676/reset_door_attributes = "open"
+#
+desc east = The narrow, dusty trail leads east through the forest. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3677, east = r6110
+#
+tag e3677 = haon dor, category = area names
+#
+set e3677/door_attributes = "open"
+#
+set e3677/reset_door_attributes = "open"
+#
+desc west = The narrow, dusty trail leads west through the forest. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6110
+#
+openexit north; n; e3678, south = r6144
+#
+tag e3678 = haon dor, category = area names
+#
+set e3678/door_attributes = "open"
+#
+set e3678/reset_door_attributes = "open"
+#
+desc north = The narrow path leads west between the giant trees. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
 #
 alias east = e, e3679
 #
@@ -2462,63 +2602,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; w; e3680, east = r6110
+openexit south; s; e3680, north = r6111
 #
 tag e3680 = haon dor, category = area names
 #
 set e3680/door_attributes = "open"
 #
 set e3680/reset_door_attributes = "open"
-#
-desc west = The narrow, dusty trail leads west through the forest. 
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r6110
-#
-openexit north; n; e3681, south = r6144
-#
-tag e3681 = haon dor, category = area names
-#
-set e3681/door_attributes = "open"
-#
-set e3681/reset_door_attributes = "open"
-#
-desc north = The narrow path leads west between the giant trees. 
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-alias east = e, e3682
-#
-tag e3682 = haon dor, category = area names
-#
-set e3682/door_attributes = "open"
-#
-set e3682/reset_door_attributes = "open"
-#
-desc east = The narrow, dusty trail leads east through the forest. 
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-openexit south; s; e3683, north = r6111
-#
-tag e3683 = haon dor, category = area names
-#
-set e3683/door_attributes = "open"
-#
-set e3683/reset_door_attributes = "open"
 #
 desc south = The narrow, dusty trail leads south through the forest. 
 #
@@ -2530,13 +2620,13 @@ objectlock south = "pass:false()"
 #
 tel r6111
 #
-alias north = n, e3684
+alias north = n, e3681
 #
-tag e3684 = haon dor, category = area names
+tag e3681 = haon dor, category = area names
 #
-set e3684/door_attributes = "open"
+set e3681/door_attributes = "open"
 #
-set e3684/reset_door_attributes = "open"
+set e3681/reset_door_attributes = "open"
 #
 desc north = The narrow, dusty trail leads north through the forest. 
 #
@@ -2546,13 +2636,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit south; s; e3685, north = r6112
+openexit south; s; e3682, north = r6112
 #
-tag e3685 = haon dor, category = area names
+tag e3682 = haon dor, category = area names
 #
-set e3685/door_attributes = "open"
+set e3682/door_attributes = "open"
 #
-set e3685/reset_door_attributes = "open"
+set e3682/reset_door_attributes = "open"
 #
 desc south = The narrow, dusty trail leads south through the forest. 
 #
@@ -2564,13 +2654,13 @@ objectlock south = "pass:false()"
 #
 tel r6112
 #
-alias north = n, e3686
+alias north = n, e3683
 #
-tag e3686 = haon dor, category = area names
+tag e3683 = haon dor, category = area names
 #
-set e3686/door_attributes = "open"
+set e3683/door_attributes = "open"
 #
-set e3686/reset_door_attributes = "open"
+set e3683/reset_door_attributes = "open"
 #
 desc north = The narrow, dusty trail leads north through the forest. 
 #
@@ -2580,13 +2670,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3687, west = r6113
+openexit east; e; e3684, west = r6113
 #
-tag e3687 = haon dor, category = area names
+tag e3684 = haon dor, category = area names
 #
-set e3687/door_attributes = "open"
+set e3684/door_attributes = "open"
 #
-set e3687/reset_door_attributes = "open"
+set e3684/reset_door_attributes = "open"
 #
 desc east = The path leads east - away from the trail. 
 #
@@ -2596,13 +2686,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; w; e3688, east = r6127
+openexit west; w; e3685, east = r6127
 #
-tag e3688 = haon dor, category = area names
+tag e3685 = haon dor, category = area names
 #
-set e3688/door_attributes = "open"
+set e3685/door_attributes = "open"
 #
-set e3688/reset_door_attributes = "open"
+set e3685/reset_door_attributes = "open"
 #
 desc west = The narrow, dusty trail leads west through the forest. 
 #
@@ -2614,13 +2704,13 @@ objectlock west = "pass:false()"
 #
 tel r6113
 #
-openexit south; s; e3689, north = r6114
+openexit south; s; e3686, north = r6114
 #
-tag e3689 = haon dor, category = area names
+tag e3686 = haon dor, category = area names
 #
-set e3689/door_attributes = "open"
+set e3686/door_attributes = "open"
 #
-set e3689/reset_door_attributes = "open"
+set e3686/reset_door_attributes = "open"
 #
 desc south = The narrow path winds its way through the trees to the south. 
 #
@@ -2630,7 +2720,57 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w, e3690
+alias west = w, e3687
+#
+tag e3687 = haon dor, category = area names
+#
+set e3687/door_attributes = "open"
+#
+set e3687/reset_door_attributes = "open"
+#
+desc west = The narrow path winds its way through the trees to the west. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6114
+#
+alias north = n, e3688
+#
+tag e3688 = haon dor, category = area names
+#
+set e3688/door_attributes = "open"
+#
+set e3688/reset_door_attributes = "open"
+#
+desc north = The narrow path winds its way through the trees to the north. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3689, west = r6115
+#
+tag e3689 = haon dor, category = area names
+#
+set e3689/door_attributes = "open"
+#
+set e3689/reset_door_attributes = "open"
+#
+desc east = The narrow path winds its way through the trees to the east. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3690, east = r6122
 #
 tag e3690 = haon dor, category = area names
 #
@@ -2646,9 +2786,9 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-tel r6114
+tel r6115
 #
-alias north = n, e3691
+openexit north; n; e3691, south = r6116
 #
 tag e3691 = haon dor, category = area names
 #
@@ -2664,63 +2804,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3692, west = r6115
+alias west = w, e3692
 #
 tag e3692 = haon dor, category = area names
 #
 set e3692/door_attributes = "open"
 #
 set e3692/reset_door_attributes = "open"
-#
-desc east = The narrow path winds its way through the trees to the east. 
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-openexit west; w; e3693, east = r6122
-#
-tag e3693 = haon dor, category = area names
-#
-set e3693/door_attributes = "open"
-#
-set e3693/reset_door_attributes = "open"
-#
-desc west = The narrow path winds its way through the trees to the west. 
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r6115
-#
-openexit north; n; e3694, south = r6116
-#
-tag e3694 = haon dor, category = area names
-#
-set e3694/door_attributes = "open"
-#
-set e3694/reset_door_attributes = "open"
-#
-desc north = The narrow path winds its way through the trees to the north. 
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-alias west = w, e3695
-#
-tag e3695 = haon dor, category = area names
-#
-set e3695/door_attributes = "open"
-#
-set e3695/reset_door_attributes = "open"
 #
 desc west = The narrow path winds its way through the trees to the west. 
 #
@@ -2732,7 +2822,57 @@ objectlock west = "pass:false()"
 #
 tel r6116
 #
-openexit east; e; e3696, west = r6117
+openexit east; e; e3693, west = r6117
+#
+tag e3693 = haon dor, category = area names
+#
+set e3693/door_attributes = "open"
+#
+set e3693/reset_door_attributes = "open"
+#
+desc east = The narrow path winds its way through the trees to the east. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s, e3694
+#
+tag e3694 = haon dor, category = area names
+#
+set e3694/door_attributes = "open"
+#
+set e3694/reset_door_attributes = "open"
+#
+desc south = The narrow path winds its way through the trees to the south. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r6117
+#
+alias north = n, e3695
+#
+tag e3695 = haon dor, category = area names
+#
+set e3695/door_attributes = "open"
+#
+set e3695/reset_door_attributes = "open"
+#
+desc north = The narrow path winds its way through the trees to the north. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3696, west = r6118
 #
 tag e3696 = haon dor, category = area names
 #
@@ -2748,63 +2888,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias south = s, e3697
+alias west = w, e3697
 #
 tag e3697 = haon dor, category = area names
 #
 set e3697/door_attributes = "open"
 #
 set e3697/reset_door_attributes = "open"
-#
-desc south = The narrow path winds its way through the trees to the south. 
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-tel r6117
-#
-alias north = n, e3698
-#
-tag e3698 = haon dor, category = area names
-#
-set e3698/door_attributes = "open"
-#
-set e3698/reset_door_attributes = "open"
-#
-desc north = The narrow path winds its way through the trees to the north. 
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit east; e; e3699, west = r6118
-#
-tag e3699 = haon dor, category = area names
-#
-set e3699/door_attributes = "open"
-#
-set e3699/reset_door_attributes = "open"
-#
-desc east = The narrow path winds its way through the trees to the east. 
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-alias west = w, e3700
-#
-tag e3700 = haon dor, category = area names
-#
-set e3700/door_attributes = "open"
-#
-set e3700/reset_door_attributes = "open"
 #
 desc west = The narrow path winds its way through the trees to the west. 
 #
@@ -2816,7 +2906,57 @@ objectlock west = "pass:false()"
 #
 tel r6118
 #
-openexit south; s; e3701, north = r6119
+openexit south; s; e3698, north = r6119
+#
+tag e3698 = haon dor, category = area names
+#
+set e3698/door_attributes = "open"
+#
+set e3698/reset_door_attributes = "open"
+#
+desc south = The narrow path winds its way through the trees to the south. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w, e3699
+#
+tag e3699 = haon dor, category = area names
+#
+set e3699/door_attributes = "open"
+#
+set e3699/reset_door_attributes = "open"
+#
+desc west = The narrow path winds its way through the trees to the west. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r6119
+#
+alias north = n, e3700
+#
+tag e3700 = haon dor, category = area names
+#
+set e3700/door_attributes = "open"
+#
+set e3700/reset_door_attributes = "open"
+#
+desc north = The narrow path winds its way through the trees to the north. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3701, north = r6120
 #
 tag e3701 = haon dor, category = area names
 #
@@ -2832,7 +2972,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w, e3702
+tel r6120
+#
+alias north = n, e3702
 #
 tag e3702 = haon dor, category = area names
 #
@@ -2840,73 +2982,21 @@ set e3702/door_attributes = "open"
 #
 set e3702/reset_door_attributes = "open"
 #
-desc west = The narrow path winds its way through the trees to the west. 
+desc north = The narrow path winds its way through the trees to the north. 
 #
-objectlock west = "pick:false()"
+objectlock north = "pick:false()"
 #
-objectlock west = "bash:false()"
+objectlock north = "bash:false()"
 #
-objectlock west = "pass:false()"
+objectlock north = "pass:false()"
 #
-tel r6119
-#
-alias north = n, e3703
+openexit west; w; e3703, east = r6121
 #
 tag e3703 = haon dor, category = area names
 #
 set e3703/door_attributes = "open"
 #
 set e3703/reset_door_attributes = "open"
-#
-desc north = The narrow path winds its way through the trees to the north. 
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit south; s; e3704, north = r6120
-#
-tag e3704 = haon dor, category = area names
-#
-set e3704/door_attributes = "open"
-#
-set e3704/reset_door_attributes = "open"
-#
-desc south = The narrow path winds its way through the trees to the south. 
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-tel r6120
-#
-alias north = n, e3705
-#
-tag e3705 = haon dor, category = area names
-#
-set e3705/door_attributes = "open"
-#
-set e3705/reset_door_attributes = "open"
-#
-desc north = The narrow path winds its way through the trees to the north. 
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit west; w; e3706, east = r6121
-#
-tag e3706 = haon dor, category = area names
-#
-set e3706/door_attributes = "open"
-#
-set e3706/reset_door_attributes = "open"
 #
 desc west = The narrow path winds its way through the trees to the west. 
 #
@@ -2918,13 +3008,13 @@ objectlock west = "pass:false()"
 #
 tel r6121
 #
-alias east = e, e3707
+alias east = e, e3704
 #
-tag e3707 = haon dor, category = area names
+tag e3704 = haon dor, category = area names
 #
-set e3707/door_attributes = "open"
+set e3704/door_attributes = "open"
 #
-set e3707/reset_door_attributes = "open"
+set e3704/reset_door_attributes = "open"
 #
 desc east = The narrow path winds its way through the trees to the east. 
 #
@@ -2936,7 +3026,57 @@ objectlock east = "pass:false()"
 #
 tel r6122
 #
-alias east = e, e3708
+alias east = e, e3705
+#
+tag e3705 = haon dor, category = area names
+#
+set e3705/door_attributes = "open"
+#
+set e3705/reset_door_attributes = "open"
+#
+desc east = The narrow path winds its way through the trees to the east. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3706, north = r6123
+#
+tag e3706 = haon dor, category = area names
+#
+set e3706/door_attributes = "open"
+#
+set e3706/reset_door_attributes = "open"
+#
+desc south = The narrow path winds its way through the trees to the south. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r6123
+#
+alias north = n, e3707
+#
+tag e3707 = haon dor, category = area names
+#
+set e3707/door_attributes = "open"
+#
+set e3707/reset_door_attributes = "open"
+#
+desc north = The narrow path winds its way through the trees to the north. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3708, west = r6124
 #
 tag e3708 = haon dor, category = area names
 #
@@ -2952,63 +3092,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3709, north = r6123
+openexit west; w; e3709, east = r6125
 #
 tag e3709 = haon dor, category = area names
 #
 set e3709/door_attributes = "open"
 #
 set e3709/reset_door_attributes = "open"
-#
-desc south = The narrow path winds its way through the trees to the south. 
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-tel r6123
-#
-alias north = n, e3710
-#
-tag e3710 = haon dor, category = area names
-#
-set e3710/door_attributes = "open"
-#
-set e3710/reset_door_attributes = "open"
-#
-desc north = The narrow path winds its way through the trees to the north. 
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit east; e; e3711, west = r6124
-#
-tag e3711 = haon dor, category = area names
-#
-set e3711/door_attributes = "open"
-#
-set e3711/reset_door_attributes = "open"
-#
-desc east = The narrow path winds its way through the trees to the east. 
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-openexit west; w; e3712, east = r6125
-#
-tag e3712 = haon dor, category = area names
-#
-set e3712/door_attributes = "open"
-#
-set e3712/reset_door_attributes = "open"
 #
 desc west = The narrow path winds its way through the trees to the west. 
 #
@@ -3020,13 +3110,13 @@ objectlock west = "pass:false()"
 #
 tel r6124
 #
-alias west = w, e3713
+alias west = w, e3710
 #
-tag e3713 = haon dor, category = area names
+tag e3710 = haon dor, category = area names
 #
-set e3713/door_attributes = "open"
+set e3710/door_attributes = "open"
 #
-set e3713/reset_door_attributes = "open"
+set e3710/reset_door_attributes = "open"
 #
 desc west = The narrow path winds its way through the trees to the west. 
 #
@@ -3038,13 +3128,13 @@ objectlock west = "pass:false()"
 #
 tel r6125
 #
-openexit north; n; e3714, south = r6126
+openexit north; n; e3711, south = r6126
 #
-tag e3714 = haon dor, category = area names
+tag e3711 = haon dor, category = area names
 #
-set e3714/door_attributes = "open"
+set e3711/door_attributes = "open"
 #
-set e3714/reset_door_attributes = "open"
+set e3711/reset_door_attributes = "open"
 #
 desc north = The narrow path winds its way through the trees to the north. 
 #
@@ -3054,13 +3144,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias east = e, e3715
+alias east = e, e3712
 #
-tag e3715 = haon dor, category = area names
+tag e3712 = haon dor, category = area names
 #
-set e3715/door_attributes = "open"
+set e3712/door_attributes = "open"
 #
-set e3715/reset_door_attributes = "open"
+set e3712/reset_door_attributes = "open"
 #
 desc east = The narrow path winds its way through the trees to the east. 
 #
@@ -3072,13 +3162,13 @@ objectlock east = "pass:false()"
 #
 tel r6126
 #
-openexit north; n; e3716, south = r6127
+openexit north; n; e3713, south = r6127
 #
-tag e3716 = haon dor, category = area names
+tag e3713 = haon dor, category = area names
 #
-set e3716/door_attributes = "open"
+set e3713/door_attributes = "open"
 #
-set e3716/reset_door_attributes = "open"
+set e3713/reset_door_attributes = "open"
 #
 desc north = The narrow, dusty trail leads north through the forest. 
 #
@@ -3088,13 +3178,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias south = s, e3717
+alias south = s, e3714
 #
-tag e3717 = haon dor, category = area names
+tag e3714 = haon dor, category = area names
 #
-set e3717/door_attributes = "open"
+set e3714/door_attributes = "open"
 #
-set e3717/reset_door_attributes = "open"
+set e3714/reset_door_attributes = "open"
 #
 desc south = The path leads south - away from the trail. 
 #
@@ -3104,13 +3194,13 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3718, east = r6128
+openexit west; w; e3715, east = r6128
 #
-tag e3718 = haon dor, category = area names
+tag e3715 = haon dor, category = area names
 #
-set e3718/door_attributes = "open"
+set e3715/door_attributes = "open"
 #
-set e3718/reset_door_attributes = "open"
+set e3715/reset_door_attributes = "open"
 #
 desc west = The narrow, dusty trail leads west through the forest. 
 #
@@ -3122,13 +3212,13 @@ objectlock west = "pass:false()"
 #
 tel r6127
 #
-alias east = e, e3719
+alias east = e, e3716
 #
-tag e3719 = haon dor, category = area names
+tag e3716 = haon dor, category = area names
 #
-set e3719/door_attributes = "open"
+set e3716/door_attributes = "open"
 #
-set e3719/reset_door_attributes = "open"
+set e3716/reset_door_attributes = "open"
 #
 desc east = The narrow, dusty trail leads east through the forest. 
 #
@@ -3138,13 +3228,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias south = s, e3720
+alias south = s, e3717
 #
-tag e3720 = haon dor, category = area names
+tag e3717 = haon dor, category = area names
 #
-set e3720/door_attributes = "open"
+set e3717/door_attributes = "open"
 #
-set e3720/reset_door_attributes = "open"
+set e3717/reset_door_attributes = "open"
 #
 desc south = The narrow, dusty trail leads south through the forest. 
 #
@@ -3156,13 +3246,13 @@ objectlock south = "pass:false()"
 #
 tel r6128
 #
-alias east = e, e3721
+alias east = e, e3718
 #
-tag e3721 = haon dor, category = area names
+tag e3718 = haon dor, category = area names
 #
-set e3721/door_attributes = "open"
+set e3718/door_attributes = "open"
 #
-set e3721/reset_door_attributes = "open"
+set e3718/reset_door_attributes = "open"
 #
 desc east = The narrow, dusty trail leads east through the forest. 
 #
@@ -3172,13 +3262,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; w; e3722, east = r6129
+openexit west; w; e3719, east = r6129
 #
-tag e3722 = haon dor, category = area names
+tag e3719 = haon dor, category = area names
 #
-set e3722/door_attributes = "open"
+set e3719/door_attributes = "open"
 #
-set e3722/reset_door_attributes = "open"
+set e3719/reset_door_attributes = "open"
 #
 desc west = The narrow, dusty trail leads west through the forest. 
 #
@@ -3190,13 +3280,13 @@ objectlock west = "pass:false()"
 #
 tel r6129
 #
-alias east = e, e3723
+alias east = e, e3720
 #
-tag e3723 = haon dor, category = area names
+tag e3720 = haon dor, category = area names
 #
-set e3723/door_attributes = "open"
+set e3720/door_attributes = "open"
 #
-set e3723/reset_door_attributes = "open"
+set e3720/reset_door_attributes = "open"
 #
 desc east = The narrow, dusty trail leads east through the forest. 
 #
@@ -3206,13 +3296,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; w; e3724, east = r6135
+openexit west; w; e3721, east = r6135
 #
-tag e3724 = haon dor, category = area names
+tag e3721 = haon dor, category = area names
 #
-set e3724/door_attributes = "open"
+set e3721/door_attributes = "open"
 #
-set e3724/reset_door_attributes = "open"
+set e3721/reset_door_attributes = "open"
 #
 desc west = The narrow, dusty trail leads west through the forest. 
 #
@@ -3224,13 +3314,13 @@ objectlock west = "pass:false()"
 #
 tel r6135
 #
-openexit north; n; e3725, south = r6136
+openexit north; n; e3722, south = r6136
 #
-tag e3725 = haon dor, category = area names
+tag e3722 = haon dor, category = area names
 #
-set e3725/door_attributes = "open"
+set e3722/door_attributes = "open"
 #
-set e3725/reset_door_attributes = "open"
+set e3722/reset_door_attributes = "open"
 #
 desc north = The dusty trail leads north through the trees. 
 #
@@ -3240,13 +3330,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias east = e, e3726
+alias east = e, e3723
 #
-tag e3726 = haon dor, category = area names
+tag e3723 = haon dor, category = area names
 #
-set e3726/door_attributes = "open"
+set e3723/door_attributes = "open"
 #
-set e3726/reset_door_attributes = "open"
+set e3723/reset_door_attributes = "open"
 #
 desc east = The dusty trail leads east through the trees. 
 #
@@ -3258,13 +3348,13 @@ objectlock east = "pass:false()"
 #
 tel r6136
 #
-openexit east; e; e3727, west = r6142
+openexit east; e; e3724, west = r6142
 #
-tag e3727 = haon dor, category = area names
+tag e3724 = haon dor, category = area names
 #
-set e3727/door_attributes = "open"
+set e3724/door_attributes = "open"
 #
-set e3727/reset_door_attributes = "open"
+set e3724/reset_door_attributes = "open"
 #
 desc east = The trees standing on the sides of the path have scratch marks on them. 
 #
@@ -3274,13 +3364,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias south = s, e3728
+alias south = s, e3725
 #
-tag e3728 = haon dor, category = area names
+tag e3725 = haon dor, category = area names
 #
-set e3728/door_attributes = "open"
+set e3725/door_attributes = "open"
 #
-set e3728/reset_door_attributes = "open"
+set e3725/reset_door_attributes = "open"
 #
 desc south = The dusty trail leads south through the trees. 
 #
@@ -3290,13 +3380,13 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3729, east = r6137
+openexit west; w; e3726, east = r6137
 #
-tag e3729 = haon dor, category = area names
+tag e3726 = haon dor, category = area names
 #
-set e3729/door_attributes = "open"
+set e3726/door_attributes = "open"
 #
-set e3729/reset_door_attributes = "open"
+set e3726/reset_door_attributes = "open"
 #
 desc west = The dusty trail leads west through the trees. 
 #
@@ -3308,13 +3398,13 @@ objectlock west = "pass:false()"
 #
 tel r6137
 #
-alias east = e, e3730
+alias east = e, e3727
 #
-tag e3730 = haon dor, category = area names
+tag e3727 = haon dor, category = area names
 #
-set e3730/door_attributes = "open"
+set e3727/door_attributes = "open"
 #
-set e3730/reset_door_attributes = "open"
+set e3727/reset_door_attributes = "open"
 #
 desc east = The dusty trail leads east through the trees. 
 #
@@ -3326,13 +3416,13 @@ objectlock east = "pass:false()"
 #
 tel r6142
 #
-openexit north; n; e3731, south = r6143
+openexit north; n; e3728, south = r6143
 #
-tag e3731 = haon dor, category = area names
+tag e3728 = haon dor, category = area names
 #
-set e3731/door_attributes = "open"
+set e3728/door_attributes = "open"
 #
-set e3731/reset_door_attributes = "open"
+set e3728/reset_door_attributes = "open"
 #
 desc north = The disgusting smell of a large reptile emanates from the cave opening. 
 #
@@ -3342,13 +3432,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias west = w, e3732
+alias west = w, e3729
 #
-tag e3732 = haon dor, category = area names
+tag e3729 = haon dor, category = area names
 #
-set e3732/door_attributes = "open"
+set e3729/door_attributes = "open"
 #
-set e3732/reset_door_attributes = "open"
+set e3729/reset_door_attributes = "open"
 #
 desc west = The path winds its way westwards. 
 #
@@ -3360,13 +3450,13 @@ objectlock west = "pass:false()"
 #
 tel r6143
 #
-alias south = s, e3733
+alias south = s, e3730
 #
-tag e3733 = haon dor, category = area names
+tag e3730 = haon dor, category = area names
 #
-set e3733/door_attributes = "open"
+set e3730/door_attributes = "open"
 #
-set e3733/reset_door_attributes = "open"
+set e3730/reset_door_attributes = "open"
 #
 desc south = The exit leads out into the forest. 
 #
@@ -3378,27 +3468,13 @@ objectlock south = "pass:false()"
 #
 tel r6144
 #
-openexit north; n; e3734, south = r13769
+alias south = s, e3731
 #
-tag e3734 = haon dor, category = area names
+tag e3731 = haon dor, category = area names
 #
-set e3734/door_attributes = "open"
+set e3731/door_attributes = "open"
 #
-set e3734/reset_door_attributes = "open"
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-alias south = s, e3735
-#
-tag e3735 = haon dor, category = area names
-#
-set e3735/door_attributes = "open"
-#
-set e3735/reset_door_attributes = "open"
+set e3731/reset_door_attributes = "open"
 #
 desc south = The narrow path winds its way through the trees to the south. 
 #
@@ -3410,15 +3486,15 @@ objectlock south = "pass:false()"
 #
 tel r6150
 #
-openexit north; n; e3736, south = r6151
+openexit north; n; e3732, south = r6151
 #
-tag e3736 = haon dor, category = area names
+tag e3732 = haon dor, category = area names
 #
-set e3736/door_attributes = "open"
+set e3732/door_attributes = "open"
 #
-set e3736/reset_door_attributes = "open"
+set e3732/reset_door_attributes = "open"
 #
-desc north = The narrow trail continues north. 
+desc north = the narrow trail continues north. 
 #
 objectlock north = "pick:false()"
 #
@@ -3426,15 +3502,15 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias south = s, e3737
+alias south = s, e3733
 #
-tag e3737 = haon dor, category = area names
+tag e3733 = haon dor, category = area names
 #
-set e3737/door_attributes = "open"
+set e3733/door_attributes = "open"
 #
-set e3737/reset_door_attributes = "open"
+set e3733/reset_door_attributes = "open"
 #
-desc south = The trail intersects the main forest path. 
+desc south = the trail intersects the main forest path. 
 #
 objectlock south = "pick:false()"
 #
@@ -3444,15 +3520,15 @@ objectlock south = "pass:false()"
 #
 tel r6151
 #
-openexit east; e; e3738, west = r6152
+openexit east; e; e3734, west = r6152
 #
-tag e3738 = haon dor, category = area names
+tag e3734 = haon dor, category = area names
 #
-set e3738/door_attributes = "open"
+set e3734/door_attributes = "open"
 #
-set e3738/reset_door_attributes = "open"
+set e3734/reset_door_attributes = "open"
 #
-desc east = The trail bends east. 
+desc east = the trail bends east. 
 #
 objectlock east = "pick:false()"
 #
@@ -3460,13 +3536,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias south = s, e3739
+alias south = s, e3735
 #
-tag e3739 = haon dor, category = area names
+tag e3735 = haon dor, category = area names
 #
-set e3739/door_attributes = "open"
+set e3735/door_attributes = "open"
 #
-set e3739/reset_door_attributes = "open"
+set e3735/reset_door_attributes = "open"
 #
 desc south = the start of the trail. 
 #
@@ -3478,47 +3554,47 @@ objectlock south = "pass:false()"
 #
 tel r6152
 #
-openexit east; door; e; e3740, west = r6153
+openexit east; door; e; e3736, west = r6153
 #
-tag e3740 = haon dor, category = area names
+tag e3736 = haon dor, category = area names
 #
-set e3740/door_attributes = "open"
+set e3736/door_attributes = "open"
 #
-set e3740/reset_door_attributes = "open"
+set e3736/reset_door_attributes = "open"
 #
 desc east = The tree door is carved beautifully. 
 #
-alias west = w, e3741
+alias west = w, e3737
 #
-tag e3741 = haon dor, category = area names
+tag e3737 = haon dor, category = area names
 #
-set e3741/door_attributes = "open"
+set e3737/door_attributes = "open"
 #
-set e3741/reset_door_attributes = "open"
+set e3737/reset_door_attributes = "open"
 #
 desc west = the bend on the trail. 
 #
 tel r6153
 #
-alias west = door, w, e3742
+alias west = door, w, e3738
 #
-tag e3742 = haon dor, category = area names
+tag e3738 = haon dor, category = area names
 #
-set e3742/door_attributes = "open"
+set e3738/door_attributes = "open"
 #
-set e3742/reset_door_attributes = "open"
+set e3738/reset_door_attributes = "open"
 #
-desc west = The door is carved beautifully. 
+desc west = the door is carved beautifully. 
 #
-openexit down; d; e3743, up = r6154
+openexit down; d; e3739, up = r6154
 #
-tag e3743 = haon dor, category = area names
+tag e3739 = haon dor, category = area names
 #
-set e3743/door_attributes = "open"
+set e3739/door_attributes = "open"
 #
-set e3743/reset_door_attributes = "open"
+set e3739/reset_door_attributes = "open"
 #
-desc down = The steps look like they will hold your weight. 
+desc down = The steps look appear like they will hold your weight. 
 #
 objectlock down = "pick:false()"
 #
@@ -3528,29 +3604,31 @@ objectlock down = "pass:false()"
 #
 tel r6154
 #
-alias south = s, e3744
+alias south = s, e3740
 #
-tag e3744 = haon dor, category = area names
+tag e3740 = haon dor, category = area names
 #
-set e3744/door_attributes = "open"
+set e3740/door_attributes = "open"
 #
-set e3744/reset_door_attributes = "open"
+set e3740/reset_door_attributes = "open"
 #
-desc south = The hallway looks quite grand. 
+desc south = the hallway looks quite grand. 
 #
-alias up = u, e3745
+alias up = u, e3741
 #
-tag e3745 = haon dor, category = area names
+tag e3741 = haon dor, category = area names
 #
-set e3745/door_attributes = "open"
+set e3741/door_attributes = "open"
 #
-set e3745/reset_door_attributes = "open"
+set e3741/reset_door_attributes = "open"
 #
-desc up = The steps appear like they will hold your weight. 
+desc up = the steps appear like they will hold your weight. 
 #
 tel r6009
 #
-create/drop John the Lumberjack;john;lumberjack;m6000:characters.Mobile
+create/drop Placeholdername;john;lumberjack;m6000:characters.Mobile
+#
+name m6000 = John the Lumberjack
 #
 desc m6000 = John the Lumberjack is here, looking for some trees to chop down. 
 #
@@ -3560,7 +3638,7 @@ set m6000/level_base = 7
 #
 set m6000/vnum = "m6000"
 #
-set m6000/look_description = "He is six feet tall and looks quite strong, muscles bulging under his heavy, checkered shirt.  His features are worn with hard work and his expression is one of a peaceful man leading a simple life. "
+set m6000/look_description = "He is six feet tall and looks quite strong, muscles bulging under his heavy, chequered shirt.  His features are worn with hard work and his expression is one of a peaceful man leading a simple life. "
 #
 set m6000/act_flags = ['stay area', 'npc']
 #
@@ -3574,13 +3652,121 @@ tag m6000 = haon dor:area name
 #
 tag m6000 = mobile
 #
-set m6000/hitpoints[maximum] = 82
+set m6000/hitpoints[maximum] = 72
 #
 set m6000/position = "standing"
 #
+tel r6009
+#
+create Placeholdername;axe;lumber;o6000:objects.Weapon
+#
+name o6000 = a lumber axe
+#
+sethome o6000 = m6000
+#
+desc o6000 = A heavy lumber axe lies here.
+#
+set o6000/level = 5
+#
+set o6000/level_base = 5
+#
+set o6000/vnum = "o6000"
+#
+set o6000/item_type = "weapon"
+#
+set o6000/wear_location = "wield"
+#
+set o6000/weight = 10
+#
+tag o6000 = haon dor:area name
+#
+tag o6000 = object
+#
+set o6000/extra_descriptions = {'axe lumber': ' It is a heavy axe of the kind lumberjacks use to chop down trees. '}
+#
+set o6000/weapon_type = "slice"
+#
+set o6000/damage_low = 1
+#
+set o6000/damage_high = 11
+#
+wieldto o6000 = m6000
+#
+set m6000/reset_objects["o6000"] = {"location":"equipped"}
+#
+tel r6009
+#
+create Placeholdername;shirt;o6001:objects.Armor
+#
+name o6001 = a chequered shirt
+#
+sethome o6001 = m6000
+#
+desc o6001 = A chequered shirt lies here.
+#
+set o6001/level = 5
+#
+set o6001/level_base = 5
+#
+set o6001/vnum = "o6001"
+#
+set o6001/item_type = "armor"
+#
+set o6001/wear_location = "body"
+#
+set o6001/weight = 2
+#
+tag o6001 = haon dor:area name
+#
+tag o6001 = object
+#
+set o6001/extra_descriptions = {'shirt': ' It is an extra large, chequered shirt made from heavy cloth. '}
+#
+set o6001/armor = 2
+#
+wearto o6001 = m6000
+#
+set m6000/reset_objects["o6001"] = {"location":"equipped"}
+#
+tel r6009
+#
+create Placeholdername;boots;o6002:objects.Armor
+#
+name o6002 = a pair of leather boots
+#
+sethome o6002 = m6000
+#
+desc o6002 = A pair of leather boots lies here.
+#
+set o6002/level = 5
+#
+set o6002/level_base = 5
+#
+set o6002/vnum = "o6002"
+#
+set o6002/item_type = "armor"
+#
+set o6002/wear_location = "feet"
+#
+set o6002/weight = 4
+#
+tag o6002 = haon dor:area name
+#
+tag o6002 = object
+#
+set o6002/extra_descriptions = {'boots': ' They are fashioned from rough leather that has been oiled frequently to make it stay waterproof.  They look worn but quite functional. '}
+#
+set o6002/armor = 2
+#
+wearto o6002 = m6000
+#
+set m6000/reset_objects["o6002"] = {"location":"equipped"}
+#
 tel r6006
 #
-create a mushroom;mushroom;o6011:objects.Food
+create Placeholdername;mushroom;o6011:objects.Food
+#
+name o6011 = a mushroom
 #
 sethome o6011 = r6006
 #
@@ -3610,113 +3796,13 @@ drop o6011
 #
 set r6006/reset_objects["o6011"] = {"location":"inventory"}
 #
-tel r6006
-#
-create a lumber axe;axe;lumber;o6000:objects.Weapon
-#
-sethome o6000 = m6000
-#
-desc o6000 = A heavy lumber axe lies here.
-#
-set o6000/level = 5
-#
-set o6000/level_base = 5
-#
-set o6000/vnum = "o6000"
-#
-set o6000/item_type = "weapon"
-#
-set o6000/wear_location = "wield"
-#
-set o6000/weight = 10
-#
-tag o6000 = haon dor:area name
-#
-tag o6000 = object
-#
-set o6000/extra_descriptions = {'axe lumber': ' It is a heavy axe of the kind lumberjacks use to chop down trees. '}
-#
-set o6000/weapon_type = "slice"
-#
-set o6000/damage_low = 4
-#
-set o6000/damage_high = 9
-#
-wieldto o6000 = m6000
-#
-set m6000/reset_objects["o6000"] = {"location":"equipped"}
-#
-tel r6006
-#
-create a checkered shirt;shirt;o6001:objects.Armor
-#
-sethome o6001 = m6000
-#
-desc o6001 = A checkered shirt lies here.
-#
-set o6001/level = 5
-#
-set o6001/level_base = 5
-#
-set o6001/vnum = "o6001"
-#
-set o6001/item_type = "armor"
-#
-set o6001/wear_location = "body"
-#
-set o6001/weight = 2
-#
-tag o6001 = haon dor:area name
-#
-tag o6001 = object
-#
-set o6001/extra_descriptions = {'shirt': ' It is an extra large, checkered shirt made from heavy cloth. '}
-#
-set o6001/armor = 4
-#
-wearto o6001 = m6000
-#
-set m6000/reset_objects["o6001"] = {"location":"equipped"}
-#
-tel r6006
-#
-create a pair of leather boots;boots;o6002:objects.Armor
-#
-sethome o6002 = m6000
-#
-desc o6002 = A pair of leather boots lies here.
-#
-set o6002/level = 5
-#
-set o6002/level_base = 5
-#
-set o6002/vnum = "o6002"
-#
-set o6002/item_type = "armor"
-#
-set o6002/wear_location = "feet"
-#
-set o6002/weight = 4
-#
-tag o6002 = haon dor:area name
-#
-tag o6002 = object
-#
-set o6002/extra_descriptions = {'boots': ' They are fashioned from rough leather that has been oiled frequently to make it stay waterproof.  They look worn but quite functional. '}
-#
-set o6002/armor = 4
-#
-wearto o6002 = m6000
-#
-set m6000/reset_objects["o6002"] = {"location":"equipped"}
-#
 tel r6009
 #
-openexit portal; well; portal; e3746, portal = R11301
+openexit portal; well; portal; e3742, portal = R11301
 #
-tag e3746 = haon dor, category = area names
+tag e3742 = haon dor, category = area names
 #
-desc e3746 = The well is dark, and the water has an odd coloration...
+desc e3742 = The well is dark, and the water has an odd coloration...
 #
 tel r6009
 #
@@ -3726,7 +3812,9 @@ set north/reset_door_attributes = ['closeable']
 #
 tel r6010
 #
-create a fireplace;fireplace;o6003:objects.Container
+create Placeholdername;fireplace;o6003:objects.Container
+#
+name o6003 = a fireplace
 #
 sethome o6003 = r6010
 #
@@ -3762,7 +3850,9 @@ set r6010/reset_objects["o6003"] = {"location":"inventory"}
 #
 tel r6010
 #
-create a small brass key;key;o6006:objects.Key
+create Placeholdername;key;o6006:objects.Key
+#
+name o6006 = a small brass key
 #
 sethome o6006 = o6003
 #
@@ -3784,13 +3874,15 @@ tag o6006 = object
 #
 set o6006/extra_descriptions = {'key': ' It is a small, simple brass key with no inscriptions or marks of any kind. '}
 #
-put o6006 = o6003
+put o6006 in o6003
 #
 set r6010/reset_objects["o6006"] = {"location":"o6003"}
 #
 tel r6010
 #
-create a wooden chest;chest;o6005:objects.Container
+create Placeholdername;chest;o6005:objects.Container
+#
+name o6005 = a wooden chest
 #
 sethome o6005 = r6010
 #
@@ -3826,7 +3918,9 @@ set r6010/reset_objects["o6005"] = {"location":"inventory"}
 #
 tel r6010
 #
-create a heap of gold coins;coins;gold;o6007:objects.Money
+create Placeholdername;coins;gold;o6007:objects.Money
+#
+name o6007 = a heap of gold coins
 #
 sethome o6007 = o6005
 #
@@ -3850,13 +3944,15 @@ set o6007/extra_descriptions = {'coins': ' The coins seem to be gold.  They are 
 #
 set o6007/value = 100
 #
-put o6007 = o6005
+put o6007 in o6005
 #
 set r6010/reset_objects["o6007"] = {"location":"o6005"}
 #
 tel r6010
 #
-create the barrel;water;barrel;o6013:objects.Drink container
+create Placeholdername;water;barrel;o6013:objects.Drink_container
+#
+name o6013 = the barrel
 #
 sethome o6013 = r6010
 #
@@ -3868,7 +3964,7 @@ set o6013/level_base = 5
 #
 set o6013/vnum = "o6013"
 #
-set o6013/item_type = "drink container"
+set o6013/item_type = "drink_container"
 #
 set o6013/weight = 65
 #
@@ -3894,7 +3990,9 @@ set south/reset_door_attributes = ['closeable']
 #
 tel r6013
 #
-create a mushroom;mushroom;o6011:objects.Food
+create Placeholdername;mushroom;o6011:objects.Food
+#
+name o6011 = a mushroom
 #
 sethome o6011 = r6013
 #
@@ -3926,7 +4024,9 @@ set r6013/reset_objects["o6011"] = {"location":"inventory"}
 #
 tel r6014
 #
-create/drop the brown fox;fox;m6005:characters.Mobile
+create/drop Placeholdername;fox;m6005:characters.Mobile
+#
+name m6005 = the brown fox
 #
 desc m6005 = A brown fox is here, looking for some rabbits to chew up. 
 #
@@ -3950,13 +4050,15 @@ tag m6005 = haon dor:area name
 #
 tag m6005 = mobile
 #
-set m6005/hitpoints[maximum] = 61
+set m6005/hitpoints[maximum] = 42
 #
 set m6005/position = "standing"
 #
 tel r6016
 #
-create a mushroom;mushroom;o6011:objects.Food
+create Placeholdername;mushroom;o6011:objects.Food
+#
+name o6011 = a mushroom
 #
 sethome o6011 = r6016
 #
@@ -3988,7 +4090,9 @@ set r6016/reset_objects["o6011"] = {"location":"inventory"}
 #
 tel r6022
 #
-create/drop the brown bear;bear;m6002:characters.Mobile
+create/drop Placeholdername;bear;m6002:characters.Mobile
+#
+name m6002 = the brown bear
 #
 desc m6002 = A big, brown, angry-looking bear is here. 
 #
@@ -4012,13 +4116,15 @@ tag m6002 = haon dor:area name
 #
 tag m6002 = mobile
 #
-set m6002/hitpoints[maximum] = 93
+set m6002/hitpoints[maximum] = 138
 #
 set m6002/position = "standing"
 #
 tel r6023
 #
-create/drop the fallow deer;deer;m6004:characters.Mobile
+create/drop Placeholdername;deer;m6004:characters.Mobile
+#
+name m6004 = the fallow deer
 #
 desc m6004 = A fallow deer is grazing peacefully here. 
 #
@@ -4044,13 +4150,15 @@ tag m6004 = haon dor:area name
 #
 tag m6004 = mobile
 #
-set m6004/hitpoints[maximum] = 9
+set m6004/hitpoints[maximum] = 8
 #
 set m6004/position = "standing"
 #
 tel r6023
 #
-create some blackberries;blackberries;o6010:objects.Food
+create Placeholdername;blackberries;o6010:objects.Food
+#
+name o6010 = some blackberries
 #
 sethome o6010 = r6023
 #
@@ -4082,7 +4190,9 @@ set r6023/reset_objects["o6010"] = {"location":"inventory"}
 #
 tel r6100
 #
-create/drop Shargugh;shargugh;brownie;m6115:characters.Mobile
+create/drop Placeholdername;shargugh;brownie;m6115:characters.Mobile
+#
+name m6115 = Shargugh
 #
 desc m6115 = Shargugh the Forest Brownie is here, grinning broadly at you. 
 #
@@ -4108,13 +4218,15 @@ tag m6115 = haon dor:area name
 #
 tag m6115 = mobile
 #
-set m6115/hitpoints[maximum] = 61
+set m6115/hitpoints[maximum] = 49
 #
 set m6115/position = "standing"
 #
 tel r6100
 #
-create an iron ring;ring;iron;o6114:objects.Armor
+create Placeholdername;ring;iron;o6114:objects.Armor
+#
+name o6114 = an iron ring
 #
 sethome o6114 = m6115
 #
@@ -4140,9 +4252,9 @@ set o6114/extra_descriptions = {'ring iron': ' It is a quite heavy human-sized r
 #
 set o6114/extra_flags = ['magic']
 #
-set o6114/stat_modifiers[constitution] = 1
+set o6114/stat_modifiers[dexterity] = 1
 #
-set o6114/armor = 2
+set o6114/armor = 3
 #
 wearto o6114 = m6115
 #
@@ -4150,7 +4262,9 @@ set m6115/reset_objects["o6114"] = {"location":"equipped"}
 #
 tel r6103
 #
-create a colossal tree;tree;opening;o6102:objects.Container
+create Placeholdername;tree;opening;o6102:objects.Container
+#
+name o6102 = a colossal tree
 #
 sethome o6102 = r6103
 #
@@ -4172,7 +4286,7 @@ tag o6102 = haon dor:area name
 #
 tag o6102 = object
 #
-set o6102/extra_descriptions = {'tree': ' This enormous tree must be a thousand years old.  Its rough bark looks gray and pale and is decorated with scratches and claw marks.  On its west side is a small opening just above ground level. ', 'opening': ' The opening is far too narrow for you to squeeze through but it looks as if the tree is hollow. '}
+set o6102/extra_descriptions = {'tree': ' This enormous tree must be a thousand years old.  Its rough bark looks grey and pale and is decorated with scratches and claw marks.  On its west side is a small opening just above ground level. ', 'opening': ' The opening is far too narrow for you to squeeze through but it looks as if the tree is hollow. '}
 #
 set o6102/weight_maximum = 1000
 #
@@ -4186,9 +4300,11 @@ set r6103/reset_objects["o6102"] = {"location":"inventory"}
 #
 tel r6104
 #
-create/drop the large, gray wolf;wolf;gray;m6102:characters.Mobile
+create/drop Placeholdername;wolf;grey;m6102:characters.Mobile
 #
-desc m6102 = A large, gray wolf is here, glaring hungrily at you. 
+name m6102 = the large, grey wolf
+#
+desc m6102 = A large, grey wolf is here, glaring hungrily at you. 
 #
 set m6102/level = 1
 #
@@ -4196,7 +4312,7 @@ set m6102/level_base = 1
 #
 set m6102/vnum = "m6102"
 #
-set m6102/look_description = "The large, gray wolf eyes you with interest while licking its lips. "
+set m6102/look_description = "The large, grey wolf eyes you with interest while licking its lips. "
 #
 set m6102/act_flags = ['stay area', 'aggressive', 'npc']
 #
@@ -4210,43 +4326,47 @@ tag m6102 = haon dor:area name
 #
 tag m6102 = mobile
 #
-set m6102/hitpoints[maximum] = 9
+set m6102/hitpoints[maximum] = 8
 #
 set m6102/position = "standing"
 #
 tel r6104
 #
-create/drop the large, gray wolf;wolf;gray;m6102:characters.Mobile
+create/drop Placeholdername;wolf;grey;m6102; m6102-2:characters.Mobile
 #
-desc m6102 = A large, gray wolf is here, glaring hungrily at you. 
+name m6102-2 = the large, grey wolf
 #
-set m6102/level = 1
+desc m6102-2 = A large, grey wolf is here, glaring hungrily at you. 
 #
-set m6102/level_base = 1
+set m6102-2/level = 1
 #
-set m6102/vnum = "m6102"
+set m6102-2/level_base = 1
 #
-set m6102/look_description = "The large, gray wolf eyes you with interest while licking its lips. "
+set m6102-2/vnum = "m6102"
 #
-set m6102/act_flags = ['stay area', 'aggressive', 'npc']
+set m6102-2/look_description = "The large, grey wolf eyes you with interest while licking its lips. "
 #
-set m6102/alignment = -150
+set m6102-2/act_flags = ['stay area', 'aggressive', 'npc']
 #
-set m6102/sex = "neuter"
+set m6102-2/alignment = -150
 #
-set m6102/race = "bear"
+set m6102-2/sex = "neuter"
 #
-tag m6102 = haon dor:area name
+set m6102-2/race = "bear"
 #
-tag m6102 = mobile
+tag m6102-2 = haon dor:area name
 #
-set m6102/hitpoints[maximum] = 9
+tag m6102-2 = mobile
 #
-set m6102/position = "standing"
+set m6102-2/hitpoints[maximum] = 9
+#
+set m6102-2/position = "standing"
 #
 tel r6104
 #
-create a toadstool;toadstool;o6106:objects.Food
+create Placeholdername;toadstool;o6106:objects.Food
+#
+name o6106 = a toadstool
 #
 sethome o6106 = r6104
 #
@@ -4278,11 +4398,13 @@ set r6104/reset_objects["o6106"] = {"location":"inventory"}
 #
 tel r6105
 #
-create a long, gray branch;branch;o6105:objects.Trash
+create Placeholdername;branch;o6105:objects.Trash
+#
+name o6105 = a long, grey branch
 #
 sethome o6105 = r6105
 #
-desc o6105 = A long, gray branch rests heavily on the ground.
+desc o6105 = A long, grey branch rests heavily on the ground.
 #
 set o6105/level = 1
 #
@@ -4304,9 +4426,11 @@ set r6105/reset_objects["o6105"] = {"location":"inventory"}
 #
 tel r6108
 #
-create/drop the large, gray wolf;wolf;gray;m6102:characters.Mobile
+create/drop Placeholdername;wolf;grey;m6102:characters.Mobile
 #
-desc m6102 = A large, gray wolf is here, glaring hungrily at you. 
+name m6102 = the large, grey wolf
+#
+desc m6102 = A large, grey wolf is here, glaring hungrily at you. 
 #
 set m6102/level = 1
 #
@@ -4314,7 +4438,7 @@ set m6102/level_base = 1
 #
 set m6102/vnum = "m6102"
 #
-set m6102/look_description = "The large, gray wolf eyes you with interest while licking its lips. "
+set m6102/look_description = "The large, grey wolf eyes you with interest while licking its lips. "
 #
 set m6102/act_flags = ['stay area', 'aggressive', 'npc']
 #
@@ -4328,43 +4452,47 @@ tag m6102 = haon dor:area name
 #
 tag m6102 = mobile
 #
-set m6102/hitpoints[maximum] = 8
+set m6102/hitpoints[maximum] = 9
 #
 set m6102/position = "standing"
 #
 tel r6108
 #
-create/drop the large, gray wolf;wolf;gray;m6102:characters.Mobile
+create/drop Placeholdername;wolf;grey;m6102; m6102-2:characters.Mobile
 #
-desc m6102 = A large, gray wolf is here, glaring hungrily at you. 
+name m6102-2 = the large, grey wolf
 #
-set m6102/level = 1
+desc m6102-2 = A large, grey wolf is here, glaring hungrily at you. 
 #
-set m6102/level_base = 1
+set m6102-2/level = 1
 #
-set m6102/vnum = "m6102"
+set m6102-2/level_base = 1
 #
-set m6102/look_description = "The large, gray wolf eyes you with interest while licking its lips. "
+set m6102-2/vnum = "m6102"
 #
-set m6102/act_flags = ['stay area', 'aggressive', 'npc']
+set m6102-2/look_description = "The large, grey wolf eyes you with interest while licking its lips. "
 #
-set m6102/alignment = -150
+set m6102-2/act_flags = ['stay area', 'aggressive', 'npc']
 #
-set m6102/sex = "neuter"
+set m6102-2/alignment = -150
 #
-set m6102/race = "bear"
+set m6102-2/sex = "neuter"
 #
-tag m6102 = haon dor:area name
+set m6102-2/race = "bear"
 #
-tag m6102 = mobile
+tag m6102-2 = haon dor:area name
 #
-set m6102/hitpoints[maximum] = 8
+tag m6102-2 = mobile
 #
-set m6102/position = "standing"
+set m6102-2/hitpoints[maximum] = 8
+#
+set m6102-2/position = "standing"
 #
 tel r6111
 #
-create a toadstool;toadstool;o6106:objects.Food
+create Placeholdername;toadstool;o6106:objects.Food
+#
+name o6106 = a toadstool
 #
 sethome o6106 = r6111
 #
@@ -4396,7 +4524,9 @@ set r6111/reset_objects["o6106"] = {"location":"inventory"}
 #
 tel r6112
 #
-create/drop the large, black wolf;wolf;black;m6103:characters.Mobile
+create/drop Placeholdername;wolf;black;m6103:characters.Mobile
+#
+name m6103 = the large, black wolf
 #
 desc m6103 = A large, black wolf is here, glaring hungrily at you. 
 #
@@ -4420,47 +4550,51 @@ tag m6103 = haon dor:area name
 #
 tag m6103 = mobile
 #
-set m6103/hitpoints[maximum] = 53
+set m6103/hitpoints[maximum] = 73
 #
 set m6103/position = "standing"
 #
 tel r6112
 #
-create/drop the large, black wolf;wolf;black;m6103:characters.Mobile
+create/drop Placeholdername;wolf;black;m6103; m6103-2:characters.Mobile
 #
-desc m6103 = A large, black wolf is here, glaring hungrily at you. 
+name m6103-2 = the large, black wolf
 #
-set m6103/level = 6
+desc m6103-2 = A large, black wolf is here, glaring hungrily at you. 
 #
-set m6103/level_base = 6
+set m6103-2/level = 6
 #
-set m6103/vnum = "m6103"
+set m6103-2/level_base = 6
 #
-set m6103/look_description = "The large, black wolf eyes you with interest while licking its lips. "
+set m6103-2/vnum = "m6103"
 #
-set m6103/act_flags = ['stay area', 'aggressive', 'npc']
+set m6103-2/look_description = "The large, black wolf eyes you with interest while licking its lips. "
 #
-set m6103/alignment = -150
+set m6103-2/act_flags = ['stay area', 'aggressive', 'npc']
 #
-set m6103/sex = "neuter"
+set m6103-2/alignment = -150
 #
-set m6103/race = "bear"
+set m6103-2/sex = "neuter"
 #
-tag m6103 = haon dor:area name
+set m6103-2/race = "bear"
 #
-tag m6103 = mobile
+tag m6103-2 = haon dor:area name
 #
-set m6103/hitpoints[maximum] = 78
+tag m6103-2 = mobile
 #
-set m6103/position = "standing"
+set m6103-2/hitpoints[maximum] = 78
+#
+set m6103-2/position = "standing"
 #
 tel r6113
 #
-create a long, gray branch;branch;o6103:objects.Light
+create Placeholdername;branch;o6103:objects.Light
+#
+name o6103 = a long, grey branch
 #
 sethome o6103 = r6113
 #
-desc o6103 = A long, gray branch rests heavily on the ground.
+desc o6103 = A long, grey branch rests heavily on the ground.
 #
 set o6103/level = 4
 #
@@ -4470,7 +4604,7 @@ set o6103/vnum = "o6103"
 #
 set o6103/item_type = "light"
 #
-set o6103/wear_location = "hold"
+set o6103/wear_location = "held, in hands"
 #
 set o6103/weight = 20
 #
@@ -4486,7 +4620,9 @@ set r6113/reset_objects["o6103"] = {"location":"inventory"}
 #
 tel r6116
 #
-create/drop the vicious warg;warg;vicious;m6100:characters.Mobile
+create/drop Placeholdername;warg;vicious;m6100:characters.Mobile
+#
+name m6100 = the vicious warg
 #
 desc m6100 = A vicious warg is here, snarling angrily at you. 
 #
@@ -4510,43 +4646,47 @@ tag m6100 = haon dor:area name
 #
 tag m6100 = mobile
 #
-set m6100/hitpoints[maximum] = 9
+set m6100/hitpoints[maximum] = 8
 #
 set m6100/position = "standing"
 #
 tel r6116
 #
-create/drop the vicious warg;warg;vicious;m6100:characters.Mobile
+create/drop Placeholdername;warg;vicious;m6100; m6100-2:characters.Mobile
 #
-desc m6100 = A vicious warg is here, snarling angrily at you. 
+name m6100-2 = the vicious warg
 #
-set m6100/level = 1
+desc m6100-2 = A vicious warg is here, snarling angrily at you. 
 #
-set m6100/level_base = 1
+set m6100-2/level = 1
 #
-set m6100/vnum = "m6100"
+set m6100-2/level_base = 1
 #
-set m6100/look_description = "It is an exceptionally large wolf with thick, black fur.  Saliva is dripping quickly from its long, white fangs.  It looks quite dangerous and very angry. "
+set m6100-2/vnum = "m6100"
 #
-set m6100/act_flags = ['stay area', 'aggressive', 'npc']
+set m6100-2/look_description = "It is an exceptionally large wolf with thick, black fur.  Saliva is dripping quickly from its long, white fangs.  It looks quite dangerous and very angry. "
 #
-set m6100/alignment = -350
+set m6100-2/act_flags = ['stay area', 'aggressive', 'npc']
 #
-set m6100/sex = "neuter"
+set m6100-2/alignment = -350
 #
-set m6100/race = "bear"
+set m6100-2/sex = "neuter"
 #
-tag m6100 = haon dor:area name
+set m6100-2/race = "bear"
 #
-tag m6100 = mobile
+tag m6100-2 = haon dor:area name
 #
-set m6100/hitpoints[maximum] = 9
+tag m6100-2 = mobile
 #
-set m6100/position = "standing"
+set m6100-2/hitpoints[maximum] = 9
+#
+set m6100-2/position = "standing"
 #
 tel r6118
 #
-create/drop the large, black wolf;wolf;black;m6103:characters.Mobile
+create/drop Placeholdername;wolf;black;m6103:characters.Mobile
+#
+name m6103 = the large, black wolf
 #
 desc m6103 = A large, black wolf is here, glaring hungrily at you. 
 #
@@ -4570,43 +4710,47 @@ tag m6103 = haon dor:area name
 #
 tag m6103 = mobile
 #
-set m6103/hitpoints[maximum] = 53
+set m6103/hitpoints[maximum] = 70
 #
 set m6103/position = "standing"
 #
 tel r6118
 #
-create/drop the large, black wolf;wolf;black;m6103:characters.Mobile
+create/drop Placeholdername;wolf;black;m6103; m6103-2:characters.Mobile
 #
-desc m6103 = A large, black wolf is here, glaring hungrily at you. 
+name m6103-2 = the large, black wolf
 #
-set m6103/level = 6
+desc m6103-2 = A large, black wolf is here, glaring hungrily at you. 
 #
-set m6103/level_base = 6
+set m6103-2/level = 6
 #
-set m6103/vnum = "m6103"
+set m6103-2/level_base = 6
 #
-set m6103/look_description = "The large, black wolf eyes you with interest while licking its lips. "
+set m6103-2/vnum = "m6103"
 #
-set m6103/act_flags = ['stay area', 'aggressive', 'npc']
+set m6103-2/look_description = "The large, black wolf eyes you with interest while licking its lips. "
 #
-set m6103/alignment = -150
+set m6103-2/act_flags = ['stay area', 'aggressive', 'npc']
 #
-set m6103/sex = "neuter"
+set m6103-2/alignment = -150
 #
-set m6103/race = "bear"
+set m6103-2/sex = "neuter"
 #
-tag m6103 = haon dor:area name
+set m6103-2/race = "bear"
 #
-tag m6103 = mobile
+tag m6103-2 = haon dor:area name
 #
-set m6103/hitpoints[maximum] = 81
+tag m6103-2 = mobile
 #
-set m6103/position = "standing"
+set m6103-2/hitpoints[maximum] = 72
+#
+set m6103-2/position = "standing"
 #
 tel r6119
 #
-create a toadstool;toadstool;o6107:objects.Food
+create Placeholdername;toadstool;o6107:objects.Food
+#
+name o6107 = a toadstool
 #
 sethome o6107 = r6119
 #
@@ -4638,7 +4782,9 @@ set r6119/reset_objects["o6107"] = {"location":"inventory"}
 #
 tel r6122
 #
-create a toadstool;toadstool;o6106:objects.Food
+create Placeholdername;toadstool;o6106:objects.Food
+#
+name o6106 = a toadstool
 #
 sethome o6106 = r6122
 #
@@ -4670,11 +4816,13 @@ set r6122/reset_objects["o6106"] = {"location":"inventory"}
 #
 tel r6125
 #
-create a long, gray branch;branch;o6104:objects.Weapon
+create Placeholdername;branch;o6104:objects.Weapon
+#
+name o6104 = a long, grey branch
 #
 sethome o6104 = r6125
 #
-desc o6104 = A long, gray branch rests heavily on the ground.
+desc o6104 = A long, grey branch rests heavily on the ground.
 #
 set o6104/level = 4
 #
@@ -4698,7 +4846,7 @@ set o6104/weapon_type = "pound"
 #
 set o6104/damage_low = 3
 #
-set o6104/damage_high = 8
+set o6104/damage_high = 9
 #
 drop o6104
 #
@@ -4706,7 +4854,9 @@ set r6125/reset_objects["o6104"] = {"location":"inventory"}
 #
 tel r6127
 #
-create/drop the ferocious warg;warg;ferocious;m6101:characters.Mobile
+create/drop Placeholdername;warg;ferocious;m6101:characters.Mobile
+#
+name m6101 = the ferocious warg
 #
 desc m6101 = A ferocious warg is here, snarling angrily at you. 
 #
@@ -4730,49 +4880,53 @@ tag m6101 = haon dor:area name
 #
 tag m6101 = mobile
 #
-set m6101/hitpoints[maximum] = 66
+set m6101/hitpoints[maximum] = 61
 #
 set m6101/position = "standing"
 #
 tel r6127
 #
-create/drop the ferocious warg;warg;ferocious;m6101:characters.Mobile
+create/drop Placeholdername;warg;ferocious;m6101; m6101-2:characters.Mobile
 #
-desc m6101 = A ferocious warg is here, snarling angrily at you. 
+name m6101-2 = the ferocious warg
 #
-set m6101/level = 6
+desc m6101-2 = A ferocious warg is here, snarling angrily at you. 
 #
-set m6101/level_base = 6
+set m6101-2/level = 6
 #
-set m6101/vnum = "m6101"
+set m6101-2/level_base = 6
 #
-set m6101/look_description = "It is an exceptionally large wolf with thick, black fur.  Saliva is dripping quickly from its long, white fangs.  It looks quite dangerous and very angry. "
+set m6101-2/vnum = "m6101"
 #
-set m6101/act_flags = ['stay area', 'aggressive', 'npc']
+set m6101-2/look_description = "It is an exceptionally large wolf with thick, black fur.  Saliva is dripping quickly from its long, white fangs.  It looks quite dangerous and very angry. "
 #
-set m6101/alignment = -350
+set m6101-2/act_flags = ['stay area', 'aggressive', 'npc']
 #
-set m6101/sex = "neuter"
+set m6101-2/alignment = -350
 #
-set m6101/race = "bear"
+set m6101-2/sex = "neuter"
 #
-tag m6101 = haon dor:area name
+set m6101-2/race = "bear"
 #
-tag m6101 = mobile
+tag m6101-2 = haon dor:area name
 #
-set m6101/hitpoints[maximum] = 58
+tag m6101-2 = mobile
 #
-set m6101/position = "standing"
+set m6101-2/hitpoints[maximum] = 64
+#
+set m6101-2/position = "standing"
 #
 tel r6143
 #
-create/drop the huge, green dragon;dragon;green;m6112:characters.Mobile
+create/drop Placeholdername;dragon;green;m6112:characters.Mobile
+#
+name m6112 = the huge, green dragon
 #
 desc m6112 = A huge green dragon is here, its narrow yellow eyes glowing with rage. 
 #
-set m6112/level = 10
+set m6112/level = 23
 #
-set m6112/level_base = 10
+set m6112/level_base = 23
 #
 set m6112/vnum = "m6112"
 #
@@ -4792,7 +4946,7 @@ tag m6112 = haon dor:area name
 #
 tag m6112 = mobile
 #
-set m6112/hitpoints[maximum] = 112
+set m6112/hitpoints[maximum] = 335
 #
 set m6112/position = "standing"
 #
@@ -4800,15 +4954,17 @@ set m6112/special_function = "breath_gas"
 #
 tel r6143
 #
-create a yellow potion;potion;yellow;o6110:objects.Potion
+create Placeholdername;potion;yellow;o6110:objects.Potion
+#
+name o6110 = a yellow potion
 #
 sethome o6110 = m6112
 #
 desc o6110 = A yellow potion has been left here.
 #
-set o6110/level = 8
+set o6110/level = 21
 #
-set o6110/level_base = 8
+set o6110/level_base = 21
 #
 set o6110/vnum = "o6110"
 #
@@ -4820,7 +4976,7 @@ tag o6110 = haon dor:area name
 #
 tag o6110 = object
 #
-set o6110/extra_descriptions = {'potion yellow': ' It has a deep yellow color and a strong spicy smell. '}
+set o6110/extra_descriptions = {'potion yellow': ' It has a deep yellow colour and a strong spicy smell. '}
 #
 set o6110/extra_flags = ['magic']
 #
@@ -4836,15 +4992,17 @@ set m6112/reset_objects["o6110"] = {"location":"inventory"}
 #
 tel r6143
 #
-create an iron crown;crown;iron;o6112:objects.Armor
+create Placeholdername;crown;iron;o6112:objects.Armor
+#
+name o6112 = an iron crown
 #
 sethome o6112 = m6112
 #
 desc o6112 = An iron crown rests on the ground.
 #
-set o6112/level = 8
+set o6112/level = 21
 #
-set o6112/level_base = 8
+set o6112/level_base = 21
 #
 set o6112/vnum = "o6112"
 #
@@ -4862,11 +5020,9 @@ set o6112/extra_descriptions = {'crown iron': ' It is a heavy human-sized crown 
 #
 set o6112/extra_flags = ['magic']
 #
-set o6112/stat_modifiers[wisdom] = 1
+set o6112/stat_modifiers[wisdom] = 3
 #
-set o6112/stat_modifiers[armor class] = -2
-#
-set o6112/armor = 4
+set o6112/armor = 8
 #
 give o6112 = m6112
 #
@@ -4874,15 +5030,17 @@ set m6112/reset_objects["o6112"] = {"location":"inventory"}
 #
 tel r6143
 #
-create a large round shield;shield;large;o6111:objects.Armor
+create Placeholdername;shield;large;o6111:objects.Armor
+#
+name o6111 = a large round shield
 #
 sethome o6111 = m6112
 #
 desc o6111 = A large round shield has been left here.
 #
-set o6111/level = 8
+set o6111/level = 21
 #
-set o6111/level_base = 8
+set o6111/level_base = 21
 #
 set o6111/vnum = "o6111"
 #
@@ -4898,7 +5056,7 @@ tag o6111 = object
 #
 set o6111/extra_descriptions = {'shield large': ' It is made from hard wood that has been reinforced with heavy iron bands. '}
 #
-set o6111/armor = 4
+set o6111/armor = 7
 #
 give o6111 = m6112
 #
@@ -4918,7 +5076,9 @@ set west/reset_door_attributes = ['closeable']
 #
 tel r6155
 #
-create/drop the elder druid;elder;druid;m6116:characters.Mobile
+create/drop Placeholdername;elder;druid;m6116:characters.Mobile
+#
+name m6116 = the elder druid
 #
 desc m6116 = The elder druid is here ... he looks very upset at your presence in his home. 
 #
@@ -4944,7 +5104,7 @@ tag m6116 = haon dor:area name
 #
 tag m6116 = mobile
 #
-set m6116/hitpoints[maximum] = 86
+set m6116/hitpoints[maximum] = 169
 #
 set m6116/position = "standing"
 #
@@ -4952,7 +5112,9 @@ set m6116/special_function = "cast_cleric"
 #
 tel r6155
 #
-create the morning star;morning-star;star;morning;o6155:objects.Weapon
+create Placeholdername;morning-star;star;morning;o6155:objects.Weapon
+#
+name o6155 = the morning star
 #
 sethome o6155 = m6116
 #
@@ -4976,7 +5138,7 @@ tag o6155 = object
 #
 set o6155/extra_flags = ['magic']
 #
-set o6155/stat_modifiers[hitroll] = 3
+set o6155/stat_modifiers[hitroll] = 4
 #
 set o6155/stat_modifiers[damroll] = -1
 #
@@ -4984,7 +5146,7 @@ set o6155/weapon_type = "crush"
 #
 set o6155/damage_low = 4
 #
-set o6155/damage_high = 13
+set o6155/damage_high = 11
 #
 wieldto o6155 = m6116
 #

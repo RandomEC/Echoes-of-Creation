@@ -1,4 +1,4 @@
-#AREA {   5  10 } Alfa Graveyard~
+#AREA {   5  10 } Alfa - Graveyard~
 
 #MOBILES
 #3600
@@ -7,7 +7,7 @@ Henry the Gardener~
 Henry the Gardener is sitting here, looking drunk.
 ~
 He is a tall but bulky man in his late fifties.  His features are worn with
-decades of hard work and his somewhat grouchy expression is one of deep
+decades of hard work and his somewhat crouched expression is one of deep
 sorrow and depression.  He is haunted by a memory of a lost paradise.
 ~
 65 0 350 S
@@ -30,11 +30,11 @@ ghoul~
 the ghastly ghoul~
 A ghastly ghoul is here.
 ~
-It is a walking corpse with long fangs and long, sharp nails that strongly
-resemble claws.  Its eyes are a dark yellow color and glare hungrily at you.
+It is a walking corpse with long fangs and long, sharp nails that most of
+resemble claws.  Its eyes are a dark yellow colour and glare hungrily at you.
 ~
 35 512 -750 S
-10 15 4 2d6+72 1d10+2
+12 15 4 2d6+72 1d10+2
 100 0
 0 Undead~ 1
 #3603
@@ -100,7 +100,7 @@ E
 brandy bottle~
 The bottle is a special 'Dragon Blood' brandy bottle.  Its neck is shaped
 like a small dragon's head.  Bottles like these are often worth a small
-amount of money, even when empty.
+amount money, even when empty.
 ~
 #3602
 brandy bottle~
@@ -165,11 +165,11 @@ E
 skeleton~
 The dusty bones are almost brown.  It must have been buried for a very long
 time.
-A dusty skeleton is in excellent condition.
+A dusty skeleton is in an excellent condition.
 ~
 #3611
 amethyst gem~
-an amethyst~
+a amethyst~
 A large, beautifully polished amethyst has been left here.~
 ~
 8 0 16385
@@ -187,10 +187,6 @@ A silver pendant has been left here.~
 9 0 5
 4~ 0~ 0~ 0~
 1 400 0
-A
-5 1
-A
-13 8
 E
 pendant silver~
 It resembles Thor's hammer and appears to be made of solid silver.
@@ -204,7 +200,7 @@ A long silver dagger is lying here.~
 0~ 2~ 4~ 11~
 1 100 0
 A
-18 1
+19 1
 E
 dagger silver~
 It has a long, sharp blade that is made entirely from silver.  A small rune
@@ -216,14 +212,14 @@ has been engraved on the blade next to the hilt.
 
 #ROOMS
 #3600
-A Gravel Road in the Graveyard~
+A Gravel Road on the Graveyard~
 You are on a well-kept gravel road that leads north-south through the
 graveyard.  On both sides of the road grow dark evergreen trees.  An iron
 grate is to the north and narrow gravel paths lead east and west.
 ~
 0 0 2
 D0
-Through the solid iron bars you see the outskirts of Eden's Grove.
+Through the solid iron bars you see the Concourse.
 ~
 grate~
 1 3121 3129
@@ -244,7 +240,7 @@ The gravel path leads westwards between the dark evergreen trees.
 0 -1 3606
 S
 #3601
-A Gravel Road in the Graveyard~
+A Gravel Road on the Graveyard~
 You are on a well-kept gravel road that leads north-south through the
 graveyard.  On both sides of the road grow dark evergreen trees.
 ~
@@ -261,7 +257,7 @@ The gravel road continues southwards.
 0 -1 3602
 S
 #3602
-A Gravel Road in the Graveyard~
+A Gravel Road on the Graveyard~
 You are on a well-kept gravel road that leads north-south through the
 graveyard.  On both sides of the road grow dark evergreen trees.
 ~
@@ -278,7 +274,7 @@ The gravel road continues southwards.
 0 -1 3603
 S
 #3603
-A Gravel Road in the Graveyard~
+A Gravel Road on the Graveyard~
 You are on a well-kept gravel road that leads north-south through the
 graveyard.  On both sides of the road grow dark evergreen trees.
 ~
@@ -297,8 +293,8 @@ building.
 S
 #3604
 In front of the Chapel~
-You are in an open space before a small chapel.  A gravel road leads north
-through the graveyard, and the chapel entrance is to the south.
+You are on an open space before a small chapel.  A gravel road leads north
+through the graveyard and the chapel entrance is to the south.
 ~
 0 0 2
 D0
@@ -323,8 +319,8 @@ The gravel path leads westwards between the dark evergreen trees.
 0 -1 3618
 S
 #3606
-A Gravel Path in the Graveyard~
-You are on a gravel path winding its way between dark evergreen trees in
+A Gravel Path on the Graveyard~
+You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  An old tomb is here.
 ~
 0 0 2
@@ -340,17 +336,17 @@ The gravel path continues southwards.
 0 -1 3608
 D5
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3607
 E
-tomb stone tombstone~
-It is a large rectangular slab of dark gray stone that has been placed face
+tomb stone~
+It is a large rectangular slab of dark grey stone that has been placed face
 up in the ground.  The name has been erased by the ravages of time.
 ~
 S
 #3607
-In a Dusty Tomb~
-You are in a dark burial chamber beneath a large tombstone.
+In a dusty Tomb~
+You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 0 9 1
@@ -360,8 +356,8 @@ tomb stone~
 1 -1 3606
 S
 #3608
-A Gravel Path in the Graveyard~
-You are on a gravel path winding its way between dark evergreen trees in
+A Gravel Path on the Graveyard~
+You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads north and west.  An old tomb is here.
 ~
 0 0 2
@@ -377,28 +373,28 @@ The gravel path continues westwards.
 0 -1 3610
 D5
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3609
 E
-tomb stone tombstone~
-It is a large rectangular slab of dark gray stone that has been placed face
+tomb stone~
+It is a large rectangular slab of dark grey stone that has been placed face
 up in the ground.  The name has been erased by the ravages of time.
 ~
 S
 #3609
-In a Dusty Tomb~
-You are in a dark burial chamber beneath a large tombstone.
+In a dusty Tomb~
+You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 0 9 1
 D4
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3608
 S
 #3610
-A Gravel Path in the Graveyard~
-You are on a gravel path winding its way between dark evergreen trees in
+A Gravel Path on the Graveyard~
+You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads east and south.  An old tomb is here.
 ~
 0 0 2
@@ -414,28 +410,28 @@ The gravel path continues southwards.
 0 -1 3612
 D5
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3611
 E
-tomb stone tombstone~
-It is a large rectangular slab of dark gray stone that has been placed face
+tomb stone~
+It is a large rectangular slab of dark grey stone that has been placed face
 up in the ground.  The name has been erased by the ravages of time.
 ~
 S
 #3611
-In a Dusty Tomb~
-You are in a dark burial chamber beneath a large tombstone.
+In a dusty Tomb~
+You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 0 9 1
 D4
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3610
 S
 #3612
-A Gravel Path in the Graveyard~
-You are on a gravel path winding its way between dark evergreen trees in
+A Gravel Path on the Graveyard~
+You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads north and east.  A small shed is to the west.
 ~
 0 0 2
@@ -456,7 +452,7 @@ door~
 1 -1 3613
 S
 #3613
-In a Shed in the Graveyard~
+In a shed on the Graveyard~
 You are in a small shed that looks as if it is used to store all sorts of
 gardening equipment.  The only exit appears to be through a door to the east.
 ~
@@ -467,8 +463,8 @@ door~
 1 -1 3612
 S
 #3614
-A Gravel Path in the Graveyard~
-You are on a gravel path winding its way between dark evergreen trees in
+A Gravel Path on the Graveyard~
+You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads south and west.  An old tomb is here.
 ~
 0 0 2
@@ -484,28 +480,28 @@ The gravel path continues westwards.
 0 -1 3612
 D5
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3615
 E
-tomb stone tombstone~
-It is a large rectangular slab of dark gray stone that has been placed face
+tomb stone~
+It is a large rectangular slab of dark grey stone that has been placed face
 up in the ground.  The name has been erased by the ravages of time.
 ~
 S
 #3615
-In a Dusty Tomb~
-You are in a dark burial chamber beneath a large tombstone.
+In a dusty Tomb~
+You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 0 9 1
 D4
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3614
 S
 #3616
-A Gravel Path in the Graveyard~
-You are on a gravel path winding its way between dark evergreen trees in
+A Gravel Path on the Graveyard~
+You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads north and south.  An old tomb is here.
 ~
 0 0 2
@@ -521,28 +517,28 @@ The gravel path continues southwards.
 0 -1 3618
 D5
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3617
 E
-tomb stone tombstone~
-It is a large rectangular slab of dark gray stone that has been placed face
+tomb stone~
+It is a large rectangular slab of dark grey stone that has been placed face
 up in the ground.  The name has been erased by the ravages of time.
 ~
 S
 #3617
-In a Dusty Tomb~
-You are in a dark burial chamber beneath a large tombstone.
+In a dusty Tomb~
+You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 0 9 1
 D4
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3616
 S
 #3618
-A Gravel Path in the Graveyard~
-You are on a gravel path winding its way between dark evergreen trees in
+A Gravel Path on the Graveyard~
+You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads north and east.  An old tomb is here.
 ~
 0 0 2
@@ -558,28 +554,28 @@ The gravel path continues eastwards towards a building of some sort.
 0 -1 3604
 D5
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3619
 E
-tomb stone tombstone~
-It is a large rectangular slab of dark gray stone that has been placed face
+tomb stone~
+It is a large rectangular slab of dark grey stone that has been placed face
 up in the ground.  The name has been erased by the ravages of time.
 ~
 S
 #3619
-In a Dusty Tomb~
-You are in a dark burial chamber beneath a large tombstone.
+In a dusty Tomb~
+You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 0 9 1
 D4
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3618
 S
 #3638
-A Gravel Path in the Graveyard~
-You are on a gravel path winding its way between dark evergreen trees in
+A Gravel Path on the Graveyard~
+You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads north and west.  An old tomb is here.
 ~
 0 0 2
@@ -595,28 +591,28 @@ The gravel path continues westwards towards a building of some sort.
 0 -1 3604
 D5
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3639
 E
-tomb stone tombstone~
-It is a large rectangular slab of dark gray stone that has been placed face
+tomb stone~
+It is a large rectangular slab of dark grey stone that has been placed face
 up in the ground.  The name has been erased by the ravages of time.
 ~
 S
 #3639
-In a Dusty Tomb~
-You are in a dark burial chamber beneath a large tombstone.
+In a dusty Tomb~
+You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 0 9 1
 D4
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3638
 S
 #3640
-A Gravel Path in the Graveyard~
-You are on a gravel path winding its way between dark evergreen trees in
+A Gravel Path on the Graveyard~
+You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads north and south.  An old tomb is here.
 ~
 0 0 2
@@ -632,28 +628,28 @@ The gravel path continues southwards.
 0 -1 3638
 D5
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3641
 E
-tomb stone tombstone~
-It is a large rectangular slab of dark gray stone that has been placed face
+tomb stone~
+It is a large rectangular slab of dark grey stone that has been placed face
 up in the ground.  The name has been erased by the ravages of time.
 ~
 S
 #3641
-In a Dusty Tomb~
-You are in a dark burial chamber beneath a large tombstone.
+In a dusty Tomb~
+You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 0 9 1
 D4
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3640
 S
 #3642
-A Gravel Path in the Graveyard~
-You are on a gravel path winding its way between dark evergreen trees in
+A Gravel Path on the Graveyard~
+You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads east and south.  An old tomb is here.
 ~
 0 0 2
@@ -669,28 +665,28 @@ The gravel path continues southwards.
 0 -1 3640
 D5
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3643
 E
-tomb stone tombstone~
-It is a large rectangular slab of dark gray stone that has been placed face
+tomb stone~
+It is a large rectangular slab of dark grey stone that has been placed face
 up in the ground.  The name has been erased by the ravages of time.
 ~
 S
 #3643
-In a Dusty Tomb~
-You are in a dark burial chamber beneath a large tombstone.
+In a dusty Tomb~
+You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 0 9 1
 D4
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3642
 S
 #3644
-A Gravel Path in the Graveyard~
-You are on a gravel path winding its way between dark evergreen trees in
+A Gravel Path on the Graveyard~
+You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads north and west.  An old tomb is here.
 ~
 0 0 2
@@ -706,28 +702,28 @@ The gravel path continues westwards.
 0 -1 3642
 D5
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3645
 E
-tomb stone tombstone~
-It is a large rectangular slab of dark gray stone that has been placed face
+tomb stone~
+It is a large rectangular slab of dark grey stone that has been placed face
 up in the ground.  The name has been erased by the ravages of time.
 ~
 S
 #3645
-In a Dusty Tomb~
-You are in a dark burial chamber beneath a large tombstone.
+In a dusty Tomb~
+You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 0 9 1
 D4
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3644
 S
 #3646
-A Gravel Path in the Graveyard~
-You are on a gravel path winding its way between dark evergreen trees in
+A Gravel Path on the Graveyard~
+You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads south and west.  An old tomb is here.
 ~
 0 0 2
@@ -743,28 +739,28 @@ The gravel path continues westwards.
 0 -1 3648
 D5
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3647
 E
-tomb stone tombstone~
-It is a large rectangular slab of dark gray stone that has been placed face
+tomb stone~
+It is a large rectangular slab of dark grey stone that has been placed face
 up in the ground.  The name has been erased by the ravages of time.
 ~
 S
 #3647
-In a Dusty Tomb~
-You are in a dark burial chamber beneath a large tombstone.
+In a dusty Tomb~
+You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 0 9 1
 D4
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3646
 S
 #3648
-A Gravel Path in the Graveyard~
-You are on a gravel path winding its way between dark evergreen trees in
+A Gravel Path on the Graveyard~
+You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads north and east.  An old tomb is here.
 ~
 0 0 2
@@ -780,17 +776,17 @@ The gravel path continues eastwards.
 0 -1 3646
 D5
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3649
 E
-tomb stone tombstone~
-It is a large rectangular slab of dark gray stone that has been placed face
+tomb stone~
+It is a large rectangular slab of dark grey stone that has been placed face
 up in the ground.  The name has been erased by the ravages of time.
 ~
 S
 #3649
-In a Dusty Tomb~
-You are in a dark burial chamber beneath a large tombstone.
+In a dusty Tomb~
+You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 0 9 1
@@ -800,8 +796,8 @@ tomb stone~
 1 -1 3648
 S
 #3650
-A Gravel Path in the Graveyard~
-You are on a gravel path winding its way between dark evergreen trees in
+A Gravel Path on the Graveyard~
+You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads south and west.  An old tomb is here.
 ~
 0 0 2
@@ -817,23 +813,23 @@ The gravel path continues westwards towards a gravel road.
 0 -1 3600
 D5
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3651
 E
-tomb stone tombstone~
-It is a large rectangular slab of dark gray stone that has been placed face
+tomb stone~
+It is a large rectangular slab of dark grey stone that has been placed face
 up in the ground.  The name has been erased by the ravages of time.
 ~
 S
 #3651
-In a Dusty Tomb~
-You are in a dark burial chamber beneath a large tombstone.
+In a dusty Tomb~
+You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 0 9 1
 D4
 ~
-tomb stone tombstone~
+tomb stone~
 1 -1 3650
 S
 #0
@@ -847,8 +843,10 @@ M 3605 spec_cast_undead
 S
 
 
+
 #SHOPS
 0
+
 
 
 #RESETS
@@ -864,7 +862,7 @@ M 0 3603 1 3609
 D 0  3609 4 1
 D 0  3610 5 1
 M 0 3603 1 3611
-E 0 3613 0 16
+O 0 3613 0 3611
 D 0  3611 4 1
 M 0 3604 4 3612
 D 0  3612 3 1
@@ -880,7 +878,7 @@ O 0 3610 0 3615
 D 0  3615 4 1
 D 0  3616 5 1
 M 0 3602 1 3617
-E 0 3612 0 3
+G 0 3612 0
 D 0  3617 4 1
 D 0  3618 5 1
 O 0 3610 0 3619
@@ -914,8 +912,4 @@ S
 
 
 
-
-
 #$
-
-

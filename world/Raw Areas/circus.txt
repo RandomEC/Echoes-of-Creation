@@ -878,7 +878,7 @@ pole~
 tightrope walker's pole~
 A long pole lies here.~
 ~
-12
+9
 1
 16385
 0~ 0~ 0~ 0~
@@ -1819,7 +1819,7 @@ D4
 door~
 1 0 4428
 S
-#4429
+#4426
 Path to the Animal Pens~
 The sounds of the circus animals are far more clear from here. It
 sounds like this circus is the proud owner of more large and scary

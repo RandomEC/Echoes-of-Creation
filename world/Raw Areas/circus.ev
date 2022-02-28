@@ -446,19 +446,19 @@ desc/edit r4429
 #
 set r4429/terrain = "city"
 #
-dig/tel Path to the Animal Pens; r4429
+dig/tel Path to the Animal Pens; r4426
 #
-tag r4429 = the circus, category = area names
+tag r4426 = the circus, category = area names
 #
-desc r4429 = The sounds of the circus animals are far more clear from here. It sounds like this circus is the proud owner of more large and scary animals than just the lions out in the Big Top. Continuing on this well-worn path will lead you to the pens. 
+desc r4426 = The sounds of the circus animals are far more clear from here. It sounds like this circus is the proud owner of more large and scary animals than just the lions out in the Big Top. Continuing on this well-worn path will lead you to the pens. 
 #
-desc/edit r4429
+desc/edit r4426
 #
 :j l
 #
 :wq
 #
-set r4429/terrain = "city"
+set r4426/terrain = "city"
 #
 dig/tel The Animal Pens; r4430
 #
@@ -1804,7 +1804,7 @@ set e3669/door_attributes = "open"
 #
 set e3669/reset_door_attributes = "open"
 #
-tel r4429
+tel r4426
 #
 openexit north; n; e3670, south = r4429
 #
@@ -1820,7 +1820,7 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias south = s, e3671
+openexit south; s; e3671, north = r4430
 #
 tag e3671 = the circus, category = area names
 #
@@ -1838,7 +1838,7 @@ objectlock south = "pass:false()"
 #
 tel r4430
 #
-openexit north; n; e3672, south = r4426
+alias north = n, e3672
 #
 tag e3672 = the circus, category = area names
 #
@@ -2244,7 +2244,7 @@ tag m4400 = the circus:area name
 #
 tag m4400 = mobile
 #
-set m4400/hitpoints[maximum] = 1229
+set m4400/hitpoints[maximum] = 547
 #
 set m4400/position = "standing"
 #
@@ -2254,7 +2254,7 @@ tel r4402
 #
 create a ticket;ticket;circusticket;o4400:objects.Key
 #
-sethome o4400 = 1-m4400
+sethome o4400 = m4400
 #
 desc o4400 = An unwanted scrap of paper lies here.
 #
@@ -2272,9 +2272,9 @@ tag o4400 = the circus:area name
 #
 tag o4400 = object
 #
-give o4400 = 1-m4400
+give o4400 = m4400
 #
-set 1-m4400/reset_objects["o4400"] = {"location":"inventory"}
+set m4400/reset_objects["o4400"] = {"location":"inventory"}
 #
 tel r4402
 #
@@ -2370,7 +2370,7 @@ tag m4403 = the circus:area name
 #
 tag m4403 = mobile
 #
-set m4403/hitpoints[maximum] = 62
+set m4403/hitpoints[maximum] = 82
 #
 set m4403/position = "standing"
 #
@@ -2400,7 +2400,7 @@ tag m4403 = the circus:area name
 #
 tag m4403 = mobile
 #
-set m4403/hitpoints[maximum] = 69
+set m4403/hitpoints[maximum] = 76
 #
 set m4403/position = "standing"
 #
@@ -2432,7 +2432,7 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 82
+set m4421/hitpoints[maximum] = 68
 #
 set m4421/position = "standing"
 #
@@ -2500,7 +2500,7 @@ tag m4401 = the circus:area name
 #
 tag m4401 = mobile
 #
-set m4401/hitpoints[maximum] = 31
+set m4401/hitpoints[maximum] = 28
 #
 set m4401/position = "standing"
 #
@@ -2568,7 +2568,7 @@ tag m4401 = the circus:area name
 #
 tag m4401 = mobile
 #
-set m4401/hitpoints[maximum] = 30
+set m4401/hitpoints[maximum] = 31
 #
 set m4401/position = "standing"
 #
@@ -2598,7 +2598,7 @@ tag m4403 = the circus:area name
 #
 tag m4403 = mobile
 #
-set m4403/hitpoints[maximum] = 58
+set m4403/hitpoints[maximum] = 80
 #
 set m4403/position = "standing"
 #
@@ -2628,7 +2628,7 @@ tag m4427 = the circus:area name
 #
 tag m4427 = mobile
 #
-set m4427/hitpoints[maximum] = 43
+set m4427/hitpoints[maximum] = 36
 #
 set m4427/position = "standing"
 #
@@ -2638,7 +2638,7 @@ tel r4407
 #
 create cotton candy;candy;o4401:objects.Pill
 #
-sethome o4401 = 1-m4427
+sethome o4401 = m4427
 #
 desc o4401 = Some pink fluffy candy lies here.
 #
@@ -2664,9 +2664,9 @@ set o4401/spell_name_1 = "refresh"
 #
 set o4401/spell_name_2 = "refresh"
 #
-give o4401 = 1-m4427
+give o4401 = m4427
 #
-set 1-m4427/reset_objects["o4401"] = {"location":"inventory"}
+set m4427/reset_objects["o4401"] = {"location":"inventory"}
 #
 tel r4408
 #
@@ -2694,7 +2694,7 @@ tag m4404 = the circus:area name
 #
 tag m4404 = mobile
 #
-set m4404/hitpoints[maximum] = 20
+set m4404/hitpoints[maximum] = 16
 #
 set m4404/position = "standing"
 #
@@ -2724,7 +2724,7 @@ tag m4453 = the circus:area name
 #
 tag m4453 = mobile
 #
-set m4453/hitpoints[maximum] = 145
+set m4453/hitpoints[maximum] = 159
 #
 set m4453/position = "standing"
 #
@@ -2754,7 +2754,7 @@ tag m4406 = the circus:area name
 #
 tag m4406 = mobile
 #
-set m4406/hitpoints[maximum] = 36
+set m4406/hitpoints[maximum] = 42
 #
 set m4406/position = "standing"
 #
@@ -2762,7 +2762,7 @@ tel r4409
 #
 create a hairy key;key;hairy;o4402:objects.Key
 #
-sethome o4402 = 1-m4406
+sethome o4402 = m4406
 #
 desc o4402 = A key lies here, covered with hair clippings.
 #
@@ -2774,7 +2774,7 @@ set o4402/vnum = "o4402"
 #
 set o4402/item_type = "key"
 #
-set o4402/wear_location = "hold"
+set o4402/wear_location = "held, in hands"
 #
 set o4402/weight = 1
 #
@@ -2782,9 +2782,9 @@ tag o4402 = the circus:area name
 #
 tag o4402 = object
 #
-wearto o4402 = 1-m4406
+wearto o4402 = m4406
 #
-set 1-m4406/reset_objects["o4402"] = {"location":"equipped"}
+set m4406/reset_objects["o4402"] = {"location":"equipped"}
 #
 tel r4410
 #
@@ -2814,7 +2814,7 @@ tag m4407 = the circus:area name
 #
 tag m4407 = mobile
 #
-set m4407/hitpoints[maximum] = 42
+set m4407/hitpoints[maximum] = 38
 #
 set m4407/position = "standing"
 #
@@ -2822,7 +2822,7 @@ tel r4410
 #
 create a shimmering key;key;shimmering;o4405:objects.Key
 #
-sethome o4405 = 1-m4407
+sethome o4405 = m4407
 #
 desc o4405 = An object lies here, shimmering, so that you aren't sure what it is.
 #
@@ -2834,7 +2834,7 @@ set o4405/vnum = "o4405"
 #
 set o4405/item_type = "key"
 #
-set o4405/wear_location = "hold"
+set o4405/wear_location = "held, in hands"
 #
 set o4405/weight = 1
 #
@@ -2842,9 +2842,9 @@ tag o4405 = the circus:area name
 #
 tag o4405 = object
 #
-wearto o4405 = 1-m4407
+wearto o4405 = m4407
 #
-set 1-m4407/reset_objects["o4405"] = {"location":"equipped"}
+set m4407/reset_objects["o4405"] = {"location":"equipped"}
 #
 tel r4411
 #
@@ -2874,7 +2874,7 @@ tag m4408 = the circus:area name
 #
 tag m4408 = mobile
 #
-set m4408/hitpoints[maximum] = 24
+set m4408/hitpoints[maximum] = 29
 #
 set m4408/position = "standing"
 #
@@ -2882,7 +2882,7 @@ tel r4411
 #
 create a small key;key;small;o4404:objects.Key
 #
-sethome o4404 = 1-m4408
+sethome o4404 = m4408
 #
 desc o4404 = A small key lies here.
 #
@@ -2894,7 +2894,7 @@ set o4404/vnum = "o4404"
 #
 set o4404/item_type = "key"
 #
-set o4404/wear_location = "hold"
+set o4404/wear_location = "held, in hands"
 #
 set o4404/weight = 1
 #
@@ -2902,15 +2902,15 @@ tag o4404 = the circus:area name
 #
 tag o4404 = object
 #
-wearto o4404 = 1-m4408
+wearto o4404 = m4408
 #
-set 1-m4408/reset_objects["o4404"] = {"location":"equipped"}
+set m4408/reset_objects["o4404"] = {"location":"equipped"}
 #
 tel r4411
 #
 create the midget's purse;purse;o4411:objects.Container
 #
-sethome o4411 = 1-m4408
+sethome o4411 = m4408
 #
 desc o4411 = A small purse lies here.
 #
@@ -2922,7 +2922,7 @@ set o4411/vnum = "o4411"
 #
 set o4411/item_type = "container"
 #
-set o4411/wear_location = "hold"
+set o4411/wear_location = "held, in hands"
 #
 set o4411/weight = 1
 #
@@ -2936,9 +2936,9 @@ set o4411/state = ['closed', 'closeable']
 #
 set o4411/state_base = ['closed', 'closeable']
 #
-give o4411 = 1-m4408
+give o4411 = m4408
 #
-set 1-m4408/reset_objects["o4411"] = {"location":"inventory"}
+set m4408/reset_objects["o4411"] = {"location":"inventory"}
 #
 tel r4411
 #
@@ -2964,7 +2964,7 @@ tag o4437 = object
 #
 set o4437/value = 50
 #
-put o4437 = o4411
+put o4437 in o4411
 #
 set r4411/reset_objects["o4437"] = {"location":"o4411"}
 #
@@ -2994,7 +2994,7 @@ tag m4410 = the circus:area name
 #
 tag m4410 = mobile
 #
-set m4410/hitpoints[maximum] = 199
+set m4410/hitpoints[maximum] = 110
 #
 set m4410/position = "standing"
 #
@@ -3002,7 +3002,7 @@ tel r4412
 #
 create a slender key;key;slender;o4406:objects.Key
 #
-sethome o4406 = 1-m4410
+sethome o4406 = m4410
 #
 desc o4406 = A very thin key lies here.
 #
@@ -3014,7 +3014,7 @@ set o4406/vnum = "o4406"
 #
 set o4406/item_type = "key"
 #
-set o4406/wear_location = "hold"
+set o4406/wear_location = "held, in hands"
 #
 set o4406/weight = 1
 #
@@ -3022,9 +3022,9 @@ tag o4406 = the circus:area name
 #
 tag o4406 = object
 #
-wearto o4406 = 1-m4410
+wearto o4406 = m4410
 #
-set 1-m4410/reset_objects["o4406"] = {"location":"equipped"}
+set m4410/reset_objects["o4406"] = {"location":"equipped"}
 #
 tel r4413
 #
@@ -3054,7 +3054,7 @@ tag m4409 = the circus:area name
 #
 tag m4409 = mobile
 #
-set m4409/hitpoints[maximum] = 74
+set m4409/hitpoints[maximum] = 68
 #
 set m4409/position = "standing"
 #
@@ -3062,7 +3062,7 @@ tel r4413
 #
 create a huge key;key;o4403:objects.Key
 #
-sethome o4403 = 1-m4409
+sethome o4403 = m4409
 #
 desc o4403 = A humongous, heavy key lies here.
 #
@@ -3074,7 +3074,7 @@ set o4403/vnum = "o4403"
 #
 set o4403/item_type = "key"
 #
-set o4403/wear_location = "hold"
+set o4403/wear_location = "held, in hands"
 #
 set o4403/weight = 1
 #
@@ -3082,9 +3082,9 @@ tag o4403 = the circus:area name
 #
 tag o4403 = object
 #
-wearto o4403 = 1-m4409
+wearto o4403 = m4409
 #
-set 1-m4409/reset_objects["o4403"] = {"location":"equipped"}
+set m4409/reset_objects["o4403"] = {"location":"equipped"}
 #
 tel r4413
 #
@@ -3102,7 +3102,7 @@ set o4414/vnum = "o4414"
 #
 set o4414/item_type = "furniture"
 #
-set o4414/wear_location = "hold"
+set o4414/wear_location = "held, in hands"
 #
 set o4414/weight = 120
 #
@@ -3178,7 +3178,7 @@ tag m4402 = the circus:area name
 #
 tag m4402 = mobile
 #
-set m4402/hitpoints[maximum] = 25
+set m4402/hitpoints[maximum] = 32
 #
 set m4402/position = "standing"
 #
@@ -3208,7 +3208,7 @@ tag m4403 = the circus:area name
 #
 tag m4403 = mobile
 #
-set m4403/hitpoints[maximum] = 50
+set m4403/hitpoints[maximum] = 82
 #
 set m4403/position = "standing"
 #
@@ -3238,7 +3238,7 @@ tag m4401 = the circus:area name
 #
 tag m4401 = mobile
 #
-set m4401/hitpoints[maximum] = 25
+set m4401/hitpoints[maximum] = 33
 #
 set m4401/position = "standing"
 #
@@ -3298,7 +3298,7 @@ tag m4403 = the circus:area name
 #
 tag m4403 = mobile
 #
-set m4403/hitpoints[maximum] = 72
+set m4403/hitpoints[maximum] = 76
 #
 set m4403/position = "standing"
 #
@@ -3328,7 +3328,7 @@ tag m4405 = the circus:area name
 #
 tag m4405 = mobile
 #
-set m4405/hitpoints[maximum] = 61
+set m4405/hitpoints[maximum] = 72
 #
 set m4405/position = "standing"
 #
@@ -3390,7 +3390,7 @@ tag m4411 = the circus:area name
 #
 tag m4411 = mobile
 #
-set m4411/hitpoints[maximum] = 157
+set m4411/hitpoints[maximum] = 122
 #
 set m4411/position = "standing"
 #
@@ -3420,39 +3420,39 @@ tag m4411 = the circus:area name
 #
 tag m4411 = mobile
 #
-set m4411/hitpoints[maximum] = 89
+set m4411/hitpoints[maximum] = 152
 #
 set m4411/position = "standing"
 #
 tel r4418
 #
-create/drop a member of the audience;member;audience;m4411:characters.Mobile
+create/drop a member of the audience;member;audience;m4411; m4411-2:characters.Mobile
 #
-desc 2-m4411 = A member of the audience goes "Ooooh!   Ahhhhh!" 
+desc m4411-2 = A member of the audience goes "Ooooh!   Ahhhhh!" 
 #
-set 2-m4411/level = 10
+set m4411-2/level = 10
 #
-set 2-m4411/level_base = 10
+set m4411-2/level_base = 10
 #
-set 2-m4411/vnum = "m4411"
+set m4411-2/vnum = "m4411"
 #
-set 2-m4411/look_description = "This person is so interested in the show, he doesn't even realize you are here. "
+set m4411-2/look_description = "This person is so interested in the show, he doesn't even realize you are here. "
 #
-set 2-m4411/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+set m4411-2/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
 #
-set 2-m4411/alignment = 0
+set m4411-2/alignment = 0
 #
-set 2-m4411/sex = "male"
+set m4411-2/sex = "male"
 #
-set 2-m4411/race = "human"
+set m4411-2/race = "human"
 #
-tag 2-m4411 = the circus:area name
+tag m4411-2 = the circus:area name
 #
-tag 2-m4411 = mobile
+tag m4411-2 = mobile
 #
-set 2-m4411/hitpoints[maximum] = 140
+set m4411-2/hitpoints[maximum] = 89
 #
-set 2-m4411/position = "standing"
+set m4411-2/position = "standing"
 #
 tel r4419
 #
@@ -3480,7 +3480,7 @@ tag m4411 = the circus:area name
 #
 tag m4411 = mobile
 #
-set m4411/hitpoints[maximum] = 115
+set m4411/hitpoints[maximum] = 168
 #
 set m4411/position = "standing"
 #
@@ -3512,7 +3512,7 @@ tag m4415 = the circus:area name
 #
 tag m4415 = mobile
 #
-set m4415/hitpoints[maximum] = 137
+set m4415/hitpoints[maximum] = 123
 #
 set m4415/position = "standing"
 #
@@ -3520,7 +3520,7 @@ tel r4419
 #
 create a tophat;tophat;hat;o4421:objects.Armor
 #
-sethome o4421 = 1-m4415
+sethome o4421 = m4415
 #
 desc o4421 = The Ringmaster's tophat lies here.
 #
@@ -3544,11 +3544,11 @@ set o4421/stat_modifiers[mana] = 10
 #
 set o4421/stat_modifiers[armor class] = 1
 #
-set o4421/armor = 4
+set o4421/armor = 5
 #
-wearto o4421 = 1-m4415
+wearto o4421 = m4415
 #
-set 1-m4415/reset_objects["o4421"] = {"location":"equipped"}
+set m4415/reset_objects["o4421"] = {"location":"equipped"}
 #
 tel r4420
 #
@@ -3576,69 +3576,69 @@ tag m4411 = the circus:area name
 #
 tag m4411 = mobile
 #
-set m4411/hitpoints[maximum] = 159
+set m4411/hitpoints[maximum] = 168
 #
 set m4411/position = "standing"
 #
 tel r4420
 #
-create/drop a member of the audience;member;audience;m4411:characters.Mobile
+create/drop a member of the audience;member;audience;m4411; m4411-2:characters.Mobile
 #
-desc 2-m4411 = A member of the audience goes "Ooooh!   Ahhhhh!" 
+desc m4411-2 = A member of the audience goes "Ooooh!   Ahhhhh!" 
 #
-set 2-m4411/level = 10
+set m4411-2/level = 10
 #
-set 2-m4411/level_base = 10
+set m4411-2/level_base = 10
 #
-set 2-m4411/vnum = "m4411"
+set m4411-2/vnum = "m4411"
 #
-set 2-m4411/look_description = "This person is so interested in the show, he doesn't even realize you are here. "
+set m4411-2/look_description = "This person is so interested in the show, he doesn't even realize you are here. "
 #
-set 2-m4411/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+set m4411-2/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
 #
-set 2-m4411/alignment = 0
+set m4411-2/alignment = 0
 #
-set 2-m4411/sex = "male"
+set m4411-2/sex = "male"
 #
-set 2-m4411/race = "human"
+set m4411-2/race = "human"
 #
-tag 2-m4411 = the circus:area name
+tag m4411-2 = the circus:area name
 #
-tag 2-m4411 = mobile
+tag m4411-2 = mobile
 #
-set 2-m4411/hitpoints[maximum] = 146
+set m4411-2/hitpoints[maximum] = 122
 #
-set 2-m4411/position = "standing"
+set m4411-2/position = "standing"
 #
 tel r4420
 #
-create/drop a member of the audience;member;audience;m4411:characters.Mobile
+create/drop a member of the audience;member;audience;m4411; m4411-3:characters.Mobile
 #
-desc 3-m4411 = A member of the audience goes "Ooooh!   Ahhhhh!" 
+desc m4411-3 = A member of the audience goes "Ooooh!   Ahhhhh!" 
 #
-set 3-m4411/level = 10
+set m4411-3/level = 10
 #
-set 3-m4411/level_base = 10
+set m4411-3/level_base = 10
 #
-set 3-m4411/vnum = "m4411"
+set m4411-3/vnum = "m4411"
 #
-set 3-m4411/look_description = "This person is so interested in the show, he doesn't even realize you are here. "
+set m4411-3/look_description = "This person is so interested in the show, he doesn't even realize you are here. "
 #
-set 3-m4411/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+set m4411-3/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
 #
-set 3-m4411/alignment = 0
+set m4411-3/alignment = 0
 #
-set 3-m4411/sex = "male"
+set m4411-3/sex = "male"
 #
-set 3-m4411/race = "human"
+set m4411-3/race = "human"
 #
-tag 3-m4411 = the circus:area name
+tag m4411-3 = the circus:area name
 #
-tag 3-m4411 = mobile
+tag m4411-3 = mobile
 #
-set 3-m4411/hitpoints[maximum] = 111
+set m4411-3/hitpoints[maximum] = 142
 #
-set 3-m4411/position = "standing"
+set m4411-3/position = "standing"
 #
 tel r4422
 #
@@ -3666,7 +3666,7 @@ tag m4412 = the circus:area name
 #
 tag m4412 = mobile
 #
-set m4412/hitpoints[maximum] = 100
+set m4412/hitpoints[maximum] = 96
 #
 set m4412/position = "standing"
 #
@@ -3674,7 +3674,7 @@ tel r4422
 #
 create a red clown nose;nose;red;o4439:objects.Armor
 #
-sethome o4439 = 1-m4412
+sethome o4439 = m4412
 #
 desc o4439 = A red nose like a clown might wear, lies forgotten upon the ground.
 #
@@ -3700,9 +3700,9 @@ set o4439/stat_modifiers[wisdom] = -1
 #
 set o4439/armor = 4
 #
-wearto o4439 = 1-m4412
+wearto o4439 = m4412
 #
-set 1-m4412/reset_objects["o4439"] = {"location":"equipped"}
+set m4412/reset_objects["o4439"] = {"location":"equipped"}
 #
 tel r4422
 #
@@ -3738,7 +3738,7 @@ tel r4422
 #
 create big clown shoes;clown;shoes;o4420:objects.Armor
 #
-sethome o4420 = 1-m4413
+sethome o4420 = m4413
 #
 desc o4420 = A huge pair of shoes lies here, apparently forgotten.
 #
@@ -3764,9 +3764,9 @@ set o4420/stat_modifiers[dexterity] = -1
 #
 set o4420/armor = 2
 #
-wearto o4420 = 1-m4413
+wearto o4420 = m4413
 #
-set 1-m4413/reset_objects["o4420"] = {"location":"equipped"}
+set m4413/reset_objects["o4420"] = {"location":"equipped"}
 #
 tel r4422
 #
@@ -3800,7 +3800,7 @@ tag m4416 = the circus:area name
 #
 tag m4416 = mobile
 #
-set m4416/hitpoints[maximum] = 74
+set m4416/hitpoints[maximum] = 95
 #
 set m4416/position = "standing"
 #
@@ -3808,7 +3808,7 @@ tel r4423
 #
 create a sharp knife;knife;o4416:objects.Weapon
 #
-sethome o4416 = 1-m4416
+sethome o4416 = m4416
 #
 desc o4416 = A sharp, well balanced knife lies on the ground.
 #
@@ -3834,17 +3834,17 @@ set o4416/weapon_type = "stab"
 #
 set o4416/damage_low = 4
 #
-set o4416/damage_high = 13
+set o4416/damage_high = 10
 #
-wieldto o4416 = 1-m4416
+wieldto o4416 = m4416
 #
-set 1-m4416/reset_objects["o4416"] = {"location":"equipped"}
+set m4416/reset_objects["o4416"] = {"location":"equipped"}
 #
 tel r4423
 #
 create drugged food;drugged;food;o4431:objects.Pill
 #
-sethome o4431 = 1-m4416
+sethome o4431 = m4416
 #
 desc o4431 = A delicious looking dinner lies here.
 #
@@ -3872,9 +3872,9 @@ set o4431/spell_name_2 = "weaken"
 #
 set o4431/spell_name_3 = "poison"
 #
-give o4431 = 1-m4416
+give o4431 = m4416
 #
-set 1-m4416/reset_objects["o4431"] = {"location":"inventory"}
+set m4416/reset_objects["o4431"] = {"location":"inventory"}
 #
 tel r4423
 #
@@ -3904,7 +3904,7 @@ tag m4417 = the circus:area name
 #
 tag m4417 = mobile
 #
-set m4417/hitpoints[maximum] = 45
+set m4417/hitpoints[maximum] = 41
 #
 set m4417/position = "standing"
 #
@@ -3912,7 +3912,7 @@ tel r4423
 #
 create a blindfold;blindfold;o4417:objects.Armor
 #
-sethome o4417 = 1-m4417
+sethome o4417 = m4417
 #
 desc o4417 = A strip of black cloth lies here.
 #
@@ -3936,11 +3936,11 @@ set o4417/stat_modifiers[hitroll] = -10
 #
 set o4417/stat_modifiers[moves] = -50
 #
-set o4417/armor = 4
+set o4417/armor = 2
 #
-wearto o4417 = 1-m4417
+wearto o4417 = m4417
 #
-set 1-m4417/reset_objects["o4417"] = {"location":"equipped"}
+set m4417/reset_objects["o4417"] = {"location":"equipped"}
 #
 tel r4424
 #
@@ -3970,7 +3970,7 @@ tag m4418 = the circus:area name
 #
 tag m4418 = mobile
 #
-set m4418/hitpoints[maximum] = 105
+set m4418/hitpoints[maximum] = 176
 #
 set m4418/position = "standing"
 #
@@ -3978,7 +3978,7 @@ tel r4424
 #
 create a whip;whip;o4418:objects.Weapon
 #
-sethome o4418 = 1-m4418
+sethome o4418 = m4418
 #
 desc o4418 = A leather whip is lying on the ground.
 #
@@ -4006,13 +4006,13 @@ set o4418/stat_modifiers[wisdom] = -1
 #
 set o4418/weapon_type = "whip"
 #
-set o4418/damage_low = 3
+set o4418/damage_low = 4
 #
-set o4418/damage_high = 12
+set o4418/damage_high = 13
 #
-wieldto o4418 = 1-m4418
+wieldto o4418 = m4418
 #
-set 1-m4418/reset_objects["o4418"] = {"location":"equipped"}
+set m4418/reset_objects["o4418"] = {"location":"equipped"}
 #
 tel r4424
 #
@@ -4046,63 +4046,63 @@ set m4419/position = "standing"
 #
 tel r4424
 #
-create/drop a ferocious Lion;lion;m4419:characters.Mobile
+create/drop a ferocious Lion;lion;m4419; m4419-2:characters.Mobile
 #
-desc 2-m4419 = A ferocious Lion leaps from his stand to attack you! 
+desc m4419-2 = A ferocious Lion leaps from his stand to attack you! 
 #
-set 2-m4419/level = 1
+set m4419-2/level = 1
 #
-set 2-m4419/level_base = 1
+set m4419-2/level_base = 1
 #
-set 2-m4419/vnum = "m4419"
+set m4419-2/vnum = "m4419"
 #
-set 2-m4419/look_description = "This is the King of the Beasts, and you understand why as he tears a chunk of flesh from your body! "
+set m4419-2/look_description = "This is the King of the Beasts, and you understand why as he tears a chunk of flesh from your body! "
 #
-set 2-m4419/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+set m4419-2/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
 #
-set 2-m4419/alignment = -1000
+set m4419-2/alignment = -1000
 #
-set 2-m4419/sex = "neuter"
+set m4419-2/sex = "neuter"
 #
-set 2-m4419/race = "bear"
+set m4419-2/race = "bear"
 #
-tag 2-m4419 = the circus:area name
+tag m4419-2 = the circus:area name
 #
-tag 2-m4419 = mobile
+tag m4419-2 = mobile
 #
-set 2-m4419/hitpoints[maximum] = 8
+set m4419-2/hitpoints[maximum] = 8
 #
-set 2-m4419/position = "standing"
+set m4419-2/position = "standing"
 #
 tel r4424
 #
-create/drop a ferocious Lion;lion;m4419:characters.Mobile
+create/drop a ferocious Lion;lion;m4419; m4419-3:characters.Mobile
 #
-desc 3-m4419 = A ferocious Lion leaps from his stand to attack you! 
+desc m4419-3 = A ferocious Lion leaps from his stand to attack you! 
 #
-set 3-m4419/level = 1
+set m4419-3/level = 1
 #
-set 3-m4419/level_base = 1
+set m4419-3/level_base = 1
 #
-set 3-m4419/vnum = "m4419"
+set m4419-3/vnum = "m4419"
 #
-set 3-m4419/look_description = "This is the King of the Beasts, and you understand why as he tears a chunk of flesh from your body! "
+set m4419-3/look_description = "This is the King of the Beasts, and you understand why as he tears a chunk of flesh from your body! "
 #
-set 3-m4419/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+set m4419-3/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
 #
-set 3-m4419/alignment = -1000
+set m4419-3/alignment = -1000
 #
-set 3-m4419/sex = "neuter"
+set m4419-3/sex = "neuter"
 #
-set 3-m4419/race = "bear"
+set m4419-3/race = "bear"
 #
-tag 3-m4419 = the circus:area name
+tag m4419-3 = the circus:area name
 #
-tag 3-m4419 = mobile
+tag m4419-3 = mobile
 #
-set 3-m4419/hitpoints[maximum] = 9
+set m4419-3/hitpoints[maximum] = 8
 #
-set 3-m4419/position = "standing"
+set m4419-3/position = "standing"
 #
 tel r4424
 #
@@ -4148,15 +4148,15 @@ tag m4420 = the circus:area name
 #
 tag m4420 = mobile
 #
-set m4420/hitpoints[maximum] = 102
+set m4420/hitpoints[maximum] = 145
 #
 set m4420/position = "standing"
 #
 tel r4425
 #
-create tightrope walker's pole;pole;o4419:objects.Furniture
+create tightrope walker's pole;pole;o4419:objects.Armor
 #
-sethome o4419 = 1-m4420
+sethome o4419 = m4420
 #
 desc o4419 = A long pole lies here.
 #
@@ -4166,9 +4166,9 @@ set o4419/level_base = 8
 #
 set o4419/vnum = "o4419"
 #
-set o4419/item_type = "furniture"
+set o4419/item_type = "armor"
 #
-set o4419/wear_location = "hold"
+set o4419/wear_location = "held, in hands"
 #
 set o4419/weight = 1
 #
@@ -4182,15 +4182,11 @@ set o4419/stat_modifiers[dexterity] = 1
 #
 set o4419/stat_modifiers[moves] = 8
 #
-set o4419/people_maximum = 0
+set o4419/armor = 4
 #
-set o4419/weight_maximum = 0
+wearto o4419 = m4420
 #
-set o4419/use_positions = []
-#
-set o4419/heal_mana_gain = 0
-#
-set 1-m4420/reset_objects["o4419"] = {"location":"equipped"}
+set m4420/reset_objects["o4419"] = {"location":"equipped"}
 #
 tel r4426
 #
@@ -4218,15 +4214,15 @@ tag m4420 = the circus:area name
 #
 tag m4420 = mobile
 #
-set m4420/hitpoints[maximum] = 162
+set m4420/hitpoints[maximum] = 95
 #
 set m4420/position = "standing"
 #
 tel r4426
 #
-create tightrope walker's pole;pole;o4419:objects.Furniture
+create tightrope walker's pole;pole;o4419:objects.Armor
 #
-sethome o4419 = 1-m4420
+sethome o4419 = m4420
 #
 desc o4419 = A long pole lies here.
 #
@@ -4236,9 +4232,9 @@ set o4419/level_base = 8
 #
 set o4419/vnum = "o4419"
 #
-set o4419/item_type = "furniture"
+set o4419/item_type = "armor"
 #
-set o4419/wear_location = "hold"
+set o4419/wear_location = "held, in hands"
 #
 set o4419/weight = 1
 #
@@ -4252,15 +4248,11 @@ set o4419/stat_modifiers[dexterity] = 1
 #
 set o4419/stat_modifiers[moves] = 8
 #
-set o4419/people_maximum = 0
+set o4419/armor = 4
 #
-set o4419/weight_maximum = 0
+wearto o4419 = m4420
 #
-set o4419/use_positions = []
-#
-set o4419/heal_mana_gain = 0
-#
-set 1-m4420/reset_objects["o4419"] = {"location":"equipped"}
+set m4420/reset_objects["o4419"] = {"location":"equipped"}
 #
 tel r4428
 #
@@ -4294,7 +4286,7 @@ tag m4412 = the circus:area name
 #
 tag m4412 = mobile
 #
-set m4412/hitpoints[maximum] = 92
+set m4412/hitpoints[maximum] = 105
 #
 set m4412/position = "standing"
 #
@@ -4302,7 +4294,7 @@ tel r4429
 #
 create a red clown nose;nose;red;o4439:objects.Armor
 #
-sethome o4439 = 1-m4412
+sethome o4439 = m4412
 #
 desc o4439 = A red nose like a clown might wear, lies forgotten upon the ground.
 #
@@ -4326,11 +4318,11 @@ set o4439/stat_modifiers[intelligence] = -2
 #
 set o4439/stat_modifiers[wisdom] = -1
 #
-set o4439/armor = 3
+set o4439/armor = 2
 #
-wearto o4439 = 1-m4412
+wearto o4439 = m4412
 #
-set 1-m4412/reset_objects["o4439"] = {"location":"equipped"}
+set m4412/reset_objects["o4439"] = {"location":"equipped"}
 #
 tel r4429
 #
@@ -4366,7 +4358,7 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 82
+set m4421/hitpoints[maximum] = 88
 #
 set m4421/position = "standing"
 #
@@ -4414,7 +4406,7 @@ tag m4422 = the circus:area name
 #
 tag m4422 = mobile
 #
-set m4422/hitpoints[maximum] = 79
+set m4422/hitpoints[maximum] = 73
 #
 set m4422/position = "standing"
 #
@@ -4450,39 +4442,39 @@ tag m4423 = the circus:area name
 #
 tag m4423 = mobile
 #
-set m4423/hitpoints[maximum] = 77
+set m4423/hitpoints[maximum] = 61
 #
 set m4423/position = "standing"
 #
 tel r4432
 #
-create/drop a trained bear;bear;m4423:characters.Mobile
+create/drop a trained bear;bear;m4423; m4423-2:characters.Mobile
 #
-desc 2-m4423 = The trained bear hasn't been fed in a week.  Look out! 
+desc m4423-2 = The trained bear hasn't been fed in a week.  Look out! 
 #
-set 2-m4423/level = 6
+set m4423-2/level = 6
 #
-set 2-m4423/level_base = 6
+set m4423-2/level_base = 6
 #
-set 2-m4423/vnum = "m4423"
+set m4423-2/vnum = "m4423"
 #
-set 2-m4423/look_description = "The bear hasn't been fed for a long time.  The Circus Owner figures he can save a lot of money by feeding the bear with unwary adventurers like yourself. "
+set m4423-2/look_description = "The bear hasn't been fed for a long time.  The Circus Owner figures he can save a lot of money by feeding the bear with unwary adventurers like yourself. "
 #
-set 2-m4423/act_flags = ['aggressive', 'sentinel', 'npc']
+set m4423-2/act_flags = ['aggressive', 'sentinel', 'npc']
 #
-set 2-m4423/alignment = 0
+set m4423-2/alignment = 0
 #
-set 2-m4423/sex = "neuter"
+set m4423-2/sex = "neuter"
 #
-set 2-m4423/race = "bear"
+set m4423-2/race = "bear"
 #
-tag 2-m4423 = the circus:area name
+tag m4423-2 = the circus:area name
 #
-tag 2-m4423 = mobile
+tag m4423-2 = mobile
 #
-set 2-m4423/hitpoints[maximum] = 53
+set m4423-2/hitpoints[maximum] = 66
 #
-set 2-m4423/position = "standing"
+set m4423-2/position = "standing"
 #
 tel r4432
 #
@@ -4516,7 +4508,7 @@ tag m4424 = the circus:area name
 #
 tag m4424 = mobile
 #
-set m4424/hitpoints[maximum] = 17
+set m4424/hitpoints[maximum] = 20
 #
 set m4424/position = "standing"
 #
@@ -4554,7 +4546,7 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 123
+set m4421/hitpoints[maximum] = 68
 #
 set m4421/position = "standing"
 #
@@ -4610,7 +4602,7 @@ tel r4435
 #
 create the strongman's bracers;bracers;strongman;o4407:objects.Armor
 #
-sethome o4407 = 1-o4424
+sethome o4407 = o4424
 #
 desc o4407 = A pair of large bracers lies here.
 #
@@ -4636,9 +4628,9 @@ set o4407/stat_modifiers[hitpoints] = 4
 #
 set o4407/armor = 4
 #
-put o4407 = 1-o4424
+put o4407 in o4424
 #
-set r4435/reset_objects["o4407"] = {"location":"1-o4424"}
+set r4435/reset_objects["o4407"] = {"location":"o4424"}
 #
 tel r4435
 #
@@ -4686,7 +4678,7 @@ tel r4436
 #
 create a razor;razor;o4413:objects.Weapon
 #
-sethome o4413 = 1-o4422
+sethome o4413 = o4422
 #
 desc o4413 = A razor lies here.
 #
@@ -4714,13 +4706,13 @@ set o4413/stat_modifiers[armor class] = 3
 #
 set o4413/weapon_type = "stab"
 #
-set o4413/damage_low = 4
+set o4413/damage_low = 2
 #
 set o4413/damage_high = 10
 #
-put o4413 = 1-o4422
+put o4413 in o4422
 #
-set r4436/reset_objects["o4413"] = {"location":"1-o4422"}
+set r4436/reset_objects["o4413"] = {"location":"o4422"}
 #
 tel r4436
 #
@@ -4768,7 +4760,7 @@ tel r4437
 #
 create the sword swallower's sword;sword;bastard;o4410:objects.Weapon
 #
-sethome o4410 = 1-o4426
+sethome o4410 = o4426
 #
 desc o4410 = A rubber bastard sword is here.
 #
@@ -4798,9 +4790,9 @@ set o4410/damage_low = 4
 #
 set o4410/damage_high = 10
 #
-put o4410 = 1-o4426
+put o4410 in o4426
 #
-set r4437/reset_objects["o4410"] = {"location":"1-o4426"}
+set r4437/reset_objects["o4410"] = {"location":"o4426"}
 #
 tel r4437
 #
@@ -4860,7 +4852,7 @@ tel r4439
 #
 create a bunch of coins;bunch;coins;o4438:objects.Money
 #
-sethome o4438 = 1-o4425
+sethome o4438 = o4425
 #
 desc o4438 = A bunch of coins lies here.
 #
@@ -4880,15 +4872,15 @@ tag o4438 = object
 #
 set o4438/value = 100
 #
-put o4438 = 1-o4425
+put o4438 in o4425
 #
-set r4439/reset_objects["o4438"] = {"location":"1-o4425"}
+set r4439/reset_objects["o4438"] = {"location":"o4425"}
 #
 tel r4439
 #
 create a small, thin sword;sword;small;o4408:objects.Weapon
 #
-sethome o4408 = 1-o4425
+sethome o4408 = o4425
 #
 desc o4408 = A small sword lies here.
 #
@@ -4916,11 +4908,11 @@ set o4408/weapon_type = "pierce"
 #
 set o4408/damage_low = 4
 #
-set o4408/damage_high = 12
+set o4408/damage_high = 10
 #
-put o4408 = 1-o4425
+put o4408 in o4425
 #
-set r4439/reset_objects["o4408"] = {"location":"1-o4425"}
+set r4439/reset_objects["o4408"] = {"location":"o4425"}
 #
 tel r4439
 #
@@ -4950,7 +4942,7 @@ tag m4429 = the circus:area name
 #
 tag m4429 = mobile
 #
-set m4429/hitpoints[maximum] = 19
+set m4429/hitpoints[maximum] = 16
 #
 set m4429/position = "standing"
 #
@@ -4988,7 +4980,7 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 92
+set m4421/hitpoints[maximum] = 91
 #
 set m4421/position = "standing"
 #
@@ -5050,7 +5042,7 @@ tel r4441
 #
 create a pointy translucent staff;staff;translucent;o4409:objects.Weapon
 #
-sethome o4409 = 1-o4423
+sethome o4409 = o4423
 #
 desc o4409 = A long, thin, shimmering object lies here.
 #
@@ -5078,13 +5070,13 @@ set o4409/stat_modifiers[damroll] = 1
 #
 set o4409/weapon_type = "pound"
 #
-set o4409/damage_low = 2
+set o4409/damage_low = 4
 #
-set o4409/damage_high = 12
+set o4409/damage_high = 10
 #
-put o4409 = 1-o4423
+put o4409 in o4423
 #
-set r4441/reset_objects["o4409"] = {"location":"1-o4423"}
+set r4441/reset_objects["o4409"] = {"location":"o4423"}
 #
 tel r4441
 #
@@ -5118,7 +5110,7 @@ tag m4425 = the circus:area name
 #
 tag m4425 = mobile
 #
-set m4425/hitpoints[maximum] = 57
+set m4425/hitpoints[maximum] = 60
 #
 set m4425/position = "standing"
 #
@@ -5148,7 +5140,7 @@ tag m4426 = the circus:area name
 #
 tag m4426 = mobile
 #
-set m4426/hitpoints[maximum] = 90
+set m4426/hitpoints[maximum] = 138
 #
 set m4426/position = "standing"
 #
@@ -5156,7 +5148,7 @@ tel r4442
 #
 create a scalpel;scalpel;o4448:objects.Weapon
 #
-sethome o4448 = 1-m4426
+sethome o4448 = m4426
 #
 desc o4448 = A thin knife with a sharp blade lies here.
 #
@@ -5184,19 +5176,19 @@ set o4448/stat_modifiers[hitroll] = -3
 #
 set o4448/weapon_type = "slice"
 #
-set o4448/damage_low = 6
+set o4448/damage_low = 4
 #
-set o4448/damage_high = 11
+set o4448/damage_high = 12
 #
-wieldto o4448 = 1-m4426
+wieldto o4448 = m4426
 #
-set 1-m4426/reset_objects["o4448"] = {"location":"equipped"}
+set m4426/reset_objects["o4448"] = {"location":"equipped"}
 #
 tel r4442
 #
 create a paper;slip;paper;o4427:objects.Key
 #
-sethome o4427 = 1-m4426
+sethome o4427 = m4426
 #
 desc o4427 = A piece of wadded up paper has been left on the ground.
 #
@@ -5214,9 +5206,9 @@ tag o4427 = the circus:area name
 #
 tag o4427 = object
 #
-give o4427 = 1-m4426
+give o4427 = m4426
 #
-set 1-m4426/reset_objects["o4427"] = {"location":"inventory"}
+set m4426/reset_objects["o4427"] = {"location":"inventory"}
 #
 tel r4442
 #
@@ -5272,7 +5264,7 @@ tel r4443
 #
 create a bunch of coins;bunch;coins;o4412:objects.Money
 #
-sethome o4412 = 1-o4428
+sethome o4412 = o4428
 #
 desc o4412 = A bunch of coins lies here.
 #
@@ -5292,9 +5284,9 @@ tag o4412 = object
 #
 set o4412/value = 700
 #
-put o4412 = 1-o4428
+put o4412 in o4428
 #
-set r4443/reset_objects["o4412"] = {"location":"1-o4428"}
+set r4443/reset_objects["o4412"] = {"location":"o4428"}
 #
 tel r4444
 #
@@ -5322,7 +5314,7 @@ tag m4412 = the circus:area name
 #
 tag m4412 = mobile
 #
-set m4412/hitpoints[maximum] = 64
+set m4412/hitpoints[maximum] = 77
 #
 set m4412/position = "standing"
 #
@@ -5330,7 +5322,7 @@ tel r4444
 #
 create a red clown nose;nose;red;o4439:objects.Armor
 #
-sethome o4439 = 1-m4412
+sethome o4439 = m4412
 #
 desc o4439 = A red nose like a clown might wear, lies forgotten upon the ground.
 #
@@ -5354,47 +5346,47 @@ set o4439/stat_modifiers[intelligence] = -2
 #
 set o4439/stat_modifiers[wisdom] = -1
 #
-set o4439/armor = 3
+set o4439/armor = 2
 #
-wearto o4439 = 1-m4412
+wearto o4439 = m4412
 #
-set 1-m4412/reset_objects["o4439"] = {"location":"equipped"}
+set m4412/reset_objects["o4439"] = {"location":"equipped"}
 #
 tel r4444
 #
-create/drop a red-nosed clown;clown;red;m4412:characters.Mobile
+create/drop a red-nosed clown;clown;red;m4412; m4412-2:characters.Mobile
 #
-desc 2-m4412 = A red-nosed clown is ready to throw a pie in your face. 
+desc m4412-2 = A red-nosed clown is ready to throw a pie in your face. 
 #
-set 2-m4412/level = 7
+set m4412-2/level = 7
 #
-set 2-m4412/level_base = 7
+set m4412-2/level_base = 7
 #
-set 2-m4412/vnum = "m4412"
+set m4412-2/vnum = "m4412"
 #
-set 2-m4412/look_description = "The clown is laughing and throwing pies, and generally being a nuisance. He turns towards you with a pie.  DUCK! "
+set m4412-2/look_description = "The clown is laughing and throwing pies, and generally being a nuisance. He turns towards you with a pie.  DUCK! "
 #
-set 2-m4412/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+set m4412-2/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
 #
-set 2-m4412/alignment = 500
+set m4412-2/alignment = 500
 #
-set 2-m4412/sex = "male"
+set m4412-2/sex = "male"
 #
-set 2-m4412/race = "human"
+set m4412-2/race = "human"
 #
-tag 2-m4412 = the circus:area name
+tag m4412-2 = the circus:area name
 #
-tag 2-m4412 = mobile
+tag m4412-2 = mobile
 #
-set 2-m4412/hitpoints[maximum] = 89
+set m4412-2/hitpoints[maximum] = 66
 #
-set 2-m4412/position = "standing"
+set m4412-2/position = "standing"
 #
 tel r4444
 #
 create a red clown nose;nose;red;o4439:objects.Armor
 #
-sethome o4439 = 2-m4412
+sethome o4439 = m4412-2
 #
 desc o4439 = A red nose like a clown might wear, lies forgotten upon the ground.
 #
@@ -5418,11 +5410,11 @@ set o4439/stat_modifiers[intelligence] = -2
 #
 set o4439/stat_modifiers[wisdom] = -1
 #
-set o4439/armor = 3
+set o4439/armor = 4
 #
-wearto o4439 = 2-m4412
+wearto o4439 = m4412-2
 #
-set 2-m4412/reset_objects["o4439"] = {"location":"equipped"}
+set m4412-2/reset_objects["o4439"] = {"location":"equipped"}
 #
 tel r4444
 #
@@ -5458,7 +5450,7 @@ tel r4444
 #
 create big clown shoes;clown;shoes;o4420:objects.Armor
 #
-sethome o4420 = 1-m4413
+sethome o4420 = m4413
 #
 desc o4420 = A huge pair of shoes lies here, apparently forgotten.
 #
@@ -5484,9 +5476,9 @@ set o4420/stat_modifiers[dexterity] = -1
 #
 set o4420/armor = 2
 #
-wearto o4420 = 1-m4413
+wearto o4420 = m4413
 #
-set 1-m4413/reset_objects["o4420"] = {"location":"equipped"}
+set m4413/reset_objects["o4420"] = {"location":"equipped"}
 #
 tel r4444
 #
@@ -5514,7 +5506,7 @@ tag m4414 = the circus:area name
 #
 tag m4414 = mobile
 #
-set m4414/hitpoints[maximum] = 45
+set m4414/hitpoints[maximum] = 36
 #
 set m4414/position = "standing"
 #
@@ -5522,7 +5514,7 @@ tel r4444
 #
 create a bucket;bucket;o4430:objects.Container
 #
-sethome o4430 = 1-m4414
+sethome o4430 = m4414
 #
 desc o4430 = A colorful bucket lies here.
 #
@@ -5534,7 +5526,7 @@ set o4430/vnum = "o4430"
 #
 set o4430/item_type = "container"
 #
-set o4430/wear_location = "hold"
+set o4430/wear_location = "held, in hands"
 #
 set o4430/weight = 1
 #
@@ -5548,43 +5540,45 @@ set o4430/state = []
 #
 set o4430/state_base = []
 #
-set 1-m4414/reset_objects["o4430"] = {"location":"equipped"}
+wearto o4430 = m4414
+#
+set m4414/reset_objects["o4430"] = {"location":"equipped"}
 #
 tel r4444
 #
-create/drop a big clown;clown;big;m4414:characters.Mobile
+create/drop a big clown;clown;big;m4414; m4414-2:characters.Mobile
 #
-desc 2-m4414 = A big clown is getting ready to throw confetti at you. 
+desc m4414-2 = A big clown is getting ready to throw confetti at you. 
 #
-set 2-m4414/level = 4
+set m4414-2/level = 4
 #
-set 2-m4414/level_base = 4
+set m4414-2/level_base = 4
 #
-set 2-m4414/vnum = "m4414"
+set m4414-2/vnum = "m4414"
 #
-set 2-m4414/look_description = "The big clown has a bucket full of confetti.  Or is it water?  Better stay away from him until you know. "
+set m4414-2/look_description = "The big clown has a bucket full of confetti.  Or is it water?  Better stay away from him until you know. "
 #
-set 2-m4414/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
+set m4414-2/act_flags = ['wimpy', 'scavenger', 'sentinel', 'npc']
 #
-set 2-m4414/alignment = 300
+set m4414-2/alignment = 300
 #
-set 2-m4414/sex = "male"
+set m4414-2/sex = "male"
 #
-set 2-m4414/race = "giant"
+set m4414-2/race = "giant"
 #
-tag 2-m4414 = the circus:area name
+tag m4414-2 = the circus:area name
 #
-tag 2-m4414 = mobile
+tag m4414-2 = mobile
 #
-set 2-m4414/hitpoints[maximum] = 46
+set m4414-2/hitpoints[maximum] = 46
 #
-set 2-m4414/position = "standing"
+set m4414-2/position = "standing"
 #
 tel r4444
 #
 create a bucket;bucket;o4430:objects.Container
 #
-sethome o4430 = 2-m4414
+sethome o4430 = m4414-2
 #
 desc o4430 = A colorful bucket lies here.
 #
@@ -5596,7 +5590,7 @@ set o4430/vnum = "o4430"
 #
 set o4430/item_type = "container"
 #
-set o4430/wear_location = "hold"
+set o4430/wear_location = "held, in hands"
 #
 set o4430/weight = 1
 #
@@ -5610,7 +5604,9 @@ set o4430/state = []
 #
 set o4430/state_base = []
 #
-set 2-m4414/reset_objects["o4430"] = {"location":"equipped"}
+wearto o4430 = m4414-2
+#
+set m4414-2/reset_objects["o4430"] = {"location":"equipped"}
 #
 tel r4445
 #
@@ -5640,7 +5636,7 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 97
+set m4421/hitpoints[maximum] = 81
 #
 set m4421/position = "standing"
 #
@@ -5670,7 +5666,7 @@ tag m4412 = the circus:area name
 #
 tag m4412 = mobile
 #
-set m4412/hitpoints[maximum] = 91
+set m4412/hitpoints[maximum] = 105
 #
 set m4412/position = "standing"
 #
@@ -5678,7 +5674,7 @@ tel r4446
 #
 create a red clown nose;nose;red;o4439:objects.Armor
 #
-sethome o4439 = 1-m4412
+sethome o4439 = m4412
 #
 desc o4439 = A red nose like a clown might wear, lies forgotten upon the ground.
 #
@@ -5704,9 +5700,9 @@ set o4439/stat_modifiers[wisdom] = -1
 #
 set o4439/armor = 3
 #
-wearto o4439 = 1-m4412
+wearto o4439 = m4412
 #
-set 1-m4412/reset_objects["o4439"] = {"location":"equipped"}
+set m4412/reset_objects["o4439"] = {"location":"equipped"}
 #
 tel r4447
 #
@@ -5736,7 +5732,7 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 119
+set m4421/hitpoints[maximum] = 87
 #
 set m4421/position = "standing"
 #
@@ -5766,15 +5762,15 @@ tag m4420 = the circus:area name
 #
 tag m4420 = mobile
 #
-set m4420/hitpoints[maximum] = 83
+set m4420/hitpoints[maximum] = 114
 #
 set m4420/position = "standing"
 #
 tel r4448
 #
-create tightrope walker's pole;pole;o4419:objects.Furniture
+create tightrope walker's pole;pole;o4419:objects.Armor
 #
-sethome o4419 = 1-m4420
+sethome o4419 = m4420
 #
 desc o4419 = A long pole lies here.
 #
@@ -5784,9 +5780,9 @@ set o4419/level_base = 8
 #
 set o4419/vnum = "o4419"
 #
-set o4419/item_type = "furniture"
+set o4419/item_type = "armor"
 #
-set o4419/wear_location = "hold"
+set o4419/wear_location = "held, in hands"
 #
 set o4419/weight = 1
 #
@@ -5800,21 +5796,17 @@ set o4419/stat_modifiers[dexterity] = 1
 #
 set o4419/stat_modifiers[moves] = 8
 #
-set o4419/people_maximum = 0
+set o4419/armor = 5
 #
-set o4419/weight_maximum = 0
+wearto o4419 = m4420
 #
-set o4419/use_positions = []
-#
-set o4419/heal_mana_gain = 0
-#
-set 1-m4420/reset_objects["o4419"] = {"location":"equipped"}
+set m4420/reset_objects["o4419"] = {"location":"equipped"}
 #
 tel r4448
 #
 create a key;key;o4441:objects.Key
 #
-sethome o4441 = 1-m4420
+sethome o4441 = m4420
 #
 desc o4441 = A small key lies in the dirt.
 #
@@ -5832,9 +5824,9 @@ tag o4441 = the circus:area name
 #
 tag o4441 = object
 #
-give o4441 = 1-m4420
+give o4441 = m4420
 #
-set 1-m4420/reset_objects["o4441"] = {"location":"inventory"}
+set m4420/reset_objects["o4441"] = {"location":"inventory"}
 #
 tel r4448
 #
@@ -5876,7 +5868,7 @@ tel r4448
 #
 create a clear potion;clear;potion;o4442:objects.Potion
 #
-sethome o4442 = 1-o4440
+sethome o4442 = o4440
 #
 desc o4442 = A clear vial of fluid sits here.
 #
@@ -5888,7 +5880,7 @@ set o4442/vnum = "o4442"
 #
 set o4442/item_type = "potion"
 #
-set o4442/wear_location = "hold"
+set o4442/wear_location = "held, in hands"
 #
 set o4442/weight = 3
 #
@@ -5908,9 +5900,9 @@ set o4442/spell_name_2 = "remove curse"
 #
 set o4442/spell_name_3 = "continual light"
 #
-put o4442 = 1-o4440
+put o4442 in o4440
 #
-set r4448/reset_objects["o4442"] = {"location":"1-o4440"}
+set r4448/reset_objects["o4442"] = {"location":"o4440"}
 #
 tel r4448
 #
@@ -5960,7 +5952,7 @@ tel r4469
 #
 create a delicious BigMac;bigmac;food;o4434:objects.Food
 #
-sethome o4434 = 1-o4449
+sethome o4434 = o4449
 #
 desc o4434 = Some food lies here, wrapped in paper.
 #
@@ -5982,15 +5974,15 @@ set o4434/hours_fed = 100
 #
 set o4434/poison = 0
 #
-put o4434 = 1-o4449
+put o4434 in o4449
 #
-set r4469/reset_objects["o4434"] = {"location":"1-o4449"}
+set r4469/reset_objects["o4434"] = {"location":"o4449"}
 #
 tel r4469
 #
-create a can of Coke;coke;can;o4435:objects.Drink container
+create a can of Coke;coke;can;o4435:objects.Drink_container
 #
-sethome o4435 = 1-o4449
+sethome o4435 = o4449
 #
 desc o4435 = A can of Coke lies here.
 #
@@ -6000,7 +5992,7 @@ set o4435/level_base = 8
 #
 set o4435/vnum = "o4435"
 #
-set o4435/item_type = "drink container"
+set o4435/item_type = "drink_container"
 #
 set o4435/weight = 1
 #
@@ -6014,15 +6006,15 @@ set o4435/liquid_type = "Coke"
 #
 set o4435/poison = 0
 #
-put o4435 = 1-o4449
+put o4435 in o4449
 #
-set r4469/reset_objects["o4435"] = {"location":"1-o4449"}
+set r4469/reset_objects["o4435"] = {"location":"o4449"}
 #
 tel r4469
 #
 create a slice of Tombstone Sausage and Pepperoni pizza;pizza;food;o4432:objects.Food
 #
-sethome o4432 = 1-o4449
+sethome o4432 = o4449
 #
 desc o4432 = A slice of pizza lies here, piping hot.
 #
@@ -6044,15 +6036,15 @@ set o4432/hours_fed = 100
 #
 set o4432/poison = 0
 #
-put o4432 = 1-o4449
+put o4432 in o4449
 #
-set r4469/reset_objects["o4432"] = {"location":"1-o4449"}
+set r4469/reset_objects["o4432"] = {"location":"o4449"}
 #
 tel r4469
 #
 create a juicy steak;steak;food;o4433:objects.Food
 #
-sethome o4433 = 1-o4449
+sethome o4433 = o4449
 #
 desc o4433 = A juicy steak dinner lies here.
 #
@@ -6074,9 +6066,9 @@ set o4433/hours_fed = 100
 #
 set o4433/poison = 0
 #
-put o4433 = 1-o4449
+put o4433 in o4449
 #
-set r4469/reset_objects["o4433"] = {"location":"1-o4449"}
+set r4469/reset_objects["o4433"] = {"location":"o4449"}
 #
 tel r4469
 #
@@ -6200,7 +6192,7 @@ set r4469/reset_objects["o4446"] = {"location":"inventory"}
 #
 tel r4469
 #
-create a wineskin;wineskin;o4447:objects.Drink container
+create a wineskin;wineskin;o4447:objects.Drink_container
 #
 sethome o4447 = r4469
 #
@@ -6212,7 +6204,7 @@ set o4447/level_base = 8
 #
 set o4447/vnum = "o4447"
 #
-set o4447/item_type = "drink container"
+set o4447/item_type = "drink_container"
 #
 set o4447/weight = 1
 #
@@ -6254,7 +6246,7 @@ tag m4450 = the circus:area name
 #
 tag m4450 = mobile
 #
-set m4450/hitpoints[maximum] = 97
+set m4450/hitpoints[maximum] = 100
 #
 set m4450/position = "standing"
 #
@@ -6262,7 +6254,7 @@ tel r4469
 #
 create a carving knife;carving;knife;o4450:objects.Weapon
 #
-sethome o4450 = 1-m4450
+sethome o4450 = m4450
 #
 desc o4450 = A very sharp knife gleams from the floor.
 #
@@ -6288,11 +6280,11 @@ set o4450/stat_modifiers[damroll] = 1
 #
 set o4450/weapon_type = "pierce"
 #
-set o4450/damage_low = 5
+set o4450/damage_low = 4
 #
-set o4450/damage_high = 12
+set o4450/damage_high = 11
 #
-wieldto o4450 = 1-m4450
+wieldto o4450 = m4450
 #
-set 1-m4450/reset_objects["o4450"] = {"location":"equipped"}
+set m4450/reset_objects["o4450"] = {"location":"equipped"}
 #
