@@ -127,8 +127,8 @@ class MuxCommand(Command):
 
         A MUX command has the following possible syntax:
 
-          name[ with several words][/switch[/switch..]] arg1[,arg2,...] [[=|,]
-              arg[,..]]
+          name[ with several words][/switch[/switch..]] arg1[^ arg2^...] [[=|^]
+              arg[^..]]
 
         The 'name[ with several words]' part is already dealt with by the
         cmdhandler at this point, and stored in self.cmdname (we don't use
@@ -140,12 +140,12 @@ class MuxCommand(Command):
           self.switches = [list of /switches (without the /)]
           self.raw = This is the raw argument input, including switches
           self.args = This is re-defined to be everything *except* the switches
-          self.lhs = Everything to the left of = (lhs:'left-hand side'). If
-                     no = is found, this is identical to self.args.
-          self.rhs: Everything to the right of = (rhs:'right-hand side').
-                    If no '=' is found, this is None.
-          self.lhslist - [self.lhs split into a list by comma]
-          self.rhslist - [list of self.rhs split into a list by comma]
+          self.lhs = Everything to the left of the delimiter (default "=") (lhs:'left-hand side'). If
+                     no delimiter is found, this is identical to self.args.
+          self.rhs: Everything to the right of the delimiter (rhs:'right-hand side').
+                    If no delimiter is found, this is None.
+          self.lhslist - [self.lhs split into a list by caret (was a comma)]
+          self.rhslist - [list of self.rhs split into a list by caret (was a comma)]
           self.arglist = [list of space-separated args (stripped, including '='
               if it exists)]
 
@@ -170,12 +170,12 @@ class MuxCommand(Command):
 
         # check for arg1, arg2, ... = argA, argB, ... constructs
         lhs, rhs = args, None
-        lhslist, rhslist = [arg.strip() for arg in args.split(',')], []
-        # if args and '=' in args:
+        lhslist, rhslist = [arg.strip() for arg in args.split('^')], []
+        # if args and self.delimiter in args:
         if args and self.delimiter in args:
             lhs, rhs = [arg.strip() for arg in args.split(self.delimiter, 1)]
-            lhslist = [arg.strip() for arg in lhs.split(',')]
-            rhslist = [arg.strip() for arg in rhs.split(',')]
+            lhslist = [arg.strip() for arg in lhs.split('^')]
+            rhslist = [arg.strip() for arg in rhs.split('^')]
 
         # save to object properties:
         self.raw = raw
