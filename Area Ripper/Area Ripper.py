@@ -1961,10 +1961,10 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as
                     door_list.append(room_set)
 
                 else:
-                    # If you are setting aliases this way, commas are the
+                    # If you are setting aliases this way, carets are the
                     # delineator instead.
                     alias_list = aliases.split("; ")
-                    aliases = ", ".join(alias_list)
+                    aliases = "^ ".join(alias_list)
                     output.write("alias %s = %s\n" % (door, aliases))
                     output.write("#\n")
                     output.write("tag %s = %s, category = area names\n"
