@@ -14,7 +14,7 @@
 import random
 from mygame.world import rules
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.txt", "rt") as myfile:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.txt", "rt") as myfile:
 
     class Object:
         def __init__(self):
@@ -1833,7 +1833,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.txt", "rt") 
                     objects[onum].special_function\
                         = special_function_list[2][6:]
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as output:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as output:
 
     # Now we are going to build out the batch file by iterating through each
     # room.
