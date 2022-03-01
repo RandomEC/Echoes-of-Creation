@@ -201,3 +201,51 @@ class CmdAttack(MuxCommand):
             pass
         else:
             self.create_combat(attacker, victim)
+
+class CmdConsider(MuxCommand):
+    """
+    Evaluate whether a mobile should be attacked.
+    Usage:
+      consider <mobile>
+    When used on a mobile, consider will tell you the approximate risk of attacking
+    the mobile by comparing levels, and a rough comparison of your current hitpoints.
+    """
+
+    key = "consider"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement consider"""
+
+        caller = self.caller
+        if not self.args:
+            caller.msg("Usage: consider <mobile>")
+            return
+
+        mobile = attacker.search(self.args, location=attacker.location)
+        if not mobile:
+            caller.msg("There is no %s here to consider." % self.args)
+            return
+        elif "mobile" not in mobile.tags.all():
+            caller.msg("You can only use consider on mobiles.")
+            return
+
+        level_difference = mobile.db.level - caller.db.level
+        
+        if level_difference <=-10:
+            level_string = "You can kill %s naked and weaponless." % mobile.key
+        elif level_difference <=-5:
+            level_string = "%s is no match for you." % (mobile.key[0].upper() + mobile.key[1:])
+        elif level_difference <=-2:
+            level_string = "%s looks like an easy kill." % (mobile.key[0].upper() + mobile.key[1:])
+        elif level_difference <= 1:
+            level_string = "The perfect match!"
+        elif level_difference <= 4:
+            level_string = "%s says 'Do you feel lucky, punk?'." % (mobile.key[0].upper() + mobile.key[1:])
+        elif level_difference <= 9:
+            level_string = "%s laughs at you mercilessly." % (mobile.key[0].upper() + mobile.key[1:])
+        else:
+            level_string = "Death will thank you for your gift."
+        
+        
