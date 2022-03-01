@@ -2756,10 +2756,39 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                     output.write("drop %s\n" % reset_vnum)
                     output.write("#\n")
                 elif reset_type == "object, in container":
+                    # First, check to see if the container is in the room or on a mobile.
+                    if reset_location != reset_room:
+                        index = reset
+                        # Iterate backwards through the reset list to find the last
+                        # container of that vnum, and get the mobile it resets on.
+                        while index >= 0:
+                            if resets[index]["type"] != "door":
+                                if resets[index]["vnum to reset"] == reset_location:
+                                    reset_mobile = resets[index]["location"]
+                                    break
+                            index -= 1
+                        # Now find the last mobile of that vnum.
+                        for dictionary in in_room_list:
+                            # Check if there are previous entries matching this mobile and this room.
+                            if dictionary["mobile/object"] == reset_mobile and dictionary["room"] == reset_room:
+                                # If so, increment the count.
+                                reset_mobile_amount += 1
+                        if reset_mobile_amount > 1:
+                            reset_mobile = ("%s-%d" % (reset_mobile, reset_mobile_amount)) 
+                        
+                        # Be warned the below will not work if there is more than one instance of the mobile
+                        # in question in more than one room. 
+                        output.write("tel %s" % reset_mobile)
+                        output.write("#\n")
+                    
                     # Put the object in the container.
                     output.write("put %s in %s\n" % (reset_vnum, index_reset_location))
                     output.write("#\n")
 
+                    if reset_location != reset_room:
+                        output.write("tel %s" % reset_room)
+                        output.write("#\n")
+                    
         # 3. Create the reset for the object/mobile that was just created. For
         # mobiles, doors and objects that do not reset in containers, the
         # reset can be created where we currently are.
