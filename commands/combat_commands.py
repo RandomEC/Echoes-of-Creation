@@ -236,19 +236,19 @@ class CmdConsider(MuxCommand):
         level_difference = mobile.db.level - caller.db.level
         
         if level_difference <=-10:
-            level_string = "You can kill %s naked and weaponless." % mobile.key
+            level_string = "You can kill %s |gnaked and weaponless|n." % mobile.key
         elif level_difference <=-5:
-            level_string = "%s is no match for you." % (mobile.key[0].upper() + mobile.key[1:])
+            level_string = "%s is |gno match|n for you." % (mobile.key[0].upper() + mobile.key[1:])
         elif level_difference <=-2:
-            level_string = "%s looks like an easy kill." % (mobile.key[0].upper() + mobile.key[1:])
+            level_string = "%s looks like an |geasy kill|n." % (mobile.key[0].upper() + mobile.key[1:])
         elif level_difference <= 1:
-            level_string = "The perfect match!"
+            level_string = "The |yperfect match|n!"
         elif level_difference <= 4:
-            level_string = "%s says 'Do you feel lucky, punk?'." % (mobile.key[0].upper() + mobile.key[1:])
+            level_string = "%s says 'Do you |yfeel lucky|n, punk?'." % (mobile.key[0].upper() + mobile.key[1:])
         elif level_difference <= 9:
-            level_string = "%s laughs at you mercilessly." % (mobile.key[0].upper() + mobile.key[1:])
+            level_string = "%s laughs at you |rmercilessly|n." % (mobile.key[0].upper() + mobile.key[1:])
         else:
-            level_string = "Death will thank you for your gift."
+            level_string = "|rDeath|n will thank you for your gift."
         
         # Create the string for the mobile's overall health.
         health_string = rules_combat.get_health_string(mobile)
