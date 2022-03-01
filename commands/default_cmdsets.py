@@ -50,6 +50,7 @@ from commands.door_commands import CmdDoorClose
 from commands.door_commands import CmdDoorUnlock
 from commands.door_commands import CmdDoorLock
 from commands.combat_commands import CmdAttack
+from commands.combat_commands import CmdConsider
 
 class CharacterCmdSet(default_cmds.CharacterCmdSet):
     """
@@ -102,6 +103,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdDig())
         self.add(CmdCreate())
         self.add(CmdName())
+        self.add(CmdConsider())
 
 class AccountCmdSet(default_cmds.AccountCmdSet):
     """
