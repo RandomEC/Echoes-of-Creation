@@ -91,6 +91,12 @@ class Combat(Object):
         # Iterate through combatants to do a round of attacks.
         for combatant in self.db.combatants:
 
+            # First, check to see if the combatant is below their wimpy.
+            if character.hitpoints_current < character.db.wimpy:
+                
+                # Make a free attempt to flee.
+                rules_combat.do_flee(character)
+            
             # Make sure this combatant and target are alive.
             if self.allow_attacks(combatant, self.db.combatants[combatant]["target"]):
                 attacker = self.db.combatants[combatant]["combatant"]
@@ -307,49 +313,8 @@ class CmdFlee(MuxCommand):
         if "combat_handler" not in caller.ndb.all:
             caller.msg("You cannot flee when you are not in combat.")
             return
-        
-        if caller.db.position == "sitting":
-            caller.msg("Maybe you had better stand up first!")
-            return
-        
-        for attempt in range(1,6):
-            direction = random.randint(1, 6)
-            
-            if direction == 1:
-                direction = "north"
-            elif direction == 2:
-                direction = "east"
-            elif direction == 3:
-                direction = "south"
-            elif direction == 4:
-                direction = "west"
-            elif direction == 5:
-                direction = "up"
-            else:
-                direction = "down"
-            
-            for exit in location.contents:
-                if exit.destination and exit.key == direction and exit.access(caller, "traverse"):
-                    success = True
-                    break
-            
-            if success:
-                break
-        
-        if success:
-            # Remove caller from combat.
-            combat = caller.ndb.combat_handler
-            combat.remove_combatant(caller)
 
-            # Do xp loss.
-
-            caller.msg("You show a good pair of heels and flee from combat!")
-            exit.at_traverse(caller, exit.destination)
-            combat.combat_end_check()
-            
-        else:
-            caller.msg("You fail to flee from combat!")
-
+        rules_combat.do_flee(caller)  
 
 class CmdWimpy(MuxCommand):
     """
