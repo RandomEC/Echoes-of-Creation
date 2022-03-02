@@ -54,6 +54,8 @@ def attributes_cost(character):
     """
     This function determines the experience cost of getting an
     additional attribute (e.g. strength, dexterity, etc.) bonus.
+    The formula for this has to be calculated from the total xp
+    available for attributes, which may change.
     """
     
     attributes_step = 1
@@ -63,10 +65,63 @@ def attributes_cost(character):
     # Calculate the amount of xp allocated to getting attributes.
     attribute_total_xp = 0
     for step in range(2, 101):
-        attribute_total_xp += (experience_cost_base(step) * ECHOES_COST_ATTRIBUTES)
+        attribute_total_xp += experience_cost_base(step) * ECHOES_COST_ATTRIBUTES
     
+    denominator = 0
+    total_upgrades = 25 # make this a global when done.
+    attribute_power = 3.1 # make this a global when done.
+    for upgrade in range(1,total_upgrades):
+        denominator += upgrade^attribute_power
     
+    attribute_factor = attribute_total_xp / denominator
     
+    return attributes_step^3.1 * attribute_factor
+
+
+def practices_cost(character):
+    """
+    This function determines current cost of practicing a skill,
+    based on the character's wisdom, and the amount of experience
+    already spent on practicing skills.
+    """
+    
+    # The cost of practicing is going to be divided by a factor,
+    # based on character wisdom.
+    if character.wisdom <= 4:
+        practice_factor = 0
+    elif character.wisdom <= 8:
+        practice_factor = 1
+    elif character.wisdom <= 14:
+        practice_factor = 2
+    elif character.wisdom <= 16:
+        practice_factor = 3
+    elif character.wisdom <= 18:
+        practice_factor = 4
+    elif character.wisdom <= 20:
+        practice_factor = 5
+    elif character.wisdom <= 21:
+        practice_factor = 6
+    elif character.wisdom <= 24:
+        practice_factor = 7
+    else:
+        practice_factor = 8
+    
+    # Calculate the first step that costs more accumulated experience
+    # spent practicing than the character has.
+    
+    step = 1
+    step_experience_total = 0
+    while character.db.experience_spent_practices <= step_experience_total:
+        step += 1
+        if step == 2:
+            step_experience_total += 2700 * ECHOES_COST_PRACTICES
+        else:
+            step_experience_total += experience_cost_base(step) * ECHOES_COST_PRACTICES
+            
+    # Since the above calculated one step past, reduce step by one.
+    step -= 1
+    
+    return experience_cost_base(step) * ECHOES_COST_PRACTICES / practice_factor    
     
 def fuzz_number(number):
     """
