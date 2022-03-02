@@ -243,6 +243,50 @@ def do_death(attacker, victim):
     return (attacker_string, victim_string, room_string)
 
 
+def do_flee(character):
+    
+    if character.db.position == "sitting":
+        character.msg("You had better stand up to try to flee!")
+        return
+    
+    for attempt in range(1,6):
+        direction = random.randint(1, 6)
+
+        if direction == 1:
+            direction = "north"
+        elif direction == 2:
+            direction = "east"
+        elif direction == 3:
+            direction = "south"
+        elif direction == 4:
+            direction = "west"
+        elif direction == 5:
+            direction = "up"
+        else:
+            direction = "down"
+
+        for exit in location.contents:
+            if exit.destination and exit.key == direction and exit.access(character, "traverse"):
+                success = True
+                break
+
+        if success:
+            break
+
+    if success:
+        # Remove character from combat.
+        combat = character.ndb.combat_handler
+        combat.remove_combatant(character)
+
+        # Do xp loss.
+
+        character.msg("You show a good pair of heels and flee from combat!")
+        exit.at_traverse(character, exit.destination)
+        combat.combat_end_check()
+
+    else:
+        character.msg("You fail to flee from combat!")
+
 def do_one_character_attacks(attacker, victim):
     """
     This calls do_one_weapon_attacks for all relevant weapon slots for one
