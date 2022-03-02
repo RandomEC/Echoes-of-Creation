@@ -35,6 +35,16 @@ BASE_CHARACTER_TYPECLASS = "typeclasses.characters.Player"
 
 BASE_ROOM_TYPECLASS = "typeclasses.rooms.Room"
 
+# Definitions for calculation of cost of various character improvements.
+# Measurement is proportion of what the xp cost of a full "level" would
+# have been for previous MUDs.
+ECHOES_COST_LEVEL = 1/6
+ECHOES_COST_HP = 1/6
+ECHOES_COST_MANA = 1/6
+ECHOES_COST_MOVES = 1/6
+ECHOES_COST_PRACTICES = 1/6
+ECHOES_COST_ATTRIBUTES = 1/6
+
 # Added to cleanup command parsing.
 COMMAND_DEFAULT_ARG_REGEX = r'^[ /]+.*$|$'
 
