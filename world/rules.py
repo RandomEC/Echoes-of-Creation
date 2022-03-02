@@ -2,7 +2,72 @@ import random
 import math
 from world import rules_race
 
+def experience_cost_base(step):
+    """
+    This function determines the base experience cost for a step
+    of experience, which is then split by other functions to get
+    the cost of a level, hitpoint gain, etc.
+    """
+    
+    if step == 2
+        return 2700
+    else:
+        return ((step^3) * 400)
 
+def level_cost(level):
+    """
+    This function determines the experience cost of increasing a
+    character one level.
+    """
+    
+    return ECHOES_COST_LEVEL * experience_cost_base(level)
+
+
+def hitpoints_cost(character):
+    """
+    This function determines the experience cost of getting an
+    additional amount of hitpoints.
+    """
+    hitpoints_step = character.db.hitpoints["trains spent"]
+    return ECHOES_COST_HITPOINTS * experience_cost_base(hitpoints_step)
+
+
+def mana_cost(character):
+    """
+    This function determines the experience cost of getting an
+    additional amount of mana.
+    """
+    mana_step = character.db.mana["trains spent"]
+    return ECHOES_COST_MANA * experience_cost_base(mana_step)
+
+
+def moves_cost(character):
+    """
+    This function determines the experience cost of getting an
+    additional amount of moves.
+    """
+    moves_step = character.db.moves["trains spent"]
+    return ECHOES_COST_MOVES * experience_cost_base(moves_step)
+
+
+def attributes_cost(character):
+    """
+    This function determines the experience cost of getting an
+    additional attribute (e.g. strength, dexterity, etc.) bonus.
+    """
+    
+    attributes_step = 1
+    for attribute in character.db.attribute_trains:
+        attributes_step += character.db.attribute_trains[attribute]
+    
+    # Calculate the amount of xp allocated to getting attributes.
+    attribute_total_xp = 0
+    for step in range(2, 101):
+        attribute_total_xp += (experience_cost_base(step) * ECHOES_COST_ATTRIBUTES)
+    
+    
+    
+    
 def fuzz_number(number):
     """
     This function simply adds slight variation to a number.
