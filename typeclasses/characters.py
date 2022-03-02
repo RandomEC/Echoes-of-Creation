@@ -77,7 +77,7 @@ class Character(DefaultCharacter):
         # set other stats
         self.db.sex = ""
         self.db.alignment = 0
-        self.db.position = ""
+        self.db.position = "standing"
         self.db.character_type = ""
 
         # set race-based stats
@@ -513,7 +513,7 @@ class Character(DefaultCharacter):
         elif self.db.position == "sleeping":
             self.msg("What, in your dreams? You are sleeping!")
             return False
-        elif self.db.position == "sitting" or "resting":
+        elif self.db.position == "sitting" or self.db.position == "resting":
             self.msg("Perhaps you should try standing first, before moving.")
             return False
         

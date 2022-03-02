@@ -1,3 +1,4 @@
+import random
 from evennia import create_object
 from evennia import TICKER_HANDLER as tickerhandler
 from commands.command import MuxCommand
@@ -52,6 +53,38 @@ class Combat(Object):
 
         return True
 
+    def combat_end_check(self):
+        """
+        Checks to see whether the combat should end.
+        """
+
+        # Check to see whether everyone in the combat is on the "same side" (player or mobile), and
+        # end the combat.
+        combatant_list = list(self.db.combatants.keys())
+        # Check to see what type of combatant the first one is.
+        if "mobile" in combatant_list[0].tags.all():
+            first_combatant_type = "mobile"
+        else:
+            first_combatant_type = "player"
+        # Default is to end the combat.
+        combat_end = True
+
+        # Cycle through combatants, and check their type.
+        for combatant in combatant_list:
+            if "mobile" in combatant.tags.all():
+                combatant_type = "mobile"
+            else:
+                combatant_type = "player"
+
+            # Check against first one. If any are different, set combat_end to False, and stop looking.
+            if combatant_type != first_combatant_type:
+                combat_end = False
+                break;
+
+        if combat_end == True:
+            self.at_stop()
+            self.delete()
+
     def at_repeat(self):
         self.clear_messages()
 
@@ -99,32 +132,7 @@ class Combat(Object):
                     combatant.db.hitpoints["damaged"] = (combatant.hitpoints_maximum - 1)
                     combatant.move_to(combatant.home, quiet=True)
 
-        # Check to see whether everyone in the combat is on the "same side" (player or mobile), and
-        # end the combat.
-        combatant_list = list(self.db.combatants.keys())
-        # Check to see what type of combatant the first one is.
-        if "mobile" in combatant_list[0].tags.all():
-            first_combatant_type = "mobile"
-        else:
-            first_combatant_type = "player"
-        # Default is to end the combat.
-        combat_end = True
-
-        # Cycle through combatants, and check their type.
-        for combatant in combatant_list:
-            if "mobile" in combatant.tags.all():
-                combatant_type = "mobile"
-            else:
-                combatant_type = "player"
-
-            # Check against first one. If any are different, set combat_end to False, and stop looking.
-            if combatant_type != first_combatant_type:
-                combat_end = False
-                break;
-
-        if combat_end == True:
-            self.at_stop()
-            self.delete()
+        self.combat_end_check()
 
         self.db.rounds += 1
 
@@ -201,3 +209,175 @@ class CmdAttack(MuxCommand):
             pass
         else:
             self.create_combat(attacker, victim)
+
+class CmdConsider(MuxCommand):
+    """
+    Evaluate whether a mobile should be attacked.
+    Usage:
+      consider <mobile>
+    When used on a mobile, consider will tell you the approximate risk of attacking
+    the mobile by comparing levels, and a rough comparison of your current hitpoints.
+    """
+
+    key = "consider"
+    aliases = ["con"]
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement consider"""
+
+        caller = self.caller
+        if not self.args:
+            caller.msg("Usage: consider <mobile>")
+            return
+
+        mobile = caller.search(self.args, location=caller.location)
+        if not mobile:
+            caller.msg("There is no %s here to consider." % self.args)
+            return
+        elif "mobile" not in mobile.tags.all():
+            caller.msg("You can only use consider on mobiles.")
+            return
+
+        # Create the string for the difference in level.
+        level_difference = mobile.db.level - caller.db.level
+        
+        if level_difference <=-10:
+            level_string = "You can kill %s |gnaked and weaponless|n." % mobile.key
+        elif level_difference <=-5:
+            level_string = "%s is |gno match|n for you." % (mobile.key[0].upper() + mobile.key[1:])
+        elif level_difference <=-2:
+            level_string = "%s looks like an |geasy kill|n." % (mobile.key[0].upper() + mobile.key[1:])
+        elif level_difference <= 1:
+            level_string = "The |yperfect match|n!"
+        elif level_difference <= 4:
+            level_string = "%s says 'Do you |yfeel lucky|n, punk?'." % (mobile.key[0].upper() + mobile.key[1:])
+        elif level_difference <= 9:
+            level_string = "%s laughs at you |rmercilessly|n." % (mobile.key[0].upper() + mobile.key[1:])
+        else:
+            level_string = "|rDeath|n will thank you for your gift."
+        
+        # Create the string for the mobile's overall health.
+        health_string = rules_combat.get_health_string(mobile)
+        
+        # Create the string for the mobile's health relative to the hero's.
+        health_difference = mobile.hitpoints_current - caller.hitpoints_current
+        health_percent = 100 * health_difference/caller.hitpoints_current
+        
+        if health_percent <= -90:
+            health_percent_string = "%s is sickly and unwell compared to your health." % (mobile.key[0].upper() + mobile.key[1:])
+        if health_percent <= -50:
+            health_percent_string = "You are substantially healthier than %s." % mobile.key
+        if health_percent <= -11:
+            health_percent_string = "You are somewhat healthier than %s." % mobile.key
+        if health_percent <= 10:
+            health_percent_string = "You are about as healthy as %s." % mobile.key
+        if health_percent <= 50:
+            health_percent_string = "%s is somewhat healthier than you." % (mobile.key[0].upper() + mobile.key[1:])
+        if health_percent <= 90:
+            health_percent_string = "%s is substantially healthier than you." % (mobile.key[0].upper() + mobile.key[1:])
+        else:
+            health_percent_string = "Compared to %s, you should maybe consider a long-term hospital stay." % mobile.key
+        
+        caller.msg("%s\n%s %s\n%s\n" % (level_string, (mobile.key[0].upper() + mobile.key[1:]), health_string, health_percent_string))
+    
+class CmdFlee(MuxCommand):
+    """
+    Attempt to flee from combat.
+    Usage:
+      flee
+    When you attempt to flee, you will try to exit from the room and combat. Your chance
+    of success is decreased the less exits there are from the room, and you cannot flee
+    through non-standard (n/e/s/w/u/d) exits. You incur a slight experience penalty for
+    fleeing from combat, and a decreased penalty for trying and failing.
+    """
+
+    key = "flee"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+        
+    def func(self):
+        """Implement flee"""        
+
+        caller = self.caller
+        location = caller.location
+        success = False
+        
+        if "combat_handler" not in caller.ndb.all:
+            caller.msg("You cannot flee when you are not in combat.")
+            return
+        
+        if caller.db.position == "sitting":
+            caller.msg("Maybe you had better stand up first!")
+            return
+        
+        for attempt in range(1,6):
+            direction = random.randint(1, 6)
+            
+            if direction == 1:
+                direction = "north"
+            elif direction == 2:
+                direction = "east"
+            elif direction == 3:
+                direction = "south"
+            elif direction == 4:
+                direction = "west"
+            elif direction == 5:
+                direction = "up"
+            else:
+                direction = "down"
+            
+            for exit in location.contents:
+                if exit.destination and exit.key == direction and exit.access(caller, "traverse"):
+                    success = True
+                    break
+            
+            if success:
+                break
+        
+        if success:
+            # Remove caller from combat.
+            combat = caller.ndb.combat_handler
+            combat.remove_combatant(caller)
+
+            # Do xp loss.
+
+            caller.msg("You show a good pair of heels and flee from combat!")
+            exit.at_traverse(caller, exit.destination)
+            combat.combat_end_check()
+            
+        else:
+            caller.msg("You fail to flee from combat!")
+
+
+class CmdWimpy(MuxCommand):
+    """
+    Set your wimpy level.
+    Usage:
+      wimpy
+      wimpy <hp amount>
+    Wimpy is the amount of hitpoints at which you wish to get an automatic
+    attempt to flee from combat each round. Using wimpy without any
+    argument automatically sets your wimpy to 15% of your maximum hitpoints.
+    """
+
+    key = "wimpy"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement wimpy"""
+
+        caller = self.caller
+
+        if not self.args.isnumeric():
+            if not self.args:
+                caller.db.wimpy = int(caller.hitpoints_maximum * 0.15)
+                caller.msg("Your wimpy has been set to %d." % caller.db.wimpy)
+            else:
+                caller.msg("Wimpy must be given a number as an argument, or no argument.")
+            return
+        else:
+            caller.db.wimpy = int(self.args)
+            caller.msg("Your wimpy has been set to %d." % caller.db.wimpy)

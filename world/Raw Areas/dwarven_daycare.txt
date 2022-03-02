@@ -1,0 +1,1381 @@
+#AREA {   1  10 } Happiness - Dwarven Daycare~
+
+#MOBILES
+#6600
+youth dwarven dwarf~
+the dwarven youth~
+A young dwarf plays with a toy axe.
+~
+This is a young but not totally harmless child.  He has short cropped
+hair and dark brown eyes.  His mischievous nature comes out with the waving
+of his toy axe.  He feels that this is his domain and no one shall infringe
+upon it.  
+~
+69 0 -150 S
+5 17 6 1d4+30 1d4+3
+50 3
+0 Dwarf~ 1
+>fight_prog 50~
+if rand(50)
+ emote swings his axe wildly at you.
+else
+ emote attempts to kick you with his scrawny legs. 
+endif
+~
+|
+#6601
+teddy bear~
+a teddy bear~
+A cute and fuzzy teddy bear stands here.
+~
+This is a tiny little bear.  It has white fuzzy fabric and a heart on
+it's chest.  For some reason or another it seems alive.  Every so often it
+wanders around the room and tries out all the furniture.  Perhaps looking
+for the best place to rest when there are no children around. 
+~
+71 0 500 S
+4 19 9 1d10+10 1d4+1
+75 5
+0 Object~ 1
+#6602
+bug~
+a creepy bug~
+A creepy bug crawls from behind a cabinet.
+~
+The bug has found a home in the dim and dusty closet.  A slender black
+body with six legs, it crawls along seemingly with no fear.  Two minuscule
+feelers probe out in front of it's triangular head, surveying it's
+surroundings. 
+~
+71 0 300 S
+2 18 9 2d5+19 1d5+1
+250 2
+0 Insect~ 1
+#6603
+soldier toy~
+a toy soldier~
+A toy soldier stands guard here.
+~
+A prim and proper soldier is at his post.  A toy with life-like
+appearance, it scans the area for possible target practice.  With any
+movement, it's head will turn in hopes of finding new prey.  It's armor is
+polished to a bright shine and it's gun has been well cleaned.  It stands
+with an evil twinkle in it's eyes. 
+~
+71 0 -300 S
+3 18 7 3d5+26 2d3+2
+400 3
+0 Object~ 1
+>fight_prog 40~
+if rand (50)
+ emote swings his sword at you.
+else
+ emote stares into the whites of your eyes.
+endif
+~
+|
+#6604
+Dwarven child~
+a Dwarven child~
+A Dwarven child scurries about.
+~
+A fragile looking little dwarven girl.  Whether out of being lost, alone,
+bored or hungry, she has tears rolling down her cheeks.  With a startle, she
+whines loudly as if she's angry. 
+~
+71 0 -400 S
+3 17 6 3d4+25 1d5+2
+100 4
+0 Dwarf~ 2
+>greet_prog 100~
+pissed
+~
+|
+#6605
+doll old~
+an old doll~
+An old doll has been left on the ground.
+~
+This old doll has seen better days.  It has been hugged and played with
+so often that it is falling apart.  There is still a hint of life left in
+it's eyes.  Tattered and torn, the doll remains one of the most liked toys
+in the daycare. 
+~
+71 0 -2 S
+2 20 10 1d10+1 1d4+2
+50 8
+0 Object~ 0
+#6606
+nanny~
+the nanny~
+An old wrinkled nanny stands here, looking over the little ones.
+~
+An old dwarven lady who has been hunched over with age.  There is still
+enough fight left in her to tackle the daily chore of watching over the
+children.  Her gray hair is pulled back into a ponytail and she is wearing a
+pink shawl around her shoulders. 
+~
+4161 2048 10 S
+6 16 6 4d4+50 1d8+2
+750 0
+0 Dwarf~ 2
+>greet_prog 100~
+tell $n Are we being good boys and girls?
+~
+>speech_prog yes yup yep yeah~
+if level($n) < 5
+mpoload 6653
+give lollipop $n
+tell $n Have a happy day.
+else
+tell $n Aren't you a little big for a lollipop?
+endif
+~
+>speech_prog no nope nah never~
+emote spanks $N and grumbles something.
+~
+>fight_prog 10~
+emote swings her cane at you.
+~
+|
+#6607
+guard~
+the armed guard~
+An armed guard stands here surveying the room.
+~
+Mimicking the dwarven guards of the kingdom, this boy has dressed up in a
+guards uniform.  Through the helmet an angry scowl shows through.  He stands
+ready to protect whatever he sees as value down here.  He just might be
+watching over some sort of secret within the depths of the basement. 
+~
+71 2056 -800 S
+4 9 2 3d10+100 3d5+2
+2000 3
+0 Dwarf~ 1
+>greet_prog 100~
+tell $n Heh, those nannies ain't that good if you got all the way down here.  I'll guess I'll just have to finish up the job the right way.
+mpkill $n
+muhaha
+~
+|
+#6608
+brat spoiled~
+the spoiled brat~
+A spoiled brat is crying here.
+~
+This little one is used to getting what he wants.  He is screaming and
+kicking now because the nannies would not give him a lollipop.  He has been
+sent down here as punishment and to be allowed to reflect upon his actions. 
+Even now, with soiled clothes, a runny nose and watery eyes, he only cares
+that he didn't get his treat. 
+~
+4167 2048 -400 S
+4 18 9 2d4+15 2d2+1
+2000 0
+0 Dwarf~ 1
+>fight_prog 45~
+if rand(15)
+ kick
+else
+ if rand(15)
+  scream
+ else
+  mpecho The brat punches you and demands a lollipop.
+ endif
+endif
+~
+|
+#6609
+elmira~
+Elmira~
+Elmira is hugging and cuddling a teddybear.
+~
+Elmira is here squeezing a teddy bear to death.  She has red hair and a
+button nose.  There seems a slight cruelty in her eyes as she cradles the
+bear. 
+~
+32847 0 -200 S
+6 12385 64 6d8+12 1d8+0
+2000 8
+0 Human~ 2
+>greet_prog 101~
+mset self hp 30001
+restore self
+~
+>fight_prog 101~
+say I wanna just hold you and cuddle you and love you and keep you.
+say Please stop fighting me so we can be friends.
+hug $n
+cuddle $n
+peace
+restore self
+
+pat $n
+say 'Ah, isn't that better?'
+follow $n
+mpcalc $n elmira 0 10 1
+~
+>rand_prog 15~
+if isfollower( $i )
+ if isgone( $Z )
+  mpcalc $i leader 0 10 1 +
+  if mpcalc( $i leader 0 10 ) < 5
+   tell $Z Oh my! Oh my! Where are you?
+  else
+   mpgoto $Z
+   recho Elmira runs into the room!
+   say Oh! THERE you are!
+   hug $Z
+   mpcalc $i leader 0 10 0
+  endif
+ else
+  tell $Z I'll just love you forever and ever!
+  hug $Z
+ endif
+else
+ if inroom( $i ) != 6603
+  recho Elmira pouts, and runs back to Dwarven Daycare.
+  mpgoto 6603
+  recho Elmira sits down and pouts.
+ endif
+endif
+~
+|
+#6610
+elf elven youth~
+An elven youth~
+An elven youth is here playing.
+~
+The elf is a cute toddler wearing overalls and small brown leather shoes.
+He has pointy little ears and sparkling gleam in his eyes.  He is so set in
+his play time that he notices little else occurring around him.  As his
+imagination runs wild, he encompasses more and more toys of the room into
+his story. 
+~
+71 0 -200 S
+4 18 9 6d6+10 1d7+0
+2000 6
+0 Elf~ 1
+>greet_prog 95~
+laugh
+~
+|
+#6611
+monster five headed boy brat~
+A little monster~
+A huge five headed monster is here!
+~
+This is actually a very badly behaved little boy.  He is down here
+because he is stubborn and just doesn't care to listen to the nannies
+anymore.  He has taken his bad attitude further by becoming this monster and
+continually terrorizing anyone that comes near him. 
+~
+3 0 -500 S
+7 18 9 4d25+15 2d5+1
+5000 0
+0 Dwarf~ 1
+>fight_prog 50~
+if rand (50)
+ emote snarls at you wildly.
+else
+ kick $r
+ say Take that!
+endif 
+~
+|
+#6612
+teacher~
+the teacher~
+A teacher stands before the chalkboard preparing her lecture.
+~
+Standing here is a retired school teacher.  She is even old compared to
+dwarven standards.  Wearing a blue dress, she has her white hair pulled
+tightly back into a bun.  Small wire rimmed glasses perch on her nose. 
+~
+69651 2176 400 S
+8 4208 4208 3d30+10 3d3+2
+7500 7
+0 Dwarf~ 2
+>greet_prog 100~
+mpechoat $n The teacher begins writing tomorrow's lesson on the board for you.
+tell $n Butterflies are such beautiful creatures. For your homework get some paint. Then we can fingerpaint.
+if rand (50)
+ say Welcome to class, $N. Have you done your homework?
+endif
+~
+>speech_prog homework assignment~
+if ispc($n)
+ say Please find us some fingerpaint, so we can all paint butterflies.
+endif
+~
+>speech_prog yes yeah yup yep~
+if hasobject($n) == fingerpaint
+ say Good job, $N!  You get an A! Please give the fingerpaint to me.
+else
+ say I'd like to see some proof that you've completed your assignment, $N.
+endif
+~
+>give_prog paint fingerpaint pot~
+say Well done! Let's see what we can do with this.
+emote paints for awhile on a blank sheet.
+say Remember, the world is full of miracles.  Butterflies are but one of them.
+mpjunk pot
+mpoload 6656 30
+give painting $n
+say This might be worth some small amount of money.
+mpcalc $n daycare 0 10 1 +
+~
+>fight_prog 50~
+if rand(30)
+ kick $r
+ say I know karate!
+else 
+ if rand(30)
+  say $n! I'll send you to the principal's office for this!
+ else
+  mpechoat $n The teacher slaps you with the end of her ruler!  OUCH!
+  mpechoaround $n The teacher slaps $N with the end of her ruler!  OUCH!
+ endif
+endif
+~
+|
+#6613
+nanny~
+a dwarven nanny~
+A dwarven nanny is here shuffling paperwork.
+~
+The dwarven nanny is more round than tall.  Her hair is finely braided to
+the back.  She occupies her time mainly with insuring all the daycare's
+paperwork is in order.  The wrinkles in her forehead show the signs of heavy
+thought.  She is proud of the work she does and has a distaste for those who
+are not as orderly. 
+~
+67 0 150 S
+6 0 0 0d0+0 0d0+0
+0 1
+0 Dwarf~ 2
+>greet_prog 80~
+mutter
+~
+|
+#0
+
+#OBJECTS
+#6600
+axe toy~
+a toy axe~
+An axe made of plastic lies here.~
+~
+5
+0
+8193
+0~ 1~ 6~ 3~
+15 600 0
+E
+axe toy~
+This axe is made out of black colored plastic.  It prolly would not be a
+great weapon for fighting the larger creatures in the realms.
+~
+#6601
+ring pink ice~
+a pink ice ring~
+A pink ice ring draws your eye.~
+~
+9
+0
+3
+1~ 0~ 0~ 0~
+8 7000 0
+A
+1 1
+A
+13 1
+E
+ring ice pink~
+This ring holds some magic powers.  For as it feels as cold as ice when
+you put it on, it will never melt.  It is a light colored pink and shines a
+bit in the light.
+~
+#6602
+earrings~
+a pair of earrings.~
+A golden pair of earrings lie here.~
+~
+9
+0
+17
+0~ 0~ 0~ 0~
+1 500 0
+A
+2 1
+#6603
+dragon toy~
+a dragon toy~
+A toy dragon is partially buried in the sand.~
+~
+12
+0
+0
+0~ 0~ 0~ 0~
+25 200 0
+#6621
+robe linen~
+a linen robe~
+A linen robe is crumpled into a ball here.~
+~
+9
+0
+1025
+1~ 0~ 0~ 0~
+5 4000 0
+A
+4 1
+A
+12 5
+E
+robe linen~
+A cream colored linen robe.  It is lightweight and will offer a little bit of
+protection against the cold.
+~
+#6644
+meat steak~
+a juicy steak~
+A juicy steak sits on a plate here.~
+~
+19
+0
+1
+15~ 0~ 0~ 0~
+5 15 0
+E
+meat steak~
+Mmm, this is about the tastiest looking steak you have ever seen.  Your
+mouth begins to water as you smell it as well.
+~
+#6645
+steak rotten~
+a rotten steak~
+A dry steak lies on the floor.~
+~
+19
+0
+1
+4~ 0~ 0~ 1~
+5 14 0
+E
+steak rotten~
+Ug, who let this steak go to waste.  A few weeks ago it might have been
+edible.  You probably should not eat this.
+~
+#6646
+potion amber~
+an amber potion~
+An amber potion sits in a corner.~
+~
+10
+0
+1
+30~ cure light~ armor~  ~
+1 1500 0
+E
+potion amber~
+An amber colored potion.  It is fairly translucent.  There is a label on the
+container.  Perhaps you should read it.
+~
+E
+container label~
+In case of headaches or other physical aches or pains, take two of these
+and call a doctor in the morning.
+~
+#6647
+gun toy~
+a toy gun~
+A toy gun with a sharp bayonet lies here.~
+~
+5
+0
+8193
+0~ 2~ 3~ 7~
+5 1700 0
+E
+gun toy~
+This gun is just a toy.  You open it up to see the bullets, and you discover
+they are merely little plastic beads.  Probably the only reason they hurt
+you is the speed they were going at.
+~
+#6648
+overalls blue jean~
+blue jean overalls~
+A pair of blue jean overalls lies on the ground here.~
+~
+9
+0
+9
+5~ 0~ 0~ 0~
+7 2000 0
+E
+overalls blue jean~
+A pair of denim blue overalls.  How cute!
+~
+#6649
+armor suit tin~
+a tin suit of armor~
+A tin suit of armor lies on the ground here.~
+~
+9
+0
+9
+4~ 0~ 0~ 0~
+10 2000 0
+E
+armor suit tin~
+This suit of armor looks like it could actually protect you from head to
+toe.  How useful!
+~
+#6650
+cane wooden~
+a wooden cane~
+A wooden cane almost trips you as you walk past it.~
+~
+5
+0
+8193
+0~ 2~ 2~ 7~
+5 1500 0
+A
+14 50
+E
+cane wooden~
+A wooden cane with a turned handle.  It is a useful walking stick.  It
+probably could knock someone unconscious too.
+~
+#6651
+sword metal~
+a small metal sword~
+A small metal sword has been impaled into the ground.~
+~
+5
+0
+8193
+0~ 3~ 3~ 1~
+10 2500 0
+A
+19 1
+E
+sword metal~
+This sword actually looks like it could hurt someone.  It is about a foot
+and a half long.  It has a long thin blade.  Its hilt is made out of wood.
+~
+#6652
+helmet metal small~
+a small metal helmet~
+A small metal helmet lies on the ground here.~
+~
+9
+0
+17
+5~ 0~ 0~ 0~
+7 3000 0
+E
+helmet metal small~
+This helmet looks like it could offer some protection.  It is made out of
+some fairly soft shiny metal.
+~
+#6653
+lollipop~
+a lollipop~
+A lollipop attracts your attention.~
+~
+19
+0
+1
+5~ 0~ 0~ 0~
+1 10 0
+E
+lollipop~
+On the wrapper is a label.  It reads: Enjoy your lollipop.  Stay Happy. :)
+~
+#6654
+shawl pink~
+a pink shawl~
+A pink shawl lies on the ground here.~
+~
+9
+0
+5
+3~ 0~ 0~ 0~
+5 750 0
+E
+shawl pink~
+This shawl looks hand-woven, probably by a nanny.  Pink fringe lines the
+entire shawl.  It looks warm and serviceable.
+~
+#6655
+bow hair blue~
+a blue hair bow~
+A blue hair bow catches your attention.~
+~
+9
+0
+17
+2~ 0~ 0~ 0~
+5 1000 0
+A
+2 1
+A
+6 1
+E
+bow hair blue~
+Aw, isn't it so cute?  Maybe you should try it on.
+Is that Mr. Skullhead?
+~
+#6656
+painting fingerpainting butterfly picture~
+a fingerpainting of a butterfly~
+A pretty fingerpainting of a butterfly sits here.~
+~
+8
+1
+1
+0~ 0~ 0~ 0~
+2 1000 0
+E
+painting fingerpainting butterfly picture~
+This is a fine fingerpainting of butterflies of various colors.  It is amazing how it could have
+all come from one drop of paint.  It must have some magical quality.
+~
+#6657
+paint fingerpaint pot~
+a pot of fingerpaint~
+A pot of brightly-colored fingerpaint sits here.~
+~
+10
+1
+1
+4~ change sex~  ~  ~
+1 15 0
+E
+paint fingerpaint pot~
+The color of the paint reminds you of butterflies.
+~
+#0
+
+
+
+#ROOMS
+#6601
+Daycare Foyer~
+A simple building from the outside, this room begins to show the depth
+that hides within.  This is where parents may drop off or pick up their
+children.  A small mat has been placed on the boarded ground to avoid foot
+tracks from the path outside.  Several windows line the northern wall. 
+Potted plants reside in each corner.  An easel stands just almost in the
+rooms center.  There is a sign above the doorway to the east and there is an
+exit to the south. 
+~
+0 12 0
+D1
+~
+~
+0 0 6624
+D2
+You see a large room full of noisy brats.
+~
+~
+1 -1 6602
+D3
+~
+~
+0 0 6500
+E
+sign~
+^YNanny's Office^x
+ 
+~
+E
+easel~
+^GWELCOME^x
+ 
+              ^Wto the
+          Dwarven Daycare^x
+ 
+ 
+           Revamp:  Keegan
+ 
+ 
+~
+S
+#6602
+Story Time~
+A compact room with soft colored walls is the gathering place for story
+times.  A sturdy rocker sits undisturbed in the center while a few bean bags
+have been tossed around it.  A cushioned bench sits directly in front of the
+rocker and a bookshelf, made of tree branches, overflowing with various
+children's books is behind.  The smell of food floats gently in the air from
+the east.  The wails of an angry child come from the west while laughter
+filters in from the south. 
+~
+0 8 0
+D0
+You see the drop off.
+~
+~
+0 -1 6601
+D1
+You see an extremely messy kitchen.
+~
+~
+0 -1 6626
+D2
+You see a large room full of noisy brats.
+~
+~
+0 -1 6604
+D3
+You see a large room full of noisy brats.
+~
+~
+0 -1 6603
+S
+#6603
+Dining Hall~
+A quiet section of the daycare reserved for meal times.  Many small
+tables, each with at least three chairs, are arranged hastily, filling the
+room.  A rolling wooden cart, used for serving the meals, sits near the east
+door. 
+~
+0 8 0
+D1
+You see a large room full of noisy brats.
+~
+~
+0 -1 6602
+D2
+You see a large room full of noisy brats.
+~
+~
+0 -1 6605
+D3
+You see a messy bathroom.
+~
+~
+0 -1 6606
+S
+#6604
+Fun Time~
+The young tykes are mostly limited to play in this room.  Wooden crates
+and cabinets, for storing the various toys, take up nearly all the wall
+space.  A large rug, barely visible under the mass of dragged out toys,
+hides the many scratches and dents from previous play sessions.  From
+building blocks to dress-up dolls most of the children find something to
+briefly entertain themselves. 
+~
+0 8 0
+D0
+You see a large room full of noisy brats.
+~
+~
+0 -1 6602
+D1
+~
+~
+0 0 6627
+D2
+~
+~
+0 0 6621
+D3
+You see a large room full of noisy brats.
+~
+~
+0 -1 6605
+E
+chalkboard board~
+A large green chalkboard covers this wall.  Above the board is the alphabet. 
+On the board is written: 'Assignment: Go explore Tanglewood.  There are
+beautiful butterflies there that wait to be seen.'
+~
+S
+#6605
+Arts 'N Crafts~
+For the more imaginative youngsters an arts and crafts center was made. 
+All the decorations of this room have been left up to the children.  The
+once white walls have been adorned with tiny painted shapes like circles,
+squares and triangles and even some hand and foot prints.  One wall is
+dedicated solely to finger paintings.  Two half-moon tables allow the young
+artists to explore their creativity.  A counter runs along the wall for
+storing of paints, paper, molding clay and other useful art tools.  
+~
+0 8 0
+D0
+You see a large room full of noisy brats.
+~
+~
+0 -1 6603
+D1
+You see a large room full of noisy brats.
+~
+~
+0 -1 6604
+D2
+~
+~
+0 0 6620
+D3
+You see a staircase leading down into darkness.
+~
+~
+0 -1 6607
+S
+#6606
+Girls Room~
+Tucked off in the corner of the daycare building is the girls restroom. 
+The heavy smell of scented soaps overpowers the calm pink walls and shining
+tile floor.  A cream colored tub sits under a skylight by the far wall.  A
+little potty sits in the near corner. 
+~
+0 8 0
+D1
+You see a large room full of noisy brats.
+~
+~
+0 -1 6603
+S
+#6607
+Stairwell~
+The room is void except for the beginnings of a staircase with a rug
+runner.  A rickety wooden railing surrounds the stairs on three sides.  A
+sconce on each wall provide the only light.  Even with activity all about
+the daycare, it is eerily quiet here. 
+~
+0 8 0
+D1
+You see a large room full of noisy brats.
+~
+~
+0 -1 6605
+D5
+You see the entrance to something.
+~
+~
+0 -1 6612
+S
+#6608
+The Playground~
+The wire fence continues around the northwest corner of the playground. 
+There is a small square concrete pad on the west side.  Tattered jump ropes
+and broken chalk lie on the pad.  A hopscotch grid has been permanently
+painted onto the surface.  Only a few clumps of grass grow here and there,
+the rest has been worn down to the dirt. 
+~
+0 0 2
+D1
+You see the playground.
+~
+~
+0 -1 6609
+D2
+You see the playground.
+~
+~
+0 -1 6610
+S
+#6609
+The Playground~
+Even with signs of tampering the wire fence stands strong.  This section
+of the playground contains nothing but a giant sand box.  Toys have been
+tossed all around, several buried over half-way in the sand.  Mounds have
+been created in several places for use as a mountain or volcano.  Some
+children have even created complex and detailed villages, while others have
+created bog and swamp scenes. 
+~
+0 0 2
+D2
+You see the playground.
+~
+~
+0 -1 6611
+D3
+You see the playground.
+~
+~
+0 -1 6608
+E
+>room_trap_random 1~
+The wind briefly howls and blowing some of the sand buildings down.  ~
+E
+village~
+Extraordinary work shows off in this village that bears resemblance to
+the Dwarven Kingdom.  Buildings, paths, and even people have been recreated
+with great detail. 
+~
+S
+#6610
+The Playground~
+A large wire fence surrounds the entire playground keep children from
+wandering off.  There are two slides and a swing set in this area.  One
+slide is a straight downward run while the other corkscrews several times. 
+The swing is deteriorating and looks as if any amount of weight will cause
+it to fall, but still has three seats in good condition.  The grass has
+grown up around the slides but is totally worn away from the ladders and the
+landings.  The swing has no grass around it at all.  
+~
+0 0 2
+D0
+You see the playground.
+~
+~
+0 -1 6608
+D1
+You see the playground.
+~
+~
+0 -1 6611
+D3
+~
+~
+0 0 6627
+S
+#6611
+The Playground~
+The grass has been left low cut here.  An empty field for the children to
+use for whatever games they can come up with such as tag or dodge ball.  A
+few leather balls sit up against fence on the far side.  Most of the time
+this field is used for group activities that the nannies hold.  
+~
+0 0 2
+D0
+You see the playground.
+~
+~
+0 -1 6609
+D3
+You see the playground.
+~
+~
+0 -1 6610
+S
+#6612
+Basement~
+The staircase quickly ends into the basement.  This portion of the
+building is hardly used and so has little light.  There is a slight chill to
+the stagnant air.  Cobwebs and dirt block much of the view of the walls. 
+Most of the children know this room as the entrance to the maze and they
+stay away.  To the east the surroundings change but the light does not. 
+~
+0 9 2
+D1
+~
+~
+0 -1 6613
+D4
+You see some stairs.
+~
+~
+0 -1 6607
+S
+#6613
+Mini-Maze~
+A narrow passage continues on into the dim lighting.  Through the
+darkness, some colorful pictures can be seen on the wooden walls.  The old
+air thickens slightly. 
+~
+0 9 2
+D1
+~
+~
+0 -1 6614
+D2
+~
+~
+0 -1 6615
+D3
+~
+~
+0 -1 6612
+E
+pictures~
+The pictures in this room depict various landscapes around the realm,
+forests, caverns, castles, mountains and plains.  
+~
+S
+#6614
+Mini-Maze~
+A narrow passage continues on into the dim lighting.  Through the
+darkness, some colorful pictures can be seen on the wooden walls.  The old
+air thickens slightly. 
+~
+0 9 2
+D2
+~
+~
+0 -1 6616
+D3
+~
+~
+0 -1 6613
+E
+pictures~
+The pictures here old attempts at art by the children.  Among them are
+fingerpaintings and crayon drawings.  There is one of quite violence
+depicting a slaughtered dwarven guard. 
+~
+S
+#6615
+Mini-Maze~
+A narrow passage continues on into the dim lighting.  Through the
+darkness, some colorful pictures can be seen on the wooden walls.  The old
+air thickens slightly. 
+~
+0 9 2
+D0
+~
+~
+0 -1 6613
+D1
+~
+~
+0 -1 6616
+E
+pictures~
+Snow White is the theme among these pictures.  There is a rather large
+one with all the seven dwarves coming home from work and one of the wicked
+stepmother disguised as an ugly old lady holding an apple.  The most
+catching of all is a beautiful painting of Snow White herself. 
+~
+S
+#6616
+Mini-Maze~
+A narrow passage continues on into the dim lighting.  Through the
+darkness, some colorful pictures can be seen on the wooden walls.  The old
+air thickens slightly. 
+~
+0 9 2
+D0
+~
+~
+0 -1 6614
+D2
+~
+~
+0 0 6617
+D3
+~
+~
+0 -1 6615
+E
+pictures~
+Among the pictures here are an old gnome chief sitting on the throne of
+his hut, reindeer resting in stables, and a scene of a little mushroom
+village. 
+~
+S
+#6617
+Mini-Maze~
+A narrow passage continues on into the dim lighting.  Through the
+darkness, some colorful pictures can be seen on the wooden walls.  The old
+air thickens slightly. 
+~
+0 9 0
+D0
+~
+~
+0 0 6616
+D1
+~
+~
+0 0 6619
+D2
+~
+~
+0 0 6618
+E
+pictures~
+There are only two pictures here.  One shows an angry beast growling
+toward the sky.  The other picture, seemingly opposing the other, is that of
+a young child with a gleam in his eye and a sword in his hand. 
+~
+S
+#6618
+Mini-Maze~
+A narrow passage continues on into the dim lighting.  Through the
+darkness, some colorful pictures can be seen on the wooden walls.  The old
+air is thick, and smells of mold. 
+~
+0 9 0
+D0
+~
+~
+0 0 6617
+D2
+~
+~
+0 0 6631
+E
+pictures~
+On one wall there is a large picture of a can of paint and several
+brushes lying beside it.  The other picture is a realistic take on the arts
+and crafts room upstairs, teacher and all. 
+~
+S
+#6619
+Mini-Maze~
+A narrow passage continues on into the dim lighting.  Through the
+darkness, some colorful pictures can be seen on the wooden walls.  The old
+air thickens slightly. 
+~
+0 9 0
+D3
+~
+~
+0 0 6617
+E
+pictures~
+The pictures of this room form a mural.  It depicts several dwarves
+standing in awe before a huge fierce dragon.  The dragon taking up nearly
+all three of the walls.  There is a small inscription towards the bottom
+that reads, Shakes. 
+~
+S
+#6620
+First Aid~
+Nothing more than a niche, the first aid station is a busy place.  The
+air almost takes on a sterile smell.  One wall is nothing but cabinets from
+floor to ceiling.  Each door and compartment holds various bandages,
+ointments and healing tools to handle most any accident.  On the other wall
+there is a cot and a water station.  There is ample light from the several
+lanterns hanging from the ceiling. 
+~
+0 8 0
+D0
+~
+~
+0 0 6605
+D1
+~
+~
+0 0 6621
+S
+#6621
+Hallway~
+A detailed and delicate candelabra hangs from the ceiling to light the
+way.  Most of the floor is covered by a decorative rung.  Two masterfully
+painted pictures are the only wall fixtures.  This short hallway allows
+passage in all directions. 
+~
+0 8 0
+D0
+~
+~
+0 0 6604
+D1
+~
+~
+0 0 6622
+D2
+~
+~
+0 0 6623
+D3
+~
+~
+0 0 6620
+E
+pictures~
+The two pictures are of a former King and Queen of the lands.  The King
+is a stout looking dwarf with a long beard in braids and dark brown hair to
+his shoulders.  The Queen is a regal dwarf with emerald green eyes.  Both
+appear to be happy with little signs of old age or stress. 
+~
+S
+#6622
+Nap Room~
+Throughout the day, each child is given time for a nap.  This rather
+large room contains no windows and has minimal light.  The walls are a dull
+brown to aid in drifting the little ones off to sleep.  Numerous cots and
+hay pallets provide the slightly comfortable beds. 
+~
+0 8 0
+D3
+~
+~
+0 0 6621
+S
+#6623
+Boys Room~
+The dark blue colors of the boys restroom help to hide the uncleanliness.
+The normally white tub is marred by dirt from continuous bath taking.  The
+little potty sits off to the back corner with a trail of littered paper
+coming from it.  The smell of filth wades heavily in the air.  Low lit
+lanterns provide enough light without giving way to the disarray. 
+~
+0 8 0
+D0
+~
+~
+0 0 6621
+S
+#6624
+Nanny's Office~
+Neat and meticulous, the nanny's office is well in order.  A hardwood
+desk with a plain chair, faces out from the wall.  Two leather cushioned
+chairs are turned toward the desk.  All papers and files are organized and
+arranged on the desk surface.  A three drawer filing cabinet stands against
+the southern wall with plaques hanging on both sides.  An elaborate
+candelabra hangs in the center of the room.  There is a sign on the door to
+the east. 
+~
+0 8 2
+D1
+~
+~
+1 0 6625
+D3
+~
+~
+0 0 6601
+E
+sign~
+^WCLOSET^x
+ 
+ 
+      ^RKEEP OUT^x
+ 
+~
+E
+plaque~
+Hanging loosely on the wall, these two plaques are the completion
+certificates of the two nannies.  They show proof that the nannies have
+taken proper training and should know what they are doing. 
+~
+S
+#6625
+Tiny closet~
+A thick accumulation of dust covers everything in the closet.  A lantern
+hanging to one side of the door reveals how cramped this space is.  Flimsy
+wooden shelves line three walls and two cabinets stand back-to-back in the
+center.  The stale musty air is the result of no windows and no one being in
+here for quite some time. 
+~
+0 8 0
+D3
+~
+~
+1 0 6624
+S
+#6626
+Messy Kitchen~
+An average sized room, the kitchen is more than sufficient for the
+daycare's needs.  The room is well lit and is kept fairly clean.  There are
+plenty of cabinets to hold the numerous pots and pans and dishes.  A small
+circular stove, for healthy warm meals, sits along the eastern wall. 
+Scarred from consistent use, the counter and its top are in need of repair.
+A window on the east wall allows a view of the outside playground. 
+~
+0 8 0
+D3
+You see a large room full of noisy brats.
+~
+~
+0 -1 6602
+S
+#6627
+Patio~
+A rectangular wooden deck supplies a platform for observing the children
+on the playground and a place to hold outside activities.  Several boards of
+the deck and the two steps to the ground are worn from constant traffic.  At
+times the patio becomes a haven from the hectic pace of the inside and
+nature's song and fresh air is a welcome break. 
+~
+0 0 2
+D1
+~
+~
+0 0 6610
+D3
+~
+~
+0 0 6604
+S
+#6631
+The End?~
+The end of the maze known as the Lair.  This is a plain room with
+unpainted walls and no other decorations.  There are a few splotches of
+spilled paint on the floor.  The air smells a little less stale here. 
+~
+0 393225 2
+D0
+~
+~
+0 0 6618
+S
+#0
+
+#SPECIALS
+M 6600 spec_thief
+M 6601 spec_thief
+M 6602 spec_thief
+M 6603 spec_thief
+M 6604 spec_thief
+M 6605 spec_thief
+M 6606 spec_cast_cleric
+M 6608 spec_thief
+M 6611 spec_cast_mage
+S
+
+
+#SHOPS
+0
+
+
+
+
+#RESETS
+M 0 6601 1 6602
+M 0 6609 1 6603
+E 0 6655 0 6
+M 0 6610 1 6604
+E 0 6648 0 5
+M 0 6612 1 6605
+M 0 6604 1 6606
+E 0 6602 0 19
+M 0 6603 1 6607
+E 0 6647 0 16
+O 0 6603 0 6609
+M 0 6610 1 6609
+E 0 6648 0 5
+M 0 6605 1 6610
+G 0 6601 0
+M 0 6608 1 6612
+G 0 6645 0
+R 0 6613 4
+R 0 6614 4
+R 0 6615 4
+R 0 6616 4
+M 0 6607 1 6618
+E 0 6652 0 6
+E 0 6651 0 16
+M 0 6600 3 6620
+E 0 6600 0 16
+M 0 6606 2 6620
+G 0 6646 0
+E 0 6654 0 3
+M 0 6601 1 6622
+M 0 6603 1 6623
+E 0 6647 0 16
+E 0 6649 0 5
+M 0 6613 1 6624
+E 0 6621 0 12
+D 0  6624 1 1
+M 0 6602 1 6625
+D 0  6625 3 1
+M 0 6605 1 6626
+M 0 6604 1 6627
+M 0 6611 1 6631
+G 0 6657 0
+S
+
+
+
+
+#$

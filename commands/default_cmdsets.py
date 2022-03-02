@@ -20,7 +20,6 @@ from commands.command import CmdCharCreate
 from commands.command import CmdInventory
 from commands.command import CmdDrop
 from commands.command import CmdLook
-from commands.command import CmdOpen
 from commands.command import CmdRepop
 from commands.command import CmdDestroy
 from commands.command import CmdLock
@@ -33,6 +32,11 @@ from commands.command import CmdGet
 from commands.command import CmdSleep
 from commands.command import CmdRest
 from commands.command import CmdStand
+from commands.build_commands import CmdOpen
+from commands.build_commands import CmdSetObjAlias
+from commands.build_commands import CmdDig
+from commands.build_commands import CmdCreate
+from commands.build_commands import CmdName
 from commands.equipment_commands import CmdWear
 from commands.equipment_commands import CmdWield
 from commands.equipment_commands import CmdRemove
@@ -46,6 +50,9 @@ from commands.door_commands import CmdDoorClose
 from commands.door_commands import CmdDoorUnlock
 from commands.door_commands import CmdDoorLock
 from commands.combat_commands import CmdAttack
+from commands.combat_commands import CmdConsider
+from commands.combat_commands import CmdFlee
+from commands.combat_commands import CmdWimpy
 
 class CharacterCmdSet(default_cmds.CharacterCmdSet):
     """
@@ -94,6 +101,13 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdSleep())
         self.add(CmdRest())
         self.add(CmdStand())
+        self.add(CmdSetObjAlias())
+        self.add(CmdDig())
+        self.add(CmdCreate())
+        self.add(CmdName())
+        self.add(CmdConsider())
+        self.add(CmdFlee())
+        self.add(CmdWimpy())
 
 class AccountCmdSet(default_cmds.AccountCmdSet):
     """

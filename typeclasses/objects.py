@@ -409,7 +409,7 @@ class Armor(Equipment):
         elif wear_location == "finger":
             if caller.db.eq_slots["finger, left"] and caller.db.eq_slots["finger, right"]:
                 wear_location = "finger, left"
-            elif not caller.db.eq_slots["finger.left"]:
+            elif not caller.db.eq_slots["finger, left"]:
                 wear_location = "finger, left"
             else:
                 wear_location = "finger, right"
@@ -619,7 +619,7 @@ class Furniture(Item):
         self.locks.add("get:false()")
         self.db.get_err_msg = "This is too heavy to pick up."
 
-class Container(Item):
+class Container(Armor):
 
     """
 
@@ -644,7 +644,7 @@ class Container(Item):
         self.locks.add("put: is_open();open: can_open();close: can_close();lock: can_lock();unlock: can_unlock()")
 
 
-class Drink_Container(Item):
+class Drink_container(Item):
 
     """
 
@@ -800,6 +800,23 @@ class Boat(Item):
         super().at_object_creation()
         self.db.object_type = "item"
         self.db.item_type = "boat"
+        self.db.vnum = 0
+        self.db.level = 1
+        self.db.extra_flags = []
+        self.db.extra_descriptions = {}
+
+class Money(Item):
+
+    """
+
+    This is the class for money items.
+
+    """
+
+    def at_object_creation(self):
+        super().at_object_creation()
+        self.db.object_type = "item"
+        self.db.item_type = "money"
         self.db.vnum = 0
         self.db.level = 1
         self.db.extra_flags = []
