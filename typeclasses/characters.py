@@ -716,6 +716,7 @@ class Player(Character):
         # set experience/level stats
         self.db.experience_total = 0
         self.db.experience_spent = 0
+        self.db.experience_spent_practices = 0
         self.db.level = 1
 
         # set monetary stats
