@@ -51,6 +51,8 @@ from commands.door_commands import CmdDoorUnlock
 from commands.door_commands import CmdDoorLock
 from commands.combat_commands import CmdAttack
 from commands.combat_commands import CmdConsider
+from commands.combat_commands import CmdFlee
+from commands.combat_commands import CmdWimpy
 
 class CharacterCmdSet(default_cmds.CharacterCmdSet):
     """
@@ -104,6 +106,8 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdCreate())
         self.add(CmdName())
         self.add(CmdConsider())
+        self.add(CmdFlee())
+        self.add(CmdWimpy())
 
 class AccountCmdSet(default_cmds.AccountCmdSet):
     """

@@ -1,6 +1,6 @@
 dig/tel Binky's Kitchen; r4469
 #
-tag r4469 = the circus, category = area names
+tag r4469 = the circus:area names
 #
 desc r4469 = A rather small room really, but the aromas drifting to you make your mouth water.  A feast fit for a king, or an immortal is spread upon the table before you.  You feel compelled to sit and at least taste some of the deli- cacies.  Somehow, you know that everything you find here will be very filling, yet completely fat free. 
 #
@@ -10,13 +10,15 @@ desc/edit r4469
 #
 :wq
 #
+set r4469/vnum = "r4469"
+#
 set r4469/terrain = "city"
 #
 set r4469/room_flags = ['no mob']
 #
 dig/tel The Path to the Circus; r4401
 #
-tag r4401 = the circus, category = area names
+tag r4401 = the circus:area names
 #
 desc r4401 = You hear music and laughter coming from ahead of you.  Posters hang from the trees, advertisements for the Circus that has just arrived in town. 
 #
@@ -26,13 +28,15 @@ desc/edit r4401
 #
 :wq
 #
+set r4401/vnum = "r4401"
+#
 set r4401/terrain = "city"
 #
 set r4401/extra_description = {'poster': 'The poster reads:  Come one, come all!!  See the greatest show in the 4th realm!!  See the Bearded Lady!!  Ivan the strongman!!  Laugh at the antics of the crazy Klawson Klowns!! '}
 #
 dig/tel The Entrance to the Circus; r4402
 #
-tag r4402 = the circus, category = area names
+tag r4402 = the circus:area names
 #
 desc r4402 = Ahead you see the Circus laid out in all its glory.  Freak shows, games booths, and dwarfing them all, the Big Top.  A ticket booth is set here. You will need a ticket to enter the Big Top. 
 #
@@ -42,11 +46,13 @@ desc/edit r4402
 #
 :wq
 #
+set r4402/vnum = "r4402"
+#
 set r4402/terrain = "city"
 #
 dig/tel The Path to the Big Top; r4403
 #
-tag r4403 = the circus, category = area names
+tag r4403 = the circus:area names
 #
 desc r4403 = This way to the Big Top is lined with people.  They seem to be having a good time.  Everyone that is, except the people waiting in line for the Big Top.  They seem annoyed at you as you push your way past them.  To the west you see games booths. 
 #
@@ -56,11 +62,13 @@ desc/edit r4403
 #
 :wq
 #
+set r4403/vnum = "r4403"
+#
 set r4403/terrain = "city"
 #
 dig/tel The Game Booths; r4404
 #
-tag r4404 = the circus, category = area names
+tag r4404 = the circus:area names
 #
 desc r4404 = This area seems deserted.  The booths are boarded up, and the only Circus employee you see is sitting on a counter, muttering obscenities at the Mayor and City Council.  He makes it a point to let you know that he knows you are there, and he is ignoring you on purpose. 
 #
@@ -70,11 +78,13 @@ desc/edit r4404
 #
 :wq
 #
+set r4404/vnum = "r4404"
+#
 set r4404/terrain = "city"
 #
 dig/tel The Game Booths; r4405
 #
-tag r4405 = the circus, category = area names
+tag r4405 = the circus:area names
 #
 desc r4405 = This area seems deserted.  The booths are boarded up, and the only Circus employee you see is sitting on a counter, muttering obscenities at the Mayor and City Council.  He makes it a point to let you know that he knows you are there, and he is ignoring you on purpose. 
 #
@@ -84,11 +94,13 @@ desc/edit r4405
 #
 :wq
 #
+set r4405/vnum = "r4405"
+#
 set r4405/terrain = "city"
 #
 dig/tel The Path to the Big Top; r4406
 #
-tag r4406 = the circus, category = area names
+tag r4406 = the circus:area names
 #
 desc r4406 = This way to the Big Top is lined with people.  They seem to be having a good time.  Everyone that is, except the people waiting in line for the Big Top.  They seem annoyed at you as you push your way past them.  To the east you see the freak shows.  To the west you see a vendor. 
 #
@@ -98,11 +110,13 @@ desc/edit r4406
 #
 :wq
 #
+set r4406/vnum = "r4406"
+#
 set r4406/terrain = "city"
 #
 dig/tel The Cotton Candy Vendor; r4407
 #
-tag r4407 = the circus, category = area names
+tag r4407 = the circus:area names
 #
 desc r4407 = The smell of cotton candy makes your mouth water.  Be careful about eating too much, all that sugar may make you hyper. 
 #
@@ -112,11 +126,13 @@ desc/edit r4407
 #
 :wq
 #
+set r4407/vnum = "r4407"
+#
 set r4407/terrain = "city"
 #
 dig/tel The Entrance to the Freak Shows; r4408
 #
-tag r4408 = the circus, category = area names
+tag r4408 = the circus:area names
 #
 desc r4408 = This area is filled with posters of the attractions the Circus has to offer to the curious.  You are invited to watch feats of strength from the strong man, gasp as a man swallows a sword, see a real, Bearded Lady, be amazed by the midget's feats of acrobatics, and be dazzled by the great magical powers of the Illusionist. 
 #
@@ -126,11 +142,13 @@ desc/edit r4408
 #
 :wq
 #
+set r4408/vnum = "r4408"
+#
 set r4408/terrain = "city"
 #
 dig/tel The Tent of the Bearded Lady; r4409
 #
-tag r4409 = the circus, category = area names
+tag r4409 = the circus:area names
 #
 desc r4409 = This tent consists of chairs for you to rest in, and a rickety wooden stage up front.  You hear the stage creak as you enter, and you understand why when you see who is standing on it.  She is bearded all right.  And big. Very big.  Colossally huge.  You don't seem to have any problem finding a seat. The place is deserted of spectators. 
 #
@@ -140,13 +158,15 @@ desc/edit r4409
 #
 :wq
 #
+set r4409/vnum = "r4409"
+#
 set r4409/terrain = "inside"
 #
 set r4409/room_flags = ['indoors']
 #
 dig/tel The Tent of the Illusionist; r4410
 #
-tag r4410 = the circus, category = area names
+tag r4410 = the circus:area names
 #
 desc r4410 = This tent is darkened at first.  Then it gradually lightens, although you do not see the source of the light.  You do hear a loud breathing sound though.  You think it may be coming from right behind you.  You think this because you can feel very warm breath on the back of your neck.  You turn, and see a very large, very evil looking creature.  It's a Dragon.  It opens its mouth, but does not attack.  Instead it just laughs at you mercilessly. The Dragon snorts a cloud of smoke at you. 
 #
@@ -156,6 +176,8 @@ desc/edit r4410
 #
 :wq
 #
+set r4410/vnum = "r4410"
+#
 set r4410/terrain = "inside"
 #
 set r4410/extra_description = {'Dragon': 'The Dragon looks incredibly powerful.  You are in awe of it, not believing that something so powerful, so huge, could be controlled by man.  Let alone fit in this tent.  Fit in this tent?  Hey, wait a minute, is it shimmering a little, or are your eyes playing tricks on you? '}
@@ -164,7 +186,7 @@ set r4410/room_flags = ['indoors']
 #
 dig/tel The Midget's Tent; r4411
 #
-tag r4411 = the circus, category = area names
+tag r4411 = the circus:area names
 #
 desc r4411 = This tent has a mat laid out, no doubt where the Midget performs his acrobatics.  You overhear another member of the audience telling his friend, 'I'd watch out for that Midget.  I hear that a new rash of robberies broke out right after the Circus came to town.  Wouldn't surprise me if he is the one responsible.' 
 #
@@ -174,13 +196,15 @@ desc/edit r4411
 #
 :wq
 #
+set r4411/vnum = "r4411"
+#
 set r4411/terrain = "inside"
 #
 set r4411/room_flags = ['indoors']
 #
 dig/tel The Sword Swallower's Tent; r4412
 #
-tag r4412 = the circus, category = area names
+tag r4412 = the circus:area names
 #
 desc r4412 = This tent is decorated with many deadly looking weapons.  A warrior could find any kind of weapon he ever dreamed of in here.  A stage at the front is obviously where the Sword Swallower performs his acts of bravery. Several rickety chairs sit in front of the stage, looking as if they might not hold the weight of the next customer to sit down. 
 #
@@ -190,13 +214,15 @@ desc/edit r4412
 #
 :wq
 #
+set r4412/vnum = "r4412"
+#
 set r4412/terrain = "inside"
 #
 set r4412/room_flags = ['indoors']
 #
 dig/tel The Strongman's Tent; r4413
 #
-tag r4413 = the circus, category = area names
+tag r4413 = the circus:area names
 #
 desc r4413 = This tent is the largest one in The Circus besides the Big Top.  It is decorated with pictures and drawings of huge men lifting huge weights. You see heavy objects at the front of the room, that must be part of the act. If Ivan the Strongman can lift those, then he really must be strong. 
 #
@@ -206,13 +232,15 @@ desc/edit r4413
 #
 :wq
 #
+set r4413/vnum = "r4413"
+#
 set r4413/terrain = "inside"
 #
 set r4413/room_flags = ['indoors']
 #
 dig/tel The Path to the Big Top; r4414
 #
-tag r4414 = the circus, category = area names
+tag r4414 = the circus:area names
 #
 desc r4414 = This way to the Big Top is lined with people.  They seem to be having a good time.  Everyone that is, except the people waiting in line for the Big Top.  They seem annoyed at you as you push your way past them.  To the east and west you see games booths. 
 #
@@ -222,11 +250,13 @@ desc/edit r4414
 #
 :wq
 #
+set r4414/vnum = "r4414"
+#
 set r4414/terrain = "city"
 #
 dig/tel The Entrance to the Big Top.; r4415
 #
-tag r4415 = the circus, category = area names
+tag r4415 = the circus:area names
 #
 desc r4415 = You've finally made it to the front of the line!  The entrance to the Big Top is in front of you.  You see a turnstile to the south, the only thing blocking you from the magic of The Circus that lies inside. 
 #
@@ -236,13 +266,15 @@ desc/edit r4415
 #
 :wq
 #
+set r4415/vnum = "r4415"
+#
 set r4415/terrain = "city"
 #
 set r4415/extra_description = {'turnstile': "There's no way past the Ticket Taker, except to have a ticket. "}
 #
 dig/tel Entryway between the Grandstands; r4416
 #
-tag r4416 = the circus, category = area names
+tag r4416 = the circus:area names
 #
 desc r4416 = The noise of the crowd greets you as you enter the Big Top.  The sounds and smells that greet you take you back to the time when you were a child, in wonder and awe of the Circus that came to your town.  You can hear the trumpet of an elephant somewhere, and the roar of a lion.  The applause of the crowd is momentarily deafening.  To the west and east you see under the Grand Stands, but can't get there from here. 
 #
@@ -252,13 +284,15 @@ desc/edit r4416
 #
 :wq
 #
+set r4416/vnum = "r4416"
+#
 set r4416/terrain = "inside"
 #
 set r4416/room_flags = ['indoors']
 #
 dig/tel Under the Grandstands; r4417
 #
-tag r4417 = the circus, category = area names
+tag r4417 = the circus:area names
 #
 desc r4417 = You are under the grandstands.  Popcorn and peanut shells litter the floor. You can climb up the supports into the stands from here. 
 #
@@ -268,13 +302,15 @@ desc/edit r4417
 #
 :wq
 #
+set r4417/vnum = "r4417"
+#
 set r4417/terrain = "inside"
 #
 set r4417/room_flags = ['indoors']
 #
 dig/tel In the Grandstands; r4418
 #
-tag r4418 = the circus, category = area names
+tag r4418 = the circus:area names
 #
 desc r4418 = You find yourself in a crowd of people enjoying the show.  The people behind you yell at you to sit down.  If you don't sit down soon, there may be a fight.  You may climb down below the stands, or exit by the stairs and get a good look at the Big Top. 
 #
@@ -284,13 +320,15 @@ desc/edit r4418
 #
 :wq
 #
+set r4418/vnum = "r4418"
+#
 set r4418/terrain = "inside"
 #
 set r4418/room_flags = ['indoors']
 #
 dig/tel First Look at the Big Top; r4419
 #
-tag r4419 = the circus, category = area names
+tag r4419 = the circus:area names
 #
 desc r4419 = You receive your first good look at the Big Top.  The size of this tent was amazing from the outside, but is even more breathtaking from the inside.  You feel as if you are in a different world, where the sky is only a little closer.  You see 3 Rings spread out in front of you.  A high wire extends between poles at a dizzying height.  The 1st Ring appears to hold a cage which contains several large lions.  The 2nd Ring is filled with clowns who are trying to fit into a small cart.  In the 3rd Ring, a man is preparing to put on a blind fold, while his assistant stands against a target. He has a rack of knives next to him.  You may enter the 2nd Ring to the south. To the east and west are the Grandstands, and the Entryway is to the north. 
 #
@@ -300,13 +338,15 @@ desc/edit r4419
 #
 :wq
 #
+set r4419/vnum = "r4419"
+#
 set r4419/terrain = "inside"
 #
 set r4419/room_flags = ['indoors']
 #
 dig/tel In the Grandstands; r4420
 #
-tag r4420 = the circus, category = area names
+tag r4420 = the circus:area names
 #
 desc r4420 = You find yourself in a crowd of people enjoying the show.  The people behind you yell at you to sit down.  If you don't sit down soon, there may be a fight.  You may climb down below the stands, or exit by the stairs and get a good look at the Big Top. The monorail platform is just west of here. 
 #
@@ -316,13 +356,15 @@ desc/edit r4420
 #
 :wq
 #
+set r4420/vnum = "r4420"
+#
 set r4420/terrain = "inside"
 #
 set r4420/room_flags = ['indoors']
 #
 dig/tel Under the Grandstands; r4421
 #
-tag r4421 = the circus, category = area names
+tag r4421 = the circus:area names
 #
 desc r4421 = You are under the grandstands.  Popcorn and peanut shells litter the floor. You can climb up the supports into the stands from here. 
 #
@@ -332,13 +374,15 @@ desc/edit r4421
 #
 :wq
 #
+set r4421/vnum = "r4421"
+#
 set r4421/terrain = "inside"
 #
 set r4421/room_flags = ['indoors']
 #
 dig/tel The 2nd Ring - You'd better read the description of this room. ; r4422
 #
-tag r4422 = the circus, category = area names
+tag r4422 = the circus:area names
 #
 desc r4422 = You are in the 2nd Ring.  You see a rickety carriage, which a line of clowns are trying to squeeze into.  You've already seen many more fit into it than could possibly fit.  The 1st Ring is to the west and the 3rd Ring is to the east.  A ladder on a pole here provides access to the tightrope above. To the north is the first look a visitor to the Big Top has.  You notice that the 1st ring is a cage which contains several HUNGRY Lions.  Entering it would be fairly suicidal.  It is a good thing it is locked! 
 #
@@ -348,13 +392,15 @@ desc/edit r4422
 #
 :wq
 #
+set r4422/vnum = "r4422"
+#
 set r4422/terrain = "inside"
 #
 set r4422/room_flags = ['indoors']
 #
 dig/tel The 3rd Ring; r4423
 #
-tag r4423 = the circus, category = area names
+tag r4423 = the circus:area names
 #
 desc r4423 = A target is set up in this Ring for the knife thrower.  Up close, you can see many red smears which have not quite been cleaned from the target. You see the crowd looking at you, probably wondering what your act is.  The only exit is to the 2nd Ring to the west. 
 #
@@ -364,13 +410,15 @@ desc/edit r4423
 #
 :wq
 #
+set r4423/vnum = "r4423"
+#
 set r4423/terrain = "inside"
 #
 set r4423/room_flags = ['no teleport in', 'indoors']
 #
 dig/tel The 1st Ring; r4424
 #
-tag r4424 = the circus, category = area names
+tag r4424 = the circus:area names
 #
 desc r4424 = This is a cage, which contains several large stands that the lions are supposed to sit on when they are not eating foolish people who walk into this room.  A few hoops are in the cage, one of which is flaming.  You think that only an idiot would be in here with the lions.  With the lions?  Hey, YOU ARE IN HERE WITH THE LIONS!!!  YOU'D BETTER RUN!!!!!! 
 #
@@ -380,13 +428,15 @@ desc/edit r4424
 #
 :wq
 #
+set r4424/vnum = "r4424"
+#
 set r4424/terrain = "inside"
 #
 set r4424/room_flags = ['indoors']
 #
 dig/tel On the High Wire; r4425
 #
-tag r4425 = the circus, category = area names
+tag r4425 = the circus:area names
 #
 desc r4425 = You try to balance on the wire, and try not to look down the 80 feet to the ground below.  It is good thing your training as adventurer has given you a little better sense of balance than most people.  DIRECTLY below you is the Lion's Cage.  If you survived the fall, YOU WOULD SURELY DIE when the Lions got ahold of you.  You note that the door is closed to the cage, so you would have very little chance of running away if you did fall into the cage.  As you take your eyes off the ground below, you see the end of the wire immediately to your west. 
 #
@@ -396,13 +446,15 @@ desc/edit r4425
 #
 :wq
 #
+set r4425/vnum = "r4425"
+#
 set r4425/terrain = "inside"
 #
 set r4425/room_flags = ['indoors']
 #
 dig/tel On the Platform Way, Way Up in the Air; r4427
 #
-tag r4427 = the circus, category = area names
+tag r4427 = the circus:area names
 #
 desc r4427 = You hug the pole as you realize just how high you are.  Your only choices are to go back down, or try to walk the high wire to the west.  Of course, the wire goes above the lion's cage, which has an open top.  Even if you did survive the fall, the lions would ensure that you probably wouldn't feel like adventuring again. 
 #
@@ -412,13 +464,15 @@ desc/edit r4427
 #
 :wq
 #
+set r4427/vnum = "r4427"
+#
 set r4427/terrain = "inside"
 #
 set r4427/room_flags = ['indoors']
 #
 dig/tel The End of the Highwire; r4428
 #
-tag r4428 = the circus, category = area names
+tag r4428 = the circus:area names
 #
 desc r4428 = You made it safely.  Now you may climb down and sneak out the back entrance of the Big Top.  Or you can brave the Tightrope again.  You hear the noises of animals outside the Big Top.  Below you is the trapdoor down, which, thankfully, DOESN'T lead to the lions. 
 #
@@ -428,13 +482,15 @@ desc/edit r4428
 #
 :wq
 #
+set r4428/vnum = "r4428"
+#
 set r4428/terrain = "inside"
 #
 set r4428/room_flags = ['indoors']
 #
 dig/tel Behind the Big Top; r4429
 #
-tag r4429 = the circus, category = area names
+tag r4429 = the circus:area names
 #
 desc r4429 = This is where the show behind the show goes on.  There are a lot of workers preparing the next act, moving animals around, and doing too much to take much notice of you.  The workers are taking the animals to the pens to the south.  You see some of the performers' wagons off to the east.  From inside, you hear applause from the crowd. 
 #
@@ -444,11 +500,13 @@ desc/edit r4429
 #
 :wq
 #
+set r4429/vnum = "r4429"
+#
 set r4429/terrain = "city"
 #
 dig/tel Path to the Animal Pens; r4426
 #
-tag r4426 = the circus, category = area names
+tag r4426 = the circus:area names
 #
 desc r4426 = The sounds of the circus animals are far more clear from here. It sounds like this circus is the proud owner of more large and scary animals than just the lions out in the Big Top. Continuing on this well-worn path will lead you to the pens. 
 #
@@ -458,11 +516,13 @@ desc/edit r4426
 #
 :wq
 #
+set r4426/vnum = "r4426"
+#
 set r4426/terrain = "city"
 #
 dig/tel The Animal Pens; r4430
 #
-tag r4430 = the circus, category = area names
+tag r4430 = the circus:area names
 #
 desc r4430 = From here you may enter the animal pens.  You see a large sign that says the following: WELCOME TO THE ANIMAL PENS!!!! Please feel free to pet and play with any of the animals.  They are all very friendly, and never hurt the public.  Especially the Bear.  Feel free to enter his cage and pet him. - The Owner Penned underneath this is a note that says:  Beware the Bear!!! You may enter the Elephant Pen to the west, the Bear Pen to the south, or the Horse Corral to the east.  Or you may return north. 
 #
@@ -472,11 +532,13 @@ desc/edit r4430
 #
 :wq
 #
+set r4430/vnum = "r4430"
+#
 set r4430/terrain = "city"
 #
 dig/tel The Elephant Pen; r4431
 #
-tag r4431 = the circus, category = area names
+tag r4431 = the circus:area names
 #
 desc r4431 = The first thing you notice in this pen is the rather pungent odor.  Oh my, you seem to have stepped in an extremely large pile of droppings.  Maybe you should leave to the east? 
 #
@@ -486,11 +548,13 @@ desc/edit r4431
 #
 :wq
 #
+set r4431/vnum = "r4431"
+#
 set r4431/terrain = "city"
 #
 dig/tel The Bear Pen; r4432
 #
-tag r4432 = the circus, category = area names
+tag r4432 = the circus:area names
 #
 desc r4432 = This room is rather dark, and it doesn't seem to have been cleaned very well lately.  The Circus Owner found that he could let some of his security guards go and save the price of feeding the bear if he just put up a sign inviting visitors to visit the friendly bear.  It appears you fell for it. 
 #
@@ -500,13 +564,15 @@ desc/edit r4432
 #
 :wq
 #
+set r4432/vnum = "r4432"
+#
 set r4432/terrain = "inside"
 #
 set r4432/room_flags = ['indoors', 'dark']
 #
 dig/tel The Horse Corral; r4433
 #
-tag r4433 = the circus, category = area names
+tag r4433 = the circus:area names
 #
 desc r4433 = This corral is where the show horses are kept when they are not performing.  It is rather small for the amount of horses that are kept here. 
 #
@@ -516,11 +582,13 @@ desc/edit r4433
 #
 :wq
 #
+set r4433/vnum = "r4433"
+#
 set r4433/terrain = "city"
 #
 dig/tel The Row of Wagons; r4434
 #
-tag r4434 = the circus, category = area names
+tag r4434 = the circus:area names
 #
 desc r4434 = You are between the two rows of wagons where the performers live. To the north is the Strongman's Wagon, to the south the Bearded Lady's Wagon.  You may also continue east or west. 
 #
@@ -530,11 +598,13 @@ desc/edit r4434
 #
 :wq
 #
+set r4434/vnum = "r4434"
+#
 set r4434/terrain = "city"
 #
 dig/tel The Strongman's Wagon; r4435
 #
-tag r4435 = the circus, category = area names
+tag r4435 = the circus:area names
 #
 desc r4435 = This wagon seems pretty small to you, so it must be tiny for Ivan. The furnishings are spartan, and you see nothing of value.  You might want to consider leaving before Ivan returns. 
 #
@@ -544,13 +614,15 @@ desc/edit r4435
 #
 :wq
 #
+set r4435/vnum = "r4435"
+#
 set r4435/terrain = "inside"
 #
 set r4435/room_flags = ['indoors']
 #
 dig/tel The Bearded Lady's Wagon; r4436
 #
-tag r4436 = the circus, category = area names
+tag r4436 = the circus:area names
 #
 desc r4436 = This is the filthiest place you think you have ever seen.  The floor is covered with hair clippings.  In the corner are several bottles entitled Miracle Stu's Wonderful Hair Tonic!!  It appears the Bearded Lady must go through that stuff like it is water. 
 #
@@ -560,13 +632,15 @@ desc/edit r4436
 #
 :wq
 #
+set r4436/vnum = "r4436"
+#
 set r4436/terrain = "inside"
 #
 set r4436/room_flags = ['indoors']
 #
 dig/tel The Sword Swallower's Wagon; r4437
 #
-tag r4437 = the circus, category = area names
+tag r4437 = the circus:area names
 #
 desc r4437 = This trailer is kept immaculately clean.  You see a knife sharpening kit, as well as several rubber swords that are standing in a small display case. 
 #
@@ -576,13 +650,15 @@ desc/edit r4437
 #
 :wq
 #
+set r4437/vnum = "r4437"
+#
 set r4437/terrain = "inside"
 #
 set r4437/room_flags = ['indoors']
 #
 dig/tel The Row of Wagons; r4438
 #
-tag r4438 = the circus, category = area names
+tag r4438 = the circus:area names
 #
 desc r4438 = You are between the two rows of wagons where the performers live. To the north is the Sword Swallower's Wagon, to the south is the Midget's Wagon.  You may also continue east or west. 
 #
@@ -592,11 +668,13 @@ desc/edit r4438
 #
 :wq
 #
+set r4438/vnum = "r4438"
+#
 set r4438/terrain = "city"
 #
 dig/tel The Midget's Tiny Wagon; r4439
 #
-tag r4439 = the circus, category = area names
+tag r4439 = the circus:area names
 #
 desc r4439 = The cheap Circus Owner believes in rewarding people according to their stature.  Accordingly, this wagon is so small that even the Midget thinks that it is a tight fit.  The poor Midget is also the poorest paid of all the Freaks.  But that doesn't bother him.  He has a second profession that he practices on the side to make a little extra cash.  He also keeps a rather large guard dog in his trailer to discourage visitors. 
 #
@@ -606,13 +684,15 @@ desc/edit r4439
 #
 :wq
 #
+set r4439/vnum = "r4439"
+#
 set r4439/terrain = "inside"
 #
 set r4439/room_flags = ['indoors']
 #
 dig/tel The Row of Wagons; r4440
 #
-tag r4440 = the circus, category = area names
+tag r4440 = the circus:area names
 #
 desc r4440 = You are between the two rows of wagons where the performers live. To the north is the Illusionist's Wagon, to the south is a very large Wagon.  You may also go back to the west, or enter a wagon to the east. 
 #
@@ -622,11 +702,13 @@ desc/edit r4440
 #
 :wq
 #
+set r4440/vnum = "r4440"
+#
 set r4440/terrain = "city"
 #
 dig/tel The Illusionist's Wagon; r4441
 #
-tag r4441 = the circus, category = area names
+tag r4441 = the circus:area names
 #
 desc r4441 = This wagon seems much larger on the inside that it does on the outside.  You see a spacious, king-sized bed, a large table and kitchenette, and a separate sitting room.  The longer that you look though, you see that all the objects in the room have a slight shimmer to them.  Closer examination reveals that the bed is a cot, the table a nightstand, and the sitting room is a chair.  It appears the Illusionist tries to fool even himself sometimes. 
 #
@@ -636,13 +718,15 @@ desc/edit r4441
 #
 :wq
 #
+set r4441/vnum = "r4441"
+#
 set r4441/terrain = "inside"
 #
 set r4441/room_flags = ['indoors']
 #
 dig/tel The Circus Owner's Wagon; r4442
 #
-tag r4442 = the circus, category = area names
+tag r4442 = the circus:area names
 #
 desc r4442 = This is by far the biggest and nicest wagon.  If the furnishings are any indication of the amount of money this man makes, maybe you should go into his line of work.  The walls are covered with walnut colored wood siding, and the furniture is of the finest workmanship.  Paintings hang on the walls, and there is even a medium sized icebox to keep the Owner's food fresh. 
 #
@@ -652,13 +736,15 @@ desc/edit r4442
 #
 :wq
 #
+set r4442/vnum = "r4442"
+#
 set r4442/terrain = "inside"
 #
 set r4442/room_flags = ['indoors', 'dark']
 #
 dig/tel The Secret Room; r4443
 #
-tag r4443 = the circus, category = area names
+tag r4443 = the circus:area names
 #
 desc r4443 = This is a small area in the back of the Circus Owner's Wagon.  You see that this must be where he keeps the money that he makes off his employee's hard work.  There are several objects of value in here, but you know you would not be able to make it off The Circus property with them, so you'd better just take the coins.  Most things here you couldn't sell easily, except the artwork. 
 #
@@ -668,13 +754,15 @@ desc/edit r4443
 #
 :wq
 #
+set r4443/vnum = "r4443"
+#
 set r4443/terrain = "inside"
 #
 set r4443/room_flags = ['indoors', 'dark']
 #
 dig/tel The Clown's Room below the 2nd Ring; r4444
 #
-tag r4444 = the circus, category = area names
+tag r4444 = the circus:area names
 #
 desc r4444 = This room has been cunningly hollowed out below the 2nd Ring, giving the clown's a place to hide after they supposedly hid in the cart.  This place is very hot.  That doesn't surprise you, as it is filled with clowns. 
 #
@@ -684,13 +772,15 @@ desc/edit r4444
 #
 :wq
 #
+set r4444/vnum = "r4444"
+#
 set r4444/terrain = "inside"
 #
 set r4444/room_flags = ['indoors', 'dark']
 #
 dig/tel Behind the Big Top; r4445
 #
-tag r4445 = the circus, category = area names
+tag r4445 = the circus:area names
 #
 desc r4445 = This is where the show behind the show goes on.  There are a lot of workers preparing the next act, moving animals around, and doing too much to take much notice of you. 
 #
@@ -700,11 +790,13 @@ desc/edit r4445
 #
 :wq
 #
+set r4445/vnum = "r4445"
+#
 set r4445/terrain = "city"
 #
 dig/tel Behind the Big Top; r4446
 #
-tag r4446 = the circus, category = area names
+tag r4446 = the circus:area names
 #
 desc r4446 = This is where the show behind the show goes on.  There are a lot of workers preparing the next act, moving animals around, and doing too much to take much notice of you. 
 #
@@ -714,11 +806,13 @@ desc/edit r4446
 #
 :wq
 #
+set r4446/vnum = "r4446"
+#
 set r4446/terrain = "city"
 #
 dig/tel Behind the Big Top; r4447
 #
-tag r4447 = the circus, category = area names
+tag r4447 = the circus:area names
 #
 desc r4447 = This is where the show behind the show goes on.  There are a lot of workers preparing the next act, moving animals around, and doing too much to take much notice of you. 
 #
@@ -728,11 +822,13 @@ desc/edit r4447
 #
 :wq
 #
+set r4447/vnum = "r4447"
+#
 set r4447/terrain = "city"
 #
 dig/tel The Tightrope Walkers Wagon; r4448
 #
-tag r4448 = the circus, category = area names
+tag r4448 = the circus:area names
 #
 desc r4448 = This wagon like most of the others shows how poorly the performers are paid.  The tightrope walkers are forced to (or choose to?) sleep in tiny hammocks, that you probably couldn't even fit in. 
 #
@@ -742,6 +838,8 @@ desc/edit r4448
 #
 :wq
 #
+set r4448/vnum = "r4448"
+#
 set r4448/terrain = "inside"
 #
 set r4448/room_flags = ['indoors']
@@ -750,13 +848,13 @@ tel r4469
 #
 tel r4401
 #
-openexit north; n; e3600, south = r12211
+openexit north; n; e3600^ south = r12211
 #
-tag e3600 = the circus, category = area names
+tag e3600 = the circus:area names
 #
-set e3600/door_attributes = "open"
+set e3600/door_attributes = ["open"]
 #
-set e3600/reset_door_attributes = "open"
+set e3600/reset_door_attributes = ["open"]
 #
 objectlock north = "pick:false()"
 #
@@ -764,13 +862,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit south; s; e3601, north = r4402
+openexit south; s; e3601^ north = r4402
 #
-tag e3601 = the circus, category = area names
+tag e3601 = the circus:area names
 #
-set e3601/door_attributes = "open"
+set e3601/door_attributes = ["open"]
 #
-set e3601/reset_door_attributes = "open"
+set e3601/reset_door_attributes = ["open"]
 #
 objectlock south = "pick:false()"
 #
@@ -780,13 +878,13 @@ objectlock south = "pass:false()"
 #
 tel r4402
 #
-alias north = n, e3602
+alias north = n^ e3602
 #
-tag e3602 = the circus, category = area names
+tag e3602 = the circus:area names
 #
-set e3602/door_attributes = "open"
+set e3602/door_attributes = ["open"]
 #
-set e3602/reset_door_attributes = "open"
+set e3602/reset_door_attributes = ["open"]
 #
 objectlock north = "pick:false()"
 #
@@ -794,13 +892,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit south; s; e3603, north = r4403
+openexit south; s; e3603^ north = r4403
 #
-tag e3603 = the circus, category = area names
+tag e3603 = the circus:area names
 #
-set e3603/door_attributes = "open"
+set e3603/door_attributes = ["open"]
 #
-set e3603/reset_door_attributes = "open"
+set e3603/reset_door_attributes = ["open"]
 #
 objectlock south = "pick:false()"
 #
@@ -810,13 +908,13 @@ objectlock south = "pass:false()"
 #
 tel r4403
 #
-alias north = n, e3604
+alias north = n^ e3604
 #
-tag e3604 = the circus, category = area names
+tag e3604 = the circus:area names
 #
-set e3604/door_attributes = "open"
+set e3604/door_attributes = ["open"]
 #
-set e3604/reset_door_attributes = "open"
+set e3604/reset_door_attributes = ["open"]
 #
 objectlock north = "pick:false()"
 #
@@ -824,13 +922,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit south; s; e3605, north = r4406
+openexit south; s; e3605^ north = r4406
 #
-tag e3605 = the circus, category = area names
+tag e3605 = the circus:area names
 #
-set e3605/door_attributes = "open"
+set e3605/door_attributes = ["open"]
 #
-set e3605/reset_door_attributes = "open"
+set e3605/reset_door_attributes = ["open"]
 #
 objectlock south = "pick:false()"
 #
@@ -838,13 +936,13 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3606, east = r4404
+openexit west; w; e3606^ east = r4404
 #
-tag e3606 = the circus, category = area names
+tag e3606 = the circus:area names
 #
-set e3606/door_attributes = "open"
+set e3606/door_attributes = ["open"]
 #
-set e3606/reset_door_attributes = "open"
+set e3606/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -854,13 +952,13 @@ objectlock west = "pass:false()"
 #
 tel r4404
 #
-alias east = e, e3607
+alias east = e^ e3607
 #
-tag e3607 = the circus, category = area names
+tag e3607 = the circus:area names
 #
-set e3607/door_attributes = "open"
+set e3607/door_attributes = ["open"]
 #
-set e3607/reset_door_attributes = "open"
+set e3607/reset_door_attributes = ["open"]
 #
 objectlock east = "pick:false()"
 #
@@ -868,13 +966,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; w; e3608, east = r4405
+openexit west; w; e3608^ east = r4405
 #
-tag e3608 = the circus, category = area names
+tag e3608 = the circus:area names
 #
-set e3608/door_attributes = "open"
+set e3608/door_attributes = ["open"]
 #
-set e3608/reset_door_attributes = "open"
+set e3608/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -884,13 +982,13 @@ objectlock west = "pass:false()"
 #
 tel r4405
 #
-alias east = e, e3609
+alias east = e^ e3609
 #
-tag e3609 = the circus, category = area names
+tag e3609 = the circus:area names
 #
-set e3609/door_attributes = "open"
+set e3609/door_attributes = ["open"]
 #
-set e3609/reset_door_attributes = "open"
+set e3609/reset_door_attributes = ["open"]
 #
 objectlock east = "pick:false()"
 #
@@ -900,13 +998,13 @@ objectlock east = "pass:false()"
 #
 tel r4406
 #
-alias north = n, e3610
+alias north = n^ e3610
 #
-tag e3610 = the circus, category = area names
+tag e3610 = the circus:area names
 #
-set e3610/door_attributes = "open"
+set e3610/door_attributes = ["open"]
 #
-set e3610/reset_door_attributes = "open"
+set e3610/reset_door_attributes = ["open"]
 #
 objectlock north = "pick:false()"
 #
@@ -914,13 +1012,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3611, west = r4408
+openexit east; e; e3611^ west = r4408
 #
-tag e3611 = the circus, category = area names
+tag e3611 = the circus:area names
 #
-set e3611/door_attributes = "open"
+set e3611/door_attributes = ["open"]
 #
-set e3611/reset_door_attributes = "open"
+set e3611/reset_door_attributes = ["open"]
 #
 objectlock east = "pick:false()"
 #
@@ -928,13 +1026,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3612, north = r4414
+openexit south; s; e3612^ north = r4414
 #
-tag e3612 = the circus, category = area names
+tag e3612 = the circus:area names
 #
-set e3612/door_attributes = "open"
+set e3612/door_attributes = ["open"]
 #
-set e3612/reset_door_attributes = "open"
+set e3612/reset_door_attributes = ["open"]
 #
 objectlock south = "pick:false()"
 #
@@ -942,13 +1040,13 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3613, east = r4407
+openexit west; w; e3613^ east = r4407
 #
-tag e3613 = the circus, category = area names
+tag e3613 = the circus:area names
 #
-set e3613/door_attributes = "open"
+set e3613/door_attributes = ["open"]
 #
-set e3613/reset_door_attributes = "open"
+set e3613/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -958,13 +1056,13 @@ objectlock west = "pass:false()"
 #
 tel r4407
 #
-alias east = e, e3614
+alias east = e^ e3614
 #
-tag e3614 = the circus, category = area names
+tag e3614 = the circus:area names
 #
-set e3614/door_attributes = "open"
+set e3614/door_attributes = ["open"]
 #
-set e3614/reset_door_attributes = "open"
+set e3614/reset_door_attributes = ["open"]
 #
 objectlock east = "pick:false()"
 #
@@ -974,13 +1072,13 @@ objectlock east = "pass:false()"
 #
 tel r4408
 #
-openexit north; n; e3615, south = r4473
+openexit north; n; e3615^ south = r4473
 #
-tag e3615 = the circus, category = area names
+tag e3615 = the circus:area names
 #
-set e3615/door_attributes = "open"
+set e3615/door_attributes = ["open"]
 #
-set e3615/reset_door_attributes = "open"
+set e3615/reset_door_attributes = ["open"]
 #
 objectlock north = "pick:false()"
 #
@@ -988,13 +1086,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3616, west = r4409
+openexit east; e; e3616^ west = r4409
 #
-tag e3616 = the circus, category = area names
+tag e3616 = the circus:area names
 #
-set e3616/door_attributes = "open"
+set e3616/door_attributes = ["open"]
 #
-set e3616/reset_door_attributes = "open"
+set e3616/reset_door_attributes = ["open"]
 #
 desc east = You see the Bearded Lady's tent. 
 #
@@ -1004,13 +1102,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3617, north = r4413
+openexit south; s; e3617^ north = r4413
 #
-tag e3617 = the circus, category = area names
+tag e3617 = the circus:area names
 #
-set e3617/door_attributes = "open"
+set e3617/door_attributes = ["open"]
 #
-set e3617/reset_door_attributes = "open"
+set e3617/reset_door_attributes = ["open"]
 #
 desc south = You see the Strongman's tent. 
 #
@@ -1020,13 +1118,13 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w, e3618
+alias west = w^ e3618
 #
-tag e3618 = the circus, category = area names
+tag e3618 = the circus:area names
 #
-set e3618/door_attributes = "open"
+set e3618/door_attributes = ["open"]
 #
-set e3618/reset_door_attributes = "open"
+set e3618/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -1036,13 +1134,13 @@ objectlock west = "pass:false()"
 #
 tel r4409
 #
-openexit east; e; e3619, west = r4410
+openexit east; e; e3619^ west = r4410
 #
-tag e3619 = the circus, category = area names
+tag e3619 = the circus:area names
 #
-set e3619/door_attributes = "open"
+set e3619/door_attributes = ["open"]
 #
-set e3619/reset_door_attributes = "open"
+set e3619/reset_door_attributes = ["open"]
 #
 desc east = You see the Illusionist's tent. 
 #
@@ -1052,13 +1150,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3620, north = r4412
+openexit south; s; e3620^ north = r4412
 #
-tag e3620 = the circus, category = area names
+tag e3620 = the circus:area names
 #
-set e3620/door_attributes = "open"
+set e3620/door_attributes = ["open"]
 #
-set e3620/reset_door_attributes = "open"
+set e3620/reset_door_attributes = ["open"]
 #
 desc south = You see the Sword Swallower's tent. 
 #
@@ -1068,13 +1166,13 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w, e3621
+alias west = w^ e3621
 #
-tag e3621 = the circus, category = area names
+tag e3621 = the circus:area names
 #
-set e3621/door_attributes = "open"
+set e3621/door_attributes = ["open"]
 #
-set e3621/reset_door_attributes = "open"
+set e3621/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -1084,13 +1182,13 @@ objectlock west = "pass:false()"
 #
 tel r4410
 #
-openexit south; s; e3622, north = r4411
+openexit south; s; e3622^ north = r4411
 #
-tag e3622 = the circus, category = area names
+tag e3622 = the circus:area names
 #
-set e3622/door_attributes = "open"
+set e3622/door_attributes = ["open"]
 #
-set e3622/reset_door_attributes = "open"
+set e3622/reset_door_attributes = ["open"]
 #
 desc south = You see the Midget's tent. 
 #
@@ -1100,13 +1198,13 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w, e3623
+alias west = w^ e3623
 #
-tag e3623 = the circus, category = area names
+tag e3623 = the circus:area names
 #
-set e3623/door_attributes = "open"
+set e3623/door_attributes = ["open"]
 #
-set e3623/reset_door_attributes = "open"
+set e3623/reset_door_attributes = ["open"]
 #
 desc west = You see the Bearded Lady's tent. 
 #
@@ -1118,13 +1216,13 @@ objectlock west = "pass:false()"
 #
 tel r4411
 #
-alias north = n, e3624
+alias north = n^ e3624
 #
-tag e3624 = the circus, category = area names
+tag e3624 = the circus:area names
 #
-set e3624/door_attributes = "open"
+set e3624/door_attributes = ["open"]
 #
-set e3624/reset_door_attributes = "open"
+set e3624/reset_door_attributes = ["open"]
 #
 desc north = You see the Illusionist's Tent. 
 #
@@ -1134,13 +1232,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit west; w; e3625, east = r4412
+openexit west; w; e3625^ east = r4412
 #
-tag e3625 = the circus, category = area names
+tag e3625 = the circus:area names
 #
-set e3625/door_attributes = "open"
+set e3625/door_attributes = ["open"]
 #
-set e3625/reset_door_attributes = "open"
+set e3625/reset_door_attributes = ["open"]
 #
 desc west = You see the Sword Swallower's Tent. 
 #
@@ -1152,13 +1250,13 @@ objectlock west = "pass:false()"
 #
 tel r4412
 #
-alias north = n, e3626
+alias north = n^ e3626
 #
-tag e3626 = the circus, category = area names
+tag e3626 = the circus:area names
 #
-set e3626/door_attributes = "open"
+set e3626/door_attributes = ["open"]
 #
-set e3626/reset_door_attributes = "open"
+set e3626/reset_door_attributes = ["open"]
 #
 desc north = You see the Bearded Lady's Tent. 
 #
@@ -1168,13 +1266,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias east = e, e3627
+alias east = e^ e3627
 #
-tag e3627 = the circus, category = area names
+tag e3627 = the circus:area names
 #
-set e3627/door_attributes = "open"
+set e3627/door_attributes = ["open"]
 #
-set e3627/reset_door_attributes = "open"
+set e3627/reset_door_attributes = ["open"]
 #
 desc east = You see the Midget's Tent. 
 #
@@ -1184,13 +1282,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; w; e3628, east = r4413
+openexit west; w; e3628^ east = r4413
 #
-tag e3628 = the circus, category = area names
+tag e3628 = the circus:area names
 #
-set e3628/door_attributes = "open"
+set e3628/door_attributes = ["open"]
 #
-set e3628/reset_door_attributes = "open"
+set e3628/reset_door_attributes = ["open"]
 #
 desc west = You see the Strongman's Tent. 
 #
@@ -1202,13 +1300,13 @@ objectlock west = "pass:false()"
 #
 tel r4413
 #
-alias north = n, e3629
+alias north = n^ e3629
 #
-tag e3629 = the circus, category = area names
+tag e3629 = the circus:area names
 #
-set e3629/door_attributes = "open"
+set e3629/door_attributes = ["open"]
 #
-set e3629/reset_door_attributes = "open"
+set e3629/reset_door_attributes = ["open"]
 #
 desc north = You see the Entrance to the Freak Shows. 
 #
@@ -1218,13 +1316,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias east = e, e3630
+alias east = e^ e3630
 #
-tag e3630 = the circus, category = area names
+tag e3630 = the circus:area names
 #
-set e3630/door_attributes = "open"
+set e3630/door_attributes = ["open"]
 #
-set e3630/reset_door_attributes = "open"
+set e3630/reset_door_attributes = ["open"]
 #
 desc east = You see the Sword Swallower's Tent. 
 #
@@ -1236,13 +1334,13 @@ objectlock east = "pass:false()"
 #
 tel r4414
 #
-alias north = n, e3631
+alias north = n^ e3631
 #
-tag e3631 = the circus, category = area names
+tag e3631 = the circus:area names
 #
-set e3631/door_attributes = "open"
+set e3631/door_attributes = ["open"]
 #
-set e3631/reset_door_attributes = "open"
+set e3631/reset_door_attributes = ["open"]
 #
 objectlock north = "pick:false()"
 #
@@ -1250,13 +1348,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit south; s; e3632, north = r4415
+openexit south; s; e3632^ north = r4415
 #
-tag e3632 = the circus, category = area names
+tag e3632 = the circus:area names
 #
-set e3632/door_attributes = "open"
+set e3632/door_attributes = ["open"]
 #
-set e3632/reset_door_attributes = "open"
+set e3632/reset_door_attributes = ["open"]
 #
 desc south = You see the Entrance to the Big Top. 
 #
@@ -1268,13 +1366,13 @@ objectlock south = "pass:false()"
 #
 tel r4415
 #
-alias north = n, e3633
+alias north = n^ e3633
 #
-tag e3633 = the circus, category = area names
+tag e3633 = the circus:area names
 #
-set e3633/door_attributes = "open"
+set e3633/door_attributes = ["open"]
 #
-set e3633/reset_door_attributes = "open"
+set e3633/reset_door_attributes = ["open"]
 #
 objectlock north = "pick:false()"
 #
@@ -1282,13 +1380,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit south; s; e3634, north = r4416
+openexit south; s; e3634^ north = r4416
 #
-tag e3634 = the circus, category = area names
+tag e3634 = the circus:area names
 #
-set e3634/door_attributes = "open"
+set e3634/door_attributes = ["open"]
 #
-set e3634/reset_door_attributes = "open"
+set e3634/reset_door_attributes = ["open"]
 #
 objectlock south = "pick:false()"
 #
@@ -1298,13 +1396,13 @@ objectlock south = "pass:false()"
 #
 tel r4416
 #
-alias north = n, e3635
+alias north = n^ e3635
 #
-tag e3635 = the circus, category = area names
+tag e3635 = the circus:area names
 #
-set e3635/door_attributes = "open"
+set e3635/door_attributes = ["open"]
 #
-set e3635/reset_door_attributes = "open"
+set e3635/reset_door_attributes = ["open"]
 #
 desc north = You see the exit from the Circus. To get back in, you'll need to have a ticket. 
 #
@@ -1314,13 +1412,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit south; s; e3636, north = r4419
+openexit south; s; e3636^ north = r4419
 #
-tag e3636 = the circus, category = area names
+tag e3636 = the circus:area names
 #
-set e3636/door_attributes = "open"
+set e3636/door_attributes = ["open"]
 #
-set e3636/reset_door_attributes = "open"
+set e3636/reset_door_attributes = ["open"]
 #
 desc south = You see your first good look at the Big Top ahead. 
 #
@@ -1332,13 +1430,13 @@ objectlock south = "pass:false()"
 #
 tel r4417
 #
-openexit west; w; e3637, east = r4416
+openexit west; w; e3637^ east = r4416
 #
-tag e3637 = the circus, category = area names
+tag e3637 = the circus:area names
 #
-set e3637/door_attributes = "open"
+set e3637/door_attributes = ["open"]
 #
-set e3637/reset_door_attributes = "open"
+set e3637/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -1346,13 +1444,13 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-openexit up; u; e3638, down = r4418
+openexit up; u; e3638^ down = r4418
 #
-tag e3638 = the circus, category = area names
+tag e3638 = the circus:area names
 #
-set e3638/door_attributes = "open"
+set e3638/door_attributes = ["open"]
 #
-set e3638/reset_door_attributes = "open"
+set e3638/reset_door_attributes = ["open"]
 #
 objectlock up = "pick:false()"
 #
@@ -1362,13 +1460,13 @@ objectlock up = "pass:false()"
 #
 tel r4418
 #
-openexit west; w; e3639, east = r4419
+openexit west; w; e3639^ east = r4419
 #
-tag e3639 = the circus, category = area names
+tag e3639 = the circus:area names
 #
-set e3639/door_attributes = "open"
+set e3639/door_attributes = ["open"]
 #
-set e3639/reset_door_attributes = "open"
+set e3639/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -1376,13 +1474,13 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-alias down = d, e3640
+alias down = d^ e3640
 #
-tag e3640 = the circus, category = area names
+tag e3640 = the circus:area names
 #
-set e3640/door_attributes = "open"
+set e3640/door_attributes = ["open"]
 #
-set e3640/reset_door_attributes = "open"
+set e3640/reset_door_attributes = ["open"]
 #
 objectlock down = "pick:false()"
 #
@@ -1392,13 +1490,13 @@ objectlock down = "pass:false()"
 #
 tel r4419
 #
-alias north = n, e3641
+alias north = n^ e3641
 #
-tag e3641 = the circus, category = area names
+tag e3641 = the circus:area names
 #
-set e3641/door_attributes = "open"
+set e3641/door_attributes = ["open"]
 #
-set e3641/reset_door_attributes = "open"
+set e3641/reset_door_attributes = ["open"]
 #
 desc north = You see the Entryway. 
 #
@@ -1408,13 +1506,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias east = e, e3642
+alias east = e^ e3642
 #
-tag e3642 = the circus, category = area names
+tag e3642 = the circus:area names
 #
-set e3642/door_attributes = "open"
+set e3642/door_attributes = ["open"]
 #
-set e3642/reset_door_attributes = "open"
+set e3642/reset_door_attributes = ["open"]
 #
 objectlock east = "pick:false()"
 #
@@ -1422,13 +1520,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3643, north = r4422
+openexit south; s; e3643^ north = r4422
 #
-tag e3643 = the circus, category = area names
+tag e3643 = the circus:area names
 #
-set e3643/door_attributes = "open"
+set e3643/door_attributes = ["open"]
 #
-set e3643/reset_door_attributes = "open"
+set e3643/reset_door_attributes = ["open"]
 #
 desc south = You see the 2nd Ring. 
 #
@@ -1438,13 +1536,13 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3644, east = r4420
+openexit west; w; e3644^ east = r4420
 #
-tag e3644 = the circus, category = area names
+tag e3644 = the circus:area names
 #
-set e3644/door_attributes = "open"
+set e3644/door_attributes = ["open"]
 #
-set e3644/reset_door_attributes = "open"
+set e3644/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -1454,13 +1552,13 @@ objectlock west = "pass:false()"
 #
 tel r4420
 #
-alias east = e, e3645
+alias east = e^ e3645
 #
-tag e3645 = the circus, category = area names
+tag e3645 = the circus:area names
 #
-set e3645/door_attributes = "open"
+set e3645/door_attributes = ["open"]
 #
-set e3645/reset_door_attributes = "open"
+set e3645/reset_door_attributes = ["open"]
 #
 objectlock east = "pick:false()"
 #
@@ -1468,13 +1566,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit down; d; e3646, up = r4421
+openexit down; d; e3646^ up = r4421
 #
-tag e3646 = the circus, category = area names
+tag e3646 = the circus:area names
 #
-set e3646/door_attributes = "open"
+set e3646/door_attributes = ["open"]
 #
-set e3646/reset_door_attributes = "open"
+set e3646/reset_door_attributes = ["open"]
 #
 objectlock down = "pick:false()"
 #
@@ -1484,13 +1582,13 @@ objectlock down = "pass:false()"
 #
 tel r4421
 #
-openexit east; e; e3647, west = r4416
+openexit east; e; e3647^ west = r4416
 #
-tag e3647 = the circus, category = area names
+tag e3647 = the circus:area names
 #
-set e3647/door_attributes = "open"
+set e3647/door_attributes = ["open"]
 #
-set e3647/reset_door_attributes = "open"
+set e3647/reset_door_attributes = ["open"]
 #
 objectlock east = "pick:false()"
 #
@@ -1498,13 +1596,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias up = u, e3648
+alias up = u^ e3648
 #
-tag e3648 = the circus, category = area names
+tag e3648 = the circus:area names
 #
-set e3648/door_attributes = "open"
+set e3648/door_attributes = ["open"]
 #
-set e3648/reset_door_attributes = "open"
+set e3648/reset_door_attributes = ["open"]
 #
 objectlock up = "pick:false()"
 #
@@ -1514,13 +1612,13 @@ objectlock up = "pass:false()"
 #
 tel r4422
 #
-alias north = n, e3649
+alias north = n^ e3649
 #
-tag e3649 = the circus, category = area names
+tag e3649 = the circus:area names
 #
-set e3649/door_attributes = "open"
+set e3649/door_attributes = ["open"]
 #
-set e3649/reset_door_attributes = "open"
+set e3649/reset_door_attributes = ["open"]
 #
 objectlock north = "pick:false()"
 #
@@ -1528,13 +1626,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3650, west = r4423
+openexit east; e; e3650^ west = r4423
 #
-tag e3650 = the circus, category = area names
+tag e3650 = the circus:area names
 #
-set e3650/door_attributes = "open"
+set e3650/door_attributes = ["open"]
 #
-set e3650/reset_door_attributes = "open"
+set e3650/reset_door_attributes = ["open"]
 #
 objectlock east = "pick:false()"
 #
@@ -1542,25 +1640,25 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; door; w; e3651, east = r4424
+openexit west; door; w; e3651^ east = r4424
 #
-tag e3651 = the circus, category = area names
+tag e3651 = the circus:area names
 #
-set e3651/door_attributes = "open"
+set e3651/door_attributes = ["open"]
 #
-set e3651/reset_door_attributes = "open"
+set e3651/reset_door_attributes = ["open"]
 #
 set west/key = "o4436"
 #
 objectlock west = "pick:false()"
 #
-openexit up; u; e3652, down = r4427
+openexit up; u; e3652^ down = r4427
 #
-tag e3652 = the circus, category = area names
+tag e3652 = the circus:area names
 #
-set e3652/door_attributes = "open"
+set e3652/door_attributes = ["open"]
 #
-set e3652/reset_door_attributes = "open"
+set e3652/reset_door_attributes = ["open"]
 #
 objectlock up = "pick:false()"
 #
@@ -1568,13 +1666,13 @@ objectlock up = "bash:false()"
 #
 objectlock up = "pass:false()"
 #
-openexit down; d; e3653, up = r4444
+openexit down; d; e3653^ up = r4444
 #
-tag e3653 = the circus, category = area names
+tag e3653 = the circus:area names
 #
-set e3653/door_attributes = "open"
+set e3653/door_attributes = ["open"]
 #
-set e3653/reset_door_attributes = "open"
+set e3653/reset_door_attributes = ["open"]
 #
 desc down = You can't see into the car, you'll just have to go in. 
 #
@@ -1586,13 +1684,13 @@ objectlock down = "pass:false()"
 #
 tel r4423
 #
-alias west = w, e3654
+alias west = w^ e3654
 #
-tag e3654 = the circus, category = area names
+tag e3654 = the circus:area names
 #
-set e3654/door_attributes = "open"
+set e3654/door_attributes = ["open"]
 #
-set e3654/reset_door_attributes = "open"
+set e3654/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -1602,33 +1700,33 @@ objectlock west = "pass:false()"
 #
 tel r4424
 #
-alias east = door, e, e3655
+alias east = door^ e^ e3655
 #
-tag e3655 = the circus, category = area names
+tag e3655 = the circus:area names
 #
-set e3655/door_attributes = "open"
+set e3655/door_attributes = ["open"]
 #
-set e3655/reset_door_attributes = "open"
+set e3655/reset_door_attributes = ["open"]
 #
 set east/key = "o4436"
 #
 objectlock east = "pick:false()"
 #
-openexit south; s; e3656, north = r0
+openexit south; s; e3656^ north = r0
 #
-tag e3656 = the circus, category = area names
+tag e3656 = the circus:area names
 #
-set e3656/door_attributes = "open"
+set e3656/door_attributes = ["open"]
 #
-set e3656/reset_door_attributes = "open"
+set e3656/reset_door_attributes = ["open"]
 #
-alias west = w, e3657
+alias west = w^ e3657
 #
-tag e3657 = the circus, category = area names
+tag e3657 = the circus:area names
 #
-set e3657/door_attributes = "open"
+set e3657/door_attributes = ["open"]
 #
-set e3657/reset_door_attributes = "open"
+set e3657/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -1636,13 +1734,13 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-openexit down; hole; d; e3658, up = r4469
+openexit down; hole; d; e3658^ up = r4469
 #
-tag e3658 = the circus, category = area names
+tag e3658 = the circus:area names
 #
-set e3658/door_attributes = "open"
+set e3658/door_attributes = ["open"]
 #
-set e3658/reset_door_attributes = "open"
+set e3658/reset_door_attributes = ["open"]
 #
 set down/key = "o4414"
 #
@@ -1650,13 +1748,13 @@ objectlock down = "bash:false()"
 #
 tel r4425
 #
-openexit east; e; e3659, west = r4427
+openexit east; e; e3659^ west = r4427
 #
-tag e3659 = the circus, category = area names
+tag e3659 = the circus:area names
 #
-set e3659/door_attributes = "open"
+set e3659/door_attributes = ["open"]
 #
-set e3659/reset_door_attributes = "open"
+set e3659/reset_door_attributes = ["open"]
 #
 objectlock east = "pick:false()"
 #
@@ -1664,13 +1762,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; w; e3660, east = r4428
+openexit west; w; e3660^ east = r4428
 #
-tag e3660 = the circus, category = area names
+tag e3660 = the circus:area names
 #
-set e3660/door_attributes = "open"
+set e3660/door_attributes = ["open"]
 #
-set e3660/reset_door_attributes = "open"
+set e3660/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -1678,13 +1776,13 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-openexit down; d; e3661, up = r4424
+openexit down; d; e3661^ up = r4424
 #
-tag e3661 = the circus, category = area names
+tag e3661 = the circus:area names
 #
-set e3661/door_attributes = "open"
+set e3661/door_attributes = ["open"]
 #
-set e3661/reset_door_attributes = "open"
+set e3661/reset_door_attributes = ["open"]
 #
 desc down = The Lion's Cage.  A suicidal move. 
 #
@@ -1696,13 +1794,13 @@ objectlock down = "pass:false()"
 #
 tel r4427
 #
-alias west = w, e3662
+alias west = w^ e3662
 #
-tag e3662 = the circus, category = area names
+tag e3662 = the circus:area names
 #
-set e3662/door_attributes = "open"
+set e3662/door_attributes = ["open"]
 #
-set e3662/reset_door_attributes = "open"
+set e3662/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -1710,13 +1808,13 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-alias down = d, e3663
+alias down = d^ e3663
 #
-tag e3663 = the circus, category = area names
+tag e3663 = the circus:area names
 #
-set e3663/door_attributes = "open"
+set e3663/door_attributes = ["open"]
 #
-set e3663/reset_door_attributes = "open"
+set e3663/reset_door_attributes = ["open"]
 #
 objectlock down = "pick:false()"
 #
@@ -1726,13 +1824,13 @@ objectlock down = "pass:false()"
 #
 tel r4428
 #
-alias east = e, e3664
+alias east = e^ e3664
 #
-tag e3664 = the circus, category = area names
+tag e3664 = the circus:area names
 #
-set e3664/door_attributes = "open"
+set e3664/door_attributes = ["open"]
 #
-set e3664/reset_door_attributes = "open"
+set e3664/reset_door_attributes = ["open"]
 #
 objectlock east = "pick:false()"
 #
@@ -1740,23 +1838,23 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit down; trapdoor; d; e3665, up = r4429
+openexit down; trapdoor; d; e3665^ up = r4429
 #
-tag e3665 = the circus, category = area names
+tag e3665 = the circus:area names
 #
-set e3665/door_attributes = "open"
+set e3665/door_attributes = ["open"]
 #
-set e3665/reset_door_attributes = "open"
+set e3665/reset_door_attributes = ["open"]
 #
 tel r4429
 #
-openexit east; e; e3666, west = r4434
+openexit east; e; e3666^ west = r4434
 #
-tag e3666 = the circus, category = area names
+tag e3666 = the circus:area names
 #
-set e3666/door_attributes = "open"
+set e3666/door_attributes = ["open"]
 #
-set e3666/reset_door_attributes = "open"
+set e3666/reset_door_attributes = ["open"]
 #
 desc east = You see the Row of Trailers. 
 #
@@ -1766,13 +1864,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3667, north = r4430
+openexit south; s; e3667^ north = r4430
 #
-tag e3667 = the circus, category = area names
+tag e3667 = the circus:area names
 #
-set e3667/door_attributes = "open"
+set e3667/door_attributes = ["open"]
 #
-set e3667/reset_door_attributes = "open"
+set e3667/reset_door_attributes = ["open"]
 #
 desc south = You see the Animal Pens. 
 #
@@ -1782,13 +1880,13 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3668, east = r4445
+openexit west; w; e3668^ east = r4445
 #
-tag e3668 = the circus, category = area names
+tag e3668 = the circus:area names
 #
-set e3668/door_attributes = "open"
+set e3668/door_attributes = ["open"]
 #
-set e3668/reset_door_attributes = "open"
+set e3668/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -1796,23 +1894,23 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-alias up = door, u, e3669
+alias up = door^ u^ e3669
 #
-tag e3669 = the circus, category = area names
+tag e3669 = the circus:area names
 #
-set e3669/door_attributes = "open"
+set e3669/door_attributes = ["open"]
 #
-set e3669/reset_door_attributes = "open"
+set e3669/reset_door_attributes = ["open"]
 #
 tel r4426
 #
-openexit north; n; e3670, south = r4429
+openexit north; n; e3670^ south = r4429
 #
-tag e3670 = the circus, category = area names
+tag e3670 = the circus:area names
 #
-set e3670/door_attributes = "open"
+set e3670/door_attributes = ["open"]
 #
-set e3670/reset_door_attributes = "open"
+set e3670/reset_door_attributes = ["open"]
 #
 objectlock north = "pick:false()"
 #
@@ -1820,13 +1918,13 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit south; s; e3671, north = r4430
+openexit south; s; e3671^ north = r4430
 #
-tag e3671 = the circus, category = area names
+tag e3671 = the circus:area names
 #
-set e3671/door_attributes = "open"
+set e3671/door_attributes = ["open"]
 #
-set e3671/reset_door_attributes = "open"
+set e3671/reset_door_attributes = ["open"]
 #
 desc south = You see the Animal Pens. 
 #
@@ -1838,13 +1936,13 @@ objectlock south = "pass:false()"
 #
 tel r4430
 #
-alias north = n, e3672
+alias north = n^ e3672
 #
-tag e3672 = the circus, category = area names
+tag e3672 = the circus:area names
 #
-set e3672/door_attributes = "open"
+set e3672/door_attributes = ["open"]
 #
-set e3672/reset_door_attributes = "open"
+set e3672/reset_door_attributes = ["open"]
 #
 objectlock north = "pick:false()"
 #
@@ -1852,77 +1950,77 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; door; e; e3673, west = r4433
+openexit east; door; e; e3673^ west = r4433
 #
-tag e3673 = the circus, category = area names
+tag e3673 = the circus:area names
 #
-set e3673/door_attributes = "open"
+set e3673/door_attributes = ["open"]
 #
-set e3673/reset_door_attributes = "open"
+set e3673/reset_door_attributes = ["open"]
 #
-openexit south; door; s; e3674, north = r4432
+openexit south; door; s; e3674^ north = r4432
 #
-tag e3674 = the circus, category = area names
+tag e3674 = the circus:area names
 #
-set e3674/door_attributes = "open"
+set e3674/door_attributes = ["open"]
 #
-set e3674/reset_door_attributes = "open"
+set e3674/reset_door_attributes = ["open"]
 #
-openexit west; door; w; e3675, east = r4431
+openexit west; door; w; e3675^ east = r4431
 #
-tag e3675 = the circus, category = area names
+tag e3675 = the circus:area names
 #
-set e3675/door_attributes = "open"
+set e3675/door_attributes = ["open"]
 #
-set e3675/reset_door_attributes = "open"
+set e3675/reset_door_attributes = ["open"]
 #
 tel r4431
 #
-alias east = door, e, e3676
+alias east = door^ e^ e3676
 #
-tag e3676 = the circus, category = area names
+tag e3676 = the circus:area names
 #
-set e3676/door_attributes = "open"
+set e3676/door_attributes = ["open"]
 #
-set e3676/reset_door_attributes = "open"
+set e3676/reset_door_attributes = ["open"]
 #
 tel r4432
 #
-alias north = door, n, e3677
+alias north = door^ n^ e3677
 #
-tag e3677 = the circus, category = area names
+tag e3677 = the circus:area names
 #
-set e3677/door_attributes = "open"
+set e3677/door_attributes = ["open"]
 #
-set e3677/reset_door_attributes = "open"
+set e3677/reset_door_attributes = ["open"]
 #
 tel r4433
 #
-alias west = door, w, e3678
+alias west = door^ w^ e3678
 #
-tag e3678 = the circus, category = area names
+tag e3678 = the circus:area names
 #
-set e3678/door_attributes = "open"
+set e3678/door_attributes = ["open"]
 #
-set e3678/reset_door_attributes = "open"
+set e3678/reset_door_attributes = ["open"]
 #
 tel r4434
 #
-openexit north; door; n; e3679, south = r4435
+openexit north; door; n; e3679^ south = r4435
 #
-tag e3679 = the circus, category = area names
+tag e3679 = the circus:area names
 #
-set e3679/door_attributes = "open"
+set e3679/door_attributes = ["open"]
 #
-set e3679/reset_door_attributes = "open"
+set e3679/reset_door_attributes = ["open"]
 #
-openexit east; e; e3680, west = r4438
+openexit east; e; e3680^ west = r4438
 #
-tag e3680 = the circus, category = area names
+tag e3680 = the circus:area names
 #
-set e3680/door_attributes = "open"
+set e3680/door_attributes = ["open"]
 #
-set e3680/reset_door_attributes = "open"
+set e3680/reset_door_attributes = ["open"]
 #
 objectlock east = "pick:false()"
 #
@@ -1930,21 +2028,21 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; door; s; e3681, north = r4436
+openexit south; door; s; e3681^ north = r4436
 #
-tag e3681 = the circus, category = area names
+tag e3681 = the circus:area names
 #
-set e3681/door_attributes = "open"
+set e3681/door_attributes = ["open"]
 #
-set e3681/reset_door_attributes = "open"
+set e3681/reset_door_attributes = ["open"]
 #
-alias west = w, e3682
+alias west = w^ e3682
 #
-tag e3682 = the circus, category = area names
+tag e3682 = the circus:area names
 #
-set e3682/door_attributes = "open"
+set e3682/door_attributes = ["open"]
 #
-set e3682/reset_door_attributes = "open"
+set e3682/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -1954,51 +2052,51 @@ objectlock west = "pass:false()"
 #
 tel r4435
 #
-alias south = door, s, e3683
+alias south = door^ s^ e3683
 #
-tag e3683 = the circus, category = area names
+tag e3683 = the circus:area names
 #
-set e3683/door_attributes = "open"
+set e3683/door_attributes = ["open"]
 #
-set e3683/reset_door_attributes = "open"
+set e3683/reset_door_attributes = ["open"]
 #
 tel r4436
 #
-alias north = door, n, e3684
+alias north = door^ n^ e3684
 #
-tag e3684 = the circus, category = area names
+tag e3684 = the circus:area names
 #
-set e3684/door_attributes = "open"
+set e3684/door_attributes = ["open"]
 #
-set e3684/reset_door_attributes = "open"
+set e3684/reset_door_attributes = ["open"]
 #
 tel r4437
 #
-openexit south; door; s; e3685, north = r4438
+openexit south; door; s; e3685^ north = r4438
 #
-tag e3685 = the circus, category = area names
+tag e3685 = the circus:area names
 #
-set e3685/door_attributes = "open"
+set e3685/door_attributes = ["open"]
 #
-set e3685/reset_door_attributes = "open"
+set e3685/reset_door_attributes = ["open"]
 #
 tel r4438
 #
-alias north = door, n, e3686
+alias north = door^ n^ e3686
 #
-tag e3686 = the circus, category = area names
+tag e3686 = the circus:area names
 #
-set e3686/door_attributes = "open"
+set e3686/door_attributes = ["open"]
 #
-set e3686/reset_door_attributes = "open"
+set e3686/reset_door_attributes = ["open"]
 #
-openexit east; e; e3687, west = r4440
+openexit east; e; e3687^ west = r4440
 #
-tag e3687 = the circus, category = area names
+tag e3687 = the circus:area names
 #
-set e3687/door_attributes = "open"
+set e3687/door_attributes = ["open"]
 #
-set e3687/reset_door_attributes = "open"
+set e3687/reset_door_attributes = ["open"]
 #
 objectlock east = "pick:false()"
 #
@@ -2006,21 +2104,21 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; door; s; e3688, north = r4439
+openexit south; door; s; e3688^ north = r4439
 #
-tag e3688 = the circus, category = area names
+tag e3688 = the circus:area names
 #
-set e3688/door_attributes = "open"
+set e3688/door_attributes = ["open"]
 #
-set e3688/reset_door_attributes = "open"
+set e3688/reset_door_attributes = ["open"]
 #
-alias west = w, e3689
+alias west = w^ e3689
 #
-tag e3689 = the circus, category = area names
+tag e3689 = the circus:area names
 #
-set e3689/door_attributes = "open"
+set e3689/door_attributes = ["open"]
 #
-set e3689/reset_door_attributes = "open"
+set e3689/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -2030,47 +2128,47 @@ objectlock west = "pass:false()"
 #
 tel r4439
 #
-alias north = door, n, e3690
+alias north = door^ n^ e3690
 #
-tag e3690 = the circus, category = area names
+tag e3690 = the circus:area names
 #
-set e3690/door_attributes = "open"
+set e3690/door_attributes = ["open"]
 #
-set e3690/reset_door_attributes = "open"
+set e3690/reset_door_attributes = ["open"]
 #
 tel r4440
 #
-openexit north; door; n; e3691, south = r4441
+openexit north; door; n; e3691^ south = r4441
 #
-tag e3691 = the circus, category = area names
+tag e3691 = the circus:area names
 #
-set e3691/door_attributes = "open"
+set e3691/door_attributes = ["open"]
 #
-set e3691/reset_door_attributes = "open"
+set e3691/reset_door_attributes = ["open"]
 #
-openexit east; door; e; e3692, west = r4448
+openexit east; door; e; e3692^ west = r4448
 #
-tag e3692 = the circus, category = area names
+tag e3692 = the circus:area names
 #
-set e3692/door_attributes = "open"
+set e3692/door_attributes = ["open"]
 #
-set e3692/reset_door_attributes = "open"
+set e3692/reset_door_attributes = ["open"]
 #
-openexit south; door; s; e3693, north = r4442
+openexit south; door; s; e3693^ north = r4442
 #
-tag e3693 = the circus, category = area names
+tag e3693 = the circus:area names
 #
-set e3693/door_attributes = "open"
+set e3693/door_attributes = ["open"]
 #
-set e3693/reset_door_attributes = "open"
+set e3693/reset_door_attributes = ["open"]
 #
-alias west = w, e3694
+alias west = w^ e3694
 #
-tag e3694 = the circus, category = area names
+tag e3694 = the circus:area names
 #
-set e3694/door_attributes = "open"
+set e3694/door_attributes = ["open"]
 #
-set e3694/reset_door_attributes = "open"
+set e3694/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -2080,51 +2178,51 @@ objectlock west = "pass:false()"
 #
 tel r4441
 #
-alias south = door, s, e3695
+alias south = door^ s^ e3695
 #
-tag e3695 = the circus, category = area names
+tag e3695 = the circus:area names
 #
-set e3695/door_attributes = "open"
+set e3695/door_attributes = ["open"]
 #
-set e3695/reset_door_attributes = "open"
+set e3695/reset_door_attributes = ["open"]
 #
 tel r4442
 #
-alias north = door, n, e3696
+alias north = door^ n^ e3696
 #
-tag e3696 = the circus, category = area names
+tag e3696 = the circus:area names
 #
-set e3696/door_attributes = "open"
+set e3696/door_attributes = ["open"]
 #
-set e3696/reset_door_attributes = "open"
+set e3696/reset_door_attributes = ["open"]
 #
-openexit south; icebox; s; e3697, north = r4443
+openexit south; icebox; s; e3697^ north = r4443
 #
-tag e3697 = the circus, category = area names
+tag e3697 = the circus:area names
 #
-set e3697/door_attributes = "open"
+set e3697/door_attributes = ["open"]
 #
-set e3697/reset_door_attributes = "open"
+set e3697/reset_door_attributes = ["open"]
 #
 tel r4443
 #
-alias north = secret, n, e3698
+alias north = secret^ n^ e3698
 #
-tag e3698 = the circus, category = area names
+tag e3698 = the circus:area names
 #
-set e3698/door_attributes = "open"
+set e3698/door_attributes = ["open"]
 #
-set e3698/reset_door_attributes = "open"
+set e3698/reset_door_attributes = ["open"]
 #
 tel r4444
 #
-alias up = u, e3699
+alias up = u^ e3699
 #
-tag e3699 = the circus, category = area names
+tag e3699 = the circus:area names
 #
-set e3699/door_attributes = "open"
+set e3699/door_attributes = ["open"]
 #
-set e3699/reset_door_attributes = "open"
+set e3699/reset_door_attributes = ["open"]
 #
 objectlock up = "pick:false()"
 #
@@ -2134,13 +2232,13 @@ objectlock up = "pass:false()"
 #
 tel r4445
 #
-alias east = e, e3700
+alias east = e^ e3700
 #
-tag e3700 = the circus, category = area names
+tag e3700 = the circus:area names
 #
-set e3700/door_attributes = "open"
+set e3700/door_attributes = ["open"]
 #
-set e3700/reset_door_attributes = "open"
+set e3700/reset_door_attributes = ["open"]
 #
 objectlock east = "pick:false()"
 #
@@ -2148,13 +2246,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; w; e3701, east = r4446
+openexit west; w; e3701^ east = r4446
 #
-tag e3701 = the circus, category = area names
+tag e3701 = the circus:area names
 #
-set e3701/door_attributes = "open"
+set e3701/door_attributes = ["open"]
 #
-set e3701/reset_door_attributes = "open"
+set e3701/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -2164,13 +2262,13 @@ objectlock west = "pass:false()"
 #
 tel r4446
 #
-alias east = e, e3702
+alias east = e^ e3702
 #
-tag e3702 = the circus, category = area names
+tag e3702 = the circus:area names
 #
-set e3702/door_attributes = "open"
+set e3702/door_attributes = ["open"]
 #
-set e3702/reset_door_attributes = "open"
+set e3702/reset_door_attributes = ["open"]
 #
 objectlock east = "pick:false()"
 #
@@ -2178,13 +2276,13 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; w; e3703, east = r4447
+openexit west; w; e3703^ east = r4447
 #
-tag e3703 = the circus, category = area names
+tag e3703 = the circus:area names
 #
-set e3703/door_attributes = "open"
+set e3703/door_attributes = ["open"]
 #
-set e3703/reset_door_attributes = "open"
+set e3703/reset_door_attributes = ["open"]
 #
 objectlock west = "pick:false()"
 #
@@ -2194,13 +2292,13 @@ objectlock west = "pass:false()"
 #
 tel r4447
 #
-alias east = e, e3704
+alias east = e^ e3704
 #
-tag e3704 = the circus, category = area names
+tag e3704 = the circus:area names
 #
-set e3704/door_attributes = "open"
+set e3704/door_attributes = ["open"]
 #
-set e3704/reset_door_attributes = "open"
+set e3704/reset_door_attributes = ["open"]
 #
 objectlock east = "pick:false()"
 #
@@ -2210,13 +2308,13 @@ objectlock east = "pass:false()"
 #
 tel r4448
 #
-alias west = door, w, e3705
+alias west = door^ w^ e3705
 #
-tag e3705 = the circus, category = area names
+tag e3705 = the circus:area names
 #
-set e3705/door_attributes = "open"
+set e3705/door_attributes = ["open"]
 #
-set e3705/reset_door_attributes = "open"
+set e3705/reset_door_attributes = ["open"]
 #
 tel r4402
 #
@@ -2244,7 +2342,7 @@ tag m4400 = the circus:area name
 #
 tag m4400 = mobile
 #
-set m4400/hitpoints[maximum] = 547
+set m4400/hitpoints[maximum] = 1458
 #
 set m4400/position = "standing"
 #
@@ -2340,7 +2438,7 @@ tag m4401 = the circus:area name
 #
 tag m4401 = mobile
 #
-set m4401/hitpoints[maximum] = 27
+set m4401/hitpoints[maximum] = 33
 #
 set m4401/position = "standing"
 #
@@ -2370,7 +2468,7 @@ tag m4403 = the circus:area name
 #
 tag m4403 = mobile
 #
-set m4403/hitpoints[maximum] = 82
+set m4403/hitpoints[maximum] = 68
 #
 set m4403/position = "standing"
 #
@@ -2400,7 +2498,7 @@ tag m4403 = the circus:area name
 #
 tag m4403 = mobile
 #
-set m4403/hitpoints[maximum] = 76
+set m4403/hitpoints[maximum] = 64
 #
 set m4403/position = "standing"
 #
@@ -2432,7 +2530,7 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 68
+set m4421/hitpoints[maximum] = 91
 #
 set m4421/position = "standing"
 #
@@ -2568,7 +2666,7 @@ tag m4401 = the circus:area name
 #
 tag m4401 = mobile
 #
-set m4401/hitpoints[maximum] = 31
+set m4401/hitpoints[maximum] = 32
 #
 set m4401/position = "standing"
 #
@@ -2598,7 +2696,7 @@ tag m4403 = the circus:area name
 #
 tag m4403 = mobile
 #
-set m4403/hitpoints[maximum] = 80
+set m4403/hitpoints[maximum] = 57
 #
 set m4403/position = "standing"
 #
@@ -2628,7 +2726,7 @@ tag m4427 = the circus:area name
 #
 tag m4427 = mobile
 #
-set m4427/hitpoints[maximum] = 36
+set m4427/hitpoints[maximum] = 33
 #
 set m4427/position = "standing"
 #
@@ -2694,7 +2792,7 @@ tag m4404 = the circus:area name
 #
 tag m4404 = mobile
 #
-set m4404/hitpoints[maximum] = 16
+set m4404/hitpoints[maximum] = 20
 #
 set m4404/position = "standing"
 #
@@ -2724,7 +2822,7 @@ tag m4453 = the circus:area name
 #
 tag m4453 = mobile
 #
-set m4453/hitpoints[maximum] = 159
+set m4453/hitpoints[maximum] = 163
 #
 set m4453/position = "standing"
 #
@@ -2754,7 +2852,7 @@ tag m4406 = the circus:area name
 #
 tag m4406 = mobile
 #
-set m4406/hitpoints[maximum] = 42
+set m4406/hitpoints[maximum] = 48
 #
 set m4406/position = "standing"
 #
@@ -2814,7 +2912,7 @@ tag m4407 = the circus:area name
 #
 tag m4407 = mobile
 #
-set m4407/hitpoints[maximum] = 38
+set m4407/hitpoints[maximum] = 37
 #
 set m4407/position = "standing"
 #
@@ -2874,7 +2972,7 @@ tag m4408 = the circus:area name
 #
 tag m4408 = mobile
 #
-set m4408/hitpoints[maximum] = 29
+set m4408/hitpoints[maximum] = 31
 #
 set m4408/position = "standing"
 #
@@ -2964,8 +3062,11 @@ tag o4437 = object
 #
 set o4437/value = 50
 #
+tel m4408
+#
 put o4437 in o4411
 #
+tel r4411#
 set r4411/reset_objects["o4437"] = {"location":"o4411"}
 #
 tel r4412
@@ -2994,7 +3095,7 @@ tag m4410 = the circus:area name
 #
 tag m4410 = mobile
 #
-set m4410/hitpoints[maximum] = 110
+set m4410/hitpoints[maximum] = 206
 #
 set m4410/position = "standing"
 #
@@ -3054,7 +3155,7 @@ tag m4409 = the circus:area name
 #
 tag m4409 = mobile
 #
-set m4409/hitpoints[maximum] = 68
+set m4409/hitpoints[maximum] = 83
 #
 set m4409/position = "standing"
 #
@@ -3148,7 +3249,7 @@ tag m4401 = the circus:area name
 #
 tag m4401 = mobile
 #
-set m4401/hitpoints[maximum] = 24
+set m4401/hitpoints[maximum] = 29
 #
 set m4401/position = "standing"
 #
@@ -3178,7 +3279,7 @@ tag m4402 = the circus:area name
 #
 tag m4402 = mobile
 #
-set m4402/hitpoints[maximum] = 32
+set m4402/hitpoints[maximum] = 28
 #
 set m4402/position = "standing"
 #
@@ -3208,7 +3309,7 @@ tag m4403 = the circus:area name
 #
 tag m4403 = mobile
 #
-set m4403/hitpoints[maximum] = 82
+set m4403/hitpoints[maximum] = 52
 #
 set m4403/position = "standing"
 #
@@ -3238,7 +3339,7 @@ tag m4401 = the circus:area name
 #
 tag m4401 = mobile
 #
-set m4401/hitpoints[maximum] = 33
+set m4401/hitpoints[maximum] = 24
 #
 set m4401/position = "standing"
 #
@@ -3268,7 +3369,7 @@ tag m4402 = the circus:area name
 #
 tag m4402 = mobile
 #
-set m4402/hitpoints[maximum] = 32
+set m4402/hitpoints[maximum] = 28
 #
 set m4402/position = "standing"
 #
@@ -3298,7 +3399,7 @@ tag m4403 = the circus:area name
 #
 tag m4403 = mobile
 #
-set m4403/hitpoints[maximum] = 76
+set m4403/hitpoints[maximum] = 72
 #
 set m4403/position = "standing"
 #
@@ -3328,7 +3429,7 @@ tag m4405 = the circus:area name
 #
 tag m4405 = mobile
 #
-set m4405/hitpoints[maximum] = 72
+set m4405/hitpoints[maximum] = 87
 #
 set m4405/position = "standing"
 #
@@ -3360,7 +3461,7 @@ tag m4452 = the circus:area name
 #
 tag m4452 = mobile
 #
-set m4452/hitpoints[maximum] = 29
+set m4452/hitpoints[maximum] = 26
 #
 set m4452/position = "standing"
 #
@@ -3390,7 +3491,7 @@ tag m4411 = the circus:area name
 #
 tag m4411 = mobile
 #
-set m4411/hitpoints[maximum] = 122
+set m4411/hitpoints[maximum] = 177
 #
 set m4411/position = "standing"
 #
@@ -3420,7 +3521,7 @@ tag m4411 = the circus:area name
 #
 tag m4411 = mobile
 #
-set m4411/hitpoints[maximum] = 152
+set m4411/hitpoints[maximum] = 163
 #
 set m4411/position = "standing"
 #
@@ -3450,7 +3551,7 @@ tag m4411-2 = the circus:area name
 #
 tag m4411-2 = mobile
 #
-set m4411-2/hitpoints[maximum] = 89
+set m4411-2/hitpoints[maximum] = 142
 #
 set m4411-2/position = "standing"
 #
@@ -3480,7 +3581,7 @@ tag m4411 = the circus:area name
 #
 tag m4411 = mobile
 #
-set m4411/hitpoints[maximum] = 168
+set m4411/hitpoints[maximum] = 145
 #
 set m4411/position = "standing"
 #
@@ -3512,7 +3613,7 @@ tag m4415 = the circus:area name
 #
 tag m4415 = mobile
 #
-set m4415/hitpoints[maximum] = 123
+set m4415/hitpoints[maximum] = 130
 #
 set m4415/position = "standing"
 #
@@ -3544,7 +3645,7 @@ set o4421/stat_modifiers[mana] = 10
 #
 set o4421/stat_modifiers[armor class] = 1
 #
-set o4421/armor = 5
+set o4421/armor = 4
 #
 wearto o4421 = m4415
 #
@@ -3576,7 +3677,7 @@ tag m4411 = the circus:area name
 #
 tag m4411 = mobile
 #
-set m4411/hitpoints[maximum] = 168
+set m4411/hitpoints[maximum] = 116
 #
 set m4411/position = "standing"
 #
@@ -3606,7 +3707,7 @@ tag m4411-2 = the circus:area name
 #
 tag m4411-2 = mobile
 #
-set m4411-2/hitpoints[maximum] = 122
+set m4411-2/hitpoints[maximum] = 170
 #
 set m4411-2/position = "standing"
 #
@@ -3636,7 +3737,7 @@ tag m4411-3 = the circus:area name
 #
 tag m4411-3 = mobile
 #
-set m4411-3/hitpoints[maximum] = 142
+set m4411-3/hitpoints[maximum] = 140
 #
 set m4411-3/position = "standing"
 #
@@ -3666,7 +3767,7 @@ tag m4412 = the circus:area name
 #
 tag m4412 = mobile
 #
-set m4412/hitpoints[maximum] = 96
+set m4412/hitpoints[maximum] = 58
 #
 set m4412/position = "standing"
 #
@@ -3698,7 +3799,7 @@ set o4439/stat_modifiers[intelligence] = -2
 #
 set o4439/stat_modifiers[wisdom] = -1
 #
-set o4439/armor = 4
+set o4439/armor = 2
 #
 wearto o4439 = m4412
 #
@@ -3762,7 +3863,7 @@ set o4420/stat_modifiers[moves] = -20
 #
 set o4420/stat_modifiers[dexterity] = -1
 #
-set o4420/armor = 2
+set o4420/armor = 1
 #
 wearto o4420 = m4413
 #
@@ -3800,7 +3901,7 @@ tag m4416 = the circus:area name
 #
 tag m4416 = mobile
 #
-set m4416/hitpoints[maximum] = 95
+set m4416/hitpoints[maximum] = 133
 #
 set m4416/position = "standing"
 #
@@ -3832,9 +3933,9 @@ set o4416/stat_modifiers[dexterity] = 1
 #
 set o4416/weapon_type = "stab"
 #
-set o4416/damage_low = 4
+set o4416/damage_low = 6
 #
-set o4416/damage_high = 10
+set o4416/damage_high = 11
 #
 wieldto o4416 = m4416
 #
@@ -3904,7 +4005,7 @@ tag m4417 = the circus:area name
 #
 tag m4417 = mobile
 #
-set m4417/hitpoints[maximum] = 41
+set m4417/hitpoints[maximum] = 43
 #
 set m4417/position = "standing"
 #
@@ -3970,7 +4071,7 @@ tag m4418 = the circus:area name
 #
 tag m4418 = mobile
 #
-set m4418/hitpoints[maximum] = 176
+set m4418/hitpoints[maximum] = 112
 #
 set m4418/position = "standing"
 #
@@ -4006,9 +4107,9 @@ set o4418/stat_modifiers[wisdom] = -1
 #
 set o4418/weapon_type = "whip"
 #
-set o4418/damage_low = 4
+set o4418/damage_low = 3
 #
-set o4418/damage_high = 13
+set o4418/damage_high = 11
 #
 wieldto o4418 = m4418
 #
@@ -4040,7 +4141,7 @@ tag m4419 = the circus:area name
 #
 tag m4419 = mobile
 #
-set m4419/hitpoints[maximum] = 8
+set m4419/hitpoints[maximum] = 9
 #
 set m4419/position = "standing"
 #
@@ -4070,7 +4171,7 @@ tag m4419-2 = the circus:area name
 #
 tag m4419-2 = mobile
 #
-set m4419-2/hitpoints[maximum] = 8
+set m4419-2/hitpoints[maximum] = 9
 #
 set m4419-2/position = "standing"
 #
@@ -4100,7 +4201,7 @@ tag m4419-3 = the circus:area name
 #
 tag m4419-3 = mobile
 #
-set m4419-3/hitpoints[maximum] = 8
+set m4419-3/hitpoints[maximum] = 9
 #
 set m4419-3/position = "standing"
 #
@@ -4148,7 +4249,7 @@ tag m4420 = the circus:area name
 #
 tag m4420 = mobile
 #
-set m4420/hitpoints[maximum] = 145
+set m4420/hitpoints[maximum] = 99
 #
 set m4420/position = "standing"
 #
@@ -4182,7 +4283,7 @@ set o4419/stat_modifiers[dexterity] = 1
 #
 set o4419/stat_modifiers[moves] = 8
 #
-set o4419/armor = 4
+set o4419/armor = 3
 #
 wearto o4419 = m4420
 #
@@ -4214,7 +4315,7 @@ tag m4420 = the circus:area name
 #
 tag m4420 = mobile
 #
-set m4420/hitpoints[maximum] = 95
+set m4420/hitpoints[maximum] = 180
 #
 set m4420/position = "standing"
 #
@@ -4248,7 +4349,7 @@ set o4419/stat_modifiers[dexterity] = 1
 #
 set o4419/stat_modifiers[moves] = 8
 #
-set o4419/armor = 4
+set o4419/armor = 3
 #
 wearto o4419 = m4420
 #
@@ -4286,7 +4387,7 @@ tag m4412 = the circus:area name
 #
 tag m4412 = mobile
 #
-set m4412/hitpoints[maximum] = 105
+set m4412/hitpoints[maximum] = 61
 #
 set m4412/position = "standing"
 #
@@ -4318,7 +4419,7 @@ set o4439/stat_modifiers[intelligence] = -2
 #
 set o4439/stat_modifiers[wisdom] = -1
 #
-set o4439/armor = 2
+set o4439/armor = 3
 #
 wearto o4439 = m4412
 #
@@ -4358,7 +4459,7 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 88
+set m4421/hitpoints[maximum] = 90
 #
 set m4421/position = "standing"
 #
@@ -4406,7 +4507,7 @@ tag m4422 = the circus:area name
 #
 tag m4422 = mobile
 #
-set m4422/hitpoints[maximum] = 73
+set m4422/hitpoints[maximum] = 82
 #
 set m4422/position = "standing"
 #
@@ -4442,7 +4543,7 @@ tag m4423 = the circus:area name
 #
 tag m4423 = mobile
 #
-set m4423/hitpoints[maximum] = 61
+set m4423/hitpoints[maximum] = 64
 #
 set m4423/position = "standing"
 #
@@ -4472,7 +4573,7 @@ tag m4423-2 = the circus:area name
 #
 tag m4423-2 = mobile
 #
-set m4423-2/hitpoints[maximum] = 66
+set m4423-2/hitpoints[maximum] = 58
 #
 set m4423-2/position = "standing"
 #
@@ -4546,7 +4647,7 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 68
+set m4421/hitpoints[maximum] = 119
 #
 set m4421/position = "standing"
 #
@@ -4788,7 +4889,7 @@ set o4410/weapon_type = "slice"
 #
 set o4410/damage_low = 4
 #
-set o4410/damage_high = 10
+set o4410/damage_high = 12
 #
 put o4410 in o4426
 #
@@ -4908,7 +5009,7 @@ set o4408/weapon_type = "pierce"
 #
 set o4408/damage_low = 4
 #
-set o4408/damage_high = 10
+set o4408/damage_high = 12
 #
 put o4408 in o4425
 #
@@ -4942,7 +5043,7 @@ tag m4429 = the circus:area name
 #
 tag m4429 = mobile
 #
-set m4429/hitpoints[maximum] = 16
+set m4429/hitpoints[maximum] = 19
 #
 set m4429/position = "standing"
 #
@@ -4980,7 +5081,7 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 91
+set m4421/hitpoints[maximum] = 88
 #
 set m4421/position = "standing"
 #
@@ -5072,7 +5173,7 @@ set o4409/weapon_type = "pound"
 #
 set o4409/damage_low = 4
 #
-set o4409/damage_high = 10
+set o4409/damage_high = 8
 #
 put o4409 in o4423
 #
@@ -5110,7 +5211,7 @@ tag m4425 = the circus:area name
 #
 tag m4425 = mobile
 #
-set m4425/hitpoints[maximum] = 60
+set m4425/hitpoints[maximum] = 41
 #
 set m4425/position = "standing"
 #
@@ -5140,7 +5241,7 @@ tag m4426 = the circus:area name
 #
 tag m4426 = mobile
 #
-set m4426/hitpoints[maximum] = 138
+set m4426/hitpoints[maximum] = 121
 #
 set m4426/position = "standing"
 #
@@ -5178,7 +5279,7 @@ set o4448/weapon_type = "slice"
 #
 set o4448/damage_low = 4
 #
-set o4448/damage_high = 12
+set o4448/damage_high = 13
 #
 wieldto o4448 = m4426
 #
@@ -5314,7 +5415,7 @@ tag m4412 = the circus:area name
 #
 tag m4412 = mobile
 #
-set m4412/hitpoints[maximum] = 77
+set m4412/hitpoints[maximum] = 98
 #
 set m4412/position = "standing"
 #
@@ -5378,7 +5479,7 @@ tag m4412-2 = the circus:area name
 #
 tag m4412-2 = mobile
 #
-set m4412-2/hitpoints[maximum] = 66
+set m4412-2/hitpoints[maximum] = 87
 #
 set m4412-2/position = "standing"
 #
@@ -5410,7 +5511,7 @@ set o4439/stat_modifiers[intelligence] = -2
 #
 set o4439/stat_modifiers[wisdom] = -1
 #
-set o4439/armor = 4
+set o4439/armor = 2
 #
 wearto o4439 = m4412-2
 #
@@ -5442,7 +5543,7 @@ tag m4413 = the circus:area name
 #
 tag m4413 = mobile
 #
-set m4413/hitpoints[maximum] = 18
+set m4413/hitpoints[maximum] = 17
 #
 set m4413/position = "standing"
 #
@@ -5570,7 +5671,7 @@ tag m4414-2 = the circus:area name
 #
 tag m4414-2 = mobile
 #
-set m4414-2/hitpoints[maximum] = 46
+set m4414-2/hitpoints[maximum] = 48
 #
 set m4414-2/position = "standing"
 #
@@ -5636,7 +5737,7 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 81
+set m4421/hitpoints[maximum] = 108
 #
 set m4421/position = "standing"
 #
@@ -5666,7 +5767,7 @@ tag m4412 = the circus:area name
 #
 tag m4412 = mobile
 #
-set m4412/hitpoints[maximum] = 105
+set m4412/hitpoints[maximum] = 79
 #
 set m4412/position = "standing"
 #
@@ -5732,7 +5833,7 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 87
+set m4421/hitpoints[maximum] = 77
 #
 set m4421/position = "standing"
 #
@@ -5762,7 +5863,7 @@ tag m4420 = the circus:area name
 #
 tag m4420 = mobile
 #
-set m4420/hitpoints[maximum] = 114
+set m4420/hitpoints[maximum] = 148
 #
 set m4420/position = "standing"
 #
@@ -5796,7 +5897,7 @@ set o4419/stat_modifiers[dexterity] = 1
 #
 set o4419/stat_modifiers[moves] = 8
 #
-set o4419/armor = 5
+set o4419/armor = 4
 #
 wearto o4419 = m4420
 #
@@ -6246,7 +6347,7 @@ tag m4450 = the circus:area name
 #
 tag m4450 = mobile
 #
-set m4450/hitpoints[maximum] = 100
+set m4450/hitpoints[maximum] = 134
 #
 set m4450/position = "standing"
 #
@@ -6282,7 +6383,7 @@ set o4450/weapon_type = "pierce"
 #
 set o4450/damage_low = 4
 #
-set o4450/damage_high = 11
+set o4450/damage_high = 13
 #
 wieldto o4450 = m4450
 #

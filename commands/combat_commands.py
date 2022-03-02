@@ -53,6 +53,38 @@ class Combat(Object):
 
         return True
 
+    def combat_end_check(self):
+        """
+        Checks to see whether the combat should end.
+        """
+
+        # Check to see whether everyone in the combat is on the "same side" (player or mobile), and
+        # end the combat.
+        combatant_list = list(self.db.combatants.keys())
+        # Check to see what type of combatant the first one is.
+        if "mobile" in combatant_list[0].tags.all():
+            first_combatant_type = "mobile"
+        else:
+            first_combatant_type = "player"
+        # Default is to end the combat.
+        combat_end = True
+
+        # Cycle through combatants, and check their type.
+        for combatant in combatant_list:
+            if "mobile" in combatant.tags.all():
+                combatant_type = "mobile"
+            else:
+                combatant_type = "player"
+
+            # Check against first one. If any are different, set combat_end to False, and stop looking.
+            if combatant_type != first_combatant_type:
+                combat_end = False
+                break;
+
+        if combat_end == True:
+            self.at_stop()
+            self.delete()
+
     def at_repeat(self):
         self.clear_messages()
 
@@ -100,32 +132,7 @@ class Combat(Object):
                     combatant.db.hitpoints["damaged"] = (combatant.hitpoints_maximum - 1)
                     combatant.move_to(combatant.home, quiet=True)
 
-        # Check to see whether everyone in the combat is on the "same side" (player or mobile), and
-        # end the combat.
-        combatant_list = list(self.db.combatants.keys())
-        # Check to see what type of combatant the first one is.
-        if "mobile" in combatant_list[0].tags.all():
-            first_combatant_type = "mobile"
-        else:
-            first_combatant_type = "player"
-        # Default is to end the combat.
-        combat_end = True
-
-        # Cycle through combatants, and check their type.
-        for combatant in combatant_list:
-            if "mobile" in combatant.tags.all():
-                combatant_type = "mobile"
-            else:
-                combatant_type = "player"
-
-            # Check against first one. If any are different, set combat_end to False, and stop looking.
-            if combatant_type != first_combatant_type:
-                combat_end = False
-                break;
-
-        if combat_end == True:
-            self.at_stop()
-            self.delete()
+        self.combat_end_check()
 
         self.db.rounds += 1
 
@@ -213,6 +220,7 @@ class CmdConsider(MuxCommand):
     """
 
     key = "consider"
+    aliases = ["con"]
     locks = "cmd:all()"
     arg_regex = r"\s|$"
 
@@ -224,7 +232,7 @@ class CmdConsider(MuxCommand):
             caller.msg("Usage: consider <mobile>")
             return
 
-        mobile = attacker.search(self.args, location=attacker.location)
+        mobile = caller.search(self.args, location=caller.location)
         if not mobile:
             caller.msg("There is no %s here to consider." % self.args)
             return
@@ -272,7 +280,7 @@ class CmdConsider(MuxCommand):
         else:
             health_percent_string = "Compared to %s, you should maybe consider a long-term hospital stay." % mobile.key
         
-        caller.msg("%s\n%s\n%s\n" % (level_string, health_string, health_percent_string))
+        caller.msg("%s\n%s %s\n%s\n" % (level_string, (mobile.key[0].upper() + mobile.key[1:]), health_string, health_percent_string))
     
 class CmdFlee(MuxCommand):
     """
@@ -296,7 +304,7 @@ class CmdFlee(MuxCommand):
         location = caller.location
         success = False
         
-        if combat_handler not in caller.ndb.all:
+        if "combat_handler" not in caller.ndb.all:
             caller.msg("You cannot flee when you are not in combat.")
             return
         
@@ -321,20 +329,55 @@ class CmdFlee(MuxCommand):
                 direction = "down"
             
             for exit in location.contents:
-                if exit.destination:
-                    if exit.key == direction:
-                        success = True
-                        break
+                if exit.destination and exit.key == direction and exit.access(caller, "traverse"):
+                    success = True
+                    break
             
             if success:
                 break
         
         if success:
-            # Need to implement all the lock checks that an exit would check
-            
-            
+            # Remove caller from combat.
+            combat = caller.ndb.combat_handler
+            combat.remove_combatant(caller)
+
+            # Do xp loss.
+
+            caller.msg("You show a good pair of heels and flee from combat!")
             exit.at_traverse(caller, exit.destination)
+            combat.combat_end_check()
             
-            
-            
-            
+        else:
+            caller.msg("You fail to flee from combat!")
+
+
+class CmdWimpy(MuxCommand):
+    """
+    Set your wimpy level.
+    Usage:
+      wimpy
+      wimpy <hp amount>
+    Wimpy is the amount of hitpoints at which you wish to get an automatic
+    attempt to flee from combat each round. Using wimpy without any
+    argument automatically sets your wimpy to 15% of your maximum hitpoints.
+    """
+
+    key = "wimpy"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement wimpy"""
+
+        caller = self.caller
+
+        if not self.args.isnumeric():
+            if not self.args:
+                caller.db.wimpy = int(caller.hitpoints_maximum * 0.15)
+                caller.msg("Your wimpy has been set to %d." % caller.db.wimpy)
+            else:
+                caller.msg("Wimpy must be given a number as an argument, or no argument.")
+            return
+        else:
+            caller.db.wimpy = int(self.args)
+            caller.msg("Your wimpy has been set to %d." % caller.db.wimpy)

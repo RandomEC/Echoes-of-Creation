@@ -1,6 +1,6 @@
 import random
 import math
-# from world import rules_race
+from world import rules_race
 
 
 def fuzz_number(number):

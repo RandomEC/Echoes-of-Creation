@@ -14,7 +14,7 @@ def do_attack(attacker, victim, eq_slot):
     """
 
     hit = hit_check(attacker, victim)
-    damage = do_damage(attacker, eq_slot)
+    damage = do_damage(attacker, victim, eq_slot)
     damage_type = get_damagetype(attacker)
     experience_modified = 0
 
@@ -94,7 +94,7 @@ def do_attack(attacker, victim, eq_slot):
     return (attacker_string, victim_string, room_string)
 
 
-def do_damage(attacker, eq_slot):
+def do_damage(attacker, victim, eq_slot):
     """
     This is called on a successful hit, and returns the total
     damage for that hit.
@@ -610,6 +610,7 @@ def get_hit_chance(attacker, victim):
         return 5
     else:
         return hit_chance
+
 
 
 def get_hitskill(attacker, victim):

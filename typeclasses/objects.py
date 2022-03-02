@@ -619,7 +619,7 @@ class Furniture(Item):
         self.locks.add("get:false()")
         self.db.get_err_msg = "This is too heavy to pick up."
 
-class Container(Item):
+class Container(Armor):
 
     """
 

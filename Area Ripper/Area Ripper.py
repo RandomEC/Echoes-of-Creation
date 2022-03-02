@@ -12,9 +12,38 @@
 # Test comment
 
 import random
-from mygame.world import rules
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.txt", "rt") as myfile:
+def fuzz_number(number):
+    """
+    This function simply adds slight variation to a number.
+    """
+
+    random_number = random.randint(1, 4)
+    if random_number < 2:
+        return number - 1
+    elif random_number > 3:
+        return number + 1
+    else:
+        return number
+
+def set_armor(level):
+    """
+    This function sets the armor value of a piece of armor.
+    """
+
+    return round(fuzz_number((level/4) + 2))
+
+
+def set_weapon_low_high(level):
+    """
+    This function sets the damage range of a weapon.
+    """
+
+    low = round(fuzz_number(fuzz_number(level/4 + 2)))
+    high = round(fuzz_number(fuzz_number(3*level/4 + 6)))
+    return low, high
+
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.txt", "rt") as myfile:
 
     class Object:
         def __init__(self):
@@ -1833,7 +1862,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.txt", "rt") a
                     objects[onum].special_function\
                         = special_function_list[2][6:]
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as output:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as output:
 
     # Now we are going to build out the batch file by iterating through each
     # room.
@@ -1866,6 +1895,11 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
         output.write(":j l\n")
         output.write("#\n")
         output.write(":wq\n")
+        output.write("#\n")
+        output.write('set %s/vnum = "%s"\n' % (
+                                               rooms[room].vnum,
+                                               rooms[room].vnum
+                                               ))
         output.write("#\n")
         output.write('set %s/terrain = "%s"\n' % (
                                                   rooms[room].vnum,
@@ -1950,9 +1984,9 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                     output.write("#\n")
                     # Set the door as open by default, may be modified by
                     # resets later.
-                    output.write("set %s/door_attributes = \"open\"\n" % vnum)
+                    output.write("set %s/door_attributes = [\"open\"]\n" % vnum)
                     output.write("#\n")
-                    output.write("set %s/reset_door_attributes = \"open\"\n"
+                    output.write("set %s/reset_door_attributes = [\"open\"]\n"
                                  % vnum
                                  )
                     output.write("#\n")
@@ -1970,9 +2004,9 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                     output.write("#\n")
                     # Set the door as open by default, may be modified by
                     # resets later.
-                    output.write("set %s/door_attributes = \"open\"\n" % vnum)
+                    output.write("set %s/door_attributes = [\"open\"]\n" % vnum)
                     output.write("#\n")
-                    output.write("set %s/reset_door_attributes = \"open\"\n"
+                    output.write("set %s/reset_door_attributes = [\"open\"]\n"
                                  % vnum
                                  )
                     output.write("#\n")
@@ -2718,11 +2752,11 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                                                                ))
                         output.write("#\n")
                 if object.item_type == "armor":
-                    armor = rules.set_armor(level)
+                    armor = set_armor(level)
                     output.write("set %s/armor = %d\n" % (index_reset_vnum, armor))
                     output.write("#\n")
                 if object.item_type == "weapon":
-                    damage_low, damage_high = rules.set_weapon_low_high(level)
+                    damage_low, damage_high = set_weapon_low_high(level)
                     output.write("set %s/damage_low = %d\n" % (
                                                                index_reset_vnum,
                                                                damage_low
@@ -2756,38 +2790,42 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/haon_dor.ev", "w") as 
                     output.write("drop %s\n" % reset_vnum)
                     output.write("#\n")
                 elif reset_type == "object, in container":
+                    reset_mobile_amount = 0
                     # First, check to see if the container is in the room or on a mobile.
-                    if reset_location != reset_room:
-                        index = reset
-                        # Iterate backwards through the reset list to find the last
-                        # container of that vnum, and get the mobile it resets on.
-                        while index >= 0:
-                            if resets[index]["type"] != "door":
-                                if resets[index]["vnum to reset"] == reset_location:
-                                    reset_mobile = resets[index]["location"]
-                                    break
-                            index -= 1
-                        # Now find the last mobile of that vnum.
+                    index = reset
+                    # Iterate backwards through the reset list to find the last
+                    # container of that vnum, and get the mobile it resets on.
+                    while index >= 0:
+                        if resets[index]["type"] != "door":
+                            if resets[index]["vnum to reset"] == reset_location:
+                                reset_mobile = resets[index]["location"]
+                                break
+                        index -= 1
+
+                    if reset_mobile[0] == "m":
+                        # Find the last mobile of that vnum.
                         for dictionary in in_room_list:
                             # Check if there are previous entries matching this mobile and this room.
                             if dictionary["mobile/object"] == reset_mobile and dictionary["room"] == reset_room:
                                 # If so, increment the count.
                                 reset_mobile_amount += 1
                         if reset_mobile_amount > 1:
-                            reset_mobile = ("%s-%d" % (reset_mobile, reset_mobile_amount)) 
-                        
+                            reset_mobile = ("%s-%d" % (reset_mobile, reset_mobile_amount))
+
                         # Be warned the below will not work if there is more than one instance of the mobile
-                        # in question in more than one room. 
-                        output.write("tel %s" % reset_mobile)
+                        # in question in more than one room.
+                        output.write("tel %s\n" % reset_mobile)
                         output.write("#\n")
-                    
+                        mob_teleport = True
+
                     # Put the object in the container.
                     output.write("put %s in %s\n" % (reset_vnum, index_reset_location))
                     output.write("#\n")
 
-                    if reset_location != reset_room:
+                    if mob_teleport:
                         output.write("tel %s" % reset_room)
                         output.write("#\n")
+                        mob_teleport = False
                     
         # 3. Create the reset for the object/mobile that was just created. For
         # mobiles, doors and objects that do not reset in containers, the
