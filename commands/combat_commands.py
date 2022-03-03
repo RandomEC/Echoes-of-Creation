@@ -92,10 +92,15 @@ class Combat(Object):
         for combatant in self.db.combatants:
 
             # First, check to see if the combatant is below their wimpy.
-            if character.hitpoints_current < character.db.wimpy:
+            if ("player" in combatant.tags.all() and
+                combatant.hitpoints_current <= combatant.db.wimpy) or \
+                    ("mobile" in combatant.tags.all() and
+                     "wimpy" in combatant.db.act_flags and
+                     combatant.hitpoints_current <= (0.15 * combatant.hitpoints_maximum
+                     )):
                 
                 # Make a free attempt to flee.
-                rules_combat.do_flee(character)
+                rules_combat.do_flee(combatant)
             
             # Make sure this combatant and target are alive.
             if self.allow_attacks(combatant, self.db.combatants[combatant]["target"]):
@@ -269,19 +274,19 @@ class CmdConsider(MuxCommand):
         
         # Create the string for the mobile's health relative to the hero's.
         health_difference = mobile.hitpoints_current - caller.hitpoints_current
-        health_percent = 100 * health_difference/caller.hitpoints_current
+        health_percent = (100 * health_difference / caller.hitpoints_current)
         
         if health_percent <= -90:
             health_percent_string = "%s is sickly and unwell compared to your health." % (mobile.key[0].upper() + mobile.key[1:])
-        if health_percent <= -50:
+        elif health_percent <= -50:
             health_percent_string = "You are substantially healthier than %s." % mobile.key
-        if health_percent <= -11:
+        elif health_percent <= -11:
             health_percent_string = "You are somewhat healthier than %s." % mobile.key
-        if health_percent <= 10:
+        elif health_percent <= 10:
             health_percent_string = "You are about as healthy as %s." % mobile.key
-        if health_percent <= 50:
+        elif health_percent <= 50:
             health_percent_string = "%s is somewhat healthier than you." % (mobile.key[0].upper() + mobile.key[1:])
-        if health_percent <= 90:
+        elif health_percent <= 90:
             health_percent_string = "%s is substantially healthier than you." % (mobile.key[0].upper() + mobile.key[1:])
         else:
             health_percent_string = "Compared to %s, you should maybe consider a long-term hospital stay." % mobile.key

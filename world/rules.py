@@ -1,5 +1,6 @@
 import random
 import math
+from server.conf import settings
 from world import rules_race
 
 def experience_cost_base(step):
@@ -9,10 +10,32 @@ def experience_cost_base(step):
     the cost of a level, hitpoint gain, etc.
     """
     
-    if step == 2
-        return 2700
+    if step == 2:
+        return settings.EXPERIENCE_STEP_TWO
     else:
-        return ((step^3) * 400)
+        return ((step ** settings.EXPERIENCE_STEP_EXPONENT) * settings.EXPERIENCE_STEP_MULTIPLIER)
+
+def current_experience_step(character):
+    """
+    This function uses a character's current total experience to
+    determine the experience step that the character is currently
+    at.
+    """
+
+    step = 1
+    step_experience_total = 0
+    while character.db.experience_total <= step_experience_total:
+        step += 1
+        if step == 2:
+            step_experience_total += 2700
+        else:
+            step_experience_total += experience_cost_base(step)
+
+    # Since the above calculated one step past, reduce step by one.
+    step -= 1
+
+    return step
+
 
 def level_cost(level):
     """
@@ -20,7 +43,7 @@ def level_cost(level):
     character one level.
     """
     
-    return ECHOES_COST_LEVEL * experience_cost_base(level)
+    return int(settings.ECHOES_COST_LEVEL * experience_cost_base(level))
 
 
 def hitpoints_cost(character):
@@ -28,8 +51,8 @@ def hitpoints_cost(character):
     This function determines the experience cost of getting an
     additional amount of hitpoints.
     """
-    hitpoints_step = character.db.hitpoints["trains spent"]
-    return ECHOES_COST_HITPOINTS * experience_cost_base(hitpoints_step)
+    hitpoints_step = character.db.hitpoints["trains spent"] + 2
+    return int(settings.ECHOES_COST_HITPOINTS * experience_cost_base(hitpoints_step))
 
 
 def mana_cost(character):
@@ -37,8 +60,8 @@ def mana_cost(character):
     This function determines the experience cost of getting an
     additional amount of mana.
     """
-    mana_step = character.db.mana["trains spent"]
-    return ECHOES_COST_MANA * experience_cost_base(mana_step)
+    mana_step = character.db.mana["trains spent"] + 2
+    return int(settings.ECHOES_COST_MANA * experience_cost_base(mana_step))
 
 
 def moves_cost(character):
@@ -46,8 +69,8 @@ def moves_cost(character):
     This function determines the experience cost of getting an
     additional amount of moves.
     """
-    moves_step = character.db.moves["trains spent"]
-    return ECHOES_COST_MOVES * experience_cost_base(moves_step)
+    moves_step = character.db.moves["trains spent"] + 2
+    return int(settings.ECHOES_COST_MOVES * experience_cost_base(moves_step))
 
 
 def attributes_cost(character):
@@ -64,18 +87,17 @@ def attributes_cost(character):
     
     # Calculate the amount of xp allocated to getting attributes.
     attribute_total_xp = 0
-    for step in range(2, 101):
-        attribute_total_xp += experience_cost_base(step) * ECHOES_COST_ATTRIBUTES
-    
+    for step in range(2, 102):
+        attribute_total_xp += int((experience_cost_base(step) * settings.ECHOES_COST_ATTRIBUTES))
+
     denominator = 0
-    total_upgrades = 25 # make this a global when done.
-    attribute_power = 3.1 # make this a global when done.
-    for upgrade in range(1,total_upgrades):
-        denominator += upgrade^attribute_power
+
+    for upgrade in range(1, settings.ATTRIBUTES_TOTAL_UPGRADES + 1):
+        denominator += (upgrade ** settings.ATTRIBUTES_EXPONENT)
+
+    attribute_factor = int(attribute_total_xp / denominator)
     
-    attribute_factor = attribute_total_xp / denominator
-    
-    return attributes_step^3.1 * attribute_factor
+    return int(attributes_step ** settings.ATTRIBUTES_EXPONENT * attribute_factor)
 
 
 def practices_cost(character):
@@ -114,14 +136,14 @@ def practices_cost(character):
     while character.db.experience_spent_practices <= step_experience_total:
         step += 1
         if step == 2:
-            step_experience_total += 2700 * ECHOES_COST_PRACTICES
+            step_experience_total += 2700 * settings.ECHOES_COST_PRACTICES
         else:
-            step_experience_total += experience_cost_base(step) * ECHOES_COST_PRACTICES
+            step_experience_total += experience_cost_base(step) * settings.ECHOES_COST_PRACTICES
             
     # Since the above calculated one step past, reduce step by one.
     step -= 1
     
-    return experience_cost_base(step) * ECHOES_COST_PRACTICES / practice_factor    
+    return experience_cost_base(step) * settings.ECHOES_COST_PRACTICES / practice_factor
     
 def fuzz_number(number):
     """

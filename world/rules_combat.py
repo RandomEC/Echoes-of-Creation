@@ -248,8 +248,9 @@ def do_flee(character):
     if character.db.position == "sitting":
         character.msg("You had better stand up to try to flee!")
         return
-    
-    for attempt in range(1,6):
+
+    success = False
+    for attempt in range(1, 6):
         direction = random.randint(1, 6)
 
         if direction == 1:
@@ -265,7 +266,7 @@ def do_flee(character):
         else:
             direction = "down"
 
-        for exit in location.contents:
+        for exit in character.location.contents:
             if exit.destination and exit.key == direction and exit.access(character, "traverse"):
                 success = True
                 break
@@ -281,11 +282,19 @@ def do_flee(character):
         # Do xp loss.
 
         character.msg("You show a good pair of heels and flee from combat!")
-        exit.at_traverse(character, exit.destination)
+        character.location.msg_contents("%s tucks tail and flees from combat!"
+                                     % (character.name[0].upper() + character.name[1:]),
+                                     exclude=character)
+
+        character.move_to(exit.destination, quiet=True)
         combat.combat_end_check()
 
     else:
         character.msg("You fail to flee from combat!")
+        character.location.msg_contents("%s looks around frantically for an escape, but can't get away!"
+                                     % (character.name[0].upper() + character.name[1:]),
+                                     exclude=character)
+
 
 def do_one_character_attacks(attacker, victim):
     """

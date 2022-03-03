@@ -53,6 +53,7 @@ from commands.combat_commands import CmdAttack
 from commands.combat_commands import CmdConsider
 from commands.combat_commands import CmdFlee
 from commands.combat_commands import CmdWimpy
+from commands.growth_commands import CmdTrain
 
 class CharacterCmdSet(default_cmds.CharacterCmdSet):
     """
@@ -108,6 +109,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdConsider())
         self.add(CmdFlee())
         self.add(CmdWimpy())
+        self.add(CmdTrain())
 
 class AccountCmdSet(default_cmds.AccountCmdSet):
     """
