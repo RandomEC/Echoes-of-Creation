@@ -10,6 +10,8 @@ from evennia.commands.command import Command as BaseCommand
 from evennia.utils import evtable
 from evennia.commands.default.building import ObjManipCommand
 from evennia.utils import utils
+from evennia import TICKER_HANDLER as tickerhandler
+from server.conf import settings
 
 # Below is here for CmdCharCreate
 import time
@@ -641,6 +643,7 @@ class CmdDrop(MuxCommand):
         if not success:
             caller.msg("This couldn't be dropped.")
         else:
+            tickerhandler.add(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
             caller.msg("You drop %s." % (obj.name,))
             caller.location.msg_contents("%s drops %s."
                                          % (caller.name, obj.name),
@@ -1431,6 +1434,7 @@ class CmdGet(MuxCommand):
             if not success:
                 caller.msg("%s can't be picked up." % (obj.key[0].upper() + obj.key[1:]))
             else:
+                tickerhandler.remove(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
                 caller.msg("You get %s from %s." % (obj.name, container.key))
                 caller.location.msg_contents(
                     "%s gets %s from %s." % (caller.name, obj.name, container.key), exclude=caller
