@@ -204,6 +204,8 @@ class Item(Object):
 
             for item in self.contents:
                 item.move_to(self.location, quiet=True)
+                tickerhandler.add(settings.DEFAULT_DISINTEGRATE_TIME, item.at_disintegrate)
+
         else:
             self.location.msg_contents("%s crumbles away to dust."
                                          % (self.name[0].upper() + self.name[1:]), exclude=self)
