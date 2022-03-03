@@ -234,9 +234,12 @@ def do_death(attacker, victim):
         # Clear spell affects.
         victim.db.spell_affects = {}
 
-        # Do xp penalty, after figuring out how much it should be.
-        # victim_string += ("You lose %s experience as a result of your
-        # death! %s
+        # Do xp penalty.
+        
+        experience_loss = int(settings.EXPERIENCE_LOSS_DEATH * experience_cost_base(current_experience_step(character) + 1))
+        victim.db.experience_total -= experience_loss
+        
+        victim_string += ("You lose %s experience as a result of your death!" % experience_loss)
 
         # Do gold penalty, after figuring out how much it should be.
 
@@ -279,18 +282,23 @@ def do_flee(character):
         combat = character.ndb.combat_handler
         combat.remove_combatant(character)
 
-        # Do xp loss.
+        experience_loss = int(settings.EXPERIENCE_LOSS_FLEE * experience_cost_base(current_experience_step(character) + 1))
+        
+        character.db.experience_total -= experience_loss
 
-        character.msg("You show a good pair of heels and flee from combat!")
-        character.location.msg_contents("%s tucks tail and flees from combat!"
-                                     % (character.name[0].upper() + character.name[1:]),
+        character.msg("You show a good pair of heels and flee %s out of combat!\nYou lose %d experience for fleeing." % (direction, experience_loss))
+        character.location.msg_contents("%s tucks tail and flees %s out of combat!"
+                                     % ((character.name[0].upper() + character.name[1:]), direction),
                                      exclude=character)
 
         character.move_to(exit.destination, quiet=True)
         combat.combat_end_check()
 
     else:
-        character.msg("You fail to flee from combat!")
+        experience_loss = int(settings.EXPERIENCE_LOSS_FLEE_FAIL * experience_cost_base(current_experience_step(character) + 1))
+        character.db.experience_total -= experience_loss
+        
+        character.msg("You fail to flee from combat!\nYou lose %d experience for the attempt." % experience_loss)
         character.location.msg_contents("%s looks around frantically for an escape, but can't get away!"
                                      % (character.name[0].upper() + character.name[1:]),
                                      exclude=character)
