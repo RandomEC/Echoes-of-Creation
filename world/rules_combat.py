@@ -103,8 +103,8 @@ def do_damage(attacker, victim, eq_slot):
     """
 
     if "mobile" in attacker.tags.all():
-        damage_low = int(attacker.db.level * 3 / 4)
-        damage_high = int(attacker.db.level * 3 / 2)
+        damage_low = ciel(attacker.db.level * 3 / 4)
+        damage_high = ciel(attacker.db.level * 3 / 2)
 
         # Damage is a random number between high damage and low damage.
         damage = random.randint(damage_low, damage_high)
