@@ -867,6 +867,7 @@ class NPC_Corpse(Container):
 
     def at_object_creation(self):
         super().at_object_creation()
+        self.tags.add("npc corpse")
 
 
 class PC_Corpse(Container):
@@ -880,3 +881,4 @@ class PC_Corpse(Container):
         super().at_object_creation()
         self.db.gold = 0
         self.db.experience = 0
+        self.tags.add("pc corpse")
