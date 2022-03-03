@@ -1434,7 +1434,10 @@ class CmdGet(MuxCommand):
             if not success:
                 caller.msg("%s can't be picked up." % (obj.key[0].upper() + obj.key[1:]))
             else:
-                tickerhandler.remove(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
+                if "pc corpse" in obj.tags.all():
+                    tickerhandler.remove(settings.PC_CORPSE_DISINTEGRATE_TIME, obj.at_disintegrate)
+                else:
+                    tickerhandler.remove(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
                 caller.msg("You get %s from %s." % (obj.name, container.key))
                 caller.location.msg_contents(
                     "%s gets %s from %s." % (caller.name, obj.name, container.key), exclude=caller
