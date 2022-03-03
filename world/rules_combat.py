@@ -1,7 +1,9 @@
 import random
 import math
 from evennia import create_object
+from evennia import TICKER_HANDLER as tickerhandler
 from world import rules_race
+from server.conf import settings
 
 
 def do_attack(attacker, victim, eq_slot):
@@ -176,6 +178,8 @@ def do_death(attacker, victim):
                                                           % victim.key))
         corpse.db.desc = ("The corpse of %s lies here." % victim.key)
         corpse.location = attacker.location
+        # Set the corpse to disintegrate.
+        tickerhandler.add(settings.DEFAULT_DISINTEGRATE_TIME, corpse.at_disintegrate)
 
         # Move all victim items to corpse.
         for item in victim.contents:
@@ -228,6 +232,7 @@ def do_death(attacker, victim):
                                key=("the corpse of %s" % victim.key))
         corpse.db.desc = ("The corpse of %s lies here." % victim.key)
         corpse.location = attacker.location
+        tickerhandler.add(settings.PC_CORPSE_DISINTEGRATE_TIME, corpse.at_disintegrate)
 
         # Heroes keep their items.
 
@@ -235,7 +240,6 @@ def do_death(attacker, victim):
         victim.db.spell_affects = {}
 
         # Do xp penalty.
-        
         experience_loss = int(settings.EXPERIENCE_LOSS_DEATH * experience_cost_base(current_experience_step(character) + 1))
         victim.db.experience_total -= experience_loss
         
