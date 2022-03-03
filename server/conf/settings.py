@@ -59,6 +59,7 @@ EXPERIENCE_LOSS_FLEE_FAIL = 0.005
 
 # Times for item disintegration.
 DEFAULT_DISINTEGRATE_TIME = 900
+PC_CORPSE_DISINTEGRATE_TIME = 1800
 
 # Added to cleanup command parsing.
 COMMAND_DEFAULT_ARG_REGEX = r'^[ /]+.*$|$'
