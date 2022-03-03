@@ -191,6 +191,24 @@ class Item(Object):
         # This lock added to enable the use of nodrop items
 
         self.locks.add("drop: true()")
+        
+    def at_disintegrate(self):
+        if self.contents:
+            if len(self.contents) == 1:
+                number = "an item drops"
+            else:
+                number = "items drop"
+            self.location.msg_contents("As %s crumbles away to dust, %s to the floor."
+                                         % (self.name, number),
+                                         exclude=self)
+
+            for item in self.contents:
+                item.move_to(self.location, quiet=True)
+        else:
+            self.location.msg_contents("%s crumbles away to dust."
+                                         % (self.name[0].upper() + self.name[1:]), exclude=self)
+        
+        self.location = None
 
 class Equipment(Item):
 
