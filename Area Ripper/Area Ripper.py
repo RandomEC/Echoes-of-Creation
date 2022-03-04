@@ -43,6 +43,52 @@ def set_weapon_low_high(level):
     high = round(fuzz_number(fuzz_number(3*level/4 + 6)))
     return low, high
 
+def calculate_experience(mobile):
+    """
+    This function calculates the starting experience for a
+    mobile. It is does not perfectly correlate with the game,
+    but is close enough for the first of a zillion kills.
+    """
+    level_xp = mobile.level * mobile.level * mobile.level * 5
+    hp_xp = mobile.hitpoints_maximum
+    ac = int((mobile.level-1)*(-500)/100)
+    ac_xp = (ac - 50) * 2
+    damage_xp = ((3 * mobile.level / 4)) * 50
+    hitroll_xp = 0
+
+    experience = level_xp + hp_xp - ac_xp + damage_xp + hitroll_xp
+
+    if "sanctuary" in mobile.affected_flags:
+        experience *= 1.5
+
+    if "flameshield" in mobile.affected_flags:
+        experience *= 1.4
+ 
+    if mobile.special_function:
+        if ("breath_any" or "cast_psionicist" or "cast_undead" or
+                "breath_gas" or "cast_mage") in mobile.special_function:
+            experience *= 1.33
+
+        elif ("breath_fire" or "breath_frost" or "breath_acid" or
+                "breath_lightning" or "cast_cleric" or "cast_judge" or
+                "cast_ghost") in mobile.special_function:
+            experience *= 1.2
+
+        elif ("poison" or "thief") in mobile.special_function:
+            experience *= 1.05
+
+        elif "cast_adept" in mobile.special_function:
+            experience *= 0.5
+
+    # Finally, randomize slightly, and check for a floor of 50.
+    experience = int(random.uniform(0.9, 1.1) * experience)
+    if experience < 50:
+        experience = 50
+
+    mobile.experience = experience
+        
+    return experience
+
 with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.txt", "rt") as myfile:
 
     class Object:
@@ -76,6 +122,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.txt", "rt") as 
             self.act_flags = list()
             self.affected_flags = list()
             self.alignment = 0
+            self.hitpoints = 0
             self.level = 0
             self.sex = "neuter"
             self.race = ""
@@ -2368,6 +2415,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as ou
                                                      int(level/4),
                                                      (level*level)
                                                      )
+                object.hitpoints = hitpoints
                 output.write("set %s/hitpoints[maximum] = %d\n" % (
                                                                    index_reset_vnum,
                                                                    hitpoints
@@ -2376,6 +2424,24 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as ou
                 output.write("set %s/position = \"standing\"\n" % index_reset_vnum)
                 output.write("#\n")
 
+                # Calculating experience can't be complete at this time,
+                # because it doesn't have its weapons, if any. Everyone needs
+                # xp, though, not just those wielding, so we do it here, and
+                # recalculate whenever a weapon gets equipped to it.
+                
+                experience = calculate_experience(object)
+            
+                output.write("set %s/experience_total = %d\n" % (
+                                                                   index_reset_vnum,
+                                                                   experience
+                                                                   ))
+                output.write("#\n")
+                output.write("set %s/experience_current = %d\n" % (
+                                                                   index_reset_vnum,
+                                                                   experience
+                                                                   ))
+                output.write("#\n")
+                                
                 # Special functions and shopkeepers are both things not every
                 # mobile will have. So, check to make sure that they are on
                 # things before setting it.
@@ -2778,6 +2844,31 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as ou
                     if object.item_type == "weapon":
                         output.write("wieldto %s = %s\n" % (reset_vnum, index_reset_location))
                         output.write("#\n")
+                        
+                        # Also need to give experience a bump if the mobile is wielding
+                        # a weapon. First, get the mnum from the index_reset_location by
+                        # stripping off the -x.
+                        if "-" in index_reset_location:
+                            dash_index = index_reset_location.find("-")
+                            equipped_mnum = index_reset_location[:dash_index]
+                        else:
+                            equipped_mnum = index_reset_location
+                        
+                        # Pull experience and multiply by the equipped factor.
+                        experience = mobiles[equipped_mnum].experience * 1.25
+                        
+                        # Reset experience for the mobile.
+                        output.write("set %s/experience_total = %d\n" % (
+                                                                   index_reset_location,
+                                                                   experience
+                                                                   ))
+                        output.write("#\n")
+                        output.write("set %s/experience_current = %d\n" % (
+                                                                           index_reset_location,
+                                                                           experience
+                                                                           ))
+                        output.write("#\n")
+                        
                     else:
                         output.write("wearto %s = %s\n" % (reset_vnum, index_reset_location))
                         output.write("#\n")
