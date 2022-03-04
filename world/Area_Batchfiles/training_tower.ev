@@ -1166,8 +1166,6 @@ openexit up; u; e3601, down = r3756
 #
 tag e3601 = training tower, category = area names
 #
-tag e3601 = exit
-#
 desc up = You see the Top of the Tower.
 #
 objectlock up = "pick:false()"
@@ -1182,8 +1180,6 @@ openexit west; w; e3602, east = r3709
 #
 tag e3602 = training tower, category = area names
 #
-tag e3602 = exit
-#
 objectlock west = "pick:false()"
 #
 objectlock west = "bash:false()"
@@ -1193,8 +1189,6 @@ objectlock west = "pass:false()"
 openexit up; u; e3603, down = r3702
 #
 tag e3603 = training tower, category = area names
-#
-tag e3603 = exit
 #
 objectlock up = "pick:false()"
 #
@@ -1208,8 +1202,6 @@ openexit north; n; e3604, south = r3701
 #
 tag e3604 = training tower, category = area names
 #
-tag e3604 = exit
-#
 objectlock north = "pick:false()"
 #
 objectlock north = "bash:false()"
@@ -1221,8 +1213,6 @@ tel r3701
 openexit east; e; e3605, west = r3756
 #
 tag e3605 = training tower, category = area names
-#
-tag e3605 = exit
 #
 desc east = You see the Top of the Training Tower.
 #
@@ -1236,8 +1226,6 @@ openexit down; slide; d; e3606, up = r3722
 #
 tag e3606 = training tower, category = area names
 #
-tag e3606 = exit
-#
 desc down = The Practice Yard lies far below you.
 #
 tel r3702
@@ -1245,8 +1233,6 @@ tel r3702
 openexit west; w; e3607, east = r3704
 #
 tag e3607 = training tower, category = area names
-#
-tag e3607 = exit
 #
 desc west = You see a windowed room.
 #
@@ -1260,8 +1246,6 @@ alias down = d, e3608
 #
 tag e3608 = training tower, category = area names
 #
-tag e3608 = exit
-#
 objectlock down = "pick:false()"
 #
 objectlock down = "bash:false()"
@@ -1274,8 +1258,6 @@ alias east = e, e3609
 #
 tag e3609 = training tower, category = area names
 #
-tag e3609 = exit
-#
 desc east = You see the Equipment Room.
 #
 objectlock east = "pick:false()"
@@ -1287,8 +1269,6 @@ objectlock east = "pass:false()"
 openexit up; u; e3610, down = r3757
 #
 tag e3610 = training tower, category = area names
-#
-tag e3610 = exit
 #
 desc up = You see the Training Hall.
 #
@@ -1304,8 +1284,6 @@ openexit east; e; e3611, west = r3711
 #
 tag e3611 = training tower, category = area names
 #
-tag e3611 = exit
-#
 objectlock east = "pick:false()"
 #
 objectlock east = "bash:false()"
@@ -1315,8 +1293,6 @@ objectlock east = "pass:false()"
 openexit up; u; e3612, down = r3709
 #
 tag e3612 = training tower, category = area names
-#
-tag e3612 = exit
 #
 objectlock up = "pick:false()"
 #
@@ -1330,8 +1306,6 @@ alias east = e, e3613
 #
 tag e3613 = training tower, category = area names
 #
-tag e3613 = exit
-#
 objectlock east = "pick:false()"
 #
 objectlock east = "bash:false()"
@@ -1341,8 +1315,6 @@ objectlock east = "pass:false()"
 openexit west; w; e3614, east = r3710
 #
 tag e3614 = training tower, category = area names
-#
-tag e3614 = exit
 #
 desc west = You see the Golem's Lair. 
 #
@@ -1356,8 +1328,6 @@ alias down = d, e3615
 #
 tag e3615 = training tower, category = area names
 #
-tag e3615 = exit
-#
 objectlock down = "pick:false()"
 #
 objectlock down = "bash:false()"
@@ -1369,8 +1339,6 @@ tel r3710
 alias east = e, e3616
 #
 tag e3616 = training tower, category = area names
-#
-tag e3616 = exit
 #
 objectlock east = "pick:false()"
 #
@@ -1384,8 +1352,6 @@ alias west = w, e3617
 #
 tag e3617 = training tower, category = area names
 #
-tag e3617 = exit
-#
 objectlock west = "pick:false()"
 #
 objectlock west = "bash:false()"
@@ -1395,8 +1361,6 @@ objectlock west = "pass:false()"
 openexit down; d; e3618, up = r3712
 #
 tag e3618 = training tower, category = area names
-#
-tag e3618 = exit
 #
 desc down = You see the First Combat Area.
 #
@@ -1412,8 +1376,6 @@ openexit north; n; e3619, south = r3713
 #
 tag e3619 = training tower, category = area names
 #
-tag e3619 = exit
-#
 objectlock north = "pick:false()"
 #
 objectlock north = "bash:false()"
@@ -1423,8 +1385,6 @@ objectlock north = "pass:false()"
 openexit east; e; e3620, west = r3716
 #
 tag e3620 = training tower, category = area names
-#
-tag e3620 = exit
 #
 objectlock east = "pick:false()"
 #
@@ -1436,8 +1396,6 @@ openexit south; s; e3621, north = r3715
 #
 tag e3621 = training tower, category = area names
 #
-tag e3621 = exit
-#
 objectlock south = "pick:false()"
 #
 objectlock south = "bash:false()"
@@ -1448,8 +1406,6 @@ openexit west; w; e3622, east = r3714
 #
 tag e3622 = training tower, category = area names
 #
-tag e3622 = exit
-#
 objectlock west = "pick:false()"
 #
 objectlock west = "bash:false()"
@@ -1459,8 +1415,6 @@ objectlock west = "pass:false()"
 alias up = u, e3623
 #
 tag e3623 = training tower, category = area names
-#
-tag e3623 = exit
 #
 desc up = You see the First Combat Area.
 #
@@ -1473,8 +1427,6 @@ objectlock up = "pass:false()"
 openexit down; d; e3624, up = r3760
 #
 tag e3624 = training tower, category = area names
-#
-tag e3624 = exit
 #
 desc down = You see the Second Combat Area.
 #
@@ -1490,8 +1442,6 @@ alias south = s, e3625
 #
 tag e3625 = training tower, category = area names
 #
-tag e3625 = exit
-#
 desc south = You see the First Combat Area. 
 #
 objectlock south = "pick:false()"
@@ -1505,8 +1455,6 @@ tel r3714
 alias east = e, e3626
 #
 tag e3626 = training tower, category = area names
-#
-tag e3626 = exit
 #
 desc east = You see the First Combat Area. 
 #
@@ -1522,8 +1470,6 @@ alias north = n, e3627
 #
 tag e3627 = training tower, category = area names
 #
-tag e3627 = exit
-#
 desc north = You see the First Combat Area. 
 #
 objectlock north = "pick:false()"
@@ -1537,8 +1483,6 @@ tel r3716
 alias west = w, e3628
 #
 tag e3628 = training tower, category = area names
-#
-tag e3628 = exit
 #
 desc west = You see the First Combat Area. 
 #
@@ -1554,8 +1498,6 @@ openexit north; n; e3629, south = r3720
 #
 tag e3629 = training tower, category = area names
 #
-tag e3629 = exit
-#
 desc north = You see the Champion's Chamber.
 #
 objectlock north = "pick:false()"
@@ -1567,8 +1509,6 @@ objectlock north = "pass:false()"
 openexit south; s; e3630, north = r3718
 #
 tag e3630 = training tower, category = area names
-#
-tag e3630 = exit
 #
 desc south = You see the Training Tower's store.
 #
@@ -1582,8 +1522,6 @@ openexit up; u; e3631, down = r3760
 #
 tag e3631 = training tower, category = area names
 #
-tag e3631 = exit
-#
 objectlock up = "pick:false()"
 #
 objectlock up = "bash:false()"
@@ -1593,8 +1531,6 @@ objectlock up = "pass:false()"
 openexit down; d; e3632, up = r3758
 #
 tag e3632 = training tower, category = area names
-#
-tag e3632 = exit
 #
 set down/key = "o3714"
 #
@@ -1607,8 +1543,6 @@ tel r3718
 alias north = n, e3633
 #
 tag e3633 = training tower, category = area names
-#
-tag e3633 = exit
 #
 desc north = You see that you're Getting Near the End.
 #
@@ -1624,8 +1558,6 @@ alias south = s, e3634
 #
 tag e3634 = training tower, category = area names
 #
-tag e3634 = exit
-#
 desc south = You see that you're Getting near the End.
 #
 objectlock south = "pick:false()"
@@ -1640,15 +1572,11 @@ openexit north; gate; n; e3635, south = r3722
 #
 tag e3635 = training tower, category = area names
 #
-tag e3635 = exit
-#
 desc north = You see the Practice Yard. 
 #
 openexit east; e; e3636, west = r3758
 #
 tag e3636 = training tower, category = area names
-#
-tag e3636 = exit
 #
 desc east = You see a door back to the Practice Hall.
 #
@@ -1664,8 +1592,6 @@ openexit north; n; e3637, south = r3729
 #
 tag e3637 = training tower, category = area names
 #
-tag e3637 = exit
-#
 objectlock north = "pick:false()"
 #
 objectlock north = "bash:false()"
@@ -1676,8 +1602,6 @@ openexit east; e; e3638, west = r3725
 #
 tag e3638 = training tower, category = area names
 #
-tag e3638 = exit
-#
 objectlock east = "pick:false()"
 #
 objectlock east = "bash:false()"
@@ -1687,8 +1611,6 @@ objectlock east = "pass:false()"
 openexit west; w; e3639, east = r3723
 #
 tag e3639 = training tower, category = area names
-#
-tag e3639 = exit
 #
 objectlock west = "pick:false()"
 #
@@ -1702,8 +1624,6 @@ openexit north; n; e3640, south = r3728
 #
 tag e3640 = training tower, category = area names
 #
-tag e3640 = exit
-#
 objectlock north = "pick:false()"
 #
 objectlock north = "bash:false()"
@@ -1714,8 +1634,6 @@ alias east = e, e3641
 #
 tag e3641 = training tower, category = area names
 #
-tag e3641 = exit
-#
 objectlock east = "pick:false()"
 #
 objectlock east = "bash:false()"
@@ -1725,8 +1643,6 @@ objectlock east = "pass:false()"
 openexit west; w; e3642, east = r3724
 #
 tag e3642 = training tower, category = area names
-#
-tag e3642 = exit
 #
 objectlock west = "pick:false()"
 #
@@ -1740,8 +1656,6 @@ openexit north; n; e3643, south = r3727
 #
 tag e3643 = training tower, category = area names
 #
-tag e3643 = exit
-#
 objectlock north = "pick:false()"
 #
 objectlock north = "bash:false()"
@@ -1751,8 +1665,6 @@ objectlock north = "pass:false()"
 alias east = e, e3644
 #
 tag e3644 = training tower, category = area names
-#
-tag e3644 = exit
 #
 objectlock east = "pick:false()"
 #
