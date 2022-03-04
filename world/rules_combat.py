@@ -1,8 +1,9 @@
-import random
 import math
+import random
+import evennia
 from evennia import create_object
 from evennia import TICKER_HANDLER as tickerhandler
-from world import rules_race
+from world import rules_race, rules
 from server.conf import settings
 
 
@@ -76,11 +77,17 @@ def do_attack(attacker, victim, eq_slot):
                           )
                        )
 
-        if "player" in attacker.tags.all() and experience_modified > 0:
-            attacker_string += \
-                ("You gain %d experience points from your attack.\n"
-                 % experience_modified
-                 )
+        if "player" in attacker.tags.all():
+            if experience_modified > 0:
+                attacker_string += \
+                    ("You gain %d experience points from your attack.\n"
+                     % experience_modified
+                     )
+            if damage > attacker.db.damage_maximum:
+                attacker.db.damage_maximum = damage
+                attacker.db.damage_maximum_mobile = victim.key
+                attacker_string += ("Your %s for %d damage is your record for damage in one hit!!!\n"
+                                    % (damage_type, damage))
     else:
         attacker_string = ("You miss %s with your %s.\n" % (victim.key,
                                                             damage_type
@@ -103,8 +110,8 @@ def do_damage(attacker, victim, eq_slot):
     """
 
     if "mobile" in attacker.tags.all():
-        damage_low = ciel(attacker.db.level * 3 / 4)
-        damage_high = ciel(attacker.db.level * 3 / 2)
+        damage_low = math.ceil(attacker.db.level * 3 / 4)
+        damage_high = math.ceil(attacker.db.level * 3 / 2)
 
         # Damage is a random number between high damage and low damage.
         damage = random.randint(damage_low, damage_high)
@@ -173,9 +180,21 @@ def do_death(attacker, victim):
 
     if "mobile" in victim.tags.all():
 
-        # Create corpse.
-        corpse = create_object("objects.NPC_Corpse", key=("corpse of %s"
-                                                          % victim.key))
+        # Check none to see if there is a handy corpse, already made.
+
+        object_candidates = evennia.search_tag("npc corpse")
+
+        for object in object_candidates:
+            if not object.location:
+                corpse = object
+                corpse.key = "corpse of %s" % victim.key
+
+        if not corpse:
+
+            # Create corpse.
+            corpse = create_object("objects.NPC_Corpse", key=("the corpse of %s"
+                                                              % victim.key))
+
         corpse.db.desc = ("The corpse of %s lies here." % victim.key)
         corpse.location = attacker.location
         # Set the corpse to disintegrate.
@@ -202,6 +221,17 @@ def do_death(attacker, victim):
             attacker.db.experience_total += experience_modified
             attacker_string += ("You receive %s experience as a result of "
                                 "your kill!\n" % experience_modified)
+        # Check if experience was more than previous best kill.
+        if victim.db.experience_total > attacker.db.kill_experience_maximum:
+            attacker.db.kill_experience_maximum = victim.db.experience_total
+            attacker.db.kill_experience_maximum_mobile = victim.key
+            attacker_string += ("That kill is your new record for most "
+                                "experience obtained for a kill!\n"
+                                "You received a total of %d experience "
+                                "from %s.\n" % (victim.db.experience_total, victim.key))
+
+        # Increment kills.
+        attacker.db.kills += 1
 
         # Update alignment.
         if "player" in attacker.tags.all():
@@ -227,12 +257,26 @@ def do_death(attacker, victim):
         # kill!" % victim.)
 
     else:
-        # Create corpse.
-        corpse = create_object("objects.PC_Corpse",
-                               key=("the corpse of %s" % victim.key))
+
+        object_candidates = evennia.search_tag("pc corpse")
+
+        for object in object_candidates:
+            if not object.location:
+                corpse = object
+                corpse.key = "corpse of %s" % victim.key
+
+        if not corpse:
+
+            # Create corpse.
+            corpse = create_object("objects.PC_Corpse", key=("the corpse of %s"
+                                                              % victim.key))
+
         corpse.db.desc = ("The corpse of %s lies here." % victim.key)
         corpse.location = attacker.location
         tickerhandler.add(settings.PC_CORPSE_DISINTEGRATE_TIME, corpse.at_disintegrate)
+
+        # Increment hero deaths.
+        victim.db.died += 1
 
         # Heroes keep their items.
 
@@ -240,7 +284,7 @@ def do_death(attacker, victim):
         victim.db.spell_affects = {}
 
         # Do xp penalty.
-        experience_loss = int(settings.EXPERIENCE_LOSS_DEATH * experience_cost_base(current_experience_step(character) + 1))
+        experience_loss = int(settings.EXPERIENCE_LOSS_DEATH * rules.experience_cost_base(rules.current_experience_step(character) + 1))
         victim.db.experience_total -= experience_loss
         
         victim_string += ("You lose %s experience as a result of your death!" % experience_loss)
@@ -279,6 +323,9 @@ def do_flee(character):
                 break
 
         if success:
+            if "mobile" in character.tags.all():
+                if random.randint(1,2) == 2:
+                    success = False
             break
 
     if success:
@@ -286,7 +333,7 @@ def do_flee(character):
         combat = character.ndb.combat_handler
         combat.remove_combatant(character)
 
-        experience_loss = int(settings.EXPERIENCE_LOSS_FLEE * experience_cost_base(current_experience_step(character) + 1))
+        experience_loss = int(settings.EXPERIENCE_LOSS_FLEE * rules.experience_cost_base(rules.current_experience_step(character) + 1))
         
         character.db.experience_total -= experience_loss
 
@@ -299,7 +346,7 @@ def do_flee(character):
         combat.combat_end_check()
 
     else:
-        experience_loss = int(settings.EXPERIENCE_LOSS_FLEE_FAIL * experience_cost_base(current_experience_step(character) + 1))
+        experience_loss = int(settings.EXPERIENCE_LOSS_FLEE_FAIL * rules.experience_cost_base(rules.current_experience_step(character) + 1))
         character.db.experience_total -= experience_loss
         
         character.msg("You fail to flee from combat!\nYou lose %d experience for the attempt." % experience_loss)

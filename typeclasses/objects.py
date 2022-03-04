@@ -11,7 +11,8 @@ inheritance.
 
 """
 from evennia import DefaultObject
-
+from evennia import TICKER_HANDLER as tickerhandler
+from server.conf import settings
 
 class Object(DefaultObject):
     """
@@ -209,7 +210,12 @@ class Item(Object):
         else:
             self.location.msg_contents("%s crumbles away to dust."
                                          % (self.name[0].upper() + self.name[1:]), exclude=self)
-        
+
+        if "pc corpse" in self.tags.all():
+            tickerhandler.remove(settings.PC_CORPSE_DISINTEGRATE_TIME, self.at_disintegrate)
+        else:
+            tickerhandler.remove(settings.DEFAULT_DISINTEGRATE_TIME, self.at_disintegrate)
+
         self.location = None
 
 class Equipment(Item):

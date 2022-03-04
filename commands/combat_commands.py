@@ -51,6 +51,9 @@ class Combat(Object):
             if target.hitpoints_current <= 0:
                 return False
 
+        if combatant.location != target.location:
+            return False
+
         return True
 
     def combat_end_check(self):
@@ -92,18 +95,18 @@ class Combat(Object):
         for combatant in self.db.combatants:
 
             # First, check to see if the combatant is below their wimpy.
-            if ("player" in combatant.tags.all() and
+            if combatant.hitpoints_current > 0 and (("player" in combatant.tags.all() and
                 combatant.hitpoints_current <= combatant.db.wimpy) or \
                     ("mobile" in combatant.tags.all() and
                      "wimpy" in combatant.db.act_flags and
                      combatant.hitpoints_current <= (0.15 * combatant.hitpoints_maximum
-                     )):
+                     ))):
                 
                 # Make a free attempt to flee.
                 rules_combat.do_flee(combatant)
             
-            # Make sure this combatant and target are alive.
-            if self.allow_attacks(combatant, self.db.combatants[combatant]["target"]):
+            # Make sure this combatant and target are alive and both still in the same room.
+            if combatant.location == self.location and self.allow_attacks(combatant, self.db.combatants[combatant]["target"]):
                 attacker = self.db.combatants[combatant]["combatant"]
                 victim = self.db.combatants[combatant]["target"]
 
@@ -120,32 +123,35 @@ class Combat(Object):
                         self.db.combatants[combatant]["combat message"] += room_string
 
         # Generate output for everyone for the above round. Anyone that died this round is still in
-        # self.db.combatants at this point.
-        for combatant in self.db.combatants:
-            if "player" in combatant.tags.all():
-                combat_message = self.db.combatants[combatant]["combat message"]
-                target = self.db.combatants[combatant]["target"]
-
-                # If the player and their target are still alive, tell them the status of their target.
-                if combatant.hitpoints_current > 0 and target.hitpoints_current > 0:
-                    combat_message += ("%s %s\n" % ((target.key[0].upper() + target.key[1:]), rules_combat.get_health_string(target)))
-                combatant.msg(combat_message)
-
-            # Check to see if the combatant is dead.
-            if combatant.hitpoints_current <= 0:
-
-                # Remove dead combatants from combat.
-                self.remove_combatant(combatant)
+        # self.db.combatants at this point. Make sure a flee didn't cause the destruction of the
+        # combat with self check.
+        if self.db.combatants:
+            for combatant in self.db.combatants:
                 if "player" in combatant.tags.all():
+                    combat_message = self.db.combatants[combatant]["combat message"]
+                    target = self.db.combatants[combatant]["target"]
 
-                    # Reset dead players to one hitpoint, and move to home. Mobile hitpoints will get reset by reset
-                    # function.
-                    combatant.db.hitpoints["damaged"] = (combatant.hitpoints_maximum - 1)
-                    combatant.move_to(combatant.home, quiet=True)
+                    # If the player and their target are still alive, tell them the status of their target.
+                    if combatant.hitpoints_current > 0 and target.hitpoints_current > 0:
+                        combat_message += ("%s %s\n" % ((target.key[0].upper() + target.key[1:]), rules_combat.get_health_string(target)))
+                    combatant.msg(combat_message)
+
+                # Check to see if the combatant is dead.
+                if combatant.hitpoints_current <= 0:
+
+                    # Remove dead combatants from combat.
+                    self.remove_combatant(combatant)
+                    if "player" in combatant.tags.all():
+
+                        # Reset dead players to one hitpoint, and move to home. Mobile hitpoints will get reset by reset
+                        # function.
+                        combatant.db.hitpoints["damaged"] = (combatant.hitpoints_maximum - 1)
+                        combatant.move_to(combatant.home, quiet=True)
+
+        self.db.rounds += 1
 
         self.combat_end_check()
 
-        self.db.rounds += 1
 
     def clear_messages(self):
         for combatant in self.db.combatants:

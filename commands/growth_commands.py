@@ -62,3 +62,13 @@ class CmdTrain(MuxCommand):
                           needed_for_moves,
                           needed_for_attribute
                           ))
+        elif self.args == "level":
+
+            needed_to_level = (rules.level_cost(caller.db.level + 1) - caller.experience_available)
+
+            if needed_to_level <= 0:
+                caller.db.experience_spent += rules.level_cost(caller.db.level + 1)
+                caller.db.level += 1
+                caller.msg("Congratulations! You have reached level %d!!!!" % caller.db.level)
+            else:
+                caller.msg("You are %d experience short of level %d." % (needed_to_level, (caller.db.level + 1)))
