@@ -643,7 +643,8 @@ class CmdDrop(MuxCommand):
         if not success:
             caller.msg("This couldn't be dropped.")
         else:
-            tickerhandler.add(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
+            if caller.db.level < 103:
+                tickerhandler.add(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
             caller.msg("You drop %s." % (obj.name,))
             caller.location.msg_contents("%s drops %s."
                                          % (caller.name, obj.name),
