@@ -1332,7 +1332,7 @@ desc north = Gargamel's Castle
 #
 set north/key = "o6209"
 #
-alias south = s, e6265
+alias south = s^ e6265
 #
 tag e6265 = smurf village:area names
 #
