@@ -1670,7 +1670,7 @@ tag o6211 = smurf village:area name
 #
 set o6211/extra_descriptions = {'piece paper soggy': " It's hard to make out much of what was once written here, since the ink has run all over. You can only discern a few phrases.", 'phrase phrases': '"... Papa\'s magic box...his back room ...the Trophy..."'}
 #
-put o6211 = o6208
+put o6211 in o6208
 #
 set r6209/reset_objects["o6211"] = {"location":"o6208"}
 #
@@ -2636,6 +2636,8 @@ set o6206/charges_current = 1
 #
 set o6206/spell_name = "burning hands"
 #
+wearto o6206 = m6211
+#
 set m6211/reset_objects["o6206"] = {"location":"equipped"}
 #
 tel r6228
@@ -2872,7 +2874,7 @@ set o6219/stat_modifiers[saving throw] = -3
 #
 set o6219/armor = 2
 #
-put o6219 = o6218
+put o6219 in o6218
 #
 set r6231/reset_objects["o6219"] = {"location":"o6218"}
 #

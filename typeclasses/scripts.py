@@ -108,7 +108,16 @@ class ResetScript(DefaultScript):
         # Maybe make a command to add an area to this list.
 
         self.db.area_list = {
-            "immortal rooms": 0
+            "smurf village": 0,
+            "graveyard": 0,
+            "haon dor": 0,
+            "dwarven daycare": 0,
+            "training tower": 0,
+            "the circus": 0,
+            "the library": 0,
+            "edens grove": 0,
+            "crystalmir lake": 0,
+            "the rats' lair": 0
         }
 
 
@@ -159,4 +168,8 @@ class UpdateTimerScript(DefaultScript):
         mobiles = evennia.search_tag("mobile")
 
         for mobile in mobiles:
-            tickerhandler.add(30, mobile.at_update)
+            if "training tower" in mobile.tags.all() or \
+                    "dwarven daycare" in mobile.tags.all() or \
+                    "smurf village" in mobile.tags.all() or \
+                    "edens grove" in mobile.tags.all():
+                tickerhandler.add(30, mobile.at_update)
