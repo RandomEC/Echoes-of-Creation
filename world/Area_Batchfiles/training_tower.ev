@@ -18,31 +18,31 @@ set r3765/extra_description = {'mirror mirrors': 'You see yourself, again and ag
 #
 set r3765/room_flags = ['indoors']
 #
-dig/tel The Banquet Hall; r3600
+dig/tel The Banquet Hall; r3766
 #
-tag r3600 = training tower:area names
+tag r3766 = training tower:area names
 #
-desc r3600 = A huge feast is laid out on a giant mahogany table, big enough to land a dragon on.  Not that the room itself is big enough to fit a dragon into. Somehow, the space around the table seems to distort and warp such that it fits into a tiny room relative to its insane size. 
+desc r3766 = A huge feast is laid out on a giant mahogany table, big enough to land a dragon on.  Not that the room itself is big enough to fit a dragon into. Somehow, the space around the table seems to distort and warp such that it fits into a tiny room relative to its insane size. 
 #
-desc/edit r3600
+desc/edit r3766
 #
 :j l
 #
 :wq
 #
-set r3600/terrain = "inside"
+set r3766/terrain = "inside"
 #
-set r3600/vnum = "r3600"
+set r3766/vnum = "r3766"
 #
-set r3600/extra_description = {'table': 'Food.  Food.  Wine.  Food.  More food.  More different food.  Beer. Polka dots?? '}
+set r3766/extra_description = {'table': 'Food.  Food.  Wine.  Food.  More food.  More different food.  Beer. Polka dots?? '}
 #
-set r3600/room_flags = ['indoors']
+set r3766/room_flags = ['indoors']
 #
 dig/tel At the Portal; r3700
 #
 tag r3700 = training tower:area names
 #
-desc r3700 = You are standing in an alcove, which seems somehow disconnected from the everyday world you are used to.  An aura of adventure and enchantment pervades the room.  There is a parchment here.  |GINSPECT PARCHMENT|W.  When you are finished, type |GPORTAL|W to begin your life at the Echoes of Creation. |W 
+desc r3700 = You are standing in an alcove, which seems somehow disconnected from the everyday world you are used to.  An aura of adventure and enchantment pervades the room.  There is a parchment here.  |gINSPECT PARCHMENT|n.  When you are finished, type |gPORTAL|n to begin your life at the Echoes of Creation. |n 
 #
 desc/edit r3700
 #
@@ -54,7 +54,7 @@ set r3700/terrain = "inside"
 #
 set r37/vnum = "r37"
 #
-set r3700/extra_description = {'parchment': "Welcome to Echoes of Creation!  Echoes of Creation is put together a bit differently from most mudworlds. Type |GHELP|W for an informational menu, or |GHELP FEATURES|W for a preview of some of the things you'll find here. |GSCORE|W, |GAFFECTS|W, |GEQUIPMENT|W, and |GINVENTORY|W (|GSC|W, |GAFF|W, |GEQ|W, |GI|W will suffice) will tell you about yourself.  |GLOOK|W will give you another look at the room.  To begin your adventure, type |GPORTAL|W. "}
+set r3700/extra_description = {'parchment': "Welcome to Echoes of Creation!  Echoes of Creation is put together a bit differently from most mudworlds. Type |gHELP|n for an informational menu, or |gHELP FEATURES|n for a preview of some of the things you'll find here. |gSCORE|n, |gAFFECTS|n, |gEQUIPMENT|n, and |gINVENTORY|n (|gSC|n, |gAFF|n, |gEQ|n, |gI|n will suffice) will tell you about yourself.  |gLOOK|n will give you another look at the room.  To begin your adventure, type |gPORTAL|n. "}
 #
 set r3700/room_flags = ['no astral out', 'no recall', 'safe', 'indoors', 'no mob']
 #
@@ -62,7 +62,7 @@ dig/tel Tower Portal; r3701
 #
 tag r3701 = training tower:area names
 #
-desc r3701 = You have stepped through a portal from the mundane world into the top of the Training Tower of Eden's Grove.  Memories of your "other" life rapidly slip away, and you sense that both adventure and glory await you in this strange and wondrous place.  There is a scroll mounted on the wall before you.  You can |GINSPECT SCROLL|W to see what it says. You can see what looks like an enormously long slide here, spiraling around what appears to be the entirety of the Tower! Maybe you'd better read the scroll before taking it!|W 
+desc r3701 = You have stepped through a portal from the mundane world into the top of the Training Tower of Eden's Grove.  Memories of your "other" life rapidly slip away, and you sense that both adventure and glory await you in this strange and wondrous place.  There is a scroll mounted on the wall before you.  You can |gINSPECT SCROLL|n to see what it says. You can see what looks like an enormously long slide here, spiraling around what appears to be the entirety of the Tower! Maybe you'd better read the scroll before taking it!|n 
 #
 desc/edit r3701
 #
@@ -74,7 +74,7 @@ set r3701/terrain = "inside"
 #
 set r3701/vnum = "r3701"
 #
-set r3701/extra_description = {'scroll': "To move around in the world, simply type |GNORTH|W, |GWEST|W, |GEAST|W, |GSOUTH|W, |GUP|W or |GDOWN|W. Abbreviations may also be used - |GN|W, |GW|W, |GE|W, |GS|W, |GU|W, |GD|W.  If there is a door present, you may have to |GOPEN|W the door before you can proceed. Some doors might be locked, in which case you will need the correct key with which to |GUNLOCK|W them. (|GUNLOCK direction|W and |GOPEN direction|W, such as |GUNLOCK SOUTH|W, allow you to be specific.) If you have been here before and wish to go directly to the Practice Yard, type |GSLIDE|W. But if you're new, GO |GEAST|W, YOUNG ONE, GO |GEAST|W!!!!! "}
+set r3701/extra_description = {'scroll': "To move around in the world, simply type |gNORTH|n, |gWEST|n, |gEAST|n, |gSOUTH|n, |gUP|n or |gDOWN|n. Abbreviations may also be used - |gN|n, |gW|n, |gE|n, |gS|n, |gU|n, |gD|n.  If there is a door present, you may have to |gOPEN|n the door before you can proceed. Some doors might be locked, in which case you will need the correct key with which to |gUNLOCK|n them. (|gUNLOCK direction|n and |gOPEN direction|n, such as |gUNLOCK SOUTH|n, allow you to be specific.) If you have been here before and wish to go directly to the Practice Yard, type |gSLIDE|n. But if you're new, GO |gEAST|n, YOUNG ONE, GO |gEAST|n!!!!! "}
 #
 set r3701/room_flags = ['special', 'indoors', 'no mob']
 #
@@ -82,7 +82,7 @@ dig/tel The Equipment Room; r3702
 #
 tag r3702 = training tower:area names
 #
-desc r3702 = Armor, weapons, lights, rings, trailpacks, boots, and frilly undergarments are all locked away in display cases.  There is a scroll hanging on the wall, and a commemorative plaque on one of the cases.  An archway leads back to the east, and a stairway will take you downstairs for combat training. Make sure you |GREAD SCROLL|W before continuing.|W 
+desc r3702 = Armor, weapons, lights, rings, trailpacks, boots, and frilly undergarments are all locked away in display cases.  There is a scroll hanging on the wall, and a commemorative plaque on one of the cases.  An archway leads back to the east, and a stairway will take you downstairs for combat training. Make sure you |gREAD SCROLL|n before continuing.|n 
 #
 desc/edit r3702
 #
@@ -94,7 +94,7 @@ set r3702/terrain = "inside"
 #
 set r3702/vnum = "r3702"
 #
-set r3702/extra_description = {'scroll': 'To pick up items on the ground as you see them, type |GGET item|W. To wear a piece of armor, type |GWEAR item|W. To hold a light source, type |GHOLD item|W. To wield a weapon, type |GWIELD weapon|W. To wear, hold, and wield everything you have, type |GWEAR ALL|W. To stop using a piece of equipment, type |GREMOVE item|W. Finally, to see the items in your inventory, type |GINVENTORY|W. If you have an item you do not want, simply type |GDROP item|W.  Keep in mind that someone may come by and get the item, however. You may get rid of unwanted items by donating them for others to use. To do this, type |GDONATE item|W. ', 'plaque': "This area was originally written for Castle Arcanum by Violet and Gomez with input and encouragement from Bram. Based on Hatchet's Mud School. It has been adapted for use with Echoes of Creation by Random. "}
+set r3702/extra_description = {'scroll': 'To pick up items on the ground as you see them, type |gGET item|n. To wear a piece of armor, type |gWEAR item|n. To hold a light source, type |gHOLD item|n. To wield a weapon, type |gWIELD weapon|n. To wear, hold, and wield everything you have, type |gWEAR ALL|n. To stop using a piece of equipment, type |gREMOVE item|n. Finally, to see the items in your inventory, type |gINVENTORY|n. If you have an item you do not want, simply type |gDROP item|n.  Keep in mind that someone may come by and get the item, however. You may get rid of unwanted items by donating them for others to use. To do this, type |gDONATE item|n. ', 'plaque': "This area was originally written for Castle Arcanum by Violet and Gomez with input and encouragement from Bram. Based on Hatchet's Mud School. It has been adapted for use with Echoes of Creation by Random. "}
 #
 set r3702/room_flags = ['indoors']
 #
@@ -138,7 +138,7 @@ dig/tel Combat Preparation Room; r3709
 #
 tag r3709 = training tower:area names
 #
-desc r3709 = Tapestries depicting the battles of successful previous students cover the walls, each illuminated by its own magical light source and seeming to vibrate with life.  Of course there is a scroll on the wall. Make sure you |GREAD SCROLL|W before moving on.|W 
+desc r3709 = Tapestries depicting the battles of successful previous students cover the walls, each illuminated by its own magical light source and seeming to vibrate with life.  Of course there is a scroll on the wall. Make sure you |gREAD SCROLL|n before moving on.|n 
 #
 desc/edit r3709
 #
@@ -150,7 +150,7 @@ set r3709/terrain = "inside"
 #
 set r3709/vnum = "r3709"
 #
-set r3709/extra_description = {'tapestries tapestry': "You see a tapestry depicting the heroic deeds of Eden's Groves's first hero, Tal. ", 'scroll': "The first lesson is knowing whom to fight. Use the command |GCONSIDER|W to see how you match up with an opponent. Avoid fighting monsters that will kill you easily. To consider a mob, type |GCON mob|W The second lesson is running away. There is a golem in the room |GWEST|W of here. It is too strong for you to kill, but it won't kill you immediately.  So go |GWEST|W from here, then |GCONSIDER GOLEM|W, then |GKILL GOLEM|W.  After a while, type |GFLEE|W to escape. You can also set your character to flee automatically with the |GWIMPY|W command. Type |GHELP WIMPY|W to find out more about |GWIMPY|W.  Typing |GWIMPY|W by itself will automatically set your wimpy to 20% of your current hit points. You may want to try this right now. After you flee, you will be back in this room.  When you are ready to continue your training, go |GDOWN|W. "}
+set r3709/extra_description = {'tapestries tapestry': "You see a tapestry depicting the heroic deeds of Eden's Groves's first hero, Tal. ", 'scroll': "The first lesson is knowing whom to fight. Use the command |gCONSIDER|n to see how you match up with an opponent. Avoid fighting monsters that will kill you easily. To consider a mob, type |gCON mob|n The second lesson is running away. There is a golem in the room |gWEST|n of here. It is too strong for you to kill, but it won't kill you immediately.  So go |gWEST|n from here, then |gCONSIDER GOLEM|n, then |gKILL GOLEM|n.  After a while, type |gFLEE|n to escape. You can also set your character to flee automatically with the |gWIMPY|n command. Type |gHELP WIMPY|n to find out more about |gWIMPY|n.  Typing |gWIMPY|n by itself will automatically set your wimpy to 20% of your current hit points. You may want to try this right now. After you flee, you will be back in this room.  When you are ready to continue your training, go |gDOWN|n. "}
 #
 set r3709/room_flags = ['indoors', 'no mob']
 #
@@ -158,7 +158,7 @@ dig/tel The Golem's Lair; r3710
 #
 tag r3710 = training tower:area names
 #
-desc r3710 = You are in a small room which restrains its occupant through the use of magic, with no need for bars or chains.  Somehow you sense that when you flee from the golem it will not be able to pursue you.  Bits of straw and the remnants of the creature's last meal are scattered on the floor.  You see a parchment here that you can |GREAD PARCHMENT.  |WThe only exit is |GEAST.|W 
+desc r3710 = You are in a small room which restrains its occupant through the use of magic, with no need for bars or chains.  Somehow you sense that when you flee from the golem it will not be able to pursue you.  Bits of straw and the remnants of the creature's last meal are scattered on the floor.  You see a parchment here that you can |gREAD PARCHMENT.  |nThe only exit is |gEAST.|n 
 #
 desc/edit r3710
 #
@@ -170,7 +170,7 @@ set r3710/terrain = "inside"
 #
 set r3710/vnum = "r3710"
 #
-set r3710/extra_description = {'parchment': "Remember, don't fight the golem to the finish!  Just type |GKILL GOLEM|W, then when you are fighting, type |GFLEE|W, until you are successful in getting out of here. "}
+set r3710/extra_description = {'parchment': "Remember, don't fight the golem to the finish!  Just type |gKILL GOLEM|n, then when you are fighting, type |gFLEE|n, until you are successful in getting out of here. "}
 #
 set r3710/room_flags = ['indoors', 'no mob']
 #
@@ -190,7 +190,7 @@ set r3711/terrain = "inside"
 #
 set r3711/vnum = "r3711"
 #
-set r3711/extra_description = {'parchment': 'The room downstairs is safe, but potential opponents lurk to all sides. |GKILL|W them all (except, of course, the friendly healer), since each holds equipment you need. '}
+set r3711/extra_description = {'parchment': 'The room downstairs is safe, but potential opponents lurk to all sides. |gKILL|n them all (except, of course, the friendly healer), since each holds equipment you need. '}
 #
 set r3711/room_flags = ['indoors', 'no mob']
 #
@@ -198,7 +198,7 @@ dig/tel The First Combat Area; r3712
 #
 tag r3712 = training tower:area names
 #
-desc r3712 = There are small rooms all around you. But here, there are soft, inviting cots for you to sleep on between battles if you have been injured. There is a large and important-looking scroll on the wall, and also a parchment. Downstairs is the Second Combat Area, waiting for you if this one is littered with corpses. Make sure you |GREAD SCROLL|W and |GREAD PARCHMENT|W.|W 
+desc r3712 = There are small rooms all around you. But here, there are soft, inviting cots for you to sleep on between battles if you have been injured. There is a large and important-looking scroll on the wall, and also a parchment. Downstairs is the Second Combat Area, waiting for you if this one is littered with corpses. Make sure you |gREAD SCROLL|n and |gREAD PARCHMENT|n.|n 
 #
 desc/edit r3712
 #
@@ -210,7 +210,7 @@ set r3712/terrain = "inside"
 #
 set r3712/vnum = "r3712"
 #
-set r3712/extra_description = {'parchment': "This is your first test!  In the four rooms are four monsters of various types.  |GKILL|W them all! After you |GKILL|W each monster, |GGET|W all of the equipment from its corpse with the command |GGET ALL CORPSE|W. In the future, some items that you find may be cursed, and not able to be dropped without removing the curse, so you may want to be careful about getting all items from a corpse. Here in the tower you should be safe, however. You can then use the command |GWEAR ALL|W to wear your newly-won equipment, but the same is true for the future with wearing cursed equipment. When you are done looting a corpse, |GSACRIFICE CORPSE|W. The gods might reward you for this. Or they may not, they're fickle. Between battles, you may want to rest or sleep to regenerate hit points. |GSLEEP|W will refresh you faster than |GREST|W, but you will be less aware of your surroundings. ", 'scroll': 'In case the worst comes to pass, please read |GHELP DEATH|W... R_I_G_H_T  N_O_W! '}
+set r3712/extra_description = {'parchment': "This is your first test!  In the four rooms are four monsters of various types.  |gKILL|n them all! After you |gKILL|n each monster, |gGET|n all of the equipment from its corpse with the command |gGET ALL CORPSE|n. In the future, some items that you find may be cursed, and not able to be dropped without removing the curse, so you may want to be careful about getting all items from a corpse. Here in the tower you should be safe, however. You can then use the command |gWEAR ALL|n to wear your newly-won equipment, but the same is true for the future with wearing cursed equipment. When you are done looting a corpse, |gSACRIFICE CORPSE|n. The gods might reward you for this. Or they may not, they're fickle. Between battles, you may want to rest or sleep to regenerate hit points. |gSLEEP|n will refresh you faster than |gREST|n, but you will be less aware of your surroundings. ", 'scroll': 'In case the worst comes to pass, please read |gHELP DEATH|n... R_I_G_H_T  N_O_W! '}
 #
 set r3712/room_flags = ['indoors']
 #
@@ -298,7 +298,7 @@ dig/tel Getting Near the End; r3717
 #
 tag r3717 = training tower:area names
 #
-desc r3717 = This room is clean, but spartan. A magical light source glows here and to the south, but seems to stop at the archway to the north, beyond which your penultimate challenge awaits you.  There is a scroll on the wall. Remember to |GREAD SCROLL|W.|W 
+desc r3717 = This room is clean, but spartan. A magical light source glows here and to the south, but seems to stop at the archway to the north, beyond which your penultimate challenge awaits you.  There is a scroll on the wall. Remember to |gREAD SCROLL|n.|n 
 #
 desc/edit r3717
 #
@@ -310,7 +310,7 @@ set r3717/terrain = "inside"
 #
 set r3717/vnum = "r3717"
 #
-set r3717/extra_description = {'scroll': "In order to continue your training, you must pass a test.  To the north is a warrior with a key that you need.  After you have killed him, you may return here, |GUNLOCK DOWN|W, |GOPEN DOWN|W, and continue |GDOWN|W. Don't miss the store to the south before going down. "}
+set r3717/extra_description = {'scroll': "In order to continue your training, you must pass a test.  To the north is a warrior with a key that you need.  After you have killed him, you may return here, |gUNLOCK DOWN|n, |gOPEN DOWN|n, and continue |gDOWN|n. Don't miss the store to the south before going down. "}
 #
 set r3717/room_flags = ['indoors', 'no mob']
 #
@@ -368,7 +368,7 @@ set r3721/terrain = "inside"
 #
 set r3721/vnum = "r3721"
 #
-set r3721/extra_description = {'parchment': "You have completed your training!  |GKILL|W the knight to get your certificate. (It's magical! |GHOLD CERTIFICATE|W and type |GSCORE|W to see how it increases some of your attributes while held.) Then go |GNORTH|W from here to visit the Practice Yard.  You'll find plenty of low-level monsters, but you'll find that you cannot attack other players. If you want to go directly to the Town Square at any time, type |GHOME|W. If you need more help during the game, type |GHELP|W. May your visit here be a pleasant one!. "}
+set r3721/extra_description = {'parchment': "You have completed your training!  |gKILL|n the knight to get your certificate. (It's magical! |gHOLD CERTIFICATE|n and type |gSCORE|n to see how it increases some of your attributes while held.) Then go |gNORTH|n from here to visit the Practice Yard.  You'll find plenty of low-level monsters, but you'll find that you cannot attack other players. If you want to go directly to the Town Square at any time, type |gHOME|n. If you need more help during the game, type |gHELP|n. May your visit here be a pleasant one!. "}
 #
 set r3721/room_flags = ['indoors']
 #
@@ -992,7 +992,7 @@ dig/tel Top of the Tower; r3756
 #
 tag r3756 = training tower:area names
 #
-desc r3756 = You are standing at the very top of the Training Tower, which was built to acclimate new visitors to being Seekers, the daring individuals that explore the portals newly forming in this realm.  This room is rather plain and bare. The walls are gray stone.  There are no windows, but the room seems to glow with a magical light that is adequate for you to see by.  Make sure you |GREAD SCROLL|W before moving |GDOWN|W through the training tower. |W 
+desc r3756 = You are standing at the very top of the Training Tower, which was built to acclimate new visitors to being Seekers, the daring individuals that explore the portals newly forming in this realm.  This room is rather plain and bare. The walls are gray stone.  There are no windows, but the room seems to glow with a magical light that is adequate for you to see by.  Make sure you |gREAD SCROLL|n before moving |gDOWN|n through the training tower. |n 
 #
 desc/edit r3756
 #
@@ -1004,7 +1004,7 @@ set r3756/terrain = "inside"
 #
 set r3756/vnum = "r3756"
 #
-set r3756/extra_description = {'scroll': 'You can talk to others in the same room by typing |GSAY <message>|W. Typing |GCHAT <message>|W will send the message to everyone in the game. If you have problems and cannot figure out what to do, type |GCHAT HELP|W. Everyone will be happy to assist you. '}
+set r3756/extra_description = {'scroll': 'You can talk to others in the same room by typing |gSAY <message>|n. Typing |gCHAT <message>|n will send the message to everyone in the game. If you have problems and cannot figure out what to do, type |gCHAT HELP|n. Everyone will be happy to assist you. '}
 #
 set r3756/room_flags = ['indoors', 'no mob']
 #
@@ -1012,7 +1012,7 @@ dig/tel Training Hall; r3757
 #
 tag r3757 = training tower:area names
 #
-desc r3757 = This room is filled with various implements to hone both your physical and mental abilities: One wall is lined with vast bookshelves neatly lined with scholarly tomes, and the other has training mats neatly rolled against it. Make sure you |GREAD SIGN|W|W!|W 
+desc r3757 = This room is filled with various implements to hone both your physical and mental abilities: One wall is lined with vast bookshelves neatly lined with scholarly tomes, and the other has training mats neatly rolled against it. Make sure you |gREAD SIGN|n|n!|n 
 #
 desc/edit r3757
 #
@@ -1024,7 +1024,7 @@ set r3757/terrain = "inside"
 #
 set r3757/vnum = "r3757"
 #
-set r3757/extra_description = {'sign': 'Welcome to the Hall of Training. Here you can spend growth opportunities to build yourself up. To find out how many growths you currently have, type |GSCORE|W. To improve a specific attribute, type |GTRAIN attr|W where |Gattr|W is the abbreviation shown below for the attribute you want increased: |W |W  strength      |GSTR|W  intelligence  |GINT|W   wisdom  |GWIS|W    dexterity  |GDEX|W |W  constitution  |GCON|W  hit points    |GHP|W    mana    |GMANA|W   movement   |GMOVE|W |W  nutrition     |GNUT|W |W Type |GHELP TRAIN|W and |GHELP GROWTHS|W for more information. '}
+set r3757/extra_description = {'sign': 'Welcome to the Hall of Training. Here you can spend growth opportunities to build yourself up. To find out how many growths you currently have, type |gSCORE|n. To improve a specific attribute, type |gTRAIN attr|n where |gattr|n is the abbreviation shown below for the attribute you want increased: |n |n  strength      |gSTR|n  intelligence  |gINT|n   wisdom  |gWIS|n    dexterity  |gDEX|n |n  constitution  |gCON|n  hit points    |gHP|n    mana    |gMANA|n   movement   |gMOVE|n |n  nutrition     |gNUT|n |n Type |gHELP TRAIN|n and |gHELP GROWTHS|n for more information. '}
 #
 set r3757/room_flags = ['indoors']
 #
@@ -1032,7 +1032,7 @@ dig/tel Practice Hall; r3758
 #
 tag r3758 = training tower:area names
 #
-desc r3758 = You are in a room filled with weapons, books, and many combat dummies, some cut and stabbed many times, others burnt to a crisp. The room is filled with the odor of sweat and an aura of magic. Before the Guilds were founded, this is where all skills and spells were practiced. There is a scroll on the wall. Make sure you |GREAD SCROLL|W.|W 
+desc r3758 = You are in a room filled with weapons, books, and many combat dummies, some cut and stabbed many times, others burnt to a crisp. The room is filled with the odor of sweat and an aura of magic. Before the Guilds were founded, this is where all skills and spells were practiced. There is a scroll on the wall. Make sure you |gREAD SCROLL|n.|n 
 #
 desc/edit r3758
 #
@@ -1044,7 +1044,7 @@ set r3758/terrain = "inside"
 #
 set r3758/vnum = "r3758"
 #
-set r3758/extra_description = {'scroll': "Welcome to the Practice Hall. To learn what skills and spells you can currently practice and how many practice sessions you have, type |GPRACTICE|W (anywhere). To see what you'll eventually be able to learn, type |GSLIST|W. To practice any skill, you must visit your guildmaster at the guild of your profession on Guild Row in the Castle. Then type |GPRACTICE skill|W, where the |Gskill|W is the skill or spell you wish to learn or improve. You must be third level or higher to practice. Practicing increases your knowledge of that skill or spell up to a certain maximum: Beyond that, your ability will only improve with use. "}
+set r3758/extra_description = {'scroll': "Welcome to the Practice Hall. To learn what skills and spells you can currently practice and how many practice sessions you have, type |gPRACTICE|n (anywhere). To see what you'll eventually be able to learn, type |gSLIST|n. To practice any skill, you must visit your guildmaster at the guild of your profession on Guild Row in the Castle. Then type |gPRACTICE skill|n, where the |gskill|n is the skill or spell you wish to learn or improve. You must be third level or higher to practice. Practicing increases your knowledge of that skill or spell up to a certain maximum: Beyond that, your ability will only improve with use. "}
 #
 set r3758/room_flags = ['indoors']
 #
@@ -1150,9 +1150,9 @@ set r3764/room_flags = ['indoors']
 #
 tel r3765
 #
-openexit west; w; e3600^ east = r3757
+openexit west; w; e3700^ east = r3757
 #
-tag e3600 = training tower:area names
+tag e3700 = training tower:area names
 #
 desc west = You see the Training Hall.
 #
@@ -1162,9 +1162,9 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-openexit up; u; e3601^ down = r3756
+openexit up; u; e3701^ down = r3756
 #
-tag e3601 = training tower:area names
+tag e3701 = training tower:area names
 #
 desc up = You see the Top of the Tower.
 #
@@ -1174,11 +1174,11 @@ objectlock up = "bash:false()"
 #
 objectlock up = "pass:false()"
 #
-tel r3600
+tel r3766
 #
-openexit west; w; e3602^ east = r3709
+openexit west; w; e3702^ east = r3709
 #
-tag e3602 = training tower:area names
+tag e3702 = training tower:area names
 #
 objectlock west = "pick:false()"
 #
@@ -1186,9 +1186,9 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-openexit up; u; e3603^ down = r3702
+openexit up; u; e3703^ down = r3702
 #
-tag e3603 = training tower:area names
+tag e3703 = training tower:area names
 #
 objectlock up = "pick:false()"
 #
@@ -1198,9 +1198,9 @@ objectlock up = "pass:false()"
 #
 tel r3700
 #
-openexit north; n; e3604^ south = r3701
+openexit portal; e3704^ portal = r3701
 #
-tag e3604 = training tower:area names
+tag e3704 = training tower:area names
 #
 objectlock north = "pick:false()"
 #
@@ -1210,9 +1210,9 @@ objectlock north = "pass:false()"
 #
 tel r3701
 #
-openexit east; e; e3605^ west = r3756
+openexit east; e; e3705^ west = r3756
 #
-tag e3605 = training tower:area names
+tag e3705 = training tower:area names
 #
 desc east = You see the Top of the Training Tower.
 #
@@ -1222,17 +1222,11 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit down; slide; d; e3606^ up = r3722
-#
-tag e3606 = training tower:area names
-#
-desc down = The Practice Yard lies far below you.
-#
 tel r3702
 #
-openexit west; w; e3607^ east = r3704
+openexit west; w; e3707^ east = r3704
 #
-tag e3607 = training tower:area names
+tag e3707 = training tower:area names
 #
 desc west = You see a windowed room.
 #
@@ -1242,9 +1236,9 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-alias down = d^ e3608
+alias down = d^ e3708
 #
-tag e3608 = training tower:area names
+tag e3708 = training tower:area names
 #
 objectlock down = "pick:false()"
 #
@@ -1254,9 +1248,9 @@ objectlock down = "pass:false()"
 #
 tel r3704
 #
-alias east = e^ e3609
+alias east = e^ e3709
 #
-tag e3609 = training tower:area names
+tag e3709 = training tower:area names
 #
 desc east = You see the Equipment Room.
 #
@@ -1266,9 +1260,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit up; u; e3610^ down = r3757
+openexit up; u; e3710^ down = r3757
 #
-tag e3610 = training tower:area names
+tag e3710 = training tower:area names
 #
 desc up = You see the Training Hall.
 #
@@ -1280,9 +1274,9 @@ objectlock up = "pass:false()"
 #
 tel r3706
 #
-openexit east; e; e3611^ west = r3711
+openexit east; e; e3711^ west = r3711
 #
-tag e3611 = training tower:area names
+tag e3711 = training tower:area names
 #
 objectlock east = "pick:false()"
 #
@@ -1290,9 +1284,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit up; u; e3612^ down = r3709
+openexit up; u; e3712^ down = r3709
 #
-tag e3612 = training tower:area names
+tag e3712 = training tower:area names
 #
 objectlock up = "pick:false()"
 #
@@ -1302,1095 +1296,7 @@ objectlock up = "pass:false()"
 #
 tel r3709
 #
-alias east = e^ e3613
-#
-tag e3613 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-openexit west; w; e3614^ east = r3710
-#
-tag e3614 = training tower:area names
-#
-desc west = You see the Golem's Lair. 
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-alias down = d^ e3615
-#
-tag e3615 = training tower:area names
-#
-objectlock down = "pick:false()"
-#
-objectlock down = "bash:false()"
-#
-objectlock down = "pass:false()"
-#
-tel r3710
-#
-alias east = e^ e3616
-#
-tag e3616 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-tel r3711
-#
-alias west = w^ e3617
-#
-tag e3617 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-openexit down; d; e3618^ up = r3712
-#
-tag e3618 = training tower:area names
-#
-desc down = You see the First Combat Area.
-#
-objectlock down = "pick:false()"
-#
-objectlock down = "bash:false()"
-#
-objectlock down = "pass:false()"
-#
-tel r3712
-#
-openexit north; n; e3619^ south = r3713
-#
-tag e3619 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit east; e; e3620^ west = r3716
-#
-tag e3620 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-openexit south; s; e3621^ north = r3715
-#
-tag e3621 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-openexit west; w; e3622^ east = r3714
-#
-tag e3622 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-alias up = u^ e3623
-#
-tag e3623 = training tower:area names
-#
-desc up = You see the First Combat Area.
-#
-objectlock up = "pick:false()"
-#
-objectlock up = "bash:false()"
-#
-objectlock up = "pass:false()"
-#
-openexit down; d; e3624^ up = r3760
-#
-tag e3624 = training tower:area names
-#
-desc down = You see the Second Combat Area.
-#
-objectlock down = "pick:false()"
-#
-objectlock down = "bash:false()"
-#
-objectlock down = "pass:false()"
-#
-tel r3713
-#
-alias south = s^ e3625
-#
-tag e3625 = training tower:area names
-#
-desc south = You see the First Combat Area. 
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-tel r3714
-#
-alias east = e^ e3626
-#
-tag e3626 = training tower:area names
-#
-desc east = You see the First Combat Area. 
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-tel r3715
-#
-alias north = n^ e3627
-#
-tag e3627 = training tower:area names
-#
-desc north = You see the First Combat Area. 
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-tel r3716
-#
-alias west = w^ e3628
-#
-tag e3628 = training tower:area names
-#
-desc west = You see the First Combat Area. 
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3717
-#
-openexit north; n; e3629^ south = r3720
-#
-tag e3629 = training tower:area names
-#
-desc north = You see the Champion's Chamber.
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit south; s; e3630^ north = r3718
-#
-tag e3630 = training tower:area names
-#
-desc south = You see the Training Tower's store.
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-openexit up; u; e3631^ down = r3760
-#
-tag e3631 = training tower:area names
-#
-objectlock up = "pick:false()"
-#
-objectlock up = "bash:false()"
-#
-objectlock up = "pass:false()"
-#
-openexit down; d; e3632^ up = r3758
-#
-tag e3632 = training tower:area names
-#
-set down/key = "o3714"
-#
-objectlock down = "pick:false()"
-#
-objectlock down = "bash:false()"
-#
-tel r3718
-#
-alias north = n^ e3633
-#
-tag e3633 = training tower:area names
-#
-desc north = You see that you're Getting Near the End.
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-tel r3720
-#
-alias south = s^ e3634
-#
-tag e3634 = training tower:area names
-#
-desc south = You see that you're Getting near the End.
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-tel r3721
-#
-openexit north; gate; n; e3635^ south = r3722
-#
-tag e3635 = training tower:area names
-#
-desc north = You see the Practice Yard. 
-#
-openexit east; e; e3636^ west = r3758
-#
-tag e3636 = training tower:area names
-#
-desc east = You see a door back to the Practice Hall.
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-tel r3722
-#
-openexit north; n; e3637^ south = r3729
-#
-tag e3637 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit east; e; e3638^ west = r3725
-#
-tag e3638 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-openexit west; w; e3639^ east = r3723
-#
-tag e3639 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3723
-#
-openexit north; n; e3640^ south = r3728
-#
-tag e3640 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-alias east = e^ e3641
-#
-tag e3641 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-openexit west; w; e3642^ east = r3724
-#
-tag e3642 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3724
-#
-openexit north; n; e3643^ south = r3727
-#
-tag e3643 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-alias east = e^ e3644
-#
-tag e3644 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-tel r3725
-#
-openexit north; n; e3645^ south = r3730
-#
-tag e3645 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit east; e; e3646^ west = r3726
-#
-tag e3646 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-alias west = w^ e3647
-#
-tag e3647 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3726
-#
-openexit north; n; e3648^ south = r3731
-#
-tag e3648 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-alias west = w^ e3649
-#
-tag e3649 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3727
-#
-openexit north; n; e3650^ south = r3732
-#
-tag e3650 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit east; e; e3651^ west = r3728
-#
-tag e3651 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-alias south = s^ e3652
-#
-tag e3652 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-tel r3728
-#
-openexit north; n; e3653^ south = r3733
-#
-tag e3653 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit east; e; e3654^ west = r3729
-#
-tag e3654 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-alias south = s^ e3655
-#
-tag e3655 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-alias west = w^ e3656
-#
-tag e3656 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3729
-#
-openexit north; n; e3657^ south = r3734
-#
-tag e3657 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit east; e; e3658^ west = r3730
-#
-tag e3658 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-alias south = s^ e3659
-#
-tag e3659 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-alias west = w^ e3660
-#
-tag e3660 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3730
-#
-openexit north; n; e3661^ south = r3735
-#
-tag e3661 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit east; e; e3662^ west = r3731
-#
-tag e3662 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-alias south = s^ e3663
-#
-tag e3663 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-alias west = w^ e3664
-#
-tag e3664 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3731
-#
-openexit north; n; e3665^ south = r3736
-#
-tag e3665 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-alias south = s^ e3666
-#
-tag e3666 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-alias west = w^ e3667
-#
-tag e3667 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3732
-#
-openexit north; n; e3668^ south = r3737
-#
-tag e3668 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit east; e; e3669^ west = r3733
-#
-tag e3669 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-alias south = s^ e3670
-#
-tag e3670 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-tel r3733
-#
-openexit north; n; e3671^ south = r3738
-#
-tag e3671 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit east; e; e3672^ west = r3734
-#
-tag e3672 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-alias south = s^ e3673
-#
-tag e3673 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-alias west = w^ e3674
-#
-tag e3674 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3734
-#
-openexit north; n; e3675^ south = r3739
-#
-tag e3675 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit east; e; e3676^ west = r3735
-#
-tag e3676 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-alias south = s^ e3677
-#
-tag e3677 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-alias west = w^ e3678
-#
-tag e3678 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-openexit down; grate; d; e3679^ up = r3747
-#
-tag e3679 = training tower:area names
-#
-desc down = You see a dark murky dungeon below. 
-#
-tel r3735
-#
-openexit north; n; e3680^ south = r3740
-#
-tag e3680 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit east; e; e3681^ west = r3736
-#
-tag e3681 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-alias south = s^ e3682
-#
-tag e3682 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-alias west = w^ e3683
-#
-tag e3683 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3736
-#
-openexit north; n; e3684^ south = r3741
-#
-tag e3684 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-alias south = s^ e3685
-#
-tag e3685 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-alias west = w^ e3686
-#
-tag e3686 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3737
-#
-openexit north; n; e3687^ south = r3742
-#
-tag e3687 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit east; e; e3688^ west = r3738
-#
-tag e3688 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-alias south = s^ e3689
-#
-tag e3689 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-tel r3738
-#
-openexit north; n; e3690^ south = r3743
-#
-tag e3690 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit east; e; e3691^ west = r3739
-#
-tag e3691 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-alias south = s^ e3692
-#
-tag e3692 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-alias west = w^ e3693
-#
-tag e3693 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3739
-#
-openexit north; n; e3694^ south = r3744
-#
-tag e3694 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit east; e; e3695^ west = r3740
-#
-tag e3695 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-alias south = s^ e3696
-#
-tag e3696 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-alias west = w^ e3697
-#
-tag e3697 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3740
-#
-openexit north; n; e3698^ south = r3745
-#
-tag e3698 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-openexit east; e; e3699^ west = r3741
-#
-tag e3699 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-alias south = s^ e3700
-#
-tag e3700 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-alias west = w^ e3701
-#
-tag e3701 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3741
-#
-openexit north; n; e3702^ south = r3746
-#
-tag e3702 = training tower:area names
-#
-objectlock north = "pick:false()"
-#
-objectlock north = "bash:false()"
-#
-objectlock north = "pass:false()"
-#
-alias south = s^ e3703
-#
-tag e3703 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-alias west = w^ e3704
-#
-tag e3704 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3742
-#
-openexit east; e; e3705^ west = r3743
-#
-tag e3705 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-alias south = s^ e3706
-#
-tag e3706 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-tel r3743
-#
-openexit east; e; e3707^ west = r3744
-#
-tag e3707 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-alias south = s^ e3708
-#
-tag e3708 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-alias west = w^ e3709
-#
-tag e3709 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3744
-#
-openexit east; e; e3710^ west = r3745
-#
-tag e3710 = training tower:area names
-#
-objectlock east = "pick:false()"
-#
-objectlock east = "bash:false()"
-#
-objectlock east = "pass:false()"
-#
-alias south = s^ e3711
-#
-tag e3711 = training tower:area names
-#
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-alias west = w^ e3712
-#
-tag e3712 = training tower:area names
-#
-objectlock west = "pick:false()"
-#
-objectlock west = "bash:false()"
-#
-objectlock west = "pass:false()"
-#
-tel r3745
-#
-openexit east; e; e3713^ west = r3746
+alias east = e^ e3713
 #
 tag e3713 = training tower:area names
 #
@@ -2400,19 +1306,11 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias south = s^ e3714
+openexit west; w; e3714^ east = r3710
 #
 tag e3714 = training tower:area names
 #
-objectlock south = "pick:false()"
-#
-objectlock south = "bash:false()"
-#
-objectlock south = "pass:false()"
-#
-alias west = w^ e3715
-#
-tag e3715 = training tower:area names
+desc west = You see the Golem's Lair. 
 #
 objectlock west = "pick:false()"
 #
@@ -2420,17 +1318,29 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-tel r3746
+alias down = d^ e3715
 #
-alias south = s^ e3716
+tag e3715 = training tower:area names
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r3710
+#
+alias east = e^ e3716
 #
 tag e3716 = training tower:area names
 #
-objectlock south = "pick:false()"
+objectlock east = "pick:false()"
 #
-objectlock south = "bash:false()"
+objectlock east = "bash:false()"
 #
-objectlock south = "pass:false()"
+objectlock east = "pass:false()"
+#
+tel r3711
 #
 alias west = w^ e3717
 #
@@ -2442,11 +1352,1095 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-tel r3747
-#
-openexit north; n; e3718^ south = r3749
+openexit down; d; e3718^ up = r3712
 #
 tag e3718 = training tower:area names
+#
+desc down = You see the First Combat Area.
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r3712
+#
+openexit north; n; e3719^ south = r3713
+#
+tag e3719 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3720^ west = r3716
+#
+tag e3720 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3721^ north = r3715
+#
+tag e3721 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3722^ east = r3714
+#
+tag e3722 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+alias up = u^ e3723
+#
+tag e3723 = training tower:area names
+#
+desc up = You see the First Combat Area.
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+openexit down; d; e3724^ up = r3760
+#
+tag e3724 = training tower:area names
+#
+desc down = You see the Second Combat Area.
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r3713
+#
+alias south = s^ e3725
+#
+tag e3725 = training tower:area names
+#
+desc south = You see the First Combat Area. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3714
+#
+alias east = e^ e3726
+#
+tag e3726 = training tower:area names
+#
+desc east = You see the First Combat Area. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r3715
+#
+alias north = n^ e3727
+#
+tag e3727 = training tower:area names
+#
+desc north = You see the First Combat Area. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r3716
+#
+alias west = w^ e3728
+#
+tag e3728 = training tower:area names
+#
+desc west = You see the First Combat Area. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3717
+#
+openexit north; n; e3729^ south = r3720
+#
+tag e3729 = training tower:area names
+#
+desc north = You see the Champion's Chamber.
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3730^ north = r3718
+#
+tag e3730 = training tower:area names
+#
+desc south = You see the Training Tower's store.
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit up; u; e3731^ down = r3760
+#
+tag e3731 = training tower:area names
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+openexit down; d; e3732^ up = r3758
+#
+tag e3732 = training tower:area names
+#
+set down/key = "o3714"
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+tel r3718
+#
+alias north = n^ e3733
+#
+tag e3733 = training tower:area names
+#
+desc north = You see that you're Getting Near the End.
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r3720
+#
+alias south = s^ e3734
+#
+tag e3734 = training tower:area names
+#
+desc south = You see that you're Getting near the End.
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3721
+#
+openexit north; gate; n; e3735^ south = r3722
+#
+tag e3735 = training tower:area names
+#
+desc north = You see the Practice Yard. 
+#
+openexit east; e; e3736^ west = r3758
+#
+tag e3736 = training tower:area names
+#
+desc east = You see a door back to the Practice Hall.
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r3722
+#
+openexit north; n; e3737^ south = r3729
+#
+tag e3737 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3738^ west = r3725
+#
+tag e3738 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3739^ east = r3723
+#
+tag e3739 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3723
+#
+openexit north; n; e3740^ south = r3728
+#
+tag e3740 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3741
+#
+tag e3741 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3742^ east = r3724
+#
+tag e3742 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3724
+#
+openexit north; n; e3743^ south = r3727
+#
+tag e3743 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3744
+#
+tag e3744 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r3725
+#
+openexit north; n; e3745^ south = r3730
+#
+tag e3745 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3746^ west = r3726
+#
+tag e3746 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3747
+#
+tag e3747 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3726
+#
+openexit north; n; e3748^ south = r3731
+#
+tag e3748 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias west = w^ e3749
+#
+tag e3749 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3727
+#
+openexit north; n; e3750^ south = r3732
+#
+tag e3750 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3751^ west = r3728
+#
+tag e3751 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3752
+#
+tag e3752 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3728
+#
+openexit north; n; e3753^ south = r3733
+#
+tag e3753 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3754^ west = r3729
+#
+tag e3754 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3755
+#
+tag e3755 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3756
+#
+tag e3756 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3729
+#
+openexit north; n; e3757^ south = r3734
+#
+tag e3757 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3758^ west = r3730
+#
+tag e3758 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3759
+#
+tag e3759 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3760
+#
+tag e3760 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3730
+#
+openexit north; n; e3761^ south = r3735
+#
+tag e3761 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3762^ west = r3731
+#
+tag e3762 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3763
+#
+tag e3763 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3764
+#
+tag e3764 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3731
+#
+openexit north; n; e3765^ south = r3736
+#
+tag e3765 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3766
+#
+tag e3766 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3767
+#
+tag e3767 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3732
+#
+openexit north; n; e3768^ south = r3737
+#
+tag e3768 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3769^ west = r3733
+#
+tag e3769 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3770
+#
+tag e3770 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3733
+#
+openexit north; n; e3771^ south = r3738
+#
+tag e3771 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3772^ west = r3734
+#
+tag e3772 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3773
+#
+tag e3773 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3774
+#
+tag e3774 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3734
+#
+openexit north; n; e3775^ south = r3739
+#
+tag e3775 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3776^ west = r3735
+#
+tag e3776 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3777
+#
+tag e3777 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3778
+#
+tag e3778 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+openexit down; grate; d; e3779^ up = r3747
+#
+tag e3779 = training tower:area names
+#
+desc down = You see a dark murky dungeon below. 
+#
+tel r3735
+#
+openexit north; n; e3780^ south = r3740
+#
+tag e3780 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3781^ west = r3736
+#
+tag e3781 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3782
+#
+tag e3782 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3783
+#
+tag e3783 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3736
+#
+openexit north; n; e3784^ south = r3741
+#
+tag e3784 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3785
+#
+tag e3785 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3786
+#
+tag e3786 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3737
+#
+openexit north; n; e3787^ south = r3742
+#
+tag e3787 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3788^ west = r3738
+#
+tag e3788 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3789
+#
+tag e3789 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3738
+#
+openexit north; n; e3790^ south = r3743
+#
+tag e3790 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3791^ west = r3739
+#
+tag e3791 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3792
+#
+tag e3792 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3793
+#
+tag e3793 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3739
+#
+openexit north; n; e3794^ south = r3744
+#
+tag e3794 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3795^ west = r3740
+#
+tag e3795 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3796
+#
+tag e3796 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3797
+#
+tag e3797 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3740
+#
+openexit north; n; e3798^ south = r3745
+#
+tag e3798 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3799^ west = r3741
+#
+tag e3799 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3800
+#
+tag e3800 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3801
+#
+tag e3801 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3741
+#
+openexit north; n; e3802^ south = r3746
+#
+tag e3802 = training tower:area names
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3803
+#
+tag e3803 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3804
+#
+tag e3804 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3742
+#
+openexit east; e; e3805^ west = r3743
+#
+tag e3805 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3806
+#
+tag e3806 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3743
+#
+openexit east; e; e3807^ west = r3744
+#
+tag e3807 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3808
+#
+tag e3808 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3809
+#
+tag e3809 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3744
+#
+openexit east; e; e3810^ west = r3745
+#
+tag e3810 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3811
+#
+tag e3811 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3812
+#
+tag e3812 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3745
+#
+openexit east; e; e3813^ west = r3746
+#
+tag e3813 = training tower:area names
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3814
+#
+tag e3814 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3815
+#
+tag e3815 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3746
+#
+alias south = s^ e3816
+#
+tag e3816 = training tower:area names
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3817
+#
+tag e3817 = training tower:area names
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3747
+#
+openexit north; n; e3818^ south = r3749
+#
+tag e3818 = training tower:area names
 #
 desc north = You see the north wall. 
 #
@@ -2456,9 +2450,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3719^ west = r3752
+openexit east; e; e3819^ west = r3752
 #
-tag e3719 = training tower:area names
+tag e3819 = training tower:area names
 #
 desc east = You see the east wall. 
 #
@@ -2468,9 +2462,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3720^ north = r3754
+openexit south; s; e3820^ north = r3754
 #
-tag e3720 = training tower:area names
+tag e3820 = training tower:area names
 #
 desc south = You see the south wall. 
 #
@@ -2480,9 +2474,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3721^ east = r3751
+openexit west; w; e3821^ east = r3751
 #
-tag e3721 = training tower:area names
+tag e3821 = training tower:area names
 #
 desc west = You see the west wall. 
 #
@@ -2492,17 +2486,17 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-alias up = grate^ u^ e3722
+alias up = grate^ u^ e3822
 #
-tag e3722 = training tower:area names
+tag e3822 = training tower:area names
 #
 desc up = You see safety! 
 #
 tel r3748
 #
-openexit east; e; e3723^ west = r3749
+openexit east; e; e3823^ west = r3749
 #
-tag e3723 = training tower:area names
+tag e3823 = training tower:area names
 #
 desc east = You see the north wall. 
 #
@@ -2512,9 +2506,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3724^ north = r3751
+openexit south; s; e3824^ north = r3751
 #
-tag e3724 = training tower:area names
+tag e3824 = training tower:area names
 #
 desc south = You see the south wall. 
 #
@@ -2526,9 +2520,9 @@ objectlock south = "pass:false()"
 #
 tel r3749
 #
-openexit east; e; e3725^ west = r3750
+openexit east; e; e3825^ west = r3750
 #
-tag e3725 = training tower:area names
+tag e3825 = training tower:area names
 #
 desc east = You see the northeast corner. 
 #
@@ -2538,9 +2532,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias south = s^ e3726
+alias south = s^ e3826
 #
-tag e3726 = training tower:area names
+tag e3826 = training tower:area names
 #
 desc south = You see the center of the dungeon. 
 #
@@ -2550,9 +2544,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w^ e3727
+alias west = w^ e3827
 #
-tag e3727 = training tower:area names
+tag e3827 = training tower:area names
 #
 desc west = You see the northwest corner. 
 #
@@ -2564,9 +2558,9 @@ objectlock west = "pass:false()"
 #
 tel r3750
 #
-openexit south; s; e3728^ north = r3752
+openexit south; s; e3828^ north = r3752
 #
-tag e3728 = training tower:area names
+tag e3828 = training tower:area names
 #
 desc south = You see the east wall. 
 #
@@ -2576,9 +2570,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w^ e3729
+alias west = w^ e3829
 #
-tag e3729 = training tower:area names
+tag e3829 = training tower:area names
 #
 desc west = You see the north wall. 
 #
@@ -2590,9 +2584,9 @@ objectlock west = "pass:false()"
 #
 tel r3751
 #
-alias north = n^ e3730
+alias north = n^ e3830
 #
-tag e3730 = training tower:area names
+tag e3830 = training tower:area names
 #
 desc north = You see the northwest corner. 
 #
@@ -2602,9 +2596,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias east = e^ e3731
+alias east = e^ e3831
 #
-tag e3731 = training tower:area names
+tag e3831 = training tower:area names
 #
 desc east = You see the center of the dungeon. 
 #
@@ -2614,9 +2608,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3732^ north = r3753
+openexit south; s; e3832^ north = r3753
 #
-tag e3732 = training tower:area names
+tag e3832 = training tower:area names
 #
 desc south = You see the southwest corner. 
 #
@@ -2628,9 +2622,9 @@ objectlock south = "pass:false()"
 #
 tel r3752
 #
-alias north = n^ e3733
+alias north = n^ e3833
 #
-tag e3733 = training tower:area names
+tag e3833 = training tower:area names
 #
 desc north = You see the northeast corner. 
 #
@@ -2640,9 +2634,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit south; s; e3734^ north = r3755
+openexit south; s; e3834^ north = r3755
 #
-tag e3734 = training tower:area names
+tag e3834 = training tower:area names
 #
 desc south = You see the southeast corner. 
 #
@@ -2652,9 +2646,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w^ e3735
+alias west = w^ e3835
 #
-tag e3735 = training tower:area names
+tag e3835 = training tower:area names
 #
 desc west = You see the center of the dungeon. 
 #
@@ -2666,9 +2660,9 @@ objectlock west = "pass:false()"
 #
 tel r3753
 #
-alias north = n^ e3736
+alias north = n^ e3836
 #
-tag e3736 = training tower:area names
+tag e3836 = training tower:area names
 #
 desc north = You see the north wall. 
 #
@@ -2678,9 +2672,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3737^ west = r3754
+openexit east; e; e3837^ west = r3754
 #
-tag e3737 = training tower:area names
+tag e3837 = training tower:area names
 #
 desc east = You see the south wall. 
 #
@@ -2692,9 +2686,9 @@ objectlock east = "pass:false()"
 #
 tel r3754
 #
-alias north = n^ e3738
+alias north = n^ e3838
 #
-tag e3738 = training tower:area names
+tag e3838 = training tower:area names
 #
 desc north = You see the center of the dungeon. 
 #
@@ -2704,9 +2698,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3739^ west = r3755
+openexit east; e; e3839^ west = r3755
 #
-tag e3739 = training tower:area names
+tag e3839 = training tower:area names
 #
 desc east = You see the southeast corner. 
 #
@@ -2716,9 +2710,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias west = w^ e3740
+alias west = w^ e3840
 #
-tag e3740 = training tower:area names
+tag e3840 = training tower:area names
 #
 desc west = You see the southwest corner. 
 #
@@ -2730,9 +2724,9 @@ objectlock west = "pass:false()"
 #
 tel r3755
 #
-alias north = n^ e3741
+alias north = n^ e3841
 #
-tag e3741 = training tower:area names
+tag e3841 = training tower:area names
 #
 desc north = You see the east wall. 
 #
@@ -2742,9 +2736,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias west = w^ e3742
+alias west = w^ e3842
 #
-tag e3742 = training tower:area names
+tag e3842 = training tower:area names
 #
 desc west = You see the south wall. 
 #
@@ -2754,15 +2748,15 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-openexit down; pile; cloth; d; e3743^ up = r3801
+openexit down; pile; cloth; d; e3843^ up = r3801
 #
-tag e3743 = training tower:area names
+tag e3843 = training tower:area names
 #
 tel r3756
 #
-alias west = w^ e3744
+alias west = w^ e3844
 #
-tag e3744 = training tower:area names
+tag e3844 = training tower:area names
 #
 desc west = You see the Portal.
 #
@@ -2772,9 +2766,9 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-alias down = d^ e3745
+alias down = d^ e3845
 #
-tag e3745 = training tower:area names
+tag e3845 = training tower:area names
 #
 desc down = You see the Mirror Room.
 #
@@ -2786,9 +2780,9 @@ objectlock down = "pass:false()"
 #
 tel r3757
 #
-alias east = e^ e3746
+alias east = e^ e3846
 #
-tag e3746 = training tower:area names
+tag e3846 = training tower:area names
 #
 desc east = You see the Mirror Room.
 #
@@ -2798,9 +2792,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias down = d^ e3747
+alias down = d^ e3847
 #
-tag e3747 = training tower:area names
+tag e3847 = training tower:area names
 #
 objectlock down = "pick:false()"
 #
@@ -2810,9 +2804,9 @@ objectlock down = "pass:false()"
 #
 tel r3758
 #
-alias west = w^ e3748
+alias west = w^ e3848
 #
-tag e3748 = training tower:area names
+tag e3848 = training tower:area names
 #
 objectlock west = "pick:false()"
 #
@@ -2820,9 +2814,9 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-alias up = u^ e3749
+alias up = u^ e3849
 #
-tag e3749 = training tower:area names
+tag e3849 = training tower:area names
 #
 objectlock up = "pick:false()"
 #
@@ -2830,9 +2824,9 @@ objectlock up = "bash:false()"
 #
 tel r3760
 #
-openexit north; n; e3750^ south = r3763
+openexit north; n; e3850^ south = r3763
 #
-tag e3750 = training tower:area names
+tag e3850 = training tower:area names
 #
 objectlock north = "pick:false()"
 #
@@ -2840,9 +2834,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3751^ west = r3762
+openexit east; e; e3851^ west = r3762
 #
-tag e3751 = training tower:area names
+tag e3851 = training tower:area names
 #
 objectlock east = "pick:false()"
 #
@@ -2850,9 +2844,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3752^ north = r3764
+openexit south; s; e3852^ north = r3764
 #
-tag e3752 = training tower:area names
+tag e3852 = training tower:area names
 #
 objectlock south = "pick:false()"
 #
@@ -2860,9 +2854,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3753^ east = r3761
+openexit west; w; e3853^ east = r3761
 #
-tag e3753 = training tower:area names
+tag e3853 = training tower:area names
 #
 objectlock west = "pick:false()"
 #
@@ -2870,9 +2864,9 @@ objectlock west = "bash:false()"
 #
 objectlock west = "pass:false()"
 #
-alias up = u^ e3754
+alias up = u^ e3854
 #
-tag e3754 = training tower:area names
+tag e3854 = training tower:area names
 #
 desc up = You see the First Combat Area. 
 #
@@ -2882,9 +2876,9 @@ objectlock up = "bash:false()"
 #
 objectlock up = "pass:false()"
 #
-alias down = d^ e3755
+alias down = d^ e3855
 #
-tag e3755 = training tower:area names
+tag e3855 = training tower:area names
 #
 desc down = You see that you're Getting Near the End.
 #
@@ -2896,9 +2890,9 @@ objectlock down = "pass:false()"
 #
 tel r3761
 #
-alias east = e^ e3756
+alias east = e^ e3856
 #
-tag e3756 = training tower:area names
+tag e3856 = training tower:area names
 #
 desc east = You see the Second Combat Area.
 #
@@ -2910,9 +2904,9 @@ objectlock east = "pass:false()"
 #
 tel r3762
 #
-alias west = w^ e3757
+alias west = w^ e3857
 #
-tag e3757 = training tower:area names
+tag e3857 = training tower:area names
 #
 desc west = You see the Second Combat Area.
 #
@@ -2924,9 +2918,9 @@ objectlock west = "pass:false()"
 #
 tel r3763
 #
-alias south = s^ e3758
+alias south = s^ e3858
 #
-tag e3758 = training tower:area names
+tag e3858 = training tower:area names
 #
 desc south = You see the Second Combat Area.
 #
@@ -2938,9 +2932,9 @@ objectlock south = "pass:false()"
 #
 tel r3764
 #
-alias north = n^ e3759
+alias north = n^ e3859
 #
-tag e3759 = training tower:area names
+tag e3859 = training tower:area names
 #
 desc north = You see the Second Combat Area.
 #
@@ -2950,7 +2944,7 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-tel r3600
+tel r3766
 #
 create/drop the gourmand;gourmand;trainer;m3728:characters.Mobile
 #
@@ -2986,7 +2980,7 @@ set m3728/talk = "While you will never starve due to lack of food and drink here
 #
 tel r3700
 #
-alias portal = portal; portal; e3760
+alias portal = portal^ e3760
 #
 tag e3760 = training tower:area names
 #
@@ -2996,7 +2990,7 @@ tel r3700
 #
 create/drop Jenny;Jenny;greeter;m3722:characters.Mobile
 #
-desc m3722 = Jenny is the official Castle Arcanum greeter. 
+desc m3722 = Jenny is the official Echoes of Creation greeter. 
 #
 set m3722/level = 89
 #
@@ -3030,9 +3024,9 @@ set m3722/position = "standing"
 #
 tel r3701
 #
-create/drop the castle butler;butler;m3721:characters.Mobile
+create/drop the butler;butler;m3721:characters.Mobile
 #
-desc m3721 = The castle butler welcomes you to Castle Arcanum. 
+desc m3721 = The butler welcomes you to the Eden's Grove Training Tower. 
 #
 set m3721/level = 96
 #
@@ -3084,7 +3078,7 @@ set m3726/vnum = "m3726"
 #
 set m3726/look_description = "If you type 'talk collector', he'll tell you what he knows. "
 #
-set m3726/talk = "Equipment check time!  Type |GEQUIP|W (or just |GEQ|W) to see what you're wearing, and |GINVENTORY|W (or |GI|W) to see what you're lugging about. Right now, you have very little.  But as you go through the Training Tower you'll acquire a set of equipment complete enough to rival my collection. Oh, type |GINSPECT SCROLL|W to learn how to manipulate your possessions.|W"
+set m3726/talk = "Equipment check time!  Type |gEQUIP|n (or just |gEQ|n) to see what you're wearing, and |gINVENTORY|n (or |gI|n) to see what you're lugging about. Right now, you have very little.  But as you go through the Training Tower you'll acquire a set of equipment complete enough to rival my collection. Oh, type |gINSPECT SCROLL|n to learn how to manipulate your possessions.|n"
 #
 set m3726/act_flags = ['no kill', 'sentinel', 'npc']
 #
@@ -3118,9 +3112,9 @@ set m3725/level_base = 100
 #
 set m3725/vnum = "m3725"
 #
-set m3725/look_description = "If you type |GTALK CONVERSATIONALIST|W, she'll repeat her lesson. "
+set m3725/look_description = "If you type |gTALK CONVERSATIONALIST|n, she'll repeat her lesson. "
 #
-set m3725/talk = "How about another brief lesson? You already know how to use |GSAY|W to communicate. You can also send a private message to another player by typing |GTELL player message|W.  You can also send messages privately to players in your room by typing |GWHISPER player message|W.  Other forms of communication are emoting and posing.  Type |GHELP POSE|W for more information on these commands."
+set m3725/talk = "How about another brief lesson? You already know how to use |gSAY|n to communicate. You can also send a private message to another player by typing |gTELL player message|n.  You can also send messages privately to players in your room by typing |gWHISPER player message|n.  Other forms of communication are emoting and posing.  Type |gHELP POSE|n for more information on these commands."
 #
 set m3725/act_flags = ['no kill', 'sentinel', 'npc']
 #
@@ -3260,7 +3254,7 @@ set m3708/vnum = "m3708"
 #
 set m3708/look_description = "She stands ready to help ... if she deems you worthy. And she will, of course, repeat her lesson for you if you 'talk healer'. "
 #
-set m3708/talk = "If you type |GSCAN|W, you'll get some idea of what monsters are around. I pray for your success. From time to time, as my prayers are answered, I'll able to cast some useful spells on you. Remember that |GAFFECTS|W will show what spells you're bearing.|W"
+set m3708/talk = "If you type |gSCAN|n, you'll get some idea of what monsters are around. I pray for your success. From time to time, as my prayers are answered, I'll able to cast some useful spells on you. Remember that |gAFFECTS|n will show what spells you're bearing.|n"
 #
 set m3708/act_flags = ['no kill', 'stay area', 'sentinel', 'npc']
 #
@@ -4380,9 +4374,9 @@ set m3723/level_base = 108
 #
 set m3723/vnum = "m3723"
 #
-set m3723/look_description = "If you type |GTALK TRAINER|W, he'll repeat his message. "
+set m3723/look_description = "If you type |gTALK TRAINER|n, he'll repeat his message. "
 #
-set m3723/talk = "Welcome! Please |GINSPECT SCROLL|W before going down. And remember that my fellow trainers and I will always repeat our lessons if you simply |GTALK|W to us again."
+set m3723/talk = "Welcome! Please |gINSPECT SCROLL|n before going down. And remember that my fellow trainers and I will always repeat our lessons if you simply |gTALK|n to us again."
 #
 set m3723/act_flags = ['no kill', 'sentinel', 'npc']
 #
@@ -4416,7 +4410,7 @@ set m3718/level_base = 103
 #
 set m3718/vnum = "m3718"
 #
-set m3718/talk = "I'll be happy to train you, but first you should |GINSPECT SIGN|W and then type |GTRAIN|W to find out what to do here.|W"
+set m3718/talk = "I'll be happy to train you, but first you should |gINSPECT SIGN|n and then type |gTRAIN|n to find out what to do here.|n"
 #
 set m3718/look_description = "He is old and wise, but still very strong. "
 #
@@ -4452,9 +4446,9 @@ set m3719/level_base = 96
 #
 set m3719/vnum = "m3719"
 #
-set m3719/look_description = "She has been through the Academy several times, and now studies the arts of several different professions. If you type |GTALK PRACTITIONER|W, she'll repeat her lesson. "
+set m3719/look_description = "She has been through the Academy several times, and now studies the arts of several different professions. If you type |gTALK PRACTITIONER|n, she'll repeat her lesson. "
 #
-set m3719/talk = "The Academy is a wonder! It enabled me to acquire the ability to use the skills and spells of several professions! |GHELP SKILLS|W will tell you all about how skills work."
+set m3719/talk = "The Academy is a wonder! It enabled me to acquire the ability to use the skills and spells of several professions! |gHELP SKILLS|n will tell you all about how skills work."
 #
 set m3719/act_flags = ['no kill', 'stay area', 'sentinel', 'npc']
 #
@@ -4570,7 +4564,7 @@ set m3708/vnum = "m3708"
 #
 set m3708/look_description = "She stands ready to help ... if she deems you worthy. And she will, of course, repeat her lesson for you if you 'talk healer'. "
 #
-set m3708/talk = "If you type |GSCAN|W, you'll get some idea of what monsters are around. I pray for your success. From time to time, as my prayers are answered, I'll able to cast some useful spells on you. Remember that |GAFFECTS|W will show what spells you're bearing.|W"
+set m3708/talk = "If you type |gSCAN|n, you'll get some idea of what monsters are around. I pray for your success. From time to time, as my prayers are answered, I'll able to cast some useful spells on you. Remember that |gAFFECTS|n will show what spells you're bearing.|n"
 #
 set m3708/act_flags = ['no kill', 'stay area', 'sentinel', 'npc']
 #
@@ -5084,9 +5078,9 @@ set m3724/level_base = 96
 #
 set m3724/vnum = "m3724"
 #
-set m3724/look_description = "If you type |GTALK TRAINER|W, he tell you his secrets. "
+set m3724/look_description = "If you type |gTALK TRAINER|n, he tell you his secrets. "
 #
-set m3724/talk = "To see yourself, type |GSCORE|W. Typing |GAFFECTS|W will tell you of spells affecting you.  Of course, to see the room you're in, you can type |GLOOK|W. To look at me, |GLOOK TRAINER|W. To look more closely at the details of things described in the room, like scrolls or parchments, type |GINSPECT|W with the name of the detail you wish to inspect. Looking more closely at details of an object, such as the engraving on a sword, can be done by |GINSPECT SWORD = ENGRAVING|W."
+set m3724/talk = "To see yourself, type |gSCORE|n. Typing |gAFFECTS|n will tell you of spells affecting you.  Of course, to see the room you're in, you can type |gLOOK|n. To look at me, |gLOOK TRAINER|n. To look more closely at the details of things described in the room, like scrolls or parchments, type |gINSPECT|n with the name of the detail you wish to inspect. Looking more closely at details of an object, such as the engraving on a sword, can be done by |gINSPECT SWORD = ENGRAVING|n."
 #
 set m3724/act_flags = ['no kill', 'sentinel', 'npc']
 #
