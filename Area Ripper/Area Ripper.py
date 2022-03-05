@@ -50,7 +50,7 @@ def calculate_experience(mobile):
     but is close enough for the first of a zillion kills.
     """
     level_xp = mobile.level * mobile.level * mobile.level * 5
-    hp_xp = mobile.hitpoints_maximum
+    hp_xp = mobile.hitpoints
     ac = int((mobile.level-1)*(-500)/100)
     ac_xp = (ac - 50) * 2
     damage_xp = ((3 * mobile.level / 4)) * 50
@@ -89,7 +89,7 @@ def calculate_experience(mobile):
         
     return experience
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.txt", "rt") as myfile:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.txt", "rt") as myfile:
 
     class Object:
         def __init__(self):
@@ -1909,7 +1909,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.txt", "rt") as 
                     objects[onum].special_function\
                         = special_function_list[2][6:]
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as output:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as output:
 
     # Now we are going to build out the batch file by iterating through each
     # room.
@@ -2092,8 +2092,6 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as ou
     mobile_object_amount = 0
 
     for reset in range(0, reset_length):
-
-        print(in_room_list)
 
         # 1. Get the reset data.
 
@@ -2882,6 +2880,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/circus.ev", "w") as ou
                     output.write("#\n")
                 elif reset_type == "object, in container":
                     reset_mobile_amount = 0
+                    mob_teleport = False
                     # First, check to see if the container is in the room or on a mobile.
                     index = reset
                     # Iterate backwards through the reset list to find the last

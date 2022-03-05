@@ -1,0 +1,4184 @@
+#AREA {   1  20 } Ceivar - The Library~
+
+#MOBILES
+#13300
+librarian~
+the librarian~
+The wrinkled old librarian shushes you as you enter.
+~
+She is a stern old woman who probably got that way from sitting behind
+a desk all day shushing people.
+~
+67 0 0 S
+2 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 2
+>speech_prog a e i o u~
+if ispc($n)
+  mpecho The librarian says, 'SHHHH!'
+  mpecho The librarian says, 'Quiet, it's a library.  People are trying to read.'
+  glare $n
+endif
+~
+|
+#13301
+sage~
+the sage~
+A pair of bespectacled eyes peer over the books as the sage looks at you.
+~
+The sage goes back to flipping pages and making notes in a volume of his
+own.  His hand strokes his long white beard slowly as he rereads the
+same page for the fourth time.
+~
+83 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+>speech_prog "vapri amu tah"~
+say Eh?
+emote absently strokes his beard and stares off into the corner of the ceiling.
+tell $n I think I know something of that.  Something about a runic tablet to unlock it.
+tell $n You go get a stone tablet, and I'll read up on it.  I'm certain I can find this.  It sounds so familiar.
+tell $n Oh, I think you can probably find a tablet easily enough.  One of the preeminent mages in the world is bound to have one, and I'm sure you can just ask for it.
+tell $n Perhaps in Kaersblade or Camelot?  I don't know.  I don't really travel much, outside the Library.
+tell $n Give me the tablet when you get it, and I'll make sure it's okay.
+~
+>give_prog stone tablet blank~
+if mpcalc($n colossus 3 1) == 1
+tell $n Thanks, but I already have one of these, remember?
+give $o $n
+else
+tell $n Yes, this will do nicely.  It is unmarred...quite acceptable.
+tell $n I did some research, and found that the runes you much write on the tablet must be special.  They need to be written in dragon's blood.
+tell $n Not only that, but the quill must be a magic chimera feather, so that it can resist the acidity of the blood..
+tell $n I can write them, but I have none of those things.  You have to go get them.
+tell $n In the meantime, I shall practice the runes with ink, to be certain I don't get them wrong.
+tell $n Just give me the blood and the feather when you get them, and I can do the rest.  Good luck!
+mpjunk all
+tell $n I'll just hold on to this.
+mpcalc $n colossus 3 1 1
+endif
+~
+>give_prog magical feather~
+if mpcalc($n colossus 3 1) == 0
+ tell $n Eh?  What's this?  Here, I don't want it.
+ give $o $n
+ else
+ if mpcalc($n colossus 4 1) == 1
+  tell $n We already did that part, my absentminded friend.
+  else
+  tell $n Ah, excellent.  One moment while I craft the quill.
+  mpcalc $n colossus 4 1 1
+  if mpcalc($n colossus 5 1) == 1
+   mpjunk all
+   tell $n Alright.  Now, I shall begin.
+   emote carefully begins to write on the tablet, and the dragon's blood burns the symbols into the stone.
+   tell $n Perfect!
+   mpoload 14867 90
+   mpechoat $n $I hands you the finished product.
+   mpechoaround $n $I hands $N the finished tablet.
+   tell $n Just invoke that.  To do so, I believe you must recite all the words on the wall of the statue, followed by all those I have written here.
+   tell $n However, you must not stop in mid-invokation.  Say them like this:  'vapri-amu-tah-...etc.'
+   mpquiet
+   give tablet $n
+   mpunquiet
+  endif
+ endif
+endif
+~
+>give_prog vial dragon blood~
+if mpcalc($n colossus 3 1) == 0
+ tell $n Eh?  What's this?  Here, I don't want it.
+ give $o $n
+ else
+ if mpcalc($n colossus 5 1) == 1
+  tell $n We already did that part, my absentminded friend.
+  else
+  tell $n Hmm.  Yes, this will be perfect as ink.
+  mpcalc $n colossus 5 1 1
+  if mpcalc($n colossus 4 1) == 1
+mpjunk all
+   tell $n Very well, I shall begin the inscription process.
+   emote carefully writes on the tablet, the dragon's blood burning away the stone.  The symbols are etched permanently there.
+   tell $n Perfect!
+   mpoload 14867 90
+   mpechoat $n $I hands you the finished product.
+   mpechoaround $n $I hands $N the finished tablet.
+   tell $n Just invoke that.  To do so, I believe you must recite all the words on the wall of the statue, followed by all those I have written here.
+   tell $n However, you must not stop in mid-invokation.  Say them like this:  'vapri-amu-tah-...etc.'
+   mpquiet
+   give tablet $n
+   mpunquiet
+  endif
+ endif
+endif
+~
+|
+#13302
+dasher reindeer~
+Dasher~
+Dasher stamps at the ground impatiently.
+~
+Dasher is a very active reindeer, always on the go.  He wants to get
+out into the sky, and carry the sleigh.
+~
+67 524288 250 S
+1 0 0 0d0+0 0d0+0
+0 0
+0 Animal~ 1
+#13303
+dancer reindeer~
+Dancer~
+Dancer paces around his stable slowly.
+~
+Dancer seems to be tired of waiting for Christmas Eve, yet not
+exactly impatient about it yet.
+~
+67 524288 250 S
+2 0 0 0d0+0 0d0+0
+0 0
+0 Animal~ 1
+#13304
+prancer reindeer~
+Prancer~
+Prancer rests in a pile of hay.
+~
+Prancer doesn't seem to mind the rest, unlike some of the other
+reindeer, who would much rather be going somewhere.
+~
+67 524288 250 S
+4 0 0 0d0+0 0d0+0
+0 0
+0 Animal~ 1
+#13305
+vixen reindeer~
+Vixen~
+Vixen's antlers turn toward you as you enter.
+~
+Vixen snorts and looks back at the feed, not much minding who enters.
+You get the feeling that Vixen is a practical sort of reindeer,
+who likes a bit of luxury in exchange for services.
+~
+67 524288 250 S
+1 0 0 0d0+0 0d0+0
+0 0
+0 Animal~ 1
+#13306
+blitzen reindeer~
+Blitzen~
+Blitzen has a fire in his eyes, and a little more energy than some of the others.
+~
+Blitzen is very anxious to get into the sky.  A great amount of energy
+is bottled up in this reindeer.
+~
+67 524288 250 S
+4 0 0 0d0+0 0d0+0
+0 0
+0 Animal~ 1
+#13307
+comet reindeer~
+Comet~
+Comet is as sleek and aerodynamic as they come.
+~
+The reindeer Comet twists his head at you, snorts at you, and goes
+back to his dinner.  He prides himself on his figure, and eats only
+the finest health food.
+~
+67 524288 250 S
+2 0 0 0d0+0 0d0+0
+0 0
+0 Animal~ 1
+#13308
+cupid reindeer~
+Cupid~
+Cupid is looking out the north window.
+~
+Cupid is looking longingly out the stable window at a female reindeer
+in the fields.  Cupid is in love...again, just like every year.
+~
+67 524288 250 S
+5 0 0 0d0+0 0d0+0
+0 0
+0 Animal~ 1
+#13309
+donner reindeer~
+Donner~
+Donner is standing on the roof of the stable.
+~
+Donner appears to be practicing for the annual Reindeer Games.  He
+is said to be unparalleled in the inverted 3-D slalom, and a
+favorite to win several different sprints and hurdles races.
+~
+67 524288 250 S
+5 0 0 0d0+0 0d0+0
+0 0
+0 Animal~ 1
+#13310
+rudolph reindeer~
+Rudolph~
+Rudolph stands proudly in the center of his stable.
+~
+Rudolph is all decked out in red and gold, and it looks like his
+fame has gone to his head.  The cocky young reindeer hero acts as
+if he hasn't seen you enter, and turns his nose up at you.
+~
+67 524840 750 S
+2 0 0 0d0+0 0d0+0
+0 0
+0 Animal~ 1
+#13311
+mrs claus~
+Mrs. Claus~
+A short, plump, rosy-cheeked woman beams a cheery smile at you.
+~
+Mrs. Claus is a happy old lady.  She absently wipes her hands on
+her apron.  It doesn't make much difference, though, since her
+apron had more flour on it than her hands did.  She's been baking
+cookies all day, by the look of things.
+~
+67 8192 800 S
+5 0 0 0d0+0 0d0+0
+0 0
+0 Elf~ 2
+#13312
+santa claus~
+Santa Claus~
+A fat man in a red suit with white trim walks by you.
+~
+Santa Claus, the legendary Father of Christmas, is a fat jolly elf
+with a smiling apple-red face.  He's wearing a bright red suit, and
+has a large sack over one shoulder.
+~
+67 8320 1000 S
+2 0 0 0d0+0 0d0+0
+0 0
+0 Elf~ 1
+#13313
+elf~
+the elf~
+An elf dressed in green and red is busy building toys.
+~
+The short little pointy-eared elf smiles at you and turns back to his
+toymaking.  He's an industrious worker, and it looks like he enjoys
+his work.
+~
+65 0 250 S
+1 0 0 0d0+0 0d0+0
+0 0
+0 Elf~ 1
+#13314
+elf~
+the elf~
+This elf is working on a large, complicated...something.
+~
+The elf's green and red garb is somehow untouched by dirt and grime,
+even though he's been on the dirty floor, all day.  He slides back under
+his...whatever, and keeps working.
+~
+65 0 250 S
+1 0 0 0d0+0 0d0+0
+0 0
+0 Elf~ 1
+#13315
+elf~
+the grumpy elf~
+An elf is busy cleaning the reindeers' stables.
+~
+The elf doesn't look especially happy.  Of course, that's not surprising,
+since he's been spending most of the day cleaning up reindeer sh*ahem* feces.
+~
+65 0 150 S
+2 0 0 0d0+0 0d0+0
+0 0
+0 Elf~ 1
+#13316
+toy train~
+the toy train~
+A big toy train is charging around the tracks at breakneck speeds.
+~
+The toy train has about a dozen cars--boxcars, a coal car,
+a big red caboose, the engine, oil cars, and everything else.  This
+is a beautiful train that any little boy would love to get for
+Christmas.  Except that it seems to be moving around on its own.
+~
+67 0 0 S
+4 0 0 0d0+0 0d0+0
+0 0
+0 Object~ 0
+#13317
+toy soldier~
+the toy soldier~
+A little toy soldier marches around the room.
+~
+The toy soldier is dressed in red, with a black helmet and boots.  He's
+got a serious-looking expression carved onto his face.  He also has
+a small black moustache.
+~
+65 0 0 S
+2 0 0 0d0+0 0d0+0
+0 0
+0 Object~ 0
+#13318
+frosty snowman~
+Frosty the Snowman~
+A large white figure made of three balls of snow stands here.
+~
+Frosty has a corncob pipe, a button nose, and two eyes made out of coal.
+He also has a broom in one hand, and a ragged black hat that looks like
+it's about to fall apart.
+~
+67 0 -100 S
+4 0 0 0d0+0 0d0+0
+0 0
+0 Elemental~ 1
+>rand_prog 15~
+mpecho The wind howls, and white snow whips by your face, chilling you to the bone.
+~
+|
+#13319
+librarian chaserlibrarian~
+the librarian~
+An exasperated librarian is pursuing a runaway book through the halls.
+~
+The librarian gasps and wheezes, exhausted by the effort of
+chasing books up and down the halls all day long.  She stops for a
+second, panting, and then takes up the chase once more.
+~
+11 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 2
+>trap_act_prog p giggles.~
+if name($n) == book runawaybook
+  mpecho The librarian charges in after the runaway book.
+  say Get over here!
+  say I'll get you!
+  mpecho The librarian gasps and wheezes.
+  say I'm getting too old for this.
+endif
+~
+>trap_act_prog p grins evilly.~
+if number($n) == 13321
+  groan
+  say Stop it!  Get back here!
+endif
+~
+>rand_prog 5~
+if mobishere() = 13321
+ say Gotcha!
+ mpecho The librarian grabs the runaway book.
+ say Finally! Now, back to the shelf where you belong.
+ mpecho The librarian, alive with new energy, heads off to replace the book.
+ mppurge runawaybook
+ mppurge self
+endif
+~
+|
+#13320
+aide~
+the librarian's aide~
+A librarian's aide is putting books back on the shelves.
+~
+This aide is dressed in a relatively nice outfit, and is carefully
+taking books back to their shelves.  (Yes, some of the books are
+struggling.)
+~
+65 0 0 S
+2 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13321
+book runawaybook~
+a runaway book~
+A small book is fleeing the librarians as fast as its little pages can carry it.
+~
+The book has the most unusual way of running you've ever seen.  (Of
+course, the fact that it's a running book probably adds a bit to your
+sense of amazement.)  It thrusts its front cover forward, then swings
+all the pages and the back cover toward the front.  And it does this
+very fast, and over and over again.
+~
+65 512 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+0 Object~ 0
+>entry_prog 35~
+mpecho A book charges into the room, emitting a giggling sound.
+mptransfer chaserlibrarian self
+if mobishere() = 13319
+ mpforce chaserlibrarian follow runawaybook
+ say Oh, I'm sooooo scared.
+ giggle
+endif
+~
+>rand_prog 55~
+say You'll never get me!
+if mobishere() = 13319
+ mpecho The book dodges the librarian's grasping hands!
+ grin
+endif
+~
+|
+#13322
+catalog card~
+the card catalog~
+The card catalog sits here, to help you find things in the Library.
+~
+~
+65603 0 0 S
+5 0 0 0d0+0 0d0+0
+0 0
+0 Object~ 0
+>greet_prog 100~
+if level($n) < 40
+  tell $n Welcome to the Castle Library!
+  tell $n If you need help finding anything, just ask me.
+  tell $n Just say that you need "directions" and I'll be glad to aid you in any way possible.
+  else
+  tell $n Remember, you can ask me for "directions"
+endif
+~
+>speech_prog directions~
+if ispc($n)
+  say Where would you like to go?
+  tell $n The Library is a strange and wonderful place!
+  tell $n There are several parts of the Library.
+  tell $n The major sections of the Library include:  "Childrens", "History", "Science", and "Fiction"
+  tell $n And the "Caged-Off" part, but nobody ever goes there.
+  tell $n Just say the name of the part of the Library to which you want directions.
+endif
+~
+>speech_prog children childrens~
+if ispc($n)
+  say Ah, the Childrens' section!  Stories of strange lands and creatures!
+  tell $n Be sure to check out the murals on the walls while you're there.
+  tell $n Don't miss the storyteller's tales.
+  tell $n The Childrens' section is directly east, down the stairs.
+  tell $n Some of the areas in it include Smurf Village and the Circus.
+  tell $n Thank you for using the Card Catalog.
+endif
+~
+>speech_prog History~
+if ispc($n)
+  say Wisely chosen!  It is good to learn of the past, to avoid future mistakes.
+  tell $n The History section isn't as large as some, but it is a vital part of the Library.
+  tell $n It is the first aisle south of here.  All the aisles are to the west.
+  tell $n Some of the areas within this section include Troy and the Shire.
+  tell $n Thank you for using the Card Catalog.
+endif
+~
+>speech_prog Science~
+if ispc($n)
+  say The Science section is one of the more diverse parts of the Library.
+  tell $n It is divided into two parts:  social and natural sciences.
+  tell $n The Science section is the second aisle to the south.
+  tell $n Social sciences are on the east end of the aisle.
+  tell $n There is a book about a Dangerous Neighborhood there.
+  tell $n One of the nannies from Daycare is studying about children's social behavior there too, I think.
+  tell $n Natural sciences are on the west end.
+  tell $n Thank you for using the Card Catalog.
+endif
+~
+>speech_prog Fiction~
+if ispc($n)
+  say Fiction!  It's wonderful to relax with after a difficult day.
+  tell $n You will find our fabulous Fiction section in the third aisle to the south.
+  tell $n I hope you find something you'll enjoy, although most of the really interesting books here are out, unless you like pirate adventures.
+  tell $n Thank you for using the Card Catalog.
+endif
+~
+>speech_prog sex porn~
+
+~
+>speech_prog asylum~
+if ispc($n)
+  say Oh, no!  You CAN'T want to go there!
+  tell $n PLEASE don't tell me you "really want to know"...PLEASE!
+endif
+~
+>speech_prog p Caged-Off~
+if ispc($n)
+  say Heavens no!  You can't want to go there!
+  say That's where we keep the dangerous books!
+  say You could get hurt!
+  tell $n Please don't say you "really want to know"...please!
+  endif
+~
+>speech_prog p really want to know~
+if ispc($n)
+  mpecho The Card Catalog wails, 'Oh, woe is me!'
+  say Very well, but it's your neck.
+  say The Caged-Off section is all the way south along this passage.
+  tell $n But it's locked, and I'm not telling you how to find the key.
+  endif
+~
+>speech_prog key~
+if ispc($n)
+  tell $n No!  I won't tell!
+  tell $n I won't be a part of this suicidal plan of yours.
+  endif
+~
+>bribe_prog 1~
+tell $n Money deposited into Arcanum Library Fund.  Thank you, and have a nice day!
+mset self gold 0
+mpjunk all
+~
+>speech_prog "vapri amu tah"~
+tell $n Gracious, I don't know anything about that.
+tell $n Try the sage in the reading room.  I think he knows a lot about ancient languages.
+~
+>speech_prog colossus~
+tell $n There isn't anything like that in the Library.  The Colossus is VERY old, though.
+tell $n Maybe you should ask the sage in the reading room.  He prides himself about his knowledge of ancient things, languages and the like.
+~
+|
+#13323
+storyteller_library~
+the storyteller~
+A storyteller sits in the middle of the floor, reciting many tales.
+~
+The storyteller is relaxing, sitting in the center of the room,
+telling one tale after another.  She tends to get quite an audience
+at times.  You can soon see why...her oratory is captivating.
+~
+65603 0 0 S
+100 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 2
+>speech_prog story~
+if mpcalc($i storytell 0 1) == 1
+ break
+endif
+mpcalc $i storytell 0 1 1
+if rand(33)
+ script ../data/scripts/fairytale.txt
+else
+ mpcalc $i storytell 0 1 0
+ mpecho ^yThe storyteller sings 'Just sit right back and you'll hear a tale, a tale of a fateful trip...that started from this tropic port, aboard this tiny ship.'^x
+ mpecho ^yThe storyteller sings 'The mate was a mighty sailing man, the skipper brave and sure.  Five passengers set sail that day, for a three hour tour...a three hour tour.'^x
+ mpecho The last words echo in your head, and mist fills the room.
+ mpat 32100 mpecho A fog of mist fills the room and then fades.
+ mptrans !roomall 32100 look
+endif
+~
+|
+#13324
+janitor~
+the janitor~
+The Library's janitor is cleaning up the area.
+~
+The janitor looks like a happy fellow, content in his job, and
+whistling while he works.  He keeps the entire Library (except the
+REALLY dangerous parts) clean and tidy, and safe for the patrons.
+~
+69 0 0 S
+2 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+>rand_prog 15~
+mpquiet
+mpat 13356 drop janitors
+mpat 13356 put all found
+mpat 13356 get janitors
+mpunquiet
+~
+|
+#13325
+librarian Edith~
+the head librarian~
+Edith looks up with a scowl on her face, angry at being interrupted.
+~
+It's not wise to get Edith angry.  She doesn't like it when people
+break the 'No talking' rule.  Rumor has it that she's a powerful mage.
+Even if she isn't, she IS in charge here.  She knows the Library better
+than anyone.
+~
+67 128 0 S
+5 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 2
+>greet_prog 100~
+say Hello.
+mpecho Edith scowls at you.
+say Do you have an appointment?
+say Give me your appointment slip.
+say Hurry up, I haven't got all day!
+~
+>give_prog appointmentslip slip~
+mpoload 13357 12
+tell $n Here you go.
+give edithsblessing $n
+tell $n Now run along.
+mpechoat $n Edith smoothly guides you out of her room.
+mpechoaround $n Edith ushers $N out.
+mptransfer $n 13300
+~
+>speech_prog a e i o u~
+if ispc($n)
+  mpecho Edith says, rather loudly, 'QUIET, this is a LIBRARY!'
+  mpechoat $n She murmurs some magic words and you feel yourself shrinking.
+  mpechoaround $n She murmurs some magic words and $N shrinks away!
+  mptransfer $n 13357
+  mpat 13357 mpecho Edith says, 'That'll teach you!'
+  mpat 13357 mpecho The sound is terribly loud. It hurts your ears.
+  mpecho She looks around and says, 'Anyone else want to make trouble?'
+  endif
+~
+>rand_prog 100~
+if ispc($r)
+ mpecho Edith stands and pushes you out of the room.
+ mpecho She mutters about people not having appointments.
+ say How am I ever supposed to keep this place running properly?
+ mptransfer $r 13300
+ mpat 13300 close north
+ mpat 13300 lock north
+ endif
+~
+|
+#13326
+book entomology~
+a vicious entomology book~
+A snarling book covered with pictures of bugs bites at you.
+~
+RUN!!  It's angry, and hungry, and it eats people whole!  This book
+is behind a cage for a reason.
+~
+99 0 0 S
+3 0 0 0d0+0 0d0+0
+0 0
+0 Object~ 0
+>greet_prog 20~
+say Hey, come here.
+say Just a little closer.
+mpecho The book sniffs at you.
+mmm
+say Really, I just wanna, um, smell you a little.
+mpecho Saliva runs off the book's six-inch fangs.
+mpecho It grins haphazardly.
+say Trust me.
+say I'm chained anyway--I couldn't hurt you.
+mpecho The nasty-looking thing waits passively for a while.
+mpecho It abandons this pretext before long and charges you!
+mpecho The chain snaps out straight and the book gnashes its teeth at you.
+snarl
+~
+>fight_prog 15~
+say LOOK AT ME, WIMP!
+mpecho You feel an overwhelming urge to look at the book.
+mpecho You can't stop yourself from examining it closer.
+mpforce all look book
+~
+>trap_act_prog p looks at you.~
+mpechoat $n The book opens its mouth, and swallows you whole!
+mpechoaround $n The book suddenly snarfs up $N!
+~
+|
+#13327
+rabid book~
+a rabid book~
+This rabid book is frothing at the...cover?
+~
+This mad tome is advancing on you, mindlessly hunting.  It wants
+little but to kill.  Odd that a book could be affected by rabies,
+but stranger things have happened in the Library.
+~
+97 0 0 S
+2 0 0 0d0+0 0d0+0
+0 0
+0 Object~ 0
+>all_greet_prog 85~
+mpecho The rabid piece of literature foams at the mouth.
+mpecho Or is it foams at the pages?  At the cover?
+mpecho Anyway, it foams somewhere.
+snarl
+if rand(30)
+  mpkill $r
+  endif
+~
+|
+#13328
+playboy magazine~
+a PlayBoy!?!~
+A magazine filled with smut has been locked up in here as well.
+~
+The magazine has a half-naked woman on the cover, and the word
+'PlayBoy' written on it, in large inviting letters.
+~
+65 0 0 S
+4 0 0 0d0+0 0d0+0
+0 0
+0 Object~ 0
+>fight_prog 69~
+if sex($n) == 1
+  mpecho The PlayBoy flips open its pages!
+  mpecho Wow, that's quite nice.
+  mpforce $n ooo
+  mpecho OH, MY!
+mpechoaround $n $N begins to drool.
+mpechoat $n You begin to drool.
+  mpecho Well, that's more than enough of an argument for you.
+  mpecho Why were you trying to destroy this magazine, anyway?
+  peace
+  endif
+~
+|
+#13329
+nanny~
+the nanny~
+A nanny stands here, looking exasperated.
+~
+She's looking through the shelves, trying to find a book on child care.
+Perhaps her methods aren't working so well anymore?
+~
+67 0 0 S
+2 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 2
+>greet_prog 100~
+say What are you doing out of the day care?
+say Well, answer me!
+say Are you lost--is that it?
+say Poor little child.  Let me help you find your way.
+say Just give nanny a hug, and she'll take you back to day care.
+~
+>trap_act_prog p hugs you.~
+mpecho The nanny carries you off to day care.
+mptransfer $n 6601 look
+mpat 6601 say There you go, dear.  Now behave.
+~
+|
+#13330
+garbage monster dragon~
+the garbage monster~
+The "garbage monster" is a furious little dragon.
+~
+The garbage monster's story is a simple one.  It got Edith angry, and
+found itself shrunk to its current size, and tossed in the trash.  Now
+Edith uses it to incinerate the trash.
+~
+67 0 -1000 S
+7 0 0 0d0+0 0d0+0
+0 0
+0 Dragon~ 0
+#13331
+mouse~
+the mouse~
+A distinguished-looking mouse sits here.
+~
+The mouse is unhappy about his loss.  He only wants to eat.  Surely
+this isn't too much to ask.  The mouse is dressed in a top hat, a
+nice dress suit, and carries a cane.  He also has a monocle, and
+he talks with a British accent.
+~
+67 0 1000 S
+8 0 0 0d0+0 0d0+0
+0 0
+0 Animal~ 1
+>greet_prog 98~
+tell $n You must help me find my cheese.  I lost it whilst on a walk through the great dangerous wastelands under the Desk.  I know not what may have happened to it since then.
+tell $n  Perhaps it has been destroyed?  Oh, woe is me if that is the case, for I shall surely starve.
+~
+>give_prog cheese wedge~
+tell $n Bless you, O traveler.  As a reward, let me break the curse that is upon you.  May you have the fortune to never walk this path again.
+mpechoat $n You find yourself growing larger, and the air shimmers.
+mpechoaround $n The mouse chants, and $N grows larger.
+mpechoaround $n Suddenly, the air around $N shimmers, and $e is gone.
+mptransfer $n 13300
+mpechoat $n You are standing back outside Edith's office!
+mpechoaround $n $N appears, amidst a shimmering of the air.
+mpjunk cheese
+~
+|
+#13332
+dust bunny~
+a dust bunny~
+A dust bunny slouches in the corner, hissing and giggling.
+~
+This is a truly disgusting creature.  It's covered with dirt,
+possibly the dirtiest thing you've ever seen.  It's drooling a long
+strand of a greenish liquid.  All down its front is a dried-up
+yellow-brown mess, that looks (and smells) like dried vomit.
+~
+67 0 0 S
+5 0 0 0d0+0 0d0+0
+0 0
+0 Animal~ 0
+#13333
+ant~
+the ant~
+A huge vicious-looking beast walks by.  It looks like...an ant?
+~
+The ant is a bit larger than you, and it could be very dangerous, with
+you in your current state.  Its feelers wave in your direction and
+it begins to advance.
+~
+65 0 0 S
+7 0 0 0d0+0 0d0+0
+0 0
+0 Insect~ 1
+#13334
+roach cockroach~
+the roach~
+A vicious roach waves its antennae at you, and moves forward.
+~
+The roach snarls and charges, its wings fluttering a little as its
+mandibles snap shut.  The cockroach's heavy shell shines from the
+small amount of available light.
+~
+65 0 -500 S
+9 0 0 0d0+0 0d0+0
+0 0
+0 Insect~ 1
+#13335
+foot~
+Edith's foot~
+Edith's massive foot slams down near you, almost crushing you.
+~
+The enormous foot is encased in a giant black shoe.  The shoe is open
+in front, and you can see Edith's toes, and much of her feet, including
+all of her bunions.  Also, her foot odor is starting to really make
+you sick.  You feel as if you're going to pass out from the (probably
+toxic) smell.
+~
+67 0 0 S
+10 0 0 0d0+0 0d0+0
+0 0
+0 Object~ 0
+#13336
+buttock left~
+Edith's left buttock~
+Edith shifts her butt, and her left buttock nearly squashes you.
+~
+Edith has quite a large rear end.  Probably because she spends so
+much time sitting at her desk shrinking people.  (You start getting
+some pretty mean thoughts.)
+~
+67 0 0 S
+7 0 0 0d0+0 0d0+0
+0 0
+0 Object~ 0
+#13337
+buttock right~
+Edith's right buttock~
+Edith's right buttock is on the other half of the chair from you.
+~
+This massive mountain of flesh shifts around and shoves at you.
+You scramble for someplace where you'll be safe from this frightening
+sight.
+~
+67 0 0 S
+9 0 0 0d0+0 0d0+0
+0 0
+0 Object~ 0
+#13338
+fly~
+the fly~
+A fly stares at you through its unnerving multifaceted eyes.
+~
+The fly makes a terribly loud (to you, anyway, at your size) buzzing
+sound and rises from the desktop.  It heads straight toward you,
+and begins to circle, sizing you up.
+~
+67 524288 0 S
+9 0 0 0d0+0 0d0+0
+0 0
+0 Insect~ 1
+#13339
+carpenter ant~
+the carpenter ant~
+An ant wearing overalls is hammering away at Edith's desk.
+~
+Apparently this is a carpenter ant.  That would explain the getup.
+It's busy building a new hole in Edith's desk, which will probably
+become its home soon.
+~
+67 0 500 S
+10 0 0 0d0+0 0d0+0
+0 0
+0 Insect~ 1
+#13340
+aeneas~
+Aeneas~
+Aeneas is here, escaping from the vast numbers of the Achaean host.
+~
+This man realizes that he has no hope of survival if he stays, and
+he's fleeing the city with the Achaeans close behind him.  He looks
+nervous, and keeps looking around to make sure he isn't seen.
+~
+67 0 0 S
+6 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13341
+cassandra prophetess~
+Cassandra~
+A prophetess stands here, crying.
+~
+This is Cassandra, whose destiny is to see the future, and to always
+be right.  The curse in this is that she will never be listened to.
+She weeps for Troy, for she knows it will not win.  She weeps for
+herself, for she tried to tell them.
+~
+67 0 0 S
+6 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 2
+#13342
+guard trojan~
+a Trojan palace guard~
+A guard stands proudly at the palace entrance.
+~
+The Trojan guard stands at the doors, denying entrance into the
+palace.  While all the others are fighting, this man has the
+honor of protecting the king from harm.
+~
+67 0 0 S
+6 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13343
+helen woman~
+Helen~
+Before you is the most beautiful woman you have ever seen.
+~
+You look into the legendary 'face that launched a thousand ships',
+the face of Helen of Troy.  Her features jump out at you, and she
+blinks her eyes slowly and turns toward you.  There's just something
+about her that you can't describe.  It transcends just beauty.
+~
+67 128 0 S
+5 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 2
+#13344
+priam king~
+Priam, King of Troy~
+King Priam of Troy sits on his throne, and his fingers tap the arm nervously.
+~
+Priam fears for Troy.  Ever since this morning, when they brought
+the horse within the walls, the Trojans have been fighting a brutal
+battle with the Achaeans.  The fighting reaches the heart of the city,
+and the palace gates.
+~
+67 0 0 S
+8 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13345
+hecuba queen~
+Hecuba, Troy's Queen~
+Hecuba sits on her throne, a most unhappy queen.
+~
+Hecuba's hands are clenching the arms of the throne.  She's glowering
+at her husband and muttering about how he should have listened to Laocoon
+and Cassandra.
+(Of course, SHE didn't listen to them, but she's conveniently
+managed to overlook that.)
+~
+67 0 0 S
+8 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 2
+#13346
+memnon king~
+Memnon~
+Memnon is NOT having a good visit to Troy.
+~
+This Ethiopian king is very unhappy about the fact that when he FINALLY
+decides to take Priam up on his offer of a visit to Troy, the city is
+thrown into a ten-years war, and conquered.
+(It's an  understatement to say that he wants to go home.)
+~
+67 0 0 S
+7 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13347
+achilles~
+Achilles~
+Achilles slips his sword under Hector's guard, scoring another light hit.
+~
+This quick and deadly warrior is almost a legend.  The prince of the
+Myrmidones flashes you a grin, and his sharp features light up as
+he spins his sword in the air in front of you.
+~
+67 0 0 S
+9 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13348
+hector~
+Hector~
+Hector is slowly but surely losing this fight.
+~
+Hector's a bloody mess.  He doesn't look like he's going to win this
+fight.  However, Hector's been in worse situations than this before,
+and come out of it shining.  This is because Hector's a thinker.
+The brown eyes of the man known as the tamer of horses are filled
+with determination.
+~
+67 0 0 S
+7 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13349
+paris~
+Paris~
+Paris, the man who stole Helen from Menelaus, stands here.
+~
+This guy was asking for trouble when he had to judge a beauty
+contest between three goddesses.  You can't come out on the good
+end of a deal like that.  He may have the most beautiful woman in the
+world in the palace, but chances are that he won't survive long enough
+to get back in there.
+~
+67 0 0 S
+8 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13350
+philoctetes~
+Philoctetes~
+Philoctetes, bearer of Hercules' bow, stands here.
+~
+He is a great warrior in his own right.  His arms bear the calluses of
+the firing of many arrows.  He also has a fresh wound on his left arm.
+~
+67 0 0 S
+7 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13351
+menelaus~
+Menelaus~
+Menelaus, Helen's husband, has sworn to get her back.
+~
+Menelaus is very unhappy, because he thought the war should have
+been won years ago.  He grumbles to himself about the Trojans'
+walls keeping him from his wife.
+~
+67 0 0 S
+9 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13352
+ajax~
+Ajax~
+Ajax, a young Achaean warrior, is a giant among his peers.
+~
+Ajax is freshly scarred, and a new wound bleeds down the side of his
+face.  He looks pleased with his day's battle, however.
+~
+67 0 0 S
+8 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13353
+Agamemnon~
+Agamemnon~
+The leader of the Achaean forces, Agamemnon stands before you.
+~
+The son of Atreus is a proud man, and a great leader among the
+Achaeans.  The battle for Troy has been long and brutal, and none
+have borne the weight of it more than Agamemnon.
+~
+67 0 0 S
+6 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13354
+calchas soothsayer~
+Calchas~
+Calchas, the soothsayer, walks through the Achaean camp.
+~
+He doesn't appear much concerned with the battle.  Perhaps he knows he
+won't be harmed.  He heaves a slow, long sigh, and looks toward the
+sky, studying the constellations.
+~
+65 0 0 S
+6 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13355
+diomedes~
+Diomedes~
+Diomedes, the young Prince of Argos, rests in his tent.
+~
+Diomedes is a cocky young warrior, and with every right.  So far, he
+hasn't been touched in the battle.  He's brought down many of the
+Trojan host, as you can see from the loot he has.
+~
+67 0 0 S
+7 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13356
+odysseus~
+Odysseus~
+Odysseus, King of Ithaca, is leading the charge into Troy!
+~
+The Achaeans may have won!  Odysseus' ploy with the great horse has
+gained Achaean forces entry into the city.  The Trojans' greatest strength,
+their walls, is beaten.  Odysseus has a great smile on his face.
+The son of Laertes turns toward you, his piercing gray eyes trying to
+decide whether you're friend or foe.
+~
+67 0 0 S
+7 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13357
+Neoptolemus~
+Neoptolemus~
+Neoptolemus, Achilles' son, is one of those chosen to hide in the horse.
+~
+He is truly the son of his father.  Achilles would be proud.
+Neoptolemus waits quietly as the horse moves into Troy, preparing
+either for a long wait, until the Trojans go to sleep, or for a brutal
+struggle if they figure out the plan.
+~
+67 0 0 S
+7 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13358
+Ithacan warrior~
+an Ithacan warrior~
+The Ithacan warrior charges through the weak defenses of a surprised Troy.
+~
+The Trojans never saw this coming, he realizes, as he hacks down yet
+another warrior.  This man looks proud to be under the command of one
+as wise and great as Odysseus.
+~
+65 0 0 S
+6 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13359
+trojan warrior~
+a Trojan warrior~
+One of the warriors of Troy fights for his life.
+~
+The warrior is bleeding from several wounds, yet he holds his
+own fiercely.  He's determined, and he's fighting for his home.
+~
+65 0 0 S
+6 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13360
+warrior myrmidon~
+a Myrmidon warrior~
+A Myrmidon warrior approaches.
+~
+The Myrmidones are among the best of the Achaeans.  Their leader,
+Achilles, is one of the Achaeans' greatest champions.  This
+man looks very powerful, and well-prepared for battle.
+~
+65 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+>death_prog 100~
+if ispc($n)
+ if mpcalc($n bountytracking 0 6) == 3
+  if mpcalc($n currentbounty 0 7) != 0
+   mpset $1 mpcalc $n currentbounty 0 7
+   mpset $1 = $1 - 1
+   mpechoat $n You obtain 1 grecian urn! $1 left until bounty complete.
+   mpcalc $n currentbounty 0 7 $1
+  endif
+ endif
+endif
+~
+|
+#13361
+warrior argos~
+a warrior from Argos~
+A warrior from Argos clashes with his enemies.
+~
+The warrior drives his weapon toward his enemy, undaunted.  The battle-
+scarred veteran prepares himself for combat as you approach.
+~
+65 0 0 S
+5 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#13362
+nestor man~
+Nestor~
+A tired-looking old man sits in Odysseus's tent, waiting for his return.
+~
+White-haired old Nestor is along as an advisor to the Achaeans.  He's
+long since passed the age where he could fight alongside them.  As
+you look at each other, he pulls his blue cloak about him a little
+tighter, to keep the chilly air away.
+~
+67 0 0 S
+7 0 0 0d0+0 0d0+0
+0 0
+0 Human~ 1
+#0
+
+#OBJECTS
+#13300
+book red~
+a red book~
+A book of Christmas stories.~
+~
+28
+0
+0
+-1~ 1~ 1~ 13311~
+5 0 0
+E
+red book~
+The book is titled, "Tales of Christmas", and the first page has a
+smiling fat man on it.  The pictures look so real that you feel like you
+could just fall into the story.
+
+(This area is for levels 1-10.)~
+#13301
+tome book~
+a dusty tome~
+A book about the legendary war at Troy.~
+~
+28
+0
+0
+-1~ 1~ 1~ 13369~
+5 0 0
+E
+tome book troy~
+The large, dusty tome reads as follows:
+     Come, and walk into the past, to a time when there was a great battle.
+     To a place where the great heroes of old fought for their lives.
+(This area is for levels 8-12.)
+~
+#13304
+quill~
+a quill~
+A quill pen, the tool of an intellectual.~
+~
+9
+0
+16385
+0~ 0~ 0~ 0~
+2 0 0
+A
+1 -1
+A
+5 -1
+A
+4 1
+A
+3 2
+#13305
+red nose~
+a bright red nose~
+This is Rudolph's bright red nose.~
+~
+1
+1
+1
+0~ 0~ -1~ 0~
+1 0 0
+A
+12 1
+#13306
+hooves~
+reindeer hooves~
+A reindeer's hooves should fly, but perhaps they require a reindeer?~
+~
+9
+0
+65
+0~ 0~ 0~ 0~
+4 0 0
+A
+14 1
+#13307
+red green hat~
+a red and green hat~
+A perky little red and green hat lies here.~
+~
+9
+0
+17
+3~ 0~ 0~ 0~
+4 0 0
+A
+12 1
+#13308
+shoes belled~
+a pair of belled shoes~
+A pair of shoes, with bells on the toes.~
+~
+9
+0
+65
+3~ 0~ 0~ 0~
+4 0 0
+A
+2 1
+#13309
+red hat~
+santa's red hat~
+This red hat has white trim on it.  It belongs to the 'Big Man', Santa Claus.~
+~
+9
+0
+17
+4~ 0~ 0~ 0~
+5 0 0
+A
+13 1
+#13310
+red suit~
+santa's red suit~
+You marvel at how clean Santa's suit is, since he's always going down chimneys.~
+~
+9
+0
+9
+0~ 0~ 0~ 0~
+7 0 0
+A
+12 1
+#13311
+bag~
+santa's bag~
+Santa's magic bag, within which are many childrens' toys.~
+~
+15
+3136
+16385
+35~ 5~ 0~ 0~
+15 0 0
+#13312
+stuffed bear~
+a big stuffed bear~
+A great big stuffed teddy bear.~
+~
+8
+0
+16385
+0~ 0~ 0~ 0~
+5 0 0
+A
+23 -5
+A
+24 -5
+A
+13 10
+A
+18 -2
+A
+19 -2
+E
+bear stuffed~
+Oh, he's sooooooo cute!
+The bear is nearly the size of you, and you can't help but want to
+snuggle up with it.~
+#13313
+north pole~
+the North Pole~
+The North Pole sticks up out of the snow here.~
+~
+4
+4096
+16385
+4~ 8~ 10~ control weather~
+18 0 0
+#13314
+chair~
+a soft chair~
+A large soft chair with a small bright light hanging over it.~
+~
+12
+0
+0
+1~ 1000~ 144~ 100~
+5 0 0
+#13315
+stove~
+a big black stove~
+Mrs. Claus's big black stove stands here.~
+~
+15
+0
+0
+1000~ 5~ 0~ 0~
+5 0 0
+#13316
+cookie gingerbread~
+a gingerbread cookie~
+A gingerbread cookie shaped like a little man.~
+~
+26
+0
+1
+8~ cure light~  ~  ~
+3 0 0
+#13317
+gingerbread cookie~
+a gingerbread cookie~
+A gingerbread cookie shaped like a little man.~
+~
+19
+0
+1
+25~ 0~ 0~ 0~
+3 0 0
+#13318
+broom~
+a broom~
+An old broom, with some bristles missing.~
+~
+5
+0
+8193
+0~ 1~ 6~ 0~
+5 0 0
+#13319
+corncob pipe~
+a corncob pipe~
+A pipe made from a piece of corncob.~
+~
+9
+0
+17
+0~ 0~ 0~ 0~
+2 0 0
+A
+3 1
+#13320
+drawing clown~
+a drawing of clowns~
+The drawings of clowns on the wall are almost alive.~
+~
+28
+0
+0
+-1~ 1~ 1~ 4401~
+5 0 0
+#13321
+key janitors~
+the janitor's key~
+The key to the janitor's closet.~
+~
+18
+0
+1
+0~ 0~ 0~ 0~
+1 0 0
+#13322
+mop~
+a mop~
+A janitor's mop.~
+~
+5
+0
+8193
+0~ 1~ 6~ 0~
+5 0 0
+#13323
+bucket~
+a bucket of soapy water~
+A bucket of soapy water, with some dirt in it.~
+~
+17
+0
+16385
+6~ 6~ 0~ 1~
+5 0 0
+#13324
+lost found box~
+a box used for lost and found~
+This box reads, 'Lost and Found'.~
+~
+15
+0
+0
+1000~ 1~ 6~ 11~
+5 0 0
+#13325
+key~
+a key~
+A copy of Edith's master key.~
+~
+18
+0
+1
+0~ 0~ 0~ 0~
+1 0 0
+#13326
+picture drawing~
+^ba drawing of smurfs^x~
+^BThe pictures on the walls are of little blue people.^x~
+~
+28
+0
+0
+-1~ 1~ 1~ 6201~
+5 0 0
+#13327
+beanbag chair~
+a beanbag chair~
+A comfortable beanbag chair rests on the ground here.~
+~
+12
+0
+0
+1~ 0~ 144~ 100~
+5 0 0
+#13328
+horse~
+the Trojan horse~
+An enormous wooden horse, left by the Achaeans as a gift, perhaps?~
+~
+28
+0
+0
+-1~ 1~ 1~ 13387~
+5 0 0
+#13329
+book shire~
+a book about the Shire~
+A book lies open here.  On its cover is a picture of a large peaceful village.~
+~
+28
+0
+0
+-1~ 1~ 1~ 1100~
+5 0 0
+E
+new book shire~
+On the cover is a picture of a short, relatively stout figure.
+This figure is recognizable as a hobbit.  He's smiling, and walking
+toward a small village.
+
+(This area is for levels 5-35.)~
+#13330
+trash can~
+a trash can~
+A huge trash can stands in the corner.~
+~
+28
+0
+0
+-1~ 1~ 1~ 13399~
+5 0 0
+#13331
+rim~
+the rim of the trash can~
+You may be able to get out over the rim of the trash can.~
+~
+28
+0
+0
+-1~ 1~ 1~ 13397~
+5 0 0
+#13332
+floyd book~
+BLANK~
+This is the mob factory portalmachine - YANKED.~
+~
+12
+131072
+0
+0~ 0~ 0~ 0~
+5 0 0
+E
+book~
+The main subject of the book is a huge factory where creatures are
+created, assembled, and sent out into the world.  Apparently a man
+named Floyd runs the place.  You catch one cryptic reference to the
+effect that chanting Floyd's name will take you to his factory.
+
+(This area is for levels 5-15.)~
+E
+\trigger~
+9400 \Floyd~
+E
+\portaldir~
+down~
+E
+\machine~
+6~
+E
+@speco~speco_machine~
+#13333
+overalls~
+a pair of overalls~
+A pair of overalls, which are sort of uncomfortable.~
+~
+15
+0
+9
+50~ 0~ 0~ 0~
+5 0 0
+#13334
+hammer~
+a carpenter's hammer~
+A carpenter's hammer, made to strike with great accuracy.~
+~
+5
+0
+8193
+0~ 1~ 6~ 0~
+7 0 0
+A
+19 -1
+A
+18 1
+A
+3 1
+#13335
+eyes~
+a fly's eyes~
+The multi-faceted eyes of a fly stare at you.~
+~
+9
+0
+17
+3~ 0~ 0~ 0~
+5 0 0
+A
+2 1
+A
+18 -3
+E
+eyes~
+They might work fine for the fly, but they disorient you terribly.
+You find yourself blinking rapidly in the hopes of restoring your normal
+vision as soon as possible.~
+#13336
+list naughty nice~
+a list of who's naughty and nice~
+A long list of names lies here.~
+~
+2
+0
+16385
+4~ curse~ weaken~ poison~
+12 0 0
+E
+list~
+This is Santa's infamous list of who's naughty and nice.  He was
+checking it twice when you stabbed him in the chest.~
+E
+nice~
+The beginning of the list is the 'Nice' list.  It's got the names
+of a bunch of goody-goodies.  You skim it and don't see your name.~
+E
+naughty~
+The list sure is long.  You finally found the 'Naughty' section.
+It says:
+  Rebecca Farnsworth
+  James Smith
+  Kenny Evans
+    ...
+    ...
+(You skip down a bit)
+    ...
+    ...
+  Marilyn Jones
+  Carol McConnell
+  Frank Kowalski
+
+  Goodness, your name's on the 'Naughty' list!  (Probably because you
+  killed Santa.)~
+#13337
+pile letters mail~
+a pile of letters~
+A gigantic pile of letters covers much of the floor.~
+~
+12
+0
+0
+0~ 0~ 0~ 0~
+5 0 0
+E
+pile letters mail~
+This pile of mail has all been opened, and you just noticed that
+it's last year's letters.  Santa probably hasn't found time to throw
+them away yet.~
+#13338
+pile letters mail~
+a pile of letters~
+A gigantic pile of letters covers much of the floor.~
+~
+12
+0
+0
+0~ 0~ 0~ 0~
+5 0 0
+E
+pile letters mail~
+These letters are all of this year's notes to Santa.  Only a
+few hundred of them have been opened and read.~
+#13339
+chest~
+a chest~
+A large wooden chest rests against the far wall.~
+~
+15
+0
+1
+500~ 13~ 13340~ 0~
+55 0 0
+#13340
+key~
+a key~
+A key with the Ithacan emblem on it.~
+~
+18
+0
+1
+0~ 0~ 0~ 0~
+1 0 0
+#13341
+amulet onyx lapis odysseus~
+an amulet of the house of Ithaca~
+Odysseus's amulet lies here.~
+~
+9
+0
+5
+4~ 0~ 0~ 0~
+2 0 0
+A
+17 -1
+A
+3 1
+E
+amulet onyx lapis odysseus~
+A amulet on a bronze chain, with a large center made of onyx and lapis
+lazuli.  The blue and black stones are carefully set in the symbol
+of the house of Ithaca--Odysseus's house.~
+#13342
+statue apollo~
+a statue of Apollo~
+A great statue of Apollo towers above you here.~
+~
+12
+1
+0
+0~ 0~ 0~ 0~
+5 0 0
+E
+statue apollo~
+Apollo's statue is an impressive specimen of sculpture.  The detail is
+amazing.  You wonder how the sculptor ever managed to get the statue
+to glow.~
+#13343
+statue poseidon fountain~
+a statue of Poseidon~
+A titanic statue of Poseidon stands in the center of a fountain.~
+~
+25
+0
+0
+0~ 0~ 0~ 0~
+5 0 0
+E
+statue poseidon fountain~
+The statue of Poseidon stands in the center of a small fountain,
+and the sea god's trident is raised high above his head.  Water fills
+the fountain, seemingly from nowhere.~
+#13344
+bow hercules~
+the bow of Hercules~
+Hercules' bow rests here, but you are not strong enough to use it.~
+~
+5
+0
+8193
+0~ 1~ 6~ 11~
+140 0 0
+#13345
+shield figure-8~
+a figure-8 shield~
+Diomedes' shield is in the shape of a figure eight.~
+~
+9
+0
+513
+5~ 0~ 0~ 0~
+5 0 0
+A
+23 -1
+A
+17 -2
+#13346
+long spear~
+a long spear~
+A long spear, the weapon of many warriors.~
+~
+5
+0
+8193
+0~ 1~ 6~ 2~
+14 0 0
+#13347
+buckler heron troy~
+a buckler with a heron emblem~
+A buckler with the heron emblem of the house of Troy.~
+~
+9
+0
+513
+5~ 0~ 0~ 0~
+5 0 0
+A
+17 -1
+#13348
+sword~
+a sword~
+A bronze sword, from the war at Troy.~
+~
+5
+0
+8193
+0~ 1~ 6~ 3~
+8 0 0
+#13349
+cloak blue~
+a blue cloak~
+Nestor's heavy sky-blue cloak.~
+~
+9
+0
+1025
+4~ 0~ 0~ 0~
+5 0 0
+A
+12 2
+A
+17 -1
+#13350
+breastplate bronze~
+a bronze breastplate~
+A heavy bronze breastplate.~
+~
+9
+0
+9
+6~ 0~ 0~ 0~
+5 0 0
+#13351
+sloth key~
+a sloth key~
+A key belonging to a sloth (you suspect the sloth was more than it seemed.)~
+~
+18
+0
+1
+0~ 0~ 0~ 0~
+1 0 0
+#13352
+book poetry~
+a book of poetry~
+A leatherbound book of poems lies here.~
+~
+12
+0
+0
+0~ 0~ 0~ 0~
+20 0 0
+E
+PAGE9 Res~
+Ars Poetica Res
+
+Silkwhisper paws upon the earth
+The brush of silken tail
+Within your eyes, men seek their worth
+For her favor, knights prevail.
+Res, divine source of wisdom and love
+We behold your beauty, and your powers prove.~
+E
+PAGE8 Ashram~
+^rArs Poetica ^RAshram Bloodangel
+
+Ashram! ^rHis name like distant thunder roars!
+The commanding swell of drum and pipe
+Sweeping all nations into discord!
+Explosive battles, blood and corpses ripe, 
+These are the joys of the rampant horde, 
+This is the province of the Angel of War!~
+E
+PAGE7 ShadowSong~
+Ars Poetica ShadowSong
+
+Her eyes hold the glow of foxfire o'er the moor
+And the clouds that kiss the moon, long locks of her hair,
+Her laughter lingers like fog by the ocean's shore
+Feel the gentle river wind, her soul is there,
+She has found the comfort beyond sorrow's cease
+Echoing from the Shadow, the Song of peace.~
+E
+PAGE6 Gomez~
+Ars Poetica Gomez
+
+The silver stars, affix'd bright on high
+Have lost their lustre, faded and become pale,
+And all the gentle ladies utter such sweet sighs
+When they look on thee, most glorious of males.
+Come, sweet star, fall to our land from heav'n above,
+And let us adore thee, Gomez, God of Love.~
+E
+PAGE5 Ceivar~
+Ars Poetica Ceivar
+
+Ceivar, trickster, devil-born
+Comes with the night on wings of the wind,
+His laughter like a cloak, lightly worn
+Swift of foot, quick of eye, Coyote's kin,
+He would steal the sky's own stars, the hair of Sif
+And leave you nothing but the skin that you were born with.
+~
+E
+PAGE4 Escher~
+Ars Poetica Escher
+
+The ocean wind from the west does blow
+And the eastern zephyr taunts in jest,
+From the north, the icy frost and snow
+And the desert south does your courage test,
+But I fear no danger, war, nor evil's hate
+While Escher guards the land, and guides my fate.~
+E
+PAGE3 Phoenix~
+Ars Poetica Phoenix
+
+The morning sun in the forges of the East
+Rises from the flames of a new-wrought day
+Bringing life to the Earth, warmth to Man and Beast
+Although at night, the flames must die away
+We know with each morning the Phoenix lives on
+From the death of the Night, to the life of the Dawn.~
+E
+PAGE2 Violet~
+^mArs Poetica Violet
+
+Sweet Violet, flower of the eternal sky
+With mercy, she nods her gentle head to me
+The firmament sorrows if e'er she would cry
+And with her smile, she sets imprison'ed souls free
+If the winds of winter blow, or the frosted faeries sing
+Her footfall soft across the land would herald blessed spring.~
+E
+PAGE1 Bram~
+Ars Poetica Bram
+
+Oh Bram, from your celestrial heights
+Can you hear the threnody of mortal song?
+The bravery and honor of valiant fights
+The tolling knell of death's sweet gong?
+Look down, great God, from heav'n above
+And bless our honor, our swords, and the game we love.~
+E
+poetry book~
+On the cover of this book is a name, that of the author:
+
+       Riel Malafactore,
+       Champion of Cthulhu, Bane of the Sigil Legions
+
+The book is split into a good number of separate poems, each
+on its own page.  There are eight pages.
+
+(To read a poem, look at PAGE1 through PAGE9, or look at the
+name of the god or goddess who you wish to read a poem about.)~
+#13353
+book legend black~
+a book about a great legend~
+A massive black book that looks and feels as if it's on fire is resting here.~
+~
+13
+113
+1
+0~ 0~ 0~ 0~
+20 0 0
+E
+blankpage firstblankpage page~
+It's blank.  Empty.  Look.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+See?~
+E
+secondblankpage~
+The second 'blank' page has something written on it, in a heavy
+blood-red text.  The sentences are close to the binding of the book.
+They say:
+
+    ^rSomeday, I will be free, and when I am, I will hunt you down and
+kill you.  And after that, I shall torture your soul for a
+hundred times the span of years that I have been imprisoned.
+
+              ^RI WILL HAVE MY REVENGE!~
+E
+CHAPTER3~
+The book goes on to speculate that perhaps the god Karnox could
+be freed from the sword, if a strong enough magic were used.
+However, it says, this action would be most unwise, considering its
+vast power, and the fact that the vicious deity will likely be very
+angry.  It goes on to mention that the legends of the Karnox say
+that it has sworn to slay all who have ever held it in battle, and
+then destroy the gods who trapped it in steel for an eternity.
+
+(thus the legend ends, and the last few pages of the book are blank)~
+E
+CHAPTER2~
+The great Black Blade, the book says, has created many legends, and been
+carried by many legendary warriors.  Through history, the Karnox
+has found its way into the hands of many great men, and changed the
+destiny of the world itself.  The gods had successfully imprisoned
+the malevolent one, but his power still seeps into the world.
+
+(look at CHAPTER3 for more)~
+E
+black book legend CHAPTER1~
+The book is about a legend from a time long ago, in the forgotten
+mists of history.  It speaks of a great being, a god known as Karnox.
+This powerful entity was imprisoned by the gods in a sword, says the
+legend.  This chapter doesn't say where the sword can be found, or
+whether it is still around at all.
+
+(look at CHAPTER2 for more)~
+E
+fire flame~
+The magical flames enveloping this book are hot to the touch, yet
+they do not burn you.  You get a feeling of rage and anger from the
+tome, however, as soon as your hand enters the fire.~
+#13354
+cheese wedge~
+a wedge of cheese~
+A large, partially eaten wedge of cheese.~
+~
+19
+0
+1
+33~ 0~ 0~ 0~
+4 0 0
+#13355
+Ithacan helm silver~
+a silver Ithacan helm~
+An Ithacan helm made of heavy silver.~
+~
+9
+65
+17
+5~ 0~ 0~ 0~
+7 0 0
+A
+4 1
+A
+17 -2
+#13356
+appointmentslip slip~
+an appointment slip~
+A slip for an appointment with Edith.~
+~
+13
+0
+1
+0~ 0~ 0~ 0~
+1 0 0
+#13357
+scroll blessing edithsblessing~
+a blessing from Edith~
+A blessing from Edith, in the form of a scroll.~
+~
+2
+64
+1
+12~ bless~ armor~ sanctuary~
+1 0 0
+E
+blessing scroll~
+It says:
+     Nice little ones deserve a gift once in a while.  This is
+     my gift to you--use it before combat, and it will aid you.
+
+                                     Edith~
+#13360
+book textbook~
+a decrepit old textbook with some pages missing~
+An old textbook lies here with the cover partway torn off and some pages missing.~
+~
+28
+0
+0
+-1~ 1~ 1~ 11971~
+0 0 0
+#13361
+game clue box~
+a game of "Clue: Master Detective"~
+A "Clue: Master Detective" game box lies here.~
+~
+28
+0
+0
+-1~ 1~ 1~ 20200~
+0 0 0
+E
+game~
+The box is empty.  In fact, there's so much space in it that you might be
+able to enter the box.  On the cover you see a warning label: "This game is
+suitable for players between 10 and 20." 
+~
+#0
+
+
+
+#ROOMS
+#13299
+New Books~
+Books recently acquired are stored here until the librarians decide where
+to put them.  With their dust jackets still in place and untorn, these books
+offer you a glimpse of lands and people somewhat off the beaten track.  
+~
+0 0 0
+D1
+~
+~
+0 0 13301
+S
+#13300
+The Entrance to the Library~
+You pass under the great marble arches of the Library.  To the south
+lies the bulk of the library.  At the north end of this room is a
+desk, and sitting at the desk is an elderly lady.  There are
+heavy wooden doors on the north and east walls.
+~
+0 8 1
+D0
+~
+~
+1 13325 13305
+D1
+~
+~
+1 13321 13356
+D2
+~
+~
+0 -1 13301
+D3
+~
+~
+0 -1 12136
+E
+desk~
+The desk is made of a beautifully glossed hardwood.  On it are a few papers,
+a quill, and a sign that says "QUIET, PLEASE".
+~
+S
+#13301
+The Library~
+You find yourself at an intersection in the hallway.  To the south
+stand many bookcases, some towering two stories upward.  To the east is
+a brightly decorated stairway leading downward.
+~
+0 8 1
+D0
+~
+~
+0 -1 13300
+D1
+~
+~
+0 -1 13302
+D2
+~
+~
+0 -1 13303
+D3
+~
+~
+0 0 13299
+S
+#13302
+The Stairway~
+The stairway leads downward, and there are beautiful pictures of a
+rainbow on the wall, along with some friendly animals.  A sign by the
+stairs identifies this as the Children's Section.
+~
+0 8 1
+D3
+~
+~
+0 -1 13301
+D5
+~
+~
+0 -1 13337
+S
+#13303
+The Main Library~
+You have entered the main library.  The hallway you are standing in is
+at least two and a half stories straight up, and is held up with great
+gothic arches.  The arched hallway continues south.  West of you is
+a set of massive shelves.  A sign hanging down from the ceiling to the
+west reads, "History".  To your east is a reading room.
+~
+0 8 1
+D0
+~
+~
+0 -1 13301
+D1
+~
+~
+1 -1 13336
+D2
+~
+~
+0 -1 13310
+D3
+~
+~
+0 -1 13344
+S
+#13304
+The History Section~
+There are shelves towering to the ceiling here, and you can smell the
+musty smell of old books.  There are many ancient volumes, but one
+particular tome somehow draws your attention toward it.
+It's a soft leatherbacked book with a picture of a fortress city
+on the front.
+~
+0 8 1
+D1
+~
+~
+0 -1 13344
+D3
+~
+~
+0 -1 13351
+S
+#13305
+The Head Librarian's Office~
+This office is very official-looking.  The heavy hardwood desk has
+a carefully shined surface, and the huge stacks of papers on it are
+placed in neat piles.  A sign on the desk reads, 'Edith--Head Librarian'.
+There are soft glowing reading lamps on the wall behind the desk,
+and a beautiful velvety green chair behind it, on which is
+sitting the head librarian.
+~
+0 520 0
+D2
+~
+~
+1 -1 13300
+S
+#13306
+The Children's Section~
+The shelf continues east from here.  The drawings on the walls include
+snow and a jolly fat figure in red.  A book with a red cover lies on
+the ground, and you can feel a cold breeze coming from it.
+~
+0 8 1
+D1
+~
+~
+0 -1 13341
+D3
+~
+~
+0 -1 13340
+S
+#13307
+The Adventure Section~
+There's a large puddle on the floor here, and occasionally, water drips
+down from above.  Perhaps you can find out what's going on up at the top
+of the ladder?
+~
+0 8 1
+D1
+~
+~
+0 -1 13347
+D3
+~
+~
+0 -1 13349
+D4
+~
+~
+0 -1 13308
+S
+#13308
+The Adventure Section--High in the Shelves~
+You see a fabulous-looking book, which is luckily just within your reach.
+It's titled, "The Log of the....".  Sadly, the cover is marked up by
+water, and you can't read the rest of the title.
+~
+0 8 1
+D5
+~
+~
+0 -1 13307
+S
+#13309
+A Reading Room~
+This room is silent, except for the occasional turning of pages.
+You see a table, covered with books.  The ancient tomes are stacked at
+least a foot and a half high.  Behind them you hear a quiet cough.
+~
+0 8 0
+D3
+~
+~
+1 -1 13310
+S
+#13310
+A Library Hallway~
+The hallway continues to the north and south, and there is another
+reading room to the east.  To the west are more bookcases, and the
+sign hanging from the ceiling says that this is the Science section.
+~
+0 8 1
+D0
+~
+~
+0 -1 13303
+D1
+~
+~
+1 -1 13309
+D2
+~
+~
+0 -1 13342
+D3
+~
+~
+0 -1 13345
+S
+#13311
+A Snowy Field~
+You are standing in the middle of a large snowy field.  Not far to the
+north is a large red and white striped pole.  Beyond the pole you can
+see a large house.
+~
+0 0 2
+D0
+~
+~
+0 -1 13312
+D2
+~
+~
+0 -1 13306
+S
+#13312
+The North Pole~
+The North Pole is horribly snowy, but you can still see a large, friendly
+house to the west.  To the east is another building, which might be a
+stable of some kind.
+~
+0 0 2
+D1
+~
+~
+0 -1 13327
+D2
+~
+~
+0 -1 13311
+D3
+~
+~
+0 -1 13313
+S
+#13313
+In Front of a House~
+You're standing in front of a house, and you can see a sign by the door.
+Also, the lights are on inside, and it looks like there are lots of
+people home.  You can see smoke coming from the chimney.
+~
+0 0 2
+D0
+~
+~
+1 -1 13314
+D1
+~
+~
+0 -1 13312
+E
+sign~
+Santa's House
+~
+S
+#13314
+Entryway to Santa's House~
+You've just entered Santa's house, and it's incredibly warm and
+cozy.  There is a smell of gingerbread and other goodies coming from
+further inside.  You can also hear various noises, including some
+industrious working and cheerful singing.  The house is littered with
+green and red, and all sorts of decorations.
+~
+0 8 0
+D0
+~
+~
+0 -1 13315
+D2
+~
+~
+1 -1 13313
+S
+#13315
+An Intersection~
+You are at an intersection of hallways in Santa's house.  To the north
+you smell cookies, and the smell is stronger than before.  The
+sounds of labor and singing are coming from the east.  To the west
+you see a dimly lit hallway.
+~
+0 12 0
+D0
+~
+~
+0 -1 13319
+D1
+~
+~
+0 -1 13321
+D2
+~
+~
+0 -1 13314
+D3
+~
+~
+0 -1 13316
+S
+#13316
+A Hallway~
+South of you is a warm, peaceful place--Santa's study.  You
+can already see the piles of mail scattered about in there.
+The lights are dim, except that you can see a brighter area further
+inside the study.
+~
+0 8 0
+D1
+~
+~
+0 -1 13315
+D2
+~
+~
+0 -1 13317
+S
+#13317
+Santa's Study~
+This is Santa's study.  It looks very comfortable and feels nice
+and warm.  Santa Claus has left mail all over, though.  You find
+yourself wondering how he can possibly keep track of it all.
+~
+0 8 0
+D0
+~
+~
+0 -1 13316
+D3
+~
+~
+0 -1 13318
+S
+#13318
+Santa's Study~
+You're now deep in Santa's study.  Here, beside his soft armchair, lie
+thousands and thousands of letters, from all the children of the world
+(or at least a fairly large number of them).  A fire burns in the
+fireplace on the north wall, which has been carefully barred off, so
+that the entire place doesn't burn down from a carelessly dropped card.
+~
+0 8 0
+D1
+~
+~
+0 -1 13317
+S
+#13319
+A Hallway~
+The smell of delicious gingerbread cookies is almost overpowering
+now.  There's a large kitchen to the west, and the smell is even
+stronger in there.
+~
+0 8 0
+D2
+~
+~
+0 -1 13315
+D3
+~
+~
+0 -1 13320
+S
+#13320
+Mrs. Claus's Kitchen~
+The kitchen is strewn with ingredients to about a dozen different
+recipes.  The gingerbread cookies are cooking as you stand there.
+A half-finished cake is sitting on a counter, and there are several
+bowls with partway finished dough in them.
+~
+0 8 0
+D1
+~
+~
+0 -1 13319
+S
+#13321
+Santa's Workshop~
+You've just entered Santa's workshop, which is a vast room
+filled with elves, all busily making toys.  Most of them are
+singing as they work, giving the entire workshop a kind of musical
+background noise.
+~
+0 8 0
+D0
+~
+~
+0 -1 13324
+D1
+~
+~
+0 -1 13322
+D3
+~
+~
+0 -1 13315
+S
+#13322
+Santa's Workshop~
+This section of the workshop has been overrun by an enormous toy
+train set.  The tracks run up and down over things, and all around
+the entire area of the room.
+~
+0 8 0
+D0
+~
+~
+0 -1 13323
+D3
+~
+~
+0 -1 13321
+S
+#13323
+Santa's Workshop~
+You can't believe that they're able to get anything done in this
+mess.  It feels like total chaos, as elves dart around you, passing
+you on both sides sometimes, with all sorts of heavy things.
+~
+0 8 0
+D0
+~
+~
+0 -1 13326
+D2
+~
+~
+0 -1 13322
+D3
+~
+~
+0 -1 13324
+S
+#13324
+Santa's Workshop~
+Santa's workshop is more vast than you had imagined.  As a matter of
+fact, it might be the single largest room you've ever been in.  They
+could conceivably make anything in here, given the raw materials and
+some time.
+~
+0 8 0
+D0
+~
+~
+0 -1 13325
+D1
+~
+~
+0 -1 13323
+D2
+~
+~
+0 -1 13321
+S
+#13325
+Santa's Workshop~
+A great green tree fills this part of the workshop, and it's covered
+with millions of decorations.  It climbs all the way to the ceiling,
+several stories up.  (Told ya the room was big.)  The tree is
+beautiful, and it's covered with false snow.  The ornaments are a
+myriad of things, many of which the elves are still experimenting with.
+~
+0 8 0
+D1
+~
+~
+0 -1 13326
+D2
+~
+~
+0 -1 13324
+S
+#13326
+Santa's Workshop~
+This part of the workshop has several tables on which the elves are
+making toy soldiers.  Apparently after they're done, the elves just
+wind up the soldiers and let them loose, to test them.
+~
+0 8 0
+D2
+~
+~
+0 -1 13323
+D3
+~
+~
+0 -1 13325
+S
+#13327
+In Front of the Stables~
+The snowy fields are very cold and unpleasant.  To your west
+is the North Pole, and north of you is the door to some sort of
+stable.  Above the door, there's a sign.  It says, 'Reindeer'.
+~
+0 4 2
+D0
+~
+~
+1 -1 13328
+D3
+~
+~
+0 -1 13312
+S
+#13328
+Dasher's Stable~
+Dasher's stable is pretty ordinary.  It's got some feed, and a pile of
+hay for the reindeer to sleep on.  To the north and east are other
+stables.  You see signs above the north and east exits, indicating
+which reindeers' stables these are.  To the south is the way out of
+all the stables.
+~
+0 8 1
+D0
+The sign reads, 'Dancer'.~
+north~
+0 -1 13329
+D1
+The sign reads, 'Prancer'.~
+east~
+0 -1 13330
+D2
+~
+~
+1 -1 13327
+S
+#13329
+Dancer's Stable~
+Dancer's stable is pretty ordinary.  It's got some feed, and a pile of
+hay for the reindeer to sleep on.  To the south and east are other
+stables.
+~
+0 8 1
+D1
+The sign reads, 'Vixen'.~
+east~
+0 -1 13331
+D2
+The sign reads, 'Dasher'.~
+south~
+0 -1 13328
+S
+#13330
+Prancer's Stable~
+Prancer's stable is pretty ordinary.  It's got some feed, and a pile of
+hay for the reindeer to sleep on.  To the north, west, and east are
+other stables.
+~
+0 8 1
+D0
+The sign reads, 'Vixen'.~
+north~
+0 -1 13331
+D1
+The sign reads, 'Comet'.~
+east~
+0 -1 13332
+D3
+The sign reads, 'Dasher'.~
+west~
+0 -1 13328
+S
+#13331
+Vixen's Stable~
+Vixen's stable is pretty ordinary.  It's got some feed, and a pile of
+hay for the reindeer to sleep on.  To the south, west, and east are
+other stables.
+~
+0 8 1
+D1
+The sign reads, 'Cupid'.~
+east~
+0 -1 13334
+D2
+The sign reads, 'Prancer'.~
+south~
+0 -1 13330
+D3
+The sign reads, 'Dancer'.~
+west~
+0 -1 13329
+S
+#13332
+Comet's Stable~
+Comet's stable is pretty ordinary.  It's got some feed, and a pile of
+hay for the reindeer to sleep on.  To the north, west, and east are other
+stables.
+~
+0 8 1
+D0
+The sign reads, 'Cupid'.~
+north~
+0 -1 13334
+D1
+The sign reads, 'Donner'.~
+east~
+0 -1 13333
+D3
+The sign reads, 'Prancer'.~
+west~
+0 -1 13330
+S
+#13333
+Donner's Stable~
+Donner's stable is pretty ordinary.  It's got some feed, and a pile of
+hay for the reindeer to sleep on.  To the north and west are other
+stables.  To the east is a small path to another stable.
+~
+0 8 1
+D0
+The sign reads, 'Blitzen'.~
+north~
+0 -1 13335
+D1
+~
+~
+0 -1 13395
+D3
+The sign reads, 'Comet'.~
+west~
+0 -1 13332
+S
+#13334
+Cupid's Stable~
+Cupid's stable is pretty ordinary.  It's got some feed, and a pile of
+hay for the reindeer to sleep on.  To the south, west, and east are other
+stables.
+~
+0 8 1
+D1
+The sign reads, 'Blitzen'.~
+east~
+0 -1 13335
+D2
+The sign reads, 'Comet'.~
+south~
+0 -1 13332
+D3
+The sign reads, 'Vixen'.~
+west~
+0 -1 13331
+E
+window~
+You see a female reindeer standing on a hillside in the snow.
+~
+S
+#13335
+Blitzen's Stable~
+Blitzen's stable is pretty ordinary.  It's got some feed, and a pile of
+hay for the reindeer to sleep on.  To the south and west are other
+stables.
+~
+0 8 1
+D2
+The sign reads, 'Donner'.~
+south~
+0 -1 13333
+D3
+The sign reads, 'Comet'.~
+west~
+0 -1 13334
+S
+#13336
+A Reading Room~
+This is a quiet reading room, where you can so research in peace,
+fearing no disturbances.  A desk rests in the room, with a quill and
+some paper on it.
+~
+0 12 0
+D3
+~
+~
+1 -1 13303
+S
+#13337
+The Children's Section~
+The walls are covered with bright painted figures.  You can see many
+small furry animals on the wall, and colorful figures.  To the east
+is a bookshelf, which ends in an open area with some beanbag chairs.
+To the south is the beginning of another row of shelves.
+~
+0 8 1
+D1
+~
+~
+0 -1 13338
+D2
+~
+~
+0 -1 13340
+D4
+~
+~
+0 -1 13302
+S
+#13338
+The Children's Section~
+Most of the books here are small, and very colorful.  You can see that
+some of them are rather worn, from the amount of handling they get.
+The pictures on the wall are of a bunch of little blue people, stories
+of whom come from old folk tales.
+~
+0 8 1
+D1
+~
+~
+0 -1 13339
+D3
+~
+~
+0 -1 13337
+S
+#13339
+The Children's Section--Storytime!~
+This part of the Library is a large square room with several beanbag
+chairs arranged in a circle.  A storyteller sits in the middle of the
+circle, spinning tales of delight for the youngsters.  Perhaps if you ask,
+she'll tell you a story?  
+~
+0 8 0
+D3
+~
+~
+0 -1 13338
+S
+#13340
+The Children's Section~
+The barrage of colorful figures on the walls continues, and all of the
+bookshelves here have been arranged in the center of the room in order
+for the children to see these pictures better.  To the east is a shelf.
+~
+0 8 1
+D0
+~
+~
+0 -1 13337
+D1
+~
+~
+0 -1 13306
+S
+#13341
+The Children's Section~
+The shelves come all the way over to the eastern wall, and are covered
+with thin, colorful books.  To the north you can hear several low, hushed
+voices through the bookshelves.
+~
+0 8 1
+D3
+~
+~
+0 -1 13306
+S
+#13342
+A Library Hallway~
+To the north is the great arched hallway of the main library.
+Another reading room lies to the east.  A sign hangs over the aisle west of
+you, and it says, "Fiction".  A heavy iron gate to the south bars off
+that area of the library, but you can't see why--it's very dark there.
+There is a small sign next to the gate.
+~
+0 8 1
+D0
+~
+~
+0 -1 13310
+D1
+~
+~
+1 -1 13343
+D2
+~
+~
+8 13325 13352
+D3
+~
+~
+0 -1 13347
+E
+sign gate~
+The sign next to the gate says:
+
+        DANGER!
+     DO NOT ENTER!
+
+You can see some vicious scratches around the edges of the archway.  There
+is _something_ dangerous in there.
+~
+S
+#13343
+A Reading Room~
+This is a quiet reading room, where you can so research in peace,
+fearing no disturbances.  A desk rests in the room, with a quill and
+some paper on it.
+~
+0 12 0
+D3
+~
+~
+1 -1 13342
+S
+#13344
+The History Section~
+You are in part of the History Section of the great Library.
+To your west, this section continues, and east of you is the main
+hallway.  The books here are rather old and dusty, but one brand
+new one sits on a shelf near your feet.
+~
+0 8 1
+D1
+~
+~
+0 -1 13303
+D3
+~
+~
+0 -1 13304
+S
+#13345
+The Social Sciences Section~
+This section looks quite large, and a ladder leads up to the topmost
+shelves.  To the west is the natural sciences section.  East of
+you is the main hallway.
+~
+0 8 1
+D1
+~
+~
+0 -1 13310
+D3
+~
+~
+0 -1 13346
+D4
+~
+~
+0 -1 13348
+S
+#13346
+The Natural Sciences Section~
+You stand among many tomes about nature and natural sciences, and you
+realize that there is much more to the world than you once thought.
+Your foot hits something, and you look down.  There is a broken
+piece of chain bolted to the ground here.
+~
+0 8 1
+D1
+~
+~
+0 -1 13345
+D3
+~
+~
+0 -1 13350
+E
+sign~
+The sign by the chain says:
+
+     This entomology book has been moved to the 'Dangerous Books'
+     section of the library, for your safety and ours.  This is due
+     to its repeated attacks on patrons, and its attempts to break
+     free.  CAUTION:  If this book attacks you, read it quickly,
+     or you may not get another chance.
+                                         --Library Management
+~
+E
+chain~
+The chain looks as if it has been gnawed at until it broke.  Beside it
+is a small sign.
+~
+S
+#13347
+The Fiction Section~
+Wow, there's some really far-out stuff here.  You see several pieces
+of fiction about alternative creation myths, including a large one
+resting against the shelf, which is so full that there isn't room
+for all the books.
+~
+0 8 1
+D1
+~
+~
+0 -1 13342
+D3
+~
+~
+0 -1 13307
+S
+#13348
+The Social Sciences Section--High in the Shelves~
+The books here deal mostly with group behavior.  There's a book
+on one shelf that's been covered with graffiti.  It's sort of torn up,
+but you can see that it's a text on gang behavior, and all that sort
+of thing.
+~
+0 12 1
+D5
+~
+~
+0 -1 13345
+S
+#13349
+The Library Hallway~
+You're at the far end of the Library.  The hallway goes south from
+here, and all the aisles run east, at their even intervals.  To
+the south is a heavy iron gate.  You cannot see beyond it, because
+it's very dark there.  There is a small sign next to the gate.
+~
+0 8 1
+D0
+~
+~
+0 -1 13350
+D1
+~
+~
+0 -1 13307
+D2
+~
+~
+8 13325 13355
+E
+sign gate~
+The sign next to the gate says:
+
+        DANGER!
+     DO NOT ENTER!
+
+You can see some vicious scratches around the edges of the archway.  There
+is _something_ dangerous in there.
+~
+S
+#13350
+The Library Hallway~
+You're at the far end of the Library.  The hallway goes south from
+here, and all the aisles run east, at their even intervals.
+~
+0 8 1
+D0
+~
+~
+0 -1 13351
+D1
+~
+~
+0 -1 13346
+D2
+~
+~
+0 -1 13349
+S
+#13351
+The Library Hallway~
+You're at the far end of the Library.  The hallway goes south from
+here, and all the aisles run east, at their even intervals.
+~
+0 8 1
+D1
+~
+~
+0 -1 13304
+D2
+~
+~
+0 -1 13350
+S
+#13352
+The Caged-off Library~
+The library here is dark and dangerous.  It's as if a shadow has fallen
+on this hallway.  You notice that the lights here are unpleasantly
+dim, which only enhances the feeling that the shadows are moving
+toward you.  The hallway leads west, into a darker area, where the
+lights area entirely dead.  North of you is the iron gatelike door.
+~
+0 9 1
+D0
+~
+~
+8 13325 13342
+D3
+~
+~
+0 -1 13353
+S
+#13353
+The Caged-off Library~
+The library here is dark and dangerous.  It's as if a shadow has fallen
+on this hallway.  You notice that the lights here are unpleasantly
+dim, which only enhances the feeling that the shadows are moving
+toward you.  The hallway leads east and west.  Much of the southern
+wall is falling apart, and has been boarded up.
+~
+0 9 1
+D1
+~
+~
+0 -1 13352
+D2
+The boarded-up wall looks like it's possible to crawl through.
+It appears to have been dug through to here from the other side,
+and patched up hurriedly, once the diggers realized where their
+passage led.
+There's a torn piece of cloth lying here.~
+board~
+1 -1 0
+D3
+~
+~
+0 -1 13354
+E
+cloth~
+The piece of cloth was torn off of a piece of clothing.
+The cloth itself is covered in blood, and appears to
+have something written on it (also in blood).  It says:
+
+   WELCOME_TO THE
+   /\    / \  \   |  |      \   |  |\   /|
+  /__\   \_    \ /   \      |   |  | \  ||
+ /    \    \    |     \     |   |  |  \ /|
+/        \_/    /     /____ \___/  /  |/ |
+
+             (AND YOU THINK WE'RE CRAZY...)
+~
+S
+#13354
+The Caged-off Library~
+The library here is dark and dangerous.  It's as if a shadow has fallen
+on this hallway.  You notice that the lights here are unpleasantly
+dim, which only enhances the feeling that the shadows are moving
+toward you.  The hallway leads east and west.
+~
+0 9 1
+D1
+~
+~
+0 -1 13353
+D3
+~
+~
+0 -1 13355
+S
+#13355
+The Caged-off Library~
+The library here is dark and dangerous.  It's as if a shadow has fallen
+on this hallway.  You notice that the lights here are unpleasantly
+dim, which only enhances the feeling that the shadows are moving
+toward you.  North of you is the iron gatelike door, and the hall
+leads east, into a darker area.
+~
+0 9 1
+D0
+~
+~
+8 13325 13349
+D1
+~
+~
+0 -1 13354
+S
+#13356
+Janitor's Closet~
+The janitor's closet is a small room--a tight squeeze indeed with all
+the stuff in it.  Not only that, but it smells awful because of all
+the cleansers and things.  You really want to get out of here.
+~
+0 520 0
+D3
+~
+~
+1 -1 13300
+S
+#13357
+On the Floor~
+You find yourself shrinking and shrinking!  Edith has made
+you the size of an insect!  Her desk stands before you, a great
+wooden monolith.
+~
+0 401416 1
+D0
+~
+~
+0 -1 13358
+S
+#13358
+Under Edith's Desk~
+Ugh!  The squeaky-clean feeling you had when you entered the office
+is gone now.  Edith keeps the place clean by brushing all the dirt and
+grime and other things underneath her desk.
+~
+0 401416 1
+D0
+~
+~
+0 -1 13359
+D1
+~
+~
+0 -1 13361
+D3
+~
+~
+0 -1 13360
+S
+#13359
+Under Edith's Desk~
+Underneath Edith's desk it's a disgusting mess.  Insects of all kinds
+are living here, and most of them don't like the intrusion you're
+creating.  If you go north, you can go under the green chair she's
+sitting on.
+~
+0 401416 1
+D0
+~
+~
+0 -1 13362
+D2
+~
+~
+0 -1 13358
+S
+#13360
+Under Edith's Desk~
+Underneath Edith's desk it's a disgusting mess.  Insects of all kinds
+are living here, and most of them don't like the intrusion you're
+creating.  To the north is the part of the room behind Edith's desk.
+~
+0 401416 1
+D0
+~
+~
+0 -1 13363
+D1
+~
+~
+0 -1 13358
+S
+#13361
+Under Edith's Desk~
+Underneath Edith's desk it's a disgusting mess.  Insects of all kinds
+are living here, and most of them don't like the intrusion you're
+creating.  To the north is the part of the room behind Edith's desk.
+~
+0 401416 1
+D0
+~
+~
+0 -1 13364
+D3
+~
+~
+0 -1 13358
+S
+#13362
+Under Edith's Chair~
+From here you might be able to climb onto Edith's chair.  You can also
+go back under her desk (to the south) or east or west, to the corners of
+the room.  It would probably be smart to do something quick, because
+her high-heeled foot is swinging at you.
+~
+0 401416 1
+D1
+~
+~
+0 -1 13364
+D2
+~
+~
+0 -1 13359
+D3
+~
+~
+0 -1 13363
+D4
+~
+~
+0 -1 13365
+S
+#13363
+Behind the Desk~
+The northwest corner of the room is north of you, and the (questionable)
+safety of the desk is south.  To the east is Edith's chair.  As of yet,
+you still have no idea how to change your size back again.
+~
+0 401416 1
+D0
+~
+~
+0 -1 13367
+D1
+~
+~
+0 -1 13362
+D2
+~
+~
+0 -1 13360
+S
+#13364
+Behind the Desk~
+As of yet, you still have no idea how to change your size back again.
+To the west is Edith's chair.  The east wall is directly east, and
+north of that is the northeast corner of the room.  South of you is the
+desk, which you can easily slip back under.
+~
+0 401416 1
+D1
+~
+~
+0 -1 13368
+D2
+~
+~
+0 -1 13361
+D3
+~
+~
+0 -1 13362
+S
+#13365
+On Edith's Chair~
+Edith's chair is a velvety green fabric, and it's very soft.  You can
+easily drop back down to the floor from here, or climb onto her desk,
+which is south of you.  At the moment, however, the head librarian
+is presenting a problem.
+~
+0 401416 1
+D2
+~
+~
+0 -1 13366
+D5
+~
+~
+0 -1 13362
+S
+#13366
+On Edith's Desk~
+Edith's desktop is a vast flat plain covered with papers and
+junk.  You don't want to be here, especially not now that you
+have seen the giant mean-looking fly moving toward you.
+~
+0 401416 1
+D0
+~
+~
+0 -1 13365
+S
+#13367
+In a Corner~
+This is the northwest corner of the room, and a lot of dust and dust-
+bunnies have gathered here.  You find yourself coughing, which stirs
+up the dust to the point where it fills the air, and gets in your
+mouth and eyes.
+~
+0 401416 2
+D2
+~
+~
+0 -1 13363
+S
+#13368
+At the East Wall~
+There isn't much here, and you're out in the open, which makes you
+uncomfortably frightened of Edith.  To the north is the northeast
+corner of the room, where you see a trash can.  West of you is the part of
+the room behind Edith's desk.
+~
+0 401416 1
+D0
+~
+~
+0 -1 13397
+D3
+~
+~
+0 -1 13364
+S
+#13369
+The Battlefield~
+The Battlefield is getting pretty bloody.  Corpses and broken weapons
+litter the Trojan plain.  You can see the fires of the Achaean camp further
+to the south, and the great walls of Troy to the northeast.
+~
+0 0 1
+D1
+~
+~
+0 -1 13371
+D2
+~
+~
+0 -1 13370
+S
+#13370
+Before the Achaean Camp~
+To the south, you see the huge encampment of the Achaean army spread out
+before you.  There are tents far across the plain, stretching almost
+to the sea.
+~
+0 4 1
+D0
+~
+~
+0 -1 13369
+D1
+~
+~
+0 -1 13372
+D2
+~
+~
+0 -1 13379
+S
+#13371
+The Battlefield~
+The battle continues in all directions, as far as your eye can see.
+The ground here is covered in blood, and this harvest of death is using
+human flesh as fertilizer.
+A strange shimmering fills the air above you...there's a mirage like
+a mountain?  Strange...really strange...
+~
+0 0 1
+D0
+~
+~
+0 -1 13373
+D1
+~
+~
+0 -1 13375
+D2
+~
+~
+0 -1 13372
+D3
+~
+~
+0 -1 13369
+D4
+~
+~
+0 0 900
+S
+#13372
+The Battlefield~
+The battle rages all around you, men falling like rain.  You
+suddenly realize that a large number of the Achaeans, mostly Ithacans,
+are missing from the battlefield today.
+~
+0 0 1
+D0
+~
+~
+0 -1 13371
+D1
+~
+~
+0 -1 13376
+D3
+~
+~
+0 -1 13370
+S
+#13373
+The Battlefield~
+The walls of Troy are north of you.  At the moment, the battle is
+sweeping all around you, a tide of bodies crashing together, leaving
+only blood and death behind.
+~
+0 0 1
+D1
+~
+~
+0 -1 13374
+D2
+~
+~
+0 -1 13371
+E
+walls troy~
+The massive stone walls stand high above you.  It seems that the Achaeans
+have no chance whatsoever of breaking through this nearly impervious
+structure.
+~
+S
+#13374
+Before the Walls of Troy~
+You stand at the bottom of the walls of Troy.  To the south is a
+strange-looking thing, and its great bulk is being slowly pushed north
+toward the city.  The Scaean Gate, the great gate of Troy, stands
+in the middle of the wall.  Several blocks have been arranged in a circle here
+and glow with an odd power.
+~
+0 2 1
+D2
+~
+~
+0 -1 13375
+D3
+~
+~
+0 -1 13373
+E
+gate scaean~
+The Scaean gate stands in the middle of the walls, a massive
+structure through which the Trojan forces have ridden many times, and
+which no enemy has ever passed through.
+~
+E
+walls troy~
+The massive stone walls stand high above you.  It seems that the Achaeans
+have no chance whatsoever of breaking through this nearly impervious
+structure.
+~
+S
+#13375
+At the Trojan Horse~
+This area of the battlefield is firmly in the Achaeans' control.  They are
+pushing a large wooden horse toward Troy, perhaps as a gift?  You doubt,
+however, that they have given up the battle quite yet.  The real
+question, though, is whether the Trojans will be deceived.
+~
+0 0 1
+D0
+~
+~
+0 -1 13374
+D2
+~
+~
+0 -1 13376
+D3
+~
+~
+0 -1 13371
+S
+#13376
+The Battlefield~
+The main battle goes on to the north and west, whenever the Trojans
+sally from the city to battle the Achaeans.  To the east, on the far edge
+of the battlefield, you can see an ongoing epic struggle.  A duel
+between two men, it looks like.
+~
+0 0 1
+D0
+~
+~
+0 -1 13375
+D1
+~
+~
+0 -1 13386
+D3
+~
+~
+0 -1 13372
+S
+#13377
+Inside the Horse~
+This is the cramped inside of the Trojan horse.  The clever planning
+behind this creation is amazing.  From the outside, it doesn't look
+like anyone could fit inside.
+~
+0 520 1
+D0
+~
+~
+0 -1 13378
+S
+#13378
+Inside the Horse~
+The horse has a musty sort of smell.  You see a hatch below you, allowing
+the occupants of the horse to exit.  The hatch is probably well-hidden
+from the outside.
+~
+0 520 1
+D2
+~
+~
+0 -1 13377
+D5
+~
+hatch~
+1 -1 13387
+S
+#13379
+Within the Achaean Camp~
+You've entered the Achaean camp, and there are men all over, getting
+ready for the next assault.  You get the feeling that most of the troops
+have resigned themselves to a long, harsh battle, unless some miracle
+ends it soon.
+~
+0 0 1
+D0
+~
+~
+0 -1 13370
+D1
+~
+~
+0 -1 13381
+D2
+~
+~
+0 -1 13382
+D3
+~
+~
+0 -1 13380
+S
+#13380
+Menelaus's Tent~
+This is the tent of one of the Achaean chiefs, Menelaus, rightful
+husband of Helen.  The tent is full of the spoils of the battles
+fought so far.
+~
+0 8 1
+D1
+~
+~
+0 -1 13379
+S
+#13381
+Odysseus's Tent~
+In the center of the tent is a table, on which rests a large lamp,
+lightly glowing.  Hung on the walls are various trophies of battle.
+Odysseus's tent also has several chests against the far wall.
+~
+0 8 1
+D3
+~
+~
+0 -1 13379
+S
+#13382
+Within the Achaean Camp~
+You are now deep inside the Achaean camp.  Moving through the camp all
+around you are (big surprise) Achaeans.  In all directions are the tents
+of some of the Achaean leaders.
+~
+0 0 1
+D0
+~
+~
+0 -1 13379
+D1
+~
+~
+0 -1 13383
+D2
+~
+~
+0 -1 13385
+D3
+~
+~
+0 -1 13384
+S
+#13383
+Agamemnon's Tent~
+The tent of Agamemnon is scattered with the armaments of many of the
+Trojan host.  The Achaean leader is a fearsome foe.
+~
+0 8 1
+D3
+~
+~
+0 -1 13382
+S
+#13384
+Diomedes's Tent~
+The prince of Argos has set all the furnishings in his tent far
+at the back.  The resulting large open space in the front of the
+tent is designed to make others uncomfortable.  It works.
+~
+0 8 1
+D1
+~
+~
+0 -1 13382
+S
+#13385
+Ajax's Tent~
+Ajax's tent is filled with the spoils of yesterday's battle.  You
+suppose that few of the champions will even fight today.
+~
+0 8 1
+D0
+~
+~
+0 -1 13382
+S
+#13386
+The Battlefield~
+Here, atop a small hill, littered with dead, are two of the greatest
+champions of the war.  Their combat will go until death, and that
+doesn't look too far away.
+~
+0 0 1
+D3
+~
+~
+0 -1 13376
+S
+#13387
+Inside Troy's Walls~
+To the south of you are Troy's walls, and in the middle is the Scaean
+Gate.  North of you is the great palace, where Troy's king and queen,
+as well as the lady Helen, await.
+~
+0 0 1
+D0
+~
+~
+1 -1 13390
+D1
+~
+~
+0 -1 13389
+D3
+~
+~
+0 -1 13388
+E
+scaean gate~
+The Scaean gate stands in the middle of the walls, a massive
+structure through which the Trojan forces have ridden many times, and
+which no enemy has ever passed through.
+~
+E
+walls troy~
+The massive stone walls stand high above you.  It seems that the Achaeans
+have no chance whatsoever of breaking through this nearly impervious
+structure.
+~
+S
+#13388
+Inside Troy's Walls~
+To the south are the great walls of Troy, which have never been taken
+in battle.  The city stretches behind you, but you know that there
+will be nothing there, since the inhabitants are all either
+hidden, or fighting.
+~
+0 0 1
+D1
+~
+~
+0 -1 13387
+E
+walls troy~
+The massive stone walls stand high above you.  It seems that the Achaeans
+have no chance whatsoever of breaking through this nearly impervious
+structure.
+~
+S
+#13389
+Inside Troy's Walls~
+To the south are the great walls of Troy, which have never been taken
+in battle.  The city stretches behind you, but you know that there
+will be nothing there, since the inhabitants are all either
+hidden, or fighting.  You see an odd passage to the west.
+~
+0 4 1
+D3
+~
+~
+0 -1 13387
+D5
+A passage out of Troy!  Perhaps you can escape, before the
+Achaeans destroy everything.~
+passage~
+1 -1 13304
+E
+walls troy~
+The massive stone walls stand high above you.  It seems that the Achaeans
+have no chance whatsoever of breaking through this nearly impervious
+structure.
+~
+S
+#13390
+Within the Palace~
+The entry hall to the palace of Troy is a large, empty, white hallway.
+Echoes reverberate here, and you can hear everything you say sounding
+again and again.  A large stairway rises from the middle of the hall,
+to the top floor of the palace.
+~
+0 8 0
+D2
+~
+~
+1 -1 13387
+D4
+~
+~
+0 -1 13391
+S
+#13391
+The Great Hall~
+This hall looks much like the one downstairs, except that at the
+north end of it is a gigantic hardwood door, on which is carved the
+heron, the symbol of Troy's royal house.  Doors east and west lead to
+the quarters of other high-ranking guests.
+~
+0 12 0
+D0
+~
+~
+0 -1 13394
+D1
+~
+~
+0 -1 13393
+D3
+~
+~
+0 -1 13392
+D5
+~
+~
+0 -1 13390
+S
+#13392
+The Quarters of Helen and Paris~
+This room is a lush bedroom.  Several different dressers are up
+against the walls.  In the center of the room is a bed, on which
+sits the most beautiful woman the world has ever seen--Helen.
+~
+0 8 0
+D1
+~
+~
+0 -1 13391
+S
+#13393
+Memnon's Quarters~
+The guest quarters are currently occupied by Memnon, a king from
+Ethiopia.  The room has been arranged to his liking, and many primitive-
+looking objects rest on the table and dressers here.
+~
+0 8 0
+D3
+~
+~
+0 -1 13391
+S
+#13394
+The Throne Room~
+Troy's great palace never fails to impress.  The throne room's
+golden pillars hold up it's great ceiling majestically.  The throne's
+bright jewels catch the eye, forcing one to look at the king.
+~
+0 8 0
+D2
+~
+~
+0 -1 13391
+S
+#13395
+A Path~
+This path leads out of the stables to a special stable made for Rudolph,
+the famous red-nosed reindeer.  You can see him resting in his stable not
+far to the north.
+~
+0 0 2
+D0
+The sign reads, 'Rudolph the Red-Nosed Reindeer'.~
+north~
+0 -1 13396
+D3
+~
+~
+0 -1 13333
+S
+#13396
+Rudolph's Stable~
+Rudolph has been living in the lap of luxury ever since he saved
+Santa that famous Christmas.  His stable is almost too comfortable.
+There are several food bins on the walls, filled with different kinds
+of luxury reindeer feed.
+~
+0 8 1
+D2
+~
+~
+0 -1 13395
+S
+#13397
+In a Corner~
+You're in the northeast corner of Edith's office, and the trash can
+towers over you here, filling most of the room.  To the east there's a
+hole in the wall, which looks quite a bit like a mouse hole.
+~
+0 401416 1
+D1
+~
+~
+0 -1 13398
+D2
+~
+~
+0 -1 13368
+S
+#13398
+In a Mouse Hole~
+The mouse hole is actually a pretty nice home.  The mouse has a rather
+comfortable-looking easy chair, and the whole hole is comparable
+to a rich man's den.  There are small rugs on the ground, and what
+look like hunting trophies (insect heads) mounted on the walls.
+~
+0 393224 1
+D3
+~
+~
+0 -1 13397
+S
+#13399
+In the Trash Can~
+Eww, this is disgusting.  Where did all this stuff come from?  Who
+throws this away?  You're hip-deep in coffee grounds, banana peels,
+used chewing gum, shredded paper, and a myriad of other garbage.
+As your foot sloshes in something, you look down, and suddenly feel an
+urge to add to the vomit that you've just stepped in.
+~
+0 401420 1
+S
+#0
+
+#SPECIALS
+M 13312 spec_cast_mage
+M 13318 spec_breath_frost
+M 13325 spec_cast_mage
+M 13327 spec_poison
+M 13329 spec_cast_mage
+M 13330 spec_breath_fire
+M 13341 spec_cast_mage
+M 13342 spec_guard
+M 13354 spec_cast_mage
+S
+
+
+
+#SHOPS
+0
+
+
+
+#RESETS
+M 0 13300 1 13300
+M 0 13322 1 13301
+M 0 13320 1 13304
+O 0 13301 0 13304
+M 0 13325 1 13305
+G 0 13325 0
+O 0 13300 0 13306
+M 0 13321 1 13307
+M 0 13319 1 13307
+M 0 13301 1 13309
+E 0 13304 0 17
+O 0 13313 0 13312
+M 0 13318 1 13312
+E 0 13319 0 6
+E 0 13318 0 16
+M 0 13312 1 13317
+E 0 13310 0 5
+E 0 13309 0 6
+E 0 13311 0 17
+P 0 13316 0 13311
+G 0 13336 0
+O 0 13337 0 13317
+O 0 13314 0 13318
+O 0 13338 0 13318
+M 0 13311 1 13320
+G 0 13316 0
+O 0 13315 0 13320
+P 0 13317 0 13315
+M 0 13313 1 13321
+M 0 13316 1 13322
+M 0 13313 1 13323
+M 0 13314 1 13324
+M 0 13317 1 13325
+M 0 13314 1 13326
+M 0 13317 1 13326
+M 0 13302 1 13328
+E 0 13306 0 8
+M 0 13303 1 13329
+E 0 13306 0 8
+M 0 13315 1 13329
+E 0 13307 0 6
+E 0 13308 0 8
+M 0 13304 1 13330
+E 0 13306 0 8
+M 0 13305 1 13331
+E 0 13306 0 8
+M 0 13307 1 13332
+E 0 13306 0 8
+M 0 13315 1 13332
+E 0 13307 0 6
+E 0 13308 0 8
+M 0 13309 1 13333
+E 0 13306 0 8
+M 0 13308 1 13334
+E 0 13306 0 8
+M 0 13306 1 13335
+E 0 13306 0 8
+O 0 13353 0 13336
+M 0 13323 1 13339
+O 0 13327 0 13339
+O 0 13327 0 13339
+O 0 13320 0 13341
+O 0 13352 0 13343
+M 0 13329 1 13345
+M 0 13324 1 13350
+E 0 13322 0 16
+E 0 13323 0 17
+G 0 13321 0
+M 0 13327 1 13353
+D 0 13353 2 1
+M 0 13328 1 13355
+O 0 13322 0 13356
+O 0 13324 0 13356
+P 0 13325 0 13324
+M 0 13339 1 13359
+E 0 13333 0 5
+E 0 13334 0 16
+M 0 13333 2 13360
+M 0 13334 2 13361
+M 0 13335 1 13362
+M 0 13334 2 13363
+M 0 13336 1 13365
+M 0 13337 1 13365
+M 0 13338 1 13366
+E 0 13335 0 6
+M 0 13332 3 13367
+M 0 13361 2 13369
+E 0 13346 0 16
+M 0 13350 1 13371
+G 0 13344 0
+M 0 13359 1 13372
+E 0 13348 0 16
+M 0 13361 1 13372
+E 0 13348 0 16
+M 0 13359 2 13373
+E 0 13348 0 16
+M 0 13349 1 13374
+M 0 13359 3 13374
+E 0 13348 0 16
+O 0 13328 0 13375
+M 0 13360 3 13376
+E 0 13346 0 16
+E 0 13350 0 5
+M 0 13357 1 13377
+E 0 13350 0 5
+M 0 13354 1 13379
+M 0 13351 1 13380
+O 0 13339 0 13381
+P 0 13355 0 13339
+M 0 13362 1 13381
+E 0 13349 0 12
+M 0 13353 1 13383
+E 0 13350 0 5
+M 0 13355 1 13384
+E 0 13345 0 11
+E 0 13346 0 16
+M 0 13352 1 13385
+M 0 13347 1 13386
+E 0 13348 0 16
+M 0 13348 1 13386
+E 0 13347 0 11
+E 0 13348 0 16
+M 0 13358 3 13387
+E 0 13346 0 16
+M 0 13356 1 13387
+E 0 13341 0 3
+E 0 13348 0 16
+E 0 13350 0 5
+G 0 13340 0
+M 0 13341 1 13388
+M 0 13359 2 13388
+E 0 13348 0 16
+O 0 13342 0 13388
+M 0 13340 1 13389
+E 0 13348 0 16
+E 0 13350 0 5
+O 0 13343 0 13389
+M 0 13342 2 13390
+E 0 13350 0 5
+E 0 13346 0 16
+M 0 13343 1 13392
+M 0 13346 1 13393
+M 0 13345 1 13394
+M 0 13344 1 13394
+M 0 13310 1 13396
+E 0 13306 0 8
+E 0 13305 0 0
+O 0 13330 0 13397
+M 0 13331 1 13398
+O 0 13331 0 13399
+M 0 13330 1 13399
+G 0 13354 0
+O 0 13356 0 13399
+S
+
+
+
+#$
+
+

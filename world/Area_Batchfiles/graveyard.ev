@@ -10,6 +10,8 @@ desc/edit r3651
 #
 :wq
 #
+set r3651/vnum = "r3651"
+#
 set r3651/terrain = "city"
 #
 set r3651/room_flags = ['indoors', 'dark']
@@ -26,6 +28,8 @@ desc/edit r3600
 #
 :wq
 #
+set r3600/vnum = "r3600"
+#
 set r3600/terrain = "field"
 #
 dig/tel A Gravel Road in the Graveyard; r3601
@@ -39,6 +43,8 @@ desc/edit r3601
 :j l
 #
 :wq
+#
+set r3601/vnum = "r3601"
 #
 set r3601/terrain = "field"
 #
@@ -54,6 +60,8 @@ desc/edit r3602
 #
 :wq
 #
+set r3602/vnum = "r3602"
+#
 set r3602/terrain = "field"
 #
 dig/tel A Gravel Road in the Graveyard; r3603
@@ -67,6 +75,8 @@ desc/edit r3603
 :j l
 #
 :wq
+#
+set r3603/vnum = "r3603"
 #
 set r3603/terrain = "field"
 #
@@ -82,6 +92,8 @@ desc/edit r3604
 #
 :wq
 #
+set r3604/vnum = "r3604"
+#
 set r3604/terrain = "field"
 #
 dig/tel A Gravel Path in the Graveyard; r3606
@@ -95,6 +107,8 @@ desc/edit r3606
 :j l
 #
 :wq
+#
+set r3606/vnum = "r3606"
 #
 set r3606/terrain = "field"
 #
@@ -112,6 +126,8 @@ desc/edit r3607
 #
 :wq
 #
+set r3607/vnum = "r3607"
+#
 set r3607/terrain = "city"
 #
 set r3607/room_flags = ['indoors', 'dark']
@@ -127,6 +143,8 @@ desc/edit r3608
 :j l
 #
 :wq
+#
+set r3608/vnum = "r3608"
 #
 set r3608/terrain = "field"
 #
@@ -144,6 +162,8 @@ desc/edit r3609
 #
 :wq
 #
+set r3609/vnum = "r3609"
+#
 set r3609/terrain = "city"
 #
 set r3609/room_flags = ['indoors', 'dark']
@@ -159,6 +179,8 @@ desc/edit r3610
 :j l
 #
 :wq
+#
+set r3610/vnum = "r3610"
 #
 set r3610/terrain = "field"
 #
@@ -176,6 +198,8 @@ desc/edit r3611
 #
 :wq
 #
+set r3611/vnum = "r3611"
+#
 set r3611/terrain = "city"
 #
 set r3611/room_flags = ['indoors', 'dark']
@@ -192,6 +216,8 @@ desc/edit r3612
 #
 :wq
 #
+set r3612/vnum = "r3612"
+#
 set r3612/terrain = "field"
 #
 dig/tel In a shed in the Graveyard; r3613
@@ -205,6 +231,8 @@ desc/edit r3613
 :j l
 #
 :wq
+#
+set r3613/vnum = "r3613"
 #
 set r3613/terrain = "city"
 #
@@ -222,6 +250,8 @@ desc/edit r3614
 #
 :wq
 #
+set r3614/vnum = "r3614"
+#
 set r3614/terrain = "field"
 #
 set r3614/extra_description = {'tomb stone tombstone': 'It is a large rectangular slab of dark gray stone that has been placed face up in the ground.  The name has been erased by the ravages of time. '}
@@ -237,6 +267,8 @@ desc/edit r3615
 :j l
 #
 :wq
+#
+set r3615/vnum = "r3615"
 #
 set r3615/terrain = "city"
 #
@@ -254,6 +286,8 @@ desc/edit r3616
 #
 :wq
 #
+set r3616/vnum = "r3616"
+#
 set r3616/terrain = "field"
 #
 set r3616/extra_description = {'tomb stone tombstone': 'It is a large rectangular slab of dark gray stone that has been placed face up in the ground.  The name has been erased by the ravages of time. '}
@@ -269,6 +303,8 @@ desc/edit r3617
 :j l
 #
 :wq
+#
+set r3617/vnum = "r3617"
 #
 set r3617/terrain = "city"
 #
@@ -286,6 +322,8 @@ desc/edit r3618
 #
 :wq
 #
+set r3618/vnum = "r3618"
+#
 set r3618/terrain = "field"
 #
 set r3618/extra_description = {'tomb stone tombstone': 'It is a large rectangular slab of dark gray stone that has been placed face up in the ground.  The name has been erased by the ravages of time. '}
@@ -301,6 +339,8 @@ desc/edit r3619
 :j l
 #
 :wq
+#
+set r3619/vnum = "r3619"
 #
 set r3619/terrain = "city"
 #
@@ -318,6 +358,8 @@ desc/edit r3638
 #
 :wq
 #
+set r3638/vnum = "r3638"
+#
 set r3638/terrain = "field"
 #
 set r3638/extra_description = {'tomb stone tombstone': 'It is a large rectangular slab of dark gray stone that has been placed face up in the ground.  The name has been erased by the ravages of time. '}
@@ -333,6 +375,8 @@ desc/edit r3639
 :j l
 #
 :wq
+#
+set r3639/vnum = "r3639"
 #
 set r3639/terrain = "city"
 #
@@ -350,6 +394,8 @@ desc/edit r3640
 #
 :wq
 #
+set r3640/vnum = "r3640"
+#
 set r3640/terrain = "field"
 #
 set r3640/extra_description = {'tomb stone tombstone': 'It is a large rectangular slab of dark gray stone that has been placed face up in the ground.  The name has been erased by the ravages of time. '}
@@ -365,6 +411,8 @@ desc/edit r3641
 :j l
 #
 :wq
+#
+set r3641/vnum = "r3641"
 #
 set r3641/terrain = "city"
 #
@@ -382,6 +430,8 @@ desc/edit r3642
 #
 :wq
 #
+set r3642/vnum = "r3642"
+#
 set r3642/terrain = "field"
 #
 set r3642/extra_description = {'tomb stone tombstone': 'It is a large rectangular slab of dark gray stone that has been placed face up in the ground.  The name has been erased by the ravages of time. '}
@@ -397,6 +447,8 @@ desc/edit r3643
 :j l
 #
 :wq
+#
+set r3643/vnum = "r3643"
 #
 set r3643/terrain = "city"
 #
@@ -414,6 +466,8 @@ desc/edit r3644
 #
 :wq
 #
+set r3644/vnum = "r3644"
+#
 set r3644/terrain = "field"
 #
 set r3644/extra_description = {'tomb stone tombstone': 'It is a large rectangular slab of dark gray stone that has been placed face up in the ground.  The name has been erased by the ravages of time. '}
@@ -429,6 +483,8 @@ desc/edit r3645
 :j l
 #
 :wq
+#
+set r3645/vnum = "r3645"
 #
 set r3645/terrain = "city"
 #
@@ -446,6 +502,8 @@ desc/edit r3646
 #
 :wq
 #
+set r3646/vnum = "r3646"
+#
 set r3646/terrain = "field"
 #
 set r3646/extra_description = {'tomb stone tombstone': 'It is a large rectangular slab of dark gray stone that has been placed face up in the ground.  The name has been erased by the ravages of time. '}
@@ -461,6 +519,8 @@ desc/edit r3647
 :j l
 #
 :wq
+#
+set r3647/vnum = "r3647"
 #
 set r3647/terrain = "city"
 #
@@ -478,6 +538,8 @@ desc/edit r3648
 #
 :wq
 #
+set r3648/vnum = "r3648"
+#
 set r3648/terrain = "field"
 #
 set r3648/extra_description = {'tomb stone tombstone': 'It is a large rectangular slab of dark gray stone that has been placed face up in the ground.  The name has been erased by the ravages of time. '}
@@ -493,6 +555,8 @@ desc/edit r3649
 :j l
 #
 :wq
+#
+set r3649/vnum = "r3649"
 #
 set r3649/terrain = "city"
 #
@@ -510,6 +574,8 @@ desc/edit r3650
 #
 :wq
 #
+set r3650/vnum = "r3650"
+#
 set r3650/terrain = "field"
 #
 set r3650/extra_description = {'tomb stone tombstone': 'It is a large rectangular slab of dark gray stone that has been placed face up in the ground.  The name has been erased by the ravages of time. '}
@@ -520,9 +586,9 @@ openexit up; tomb; stone; tombstone; u; e3600^ down = r3650
 #
 tag e3600 = graveyard:area names
 #
-set e3600/door_attributes = "open"
+set e3600/door_attributes = ["open"]
 #
-set e3600/reset_door_attributes = "open"
+set e3600/reset_door_attributes = ["open"]
 #
 tel r3600
 #
@@ -530,9 +596,9 @@ openexit north; grate; n; e3601^ south = r3129
 #
 tag e3601 = graveyard:area names
 #
-set e3601/door_attributes = "open"
+set e3601/door_attributes = ["open"]
 #
-set e3601/reset_door_attributes = "open"
+set e3601/reset_door_attributes = ["open"]
 #
 desc north = Through the solid iron bars you see the Concourse. 
 #
@@ -542,9 +608,9 @@ openexit east; e; e3602^ west = r3650
 #
 tag e3602 = graveyard:area names
 #
-set e3602/door_attributes = "open"
+set e3602/door_attributes = ["open"]
 #
-set e3602/reset_door_attributes = "open"
+set e3602/reset_door_attributes = ["open"]
 #
 desc east = The gravel path leads eastwards between the dark evergreen trees. 
 #
@@ -558,9 +624,9 @@ openexit south; s; e3603^ north = r3601
 #
 tag e3603 = graveyard:area names
 #
-set e3603/door_attributes = "open"
+set e3603/door_attributes = ["open"]
 #
-set e3603/reset_door_attributes = "open"
+set e3603/reset_door_attributes = ["open"]
 #
 desc south = The gravel road continues southwards. 
 #
@@ -574,9 +640,9 @@ openexit west; w; e3604^ east = r3606
 #
 tag e3604 = graveyard:area names
 #
-set e3604/door_attributes = "open"
+set e3604/door_attributes = ["open"]
 #
-set e3604/reset_door_attributes = "open"
+set e3604/reset_door_attributes = ["open"]
 #
 desc west = The gravel path leads westwards between the dark evergreen trees. 
 #
@@ -592,9 +658,9 @@ alias north = n^ e3605
 #
 tag e3605 = graveyard:area names
 #
-set e3605/door_attributes = "open"
+set e3605/door_attributes = ["open"]
 #
-set e3605/reset_door_attributes = "open"
+set e3605/reset_door_attributes = ["open"]
 #
 desc north = The gravel road continues northwards. 
 #
@@ -608,9 +674,9 @@ openexit south; s; e3606^ north = r3602
 #
 tag e3606 = graveyard:area names
 #
-set e3606/door_attributes = "open"
+set e3606/door_attributes = ["open"]
 #
-set e3606/reset_door_attributes = "open"
+set e3606/reset_door_attributes = ["open"]
 #
 desc south = The gravel road continues southwards. 
 #
@@ -626,9 +692,9 @@ alias north = n^ e3607
 #
 tag e3607 = graveyard:area names
 #
-set e3607/door_attributes = "open"
+set e3607/door_attributes = ["open"]
 #
-set e3607/reset_door_attributes = "open"
+set e3607/reset_door_attributes = ["open"]
 #
 desc north = The gravel road continues northwards. 
 #
@@ -642,9 +708,9 @@ openexit south; s; e3608^ north = r3603
 #
 tag e3608 = graveyard:area names
 #
-set e3608/door_attributes = "open"
+set e3608/door_attributes = ["open"]
 #
-set e3608/reset_door_attributes = "open"
+set e3608/reset_door_attributes = ["open"]
 #
 desc south = The gravel road continues southwards. 
 #
@@ -660,9 +726,9 @@ alias north = n^ e3609
 #
 tag e3609 = graveyard:area names
 #
-set e3609/door_attributes = "open"
+set e3609/door_attributes = ["open"]
 #
-set e3609/reset_door_attributes = "open"
+set e3609/reset_door_attributes = ["open"]
 #
 desc north = The gravel road continues northwards. 
 #
@@ -676,9 +742,9 @@ openexit south; s; e3610^ north = r3604
 #
 tag e3610 = graveyard:area names
 #
-set e3610/door_attributes = "open"
+set e3610/door_attributes = ["open"]
 #
-set e3610/reset_door_attributes = "open"
+set e3610/reset_door_attributes = ["open"]
 #
 desc south = The gravel road continues southwards to an open space before a small building. 
 #
@@ -694,9 +760,9 @@ alias north = n^ e3611
 #
 tag e3611 = graveyard:area names
 #
-set e3611/door_attributes = "open"
+set e3611/door_attributes = ["open"]
 #
-set e3611/reset_door_attributes = "open"
+set e3611/reset_door_attributes = ["open"]
 #
 desc north = The gravel road continues northwards. 
 #
@@ -710,9 +776,9 @@ openexit east; e; e3612^ west = r3638
 #
 tag e3612 = graveyard:area names
 #
-set e3612/door_attributes = "open"
+set e3612/door_attributes = ["open"]
 #
-set e3612/reset_door_attributes = "open"
+set e3612/reset_door_attributes = ["open"]
 #
 desc east = The gravel path leads eastwards between the dark evergreen trees. 
 #
@@ -726,9 +792,9 @@ openexit south; door; s; e3613^ north = r3405
 #
 tag e3613 = graveyard:area names
 #
-set e3613/door_attributes = "open"
+set e3613/door_attributes = ["open"]
 #
-set e3613/reset_door_attributes = "open"
+set e3613/reset_door_attributes = ["open"]
 #
 desc south = The chapel door is made of dark wood. 
 #
@@ -736,9 +802,9 @@ openexit west; w; e3614^ east = r3618
 #
 tag e3614 = graveyard:area names
 #
-set e3614/door_attributes = "open"
+set e3614/door_attributes = ["open"]
 #
-set e3614/reset_door_attributes = "open"
+set e3614/reset_door_attributes = ["open"]
 #
 desc west = The gravel path leads westwards between the dark evergreen trees. 
 #
@@ -754,9 +820,9 @@ alias east = e^ e3615
 #
 tag e3615 = graveyard:area names
 #
-set e3615/door_attributes = "open"
+set e3615/door_attributes = ["open"]
 #
-set e3615/reset_door_attributes = "open"
+set e3615/reset_door_attributes = ["open"]
 #
 desc east = The gravel path continues eastwards towards a gravel road. 
 #
@@ -770,9 +836,9 @@ openexit south; s; e3616^ north = r3608
 #
 tag e3616 = graveyard:area names
 #
-set e3616/door_attributes = "open"
+set e3616/door_attributes = ["open"]
 #
-set e3616/reset_door_attributes = "open"
+set e3616/reset_door_attributes = ["open"]
 #
 desc south = The gravel path continues southwards. 
 #
@@ -786,9 +852,9 @@ openexit down; tomb; stone; tombstone; d; e3617^ up = r3607
 #
 tag e3617 = graveyard:area names
 #
-set e3617/door_attributes = "open"
+set e3617/door_attributes = ["open"]
 #
-set e3617/reset_door_attributes = "open"
+set e3617/reset_door_attributes = ["open"]
 #
 tel r3607
 #
@@ -796,9 +862,9 @@ alias up = tomb^ stone^ tombstone^ u^ e3618
 #
 tag e3618 = graveyard:area names
 #
-set e3618/door_attributes = "open"
+set e3618/door_attributes = ["open"]
 #
-set e3618/reset_door_attributes = "open"
+set e3618/reset_door_attributes = ["open"]
 #
 tel r3608
 #
@@ -806,9 +872,9 @@ alias north = n^ e3619
 #
 tag e3619 = graveyard:area names
 #
-set e3619/door_attributes = "open"
+set e3619/door_attributes = ["open"]
 #
-set e3619/reset_door_attributes = "open"
+set e3619/reset_door_attributes = ["open"]
 #
 desc north = The gravel path continues northwards. 
 #
@@ -822,9 +888,9 @@ openexit west; w; e3620^ east = r3610
 #
 tag e3620 = graveyard:area names
 #
-set e3620/door_attributes = "open"
+set e3620/door_attributes = ["open"]
 #
-set e3620/reset_door_attributes = "open"
+set e3620/reset_door_attributes = ["open"]
 #
 desc west = The gravel path continues westwards. 
 #
@@ -838,9 +904,9 @@ openexit down; tomb; stone; tombstone; d; e3621^ up = r3609
 #
 tag e3621 = graveyard:area names
 #
-set e3621/door_attributes = "open"
+set e3621/door_attributes = ["open"]
 #
-set e3621/reset_door_attributes = "open"
+set e3621/reset_door_attributes = ["open"]
 #
 tel r3609
 #
@@ -848,9 +914,9 @@ alias up = tomb^ stone^ tombstone^ u^ e3622
 #
 tag e3622 = graveyard:area names
 #
-set e3622/door_attributes = "open"
+set e3622/door_attributes = ["open"]
 #
-set e3622/reset_door_attributes = "open"
+set e3622/reset_door_attributes = ["open"]
 #
 tel r3610
 #
@@ -858,9 +924,9 @@ alias east = e^ e3623
 #
 tag e3623 = graveyard:area names
 #
-set e3623/door_attributes = "open"
+set e3623/door_attributes = ["open"]
 #
-set e3623/reset_door_attributes = "open"
+set e3623/reset_door_attributes = ["open"]
 #
 desc east = The gravel path continues eastwards. 
 #
@@ -874,9 +940,9 @@ openexit south; s; e3624^ north = r3612
 #
 tag e3624 = graveyard:area names
 #
-set e3624/door_attributes = "open"
+set e3624/door_attributes = ["open"]
 #
-set e3624/reset_door_attributes = "open"
+set e3624/reset_door_attributes = ["open"]
 #
 desc south = The gravel path continues southwards. 
 #
@@ -890,9 +956,9 @@ openexit down; tomb; stone; tombstone; d; e3625^ up = r3611
 #
 tag e3625 = graveyard:area names
 #
-set e3625/door_attributes = "open"
+set e3625/door_attributes = ["open"]
 #
-set e3625/reset_door_attributes = "open"
+set e3625/reset_door_attributes = ["open"]
 #
 tel r3611
 #
@@ -900,9 +966,9 @@ alias up = tomb^ stone^ tombstone^ u^ e3626
 #
 tag e3626 = graveyard:area names
 #
-set e3626/door_attributes = "open"
+set e3626/door_attributes = ["open"]
 #
-set e3626/reset_door_attributes = "open"
+set e3626/reset_door_attributes = ["open"]
 #
 tel r3612
 #
@@ -910,9 +976,9 @@ alias north = n^ e3627
 #
 tag e3627 = graveyard:area names
 #
-set e3627/door_attributes = "open"
+set e3627/door_attributes = ["open"]
 #
-set e3627/reset_door_attributes = "open"
+set e3627/reset_door_attributes = ["open"]
 #
 desc north = The gravel path continues northwards. 
 #
@@ -926,9 +992,9 @@ openexit east; e; e3628^ west = r3614
 #
 tag e3628 = graveyard:area names
 #
-set e3628/door_attributes = "open"
+set e3628/door_attributes = ["open"]
 #
-set e3628/reset_door_attributes = "open"
+set e3628/reset_door_attributes = ["open"]
 #
 desc east = The gravel path continues eastwards. 
 #
@@ -942,9 +1008,9 @@ openexit west; door; w; e3629^ east = r3613
 #
 tag e3629 = graveyard:area names
 #
-set e3629/door_attributes = "open"
+set e3629/door_attributes = ["open"]
 #
-set e3629/reset_door_attributes = "open"
+set e3629/reset_door_attributes = ["open"]
 #
 desc west = It is a small black-painted shed with a wooden door. 
 #
@@ -954,9 +1020,9 @@ alias east = door^ e^ e3630
 #
 tag e3630 = graveyard:area names
 #
-set e3630/door_attributes = "open"
+set e3630/door_attributes = ["open"]
 #
-set e3630/reset_door_attributes = "open"
+set e3630/reset_door_attributes = ["open"]
 #
 tel r3614
 #
@@ -964,9 +1030,9 @@ openexit south; s; e3631^ north = r3616
 #
 tag e3631 = graveyard:area names
 #
-set e3631/door_attributes = "open"
+set e3631/door_attributes = ["open"]
 #
-set e3631/reset_door_attributes = "open"
+set e3631/reset_door_attributes = ["open"]
 #
 desc south = The gravel path continues southwards. 
 #
@@ -980,9 +1046,9 @@ alias west = w^ e3632
 #
 tag e3632 = graveyard:area names
 #
-set e3632/door_attributes = "open"
+set e3632/door_attributes = ["open"]
 #
-set e3632/reset_door_attributes = "open"
+set e3632/reset_door_attributes = ["open"]
 #
 desc west = The gravel path continues westwards. 
 #
@@ -996,9 +1062,9 @@ openexit down; tomb; stone; tombstone; d; e3633^ up = r3615
 #
 tag e3633 = graveyard:area names
 #
-set e3633/door_attributes = "open"
+set e3633/door_attributes = ["open"]
 #
-set e3633/reset_door_attributes = "open"
+set e3633/reset_door_attributes = ["open"]
 #
 tel r3615
 #
@@ -1006,9 +1072,9 @@ alias up = tomb^ stone^ tombstone^ u^ e3634
 #
 tag e3634 = graveyard:area names
 #
-set e3634/door_attributes = "open"
+set e3634/door_attributes = ["open"]
 #
-set e3634/reset_door_attributes = "open"
+set e3634/reset_door_attributes = ["open"]
 #
 tel r3616
 #
@@ -1016,9 +1082,9 @@ alias north = n^ e3635
 #
 tag e3635 = graveyard:area names
 #
-set e3635/door_attributes = "open"
+set e3635/door_attributes = ["open"]
 #
-set e3635/reset_door_attributes = "open"
+set e3635/reset_door_attributes = ["open"]
 #
 desc north = The gravel path continues northwards. 
 #
@@ -1032,9 +1098,9 @@ openexit south; s; e3636^ north = r3618
 #
 tag e3636 = graveyard:area names
 #
-set e3636/door_attributes = "open"
+set e3636/door_attributes = ["open"]
 #
-set e3636/reset_door_attributes = "open"
+set e3636/reset_door_attributes = ["open"]
 #
 desc south = The gravel path continues southwards. 
 #
@@ -1048,9 +1114,9 @@ openexit down; tomb; stone; tombstone; d; e3637^ up = r3617
 #
 tag e3637 = graveyard:area names
 #
-set e3637/door_attributes = "open"
+set e3637/door_attributes = ["open"]
 #
-set e3637/reset_door_attributes = "open"
+set e3637/reset_door_attributes = ["open"]
 #
 tel r3617
 #
@@ -1058,9 +1124,9 @@ alias up = tomb^ stone^ tombstone^ u^ e3638
 #
 tag e3638 = graveyard:area names
 #
-set e3638/door_attributes = "open"
+set e3638/door_attributes = ["open"]
 #
-set e3638/reset_door_attributes = "open"
+set e3638/reset_door_attributes = ["open"]
 #
 tel r3618
 #
@@ -1068,9 +1134,9 @@ alias north = n^ e3639
 #
 tag e3639 = graveyard:area names
 #
-set e3639/door_attributes = "open"
+set e3639/door_attributes = ["open"]
 #
-set e3639/reset_door_attributes = "open"
+set e3639/reset_door_attributes = ["open"]
 #
 desc north = The gravel path continues northwards. 
 #
@@ -1084,9 +1150,9 @@ alias east = e^ e3640
 #
 tag e3640 = graveyard:area names
 #
-set e3640/door_attributes = "open"
+set e3640/door_attributes = ["open"]
 #
-set e3640/reset_door_attributes = "open"
+set e3640/reset_door_attributes = ["open"]
 #
 desc east = The gravel path continues eastwards towards a building of some sort. 
 #
@@ -1100,9 +1166,9 @@ openexit down; tomb; stone; tombstone; d; e3641^ up = r3619
 #
 tag e3641 = graveyard:area names
 #
-set e3641/door_attributes = "open"
+set e3641/door_attributes = ["open"]
 #
-set e3641/reset_door_attributes = "open"
+set e3641/reset_door_attributes = ["open"]
 #
 tel r3619
 #
@@ -1110,9 +1176,9 @@ alias up = tomb^ stone^ tombstone^ u^ e3642
 #
 tag e3642 = graveyard:area names
 #
-set e3642/door_attributes = "open"
+set e3642/door_attributes = ["open"]
 #
-set e3642/reset_door_attributes = "open"
+set e3642/reset_door_attributes = ["open"]
 #
 tel r3638
 #
@@ -1120,9 +1186,9 @@ openexit north; n; e3643^ south = r3640
 #
 tag e3643 = graveyard:area names
 #
-set e3643/door_attributes = "open"
+set e3643/door_attributes = ["open"]
 #
-set e3643/reset_door_attributes = "open"
+set e3643/reset_door_attributes = ["open"]
 #
 desc north = The gravel path continues northwards. 
 #
@@ -1136,9 +1202,9 @@ alias west = w^ e3644
 #
 tag e3644 = graveyard:area names
 #
-set e3644/door_attributes = "open"
+set e3644/door_attributes = ["open"]
 #
-set e3644/reset_door_attributes = "open"
+set e3644/reset_door_attributes = ["open"]
 #
 desc west = The gravel path continues westwards towards a building of some sort. 
 #
@@ -1152,9 +1218,9 @@ openexit down; tomb; stone; tombstone; d; e3645^ up = r3639
 #
 tag e3645 = graveyard:area names
 #
-set e3645/door_attributes = "open"
+set e3645/door_attributes = ["open"]
 #
-set e3645/reset_door_attributes = "open"
+set e3645/reset_door_attributes = ["open"]
 #
 tel r3639
 #
@@ -1162,9 +1228,9 @@ alias up = tomb^ stone^ tombstone^ u^ e3646
 #
 tag e3646 = graveyard:area names
 #
-set e3646/door_attributes = "open"
+set e3646/door_attributes = ["open"]
 #
-set e3646/reset_door_attributes = "open"
+set e3646/reset_door_attributes = ["open"]
 #
 tel r3640
 #
@@ -1172,9 +1238,9 @@ openexit north; n; e3647^ south = r3642
 #
 tag e3647 = graveyard:area names
 #
-set e3647/door_attributes = "open"
+set e3647/door_attributes = ["open"]
 #
-set e3647/reset_door_attributes = "open"
+set e3647/reset_door_attributes = ["open"]
 #
 desc north = The gravel path continues northwards. 
 #
@@ -1188,9 +1254,9 @@ alias south = s^ e3648
 #
 tag e3648 = graveyard:area names
 #
-set e3648/door_attributes = "open"
+set e3648/door_attributes = ["open"]
 #
-set e3648/reset_door_attributes = "open"
+set e3648/reset_door_attributes = ["open"]
 #
 desc south = The gravel path continues southwards. 
 #
@@ -1204,9 +1270,9 @@ openexit down; tomb; stone; tombstone; d; e3649^ up = r3641
 #
 tag e3649 = graveyard:area names
 #
-set e3649/door_attributes = "open"
+set e3649/door_attributes = ["open"]
 #
-set e3649/reset_door_attributes = "open"
+set e3649/reset_door_attributes = ["open"]
 #
 tel r3641
 #
@@ -1214,9 +1280,9 @@ alias up = tomb^ stone^ tombstone^ u^ e3650
 #
 tag e3650 = graveyard:area names
 #
-set e3650/door_attributes = "open"
+set e3650/door_attributes = ["open"]
 #
-set e3650/reset_door_attributes = "open"
+set e3650/reset_door_attributes = ["open"]
 #
 tel r3642
 #
@@ -1224,9 +1290,9 @@ openexit east; e; e3651^ west = r3644
 #
 tag e3651 = graveyard:area names
 #
-set e3651/door_attributes = "open"
+set e3651/door_attributes = ["open"]
 #
-set e3651/reset_door_attributes = "open"
+set e3651/reset_door_attributes = ["open"]
 #
 desc east = The gravel path continues eastwards. 
 #
@@ -1240,9 +1306,9 @@ alias south = s^ e3652
 #
 tag e3652 = graveyard:area names
 #
-set e3652/door_attributes = "open"
+set e3652/door_attributes = ["open"]
 #
-set e3652/reset_door_attributes = "open"
+set e3652/reset_door_attributes = ["open"]
 #
 desc south = The gravel path continues southwards. 
 #
@@ -1256,9 +1322,9 @@ openexit down; tomb; stone; tombstone; d; e3653^ up = r3643
 #
 tag e3653 = graveyard:area names
 #
-set e3653/door_attributes = "open"
+set e3653/door_attributes = ["open"]
 #
-set e3653/reset_door_attributes = "open"
+set e3653/reset_door_attributes = ["open"]
 #
 tel r3643
 #
@@ -1266,9 +1332,9 @@ alias up = tomb^ stone^ tombstone^ u^ e3654
 #
 tag e3654 = graveyard:area names
 #
-set e3654/door_attributes = "open"
+set e3654/door_attributes = ["open"]
 #
-set e3654/reset_door_attributes = "open"
+set e3654/reset_door_attributes = ["open"]
 #
 tel r3644
 #
@@ -1276,9 +1342,9 @@ openexit north; n; e3655^ south = r3646
 #
 tag e3655 = graveyard:area names
 #
-set e3655/door_attributes = "open"
+set e3655/door_attributes = ["open"]
 #
-set e3655/reset_door_attributes = "open"
+set e3655/reset_door_attributes = ["open"]
 #
 desc north = The gravel path continues northwards. 
 #
@@ -1292,9 +1358,9 @@ alias west = w^ e3656
 #
 tag e3656 = graveyard:area names
 #
-set e3656/door_attributes = "open"
+set e3656/door_attributes = ["open"]
 #
-set e3656/reset_door_attributes = "open"
+set e3656/reset_door_attributes = ["open"]
 #
 desc west = The gravel path continues westwards. 
 #
@@ -1308,9 +1374,9 @@ openexit down; tomb; stone; tombstone; d; e3657^ up = r3645
 #
 tag e3657 = graveyard:area names
 #
-set e3657/door_attributes = "open"
+set e3657/door_attributes = ["open"]
 #
-set e3657/reset_door_attributes = "open"
+set e3657/reset_door_attributes = ["open"]
 #
 tel r3645
 #
@@ -1318,9 +1384,9 @@ alias up = tomb^ stone^ tombstone^ u^ e3658
 #
 tag e3658 = graveyard:area names
 #
-set e3658/door_attributes = "open"
+set e3658/door_attributes = ["open"]
 #
-set e3658/reset_door_attributes = "open"
+set e3658/reset_door_attributes = ["open"]
 #
 tel r3646
 #
@@ -1328,9 +1394,9 @@ alias south = s^ e3659
 #
 tag e3659 = graveyard:area names
 #
-set e3659/door_attributes = "open"
+set e3659/door_attributes = ["open"]
 #
-set e3659/reset_door_attributes = "open"
+set e3659/reset_door_attributes = ["open"]
 #
 desc south = The gravel path continues southwards. 
 #
@@ -1344,9 +1410,9 @@ openexit west; w; e3660^ east = r3648
 #
 tag e3660 = graveyard:area names
 #
-set e3660/door_attributes = "open"
+set e3660/door_attributes = ["open"]
 #
-set e3660/reset_door_attributes = "open"
+set e3660/reset_door_attributes = ["open"]
 #
 desc west = The gravel path continues westwards. 
 #
@@ -1360,9 +1426,9 @@ openexit down; tomb; stone; tombstone; d; e3661^ up = r3647
 #
 tag e3661 = graveyard:area names
 #
-set e3661/door_attributes = "open"
+set e3661/door_attributes = ["open"]
 #
-set e3661/reset_door_attributes = "open"
+set e3661/reset_door_attributes = ["open"]
 #
 tel r3647
 #
@@ -1370,9 +1436,9 @@ alias up = tomb^ stone^ tombstone^ u^ e3662
 #
 tag e3662 = graveyard:area names
 #
-set e3662/door_attributes = "open"
+set e3662/door_attributes = ["open"]
 #
-set e3662/reset_door_attributes = "open"
+set e3662/reset_door_attributes = ["open"]
 #
 tel r3648
 #
@@ -1380,9 +1446,9 @@ openexit north; n; e3663^ south = r3650
 #
 tag e3663 = graveyard:area names
 #
-set e3663/door_attributes = "open"
+set e3663/door_attributes = ["open"]
 #
-set e3663/reset_door_attributes = "open"
+set e3663/reset_door_attributes = ["open"]
 #
 desc north = The gravel path continues northwards. 
 #
@@ -1396,9 +1462,9 @@ alias east = e^ e3664
 #
 tag e3664 = graveyard:area names
 #
-set e3664/door_attributes = "open"
+set e3664/door_attributes = ["open"]
 #
-set e3664/reset_door_attributes = "open"
+set e3664/reset_door_attributes = ["open"]
 #
 desc east = The gravel path continues eastwards. 
 #
@@ -1412,9 +1478,9 @@ openexit down; tomb; stone; tombstone; d; e3665^ up = r3649
 #
 tag e3665 = graveyard:area names
 #
-set e3665/door_attributes = "open"
+set e3665/door_attributes = ["open"]
 #
-set e3665/reset_door_attributes = "open"
+set e3665/reset_door_attributes = ["open"]
 #
 tel r3649
 #
@@ -1422,9 +1488,9 @@ alias up = tomb^ stone^ tombstone^ u^ e3666
 #
 tag e3666 = graveyard:area names
 #
-set e3666/door_attributes = "open"
+set e3666/door_attributes = ["open"]
 #
-set e3666/reset_door_attributes = "open"
+set e3666/reset_door_attributes = ["open"]
 #
 tel r3650
 #
@@ -1432,9 +1498,9 @@ alias south = s^ e3667
 #
 tag e3667 = graveyard:area names
 #
-set e3667/door_attributes = "open"
+set e3667/door_attributes = ["open"]
 #
-set e3667/reset_door_attributes = "open"
+set e3667/reset_door_attributes = ["open"]
 #
 desc south = The gravel path continues southwards. 
 #
@@ -1448,9 +1514,9 @@ alias west = w^ e3668
 #
 tag e3668 = graveyard:area names
 #
-set e3668/door_attributes = "open"
+set e3668/door_attributes = ["open"]
 #
-set e3668/reset_door_attributes = "open"
+set e3668/reset_door_attributes = ["open"]
 #
 desc west = The gravel path continues westwards towards a gravel road. 
 #
@@ -1464,9 +1530,9 @@ alias down = tomb^ stone^ tombstone^ d^ e3669
 #
 tag e3669 = graveyard:area names
 #
-set e3669/door_attributes = "open"
+set e3669/door_attributes = ["open"]
 #
-set e3669/reset_door_attributes = "open"
+set e3669/reset_door_attributes = ["open"]
 #
 tel r3600
 #
@@ -1502,9 +1568,13 @@ tag m3604 = graveyard:area name
 #
 tag m3604 = mobile
 #
-set m3604/hitpoints[maximum] = 46
+set m3604/hitpoints[maximum] = 48
 #
 set m3604/position = "standing"
+#
+set m3604/experience_total = 1081
+#
+set m3604/experience_current = 1081
 #
 set m3604/special_function = "cast_undead"
 #
@@ -1542,9 +1612,13 @@ tag m3604 = graveyard:area name
 #
 tag m3604 = mobile
 #
-set m3604/hitpoints[maximum] = 46
+set m3604/hitpoints[maximum] = 49
 #
 set m3604/position = "standing"
+#
+set m3604/experience_total = 1045
+#
+set m3604/experience_current = 1045
 #
 set m3604/special_function = "cast_undead"
 #
@@ -1630,9 +1704,13 @@ tag m3603 = graveyard:area name
 #
 tag m3603 = mobile
 #
-set m3603/hitpoints[maximum] = 62
+set m3603/hitpoints[maximum] = 45
 #
 set m3603/position = "standing"
+#
+set m3603/experience_total = 985
+#
+set m3603/experience_current = 985
 #
 set m3603/special_function = "cast_undead"
 #
@@ -1676,9 +1754,13 @@ tag m3603 = graveyard:area name
 #
 tag m3603 = mobile
 #
-set m3603/hitpoints[maximum] = 49
+set m3603/hitpoints[maximum] = 41
 #
 set m3603/position = "standing"
+#
+set m3603/experience_total = 1051
+#
+set m3603/experience_current = 1051
 #
 set m3603/special_function = "cast_undead"
 #
@@ -1712,11 +1794,15 @@ set o3613/stat_modifiers[hitroll] = 1
 #
 set o3613/weapon_type = "pierce"
 #
-set o3613/damage_low = 4
+set o3613/damage_low = 1
 #
-set o3613/damage_high = 8
+set o3613/damage_high = 9
 #
 wieldto o3613 = m3603
+#
+set m3603/experience_total = 1313
+#
+set m3603/experience_current = 1313
 #
 set m3603/reset_objects["o3613"] = {"location":"equipped"}
 #
@@ -1754,9 +1840,13 @@ tag m3604 = graveyard:area name
 #
 tag m3604 = mobile
 #
-set m3604/hitpoints[maximum] = 64
+set m3604/hitpoints[maximum] = 62
 #
 set m3604/position = "standing"
+#
+set m3604/experience_total = 1045
+#
+set m3604/experience_current = 1045
 #
 set m3604/special_function = "cast_undead"
 #
@@ -1792,9 +1882,13 @@ tag m3600 = graveyard:area name
 #
 tag m3600 = mobile
 #
-set m3600/hitpoints[maximum] = 8
+set m3600/hitpoints[maximum] = 9
 #
 set m3600/position = "standing"
+#
+set m3600/experience_total = 138
+#
+set m3600/experience_current = 138
 #
 tel r3613
 #
@@ -1920,9 +2014,9 @@ set o3604/extra_descriptions = {'shovel': ' It is a large metal shovel with a so
 #
 set o3604/weapon_type = "pound"
 #
-set o3604/damage_low = 1
+set o3604/damage_low = 0
 #
-set o3604/damage_high = 7
+set o3604/damage_high = 6
 #
 drop o3604
 #
@@ -1956,7 +2050,7 @@ set o3605/extra_descriptions = {'rake': ' It is a large metal rake with a solid 
 #
 set o3605/weapon_type = "claw"
 #
-set o3605/damage_low = 1
+set o3605/damage_low = 3
 #
 set o3605/damage_high = 7
 #
@@ -2052,9 +2146,13 @@ tag m3602 = graveyard:area name
 #
 tag m3602 = mobile
 #
-set m3602/hitpoints[maximum] = 106
+set m3602/hitpoints[maximum] = 189
 #
 set m3602/position = "standing"
+#
+set m3602/experience_total = 9283
+#
+set m3602/experience_current = 9283
 #
 set m3602/special_function = "cast_undead"
 #
@@ -2088,7 +2186,7 @@ set o3612/stat_modifiers[constitution] = 1
 #
 set o3612/stat_modifiers[hitpoints] = 1
 #
-set o3612/armor = 6
+set o3612/armor = 4
 #
 wearto o3612 = m3602
 #
@@ -2180,6 +2278,10 @@ set m3605/hitpoints[maximum] = 8
 #
 set m3605/position = "standing"
 #
+set m3605/experience_total = 135
+#
+set m3605/experience_current = 135
+#
 set m3605/special_function = "cast_undead"
 #
 tel r3638
@@ -2220,6 +2322,10 @@ set m3603/hitpoints[maximum] = 65
 #
 set m3603/position = "standing"
 #
+set m3603/experience_total = 952
+#
+set m3603/experience_current = 952
+#
 set m3603/special_function = "cast_undead"
 #
 tel r3639
@@ -2256,9 +2362,13 @@ tag m3604 = graveyard:area name
 #
 tag m3604 = mobile
 #
-set m3604/hitpoints[maximum] = 44
+set m3604/hitpoints[maximum] = 57
 #
 set m3604/position = "standing"
+#
+set m3604/experience_total = 919
+#
+set m3604/experience_current = 919
 #
 set m3604/special_function = "cast_undead"
 #
@@ -2382,6 +2492,10 @@ set m3605/hitpoints[maximum] = 9
 #
 set m3605/position = "standing"
 #
+set m3605/experience_total = 138
+#
+set m3605/experience_current = 138
+#
 set m3605/special_function = "cast_undead"
 #
 tel r3644
@@ -2418,9 +2532,13 @@ tag m3601 = graveyard:area name
 #
 tag m3601 = mobile
 #
-set m3601/hitpoints[maximum] = 45
+set m3601/hitpoints[maximum] = 64
 #
 set m3601/position = "standing"
+#
+set m3601/experience_total = 986
+#
+set m3601/experience_current = 986
 #
 set m3601/special_function = "cast_undead"
 #
@@ -2544,9 +2662,13 @@ tag m3603 = graveyard:area name
 #
 tag m3603 = mobile
 #
-set m3603/hitpoints[maximum] = 62
+set m3603/hitpoints[maximum] = 56
 #
 set m3603/position = "standing"
+#
+set m3603/experience_total = 925
+#
+set m3603/experience_current = 925
 #
 set m3603/special_function = "cast_undead"
 #
@@ -2593,6 +2715,10 @@ tag m3605 = mobile
 set m3605/hitpoints[maximum] = 8
 #
 set m3605/position = "standing"
+#
+set m3605/experience_total = 158
+#
+set m3605/experience_current = 158
 #
 set m3605/special_function = "cast_undead"
 #

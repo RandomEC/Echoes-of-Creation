@@ -148,9 +148,10 @@ class Combat(Object):
                         combatant.db.hitpoints["damaged"] = (combatant.hitpoints_maximum - 1)
                         combatant.move_to(combatant.home, quiet=True)
 
-        self.db.rounds += 1
+        if self.db.combatants:
+            self.db.rounds += 1
 
-        self.combat_end_check()
+            self.combat_end_check()
 
 
     def clear_messages(self):

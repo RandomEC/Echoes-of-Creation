@@ -575,9 +575,6 @@ class CmdWearTo(MuxCommand):
 
             caller.location.msg_contents(room_wear_string)
 
-        if not eq.at_after_equip(caller):
-            return
-
 
 class CmdWieldTo(MuxCommand):
     """

@@ -1,0 +1,7046 @@
+dig/tel Kids' Closet.; r10082
+#
+tag r10082 = crystalmir lake:area names
+#
+desc r10082 = You are standing in the kids' closet. There are piles of unwashed laundry and toys. You see an evil looking book lying against the south wall. 
+#
+desc/edit r10082
+#
+:j l
+#
+:wq
+#
+set r10082/vnum = "r10082"
+#
+set r10082/terrain = "inside"
+#
+dig/tel Rock Outcropping; r10001
+#
+tag r10001 = crystalmir lake:area names
+#
+desc r10001 = This small area is populated with some moss covered boulders and small trees, trying to retake the ground.  Just to the south, the trail connects to the Western Road.  To the north the trail looks like it splits, heading north and east towards a lake, and west into some mountains beyond the trees.  A small wooden sign is posted here. 
+#
+desc/edit r10001
+#
+:j l
+#
+:wq
+#
+set r10001/vnum = "r10001"
+#
+set r10001/terrain = "mountain"
+#
+set r10001/extra_description = {'sign': '**CRYSTALMIR LAKE** For those of you who enjoy Dragonlance. First of many Dragonlance areas. Original Story and Design: Tracy Hickman Harold Johnson Douglas Niles Michael Dobson Brought to you by  -- Strahd '}
+#
+set r10001/room_flags = ['no mob']
+#
+dig/tel Small Grove; r10002
+#
+tag r10002 = crystalmir lake:area names
+#
+desc r10002 = Suddenly, soft music begins.  Its source is a slim, beautiful girl.  Lyre in hand, she sits gracefully as she plays; nearby, a large plainsman raises a flute to his lips.  A voice, clear as winter wind, begins to sing... 
+#
+desc/edit r10002
+#
+:j l
+#
+:wq
+#
+set r10002/vnum = "r10002"
+#
+set r10002/terrain = "forest"
+#
+set r10002/room_flags = ['safe']
+#
+dig/tel Entrance to the Town of Solace; r10003
+#
+tag r10003 = crystalmir lake:area names
+#
+desc r10003 = A warm autumn breeze rustles the great Vallenwoods trees of Solace. The road that wanders through the trees blazes in the bright colors of autumn. The richly stained buildings of Solace rest cradled over head in the boughs of the trees. 
+#
+desc/edit r10003
+#
+:j l
+#
+:wq
+#
+set r10003/vnum = "r10003"
+#
+set r10003/terrain = "city"
+#
+dig/tel East Shore of Crystalmir Lake; r10004
+#
+tag r10004 = crystalmir lake:area names
+#
+desc r10004 = The blue of the autumn sky darkens on the deep stillness of the lake. The soft forests of giant Vallenwoods border the serene waters on the eastern, southern and western shores. To the north a patchwork of fields stretches toward the distant purple mountains. 
+#
+desc/edit r10004
+#
+:j l
+#
+:wq
+#
+set r10004/vnum = "r10004"
+#
+set r10004/terrain = "water swim"
+#
+dig/tel Middle of Crystalmir Lake; r10005
+#
+tag r10005 = crystalmir lake:area names
+#
+desc r10005 = You are in the middle of Crystalmir lake. The water is so still it is like a thin sheet of glass. 
+#
+desc/edit r10005
+#
+:j l
+#
+:wq
+#
+set r10005/vnum = "r10005"
+#
+set r10005/terrain = "water swim"
+#
+dig/tel North Shore of Crystalmir Lake; r10006
+#
+tag r10006 = crystalmir lake:area names
+#
+desc r10006 = The blue of the autumn sky darkens on the deep stillness of the lake. The soft forests of giant Vallenwoods border the serene waters on the eastern, southern and western shores. To the north a patchwork of fields stretches toward the distant purple mountains. 
+#
+desc/edit r10006
+#
+:j l
+#
+:wq
+#
+set r10006/vnum = "r10006"
+#
+set r10006/terrain = "water swim"
+#
+dig/tel Path Along the Lake; r10007
+#
+tag r10007 = crystalmir lake:area names
+#
+desc r10007 = You are walking along a path that follows the shore of the lake. 
+#
+desc/edit r10007
+#
+:j l
+#
+:wq
+#
+set r10007/vnum = "r10007"
+#
+set r10007/terrain = "field"
+#
+dig/tel West Shore of Crystalmir Lake; r10008
+#
+tag r10008 = crystalmir lake:area names
+#
+desc r10008 = The blue of the autumn sky darkens on the deep stillness of the lake. The soft forests of giant Vallenwoods border the serene waters on the eastern, southern and western shores. To the north a patchwork of fields stretches toward the distant purple mountains. 
+#
+desc/edit r10008
+#
+:j l
+#
+:wq
+#
+set r10008/vnum = "r10008"
+#
+set r10008/terrain = "water swim"
+#
+dig/tel Path Along the Lake; r10009
+#
+tag r10009 = crystalmir lake:area names
+#
+desc r10009 = You are walking on a path that follows the shore of the lake. 
+#
+desc/edit r10009
+#
+:j l
+#
+:wq
+#
+set r10009/vnum = "r10009"
+#
+set r10009/terrain = "field"
+#
+dig/tel South Shore of Crystalmir Lake; r10010
+#
+tag r10010 = crystalmir lake:area names
+#
+desc r10010 = The blue of the autumn sky darkens on the deep stillness of the lake. The soft forests of giant Vallenwoods border the serene waters on the eastern, southern and western shores. To the north a patchwork of fields stretches toward the distant purple mountains. 
+#
+desc/edit r10010
+#
+:j l
+#
+:wq
+#
+set r10010/vnum = "r10010"
+#
+set r10010/terrain = "water swim"
+#
+dig/tel Path Along The Lake; r10011
+#
+tag r10011 = crystalmir lake:area names
+#
+desc r10011 = You are walking along a path that follows the shore of the lake. 
+#
+desc/edit r10011
+#
+:j l
+#
+:wq
+#
+set r10011/vnum = "r10011"
+#
+set r10011/terrain = "field"
+#
+dig/tel Path Along the Lake; r10012
+#
+tag r10012 = crystalmir lake:area names
+#
+desc r10012 = The shoreline path opens up to a small field here.  Across the field to the west, a small stone keep nestles into the mountains.  From it's tower, hangs a large white banner emblazoned with a bright red hawk.  Looking over the lake, you can see Solace on the far shore.  The shore path heads north and east from here. 
+#
+desc/edit r10012
+#
+:j l
+#
+:wq
+#
+set r10012/vnum = "r10012"
+#
+set r10012/terrain = "field"
+#
+dig/tel Nearfields; r10013
+#
+tag r10013 = crystalmir lake:area names
+#
+desc r10013 = Here, farmers and thief workers tread through fields of grain. The thick wheat falls smoothly before the flickering scythes. 
+#
+desc/edit r10013
+#
+:j l
+#
+:wq
+#
+set r10013/vnum = "r10013"
+#
+set r10013/terrain = "field"
+#
+dig/tel Northfields; r10014
+#
+tag r10014 = crystalmir lake:area names
+#
+desc r10014 = A sea of grain sweeps across the north flats. Stalks sag with ripened grain, ready for harvest. But no one is around to harvest the grains or tend the crops. 
+#
+desc/edit r10014
+#
+:j l
+#
+:wq
+#
+set r10014/vnum = "r10014"
+#
+set r10014/terrain = "field"
+#
+dig/tel Twin Flat; r10015
+#
+tag r10015 = crystalmir lake:area names
+#
+desc r10015 = A clear mountain valley sprawls about. To the northwest and southeast, thick Vallenwoods flash yellow and scarlet against the bright autumn sky. To the east shimmers the cool blue of Crystalmir Lake. Westward, the valley enters a canyon rimmed by granite cliffs. The valley floor itself continues to the northeast. Some distance away, a group of huddled men pulls a large cart slowly west down the Haven road. They sway rhythmically. Coarse, heavy robes completely conceal their features. 
+#
+desc/edit r10015
+#
+:j l
+#
+:wq
+#
+set r10015/vnum = "r10015"
+#
+set r10015/terrain = "field"
+#
+dig/tel Jakanth Vale; r10016
+#
+tag r10016 = crystalmir lake:area names
+#
+desc r10016 = Trails lead deeper into the woods, but even at its edge an unnatural stillness has settled on the place. The woods seem much the same, but there is a subtle difference, a heaviness in the air. Even the insects are silent. 
+#
+desc/edit r10016
+#
+:j l
+#
+:wq
+#
+set r10016/vnum = "r10016"
+#
+set r10016/terrain = "forest"
+#
+dig/tel Trail Through Forest; r10017
+#
+tag r10017 = crystalmir lake:area names
+#
+desc r10017 = Heavily wrapped feet trod upon this trail a short time ago. You smell smoke. 
+#
+desc/edit r10017
+#
+:j l
+#
+:wq
+#
+set r10017/vnum = "r10017"
+#
+set r10017/terrain = "forest"
+#
+dig/tel Smoldering Campsite; r10018
+#
+tag r10018 = crystalmir lake:area names
+#
+desc r10018 = The campsite smells like burned hair. Charred bones lie in the ashes of the fire pit. The grass has been stamped down around the area. 
+#
+desc/edit r10018
+#
+:j l
+#
+:wq
+#
+set r10018/vnum = "r10018"
+#
+set r10018/terrain = "forest"
+#
+dig/tel Sentinel Gap; r10019
+#
+tag r10019 = crystalmir lake:area names
+#
+desc r10019 = Walls of granite soar on either side of the narrow canyon floor. A chilly breeze whistles and rumbles between the cliffs. 
+#
+desc/edit r10019
+#
+:j l
+#
+:wq
+#
+set r10019/vnum = "r10019"
+#
+set r10019/terrain = "inside"
+#
+dig/tel On a Mountain Path; r10020
+#
+tag r10020 = crystalmir lake:area names
+#
+desc r10020 = The path leads up a little farther up the mountain to the west, or east down into the fields.  From here, you have a good view of Crystalmir lake and nearby Solace. 
+#
+desc/edit r10020
+#
+:j l
+#
+:wq
+#
+set r10020/vnum = "r10020"
+#
+set r10020/terrain = "inside"
+#
+dig/tel Prayers Eye Peak; r10021
+#
+tag r10021 = crystalmir lake:area names
+#
+desc r10021 = The flaming colors of fall surround you, and autumn breeze ripples through your hair. To the southwest, the white-capped outline of Prayers Eye Peak soars in the distance. Barely visible from here, a sharp crack splits the peak as though it consisted of two hands pressed together. 
+#
+desc/edit r10021
+#
+:j l
+#
+:wq
+#
+set r10021/vnum = "r10021"
+#
+set r10021/terrain = "mountain"
+#
+dig/tel Road Through the Forest; r10022
+#
+tag r10022 = crystalmir lake:area names
+#
+desc r10022 = This is a well traveled dirt road. 
+#
+desc/edit r10022
+#
+:j l
+#
+:wq
+#
+set r10022/vnum = "r10022"
+#
+set r10022/terrain = "inside"
+#
+dig/tel Stone Bridge; r10023
+#
+tag r10023 = crystalmir lake:area names
+#
+desc r10023 = The Solace Stream sparkles beneath an ancient stone bridge. Water tumbles out of the forest, over the rocks, and toward the Southpass that lies between southern Sentinel Peaks. West of the bridge, the road splits in two, branching to the south and the west. Both roads wind among the great Vallenwoods, whose boughs form a brilliant canopy over the roadway. 
+#
+desc/edit r10023
+#
+:j l
+#
+:wq
+#
+set r10023/vnum = "r10023"
+#
+set r10023/terrain = "hills"
+#
+dig/tel Road Among the Vallenwoods.; r10024
+#
+tag r10024 = crystalmir lake:area names
+#
+desc r10024 = This road path winds its way through the Vallenwoods, heading west into the mountains, and east towards a small stone bridge.  Though, looking north, one can see the lake in the distance through the trees. There is a signpost here. 
+#
+desc/edit r10024
+#
+:j l
+#
+:wq
+#
+set r10024/vnum = "r10024"
+#
+set r10024/terrain = "forest"
+#
+set r10024/extra_description = {'signpost sign': 'The sign indicates that Solace is north of the eastern bridge.  The sign also indicates that Crystalmir Lake itself is to the north. '}
+#
+dig/tel Mountain Trail; r10025
+#
+tag r10025 = crystalmir lake:area names
+#
+desc r10025 = This rocky trail begins the ascent into the mountains. To the north is Crystalmir Lake. 
+#
+desc/edit r10025
+#
+:j l
+#
+:wq
+#
+set r10025/vnum = "r10025"
+#
+set r10025/terrain = "mountain"
+#
+dig/tel In the Mountains; r10026
+#
+tag r10026 = crystalmir lake:area names
+#
+desc r10026 = You are walking on a rocky trail that winds through the mountains. From here you can see the whole valley and Crystalmir Lake. 
+#
+desc/edit r10026
+#
+:j l
+#
+:wq
+#
+set r10026/vnum = "r10026"
+#
+set r10026/terrain = "mountain"
+#
+dig/tel In the Mountains; r10027
+#
+tag r10027 = crystalmir lake:area names
+#
+desc r10027 = You are walking on a rocky trail that winds through the mountains. From here you can see the whole valley and Crystalmir Lake. From here it almost looks as if there is something at the bottom of the lake. 
+#
+desc/edit r10027
+#
+:j l
+#
+:wq
+#
+set r10027/vnum = "r10027"
+#
+set r10027/terrain = "mountain"
+#
+dig/tel In the Mountains; r10028
+#
+tag r10028 = crystalmir lake:area names
+#
+desc r10028 = You are walking on a rocky trail that winds through the mountains. From here you can see the whole valley and Crystalmir Lake. 
+#
+desc/edit r10028
+#
+:j l
+#
+:wq
+#
+set r10028/vnum = "r10028"
+#
+set r10028/terrain = "mountain"
+#
+dig/tel Among the Vallenwoods; r10029
+#
+tag r10029 = crystalmir lake:area names
+#
+desc r10029 = You are walking among the peaceful Vallenwoods. The trees sway in the breeze in a dance of autumn. 
+#
+desc/edit r10029
+#
+:j l
+#
+:wq
+#
+set r10029/vnum = "r10029"
+#
+set r10029/terrain = "forest"
+#
+dig/tel Solace East Woods; r10030
+#
+tag r10030 = crystalmir lake:area names
+#
+desc r10030 = The huge Vallenwoods trees tower above soft forest paths. Sunlight dapples the floor of the woods, and sparrows and squirrels quarrel overhead. The musty smell of fallen leaves rises through the fragrance of late wildflowers. 
+#
+desc/edit r10030
+#
+:j l
+#
+:wq
+#
+set r10030/vnum = "r10030"
+#
+set r10030/terrain = "forest"
+#
+dig/tel Northfields; r10031
+#
+tag r10031 = crystalmir lake:area names
+#
+desc r10031 = A sea of grain sweeps across the north flats.  Stalks sag with ripened grain, ready for harvest.  But no one is around to harvest the grains or tend the crops. A mostly rotted corpse is half-buried in the ground here. 
+#
+desc/edit r10031
+#
+:j l
+#
+:wq
+#
+set r10031/vnum = "r10031"
+#
+set r10031/terrain = "field"
+#
+set r10031/extra_description = {'corpse': 'The corpse is lying face-down in a small depression in the ground.  It looks a little flat, as if it fell from the sky. '}
+#
+set r10031/room_flags = ['no recall']
+#
+dig/tel Northfields; r10032
+#
+tag r10032 = crystalmir lake:area names
+#
+desc r10032 = A sea of grain sweeps across the north flats. Stalks sag with ripened grain, ready for harvest. But no one is around to harvest the grains or tend the crops. 
+#
+desc/edit r10032
+#
+:j l
+#
+:wq
+#
+set r10032/vnum = "r10032"
+#
+set r10032/terrain = "field"
+#
+set r10032/room_flags = ['no recall']
+#
+dig/tel Northfields; r10033
+#
+tag r10033 = crystalmir lake:area names
+#
+desc r10033 = A sea of grain sweeps across the north flats. Stalks sag with ripened grain, ready for harvest. But no one is around to harvest the grains or tend the crops. 
+#
+desc/edit r10033
+#
+:j l
+#
+:wq
+#
+set r10033/vnum = "r10033"
+#
+set r10033/terrain = "field"
+#
+set r10033/room_flags = ['no recall']
+#
+dig/tel Northfields; r10034
+#
+tag r10034 = crystalmir lake:area names
+#
+desc r10034 = A sea of grain sweeps across the north flats.  Stalks sag with ripened grain, ready for harvest.  But no one is around to harvest the grains or tend the crops. To the north an old farmhouse stands before a massive field of corn. 
+#
+desc/edit r10034
+#
+:j l
+#
+:wq
+#
+set r10034/vnum = "r10034"
+#
+set r10034/terrain = "field"
+#
+set r10034/room_flags = ['no recall']
+#
+dig/tel Northfields; r10035
+#
+tag r10035 = crystalmir lake:area names
+#
+desc r10035 = A sea of grain sweeps across the north flats. Stalks sag with ripened grain, ready for harvest. But no one is around to harvest the grains or tend the crops. 
+#
+desc/edit r10035
+#
+:j l
+#
+:wq
+#
+set r10035/vnum = "r10035"
+#
+set r10035/terrain = "field"
+#
+set r10035/room_flags = ['no recall']
+#
+dig/tel Northfields; r10036
+#
+tag r10036 = crystalmir lake:area names
+#
+desc r10036 = A sea of grain sweeps across the north flats. Stalks sag with ripened grain, ready for harvest. But no one is around to harvest the grains or tend the crops. 
+#
+desc/edit r10036
+#
+:j l
+#
+:wq
+#
+set r10036/vnum = "r10036"
+#
+set r10036/terrain = "field"
+#
+set r10036/room_flags = ['no recall']
+#
+dig/tel Northfields; r10037
+#
+tag r10037 = crystalmir lake:area names
+#
+desc r10037 = A sea of grain sweeps across the north flats. Stalks sag with ripened grain, ready for harvest. But no one is around to harvest the grains or tend the crops. 
+#
+desc/edit r10037
+#
+:j l
+#
+:wq
+#
+set r10037/vnum = "r10037"
+#
+set r10037/terrain = "field"
+#
+set r10037/room_flags = ['no recall']
+#
+dig/tel Northfields; r10038
+#
+tag r10038 = crystalmir lake:area names
+#
+desc r10038 = A sea of grain sweeps across the north flats. Stalks sag with ripened grain, ready for harvest. But no one is around to harvest the grains or tend the crops. 
+#
+desc/edit r10038
+#
+:j l
+#
+:wq
+#
+set r10038/vnum = "r10038"
+#
+set r10038/terrain = "field"
+#
+set r10038/room_flags = ['no recall']
+#
+dig/tel A Farmer's House; r10039
+#
+tag r10039 = crystalmir lake:area names
+#
+desc r10039 = A typical farm house is here next to the endless fields of grain. 
+#
+desc/edit r10039
+#
+:j l
+#
+:wq
+#
+set r10039/vnum = "r10039"
+#
+set r10039/terrain = "inside"
+#
+dig/tel Living Room; r10040
+#
+tag r10040 = crystalmir lake:area names
+#
+desc r10040 = This is the living room of the farmer. You don't live here. And you don't know the farmer. Why are you here? 
+#
+desc/edit r10040
+#
+:j l
+#
+:wq
+#
+set r10040/vnum = "r10040"
+#
+set r10040/terrain = "inside"
+#
+set r10040/room_flags = ['indoors', 'no mob']
+#
+dig/tel Top of the Stairs; r10041
+#
+tag r10041 = crystalmir lake:area names
+#
+desc r10041 = You are standing at the top of the stairs. There is a picture of Grandma on the wall. 
+#
+desc/edit r10041
+#
+:j l
+#
+:wq
+#
+set r10041/vnum = "r10041"
+#
+set r10041/terrain = "inside"
+#
+set r10041/extra_description = {'picture': 'It is a picture of Grandma.... or is it Grandpa...? '}
+#
+set r10041/room_flags = ['indoors']
+#
+dig/tel Bedroom; r10042
+#
+tag r10042 = crystalmir lake:area names
+#
+desc r10042 = You are standing in the bedroom of the farmer. There are family pictures hanging on the walls. An antique bed sits in one corner of the room. 
+#
+desc/edit r10042
+#
+:j l
+#
+:wq
+#
+set r10042/vnum = "r10042"
+#
+set r10042/terrain = "inside"
+#
+set r10042/extra_description = {'pictures': "That's strange... They all sorta look like pictures of like... Like.... Farmers.... Well what did you expect? "}
+#
+set r10042/room_flags = ['indoors']
+#
+dig/tel Kids' Room; r10043
+#
+tag r10043 = crystalmir lake:area names
+#
+desc r10043 = You are standing in the kids' bedroom. There are posters plastered to every inch of wall space. A bunk bed sits against the wall. You see a closet to the south. 
+#
+desc/edit r10043
+#
+:j l
+#
+:wq
+#
+set r10043/vnum = "r10043"
+#
+set r10043/terrain = "inside"
+#
+set r10043/extra_description = {'autograph': "I LOVE you 'cause you are SUPERDYDUPERDY!!! Barney ", 'posters': 'They seem to be various posters of a purple dinosaur singing... There is an autograph on one poster. '}
+#
+set r10043/room_flags = ['indoors']
+#
+dig/tel In the Closet; r10044
+#
+tag r10044 = crystalmir lake:area names
+#
+desc r10044 = You are standing in the bedroom closet. There are cedar blocks and mothballs in here. Uh oh....The door closed behind you. You are locked in. 
+#
+desc/edit r10044
+#
+:j l
+#
+:wq
+#
+set r10044/vnum = "r10044"
+#
+set r10044/terrain = "inside"
+#
+set r10044/extra_description = {'mothballs': 'They look like white malt balls... I wonder if they taste like it too? ', 'cedar blocks': "Looks like cedar blocks. What did you expect ? Gold? This is a FARMER'S house. "}
+#
+set r10044/room_flags = ['no recall', 'indoors']
+#
+dig/tel Underwater; r10048
+#
+tag r10048 = crystalmir lake:area names
+#
+desc r10048 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass... 
+#
+desc/edit r10048
+#
+:j l
+#
+:wq
+#
+set r10048/vnum = "r10048"
+#
+set r10048/terrain = "underwater"
+#
+dig/tel Underwater; r10049
+#
+tag r10049 = crystalmir lake:area names
+#
+desc r10049 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10049
+#
+:j l
+#
+:wq
+#
+set r10049/vnum = "r10049"
+#
+set r10049/terrain = "underwater"
+#
+dig/tel Underwater; r10050
+#
+tag r10050 = crystalmir lake:area names
+#
+desc r10050 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10050
+#
+:j l
+#
+:wq
+#
+set r10050/vnum = "r10050"
+#
+set r10050/terrain = "underwater"
+#
+dig/tel Underwater; r10051
+#
+tag r10051 = crystalmir lake:area names
+#
+desc r10051 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10051
+#
+:j l
+#
+:wq
+#
+set r10051/vnum = "r10051"
+#
+set r10051/terrain = "underwater"
+#
+dig/tel Underwater; r10052
+#
+tag r10052 = crystalmir lake:area names
+#
+desc r10052 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10052
+#
+:j l
+#
+:wq
+#
+set r10052/vnum = "r10052"
+#
+set r10052/terrain = "underwater"
+#
+dig/tel Underwater; r10053
+#
+tag r10053 = crystalmir lake:area names
+#
+desc r10053 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10053
+#
+:j l
+#
+:wq
+#
+set r10053/vnum = "r10053"
+#
+set r10053/terrain = "underwater"
+#
+dig/tel Underwater; r10054
+#
+tag r10054 = crystalmir lake:area names
+#
+desc r10054 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10054
+#
+:j l
+#
+:wq
+#
+set r10054/vnum = "r10054"
+#
+set r10054/terrain = "underwater"
+#
+dig/tel Underwater; r10055
+#
+tag r10055 = crystalmir lake:area names
+#
+desc r10055 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10055
+#
+:j l
+#
+:wq
+#
+set r10055/vnum = "r10055"
+#
+set r10055/terrain = "underwater"
+#
+dig/tel Underwater; r10056
+#
+tag r10056 = crystalmir lake:area names
+#
+desc r10056 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10056
+#
+:j l
+#
+:wq
+#
+set r10056/vnum = "r10056"
+#
+set r10056/terrain = "underwater"
+#
+dig/tel Underwater; r10057
+#
+tag r10057 = crystalmir lake:area names
+#
+desc r10057 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10057
+#
+:j l
+#
+:wq
+#
+set r10057/vnum = "r10057"
+#
+set r10057/terrain = "underwater"
+#
+dig/tel Underwater; r10058
+#
+tag r10058 = crystalmir lake:area names
+#
+desc r10058 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10058
+#
+:j l
+#
+:wq
+#
+set r10058/vnum = "r10058"
+#
+set r10058/terrain = "underwater"
+#
+dig/tel Underwater; r10059
+#
+tag r10059 = crystalmir lake:area names
+#
+desc r10059 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10059
+#
+:j l
+#
+:wq
+#
+set r10059/vnum = "r10059"
+#
+set r10059/terrain = "underwater"
+#
+dig/tel Underwater; r10060
+#
+tag r10060 = crystalmir lake:area names
+#
+desc r10060 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10060
+#
+:j l
+#
+:wq
+#
+set r10060/vnum = "r10060"
+#
+set r10060/terrain = "underwater"
+#
+dig/tel Underwater; r10061
+#
+tag r10061 = crystalmir lake:area names
+#
+desc r10061 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10061
+#
+:j l
+#
+:wq
+#
+set r10061/vnum = "r10061"
+#
+set r10061/terrain = "underwater"
+#
+dig/tel Underwater; r10062
+#
+tag r10062 = crystalmir lake:area names
+#
+desc r10062 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10062
+#
+:j l
+#
+:wq
+#
+set r10062/vnum = "r10062"
+#
+set r10062/terrain = "underwater"
+#
+dig/tel Underwater; r10063
+#
+tag r10063 = crystalmir lake:area names
+#
+desc r10063 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10063
+#
+:j l
+#
+:wq
+#
+set r10063/vnum = "r10063"
+#
+set r10063/terrain = "underwater"
+#
+dig/tel Underwater; r10064
+#
+tag r10064 = crystalmir lake:area names
+#
+desc r10064 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10064
+#
+:j l
+#
+:wq
+#
+set r10064/vnum = "r10064"
+#
+set r10064/terrain = "underwater"
+#
+dig/tel Underwater; r10065
+#
+tag r10065 = crystalmir lake:area names
+#
+desc r10065 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10065
+#
+:j l
+#
+:wq
+#
+set r10065/vnum = "r10065"
+#
+set r10065/terrain = "underwater"
+#
+dig/tel Underwater; r10066
+#
+tag r10066 = crystalmir lake:area names
+#
+desc r10066 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10066
+#
+:j l
+#
+:wq
+#
+set r10066/vnum = "r10066"
+#
+set r10066/terrain = "underwater"
+#
+dig/tel Underwater; r10067
+#
+tag r10067 = crystalmir lake:area names
+#
+desc r10067 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10067
+#
+:j l
+#
+:wq
+#
+set r10067/vnum = "r10067"
+#
+set r10067/terrain = "underwater"
+#
+dig/tel Underwater; r10068
+#
+tag r10068 = crystalmir lake:area names
+#
+desc r10068 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10068
+#
+:j l
+#
+:wq
+#
+set r10068/vnum = "r10068"
+#
+set r10068/terrain = "underwater"
+#
+dig/tel Underwater; r10069
+#
+tag r10069 = crystalmir lake:area names
+#
+desc r10069 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10069
+#
+:j l
+#
+:wq
+#
+set r10069/vnum = "r10069"
+#
+set r10069/terrain = "underwater"
+#
+dig/tel Underwater; r10070
+#
+tag r10070 = crystalmir lake:area names
+#
+desc r10070 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10070
+#
+:j l
+#
+:wq
+#
+set r10070/vnum = "r10070"
+#
+set r10070/terrain = "underwater"
+#
+dig/tel Underwater; r10071
+#
+tag r10071 = crystalmir lake:area names
+#
+desc r10071 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10071
+#
+:j l
+#
+:wq
+#
+set r10071/vnum = "r10071"
+#
+set r10071/terrain = "underwater"
+#
+dig/tel Underwater; r10072
+#
+tag r10072 = crystalmir lake:area names
+#
+desc r10072 = It is very dim here. You can make out the faint surfaces of the lake floor and other rocks. You hope you can hold your breath long enough. It looks as if the surface of the lake is made of glass ... In fact you can't break the surface! You need air SOON! 
+#
+desc/edit r10072
+#
+:j l
+#
+:wq
+#
+set r10072/vnum = "r10072"
+#
+set r10072/terrain = "underwater"
+#
+dig/tel Underwater Cave; r10073
+#
+tag r10073 = crystalmir lake:area names
+#
+desc r10073 = This is an underwater cave that seems to have trapped some air in it. It seems as if the cave continued deeper, but it is blocked by a rock slide. 
+#
+desc/edit r10073
+#
+:j l
+#
+:wq
+#
+set r10073/vnum = "r10073"
+#
+set r10073/terrain = "underwater"
+#
+set r10073/extra_description = {'rock slide': 'There is no way you are going to clear away all the rocks. '}
+#
+dig/tel Underwater Passageway; r10074
+#
+tag r10074 = crystalmir lake:area names
+#
+desc r10074 = This passageway is almost completely filled with water. It seems to have trapped some air. Something doesn't feel right. Maybe you should leave. 
+#
+desc/edit r10074
+#
+:j l
+#
+:wq
+#
+set r10074/vnum = "r10074"
+#
+set r10074/terrain = "underwater"
+#
+dig/tel Underwater Passageway; r10075
+#
+tag r10075 = crystalmir lake:area names
+#
+desc r10075 = This passageway is almost completely filled with air. This is REALLY strange. You wonder how this can be. Something is definitely wrong. The air here is very humid and it seems to be getting warmer to the south. 
+#
+desc/edit r10075
+#
+:j l
+#
+:wq
+#
+set r10075/vnum = "r10075"
+#
+set r10075/terrain = "underwater"
+#
+dig/tel Cave of the Turtle Dragon; r10076
+#
+tag r10076 = crystalmir lake:area names
+#
+desc r10076 = This cave is enormous. It is mostly flooded with water. The air is very humid and misty. Large piles of bones lay all over. The walls are covered with scratches and claw marks. 
+#
+desc/edit r10076
+#
+:j l
+#
+:wq
+#
+set r10076/vnum = "r10076"
+#
+set r10076/terrain = "underwater"
+#
+set r10076/extra_description = {'bones': 'Mostly they are fish bones... But some of them look like humanoid bones... '}
+#
+dig/tel Narrow Crack in the Rock.; r10077
+#
+tag r10077 = crystalmir lake:area names
+#
+desc r10077 = This seems to be a crack caused by some earthquake or other natural event. The opening is large here, but seems to get smaller as it goes on. 
+#
+desc/edit r10077
+#
+:j l
+#
+:wq
+#
+set r10077/vnum = "r10077"
+#
+set r10077/terrain = "underwater"
+#
+dig/tel Small Tunnel; r10078
+#
+tag r10078 = crystalmir lake:area names
+#
+desc r10078 = This is a small tunnel that seems to go deeper into the mountains. It is completely filled with water. Some light filters in through the muck to the east. 
+#
+desc/edit r10078
+#
+:j l
+#
+:wq
+#
+set r10078/vnum = "r10078"
+#
+set r10078/terrain = "underwater"
+#
+dig/tel Dead End; r10079
+#
+tag r10079 = crystalmir lake:area names
+#
+desc r10079 = The tunnel seems to dead-end here. There is nothing but mud and a small pocket of air. 
+#
+desc/edit r10079
+#
+:j l
+#
+:wq
+#
+set r10079/vnum = "r10079"
+#
+set r10079/terrain = "underwater"
+#
+dig/tel Nest Entrance; r10080
+#
+tag r10080 = crystalmir lake:area names
+#
+desc r10080 = This seems to be the entrance to a nest of some kind. The water here is very murky. 
+#
+desc/edit r10080
+#
+:j l
+#
+:wq
+#
+set r10080/vnum = "r10080"
+#
+set r10080/terrain = "underwater"
+#
+dig/tel Barracuda Nest; r10081
+#
+tag r10081 = crystalmir lake:area names
+#
+desc r10081 = You have disturbed a barracuda nest. They are none too pleased and now plan to use you for their next feeding.... 
+#
+desc/edit r10081
+#
+:j l
+#
+:wq
+#
+set r10081/vnum = "r10081"
+#
+set r10081/terrain = "underwater"
+#
+tel r10082
+#
+openexit north; door; n; e3600^ south = r10043
+#
+tag e3600 = crystalmir lake:area names
+#
+set e3600/door_attributes = ["open"]
+#
+set e3600/reset_door_attributes = ["open"]
+#
+desc north = You see the closet door. 
+#
+tel r10001
+#
+openexit north; n; e3602^ south = r10024
+#
+tag e3602 = crystalmir lake:area names
+#
+set e3602/door_attributes = ["open"]
+#
+set e3602/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r10002
+#
+openexit south; s; e3604^ north = r10029
+#
+tag e3604 = crystalmir lake:area names
+#
+set e3604/door_attributes = ["open"]
+#
+set e3604/reset_door_attributes = ["open"]
+#
+desc south = You see forest. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3605^ east = r10003
+#
+tag e3605 = crystalmir lake:area names
+#
+set e3605/door_attributes = ["open"]
+#
+set e3605/reset_door_attributes = ["open"]
+#
+desc west = You see a town in the distance. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10003
+#
+alias east = e^ e3607
+#
+tag e3607 = crystalmir lake:area names
+#
+set e3607/door_attributes = ["open"]
+#
+set e3607/reset_door_attributes = ["open"]
+#
+desc east = You see a small grove. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3608^ north = r10022
+#
+tag e3608 = crystalmir lake:area names
+#
+set e3608/door_attributes = ["open"]
+#
+set e3608/reset_door_attributes = ["open"]
+#
+desc south = You see road through the forest. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3609^ east = r10004
+#
+tag e3609 = crystalmir lake:area names
+#
+set e3609/door_attributes = ["open"]
+#
+set e3609/reset_door_attributes = ["open"]
+#
+desc west = You see a lake shore. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10004
+#
+openexit north; n; e3610^ south = r10007
+#
+tag e3610 = crystalmir lake:area names
+#
+set e3610/door_attributes = ["open"]
+#
+set e3610/reset_door_attributes = ["open"]
+#
+desc north = You see a path along the lake. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3611
+#
+tag e3611 = crystalmir lake:area names
+#
+set e3611/door_attributes = ["open"]
+#
+set e3611/reset_door_attributes = ["open"]
+#
+desc east = You see a town in the distance. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3612^ north = r10011
+#
+tag e3612 = crystalmir lake:area names
+#
+set e3612/door_attributes = ["open"]
+#
+set e3612/reset_door_attributes = ["open"]
+#
+desc south = You see a path that follows the lakeshore. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3613^ east = r10005
+#
+tag e3613 = crystalmir lake:area names
+#
+set e3613/door_attributes = ["open"]
+#
+set e3613/reset_door_attributes = ["open"]
+#
+desc west = You see water. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10005
+#
+openexit north; n; e3614^ south = r10006
+#
+tag e3614 = crystalmir lake:area names
+#
+set e3614/door_attributes = ["open"]
+#
+set e3614/reset_door_attributes = ["open"]
+#
+desc north = You see the north shore of the lake. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3615
+#
+tag e3615 = crystalmir lake:area names
+#
+set e3615/door_attributes = ["open"]
+#
+set e3615/reset_door_attributes = ["open"]
+#
+desc east = You see the east shore of the lake. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3616^ north = r10010
+#
+tag e3616 = crystalmir lake:area names
+#
+set e3616/door_attributes = ["open"]
+#
+set e3616/reset_door_attributes = ["open"]
+#
+desc south = You see the south shore of the lake. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3617^ east = r10008
+#
+tag e3617 = crystalmir lake:area names
+#
+set e3617/door_attributes = ["open"]
+#
+set e3617/reset_door_attributes = ["open"]
+#
+desc west = You see the west shore of the lake. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+openexit down; d; e3618^ up = r10048
+#
+tag e3618 = crystalmir lake:area names
+#
+set e3618/door_attributes = ["open"]
+#
+set e3618/reset_door_attributes = ["open"]
+#
+desc down = You can't see much under the water. 
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r10006
+#
+openexit north; n; e3619^ south = r10014
+#
+tag e3619 = crystalmir lake:area names
+#
+set e3619/door_attributes = ["open"]
+#
+set e3619/reset_door_attributes = ["open"]
+#
+desc north = You see fields of grain. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3620^ west = r10007
+#
+tag e3620 = crystalmir lake:area names
+#
+set e3620/door_attributes = ["open"]
+#
+set e3620/reset_door_attributes = ["open"]
+#
+desc east = You see a path along the lake. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3621
+#
+tag e3621 = crystalmir lake:area names
+#
+set e3621/door_attributes = ["open"]
+#
+set e3621/reset_door_attributes = ["open"]
+#
+desc south = You see water. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3622^ east = r10009
+#
+tag e3622 = crystalmir lake:area names
+#
+set e3622/door_attributes = ["open"]
+#
+set e3622/reset_door_attributes = ["open"]
+#
+desc west = You see a path along the lakeshore. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10007
+#
+openexit north; n; e3623^ south = r10013
+#
+tag e3623 = crystalmir lake:area names
+#
+set e3623/door_attributes = ["open"]
+#
+set e3623/reset_door_attributes = ["open"]
+#
+desc north = You see fields of grain. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3624
+#
+tag e3624 = crystalmir lake:area names
+#
+set e3624/door_attributes = ["open"]
+#
+set e3624/reset_door_attributes = ["open"]
+#
+desc south = You see the east shore of Crystalmir Lake. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3625
+#
+tag e3625 = crystalmir lake:area names
+#
+set e3625/door_attributes = ["open"]
+#
+set e3625/reset_door_attributes = ["open"]
+#
+desc west = You see the north shore of Crystalmir Lake. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10008
+#
+openexit north; n; e3626^ south = r10009
+#
+tag e3626 = crystalmir lake:area names
+#
+set e3626/door_attributes = ["open"]
+#
+set e3626/reset_door_attributes = ["open"]
+#
+desc north = You see a path along the lakeshore. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3627
+#
+tag e3627 = crystalmir lake:area names
+#
+set e3627/door_attributes = ["open"]
+#
+set e3627/reset_door_attributes = ["open"]
+#
+desc east = You see water. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3628^ north = r10012
+#
+tag e3628 = crystalmir lake:area names
+#
+set e3628/door_attributes = ["open"]
+#
+set e3628/reset_door_attributes = ["open"]
+#
+desc south = You see a path that follows the lakeshore. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3629^ east = r10021
+#
+tag e3629 = crystalmir lake:area names
+#
+set e3629/door_attributes = ["open"]
+#
+set e3629/reset_door_attributes = ["open"]
+#
+desc west = You see a rough path leading up a mountain. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10009
+#
+openexit north; n; e3630^ south = r10015
+#
+tag e3630 = crystalmir lake:area names
+#
+set e3630/door_attributes = ["open"]
+#
+set e3630/reset_door_attributes = ["open"]
+#
+desc north = You see the valley floor. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3631
+#
+tag e3631 = crystalmir lake:area names
+#
+set e3631/door_attributes = ["open"]
+#
+set e3631/reset_door_attributes = ["open"]
+#
+desc east = You see the north shore of the lake. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3632
+#
+tag e3632 = crystalmir lake:area names
+#
+set e3632/door_attributes = ["open"]
+#
+set e3632/reset_door_attributes = ["open"]
+#
+desc south = You see the west shore of the lake. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3633^ east = r10019
+#
+tag e3633 = crystalmir lake:area names
+#
+set e3633/door_attributes = ["open"]
+#
+set e3633/reset_door_attributes = ["open"]
+#
+desc west = You see the canyon floor. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10010
+#
+alias north = n^ e3634
+#
+tag e3634 = crystalmir lake:area names
+#
+set e3634/door_attributes = ["open"]
+#
+set e3634/reset_door_attributes = ["open"]
+#
+desc north = You see water. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3635^ west = r10011
+#
+tag e3635 = crystalmir lake:area names
+#
+set e3635/door_attributes = ["open"]
+#
+set e3635/reset_door_attributes = ["open"]
+#
+desc east = You see a path that follows the lakeshore. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3636^ north = r10025
+#
+tag e3636 = crystalmir lake:area names
+#
+set e3636/door_attributes = ["open"]
+#
+set e3636/reset_door_attributes = ["open"]
+#
+desc south = You see a rocky path into the mountains. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3637^ east = r10012
+#
+tag e3637 = crystalmir lake:area names
+#
+set e3637/door_attributes = ["open"]
+#
+set e3637/reset_door_attributes = ["open"]
+#
+desc west = You see a path that follows the lakeshore. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10011
+#
+alias north = n^ e3638
+#
+tag e3638 = crystalmir lake:area names
+#
+set e3638/door_attributes = ["open"]
+#
+set e3638/reset_door_attributes = ["open"]
+#
+desc north = You see the east shore of the lake. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3639^ west = r10022
+#
+tag e3639 = crystalmir lake:area names
+#
+set e3639/door_attributes = ["open"]
+#
+set e3639/reset_door_attributes = ["open"]
+#
+desc east = You see a road winding through the forest. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3640
+#
+tag e3640 = crystalmir lake:area names
+#
+set e3640/door_attributes = ["open"]
+#
+set e3640/reset_door_attributes = ["open"]
+#
+desc west = You see the south shore of the lake. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10012
+#
+alias north = n^ e3641
+#
+tag e3641 = crystalmir lake:area names
+#
+set e3641/door_attributes = ["open"]
+#
+set e3641/reset_door_attributes = ["open"]
+#
+desc north = You see the west shore of the lake. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3642
+#
+tag e3642 = crystalmir lake:area names
+#
+set e3642/door_attributes = ["open"]
+#
+set e3642/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r10013
+#
+openexit north; n; e3644^ south = r10036
+#
+tag e3644 = crystalmir lake:area names
+#
+set e3644/door_attributes = ["open"]
+#
+set e3644/reset_door_attributes = ["open"]
+#
+desc north = You see fields of grain. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3645
+#
+tag e3645 = crystalmir lake:area names
+#
+set e3645/door_attributes = ["open"]
+#
+set e3645/reset_door_attributes = ["open"]
+#
+desc south = You see a path along the lake. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3646^ east = r10014
+#
+tag e3646 = crystalmir lake:area names
+#
+set e3646/door_attributes = ["open"]
+#
+set e3646/reset_door_attributes = ["open"]
+#
+desc west = You see fields of grain. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10014
+#
+openexit north; n; e3647^ south = r10031
+#
+tag e3647 = crystalmir lake:area names
+#
+set e3647/door_attributes = ["open"]
+#
+set e3647/reset_door_attributes = ["open"]
+#
+desc north = You see fields of grain. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3648
+#
+tag e3648 = crystalmir lake:area names
+#
+set e3648/door_attributes = ["open"]
+#
+set e3648/reset_door_attributes = ["open"]
+#
+desc east = You see fields of grain. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3649
+#
+tag e3649 = crystalmir lake:area names
+#
+set e3649/door_attributes = ["open"]
+#
+set e3649/reset_door_attributes = ["open"]
+#
+desc south = You see the shore of a lake. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3650^ east = r10015
+#
+tag e3650 = crystalmir lake:area names
+#
+set e3650/door_attributes = ["open"]
+#
+set e3650/reset_door_attributes = ["open"]
+#
+desc west = You see the valley floor. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10015
+#
+alias east = e^ e3651
+#
+tag e3651 = crystalmir lake:area names
+#
+set e3651/door_attributes = ["open"]
+#
+set e3651/reset_door_attributes = ["open"]
+#
+desc east = You see fields of grain. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3652
+#
+tag e3652 = crystalmir lake:area names
+#
+set e3652/door_attributes = ["open"]
+#
+set e3652/reset_door_attributes = ["open"]
+#
+desc south = You see a path along the lake. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3653^ east = r10016
+#
+tag e3653 = crystalmir lake:area names
+#
+set e3653/door_attributes = ["open"]
+#
+set e3653/reset_door_attributes = ["open"]
+#
+desc west = You see a trail into the forest. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10016
+#
+openexit north; n; e3654^ south = r10017
+#
+tag e3654 = crystalmir lake:area names
+#
+set e3654/door_attributes = ["open"]
+#
+set e3654/reset_door_attributes = ["open"]
+#
+desc north = You see a path in the forest. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3655
+#
+tag e3655 = crystalmir lake:area names
+#
+set e3655/door_attributes = ["open"]
+#
+set e3655/reset_door_attributes = ["open"]
+#
+desc east = You see the valley floor. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3656^ north = r10019
+#
+tag e3656 = crystalmir lake:area names
+#
+set e3656/door_attributes = ["open"]
+#
+set e3656/reset_door_attributes = ["open"]
+#
+desc south = You see the canyon floor. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r10017
+#
+alias south = s^ e3657
+#
+tag e3657 = crystalmir lake:area names
+#
+set e3657/door_attributes = ["open"]
+#
+set e3657/reset_door_attributes = ["open"]
+#
+desc south = You see an opening in the trees. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3658^ east = r10018
+#
+tag e3658 = crystalmir lake:area names
+#
+set e3658/door_attributes = ["open"]
+#
+set e3658/reset_door_attributes = ["open"]
+#
+desc west = You see a trail winding through the forest. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10018
+#
+alias east = e^ e3660
+#
+tag e3660 = crystalmir lake:area names
+#
+set e3660/door_attributes = ["open"]
+#
+set e3660/reset_door_attributes = ["open"]
+#
+desc east = You see a path winding through the forest. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r10019
+#
+alias north = n^ e3661
+#
+tag e3661 = crystalmir lake:area names
+#
+set e3661/door_attributes = ["open"]
+#
+set e3661/reset_door_attributes = ["open"]
+#
+desc north = You see a path winding into the forest. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3662
+#
+tag e3662 = crystalmir lake:area names
+#
+set e3662/door_attributes = ["open"]
+#
+set e3662/reset_door_attributes = ["open"]
+#
+desc east = You see a path along the lake. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3663^ north = r10021
+#
+tag e3663 = crystalmir lake:area names
+#
+set e3663/door_attributes = ["open"]
+#
+set e3663/reset_door_attributes = ["open"]
+#
+desc south = You see a rough path leading up a mountain. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3664^ east = r10020
+#
+tag e3664 = crystalmir lake:area names
+#
+set e3664/door_attributes = ["open"]
+#
+set e3664/reset_door_attributes = ["open"]
+#
+desc west = You see a path winding into the canyon. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10020
+#
+alias east = e^ e3665
+#
+tag e3665 = crystalmir lake:area names
+#
+set e3665/door_attributes = ["open"]
+#
+set e3665/reset_door_attributes = ["open"]
+#
+desc east = You see the canyon floor. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r10021
+#
+alias north = n^ e3667
+#
+tag e3667 = crystalmir lake:area names
+#
+set e3667/door_attributes = ["open"]
+#
+set e3667/reset_door_attributes = ["open"]
+#
+desc north = You see the canyon floor. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3668
+#
+tag e3668 = crystalmir lake:area names
+#
+set e3668/door_attributes = ["open"]
+#
+set e3668/reset_door_attributes = ["open"]
+#
+desc east = You see the shore of a lake. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3669^ north = r10028
+#
+tag e3669 = crystalmir lake:area names
+#
+set e3669/door_attributes = ["open"]
+#
+set e3669/reset_door_attributes = ["open"]
+#
+desc south = You see a rock path winding through the mountains. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r10022
+#
+alias north = n^ e3670
+#
+tag e3670 = crystalmir lake:area names
+#
+set e3670/door_attributes = ["open"]
+#
+set e3670/reset_door_attributes = ["open"]
+#
+desc north = You see the entrance to a small town. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3671^ west = r10029
+#
+tag e3671 = crystalmir lake:area names
+#
+set e3671/door_attributes = ["open"]
+#
+set e3671/reset_door_attributes = ["open"]
+#
+desc east = You see forest. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3672^ north = r10023
+#
+tag e3672 = crystalmir lake:area names
+#
+set e3672/door_attributes = ["open"]
+#
+set e3672/reset_door_attributes = ["open"]
+#
+desc south = You see a stone bridge. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3673
+#
+tag e3673 = crystalmir lake:area names
+#
+set e3673/door_attributes = ["open"]
+#
+set e3673/reset_door_attributes = ["open"]
+#
+desc west = You see a path along the lake. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10023
+#
+alias north = n^ e3674
+#
+tag e3674 = crystalmir lake:area names
+#
+set e3674/door_attributes = ["open"]
+#
+set e3674/reset_door_attributes = ["open"]
+#
+desc north = You see a road winding through the forest. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3675^ west = r10030
+#
+tag e3675 = crystalmir lake:area names
+#
+set e3675/door_attributes = ["open"]
+#
+set e3675/reset_door_attributes = ["open"]
+#
+desc east = You see forest. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3676^ east = r10024
+#
+tag e3676 = crystalmir lake:area names
+#
+set e3676/door_attributes = ["open"]
+#
+set e3676/reset_door_attributes = ["open"]
+#
+desc west = You see a road winding through the forest. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10024
+#
+alias east = e^ e3677
+#
+tag e3677 = crystalmir lake:area names
+#
+set e3677/door_attributes = ["open"]
+#
+set e3677/reset_door_attributes = ["open"]
+#
+desc east = You see a stone bridge. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3678
+#
+tag e3678 = crystalmir lake:area names
+#
+set e3678/door_attributes = ["open"]
+#
+set e3678/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3679^ east = r10025
+#
+tag e3679 = crystalmir lake:area names
+#
+set e3679/door_attributes = ["open"]
+#
+set e3679/reset_door_attributes = ["open"]
+#
+desc west = You see a rocky path into the mountains. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10025
+#
+alias north = n^ e3680
+#
+tag e3680 = crystalmir lake:area names
+#
+set e3680/door_attributes = ["open"]
+#
+set e3680/reset_door_attributes = ["open"]
+#
+desc north = You see the shore of a lake. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3681
+#
+tag e3681 = crystalmir lake:area names
+#
+set e3681/door_attributes = ["open"]
+#
+set e3681/reset_door_attributes = ["open"]
+#
+desc east = You see a road winding through the forest. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3682^ east = r10026
+#
+tag e3682 = crystalmir lake:area names
+#
+set e3682/door_attributes = ["open"]
+#
+set e3682/reset_door_attributes = ["open"]
+#
+desc west = You see a road winding through the mountains. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10026
+#
+alias east = e^ e3683
+#
+tag e3683 = crystalmir lake:area names
+#
+set e3683/door_attributes = ["open"]
+#
+set e3683/reset_door_attributes = ["open"]
+#
+desc east = You see a rocky trail descending into the forest. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3684^ east = r10027
+#
+tag e3684 = crystalmir lake:area names
+#
+set e3684/door_attributes = ["open"]
+#
+set e3684/reset_door_attributes = ["open"]
+#
+desc west = You see a road winding through the mountains. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10027
+#
+openexit north; n; e3685^ south = r10028
+#
+tag e3685 = crystalmir lake:area names
+#
+set e3685/door_attributes = ["open"]
+#
+set e3685/reset_door_attributes = ["open"]
+#
+desc north = You see a rocky trail winding through the mountains. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3686
+#
+tag e3686 = crystalmir lake:area names
+#
+set e3686/door_attributes = ["open"]
+#
+set e3686/reset_door_attributes = ["open"]
+#
+desc east = You see a rocky trail winding through the mountains. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r10028
+#
+alias north = n^ e3687
+#
+tag e3687 = crystalmir lake:area names
+#
+set e3687/door_attributes = ["open"]
+#
+set e3687/reset_door_attributes = ["open"]
+#
+desc north = You see a rocky trail winding through the mountains. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3688
+#
+tag e3688 = crystalmir lake:area names
+#
+set e3688/door_attributes = ["open"]
+#
+set e3688/reset_door_attributes = ["open"]
+#
+desc south = You see a rocky trail winding through the mountains. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r10029
+#
+alias north = n^ e3689
+#
+tag e3689 = crystalmir lake:area names
+#
+set e3689/door_attributes = ["open"]
+#
+set e3689/reset_door_attributes = ["open"]
+#
+desc north = You see a small grove. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3690^ north = r10030
+#
+tag e3690 = crystalmir lake:area names
+#
+set e3690/door_attributes = ["open"]
+#
+set e3690/reset_door_attributes = ["open"]
+#
+desc south = You see forest. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3691
+#
+tag e3691 = crystalmir lake:area names
+#
+set e3691/door_attributes = ["open"]
+#
+set e3691/reset_door_attributes = ["open"]
+#
+desc west = You see a road winding through the forest. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10030
+#
+alias north = n^ e3692
+#
+tag e3692 = crystalmir lake:area names
+#
+set e3692/door_attributes = ["open"]
+#
+set e3692/reset_door_attributes = ["open"]
+#
+desc north = You see a forest. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias west = w^ e3693
+#
+tag e3693 = crystalmir lake:area names
+#
+set e3693/door_attributes = ["open"]
+#
+set e3693/reset_door_attributes = ["open"]
+#
+desc west = You see a stone bridge. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10031
+#
+openexit north; n; e3694^ south = r10034
+#
+tag e3694 = crystalmir lake:area names
+#
+set e3694/door_attributes = ["open"]
+#
+set e3694/reset_door_attributes = ["open"]
+#
+desc north = You see fields of grain. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3695^ west = r10036
+#
+tag e3695 = crystalmir lake:area names
+#
+set e3695/door_attributes = ["open"]
+#
+set e3695/reset_door_attributes = ["open"]
+#
+desc east = You see fields of grain. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3696
+#
+tag e3696 = crystalmir lake:area names
+#
+set e3696/door_attributes = ["open"]
+#
+set e3696/reset_door_attributes = ["open"]
+#
+desc south = You see fields of grain. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3697^ east = r10032
+#
+tag e3697 = crystalmir lake:area names
+#
+set e3697/door_attributes = ["open"]
+#
+set e3697/reset_door_attributes = ["open"]
+#
+desc west = You see fields of grain. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10032
+#
+openexit north; n; e3698^ south = r10033
+#
+tag e3698 = crystalmir lake:area names
+#
+set e3698/door_attributes = ["open"]
+#
+set e3698/reset_door_attributes = ["open"]
+#
+desc north = You see fields of grain. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3699
+#
+tag e3699 = crystalmir lake:area names
+#
+set e3699/door_attributes = ["open"]
+#
+set e3699/reset_door_attributes = ["open"]
+#
+desc east = You see fields of grain. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r10033
+#
+openexit east; e; e3700^ west = r10034
+#
+tag e3700 = crystalmir lake:area names
+#
+set e3700/door_attributes = ["open"]
+#
+set e3700/reset_door_attributes = ["open"]
+#
+desc east = You see fields of grain. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3701
+#
+tag e3701 = crystalmir lake:area names
+#
+set e3701/door_attributes = ["open"]
+#
+set e3701/reset_door_attributes = ["open"]
+#
+desc south = You see fields of grain. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3702^ east = r10037
+#
+tag e3702 = crystalmir lake:area names
+#
+set e3702/door_attributes = ["open"]
+#
+set e3702/reset_door_attributes = ["open"]
+#
+desc west = You see fields of grain. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10034
+#
+openexit east; e; e3704^ west = r10035
+#
+tag e3704 = crystalmir lake:area names
+#
+set e3704/door_attributes = ["open"]
+#
+set e3704/reset_door_attributes = ["open"]
+#
+desc east = You see fields of grain. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3705
+#
+tag e3705 = crystalmir lake:area names
+#
+set e3705/door_attributes = ["open"]
+#
+set e3705/reset_door_attributes = ["open"]
+#
+desc south = You see fields of grain. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3706
+#
+tag e3706 = crystalmir lake:area names
+#
+set e3706/door_attributes = ["open"]
+#
+set e3706/reset_door_attributes = ["open"]
+#
+desc west = You see fields of grain. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10035
+#
+openexit east; e; e3707^ west = r10038
+#
+tag e3707 = crystalmir lake:area names
+#
+set e3707/door_attributes = ["open"]
+#
+set e3707/reset_door_attributes = ["open"]
+#
+desc east = You see fields of grain. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3708^ north = r10036
+#
+tag e3708 = crystalmir lake:area names
+#
+set e3708/door_attributes = ["open"]
+#
+set e3708/reset_door_attributes = ["open"]
+#
+desc south = You see fields of grain. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3709
+#
+tag e3709 = crystalmir lake:area names
+#
+set e3709/door_attributes = ["open"]
+#
+set e3709/reset_door_attributes = ["open"]
+#
+desc west = You see fields of grain. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10036
+#
+alias north = n^ e3710
+#
+tag e3710 = crystalmir lake:area names
+#
+set e3710/door_attributes = ["open"]
+#
+set e3710/reset_door_attributes = ["open"]
+#
+desc north = You see fields of grain. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3711^ west = r10037
+#
+tag e3711 = crystalmir lake:area names
+#
+set e3711/door_attributes = ["open"]
+#
+set e3711/reset_door_attributes = ["open"]
+#
+desc east = You see fields of grain. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3712
+#
+tag e3712 = crystalmir lake:area names
+#
+set e3712/door_attributes = ["open"]
+#
+set e3712/reset_door_attributes = ["open"]
+#
+desc south = You see fields of grain. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3713
+#
+tag e3713 = crystalmir lake:area names
+#
+set e3713/door_attributes = ["open"]
+#
+set e3713/reset_door_attributes = ["open"]
+#
+desc west = You see fields of grain. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10037
+#
+openexit north; n; e3714^ south = r10038
+#
+tag e3714 = crystalmir lake:area names
+#
+set e3714/door_attributes = ["open"]
+#
+set e3714/reset_door_attributes = ["open"]
+#
+desc north = You see fields of grain. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3715
+#
+tag e3715 = crystalmir lake:area names
+#
+set e3715/door_attributes = ["open"]
+#
+set e3715/reset_door_attributes = ["open"]
+#
+desc east = You see fields of grain. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3716^ north = r10039
+#
+tag e3716 = crystalmir lake:area names
+#
+set e3716/door_attributes = ["open"]
+#
+set e3716/reset_door_attributes = ["open"]
+#
+desc south = You see a house. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3717
+#
+tag e3717 = crystalmir lake:area names
+#
+set e3717/door_attributes = ["open"]
+#
+set e3717/reset_door_attributes = ["open"]
+#
+desc west = You see fields of grain. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10038
+#
+alias south = s^ e3718
+#
+tag e3718 = crystalmir lake:area names
+#
+set e3718/door_attributes = ["open"]
+#
+set e3718/reset_door_attributes = ["open"]
+#
+desc south = You see fields of grain. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3719
+#
+tag e3719 = crystalmir lake:area names
+#
+set e3719/door_attributes = ["open"]
+#
+set e3719/reset_door_attributes = ["open"]
+#
+desc west = You see fields of grain. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10039
+#
+alias north = n^ e3720
+#
+tag e3720 = crystalmir lake:area names
+#
+set e3720/door_attributes = ["open"]
+#
+set e3720/reset_door_attributes = ["open"]
+#
+desc north = You see fields of grain 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; door; e; e3721^ west = r10040
+#
+tag e3721 = crystalmir lake:area names
+#
+set e3721/door_attributes = ["open"]
+#
+set e3721/reset_door_attributes = ["open"]
+#
+desc east = You see the farmer's house. 
+#
+set east/key = "o10006"
+#
+tel r10040
+#
+alias west = w^ e3722
+#
+tag e3722 = crystalmir lake:area names
+#
+set e3722/door_attributes = ["open"]
+#
+set e3722/reset_door_attributes = ["open"]
+#
+desc west = Front door. 
+#
+set west/key = "o10006"
+#
+openexit up; u; e3723^ down = r10041
+#
+tag e3723 = crystalmir lake:area names
+#
+set e3723/door_attributes = ["open"]
+#
+set e3723/reset_door_attributes = ["open"]
+#
+desc up = You see stairs 
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r10041
+#
+openexit north; n; e3724^ south = r10042
+#
+tag e3724 = crystalmir lake:area names
+#
+set e3724/door_attributes = ["open"]
+#
+set e3724/reset_door_attributes = ["open"]
+#
+desc north = You see a bedroom 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3725^ west = r10043
+#
+tag e3725 = crystalmir lake:area names
+#
+set e3725/door_attributes = ["open"]
+#
+set e3725/reset_door_attributes = ["open"]
+#
+desc east = You see a bedroom 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias down = d^ e3726
+#
+tag e3726 = crystalmir lake:area names
+#
+set e3726/door_attributes = ["open"]
+#
+set e3726/reset_door_attributes = ["open"]
+#
+desc down = You see stairs 
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r10042
+#
+openexit east; closet; door; e; e3727^ west = r10044
+#
+tag e3727 = crystalmir lake:area names
+#
+set e3727/door_attributes = ["open"]
+#
+set e3727/reset_door_attributes = ["open"]
+#
+desc east = You see a bedroom closet. 
+#
+alias south = s^ e3728
+#
+tag e3728 = crystalmir lake:area names
+#
+set e3728/door_attributes = ["open"]
+#
+set e3728/reset_door_attributes = ["open"]
+#
+desc south = You see the top of the stairs. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r10043
+#
+alias south = closet^ door^ s^ e3729
+#
+tag e3729 = crystalmir lake:area names
+#
+set e3729/door_attributes = ["open"]
+#
+set e3729/reset_door_attributes = ["open"]
+#
+desc south = You see a closet door. 
+#
+alias west = w^ e3730
+#
+tag e3730 = crystalmir lake:area names
+#
+set e3730/door_attributes = ["open"]
+#
+set e3730/reset_door_attributes = ["open"]
+#
+desc west = You see the top of the stairs. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10044
+#
+alias west = closet^ door^ w^ e3731
+#
+tag e3731 = crystalmir lake:area names
+#
+set e3731/door_attributes = ["open"]
+#
+set e3731/reset_door_attributes = ["open"]
+#
+desc west = You see the closet door. 
+#
+set west/key = "o10007"
+#
+tel r10048
+#
+openexit north; n; e3732^ south = r10055
+#
+tag e3732 = crystalmir lake:area names
+#
+set e3732/door_attributes = ["open"]
+#
+set e3732/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; door; e; e3733^ west = r10049
+#
+tag e3733 = crystalmir lake:area names
+#
+set e3733/door_attributes = ["open"]
+#
+set e3733/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3734^ north = r10051
+#
+tag e3734 = crystalmir lake:area names
+#
+set e3734/door_attributes = ["open"]
+#
+set e3734/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3735^ east = r10053
+#
+tag e3735 = crystalmir lake:area names
+#
+set e3735/door_attributes = ["open"]
+#
+set e3735/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+alias up = u^ e3736
+#
+tag e3736 = crystalmir lake:area names
+#
+set e3736/door_attributes = ["open"]
+#
+set e3736/reset_door_attributes = ["open"]
+#
+desc up = You see the surface of Crystalmir Lake. 
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r10049
+#
+openexit north; n; e3737^ south = r10056
+#
+tag e3737 = crystalmir lake:area names
+#
+set e3737/door_attributes = ["open"]
+#
+set e3737/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3738^ west = r10058
+#
+tag e3738 = crystalmir lake:area names
+#
+set e3738/door_attributes = ["open"]
+#
+set e3738/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3739^ north = r10050
+#
+tag e3739 = crystalmir lake:area names
+#
+set e3739/door_attributes = ["open"]
+#
+set e3739/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3740
+#
+tag e3740 = crystalmir lake:area names
+#
+set e3740/door_attributes = ["open"]
+#
+set e3740/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10050
+#
+alias north = n^ e3741
+#
+tag e3741 = crystalmir lake:area names
+#
+set e3741/door_attributes = ["open"]
+#
+set e3741/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3742^ west = r10059
+#
+tag e3742 = crystalmir lake:area names
+#
+set e3742/door_attributes = ["open"]
+#
+set e3742/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3743^ north = r10061
+#
+tag e3743 = crystalmir lake:area names
+#
+set e3743/door_attributes = ["open"]
+#
+set e3743/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3744^ east = r10051
+#
+tag e3744 = crystalmir lake:area names
+#
+set e3744/door_attributes = ["open"]
+#
+set e3744/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10051
+#
+alias north = n^ e3745
+#
+tag e3745 = crystalmir lake:area names
+#
+set e3745/door_attributes = ["open"]
+#
+set e3745/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3746
+#
+tag e3746 = crystalmir lake:area names
+#
+set e3746/door_attributes = ["open"]
+#
+set e3746/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3747^ north = r10062
+#
+tag e3747 = crystalmir lake:area names
+#
+set e3747/door_attributes = ["open"]
+#
+set e3747/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3748^ east = r10052
+#
+tag e3748 = crystalmir lake:area names
+#
+set e3748/door_attributes = ["open"]
+#
+set e3748/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10052
+#
+openexit north; n; e3749^ south = r10053
+#
+tag e3749 = crystalmir lake:area names
+#
+set e3749/door_attributes = ["open"]
+#
+set e3749/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3750
+#
+tag e3750 = crystalmir lake:area names
+#
+set e3750/door_attributes = ["open"]
+#
+set e3750/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3751^ north = r10063
+#
+tag e3751 = crystalmir lake:area names
+#
+set e3751/door_attributes = ["open"]
+#
+set e3751/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3752^ east = r10065
+#
+tag e3752 = crystalmir lake:area names
+#
+set e3752/door_attributes = ["open"]
+#
+set e3752/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10053
+#
+openexit north; n; e3753^ south = r10054
+#
+tag e3753 = crystalmir lake:area names
+#
+set e3753/door_attributes = ["open"]
+#
+set e3753/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3754
+#
+tag e3754 = crystalmir lake:area names
+#
+set e3754/door_attributes = ["open"]
+#
+set e3754/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3755
+#
+tag e3755 = crystalmir lake:area names
+#
+set e3755/door_attributes = ["open"]
+#
+set e3755/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3756^ east = r10066
+#
+tag e3756 = crystalmir lake:area names
+#
+set e3756/door_attributes = ["open"]
+#
+set e3756/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10054
+#
+openexit north; n; e3757^ south = r10069
+#
+tag e3757 = crystalmir lake:area names
+#
+set e3757/door_attributes = ["open"]
+#
+set e3757/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3758^ west = r10055
+#
+tag e3758 = crystalmir lake:area names
+#
+set e3758/door_attributes = ["open"]
+#
+set e3758/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3759
+#
+tag e3759 = crystalmir lake:area names
+#
+set e3759/door_attributes = ["open"]
+#
+set e3759/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3760^ east = r10067
+#
+tag e3760 = crystalmir lake:area names
+#
+set e3760/door_attributes = ["open"]
+#
+set e3760/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10055
+#
+openexit north; n; e3761^ south = r10070
+#
+tag e3761 = crystalmir lake:area names
+#
+set e3761/door_attributes = ["open"]
+#
+set e3761/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3762^ west = r10056
+#
+tag e3762 = crystalmir lake:area names
+#
+set e3762/door_attributes = ["open"]
+#
+set e3762/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3763
+#
+tag e3763 = crystalmir lake:area names
+#
+set e3763/door_attributes = ["open"]
+#
+set e3763/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3764
+#
+tag e3764 = crystalmir lake:area names
+#
+set e3764/door_attributes = ["open"]
+#
+set e3764/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10056
+#
+openexit north; n; e3765^ south = r10071
+#
+tag e3765 = crystalmir lake:area names
+#
+set e3765/door_attributes = ["open"]
+#
+set e3765/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3766^ west = r10057
+#
+tag e3766 = crystalmir lake:area names
+#
+set e3766/door_attributes = ["open"]
+#
+set e3766/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3767
+#
+tag e3767 = crystalmir lake:area names
+#
+set e3767/door_attributes = ["open"]
+#
+set e3767/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3768
+#
+tag e3768 = crystalmir lake:area names
+#
+set e3768/door_attributes = ["open"]
+#
+set e3768/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10057
+#
+openexit north; n; e3769^ south = r10072
+#
+tag e3769 = crystalmir lake:area names
+#
+set e3769/door_attributes = ["open"]
+#
+set e3769/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3770^ north = r10058
+#
+tag e3770 = crystalmir lake:area names
+#
+set e3770/door_attributes = ["open"]
+#
+set e3770/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3771
+#
+tag e3771 = crystalmir lake:area names
+#
+set e3771/door_attributes = ["open"]
+#
+set e3771/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10058
+#
+alias north = n^ e3772
+#
+tag e3772 = crystalmir lake:area names
+#
+set e3772/door_attributes = ["open"]
+#
+set e3772/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3773^ west = r10073
+#
+tag e3773 = crystalmir lake:area names
+#
+set e3773/door_attributes = ["open"]
+#
+set e3773/reset_door_attributes = ["open"]
+#
+desc east = You see an opening in the lakebed. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3774^ north = r10059
+#
+tag e3774 = crystalmir lake:area names
+#
+set e3774/door_attributes = ["open"]
+#
+set e3774/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3775
+#
+tag e3775 = crystalmir lake:area names
+#
+set e3775/door_attributes = ["open"]
+#
+set e3775/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10059
+#
+alias north = n^ e3776
+#
+tag e3776 = crystalmir lake:area names
+#
+set e3776/door_attributes = ["open"]
+#
+set e3776/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3777^ north = r10060
+#
+tag e3777 = crystalmir lake:area names
+#
+set e3777/door_attributes = ["open"]
+#
+set e3777/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3778
+#
+tag e3778 = crystalmir lake:area names
+#
+set e3778/door_attributes = ["open"]
+#
+set e3778/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10060
+#
+alias north = n^ e3779
+#
+tag e3779 = crystalmir lake:area names
+#
+set e3779/door_attributes = ["open"]
+#
+set e3779/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit west; w; e3780^ east = r10061
+#
+tag e3780 = crystalmir lake:area names
+#
+set e3780/door_attributes = ["open"]
+#
+set e3780/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10061
+#
+alias north = n^ e3781
+#
+tag e3781 = crystalmir lake:area names
+#
+set e3781/door_attributes = ["open"]
+#
+set e3781/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3782
+#
+tag e3782 = crystalmir lake:area names
+#
+set e3782/door_attributes = ["open"]
+#
+set e3782/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3783^ east = r10062
+#
+tag e3783 = crystalmir lake:area names
+#
+set e3783/door_attributes = ["open"]
+#
+set e3783/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10062
+#
+alias north = n^ e3784
+#
+tag e3784 = crystalmir lake:area names
+#
+set e3784/door_attributes = ["open"]
+#
+set e3784/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3785
+#
+tag e3785 = crystalmir lake:area names
+#
+set e3785/door_attributes = ["open"]
+#
+set e3785/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3786^ east = r10063
+#
+tag e3786 = crystalmir lake:area names
+#
+set e3786/door_attributes = ["open"]
+#
+set e3786/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10063
+#
+alias north = n^ e3787
+#
+tag e3787 = crystalmir lake:area names
+#
+set e3787/door_attributes = ["open"]
+#
+set e3787/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3788
+#
+tag e3788 = crystalmir lake:area names
+#
+set e3788/door_attributes = ["open"]
+#
+set e3788/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3789^ east = r10064
+#
+tag e3789 = crystalmir lake:area names
+#
+set e3789/door_attributes = ["open"]
+#
+set e3789/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10064
+#
+openexit north; n; e3790^ south = r10065
+#
+tag e3790 = crystalmir lake:area names
+#
+set e3790/door_attributes = ["open"]
+#
+set e3790/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3791
+#
+tag e3791 = crystalmir lake:area names
+#
+set e3791/door_attributes = ["open"]
+#
+set e3791/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r10065
+#
+openexit north; n; e3792^ south = r10066
+#
+tag e3792 = crystalmir lake:area names
+#
+set e3792/door_attributes = ["open"]
+#
+set e3792/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3793
+#
+tag e3793 = crystalmir lake:area names
+#
+set e3793/door_attributes = ["open"]
+#
+set e3793/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3794
+#
+tag e3794 = crystalmir lake:area names
+#
+set e3794/door_attributes = ["open"]
+#
+set e3794/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3795^ east = r10074
+#
+tag e3795 = crystalmir lake:area names
+#
+set e3795/door_attributes = ["open"]
+#
+set e3795/reset_door_attributes = ["open"]
+#
+desc west = You see an opening in the lakebed. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10066
+#
+openexit north; n; e3796^ south = r10067
+#
+tag e3796 = crystalmir lake:area names
+#
+set e3796/door_attributes = ["open"]
+#
+set e3796/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3797
+#
+tag e3797 = crystalmir lake:area names
+#
+set e3797/door_attributes = ["open"]
+#
+set e3797/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3798
+#
+tag e3798 = crystalmir lake:area names
+#
+set e3798/door_attributes = ["open"]
+#
+set e3798/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r10067
+#
+openexit north; n; e3799^ south = r10068
+#
+tag e3799 = crystalmir lake:area names
+#
+set e3799/door_attributes = ["open"]
+#
+set e3799/reset_door_attributes = ["open"]
+#
+desc north = It's too dark to see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3800
+#
+tag e3800 = crystalmir lake:area names
+#
+set e3800/door_attributes = ["open"]
+#
+set e3800/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3801
+#
+tag e3801 = crystalmir lake:area names
+#
+set e3801/door_attributes = ["open"]
+#
+set e3801/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r10068
+#
+openexit east; e; e3802^ west = r10069
+#
+tag e3802 = crystalmir lake:area names
+#
+set e3802/door_attributes = ["open"]
+#
+set e3802/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3803
+#
+tag e3803 = crystalmir lake:area names
+#
+set e3803/door_attributes = ["open"]
+#
+set e3803/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3804^ east = r10077
+#
+tag e3804 = crystalmir lake:area names
+#
+set e3804/door_attributes = ["open"]
+#
+set e3804/reset_door_attributes = ["open"]
+#
+desc west = There seems to a small crack in the lakebed. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10069
+#
+openexit east; e; e3805^ west = r10070
+#
+tag e3805 = crystalmir lake:area names
+#
+set e3805/door_attributes = ["open"]
+#
+set e3805/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3806
+#
+tag e3806 = crystalmir lake:area names
+#
+set e3806/door_attributes = ["open"]
+#
+set e3806/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3807
+#
+tag e3807 = crystalmir lake:area names
+#
+set e3807/door_attributes = ["open"]
+#
+set e3807/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10070
+#
+openexit east; e; e3808^ west = r10071
+#
+tag e3808 = crystalmir lake:area names
+#
+set e3808/door_attributes = ["open"]
+#
+set e3808/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3809
+#
+tag e3809 = crystalmir lake:area names
+#
+set e3809/door_attributes = ["open"]
+#
+set e3809/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3810
+#
+tag e3810 = crystalmir lake:area names
+#
+set e3810/door_attributes = ["open"]
+#
+set e3810/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10071
+#
+openexit east; e; e3811^ west = r10072
+#
+tag e3811 = crystalmir lake:area names
+#
+set e3811/door_attributes = ["open"]
+#
+set e3811/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3812
+#
+tag e3812 = crystalmir lake:area names
+#
+set e3812/door_attributes = ["open"]
+#
+set e3812/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3813
+#
+tag e3813 = crystalmir lake:area names
+#
+set e3813/door_attributes = ["open"]
+#
+set e3813/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10072
+#
+alias south = s^ e3814
+#
+tag e3814 = crystalmir lake:area names
+#
+set e3814/door_attributes = ["open"]
+#
+set e3814/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3815
+#
+tag e3815 = crystalmir lake:area names
+#
+set e3815/door_attributes = ["open"]
+#
+set e3815/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10073
+#
+alias west = w^ e3816
+#
+tag e3816 = crystalmir lake:area names
+#
+set e3816/door_attributes = ["open"]
+#
+set e3816/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10074
+#
+alias east = e^ e3817
+#
+tag e3817 = crystalmir lake:area names
+#
+set e3817/door_attributes = ["open"]
+#
+set e3817/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3818^ east = r10075
+#
+tag e3818 = crystalmir lake:area names
+#
+set e3818/door_attributes = ["open"]
+#
+set e3818/reset_door_attributes = ["open"]
+#
+desc west = It's too dark to see. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10075
+#
+alias east = e^ e3819
+#
+tag e3819 = crystalmir lake:area names
+#
+set e3819/door_attributes = ["open"]
+#
+set e3819/reset_door_attributes = ["open"]
+#
+desc east = Underwater Passageway. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3820^ north = r10076
+#
+tag e3820 = crystalmir lake:area names
+#
+set e3820/door_attributes = ["open"]
+#
+set e3820/reset_door_attributes = ["open"]
+#
+desc south = A very large cave entrance. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r10076
+#
+alias north = n^ e3821
+#
+tag e3821 = crystalmir lake:area names
+#
+set e3821/door_attributes = ["open"]
+#
+set e3821/reset_door_attributes = ["open"]
+#
+desc north = Underwater Passageway. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r10077
+#
+alias east = e^ e3822
+#
+tag e3822 = crystalmir lake:area names
+#
+set e3822/door_attributes = ["open"]
+#
+set e3822/reset_door_attributes = ["open"]
+#
+desc east = It's too dark to see. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3823^ east = r10078
+#
+tag e3823 = crystalmir lake:area names
+#
+set e3823/door_attributes = ["open"]
+#
+set e3823/reset_door_attributes = ["open"]
+#
+desc west = A very small tunnel. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r10078
+#
+openexit north; n; e3824^ south = r10080
+#
+tag e3824 = crystalmir lake:area names
+#
+set e3824/door_attributes = ["open"]
+#
+set e3824/reset_door_attributes = ["open"]
+#
+desc north = A very small tunnel. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3825
+#
+tag e3825 = crystalmir lake:area names
+#
+set e3825/door_attributes = ["open"]
+#
+set e3825/reset_door_attributes = ["open"]
+#
+desc east = A narrow crack. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3826^ north = r10079
+#
+tag e3826 = crystalmir lake:area names
+#
+set e3826/door_attributes = ["open"]
+#
+set e3826/reset_door_attributes = ["open"]
+#
+desc south = A very small tunnel. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r10079
+#
+alias north = n^ e3827
+#
+tag e3827 = crystalmir lake:area names
+#
+set e3827/door_attributes = ["open"]
+#
+set e3827/reset_door_attributes = ["open"]
+#
+desc north = a very small tunnel. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r10080
+#
+openexit north; n; e3828^ south = r10081
+#
+tag e3828 = crystalmir lake:area names
+#
+set e3828/door_attributes = ["open"]
+#
+set e3828/reset_door_attributes = ["open"]
+#
+desc north = Barracuda nest. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3829
+#
+tag e3829 = crystalmir lake:area names
+#
+set e3829/door_attributes = ["open"]
+#
+set e3829/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r10081
+#
+alias south = s^ e3830
+#
+tag e3830 = crystalmir lake:area names
+#
+set e3830/door_attributes = ["open"]
+#
+set e3830/reset_door_attributes = ["open"]
+#
+desc south = A small tunnel. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r10002
+#
+create/drop Goldmoon;Goldmoon;girl;m10001:characters.Mobile
+#
+desc m10001 = Goldmoon is singing a beautiful song here. 
+#
+set m10001/level = 10
+#
+set m10001/level_base = 10
+#
+set m10001/vnum = "m10001"
+#
+set m10001/look_description = "The girl's eyes are a bright sky blue; her skin is a buttery tan. Most striking of all is the flowing white gold of her hair. Plush white furs trim her woven cape. A single feather folds back along the right side of her head. "
+#
+set m10001/act_flags = ['no kill', 'healer', 'sentinel', 'npc']
+#
+set m10001/alignment = 900
+#
+set m10001/sex = "female"
+#
+set m10001/spell_affects = {'sanctuary': ''}
+#
+set m10001/race = "human"
+#
+tag m10001 = crystalmir lake:area name
+#
+tag m10001 = mobile
+#
+set m10001/hitpoints[maximum] = 84
+#
+set m10001/position = "standing"
+#
+set m10001/experience_total = 4411
+#
+set m10001/experience_current = 4411
+#
+set m10001/special_function = "cast_adept"
+#
+tel r10002
+#
+create a blue crystal staff;blue;crystal;staff;o10003:objects.Staff
+#
+sethome o10003 = m10001
+#
+desc o10003 = A blue crystal staff lies here.
+#
+set o10003/level = 8
+#
+set o10003/level_base = 8
+#
+set o10003/vnum = "o10003"
+#
+set o10003/item_type = "staff"
+#
+set o10003/wear_location = "held, in hands"
+#
+set o10003/weight = 5
+#
+tag o10003 = crystalmir lake:area name
+#
+tag o10003 = object
+#
+set o10003/extra_descriptions = {'blue crystal staff': ' This staff is carved from a single piece of blue crystal. It is about five feet long and has a two-inch-diameter shaft. The ornamentally bladed head of the staff bears a gem in its center. '}
+#
+set o10003/alignment_restriction = ['neutral', 'evil']
+#
+set o10003/extra_flags = ['magic']
+#
+set o10003/spell_level = 10
+#
+set o10003/spell_level_base = 10
+#
+set o10003/charges_maximum = 20
+#
+set o10003/charges_maximum_base = 20
+#
+set o10003/charges_current = 20
+#
+set o10003/spell_name = "cure critical"
+#
+wearto o10003 = m10001
+#
+set m10001/reset_objects["o10003"] = {"location":"equipped"}
+#
+tel r10002
+#
+create leather armor;leather;armor;o10013:objects.Armor
+#
+sethome o10013 = m10001
+#
+desc o10013 = There is a suit of leather armor on the ground.
+#
+set o10013/level = 8
+#
+set o10013/level_base = 8
+#
+set o10013/vnum = "o10013"
+#
+set o10013/item_type = "armor"
+#
+set o10013/wear_location = "body"
+#
+set o10013/weight = 5
+#
+tag o10013 = crystalmir lake:area name
+#
+tag o10013 = object
+#
+set o10013/armor = 3
+#
+wearto o10013 = m10001
+#
+set m10001/reset_objects["o10013"] = {"location":"equipped"}
+#
+tel r10002
+#
+create/drop Riverwind;riverwind;man;m10003:characters.Mobile
+#
+desc m10003 = Riverwind the Ranger is standing here.. 
+#
+set m10003/level = 9
+#
+set m10003/level_base = 9
+#
+set m10003/vnum = "m10003"
+#
+set m10003/look_description = "A black haired ranger whose muscles surge with power. He looks travel weary and tired. "
+#
+set m10003/act_flags = ['healer', 'gamble', 'practice', 'pet', 'scavenger', 'sentinel']
+#
+set m10003/alignment = 900
+#
+set m10003/sex = "male"
+#
+set m10003/spell_affects = {'sanctuary': ''}
+#
+set m10003/race = "human"
+#
+tag m10003 = crystalmir lake:area name
+#
+tag m10003 = mobile
+#
+set m10003/hitpoints[maximum] = 139
+#
+set m10003/position = "standing"
+#
+set m10003/experience_total = 6909
+#
+set m10003/experience_current = 6909
+#
+tel r10002
+#
+create a silver longsword;silver;longsword;sword;o10008:objects.Weapon
+#
+sethome o10008 = m10003
+#
+desc o10008 = There is a silver longsword on the ground.
+#
+set o10008/level = 7
+#
+set o10008/level_base = 7
+#
+set o10008/vnum = "o10008"
+#
+set o10008/item_type = "weapon"
+#
+set o10008/wear_location = "wield"
+#
+set o10008/weight = 7
+#
+tag o10008 = crystalmir lake:area name
+#
+tag o10008 = object
+#
+set o10008/extra_descriptions = {'silver longsword': ' This silver longsword looks as if it has seen many battles. '}
+#
+set o10008/alignment_restriction = ['evil']
+#
+set o10008/stat_modifiers[saving throw] = -1
+#
+set o10008/stat_modifiers[hitpoints] = 4
+#
+set o10008/weapon_type = "slice"
+#
+set o10008/damage_low = 3
+#
+set o10008/damage_high = 10
+#
+wieldto o10008 = m10003
+#
+set m10003/experience_total = 8636
+#
+set m10003/experience_current = 8636
+#
+set m10003/reset_objects["o10008"] = {"location":"equipped"}
+#
+tel r10002
+#
+create leather armor;leather;armor;o10013:objects.Armor
+#
+sethome o10013 = m10003
+#
+desc o10013 = There is a suit of leather armor on the ground.
+#
+set o10013/level = 7
+#
+set o10013/level_base = 7
+#
+set o10013/vnum = "o10013"
+#
+set o10013/item_type = "armor"
+#
+set o10013/wear_location = "body"
+#
+set o10013/weight = 5
+#
+tag o10013 = crystalmir lake:area name
+#
+tag o10013 = object
+#
+set o10013/armor = 5
+#
+wearto o10013 = m10003
+#
+set m10003/reset_objects["o10013"] = {"location":"equipped"}
+#
+tel r10005
+#
+create/drop a barracuda;barracuda;m10007:characters.Mobile
+#
+desc m10007 = There is a barracuda swimming around you...it looks hungry.. 
+#
+set m10007/level = 7
+#
+set m10007/level_base = 7
+#
+set m10007/vnum = "m10007"
+#
+set m10007/look_description = "This is a very hungry looking fish with BIG teeth... "
+#
+set m10007/act_flags = ['healer', 'gamble', 'practice', 'wimpy', 'stay area', 'aggressive']
+#
+set m10007/alignment = 20
+#
+set m10007/sex = "neuter"
+#
+set m10007/spell_affects = {'gills': ''}
+#
+set m10007/race = "fish"
+#
+tag m10007 = crystalmir lake:area name
+#
+tag m10007 = mobile
+#
+set m10007/hitpoints[maximum] = 59
+#
+set m10007/position = "standing"
+#
+set m10007/experience_total = 2070
+#
+set m10007/experience_current = 2070
+#
+tel r10006
+#
+create/drop a strange fish;strange;fish;m10010:characters.Mobile
+#
+desc m10010 = A fish is swimming merrily by... 
+#
+set m10010/level = 5
+#
+set m10010/level_base = 5
+#
+set m10010/vnum = "m10010"
+#
+set m10010/look_description = "Some unknown type of fish....probably originally from near Guam. Probably walks too.... "
+#
+set m10010/act_flags = ['healer', 'gamble', 'practice', 'pet', 'scavenger', 'sentinel']
+#
+set m10010/alignment = 200
+#
+set m10010/sex = "neuter"
+#
+set m10010/spell_affects = {'gills': ''}
+#
+set m10010/race = "fish"
+#
+tag m10010 = crystalmir lake:area name
+#
+tag m10010 = mobile
+#
+set m10010/hitpoints[maximum] = 45
+#
+set m10010/position = "standing"
+#
+set m10010/experience_total = 1010
+#
+set m10010/experience_current = 1010
+#
+tel r10010
+#
+create/drop a strange fish;strange;fish;m10010:characters.Mobile
+#
+desc m10010 = A fish is swimming merrily by... 
+#
+set m10010/level = 5
+#
+set m10010/level_base = 5
+#
+set m10010/vnum = "m10010"
+#
+set m10010/look_description = "Some unknown type of fish....probably originally from near Guam. Probably walks too.... "
+#
+set m10010/act_flags = ['healer', 'gamble', 'practice', 'pet', 'scavenger', 'sentinel']
+#
+set m10010/alignment = 200
+#
+set m10010/sex = "neuter"
+#
+set m10010/spell_affects = {'gills': ''}
+#
+set m10010/race = "fish"
+#
+tag m10010 = crystalmir lake:area name
+#
+tag m10010 = mobile
+#
+set m10010/hitpoints[maximum] = 50
+#
+set m10010/position = "standing"
+#
+set m10010/experience_total = 978
+#
+set m10010/experience_current = 978
+#
+tel r10013
+#
+create/drop The farmer;farmer;m10005:characters.Mobile
+#
+desc m10005 = The farmer is standing here looking after his workers... 
+#
+set m10005/level = 7
+#
+set m10005/level_base = 7
+#
+set m10005/vnum = "m10005"
+#
+set m10005/look_description = "He looks like a farmer.....go figure... "
+#
+set m10005/act_flags = ['healer', 'gamble', 'practice', 'wimpy', 'stay area', 'scavenger', 'sentinel']
+#
+set m10005/alignment = 150
+#
+set m10005/sex = "male"
+#
+set m10005/race = "human"
+#
+tag m10005 = crystalmir lake:area name
+#
+tag m10005 = mobile
+#
+set m10005/hitpoints[maximum] = 100
+#
+set m10005/position = "standing"
+#
+set m10005/experience_total = 2378
+#
+set m10005/experience_current = 2378
+#
+tel r10013
+#
+create a farming scythe;farming;scythe;o10002:objects.Weapon
+#
+sethome o10002 = m10005
+#
+desc o10002 = A farming scythe lies here.
+#
+set o10002/level = 5
+#
+set o10002/level_base = 5
+#
+set o10002/vnum = "o10002"
+#
+set o10002/item_type = "weapon"
+#
+set o10002/wear_location = "wield"
+#
+set o10002/weight = 10
+#
+tag o10002 = crystalmir lake:area name
+#
+tag o10002 = object
+#
+set o10002/extra_descriptions = {'farming scythe': ' This scythe is used by the farmers to harvest their wheat. '}
+#
+set o10002/weapon_type = "slash"
+#
+set o10002/damage_low = 4
+#
+set o10002/damage_high = 11
+#
+wieldto o10002 = m10005
+#
+set m10005/experience_total = 2972
+#
+set m10005/experience_current = 2972
+#
+set m10005/reset_objects["o10002"] = {"location":"equipped"}
+#
+tel r10013
+#
+create a farmer's long johns;farmer;long;johns;o10009:objects.Armor
+#
+sethome o10009 = m10005
+#
+desc o10009 = A pair of farmer's long johns are lying here.
+#
+set o10009/level = 5
+#
+set o10009/level_base = 5
+#
+set o10009/vnum = "o10009"
+#
+set o10009/item_type = "armor"
+#
+set o10009/wear_location = "body"
+#
+set o10009/weight = 2
+#
+tag o10009 = crystalmir lake:area name
+#
+tag o10009 = object
+#
+set o10009/extra_descriptions = {'long johns': " It's a pair of long johns....the kind a farmer would wear. "}
+#
+set o10009/armor = 2
+#
+wearto o10009 = m10005
+#
+set m10005/reset_objects["o10009"] = {"location":"equipped"}
+#
+tel r10013
+#
+create/drop A farm worker;farm;worker;m10006:characters.Mobile
+#
+desc m10006 = A farm worker is here harvesting grain. 
+#
+set m10006/level = 5
+#
+set m10006/level_base = 5
+#
+set m10006/vnum = "m10006"
+#
+set m10006/look_description = "The worker is very busy...leave him alone. "
+#
+set m10006/act_flags = ['healer', 'gamble', 'practice', 'pet', 'scavenger', 'sentinel']
+#
+set m10006/alignment = 125
+#
+set m10006/sex = "male"
+#
+set m10006/race = "human"
+#
+tag m10006 = crystalmir lake:area name
+#
+tag m10006 = mobile
+#
+set m10006/hitpoints[maximum] = 63
+#
+set m10006/position = "standing"
+#
+set m10006/experience_total = 1112
+#
+set m10006/experience_current = 1112
+#
+tel r10013
+#
+create a farmer's long johns;farmer;long;johns;o10009:objects.Armor
+#
+sethome o10009 = m10006
+#
+desc o10009 = A pair of farmer's long johns are lying here.
+#
+set o10009/level = 3
+#
+set o10009/level_base = 3
+#
+set o10009/vnum = "o10009"
+#
+set o10009/item_type = "armor"
+#
+set o10009/wear_location = "body"
+#
+set o10009/weight = 2
+#
+tag o10009 = crystalmir lake:area name
+#
+tag o10009 = object
+#
+set o10009/extra_descriptions = {'long johns': " It's a pair of long johns....the kind a farmer would wear. "}
+#
+set o10009/armor = 2
+#
+wearto o10009 = m10006
+#
+set m10006/reset_objects["o10009"] = {"location":"equipped"}
+#
+tel r10015
+#
+create/drop Baaz Draconian;Baaz;Draconian;robed;m10004:characters.Mobile
+#
+desc m10004 = A robed figure is standing here. 
+#
+set m10004/level = 9
+#
+set m10004/level_base = 9
+#
+set m10004/vnum = "m10004"
+#
+set m10004/look_description = "It's hard to tell anything about the figure. It is concealed by its heavy robe and hood. "
+#
+set m10004/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m10004/alignment = -750
+#
+set m10004/sex = "male"
+#
+set m10004/spell_affects = {'infrared': ''}
+#
+set m10004/race = "dragon"
+#
+tag m10004 = crystalmir lake:area name
+#
+tag m10004 = mobile
+#
+set m10004/hitpoints[maximum] = 125
+#
+set m10004/position = "standing"
+#
+set m10004/experience_total = 4054
+#
+set m10004/experience_current = 4054
+#
+tel r10015
+#
+create a footman's lance;footman's;Lance;o10015:objects.Weapon
+#
+sethome o10015 = m10004
+#
+desc o10015 = There is a long wicked looking polearm lying here.
+#
+set o10015/level = 7
+#
+set o10015/level_base = 7
+#
+set o10015/vnum = "o10015"
+#
+set o10015/item_type = "weapon"
+#
+set o10015/wear_location = "wield"
+#
+set o10015/weight = 20
+#
+tag o10015 = crystalmir lake:area name
+#
+tag o10015 = object
+#
+set o10015/extra_descriptions = {'footmans lance': ' This is a long pole arm with detailed engravings on the shaft. The blade at the end of the pole is formed in various hooks and spikes, to maximize the amount of damage inflicted... '}
+#
+set o10015/weapon_type = "hit"
+#
+set o10015/damage_low = 5
+#
+set o10015/damage_high = 11
+#
+wieldto o10015 = m10004
+#
+set m10004/experience_total = 5067
+#
+set m10004/experience_current = 5067
+#
+set m10004/reset_objects["o10015"] = {"location":"equipped"}
+#
+tel r10015
+#
+create a humanskin vest;human;skin;humanskin;vest;o10016:objects.Armor
+#
+sethome o10016 = m10004
+#
+desc o10016 = A large pile of skin is lying here.
+#
+set o10016/level = 7
+#
+set o10016/level_base = 7
+#
+set o10016/vnum = "o10016"
+#
+set o10016/item_type = "armor"
+#
+set o10016/wear_location = "body"
+#
+set o10016/weight = 10
+#
+tag o10016 = crystalmir lake:area name
+#
+tag o10016 = object
+#
+set o10016/extra_descriptions = {'human skin vest': ' This vest is made of multiple layers of human skin stitched together. '}
+#
+set o10016/armor = 4
+#
+wearto o10016 = m10004
+#
+set m10004/reset_objects["o10016"] = {"location":"equipped"}
+#
+tel r10015
+#
+create a draconian helmet;draconian;helmet;o10017:objects.Armor
+#
+sethome o10017 = m10004
+#
+desc o10017 = A helmet made of leather and iron lies here.
+#
+set o10017/level = 7
+#
+set o10017/level_base = 7
+#
+set o10017/vnum = "o10017"
+#
+set o10017/item_type = "armor"
+#
+set o10017/wear_location = "head"
+#
+set o10017/weight = 4
+#
+tag o10017 = crystalmir lake:area name
+#
+tag o10017 = object
+#
+set o10017/extra_descriptions = {'draconian helmet': ' This is a crudely constructed leather helmet, held together with large iron bands. '}
+#
+set o10017/armor = 4
+#
+wearto o10017 = m10004
+#
+set m10004/reset_objects["o10017"] = {"location":"equipped"}
+#
+tel r10016
+#
+create/drop the White Stag;White;Stag;m10012:characters.Mobile
+#
+desc m10012 = A beautiful white stag is here. 
+#
+set m10012/level = 7
+#
+set m10012/level_base = 7
+#
+set m10012/vnum = "m10012"
+#
+set m10012/look_description = "This is the White Stag. You can't believe you actually see it … it's supposed to be just a legend... "
+#
+set m10012/act_flags = ['healer', 'gamble', 'practice', 'pet', 'scavenger', 'sentinel']
+#
+set m10012/alignment = -300
+#
+set m10012/sex = "male"
+#
+set m10012/spell_affects = {'hide': ''}
+#
+set m10012/race = "animal"
+#
+tag m10012 = crystalmir lake:area name
+#
+tag m10012 = mobile
+#
+set m10012/hitpoints[maximum] = 65
+#
+set m10012/position = "standing"
+#
+set m10012/experience_total = 2219
+#
+set m10012/experience_current = 2219
+#
+tel r10018
+#
+create a fire pit;fire;pit;o10005:objects.Container
+#
+sethome o10005 = r10018
+#
+desc o10005 = There is a fire pit here, still smoldering.
+#
+set o10005/level = 5
+#
+set o10005/level_base = 5
+#
+set o10005/vnum = "o10005"
+#
+set o10005/item_type = "container"
+#
+objectlock o10005 = "get:perm(Admin)"
+#
+set o10005/weight = 0
+#
+tag o10005 = crystalmir lake:area name
+#
+tag o10005 = object
+#
+set o10005/extra_descriptions = {'fire pit': " This is the smoldering fire pit of whomever's camp this was. "}
+#
+set o10005/weight_maximum = 10000
+#
+set o10005/state = []
+#
+set o10005/state_base = []
+#
+drop o10005
+#
+set r10018/reset_objects["o10005"] = {"location":"inventory"}
+#
+tel r10018
+#
+create a bright silver bracer;bright;silver;bracer;o10004:objects.Armor
+#
+sethome o10004 = o10005
+#
+desc o10004 = A bright silver bracer lies here.
+#
+set o10004/level = 5
+#
+set o10004/level_base = 5
+#
+set o10004/vnum = "o10004"
+#
+set o10004/item_type = "armor"
+#
+set o10004/wear_location = "wrist"
+#
+set o10004/weight = 7
+#
+tag o10004 = crystalmir lake:area name
+#
+tag o10004 = object
+#
+set o10004/extra_descriptions = {'bright silver bracer': ' This is a bright silver bracer fitted with four gems. The inside of the band is engraved, "Firehawk, warrior of Que-shu" '}
+#
+set o10004/alignment_restriction = ['good']
+#
+set o10004/stat_modifiers[hitpoints] = 1
+#
+set o10004/stat_modifiers[moves] = 2
+#
+set o10004/stat_modifiers[strength] = 1
+#
+set o10004/armor = 4
+#
+put o10004 in o10005
+#
+set r10018/reset_objects["o10004"] = {"location":"o10005"}
+#
+tel r10022
+#
+create/drop a hobgoblin flunky;hobgoblin;flunky;m10011:characters.Mobile
+#
+desc m10011 = A small hobgoblin seems to be searching for something. 
+#
+set m10011/level = 2
+#
+set m10011/level_base = 2
+#
+set m10011/vnum = "m10011"
+#
+set m10011/look_description = 'The hobgoblin screams at you, "Give me the blue crystal staff!!!!"'
+#
+set m10011/act_flags = ['healer', 'gamble', 'practice', 'pet', 'sentinel']
+#
+set m10011/alignment = -300
+#
+set m10011/sex = "male"
+#
+set m10011/race = "hobgoblin"
+#
+tag m10011 = crystalmir lake:area name
+#
+tag m10011 = mobile
+#
+set m10011/hitpoints[maximum] = 20
+#
+set m10011/position = "standing"
+#
+set m10011/experience_total = 259
+#
+set m10011/experience_current = 259
+#
+tel r10023
+#
+create/drop a hobgoblin flunky;hobgoblin;flunky;m10011:characters.Mobile
+#
+desc m10011 = A small hobgoblin seems to be searching for something. 
+#
+set m10011/level = 2
+#
+set m10011/level_base = 2
+#
+set m10011/vnum = "m10011"
+#
+set m10011/look_description = 'The hobgoblin screams at you, "Give me the blue crystal staff!!!!"'
+#
+set m10011/act_flags = ['healer', 'gamble', 'practice', 'pet', 'sentinel']
+#
+set m10011/alignment = -300
+#
+set m10011/sex = "male"
+#
+set m10011/race = "hobgoblin"
+#
+tag m10011 = crystalmir lake:area name
+#
+tag m10011 = mobile
+#
+set m10011/hitpoints[maximum] = 17
+#
+set m10011/position = "standing"
+#
+set m10011/experience_total = 238
+#
+set m10011/experience_current = 238
+#
+tel r10027
+#
+create/drop a hobgoblin flunky;hobgoblin;flunky;m10011:characters.Mobile
+#
+desc m10011 = A small hobgoblin seems to be searching for something. 
+#
+set m10011/level = 2
+#
+set m10011/level_base = 2
+#
+set m10011/vnum = "m10011"
+#
+set m10011/look_description = 'The hobgoblin screams at you, "Give me the blue crystal staff!!!!"'
+#
+set m10011/act_flags = ['healer', 'gamble', 'practice', 'pet', 'sentinel']
+#
+set m10011/alignment = -300
+#
+set m10011/sex = "male"
+#
+set m10011/race = "hobgoblin"
+#
+tag m10011 = crystalmir lake:area name
+#
+tag m10011 = mobile
+#
+set m10011/hitpoints[maximum] = 20
+#
+set m10011/position = "standing"
+#
+set m10011/experience_total = 231
+#
+set m10011/experience_current = 231
+#
+tel r10029
+#
+create/drop a hobgoblin flunky;hobgoblin;flunky;m10011:characters.Mobile
+#
+desc m10011 = A small hobgoblin seems to be searching for something. 
+#
+set m10011/level = 2
+#
+set m10011/level_base = 2
+#
+set m10011/vnum = "m10011"
+#
+set m10011/look_description = 'The hobgoblin screams at you, "Give me the blue crystal staff!!!!"'
+#
+set m10011/act_flags = ['healer', 'gamble', 'practice', 'pet', 'sentinel']
+#
+set m10011/alignment = -300
+#
+set m10011/sex = "male"
+#
+set m10011/race = "hobgoblin"
+#
+tag m10011 = crystalmir lake:area name
+#
+tag m10011 = mobile
+#
+set m10011/hitpoints[maximum] = 19
+#
+set m10011/position = "standing"
+#
+set m10011/experience_total = 220
+#
+set m10011/experience_current = 220
+#
+tel r10030
+#
+create/drop The Fewmaster Toede;Fewmaster;Toede;m10002:characters.Mobile
+#
+desc m10002 = The Fewmaster Toede is here. 
+#
+set m10002/level = 6
+#
+set m10002/level_base = 6
+#
+set m10002/vnum = "m10002"
+#
+set m10002/look_description = "Toede's wispy, white hair tops a very ugly face. His speckled gray skin, double chins, and pot belly all resemble those of a vicious little toad. "
+#
+set m10002/act_flags = ['healer', 'gamble', 'practice', 'pet', 'aggressive', 'scavenger', 'sentinel']
+#
+set m10002/alignment = -900
+#
+set m10002/sex = "male"
+#
+set m10002/spell_affects = {'sanctuary': ''}
+#
+set m10002/race = "elf"
+#
+tag m10002 = crystalmir lake:area name
+#
+tag m10002 = mobile
+#
+set m10002/hitpoints[maximum] = 64
+#
+set m10002/position = "standing"
+#
+set m10002/experience_total = 2251
+#
+set m10002/experience_current = 2251
+#
+tel r10030
+#
+create chamorro Dagger;chamorro;dagger;o10014:objects.Weapon
+#
+sethome o10014 = m10002
+#
+desc o10014 = There is a chamorro dagger lying here.
+#
+set o10014/level = 4
+#
+set o10014/level_base = 4
+#
+set o10014/vnum = "o10014"
+#
+set o10014/item_type = "weapon"
+#
+set o10014/wear_location = "wield"
+#
+set o10014/weight = 5
+#
+tag o10014 = crystalmir lake:area name
+#
+tag o10014 = object
+#
+set o10014/extra_descriptions = {'chamorro dagger': ' a chamorro dagger what else? It is engraved with, "Made in Guam" '}
+#
+set o10014/weapon_type = "stab"
+#
+set o10014/damage_low = 2
+#
+set o10014/damage_high = 9
+#
+wieldto o10014 = m10002
+#
+set m10002/experience_total = 2813
+#
+set m10002/experience_current = 2813
+#
+set m10002/reset_objects["o10014"] = {"location":"equipped"}
+#
+tel r10030
+#
+create leather armor;leather;armor;o10013:objects.Armor
+#
+sethome o10013 = m10002
+#
+desc o10013 = There is a suit of leather armor on the ground.
+#
+set o10013/level = 4
+#
+set o10013/level_base = 4
+#
+set o10013/vnum = "o10013"
+#
+set o10013/item_type = "armor"
+#
+set o10013/wear_location = "body"
+#
+set o10013/weight = 5
+#
+tag o10013 = crystalmir lake:area name
+#
+tag o10013 = object
+#
+set o10013/armor = 2
+#
+wearto o10013 = m10002
+#
+set m10002/reset_objects["o10013"] = {"location":"equipped"}
+#
+tel r10031
+#
+create/drop a large rat;rat;large;m10014:characters.Mobile
+#
+desc m10014 = A large rat is here eating grain. 
+#
+set m10014/level = 5
+#
+set m10014/level_base = 5
+#
+set m10014/vnum = "m10014"
+#
+set m10014/look_description = "You have the urge to kill this vile creature. I'm sure the farmers would appreciate it too. "
+#
+set m10014/act_flags = ['healer', 'gamble', 'practice', 'pet', 'sentinel']
+#
+set m10014/alignment = -200
+#
+set m10014/sex = "male"
+#
+set m10014/race = "rat"
+#
+tag m10014 = crystalmir lake:area name
+#
+tag m10014 = mobile
+#
+set m10014/hitpoints[maximum] = 60
+#
+set m10014/position = "standing"
+#
+set m10014/experience_total = 1071
+#
+set m10014/experience_current = 1071
+#
+tel r10034
+#
+create/drop a field mouse;mouse;field;m10015:characters.Mobile
+#
+desc m10015 = A small mouse runs across your foot. 
+#
+set m10015/level = 1
+#
+set m10015/level_base = 1
+#
+set m10015/vnum = "m10015"
+#
+set m10015/look_description = "The Mouse is a cute little creature. "
+#
+set m10015/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m10015/alignment = 100
+#
+set m10015/sex = "male"
+#
+set m10015/race = "rat"
+#
+tag m10015 = crystalmir lake:area name
+#
+tag m10015 = mobile
+#
+set m10015/hitpoints[maximum] = 8
+#
+set m10015/position = "standing"
+#
+set m10015/experience_total = 139
+#
+set m10015/experience_current = 139
+#
+tel r10034
+#
+create some grain;grain;o10012:objects.Food
+#
+sethome o10012 = r10034
+#
+desc o10012 = There is some grain here.
+#
+set o10012/level = 1
+#
+set o10012/level_base = 1
+#
+set o10012/vnum = "o10012"
+#
+set o10012/item_type = "food"
+#
+set o10012/weight = 5
+#
+tag o10012 = crystalmir lake:area name
+#
+tag o10012 = object
+#
+set o10012/hours_fed = 5
+#
+set o10012/poison = 0
+#
+drop o10012
+#
+set r10034/reset_objects["o10012"] = {"location":"inventory"}
+#
+tel r10035
+#
+create/drop a large rat;rat;large;m10014:characters.Mobile
+#
+desc m10014 = A large rat is here eating grain. 
+#
+set m10014/level = 5
+#
+set m10014/level_base = 5
+#
+set m10014/vnum = "m10014"
+#
+set m10014/look_description = "You have the urge to kill this vile creature. I'm sure the farmers would appreciate it too. "
+#
+set m10014/act_flags = ['healer', 'gamble', 'practice', 'pet', 'sentinel']
+#
+set m10014/alignment = -200
+#
+set m10014/sex = "male"
+#
+set m10014/race = "rat"
+#
+tag m10014 = crystalmir lake:area name
+#
+tag m10014 = mobile
+#
+set m10014/hitpoints[maximum] = 59
+#
+set m10014/position = "standing"
+#
+set m10014/experience_total = 1110
+#
+set m10014/experience_current = 1110
+#
+tel r10036
+#
+create some grain;grain;o10012:objects.Food
+#
+sethome o10012 = r10036
+#
+desc o10012 = There is some grain here.
+#
+set o10012/level = 3
+#
+set o10012/level_base = 3
+#
+set o10012/vnum = "o10012"
+#
+set o10012/item_type = "food"
+#
+set o10012/weight = 5
+#
+tag o10012 = crystalmir lake:area name
+#
+tag o10012 = object
+#
+set o10012/hours_fed = 5
+#
+set o10012/poison = 0
+#
+drop o10012
+#
+set r10036/reset_objects["o10012"] = {"location":"inventory"}
+#
+tel r10037
+#
+create/drop a field mouse;mouse;field;m10015:characters.Mobile
+#
+desc m10015 = A small mouse runs across your foot. 
+#
+set m10015/level = 1
+#
+set m10015/level_base = 1
+#
+set m10015/vnum = "m10015"
+#
+set m10015/look_description = "The Mouse is a cute little creature. "
+#
+set m10015/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m10015/alignment = 100
+#
+set m10015/sex = "male"
+#
+set m10015/race = "rat"
+#
+tag m10015 = crystalmir lake:area name
+#
+tag m10015 = mobile
+#
+set m10015/hitpoints[maximum] = 8
+#
+set m10015/position = "standing"
+#
+set m10015/experience_total = 155
+#
+set m10015/experience_current = 155
+#
+tel r10038
+#
+create/drop a large rat;rat;large;m10014:characters.Mobile
+#
+desc m10014 = A large rat is here eating grain. 
+#
+set m10014/level = 5
+#
+set m10014/level_base = 5
+#
+set m10014/vnum = "m10014"
+#
+set m10014/look_description = "You have the urge to kill this vile creature. I'm sure the farmers would appreciate it too. "
+#
+set m10014/act_flags = ['healer', 'gamble', 'practice', 'pet', 'sentinel']
+#
+set m10014/alignment = -200
+#
+set m10014/sex = "male"
+#
+set m10014/race = "rat"
+#
+tag m10014 = crystalmir lake:area name
+#
+tag m10014 = mobile
+#
+set m10014/hitpoints[maximum] = 59
+#
+set m10014/position = "standing"
+#
+set m10014/experience_total = 912
+#
+set m10014/experience_current = 912
+#
+tel r10038
+#
+create some grain;grain;o10012:objects.Food
+#
+sethome o10012 = r10038
+#
+desc o10012 = There is some grain here.
+#
+set o10012/level = 3
+#
+set o10012/level_base = 3
+#
+set o10012/vnum = "o10012"
+#
+set o10012/item_type = "food"
+#
+set o10012/weight = 5
+#
+tag o10012 = crystalmir lake:area name
+#
+tag o10012 = object
+#
+set o10012/hours_fed = 5
+#
+set o10012/poison = 0
+#
+drop o10012
+#
+set r10038/reset_objects["o10012"] = {"location":"inventory"}
+#
+tel r10039
+#
+create/drop the farmer's guard dog;farmer's;guard;dog;m10009:characters.Mobile
+#
+desc m10009 = The farmer's guard dog is here guarding whatever he's supposed to guard. 
+#
+set m10009/level = 1
+#
+set m10009/level_base = 1
+#
+set m10009/vnum = "m10009"
+#
+set m10009/look_description = "This is a very mean looking dog. And since it doesn't know you ...I think he's thinking of biting you!!.... "
+#
+set m10009/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m10009/alignment = 100
+#
+set m10009/sex = "neuter"
+#
+set m10009/spell_affects = {'detect invis': ''}
+#
+set m10009/race = "animal"
+#
+tag m10009 = crystalmir lake:area name
+#
+tag m10009 = mobile
+#
+set m10009/hitpoints[maximum] = 9
+#
+set m10009/position = "standing"
+#
+set m10009/experience_total = 147
+#
+set m10009/experience_current = 147
+#
+tel r10039
+#
+create a house key;house;key;;o10006:objects.Key
+#
+sethome o10006 = m10009
+#
+desc o10006 = There is a house key on the ground.
+#
+set o10006/level = 1
+#
+set o10006/level_base = 1
+#
+set o10006/vnum = "o10006"
+#
+set o10006/item_type = "key"
+#
+set o10006/weight = 2
+#
+tag o10006 = crystalmir lake:area name
+#
+tag o10006 = object
+#
+set o10006/extra_descriptions = {'house key': " This looks like someone's house key. "}
+#
+give o10006 = m10009
+#
+set m10009/reset_objects["o10006"] = {"location":"inventory"}
+#
+tel r10039
+#
+set east/door_attributes = ['lockable', 'locked']
+#
+set east/reset_door_attributes = ['lockable', 'locked']
+#
+tel r10042
+#
+create a coathanger;coathanger;o10007:objects.Key
+#
+sethome o10007 = r10042
+#
+desc o10007 = There is a coathanger on the ground.
+#
+set o10007/level = 1
+#
+set o10007/level_base = 1
+#
+set o10007/vnum = "o10007"
+#
+set o10007/item_type = "key"
+#
+set o10007/weight = 2
+#
+tag o10007 = crystalmir lake:area name
+#
+tag o10007 = object
+#
+set o10007/extra_descriptions = {'coathanger': ' It looks like a coathanger … duh .... '}
+#
+drop o10007
+#
+set r10042/reset_objects["o10007"] = {"location":"inventory"}
+#
+tel r10042
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r10043
+#
+create/drop an old pooh bear;old;pooh;bear;m10013:characters.Mobile
+#
+desc m10013 = An old worn out Winnie the Pooh bear is here. 
+#
+set m10013/level = 5
+#
+set m10013/level_base = 5
+#
+set m10013/vnum = "m10013"
+#
+set m10013/look_description = "This is an old pooh bear. It looks as if it has been loved a little too much. "
+#
+set m10013/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m10013/alignment = 300
+#
+set m10013/sex = "male"
+#
+set m10013/race = "bear"
+#
+tag m10013 = crystalmir lake:area name
+#
+tag m10013 = mobile
+#
+set m10013/hitpoints[maximum] = 65
+#
+set m10013/position = "standing"
+#
+set m10013/experience_total = 988
+#
+set m10013/experience_current = 988
+#
+set m10013/special_function = "thief"
+#
+tel r10043
+#
+set south/door_attributes = ['closeable']
+#
+set south/reset_door_attributes = ['closeable']
+#
+tel r10044
+#
+set west/door_attributes = ['lockable', 'locked']
+#
+set west/reset_door_attributes = ['lockable', 'locked']
+#
+tel r10049
+#
+create/drop a strange fish;strange;fish;m10010:characters.Mobile
+#
+desc m10010 = A fish is swimming merrily by... 
+#
+set m10010/level = 5
+#
+set m10010/level_base = 5
+#
+set m10010/vnum = "m10010"
+#
+set m10010/look_description = "Some unknown type of fish....probably originally from near Guam. Probably walks too.... "
+#
+set m10010/act_flags = ['healer', 'gamble', 'practice', 'pet', 'scavenger', 'sentinel']
+#
+set m10010/alignment = 200
+#
+set m10010/sex = "neuter"
+#
+set m10010/spell_affects = {'gills': ''}
+#
+set m10010/race = "fish"
+#
+tag m10010 = crystalmir lake:area name
+#
+tag m10010 = mobile
+#
+set m10010/hitpoints[maximum] = 46
+#
+set m10010/position = "standing"
+#
+set m10010/experience_total = 984
+#
+set m10010/experience_current = 984
+#
+tel r10051
+#
+create/drop a strange fish;strange;fish;m10010:characters.Mobile
+#
+desc m10010 = A fish is swimming merrily by... 
+#
+set m10010/level = 5
+#
+set m10010/level_base = 5
+#
+set m10010/vnum = "m10010"
+#
+set m10010/look_description = "Some unknown type of fish....probably originally from near Guam. Probably walks too.... "
+#
+set m10010/act_flags = ['healer', 'gamble', 'practice', 'pet', 'scavenger', 'sentinel']
+#
+set m10010/alignment = 200
+#
+set m10010/sex = "neuter"
+#
+set m10010/spell_affects = {'gills': ''}
+#
+set m10010/race = "fish"
+#
+tag m10010 = crystalmir lake:area name
+#
+tag m10010 = mobile
+#
+set m10010/hitpoints[maximum] = 51
+#
+set m10010/position = "standing"
+#
+set m10010/experience_total = 955
+#
+set m10010/experience_current = 955
+#
+tel r10053
+#
+create/drop a strange fish;strange;fish;m10010:characters.Mobile
+#
+desc m10010 = A fish is swimming merrily by... 
+#
+set m10010/level = 5
+#
+set m10010/level_base = 5
+#
+set m10010/vnum = "m10010"
+#
+set m10010/look_description = "Some unknown type of fish....probably originally from near Guam. Probably walks too.... "
+#
+set m10010/act_flags = ['healer', 'gamble', 'practice', 'pet', 'scavenger', 'sentinel']
+#
+set m10010/alignment = 200
+#
+set m10010/sex = "neuter"
+#
+set m10010/spell_affects = {'gills': ''}
+#
+set m10010/race = "fish"
+#
+tag m10010 = crystalmir lake:area name
+#
+tag m10010 = mobile
+#
+set m10010/hitpoints[maximum] = 46
+#
+set m10010/position = "standing"
+#
+set m10010/experience_total = 945
+#
+set m10010/experience_current = 945
+#
+tel r10055
+#
+create/drop a strange fish;strange;fish;m10010:characters.Mobile
+#
+desc m10010 = A fish is swimming merrily by... 
+#
+set m10010/level = 5
+#
+set m10010/level_base = 5
+#
+set m10010/vnum = "m10010"
+#
+set m10010/look_description = "Some unknown type of fish....probably originally from near Guam. Probably walks too.... "
+#
+set m10010/act_flags = ['healer', 'gamble', 'practice', 'pet', 'scavenger', 'sentinel']
+#
+set m10010/alignment = 200
+#
+set m10010/sex = "neuter"
+#
+set m10010/spell_affects = {'gills': ''}
+#
+set m10010/race = "fish"
+#
+tag m10010 = crystalmir lake:area name
+#
+tag m10010 = mobile
+#
+set m10010/hitpoints[maximum] = 52
+#
+set m10010/position = "standing"
+#
+set m10010/experience_total = 940
+#
+set m10010/experience_current = 940
+#
+tel r10057
+#
+create/drop a barracuda;barracuda;m10007:characters.Mobile
+#
+desc m10007 = There is a barracuda swimming around you...it looks hungry.. 
+#
+set m10007/level = 7
+#
+set m10007/level_base = 7
+#
+set m10007/vnum = "m10007"
+#
+set m10007/look_description = "This is a very hungry looking fish with BIG teeth... "
+#
+set m10007/act_flags = ['healer', 'gamble', 'practice', 'wimpy', 'stay area', 'aggressive']
+#
+set m10007/alignment = 20
+#
+set m10007/sex = "neuter"
+#
+set m10007/spell_affects = {'gills': ''}
+#
+set m10007/race = "fish"
+#
+tag m10007 = crystalmir lake:area name
+#
+tag m10007 = mobile
+#
+set m10007/hitpoints[maximum] = 59
+#
+set m10007/position = "standing"
+#
+set m10007/experience_total = 2225
+#
+set m10007/experience_current = 2225
+#
+tel r10061
+#
+create/drop a strange fish;strange;fish;m10010:characters.Mobile
+#
+desc m10010 = A fish is swimming merrily by... 
+#
+set m10010/level = 5
+#
+set m10010/level_base = 5
+#
+set m10010/vnum = "m10010"
+#
+set m10010/look_description = "Some unknown type of fish....probably originally from near Guam. Probably walks too.... "
+#
+set m10010/act_flags = ['healer', 'gamble', 'practice', 'pet', 'scavenger', 'sentinel']
+#
+set m10010/alignment = 200
+#
+set m10010/sex = "neuter"
+#
+set m10010/spell_affects = {'gills': ''}
+#
+set m10010/race = "fish"
+#
+tag m10010 = crystalmir lake:area name
+#
+tag m10010 = mobile
+#
+set m10010/hitpoints[maximum] = 43
+#
+set m10010/position = "standing"
+#
+set m10010/experience_total = 967
+#
+set m10010/experience_current = 967
+#
+tel r10064
+#
+create/drop a strange fish;strange;fish;m10010:characters.Mobile
+#
+desc m10010 = A fish is swimming merrily by... 
+#
+set m10010/level = 5
+#
+set m10010/level_base = 5
+#
+set m10010/vnum = "m10010"
+#
+set m10010/look_description = "Some unknown type of fish....probably originally from near Guam. Probably walks too.... "
+#
+set m10010/act_flags = ['healer', 'gamble', 'practice', 'pet', 'scavenger', 'sentinel']
+#
+set m10010/alignment = 200
+#
+set m10010/sex = "neuter"
+#
+set m10010/spell_affects = {'gills': ''}
+#
+set m10010/race = "fish"
+#
+tag m10010 = crystalmir lake:area name
+#
+tag m10010 = mobile
+#
+set m10010/hitpoints[maximum] = 45
+#
+set m10010/position = "standing"
+#
+set m10010/experience_total = 1074
+#
+set m10010/experience_current = 1074
+#
+tel r10066
+#
+create/drop a barracuda;barracuda;m10007:characters.Mobile
+#
+desc m10007 = There is a barracuda swimming around you...it looks hungry.. 
+#
+set m10007/level = 7
+#
+set m10007/level_base = 7
+#
+set m10007/vnum = "m10007"
+#
+set m10007/look_description = "This is a very hungry looking fish with BIG teeth... "
+#
+set m10007/act_flags = ['healer', 'gamble', 'practice', 'wimpy', 'stay area', 'aggressive']
+#
+set m10007/alignment = 20
+#
+set m10007/sex = "neuter"
+#
+set m10007/spell_affects = {'gills': ''}
+#
+set m10007/race = "fish"
+#
+tag m10007 = crystalmir lake:area name
+#
+tag m10007 = mobile
+#
+set m10007/hitpoints[maximum] = 62
+#
+set m10007/position = "standing"
+#
+set m10007/experience_total = 2019
+#
+set m10007/experience_current = 2019
+#
+tel r10067
+#
+create/drop a strange fish;strange;fish;m10010:characters.Mobile
+#
+desc m10010 = A fish is swimming merrily by... 
+#
+set m10010/level = 5
+#
+set m10010/level_base = 5
+#
+set m10010/vnum = "m10010"
+#
+set m10010/look_description = "Some unknown type of fish....probably originally from near Guam. Probably walks too.... "
+#
+set m10010/act_flags = ['healer', 'gamble', 'practice', 'pet', 'scavenger', 'sentinel']
+#
+set m10010/alignment = 200
+#
+set m10010/sex = "neuter"
+#
+set m10010/spell_affects = {'gills': ''}
+#
+set m10010/race = "fish"
+#
+tag m10010 = crystalmir lake:area name
+#
+tag m10010 = mobile
+#
+set m10010/hitpoints[maximum] = 63
+#
+set m10010/position = "standing"
+#
+set m10010/experience_total = 975
+#
+set m10010/experience_current = 975
+#
+tel r10069
+#
+create/drop a barracuda;barracuda;m10007:characters.Mobile
+#
+desc m10007 = There is a barracuda swimming around you...it looks hungry.. 
+#
+set m10007/level = 7
+#
+set m10007/level_base = 7
+#
+set m10007/vnum = "m10007"
+#
+set m10007/look_description = "This is a very hungry looking fish with BIG teeth... "
+#
+set m10007/act_flags = ['healer', 'gamble', 'practice', 'wimpy', 'stay area', 'aggressive']
+#
+set m10007/alignment = 20
+#
+set m10007/sex = "neuter"
+#
+set m10007/spell_affects = {'gills': ''}
+#
+set m10007/race = "fish"
+#
+tag m10007 = crystalmir lake:area name
+#
+tag m10007 = mobile
+#
+set m10007/hitpoints[maximum] = 105
+#
+set m10007/position = "standing"
+#
+set m10007/experience_total = 2343
+#
+set m10007/experience_current = 2343
+#
+tel r10073
+#
+create/drop a strange fish;strange;fish;m10010:characters.Mobile
+#
+desc m10010 = A fish is swimming merrily by... 
+#
+set m10010/level = 5
+#
+set m10010/level_base = 5
+#
+set m10010/vnum = "m10010"
+#
+set m10010/look_description = "Some unknown type of fish....probably originally from near Guam. Probably walks too.... "
+#
+set m10010/act_flags = ['healer', 'gamble', 'practice', 'pet', 'scavenger', 'sentinel']
+#
+set m10010/alignment = 200
+#
+set m10010/sex = "neuter"
+#
+set m10010/spell_affects = {'gills': ''}
+#
+set m10010/race = "fish"
+#
+tag m10010 = crystalmir lake:area name
+#
+tag m10010 = mobile
+#
+set m10010/hitpoints[maximum] = 63
+#
+set m10010/position = "standing"
+#
+set m10010/experience_total = 1094
+#
+set m10010/experience_current = 1094
+#
+tel r10076
+#
+create/drop a turtle dragon;turtle;Dragon;m10008:characters.Mobile
+#
+desc m10008 = There is a very large turtle dragon here. 
+#
+set m10008/level = 8
+#
+set m10008/level_base = 8
+#
+set m10008/vnum = "m10008"
+#
+set m10008/look_description = "This is a very big dragon.  It looks more turtle than dragon though. Its blue-green scales glisten with moisture.  Steam jets from its nostrils. It looks you over intently before eating you. "
+#
+set m10008/act_flags = ['stay area', 'aggressive', 'sentinel', 'npc']
+#
+set m10008/alignment = -700
+#
+set m10008/sex = "neuter"
+#
+set m10008/spell_affects = {'gills': '', 'detect invis': ''}
+#
+set m10008/race = "dragon"
+#
+tag m10008 = crystalmir lake:area name
+#
+tag m10008 = mobile
+#
+set m10008/hitpoints[maximum] = 105
+#
+set m10008/position = "standing"
+#
+set m10008/experience_total = 3328
+#
+set m10008/experience_current = 3328
+#
+set m10008/special_function = "breath_gas"
+#
+tel r10076
+#
+create a turtle dragon shell;turtle;dragon;shell;o10001:objects.Armor
+#
+sethome o10001 = m10008
+#
+desc o10001 = A giant Turtle dragon shell lies here.
+#
+set o10001/level = 6
+#
+set o10001/level_base = 6
+#
+set o10001/vnum = "o10001"
+#
+set o10001/item_type = "armor"
+#
+set o10001/wear_location = "about body"
+#
+set o10001/weight = 20
+#
+tag o10001 = crystalmir lake:area name
+#
+tag o10001 = object
+#
+set o10001/extra_descriptions = {'turtle dragon shell': ' This is the giant shell of a Turtle dragon. A 17 -2 A 19 1 '}
+#
+set o10001/extra_flags = ['glow']
+#
+set o10001/armor = 4
+#
+wearto o10001 = m10008
+#
+set m10008/reset_objects["o10001"] = {"location":"equipped"}
+#
+tel r10076
+#
+create a heap of ancient gold coins;ancient;coins;gold;o10010:objects.Money
+#
+sethome o10010 = m10008
+#
+desc o10010 = Some ancient gold coins lie piled up in a heap, from a shipwreck maybe?
+#
+set o10010/level = 6
+#
+set o10010/level_base = 6
+#
+set o10010/vnum = "o10010"
+#
+set o10010/item_type = "money"
+#
+set o10010/weight = 0
+#
+tag o10010 = crystalmir lake:area name
+#
+tag o10010 = object
+#
+set o10010/extra_descriptions = {'coins': ' The coins seem to be gold.  From a Spanish shipwreck maybe? '}
+#
+set o10010/value = 1000
+#
+give o10010 = m10008
+#
+set m10008/reset_objects["o10010"] = {"location":"inventory"}
+#
+tel r10078
+#
+create/drop a strange fish;strange;fish;m10010:characters.Mobile
+#
+desc m10010 = A fish is swimming merrily by... 
+#
+set m10010/level = 5
+#
+set m10010/level_base = 5
+#
+set m10010/vnum = "m10010"
+#
+set m10010/look_description = "Some unknown type of fish....probably originally from near Guam. Probably walks too.... "
+#
+set m10010/act_flags = ['healer', 'gamble', 'practice', 'pet', 'scavenger', 'sentinel']
+#
+set m10010/alignment = 200
+#
+set m10010/sex = "neuter"
+#
+set m10010/spell_affects = {'gills': ''}
+#
+set m10010/race = "fish"
+#
+tag m10010 = crystalmir lake:area name
+#
+tag m10010 = mobile
+#
+set m10010/hitpoints[maximum] = 48
+#
+set m10010/position = "standing"
+#
+set m10010/experience_total = 909
+#
+set m10010/experience_current = 909
+#
+tel r10079
+#
+create/drop a barracuda;barracuda;m10007:characters.Mobile
+#
+desc m10007 = There is a barracuda swimming around you...it looks hungry.. 
+#
+set m10007/level = 7
+#
+set m10007/level_base = 7
+#
+set m10007/vnum = "m10007"
+#
+set m10007/look_description = "This is a very hungry looking fish with BIG teeth... "
+#
+set m10007/act_flags = ['healer', 'gamble', 'practice', 'wimpy', 'stay area', 'aggressive']
+#
+set m10007/alignment = 20
+#
+set m10007/sex = "neuter"
+#
+set m10007/spell_affects = {'gills': ''}
+#
+set m10007/race = "fish"
+#
+tag m10007 = crystalmir lake:area name
+#
+tag m10007 = mobile
+#
+set m10007/hitpoints[maximum] = 89
+#
+set m10007/position = "standing"
+#
+set m10007/experience_total = 2173
+#
+set m10007/experience_current = 2173
+#
+tel r10081
+#
+create/drop a barracuda;barracuda;m10007:characters.Mobile
+#
+desc m10007 = There is a barracuda swimming around you...it looks hungry.. 
+#
+set m10007/level = 7
+#
+set m10007/level_base = 7
+#
+set m10007/vnum = "m10007"
+#
+set m10007/look_description = "This is a very hungry looking fish with BIG teeth... "
+#
+set m10007/act_flags = ['healer', 'gamble', 'practice', 'wimpy', 'stay area', 'aggressive']
+#
+set m10007/alignment = 20
+#
+set m10007/sex = "neuter"
+#
+set m10007/spell_affects = {'gills': ''}
+#
+set m10007/race = "fish"
+#
+tag m10007 = crystalmir lake:area name
+#
+tag m10007 = mobile
+#
+set m10007/hitpoints[maximum] = 66
+#
+set m10007/position = "standing"
+#
+set m10007/experience_total = 2233
+#
+set m10007/experience_current = 2233
+#
+tel r10082
+#
+set north/door_attributes = ['closeable']
+#
+set north/reset_door_attributes = ['closeable']
+#
+tel r10082
+#
+set south/door_attributes = ['closeable']
+#
+set south/reset_door_attributes = ['closeable']
+#
