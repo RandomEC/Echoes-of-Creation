@@ -1,6 +1,6 @@
 dig/tel The End?; r6631
 #
-tag r6631 = dwarven daycare, category = area names
+tag r6631 = dwarven daycare:area names
 #
 desc r6631 = The end of the maze known as the Lair.  This is a plain room with unpainted walls and no other decorations.  There are a few splotches of spilled paint on the floor.  The air smells a little less stale here. 
 #
@@ -18,7 +18,7 @@ set r6631/room_flags = ['no teleport in', 'no summon from', 'indoors', 'dark']
 #
 dig/tel Daycare Foyer; r6601
 #
-tag r6601 = dwarven daycare, category = area names
+tag r6601 = dwarven daycare:area names
 #
 desc r6601 = A simple building from the outside, this room begins to show the depth that hides within.  This is where parents may drop off or pick up their children.  A small mat has been placed on the boarded ground to avoid foot tracks from the path outside.  Several windows line the northern wall. Potted plants reside in each corner.  An easel stands just almost in the rooms center.  There is a sign above the doorway to the east and there is an exit to the south. 
 #
@@ -38,7 +38,7 @@ set r6601/room_flags = ['indoors', 'no mob']
 #
 dig/tel Story Time; r6602
 #
-tag r6602 = dwarven daycare, category = area names
+tag r6602 = dwarven daycare:area names
 #
 desc r6602 = A compact room with soft colored walls is the gathering place for story times.  A sturdy rocker sits undisturbed in the center while a few bean bags have been tossed around it.  A cushioned bench sits directly in front of the rocker and a bookshelf, made of tree branches, overflowing with various children's books is behind.  The smell of food floats gently in the air from the east.  The wails of an angry child come from the west while laughter filters in from the south. 
 #
@@ -56,7 +56,7 @@ set r6602/room_flags = ['indoors']
 #
 dig/tel Dining Hall; r6603
 #
-tag r6603 = dwarven daycare, category = area names
+tag r6603 = dwarven daycare:area names
 #
 desc r6603 = A quiet section of the daycare reserved for meal times.  Many small tables, each with at least three chairs, are arranged hastily, filling the room.  A rolling wooden cart, used for serving the meals, sits near the east door. 
 #
@@ -74,7 +74,7 @@ set r6603/room_flags = ['indoors']
 #
 dig/tel Fun Time; r6604
 #
-tag r6604 = dwarven daycare, category = area names
+tag r6604 = dwarven daycare:area names
 #
 desc r6604 = The young tykes are mostly limited to play in this room.  Wooden crates and cabinets, for storing the various toys, take up nearly all the wall space.  A large rug, barely visible under the mass of dragged out toys, hides the many scratches and dents from previous play sessions.  From building blocks to dress-up dolls most of the children find something to briefly entertain themselves. 
 #
@@ -94,7 +94,7 @@ set r6604/room_flags = ['indoors']
 #
 dig/tel Arts 'N Crafts; r6605
 #
-tag r6605 = dwarven daycare, category = area names
+tag r6605 = dwarven daycare:area names
 #
 desc r6605 = For the more imaginative youngsters an arts and crafts center was made. All the decorations of this room have been left up to the children.  The once white walls have been adorned with tiny painted shapes like circles, squares and triangles and even some hand and foot prints.  One wall is dedicated solely to finger paintings.  Two half-moon tables allow the young artists to explore their creativity.  A counter runs along the wall for storing of paints, paper, molding clay and other useful art tools. 
 #
@@ -112,7 +112,7 @@ set r6605/room_flags = ['indoors']
 #
 dig/tel Girls Room; r6606
 #
-tag r6606 = dwarven daycare, category = area names
+tag r6606 = dwarven daycare:area names
 #
 desc r6606 = Tucked off in the corner of the daycare building is the girls restroom. The heavy smell of scented soaps overpowers the calm pink walls and shining tile floor.  A cream colored tub sits under a skylight by the far wall.  A little potty sits in the near corner. 
 #
@@ -130,7 +130,7 @@ set r6606/room_flags = ['indoors']
 #
 dig/tel Stairwell; r6607
 #
-tag r6607 = dwarven daycare, category = area names
+tag r6607 = dwarven daycare:area names
 #
 desc r6607 = The room is void except for the beginnings of a staircase with a rug runner.  A rickety wooden railing surrounds the stairs on three sides.  A sconce on each wall provide the only light.  Even with activity all about the daycare, it is eerily quiet here. 
 #
@@ -148,7 +148,7 @@ set r6607/room_flags = ['indoors']
 #
 dig/tel The Playground; r6608
 #
-tag r6608 = dwarven daycare, category = area names
+tag r6608 = dwarven daycare:area names
 #
 desc r6608 = The wire fence continues around the northwest corner of the playground. There is a small square concrete pad on the west side.  Tattered jump ropes and broken chalk lie on the pad.  A hopscotch grid has been permanently painted onto the surface.  Only a few clumps of grass grow here and there, the rest has been worn down to the dirt. 
 #
@@ -164,7 +164,7 @@ set r6608/vnum = "r6608"
 #
 dig/tel The Playground; r6609
 #
-tag r6609 = dwarven daycare, category = area names
+tag r6609 = dwarven daycare:area names
 #
 desc r6609 = Even with signs of tampering the wire fence stands strong.  This section of the playground contains nothing but a giant sand box.  Toys have been tossed all around, several buried over half-way in the sand.  Mounds have been created in several places for use as a mountain or volcano.  Some children have even created complex and detailed villages, while others have created bog and swamp scenes. 
 #
@@ -182,7 +182,7 @@ set r6609/extra_description = {'>room_trap_random 1': 'The wind briefly howls an
 #
 dig/tel The Playground; r6610
 #
-tag r6610 = dwarven daycare, category = area names
+tag r6610 = dwarven daycare:area names
 #
 desc r6610 = A large wire fence surrounds the entire playground keep children from wandering off.  There are two slides and a swing set in this area.  One slide is a straight downward run while the other corkscrews several times. The swing is deteriorating and looks as if any amount of weight will cause it to fall, but still has three seats in good condition.  The grass has grown up around the slides but is totally worn away from the ladders and the landings.  The swing has no grass around it at all. 
 #
@@ -198,7 +198,7 @@ set r6610/vnum = "r6610"
 #
 dig/tel The Playground; r6611
 #
-tag r6611 = dwarven daycare, category = area names
+tag r6611 = dwarven daycare:area names
 #
 desc r6611 = The grass has been left low cut here.  An empty field for the children to use for whatever games they can come up with such as tag or dodge ball.  A few leather balls sit up against fence on the far side.  Most of the time this field is used for group activities that the nannies hold. 
 #
@@ -214,7 +214,7 @@ set r6611/vnum = "r6611"
 #
 dig/tel Basement; r6612
 #
-tag r6612 = dwarven daycare, category = area names
+tag r6612 = dwarven daycare:area names
 #
 desc r6612 = The staircase quickly ends into the basement.  This portion of the building is hardly used and so has little light.  There is a slight chill to the stagnant air.  Cobwebs and dirt block much of the view of the walls. Most of the children know this room as the entrance to the maze and they stay away.  To the east the surroundings change but the light does not. 
 #
@@ -232,7 +232,7 @@ set r6612/room_flags = ['indoors', 'dark']
 #
 dig/tel Mini-Maze; r6613
 #
-tag r6613 = dwarven daycare, category = area names
+tag r6613 = dwarven daycare:area names
 #
 desc r6613 = A narrow passage continues on into the dim lighting.  Through the darkness, some colorful pictures can be seen on the wooden walls.  The old air thickens slightly. 
 #
@@ -252,7 +252,7 @@ set r6613/room_flags = ['indoors', 'dark']
 #
 dig/tel Mini-Maze; r6614
 #
-tag r6614 = dwarven daycare, category = area names
+tag r6614 = dwarven daycare:area names
 #
 desc r6614 = A narrow passage continues on into the dim lighting.  Through the darkness, some colorful pictures can be seen on the wooden walls.  The old air thickens slightly. 
 #
@@ -272,7 +272,7 @@ set r6614/room_flags = ['indoors', 'dark']
 #
 dig/tel Mini-Maze; r6615
 #
-tag r6615 = dwarven daycare, category = area names
+tag r6615 = dwarven daycare:area names
 #
 desc r6615 = A narrow passage continues on into the dim lighting.  Through the darkness, some colorful pictures can be seen on the wooden walls.  The old air thickens slightly. 
 #
@@ -292,7 +292,7 @@ set r6615/room_flags = ['indoors', 'dark']
 #
 dig/tel Mini-Maze; r6616
 #
-tag r6616 = dwarven daycare, category = area names
+tag r6616 = dwarven daycare:area names
 #
 desc r6616 = A narrow passage continues on into the dim lighting.  Through the darkness, some colorful pictures can be seen on the wooden walls.  The old air thickens slightly. 
 #
@@ -312,7 +312,7 @@ set r6616/room_flags = ['indoors', 'dark']
 #
 dig/tel Mini-Maze; r6617
 #
-tag r6617 = dwarven daycare, category = area names
+tag r6617 = dwarven daycare:area names
 #
 desc r6617 = A narrow passage continues on into the dim lighting.  Through the darkness, some colorful pictures can be seen on the wooden walls.  The old air thickens slightly. 
 #
@@ -332,7 +332,7 @@ set r6617/room_flags = ['indoors', 'dark']
 #
 dig/tel Mini-Maze; r6618
 #
-tag r6618 = dwarven daycare, category = area names
+tag r6618 = dwarven daycare:area names
 #
 desc r6618 = A narrow passage continues on into the dim lighting.  Through the darkness, some colorful pictures can be seen on the wooden walls.  The old air is thick, and smells of mold. 
 #
@@ -352,7 +352,7 @@ set r6618/room_flags = ['indoors', 'dark']
 #
 dig/tel Mini-Maze; r6619
 #
-tag r6619 = dwarven daycare, category = area names
+tag r6619 = dwarven daycare:area names
 #
 desc r6619 = A narrow passage continues on into the dim lighting.  Through the darkness, some colorful pictures can be seen on the wooden walls.  The old air thickens slightly. 
 #
@@ -372,7 +372,7 @@ set r6619/room_flags = ['indoors', 'dark']
 #
 dig/tel First Aid; r6620
 #
-tag r6620 = dwarven daycare, category = area names
+tag r6620 = dwarven daycare:area names
 #
 desc r6620 = Nothing more than a niche, the first aid station is a busy place.  The air almost takes on a sterile smell.  One wall is nothing but cabinets from floor to ceiling.  Each door and compartment holds various bandages, ointments and healing tools to handle most any accident.  On the other wall there is a cot and a water station.  There is ample light from the several lanterns hanging from the ceiling. 
 #
@@ -390,7 +390,7 @@ set r6620/room_flags = ['indoors']
 #
 dig/tel Hallway; r6621
 #
-tag r6621 = dwarven daycare, category = area names
+tag r6621 = dwarven daycare:area names
 #
 desc r6621 = A detailed and delicate candelabra hangs from the ceiling to light the way.  Most of the floor is covered by a decorative rung.  Two masterfully painted pictures are the only wall fixtures.  This short hallway allows passage in all directions. 
 #
@@ -410,7 +410,7 @@ set r6621/room_flags = ['indoors']
 #
 dig/tel Nap Room; r6622
 #
-tag r6622 = dwarven daycare, category = area names
+tag r6622 = dwarven daycare:area names
 #
 desc r6622 = Throughout the day, each child is given time for a nap.  This rather large room contains no windows and has minimal light.  The walls are a dull brown to aid in drifting the little ones off to sleep.  Numerous cots and hay pallets provide the slightly comfortable beds. 
 #
@@ -428,7 +428,7 @@ set r6622/room_flags = ['indoors']
 #
 dig/tel Boys Room; r6623
 #
-tag r6623 = dwarven daycare, category = area names
+tag r6623 = dwarven daycare:area names
 #
 desc r6623 = The dark blue colors of the boys restroom help to hide the uncleanliness. The normally white tub is marred by dirt from continuous bath taking.  The little potty sits off to the back corner with a trail of littered paper coming from it.  The smell of filth wades heavily in the air.  Low lit lanterns provide enough light without giving way to the disarray. 
 #
@@ -446,7 +446,7 @@ set r6623/room_flags = ['indoors']
 #
 dig/tel Nanny's Office; r6624
 #
-tag r6624 = dwarven daycare, category = area names
+tag r6624 = dwarven daycare:area names
 #
 desc r6624 = Neat and meticulous, the nanny's office is well in order.  A hardwood desk with a plain chair, faces out from the wall.  Two leather cushioned chairs are turned toward the desk.  All papers and files are organized and arranged on the desk surface.  A three drawer filing cabinet stands against the southern wall with plaques hanging on both sides.  An elaborate candelabra hangs in the center of the room.  There is a sign on the door to the east. 
 #
@@ -466,7 +466,7 @@ set r6624/room_flags = ['indoors']
 #
 dig/tel Tiny closet; r6625
 #
-tag r6625 = dwarven daycare, category = area names
+tag r6625 = dwarven daycare:area names
 #
 desc r6625 = A thick accumulation of dust covers everything in the closet.  A lantern hanging to one side of the door reveals how cramped this space is.  Flimsy wooden shelves line three walls and two cabinets stand back-to-back in the center.  The stale musty air is the result of no windows and no one being in here for quite some time. 
 #
@@ -484,7 +484,7 @@ set r6625/room_flags = ['indoors']
 #
 dig/tel Messy Kitchen; r6626
 #
-tag r6626 = dwarven daycare, category = area names
+tag r6626 = dwarven daycare:area names
 #
 desc r6626 = An average sized room, the kitchen is more than sufficient for the daycare's needs.  The room is well lit and is kept fairly clean.  There are plenty of cabinets to hold the numerous pots and pans and dishes.  A small circular stove, for healthy warm meals, sits along the eastern wall. Scarred from consistent use, the counter and its top are in need of repair. A window on the east wall allows a view of the outside playground. 
 #
@@ -502,7 +502,7 @@ set r6626/room_flags = ['indoors']
 #
 dig/tel Patio; r6627
 #
-tag r6627 = dwarven daycare, category = area names
+tag r6627 = dwarven daycare:area names
 #
 desc r6627 = A rectangular wooden deck supplies a platform for observing the children on the playground and a place to hold outside activities.  Several boards of the deck and the two steps to the ground are worn from constant traffic.  At times the patio becomes a haven from the hectic pace of the inside and nature's song and fresh air is a welcome break. 
 #
@@ -518,9 +518,9 @@ set r6627/vnum = "r6627"
 #
 tel r6631
 #
-openexit north; n; e3600, south = r6618
+openexit north; n; e3600^ south = r6618
 #
-tag e3600 = dwarven daycare, category = area names
+tag e3600 = dwarven daycare:area names
 #
 set e3600/door_attributes = "open"
 #
@@ -534,9 +534,9 @@ objectlock north = "pass:false()"
 #
 tel r6601
 #
-openexit east; e; e3601, west = r6624
+openexit east; e; e3601^ west = r6624
 #
-tag e3601 = dwarven daycare, category = area names
+tag e3601 = dwarven daycare:area names
 #
 set e3601/door_attributes = "open"
 #
@@ -548,9 +548,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3602, north = r6602
+openexit south; s; e3602^ north = r6602
 #
-tag e3602 = dwarven daycare, category = area names
+tag e3602 = dwarven daycare:area names
 #
 set e3602/door_attributes = "open"
 #
@@ -558,9 +558,9 @@ set e3602/reset_door_attributes = "open"
 #
 desc south = You see a large room full of noisy brats. 
 #
-openexit west; w; e3603, east = r6500
+openexit west; w; e3603^ east = r6500
 #
-tag e3603 = dwarven daycare, category = area names
+tag e3603 = dwarven daycare:area names
 #
 set e3603/door_attributes = "open"
 #
@@ -574,9 +574,9 @@ objectlock west = "pass:false()"
 #
 tel r6602
 #
-alias north = n, e3604
+alias north = n^ e3604
 #
-tag e3604 = dwarven daycare, category = area names
+tag e3604 = dwarven daycare:area names
 #
 set e3604/door_attributes = "open"
 #
@@ -590,9 +590,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3605, west = r6626
+openexit east; e; e3605^ west = r6626
 #
-tag e3605 = dwarven daycare, category = area names
+tag e3605 = dwarven daycare:area names
 #
 set e3605/door_attributes = "open"
 #
@@ -606,9 +606,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3606, north = r6604
+openexit south; s; e3606^ north = r6604
 #
-tag e3606 = dwarven daycare, category = area names
+tag e3606 = dwarven daycare:area names
 #
 set e3606/door_attributes = "open"
 #
@@ -622,9 +622,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3607, east = r6603
+openexit west; w; e3607^ east = r6603
 #
-tag e3607 = dwarven daycare, category = area names
+tag e3607 = dwarven daycare:area names
 #
 set e3607/door_attributes = "open"
 #
@@ -640,9 +640,9 @@ objectlock west = "pass:false()"
 #
 tel r6603
 #
-alias east = e, e3608
+alias east = e^ e3608
 #
-tag e3608 = dwarven daycare, category = area names
+tag e3608 = dwarven daycare:area names
 #
 set e3608/door_attributes = "open"
 #
@@ -656,9 +656,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3609, north = r6605
+openexit south; s; e3609^ north = r6605
 #
-tag e3609 = dwarven daycare, category = area names
+tag e3609 = dwarven daycare:area names
 #
 set e3609/door_attributes = "open"
 #
@@ -672,9 +672,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3610, east = r6606
+openexit west; w; e3610^ east = r6606
 #
-tag e3610 = dwarven daycare, category = area names
+tag e3610 = dwarven daycare:area names
 #
 set e3610/door_attributes = "open"
 #
@@ -690,9 +690,9 @@ objectlock west = "pass:false()"
 #
 tel r6604
 #
-alias north = n, e3611
+alias north = n^ e3611
 #
-tag e3611 = dwarven daycare, category = area names
+tag e3611 = dwarven daycare:area names
 #
 set e3611/door_attributes = "open"
 #
@@ -706,9 +706,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3612, west = r6627
+openexit east; e; e3612^ west = r6627
 #
-tag e3612 = dwarven daycare, category = area names
+tag e3612 = dwarven daycare:area names
 #
 set e3612/door_attributes = "open"
 #
@@ -720,9 +720,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3613, north = r6621
+openexit south; s; e3613^ north = r6621
 #
-tag e3613 = dwarven daycare, category = area names
+tag e3613 = dwarven daycare:area names
 #
 set e3613/door_attributes = "open"
 #
@@ -734,9 +734,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3614, east = r6605
+openexit west; w; e3614^ east = r6605
 #
-tag e3614 = dwarven daycare, category = area names
+tag e3614 = dwarven daycare:area names
 #
 set e3614/door_attributes = "open"
 #
@@ -752,9 +752,9 @@ objectlock west = "pass:false()"
 #
 tel r6605
 #
-alias north = n, e3615
+alias north = n^ e3615
 #
-tag e3615 = dwarven daycare, category = area names
+tag e3615 = dwarven daycare:area names
 #
 set e3615/door_attributes = "open"
 #
@@ -768,9 +768,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias east = e, e3616
+alias east = e^ e3616
 #
-tag e3616 = dwarven daycare, category = area names
+tag e3616 = dwarven daycare:area names
 #
 set e3616/door_attributes = "open"
 #
@@ -784,9 +784,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3617, north = r6620
+openexit south; s; e3617^ north = r6620
 #
-tag e3617 = dwarven daycare, category = area names
+tag e3617 = dwarven daycare:area names
 #
 set e3617/door_attributes = "open"
 #
@@ -798,9 +798,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e3618, east = r6607
+openexit west; w; e3618^ east = r6607
 #
-tag e3618 = dwarven daycare, category = area names
+tag e3618 = dwarven daycare:area names
 #
 set e3618/door_attributes = "open"
 #
@@ -816,9 +816,9 @@ objectlock west = "pass:false()"
 #
 tel r6606
 #
-alias east = e, e3619
+alias east = e^ e3619
 #
-tag e3619 = dwarven daycare, category = area names
+tag e3619 = dwarven daycare:area names
 #
 set e3619/door_attributes = "open"
 #
@@ -834,9 +834,9 @@ objectlock east = "pass:false()"
 #
 tel r6607
 #
-alias east = e, e3620
+alias east = e^ e3620
 #
-tag e3620 = dwarven daycare, category = area names
+tag e3620 = dwarven daycare:area names
 #
 set e3620/door_attributes = "open"
 #
@@ -850,9 +850,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit down; d; e3621, up = r6612
+openexit down; d; e3621^ up = r6612
 #
-tag e3621 = dwarven daycare, category = area names
+tag e3621 = dwarven daycare:area names
 #
 set e3621/door_attributes = "open"
 #
@@ -868,9 +868,9 @@ objectlock down = "pass:false()"
 #
 tel r6608
 #
-openexit east; e; e3622, west = r6609
+openexit east; e; e3622^ west = r6609
 #
-tag e3622 = dwarven daycare, category = area names
+tag e3622 = dwarven daycare:area names
 #
 set e3622/door_attributes = "open"
 #
@@ -884,9 +884,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3623, north = r6610
+openexit south; s; e3623^ north = r6610
 #
-tag e3623 = dwarven daycare, category = area names
+tag e3623 = dwarven daycare:area names
 #
 set e3623/door_attributes = "open"
 #
@@ -902,9 +902,9 @@ objectlock south = "pass:false()"
 #
 tel r6609
 #
-openexit south; s; e3624, north = r6611
+openexit south; s; e3624^ north = r6611
 #
-tag e3624 = dwarven daycare, category = area names
+tag e3624 = dwarven daycare:area names
 #
 set e3624/door_attributes = "open"
 #
@@ -918,9 +918,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w, e3625
+alias west = w^ e3625
 #
-tag e3625 = dwarven daycare, category = area names
+tag e3625 = dwarven daycare:area names
 #
 set e3625/door_attributes = "open"
 #
@@ -936,9 +936,9 @@ objectlock west = "pass:false()"
 #
 tel r6610
 #
-alias north = n, e3626
+alias north = n^ e3626
 #
-tag e3626 = dwarven daycare, category = area names
+tag e3626 = dwarven daycare:area names
 #
 set e3626/door_attributes = "open"
 #
@@ -952,9 +952,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3627, west = r6611
+openexit east; e; e3627^ west = r6611
 #
-tag e3627 = dwarven daycare, category = area names
+tag e3627 = dwarven daycare:area names
 #
 set e3627/door_attributes = "open"
 #
@@ -968,9 +968,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; w; e3628, east = r6627
+openexit west; w; e3628^ east = r6627
 #
-tag e3628 = dwarven daycare, category = area names
+tag e3628 = dwarven daycare:area names
 #
 set e3628/door_attributes = "open"
 #
@@ -984,9 +984,9 @@ objectlock west = "pass:false()"
 #
 tel r6611
 #
-alias north = n, e3629
+alias north = n^ e3629
 #
-tag e3629 = dwarven daycare, category = area names
+tag e3629 = dwarven daycare:area names
 #
 set e3629/door_attributes = "open"
 #
@@ -1000,9 +1000,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias west = w, e3630
+alias west = w^ e3630
 #
-tag e3630 = dwarven daycare, category = area names
+tag e3630 = dwarven daycare:area names
 #
 set e3630/door_attributes = "open"
 #
@@ -1018,9 +1018,9 @@ objectlock west = "pass:false()"
 #
 tel r6612
 #
-openexit east; e; e3631, west = r6613
+openexit east; e; e3631^ west = r6613
 #
-tag e3631 = dwarven daycare, category = area names
+tag e3631 = dwarven daycare:area names
 #
 set e3631/door_attributes = "open"
 #
@@ -1032,9 +1032,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias up = u, e3632
+alias up = u^ e3632
 #
-tag e3632 = dwarven daycare, category = area names
+tag e3632 = dwarven daycare:area names
 #
 set e3632/door_attributes = "open"
 #
@@ -1050,9 +1050,9 @@ objectlock up = "pass:false()"
 #
 tel r6613
 #
-openexit east; e; e3633, west = r6614
+openexit east; e; e3633^ west = r6614
 #
-tag e3633 = dwarven daycare, category = area names
+tag e3633 = dwarven daycare:area names
 #
 set e3633/door_attributes = "open"
 #
@@ -1064,9 +1064,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3634, north = r6615
+openexit south; s; e3634^ north = r6615
 #
-tag e3634 = dwarven daycare, category = area names
+tag e3634 = dwarven daycare:area names
 #
 set e3634/door_attributes = "open"
 #
@@ -1078,9 +1078,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w, e3635
+alias west = w^ e3635
 #
-tag e3635 = dwarven daycare, category = area names
+tag e3635 = dwarven daycare:area names
 #
 set e3635/door_attributes = "open"
 #
@@ -1094,9 +1094,9 @@ objectlock west = "pass:false()"
 #
 tel r6614
 #
-openexit south; s; e3636, north = r6616
+openexit south; s; e3636^ north = r6616
 #
-tag e3636 = dwarven daycare, category = area names
+tag e3636 = dwarven daycare:area names
 #
 set e3636/door_attributes = "open"
 #
@@ -1108,9 +1108,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w, e3637
+alias west = w^ e3637
 #
-tag e3637 = dwarven daycare, category = area names
+tag e3637 = dwarven daycare:area names
 #
 set e3637/door_attributes = "open"
 #
@@ -1124,9 +1124,9 @@ objectlock west = "pass:false()"
 #
 tel r6615
 #
-alias north = n, e3638
+alias north = n^ e3638
 #
-tag e3638 = dwarven daycare, category = area names
+tag e3638 = dwarven daycare:area names
 #
 set e3638/door_attributes = "open"
 #
@@ -1138,9 +1138,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3639, west = r6616
+openexit east; e; e3639^ west = r6616
 #
-tag e3639 = dwarven daycare, category = area names
+tag e3639 = dwarven daycare:area names
 #
 set e3639/door_attributes = "open"
 #
@@ -1154,9 +1154,9 @@ objectlock east = "pass:false()"
 #
 tel r6616
 #
-alias north = n, e3640
+alias north = n^ e3640
 #
-tag e3640 = dwarven daycare, category = area names
+tag e3640 = dwarven daycare:area names
 #
 set e3640/door_attributes = "open"
 #
@@ -1168,9 +1168,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit south; s; e3641, north = r6617
+openexit south; s; e3641^ north = r6617
 #
-tag e3641 = dwarven daycare, category = area names
+tag e3641 = dwarven daycare:area names
 #
 set e3641/door_attributes = "open"
 #
@@ -1182,9 +1182,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w, e3642
+alias west = w^ e3642
 #
-tag e3642 = dwarven daycare, category = area names
+tag e3642 = dwarven daycare:area names
 #
 set e3642/door_attributes = "open"
 #
@@ -1198,9 +1198,9 @@ objectlock west = "pass:false()"
 #
 tel r6617
 #
-alias north = n, e3643
+alias north = n^ e3643
 #
-tag e3643 = dwarven daycare, category = area names
+tag e3643 = dwarven daycare:area names
 #
 set e3643/door_attributes = "open"
 #
@@ -1212,9 +1212,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3644, west = r6619
+openexit east; e; e3644^ west = r6619
 #
-tag e3644 = dwarven daycare, category = area names
+tag e3644 = dwarven daycare:area names
 #
 set e3644/door_attributes = "open"
 #
@@ -1226,9 +1226,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3645, north = r6618
+openexit south; s; e3645^ north = r6618
 #
-tag e3645 = dwarven daycare, category = area names
+tag e3645 = dwarven daycare:area names
 #
 set e3645/door_attributes = "open"
 #
@@ -1242,9 +1242,9 @@ objectlock south = "pass:false()"
 #
 tel r6618
 #
-alias north = n, e3646
+alias north = n^ e3646
 #
-tag e3646 = dwarven daycare, category = area names
+tag e3646 = dwarven daycare:area names
 #
 set e3646/door_attributes = "open"
 #
@@ -1256,9 +1256,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias south = s, e3647
+alias south = s^ e3647
 #
-tag e3647 = dwarven daycare, category = area names
+tag e3647 = dwarven daycare:area names
 #
 set e3647/door_attributes = "open"
 #
@@ -1272,9 +1272,9 @@ objectlock south = "pass:false()"
 #
 tel r6619
 #
-alias west = w, e3648
+alias west = w^ e3648
 #
-tag e3648 = dwarven daycare, category = area names
+tag e3648 = dwarven daycare:area names
 #
 set e3648/door_attributes = "open"
 #
@@ -1288,9 +1288,9 @@ objectlock west = "pass:false()"
 #
 tel r6620
 #
-alias north = n, e3649
+alias north = n^ e3649
 #
-tag e3649 = dwarven daycare, category = area names
+tag e3649 = dwarven daycare:area names
 #
 set e3649/door_attributes = "open"
 #
@@ -1302,9 +1302,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3650, west = r6621
+openexit east; e; e3650^ west = r6621
 #
-tag e3650 = dwarven daycare, category = area names
+tag e3650 = dwarven daycare:area names
 #
 set e3650/door_attributes = "open"
 #
@@ -1318,9 +1318,9 @@ objectlock east = "pass:false()"
 #
 tel r6621
 #
-alias north = n, e3651
+alias north = n^ e3651
 #
-tag e3651 = dwarven daycare, category = area names
+tag e3651 = dwarven daycare:area names
 #
 set e3651/door_attributes = "open"
 #
@@ -1332,9 +1332,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e3652, west = r6622
+openexit east; e; e3652^ west = r6622
 #
-tag e3652 = dwarven daycare, category = area names
+tag e3652 = dwarven daycare:area names
 #
 set e3652/door_attributes = "open"
 #
@@ -1346,9 +1346,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e3653, north = r6623
+openexit south; s; e3653^ north = r6623
 #
-tag e3653 = dwarven daycare, category = area names
+tag e3653 = dwarven daycare:area names
 #
 set e3653/door_attributes = "open"
 #
@@ -1360,9 +1360,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w, e3654
+alias west = w^ e3654
 #
-tag e3654 = dwarven daycare, category = area names
+tag e3654 = dwarven daycare:area names
 #
 set e3654/door_attributes = "open"
 #
@@ -1376,9 +1376,9 @@ objectlock west = "pass:false()"
 #
 tel r6622
 #
-alias west = w, e3655
+alias west = w^ e3655
 #
-tag e3655 = dwarven daycare, category = area names
+tag e3655 = dwarven daycare:area names
 #
 set e3655/door_attributes = "open"
 #
@@ -1392,9 +1392,9 @@ objectlock west = "pass:false()"
 #
 tel r6623
 #
-alias north = n, e3656
+alias north = n^ e3656
 #
-tag e3656 = dwarven daycare, category = area names
+tag e3656 = dwarven daycare:area names
 #
 set e3656/door_attributes = "open"
 #
@@ -1408,17 +1408,17 @@ objectlock north = "pass:false()"
 #
 tel r6624
 #
-openexit east; e; e3657, west = r6625
+openexit east; e; e3657^ west = r6625
 #
-tag e3657 = dwarven daycare, category = area names
+tag e3657 = dwarven daycare:area names
 #
 set e3657/door_attributes = "open"
 #
 set e3657/reset_door_attributes = "open"
 #
-alias west = w, e3658
+alias west = w^ e3658
 #
-tag e3658 = dwarven daycare, category = area names
+tag e3658 = dwarven daycare:area names
 #
 set e3658/door_attributes = "open"
 #
@@ -1432,9 +1432,9 @@ objectlock west = "pass:false()"
 #
 tel r6625
 #
-alias west = w, e3659
+alias west = w^ e3659
 #
-tag e3659 = dwarven daycare, category = area names
+tag e3659 = dwarven daycare:area names
 #
 set e3659/door_attributes = "open"
 #
@@ -1442,9 +1442,9 @@ set e3659/reset_door_attributes = "open"
 #
 tel r6626
 #
-alias west = w, e3660
+alias west = w^ e3660
 #
-tag e3660 = dwarven daycare, category = area names
+tag e3660 = dwarven daycare:area names
 #
 set e3660/door_attributes = "open"
 #
@@ -1460,9 +1460,9 @@ objectlock west = "pass:false()"
 #
 tel r6627
 #
-alias east = e, e3661
+alias east = e^ e3661
 #
-tag e3661 = dwarven daycare, category = area names
+tag e3661 = dwarven daycare:area names
 #
 set e3661/door_attributes = "open"
 #
@@ -1474,9 +1474,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias west = w, e3662
+alias west = w^ e3662
 #
-tag e3662 = dwarven daycare, category = area names
+tag e3662 = dwarven daycare:area names
 #
 set e3662/door_attributes = "open"
 #
