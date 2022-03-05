@@ -2074,7 +2074,7 @@ set m6607/hitpoints[maximum] = 48
 #
 set m6607/position = "standing"
 #
-tel r6618
+tel r6612
 #
 create a small metal helmet;helmet;metal;small;o6652:objects.Armor
 #
@@ -2106,7 +2106,7 @@ wearto o6652 = m6607
 #
 set m6607/reset_objects["o6652"] = {"location":"equipped"}
 #
-tel r6618
+tel r6612
 #
 create a small metal sword;sword;metal;o6651:objects.Weapon
 #
