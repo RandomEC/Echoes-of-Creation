@@ -1,6 +1,6 @@
 dig/tel The Trophy Room; r6231
 #
-tag r6231 = smurf village, category = area names
+tag r6231 = smurf village:area names
 #
 desc r6231 = The room is unfurnished, except for a display case centered on the east wall. The walls are covered with murals depicting various encounters between the smurfs (victors) and Gargamel and Azreal (losers). 
 #
@@ -18,7 +18,7 @@ set r6231/room_flags = ['no astral in', 'no summon to', 'no teleport in', 'indoo
 #
 dig/tel Dimly Lit Path; r6201
 #
-tag r6201 = smurf village, category = area names
+tag r6201 = smurf village:area names
 #
 desc r6201 = This path is made of crushed granite with curious blue streaks in it. The path continues north to a village, and south it fades into the woods, and seems kind of blurry and indistinct. 
 #
@@ -36,7 +36,7 @@ set r6201/room_flags = ['no mob']
 #
 dig/tel Dimly Lit Path; r6202
 #
-tag r6202 = smurf village, category = area names
+tag r6202 = smurf village:area names
 #
 desc r6202 = This section of the road is badly worn and frequently traversed.  There is faint singing to the north.  The road back to the forest lies to the south. 
 #
@@ -54,7 +54,7 @@ set r6202/room_flags = ['no mob']
 #
 dig/tel Dimly Lit Path; r6203
 #
-tag r6203 = smurf village, category = area names
+tag r6203 = smurf village:area names
 #
 desc r6203 = This section of the road is badly worn and frequently traversed.  Singing is getting stronger to the north.  The road back to the forest lies to the south. 
 #
@@ -70,7 +70,7 @@ set r6203/vnum = "r6203"
 #
 dig/tel Entrance to Smurf Village; r6204
 #
-tag r6204 = smurf village, category = area names
+tag r6204 = smurf village:area names
 #
 desc r6204 = You stand at the entrance to a tiny village.  You can see across the whole village easily.  Little blue creatures with white hats and boots and little fluffy tails scamper about.  They sing continuously.  The singing is getting on your nerves and you have the urge to squash them. 
 #
@@ -86,7 +86,7 @@ set r6204/vnum = "r6204"
 #
 dig/tel Smurfy Road; r6205
 #
-tag r6205 = smurf village, category = area names
+tag r6205 = smurf village:area names
 #
 desc r6205 = You are way too big to be using this road.  But who cares.  Who's gonna stop you?  These little blue smurfs?  The singing is growing intense.  Your ears are starting to ring.  Smurfy Road continues to the north, west, and east. There is still time to turn back and go south. 
 #
@@ -102,7 +102,7 @@ set r6205/vnum = "r6205"
 #
 dig/tel Smurfy Road; r6206
 #
-tag r6206 = smurf village, category = area names
+tag r6206 = smurf village:area names
 #
 desc r6206 = You continue to travel down Smurfy Road.  Isn't it just smurfy?  Smurfy road continues its smurfy path to the smurfy north, smurfy west, and smurfy south. A smurfy home lies to the smurfy east. 
 #
@@ -118,7 +118,7 @@ set r6206/vnum = "r6206"
 #
 dig/tel Smurfy Road; r6207
 #
-tag r6207 = smurf village, category = area names
+tag r6207 = smurf village:area names
 #
 desc r6207 = Oh boy, another smurfy road!  Smurfy Road goes north and south here.  There is a smurfy, mushroom home to the west.  A beautiful smurfberry patch is to the east. 
 #
@@ -134,7 +134,7 @@ set r6207/vnum = "r6207"
 #
 dig/tel Smurfy Road; r6208
 #
-tag r6208 = smurf village, category = area names
+tag r6208 = smurf village:area names
 #
 desc r6208 = Smurfy Road continues to smurf here.  It smurfs to the south and smurfs to an end to the north.  A smurfberry patch is to the east.  A stone path lies to the west. 
 #
@@ -150,7 +150,7 @@ set r6208/vnum = "r6208"
 #
 dig/tel Smurfy Road; r6209
 #
-tag r6209 = smurf village, category = area names
+tag r6209 = smurf village:area names
 #
 desc r6209 = A smurfy well lies here in the middle of Smurfy Road.  A fence separates the smurfs from harm to the north.  A berry patch is to the east.  Smurfy Road continues to the south and west. 
 #
@@ -168,7 +168,7 @@ set r6209/extra_description = {'smurfy well': "A small well is here.  Just the r
 #
 dig/tel Smurfy Road; r6210
 #
-tag r6210 = smurf village, category = area names
+tag r6210 = smurf village:area names
 #
 desc r6210 = A corner of smurfy road is where you stand.  A smurfy fence blocks passage to the east or south.  A smurfy home is to the south.  Smurfy Road goes back to the west. 
 #
@@ -184,7 +184,7 @@ set r6210/vnum = "r6210"
 #
 dig/tel Smurfy Road; r6211
 #
-tag r6211 = smurf village, category = area names
+tag r6211 = smurf village:area names
 #
 desc r6211 = Western corner of Smurfy Road.  You can continue to smurf down the road to the east and north.  You can also smurf into a smurfy home to the south. 
 #
@@ -200,7 +200,7 @@ set r6211/vnum = "r6211"
 #
 dig/tel Smurfy Road; r6212
 #
-tag r6212 = smurf village, category = area names
+tag r6212 = smurf village:area names
 #
 desc r6212 = There's no place like smurf.  There's no place like smurf.  Sorry wrong movie.  A smurfy home is to the west.  Smurfette's house iis to the north but you can't get in from here.  Smurfy Road continues to the south and east. 
 #
@@ -216,7 +216,7 @@ set r6212/vnum = "r6212"
 #
 dig/tel Stone Path; r6213
 #
-tag r6213 = smurf village, category = area names
+tag r6213 = smurf village:area names
 #
 desc r6213 = You are walking along a cute little stone path.  To the south lies Papa Smurf's house.  A Smurfy house is to the west.  Smurfy road is to the east. Everything is so peaceful here.  You could stay forever. 
 #
@@ -232,7 +232,7 @@ set r6213/vnum = "r6213"
 #
 dig/tel Stone Path; r6232
 #
-tag r6232 = smurf village, category = area names
+tag r6232 = smurf village:area names
 #
 desc r6232 = You are walking along a cute little stone path.  To the south lies Smurfette's house.  More Smurfy houses lie to the west.  Some smurfs clearly like to be off on their own a bit. 
 #
@@ -248,7 +248,7 @@ set r6232/vnum = "r6232"
 #
 dig/tel Smurfy Road; r6214
 #
-tag r6214 = smurf village, category = area names
+tag r6214 = smurf village:area names
 #
 desc r6214 = Yet another part of Smurfy Road.  Hey, if you go west it's the last section of Smurfy Road.  You can go back to the smurfy well to the east. 
 #
@@ -264,7 +264,7 @@ set r6214/vnum = "r6214"
 #
 dig/tel Smurfy Road; r6215
 #
-tag r6215 = smurf village, category = area names
+tag r6215 = smurf village:area names
 #
 desc r6215 = The last piece of Smurfy Road.  You can go back to Smurfy Road to the east. A nice, beautiful, smurfy, mushroom home is to the south.  In the distance to the north you can see Gargamel's Castle. 
 #
@@ -280,7 +280,7 @@ set r6215/vnum = "r6215"
 #
 dig/tel Smurfberry Patch; r6216
 #
-tag r6216 = smurf village, category = area names
+tag r6216 = smurf village:area names
 #
 desc r6216 = Delicious smurfberries grow here.  You could probably eat a year's worth of smurfberries in one sitting.  Smurfy Road is back to the west.  Another smurfberry patch is to the north. 
 #
@@ -296,7 +296,7 @@ set r6216/vnum = "r6216"
 #
 dig/tel Smurfberry Patch; r6217
 #
-tag r6217 = smurf village, category = area names
+tag r6217 = smurf village:area names
 #
 desc r6217 = Another patch of smurfberries is growing here.  The smell is driving your nostrils crazy.  It almost, ALMOST, makes you forget all the singing going on.  Smurfy Road is to the west, while smurfberry patches are to the north and south. 
 #
@@ -312,7 +312,7 @@ set r6217/vnum = "r6217"
 #
 dig/tel Smurfberry Patch; r6218
 #
-tag r6218 = smurf village, category = area names
+tag r6218 = smurf village:area names
 #
 desc r6218 = The northernmost of the smurfberry patches grows here.  It looks just as scrumptious as all the rest.  Just take a few; they'll never know.  Smurfy Road is to the west.  A smurfberry patch is to the south. 
 #
@@ -328,7 +328,7 @@ set r6218/vnum = "r6218"
 #
 dig/tel Brainy Smurf's Home; r6219
 #
-tag r6219 = smurf village, category = area names
+tag r6219 = smurf village:area names
 #
 desc r6219 = You rip the roof of the home to get a good look inside.  You see many smurfy books.  The print is so small you couldn't even read it with a magnifying glass.  I wonder if Brainy Smurf minds if you destroy his home?  Smurfy Road is back to the north. 
 #
@@ -344,7 +344,7 @@ set r6219/vnum = "r6219"
 #
 dig/tel Handy Smurf's Home; r6220
 #
-tag r6220 = smurf village, category = area names
+tag r6220 = smurf village:area names
 #
 desc r6220 = This home was well built.  Of course, until you rip it apart, you big meanie, you.  Tools are all over the place.  Too small for you to use.  Smurfy Road is back to the west. 
 #
@@ -360,7 +360,7 @@ set r6220/vnum = "r6220"
 #
 dig/tel Hefty Smurf's Home; r6221
 #
-tag r6221 = smurf village, category = area names
+tag r6221 = smurf village:area names
 #
 desc r6221 = Hefty is anything but wimpy.  So is his house.  It actually took you a couple of minutes to destroy his house.  Better watch out -- he might be a little mad at you.  Smurfy Road is back to the north. 
 #
@@ -376,7 +376,7 @@ set r6221/vnum = "r6221"
 #
 dig/tel Sleepy Smurf's Home; r6222
 #
-tag r6222 = smurf village, category = area names
+tag r6222 = smurf village:area names
 #
 desc r6222 = Be vewy vewy quiet.  Sleepy Smurf is probably sleeping.  You see so many beds you can't even tell if he is here.  Maybe you should quietly go back to Smurfy Road to the east. 
 #
@@ -392,7 +392,7 @@ set r6222/vnum = "r6222"
 #
 dig/tel Grumpy Smurf's Home; r6223
 #
-tag r6223 = smurf village, category = area names
+tag r6223 = smurf village:area names
 #
 desc r6223 = This is Grumpy Smurf's home.  He is pissed at you.  Of course, he is pissed at everyone.  So don't take it bad.  Maybe you'd better leave before he really gets mad.  Smurfy Road to the east is your only salvation. 
 #
@@ -408,7 +408,7 @@ set r6223/vnum = "r6223"
 #
 dig/tel Jokey Smurf's Home; r6224
 #
-tag r6224 = smurf village, category = area names
+tag r6224 = smurf village:area names
 #
 desc r6224 = You pull the top of his house and it explodes in your face.  That Jokey Smurf, what a kidder.  You can hear his laughter as you wipe the ashes off your face.  You better get even.  Smurfy Road is to the north. 
 #
@@ -424,7 +424,7 @@ set r6224/vnum = "r6224"
 #
 dig/tel Papa Smurf's Home; r6225
 #
-tag r6225 = smurf village, category = area names
+tag r6225 = smurf village:area names
 #
 desc r6225 = This is the home of the leader of the smurfs. Papa Smurf has a nicely decorated home. He takes pride in his work. You could get to know him ... or just squash him.  If Papa Smurf is not here he is probably visiting Smurfette. 
 #
@@ -440,7 +440,7 @@ set r6225/vnum = "r6225"
 #
 dig/tel Path to Gargamel's Castle; r6226
 #
-tag r6226 = smurf village, category = area names
+tag r6226 = smurf village:area names
 #
 desc r6226 = You are walking along a path to Gargamel's Castle to the north. Smurfy Road lies to the south. 
 #
@@ -456,7 +456,7 @@ set r6226/vnum = "r6226"
 #
 dig/tel Outside Gargamel's Castle; r6227
 #
-tag r6227 = smurf village, category = area names
+tag r6227 = smurf village:area names
 #
 desc r6227 = You are standing outside Gargamel's Castle.  You can hear him screaming at Azreal from inside.  You can also hear him cursing out those wretched smurfs. His Castle is to the north while Smurfy Road is to the south. 
 #
@@ -472,7 +472,7 @@ set r6227/vnum = "r6227"
 #
 dig/tel Gargamel's Castle; r6228
 #
-tag r6228 = smurf village, category = area names
+tag r6228 = smurf village:area names
 #
 desc r6228 = This is Gargamel's Castle.  His big black kettle is in the middle of the room. Where else would he put it?  The place has only one room. 
 #
@@ -490,7 +490,7 @@ set r6228/room_flags = ['no teleport in', 'no summon from']
 #
 dig/tel Smurfette's House; r6229
 #
-tag r6229 = smurf village, category = area names
+tag r6229 = smurf village:area names
 #
 desc r6229 = Perhaps it is due to being the only female smurf, but Smurfette's house seems a little OVERLY girly.  Every surface that could possibly be pink is. If there's a piece of fabric, it has lace on it. Perfume hangs heavy in the air, a welcome escape from the ever-present scent of smurfberries, to be honest. The only exit is to the east. 
 #
@@ -506,7 +506,7 @@ set r6229/vnum = "r6229"
 #
 dig/tel Papa Smurf's Back Room; r6230
 #
-tag r6230 = smurf village, category = area names
+tag r6230 = smurf village:area names
 #
 desc r6230 = This is a small closet which opens off of the south end of Papa's living area. There's not much here, but then, Papa never was one for variety in outfits. A shelf hangs at knee-level (waist-level for smurfs) on the south wall. 
 #
@@ -524,9 +524,9 @@ set r6230/room_flags = ['indoors', 'dark']
 #
 tel r6231
 #
-openexit west; w; e6201, east = r6230
+openexit west; w; e6201^ east = r6230
 #
-tag e6201 = smurf village, category = area names
+tag e6201 = smurf village:area names
 #
 objectlock west = "pick:false()"
 #
@@ -536,9 +536,9 @@ objectlock west = "pass:false()"
 #
 tel r6201
 #
-openexit north; n; e6202, south = r6202
+openexit north; n; e6202^ south = r6202
 #
-tag e6202 = smurf village, category = area names
+tag e6202 = smurf village:area names
 #
 desc north = The path continues toward the village. 
 #
@@ -548,9 +548,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit south; s; e6203, north = r13338
+openexit south; s; e6203^ north = r13338
 #
-tag e6203 = smurf village, category = area names
+tag e6203 = smurf village:area names
 #
 objectlock south = "pick:false()"
 #
@@ -560,9 +560,9 @@ objectlock south = "pass:false()"
 #
 tel r6202
 #
-openexit north; n; e6204, south = r6203
+openexit north; n; e6204^ south = r6203
 #
-tag e6204 = smurf village, category = area names
+tag e6204 = smurf village:area names
 #
 desc north = The path continues toward the village. 
 #
@@ -572,9 +572,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias south = s, e6205
+alias south = s^ e6205
 #
-tag e6205 = smurf village, category = area names
+tag e6205 = smurf village:area names
 #
 desc south = The dimly lit path. 
 #
@@ -586,9 +586,9 @@ objectlock south = "pass:false()"
 #
 tel r6203
 #
-openexit north; n; e6206, south = r6204
+openexit north; n; e6206^ south = r6204
 #
-tag e6206 = smurf village, category = area names
+tag e6206 = smurf village:area names
 #
 desc north = The entrance to smurf village. 
 #
@@ -598,9 +598,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias south = s, e6207
+alias south = s^ e6207
 #
-tag e6207 = smurf village, category = area names
+tag e6207 = smurf village:area names
 #
 desc south = The dimly lit path. 
 #
@@ -612,9 +612,9 @@ objectlock south = "pass:false()"
 #
 tel r6204
 #
-openexit north; n; e6208, south = r6205
+openexit north; n; e6208^ south = r6205
 #
-tag e6208 = smurf village, category = area names
+tag e6208 = smurf village:area names
 #
 desc north = Smurfy Road 
 #
@@ -624,9 +624,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias south = s, e6209
+alias south = s^ e6209
 #
-tag e6209 = smurf village, category = area names
+tag e6209 = smurf village:area names
 #
 desc south = Dimly Lit Path 
 #
@@ -638,9 +638,9 @@ objectlock south = "pass:false()"
 #
 tel r6205
 #
-openexit north; n; e6210, south = r6206
+openexit north; n; e6210^ south = r6206
 #
-tag e6210 = smurf village, category = area names
+tag e6210 = smurf village:area names
 #
 desc north = Smurfy Road 
 #
@@ -650,9 +650,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e6211, west = r6210
+openexit east; e; e6211^ west = r6210
 #
-tag e6211 = smurf village, category = area names
+tag e6211 = smurf village:area names
 #
 desc east = Smurfy Road 
 #
@@ -662,9 +662,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias south = s, e6212
+alias south = s^ e6212
 #
-tag e6212 = smurf village, category = area names
+tag e6212 = smurf village:area names
 #
 desc south = Entrance to smurf village 
 #
@@ -674,9 +674,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e6213, east = r6211
+openexit west; w; e6213^ east = r6211
 #
-tag e6213 = smurf village, category = area names
+tag e6213 = smurf village:area names
 #
 desc west = Smurfy Road 
 #
@@ -688,9 +688,9 @@ objectlock west = "pass:false()"
 #
 tel r6206
 #
-openexit north; n; e6214, south = r6207
+openexit north; n; e6214^ south = r6207
 #
-tag e6214 = smurf village, category = area names
+tag e6214 = smurf village:area names
 #
 desc north = Smurfy Road 
 #
@@ -700,9 +700,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e6215, west = r6220
+openexit east; e; e6215^ west = r6220
 #
-tag e6215 = smurf village, category = area names
+tag e6215 = smurf village:area names
 #
 desc east = Smurfy Home 
 #
@@ -712,9 +712,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias south = s, e6216
+alias south = s^ e6216
 #
-tag e6216 = smurf village, category = area names
+tag e6216 = smurf village:area names
 #
 desc south = Smurfy Road 
 #
@@ -724,9 +724,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e6217, east = r6212
+openexit west; w; e6217^ east = r6212
 #
-tag e6217 = smurf village, category = area names
+tag e6217 = smurf village:area names
 #
 desc west = Smurfy Road 
 #
@@ -738,9 +738,9 @@ objectlock west = "pass:false()"
 #
 tel r6207
 #
-openexit north; n; e6218, south = r6208
+openexit north; n; e6218^ south = r6208
 #
-tag e6218 = smurf village, category = area names
+tag e6218 = smurf village:area names
 #
 desc north = Smurfy Road 
 #
@@ -750,9 +750,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e6219, west = r6216
+openexit east; e; e6219^ west = r6216
 #
-tag e6219 = smurf village, category = area names
+tag e6219 = smurf village:area names
 #
 desc east = Smurfberry Patch 
 #
@@ -762,9 +762,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias south = s, e6220
+alias south = s^ e6220
 #
-tag e6220 = smurf village, category = area names
+tag e6220 = smurf village:area names
 #
 desc south = Smurfy Road 
 #
@@ -774,9 +774,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e6221, east = r6229
+openexit west; w; e6221^ east = r6229
 #
-tag e6221 = smurf village, category = area names
+tag e6221 = smurf village:area names
 #
 desc west = A Smurfy Home 
 #
@@ -788,9 +788,9 @@ objectlock west = "pass:false()"
 #
 tel r6208
 #
-openexit north; n; e6222, south = r6209
+openexit north; n; e6222^ south = r6209
 #
-tag e6222 = smurf village, category = area names
+tag e6222 = smurf village:area names
 #
 desc north = Smurfy Road 
 #
@@ -800,9 +800,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-openexit east; e; e6223, west = r6217
+openexit east; e; e6223^ west = r6217
 #
-tag e6223 = smurf village, category = area names
+tag e6223 = smurf village:area names
 #
 desc east = Smurfberry patch 
 #
@@ -812,9 +812,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias south = s, e6224
+alias south = s^ e6224
 #
-tag e6224 = smurf village, category = area names
+tag e6224 = smurf village:area names
 #
 desc south = Smurfy Road 
 #
@@ -824,9 +824,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e6225, east = r6232
+openexit west; w; e6225^ east = r6232
 #
-tag e6225 = smurf village, category = area names
+tag e6225 = smurf village:area names
 #
 desc west = A stone path 
 #
@@ -838,9 +838,9 @@ objectlock west = "pass:false()"
 #
 tel r6209
 #
-openexit east; e; e6226, west = r6218
+openexit east; e; e6226^ west = r6218
 #
-tag e6226 = smurf village, category = area names
+tag e6226 = smurf village:area names
 #
 desc east = Smurfberry Patch 
 #
@@ -850,9 +850,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias south = s, e6227
+alias south = s^ e6227
 #
-tag e6227 = smurf village, category = area names
+tag e6227 = smurf village:area names
 #
 desc south = Smurfy Road 
 #
@@ -862,9 +862,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e6228, east = r6214
+openexit west; w; e6228^ east = r6214
 #
-tag e6228 = smurf village, category = area names
+tag e6228 = smurf village:area names
 #
 desc west = Smurfy Road 
 #
@@ -876,9 +876,9 @@ objectlock west = "pass:false()"
 #
 tel r6210
 #
-openexit south; s; e6229, north = r6219
+openexit south; s; e6229^ north = r6219
 #
-tag e6229 = smurf village, category = area names
+tag e6229 = smurf village:area names
 #
 desc south = Smurfy Home 
 #
@@ -888,9 +888,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w, e6230
+alias west = w^ e6230
 #
-tag e6230 = smurf village, category = area names
+tag e6230 = smurf village:area names
 #
 desc west = Smurfy Road 
 #
@@ -902,9 +902,9 @@ objectlock west = "pass:false()"
 #
 tel r6211
 #
-openexit north; n; e6231, south = r6212
+openexit north; n; e6231^ south = r6212
 #
-tag e6231 = smurf village, category = area names
+tag e6231 = smurf village:area names
 #
 desc north = Smurfy Road 
 #
@@ -914,9 +914,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias east = e, e6232
+alias east = e^ e6232
 #
-tag e6232 = smurf village, category = area names
+tag e6232 = smurf village:area names
 #
 desc east = Smurfy Road 
 #
@@ -926,9 +926,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; s; e6233, north = r6221
+openexit south; s; e6233^ north = r6221
 #
-tag e6233 = smurf village, category = area names
+tag e6233 = smurf village:area names
 #
 desc south = Smurfy Home 
 #
@@ -940,9 +940,9 @@ objectlock south = "pass:false()"
 #
 tel r6212
 #
-alias east = e, e6234
+alias east = e^ e6234
 #
-tag e6234 = smurf village, category = area names
+tag e6234 = smurf village:area names
 #
 desc east = Smurfy Road 
 #
@@ -952,9 +952,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias south = s, e6235
+alias south = s^ e6235
 #
-tag e6235 = smurf village, category = area names
+tag e6235 = smurf village:area names
 #
 desc south = Smurfy Road 
 #
@@ -964,9 +964,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-openexit west; w; e6236, east = r6222
+openexit west; w; e6236^ east = r6222
 #
-tag e6236 = smurf village, category = area names
+tag e6236 = smurf village:area names
 #
 desc west = Smurfy Home 
 #
@@ -978,9 +978,9 @@ objectlock west = "pass:false()"
 #
 tel r6213
 #
-openexit east; e; e6237, west = r6232
+openexit east; e; e6237^ west = r6232
 #
-tag e6237 = smurf village, category = area names
+tag e6237 = smurf village:area names
 #
 desc east = Smurfy Road 
 #
@@ -990,17 +990,17 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit south; door; s; e6238, north = r6225
+openexit south; door; s; e6238^ north = r6225
 #
-tag e6238 = smurf village, category = area names
+tag e6238 = smurf village:area names
 #
 desc south = Papa Smurf's House 
 #
 set south/key = "o6207"
 #
-openexit west; w; e6239, east = r6223
+openexit west; w; e6239^ east = r6223
 #
-tag e6239 = smurf village, category = area names
+tag e6239 = smurf village:area names
 #
 desc west = Smurfy House 
 #
@@ -1012,9 +1012,9 @@ objectlock west = "pass:false()"
 #
 tel r6232
 #
-alias east = e, e6240
+alias east = e^ e6240
 #
-tag e6240 = smurf village, category = area names
+tag e6240 = smurf village:area names
 #
 desc east = Smurfy Road 
 #
@@ -1024,9 +1024,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-alias west = w, e6241
+alias west = w^ e6241
 #
-tag e6241 = smurf village, category = area names
+tag e6241 = smurf village:area names
 #
 desc west = Smurfy Road 
 #
@@ -1038,9 +1038,9 @@ objectlock west = "pass:false()"
 #
 tel r6214
 #
-alias east = e, e6242
+alias east = e^ e6242
 #
-tag e6242 = smurf village, category = area names
+tag e6242 = smurf village:area names
 #
 desc east = Smurfy Road 
 #
@@ -1050,9 +1050,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; w; e6243, east = r6215
+openexit west; w; e6243^ east = r6215
 #
-tag e6243 = smurf village, category = area names
+tag e6243 = smurf village:area names
 #
 desc west = Smurfy Road 
 #
@@ -1064,9 +1064,9 @@ objectlock west = "pass:false()"
 #
 tel r6215
 #
-openexit north; n; e6244, south = r6226
+openexit north; n; e6244^ south = r6226
 #
-tag e6244 = smurf village, category = area names
+tag e6244 = smurf village:area names
 #
 desc north = Path to Gargamel's Castle 
 #
@@ -1076,9 +1076,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias east = e, e6245
+alias east = e^ e6245
 #
-tag e6245 = smurf village, category = area names
+tag e6245 = smurf village:area names
 #
 desc east = Smurfy Road 
 #
@@ -1088,9 +1088,9 @@ objectlock east = "bash:false()"
 #
 objectlock east = "pass:false()"
 #
-openexit west; w; e6246, east = r6224
+openexit west; w; e6246^ east = r6224
 #
-tag e6246 = smurf village, category = area names
+tag e6246 = smurf village:area names
 #
 desc west = Smurfy Home 
 #
@@ -1102,9 +1102,9 @@ objectlock west = "pass:false()"
 #
 tel r6216
 #
-openexit north; n; e6247, south = r6217
+openexit north; n; e6247^ south = r6217
 #
-tag e6247 = smurf village, category = area names
+tag e6247 = smurf village:area names
 #
 desc north = Smurfberry Patch 
 #
@@ -1114,9 +1114,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias west = w, e6248
+alias west = w^ e6248
 #
-tag e6248 = smurf village, category = area names
+tag e6248 = smurf village:area names
 #
 desc west = Smurfy Road 
 #
@@ -1128,9 +1128,9 @@ objectlock west = "pass:false()"
 #
 tel r6217
 #
-openexit north; n; e6249, south = r6218
+openexit north; n; e6249^ south = r6218
 #
-tag e6249 = smurf village, category = area names
+tag e6249 = smurf village:area names
 #
 desc north = Smurfberry Patch 
 #
@@ -1140,9 +1140,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias south = s, e6250
+alias south = s^ e6250
 #
-tag e6250 = smurf village, category = area names
+tag e6250 = smurf village:area names
 #
 desc south = Smurfberry Patch 
 #
@@ -1152,9 +1152,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w, e6251
+alias west = w^ e6251
 #
-tag e6251 = smurf village, category = area names
+tag e6251 = smurf village:area names
 #
 desc west = Smurfy Road 
 #
@@ -1166,9 +1166,9 @@ objectlock west = "pass:false()"
 #
 tel r6218
 #
-alias south = s, e6252
+alias south = s^ e6252
 #
-tag e6252 = smurf village, category = area names
+tag e6252 = smurf village:area names
 #
 desc south = Smurfberry Patch 
 #
@@ -1178,9 +1178,9 @@ objectlock south = "bash:false()"
 #
 objectlock south = "pass:false()"
 #
-alias west = w, e6253
+alias west = w^ e6253
 #
-tag e6253 = smurf village, category = area names
+tag e6253 = smurf village:area names
 #
 desc west = Smurfy Road 
 #
@@ -1192,9 +1192,9 @@ objectlock west = "pass:false()"
 #
 tel r6219
 #
-alias north = n, e6254
+alias north = n^ e6254
 #
-tag e6254 = smurf village, category = area names
+tag e6254 = smurf village:area names
 #
 desc north = Smurfy Road 
 #
@@ -1206,9 +1206,9 @@ objectlock north = "pass:false()"
 #
 tel r6220
 #
-alias west = w, e6255
+alias west = w^ e6255
 #
-tag e6255 = smurf village, category = area names
+tag e6255 = smurf village:area names
 #
 desc west = Smurfy Road 
 #
@@ -1220,9 +1220,9 @@ objectlock west = "pass:false()"
 #
 tel r6221
 #
-alias north = n, e6256
+alias north = n^ e6256
 #
-tag e6256 = smurf village, category = area names
+tag e6256 = smurf village:area names
 #
 desc north = Smurfy Road 
 #
@@ -1234,9 +1234,9 @@ objectlock north = "pass:false()"
 #
 tel r6222
 #
-alias east = e, e6257
+alias east = e^ e6257
 #
-tag e6257 = smurf village, category = area names
+tag e6257 = smurf village:area names
 #
 desc east = Smurfy Road 
 #
@@ -1248,9 +1248,9 @@ objectlock east = "pass:false()"
 #
 tel r6223
 #
-alias east = e, e6258
+alias east = e^ e6258
 #
-tag e6258 = smurf village, category = area names
+tag e6258 = smurf village:area names
 #
 desc east = Smurfy Road 
 #
@@ -1262,9 +1262,9 @@ objectlock east = "pass:false()"
 #
 tel r6224
 #
-alias east = e, e6259
+alias east = e^ e6259
 #
-tag e6259 = smurf village, category = area names
+tag e6259 = smurf village:area names
 #
 desc east = Smurfy Road 
 #
@@ -1276,17 +1276,17 @@ objectlock east = "pass:false()"
 #
 tel r6225
 #
-alias north = door, n, e6260
+alias north = door^ n^ e6260
 #
-tag e6260 = smurf village, category = area names
+tag e6260 = smurf village:area names
 #
 desc north = Stone Path 
 #
 set north/key = "o6207"
 #
-openexit south; s; e6261, north = r6230
+openexit south; s; e6261^ north = r6230
 #
-tag e6261 = smurf village, category = area names
+tag e6261 = smurf village:area names
 #
 set south/key = "o6207"
 #
@@ -1298,9 +1298,9 @@ objectlock south = "pass:false()"
 #
 tel r6226
 #
-openexit north; n; e6262, south = r6227
+openexit north; n; e6262^ south = r6227
 #
-tag e6262 = smurf village, category = area names
+tag e6262 = smurf village:area names
 #
 desc north = Outside Gargamel's Castle 
 #
@@ -1310,9 +1310,9 @@ objectlock north = "bash:false()"
 #
 objectlock north = "pass:false()"
 #
-alias south = s, e6263
+alias south = s^ e6263
 #
-tag e6263 = smurf village, category = area names
+tag e6263 = smurf village:area names
 #
 desc south = Smurfy Road 
 #
@@ -1324,9 +1324,9 @@ objectlock south = "pass:false()"
 #
 tel r6227
 #
-openexit north; door; n; e6264, south = r6228
+openexit north; door; n; e6264^ south = r6228
 #
-tag e6264 = smurf village, category = area names
+tag e6264 = smurf village:area names
 #
 desc north = Gargamel's Castle 
 #
@@ -1334,7 +1334,7 @@ set north/key = "o6209"
 #
 alias south = s, e6265
 #
-tag e6265 = smurf village, category = area names
+tag e6265 = smurf village:area names
 #
 desc south = Path to Gargamel's Castle 
 #
@@ -1346,9 +1346,9 @@ objectlock south = "pass:false()"
 #
 tel r6228
 #
-alias south = door, s, e6266
+alias south = door^ s^ e6266
 #
-tag e6266 = smurf village, category = area names
+tag e6266 = smurf village:area names
 #
 desc south = Outside Gargamel's Castle 
 #
@@ -1356,9 +1356,9 @@ set south/key = "o109"
 #
 tel r6229
 #
-alias east = e, e6267
+alias east = e^ e6267
 #
-tag e6267 = smurf village, category = area names
+tag e6267 = smurf village:area names
 #
 desc east = Smurfy Road 
 #
@@ -1370,9 +1370,9 @@ objectlock east = "pass:false()"
 #
 tel r6230
 #
-alias north = n, e6268
+alias north = n^ e6268
 #
-tag e6268 = smurf village, category = area names
+tag e6268 = smurf village:area names
 #
 set north/key = "o6207"
 #
