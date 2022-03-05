@@ -12,6 +12,8 @@ desc/edit r3765
 #
 set r3765/terrain = "inside"
 #
+set r3765/vnum = "r3765"
+#
 set r3765/extra_description = {'mirror mirrors': 'You see yourself, again and again and again. '}
 #
 set r3765/room_flags = ['indoors']
@@ -29,6 +31,8 @@ desc/edit r3600
 :wq
 #
 set r3600/terrain = "inside"
+#
+set r3600/vnum = "r3600"
 #
 set r3600/extra_description = {'table': 'Food.  Food.  Wine.  Food.  More food.  More different food.  Beer. Polka dots?? '}
 #
@@ -48,6 +52,8 @@ desc/edit r3700
 #
 set r3700/terrain = "inside"
 #
+set r37/vnum = "r37"
+#
 set r3700/extra_description = {'parchment': "Welcome to Echoes of Creation!  Echoes of Creation is put together a bit differently from most mudworlds. Type |GHELP|W for an informational menu, or |GHELP FEATURES|W for a preview of some of the things you'll find here. |GSCORE|W, |GAFFECTS|W, |GEQUIPMENT|W, and |GINVENTORY|W (|GSC|W, |GAFF|W, |GEQ|W, |GI|W will suffice) will tell you about yourself.  |GLOOK|W will give you another look at the room.  To begin your adventure, type |GPORTAL|W. "}
 #
 set r3700/room_flags = ['no astral out', 'no recall', 'safe', 'indoors', 'no mob']
@@ -65,6 +71,8 @@ desc/edit r3701
 :wq
 #
 set r3701/terrain = "inside"
+#
+set r3701/vnum = "r3701"
 #
 set r3701/extra_description = {'scroll': "To move around in the world, simply type |GNORTH|W, |GWEST|W, |GEAST|W, |GSOUTH|W, |GUP|W or |GDOWN|W. Abbreviations may also be used - |GN|W, |GW|W, |GE|W, |GS|W, |GU|W, |GD|W.  If there is a door present, you may have to |GOPEN|W the door before you can proceed. Some doors might be locked, in which case you will need the correct key with which to |GUNLOCK|W them. (|GUNLOCK direction|W and |GOPEN direction|W, such as |GUNLOCK SOUTH|W, allow you to be specific.) If you have been here before and wish to go directly to the Practice Yard, type |GSLIDE|W. But if you're new, GO |GEAST|W, YOUNG ONE, GO |GEAST|W!!!!! "}
 #
@@ -84,6 +92,8 @@ desc/edit r3702
 #
 set r3702/terrain = "inside"
 #
+set r3702/vnum = "r3702"
+#
 set r3702/extra_description = {'scroll': 'To pick up items on the ground as you see them, type |GGET item|W. To wear a piece of armor, type |GWEAR item|W. To hold a light source, type |GHOLD item|W. To wield a weapon, type |GWIELD weapon|W. To wear, hold, and wield everything you have, type |GWEAR ALL|W. To stop using a piece of equipment, type |GREMOVE item|W. Finally, to see the items in your inventory, type |GINVENTORY|W. If you have an item you do not want, simply type |GDROP item|W.  Keep in mind that someone may come by and get the item, however. You may get rid of unwanted items by donating them for others to use. To do this, type |GDONATE item|W. ', 'plaque': "This area was originally written for Castle Arcanum by Violet and Gomez with input and encouragement from Bram. Based on Hatchet's Mud School. It has been adapted for use with Echoes of Creation by Random. "}
 #
 set r3702/room_flags = ['indoors']
@@ -101,6 +111,8 @@ desc/edit r3704
 :wq
 #
 set r3704/terrain = "inside"
+#
+set r3704/vnum = "r3704"
 #
 set r3704/extra_description = {'window citizens grounds': "The town of Eden's Grove is far below you. "}
 #
@@ -120,6 +132,8 @@ desc/edit r3706
 #
 set r3706/terrain = "inside"
 #
+set r3706/vnum = "r3706"
+#
 dig/tel Combat Preparation Room; r3709
 #
 tag r3709 = training tower, category = area names
@@ -133,6 +147,8 @@ desc/edit r3709
 :wq
 #
 set r3709/terrain = "inside"
+#
+set r3709/vnum = "r3709"
 #
 set r3709/extra_description = {'tapestries tapestry': "You see a tapestry depicting the heroic deeds of Eden's Groves's first hero, Tal. ", 'scroll': "The first lesson is knowing whom to fight. Use the command |GCONSIDER|W to see how you match up with an opponent. Avoid fighting monsters that will kill you easily. To consider a mob, type |GCON mob|W The second lesson is running away. There is a golem in the room |GWEST|W of here. It is too strong for you to kill, but it won't kill you immediately.  So go |GWEST|W from here, then |GCONSIDER GOLEM|W, then |GKILL GOLEM|W.  After a while, type |GFLEE|W to escape. You can also set your character to flee automatically with the |GWIMPY|W command. Type |GHELP WIMPY|W to find out more about |GWIMPY|W.  Typing |GWIMPY|W by itself will automatically set your wimpy to 20% of your current hit points. You may want to try this right now. After you flee, you will be back in this room.  When you are ready to continue your training, go |GDOWN|W. "}
 #
@@ -152,6 +168,8 @@ desc/edit r3710
 #
 set r3710/terrain = "inside"
 #
+set r3710/vnum = "r3710"
+#
 set r3710/extra_description = {'parchment': "Remember, don't fight the golem to the finish!  Just type |GKILL GOLEM|W, then when you are fighting, type |GFLEE|W, until you are successful in getting out of here. "}
 #
 set r3710/room_flags = ['indoors', 'no mob']
@@ -169,6 +187,8 @@ desc/edit r3711
 :wq
 #
 set r3711/terrain = "inside"
+#
+set r3711/vnum = "r3711"
 #
 set r3711/extra_description = {'parchment': 'The room downstairs is safe, but potential opponents lurk to all sides. |GKILL|W them all (except, of course, the friendly healer), since each holds equipment you need. '}
 #
@@ -188,6 +208,8 @@ desc/edit r3712
 #
 set r3712/terrain = "inside"
 #
+set r3712/vnum = "r3712"
+#
 set r3712/extra_description = {'parchment': "This is your first test!  In the four rooms are four monsters of various types.  |GKILL|W them all! After you |GKILL|W each monster, |GGET|W all of the equipment from its corpse with the command |GGET ALL CORPSE|W. In the future, some items that you find may be cursed, and not able to be dropped without removing the curse, so you may want to be careful about getting all items from a corpse. Here in the tower you should be safe, however. You can then use the command |GWEAR ALL|W to wear your newly-won equipment, but the same is true for the future with wearing cursed equipment. When you are done looting a corpse, |GSACRIFICE CORPSE|W. The gods might reward you for this. Or they may not, they're fickle. Between battles, you may want to rest or sleep to regenerate hit points. |GSLEEP|W will refresh you faster than |GREST|W, but you will be less aware of your surroundings. ", 'scroll': 'In case the worst comes to pass, please read |GHELP DEATH|W... R_I_G_H_T  N_O_W! '}
 #
 set r3712/room_flags = ['indoors']
@@ -205,6 +227,8 @@ desc/edit r3713
 :wq
 #
 set r3713/terrain = "inside"
+#
+set r3713/vnum = "r3713"
 #
 set r3713/extra_description = {'parchment': 'There should be an angry minotaur in this room.  Kill him and get out of here fast!  Remember to loot and sacrifice the corpse. '}
 #
@@ -224,6 +248,8 @@ desc/edit r3714
 #
 set r3714/terrain = "inside"
 #
+set r3714/vnum = "r3714"
+#
 set r3714/extra_description = {'parchment': 'There should be a foolish tabaxi in this room.  Kill him and get out of here fast!  Remember to loot and sacrifice the corpse. '}
 #
 set r3714/room_flags = ['indoors']
@@ -241,6 +267,8 @@ desc/edit r3715
 :wq
 #
 set r3715/terrain = "inside"
+#
+set r3715/vnum = "r3715"
 #
 set r3715/extra_description = {'parchment': 'There should be an elderly goblin in this room.  Kill him and get out of here fast!  Remember to loot and sacrifice the corpse. '}
 #
@@ -260,6 +288,8 @@ desc/edit r3716
 #
 set r3716/terrain = "inside"
 #
+set r3716/vnum = "r3716"
+#
 set r3716/extra_description = {'parchment': 'There should be a kobold in this room.  Kill him and get out of here fast!  Remember to loot and sacrifice the corpse. '}
 #
 set r3716/room_flags = ['indoors']
@@ -277,6 +307,8 @@ desc/edit r3717
 :wq
 #
 set r3717/terrain = "inside"
+#
+set r3717/vnum = "r3717"
 #
 set r3717/extra_description = {'scroll': "In order to continue your training, you must pass a test.  To the north is a warrior with a key that you need.  After you have killed him, you may return here, |GUNLOCK DOWN|W, |GOPEN DOWN|W, and continue |GDOWN|W. Don't miss the store to the south before going down. "}
 #
@@ -296,6 +328,8 @@ desc/edit r3718
 #
 set r3718/terrain = "inside"
 #
+set r3718/vnum = "r3718"
+#
 set r3718/extra_description = {'sign': "The sign reads: Buy   - Buy something from the storekeeper. List  - The storekeeper will tell you what's for sale. Value - The storekeeper will tell you how much he will give to you for that item. Sell  - Sell that item to the storekeeper. "}
 #
 set r3718/room_flags = ['indoors']
@@ -314,6 +348,8 @@ desc/edit r3720
 #
 set r3720/terrain = "inside"
 #
+set r3720/vnum = "r3720"
+#
 set r3720/room_flags = ['indoors', 'dark']
 #
 dig/tel Tower Wardroom; r3721
@@ -329,6 +365,8 @@ desc/edit r3721
 :wq
 #
 set r3721/terrain = "inside"
+#
+set r3721/vnum = "r3721"
 #
 set r3721/extra_description = {'parchment': "You have completed your training!  |GKILL|W the knight to get your certificate. (It's magical! |GHOLD CERTIFICATE|W and type |GSCORE|W to see how it increases some of your attributes while held.) Then go |GNORTH|W from here to visit the Practice Yard.  You'll find plenty of low-level monsters, but you'll find that you cannot attack other players. If you want to go directly to the Town Square at any time, type |GHOME|W. If you need more help during the game, type |GHELP|W. May your visit here be a pleasant one!. "}
 #
@@ -348,6 +386,8 @@ desc/edit r3722
 #
 set r3722/terrain = "inside"
 #
+set r3722/vnum = "r3722"
+#
 set r3722/room_flags = ['indoors']
 #
 dig/tel South Wall of the Practice Yard; r3723
@@ -363,6 +403,8 @@ desc/edit r3723
 :wq
 #
 set r3723/terrain = "inside"
+#
+set r3723/vnum = "r3723"
 #
 set r3723/room_flags = ['indoors']
 #
@@ -380,6 +422,8 @@ desc/edit r3724
 #
 set r3724/terrain = "inside"
 #
+set r3724/vnum = "r3724"
+#
 set r3724/room_flags = ['indoors']
 #
 dig/tel South Wall of the Practice Yard; r3725
@@ -395,6 +439,8 @@ desc/edit r3725
 :wq
 #
 set r3725/terrain = "inside"
+#
+set r3725/vnum = "r3725"
 #
 set r3725/room_flags = ['indoors']
 #
@@ -412,6 +458,8 @@ desc/edit r3726
 #
 set r3726/terrain = "inside"
 #
+set r3726/vnum = "r3726"
+#
 set r3726/room_flags = ['indoors']
 #
 dig/tel West Wall of the Practice Yard; r3727
@@ -427,6 +475,8 @@ desc/edit r3727
 :wq
 #
 set r3727/terrain = "inside"
+#
+set r3727/vnum = "r3727"
 #
 set r3727/room_flags = ['indoors']
 #
@@ -444,6 +494,8 @@ desc/edit r3728
 #
 set r3728/terrain = "inside"
 #
+set r3728/vnum = "r3728"
+#
 set r3728/room_flags = ['indoors']
 #
 dig/tel The Practice Yard; r3729
@@ -459,6 +511,8 @@ desc/edit r3729
 :wq
 #
 set r3729/terrain = "inside"
+#
+set r3728/vnum = "r3729"
 #
 set r3729/room_flags = ['indoors']
 #
@@ -476,6 +530,8 @@ desc/edit r3730
 #
 set r3730/terrain = "inside"
 #
+set r3730/vnum = "r3730"
+#
 set r3730/room_flags = ['indoors']
 #
 dig/tel East Wall of the Practice Yard; r3731
@@ -491,6 +547,8 @@ desc/edit r3731
 :wq
 #
 set r3731/terrain = "inside"
+#
+set r3731/vnum = "r3731"
 #
 set r3731/room_flags = ['indoors']
 #
@@ -508,6 +566,8 @@ desc/edit r3732
 #
 set r3732/terrain = "inside"
 #
+set r3732/vnum = "r3732"
+#
 set r3732/room_flags = ['indoors']
 #
 dig/tel The Practice Yard; r3733
@@ -524,6 +584,8 @@ desc/edit r3733
 #
 set r3733/terrain = "inside"
 #
+set r3733/vnum = "r3733"
+#
 set r3733/room_flags = ['indoors']
 #
 dig/tel Center of the Practice Yard; r3734
@@ -539,6 +601,8 @@ desc/edit r3734
 :wq
 #
 set r3734/terrain = "inside"
+#
+set r3734/vnum = "r3734"
 #
 set r3734/extra_description = {'sign big': 'Those of great bravery or little sense might wish to go down into the Dungeon. However, know that there are aggressive monsters down there, and there is only one exit. '}
 #
@@ -558,6 +622,8 @@ desc/edit r3735
 #
 set r3735/terrain = "inside"
 #
+set r3735/vnum = "r3735"
+#
 set r3735/room_flags = ['indoors']
 #
 dig/tel East Wall of the Practice Yard; r3736
@@ -573,6 +639,8 @@ desc/edit r3736
 :wq
 #
 set r3736/terrain = "inside"
+#
+set r3736/vnum = "r3736"
 #
 set r3736/room_flags = ['indoors']
 #
@@ -590,6 +658,8 @@ desc/edit r3737
 #
 set r3737/terrain = "inside"
 #
+set r3737/vnum = "r3737"
+#
 set r3737/room_flags = ['indoors']
 #
 dig/tel The Practice Yard; r3738
@@ -605,6 +675,8 @@ desc/edit r3738
 :wq
 #
 set r3738/terrain = "inside"
+#
+set r3738/vnum = "r3738"
 #
 set r3738/room_flags = ['indoors']
 #
@@ -622,6 +694,8 @@ desc/edit r3739
 #
 set r3739/terrain = "inside"
 #
+set r3739/vnum = "r3739"
+#
 set r3739/room_flags = ['indoors']
 #
 dig/tel The Practice Yard; r3740
@@ -637,6 +711,8 @@ desc/edit r3740
 :wq
 #
 set r3740/terrain = "inside"
+#
+set r3740/vnum = "r3740"
 #
 set r3740/room_flags = ['indoors']
 #
@@ -654,6 +730,8 @@ desc/edit r3741
 #
 set r3741/terrain = "inside"
 #
+set r3741/vnum = "r3741"
+#
 set r3741/room_flags = ['indoors']
 #
 dig/tel Northwest Corner of the Practice Yard; r3742
@@ -669,6 +747,8 @@ desc/edit r3742
 :wq
 #
 set r3742/terrain = "inside"
+#
+set r3742/vnum = "r3742"
 #
 set r3742/room_flags = ['indoors']
 #
@@ -686,6 +766,8 @@ desc/edit r3743
 #
 set r3743/terrain = "inside"
 #
+set r3743/vnum = "r3743"
+#
 set r3743/room_flags = ['indoors']
 #
 dig/tel North Wall of the Practice Yard; r3744
@@ -701,6 +783,8 @@ desc/edit r3744
 :wq
 #
 set r3744/terrain = "inside"
+#
+set r3744/vnum = "r3744"
 #
 set r3744/room_flags = ['indoors']
 #
@@ -718,6 +802,8 @@ desc/edit r3745
 #
 set r3745/terrain = "inside"
 #
+set r3745/vnum = "r3745"
+#
 set r3745/room_flags = ['indoors']
 #
 dig/tel Northeast Corner of the Practice Yard; r3746
@@ -733,6 +819,8 @@ desc/edit r3746
 :wq
 #
 set r3746/terrain = "inside"
+#
+set r3746/vnum = "r3746"
 #
 set r3746/room_flags = ['indoors']
 #
@@ -750,6 +838,8 @@ desc/edit r3747
 #
 set r3747/terrain = "inside"
 #
+set r3747/vnum = "r3747"
+#
 set r3747/room_flags = ['indoors']
 #
 dig/tel The Northwest Corner of the Dungeon; r3748
@@ -765,6 +855,8 @@ desc/edit r3748
 :wq
 #
 set r3748/terrain = "inside"
+#
+set r3748/vnum = "r3748"
 #
 set r3748/room_flags = ['indoors', 'dark']
 #
@@ -782,6 +874,8 @@ desc/edit r3749
 #
 set r3749/terrain = "inside"
 #
+set r3749/vnum = "r3749"
+#
 set r3749/room_flags = ['indoors', 'dark']
 #
 dig/tel The Northeast Corner of the Dungeon; r3750
@@ -797,6 +891,8 @@ desc/edit r3750
 :wq
 #
 set r3750/terrain = "inside"
+#
+set r3750/vnum = "r3750"
 #
 set r3750/room_flags = ['indoors', 'dark']
 #
@@ -814,6 +910,8 @@ desc/edit r3751
 #
 set r3751/terrain = "inside"
 #
+set r3751/vnum = "r3751"
+#
 set r3751/room_flags = ['indoors', 'dark']
 #
 dig/tel The East Wall of the Dungeon; r3752
@@ -829,6 +927,8 @@ desc/edit r3752
 :wq
 #
 set r3752/terrain = "inside"
+#
+set r3752/vnum = "r3752"
 #
 set r3752/room_flags = ['indoors', 'dark']
 #
@@ -846,6 +946,8 @@ desc/edit r3753
 #
 set r3753/terrain = "inside"
 #
+set r3753/vnum = "r3753"
+#
 set r3753/room_flags = ['indoors', 'dark']
 #
 dig/tel The South Wall of the Dungeon; r3754
@@ -861,6 +963,8 @@ desc/edit r3754
 :wq
 #
 set r3754/terrain = "inside"
+#
+set r3754/vnum = "r3754"
 #
 set r3754/extra_description = {'markings': 'Someone has scribbled "God have mercy on my soul" here. '}
 #
@@ -880,6 +984,8 @@ desc/edit r3755
 #
 set r3755/terrain = "inside"
 #
+set r3755/vnum = "r3755"
+#
 set r3755/room_flags = ['indoors', 'dark']
 #
 dig/tel Top of the Tower; r3756
@@ -895,6 +1001,8 @@ desc/edit r3756
 :wq
 #
 set r3756/terrain = "inside"
+#
+set r3756/vnum = "r3756"
 #
 set r3756/extra_description = {'scroll': 'You can talk to others in the same room by typing |GSAY <message>|W. Typing |GCHAT <message>|W will send the message to everyone in the game. If you have problems and cannot figure out what to do, type |GCHAT HELP|W. Everyone will be happy to assist you. '}
 #
@@ -914,6 +1022,8 @@ desc/edit r3757
 #
 set r3757/terrain = "inside"
 #
+set r3757/vnum = "r3757"
+#
 set r3757/extra_description = {'sign': 'Welcome to the Hall of Training. Here you can spend growth opportunities to build yourself up. To find out how many growths you currently have, type |GSCORE|W. To improve a specific attribute, type |GTRAIN attr|W where |Gattr|W is the abbreviation shown below for the attribute you want increased: |W |W  strength      |GSTR|W  intelligence  |GINT|W   wisdom  |GWIS|W    dexterity  |GDEX|W |W  constitution  |GCON|W  hit points    |GHP|W    mana    |GMANA|W   movement   |GMOVE|W |W  nutrition     |GNUT|W |W Type |GHELP TRAIN|W and |GHELP GROWTHS|W for more information. '}
 #
 set r3757/room_flags = ['indoors']
@@ -931,6 +1041,8 @@ desc/edit r3758
 :wq
 #
 set r3758/terrain = "inside"
+#
+set r3758/vnum = "r3758"
 #
 set r3758/extra_description = {'scroll': "Welcome to the Practice Hall. To learn what skills and spells you can currently practice and how many practice sessions you have, type |GPRACTICE|W (anywhere). To see what you'll eventually be able to learn, type |GSLIST|W. To practice any skill, you must visit your guildmaster at the guild of your profession on Guild Row in the Castle. Then type |GPRACTICE skill|W, where the |Gskill|W is the skill or spell you wish to learn or improve. You must be third level or higher to practice. Practicing increases your knowledge of that skill or spell up to a certain maximum: Beyond that, your ability will only improve with use. "}
 #
@@ -950,6 +1062,8 @@ desc/edit r3760
 #
 set r3760/terrain = "inside"
 #
+set r3760/vnum = "r3760"
+#
 set r3760/extra_description = {'scroll': 'This area is identical to the First Combat Area.  It is here in case the first becomes too crowded.  If you have killed all the creatures in the First Combat Area, you may continue the slaughter in this area. When you feel confident in your fighting ability, continue down from here. '}
 #
 set r3760/room_flags = ['indoors']
@@ -967,6 +1081,8 @@ desc/edit r3761
 :wq
 #
 set r3761/terrain = "inside"
+#
+set r3761/vnum = "r3761"
 #
 set r3761/extra_description = {'scroll': "There should be a foolish tabaxi here.  Kill him and get out of here fast!  Don't forget to loot and sacrifice the corpse. "}
 #
@@ -986,6 +1102,8 @@ desc/edit r3762
 #
 set r3762/terrain = "inside"
 #
+set r3762/vnum = "r3762"
+#
 set r3762/extra_description = {'scroll': "There should be a tired page here.  Kill him and get out of here fast! Don't forget to loot and sacrifice the corpse. "}
 #
 set r3762/room_flags = ['indoors']
@@ -1004,6 +1122,8 @@ desc/edit r3763
 #
 set r3763/terrain = "inside"
 #
+set r3763/vnum = "r3763"
+#
 set r3763/extra_description = {'scroll': "There should be an angry minotaur here.  Kill her and get out of here fast!  Don't forget to loot and sacrifice the corpse. "}
 #
 set r3763/room_flags = ['indoors']
@@ -1021,6 +1141,8 @@ desc/edit r3764
 :wq
 #
 set r3764/terrain = "inside"
+#
+set r3764/vnum = "r3764"
 #
 set r3764/extra_description = {'scroll': "There should be an elderly goblin in this room.  Kill him and get out of here fast!  Don't forget to loot and sacrifice the corpse. "}
 #

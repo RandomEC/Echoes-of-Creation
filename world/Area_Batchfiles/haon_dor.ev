@@ -10,6 +10,8 @@ desc/edit r6155
 #
 :wq
 #
+set r6155/vnum = "r6155"
+#
 set r6155/terrain = "forest"
 #
 set r6155/room_flags = ['indoors', 'dark']
@@ -25,6 +27,8 @@ desc/edit r6000
 :j l
 #
 :wq
+#
+set r6000/vnum = "r6000"
 #
 set r6000/terrain = "field"
 #
@@ -44,6 +48,8 @@ desc/edit r6001
 #
 :wq
 #
+set r6001/vnum = "r6001"
+#
 set r6001/terrain = "forest"
 #
 set r6001/extra_description = {'trail': 'The forest trail winds east-west through the trees. ', 'tree trees': 'The trees here are quite young and fresh.  They seem to accommodate many kinds of birds, insects and other small animals. ', 'birds insects animals': 'Very cute little creatures, they seem to enjoy life. '}
@@ -59,6 +65,8 @@ desc/edit r6002
 :j l
 #
 :wq
+#
+set r6002/vnum = "r6002"
 #
 set r6002/terrain = "forest"
 #
@@ -76,6 +84,8 @@ desc/edit r6003
 #
 :wq
 #
+set r6003/vnum = "r6003"
+#
 set r6003/terrain = "forest"
 #
 set r6003/extra_description = {'trail': 'The forest trail seems almost fragile compared to the massive trunks. ', 'tree trees': 'The dense crowns of the mature trees leave only a fraction of the sky to be seen through the leaves. '}
@@ -91,6 +101,8 @@ desc/edit r6004
 :j l
 #
 :wq
+#
+set r6004/vnum = "r6004"
 #
 set r6004/terrain = "forest"
 #
@@ -108,6 +120,8 @@ desc/edit r6005
 #
 :wq
 #
+set r6005/vnum = "r6005"
+#
 set r6005/terrain = "forest"
 #
 set r6005/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The trees are mostly old beeches and oaks. '}
@@ -123,6 +137,8 @@ desc/edit r6006
 :j l
 #
 :wq
+#
+set r6006/vnum = "r6006"
 #
 set r6006/terrain = "forest"
 #
@@ -140,6 +156,8 @@ desc/edit r6007
 #
 :wq
 #
+set r6007/vnum = "r6007"
+#
 set r6007/terrain = "forest"
 #
 set r6007/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The trees are mostly old beeches and oaks. '}
@@ -155,6 +173,8 @@ desc/edit r6008
 :j l
 #
 :wq
+#
+set r6008/vnum = "r6008"
 #
 set r6008/terrain = "forest"
 #
@@ -172,6 +192,8 @@ desc/edit r6009
 #
 :wq
 #
+set r6009/vnum = "r6009"
+#
 set r6009/terrain = "forest"
 #
 set r6009/extra_description = {'cabin logs': "It looks simple but comfortable and the slender trees make the whole place seem pretty idyllic.  It's a cabin built from logs.  Wooden logs, not system logs. ", 'path paths': "The path is probably used by the cabin's inhabitants. ", 'tree trees': 'The trees are fairly young, not much more than a hundred years or so. '}
@@ -187,6 +209,8 @@ desc/edit r6010
 :j l
 #
 :wq
+#
+set r6010/vnum = "r6010"
 #
 set r6010/terrain = "inside"
 #
@@ -206,6 +230,8 @@ desc/edit r6011
 #
 :wq
 #
+set r6011/vnum = "r6011"
+#
 set r6011/terrain = "forest"
 #
 set r6011/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The trees are fairly young, not much more than a hundred years or so. '}
@@ -221,6 +247,8 @@ desc/edit r6012
 :j l
 #
 :wq
+#
+set r6012/vnum = "r6012"
 #
 set r6012/terrain = "forest"
 #
@@ -238,6 +266,8 @@ desc/edit r6013
 #
 :wq
 #
+set r6013/vnum = "r6013"
+#
 set r6013/terrain = "forest"
 #
 set r6013/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The trees are mostly old beeches and oaks. '}
@@ -253,6 +283,8 @@ desc/edit r6014
 :j l
 #
 :wq
+#
+set r6014/vnum = "r6014"
 #
 set r6014/terrain = "forest"
 #
@@ -270,6 +302,8 @@ desc/edit r6015
 #
 :wq
 #
+set r6015/vnum = "r6015"
+#
 set r6015/terrain = "forest"
 #
 set r6015/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The trees are mostly old beeches and oaks. '}
@@ -285,6 +319,8 @@ desc/edit r6016
 :j l
 #
 :wq
+#
+set r6016/vnum = "r6016"
 #
 set r6016/terrain = "forest"
 #
@@ -302,6 +338,8 @@ desc/edit r6017
 #
 :wq
 #
+set r6017/vnum = "r6017"
+#
 set r6017/terrain = "forest"
 #
 set r6017/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The crowns of the old trees leave the forest in an unreal twilight illumination. '}
@@ -317,6 +355,8 @@ desc/edit r6018
 :j l
 #
 :wq
+#
+set r6018/vnum = "r6018"
 #
 set r6018/terrain = "forest"
 #
@@ -334,6 +374,8 @@ desc/edit r6019
 #
 :wq
 #
+set r6019/vnum = "r6019"
+#
 set r6019/terrain = "forest"
 #
 set r6019/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The crowns of the old trees leave the forest in an unreal twilight illumination. '}
@@ -349,6 +391,8 @@ desc/edit r6020
 :j l
 #
 :wq
+#
+set r6020/vnum = "r6020"
 #
 set r6020/terrain = "forest"
 #
@@ -366,6 +410,8 @@ desc/edit r6021
 #
 :wq
 #
+set r6021/vnum = "r6021"
+#
 set r6021/terrain = "forest"
 #
 set r6021/extra_description = {'path paths': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees': 'The crowns of the old trees leave the forest in an unreal twilight illumination. ', 'cave entrance': 'The irregular opening is eight feet wide and six feet tall.  An acrid smell emanates from within. '}
@@ -381,6 +427,8 @@ desc/edit r6022
 :j l
 #
 :wq
+#
+set r6022/vnum = "r6022"
 #
 set r6022/terrain = "inside"
 #
@@ -400,6 +448,8 @@ desc/edit r6023
 #
 :wq
 #
+set r6023/vnum = "r6023"
+#
 set r6023/terrain = "field"
 #
 set r6023/extra_description = {'grass': 'The tall grass makes a nice hiding place for animals. ', 'path': 'The narrow path is probably used by the animals living in the forest. ', 'tree trees thicket': 'The trees form a close thicket. '}
@@ -415,6 +465,8 @@ desc/edit r6100
 :j l
 #
 :wq
+#
+set r6100/vnum = "r6100"
 #
 set r6100/terrain = "forest"
 #
@@ -434,6 +486,8 @@ desc/edit r6101
 #
 :wq
 #
+set r6101/vnum = "r6101"
+#
 set r6101/terrain = "forest"
 #
 set r6101/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'path': 'The path seems fragile and unsafe compared to the enormous trunks that loom around it. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
@@ -451,6 +505,8 @@ desc/edit r6102
 :j l
 #
 :wq
+#
+set r6102/vnum = "r6102"
 #
 set r6102/terrain = "forest"
 #
@@ -470,6 +526,8 @@ desc/edit r6103
 #
 :wq
 #
+set r6103/vnum = "r6103"
+#
 set r6103/terrain = "forest"
 #
 set r6103/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'trees trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
@@ -487,6 +545,8 @@ desc/edit r6104
 :j l
 #
 :wq
+#
+set r6104/vnum = "r6104"
 #
 set r6104/terrain = "forest"
 #
@@ -506,6 +566,8 @@ desc/edit r6105
 #
 :wq
 #
+set r6105/vnum = "r6105"
+#
 set r6105/terrain = "forest"
 #
 set r6105/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
@@ -523,6 +585,8 @@ desc/edit r6106
 :j l
 #
 :wq
+#
+set r6106/vnum = "r6106"
 #
 set r6106/terrain = "forest"
 #
@@ -542,6 +606,8 @@ desc/edit r6107
 #
 :wq
 #
+set r6107/vnum = "r6107"
+#
 set r6107/terrain = "forest"
 #
 set r6107/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
@@ -559,6 +625,8 @@ desc/edit r6108
 :j l
 #
 :wq
+#
+set r6108/vnum = "r6108"
 #
 set r6108/terrain = "forest"
 #
@@ -578,6 +646,8 @@ desc/edit r6109
 #
 :wq
 #
+set r6109/vnum = "r6109"
+#
 set r6109/terrain = "forest"
 #
 set r6109/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
@@ -595,6 +665,8 @@ desc/edit r6110
 :j l
 #
 :wq
+#
+set r6110/vnum = "r6110"
 #
 set r6110/terrain = "forest"
 #
@@ -614,6 +686,8 @@ desc/edit r6111
 #
 :wq
 #
+set r6111/vnum = "r6111"
+#
 set r6111/terrain = "forest"
 #
 set r6111/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
@@ -631,6 +705,8 @@ desc/edit r6112
 :j l
 #
 :wq
+#
+set r6112/vnum = "r6112"
 #
 set r6112/terrain = "forest"
 #
@@ -650,6 +726,8 @@ desc/edit r6113
 #
 :wq
 #
+set r6113/vnum = "r6113"
+#
 set r6113/terrain = "forest"
 #
 set r6113/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
@@ -667,6 +745,8 @@ desc/edit r6114
 :j l
 #
 :wq
+#
+set r6114/vnum = "r6114"
 #
 set r6114/terrain = "forest"
 #
@@ -686,6 +766,8 @@ desc/edit r6115
 #
 :wq
 #
+set r6115/vnum = "r6115"
+#
 set r6115/terrain = "forest"
 #
 set r6115/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
@@ -703,6 +785,8 @@ desc/edit r6116
 :j l
 #
 :wq
+#
+set r6116/vnum = "r6116"
 #
 set r6116/terrain = "forest"
 #
@@ -722,6 +806,8 @@ desc/edit r6117
 #
 :wq
 #
+set r6117/vnum = "r6117"
+#
 set r6117/terrain = "forest"
 #
 set r6117/extra_description = {'tree trees trunk trunks': 'The ancient grey giants seem to observe you silently. ', 'path paths': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
@@ -739,6 +825,8 @@ desc/edit r6118
 :j l
 #
 :wq
+#
+set r6118/vnum = "r6118"
 #
 set r6118/terrain = "forest"
 #
@@ -758,6 +846,8 @@ desc/edit r6119
 #
 :wq
 #
+set r6119/vnum = "r6119"
+#
 set r6119/terrain = "forest"
 #
 set r6119/extra_description = {'tree trees trunk trunks': 'You feel as if they are watching you. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
@@ -775,6 +865,8 @@ desc/edit r6120
 :j l
 #
 :wq
+#
+set r6120/vnum = "r6120"
 #
 set r6120/terrain = "forest"
 #
@@ -794,6 +886,8 @@ desc/edit r6121
 #
 :wq
 #
+set r6121/vnum = "r6121"
+#
 set r6121/terrain = "forest"
 #
 set r6121/extra_description = {'river': 'The river flows fast and strong.  It is black or looks so in the gloom. ', 'bank banks tree trees trunk trunks': 'The ancient crowns of trees on both banks reach together forming a dense roof above the dark river. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
@@ -811,6 +905,8 @@ desc/edit r6122
 :j l
 #
 :wq
+#
+set r6122/vnum = "r6122"
 #
 set r6122/terrain = "forest"
 #
@@ -830,6 +926,8 @@ desc/edit r6123
 #
 :wq
 #
+set r6123/vnum = "r6123"
+#
 set r6123/terrain = "forest"
 #
 set r6123/extra_description = {'river': 'The river flows fast and strong.  It is black or looks so in the gloom. ', 'bank banks tree trees trunk trunks': 'The ancient crowns of trees on both banks reach together forming a dense roof above the dark river. ', 'path paths': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
@@ -847,6 +945,8 @@ desc/edit r6124
 :j l
 #
 :wq
+#
+set r6124/vnum = "r6124"
 #
 set r6124/terrain = "forest"
 #
@@ -866,6 +966,8 @@ desc/edit r6125
 #
 :wq
 #
+set r6125/vnum = "r6125"
+#
 set r6125/terrain = "forest"
 #
 set r6125/extra_description = {'river': 'The river flows fast and strong.  It is black or looks so in the gloom. ', 'bank banks tree trees trunk trunks': 'The ancient crowns of trees on both banks reach together forming a dense roof above the dark river. ', 'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. '}
@@ -883,6 +985,8 @@ desc/edit r6126
 :j l
 #
 :wq
+#
+set r6126/vnum = "r6126"
 #
 set r6126/terrain = "forest"
 #
@@ -902,6 +1006,8 @@ desc/edit r6127
 #
 :wq
 #
+set r6127/vnum = "r6127"
+#
 set r6127/terrain = "forest"
 #
 set r6127/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
@@ -919,6 +1025,8 @@ desc/edit r6128
 :j l
 #
 :wq
+#
+set r6128/vnum = "r6128"
 #
 set r6128/terrain = "forest"
 #
@@ -938,6 +1046,8 @@ desc/edit r6129
 #
 :wq
 #
+set r6129/vnum = "r6129"
+#
 set r6129/terrain = "forest"
 #
 set r6129/extra_description = {'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. ', 'tree trees trunk trunks': 'These ancient trees must have been here for many, many years.  It is impossible to catch even a glimpse of anything above the lowest branches. '}
@@ -955,6 +1065,8 @@ desc/edit r6135
 :j l
 #
 :wq
+#
+set r6135/vnum = "r6135"
 #
 set r6135/terrain = "forest"
 #
@@ -974,6 +1086,8 @@ desc/edit r6136
 #
 :wq
 #
+set r6136/vnum = "r6136"
+#
 set r6136/terrain = "forest"
 #
 set r6136/extra_description = {'tree trees trunk trunks': 'To the east the ancient grey giants have many marks as if something with huge claws has been tearing at them in rage. ', 'path': 'The trees standing on the sides of the path have scratch marks on them. ', 'trail': 'The dark and dusty trail seems fragile compared to the massive trunks, and in some places, giant grey roots have broken up through its surface. '}
@@ -991,6 +1105,8 @@ desc/edit r6137
 :j l
 #
 :wq
+#
+set r6137/vnum = "r6137"
 #
 set r6137/terrain = "forest"
 #
@@ -1010,6 +1126,8 @@ desc/edit r6142
 #
 :wq
 #
+set r6142/vnum = "r6142"
+#
 set r6142/terrain = "forest"
 #
 set r6142/extra_description = {'tree trees': 'The ancient grey giants have many marks as if something with huge claws has been tearing at them in rage. ', 'cave opening': 'The disgusting smell of a large reptile emanates from the cave opening. '}
@@ -1027,6 +1145,8 @@ desc/edit r6143
 :j l
 #
 :wq
+#
+set r6143/vnum = "r6143"
 #
 set r6143/terrain = "forest"
 #
@@ -1046,6 +1166,8 @@ desc/edit r6144
 #
 :wq
 #
+set r6144/vnum = "r6144"
+#
 set r6144/terrain = "forest"
 #
 set r6144/extra_description = {'path': 'The path seems all too frail.  One of the giant roots could probably crush it in a single blow. ', 'trees trunks': 'The ancient grey giants seem to observe you silently. '}
@@ -1064,6 +1186,8 @@ desc/edit r6150
 #
 :wq
 #
+set r6150/vnum = "r6150"
+#
 set r6150/terrain = "forest"
 #
 set r6150/room_flags = ['indoors', 'dark']
@@ -1079,6 +1203,8 @@ desc/edit r6151
 :j l
 #
 :wq
+#
+set r6151/vnum = "r6151"
 #
 set r6151/terrain = "forest"
 #
@@ -1096,6 +1222,8 @@ desc/edit r6152
 #
 :wq
 #
+set r6152/vnum = "r6152"
+#
 set r6152/terrain = "forest"
 #
 set r6152/room_flags = ['indoors', 'dark']
@@ -1111,6 +1239,8 @@ desc/edit r6153
 :j l
 #
 :wq
+#
+set r6153/vnum = "r6153"
 #
 set r6153/terrain = "forest"
 #
@@ -1128,6 +1258,8 @@ desc/edit r6154
 #
 :wq
 #
+set r6154/vnum = "r6154"
+#
 set r6154/terrain = "forest"
 #
 set r6154/room_flags = ['indoors', 'dark']
@@ -1138,9 +1270,9 @@ openexit north; n; e3600^ south = r6154
 #
 tag e3600 = haon dor:area names
 #
-set e3600/door_attributes = "open"
+set e3600/door_attributes = ["open"]
 #
-set e3600/reset_door_attributes = "open"
+set e3600/reset_door_attributes = ["open"]
 #
 desc north = the hallway looks quite grand. 
 #
@@ -1150,9 +1282,9 @@ openexit west; w; e3601^ east = r6001
 #
 tag e3601 = haon dor:area names
 #
-set e3601/door_attributes = "open"
+set e3601/door_attributes = ["open"]
 #
-set e3601/reset_door_attributes = "open"
+set e3601/reset_door_attributes = ["open"]
 #
 desc west = You see the narrow forest trail winding westwards in between the trees. 
 #
@@ -1168,9 +1300,9 @@ alias east = e^ e3602
 #
 tag e3602 = haon dor:area names
 #
-set e3602/door_attributes = "open"
+set e3602/door_attributes = ["open"]
 #
-set e3602/reset_door_attributes = "open"
+set e3602/reset_door_attributes = ["open"]
 #
 desc east = The trail continues eastwards out of the forest. 
 #
@@ -1184,9 +1316,9 @@ openexit west; w; e3603^ east = r6002
 #
 tag e3603 = haon dor:area names
 #
-set e3603/door_attributes = "open"
+set e3603/door_attributes = ["open"]
 #
-set e3603/reset_door_attributes = "open"
+set e3603/reset_door_attributes = ["open"]
 #
 desc west = You see the narrow forest trail winding westwards in between the trees. 
 #
@@ -1202,9 +1334,9 @@ alias east = e^ e3604
 #
 tag e3604 = haon dor:area names
 #
-set e3604/door_attributes = "open"
+set e3604/door_attributes = ["open"]
 #
-set e3604/reset_door_attributes = "open"
+set e3604/reset_door_attributes = ["open"]
 #
 desc east = The trail continues eastwards through the young trees. 
 #
@@ -1218,9 +1350,9 @@ openexit south; s; e3605^ north = r6011
 #
 tag e3605 = haon dor:area names
 #
-set e3605/door_attributes = "open"
+set e3605/door_attributes = ["open"]
 #
-set e3605/reset_door_attributes = "open"
+set e3605/reset_door_attributes = ["open"]
 #
 desc south = The small path leads south through the young trees. 
 #
@@ -1234,9 +1366,9 @@ openexit west; w; e3606^ east = r6003
 #
 tag e3606 = haon dor:area names
 #
-set e3606/door_attributes = "open"
+set e3606/door_attributes = ["open"]
 #
-set e3606/reset_door_attributes = "open"
+set e3606/reset_door_attributes = ["open"]
 #
 desc west = You see the narrow forest trail winding westwards into the dense forest. 
 #
@@ -1252,9 +1384,9 @@ alias east = e^ e3607
 #
 tag e3607 = haon dor:area names
 #
-set e3607/door_attributes = "open"
+set e3607/door_attributes = ["open"]
 #
-set e3607/reset_door_attributes = "open"
+set e3607/reset_door_attributes = ["open"]
 #
 desc east = The trail continues eastwards to the younger part of the forest. 
 #
@@ -1268,9 +1400,9 @@ openexit west; w; e3608^ east = r6004
 #
 tag e3608 = haon dor:area names
 #
-set e3608/door_attributes = "open"
+set e3608/door_attributes = ["open"]
 #
-set e3608/reset_door_attributes = "open"
+set e3608/reset_door_attributes = ["open"]
 #
 desc west = You see the narrow trail winding westwards through the dense forest. 
 #
@@ -1286,9 +1418,9 @@ alias east = e^ e3609
 #
 tag e3609 = haon dor:area names
 #
-set e3609/door_attributes = "open"
+set e3609/door_attributes = ["open"]
 #
-set e3609/reset_door_attributes = "open"
+set e3609/reset_door_attributes = ["open"]
 #
 desc east = The trail continues eastwards through the dense forest. 
 #
@@ -1302,9 +1434,9 @@ openexit south; s; e3610^ north = r6005
 #
 tag e3610 = haon dor:area names
 #
-set e3610/door_attributes = "open"
+set e3610/door_attributes = ["open"]
 #
-set e3610/reset_door_attributes = "open"
+set e3610/reset_door_attributes = ["open"]
 #
 desc south = The small path leads south through the trees. 
 #
@@ -1318,9 +1450,9 @@ openexit west; w; e3611^ east = r6100
 #
 tag e3611 = haon dor:area names
 #
-set e3611/door_attributes = "open"
+set e3611/door_attributes = ["open"]
 #
-set e3611/reset_door_attributes = "open"
+set e3611/reset_door_attributes = ["open"]
 #
 desc west = The narrow trail almost seems to disappear between the enormous trunks. 
 #
@@ -1336,9 +1468,9 @@ alias north = n^ e3612
 #
 tag e3612 = haon dor:area names
 #
-set e3612/door_attributes = "open"
+set e3612/door_attributes = ["open"]
 #
-set e3612/reset_door_attributes = "open"
+set e3612/reset_door_attributes = ["open"]
 #
 desc north = The small path leads north through the trees. 
 #
@@ -1352,9 +1484,9 @@ openexit south; s; e3613^ north = r6006
 #
 tag e3613 = haon dor:area names
 #
-set e3613/door_attributes = "open"
+set e3613/door_attributes = ["open"]
 #
-set e3613/reset_door_attributes = "open"
+set e3613/reset_door_attributes = ["open"]
 #
 desc south = The small path leads south through the trees. 
 #
@@ -1370,9 +1502,9 @@ alias north = n^ e3614
 #
 tag e3614 = haon dor:area names
 #
-set e3614/door_attributes = "open"
+set e3614/door_attributes = ["open"]
 #
-set e3614/reset_door_attributes = "open"
+set e3614/reset_door_attributes = ["open"]
 #
 desc north = The small path leads north through the trees. 
 #
@@ -1386,9 +1518,9 @@ openexit east; e; e3615^ west = r6007
 #
 tag e3615 = haon dor:area names
 #
-set e3615/door_attributes = "open"
+set e3615/door_attributes = ["open"]
 #
-set e3615/reset_door_attributes = "open"
+set e3615/reset_door_attributes = ["open"]
 #
 desc east = The small path leads east through the trees. 
 #
@@ -1404,9 +1536,9 @@ openexit east; e; e3616^ west = r6008
 #
 tag e3616 = haon dor:area names
 #
-set e3616/door_attributes = "open"
+set e3616/door_attributes = ["open"]
 #
-set e3616/reset_door_attributes = "open"
+set e3616/reset_door_attributes = ["open"]
 #
 desc east = You can barely make out a clearing to the east. 
 #
@@ -1420,9 +1552,9 @@ openexit south; s; e3617^ north = r6012
 #
 tag e3617 = haon dor:area names
 #
-set e3617/door_attributes = "open"
+set e3617/door_attributes = ["open"]
 #
-set e3617/reset_door_attributes = "open"
+set e3617/reset_door_attributes = ["open"]
 #
 desc south = The small path leads south through the trees. 
 #
@@ -1436,9 +1568,9 @@ alias west = w^ e3618
 #
 tag e3618 = haon dor:area names
 #
-set e3618/door_attributes = "open"
+set e3618/door_attributes = ["open"]
 #
-set e3618/reset_door_attributes = "open"
+set e3618/reset_door_attributes = ["open"]
 #
 desc west = The small path leads west through the trees. 
 #
@@ -1454,9 +1586,9 @@ openexit north; n; e3619^ south = r6011
 #
 tag e3619 = haon dor:area names
 #
-set e3619/door_attributes = "open"
+set e3619/door_attributes = ["open"]
 #
-set e3619/reset_door_attributes = "open"
+set e3619/reset_door_attributes = ["open"]
 #
 desc north = The small path leads north through the trees. 
 #
@@ -1470,9 +1602,9 @@ openexit east; e; e3620^ west = r6009
 #
 tag e3620 = haon dor:area names
 #
-set e3620/door_attributes = "open"
+set e3620/door_attributes = ["open"]
 #
-set e3620/reset_door_attributes = "open"
+set e3620/reset_door_attributes = ["open"]
 #
 desc east = The small path leads east through the trees. 
 #
@@ -1486,9 +1618,9 @@ alias west = w^ e3621
 #
 tag e3621 = haon dor:area names
 #
-set e3621/door_attributes = "open"
+set e3621/door_attributes = ["open"]
 #
-set e3621/reset_door_attributes = "open"
+set e3621/reset_door_attributes = ["open"]
 #
 desc west = The small path leads west through the trees. 
 #
@@ -1504,9 +1636,9 @@ openexit north; door; wooden; n; e3622^ south = r6010
 #
 tag e3622 = haon dor:area names
 #
-set e3622/door_attributes = "open"
+set e3622/door_attributes = ["open"]
 #
-set e3622/reset_door_attributes = "open"
+set e3622/reset_door_attributes = ["open"]
 #
 desc north = The wooden door is quite sturdy but does not appear to be equipped with a lock. 
 #
@@ -1516,9 +1648,9 @@ openexit south; s; e3623^ north = r6014
 #
 tag e3623 = haon dor:area names
 #
-set e3623/door_attributes = "open"
+set e3623/door_attributes = ["open"]
 #
-set e3623/reset_door_attributes = "open"
+set e3623/reset_door_attributes = ["open"]
 #
 desc south = The small path leads south through the dense forest. 
 #
@@ -1532,9 +1664,9 @@ alias west = w^ e3624
 #
 tag e3624 = haon dor:area names
 #
-set e3624/door_attributes = "open"
+set e3624/door_attributes = ["open"]
 #
-set e3624/reset_door_attributes = "open"
+set e3624/reset_door_attributes = ["open"]
 #
 desc west = The small path leads west through the light forest. 
 #
@@ -1550,9 +1682,9 @@ alias south = door^ wooden^ s^ e3625
 #
 tag e3625 = haon dor:area names
 #
-set e3625/door_attributes = "open"
+set e3625/door_attributes = ["open"]
 #
-set e3625/reset_door_attributes = "open"
+set e3625/reset_door_attributes = ["open"]
 #
 desc south = The wooden door leads south. 
 #
@@ -1564,9 +1696,9 @@ alias north = n^ e3626
 #
 tag e3626 = haon dor:area names
 #
-set e3626/door_attributes = "open"
+set e3626/door_attributes = ["open"]
 #
-set e3626/reset_door_attributes = "open"
+set e3626/reset_door_attributes = ["open"]
 #
 desc north = The path leads north through the young trees. 
 #
@@ -1580,9 +1712,9 @@ alias south = s^ e3627
 #
 tag e3627 = haon dor:area names
 #
-set e3627/door_attributes = "open"
+set e3627/door_attributes = ["open"]
 #
-set e3627/reset_door_attributes = "open"
+set e3627/reset_door_attributes = ["open"]
 #
 desc south = The path leads south through the young trees. 
 #
@@ -1598,9 +1730,9 @@ alias north = n^ e3628
 #
 tag e3628 = haon dor:area names
 #
-set e3628/door_attributes = "open"
+set e3628/door_attributes = ["open"]
 #
-set e3628/reset_door_attributes = "open"
+set e3628/reset_door_attributes = ["open"]
 #
 desc north = The small path leads north through the trees. 
 #
@@ -1614,9 +1746,9 @@ openexit east; e; e3629^ west = r6013
 #
 tag e3629 = haon dor:area names
 #
-set e3629/door_attributes = "open"
+set e3629/door_attributes = ["open"]
 #
-set e3629/reset_door_attributes = "open"
+set e3629/reset_door_attributes = ["open"]
 #
 desc east = The small path leads east through the trees. 
 #
@@ -1630,9 +1762,9 @@ openexit south; s; e3630^ north = r6021
 #
 tag e3630 = haon dor:area names
 #
-set e3630/door_attributes = "open"
+set e3630/door_attributes = ["open"]
 #
-set e3630/reset_door_attributes = "open"
+set e3630/reset_door_attributes = ["open"]
 #
 desc south = The small path leads south through the trees. 
 #
@@ -1648,9 +1780,9 @@ openexit east; e; e3631^ west = r6014
 #
 tag e3631 = haon dor:area names
 #
-set e3631/door_attributes = "open"
+set e3631/door_attributes = ["open"]
 #
-set e3631/reset_door_attributes = "open"
+set e3631/reset_door_attributes = ["open"]
 #
 desc east = The small path leads east through the trees. 
 #
@@ -1664,9 +1796,9 @@ alias west = w^ e3632
 #
 tag e3632 = haon dor:area names
 #
-set e3632/door_attributes = "open"
+set e3632/door_attributes = ["open"]
 #
-set e3632/reset_door_attributes = "open"
+set e3632/reset_door_attributes = ["open"]
 #
 desc west = The small path leads west through the trees. 
 #
@@ -1682,9 +1814,9 @@ alias north = n^ e3633
 #
 tag e3633 = haon dor:area names
 #
-set e3633/door_attributes = "open"
+set e3633/door_attributes = ["open"]
 #
-set e3633/reset_door_attributes = "open"
+set e3633/reset_door_attributes = ["open"]
 #
 desc north = The path leads north to a lighter part of the forest. 
 #
@@ -1698,9 +1830,9 @@ openexit east; e; e3634^ west = r6015
 #
 tag e3634 = haon dor:area names
 #
-set e3634/door_attributes = "open"
+set e3634/door_attributes = ["open"]
 #
-set e3634/reset_door_attributes = "open"
+set e3634/reset_door_attributes = ["open"]
 #
 desc east = The small path leads east through the trees. 
 #
@@ -1714,9 +1846,9 @@ alias west = w^ e3635
 #
 tag e3635 = haon dor:area names
 #
-set e3635/door_attributes = "open"
+set e3635/door_attributes = ["open"]
 #
-set e3635/reset_door_attributes = "open"
+set e3635/reset_door_attributes = ["open"]
 #
 desc west = The small path leads west through the trees. 
 #
@@ -1732,9 +1864,9 @@ openexit south; s; e3636^ north = r6016
 #
 tag e3636 = haon dor:area names
 #
-set e3636/door_attributes = "open"
+set e3636/door_attributes = ["open"]
 #
-set e3636/reset_door_attributes = "open"
+set e3636/reset_door_attributes = ["open"]
 #
 desc south = The small path leads south through the trees. 
 #
@@ -1748,9 +1880,9 @@ alias west = w^ e3637
 #
 tag e3637 = haon dor:area names
 #
-set e3637/door_attributes = "open"
+set e3637/door_attributes = ["open"]
 #
-set e3637/reset_door_attributes = "open"
+set e3637/reset_door_attributes = ["open"]
 #
 desc west = The small path leads west through the trees. 
 #
@@ -1766,9 +1898,9 @@ alias north = n^ e3638
 #
 tag e3638 = haon dor:area names
 #
-set e3638/door_attributes = "open"
+set e3638/door_attributes = ["open"]
 #
-set e3638/reset_door_attributes = "open"
+set e3638/reset_door_attributes = ["open"]
 #
 desc north = The small path leads north through the trees. 
 #
@@ -1782,9 +1914,9 @@ openexit south; s; e3639^ north = r6017
 #
 tag e3639 = haon dor:area names
 #
-set e3639/door_attributes = "open"
+set e3639/door_attributes = ["open"]
 #
-set e3639/reset_door_attributes = "open"
+set e3639/reset_door_attributes = ["open"]
 #
 desc south = The small path leads south through the trees. 
 #
@@ -1800,9 +1932,9 @@ alias north = n^ e3640
 #
 tag e3640 = haon dor:area names
 #
-set e3640/door_attributes = "open"
+set e3640/door_attributes = ["open"]
 #
-set e3640/reset_door_attributes = "open"
+set e3640/reset_door_attributes = ["open"]
 #
 desc north = The small path leads north through the trees. 
 #
@@ -1816,9 +1948,9 @@ openexit west; w; e3641^ east = r6018
 #
 tag e3641 = haon dor:area names
 #
-set e3641/door_attributes = "open"
+set e3641/door_attributes = ["open"]
 #
-set e3641/reset_door_attributes = "open"
+set e3641/reset_door_attributes = ["open"]
 #
 desc west = The small path leads west through the trees to a lighter part of the forest. 
 #
@@ -1834,9 +1966,9 @@ openexit north; n; e3642^ south = r6023
 #
 tag e3642 = haon dor:area names
 #
-set e3642/door_attributes = "open"
+set e3642/door_attributes = ["open"]
 #
-set e3642/reset_door_attributes = "open"
+set e3642/reset_door_attributes = ["open"]
 #
 desc north = The path leads north to a small, grassy field. 
 #
@@ -1850,9 +1982,9 @@ alias east = e^ e3643
 #
 tag e3643 = haon dor:area names
 #
-set e3643/door_attributes = "open"
+set e3643/door_attributes = ["open"]
 #
-set e3643/reset_door_attributes = "open"
+set e3643/reset_door_attributes = ["open"]
 #
 desc east = The path leads east to a dense part of the forest. 
 #
@@ -1866,9 +1998,9 @@ openexit west; w; e3644^ east = r6019
 #
 tag e3644 = haon dor:area names
 #
-set e3644/door_attributes = "open"
+set e3644/door_attributes = ["open"]
 #
-set e3644/reset_door_attributes = "open"
+set e3644/reset_door_attributes = ["open"]
 #
 desc west = The path leads west to a dense part of the forest. 
 #
@@ -1884,9 +2016,9 @@ openexit north; n; e3645^ south = r6020
 #
 tag e3645 = haon dor:area names
 #
-set e3645/door_attributes = "open"
+set e3645/door_attributes = ["open"]
 #
-set e3645/reset_door_attributes = "open"
+set e3645/reset_door_attributes = ["open"]
 #
 desc north = The small path leads north through the trees. 
 #
@@ -1900,9 +2032,9 @@ alias east = e^ e3646
 #
 tag e3646 = haon dor:area names
 #
-set e3646/door_attributes = "open"
+set e3646/door_attributes = ["open"]
 #
-set e3646/reset_door_attributes = "open"
+set e3646/reset_door_attributes = ["open"]
 #
 desc east = The small path leads east through the trees to a lighter part of the forest. 
 #
@@ -1918,9 +2050,9 @@ alias south = s^ e3647
 #
 tag e3647 = haon dor:area names
 #
-set e3647/door_attributes = "open"
+set e3647/door_attributes = ["open"]
 #
-set e3647/reset_door_attributes = "open"
+set e3647/reset_door_attributes = ["open"]
 #
 desc south = The small path leads south through the trees. 
 #
@@ -1934,9 +2066,9 @@ openexit west; w; e3648^ east = r6021
 #
 tag e3648 = haon dor:area names
 #
-set e3648/door_attributes = "open"
+set e3648/door_attributes = ["open"]
 #
-set e3648/reset_door_attributes = "open"
+set e3648/reset_door_attributes = ["open"]
 #
 desc west = The small path leads west through the trees. 
 #
@@ -1952,9 +2084,9 @@ alias north = n^ e3649
 #
 tag e3649 = haon dor:area names
 #
-set e3649/door_attributes = "open"
+set e3649/door_attributes = ["open"]
 #
-set e3649/reset_door_attributes = "open"
+set e3649/reset_door_attributes = ["open"]
 #
 desc north = The small path leads north through the trees. 
 #
@@ -1968,9 +2100,9 @@ alias east = e^ e3650
 #
 tag e3650 = haon dor:area names
 #
-set e3650/door_attributes = "open"
+set e3650/door_attributes = ["open"]
 #
-set e3650/reset_door_attributes = "open"
+set e3650/reset_door_attributes = ["open"]
 #
 desc east = The small path leads east through the trees. 
 #
@@ -1984,9 +2116,9 @@ openexit west; w; e3651^ east = r6022
 #
 tag e3651 = haon dor:area names
 #
-set e3651/door_attributes = "open"
+set e3651/door_attributes = ["open"]
 #
-set e3651/reset_door_attributes = "open"
+set e3651/reset_door_attributes = ["open"]
 #
 desc west = The cave is very dark. 
 #
@@ -2002,9 +2134,9 @@ alias east = e^ e3652
 #
 tag e3652 = haon dor:area names
 #
-set e3652/door_attributes = "open"
+set e3652/door_attributes = ["open"]
 #
-set e3652/reset_door_attributes = "open"
+set e3652/reset_door_attributes = ["open"]
 #
 desc east = The cave opening is to the east. 
 #
@@ -2020,9 +2152,9 @@ alias south = s^ e3653
 #
 tag e3653 = haon dor:area names
 #
-set e3653/door_attributes = "open"
+set e3653/door_attributes = ["open"]
 #
-set e3653/reset_door_attributes = "open"
+set e3653/reset_door_attributes = ["open"]
 #
 desc south = The small path leads south in between the trees. 
 #
@@ -2038,9 +2170,9 @@ alias east = e^ e3654
 #
 tag e3654 = haon dor:area names
 #
-set e3654/door_attributes = "open"
+set e3654/door_attributes = ["open"]
 #
-set e3654/reset_door_attributes = "open"
+set e3654/reset_door_attributes = ["open"]
 #
 desc east = The narrow trail leads east to a somewhat lighter part of the forest. 
 #
@@ -2054,9 +2186,9 @@ openexit west; w; e3655^ east = r6101
 #
 tag e3655 = haon dor:area names
 #
-set e3655/door_attributes = "open"
+set e3655/door_attributes = ["open"]
 #
-set e3655/reset_door_attributes = "open"
+set e3655/reset_door_attributes = ["open"]
 #
 desc west = The narrow, dusty trail leads west through the forest. 
 #
@@ -2072,9 +2204,9 @@ alias east = e^ e3656
 #
 tag e3656 = haon dor:area names
 #
-set e3656/door_attributes = "open"
+set e3656/door_attributes = ["open"]
 #
-set e3656/reset_door_attributes = "open"
+set e3656/reset_door_attributes = ["open"]
 #
 desc east = The narrow, dusty trail leads east through the forest. 
 #
@@ -2088,9 +2220,9 @@ openexit south; s; e3657^ north = r6104
 #
 tag e3657 = haon dor:area names
 #
-set e3657/door_attributes = "open"
+set e3657/door_attributes = ["open"]
 #
-set e3657/reset_door_attributes = "open"
+set e3657/reset_door_attributes = ["open"]
 #
 desc south = The path leads south - away from the trail. 
 #
@@ -2104,9 +2236,9 @@ openexit west; w; e3658^ east = r6102
 #
 tag e3658 = haon dor:area names
 #
-set e3658/door_attributes = "open"
+set e3658/door_attributes = ["open"]
 #
-set e3658/reset_door_attributes = "open"
+set e3658/reset_door_attributes = ["open"]
 #
 desc west = The narrow, dusty trail leads west through the forest. 
 #
@@ -2122,9 +2254,9 @@ alias east = e^ e3659
 #
 tag e3659 = haon dor:area names
 #
-set e3659/door_attributes = "open"
+set e3659/door_attributes = ["open"]
 #
-set e3659/reset_door_attributes = "open"
+set e3659/reset_door_attributes = ["open"]
 #
 desc east = The narrow, dusty trail leads east through the forest. 
 #
@@ -2138,9 +2270,9 @@ openexit west; w; e3660^ east = r6103
 #
 tag e3660 = haon dor:area names
 #
-set e3660/door_attributes = "open"
+set e3660/door_attributes = ["open"]
 #
-set e3660/reset_door_attributes = "open"
+set e3660/reset_door_attributes = ["open"]
 #
 desc west = The narrow, dusty trail leads west through the forest. 
 #
@@ -2156,9 +2288,9 @@ openexit north; n; e3661^ south = r6150
 #
 tag e3661 = haon dor:area names
 #
-set e3661/door_attributes = "open"
+set e3661/door_attributes = ["open"]
 #
-set e3661/reset_door_attributes = "open"
+set e3661/reset_door_attributes = ["open"]
 #
 desc north = You see a dark trail north. 
 #
@@ -2172,9 +2304,9 @@ alias east = e^ e3662
 #
 tag e3662 = haon dor:area names
 #
-set e3662/door_attributes = "open"
+set e3662/door_attributes = ["open"]
 #
-set e3662/reset_door_attributes = "open"
+set e3662/reset_door_attributes = ["open"]
 #
 desc east = The narrow, dusty trail leads east through the forest. 
 #
@@ -2188,9 +2320,9 @@ openexit south; s; e3663^ north = r6108
 #
 tag e3663 = haon dor:area names
 #
-set e3663/door_attributes = "open"
+set e3663/door_attributes = ["open"]
 #
-set e3663/reset_door_attributes = "open"
+set e3663/reset_door_attributes = ["open"]
 #
 desc south = The narrow, dusty trail leads south through the forest. 
 #
@@ -2206,9 +2338,9 @@ alias north = n^ e3664
 #
 tag e3664 = haon dor:area names
 #
-set e3664/door_attributes = "open"
+set e3664/door_attributes = ["open"]
 #
-set e3664/reset_door_attributes = "open"
+set e3664/reset_door_attributes = ["open"]
 #
 desc north = The narrow path winds its way through the trees to the north. 
 #
@@ -2222,9 +2354,9 @@ openexit south; s; e3665^ north = r6105
 #
 tag e3665 = haon dor:area names
 #
-set e3665/door_attributes = "open"
+set e3665/door_attributes = ["open"]
 #
-set e3665/reset_door_attributes = "open"
+set e3665/reset_door_attributes = ["open"]
 #
 desc south = The narrow path winds its way through the trees to the south. 
 #
@@ -2240,9 +2372,9 @@ alias north = n^ e3666
 #
 tag e3666 = haon dor:area names
 #
-set e3666/door_attributes = "open"
+set e3666/door_attributes = ["open"]
 #
-set e3666/reset_door_attributes = "open"
+set e3666/reset_door_attributes = ["open"]
 #
 desc north = The narrow path winds its way through the trees to the north. 
 #
@@ -2256,9 +2388,9 @@ openexit west; w; e3667^ east = r6106
 #
 tag e3667 = haon dor:area names
 #
-set e3667/door_attributes = "open"
+set e3667/door_attributes = ["open"]
 #
-set e3667/reset_door_attributes = "open"
+set e3667/reset_door_attributes = ["open"]
 #
 desc west = The narrow path winds its way through the trees to the west. 
 #
@@ -2274,9 +2406,9 @@ alias east = e^ e3668
 #
 tag e3668 = haon dor:area names
 #
-set e3668/door_attributes = "open"
+set e3668/door_attributes = ["open"]
 #
-set e3668/reset_door_attributes = "open"
+set e3668/reset_door_attributes = ["open"]
 #
 desc east = The narrow path winds its way through the trees to the east. 
 #
@@ -2290,9 +2422,9 @@ openexit south; s; e3669^ north = r6117
 #
 tag e3669 = haon dor:area names
 #
-set e3669/door_attributes = "open"
+set e3669/door_attributes = ["open"]
 #
-set e3669/reset_door_attributes = "open"
+set e3669/reset_door_attributes = ["open"]
 #
 desc south = The narrow path winds its way through the trees to the south. 
 #
@@ -2306,9 +2438,9 @@ openexit west; w; e3670^ east = r6107
 #
 tag e3670 = haon dor:area names
 #
-set e3670/door_attributes = "open"
+set e3670/door_attributes = ["open"]
 #
-set e3670/reset_door_attributes = "open"
+set e3670/reset_door_attributes = ["open"]
 #
 desc west = The narrow path winds its way through the trees to the west. 
 #
@@ -2324,9 +2456,9 @@ openexit north; n; e3671^ south = r6108
 #
 tag e3671 = haon dor:area names
 #
-set e3671/door_attributes = "open"
+set e3671/door_attributes = ["open"]
 #
-set e3671/reset_door_attributes = "open"
+set e3671/reset_door_attributes = ["open"]
 #
 desc north = The narrow path winds its way through the trees to the north. 
 #
@@ -2340,9 +2472,9 @@ alias east = e^ e3672
 #
 tag e3672 = haon dor:area names
 #
-set e3672/door_attributes = "open"
+set e3672/door_attributes = ["open"]
 #
-set e3672/reset_door_attributes = "open"
+set e3672/reset_door_attributes = ["open"]
 #
 desc east = The narrow path winds its way through the trees to the east. 
 #
@@ -2358,9 +2490,9 @@ alias north = n^ e3673
 #
 tag e3673 = haon dor:area names
 #
-set e3673/door_attributes = "open"
+set e3673/door_attributes = ["open"]
 #
-set e3673/reset_door_attributes = "open"
+set e3673/reset_door_attributes = ["open"]
 #
 desc north = The narrow, dusty trail leads north through the forest. 
 #
@@ -2374,9 +2506,9 @@ alias south = s^ e3674
 #
 tag e3674 = haon dor:area names
 #
-set e3674/door_attributes = "open"
+set e3674/door_attributes = ["open"]
 #
-set e3674/reset_door_attributes = "open"
+set e3674/reset_door_attributes = ["open"]
 #
 desc south = The path leads south - away from the trail. 
 #
@@ -2390,9 +2522,9 @@ openexit west; w; e3675^ east = r6109
 #
 tag e3675 = haon dor:area names
 #
-set e3675/door_attributes = "open"
+set e3675/door_attributes = ["open"]
 #
-set e3675/reset_door_attributes = "open"
+set e3675/reset_door_attributes = ["open"]
 #
 desc west = The narrow, dusty trail leads west through the forest. 
 #
@@ -2408,9 +2540,9 @@ alias east = e^ e3676
 #
 tag e3676 = haon dor:area names
 #
-set e3676/door_attributes = "open"
+set e3676/door_attributes = ["open"]
 #
-set e3676/reset_door_attributes = "open"
+set e3676/reset_door_attributes = ["open"]
 #
 desc east = The narrow, dusty trail leads east through the forest. 
 #
@@ -2424,9 +2556,9 @@ openexit west; w; e3677^ east = r6110
 #
 tag e3677 = haon dor:area names
 #
-set e3677/door_attributes = "open"
+set e3677/door_attributes = ["open"]
 #
-set e3677/reset_door_attributes = "open"
+set e3677/reset_door_attributes = ["open"]
 #
 desc west = The narrow, dusty trail leads west through the forest. 
 #
@@ -2442,9 +2574,9 @@ openexit north; n; e3678^ south = r6144
 #
 tag e3678 = haon dor:area names
 #
-set e3678/door_attributes = "open"
+set e3678/door_attributes = ["open"]
 #
-set e3678/reset_door_attributes = "open"
+set e3678/reset_door_attributes = ["open"]
 #
 desc north = The narrow path leads west between the giant trees. 
 #
@@ -2458,9 +2590,9 @@ alias east = e^ e3679
 #
 tag e3679 = haon dor:area names
 #
-set e3679/door_attributes = "open"
+set e3679/door_attributes = ["open"]
 #
-set e3679/reset_door_attributes = "open"
+set e3679/reset_door_attributes = ["open"]
 #
 desc east = The narrow, dusty trail leads east through the forest. 
 #
@@ -2474,9 +2606,9 @@ openexit south; s; e3680^ north = r6111
 #
 tag e3680 = haon dor:area names
 #
-set e3680/door_attributes = "open"
+set e3680/door_attributes = ["open"]
 #
-set e3680/reset_door_attributes = "open"
+set e3680/reset_door_attributes = ["open"]
 #
 desc south = The narrow, dusty trail leads south through the forest. 
 #
@@ -2492,9 +2624,9 @@ alias north = n^ e3681
 #
 tag e3681 = haon dor:area names
 #
-set e3681/door_attributes = "open"
+set e3681/door_attributes = ["open"]
 #
-set e3681/reset_door_attributes = "open"
+set e3681/reset_door_attributes = ["open"]
 #
 desc north = The narrow, dusty trail leads north through the forest. 
 #
@@ -2508,9 +2640,9 @@ openexit south; s; e3682^ north = r6112
 #
 tag e3682 = haon dor:area names
 #
-set e3682/door_attributes = "open"
+set e3682/door_attributes = ["open"]
 #
-set e3682/reset_door_attributes = "open"
+set e3682/reset_door_attributes = ["open"]
 #
 desc south = The narrow, dusty trail leads south through the forest. 
 #
@@ -2526,9 +2658,9 @@ alias north = n^ e3683
 #
 tag e3683 = haon dor:area names
 #
-set e3683/door_attributes = "open"
+set e3683/door_attributes = ["open"]
 #
-set e3683/reset_door_attributes = "open"
+set e3683/reset_door_attributes = ["open"]
 #
 desc north = The narrow, dusty trail leads north through the forest. 
 #
@@ -2542,9 +2674,9 @@ openexit east; e; e3684^ west = r6113
 #
 tag e3684 = haon dor:area names
 #
-set e3684/door_attributes = "open"
+set e3684/door_attributes = ["open"]
 #
-set e3684/reset_door_attributes = "open"
+set e3684/reset_door_attributes = ["open"]
 #
 desc east = The path leads east - away from the trail. 
 #
@@ -2558,9 +2690,9 @@ openexit west; w; e3685^ east = r6127
 #
 tag e3685 = haon dor:area names
 #
-set e3685/door_attributes = "open"
+set e3685/door_attributes = ["open"]
 #
-set e3685/reset_door_attributes = "open"
+set e3685/reset_door_attributes = ["open"]
 #
 desc west = The narrow, dusty trail leads west through the forest. 
 #
@@ -2576,9 +2708,9 @@ openexit south; s; e3686^ north = r6114
 #
 tag e3686 = haon dor:area names
 #
-set e3686/door_attributes = "open"
+set e3686/door_attributes = ["open"]
 #
-set e3686/reset_door_attributes = "open"
+set e3686/reset_door_attributes = ["open"]
 #
 desc south = The narrow path winds its way through the trees to the south. 
 #
@@ -2592,9 +2724,9 @@ alias west = w^ e3687
 #
 tag e3687 = haon dor:area names
 #
-set e3687/door_attributes = "open"
+set e3687/door_attributes = ["open"]
 #
-set e3687/reset_door_attributes = "open"
+set e3687/reset_door_attributes = ["open"]
 #
 desc west = The narrow path winds its way through the trees to the west. 
 #
@@ -2610,9 +2742,9 @@ alias north = n^ e3688
 #
 tag e3688 = haon dor:area names
 #
-set e3688/door_attributes = "open"
+set e3688/door_attributes = ["open"]
 #
-set e3688/reset_door_attributes = "open"
+set e3688/reset_door_attributes = ["open"]
 #
 desc north = The narrow path winds its way through the trees to the north. 
 #
@@ -2626,9 +2758,9 @@ openexit east; e; e3689^ west = r6115
 #
 tag e3689 = haon dor:area names
 #
-set e3689/door_attributes = "open"
+set e3689/door_attributes = ["open"]
 #
-set e3689/reset_door_attributes = "open"
+set e3689/reset_door_attributes = ["open"]
 #
 desc east = The narrow path winds its way through the trees to the east. 
 #
@@ -2642,9 +2774,9 @@ openexit west; w; e3690^ east = r6122
 #
 tag e3690 = haon dor:area names
 #
-set e3690/door_attributes = "open"
+set e3690/door_attributes = ["open"]
 #
-set e3690/reset_door_attributes = "open"
+set e3690/reset_door_attributes = ["open"]
 #
 desc west = The narrow path winds its way through the trees to the west. 
 #
@@ -2660,9 +2792,9 @@ openexit north; n; e3691^ south = r6116
 #
 tag e3691 = haon dor:area names
 #
-set e3691/door_attributes = "open"
+set e3691/door_attributes = ["open"]
 #
-set e3691/reset_door_attributes = "open"
+set e3691/reset_door_attributes = ["open"]
 #
 desc north = The narrow path winds its way through the trees to the north. 
 #
@@ -2676,9 +2808,9 @@ alias west = w^ e3692
 #
 tag e3692 = haon dor:area names
 #
-set e3692/door_attributes = "open"
+set e3692/door_attributes = ["open"]
 #
-set e3692/reset_door_attributes = "open"
+set e3692/reset_door_attributes = ["open"]
 #
 desc west = The narrow path winds its way through the trees to the west. 
 #
@@ -2694,9 +2826,9 @@ openexit east; e; e3693^ west = r6117
 #
 tag e3693 = haon dor:area names
 #
-set e3693/door_attributes = "open"
+set e3693/door_attributes = ["open"]
 #
-set e3693/reset_door_attributes = "open"
+set e3693/reset_door_attributes = ["open"]
 #
 desc east = The narrow path winds its way through the trees to the east. 
 #
@@ -2710,9 +2842,9 @@ alias south = s^ e3694
 #
 tag e3694 = haon dor:area names
 #
-set e3694/door_attributes = "open"
+set e3694/door_attributes = ["open"]
 #
-set e3694/reset_door_attributes = "open"
+set e3694/reset_door_attributes = ["open"]
 #
 desc south = The narrow path winds its way through the trees to the south. 
 #
@@ -2728,9 +2860,9 @@ alias north = n^ e3695
 #
 tag e3695 = haon dor:area names
 #
-set e3695/door_attributes = "open"
+set e3695/door_attributes = ["open"]
 #
-set e3695/reset_door_attributes = "open"
+set e3695/reset_door_attributes = ["open"]
 #
 desc north = The narrow path winds its way through the trees to the north. 
 #
@@ -2744,9 +2876,9 @@ openexit east; e; e3696^ west = r6118
 #
 tag e3696 = haon dor:area names
 #
-set e3696/door_attributes = "open"
+set e3696/door_attributes = ["open"]
 #
-set e3696/reset_door_attributes = "open"
+set e3696/reset_door_attributes = ["open"]
 #
 desc east = The narrow path winds its way through the trees to the east. 
 #
@@ -2760,9 +2892,9 @@ alias west = w^ e3697
 #
 tag e3697 = haon dor:area names
 #
-set e3697/door_attributes = "open"
+set e3697/door_attributes = ["open"]
 #
-set e3697/reset_door_attributes = "open"
+set e3697/reset_door_attributes = ["open"]
 #
 desc west = The narrow path winds its way through the trees to the west. 
 #
@@ -2778,9 +2910,9 @@ openexit south; s; e3698^ north = r6119
 #
 tag e3698 = haon dor:area names
 #
-set e3698/door_attributes = "open"
+set e3698/door_attributes = ["open"]
 #
-set e3698/reset_door_attributes = "open"
+set e3698/reset_door_attributes = ["open"]
 #
 desc south = The narrow path winds its way through the trees to the south. 
 #
@@ -2794,9 +2926,9 @@ alias west = w^ e3699
 #
 tag e3699 = haon dor:area names
 #
-set e3699/door_attributes = "open"
+set e3699/door_attributes = ["open"]
 #
-set e3699/reset_door_attributes = "open"
+set e3699/reset_door_attributes = ["open"]
 #
 desc west = The narrow path winds its way through the trees to the west. 
 #
@@ -2812,9 +2944,9 @@ alias north = n^ e3700
 #
 tag e3700 = haon dor:area names
 #
-set e3700/door_attributes = "open"
+set e3700/door_attributes = ["open"]
 #
-set e3700/reset_door_attributes = "open"
+set e3700/reset_door_attributes = ["open"]
 #
 desc north = The narrow path winds its way through the trees to the north. 
 #
@@ -2828,9 +2960,9 @@ openexit south; s; e3701^ north = r6120
 #
 tag e3701 = haon dor:area names
 #
-set e3701/door_attributes = "open"
+set e3701/door_attributes = ["open"]
 #
-set e3701/reset_door_attributes = "open"
+set e3701/reset_door_attributes = ["open"]
 #
 desc south = The narrow path winds its way through the trees to the south. 
 #
@@ -2846,9 +2978,9 @@ alias north = n^ e3702
 #
 tag e3702 = haon dor:area names
 #
-set e3702/door_attributes = "open"
+set e3702/door_attributes = ["open"]
 #
-set e3702/reset_door_attributes = "open"
+set e3702/reset_door_attributes = ["open"]
 #
 desc north = The narrow path winds its way through the trees to the north. 
 #
@@ -2862,9 +2994,9 @@ openexit west; w; e3703^ east = r6121
 #
 tag e3703 = haon dor:area names
 #
-set e3703/door_attributes = "open"
+set e3703/door_attributes = ["open"]
 #
-set e3703/reset_door_attributes = "open"
+set e3703/reset_door_attributes = ["open"]
 #
 desc west = The narrow path winds its way through the trees to the west. 
 #
@@ -2880,9 +3012,9 @@ alias east = e^ e3704
 #
 tag e3704 = haon dor:area names
 #
-set e3704/door_attributes = "open"
+set e3704/door_attributes = ["open"]
 #
-set e3704/reset_door_attributes = "open"
+set e3704/reset_door_attributes = ["open"]
 #
 desc east = The narrow path winds its way through the trees to the east. 
 #
@@ -2898,9 +3030,9 @@ alias east = e^ e3705
 #
 tag e3705 = haon dor:area names
 #
-set e3705/door_attributes = "open"
+set e3705/door_attributes = ["open"]
 #
-set e3705/reset_door_attributes = "open"
+set e3705/reset_door_attributes = ["open"]
 #
 desc east = The narrow path winds its way through the trees to the east. 
 #
@@ -2914,9 +3046,9 @@ openexit south; s; e3706^ north = r6123
 #
 tag e3706 = haon dor:area names
 #
-set e3706/door_attributes = "open"
+set e3706/door_attributes = ["open"]
 #
-set e3706/reset_door_attributes = "open"
+set e3706/reset_door_attributes = ["open"]
 #
 desc south = The narrow path winds its way through the trees to the south. 
 #
@@ -2932,9 +3064,9 @@ alias north = n^ e3707
 #
 tag e3707 = haon dor:area names
 #
-set e3707/door_attributes = "open"
+set e3707/door_attributes = ["open"]
 #
-set e3707/reset_door_attributes = "open"
+set e3707/reset_door_attributes = ["open"]
 #
 desc north = The narrow path winds its way through the trees to the north. 
 #
@@ -2948,9 +3080,9 @@ openexit east; e; e3708^ west = r6124
 #
 tag e3708 = haon dor:area names
 #
-set e3708/door_attributes = "open"
+set e3708/door_attributes = ["open"]
 #
-set e3708/reset_door_attributes = "open"
+set e3708/reset_door_attributes = ["open"]
 #
 desc east = The narrow path winds its way through the trees to the east. 
 #
@@ -2964,9 +3096,9 @@ openexit west; w; e3709^ east = r6125
 #
 tag e3709 = haon dor:area names
 #
-set e3709/door_attributes = "open"
+set e3709/door_attributes = ["open"]
 #
-set e3709/reset_door_attributes = "open"
+set e3709/reset_door_attributes = ["open"]
 #
 desc west = The narrow path winds its way through the trees to the west. 
 #
@@ -2982,9 +3114,9 @@ alias west = w^ e3710
 #
 tag e3710 = haon dor:area names
 #
-set e3710/door_attributes = "open"
+set e3710/door_attributes = ["open"]
 #
-set e3710/reset_door_attributes = "open"
+set e3710/reset_door_attributes = ["open"]
 #
 desc west = The narrow path winds its way through the trees to the west. 
 #
@@ -3000,9 +3132,9 @@ openexit north; n; e3711^ south = r6126
 #
 tag e3711 = haon dor:area names
 #
-set e3711/door_attributes = "open"
+set e3711/door_attributes = ["open"]
 #
-set e3711/reset_door_attributes = "open"
+set e3711/reset_door_attributes = ["open"]
 #
 desc north = The narrow path winds its way through the trees to the north. 
 #
@@ -3016,9 +3148,9 @@ alias east = e^ e3712
 #
 tag e3712 = haon dor:area names
 #
-set e3712/door_attributes = "open"
+set e3712/door_attributes = ["open"]
 #
-set e3712/reset_door_attributes = "open"
+set e3712/reset_door_attributes = ["open"]
 #
 desc east = The narrow path winds its way through the trees to the east. 
 #
@@ -3034,9 +3166,9 @@ openexit north; n; e3713^ south = r6127
 #
 tag e3713 = haon dor:area names
 #
-set e3713/door_attributes = "open"
+set e3713/door_attributes = ["open"]
 #
-set e3713/reset_door_attributes = "open"
+set e3713/reset_door_attributes = ["open"]
 #
 desc north = The narrow, dusty trail leads north through the forest. 
 #
@@ -3050,9 +3182,9 @@ alias south = s^ e3714
 #
 tag e3714 = haon dor:area names
 #
-set e3714/door_attributes = "open"
+set e3714/door_attributes = ["open"]
 #
-set e3714/reset_door_attributes = "open"
+set e3714/reset_door_attributes = ["open"]
 #
 desc south = The path leads south - away from the trail. 
 #
@@ -3066,9 +3198,9 @@ openexit west; w; e3715^ east = r6128
 #
 tag e3715 = haon dor:area names
 #
-set e3715/door_attributes = "open"
+set e3715/door_attributes = ["open"]
 #
-set e3715/reset_door_attributes = "open"
+set e3715/reset_door_attributes = ["open"]
 #
 desc west = The narrow, dusty trail leads west through the forest. 
 #
@@ -3084,9 +3216,9 @@ alias east = e^ e3716
 #
 tag e3716 = haon dor:area names
 #
-set e3716/door_attributes = "open"
+set e3716/door_attributes = ["open"]
 #
-set e3716/reset_door_attributes = "open"
+set e3716/reset_door_attributes = ["open"]
 #
 desc east = The narrow, dusty trail leads east through the forest. 
 #
@@ -3100,9 +3232,9 @@ alias south = s^ e3717
 #
 tag e3717 = haon dor:area names
 #
-set e3717/door_attributes = "open"
+set e3717/door_attributes = ["open"]
 #
-set e3717/reset_door_attributes = "open"
+set e3717/reset_door_attributes = ["open"]
 #
 desc south = The narrow, dusty trail leads south through the forest. 
 #
@@ -3118,9 +3250,9 @@ alias east = e^ e3718
 #
 tag e3718 = haon dor:area names
 #
-set e3718/door_attributes = "open"
+set e3718/door_attributes = ["open"]
 #
-set e3718/reset_door_attributes = "open"
+set e3718/reset_door_attributes = ["open"]
 #
 desc east = The narrow, dusty trail leads east through the forest. 
 #
@@ -3134,9 +3266,9 @@ openexit west; w; e3719^ east = r6129
 #
 tag e3719 = haon dor:area names
 #
-set e3719/door_attributes = "open"
+set e3719/door_attributes = ["open"]
 #
-set e3719/reset_door_attributes = "open"
+set e3719/reset_door_attributes = ["open"]
 #
 desc west = The narrow, dusty trail leads west through the forest. 
 #
@@ -3152,9 +3284,9 @@ alias east = e^ e3720
 #
 tag e3720 = haon dor:area names
 #
-set e3720/door_attributes = "open"
+set e3720/door_attributes = ["open"]
 #
-set e3720/reset_door_attributes = "open"
+set e3720/reset_door_attributes = ["open"]
 #
 desc east = The narrow, dusty trail leads east through the forest. 
 #
@@ -3168,9 +3300,9 @@ openexit west; w; e3721^ east = r6135
 #
 tag e3721 = haon dor:area names
 #
-set e3721/door_attributes = "open"
+set e3721/door_attributes = ["open"]
 #
-set e3721/reset_door_attributes = "open"
+set e3721/reset_door_attributes = ["open"]
 #
 desc west = The narrow, dusty trail leads west through the forest. 
 #
@@ -3186,9 +3318,9 @@ openexit north; n; e3722^ south = r6136
 #
 tag e3722 = haon dor:area names
 #
-set e3722/door_attributes = "open"
+set e3722/door_attributes = ["open"]
 #
-set e3722/reset_door_attributes = "open"
+set e3722/reset_door_attributes = ["open"]
 #
 desc north = The dusty trail leads north through the trees. 
 #
@@ -3202,9 +3334,9 @@ alias east = e^ e3723
 #
 tag e3723 = haon dor:area names
 #
-set e3723/door_attributes = "open"
+set e3723/door_attributes = ["open"]
 #
-set e3723/reset_door_attributes = "open"
+set e3723/reset_door_attributes = ["open"]
 #
 desc east = The dusty trail leads east through the trees. 
 #
@@ -3220,9 +3352,9 @@ openexit east; e; e3724^ west = r6142
 #
 tag e3724 = haon dor:area names
 #
-set e3724/door_attributes = "open"
+set e3724/door_attributes = ["open"]
 #
-set e3724/reset_door_attributes = "open"
+set e3724/reset_door_attributes = ["open"]
 #
 desc east = The trees standing on the sides of the path have scratch marks on them. 
 #
@@ -3236,9 +3368,9 @@ alias south = s^ e3725
 #
 tag e3725 = haon dor:area names
 #
-set e3725/door_attributes = "open"
+set e3725/door_attributes = ["open"]
 #
-set e3725/reset_door_attributes = "open"
+set e3725/reset_door_attributes = ["open"]
 #
 desc south = The dusty trail leads south through the trees. 
 #
@@ -3252,9 +3384,9 @@ openexit west; w; e3726^ east = r6137
 #
 tag e3726 = haon dor:area names
 #
-set e3726/door_attributes = "open"
+set e3726/door_attributes = ["open"]
 #
-set e3726/reset_door_attributes = "open"
+set e3726/reset_door_attributes = ["open"]
 #
 desc west = The dusty trail leads west through the trees. 
 #
@@ -3270,9 +3402,9 @@ alias east = e^ e3727
 #
 tag e3727 = haon dor:area names
 #
-set e3727/door_attributes = "open"
+set e3727/door_attributes = ["open"]
 #
-set e3727/reset_door_attributes = "open"
+set e3727/reset_door_attributes = ["open"]
 #
 desc east = The dusty trail leads east through the trees. 
 #
@@ -3288,9 +3420,9 @@ openexit north; n; e3728^ south = r6143
 #
 tag e3728 = haon dor:area names
 #
-set e3728/door_attributes = "open"
+set e3728/door_attributes = ["open"]
 #
-set e3728/reset_door_attributes = "open"
+set e3728/reset_door_attributes = ["open"]
 #
 desc north = The disgusting smell of a large reptile emanates from the cave opening. 
 #
@@ -3304,9 +3436,9 @@ alias west = w^ e3729
 #
 tag e3729 = haon dor:area names
 #
-set e3729/door_attributes = "open"
+set e3729/door_attributes = ["open"]
 #
-set e3729/reset_door_attributes = "open"
+set e3729/reset_door_attributes = ["open"]
 #
 desc west = The path winds its way westwards. 
 #
@@ -3322,9 +3454,9 @@ alias south = s^ e3730
 #
 tag e3730 = haon dor:area names
 #
-set e3730/door_attributes = "open"
+set e3730/door_attributes = ["open"]
 #
-set e3730/reset_door_attributes = "open"
+set e3730/reset_door_attributes = ["open"]
 #
 desc south = The exit leads out into the forest. 
 #
@@ -3340,9 +3472,9 @@ alias south = s^ e3731
 #
 tag e3731 = haon dor:area names
 #
-set e3731/door_attributes = "open"
+set e3731/door_attributes = ["open"]
 #
-set e3731/reset_door_attributes = "open"
+set e3731/reset_door_attributes = ["open"]
 #
 desc south = The narrow path winds its way through the trees to the south. 
 #
@@ -3358,9 +3490,9 @@ openexit north; n; e3732^ south = r6151
 #
 tag e3732 = haon dor:area names
 #
-set e3732/door_attributes = "open"
+set e3732/door_attributes = ["open"]
 #
-set e3732/reset_door_attributes = "open"
+set e3732/reset_door_attributes = ["open"]
 #
 desc north = the narrow trail continues north. 
 #
@@ -3374,9 +3506,9 @@ alias south = s^ e3733
 #
 tag e3733 = haon dor:area names
 #
-set e3733/door_attributes = "open"
+set e3733/door_attributes = ["open"]
 #
-set e3733/reset_door_attributes = "open"
+set e3733/reset_door_attributes = ["open"]
 #
 desc south = the trail intersects the main forest path. 
 #
@@ -3392,9 +3524,9 @@ openexit east; e; e3734^ west = r6152
 #
 tag e3734 = haon dor:area names
 #
-set e3734/door_attributes = "open"
+set e3734/door_attributes = ["open"]
 #
-set e3734/reset_door_attributes = "open"
+set e3734/reset_door_attributes = ["open"]
 #
 desc east = the trail bends east. 
 #
@@ -3408,9 +3540,9 @@ alias south = s^ e3735
 #
 tag e3735 = haon dor:area names
 #
-set e3735/door_attributes = "open"
+set e3735/door_attributes = ["open"]
 #
-set e3735/reset_door_attributes = "open"
+set e3735/reset_door_attributes = ["open"]
 #
 desc south = the start of the trail. 
 #
@@ -3426,9 +3558,9 @@ openexit east; door; e; e3736^ west = r6153
 #
 tag e3736 = haon dor:area names
 #
-set e3736/door_attributes = "open"
+set e3736/door_attributes = ["open"]
 #
-set e3736/reset_door_attributes = "open"
+set e3736/reset_door_attributes = ["open"]
 #
 desc east = The tree door is carved beautifully. 
 #
@@ -3436,9 +3568,9 @@ alias west = w^ e3737
 #
 tag e3737 = haon dor:area names
 #
-set e3737/door_attributes = "open"
+set e3737/door_attributes = ["open"]
 #
-set e3737/reset_door_attributes = "open"
+set e3737/reset_door_attributes = ["open"]
 #
 desc west = the bend on the trail. 
 #
@@ -3448,9 +3580,9 @@ alias west = door^ w^ e3738
 #
 tag e3738 = haon dor:area names
 #
-set e3738/door_attributes = "open"
+set e3738/door_attributes = ["open"]
 #
-set e3738/reset_door_attributes = "open"
+set e3738/reset_door_attributes = ["open"]
 #
 desc west = the door is carved beautifully. 
 #
@@ -3458,9 +3590,9 @@ openexit down; d; e3739^ up = r6154
 #
 tag e3739 = haon dor:area names
 #
-set e3739/door_attributes = "open"
+set e3739/door_attributes = ["open"]
 #
-set e3739/reset_door_attributes = "open"
+set e3739/reset_door_attributes = ["open"]
 #
 desc down = The steps look appear like they will hold your weight. 
 #
@@ -3476,9 +3608,9 @@ alias south = s^ e3740
 #
 tag e3740 = haon dor:area names
 #
-set e3740/door_attributes = "open"
+set e3740/door_attributes = ["open"]
 #
-set e3740/reset_door_attributes = "open"
+set e3740/reset_door_attributes = ["open"]
 #
 desc south = the hallway looks quite grand. 
 #
@@ -3486,9 +3618,9 @@ alias up = u^ e3741
 #
 tag e3741 = haon dor:area names
 #
-set e3741/door_attributes = "open"
+set e3741/door_attributes = ["open"]
 #
-set e3741/reset_door_attributes = "open"
+set e3741/reset_door_attributes = ["open"]
 #
 desc up = the steps appear like they will hold your weight. 
 #
@@ -3518,9 +3650,13 @@ tag m6000 = haon dor:area name
 #
 tag m6000 = mobile
 #
-set m6000/hitpoints[maximum] = 60
+set m6000/hitpoints[maximum] = 62
 #
 set m6000/position = "standing"
+#
+set m6000/experience_total = 1981
+#
+set m6000/experience_current = 1981
 #
 tel r6009
 #
@@ -3550,11 +3686,15 @@ set o6000/extra_descriptions = {'axe lumber': ' It is a heavy axe of the kind lu
 #
 set o6000/weapon_type = "slice"
 #
-set o6000/damage_low = 1
+set o6000/damage_low = 2
 #
-set o6000/damage_high = 10
+set o6000/damage_high = 9
 #
 wieldto o6000 = m6000
+#
+set m6000/experience_total = 2476
+#
+set m6000/experience_current = 2476
 #
 set m6000/reset_objects["o6000"] = {"location":"equipped"}
 #
@@ -3584,7 +3724,7 @@ tag o6001 = object
 #
 set o6001/extra_descriptions = {'shirt': ' It is an extra large, chequered shirt made from heavy cloth. '}
 #
-set o6001/armor = 3
+set o6001/armor = 4
 #
 wearto o6001 = m6000
 #
@@ -3616,7 +3756,7 @@ tag o6002 = object
 #
 set o6002/extra_descriptions = {'boots': ' They are fashioned from rough leather that has been oiled frequently to make it stay waterproof.  They look worn but quite functional. '}
 #
-set o6002/armor = 2
+set o6002/armor = 3
 #
 wearto o6002 = m6000
 #
@@ -3894,9 +4034,13 @@ tag m6005 = haon dor:area name
 #
 tag m6005 = mobile
 #
-set m6005/hitpoints[maximum] = 52
+set m6005/hitpoints[maximum] = 62
 #
 set m6005/position = "standing"
+#
+set m6005/experience_total = 1020
+#
+set m6005/experience_current = 1020
 #
 tel r6016
 #
@@ -3956,9 +4100,13 @@ tag m6002 = haon dor:area name
 #
 tag m6002 = mobile
 #
-set m6002/hitpoints[maximum] = 80
+set m6002/hitpoints[maximum] = 92
 #
 set m6002/position = "standing"
+#
+set m6002/experience_total = 4586
+#
+set m6002/experience_current = 4586
 #
 tel r6023
 #
@@ -3991,6 +4139,10 @@ tag m6004 = mobile
 set m6004/hitpoints[maximum] = 8
 #
 set m6004/position = "standing"
+#
+set m6004/experience_total = 149
+#
+set m6004/experience_current = 149
 #
 tel r6023
 #
@@ -4052,9 +4204,13 @@ tag m6115 = haon dor:area name
 #
 tag m6115 = mobile
 #
-set m6115/hitpoints[maximum] = 65
+set m6115/hitpoints[maximum] = 41
 #
 set m6115/position = "standing"
+#
+set m6115/experience_total = 953
+#
+set m6115/experience_current = 953
 #
 tel r6100
 #
@@ -4154,9 +4310,13 @@ tag m6102 = haon dor:area name
 #
 tag m6102 = mobile
 #
-set m6102/hitpoints[maximum] = 8
+set m6102/hitpoints[maximum] = 9
 #
 set m6102/position = "standing"
+#
+set m6102/experience_total = 164
+#
+set m6102/experience_current = 164
 #
 tel r6104
 #
@@ -4184,9 +4344,13 @@ tag m6102-2 = haon dor:area name
 #
 tag m6102-2 = mobile
 #
-set m6102-2/hitpoints[maximum] = 8
+set m6102-2/hitpoints[maximum] = 9
 #
 set m6102-2/position = "standing"
+#
+set m6102-2/experience_total = 156
+#
+set m6102-2/experience_current = 156
 #
 tel r6104
 #
@@ -4276,6 +4440,10 @@ set m6102/hitpoints[maximum] = 9
 #
 set m6102/position = "standing"
 #
+set m6102/experience_total = 140
+#
+set m6102/experience_current = 140
+#
 tel r6108
 #
 create/drop the large, grey wolf;wolf;grey;m6102; m6102-2:characters.Mobile
@@ -4302,9 +4470,13 @@ tag m6102-2 = haon dor:area name
 #
 tag m6102-2 = mobile
 #
-set m6102-2/hitpoints[maximum] = 8
+set m6102-2/hitpoints[maximum] = 9
 #
 set m6102-2/position = "standing"
+#
+set m6102-2/experience_total = 138
+#
+set m6102-2/experience_current = 138
 #
 tel r6111
 #
@@ -4364,9 +4536,13 @@ tag m6103 = haon dor:area name
 #
 tag m6103 = mobile
 #
-set m6103/hitpoints[maximum] = 49
+set m6103/hitpoints[maximum] = 62
 #
 set m6103/position = "standing"
+#
+set m6103/experience_total = 1621
+#
+set m6103/experience_current = 1621
 #
 tel r6112
 #
@@ -4394,9 +4570,13 @@ tag m6103-2 = haon dor:area name
 #
 tag m6103-2 = mobile
 #
-set m6103-2/hitpoints[maximum] = 76
+set m6103-2/hitpoints[maximum] = 84
 #
 set m6103-2/position = "standing"
+#
+set m6103-2/experience_total = 1548
+#
+set m6103-2/experience_current = 1548
 #
 tel r6113
 #
@@ -4454,9 +4634,13 @@ tag m6100 = haon dor:area name
 #
 tag m6100 = mobile
 #
-set m6100/hitpoints[maximum] = 8
+set m6100/hitpoints[maximum] = 9
 #
 set m6100/position = "standing"
+#
+set m6100/experience_total = 148
+#
+set m6100/experience_current = 148
 #
 tel r6116
 #
@@ -4488,6 +4672,10 @@ set m6100-2/hitpoints[maximum] = 9
 #
 set m6100-2/position = "standing"
 #
+set m6100-2/experience_total = 166
+#
+set m6100-2/experience_current = 166
+#
 tel r6118
 #
 create/drop the large, black wolf;wolf;black;m6103:characters.Mobile
@@ -4514,9 +4702,13 @@ tag m6103 = haon dor:area name
 #
 tag m6103 = mobile
 #
-set m6103/hitpoints[maximum] = 62
+set m6103/hitpoints[maximum] = 51
 #
 set m6103/position = "standing"
+#
+set m6103/experience_total = 1598
+#
+set m6103/experience_current = 1598
 #
 tel r6118
 #
@@ -4544,9 +4736,13 @@ tag m6103-2 = haon dor:area name
 #
 tag m6103-2 = mobile
 #
-set m6103-2/hitpoints[maximum] = 59
+set m6103-2/hitpoints[maximum] = 72
 #
 set m6103-2/position = "standing"
+#
+set m6103-2/experience_total = 1544
+#
+set m6103-2/experience_current = 1544
 #
 tel r6119
 #
@@ -4642,7 +4838,7 @@ set o6104/weapon_type = "pound"
 #
 set o6104/damage_low = 4
 #
-set o6104/damage_high = 8
+set o6104/damage_high = 9
 #
 drop o6104
 #
@@ -4674,9 +4870,13 @@ tag m6101 = haon dor:area name
 #
 tag m6101 = mobile
 #
-set m6101/hitpoints[maximum] = 84
+set m6101/hitpoints[maximum] = 80
 #
 set m6101/position = "standing"
+#
+set m6101/experience_total = 1598
+#
+set m6101/experience_current = 1598
 #
 tel r6127
 #
@@ -4704,9 +4904,13 @@ tag m6101-2 = haon dor:area name
 #
 tag m6101-2 = mobile
 #
-set m6101-2/hitpoints[maximum] = 58
+set m6101-2/hitpoints[maximum] = 80
 #
 set m6101-2/position = "standing"
+#
+set m6101-2/experience_total = 1502
+#
+set m6101-2/experience_current = 1502
 #
 tel r6143
 #
@@ -4736,9 +4940,13 @@ tag m6112 = haon dor:area name
 #
 tag m6112 = mobile
 #
-set m6112/hitpoints[maximum] = 403
+set m6112/hitpoints[maximum] = 586
 #
 set m6112/position = "standing"
+#
+set m6112/experience_total = 65596
+#
+set m6112/experience_current = 65596
 #
 set m6112/special_function = "breath_gas"
 #
@@ -4808,7 +5016,7 @@ set o6112/extra_flags = ['magic']
 #
 set o6112/stat_modifiers[wisdom] = 3
 #
-set o6112/armor = 7
+set o6112/armor = 6
 #
 give o6112 = m6112
 #
@@ -4886,9 +5094,13 @@ tag m6116 = haon dor:area name
 #
 tag m6116 = mobile
 #
-set m6116/hitpoints[maximum] = 113
+set m6116/hitpoints[maximum] = 130
 #
 set m6116/position = "standing"
+#
+set m6116/experience_total = 5505
+#
+set m6116/experience_current = 5505
 #
 set m6116/special_function = "cast_cleric"
 #
@@ -4926,9 +5138,13 @@ set o6155/weapon_type = "crush"
 #
 set o6155/damage_low = 3
 #
-set o6155/damage_high = 12
+set o6155/damage_high = 10
 #
 wieldto o6155 = m6116
+#
+set m6116/experience_total = 6881
+#
+set m6116/experience_current = 6881
 #
 set m6116/reset_objects["o6155"] = {"location":"equipped"}
 #

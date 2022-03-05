@@ -716,6 +716,7 @@ class Player(Character):
         # set experience/level stats
         self.db.experience_total = 0
         self.db.experience_spent = 0
+        self.db.experience_spent_practices = 0
         self.db.level = 1
 
         # set monetary stats
@@ -749,7 +750,12 @@ class Player(Character):
         self.db.holy_light = False
         
         self.tags.add("player")
-        
+
+    @property
+    def experience_available(self):
+        return self.db.experience_total - self.db.experience_spent
+
+
     def check_key(self,key_vnum): 
         """
         Simple method to check whether character has a specific key in their

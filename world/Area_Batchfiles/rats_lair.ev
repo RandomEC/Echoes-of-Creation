@@ -1,0 +1,5046 @@
+dig/tel Icaza's and Hatchet's Bedroom; r3843
+#
+tag r3843 = the rats' lair:area names
+#
+desc r3843 = You are in a large room.  Strangely, you see THREE beds in this room, a large brass bed, an equally large waterbed, and a smaller low futon.  All three look used, as if the owners of this room use all three beds depending on their moods.  The smell of roses and perfumes permeates this room, and you can hear some soft jazzy music (Kenny G?) in the background.  There is no mortal exit from this room. 
+#
+desc/edit r3843
+#
+:j l
+#
+:wq
+#
+set r3843/vnum = "r3843"
+#
+set r3843/terrain = "city"
+#
+set r3843/room_flags = ['private', 'underground', 'no mob']
+#
+dig/tel A Hidden Alcove; r3800
+#
+tag r3800 = the rats' lair:area names
+#
+desc r3800 = A small alcove is hidden behind the storage room.  Thin streaks of dull gray light filter in around the edges of the door.  A musty smell pervades the entire room. 
+#
+desc/edit r3800
+#
+:j l
+#
+:wq
+#
+set r3800/vnum = "r3800"
+#
+set r3800/terrain = "inside"
+#
+set r3800/room_flags = ['underground', 'indoors']
+#
+dig/tel Below a Dark Stairway; r3801
+#
+tag r3801 = the rats' lair:area names
+#
+desc r3801 = You are beneath a dark stairway.  Little light filters through from above, allowing you to see only a dim passage leading to the south.  You see around you decaying wood, and a musty smell assails your nostrils.  You look down and realize you are stepping on some type of feces. 
+#
+desc/edit r3801
+#
+:j l
+#
+:wq
+#
+set r3801/vnum = "r3801"
+#
+set r3801/terrain = "city"
+#
+set r3801/room_flags = ['underground', 'indoors', 'no mob']
+#
+dig/tel A Hallway; r3802
+#
+tag r3802 = the rats' lair:area names
+#
+desc r3802 = You are in a dim hallway.  Unlit torches hang from the walls, but the little light coming from the north is enough for you to see around.  This hallway continues south and north, with doors to the west and east. 
+#
+desc/edit r3802
+#
+:j l
+#
+:wq
+#
+set r3802/vnum = "r3802"
+#
+set r3802/terrain = "city"
+#
+set r3802/room_flags = ['underground', 'indoors']
+#
+dig/tel A Dim Hallway; r3803
+#
+tag r3803 = the rats' lair:area names
+#
+desc r3803 = You are in a dim hallway, deeper into this decrepit place.  You realize that this place used to be a basement of some sort.  This hallway leads north and south, with doors to the west and east.  There is less and less light coming from the north, and you can barely see what's south of you.  Hanging on the walls are some torches. 
+#
+desc/edit r3803
+#
+:j l
+#
+:wq
+#
+set r3803/vnum = "r3803"
+#
+set r3803/terrain = "city"
+#
+set r3803/room_flags = ['underground', 'indoors']
+#
+dig/tel A Dim Hallway Above the Stairway; r3804
+#
+tag r3804 = the rats' lair:area names
+#
+desc r3804 = You are at the end of the dim hallway.  Below you are some old wooden stairs. You can see that what's available of the light from the north can not penetrate the lower floor.  A room is to the west and to the east.  Hanging on the walls are some torches that look serviceable. 
+#
+desc/edit r3804
+#
+:j l
+#
+:wq
+#
+set r3804/vnum = "r3804"
+#
+set r3804/terrain = "city"
+#
+set r3804/room_flags = ['underground', 'indoors']
+#
+dig/tel A Small Storage Room; r3805
+#
+tag r3805 = the rats' lair:area names
+#
+desc r3805 = You are in a small storage room.  Ripped up flour sacks litter this floor, along with some animal droppings.  The exit is to the east. 
+#
+desc/edit r3805
+#
+:j l
+#
+:wq
+#
+set r3805/vnum = "r3805"
+#
+set r3805/terrain = "city"
+#
+set r3805/room_flags = ['underground', 'indoors']
+#
+dig/tel A Small Storage Room; r3806
+#
+tag r3806 = the rats' lair:area names
+#
+desc r3806 = You are in a small storage room.  A pile of rags is against the far wall.  You think you saw something move in the pile of rags!  The exit is to the west. 
+#
+desc/edit r3806
+#
+:j l
+#
+:wq
+#
+set r3806/vnum = "r3806"
+#
+set r3806/terrain = "city"
+#
+set r3806/room_flags = ['underground', 'indoors']
+#
+dig/tel A Small Storage Room; r3807
+#
+tag r3807 = the rats' lair:area names
+#
+desc r3807 = You are in a small storage room.  A horrid stench fills this room, smelling like some dead animal is rotting away here.  The exit is to the east. 
+#
+desc/edit r3807
+#
+:j l
+#
+:wq
+#
+set r3807/vnum = "r3807"
+#
+set r3807/terrain = "city"
+#
+set r3807/room_flags = ['underground', 'indoors']
+#
+dig/tel A Small Storage Room; r3808
+#
+tag r3808 = the rats' lair:area names
+#
+desc r3808 = You are in a small storage room.  A pile of filthy rags leans against the far wall.  There are odd scratch marks on the floor and the pile of rags looks almost compressed.  There is an exit to the west. 
+#
+desc/edit r3808
+#
+:j l
+#
+:wq
+#
+set r3808/vnum = "r3808"
+#
+set r3808/terrain = "city"
+#
+set r3808/room_flags = ['underground', 'indoors']
+#
+dig/tel A Small Storage Room; r3809
+#
+tag r3809 = the rats' lair:area names
+#
+desc r3809 = You are in a small storage room.  A pile of filthy rags is against the far wall.  The exit is to the east. 
+#
+desc/edit r3809
+#
+:j l
+#
+:wq
+#
+set r3809/vnum = "r3809"
+#
+set r3809/terrain = "city"
+#
+set r3809/room_flags = ['underground', 'indoors', 'no mob']
+#
+dig/tel A Small Storage Room; r3810
+#
+tag r3810 = the rats' lair:area names
+#
+desc r3810 = You are in a small storage room.  Nothing of interest is here.  The exit is to the west. 
+#
+desc/edit r3810
+#
+:j l
+#
+:wq
+#
+set r3810/vnum = "r3810"
+#
+set r3810/terrain = "city"
+#
+set r3810/room_flags = ['underground', 'indoors']
+#
+dig/tel Beneath the Old Stairway; r3811
+#
+tag r3811 = the rats' lair:area names
+#
+desc r3811 = You are beneath the old stairway.  It reeks of dead meat and fecal matter here, and the combined darkness makes this place quite forbidding.  Small rooms can be seen in the west and east, and a hallway leads north.  Unlit torches adorn the walls. 
+#
+desc/edit r3811
+#
+:j l
+#
+:wq
+#
+set r3811/vnum = "r3811"
+#
+set r3811/terrain = "city"
+#
+set r3811/room_flags = ['underground', 'indoors', 'dark']
+#
+dig/tel A Dark Hallway; r3812
+#
+tag r3812 = the rats' lair:area names
+#
+desc r3812 = You are in a dark hallway.  It appears that this part of the basement area is not fully complete in construction, and that the inhabitants here have made some make-shift arrangements.  The hallway leads north and south, with rooms to the west and east.  Unlit torches adorn the walls. 
+#
+desc/edit r3812
+#
+:j l
+#
+:wq
+#
+set r3812/vnum = "r3812"
+#
+set r3812/terrain = "city"
+#
+set r3812/room_flags = ['underground', 'indoors', 'dark']
+#
+dig/tel A Dark Hallway; r3813
+#
+tag r3813 = the rats' lair:area names
+#
+desc r3813 = You are in a dark hallway that leads north to south.  West and east of you are some roughly made rooms.  You can see that the wooden walls are incomplete, and parts of the walls are just dug from rock and packed soil.  Unlit torches are on the walls. 
+#
+desc/edit r3813
+#
+:j l
+#
+:wq
+#
+set r3813/vnum = "r3813"
+#
+set r3813/terrain = "city"
+#
+set r3813/room_flags = ['underground', 'indoors', 'dark']
+#
+dig/tel A Dark Hallway; r3814
+#
+tag r3814 = the rats' lair:area names
+#
+desc r3814 = You are in a dark hallway.  You see more exposed rock than wood now, as this unfinished place reveals it's state of incompleteness.  Someone must have abandoned this place for a reason.  To the west and east are some makeshift bedrooms, and this hallway leads north and south. 
+#
+desc/edit r3814
+#
+:j l
+#
+:wq
+#
+set r3814/vnum = "r3814"
+#
+set r3814/terrain = "city"
+#
+set r3814/room_flags = ['underground', 'indoors', 'dark']
+#
+dig/tel A Storage Room; r3815
+#
+tag r3815 = the rats' lair:area names
+#
+desc r3815 = You are in a storage room.  Weapons and some armor are on the floor.  Most are broken, however, so they are useless to you.  The exit is to the east. 
+#
+desc/edit r3815
+#
+:j l
+#
+:wq
+#
+set r3815/vnum = "r3815"
+#
+set r3815/terrain = "city"
+#
+set r3815/room_flags = ['underground', 'indoors', 'dark']
+#
+dig/tel A Storage Room; r3816
+#
+tag r3816 = the rats' lair:area names
+#
+desc r3816 = You are in a storage room.  "Food" and some useless tools are scattered all over the floor, but they sure don't look like anything you'd dare get near! The exit is to the west. 
+#
+desc/edit r3816
+#
+:j l
+#
+:wq
+#
+set r3816/vnum = "r3816"
+#
+set r3816/terrain = "city"
+#
+set r3816/room_flags = ['underground', 'indoors', 'dark']
+#
+dig/tel A Bedroom; r3817
+#
+tag r3817 = the rats' lair:area names
+#
+desc r3817 = You are in a makeshift bedroom.  A pile of rags against a wall makes a bed, and some boards nailed together make a table.  The exit is to the east. 
+#
+desc/edit r3817
+#
+:j l
+#
+:wq
+#
+set r3817/vnum = "r3817"
+#
+set r3817/terrain = "city"
+#
+set r3817/room_flags = ['underground', 'indoors', 'dark']
+#
+dig/tel A Bedroom; r3818
+#
+tag r3818 = the rats' lair:area names
+#
+desc r3818 = You are in a makeshift bedroom.  A pile of rags against a wall makes a bed, and a crate on it's side makes a rough cabinet.  The exit is to the west. 
+#
+desc/edit r3818
+#
+:j l
+#
+:wq
+#
+set r3818/vnum = "r3818"
+#
+set r3818/terrain = "city"
+#
+set r3818/room_flags = ['underground', 'indoors', 'dark']
+#
+dig/tel A Bedroom; r3819
+#
+tag r3819 = the rats' lair:area names
+#
+desc r3819 = You are in a makeshift bedroom.  The only thing in this room is a bed made of a pile of rags.  The exit is to the east. 
+#
+desc/edit r3819
+#
+:j l
+#
+:wq
+#
+set r3819/vnum = "r3819"
+#
+set r3819/terrain = "city"
+#
+set r3819/room_flags = ['underground', 'indoors', 'dark']
+#
+dig/tel A Bedroom; r3820
+#
+tag r3820 = the rats' lair:area names
+#
+desc r3820 = You are in a makeshift bedroom.  The only thing in this room is a bed made of a pile of rags.  The exit is to the west. 
+#
+desc/edit r3820
+#
+:j l
+#
+:wq
+#
+set r3820/vnum = "r3820"
+#
+set r3820/terrain = "city"
+#
+set r3820/room_flags = ['underground', 'indoors', 'dark']
+#
+dig/tel A Bedroom; r3821
+#
+tag r3821 = the rats' lair:area names
+#
+desc r3821 = You are in a makeshift bedroom.  All you see in this room is a bed made of rags and a wooden box.  The exit is to the east. 
+#
+desc/edit r3821
+#
+:j l
+#
+:wq
+#
+set r3821/vnum = "r3821"
+#
+set r3821/terrain = "city"
+#
+set r3821/room_flags = ['underground', 'indoors', 'dark']
+#
+dig/tel A Bedroom; r3822
+#
+tag r3822 = the rats' lair:area names
+#
+desc r3822 = You are in a makeshift bedroom.  All you can see in this room is a bed made of rags and a shabbily built stool in the corner.  The exit is to the west. 
+#
+desc/edit r3822
+#
+:j l
+#
+:wq
+#
+set r3822/vnum = "r3822"
+#
+set r3822/terrain = "city"
+#
+set r3822/room_flags = ['underground', 'indoors', 'dark']
+#
+dig/tel A Stairway; r3823
+#
+tag r3823 = the rats' lair:area names
+#
+desc r3823 = You are on a landing of an old stairway.  The stairs creak as you put any pressure on it, and the combined gloom of this place gives you the creeps. The stairs lead both up and down, and a hallway is to the south. 
+#
+desc/edit r3823
+#
+:j l
+#
+:wq
+#
+set r3823/vnum = "r3823"
+#
+set r3823/terrain = "city"
+#
+set r3823/room_flags = ['underground', 'indoors', 'dark']
+#
+dig/tel A Meeting Room; r3824
+#
+tag r3824 = the rats' lair:area names
+#
+desc r3824 = You are in a roughly dug room, about 20 paces by 20 paces, and 8 paces high. A table is in the center, with about a dozen chairs surrounding it.  A lit torch is on a wall, and you can tell that someone must do some upkeep here, because the obnoxious smell is less in this room.  The exit is down the stairway. 
+#
+desc/edit r3824
+#
+:j l
+#
+:wq
+#
+set r3824/vnum = "r3824"
+#
+set r3824/terrain = "city"
+#
+set r3824/room_flags = ['underground', 'indoors']
+#
+dig/tel At the Bottom of the Stairs; r3825
+#
+tag r3825 = the rats' lair:area names
+#
+desc r3825 = You are at the bottom of the stairs, in a roughly dug room.  This area smells like swamp, with a warm and humid odor assailing your nostrils.  An ominously red light comes from the south, the other exit to this room being the stairs back up. 
+#
+desc/edit r3825
+#
+:j l
+#
+:wq
+#
+set r3825/vnum = "r3825"
+#
+set r3825/terrain = "city"
+#
+set r3825/room_flags = ['underground', 'indoors', 'dark']
+#
+dig/tel The Firedrake's Lair; r3826
+#
+tag r3826 = the rats' lair:area names
+#
+desc r3826 = You are in a large, roughly dug room, about 15 paces by 15 paces and 10 paces high.  A light smoke fills the air, and you see burn marks all around you.  A steel door is to the east, another is to the west, and tunnels lead north and south. 
+#
+desc/edit r3826
+#
+:j l
+#
+:wq
+#
+set r3826/vnum = "r3826"
+#
+set r3826/terrain = "city"
+#
+set r3826/room_flags = ['underground', 'indoors', 'no mob']
+#
+dig/tel The Treasure Room; r3827
+#
+tag r3827 = the rats' lair:area names
+#
+desc r3827 = You are in a small, unlit room.  There is nothing of interest here other than the obvious treasure piled in the center of this room!  The steel door leads west out of here. 
+#
+desc/edit r3827
+#
+:j l
+#
+:wq
+#
+set r3827/vnum = "r3827"
+#
+set r3827/terrain = "city"
+#
+set r3827/room_flags = ['underground', 'indoors', 'dark']
+#
+dig/tel The Leader's Quarters; r3828
+#
+tag r3828 = the rats' lair:area names
+#
+desc r3828 = You are in a small room.  A large desk and large chair make up the furnishings in this room, other than a painting on the north wall.  The steel door leads east out of here. 
+#
+desc/edit r3828
+#
+:j l
+#
+:wq
+#
+set r3828/vnum = "r3828"
+#
+set r3828/terrain = "city"
+#
+set r3828/room_flags = ['underground', 'indoors', 'dark']
+#
+dig/tel A Rough Tunnel; r3829
+#
+tag r3829 = the rats' lair:area names
+#
+desc r3829 = You are in a roughly dug tunnel.  The inhabitants of this lair must have begun to expand by excavating this area.  A lit lantern casts wavy shadows across this tunnel, which leads north and south. 
+#
+desc/edit r3829
+#
+:j l
+#
+:wq
+#
+set r3829/vnum = "r3829"
+#
+set r3829/terrain = "city"
+#
+set r3829/room_flags = ['underground', 'indoors']
+#
+dig/tel A T-Intersection in the Tunnels; r3830
+#
+tag r3830 = the rats' lair:area names
+#
+desc r3830 = You are in an intersection in the tunnels.  A lit lantern casts a orange light in this tunnel, showing cages to the west, and side branches leading north and east. 
+#
+desc/edit r3830
+#
+:j l
+#
+:wq
+#
+set r3830/vnum = "r3830"
+#
+set r3830/terrain = "city"
+#
+set r3830/room_flags = ['underground', 'indoors']
+#
+dig/tel A Large Cage; r3831
+#
+tag r3831 = the rats' lair:area names
+#
+desc r3831 = You are in a large, unlit cage.  It smells bad here, and you here squishing sounds as you tread around in this room.  The exit is to the east. 
+#
+desc/edit r3831
+#
+:j l
+#
+:wq
+#
+set r3831/vnum = "r3831"
+#
+set r3831/terrain = "city"
+#
+set r3831/room_flags = ['underground', 'indoors', 'dark']
+#
+dig/tel A Bend in the Tunnels; r3832
+#
+tag r3832 = the rats' lair:area names
+#
+desc r3832 = You are in a bend in the tunnels.  A lantern blazes on a low ceiling.  The exits are to the west and south. 
+#
+desc/edit r3832
+#
+:j l
+#
+:wq
+#
+set r3832/vnum = "r3832"
+#
+set r3832/terrain = "city"
+#
+set r3832/room_flags = ['underground', 'indoors']
+#
+dig/tel A T-Intersection in the Tunnels; r3833
+#
+tag r3833 = the rats' lair:area names
+#
+desc r3833 = You are in a T-intersection in the tunnels.  A lantern shows exits in the cardinal directions. 
+#
+desc/edit r3833
+#
+:j l
+#
+:wq
+#
+set r3833/vnum = "r3833"
+#
+set r3833/terrain = "city"
+#
+set r3833/room_flags = ['underground', 'indoors']
+#
+dig/tel An End of the Tunnel; r3834
+#
+tag r3834 = the rats' lair:area names
+#
+desc r3834 = You are at an end of the tunnel, and you can see signs of digging here.  The walls glitter from a lantern hung on a wall.  The exit is to the east. 
+#
+desc/edit r3834
+#
+:j l
+#
+:wq
+#
+set r3834/vnum = "r3834"
+#
+set r3834/terrain = "city"
+#
+set r3834/room_flags = ['underground', 'indoors']
+#
+dig/tel An End of the Tunnel; r3835
+#
+tag r3835 = the rats' lair:area names
+#
+desc r3835 = You are at an end of the tunnel, and you can see signs of digging here.  The walls glitter from a lantern hung on a wall.  The exit is to the west. 
+#
+desc/edit r3835
+#
+:j l
+#
+:wq
+#
+set r3835/vnum = "r3835"
+#
+set r3835/terrain = "city"
+#
+set r3835/room_flags = ['underground', 'indoors']
+#
+dig/tel The Tunnel; r3836
+#
+tag r3836 = the rats' lair:area names
+#
+desc r3836 = You are in the tunnels.  A high lantern shows exits to the north and south. The walls glitter slightly. 
+#
+desc/edit r3836
+#
+:j l
+#
+:wq
+#
+set r3836/vnum = "r3836"
+#
+set r3836/terrain = "city"
+#
+set r3836/room_flags = ['underground', 'indoors']
+#
+dig/tel An End of the Tunnel; r3837
+#
+tag r3837 = the rats' lair:area names
+#
+desc r3837 = You are at an end of the tunnels.  A high lantern shows a large silver door to the south.  The door seems to glow.  The tunnel leads back north.  There is a large sign here, scribbled on it, 'Do NOT Enter!' 
+#
+desc/edit r3837
+#
+:j l
+#
+:wq
+#
+set r3837/vnum = "r3837"
+#
+set r3837/terrain = "city"
+#
+set r3837/extra_description = {'sign': "The sign says, 'Do NOT Enter!' "}
+#
+set r3837/room_flags = ['underground', 'indoors']
+#
+dig/tel A Small Shrine; r3838
+#
+tag r3838 = the rats' lair:area names
+#
+desc r3838 = You are in a small room.  For some reason, this room is much cleaner than the others in this decrepit area.  A candle burns smokelessly on a table in the middle of the room, and a small shrine is against the far wall.  The occupants of this area must avoid this room for some reason.  Some words are inscribed next to the shrine.  The exit is to the north. 
+#
+desc/edit r3838
+#
+:j l
+#
+:wq
+#
+set r3838/vnum = "r3838"
+#
+set r3838/terrain = "city"
+#
+set r3838/extra_description = {'words inscription inscribed walls wall': 'The inscribed words say, My Goddess Icaza, My love for you shall never end, for you are the love of my life.  I dedicate this room to you, and I bless it so that no evil may ever enter this room. Your Mortal Paladin, Hatchet '}
+#
+set r3838/room_flags = ['underground', 'indoors', 'no mob']
+#
+dig/tel Empty room; r3839
+#
+tag r3839 = the rats' lair:area names
+#
+desc r3839 = You are on the other side of this dimensional portal!  You look around, and see walls made of a golden substance harder than titanium and atlantium.  A divine light illuminates this room.  To the west, you see the rest of this estate, and to the east, you see a small room with a shrine through a hazy portal. 
+#
+desc/edit r3839
+#
+:j l
+#
+:wq
+#
+set r3839/vnum = "r3839"
+#
+set r3839/terrain = "city"
+#
+set r3839/room_flags = ['no teleport in', 'solitary', 'safe', 'underground', 'indoors']
+#
+dig/tel Empty Room; r3840
+#
+tag r3840 = the rats' lair:area names
+#
+desc r3840 = You are in a large room.  Walls made of a golden substance harder than titanium and atlantium rise high to the ceilings.  Paintings, tapestries, and other beautiful objects of art merge into the walls, as if they are part of the walls themselves.  Two large thrones are in the center of this room.  A large door wrought from a platinum-like metal is to the north, and an equally large door wrought from a gold-like metal is to the south.  The other exit from this room is the hallway to the east, and a mysterious portal to the west. 
+#
+desc/edit r3840
+#
+:j l
+#
+:wq
+#
+set r3840/vnum = "r3840"
+#
+set r3840/terrain = "city"
+#
+set r3840/extra_description = {'portal west': 'This portal seems impenetrable by mortal means. '}
+#
+set r3840/room_flags = ['no astral in', 'no teleport in', 'solitary', 'safe', 'underground', 'indoors']
+#
+dig/tel Empty room; r3841
+#
+tag r3841 = the rats' lair:area names
+#
+desc r3841 = You are in a small, cluttered room.  You are amazed by the amount of trash in this room, especially compared to the large, opulent room this is connected to. A picture of the fair lady Icaza is on a wall, next to a Cindy Crawford calendar.  You can hear the song 'Somewhere Out There' in the background.  The exit is to the south. 
+#
+desc/edit r3841
+#
+:j l
+#
+:wq
+#
+set r3841/vnum = "r3841"
+#
+set r3841/terrain = "city"
+#
+set r3841/room_flags = ['no teleport in', 'solitary', 'safe', 'underground']
+#
+dig/tel Empty Room; r3842
+#
+tag r3842 = the rats' lair:area names
+#
+desc r3842 = You are in a small room.  A large bed is in the corner, and a wooden rocker creaks of it's own will on the hardwood floors.  You can see a stuffed ducky and a stuffed piggie on the bed.  This bed looks like it's for display use only, as the owner of this room must sleep somewhere else.  You can hear the ringing of a small bell in the background.  The exit is to the north. 
+#
+desc/edit r3842
+#
+:j l
+#
+:wq
+#
+set r3842/vnum = "r3842"
+#
+set r3842/terrain = "city"
+#
+set r3842/room_flags = ['no teleport in', 'solitary', 'safe', 'underground']
+#
+tel r3843
+#
+tel r3800
+#
+openexit west; w; e3600^ east = r3808
+#
+tag e3600 = the rats' lair:area names
+#
+set e3600/door_attributes = ["open"]
+#
+set e3600/reset_door_attributes = ["open"]
+#
+tel r3801
+#
+openexit south; s; e3601^ north = r3802
+#
+tag e3601 = the rats' lair:area names
+#
+set e3601/door_attributes = ["open"]
+#
+set e3601/reset_door_attributes = ["open"]
+#
+desc south = You see the dim passage leading south. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit up; pile; cloth; u; e3602^ down = r3755
+#
+tag e3602 = the rats' lair:area names
+#
+set e3602/door_attributes = ["open"]
+#
+set e3602/reset_door_attributes = ["open"]
+#
+tel r3802
+#
+alias north = n^ e3603
+#
+tag e3603 = the rats' lair:area names
+#
+set e3603/door_attributes = ["open"]
+#
+set e3603/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; door; e; e3604^ west = r3806
+#
+tag e3604 = the rats' lair:area names
+#
+set e3604/door_attributes = ["open"]
+#
+set e3604/reset_door_attributes = ["open"]
+#
+openexit south; s; e3605^ north = r3803
+#
+tag e3605 = the rats' lair:area names
+#
+set e3605/door_attributes = ["open"]
+#
+set e3605/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; door; w; e3606^ east = r3805
+#
+tag e3606 = the rats' lair:area names
+#
+set e3606/door_attributes = ["open"]
+#
+set e3606/reset_door_attributes = ["open"]
+#
+tel r3803
+#
+alias north = n^ e3607
+#
+tag e3607 = the rats' lair:area names
+#
+set e3607/door_attributes = ["open"]
+#
+set e3607/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; door; e; e3608^ west = r3808
+#
+tag e3608 = the rats' lair:area names
+#
+set e3608/door_attributes = ["open"]
+#
+set e3608/reset_door_attributes = ["open"]
+#
+openexit south; s; e3609^ north = r3804
+#
+tag e3609 = the rats' lair:area names
+#
+set e3609/door_attributes = ["open"]
+#
+set e3609/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; door; w; e3610^ east = r3807
+#
+tag e3610 = the rats' lair:area names
+#
+set e3610/door_attributes = ["open"]
+#
+set e3610/reset_door_attributes = ["open"]
+#
+tel r3804
+#
+alias north = n^ e3611
+#
+tag e3611 = the rats' lair:area names
+#
+set e3611/door_attributes = ["open"]
+#
+set e3611/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; door; e; e3612^ west = r3810
+#
+tag e3612 = the rats' lair:area names
+#
+set e3612/door_attributes = ["open"]
+#
+set e3612/reset_door_attributes = ["open"]
+#
+openexit west; door; w; e3613^ east = r3809
+#
+tag e3613 = the rats' lair:area names
+#
+set e3613/door_attributes = ["open"]
+#
+set e3613/reset_door_attributes = ["open"]
+#
+openexit down; d; e3614^ up = r3811
+#
+tag e3614 = the rats' lair:area names
+#
+set e3614/door_attributes = ["open"]
+#
+set e3614/reset_door_attributes = ["open"]
+#
+desc down = You see nothing in the gloom below. 
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r3805
+#
+alias east = door^ e^ e3615
+#
+tag e3615 = the rats' lair:area names
+#
+set e3615/door_attributes = ["open"]
+#
+set e3615/reset_door_attributes = ["open"]
+#
+tel r3806
+#
+alias west = door^ w^ e3616
+#
+tag e3616 = the rats' lair:area names
+#
+set e3616/door_attributes = ["open"]
+#
+set e3616/reset_door_attributes = ["open"]
+#
+tel r3807
+#
+alias east = door^ e^ e3617
+#
+tag e3617 = the rats' lair:area names
+#
+set e3617/door_attributes = ["open"]
+#
+set e3617/reset_door_attributes = ["open"]
+#
+tel r3808
+#
+alias east = e^ e3618
+#
+tag e3618 = the rats' lair:area names
+#
+set e3618/door_attributes = ["open"]
+#
+set e3618/reset_door_attributes = ["open"]
+#
+alias west = door^ w^ e3619
+#
+tag e3619 = the rats' lair:area names
+#
+set e3619/door_attributes = ["open"]
+#
+set e3619/reset_door_attributes = ["open"]
+#
+tel r3809
+#
+alias east = door^ e^ e3620
+#
+tag e3620 = the rats' lair:area names
+#
+set e3620/door_attributes = ["open"]
+#
+set e3620/reset_door_attributes = ["open"]
+#
+tel r3810
+#
+alias west = door^ w^ e3621
+#
+tag e3621 = the rats' lair:area names
+#
+set e3621/door_attributes = ["open"]
+#
+set e3621/reset_door_attributes = ["open"]
+#
+tel r3811
+#
+openexit north; n; e3622^ south = r3812
+#
+tag e3622 = the rats' lair:area names
+#
+set e3622/door_attributes = ["open"]
+#
+set e3622/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; door; e; e3623^ west = r3816
+#
+tag e3623 = the rats' lair:area names
+#
+set e3623/door_attributes = ["open"]
+#
+set e3623/reset_door_attributes = ["open"]
+#
+openexit west; door; w; e3624^ east = r3815
+#
+tag e3624 = the rats' lair:area names
+#
+set e3624/door_attributes = ["open"]
+#
+set e3624/reset_door_attributes = ["open"]
+#
+alias up = u^ e3625
+#
+tag e3625 = the rats' lair:area names
+#
+set e3625/door_attributes = ["open"]
+#
+set e3625/reset_door_attributes = ["open"]
+#
+desc up = You see the relative safety of the upper floor. 
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r3812
+#
+openexit north; n; e3626^ south = r3813
+#
+tag e3626 = the rats' lair:area names
+#
+set e3626/door_attributes = ["open"]
+#
+set e3626/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; door; e; e3627^ west = r3818
+#
+tag e3627 = the rats' lair:area names
+#
+set e3627/door_attributes = ["open"]
+#
+set e3627/reset_door_attributes = ["open"]
+#
+alias south = s^ e3628
+#
+tag e3628 = the rats' lair:area names
+#
+set e3628/door_attributes = ["open"]
+#
+set e3628/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; door; w; e3629^ east = r3817
+#
+tag e3629 = the rats' lair:area names
+#
+set e3629/door_attributes = ["open"]
+#
+set e3629/reset_door_attributes = ["open"]
+#
+tel r3813
+#
+openexit north; n; e3630^ south = r3814
+#
+tag e3630 = the rats' lair:area names
+#
+set e3630/door_attributes = ["open"]
+#
+set e3630/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; door; e; e3631^ west = r3820
+#
+tag e3631 = the rats' lair:area names
+#
+set e3631/door_attributes = ["open"]
+#
+set e3631/reset_door_attributes = ["open"]
+#
+alias south = s^ e3632
+#
+tag e3632 = the rats' lair:area names
+#
+set e3632/door_attributes = ["open"]
+#
+set e3632/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; door; w; e3633^ east = r3819
+#
+tag e3633 = the rats' lair:area names
+#
+set e3633/door_attributes = ["open"]
+#
+set e3633/reset_door_attributes = ["open"]
+#
+tel r3814
+#
+openexit north; n; e3634^ south = r3823
+#
+tag e3634 = the rats' lair:area names
+#
+set e3634/door_attributes = ["open"]
+#
+set e3634/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; door; e; e3635^ west = r3822
+#
+tag e3635 = the rats' lair:area names
+#
+set e3635/door_attributes = ["open"]
+#
+set e3635/reset_door_attributes = ["open"]
+#
+alias south = s^ e3636
+#
+tag e3636 = the rats' lair:area names
+#
+set e3636/door_attributes = ["open"]
+#
+set e3636/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; door; w; e3637^ east = r3821
+#
+tag e3637 = the rats' lair:area names
+#
+set e3637/door_attributes = ["open"]
+#
+set e3637/reset_door_attributes = ["open"]
+#
+tel r3815
+#
+alias east = door^ e^ e3638
+#
+tag e3638 = the rats' lair:area names
+#
+set e3638/door_attributes = ["open"]
+#
+set e3638/reset_door_attributes = ["open"]
+#
+tel r3816
+#
+alias west = door^ w^ e3639
+#
+tag e3639 = the rats' lair:area names
+#
+set e3639/door_attributes = ["open"]
+#
+set e3639/reset_door_attributes = ["open"]
+#
+tel r3817
+#
+alias east = door^ e^ e3640
+#
+tag e3640 = the rats' lair:area names
+#
+set e3640/door_attributes = ["open"]
+#
+set e3640/reset_door_attributes = ["open"]
+#
+tel r3818
+#
+alias west = door^ w^ e3641
+#
+tag e3641 = the rats' lair:area names
+#
+set e3641/door_attributes = ["open"]
+#
+set e3641/reset_door_attributes = ["open"]
+#
+tel r3819
+#
+alias east = door^ e^ e3642
+#
+tag e3642 = the rats' lair:area names
+#
+set e3642/door_attributes = ["open"]
+#
+set e3642/reset_door_attributes = ["open"]
+#
+tel r3820
+#
+alias west = door^ w^ e3643
+#
+tag e3643 = the rats' lair:area names
+#
+set e3643/door_attributes = ["open"]
+#
+set e3643/reset_door_attributes = ["open"]
+#
+tel r3821
+#
+alias east = door^ e^ e3644
+#
+tag e3644 = the rats' lair:area names
+#
+set e3644/door_attributes = ["open"]
+#
+set e3644/reset_door_attributes = ["open"]
+#
+tel r3822
+#
+alias west = door^ w^ e3645
+#
+tag e3645 = the rats' lair:area names
+#
+set e3645/door_attributes = ["open"]
+#
+set e3645/reset_door_attributes = ["open"]
+#
+tel r3823
+#
+alias south = s^ e3646
+#
+tag e3646 = the rats' lair:area names
+#
+set e3646/door_attributes = ["open"]
+#
+set e3646/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit up; u; e3647^ down = r3824
+#
+tag e3647 = the rats' lair:area names
+#
+set e3647/door_attributes = ["open"]
+#
+set e3647/reset_door_attributes = ["open"]
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+openexit down; d; e3648^ up = r3825
+#
+tag e3648 = the rats' lair:area names
+#
+set e3648/door_attributes = ["open"]
+#
+set e3648/reset_door_attributes = ["open"]
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r3824
+#
+alias down = d^ e3649
+#
+tag e3649 = the rats' lair:area names
+#
+set e3649/door_attributes = ["open"]
+#
+set e3649/reset_door_attributes = ["open"]
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r3825
+#
+openexit south; s; e3650^ north = r3826
+#
+tag e3650 = the rats' lair:area names
+#
+set e3650/door_attributes = ["open"]
+#
+set e3650/reset_door_attributes = ["open"]
+#
+desc south = You think you smell smoke coming from the south. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias up = u^ e3651
+#
+tag e3651 = the rats' lair:area names
+#
+set e3651/door_attributes = ["open"]
+#
+set e3651/reset_door_attributes = ["open"]
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r3826
+#
+alias north = n^ e3652
+#
+tag e3652 = the rats' lair:area names
+#
+set e3652/door_attributes = ["open"]
+#
+set e3652/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; door; steel; e; e3653^ west = r3827
+#
+tag e3653 = the rats' lair:area names
+#
+set e3653/door_attributes = ["open"]
+#
+set e3653/reset_door_attributes = ["open"]
+#
+set east/key = "o3802"
+#
+openexit south; s; e3654^ north = r3829
+#
+tag e3654 = the rats' lair:area names
+#
+set e3654/door_attributes = ["open"]
+#
+set e3654/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; door; steel; w; e3655^ east = r3828
+#
+tag e3655 = the rats' lair:area names
+#
+set e3655/door_attributes = ["open"]
+#
+set e3655/reset_door_attributes = ["open"]
+#
+set west/key = "o3802"
+#
+tel r3827
+#
+alias west = door^ steel^ w^ e3656
+#
+tag e3656 = the rats' lair:area names
+#
+set e3656/door_attributes = ["open"]
+#
+set e3656/reset_door_attributes = ["open"]
+#
+set west/key = "o3802"
+#
+tel r3828
+#
+alias east = door^ steel^ e^ e3657
+#
+tag e3657 = the rats' lair:area names
+#
+set e3657/door_attributes = ["open"]
+#
+set e3657/reset_door_attributes = ["open"]
+#
+set east/key = "o3802"
+#
+tel r3829
+#
+alias north = n^ e3658
+#
+tag e3658 = the rats' lair:area names
+#
+set e3658/door_attributes = ["open"]
+#
+set e3658/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3659^ north = r3830
+#
+tag e3659 = the rats' lair:area names
+#
+set e3659/door_attributes = ["open"]
+#
+set e3659/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3830
+#
+alias north = n^ e3660
+#
+tag e3660 = the rats' lair:area names
+#
+set e3660/door_attributes = ["open"]
+#
+set e3660/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3661^ west = r3832
+#
+tag e3661 = the rats' lair:area names
+#
+set e3661/door_attributes = ["open"]
+#
+set e3661/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; cage; w; e3662^ east = r3831
+#
+tag e3662 = the rats' lair:area names
+#
+set e3662/door_attributes = ["open"]
+#
+set e3662/reset_door_attributes = ["open"]
+#
+desc west = You hear the pathetic whimpers of slaves. 
+#
+set west/key = "o3803"
+#
+tel r3831
+#
+alias east = cage^ e^ e3663
+#
+tag e3663 = the rats' lair:area names
+#
+set e3663/door_attributes = ["open"]
+#
+set e3663/reset_door_attributes = ["open"]
+#
+set east/key = "o3803"
+#
+tel r3832
+#
+openexit south; s; e3664^ north = r3833
+#
+tag e3664 = the rats' lair:area names
+#
+set e3664/door_attributes = ["open"]
+#
+set e3664/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3665
+#
+tag e3665 = the rats' lair:area names
+#
+set e3665/door_attributes = ["open"]
+#
+set e3665/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3833
+#
+alias north = n^ e3666
+#
+tag e3666 = the rats' lair:area names
+#
+set e3666/door_attributes = ["open"]
+#
+set e3666/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3667^ west = r3835
+#
+tag e3667 = the rats' lair:area names
+#
+set e3667/door_attributes = ["open"]
+#
+set e3667/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3668^ north = r3836
+#
+tag e3668 = the rats' lair:area names
+#
+set e3668/door_attributes = ["open"]
+#
+set e3668/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3669^ east = r3834
+#
+tag e3669 = the rats' lair:area names
+#
+set e3669/door_attributes = ["open"]
+#
+set e3669/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3834
+#
+alias east = e^ e3670
+#
+tag e3670 = the rats' lair:area names
+#
+set e3670/door_attributes = ["open"]
+#
+set e3670/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r3835
+#
+alias west = w^ e3671
+#
+tag e3671 = the rats' lair:area names
+#
+set e3671/door_attributes = ["open"]
+#
+set e3671/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3836
+#
+alias north = n^ e3672
+#
+tag e3672 = the rats' lair:area names
+#
+set e3672/door_attributes = ["open"]
+#
+set e3672/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3673^ north = r3837
+#
+tag e3673 = the rats' lair:area names
+#
+set e3673/door_attributes = ["open"]
+#
+set e3673/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3837
+#
+alias north = n^ e3674
+#
+tag e3674 = the rats' lair:area names
+#
+set e3674/door_attributes = ["open"]
+#
+set e3674/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; door; silver; s; e3675^ north = r3838
+#
+tag e3675 = the rats' lair:area names
+#
+set e3675/door_attributes = ["open"]
+#
+set e3675/reset_door_attributes = ["open"]
+#
+desc south = The sign says, 'Do NOT Enter!' 
+#
+set south/key = "o3801"
+#
+objectlock south = "pick:false()"
+#
+tel r3838
+#
+alias north = door^ n^ e3676
+#
+tag e3676 = the rats' lair:area names
+#
+set e3676/door_attributes = ["open"]
+#
+set e3676/reset_door_attributes = ["open"]
+#
+set north/key = "o3801"
+#
+objectlock north = "pick:false()"
+#
+tel r3839
+#
+openexit west; w; e3677^ east = r3840
+#
+tag e3677 = the rats' lair:area names
+#
+set e3677/door_attributes = ["open"]
+#
+set e3677/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3840
+#
+openexit north; n; e3678^ south = r3841
+#
+tag e3678 = the rats' lair:area names
+#
+set e3678/door_attributes = ["open"]
+#
+set e3678/reset_door_attributes = ["open"]
+#
+desc north = The door looks impenetrable by mundane means.  A small sign says, 'Hatchet'. 
+#
+objectlock north = "pick:false()"
+#
+alias east = e^ e3679
+#
+tag e3679 = the rats' lair:area names
+#
+set e3679/door_attributes = ["open"]
+#
+set e3679/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3680^ north = r3842
+#
+tag e3680 = the rats' lair:area names
+#
+set e3680/door_attributes = ["open"]
+#
+set e3680/reset_door_attributes = ["open"]
+#
+desc south = The door looks impenetrable by mundane means.  A small sign says, 'Icaza'. 
+#
+objectlock south = "pick:false()"
+#
+tel r3841
+#
+alias south = s^ e3681
+#
+tag e3681 = the rats' lair:area names
+#
+set e3681/door_attributes = ["open"]
+#
+set e3681/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3842
+#
+alias north = n^ e3682
+#
+tag e3682 = the rats' lair:area names
+#
+set e3682/door_attributes = ["open"]
+#
+set e3682/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r3800
+#
+create/drop Verneth Smilterbans;verneth;gnome;orderknight1;m3818:characters.Mobile
+#
+desc m3818 = A short gnome snorts and grumbles at the smell 
+#
+set m3818/level = 7
+#
+set m3818/level_base = 7
+#
+set m3818/vnum = "m3818"
+#
+set m3818/look_description = "Verneth is not a happy gnome.  Dark circles surround his eyes and he continually mutters to himself about the cold.  He shakes his head from side to side as he moves around, almost as if trying to get a sound out of his eaer.  He's been sent here on assignment from the Gnome King to attempt to locate a way to destroy all rats once and for all, but has had only setback after setback. "
+#
+set m3818/act_flags = ['no kill', 'sentinel', 'npc']
+#
+set m3818/alignment = 1000
+#
+set m3818/sex = "male"
+#
+set m3818/race = "gnome"
+#
+tag m3818 = the rats' lair:area name
+#
+tag m3818 = mobile
+#
+set m3818/hitpoints[maximum] = 102
+#
+set m3818/position = "standing"
+#
+set m3818/experience_total = 2052
+#
+set m3818/experience_current = 2052
+#
+tel r3800
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r3801
+#
+set up/door_attributes = ['closeable']
+#
+set up/reset_door_attributes = ['closeable']
+#
+tel r3802
+#
+create/drop a small rat;rat;small;m3801:characters.Mobile
+#
+desc m3801 = A small rat is scurrying from room to room. 
+#
+set m3801/level = 1
+#
+set m3801/level_base = 1
+#
+set m3801/vnum = "m3801"
+#
+set m3801/look_description = "This rat looks like ... a rat. "
+#
+set m3801/act_flags = ['wimpy', 'npc']
+#
+set m3801/alignment = -100
+#
+set m3801/sex = "neuter"
+#
+set m3801/spell_affects = {'sneak': ''}
+#
+set m3801/race = "rat"
+#
+tag m3801 = the rats' lair:area name
+#
+tag m3801 = mobile
+#
+set m3801/hitpoints[maximum] = 9
+#
+set m3801/position = "standing"
+#
+set m3801/experience_total = 153
+#
+set m3801/experience_current = 153
+#
+set m3801/special_function = "poison"
+#
+tel r3802
+#
+create the walls;wall;walls;o3804:objects.Container
+#
+sethome o3804 = r3802
+#
+desc o3804 = The old wooden walls look like they are about to fall down on you.
+#
+set o3804/level = 1
+#
+set o3804/level_base = 1
+#
+set o3804/vnum = "o3804"
+#
+set o3804/item_type = "container"
+#
+objectlock o3804 = "get:perm(Admin)"
+#
+set o3804/weight = 1
+#
+tag o3804 = the rats' lair:area name
+#
+tag o3804 = object
+#
+set o3804/extra_descriptions = {'wall walls': ' The walls here are made of rock holding back the rock and soil.  They look like they are ready to fall apart.  Most of these walls hold a torch. '}
+#
+set o3804/weight_maximum = 300
+#
+set o3804/state = []
+#
+set o3804/state_base = []
+#
+drop o3804
+#
+set r3802/reset_objects["o3804"] = {"location":"inventory"}
+#
+tel r3802
+#
+create a torch;torch;o3820:objects.Light
+#
+sethome o3820 = o3804
+#
+desc o3820 = A torch is here.
+#
+set o3820/level = 1
+#
+set o3820/level_base = 1
+#
+set o3820/vnum = "o3820"
+#
+set o3820/item_type = "light"
+#
+set o3820/weight = 3
+#
+tag o3820 = the rats' lair:area name
+#
+tag o3820 = object
+#
+set o3820/light_hours= 99
+#
+put o3820 in o3804
+#
+set r3802/reset_objects["o3820"] = {"location":"o3804"}
+#
+tel r3802
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r3803
+#
+create the walls;wall;walls;o3804:objects.Container
+#
+sethome o3804 = r3803
+#
+desc o3804 = The old wooden walls look like they are about to fall down on you.
+#
+set o3804/level = 1
+#
+set o3804/level_base = 1
+#
+set o3804/vnum = "o3804"
+#
+set o3804/item_type = "container"
+#
+objectlock o3804 = "get:perm(Admin)"
+#
+set o3804/weight = 1
+#
+tag o3804 = the rats' lair:area name
+#
+tag o3804 = object
+#
+set o3804/extra_descriptions = {'wall walls': ' The walls here are made of rock holding back the rock and soil.  They look like they are ready to fall apart.  Most of these walls hold a torch. '}
+#
+set o3804/weight_maximum = 300
+#
+set o3804/state = []
+#
+set o3804/state_base = []
+#
+drop o3804
+#
+set r3803/reset_objects["o3804"] = {"location":"inventory"}
+#
+tel r3803
+#
+create a torch;torch;o3820:objects.Light
+#
+sethome o3820 = o3804
+#
+desc o3820 = A torch is here.
+#
+set o3820/level = 1
+#
+set o3820/level_base = 1
+#
+set o3820/vnum = "o3820"
+#
+set o3820/item_type = "light"
+#
+set o3820/weight = 3
+#
+tag o3820 = the rats' lair:area name
+#
+tag o3820 = object
+#
+set o3820/light_hours= 99
+#
+put o3820 in o3804
+#
+set r3803/reset_objects["o3820"] = {"location":"o3804"}
+#
+tel r3804
+#
+create the walls;wall;walls;o3804:objects.Container
+#
+sethome o3804 = r3804
+#
+desc o3804 = The old wooden walls look like they are about to fall down on you.
+#
+set o3804/level = 1
+#
+set o3804/level_base = 1
+#
+set o3804/vnum = "o3804"
+#
+set o3804/item_type = "container"
+#
+objectlock o3804 = "get:perm(Admin)"
+#
+set o3804/weight = 1
+#
+tag o3804 = the rats' lair:area name
+#
+tag o3804 = object
+#
+set o3804/extra_descriptions = {'wall walls': ' The walls here are made of rock holding back the rock and soil.  They look like they are ready to fall apart.  Most of these walls hold a torch. '}
+#
+set o3804/weight_maximum = 300
+#
+set o3804/state = []
+#
+set o3804/state_base = []
+#
+drop o3804
+#
+set r3804/reset_objects["o3804"] = {"location":"inventory"}
+#
+tel r3804
+#
+create a torch;torch;o3820:objects.Light
+#
+sethome o3820 = o3804
+#
+desc o3820 = A torch is here.
+#
+set o3820/level = 1
+#
+set o3820/level_base = 1
+#
+set o3820/vnum = "o3820"
+#
+set o3820/item_type = "light"
+#
+set o3820/weight = 3
+#
+tag o3820 = the rats' lair:area name
+#
+tag o3820 = object
+#
+set o3820/light_hours= 99
+#
+put o3820 in o3804
+#
+set r3804/reset_objects["o3820"] = {"location":"o3804"}
+#
+tel r3804
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r3806
+#
+create/drop a wererat;rat;wererat;m3806:characters.Mobile
+#
+desc m3806 = A humanoid rat notices you, then attacks! 
+#
+set m3806/level = 5
+#
+set m3806/level_base = 5
+#
+set m3806/vnum = "m3806"
+#
+set m3806/look_description = "This beast looks like a combination rat and human, as it has properties of both, namely standing erect, wielding a weapon, but with fur, ears, and tail of a rat. "
+#
+set m3806/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m3806/alignment = -500
+#
+set m3806/sex = "neuter"
+#
+set m3806/race = "rat"
+#
+tag m3806 = the rats' lair:area name
+#
+tag m3806 = mobile
+#
+set m3806/hitpoints[maximum] = 43
+#
+set m3806/position = "standing"
+#
+set m3806/experience_total = 1125
+#
+set m3806/experience_current = 1125
+#
+set m3806/special_function = "poison"
+#
+tel r3806
+#
+create a wooden stake;stake;wooden;o3811:objects.Weapon
+#
+sethome o3811 = m3806
+#
+desc o3811 = A wooden stake is against the wall.
+#
+set o3811/level = 3
+#
+set o3811/level_base = 3
+#
+set o3811/vnum = "o3811"
+#
+set o3811/item_type = "weapon"
+#
+set o3811/wear_location = "wield"
+#
+set o3811/weight = 5
+#
+tag o3811 = the rats' lair:area name
+#
+tag o3811 = object
+#
+set o3811/extra_descriptions = {'stake wooden': ' This wooden stake is quite sharp, and looks designed as a weapon.  The blood- stains at the tip confirm this idea. '}
+#
+set o3811/weapon_type = "pierce"
+#
+set o3811/damage_low = 4
+#
+set o3811/damage_high = 8
+#
+wieldto o3811 = m3806
+#
+set m3806/experience_total = 1406
+#
+set m3806/experience_current = 1406
+#
+set m3806/reset_objects["o3811"] = {"location":"equipped"}
+#
+tel r3806
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r3808
+#
+create/drop a rat;rat;m3804:characters.Mobile
+#
+desc m3804 = A rat scurries around. 
+#
+set m3804/level = 2
+#
+set m3804/level_base = 2
+#
+set m3804/vnum = "m3804"
+#
+set m3804/look_description = "This rat is about average size, with average size teeth and average size claws. "
+#
+set m3804/act_flags = ['wimpy', 'stay area', 'aggressive', 'npc']
+#
+set m3804/alignment = -200
+#
+set m3804/sex = "neuter"
+#
+set m3804/spell_affects = {'sneak': ''}
+#
+set m3804/race = "rat"
+#
+tag m3804 = the rats' lair:area name
+#
+tag m3804 = mobile
+#
+set m3804/hitpoints[maximum] = 20
+#
+set m3804/position = "standing"
+#
+set m3804/experience_total = 274
+#
+set m3804/experience_current = 274
+#
+set m3804/special_function = "poison"
+#
+tel r3808
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r3809
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r3810
+#
+create/drop a small rat;rat;small;m3801:characters.Mobile
+#
+desc m3801 = A small rat is scurrying from room to room. 
+#
+set m3801/level = 1
+#
+set m3801/level_base = 1
+#
+set m3801/vnum = "m3801"
+#
+set m3801/look_description = "This rat looks like ... a rat. "
+#
+set m3801/act_flags = ['wimpy', 'npc']
+#
+set m3801/alignment = -100
+#
+set m3801/sex = "neuter"
+#
+set m3801/spell_affects = {'sneak': ''}
+#
+set m3801/race = "rat"
+#
+tag m3801 = the rats' lair:area name
+#
+tag m3801 = mobile
+#
+set m3801/hitpoints[maximum] = 8
+#
+set m3801/position = "standing"
+#
+set m3801/experience_total = 146
+#
+set m3801/experience_current = 146
+#
+set m3801/special_function = "poison"
+#
+tel r3811
+#
+create the walls;wall;walls;o3804:objects.Container
+#
+sethome o3804 = r3811
+#
+desc o3804 = The old wooden walls look like they are about to fall down on you.
+#
+set o3804/level = 1
+#
+set o3804/level_base = 1
+#
+set o3804/vnum = "o3804"
+#
+set o3804/item_type = "container"
+#
+objectlock o3804 = "get:perm(Admin)"
+#
+set o3804/weight = 1
+#
+tag o3804 = the rats' lair:area name
+#
+tag o3804 = object
+#
+set o3804/extra_descriptions = {'wall walls': ' The walls here are made of rock holding back the rock and soil.  They look like they are ready to fall apart.  Most of these walls hold a torch. '}
+#
+set o3804/weight_maximum = 300
+#
+set o3804/state = []
+#
+set o3804/state_base = []
+#
+drop o3804
+#
+set r3811/reset_objects["o3804"] = {"location":"inventory"}
+#
+tel r3811
+#
+create a torch;torch;o3820:objects.Light
+#
+sethome o3820 = o3804
+#
+desc o3820 = A torch is here.
+#
+set o3820/level = 1
+#
+set o3820/level_base = 1
+#
+set o3820/vnum = "o3820"
+#
+set o3820/item_type = "light"
+#
+set o3820/weight = 3
+#
+tag o3820 = the rats' lair:area name
+#
+tag o3820 = object
+#
+set o3820/light_hours= 99
+#
+put o3820 in o3804
+#
+set r3811/reset_objects["o3820"] = {"location":"o3804"}
+#
+tel r3811
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r3811
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r3812
+#
+create the walls;wall;walls;o3804:objects.Container
+#
+sethome o3804 = r3812
+#
+desc o3804 = The old wooden walls look like they are about to fall down on you.
+#
+set o3804/level = 1
+#
+set o3804/level_base = 1
+#
+set o3804/vnum = "o3804"
+#
+set o3804/item_type = "container"
+#
+objectlock o3804 = "get:perm(Admin)"
+#
+set o3804/weight = 1
+#
+tag o3804 = the rats' lair:area name
+#
+tag o3804 = object
+#
+set o3804/extra_descriptions = {'wall walls': ' The walls here are made of rock holding back the rock and soil.  They look like they are ready to fall apart.  Most of these walls hold a torch. '}
+#
+set o3804/weight_maximum = 300
+#
+set o3804/state = []
+#
+set o3804/state_base = []
+#
+drop o3804
+#
+set r3812/reset_objects["o3804"] = {"location":"inventory"}
+#
+tel r3812
+#
+create a torch;torch;o3820:objects.Light
+#
+sethome o3820 = o3804
+#
+desc o3820 = A torch is here.
+#
+set o3820/level = 1
+#
+set o3820/level_base = 1
+#
+set o3820/vnum = "o3820"
+#
+set o3820/item_type = "light"
+#
+set o3820/weight = 3
+#
+tag o3820 = the rats' lair:area name
+#
+tag o3820 = object
+#
+set o3820/light_hours= 99
+#
+put o3820 in o3804
+#
+set r3812/reset_objects["o3820"] = {"location":"o3804"}
+#
+tel r3812
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r3813
+#
+create the walls;wall;walls;o3804:objects.Container
+#
+sethome o3804 = r3813
+#
+desc o3804 = The old wooden walls look like they are about to fall down on you.
+#
+set o3804/level = 1
+#
+set o3804/level_base = 1
+#
+set o3804/vnum = "o3804"
+#
+set o3804/item_type = "container"
+#
+objectlock o3804 = "get:perm(Admin)"
+#
+set o3804/weight = 1
+#
+tag o3804 = the rats' lair:area name
+#
+tag o3804 = object
+#
+set o3804/extra_descriptions = {'wall walls': ' The walls here are made of rock holding back the rock and soil.  They look like they are ready to fall apart.  Most of these walls hold a torch. '}
+#
+set o3804/weight_maximum = 300
+#
+set o3804/state = []
+#
+set o3804/state_base = []
+#
+drop o3804
+#
+set r3813/reset_objects["o3804"] = {"location":"inventory"}
+#
+tel r3813
+#
+create a torch;torch;o3820:objects.Light
+#
+sethome o3820 = o3804
+#
+desc o3820 = A torch is here.
+#
+set o3820/level = 1
+#
+set o3820/level_base = 1
+#
+set o3820/vnum = "o3820"
+#
+set o3820/item_type = "light"
+#
+set o3820/weight = 3
+#
+tag o3820 = the rats' lair:area name
+#
+tag o3820 = object
+#
+set o3820/light_hours= 99
+#
+put o3820 in o3804
+#
+set r3813/reset_objects["o3820"] = {"location":"o3804"}
+#
+tel r3813
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r3814
+#
+create the walls;wall;walls;o3804:objects.Container
+#
+sethome o3804 = r3814
+#
+desc o3804 = The old wooden walls look like they are about to fall down on you.
+#
+set o3804/level = 1
+#
+set o3804/level_base = 1
+#
+set o3804/vnum = "o3804"
+#
+set o3804/item_type = "container"
+#
+objectlock o3804 = "get:perm(Admin)"
+#
+set o3804/weight = 1
+#
+tag o3804 = the rats' lair:area name
+#
+tag o3804 = object
+#
+set o3804/extra_descriptions = {'wall walls': ' The walls here are made of rock holding back the rock and soil.  They look like they are ready to fall apart.  Most of these walls hold a torch. '}
+#
+set o3804/weight_maximum = 300
+#
+set o3804/state = []
+#
+set o3804/state_base = []
+#
+drop o3804
+#
+set r3814/reset_objects["o3804"] = {"location":"inventory"}
+#
+tel r3814
+#
+create a torch;torch;o3820:objects.Light
+#
+sethome o3820 = o3804
+#
+desc o3820 = A torch is here.
+#
+set o3820/level = 1
+#
+set o3820/level_base = 1
+#
+set o3820/vnum = "o3820"
+#
+set o3820/item_type = "light"
+#
+set o3820/weight = 3
+#
+tag o3820 = the rats' lair:area name
+#
+tag o3820 = object
+#
+set o3820/light_hours= 99
+#
+put o3820 in o3804
+#
+set r3814/reset_objects["o3820"] = {"location":"o3804"}
+#
+tel r3814
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r3815
+#
+create/drop a wererat guard;rat;wererat;guard;m3807:characters.Mobile
+#
+desc m3807 = A humanoid rat stands guard here, but decides to attack you! 
+#
+set m3807/level = 6
+#
+set m3807/level_base = 6
+#
+set m3807/vnum = "m3807"
+#
+set m3807/look_description = "This beast looks like a combination rat and human, as it has properties of both, namely standing erect, wielding a weapon, but with fur, ears, and tail of a rat.  He seems to be guarding something. "
+#
+set m3807/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m3807/alignment = -500
+#
+set m3807/sex = "neuter"
+#
+set m3807/race = "rat"
+#
+tag m3807 = the rats' lair:area name
+#
+tag m3807 = mobile
+#
+set m3807/hitpoints[maximum] = 70
+#
+set m3807/position = "standing"
+#
+set m3807/experience_total = 1666
+#
+set m3807/experience_current = 1666
+#
+set m3807/special_function = "poison"
+#
+tel r3815
+#
+create a long rusted knife;long;rusted;knife;o3813:objects.Weapon
+#
+sethome o3813 = m3807
+#
+desc o3813 = A long bladed knife is rusting on the floor.
+#
+set o3813/level = 4
+#
+set o3813/level_base = 4
+#
+set o3813/vnum = "o3813"
+#
+set o3813/item_type = "weapon"
+#
+set o3813/wear_location = "wield"
+#
+set o3813/weight = 7
+#
+tag o3813 = the rats' lair:area name
+#
+tag o3813 = object
+#
+set o3813/extra_descriptions = {'long rusted knife': ' This knife is rusted, but the rust only adds to the wickedness of this blade. '}
+#
+set o3813/extra_flags = ['magic']
+#
+set o3813/stat_modifiers[hitroll] = 1
+#
+set o3813/weapon_type = "slash"
+#
+set o3813/damage_low = 3
+#
+set o3813/damage_high = 8
+#
+wieldto o3813 = m3807
+#
+set m3807/experience_total = 2082
+#
+set m3807/experience_current = 2082
+#
+set m3807/reset_objects["o3813"] = {"location":"equipped"}
+#
+tel r3815
+#
+create tin leggings;tin;leggings;o3815:objects.Armor
+#
+sethome o3815 = m3807
+#
+desc o3815 = A pair of tin leggings rusts on the floor.
+#
+set o3815/level = 4
+#
+set o3815/level_base = 4
+#
+set o3815/vnum = "o3815"
+#
+set o3815/item_type = "armor"
+#
+set o3815/wear_location = "legs"
+#
+set o3815/weight = 5
+#
+tag o3815 = the rats' lair:area name
+#
+tag o3815 = object
+#
+set o3815/armor = 3
+#
+wearto o3815 = m3807
+#
+set m3807/reset_objects["o3815"] = {"location":"equipped"}
+#
+tel r3815
+#
+create/drop a wererat guard;rat;wererat;guard;m3807; m3807-2:characters.Mobile
+#
+desc m3807-2 = A humanoid rat stands guard here, but decides to attack you! 
+#
+set m3807-2/level = 6
+#
+set m3807-2/level_base = 6
+#
+set m3807-2/vnum = "m3807"
+#
+set m3807-2/look_description = "This beast looks like a combination rat and human, as it has properties of both, namely standing erect, wielding a weapon, but with fur, ears, and tail of a rat.  He seems to be guarding something. "
+#
+set m3807-2/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m3807-2/alignment = -500
+#
+set m3807-2/sex = "neuter"
+#
+set m3807-2/race = "rat"
+#
+tag m3807-2 = the rats' lair:area name
+#
+tag m3807-2 = mobile
+#
+set m3807-2/hitpoints[maximum] = 68
+#
+set m3807-2/position = "standing"
+#
+set m3807-2/experience_total = 1578
+#
+set m3807-2/experience_current = 1578
+#
+set m3807-2/special_function = "poison"
+#
+tel r3815
+#
+create a long rusted knife;long;rusted;knife;o3813:objects.Weapon
+#
+sethome o3813 = m3807-2
+#
+desc o3813 = A long bladed knife is rusting on the floor.
+#
+set o3813/level = 4
+#
+set o3813/level_base = 4
+#
+set o3813/vnum = "o3813"
+#
+set o3813/item_type = "weapon"
+#
+set o3813/wear_location = "wield"
+#
+set o3813/weight = 7
+#
+tag o3813 = the rats' lair:area name
+#
+tag o3813 = object
+#
+set o3813/extra_descriptions = {'long rusted knife': ' This knife is rusted, but the rust only adds to the wickedness of this blade. '}
+#
+set o3813/extra_flags = ['magic']
+#
+set o3813/stat_modifiers[hitroll] = 1
+#
+set o3813/weapon_type = "slash"
+#
+set o3813/damage_low = 3
+#
+set o3813/damage_high = 8
+#
+wieldto o3813 = m3807-2
+#
+set m3807-2/experience_total = 1972
+#
+set m3807-2/experience_current = 1972
+#
+set m3807-2/reset_objects["o3813"] = {"location":"equipped"}
+#
+tel r3815
+#
+create tin leggings;tin;leggings;o3815:objects.Armor
+#
+sethome o3815 = m3807-2
+#
+desc o3815 = A pair of tin leggings rusts on the floor.
+#
+set o3815/level = 4
+#
+set o3815/level_base = 4
+#
+set o3815/vnum = "o3815"
+#
+set o3815/item_type = "armor"
+#
+set o3815/wear_location = "legs"
+#
+set o3815/weight = 5
+#
+tag o3815 = the rats' lair:area name
+#
+tag o3815 = object
+#
+set o3815/armor = 4
+#
+wearto o3815 = m3807-2
+#
+set m3807-2/reset_objects["o3815"] = {"location":"equipped"}
+#
+tel r3815
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r3816
+#
+create/drop a wererat guard;rat;wererat;guard;m3807:characters.Mobile
+#
+desc m3807 = A humanoid rat stands guard here, but decides to attack you! 
+#
+set m3807/level = 6
+#
+set m3807/level_base = 6
+#
+set m3807/vnum = "m3807"
+#
+set m3807/look_description = "This beast looks like a combination rat and human, as it has properties of both, namely standing erect, wielding a weapon, but with fur, ears, and tail of a rat.  He seems to be guarding something. "
+#
+set m3807/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m3807/alignment = -500
+#
+set m3807/sex = "neuter"
+#
+set m3807/race = "rat"
+#
+tag m3807 = the rats' lair:area name
+#
+tag m3807 = mobile
+#
+set m3807/hitpoints[maximum] = 53
+#
+set m3807/position = "standing"
+#
+set m3807/experience_total = 1441
+#
+set m3807/experience_current = 1441
+#
+set m3807/special_function = "poison"
+#
+tel r3816
+#
+create a long rusted knife;long;rusted;knife;o3813:objects.Weapon
+#
+sethome o3813 = m3807
+#
+desc o3813 = A long bladed knife is rusting on the floor.
+#
+set o3813/level = 4
+#
+set o3813/level_base = 4
+#
+set o3813/vnum = "o3813"
+#
+set o3813/item_type = "weapon"
+#
+set o3813/wear_location = "wield"
+#
+set o3813/weight = 7
+#
+tag o3813 = the rats' lair:area name
+#
+tag o3813 = object
+#
+set o3813/extra_descriptions = {'long rusted knife': ' This knife is rusted, but the rust only adds to the wickedness of this blade. '}
+#
+set o3813/extra_flags = ['magic']
+#
+set o3813/stat_modifiers[hitroll] = 1
+#
+set o3813/weapon_type = "slash"
+#
+set o3813/damage_low = 2
+#
+set o3813/damage_high = 8
+#
+wieldto o3813 = m3807
+#
+set m3807/experience_total = 1801
+#
+set m3807/experience_current = 1801
+#
+set m3807/reset_objects["o3813"] = {"location":"equipped"}
+#
+tel r3816
+#
+create tin armguards;tin;armguards;o3816:objects.Armor
+#
+sethome o3816 = m3807
+#
+desc o3816 = A pair of tin armguards rusts on the floor.
+#
+set o3816/level = 4
+#
+set o3816/level_base = 4
+#
+set o3816/vnum = "o3816"
+#
+set o3816/item_type = "armor"
+#
+set o3816/wear_location = "arms"
+#
+set o3816/weight = 5
+#
+tag o3816 = the rats' lair:area name
+#
+tag o3816 = object
+#
+set o3816/armor = 4
+#
+wearto o3816 = m3807
+#
+set m3807/reset_objects["o3816"] = {"location":"equipped"}
+#
+tel r3816
+#
+create/drop a wererat guard;rat;wererat;guard;m3807; m3807-2:characters.Mobile
+#
+desc m3807-2 = A humanoid rat stands guard here, but decides to attack you! 
+#
+set m3807-2/level = 6
+#
+set m3807-2/level_base = 6
+#
+set m3807-2/vnum = "m3807"
+#
+set m3807-2/look_description = "This beast looks like a combination rat and human, as it has properties of both, namely standing erect, wielding a weapon, but with fur, ears, and tail of a rat.  He seems to be guarding something. "
+#
+set m3807-2/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m3807-2/alignment = -500
+#
+set m3807-2/sex = "neuter"
+#
+set m3807-2/race = "rat"
+#
+tag m3807-2 = the rats' lair:area name
+#
+tag m3807-2 = mobile
+#
+set m3807-2/hitpoints[maximum] = 67
+#
+set m3807-2/position = "standing"
+#
+set m3807-2/experience_total = 1751
+#
+set m3807-2/experience_current = 1751
+#
+set m3807-2/special_function = "poison"
+#
+tel r3816
+#
+create a long rusted knife;long;rusted;knife;o3813:objects.Weapon
+#
+sethome o3813 = m3807-2
+#
+desc o3813 = A long bladed knife is rusting on the floor.
+#
+set o3813/level = 4
+#
+set o3813/level_base = 4
+#
+set o3813/vnum = "o3813"
+#
+set o3813/item_type = "weapon"
+#
+set o3813/wear_location = "wield"
+#
+set o3813/weight = 7
+#
+tag o3813 = the rats' lair:area name
+#
+tag o3813 = object
+#
+set o3813/extra_descriptions = {'long rusted knife': ' This knife is rusted, but the rust only adds to the wickedness of this blade. '}
+#
+set o3813/extra_flags = ['magic']
+#
+set o3813/stat_modifiers[hitroll] = 1
+#
+set o3813/weapon_type = "slash"
+#
+set o3813/damage_low = 2
+#
+set o3813/damage_high = 10
+#
+wieldto o3813 = m3807-2
+#
+set m3807-2/experience_total = 2188
+#
+set m3807-2/experience_current = 2188
+#
+set m3807-2/reset_objects["o3813"] = {"location":"equipped"}
+#
+tel r3816
+#
+create tin armguards;tin;armguards;o3816:objects.Armor
+#
+sethome o3816 = m3807-2
+#
+desc o3816 = A pair of tin armguards rusts on the floor.
+#
+set o3816/level = 4
+#
+set o3816/level_base = 4
+#
+set o3816/vnum = "o3816"
+#
+set o3816/item_type = "armor"
+#
+set o3816/wear_location = "arms"
+#
+set o3816/weight = 5
+#
+tag o3816 = the rats' lair:area name
+#
+tag o3816 = object
+#
+set o3816/armor = 3
+#
+wearto o3816 = m3807-2
+#
+set m3807-2/reset_objects["o3816"] = {"location":"equipped"}
+#
+tel r3816
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r3817
+#
+create/drop a rat;rat;m3804:characters.Mobile
+#
+desc m3804 = A rat scurries around. 
+#
+set m3804/level = 2
+#
+set m3804/level_base = 2
+#
+set m3804/vnum = "m3804"
+#
+set m3804/look_description = "This rat is about average size, with average size teeth and average size claws. "
+#
+set m3804/act_flags = ['wimpy', 'stay area', 'aggressive', 'npc']
+#
+set m3804/alignment = -200
+#
+set m3804/sex = "neuter"
+#
+set m3804/spell_affects = {'sneak': ''}
+#
+set m3804/race = "rat"
+#
+tag m3804 = the rats' lair:area name
+#
+tag m3804 = mobile
+#
+set m3804/hitpoints[maximum] = 20
+#
+set m3804/position = "standing"
+#
+set m3804/experience_total = 239
+#
+set m3804/experience_current = 239
+#
+set m3804/special_function = "poison"
+#
+tel r3818
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r3819
+#
+create/drop the green Ooze;ooze;green;m3817:characters.Mobile
+#
+desc m3817 = Some green ooze clings onto the ceiling and the walls. 
+#
+set m3817/level = 8
+#
+set m3817/level_base = 8
+#
+set m3817/vnum = "m3817"
+#
+set m3817/look_description = "This ooze looks like bad stuff, almost as if it's alive. "
+#
+set m3817/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m3817/alignment = 0
+#
+set m3817/sex = "neuter"
+#
+set m3817/race = "plant"
+#
+tag m3817 = the rats' lair:area name
+#
+tag m3817 = mobile
+#
+set m3817/hitpoints[maximum] = 128
+#
+set m3817/position = "standing"
+#
+set m3817/experience_total = 3130
+#
+set m3817/experience_current = 3130
+#
+tel r3819
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r3821
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r3823
+#
+create the walls;wall;walls;o3804:objects.Container
+#
+sethome o3804 = r3823
+#
+desc o3804 = The old wooden walls look like they are about to fall down on you.
+#
+set o3804/level = 6
+#
+set o3804/level_base = 6
+#
+set o3804/vnum = "o3804"
+#
+set o3804/item_type = "container"
+#
+objectlock o3804 = "get:perm(Admin)"
+#
+set o3804/weight = 1
+#
+tag o3804 = the rats' lair:area name
+#
+tag o3804 = object
+#
+set o3804/extra_descriptions = {'wall walls': ' The walls here are made of rock holding back the rock and soil.  They look like they are ready to fall apart.  Most of these walls hold a torch. '}
+#
+set o3804/weight_maximum = 300
+#
+set o3804/state = []
+#
+set o3804/state_base = []
+#
+drop o3804
+#
+set r3823/reset_objects["o3804"] = {"location":"inventory"}
+#
+tel r3823
+#
+create a torch;torch;o3820:objects.Light
+#
+sethome o3820 = o3804
+#
+desc o3820 = A torch is here.
+#
+set o3820/level = 6
+#
+set o3820/level_base = 6
+#
+set o3820/vnum = "o3820"
+#
+set o3820/item_type = "light"
+#
+set o3820/weight = 3
+#
+tag o3820 = the rats' lair:area name
+#
+tag o3820 = object
+#
+set o3820/light_hours= 99
+#
+put o3820 in o3804
+#
+set r3823/reset_objects["o3820"] = {"location":"o3804"}
+#
+tel r3823
+#
+create/drop a large rat;rat;large;m3805:characters.Mobile
+#
+desc m3805 = A large rat stares at you hungrily, then attacks you! 
+#
+set m3805/level = 3
+#
+set m3805/level_base = 3
+#
+set m3805/vnum = "m3805"
+#
+set m3805/look_description = "This rat is about the length of your arm, with sharp claws and teeth, which it uses now to bite at you! "
+#
+set m3805/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m3805/alignment = -400
+#
+set m3805/sex = "neuter"
+#
+set m3805/race = "rat"
+#
+tag m3805 = the rats' lair:area name
+#
+tag m3805 = mobile
+#
+set m3805/hitpoints[maximum] = 24
+#
+set m3805/position = "standing"
+#
+set m3805/experience_total = 411
+#
+set m3805/experience_current = 411
+#
+set m3805/special_function = "poison"
+#
+tel r3824
+#
+create the walls;wall;walls;o3804:objects.Container
+#
+sethome o3804 = r3824
+#
+desc o3804 = The old wooden walls look like they are about to fall down on you.
+#
+set o3804/level = 1
+#
+set o3804/level_base = 1
+#
+set o3804/vnum = "o3804"
+#
+set o3804/item_type = "container"
+#
+objectlock o3804 = "get:perm(Admin)"
+#
+set o3804/weight = 1
+#
+tag o3804 = the rats' lair:area name
+#
+tag o3804 = object
+#
+set o3804/extra_descriptions = {'wall walls': ' The walls here are made of rock holding back the rock and soil.  They look like they are ready to fall apart.  Most of these walls hold a torch. '}
+#
+set o3804/weight_maximum = 300
+#
+set o3804/state = []
+#
+set o3804/state_base = []
+#
+drop o3804
+#
+set r3824/reset_objects["o3804"] = {"location":"inventory"}
+#
+tel r3824
+#
+create a torch;torch;o3820:objects.Light
+#
+sethome o3820 = o3804
+#
+desc o3820 = A torch is here.
+#
+set o3820/level = 1
+#
+set o3820/level_base = 1
+#
+set o3820/vnum = "o3820"
+#
+set o3820/item_type = "light"
+#
+set o3820/weight = 3
+#
+tag o3820 = the rats' lair:area name
+#
+tag o3820 = object
+#
+set o3820/light_hours= 99
+#
+put o3820 in o3804
+#
+set r3824/reset_objects["o3820"] = {"location":"o3804"}
+#
+tel r3824
+#
+create/drop a wererat;rat;wererat;m3808:characters.Mobile
+#
+desc m3808 = A humanoid rat sits here, discussing some business. 
+#
+set m3808/level = 4
+#
+set m3808/level_base = 4
+#
+set m3808/vnum = "m3808"
+#
+set m3808/look_description = "This beast looks like a combination rat and human, as it has properties of both, namely standing erect, wielding a weapon, but with fur, ears, and tail of a rat.  They don't notice you in their discussion. "
+#
+set m3808/act_flags = ['wimpy', 'stay area', 'sentinel', 'npc']
+#
+set m3808/alignment = -5
+#
+set m3808/sex = "neuter"
+#
+set m3808/race = "rat"
+#
+tag m3808 = the rats' lair:area name
+#
+tag m3808 = mobile
+#
+set m3808/hitpoints[maximum] = 42
+#
+set m3808/position = "standing"
+#
+set m3808/experience_total = 682
+#
+set m3808/experience_current = 682
+#
+set m3808/special_function = "poison"
+#
+tel r3824
+#
+create a wooden stake;stake;wooden;o3811:objects.Weapon
+#
+sethome o3811 = m3808
+#
+desc o3811 = A wooden stake is against the wall.
+#
+set o3811/level = 2
+#
+set o3811/level_base = 2
+#
+set o3811/vnum = "o3811"
+#
+set o3811/item_type = "weapon"
+#
+set o3811/wear_location = "wield"
+#
+set o3811/weight = 5
+#
+tag o3811 = the rats' lair:area name
+#
+tag o3811 = object
+#
+set o3811/extra_descriptions = {'stake wooden': ' This wooden stake is quite sharp, and looks designed as a weapon.  The blood- stains at the tip confirm this idea. '}
+#
+set o3811/weapon_type = "pierce"
+#
+set o3811/damage_low = 2
+#
+set o3811/damage_high = 8
+#
+wieldto o3811 = m3808
+#
+set m3808/experience_total = 852
+#
+set m3808/experience_current = 852
+#
+set m3808/reset_objects["o3811"] = {"location":"equipped"}
+#
+tel r3824
+#
+create/drop a wererat;rat;wererat;m3808; m3808-2:characters.Mobile
+#
+desc m3808-2 = A humanoid rat sits here, discussing some business. 
+#
+set m3808-2/level = 4
+#
+set m3808-2/level_base = 4
+#
+set m3808-2/vnum = "m3808"
+#
+set m3808-2/look_description = "This beast looks like a combination rat and human, as it has properties of both, namely standing erect, wielding a weapon, but with fur, ears, and tail of a rat.  They don't notice you in their discussion. "
+#
+set m3808-2/act_flags = ['wimpy', 'stay area', 'sentinel', 'npc']
+#
+set m3808-2/alignment = -5
+#
+set m3808-2/sex = "neuter"
+#
+set m3808-2/race = "rat"
+#
+tag m3808-2 = the rats' lair:area name
+#
+tag m3808-2 = mobile
+#
+set m3808-2/hitpoints[maximum] = 36
+#
+set m3808-2/position = "standing"
+#
+set m3808-2/experience_total = 706
+#
+set m3808-2/experience_current = 706
+#
+set m3808-2/special_function = "poison"
+#
+tel r3824
+#
+create a wooden stake;stake;wooden;o3811:objects.Weapon
+#
+sethome o3811 = m3808-2
+#
+desc o3811 = A wooden stake is against the wall.
+#
+set o3811/level = 2
+#
+set o3811/level_base = 2
+#
+set o3811/vnum = "o3811"
+#
+set o3811/item_type = "weapon"
+#
+set o3811/wear_location = "wield"
+#
+set o3811/weight = 5
+#
+tag o3811 = the rats' lair:area name
+#
+tag o3811 = object
+#
+set o3811/extra_descriptions = {'stake wooden': ' This wooden stake is quite sharp, and looks designed as a weapon.  The blood- stains at the tip confirm this idea. '}
+#
+set o3811/weapon_type = "pierce"
+#
+set o3811/damage_low = 4
+#
+set o3811/damage_high = 10
+#
+wieldto o3811 = m3808-2
+#
+set m3808-2/experience_total = 882
+#
+set m3808-2/experience_current = 882
+#
+set m3808-2/reset_objects["o3811"] = {"location":"equipped"}
+#
+tel r3824
+#
+create/drop a wererat;rat;wererat;m3808; m3808-3:characters.Mobile
+#
+desc m3808-3 = A humanoid rat sits here, discussing some business. 
+#
+set m3808-3/level = 4
+#
+set m3808-3/level_base = 4
+#
+set m3808-3/vnum = "m3808"
+#
+set m3808-3/look_description = "This beast looks like a combination rat and human, as it has properties of both, namely standing erect, wielding a weapon, but with fur, ears, and tail of a rat.  They don't notice you in their discussion. "
+#
+set m3808-3/act_flags = ['wimpy', 'stay area', 'sentinel', 'npc']
+#
+set m3808-3/alignment = -5
+#
+set m3808-3/sex = "neuter"
+#
+set m3808-3/race = "rat"
+#
+tag m3808-3 = the rats' lair:area name
+#
+tag m3808-3 = mobile
+#
+set m3808-3/hitpoints[maximum] = 48
+#
+set m3808-3/position = "standing"
+#
+set m3808-3/experience_total = 731
+#
+set m3808-3/experience_current = 731
+#
+set m3808-3/special_function = "poison"
+#
+tel r3824
+#
+create a wooden stake;stake;wooden;o3811:objects.Weapon
+#
+sethome o3811 = m3808-3
+#
+desc o3811 = A wooden stake is against the wall.
+#
+set o3811/level = 2
+#
+set o3811/level_base = 2
+#
+set o3811/vnum = "o3811"
+#
+set o3811/item_type = "weapon"
+#
+set o3811/wear_location = "wield"
+#
+set o3811/weight = 5
+#
+tag o3811 = the rats' lair:area name
+#
+tag o3811 = object
+#
+set o3811/extra_descriptions = {'stake wooden': ' This wooden stake is quite sharp, and looks designed as a weapon.  The blood- stains at the tip confirm this idea. '}
+#
+set o3811/weapon_type = "pierce"
+#
+set o3811/damage_low = 2
+#
+set o3811/damage_high = 8
+#
+wieldto o3811 = m3808-3
+#
+set m3808-3/experience_total = 913
+#
+set m3808-3/experience_current = 913
+#
+set m3808-3/reset_objects["o3811"] = {"location":"equipped"}
+#
+tel r3826
+#
+create/drop a firedrake;drake;firedrake;m3809:characters.Mobile
+#
+desc m3809 = A red dragon-beast sits here, staring at you and blowing fire at you! 
+#
+set m3809/level = 10
+#
+set m3809/level_base = 10
+#
+set m3809/vnum = "m3809"
+#
+set m3809/look_description = "This beast looks a lot like a red dragon, except that it's a bit smaller.  It has red scales over it's four-legged reptilian body, with sharp claws and piercing tail.  It is disturbed by your intrusion. "
+#
+set m3809/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m3809/alignment = -700
+#
+set m3809/sex = "neuter"
+#
+set m3809/spell_affects = {'detect invis': ''}
+#
+set m3809/race = "dragon"
+#
+tag m3809 = the rats' lair:area name
+#
+tag m3809 = mobile
+#
+set m3809/hitpoints[maximum] = 180
+#
+set m3809/position = "standing"
+#
+set m3809/experience_total = 7451
+#
+set m3809/experience_current = 7451
+#
+set m3809/special_function = "breath_fire"
+#
+tel r3826
+#
+create a key on a necklace;key;necklace;o3802:objects.Key
+#
+sethome o3802 = m3809
+#
+desc o3802 = A necklace with a key on it is on the floor.
+#
+set o3802/level = 8
+#
+set o3802/level_base = 8
+#
+set o3802/vnum = "o3802"
+#
+set o3802/item_type = "key"
+#
+set o3802/wear_location = "neck"
+#
+set o3802/weight = 1
+#
+tag o3802 = the rats' lair:area name
+#
+tag o3802 = object
+#
+wearto o3802 = m3809
+#
+set m3809/reset_objects["o3802"] = {"location":"equipped"}
+#
+tel r3826
+#
+set east/door_attributes = ['lockable', 'locked']
+#
+set east/reset_door_attributes = ['lockable', 'locked']
+#
+tel r3826
+#
+set west/door_attributes = ['lockable', 'locked']
+#
+set west/reset_door_attributes = ['lockable', 'locked']
+#
+tel r3827
+#
+create a silver key;silver;key;o3801:objects.Key
+#
+sethome o3801 = r3827
+#
+desc o3801 = A silver key rest here, making a clean perimeter wherever it touches.
+#
+set o3801/level = 8
+#
+set o3801/level_base = 8
+#
+set o3801/vnum = "o3801"
+#
+set o3801/item_type = "key"
+#
+set o3801/weight = 1
+#
+tag o3801 = the rats' lair:area name
+#
+tag o3801 = object
+#
+set o3801/extra_descriptions = {'silver key': ' Inscribed on this key are unintelligible runes. ', 'runes': " You don't understand what the runes say at all. "}
+#
+drop o3801
+#
+set r3827/reset_objects["o3801"] = {"location":"inventory"}
+#
+tel r3827
+#
+create the treasure of gold coins;treasure;gold;coins;o3821:objects.Money
+#
+sethome o3821 = r3827
+#
+desc o3821 = A big pile of gold coins is in the middle of the room!
+#
+set o3821/level = 8
+#
+set o3821/level_base = 8
+#
+set o3821/vnum = "o3821"
+#
+set o3821/item_type = "money"
+#
+set o3821/weight = 10
+#
+tag o3821 = the rats' lair:area name
+#
+tag o3821 = object
+#
+set o3821/extra_flags = ['glow']
+#
+set o3821/value = 2000
+#
+drop o3821
+#
+set r3827/reset_objects["o3821"] = {"location":"inventory"}
+#
+tel r3827
+#
+set west/door_attributes = ['lockable', 'locked']
+#
+set west/reset_door_attributes = ['lockable', 'locked']
+#
+tel r3828
+#
+create/drop the wererat leader;rat;wererat;leader;m3810:characters.Mobile
+#
+desc m3810 = A bulky rat-beast is here, enraged that you have intruded upon its room! 
+#
+set m3810/level = 9
+#
+set m3810/level_base = 9
+#
+set m3810/vnum = "m3810"
+#
+set m3810/look_description = "This beast looks like a combination rat and human, as it has properties of both, namely standing erect, wielding a weapon, but with fur, ears, and tail of a rat.  This one is different from the others, since it is better attired and also much bigger. "
+#
+set m3810/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m3810/alignment = -700
+#
+set m3810/sex = "neuter"
+#
+set m3810/race = "rat"
+#
+tag m3810 = the rats' lair:area name
+#
+tag m3810 = mobile
+#
+set m3810/hitpoints[maximum] = 88
+#
+set m3810/position = "standing"
+#
+set m3810/experience_total = 4674
+#
+set m3810/experience_current = 4674
+#
+set m3810/special_function = "poison"
+#
+tel r3828
+#
+create a spiked flail;flail;spiked;o3817:objects.Weapon
+#
+sethome o3817 = m3810
+#
+desc o3817 = A spiked flail rests on the floor.
+#
+set o3817/level = 7
+#
+set o3817/level_base = 7
+#
+set o3817/vnum = "o3817"
+#
+set o3817/item_type = "weapon"
+#
+set o3817/wear_location = "wield"
+#
+set o3817/weight = 5
+#
+tag o3817 = the rats' lair:area name
+#
+tag o3817 = object
+#
+set o3817/extra_flags = ['magic']
+#
+set o3817/stat_modifiers[damroll] = 1
+#
+set o3817/weapon_type = "pound"
+#
+set o3817/damage_low = 3
+#
+set o3817/damage_high = 10
+#
+wieldto o3817 = m3810
+#
+set m3810/experience_total = 5842
+#
+set m3810/experience_current = 5842
+#
+set m3810/reset_objects["o3817"] = {"location":"equipped"}
+#
+tel r3828
+#
+create a tin bracer;tin;bracer;o3814:objects.Armor
+#
+sethome o3814 = m3810
+#
+desc o3814 = A tin bracer is rusting on the floor.
+#
+set o3814/level = 7
+#
+set o3814/level_base = 7
+#
+set o3814/vnum = "o3814"
+#
+set o3814/item_type = "armor"
+#
+set o3814/wear_location = "wrist"
+#
+set o3814/weight = 5
+#
+tag o3814 = the rats' lair:area name
+#
+tag o3814 = object
+#
+set o3814/armor = 4
+#
+wearto o3814 = m3810
+#
+set m3810/reset_objects["o3814"] = {"location":"equipped"}
+#
+tel r3828
+#
+create a tin bracer;tin;bracer;o3814:objects.Armor
+#
+sethome o3814 = m3810
+#
+desc o3814 = A tin bracer is rusting on the floor.
+#
+set o3814/level = 7
+#
+set o3814/level_base = 7
+#
+set o3814/vnum = "o3814"
+#
+set o3814/item_type = "armor"
+#
+set o3814/wear_location = "wrist"
+#
+set o3814/weight = 5
+#
+tag o3814 = the rats' lair:area name
+#
+tag o3814 = object
+#
+set o3814/armor = 5
+#
+wearto o3814 = m3810
+#
+set m3810/reset_objects["o3814"] = {"location":"equipped"}
+#
+tel r3828
+#
+create tin leggings;tin;leggings;o3815:objects.Armor
+#
+sethome o3815 = m3810
+#
+desc o3815 = A pair of tin leggings rusts on the floor.
+#
+set o3815/level = 7
+#
+set o3815/level_base = 7
+#
+set o3815/vnum = "o3815"
+#
+set o3815/item_type = "armor"
+#
+set o3815/wear_location = "legs"
+#
+set o3815/weight = 5
+#
+tag o3815 = the rats' lair:area name
+#
+tag o3815 = object
+#
+set o3815/armor = 4
+#
+wearto o3815 = m3810
+#
+set m3810/reset_objects["o3815"] = {"location":"equipped"}
+#
+tel r3828
+#
+create tin armguards;tin;armguards;o3816:objects.Armor
+#
+sethome o3816 = m3810
+#
+desc o3816 = A pair of tin armguards rusts on the floor.
+#
+set o3816/level = 7
+#
+set o3816/level_base = 7
+#
+set o3816/vnum = "o3816"
+#
+set o3816/item_type = "armor"
+#
+set o3816/wear_location = "arms"
+#
+set o3816/weight = 5
+#
+tag o3816 = the rats' lair:area name
+#
+tag o3816 = object
+#
+set o3816/armor = 4
+#
+wearto o3816 = m3810
+#
+set m3810/reset_objects["o3816"] = {"location":"equipped"}
+#
+tel r3828
+#
+create/drop a large rat;rat;large;m3811:characters.Mobile
+#
+desc m3811 = A large rat stares at you menacingly, then attacks you! 
+#
+set m3811/level = 3
+#
+set m3811/level_base = 3
+#
+set m3811/vnum = "m3811"
+#
+set m3811/look_description = "This rat is about the length of your arm, with sharp claws and teeth, which it uses now to bite at you! "
+#
+set m3811/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m3811/alignment = -400
+#
+set m3811/sex = "neuter"
+#
+set m3811/race = "rat"
+#
+tag m3811 = the rats' lair:area name
+#
+tag m3811 = mobile
+#
+set m3811/hitpoints[maximum] = 33
+#
+set m3811/position = "standing"
+#
+set m3811/experience_total = 405
+#
+set m3811/experience_current = 405
+#
+set m3811/special_function = "poison"
+#
+tel r3828
+#
+create/drop a large rat;rat;large;m3811; m3811-2:characters.Mobile
+#
+desc m3811-2 = A large rat stares at you menacingly, then attacks you! 
+#
+set m3811-2/level = 3
+#
+set m3811-2/level_base = 3
+#
+set m3811-2/vnum = "m3811"
+#
+set m3811-2/look_description = "This rat is about the length of your arm, with sharp claws and teeth, which it uses now to bite at you! "
+#
+set m3811-2/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m3811-2/alignment = -400
+#
+set m3811-2/sex = "neuter"
+#
+set m3811-2/race = "rat"
+#
+tag m3811-2 = the rats' lair:area name
+#
+tag m3811-2 = mobile
+#
+set m3811-2/hitpoints[maximum] = 28
+#
+set m3811-2/position = "standing"
+#
+set m3811-2/experience_total = 442
+#
+set m3811-2/experience_current = 442
+#
+set m3811-2/special_function = "poison"
+#
+tel r3828
+#
+set east/door_attributes = ['lockable', 'locked']
+#
+set east/reset_door_attributes = ['lockable', 'locked']
+#
+tel r3829
+#
+create the walls of the cave;wall;walls;cave;caves;cavern;o3805:objects.Container
+#
+sethome o3805 = r3829
+#
+desc o3805 = The walls gleam with hidden treasures!
+#
+set o3805/level = 1
+#
+set o3805/level_base = 1
+#
+set o3805/vnum = "o3805"
+#
+set o3805/item_type = "container"
+#
+objectlock o3805 = "get:perm(Admin)"
+#
+set o3805/weight = 1
+#
+tag o3805 = the rats' lair:area name
+#
+tag o3805 = object
+#
+set o3805/extra_descriptions = {'wall walls cave caves cavern': ' The walls of this cave shine with sparkling gems, although most of them are too small to be dug out. '}
+#
+set o3805/weight_maximum = 300
+#
+set o3805/state = []
+#
+set o3805/state_base = []
+#
+drop o3805
+#
+set r3829/reset_objects["o3805"] = {"location":"inventory"}
+#
+tel r3829
+#
+create a sapphire gem;sapphire;gem;o3822:objects.Treasure
+#
+sethome o3822 = o3805
+#
+desc o3822 = A big sapphire gem glitters on the floor.
+#
+set o3822/level = 1
+#
+set o3822/level_base = 1
+#
+set o3822/vnum = "o3822"
+#
+set o3822/item_type = "treasure"
+#
+set o3822/weight = 5
+#
+tag o3822 = the rats' lair:area name
+#
+tag o3822 = object
+#
+put o3822 in o3805
+#
+set r3829/reset_objects["o3822"] = {"location":"o3805"}
+#
+tel r3830
+#
+create/drop a wererat slavemaster;rat;wererat;slavemaster;m3812:characters.Mobile
+#
+desc m3812 = A large wererat cracks his whip at you! 
+#
+set m3812/level = 7
+#
+set m3812/level_base = 7
+#
+set m3812/vnum = "m3812"
+#
+set m3812/look_description = "This beast looks like a combination rat and human, as it has properties of both, namely standing erect, wielding a weapon, but with fur, ears, and tail of a rat.  This one looks quite big, and the barbed whip he flicks toward you looks quite deadly. "
+#
+set m3812/act_flags = ['aggressive', 'npc']
+#
+set m3812/alignment = -600
+#
+set m3812/sex = "male"
+#
+set m3812/race = "rat"
+#
+tag m3812 = the rats' lair:area name
+#
+tag m3812 = mobile
+#
+set m3812/hitpoints[maximum] = 60
+#
+set m3812/position = "standing"
+#
+set m3812/experience_total = 2236
+#
+set m3812/experience_current = 2236
+#
+set m3812/special_function = "poison"
+#
+tel r3830
+#
+create a barbed whip;whip;barbed;o3818:objects.Weapon
+#
+sethome o3818 = m3812
+#
+desc o3818 = A barbed whip is curled up on the floor.
+#
+set o3818/level = 5
+#
+set o3818/level_base = 5
+#
+set o3818/vnum = "o3818"
+#
+set o3818/item_type = "weapon"
+#
+set o3818/wear_location = "wield"
+#
+set o3818/weight = 10
+#
+tag o3818 = the rats' lair:area name
+#
+tag o3818 = object
+#
+set o3818/extra_flags = ['magic']
+#
+set o3818/stat_modifiers[damroll] = 1
+#
+set o3818/weapon_type = "whip"
+#
+set o3818/damage_low = 3
+#
+set o3818/damage_high = 8
+#
+wieldto o3818 = m3812
+#
+set m3812/experience_total = 2795
+#
+set m3812/experience_current = 2795
+#
+set m3812/reset_objects["o3818"] = {"location":"equipped"}
+#
+tel r3830
+#
+create a tin bracer;tin;bracer;o3814:objects.Armor
+#
+sethome o3814 = m3812
+#
+desc o3814 = A tin bracer is rusting on the floor.
+#
+set o3814/level = 5
+#
+set o3814/level_base = 5
+#
+set o3814/vnum = "o3814"
+#
+set o3814/item_type = "armor"
+#
+set o3814/wear_location = "wrist"
+#
+set o3814/weight = 5
+#
+tag o3814 = the rats' lair:area name
+#
+tag o3814 = object
+#
+set o3814/armor = 3
+#
+wearto o3814 = m3812
+#
+set m3812/reset_objects["o3814"] = {"location":"equipped"}
+#
+tel r3830
+#
+create a tin bracer;tin;bracer;o3814:objects.Armor
+#
+sethome o3814 = m3812
+#
+desc o3814 = A tin bracer is rusting on the floor.
+#
+set o3814/level = 5
+#
+set o3814/level_base = 5
+#
+set o3814/vnum = "o3814"
+#
+set o3814/item_type = "armor"
+#
+set o3814/wear_location = "wrist"
+#
+set o3814/weight = 5
+#
+tag o3814 = the rats' lair:area name
+#
+tag o3814 = object
+#
+set o3814/armor = 3
+#
+wearto o3814 = m3812
+#
+set m3812/reset_objects["o3814"] = {"location":"equipped"}
+#
+tel r3830
+#
+create an iron key;key;iron;o3803:objects.Key
+#
+sethome o3803 = m3812
+#
+desc o3803 = An iron key is on the floor.
+#
+set o3803/level = 5
+#
+set o3803/level_base = 5
+#
+set o3803/vnum = "o3803"
+#
+set o3803/item_type = "key"
+#
+set o3803/weight = 1
+#
+tag o3803 = the rats' lair:area name
+#
+tag o3803 = object
+#
+give o3803 = m3812
+#
+set m3812/reset_objects["o3803"] = {"location":"inventory"}
+#
+tel r3830
+#
+create the walls of the cave;wall;walls;cave;caves;cavern;o3805:objects.Container
+#
+sethome o3805 = r3830
+#
+desc o3805 = The walls gleam with hidden treasures!
+#
+set o3805/level = 5
+#
+set o3805/level_base = 5
+#
+set o3805/vnum = "o3805"
+#
+set o3805/item_type = "container"
+#
+objectlock o3805 = "get:perm(Admin)"
+#
+set o3805/weight = 1
+#
+tag o3805 = the rats' lair:area name
+#
+tag o3805 = object
+#
+set o3805/extra_descriptions = {'wall walls cave caves cavern': ' The walls of this cave shine with sparkling gems, although most of them are too small to be dug out. '}
+#
+set o3805/weight_maximum = 300
+#
+set o3805/state = []
+#
+set o3805/state_base = []
+#
+drop o3805
+#
+set r3830/reset_objects["o3805"] = {"location":"inventory"}
+#
+tel r3830
+#
+create a ruby gem;ruby;gem;o3823:objects.Treasure
+#
+sethome o3823 = o3805
+#
+desc o3823 = A big ruby gem glitters on the floor.
+#
+set o3823/level = 5
+#
+set o3823/level_base = 5
+#
+set o3823/vnum = "o3823"
+#
+set o3823/item_type = "treasure"
+#
+set o3823/weight = 5
+#
+tag o3823 = the rats' lair:area name
+#
+tag o3823 = object
+#
+put o3823 in o3805
+#
+set r3830/reset_objects["o3823"] = {"location":"o3805"}
+#
+tel r3830
+#
+set west/door_attributes = ['lockable', 'locked']
+#
+set west/reset_door_attributes = ['lockable', 'locked']
+#
+tel r3831
+#
+create/drop a human slave;slave;human;m3813:characters.Mobile
+#
+desc m3813 = A human slave crouches in a corner, shivering. 
+#
+set m3813/level = 3
+#
+set m3813/level_base = 3
+#
+set m3813/vnum = "m3813"
+#
+set m3813/look_description = "This human looks familiar, and upon further examination, you see that this slave used to be a citizen of Eden's Grove!  She asks pitifully for you to help her escape. "
+#
+set m3813/act_flags = ['wimpy', 'npc']
+#
+set m3813/alignment = 100
+#
+set m3813/sex = "female"
+#
+set m3813/race = "human"
+#
+tag m3813 = the rats' lair:area name
+#
+tag m3813 = mobile
+#
+set m3813/hitpoints[maximum] = 33
+#
+set m3813/position = "standing"
+#
+set m3813/experience_total = 368
+#
+set m3813/experience_current = 368
+#
+tel r3831
+#
+create/drop a human slave;slave;human;m3813; m3813-2:characters.Mobile
+#
+desc m3813-2 = A human slave crouches in a corner, shivering. 
+#
+set m3813-2/level = 3
+#
+set m3813-2/level_base = 3
+#
+set m3813-2/vnum = "m3813"
+#
+set m3813-2/look_description = "This human looks familiar, and upon further examination, you see that this slave used to be a citizen of Eden's Grove!  She asks pitifully for you to help her escape. "
+#
+set m3813-2/act_flags = ['wimpy', 'npc']
+#
+set m3813-2/alignment = 100
+#
+set m3813-2/sex = "female"
+#
+set m3813-2/race = "human"
+#
+tag m3813-2 = the rats' lair:area name
+#
+tag m3813-2 = mobile
+#
+set m3813-2/hitpoints[maximum] = 28
+#
+set m3813-2/position = "standing"
+#
+set m3813-2/experience_total = 392
+#
+set m3813-2/experience_current = 392
+#
+tel r3831
+#
+create/drop a human slave;slave;human;m3813; m3813-3:characters.Mobile
+#
+desc m3813-3 = A human slave crouches in a corner, shivering. 
+#
+set m3813-3/level = 3
+#
+set m3813-3/level_base = 3
+#
+set m3813-3/vnum = "m3813"
+#
+set m3813-3/look_description = "This human looks familiar, and upon further examination, you see that this slave used to be a citizen of Eden's Grove!  She asks pitifully for you to help her escape. "
+#
+set m3813-3/act_flags = ['wimpy', 'npc']
+#
+set m3813-3/alignment = 100
+#
+set m3813-3/sex = "female"
+#
+set m3813-3/race = "human"
+#
+tag m3813-3 = the rats' lair:area name
+#
+tag m3813-3 = mobile
+#
+set m3813-3/hitpoints[maximum] = 24
+#
+set m3813-3/position = "standing"
+#
+set m3813-3/experience_total = 425
+#
+set m3813-3/experience_current = 425
+#
+tel r3831
+#
+set east/door_attributes = ['lockable', 'locked']
+#
+set east/reset_door_attributes = ['lockable', 'locked']
+#
+tel r3832
+#
+create the walls of the cave;wall;walls;cave;caves;cavern;o3805:objects.Container
+#
+sethome o3805 = r3832
+#
+desc o3805 = The walls gleam with hidden treasures!
+#
+set o3805/level = 1
+#
+set o3805/level_base = 1
+#
+set o3805/vnum = "o3805"
+#
+set o3805/item_type = "container"
+#
+objectlock o3805 = "get:perm(Admin)"
+#
+set o3805/weight = 1
+#
+tag o3805 = the rats' lair:area name
+#
+tag o3805 = object
+#
+set o3805/extra_descriptions = {'wall walls cave caves cavern': ' The walls of this cave shine with sparkling gems, although most of them are too small to be dug out. '}
+#
+set o3805/weight_maximum = 300
+#
+set o3805/state = []
+#
+set o3805/state_base = []
+#
+drop o3805
+#
+set r3832/reset_objects["o3805"] = {"location":"inventory"}
+#
+tel r3832
+#
+create a sapphire gem;sapphire;gem;o3822:objects.Treasure
+#
+sethome o3822 = o3805
+#
+desc o3822 = A big sapphire gem glitters on the floor.
+#
+set o3822/level = 1
+#
+set o3822/level_base = 1
+#
+set o3822/vnum = "o3822"
+#
+set o3822/item_type = "treasure"
+#
+set o3822/weight = 5
+#
+tag o3822 = the rats' lair:area name
+#
+tag o3822 = object
+#
+put o3822 in o3805
+#
+set r3832/reset_objects["o3822"] = {"location":"o3805"}
+#
+tel r3833
+#
+create the walls of the cave;wall;walls;cave;caves;cavern;o3805:objects.Container
+#
+sethome o3805 = r3833
+#
+desc o3805 = The walls gleam with hidden treasures!
+#
+set o3805/level = 1
+#
+set o3805/level_base = 1
+#
+set o3805/vnum = "o3805"
+#
+set o3805/item_type = "container"
+#
+objectlock o3805 = "get:perm(Admin)"
+#
+set o3805/weight = 1
+#
+tag o3805 = the rats' lair:area name
+#
+tag o3805 = object
+#
+set o3805/extra_descriptions = {'wall walls cave caves cavern': ' The walls of this cave shine with sparkling gems, although most of them are too small to be dug out. '}
+#
+set o3805/weight_maximum = 300
+#
+set o3805/state = []
+#
+set o3805/state_base = []
+#
+drop o3805
+#
+set r3833/reset_objects["o3805"] = {"location":"inventory"}
+#
+tel r3833
+#
+create a sapphire gem;sapphire;gem;o3822:objects.Treasure
+#
+sethome o3822 = o3805
+#
+desc o3822 = A big sapphire gem glitters on the floor.
+#
+set o3822/level = 1
+#
+set o3822/level_base = 1
+#
+set o3822/vnum = "o3822"
+#
+set o3822/item_type = "treasure"
+#
+set o3822/weight = 5
+#
+tag o3822 = the rats' lair:area name
+#
+tag o3822 = object
+#
+put o3822 in o3805
+#
+set r3833/reset_objects["o3822"] = {"location":"o3805"}
+#
+tel r3834
+#
+create the walls of the cave;wall;walls;cave;caves;cavern;o3805:objects.Container
+#
+sethome o3805 = r3834
+#
+desc o3805 = The walls gleam with hidden treasures!
+#
+set o3805/level = 1
+#
+set o3805/level_base = 1
+#
+set o3805/vnum = "o3805"
+#
+set o3805/item_type = "container"
+#
+objectlock o3805 = "get:perm(Admin)"
+#
+set o3805/weight = 1
+#
+tag o3805 = the rats' lair:area name
+#
+tag o3805 = object
+#
+set o3805/extra_descriptions = {'wall walls cave caves cavern': ' The walls of this cave shine with sparkling gems, although most of them are too small to be dug out. '}
+#
+set o3805/weight_maximum = 300
+#
+set o3805/state = []
+#
+set o3805/state_base = []
+#
+drop o3805
+#
+set r3834/reset_objects["o3805"] = {"location":"inventory"}
+#
+tel r3834
+#
+create a ruby gem;ruby;gem;o3823:objects.Treasure
+#
+sethome o3823 = o3805
+#
+desc o3823 = A big ruby gem glitters on the floor.
+#
+set o3823/level = 1
+#
+set o3823/level_base = 1
+#
+set o3823/vnum = "o3823"
+#
+set o3823/item_type = "treasure"
+#
+set o3823/weight = 5
+#
+tag o3823 = the rats' lair:area name
+#
+tag o3823 = object
+#
+put o3823 in o3805
+#
+set r3834/reset_objects["o3823"] = {"location":"o3805"}
+#
+tel r3835
+#
+create the walls of the cave;wall;walls;cave;caves;cavern;o3805:objects.Container
+#
+sethome o3805 = r3835
+#
+desc o3805 = The walls gleam with hidden treasures!
+#
+set o3805/level = 1
+#
+set o3805/level_base = 1
+#
+set o3805/vnum = "o3805"
+#
+set o3805/item_type = "container"
+#
+objectlock o3805 = "get:perm(Admin)"
+#
+set o3805/weight = 1
+#
+tag o3805 = the rats' lair:area name
+#
+tag o3805 = object
+#
+set o3805/extra_descriptions = {'wall walls cave caves cavern': ' The walls of this cave shine with sparkling gems, although most of them are too small to be dug out. '}
+#
+set o3805/weight_maximum = 300
+#
+set o3805/state = []
+#
+set o3805/state_base = []
+#
+drop o3805
+#
+set r3835/reset_objects["o3805"] = {"location":"inventory"}
+#
+tel r3835
+#
+create a sapphire gem;sapphire;gem;o3822:objects.Treasure
+#
+sethome o3822 = o3805
+#
+desc o3822 = A big sapphire gem glitters on the floor.
+#
+set o3822/level = 1
+#
+set o3822/level_base = 1
+#
+set o3822/vnum = "o3822"
+#
+set o3822/item_type = "treasure"
+#
+set o3822/weight = 5
+#
+tag o3822 = the rats' lair:area name
+#
+tag o3822 = object
+#
+put o3822 in o3805
+#
+set r3835/reset_objects["o3822"] = {"location":"o3805"}
+#
+tel r3835
+#
+create/drop a human slave;slave;human;m3814:characters.Mobile
+#
+desc m3814 = A human slave is here, digging in the tunnels. 
+#
+set m3814/level = 3
+#
+set m3814/level_base = 3
+#
+set m3814/vnum = "m3814"
+#
+set m3814/look_description = "This human looks familiar, and upon further examination, you see that this slave used to be a citizen of Eden's Grove!  He asks pitifully for you to help him escape. "
+#
+set m3814/act_flags = ['wimpy', 'npc']
+#
+set m3814/alignment = 100
+#
+set m3814/sex = "male"
+#
+set m3814/race = "human"
+#
+tag m3814 = the rats' lair:area name
+#
+tag m3814 = mobile
+#
+set m3814/hitpoints[maximum] = 31
+#
+set m3814/position = "standing"
+#
+set m3814/experience_total = 406
+#
+set m3814/experience_current = 406
+#
+tel r3836
+#
+create the walls of the cave;wall;walls;cave;caves;cavern;o3805:objects.Container
+#
+sethome o3805 = r3836
+#
+desc o3805 = The walls gleam with hidden treasures!
+#
+set o3805/level = 1
+#
+set o3805/level_base = 1
+#
+set o3805/vnum = "o3805"
+#
+set o3805/item_type = "container"
+#
+objectlock o3805 = "get:perm(Admin)"
+#
+set o3805/weight = 1
+#
+tag o3805 = the rats' lair:area name
+#
+tag o3805 = object
+#
+set o3805/extra_descriptions = {'wall walls cave caves cavern': ' The walls of this cave shine with sparkling gems, although most of them are too small to be dug out. '}
+#
+set o3805/weight_maximum = 300
+#
+set o3805/state = []
+#
+set o3805/state_base = []
+#
+drop o3805
+#
+set r3836/reset_objects["o3805"] = {"location":"inventory"}
+#
+tel r3836
+#
+create a sapphire gem;sapphire;gem;o3822:objects.Treasure
+#
+sethome o3822 = o3805
+#
+desc o3822 = A big sapphire gem glitters on the floor.
+#
+set o3822/level = 1
+#
+set o3822/level_base = 1
+#
+set o3822/vnum = "o3822"
+#
+set o3822/item_type = "treasure"
+#
+set o3822/weight = 5
+#
+tag o3822 = the rats' lair:area name
+#
+tag o3822 = object
+#
+put o3822 in o3805
+#
+set r3836/reset_objects["o3822"] = {"location":"o3805"}
+#
+tel r3837
+#
+create the walls of the cave;wall;walls;cave;caves;cavern;o3805:objects.Container
+#
+sethome o3805 = r3837
+#
+desc o3805 = The walls gleam with hidden treasures!
+#
+set o3805/level = 1
+#
+set o3805/level_base = 1
+#
+set o3805/vnum = "o3805"
+#
+set o3805/item_type = "container"
+#
+objectlock o3805 = "get:perm(Admin)"
+#
+set o3805/weight = 1
+#
+tag o3805 = the rats' lair:area name
+#
+tag o3805 = object
+#
+set o3805/extra_descriptions = {'wall walls cave caves cavern': ' The walls of this cave shine with sparkling gems, although most of them are too small to be dug out. '}
+#
+set o3805/weight_maximum = 300
+#
+set o3805/state = []
+#
+set o3805/state_base = []
+#
+drop o3805
+#
+set r3837/reset_objects["o3805"] = {"location":"inventory"}
+#
+tel r3837
+#
+create a ruby gem;ruby;gem;o3823:objects.Treasure
+#
+sethome o3823 = o3805
+#
+desc o3823 = A big ruby gem glitters on the floor.
+#
+set o3823/level = 1
+#
+set o3823/level_base = 1
+#
+set o3823/vnum = "o3823"
+#
+set o3823/item_type = "treasure"
+#
+set o3823/weight = 5
+#
+tag o3823 = the rats' lair:area name
+#
+tag o3823 = object
+#
+put o3823 in o3805
+#
+set r3837/reset_objects["o3823"] = {"location":"o3805"}
+#
+tel r3837
+#
+create/drop a human slave;slave;human;m3814:characters.Mobile
+#
+desc m3814 = A human slave is here, digging in the tunnels. 
+#
+set m3814/level = 3
+#
+set m3814/level_base = 3
+#
+set m3814/vnum = "m3814"
+#
+set m3814/look_description = "This human looks familiar, and upon further examination, you see that this slave used to be a citizen of Eden's Grove!  He asks pitifully for you to help him escape. "
+#
+set m3814/act_flags = ['wimpy', 'npc']
+#
+set m3814/alignment = 100
+#
+set m3814/sex = "male"
+#
+set m3814/race = "human"
+#
+tag m3814 = the rats' lair:area name
+#
+tag m3814 = mobile
+#
+set m3814/hitpoints[maximum] = 25
+#
+set m3814/position = "standing"
+#
+set m3814/experience_total = 429
+#
+set m3814/experience_current = 429
+#
+tel r3837
+#
+set south/door_attributes = ['lockable', 'locked']
+#
+set south/reset_door_attributes = ['lockable', 'locked']
+#
+tel r3838
+#
+create the walls of the cave;wall;walls;cave;caves;cavern;o3805:objects.Container
+#
+sethome o3805 = r3838
+#
+desc o3805 = The walls gleam with hidden treasures!
+#
+set o3805/level = 1
+#
+set o3805/level_base = 1
+#
+set o3805/vnum = "o3805"
+#
+set o3805/item_type = "container"
+#
+objectlock o3805 = "get:perm(Admin)"
+#
+set o3805/weight = 1
+#
+tag o3805 = the rats' lair:area name
+#
+tag o3805 = object
+#
+set o3805/extra_descriptions = {'wall walls cave caves cavern': ' The walls of this cave shine with sparkling gems, although most of them are too small to be dug out. '}
+#
+set o3805/weight_maximum = 300
+#
+set o3805/state = []
+#
+set o3805/state_base = []
+#
+drop o3805
+#
+set r3838/reset_objects["o3805"] = {"location":"inventory"}
+#
+tel r3838
+#
+create a ruby gem;ruby;gem;o3823:objects.Treasure
+#
+sethome o3823 = o3805
+#
+desc o3823 = A big ruby gem glitters on the floor.
+#
+set o3823/level = 1
+#
+set o3823/level_base = 1
+#
+set o3823/vnum = "o3823"
+#
+set o3823/item_type = "treasure"
+#
+set o3823/weight = 5
+#
+tag o3823 = the rats' lair:area name
+#
+tag o3823 = object
+#
+put o3823 in o3805
+#
+set r3838/reset_objects["o3823"] = {"location":"o3805"}
+#
+tel r3838
+#
+create the shrine;shrine;o3812:objects.Container
+#
+sethome o3812 = r3838
+#
+desc o3812 = 
+#
+set o3812/level = 1
+#
+set o3812/level_base = 1
+#
+set o3812/vnum = "o3812"
+#
+set o3812/item_type = "container"
+#
+objectlock o3812 = "get:perm(Admin)"
+#
+set o3812/weight = 5
+#
+tag o3812 = the rats' lair:area name
+#
+tag o3812 = object
+#
+set o3812/extra_descriptions = {'shrine': ' This shrine is built for worshiping the Goddess Icaza.  Red carnation petals cover the shrine, exuding a light, fresh scent to this place. '}
+#
+set o3812/weight_maximum = 200
+#
+set o3812/state = []
+#
+set o3812/state_base = []
+#
+drop o3812
+#
+set r3838/reset_objects["o3812"] = {"location":"inventory"}
+#
+tel r3838
+#
+create holy Rod of Icaza;rod;holy;icaza;o3819:objects.Staff
+#
+sethome o3819 = o3812
+#
+desc o3819 = A rod of gold rests millimeters from the floor.
+#
+set o3819/level = 1
+#
+set o3819/level_base = 1
+#
+set o3819/vnum = "o3819"
+#
+set o3819/item_type = "staff"
+#
+set o3819/wear_location = "held, in hands"
+#
+set o3819/weight = 10
+#
+tag o3819 = the rats' lair:area name
+#
+tag o3819 = object
+#
+set o3819/extra_descriptions = {'rod holy icaza': ' This rod was blessed by the touch and laugh of Goddess Icaza.  Holding on to it will bring you luck and protection. '}
+#
+set o3819/alignment_restriction = ['neutral', 'evil']
+#
+set o3819/extra_flags = ['bless', 'magic', 'hum', 'glow']
+#
+set o3819/stat_modifiers[intelligence] = 1
+#
+set o3819/stat_modifiers[saving throw] = -1
+#
+set o3819/stat_modifiers[armor class] = -2
+#
+set o3819/spell_level = 10
+#
+set o3819/spell_level_base = 10
+#
+set o3819/charges_maximum = 3
+#
+set o3819/charges_maximum_base = 3
+#
+set o3819/charges_current = 3
+#
+set o3819/spell_name = "protection"
+#
+put o3819 in o3812
+#
+set r3838/reset_objects["o3819"] = {"location":"o3812"}
+#
+tel r3838
+#
+create the shrine;shrine;o3812; o3812-2:objects.Container
+#
+sethome o3812-2 = r3838
+#
+desc o3812-2 = 
+#
+set o3812-2/level = 1
+#
+set o3812-2/level_base = 1
+#
+set o3812-2/vnum = "o3812"
+#
+set o3812-2/item_type = "container"
+#
+objectlock o3812-2 = "get:perm(Admin)"
+#
+set o3812-2/weight = 5
+#
+tag o3812-2 = the rats' lair:area name
+#
+tag o3812-2 = object
+#
+set o3812-2/extra_descriptions = {'shrine': ' This shrine is built for worshiping the Goddess Icaza.  Red carnation petals cover the shrine, exuding a light, fresh scent to this place. '}
+#
+set o3812-2/weight_maximum = 200
+#
+set o3812-2/state = []
+#
+set o3812-2/state_base = []
+#
+drop o3812
+#
+set r3838/reset_objects["o3812"] = {"location":"inventory"}
+#
+tel r3838
+#
+create a book of poetry;book;poetry;poems;o3825:objects.Treasure
+#
+sethome o3825 = o3812-2
+#
+desc o3825 = A book of poetry is beckoning you to read it.
+#
+set o3825/level = 1
+#
+set o3825/level_base = 1
+#
+set o3825/vnum = "o3825"
+#
+set o3825/item_type = "treasure"
+#
+set o3825/weight = 1
+#
+tag o3825 = the rats' lair:area name
+#
+tag o3825 = object
+#
+set o3825/extra_descriptions = {'book poetry poems': ' This book of poetry is written by Hatchet for his loving Goddess, Icaza.  There are 5 poems in this book currently.  To read them, read ONE, TWO, THREE, FOUR or FIVE. ', 'one': ' . Dear Icaza Roses are red, Violets are blue. For being my love, I write this book for you. Inspired by and dedicated for the fair lady Icaza. by Hatchet, 3/7/94 ', 'two': ' . Little Girl One day, I happened upon a little girl, Sitting on the stump of a tree. She was dressed in blue, head full of curls, And she was smiling at me! "Hello, dear old man," she says to me. "I\'m going to Wonderland! If you would like to come join me, Please, take hold of my hand!" I had barely touched her hand, When she ran off at a tear, Pulling me to a far away land That only she knew where. I watched this girl run like the fire, She must be under twenty. But she didn\'t slow, she didn\'t tire, While I hobbled behind, panting aplenty. Suddenly, we both started flying, With the Earth shrinking behind. I thought I must be dying, Or just losing my mind! "Where are we going, what is your name?", I yelled to the little girl. But nothing will distract this dame, As through a hole we hurl. I was suddenly filled with white light. Wondering what would next happen. But then I was no longer afright, As I saw what must be Heaven! Tranquil plains blossomed before my eyes As we came down to land. I looked around, from green grass to blue skies. This must be Wonderland! We finally stopped, our destination here, As we came upon a grand plaza. She leaned over, whispered to my ear, "I am Goddess Icaza." Inspired by and dedicated to the fair lady Icaza. 3/7/94 by Hatchet ', 'three': ' . Untitled I read a poem to my love, One that comes to me unbidden. It is a simple poem, written by simple me, but writing such a poem makes me laugh, and it makes her cry And I know that at that very moment, we are both experiencing the same emotion, Love. Inspired by and dedicated to the fair lady Icaza by Hatchet 3/14/94 ', 'four': " . Untitled Leaves swirling around us, Raindrops in our hair. Locked within one another's embrace, Lost in our own world. We kiss softly, longingly, Secure within our own warmth. People scurry around us, Oblivious to us, we oblivious to them. Inspired by and dedicated to the fair lady Icaza by Hatchet 4/4/94 ", 'five': ' . Proposal I am enchanted by you. So easily you have captured my heart. And so happy I am when I think of you, My life I wish you to be a part. I am in love with you, After only knowing you for time so short. It is your love that I now woo, You hand I now quietly court. I am lonely without you, You are so vital to my life. So I now humbly beg of you, Susan, please be my wife. by Hatchet, 9/1/93, recited to Icaza on 9/9/1994 '}
+#
+put o3825 in o3812-2
+#
+set r3838/reset_objects["o3825"] = {"location":"o3812-2"}
+#
+tel r3838
+#
+create a book of poetry;book;poetry;poems;o3826:objects.Treasure
+#
+sethome o3826 = r3838
+#
+desc o3826 = A book of poetry is beckoning you to read it.
+#
+set o3826/level = 1
+#
+set o3826/level_base = 1
+#
+set o3826/vnum = "o3826"
+#
+set o3826/item_type = "treasure"
+#
+set o3826/weight = 1
+#
+tag o3826 = the rats' lair:area name
+#
+tag o3826 = object
+#
+set o3826/extra_descriptions = {'book poetry poems': ' This book of poetry is written by Hatchet for his own pleasure.  There are 4 poems in this book currently.  To read them, read ONE, TWO, THREE, or FOUR. ', 'one': ' . Driving Fast Wind streaming my hair. Racing along the highway. Police behind me. by Hatchet 6/16/95 ', 'two': ' . Traffic Class We all sit in class. Listening to a comic As he laughs at us. by Hatchet 6/16/95 ', 'three': ' . Suspension A half score people Bound to a room By their own volition. We even pay for Our adult suspension. We all come to this place For the same reason. And we await the same fate. by Hatchet 6/16/95 ', 'four': " . Speeding There was a guy named Mitch Who drove like he had an itch. He sped down Twenty Four, Didn't look aft or fore, And got caught by a bitch. by Hatchet 6/16/95 "}
+#
+drop o3826
+#
+set r3838/reset_objects["o3826"] = {"location":"inventory"}
+#
+tel r3838
+#
+set north/door_attributes = ['lockable', 'locked']
+#
+set north/reset_door_attributes = ['lockable', 'locked']
+#
+tel r3840
+#
+set north/door_attributes = ['lockable', 'locked']
+#
+set north/reset_door_attributes = ['lockable', 'locked']
+#
+tel r3840
+#
+set south/door_attributes = ['lockable', 'locked']
+#
+set south/reset_door_attributes = ['lockable', 'locked']
+#

@@ -11,7 +11,8 @@ inheritance.
 
 """
 from evennia import DefaultObject
-
+from evennia import TICKER_HANDLER as tickerhandler
+from server.conf import settings
 
 class Object(DefaultObject):
     """
@@ -191,6 +192,99 @@ class Item(Object):
         # This lock added to enable the use of nodrop items
 
         self.locks.add("drop: true()")
+        
+    def at_disintegrate(self):
+        if self.contents:
+            if len(self.contents) == 1:
+                number = "an item drops"
+            else:
+                number = "items drop"
+            self.location.msg_contents("As %s crumbles away to dust, %s to the floor."
+                                         % (self.name, number),
+                                         exclude=self)
+
+            for item in self.contents:
+                item.move_to(self.location, quiet=True)
+                tickerhandler.add(settings.DEFAULT_DISINTEGRATE_TIME, item.at_disintegrate)
+
+        else:
+            self.location.msg_contents("%s crumbles away to dust."
+                                         % (self.name[0].upper() + self.name[1:]), exclude=self)
+
+        if "pc corpse" in self.tags.all():
+            tickerhandler.remove(settings.PC_CORPSE_DISINTEGRATE_TIME, self.at_disintegrate)
+        else:
+            tickerhandler.remove(settings.DEFAULT_DISINTEGRATE_TIME, self.at_disintegrate)
+
+        self.location = None
+
+    def wear_to(
+            self,
+            caller
+    ):
+        """
+        Equips this object to a wear location.
+
+        Args:
+            caller: Reference to the character trying to wear the object.
+            quiet (bool): If true, turn off the calling of the emit hooks
+                (announce_move_to/from etc)
+            emit_to_obj (Object): object to receive error messages
+            use_destination (bool): Default is for objects to use the "destination"
+                 property of destinations as the target to move to. Turning off this
+                 keyword allows objects to move "inside" exit objects.
+
+        Returns:
+            result (bool): True/False depending on if there were problems with the
+                 wear action.
+                    This method may also return various error messages to the
+                    `emit_to_obj`.
+
+        """
+
+        def logerr(string="", err=None):
+            """Simple log helper method"""
+            logger.log_trace()
+            self.msg("%s%s" % (string, "" if err is None else " (%s)" % err))
+            return
+
+        wear_location = self.db.wear_location
+
+        # Fix wear location for multi-slot locations. First checks whether both
+        # locations are full (assign to first), then if first is empty (assign to
+        # first), otherwise assign to second.
+
+        if wear_location == "wrist":
+            if caller.db.eq_slots["wrist, left"] and caller.db.eq_slots["wrist, right"]:
+                wear_location = "wrist, left"
+            elif not caller.db.eq_slots["wrist, left"]:
+                wear_location = "wrist, left"
+            else:
+                wear_location = "wrist, right"
+        elif wear_location == "neck":
+            if caller.db.eq_slots["neck, first"] and caller.db.eq_slots["neck, second"]:
+                wear_location = "neck, first"
+            elif not caller.db.eq_slots["neck, first"]:
+                wear_location = "neck, first"
+            else:
+                wear_location = "neck, second"
+        elif wear_location == "finger":
+            if caller.db.eq_slots["finger, left"] and caller.db.eq_slots["finger, right"]:
+                wear_location = "finger, left"
+            elif not caller.db.eq_slots["finger, left"]:
+                wear_location = "finger, left"
+            else:
+                wear_location = "finger, right"
+
+        # Perform wear action.
+        try:
+            self.db.equipped = True
+            caller.db.eq_slots[wear_location] = self
+        except Exception as err:
+            logerr(errtxt % "location change", err)
+            return False
+        return True
+
 
 class Equipment(Item):
 
@@ -292,7 +386,7 @@ class Equipment(Item):
             return False
         return True
 
-    def at_after_equip(self,caller):
+    def at_after_equip(self, caller):
         """
         
         This method is intended to create the effect of equipment shocking the character and
@@ -354,74 +448,6 @@ class Armor(Equipment):
         super().at_object_creation()
         self.db.item_type = "armor"
         self.db.armor = 0
-
-
-    def wear_to(
-        self,
-        caller
-    ):
-        """
-        Equips this object to a wear location.
-
-        Args:
-            caller: Reference to the character trying to wear the object.
-            quiet (bool): If true, turn off the calling of the emit hooks
-                (announce_move_to/from etc)
-            emit_to_obj (Object): object to receive error messages
-            use_destination (bool): Default is for objects to use the "destination"
-                 property of destinations as the target to move to. Turning off this
-                 keyword allows objects to move "inside" exit objects.
-
-        Returns:
-            result (bool): True/False depending on if there were problems with the
-                 wear action.
-                    This method may also return various error messages to the
-                    `emit_to_obj`.
-
-        """
-
-        def logerr(string="", err=None):
-            """Simple log helper method"""
-            logger.log_trace()
-            self.msg("%s%s" % (string, "" if err is None else " (%s)" % err))
-            return
-
-        wear_location = self.db.wear_location
-
-        # Fix wear location for multi-slot locations. First checks whether both 
-        # locations are full (assign to first), then if first is empty (assign to
-        # first), otherwise assign to second.
-
-        if wear_location == "wrist":
-            if caller.db.eq_slots["wrist, left"] and caller.db.eq_slots["wrist, right"]:
-                wear_location = "wrist, left"
-            elif not caller.db.eq_slots["wrist, left"]:
-                wear_location = "wrist, left"
-            else:
-                wear_location = "wrist, right"
-        elif wear_location == "neck":
-            if caller.db.eq_slots["neck, first"] and caller.db.eq_slots["neck, second"]:
-                wear_location = "neck, first"
-            elif not caller.db.eq_slots["neck, first"]:
-                wear_location = "neck, first"
-            else:
-                wear_location = "neck, second"
-        elif wear_location == "finger":
-            if caller.db.eq_slots["finger, left"] and caller.db.eq_slots["finger, right"]:
-                wear_location = "finger, left"
-            elif not caller.db.eq_slots["finger, left"]:
-                wear_location = "finger, left"
-            else:
-                wear_location = "finger, right"
-            
-        # Perform wear action.
-        try:
-            self.db.equipped = True
-            caller.db.eq_slots[wear_location] = self
-        except Exception as err:
-            logerr(errtxt % "location change", err)
-            return False
-        return True
 
 class Weapon(Equipment):
 
@@ -669,6 +695,19 @@ class Drink_container(Item):
         self.db.liquid_food = 0
         self.db.liquid_thirst = 0
 
+class Fountain(Drink_container):
+
+    """
+
+    This is the class for fountains.
+
+    """
+
+    def at_object_creation(self):
+        super().at_object_creation()
+        self.db.object_type = "item"
+        self.db.item_type = "fountain"
+
 class Food(Item):
 
     """
@@ -849,6 +888,7 @@ class NPC_Corpse(Container):
 
     def at_object_creation(self):
         super().at_object_creation()
+        self.tags.add("npc corpse")
 
 
 class PC_Corpse(Container):
@@ -862,3 +902,4 @@ class PC_Corpse(Container):
         super().at_object_creation()
         self.db.gold = 0
         self.db.experience = 0
+        self.tags.add("pc corpse")

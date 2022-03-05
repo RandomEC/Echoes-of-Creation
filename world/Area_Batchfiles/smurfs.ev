@@ -12,6 +12,8 @@ desc/edit r6231
 #
 set r6231/terrain = "inside"
 #
+set r6231/vnum = "r6231"
+#
 set r6231/room_flags = ['no astral in', 'no summon to', 'no teleport in', 'indoors']
 #
 dig/tel Dimly Lit Path; r6201
@@ -27,6 +29,8 @@ desc/edit r6201
 :wq
 #
 set r6201/terrain = "forest"
+#
+set r6201/vnum = "r6201"
 #
 set r6201/room_flags = ['no mob']
 #
@@ -44,6 +48,8 @@ desc/edit r6202
 #
 set r6202/terrain = "forest"
 #
+set r6202/vnum = "r6202"
+#
 set r6202/room_flags = ['no mob']
 #
 dig/tel Dimly Lit Path; r6203
@@ -60,6 +66,8 @@ desc/edit r6203
 #
 set r6203/terrain = "forest"
 #
+set r6203/vnum = "r6203"
+#
 dig/tel Entrance to Smurf Village; r6204
 #
 tag r6204 = smurf village, category = area names
@@ -73,6 +81,8 @@ desc/edit r6204
 :wq
 #
 set r6204/terrain = "field"
+#
+set r6204/vnum = "r6204"
 #
 dig/tel Smurfy Road; r6205
 #
@@ -88,6 +98,8 @@ desc/edit r6205
 #
 set r6205/terrain = "city"
 #
+set r6205/vnum = "r6205"
+#
 dig/tel Smurfy Road; r6206
 #
 tag r6206 = smurf village, category = area names
@@ -101,6 +113,8 @@ desc/edit r6206
 :wq
 #
 set r6206/terrain = "city"
+#
+set r6206/vnum = "r6206"
 #
 dig/tel Smurfy Road; r6207
 #
@@ -116,6 +130,8 @@ desc/edit r6207
 #
 set r6207/terrain = "city"
 #
+set r6207/vnum = "r6207"
+#
 dig/tel Smurfy Road; r6208
 #
 tag r6208 = smurf village, category = area names
@@ -130,6 +146,8 @@ desc/edit r6208
 #
 set r6208/terrain = "city"
 #
+set r6208/vnum = "r6208"
+#
 dig/tel Smurfy Road; r6209
 #
 tag r6209 = smurf village, category = area names
@@ -143,6 +161,8 @@ desc/edit r6209
 :wq
 #
 set r6209/terrain = "city"
+#
+set r6209/vnum = "r6209"
 #
 set r6209/extra_description = {'smurfy well': "A small well is here.  Just the right size if you're a smurf.  But big enough for you to get some water from.  I'm sure the smurfs wont mind. The well has a bucket for hauling up water to drink. ", 'bucket': 'The smurfy bucket is filled with cool refreshing water. '}
 #
@@ -160,6 +180,8 @@ desc/edit r6210
 #
 set r6210/terrain = "city"
 #
+set r6210/vnum = "r6210"
+#
 dig/tel Smurfy Road; r6211
 #
 tag r6211 = smurf village, category = area names
@@ -173,6 +195,8 @@ desc/edit r6211
 :wq
 #
 set r6211/terrain = "city"
+#
+set r6211/vnum = "r6211"
 #
 dig/tel Smurfy Road; r6212
 #
@@ -188,6 +212,8 @@ desc/edit r6212
 #
 set r6212/terrain = "city"
 #
+set r6212/vnum = "r6212"
+#
 dig/tel Stone Path; r6213
 #
 tag r6213 = smurf village, category = area names
@@ -201,6 +227,8 @@ desc/edit r6213
 :wq
 #
 set r6213/terrain = "city"
+#
+set r6213/vnum = "r6213"
 #
 dig/tel Stone Path; r6232
 #
@@ -216,6 +244,8 @@ desc/edit r6232
 #
 set r6232/terrain = "city"
 #
+set r6232/vnum = "r6232"
+#
 dig/tel Smurfy Road; r6214
 #
 tag r6214 = smurf village, category = area names
@@ -229,6 +259,8 @@ desc/edit r6214
 :wq
 #
 set r6214/terrain = "city"
+#
+set r6214/vnum = "r6214"
 #
 dig/tel Smurfy Road; r6215
 #
@@ -244,6 +276,8 @@ desc/edit r6215
 #
 set r6215/terrain = "city"
 #
+set r6215/vnum = "r6215"
+#
 dig/tel Smurfberry Patch; r6216
 #
 tag r6216 = smurf village, category = area names
@@ -257,6 +291,8 @@ desc/edit r6216
 :wq
 #
 set r6216/terrain = "city"
+#
+set r6216/vnum = "r6216"
 #
 dig/tel Smurfberry Patch; r6217
 #
@@ -272,6 +308,8 @@ desc/edit r6217
 #
 set r6217/terrain = "city"
 #
+set r6217/vnum = "r6217"
+#
 dig/tel Smurfberry Patch; r6218
 #
 tag r6218 = smurf village, category = area names
@@ -285,6 +323,8 @@ desc/edit r6218
 :wq
 #
 set r6218/terrain = "city"
+#
+set r6218/vnum = "r6218"
 #
 dig/tel Brainy Smurf's Home; r6219
 #
@@ -300,6 +340,8 @@ desc/edit r6219
 #
 set r6219/terrain = "city"
 #
+set r6219/vnum = "r6219"
+#
 dig/tel Handy Smurf's Home; r6220
 #
 tag r6220 = smurf village, category = area names
@@ -313,6 +355,8 @@ desc/edit r6220
 :wq
 #
 set r6220/terrain = "city"
+#
+set r6220/vnum = "r6220"
 #
 dig/tel Hefty Smurf's Home; r6221
 #
@@ -328,6 +372,8 @@ desc/edit r6221
 #
 set r6221/terrain = "city"
 #
+set r6221/vnum = "r6221"
+#
 dig/tel Sleepy Smurf's Home; r6222
 #
 tag r6222 = smurf village, category = area names
@@ -341,6 +387,8 @@ desc/edit r6222
 :wq
 #
 set r6222/terrain = "city"
+#
+set r6222/vnum = "r6222"
 #
 dig/tel Grumpy Smurf's Home; r6223
 #
@@ -356,6 +404,8 @@ desc/edit r6223
 #
 set r6223/terrain = "city"
 #
+set r6223/vnum = "r6223"
+#
 dig/tel Jokey Smurf's Home; r6224
 #
 tag r6224 = smurf village, category = area names
@@ -369,6 +419,8 @@ desc/edit r6224
 :wq
 #
 set r6224/terrain = "city"
+#
+set r6224/vnum = "r6224"
 #
 dig/tel Papa Smurf's Home; r6225
 #
@@ -384,6 +436,8 @@ desc/edit r6225
 #
 set r6225/terrain = "city"
 #
+set r6225/vnum = "r6225"
+#
 dig/tel Path to Gargamel's Castle; r6226
 #
 tag r6226 = smurf village, category = area names
@@ -397,6 +451,8 @@ desc/edit r6226
 :wq
 #
 set r6226/terrain = "city"
+#
+set r6226/vnum = "r6226"
 #
 dig/tel Outside Gargamel's Castle; r6227
 #
@@ -412,6 +468,8 @@ desc/edit r6227
 #
 set r6227/terrain = "city"
 #
+set r6227/vnum = "r6227"
+#
 dig/tel Gargamel's Castle; r6228
 #
 tag r6228 = smurf village, category = area names
@@ -425,6 +483,8 @@ desc/edit r6228
 :wq
 #
 set r6228/terrain = "field"
+#
+set r6228/vnum = "r6228"
 #
 set r6228/room_flags = ['no teleport in', 'no summon from']
 #
@@ -442,6 +502,8 @@ desc/edit r6229
 #
 set r6229/terrain = "city"
 #
+set r6229/vnum = "r6229"
+#
 dig/tel Papa Smurf's Back Room; r6230
 #
 tag r6230 = smurf village, category = area names
@@ -455,6 +517,8 @@ desc/edit r6230
 :wq
 #
 set r6230/terrain = "inside"
+#
+set r6230/vnum = "r6220"
 #
 set r6230/room_flags = ['indoors', 'dark']
 #

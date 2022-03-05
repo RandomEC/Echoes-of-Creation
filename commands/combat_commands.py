@@ -51,6 +51,9 @@ class Combat(Object):
             if target.hitpoints_current <= 0:
                 return False
 
+        if combatant.location != target.location:
+            return False
+
         return True
 
     def combat_end_check(self):
@@ -91,8 +94,19 @@ class Combat(Object):
         # Iterate through combatants to do a round of attacks.
         for combatant in self.db.combatants:
 
-            # Make sure this combatant and target are alive.
-            if self.allow_attacks(combatant, self.db.combatants[combatant]["target"]):
+            # First, check to see if the combatant is below their wimpy.
+            if combatant.hitpoints_current > 0 and (("player" in combatant.tags.all() and
+                combatant.hitpoints_current <= combatant.db.wimpy) or \
+                    ("mobile" in combatant.tags.all() and
+                     "wimpy" in combatant.db.act_flags and
+                     combatant.hitpoints_current <= (0.15 * combatant.hitpoints_maximum
+                     ))):
+                
+                # Make a free attempt to flee.
+                rules_combat.do_flee(combatant)
+            
+            # Make sure this combatant and target are alive and both still in the same room.
+            if combatant.location == self.location and self.allow_attacks(combatant, self.db.combatants[combatant]["target"]):
                 attacker = self.db.combatants[combatant]["combatant"]
                 victim = self.db.combatants[combatant]["target"]
 
@@ -109,32 +123,36 @@ class Combat(Object):
                         self.db.combatants[combatant]["combat message"] += room_string
 
         # Generate output for everyone for the above round. Anyone that died this round is still in
-        # self.db.combatants at this point.
-        for combatant in self.db.combatants:
-            if "player" in combatant.tags.all():
-                combat_message = self.db.combatants[combatant]["combat message"]
-                target = self.db.combatants[combatant]["target"]
-
-                # If the player and their target are still alive, tell them the status of their target.
-                if combatant.hitpoints_current > 0 and target.hitpoints_current > 0:
-                    combat_message += ("%s %s\n" % ((target.key[0].upper() + target.key[1:]), rules_combat.get_health_string(target)))
-                combatant.msg(combat_message)
-
-            # Check to see if the combatant is dead.
-            if combatant.hitpoints_current <= 0:
-
-                # Remove dead combatants from combat.
-                self.remove_combatant(combatant)
+        # self.db.combatants at this point. Make sure a flee didn't cause the destruction of the
+        # combat with self check.
+        if self.db.combatants:
+            for combatant in self.db.combatants:
                 if "player" in combatant.tags.all():
+                    combat_message = self.db.combatants[combatant]["combat message"]
+                    target = self.db.combatants[combatant]["target"]
 
-                    # Reset dead players to one hitpoint, and move to home. Mobile hitpoints will get reset by reset
-                    # function.
-                    combatant.db.hitpoints["damaged"] = (combatant.hitpoints_maximum - 1)
-                    combatant.move_to(combatant.home, quiet=True)
+                    # If the player and their target are still alive, tell them the status of their target.
+                    if combatant.hitpoints_current > 0 and target.hitpoints_current > 0:
+                        combat_message += ("%s %s\n" % ((target.key[0].upper() + target.key[1:]), rules_combat.get_health_string(target)))
+                    combatant.msg(combat_message)
 
-        self.combat_end_check()
+                # Check to see if the combatant is dead.
+                if combatant.hitpoints_current <= 0:
 
-        self.db.rounds += 1
+                    # Remove dead combatants from combat.
+                    self.remove_combatant(combatant)
+                    if "player" in combatant.tags.all():
+
+                        # Reset dead players to one hitpoint, and move to home. Mobile hitpoints will get reset by reset
+                        # function.
+                        combatant.db.hitpoints["damaged"] = (combatant.hitpoints_maximum - 1)
+                        combatant.move_to(combatant.home, quiet=True)
+
+        if self.db.combatants:
+            self.db.rounds += 1
+
+            self.combat_end_check()
+
 
     def clear_messages(self):
         for combatant in self.db.combatants:
@@ -263,19 +281,19 @@ class CmdConsider(MuxCommand):
         
         # Create the string for the mobile's health relative to the hero's.
         health_difference = mobile.hitpoints_current - caller.hitpoints_current
-        health_percent = 100 * health_difference/caller.hitpoints_current
+        health_percent = (100 * health_difference / caller.hitpoints_current)
         
         if health_percent <= -90:
             health_percent_string = "%s is sickly and unwell compared to your health." % (mobile.key[0].upper() + mobile.key[1:])
-        if health_percent <= -50:
+        elif health_percent <= -50:
             health_percent_string = "You are substantially healthier than %s." % mobile.key
-        if health_percent <= -11:
+        elif health_percent <= -11:
             health_percent_string = "You are somewhat healthier than %s." % mobile.key
-        if health_percent <= 10:
+        elif health_percent <= 10:
             health_percent_string = "You are about as healthy as %s." % mobile.key
-        if health_percent <= 50:
+        elif health_percent <= 50:
             health_percent_string = "%s is somewhat healthier than you." % (mobile.key[0].upper() + mobile.key[1:])
-        if health_percent <= 90:
+        elif health_percent <= 90:
             health_percent_string = "%s is substantially healthier than you." % (mobile.key[0].upper() + mobile.key[1:])
         else:
             health_percent_string = "Compared to %s, you should maybe consider a long-term hospital stay." % mobile.key
@@ -307,49 +325,8 @@ class CmdFlee(MuxCommand):
         if "combat_handler" not in caller.ndb.all:
             caller.msg("You cannot flee when you are not in combat.")
             return
-        
-        if caller.db.position == "sitting":
-            caller.msg("Maybe you had better stand up first!")
-            return
-        
-        for attempt in range(1,6):
-            direction = random.randint(1, 6)
-            
-            if direction == 1:
-                direction = "north"
-            elif direction == 2:
-                direction = "east"
-            elif direction == 3:
-                direction = "south"
-            elif direction == 4:
-                direction = "west"
-            elif direction == 5:
-                direction = "up"
-            else:
-                direction = "down"
-            
-            for exit in location.contents:
-                if exit.destination and exit.key == direction and exit.access(caller, "traverse"):
-                    success = True
-                    break
-            
-            if success:
-                break
-        
-        if success:
-            # Remove caller from combat.
-            combat = caller.ndb.combat_handler
-            combat.remove_combatant(caller)
 
-            # Do xp loss.
-
-            caller.msg("You show a good pair of heels and flee from combat!")
-            exit.at_traverse(caller, exit.destination)
-            combat.combat_end_check()
-            
-        else:
-            caller.msg("You fail to flee from combat!")
-
+        rules_combat.do_flee(caller)  
 
 class CmdWimpy(MuxCommand):
     """

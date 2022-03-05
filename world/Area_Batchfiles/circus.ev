@@ -2342,9 +2342,13 @@ tag m4400 = the circus:area name
 #
 tag m4400 = mobile
 #
-set m4400/hitpoints[maximum] = 1458
+set m4400/hitpoints[maximum] = 511
 #
 set m4400/position = "standing"
+#
+set m4400/experience_total = 235478
+#
+set m4400/experience_current = 235478
 #
 set m4400/shopkeeper = {'item will buy 1': 'trash', 'item will buy 2': 'trash', 'item will buy 3': 'trash', 'item will buy 4': 'trash', 'sell percentage': '0', 'buy percentage': '100', 'opening hour': '50', 'closing hour': '0'}
 #
@@ -2438,9 +2442,13 @@ tag m4401 = the circus:area name
 #
 tag m4401 = mobile
 #
-set m4401/hitpoints[maximum] = 33
+set m4401/hitpoints[maximum] = 31
 #
 set m4401/position = "standing"
+#
+set m4401/experience_total = 402
+#
+set m4401/experience_current = 402
 #
 tel r4403
 #
@@ -2468,9 +2476,13 @@ tag m4403 = the circus:area name
 #
 tag m4403 = mobile
 #
-set m4403/hitpoints[maximum] = 68
+set m4403/hitpoints[maximum] = 78
 #
 set m4403/position = "standing"
+#
+set m4403/experience_total = 1596
+#
+set m4403/experience_current = 1596
 #
 tel r4404
 #
@@ -2502,6 +2514,10 @@ set m4403/hitpoints[maximum] = 64
 #
 set m4403/position = "standing"
 #
+set m4403/experience_total = 1667
+#
+set m4403/experience_current = 1667
+#
 tel r4404
 #
 create/drop an animal keeper;keeper;m4421:characters.Mobile
@@ -2530,9 +2546,13 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 91
+set m4421/hitpoints[maximum] = 87
 #
 set m4421/position = "standing"
+#
+set m4421/experience_total = 3211
+#
+set m4421/experience_current = 3211
 #
 tel r4404
 #
@@ -2602,6 +2622,10 @@ set m4401/hitpoints[maximum] = 28
 #
 set m4401/position = "standing"
 #
+set m4401/experience_total = 424
+#
+set m4401/experience_current = 424
+#
 tel r4405
 #
 create a letter;sign;o4415:objects.Furniture
@@ -2666,9 +2690,13 @@ tag m4401 = the circus:area name
 #
 tag m4401 = mobile
 #
-set m4401/hitpoints[maximum] = 32
+set m4401/hitpoints[maximum] = 27
 #
 set m4401/position = "standing"
+#
+set m4401/experience_total = 376
+#
+set m4401/experience_current = 376
 #
 tel r4406
 #
@@ -2696,9 +2724,13 @@ tag m4403 = the circus:area name
 #
 tag m4403 = mobile
 #
-set m4403/hitpoints[maximum] = 57
+set m4403/hitpoints[maximum] = 54
 #
 set m4403/position = "standing"
+#
+set m4403/experience_total = 1392
+#
+set m4403/experience_current = 1392
 #
 tel r4407
 #
@@ -2726,9 +2758,13 @@ tag m4427 = the circus:area name
 #
 tag m4427 = mobile
 #
-set m4427/hitpoints[maximum] = 33
+set m4427/hitpoints[maximum] = 34
 #
 set m4427/position = "standing"
+#
+set m4427/experience_total = 608
+#
+set m4427/experience_current = 608
 #
 set m4427/shopkeeper = {'item will buy 1': 'trash', 'item will buy 2': 'trash', 'item will buy 3': 'trash', 'item will buy 4': 'trash', 'sell percentage': '0', 'buy percentage': '100', 'opening hour': '50', 'closing hour': '0'}
 #
@@ -2792,9 +2828,13 @@ tag m4404 = the circus:area name
 #
 tag m4404 = mobile
 #
-set m4404/hitpoints[maximum] = 20
+set m4404/hitpoints[maximum] = 19
 #
 set m4404/position = "standing"
+#
+set m4404/experience_total = 226
+#
+set m4404/experience_current = 226
 #
 tel r4408
 #
@@ -2822,9 +2862,13 @@ tag m4453 = the circus:area name
 #
 tag m4453 = mobile
 #
-set m4453/hitpoints[maximum] = 163
+set m4453/hitpoints[maximum] = 134
 #
 set m4453/position = "standing"
+#
+set m4453/experience_total = 5961
+#
+set m4453/experience_current = 5961
 #
 tel r4409
 #
@@ -2852,9 +2896,13 @@ tag m4406 = the circus:area name
 #
 tag m4406 = mobile
 #
-set m4406/hitpoints[maximum] = 48
+set m4406/hitpoints[maximum] = 43
 #
 set m4406/position = "standing"
+#
+set m4406/experience_total = 706
+#
+set m4406/experience_current = 706
 #
 tel r4409
 #
@@ -2912,9 +2960,13 @@ tag m4407 = the circus:area name
 #
 tag m4407 = mobile
 #
-set m4407/hitpoints[maximum] = 37
+set m4407/hitpoints[maximum] = 39
 #
 set m4407/position = "standing"
+#
+set m4407/experience_total = 637
+#
+set m4407/experience_current = 637
 #
 tel r4410
 #
@@ -2972,9 +3024,13 @@ tag m4408 = the circus:area name
 #
 tag m4408 = mobile
 #
-set m4408/hitpoints[maximum] = 31
+set m4408/hitpoints[maximum] = 25
 #
 set m4408/position = "standing"
+#
+set m4408/experience_total = 423
+#
+set m4408/experience_current = 423
 #
 tel r4411
 #
@@ -3095,9 +3151,13 @@ tag m4410 = the circus:area name
 #
 tag m4410 = mobile
 #
-set m4410/hitpoints[maximum] = 206
+set m4410/hitpoints[maximum] = 157
 #
 set m4410/position = "standing"
+#
+set m4410/experience_total = 9477
+#
+set m4410/experience_current = 9477
 #
 tel r4412
 #
@@ -3155,9 +3215,13 @@ tag m4409 = the circus:area name
 #
 tag m4409 = mobile
 #
-set m4409/hitpoints[maximum] = 83
+set m4409/hitpoints[maximum] = 57
 #
 set m4409/position = "standing"
+#
+set m4409/experience_total = 1573
+#
+set m4409/experience_current = 1573
 #
 tel r4413
 #
@@ -3249,9 +3313,13 @@ tag m4401 = the circus:area name
 #
 tag m4401 = mobile
 #
-set m4401/hitpoints[maximum] = 29
+set m4401/hitpoints[maximum] = 30
 #
 set m4401/position = "standing"
+#
+set m4401/experience_total = 427
+#
+set m4401/experience_current = 427
 #
 tel r4414
 #
@@ -3279,9 +3347,13 @@ tag m4402 = the circus:area name
 #
 tag m4402 = mobile
 #
-set m4402/hitpoints[maximum] = 28
+set m4402/hitpoints[maximum] = 27
 #
 set m4402/position = "standing"
+#
+set m4402/experience_total = 423
+#
+set m4402/experience_current = 423
 #
 tel r4414
 #
@@ -3309,9 +3381,13 @@ tag m4403 = the circus:area name
 #
 tag m4403 = mobile
 #
-set m4403/hitpoints[maximum] = 52
+set m4403/hitpoints[maximum] = 79
 #
 set m4403/position = "standing"
+#
+set m4403/experience_total = 1402
+#
+set m4403/experience_current = 1402
 #
 tel r4415
 #
@@ -3339,9 +3415,13 @@ tag m4401 = the circus:area name
 #
 tag m4401 = mobile
 #
-set m4401/hitpoints[maximum] = 24
+set m4401/hitpoints[maximum] = 31
 #
 set m4401/position = "standing"
+#
+set m4401/experience_total = 409
+#
+set m4401/experience_current = 409
 #
 tel r4415
 #
@@ -3369,9 +3449,13 @@ tag m4402 = the circus:area name
 #
 tag m4402 = mobile
 #
-set m4402/hitpoints[maximum] = 28
+set m4402/hitpoints[maximum] = 32
 #
 set m4402/position = "standing"
+#
+set m4402/experience_total = 367
+#
+set m4402/experience_current = 367
 #
 tel r4415
 #
@@ -3399,9 +3483,13 @@ tag m4403 = the circus:area name
 #
 tag m4403 = mobile
 #
-set m4403/hitpoints[maximum] = 72
+set m4403/hitpoints[maximum] = 50
 #
 set m4403/position = "standing"
+#
+set m4403/experience_total = 1582
+#
+set m4403/experience_current = 1582
 #
 tel r4415
 #
@@ -3429,9 +3517,13 @@ tag m4405 = the circus:area name
 #
 tag m4405 = mobile
 #
-set m4405/hitpoints[maximum] = 87
+set m4405/hitpoints[maximum] = 105
 #
 set m4405/position = "standing"
+#
+set m4405/experience_total = 2414
+#
+set m4405/experience_current = 2414
 #
 tel r4415
 #
@@ -3461,9 +3553,13 @@ tag m4452 = the circus:area name
 #
 tag m4452 = mobile
 #
-set m4452/hitpoints[maximum] = 26
+set m4452/hitpoints[maximum] = 27
 #
 set m4452/position = "standing"
+#
+set m4452/experience_total = 429
+#
+set m4452/experience_current = 429
 #
 tel r4417
 #
@@ -3491,9 +3587,13 @@ tag m4411 = the circus:area name
 #
 tag m4411 = mobile
 #
-set m4411/hitpoints[maximum] = 177
+set m4411/hitpoints[maximum] = 155
 #
 set m4411/position = "standing"
+#
+set m4411/experience_total = 6222
+#
+set m4411/experience_current = 6222
 #
 tel r4418
 #
@@ -3521,9 +3621,13 @@ tag m4411 = the circus:area name
 #
 tag m4411 = mobile
 #
-set m4411/hitpoints[maximum] = 163
+set m4411/hitpoints[maximum] = 97
 #
 set m4411/position = "standing"
+#
+set m4411/experience_total = 6030
+#
+set m4411/experience_current = 6030
 #
 tel r4418
 #
@@ -3551,9 +3655,13 @@ tag m4411-2 = the circus:area name
 #
 tag m4411-2 = mobile
 #
-set m4411-2/hitpoints[maximum] = 142
+set m4411-2/hitpoints[maximum] = 169
 #
 set m4411-2/position = "standing"
+#
+set m4411-2/experience_total = 5981
+#
+set m4411-2/experience_current = 5981
 #
 tel r4419
 #
@@ -3581,9 +3689,13 @@ tag m4411 = the circus:area name
 #
 tag m4411 = mobile
 #
-set m4411/hitpoints[maximum] = 145
+set m4411/hitpoints[maximum] = 160
 #
 set m4411/position = "standing"
+#
+set m4411/experience_total = 5336
+#
+set m4411/experience_current = 5336
 #
 tel r4419
 #
@@ -3613,9 +3725,13 @@ tag m4415 = the circus:area name
 #
 tag m4415 = mobile
 #
-set m4415/hitpoints[maximum] = 130
+set m4415/hitpoints[maximum] = 140
 #
 set m4415/position = "standing"
+#
+set m4415/experience_total = 4277
+#
+set m4415/experience_current = 4277
 #
 tel r4419
 #
@@ -3645,7 +3761,7 @@ set o4421/stat_modifiers[mana] = 10
 #
 set o4421/stat_modifiers[armor class] = 1
 #
-set o4421/armor = 4
+set o4421/armor = 5
 #
 wearto o4421 = m4415
 #
@@ -3677,9 +3793,13 @@ tag m4411 = the circus:area name
 #
 tag m4411 = mobile
 #
-set m4411/hitpoints[maximum] = 116
+set m4411/hitpoints[maximum] = 130
 #
 set m4411/position = "standing"
+#
+set m4411/experience_total = 5703
+#
+set m4411/experience_current = 5703
 #
 tel r4420
 #
@@ -3707,9 +3827,13 @@ tag m4411-2 = the circus:area name
 #
 tag m4411-2 = mobile
 #
-set m4411-2/hitpoints[maximum] = 170
+set m4411-2/hitpoints[maximum] = 133
 #
 set m4411-2/position = "standing"
+#
+set m4411-2/experience_total = 5215
+#
+set m4411-2/experience_current = 5215
 #
 tel r4420
 #
@@ -3737,9 +3861,13 @@ tag m4411-3 = the circus:area name
 #
 tag m4411-3 = mobile
 #
-set m4411-3/hitpoints[maximum] = 140
+set m4411-3/hitpoints[maximum] = 170
 #
 set m4411-3/position = "standing"
+#
+set m4411-3/experience_total = 5358
+#
+set m4411-3/experience_current = 5358
 #
 tel r4422
 #
@@ -3767,9 +3895,13 @@ tag m4412 = the circus:area name
 #
 tag m4412 = mobile
 #
-set m4412/hitpoints[maximum] = 58
+set m4412/hitpoints[maximum] = 90
 #
 set m4412/position = "standing"
+#
+set m4412/experience_total = 2101
+#
+set m4412/experience_current = 2101
 #
 tel r4422
 #
@@ -3799,7 +3931,7 @@ set o4439/stat_modifiers[intelligence] = -2
 #
 set o4439/stat_modifiers[wisdom] = -1
 #
-set o4439/armor = 2
+set o4439/armor = 4
 #
 wearto o4439 = m4412
 #
@@ -3831,9 +3963,13 @@ tag m4413 = the circus:area name
 #
 tag m4413 = mobile
 #
-set m4413/hitpoints[maximum] = 18
+set m4413/hitpoints[maximum] = 16
 #
 set m4413/position = "standing"
+#
+set m4413/experience_total = 256
+#
+set m4413/experience_current = 256
 #
 tel r4422
 #
@@ -3863,7 +3999,7 @@ set o4420/stat_modifiers[moves] = -20
 #
 set o4420/stat_modifiers[dexterity] = -1
 #
-set o4420/armor = 1
+set o4420/armor = 2
 #
 wearto o4420 = m4413
 #
@@ -3901,9 +4037,13 @@ tag m4416 = the circus:area name
 #
 tag m4416 = mobile
 #
-set m4416/hitpoints[maximum] = 133
+set m4416/hitpoints[maximum] = 112
 #
 set m4416/position = "standing"
+#
+set m4416/experience_total = 3897
+#
+set m4416/experience_current = 3897
 #
 tel r4423
 #
@@ -3933,11 +4073,15 @@ set o4416/stat_modifiers[dexterity] = 1
 #
 set o4416/weapon_type = "stab"
 #
-set o4416/damage_low = 6
+set o4416/damage_low = 3
 #
-set o4416/damage_high = 11
+set o4416/damage_high = 10
 #
 wieldto o4416 = m4416
+#
+set m4416/experience_total = 4871
+#
+set m4416/experience_current = 4871
 #
 set m4416/reset_objects["o4416"] = {"location":"equipped"}
 #
@@ -4005,9 +4149,13 @@ tag m4417 = the circus:area name
 #
 tag m4417 = mobile
 #
-set m4417/hitpoints[maximum] = 43
+set m4417/hitpoints[maximum] = 34
 #
 set m4417/position = "standing"
+#
+set m4417/experience_total = 641
+#
+set m4417/experience_current = 641
 #
 tel r4423
 #
@@ -4071,9 +4219,13 @@ tag m4418 = the circus:area name
 #
 tag m4418 = mobile
 #
-set m4418/hitpoints[maximum] = 112
+set m4418/hitpoints[maximum] = 124
 #
 set m4418/position = "standing"
+#
+set m4418/experience_total = 5164
+#
+set m4418/experience_current = 5164
 #
 tel r4424
 #
@@ -4109,9 +4261,13 @@ set o4418/weapon_type = "whip"
 #
 set o4418/damage_low = 3
 #
-set o4418/damage_high = 11
+set o4418/damage_high = 13
 #
 wieldto o4418 = m4418
+#
+set m4418/experience_total = 6455
+#
+set m4418/experience_current = 6455
 #
 set m4418/reset_objects["o4418"] = {"location":"equipped"}
 #
@@ -4141,9 +4297,13 @@ tag m4419 = the circus:area name
 #
 tag m4419 = mobile
 #
-set m4419/hitpoints[maximum] = 9
+set m4419/hitpoints[maximum] = 8
 #
 set m4419/position = "standing"
+#
+set m4419/experience_total = 144
+#
+set m4419/experience_current = 144
 #
 tel r4424
 #
@@ -4171,9 +4331,13 @@ tag m4419-2 = the circus:area name
 #
 tag m4419-2 = mobile
 #
-set m4419-2/hitpoints[maximum] = 9
+set m4419-2/hitpoints[maximum] = 8
 #
 set m4419-2/position = "standing"
+#
+set m4419-2/experience_total = 163
+#
+set m4419-2/experience_current = 163
 #
 tel r4424
 #
@@ -4201,9 +4365,13 @@ tag m4419-3 = the circus:area name
 #
 tag m4419-3 = mobile
 #
-set m4419-3/hitpoints[maximum] = 9
+set m4419-3/hitpoints[maximum] = 8
 #
 set m4419-3/position = "standing"
+#
+set m4419-3/experience_total = 144
+#
+set m4419-3/experience_current = 144
 #
 tel r4424
 #
@@ -4249,9 +4417,13 @@ tag m4420 = the circus:area name
 #
 tag m4420 = mobile
 #
-set m4420/hitpoints[maximum] = 99
+set m4420/hitpoints[maximum] = 154
 #
 set m4420/position = "standing"
+#
+set m4420/experience_total = 5911
+#
+set m4420/experience_current = 5911
 #
 tel r4425
 #
@@ -4283,7 +4455,7 @@ set o4419/stat_modifiers[dexterity] = 1
 #
 set o4419/stat_modifiers[moves] = 8
 #
-set o4419/armor = 3
+set o4419/armor = 4
 #
 wearto o4419 = m4420
 #
@@ -4315,9 +4487,13 @@ tag m4420 = the circus:area name
 #
 tag m4420 = mobile
 #
-set m4420/hitpoints[maximum] = 180
+set m4420/hitpoints[maximum] = 159
 #
 set m4420/position = "standing"
+#
+set m4420/experience_total = 5697
+#
+set m4420/experience_current = 5697
 #
 tel r4426
 #
@@ -4349,7 +4525,7 @@ set o4419/stat_modifiers[dexterity] = 1
 #
 set o4419/stat_modifiers[moves] = 8
 #
-set o4419/armor = 3
+set o4419/armor = 4
 #
 wearto o4419 = m4420
 #
@@ -4387,9 +4563,13 @@ tag m4412 = the circus:area name
 #
 tag m4412 = mobile
 #
-set m4412/hitpoints[maximum] = 61
+set m4412/hitpoints[maximum] = 96
 #
 set m4412/position = "standing"
+#
+set m4412/experience_total = 2347
+#
+set m4412/experience_current = 2347
 #
 tel r4429
 #
@@ -4419,7 +4599,7 @@ set o4439/stat_modifiers[intelligence] = -2
 #
 set o4439/stat_modifiers[wisdom] = -1
 #
-set o4439/armor = 3
+set o4439/armor = 4
 #
 wearto o4439 = m4412
 #
@@ -4459,9 +4639,13 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 90
+set m4421/hitpoints[maximum] = 85
 #
 set m4421/position = "standing"
+#
+set m4421/experience_total = 2816
+#
+set m4421/experience_current = 2816
 #
 tel r4430
 #
@@ -4507,9 +4691,13 @@ tag m4422 = the circus:area name
 #
 tag m4422 = mobile
 #
-set m4422/hitpoints[maximum] = 82
+set m4422/hitpoints[maximum] = 60
 #
 set m4422/position = "standing"
+#
+set m4422/experience_total = 1486
+#
+set m4422/experience_current = 1486
 #
 tel r4431
 #
@@ -4543,9 +4731,13 @@ tag m4423 = the circus:area name
 #
 tag m4423 = mobile
 #
-set m4423/hitpoints[maximum] = 64
+set m4423/hitpoints[maximum] = 60
 #
 set m4423/position = "standing"
+#
+set m4423/experience_total = 1528
+#
+set m4423/experience_current = 1528
 #
 tel r4432
 #
@@ -4573,9 +4765,13 @@ tag m4423-2 = the circus:area name
 #
 tag m4423-2 = mobile
 #
-set m4423-2/hitpoints[maximum] = 58
+set m4423-2/hitpoints[maximum] = 82
 #
 set m4423-2/position = "standing"
+#
+set m4423-2/experience_total = 1489
+#
+set m4423-2/experience_current = 1489
 #
 tel r4432
 #
@@ -4609,9 +4805,13 @@ tag m4424 = the circus:area name
 #
 tag m4424 = mobile
 #
-set m4424/hitpoints[maximum] = 20
+set m4424/hitpoints[maximum] = 18
 #
 set m4424/position = "standing"
+#
+set m4424/experience_total = 220
+#
+set m4424/experience_current = 220
 #
 tel r4433
 #
@@ -4647,9 +4847,13 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 119
+set m4421/hitpoints[maximum] = 81
 #
 set m4421/position = "standing"
+#
+set m4421/experience_total = 3206
+#
+set m4421/experience_current = 3206
 #
 tel r4434
 #
@@ -4807,9 +5011,9 @@ set o4413/stat_modifiers[armor class] = 3
 #
 set o4413/weapon_type = "stab"
 #
-set o4413/damage_low = 2
+set o4413/damage_low = 4
 #
-set o4413/damage_high = 10
+set o4413/damage_high = 12
 #
 put o4413 in o4422
 #
@@ -5009,7 +5213,7 @@ set o4408/weapon_type = "pierce"
 #
 set o4408/damage_low = 4
 #
-set o4408/damage_high = 12
+set o4408/damage_high = 10
 #
 put o4408 in o4425
 #
@@ -5043,9 +5247,13 @@ tag m4429 = the circus:area name
 #
 tag m4429 = mobile
 #
-set m4429/hitpoints[maximum] = 19
+set m4429/hitpoints[maximum] = 20
 #
 set m4429/position = "standing"
+#
+set m4429/experience_total = 240
+#
+set m4429/experience_current = 240
 #
 tel r4439
 #
@@ -5081,9 +5289,13 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 88
+set m4421/hitpoints[maximum] = 78
 #
 set m4421/position = "standing"
+#
+set m4421/experience_total = 3007
+#
+set m4421/experience_current = 3007
 #
 tel r4440
 #
@@ -5171,9 +5383,9 @@ set o4409/stat_modifiers[damroll] = 1
 #
 set o4409/weapon_type = "pound"
 #
-set o4409/damage_low = 4
+set o4409/damage_low = 6
 #
-set o4409/damage_high = 8
+set o4409/damage_high = 12
 #
 put o4409 in o4423
 #
@@ -5211,9 +5423,13 @@ tag m4425 = the circus:area name
 #
 tag m4425 = mobile
 #
-set m4425/hitpoints[maximum] = 41
+set m4425/hitpoints[maximum] = 53
 #
 set m4425/position = "standing"
+#
+set m4425/experience_total = 923
+#
+set m4425/experience_current = 923
 #
 tel r4442
 #
@@ -5241,9 +5457,13 @@ tag m4426 = the circus:area name
 #
 tag m4426 = mobile
 #
-set m4426/hitpoints[maximum] = 121
+set m4426/hitpoints[maximum] = 94
 #
 set m4426/position = "standing"
+#
+set m4426/experience_total = 5394
+#
+set m4426/experience_current = 5394
 #
 tel r4442
 #
@@ -5277,11 +5497,15 @@ set o4448/stat_modifiers[hitroll] = -3
 #
 set o4448/weapon_type = "slice"
 #
-set o4448/damage_low = 4
+set o4448/damage_low = 6
 #
-set o4448/damage_high = 13
+set o4448/damage_high = 10
 #
 wieldto o4448 = m4426
+#
+set m4426/experience_total = 6742
+#
+set m4426/experience_current = 6742
 #
 set m4426/reset_objects["o4448"] = {"location":"equipped"}
 #
@@ -5415,9 +5639,13 @@ tag m4412 = the circus:area name
 #
 tag m4412 = mobile
 #
-set m4412/hitpoints[maximum] = 98
+set m4412/hitpoints[maximum] = 63
 #
 set m4412/position = "standing"
+#
+set m4412/experience_total = 2186
+#
+set m4412/experience_current = 2186
 #
 tel r4444
 #
@@ -5447,7 +5675,7 @@ set o4439/stat_modifiers[intelligence] = -2
 #
 set o4439/stat_modifiers[wisdom] = -1
 #
-set o4439/armor = 2
+set o4439/armor = 4
 #
 wearto o4439 = m4412
 #
@@ -5479,9 +5707,13 @@ tag m4412-2 = the circus:area name
 #
 tag m4412-2 = mobile
 #
-set m4412-2/hitpoints[maximum] = 87
+set m4412-2/hitpoints[maximum] = 79
 #
 set m4412-2/position = "standing"
+#
+set m4412-2/experience_total = 2354
+#
+set m4412-2/experience_current = 2354
 #
 tel r4444
 #
@@ -5511,7 +5743,7 @@ set o4439/stat_modifiers[intelligence] = -2
 #
 set o4439/stat_modifiers[wisdom] = -1
 #
-set o4439/armor = 2
+set o4439/armor = 3
 #
 wearto o4439 = m4412-2
 #
@@ -5543,9 +5775,13 @@ tag m4413 = the circus:area name
 #
 tag m4413 = mobile
 #
-set m4413/hitpoints[maximum] = 17
+set m4413/hitpoints[maximum] = 19
 #
 set m4413/position = "standing"
+#
+set m4413/experience_total = 254
+#
+set m4413/experience_current = 254
 #
 tel r4444
 #
@@ -5607,9 +5843,13 @@ tag m4414 = the circus:area name
 #
 tag m4414 = mobile
 #
-set m4414/hitpoints[maximum] = 36
+set m4414/hitpoints[maximum] = 46
 #
 set m4414/position = "standing"
+#
+set m4414/experience_total = 635
+#
+set m4414/experience_current = 635
 #
 tel r4444
 #
@@ -5671,9 +5911,13 @@ tag m4414-2 = the circus:area name
 #
 tag m4414-2 = mobile
 #
-set m4414-2/hitpoints[maximum] = 48
+set m4414-2/hitpoints[maximum] = 42
 #
 set m4414-2/position = "standing"
+#
+set m4414-2/experience_total = 637
+#
+set m4414-2/experience_current = 637
 #
 tel r4444
 #
@@ -5737,9 +5981,13 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 108
+set m4421/hitpoints[maximum] = 69
 #
 set m4421/position = "standing"
+#
+set m4421/experience_total = 3071
+#
+set m4421/experience_current = 3071
 #
 tel r4446
 #
@@ -5767,9 +6015,13 @@ tag m4412 = the circus:area name
 #
 tag m4412 = mobile
 #
-set m4412/hitpoints[maximum] = 79
+set m4412/hitpoints[maximum] = 98
 #
 set m4412/position = "standing"
+#
+set m4412/experience_total = 2160
+#
+set m4412/experience_current = 2160
 #
 tel r4446
 #
@@ -5799,7 +6051,7 @@ set o4439/stat_modifiers[intelligence] = -2
 #
 set o4439/stat_modifiers[wisdom] = -1
 #
-set o4439/armor = 3
+set o4439/armor = 4
 #
 wearto o4439 = m4412
 #
@@ -5833,9 +6085,13 @@ tag m4421 = the circus:area name
 #
 tag m4421 = mobile
 #
-set m4421/hitpoints[maximum] = 77
+set m4421/hitpoints[maximum] = 123
 #
 set m4421/position = "standing"
+#
+set m4421/experience_total = 2883
+#
+set m4421/experience_current = 2883
 #
 tel r4448
 #
@@ -5863,9 +6119,13 @@ tag m4420 = the circus:area name
 #
 tag m4420 = mobile
 #
-set m4420/hitpoints[maximum] = 148
+set m4420/hitpoints[maximum] = 122
 #
 set m4420/position = "standing"
+#
+set m4420/experience_total = 6059
+#
+set m4420/experience_current = 6059
 #
 tel r4448
 #
@@ -5897,7 +6157,7 @@ set o4419/stat_modifiers[dexterity] = 1
 #
 set o4419/stat_modifiers[moves] = 8
 #
-set o4419/armor = 4
+set o4419/armor = 5
 #
 wearto o4419 = m4420
 #
@@ -6347,9 +6607,13 @@ tag m4450 = the circus:area name
 #
 tag m4450 = mobile
 #
-set m4450/hitpoints[maximum] = 134
+set m4450/hitpoints[maximum] = 157
 #
 set m4450/position = "standing"
+#
+set m4450/experience_total = 6099
+#
+set m4450/experience_current = 6099
 #
 tel r4469
 #
@@ -6381,11 +6645,15 @@ set o4450/stat_modifiers[damroll] = 1
 #
 set o4450/weapon_type = "pierce"
 #
-set o4450/damage_low = 4
+set o4450/damage_low = 5
 #
-set o4450/damage_high = 13
+set o4450/damage_high = 11
 #
 wieldto o4450 = m4450
+#
+set m4450/experience_total = 7623
+#
+set m4450/experience_current = 7623
 #
 set m4450/reset_objects["o4450"] = {"location":"equipped"}
 #

@@ -12,6 +12,8 @@ desc/edit r6631
 #
 set r6631/terrain = "field"
 #
+set r6631/vnum = "r6631"
+#
 set r6631/room_flags = ['no teleport in', 'no summon from', 'indoors', 'dark']
 #
 dig/tel Daycare Foyer; r6601
@@ -27,6 +29,8 @@ desc/edit r6601
 :wq
 #
 set r6601/terrain = "inside"
+#
+set r6601/vnum = "r6601"
 #
 set r6601/extra_description = {'sign': "|yNanny's Office|n ", 'easel': '|gWELCOME|n |wto the Dwarven Daycare|n Revamp:  Keegan '}
 #
@@ -46,6 +50,8 @@ desc/edit r6602
 #
 set r6602/terrain = "inside"
 #
+set r6602/vnum = "r6602"
+#
 set r6602/room_flags = ['indoors']
 #
 dig/tel Dining Hall; r6603
@@ -62,6 +68,8 @@ desc/edit r6603
 #
 set r6603/terrain = "inside"
 #
+set r6603/vnum = "r6603"
+#
 set r6603/room_flags = ['indoors']
 #
 dig/tel Fun Time; r6604
@@ -77,6 +85,8 @@ desc/edit r6604
 :wq
 #
 set r6604/terrain = "inside"
+#
+set r6604/vnum = "r6604"
 #
 set r6604/extra_description = {'chalkboard board': "A large green chalkboard covers this wall.  Above the board is the alphabet. On the board is written: 'Assignment: Go explore Tanglewood.  There are beautiful butterflies there that wait to be seen.' "}
 #
@@ -96,6 +106,8 @@ desc/edit r6605
 #
 set r6605/terrain = "inside"
 #
+set r6605/vnum = "r6605"
+#
 set r6605/room_flags = ['indoors']
 #
 dig/tel Girls Room; r6606
@@ -111,6 +123,8 @@ desc/edit r6606
 :wq
 #
 set r6606/terrain = "inside"
+#
+set r6606/vnum = "r6606"
 #
 set r6606/room_flags = ['indoors']
 #
@@ -128,6 +142,8 @@ desc/edit r6607
 #
 set r6607/terrain = "inside"
 #
+set r6607/vnum = "r6607"
+#
 set r6607/room_flags = ['indoors']
 #
 dig/tel The Playground; r6608
@@ -144,6 +160,8 @@ desc/edit r6608
 #
 set r6608/terrain = "field"
 #
+set r6608/vnum = "r6608"
+#
 dig/tel The Playground; r6609
 #
 tag r6609 = dwarven daycare, category = area names
@@ -157,6 +175,8 @@ desc/edit r6609
 :wq
 #
 set r6609/terrain = "field"
+#
+set r6609/vnum = "r6609"
 #
 set r6609/extra_description = {'>room_trap_random 1': 'The wind briefly howls and blowing some of the sand buildings down.  ', 'village': 'Extraordinary work shows off in this village that bears resemblance to the Dwarven Kingdom.  Buildings, paths, and even people have been recreated with great detail. '}
 #
@@ -174,6 +194,8 @@ desc/edit r6610
 #
 set r6610/terrain = "field"
 #
+set r6610/vnum = "r6610"
+#
 dig/tel The Playground; r6611
 #
 tag r6611 = dwarven daycare, category = area names
@@ -188,6 +210,8 @@ desc/edit r6611
 #
 set r6611/terrain = "field"
 #
+set r6611/vnum = "r6611"
+#
 dig/tel Basement; r6612
 #
 tag r6612 = dwarven daycare, category = area names
@@ -201,6 +225,8 @@ desc/edit r6612
 :wq
 #
 set r6612/terrain = "field"
+#
+set r6612/vnum = "r6612"
 #
 set r6612/room_flags = ['indoors', 'dark']
 #
@@ -217,6 +243,8 @@ desc/edit r6613
 :wq
 #
 set r6613/terrain = "field"
+#
+set r6613/vnum = "r6613"
 #
 set r6613/extra_description = {'pictures': 'The pictures in this room depict various landscapes around the realm, forests, caverns, castles, mountains and plains. '}
 #
@@ -236,6 +264,8 @@ desc/edit r6614
 #
 set r6614/terrain = "field"
 #
+set r6614/vnum = "r6614"
+#
 set r6614/extra_description = {'pictures': 'The pictures here old attempts at art by the children.  Among them are fingerpaintings and crayon drawings.  There is one of quite violence depicting a slaughtered dwarven guard. '}
 #
 set r6614/room_flags = ['indoors', 'dark']
@@ -253,6 +283,8 @@ desc/edit r6615
 :wq
 #
 set r6615/terrain = "field"
+#
+set r6615/vnum = "r6615"
 #
 set r6615/extra_description = {'pictures': 'Snow White is the theme among these pictures.  There is a rather large one with all the seven dwarves coming home from work and one of the wicked stepmother disguised as an ugly old lady holding an apple.  The most catching of all is a beautiful painting of Snow White herself. '}
 #
@@ -272,6 +304,8 @@ desc/edit r6616
 #
 set r6616/terrain = "field"
 #
+set r6616/vnum = "r6616"
+#
 set r6616/extra_description = {'pictures': 'Among the pictures here are an old gnome chief sitting on the throne of his hut, reindeer resting in stables, and a scene of a little mushroom village. '}
 #
 set r6616/room_flags = ['indoors', 'dark']
@@ -289,6 +323,8 @@ desc/edit r6617
 :wq
 #
 set r6617/terrain = "inside"
+#
+set r6617/vnum = "r6617"
 #
 set r6617/extra_description = {'pictures': 'There are only two pictures here.  One shows an angry beast growling toward the sky.  The other picture, seemingly opposing the other, is that of a young child with a gleam in his eye and a sword in his hand. '}
 #
@@ -308,6 +344,8 @@ desc/edit r6618
 #
 set r6618/terrain = "inside"
 #
+set r6618/vnum = "r6618"
+#
 set r6618/extra_description = {'pictures': 'On one wall there is a large picture of a can of paint and several brushes lying beside it.  The other picture is a realistic take on the arts and crafts room upstairs, teacher and all. '}
 #
 set r6618/room_flags = ['indoors', 'dark']
@@ -325,6 +363,8 @@ desc/edit r6619
 :wq
 #
 set r6619/terrain = "inside"
+#
+set r6619/vnum = "r6619"
 #
 set r6619/extra_description = {'pictures': 'The pictures of this room form a mural.  It depicts several dwarves standing in awe before a huge fierce dragon.  The dragon taking up nearly all three of the walls.  There is a small inscription towards the bottom that reads, Shakes. '}
 #
@@ -344,6 +384,8 @@ desc/edit r6620
 #
 set r6620/terrain = "inside"
 #
+set r6620/vnum = "r6620"
+#
 set r6620/room_flags = ['indoors']
 #
 dig/tel Hallway; r6621
@@ -359,6 +401,8 @@ desc/edit r6621
 :wq
 #
 set r6621/terrain = "inside"
+#
+set r6621/vnum = "r6621"
 #
 set r6621/extra_description = {'pictures': 'The two pictures are of a former King and Queen of the lands.  The King is a stout looking dwarf with a long beard in braids and dark brown hair to his shoulders.  The Queen is a regal dwarf with emerald green eyes.  Both appear to be happy with little signs of old age or stress. '}
 #
@@ -378,6 +422,8 @@ desc/edit r6622
 #
 set r6622/terrain = "inside"
 #
+set r6622/vnum = "r6622"
+#
 set r6622/room_flags = ['indoors']
 #
 dig/tel Boys Room; r6623
@@ -394,6 +440,8 @@ desc/edit r6623
 #
 set r6623/terrain = "inside"
 #
+set r6623/vnum = "r6623"
+#
 set r6623/room_flags = ['indoors']
 #
 dig/tel Nanny's Office; r6624
@@ -409,6 +457,8 @@ desc/edit r6624
 :wq
 #
 set r6624/terrain = "field"
+#
+set r6624/vnum = "r6624"
 #
 set r6624/extra_description = {'sign': '|wCLOSET|n |rKEEP OUT|n ', 'plaque': 'Hanging loosely on the wall, these two plaques are the completion certificates of the two nannies.  They show proof that the nannies have taken proper training and should know what they are doing. '}
 #
@@ -428,6 +478,8 @@ desc/edit r6625
 #
 set r6625/terrain = "inside"
 #
+set r6625/vnum = "r6625"
+#
 set r6625/room_flags = ['indoors']
 #
 dig/tel Messy Kitchen; r6626
@@ -444,6 +496,8 @@ desc/edit r6626
 #
 set r6626/terrain = "inside"
 #
+set r6626/vnum = "r6626"
+#
 set r6626/room_flags = ['indoors']
 #
 dig/tel Patio; r6627
@@ -459,6 +513,8 @@ desc/edit r6627
 :wq
 #
 set r6627/terrain = "field"
+#
+set r6627/vnum = "r6627"
 #
 tel r6631
 #
