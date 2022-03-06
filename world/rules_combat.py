@@ -184,6 +184,8 @@ def do_death(attacker, victim):
 
         object_candidates = evennia.search_tag("npc corpse")
 
+        corpse = False
+
         for object in object_candidates:
             if not object.location:
                 corpse = object
