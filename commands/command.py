@@ -1305,7 +1305,7 @@ class CmdTalk(MuxCommand):
         if to_talk == caller:
             caller.msg("You mutter away to yourself quietly.")
             return
-        if not to_talk.is_typeclass("typeclasses.characters.Mobile"):
+        if "mobile" not in to_talk.tags.all():
             caller.msg("Try talking to a mobile.")
             return
         else:
@@ -1331,7 +1331,7 @@ class CmdInspect(MuxCommand):
     """
 
     key = "inspect"
-    alias = "read"
+    aliases = ["read"]
     rhs_split = ("=")
     locks = "cmd:all()"
     arg_regex = r"\s|$"

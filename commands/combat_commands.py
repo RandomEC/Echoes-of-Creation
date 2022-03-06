@@ -195,6 +195,7 @@ class CmdAttack(MuxCommand):
     """
 
     key = "attack"
+    aliases = ["kill"]
     locks = "cmd:all()"
     arg_regex = r"\s|$"
 
