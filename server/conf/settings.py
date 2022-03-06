@@ -61,14 +61,6 @@ EXPERIENCE_LOSS_FLEE_FAIL = 0.005
 DEFAULT_DISINTEGRATE_TIME = 5 #900
 PC_CORPSE_DISINTEGRATE_TIME = 1800
 
-# Character creation defaults
-# Default home is the Town Square in Eden's Grove.
-DEFAULT_HOME = "r101"
-# The start position for new characters. Default is the top of
-# the Training Tower.
-START_LOCATION = "#2"
-
-
 # Added to cleanup command parsing.
 COMMAND_DEFAULT_ARG_REGEX = r'^[ /]+.*$|$'
 

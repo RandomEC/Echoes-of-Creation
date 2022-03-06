@@ -14,10 +14,12 @@ from evennia import TICKER_HANDLER as tickerhandler
 from server.conf import settings
 
 # Below is here for CmdCharCreate
+import time
+from codecs import lookup as codecs_lookup
 from django.conf import settings
+from evennia.server.sessionhandler import SESSIONS
 from evennia.utils import utils, create, logger, search
 _MAX_NR_CHARACTERS = settings.MAX_NR_CHARACTERS
-from evennia.utils.evmenu import get_input
 
 # from evennia import default_cmds
 

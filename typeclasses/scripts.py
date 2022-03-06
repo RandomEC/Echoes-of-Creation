@@ -96,8 +96,6 @@ class Script(DefaultScript):
 
 class ResetScript(DefaultScript):
 
-    # Start with scripts/start scripts.ResetScript
-
     def at_script_creation(self):
         self.key = "reset_script"
         self.interval = 300   # 5 minute repeat, make a global
