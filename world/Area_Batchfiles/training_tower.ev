@@ -42,7 +42,7 @@ dig/tel At the Portal; r3700
 #
 tag r3700 = training tower:area names
 #
-desc r3700 = You are standing in an alcove, which seems somehow disconnected from the everyday world you are used to.  An aura of adventure and enchantment pervades the room.  There is a parchment here.  |gINSPECT PARCHMENT|n.  When you are finished, type |gPORTAL|n to begin your life at the Echoes of Creation. |n 
+desc r3700 = You are standing in an alcove, which seems somehow disconnected from the everyday world you are used to.  An aura of adventure and enchantment pervades the room.  There is a parchment here.  |gINSPECT PARCHMENT|C.  When you are finished, type |gPORTAL|C to begin your life at the Echoes of Creation. |n 
 #
 desc/edit r3700
 #
@@ -52,7 +52,7 @@ desc/edit r3700
 #
 set r3700/terrain = "inside"
 #
-set r37/vnum = "r37"
+set r3700/vnum = "r3700"
 #
 set r3700/extra_description = {'parchment': "Welcome to Echoes of Creation!  Echoes of Creation is put together a bit differently from most mudworlds. Type |gHELP|n for an informational menu, or |gHELP FEATURES|n for a preview of some of the things you'll find here. |gSCORE|n, |gAFFECTS|n, |gEQUIPMENT|n, and |gINVENTORY|n (|gSC|n, |gAFF|n, |gEQ|n, |gI|n will suffice) will tell you about yourself.  |gLOOK|n will give you another look at the room.  To begin your adventure, type |gPORTAL|n. "}
 #
@@ -62,7 +62,7 @@ dig/tel Tower Portal; r3701
 #
 tag r3701 = training tower:area names
 #
-desc r3701 = You have stepped through a portal from the mundane world into the top of the Training Tower of Eden's Grove.  Memories of your "other" life rapidly slip away, and you sense that both adventure and glory await you in this strange and wondrous place.  There is a scroll mounted on the wall before you.  You can |gINSPECT SCROLL|n to see what it says. You can see what looks like an enormously long slide here, spiraling around what appears to be the entirety of the Tower! Maybe you'd better read the scroll before taking it!|n 
+desc r3701 = You have stepped through a portal from the mundane world into the top of the Training Tower of Eden's Grove.  Memories of your "other" life rapidly slip away, and you sense that both adventure and glory await you in this strange and wondrous place.  There is a scroll mounted on the wall before you.  You can |gINSPECT SCROLL|C to see what it says. You can see what looks like an enormously long slide here, spiraling around what appears to be the entirety of the Tower! Maybe you'd better read the scroll before taking it!|n 
 #
 desc/edit r3701
 #
@@ -82,7 +82,7 @@ dig/tel The Equipment Room; r3702
 #
 tag r3702 = training tower:area names
 #
-desc r3702 = Armor, weapons, lights, rings, trailpacks, boots, and frilly undergarments are all locked away in display cases.  There is a scroll hanging on the wall, and a commemorative plaque on one of the cases.  An archway leads back to the east, and a stairway will take you downstairs for combat training. Make sure you |gREAD SCROLL|n before continuing.|n 
+desc r3702 = Armor, weapons, lights, rings, trailpacks, boots, and frilly undergarments are all locked away in display cases.  There is a scroll hanging on the wall, and a commemorative plaque on one of the cases.  An archway leads back to the east, and a stairway will take you downstairs for combat training. Make sure you |gREAD SCROLL|C before continuing.|n 
 #
 desc/edit r3702
 #
@@ -138,7 +138,7 @@ dig/tel Combat Preparation Room; r3709
 #
 tag r3709 = training tower:area names
 #
-desc r3709 = Tapestries depicting the battles of successful previous students cover the walls, each illuminated by its own magical light source and seeming to vibrate with life.  Of course there is a scroll on the wall. Make sure you |gREAD SCROLL|n before moving on.|n 
+desc r3709 = Tapestries depicting the battles of successful previous students cover the walls, each illuminated by its own magical light source and seeming to vibrate with life.  Of course there is a scroll on the wall. Make sure you |gREAD SCROLL|C before moving on.|n 
 #
 desc/edit r3709
 #
@@ -158,7 +158,7 @@ dig/tel The Golem's Lair; r3710
 #
 tag r3710 = training tower:area names
 #
-desc r3710 = You are in a small room which restrains its occupant through the use of magic, with no need for bars or chains.  Somehow you sense that when you flee from the golem it will not be able to pursue you.  Bits of straw and the remnants of the creature's last meal are scattered on the floor.  You see a parchment here that you can |gREAD PARCHMENT.  |nThe only exit is |gEAST.|n 
+desc r3710 = You are in a small room which restrains its occupant through the use of magic, with no need for bars or chains.  Somehow you sense that when you flee from the golem it will not be able to pursue you.  Bits of straw and the remnants of the creature's last meal are scattered on the floor.  You see a parchment here that you can |gREAD PARCHMENT.  |CThe only exit is |gEAST.|n 
 #
 desc/edit r3710
 #
@@ -992,7 +992,7 @@ dig/tel Top of the Tower; r3756
 #
 tag r3756 = training tower:area names
 #
-desc r3756 = You are standing at the very top of the Training Tower, which was built to acclimate new visitors to being Seekers, the daring individuals that explore the portals newly forming in this realm.  This room is rather plain and bare. The walls are gray stone.  There are no windows, but the room seems to glow with a magical light that is adequate for you to see by.  Make sure you |gREAD SCROLL|n before moving |gDOWN|n through the training tower. |n 
+desc r3756 = You are standing at the very top of the Training Tower, which was built to acclimate new visitors to being Seekers, the daring individuals that explore the portals newly forming in this realm.  This room is rather plain and bare. The walls are gray stone.  There are no windows, but the room seems to glow with a magical light that is adequate for you to see by.  Make sure you |gREAD SCROLL|C before moving |gDOWN|C through the training tower. |n 
 #
 desc/edit r3756
 #
@@ -1024,7 +1024,7 @@ set r3757/terrain = "inside"
 #
 set r3757/vnum = "r3757"
 #
-set r3757/extra_description = {'sign': 'Welcome to the Hall of Training. Here you can spend growth opportunities to build yourself up. To find out how many growths you currently have, type |gSCORE|n. To improve a specific attribute, type |gTRAIN attr|n where |gattr|n is the abbreviation shown below for the attribute you want increased: |n |n  strength      |gSTR|n  intelligence  |gINT|n   wisdom  |gWIS|n    dexterity  |gDEX|n |n  constitution  |gCON|n  hit points    |gHP|n    mana    |gMANA|n   movement   |gMOVE|n |n  nutrition     |gNUT|n |n Type |gHELP TRAIN|n and |gHELP GROWTHS|n for more information. '}
+set r3757/extra_description = {'sign': 'Welcome to the Hall of Training. There won't be much that you can do here yet, but eventually you will be able to spend experience to build yourself up. To find out how much experience it costs to increase your level, hitpoints, mana, moves, or attributes (like strength), type |gTRAIN|n. |gTRAIN|n can be used in combination with |gLEVEL|n, or any of the other statistics that come up when you input |gTRAIN|n alone, if you have enough experience. Type |gHELP TRAIN|n for more information.'}
 #
 set r3757/room_flags = ['indoors']
 #
@@ -2946,7 +2946,7 @@ objectlock north = "pass:false()"
 #
 tel r3766
 #
-create/drop the gourmand;gourmand;trainer;m3728:characters.Mobile
+create/drop the gourmand;man;gourmand;trainer;m3728:characters.Mobile
 #
 desc m3728 = A large, rotund man stands here, munching on something unidentifiable. 
 #

@@ -13,6 +13,7 @@ inheritance.
 from evennia import DefaultObject
 from evennia import TICKER_HANDLER as tickerhandler
 from server.conf import settings
+from world import rules
 
 class Object(DefaultObject):
     """
@@ -205,16 +206,14 @@ class Item(Object):
 
             for item in self.contents:
                 item.move_to(self.location, quiet=True)
-                tickerhandler.add(settings.DEFAULT_DISINTEGRATE_TIME, item.at_disintegrate)
+                rules.set_disintegrate_timer(item)
 
         else:
             self.location.msg_contents("%s crumbles away to dust."
                                          % (self.name[0].upper() + self.name[1:]), exclude=self)
 
-        if "pc corpse" in self.tags.all():
-            tickerhandler.remove(settings.PC_CORPSE_DISINTEGRATE_TIME, self.at_disintegrate)
-        else:
-            tickerhandler.remove(settings.DEFAULT_DISINTEGRATE_TIME, self.at_disintegrate)
+        # Remove the disintegrate timer and tag.
+        rules.remove_disintegrate_timer(self)
 
         self.location = None
 
@@ -284,6 +283,57 @@ class Item(Object):
             logerr(errtxt % "location change", err)
             return False
         return True
+
+        # Call the at_after_equip hood for alignment check.
+        self.at_after_equip(caller)
+
+    def at_after_equip(self, caller):
+        """
+
+        This method is intended to create the effect of equipment shocking the character and
+        dropping after the character tries to equip it when the equipment is not permitted
+        to be used by characters of the character's alignment.
+
+        """
+
+        # if there is no alignment restriction on the equipment, go no further.
+
+        if not self.db.alignment_restriction:
+            return
+
+        # determine alignment of prospective wearer
+
+        if caller.db.alignment > 333:
+            alignment = "good"
+        elif caller.db.alignment < -333:
+            alignment = "evil"
+        else:
+            alignment = "neutral"
+
+        # check prohibited alignments against character alignment
+
+        for prohibited_alignment in self.db.alignment_restriction:
+
+            if alignment == prohibited_alignment:
+                self.db.equipped = False  # set the equipment to not equipped.
+
+                # set the wear_location to empty.
+
+                for wear_location in caller.db.eq_slots:
+                    if caller.db.eq_slots[wear_location] == self:
+                        caller.db.eq_slots[wear_location] = ""
+
+                # drop the equipment and send appropriate messages.
+
+                success = self.move_to(caller.location, quiet=True)
+                if not success:
+                    caller.msg("Your alignment-restricted equipment did not drop. Contact Random.")
+                else:
+                    caller.msg("%s shocks you as you try to wear it, and drops to the ground." % (
+                                self.name[0].upper() + self.name[1:]))
+                    caller.location.msg_contents(
+                        "%s's %s drops to the ground after wearing it." % (caller.name, self.name), exclude=caller)
+                    self.at_drop(caller)
 
 
 class Equipment(Item):
@@ -386,55 +436,7 @@ class Equipment(Item):
             return False
         return True
 
-    def at_after_equip(self, caller):
-        """
-        
-        This method is intended to create the effect of equipment shocking the character and
-        dropping after the character tries to equip it when the equipment is not permitted
-        to be used by characters of the character's alignment.
-        
-        """
-        
-        # if there is no alignment restriction on the equipment, go no further.
-        
-        if not self.db.alignment_restriction:
-            return
-        
-        # determine alignment of prospective wearer
-        
-        if caller.db.alignment > 333:
-            alignment = "good"
-        elif caller.db.alignment < -333:
-            alignment = "evil"
-        else:
-            alignment = "neutral"
-        
-        # check prohibited alignments against character alignment
-        
-        for prohibited_alignment in self.db.alignment_restriction:
 
-            if alignment == prohibited_alignment:
-                self.db.equipped = False # set the equipment to not equipped.
-                
-                # set the wear_location to empty.
-                
-                for wear_location in caller.db.eq_slots:
-                    if caller.db.eq_slots[wear_location] == self:
-                        caller.db.eq_slots[wear_location] = ""
-                
-                # drop the equipment and send appropriate messages.
-                
-                success = self.move_to(caller.location, quiet = True)
-                if not success:
-                    caller.msg("Your alignment-restricted equipment did not drop. Contact Random.")
-                else:
-                    caller.msg("%s shocks you as you try to wear it, and drops to the ground." % (self.name[0].upper() + self.name[1:]))
-                    caller.location.msg_contents("%s's %s drops to the ground after wearing it." % (caller.name, self.name), exclude = caller)
-                    self.at_drop(caller)
-                    
-
-
-  
 class Armor(Equipment):
 
     """

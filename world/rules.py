@@ -2,6 +2,35 @@ import random
 import math
 from server.conf import settings
 from world import rules_race
+from evennia import TICKER_HANDLER as tickerhandler
+
+def remove_disintegrate_timer(obj):
+    """
+    This function removes the timer that comes from dropping an
+    object.
+    """
+
+    if "pc corpse" in obj.tags.all() and "disintegrating" in obj.tags.all():
+        tickerhandler.remove(settings.PC_CORPSE_DISINTEGRATE_TIME, obj.at_disintegrate)
+        obj.tags.remove("disintegrating")
+    elif "disintegrating" in obj.tags.all():
+        tickerhandler.remove(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
+        obj.tags.remove("disintegrating")
+
+
+def set_disintegrate_timer(obj):
+    """
+    This function sets the timer that comes from dropping an
+    object.
+    """
+
+    if "pc corpse" in obj.tags.all():
+        tickerhandler.set(settings.PC_CORPSE_DISINTEGRATE_TIME, obj.at_disintegrate)
+        obj.tags.add("disintegrating")
+    else:
+        tickerhandler.add(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
+        obj.tags.add("disintegrating")
+
 
 def experience_cost_base(step):
     """

@@ -82,112 +82,119 @@ class CmdWear(MuxCommand):
         if not self.args:
             caller.msg("What do you want to wear?")
             return
-        
-        eq = caller.search(self.args, location=caller)
 
-        if not eq:
-            caller.msg("You do not appear to have a %s." % self.args)
-            return
-        if caller == eq:
-            caller.msg("You can't wear yourself.")
-            return
-        
-        # check to make sure equipment has valid wear location. Need to check wrist, neck and
-        # finger separately as there are two wear locations for each in the character.db.eq_slots
-        # dictionary.
-        
-        wear_location = eq.db.wear_location
-        
-        if wear_location == "wield":
-            caller.msg("You cannot wear a weapon. Wield it instead.")
-            return
-        elif not (wear_location in caller.db.eq_slots.keys() or wear_location == "wrist" or wear_location == "finger" or wear_location == "neck"):
-            
-            caller.msg("That cannot be worn.")
-            return
-        
-        # check to make sure character is not already wearing the equipment.
-        
-        if eq.db.equipped:
-            caller.msg("You are already wearing that!")
-            return
-        
-        # check for whether character is high enough level to wear
 
-        if not eq.access(caller, "equip"):
-            if eq.db.get_err_msg:
-                caller.msg(eq.db.get_err_msg)
-            else:
-                caller.msg("You can't wear equipment more than five levels above your level.")
-            return
+        wear_list = []
 
-        # Check for whether the character is already wearing something in that slot.
- 
-        wear_location = eq.db.wear_location
-
-        # If there is no location open for the eq to be worn, we must try to remove.
-        if not check_wear_location(caller, wear_location):
-
-            if not check_cursed_remove(caller, wear_location):
-                caller.msg("The object you are currently wearing in that location is cursed, and cannot be removed.")
+        if self.args == "all":
+            for object in caller.contents:
+                if not object.db.equipped:
+                    wear_list.append(object)
+            if not wear_list:
+                caller.msg("You have nothing to wear that you are not already wearing.")
                 return
-            else:
-                # If the eq in the slot is not cursed.
-                wear_location = check_cursed_remove(caller, wear_location)
-
-                eq_current = caller.db.eq_slots[wear_location]
-                success = eq_current.remove_from(caller)
-                if not success:
-                    caller.msg("You cannot remove this.")
-                else:
-                    caller.msg("You remove %s from your %s." % (eq_current.name, eq_current.db.wear_location))
-                    caller.location.msg_contents("%s removes a %s from his %s."
-                                                 % (
-                                                    caller.name,
-                                                    eq_current.name,
-                                                    eq_current.db.wear_location
-                                                    ), exclude=caller
-                                                 )
-
-        # If a location is open, just wear it.
-        success = eq.wear_to(caller)
-        if not success:
-            caller.msg("You cannot wear this.")
         else:
-            if(caller.db.sex == "male"):
-                possessive = "his"
-            elif(caller.db.sex == "female"):
-                possessive = "her"
-            else:
-                possessive = "its"
-            
-            if wear_location == "light":
-                room_wear_string = "%s holds %s as a %s." % (caller.name, eq.name, wear_location)
-                self_wear_string = "You hold %s as a %s." % (eq.name, wear_location)
-            elif wear_location == "neck" or wear_location == "wrist" or wear_location == "waist":
-                room_wear_string = "%s wears %s around %s %s." % (caller.name, eq.name, possessive, wear_location)
-                self_wear_string = "You wear %s around your %s." % (eq.name, wear_location)
-            elif wear_location == "about body":
-                room_wear_string = "%s wears %s about %s body." % (caller.name, eq.name, possessive)
-                self_wear_string = "You wear %s about your body." % (eq.name)
-            elif wear_location == "pride":
-                room_wear_string = "%s pins on %s and wears it with pride." % (caller.name, eq.name)
-                self_wear_string = "You pin on %s and wear it with pride." % (eq.name)
-            elif wear_location == "shield":
-                room_wear_string = "%s holds %s as a shield." % (caller.name, eq.name)
-                self_wear_string = "You hold %s as a shield." % (eq.name)
-            elif wear_location == "held, in hands":
-                room_wear_string = "%s holds %s in %s hands." % (caller.name, eq.name, possessive)
-                self_wear_string = "You hold %s in your hands." % (eq.name)
-            else:
-                room_wear_string = "%s wears %s on %s %s." % (caller.name, eq.name, possessive, wear_location)
-                self_wear_string = "You wear %s on your %s." % (eq.name, wear_location)
-                
-            caller.msg(self_wear_string)
-            caller.location.msg_contents(room_wear_string, exclude=caller)
+            object = caller.search(self.args, location=caller)
+            wear_list.append(object)
+            if not object:
+                caller.msg("You do not appear to have %s." % self.args)
+                return
+            elif caller == object:
+                caller.msg("You can't wear yourself.")
+                return
+            # check to make sure character is not already wearing the equipment.
+            elif object.db.equipped:
+                caller.msg("You are already wearing that!")
+                return
 
-        if not eq.at_after_equip(caller):
-            return
+        wear_output = ""
+        wear_output_room = ""
+        for eq in wear_list:
+
+            # check to make sure equipment has valid wear location. Need to check wrist, neck and
+            # finger separately as there are two wear locations for each in the character.db.eq_slots
+            # dictionary.
+
+            wear_location = eq.db.wear_location
+
+            if wear_location == "wield":
+                wear_output += "You cannot wear %s. Wield it instead.\n" % eq.key
+
+            elif not (wear_location in caller.db.eq_slots.keys() or wear_location == "wrist" or wear_location == "finger" or wear_location == "neck"):
+                wear_output += "%s cannot be worn.\n" % (eq.key[0].upper() + eq.key[1:])
+
+            # check for whether character is high enough level to wear.
+            elif not eq.access(caller, "equip"):
+                if eq.db.get_err_msg:
+                    wear_output += "%s\n" % eq.db.get_err_msg
+                else:
+                    wear_output += "You can't wear %s as it is more than five levels above your level.\n" % eq.key
+
+            # Okay, the equipment can be worn, now what?
+            else:
+                # If there is no location open for the eq to be worn, we must try to remove.
+                if not check_wear_location(caller, wear_location):
+
+                    if not check_cursed_remove(caller, wear_location):
+                        wear_output += "The object in %s's location is cursed, and cannot be removed.\n" % eq.key
+                    else:
+                        # If the eq in the slot is not cursed.
+                        wear_location = check_cursed_remove(caller, wear_location)
+
+                        eq_current = caller.db.eq_slots[wear_location]
+                        success = eq_current.remove_from(caller)
+                        if not success:
+                            wear_output += "You cannot remove %s.\n" % eq_current.key
+                        else:
+                            wear_output += "You remove %s from your %s.\n" % (eq_current.name, eq_current.db.wear_location)
+                            wear_output_room += "%s removes a %s from his %s.\n" % (
+                                                                                    caller.name,
+                                                                                    eq_current.name,
+                                                                                    eq_current.db.wear_location
+                                                                                    )
+
+                # If a location is open, just wear it.
+                success = eq.wear_to(caller)
+                if not success:
+                    wear_output += ("You cannot wear %s.\n" % eq.key)
+                else:
+                    if(caller.db.sex == "male"):
+                        possessive = "his"
+                    elif(caller.db.sex == "female"):
+                        possessive = "her"
+                    else:
+                        possessive = "its"
+
+                    if wear_location == "light":
+                        room_wear_string = "%s holds %s as a %s." % (caller.name, eq.name, wear_location)
+                        self_wear_string = "You hold %s as a %s." % (eq.name, wear_location)
+                    elif wear_location == "neck" or wear_location == "wrist" or wear_location == "waist":
+                        room_wear_string = "%s wears %s around %s %s." % (caller.name, eq.name, possessive, wear_location)
+                        self_wear_string = "You wear %s around your %s." % (eq.name, wear_location)
+                    elif wear_location == "about body":
+                        room_wear_string = "%s wears %s about %s body." % (caller.name, eq.name, possessive)
+                        self_wear_string = "You wear %s about your body." % (eq.name)
+                    elif wear_location == "pride":
+                        room_wear_string = "%s pins on %s and wears it with pride." % (caller.name, eq.name)
+                        self_wear_string = "You pin on %s and wear it with pride." % (eq.name)
+                    elif wear_location == "shield":
+                        room_wear_string = "%s holds %s as a shield." % (caller.name, eq.name)
+                        self_wear_string = "You hold %s as a shield." % (eq.name)
+                    elif wear_location == "held, in hands":
+                        room_wear_string = "%s holds %s in %s hands." % (caller.name, eq.name, possessive)
+                        self_wear_string = "You hold %s in your hands." % (eq.name)
+                    else:
+                        room_wear_string = "%s wears %s on %s %s." % (caller.name, eq.name, possessive, wear_location)
+                        self_wear_string = "You wear %s on your %s." % (eq.name, wear_location)
+
+                    wear_output += "%s\n" % self_wear_string
+                    wear_output_room += "%s\n" % room_wear_string
+                                        
+                    caller.msg(wear_output)
+                    caller.location.msg_contents(room_wear_string, exclude=caller)
+
+                if not eq.at_after_equip(caller):
+                    return
 
 class CmdWield(MuxCommand):
     """

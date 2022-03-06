@@ -80,8 +80,8 @@ def do_attack(attacker, victim, eq_slot):
         if "player" in attacker.tags.all():
             if experience_modified > 0:
                 attacker_string += \
-                    ("You gain %d experience points from your attack.\n"
-                     % experience_modified
+                    ("You gain %d experience points from your attack of %d total, causing experience current of %s.\n"
+                     % (experience_modified, victim.db.experience_total, victim.db.experience_current)
                      )
             if damage > attacker.db.damage_maximum:
                 attacker.db.damage_maximum = damage
@@ -765,11 +765,13 @@ def modify_experience(attacker, victim, experience):
     # Modify experience award based on relative alignment.
     alignment_difference = abs(attacker.db.alignment - victim.db.alignment)
     if alignment_difference >= 1000:
-        experience_modified = experience * 1.25
+        experience_modified = math.ceil(experience * 1.25)
     elif alignment_difference < 500:
-        experience_modified = experience * 0.75
+        experience_modified = math.ceil(experience * 0.75)
     else:
         experience_modified = experience
+
+    attacker.msg("Your align is %d and theirs is %d, so %d experience is modified to %d" % (attacker.db.alignment, victim.db.alignment, experience, experience_modified))
 
     # Modify experience award based on racial hatreds or affection.
 
@@ -778,5 +780,9 @@ def modify_experience(attacker, victim, experience):
             experience_modified *= 1.1
     elif victim.race == attacker.race:
         experience_modified *= 0.875
+
+    experience_modified = math.ceil(experience_modified)
+
+    attacker.msg("And after race modification, it was %d" % experience_modified)
 
     return int(experience_modified)

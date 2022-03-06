@@ -12,6 +12,7 @@ from evennia.commands.default.building import ObjManipCommand
 from evennia.utils import utils
 from evennia import TICKER_HANDLER as tickerhandler
 from server.conf import settings
+from world import rules
 
 # Below is here for CmdCharCreate
 import time
@@ -644,7 +645,7 @@ class CmdDrop(MuxCommand):
             caller.msg("This couldn't be dropped.")
         else:
             if caller.db.level < 103:
-                tickerhandler.add(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
+                rules.set_disintegrate.timer(obj)
             caller.msg("You drop %s." % (obj.name,))
             caller.location.msg_contents("%s drops %s."
                                          % (caller.name, obj.name),
@@ -981,7 +982,7 @@ class CmdPut(MuxCommand):
     """
     Put something in a container.
     Usage:
-      put <inventory obj> <=> <target>
+      put <inventory obj> in <target>
     Puts an item from your inventory in a container,
     placing it in its inventory.
     """
@@ -996,7 +997,7 @@ class CmdPut(MuxCommand):
 
         caller = self.caller
         if not self.args or not self.rhs:
-            caller.msg("Usage: put <inventory object> = <target>")
+            caller.msg("Usage: put <inventory object> in <target>")
             return
         to_put = caller.search(
             self.lhs,
@@ -1302,6 +1303,9 @@ class CmdTalk(MuxCommand):
             multimatch_string="There is more than one %s here:" % self.args,
         )
 
+        if not to_talk:
+            return
+
         if to_talk == caller:
             caller.msg("You mutter away to yourself quietly.")
             return
@@ -1332,7 +1336,6 @@ class CmdInspect(MuxCommand):
 
     key = "inspect"
     aliases = ["read"]
-    rhs_split = ("=")
     locks = "cmd:all()"
     arg_regex = r"\s|$"
 
@@ -1355,7 +1358,7 @@ class CmdInspect(MuxCommand):
             caller.msg("You see nothing special about the %s." % self.args)
             return
         else:
-            object = caller.search(self.lhs, location=(caller or caller.location))
+            object = caller.search(self.lhs, location=(caller, caller.location))
             aspect = self.rhs
 
             if not object:
@@ -1363,7 +1366,7 @@ class CmdInspect(MuxCommand):
             else:
                 for extra_keywords_string in object.db.extra_descriptions:
                     extra_keywords_list = extra_keywords_string.split()
-                    if self.rhs in extra_keywords_list:
+                    if aspect in extra_keywords_list:
                         caller.msg("You closely inspect the %s on the %s:\n%s" % (self.rhs, self.lhs, object.db.extra_descriptions[extra_keywords_string]))
                         return
                 caller.msg("You see nothing special about the %s on the %s." % (self.rhs, self.lhs))
@@ -1399,82 +1402,124 @@ class CmdGet(MuxCommand):
             if not self.lhs:
                 caller.msg("Get what from %s?" % self.rhs)
                 return
+
             container = caller.search(self.rhs, location=[caller, caller.location])
             
             if not container:
                 caller.msg("There is no %s here to get items from." % self.rhs)
                 return
-            if container.db.item_type != "container":
+            elif container.db.item_type != "container":
                 caller.msg("%s is not a container." % (container.key[0].upper() + container.key[1:]))
                 return
-            
-            if not container.access(caller, "put"):
+            elif not container.access(caller, "put"):
                 if "open" not in container.db.state:
                     caller.msg("You can neither see in nor access %s while it is closed."
                                % container.key
                                )
                 return
-            
-            obj = caller.search(self.lhs, location=container)
-            if not obj:
-                caller.msg("There is no %s in the %s." % (self.lhs, container.key))
-                return
 
-            if not obj.access(caller, "get"):
-                if obj.db.get_err_msg:
-                    caller.msg(obj.db.get_err_msg)
-                else:
-                    caller.msg("You can't get that.")
-                return
 
-            # calling at_before_get hook method
-            if not obj.at_before_get(caller):
-                return
+            get_list = []
 
-            success = obj.move_to(caller, quiet=True)
-            if not success:
-                caller.msg("%s can't be picked up." % (obj.key[0].upper() + obj.key[1:]))
+            if self.lhs == "all":
+                for object in container.contents:
+                    if "object" in object.tags.all():
+                        get_list.append(object)
+                if not get_list:
+                    caller.msg("There is nothing in %s to get." % container.key)
+                    return
             else:
-                if "pc corpse" in obj.tags.all():
-                    tickerhandler.remove(settings.PC_CORPSE_DISINTEGRATE_TIME, obj.at_disintegrate)
+                get_list = []
+                object = caller.search(self.lhs, location=container)
+                get_list.append(object)
+                if not object:
+                    caller.msg("There is no %s in %s to get." % (self.lhs, container.key))
+                    return
+
+            for obj in get_list:
+
+                get_output = ""
+                get_output_room = ""
+
+                if caller == obj:
+                    get_output += "You can't get yourself.\n"
+                elif not obj.access(caller, "get"):
+                    if obj.db.get_err_msg:
+                        get_output += "%s\n" % obj.db.get_err_msg
+                    else:
+                        get_output += "You can't get %s.\n" % obj.key
+
+                # calling at_before_get hook method
+                elif not obj.at_before_get(caller):
+                    pass
+
                 else:
-                    tickerhandler.remove(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
-                caller.msg("You get %s from %s." % (obj.name, container.key))
+                    success = obj.move_to(caller, quiet=True)
+                    if not success:
+                        get_output += "%s can't be picked up.\n" % (obj.key[0].upper() + obj.key[1:])
+                    else:
+                        rules.remove_disintegrate_timer(obj)
+                        get_output += "You take %s from %s.\n" % (obj.name, container.key)
+                        get_output_room = "%s takes %s from %s.\n" % (caller.name, obj.name, container.key)
+                        # calling at_get hook method
+                        obj.at_get(caller)
+
+                caller.msg(get_output)
                 caller.location.msg_contents(
-                    "%s gets %s from %s." % (caller.name, obj.name, container.key), exclude=caller
-                )
-                # calling at_get hook method
-                obj.at_get(caller)
+                            get_output_room, exclude=caller
+                        )
         
         # If just a regular get command.
         else:
-            obj = caller.search(self.args, location=caller.location)
-            if not obj:
-                return
-            if caller == obj:
-                caller.msg("You can't get yourself.")
-                return
-            if not obj.access(caller, "get"):
-                if obj.db.get_err_msg:
-                    caller.msg(obj.db.get_err_msg)
-                else:
-                    caller.msg("You can't get that.")
-                return
+            get_list = []
+            if self.args == "all":
+                for object in caller.location.contents:
+                    if "object" in object.tags.all():
+                        get_list.append(object)
+                if not get_list:
+                    caller.msg("There is nothing here to get.")
+                    return
 
-            # calling at_before_get hook method
-            if not obj.at_before_get(caller):
-                return
-
-            success = obj.move_to(caller, quiet=True)
-            if not success:
-                caller.msg("This can't be picked up.")
             else:
-                caller.msg("You pick up %s." % obj.name)
+                get_list = []
+                object = caller.search(self.args, location=caller.location)
+                get_list.append(object)
+                if not object:
+                    caller.msg("There is no %s here to get." % self.args)
+                    return
+
+            for obj in get_list:
+
+                get_output = ""
+                get_output_room = ""
+
+                if caller == obj:
+                    get_output += "You can't get yourself.\n"
+                elif not obj.access(caller, "get"):
+                    if obj.db.get_err_msg:
+                        get_output += "%s\n" % obj.db.get_err_msg
+                    else:
+                        get_output += "You can't get %s.\n" % obj.key
+
+                # calling at_before_get hook method
+                elif not obj.at_before_get(caller):
+                    pass
+
+                else:
+                    success = obj.move_to(caller, quiet=True)
+                    if not success:
+                        get_output += "%s can't be picked up.\n" % (obj.key[0].upper() + obj.key[1:])
+                    else:
+                        rules.remove_disintegrate_timer(obj)
+                        get_output += "You pick up %s.\n" % obj.name
+                        get_output_room = "%s picks up %s.\n" % (caller.name, obj.name)
+                        # calling at_get hook method
+                        obj.at_get(caller)
+
+                caller.msg(get_output)
                 caller.location.msg_contents(
-                    "%s picks up %s." % (caller.name, obj.name), exclude=caller
-                )
-                # calling at_get hook method
-                obj.at_get(caller)
+                            get_output_room, exclude=caller
+                        )
 
 class CmdSleep(MuxCommand):
     """
