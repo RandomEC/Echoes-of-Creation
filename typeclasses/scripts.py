@@ -94,6 +94,14 @@ class Script(DefaultScript):
     pass
 
 
+class EntranceTestScript(DefaultScript):
+
+    def at_script_creation(self):
+        self.key = "entrance test"
+        self.desc = "Test script for putting scripts on rooms."
+        self.persistent = True
+        self.type = "at_object_receive"
+
 class ResetScript(DefaultScript):
 
     def at_script_creation(self):

@@ -189,7 +189,7 @@ class CmdWear(MuxCommand):
 
                     wear_output += "%s\n" % self_wear_string
                     wear_output_room += "%s\n" % room_wear_string
-                                        
+
                     caller.msg(wear_output)
                     caller.location.msg_contents(room_wear_string, exclude=caller)
 
