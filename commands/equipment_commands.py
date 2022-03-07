@@ -107,8 +107,6 @@ class CmdWear(MuxCommand):
                 caller.msg("You are already wearing that!")
                 return
 
-        wear_output = ""
-        wear_output_room = ""
         for eq in wear_list:
 
             # check to make sure equipment has valid wear location. Need to check wrist, neck and
@@ -118,17 +116,17 @@ class CmdWear(MuxCommand):
             wear_location = eq.db.wear_location
 
             if wear_location == "wield":
-                wear_output += "You cannot wear %s. Wield it instead.\n" % eq.key
+                caller.msg("You cannot wear %s. Wield it instead." % eq.key)
 
             elif not (wear_location in caller.db.eq_slots.keys() or wear_location == "wrist" or wear_location == "finger" or wear_location == "neck"):
-                wear_output += "%s cannot be worn.\n" % (eq.key[0].upper() + eq.key[1:])
+                caller.msg("%s cannot be worn." % (eq.key[0].upper() + eq.key[1:]))
 
             # check for whether character is high enough level to wear.
             elif not eq.access(caller, "equip"):
                 if eq.db.get_err_msg:
-                    wear_output += "%s\n" % eq.db.get_err_msg
+                    caller.msg(eq.db.get_err_msg)
                 else:
-                    wear_output += "You can't wear %s as it is more than five levels above your level.\n" % eq.key
+                    caller.msg("You can't wear %s as it is more than five levels above your level." % eq.key)
 
             # Okay, the equipment can be worn, now what?
             else:
@@ -136,7 +134,7 @@ class CmdWear(MuxCommand):
                 if not check_wear_location(caller, wear_location):
 
                     if not check_cursed_remove(caller, wear_location):
-                        wear_output += "The object in %s's location is cursed, and cannot be removed.\n" % eq.key
+                        caller.msg("The object in %s's location is cursed, and cannot be removed." % eq.key)
                     else:
                         # If the eq in the slot is not cursed.
                         wear_location = check_cursed_remove(caller, wear_location)
@@ -144,19 +142,19 @@ class CmdWear(MuxCommand):
                         eq_current = caller.db.eq_slots[wear_location]
                         success = eq_current.remove_from(caller)
                         if not success:
-                            wear_output += "You cannot remove %s.\n" % eq_current.key
+                            caller.msg("You cannot remove %s." % eq_current.key)
                         else:
-                            wear_output += "You remove %s from your %s.\n" % (eq_current.name, eq_current.db.wear_location)
-                            wear_output_room += "%s removes a %s from his %s.\n" % (
+                            caller.msg("You remove %s from your %s." % (eq_current.name, eq_current.db.wear_location))
+                            caller.location.msg_contents("%s removes a %s from his %s." % (
                                                                                     caller.name,
                                                                                     eq_current.name,
                                                                                     eq_current.db.wear_location
-                                                                                    )
-
+                                                                                    ))
+                            
                 # If a location is open, just wear it.
                 success = eq.wear_to(caller)
                 if not success:
-                    wear_output += ("You cannot wear %s.\n" % eq.key)
+                    caller.msg("You cannot wear %s." % eq.key)
                 else:
                     if(caller.db.sex == "male"):
                         possessive = "his"
@@ -187,14 +185,11 @@ class CmdWear(MuxCommand):
                         room_wear_string = "%s wears %s on %s %s." % (caller.name, eq.name, possessive, wear_location)
                         self_wear_string = "You wear %s on your %s." % (eq.name, wear_location)
 
-                    wear_output += "%s\n" % self_wear_string
-                    wear_output_room += "%s\n" % room_wear_string
+                    caller.msg(self_wear_string)
+                    caller.location.msg_contents(room_wear_string)
 
-                    caller.msg(wear_output)
-                    caller.location.msg_contents(room_wear_string, exclude=caller)
-
-                if not eq.at_after_equip(caller):
-                    return
+                    if not eq.at_after_equip(caller):
+                        return
 
 class CmdWield(MuxCommand):
     """
