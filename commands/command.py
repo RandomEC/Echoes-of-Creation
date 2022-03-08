@@ -1630,4 +1630,43 @@ class CmdStand(MuxCommand):
         caller.db.position = "standing"
 
 
-        
+class CmdSay(MuxCommand):
+    """
+    speak as your character
+    Usage:
+      say <message>
+    Talk to those in your current location.
+    """
+
+    key = "say"
+    aliases = ['"', "'"]
+    locks = "cmd:all()"
+
+    def func(self):
+        """Run the say command"""
+
+        caller = self.caller
+
+        if not self.args:
+            caller.msg("Say what?")
+            return
+
+        speech = self.args
+
+        # Calling the at_before_say hook on the character
+        speech = caller.at_before_say(speech)
+
+        # If speech is empty, stop here
+        if not speech:
+            return
+
+        # Call the at_after_say hook on the character
+        caller.at_say(speech, msg_self=True)
+
+        # Call the at_after_say hook on the location and its contents.
+        # Primarily for scripts.
+        caller.location.at_after_say(caller, speech)
+        for object in caller.location.contents:
+            if "mobile" in object.tags.all() or "object" in object.tags.all():
+                object.at_after_say(caller, speech)
+

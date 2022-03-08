@@ -15,6 +15,7 @@ just overloads its hooks to have it perform its function.
 import evennia
 from evennia import DefaultScript
 from evennia.utils import search
+from evennia.utils.evmenu import get_input
 from evennia import TICKER_HANDLER as tickerhandler
 
 class Script(DefaultScript):
@@ -94,13 +95,177 @@ class Script(DefaultScript):
     pass
 
 
-class EntranceTestScript(DefaultScript):
-
+class ChooseDrowScript(DefaultScript):
     def at_script_creation(self):
-        self.key = "entrance test"
-        self.desc = "Test script for putting scripts on rooms."
+        self.desc = "Script for choosing drow as your player race."
         self.persistent = True
-        self.type = "at_object_receive"
+        self.type = "at_after_say"
+
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+                caller.race = "drow"
+                caller.msg("You are moving on now.")
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
+
+            return repeat
+
+        get_input(self.obj, "You chose drow as the race for your character, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
+
+class ChooseDwarfScript(DefaultScript):
+    def at_script_creation(self):
+        self.desc = "Script for choosing dwarf as your player race."
+        self.persistent = True
+        self.type = "at_after_say"
+        self.obj.race = "dwarf"
+
+
+class ChooseEldarScript(DefaultScript):
+    def at_script_creation(self):
+        self.desc = "Script for choosing eldar as your player race."
+        self.persistent = True
+        self.type = "at_after_say"
+        self.obj.race = "eldar"
+
+
+class ChooseElfScript(DefaultScript):
+    def at_script_creation(self):
+        self.desc = "Script for choosing elf as your player race."
+        self.persistent = True
+        self.type = "at_after_say"
+        self.obj.race = "elf"
+
+
+class ChooseFemaleScript(DefaultScript):
+    def at_script_creation(self):
+        self.desc = "Script for choosing female as your player sex."
+        self.persistent = True
+        self.type = "at_after_say"
+        self.obj.sex = "female"
+
+
+class ChooseGnomeScript(DefaultScript):
+    def at_script_creation(self):
+        self.desc = "Script for choosing gnome as your player race."
+        self.persistent = True
+        self.type = "at_after_say"
+        self.obj.race = "gnome"
+
+
+class ChooseHalfdwarfScript(DefaultScript):
+    def at_script_creation(self):
+        self.desc = "Script for choosing halfdwarf as your player race."
+        self.persistent = True
+        self.type = "at_after_say"
+        self.obj.race = "halfdwarf"
+
+
+class ChooseHalfelfScript(DefaultScript):
+    def at_script_creation(self):
+        self.desc = "Script for choosing halfelf as your player race."
+        self.persistent = True
+        self.type = "at_after_say"
+        self.obj.race = "halfelf"
+
+
+class ChooseHalfkoboldScript(DefaultScript):
+    def at_script_creation(self):
+        self.desc = "Script for choosing halfkobold as your player race."
+        self.persistent = True
+        self.type = "at_after_say"
+        self.obj.race = "halfkobold"
+
+
+class ChooseHobbitScript(DefaultScript):
+    def at_script_creation(self):
+        self.desc = "Script for choosing hobbit as your player race."
+        self.persistent = True
+        self.type = "at_after_say"
+        self.obj.race = "hobbit"
+
+
+class ChooseHumanScript(DefaultScript):
+    def at_script_creation(self):
+        self.desc = "Script for choosing human as your player race."
+        self.persistent = True
+        self.type = "at_after_say"
+        self.obj.race = "human"
+
+
+class ChooseLizardmanScript(DefaultScript):
+    def at_script_creation(self):
+        self.desc = "Script for choosing lizardman as your player race."
+        self.persistent = True
+        self.type = "at_after_say"
+        self.obj.race = "lizardman"
+
+
+class ChooseMaleScript(DefaultScript):
+    def at_script_creation(self):
+        self.desc = "Script for choosing male as your player sex."
+        self.persistent = True
+        self.type = "at_after_say"
+        self.obj.sex = "male"
+
+
+class ChooseNeuterScript(DefaultScript):
+    def at_script_creation(self):
+        self.desc = "Script for choosing neuter as your player sex."
+        self.persistent = True
+        self.type = "at_after_say"
+        self.obj.sex = "neuter"
+
+
+class ChooseOgreScript(DefaultScript):
+    def at_script_creation(self):
+        self.desc = "Script for choosing ogre as your player race."
+        self.persistent = True
+        self.type = "at_after_say"
+        self.obj.race = "ogre"
+
+
+class ChooseOrcScript(DefaultScript):
+    def at_script_creation(self):
+        self.desc = "Script for choosing orc as your player race."
+        self.persistent = True
+        self.type = "at_after_say"
+        self.obj.race = "orc"
+
+
+class RaceTableScript(DefaultScript):
+    def at_script_creation(self):
+        self.desc = "Script for showing the playable race table."
+        self.persistent = True
+        self.type = "at_after_say"
+        self.obj.msg("""=====================================================\
+===========
+                                     Infra- Detect
+  ##  Race       Str Dex Int Wis Con vision Hidden Size Hated By
+================================================================
+   1  Human                            No     No     3   4 races
+   2  Elf             +1  +1      -1  Yes    Yes     2  11 races
+   3  Eldar               +1  +1  -1  Yes    Yes     2  11 races
+   4  Halfelf         +1              Yes     No     3  10 races
+   5  Drow            +1      +1      Yes    Yes     2   6 races
+   6  Dwarf           -1          +1  Yes    Yes     2  12 races
+   7  Halfdwarf                   +1  Yes     No     2  12 races
+   8  Hobbit          +1          -1  Yes     No     2  12 races
+   9  Ogre        +1  -1  -1      +1   No     No     5   8 races
+  10  Orc         +1      -1      +1  Yes     No     4   8 races
+  11  Lizardman   +1  +1  -1  -1  +1   No     No     3   0 races
+  12  Gnome       -1  +1      +1  -1  Yes     No     2  10 races
+  13  Halfkobold  -2  +3  -1  -2  -2  Yes     No     2   5 races
+================================================================"""
+)
 
 class ResetScript(DefaultScript):
 

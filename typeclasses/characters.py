@@ -8,6 +8,7 @@ creation commands.
 
 """
 from evennia import DefaultCharacter
+from evennia import create_script
 from evennia.utils import search
 from world import rules_race
 from world import rules
@@ -413,6 +414,18 @@ class Character(DefaultCharacter):
         # once we implement spell affects, check for them here on race
         return self.db.race
 
+    @race.setter
+    def race(self, race):
+        self.db.race = race
+
+    @property
+    def sex(self):
+        return self.db.sex
+
+    @sex.setter
+    def sex(self, sex):
+        self.db.sex = sex
+
     def take_damage(self, damage):
         """
         Method to use to do damage to a character.
@@ -520,7 +533,18 @@ class Character(DefaultCharacter):
         # Add movement cost function here, after check for all the reasons why you couldn't move.
         
         return True
-                    
+
+    def at_after_say(self, speaker, message):
+        """
+        This is a hook for starting mobile scripts that trigger on
+        say.
+        """
+
+        if self.db.scripts:
+            if message in self.db.say_scripts:
+                create_script(self.db.say_scripts[message], key=message, obj=speaker)
+                speaker.scripts.delete(message)
+
 class Mobile(Character):
     """
     The Mobile class is intended to be used for the npcs on the MUD, and inherits from the

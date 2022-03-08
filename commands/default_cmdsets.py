@@ -32,6 +32,7 @@ from commands.command import CmdGet
 from commands.command import CmdSleep
 from commands.command import CmdRest
 from commands.command import CmdStand
+from commands.command import CmdSay
 from commands.build_commands import CmdOpen
 from commands.build_commands import CmdSetObjAlias
 from commands.build_commands import CmdDig
@@ -110,6 +111,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdFlee())
         self.add(CmdWimpy())
         self.add(CmdTrain())
+        self.add(CmdSay())
 
 class AccountCmdSet(default_cmds.AccountCmdSet):
     """
