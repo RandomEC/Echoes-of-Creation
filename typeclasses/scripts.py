@@ -126,120 +126,390 @@ class ChooseDwarfScript(DefaultScript):
         self.desc = "Script for choosing dwarf as your player race."
         self.persistent = True
         self.type = "at_after_say"
-        self.obj.race = "dwarf"
+ 
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+                caller.race = "dwarf"
+                caller.msg("You are moving on now.")
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
 
+            return repeat
+
+        get_input(self.obj, "You chose dwarf as the race for your character, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
 
 class ChooseEldarScript(DefaultScript):
     def at_script_creation(self):
         self.desc = "Script for choosing eldar as your player race."
         self.persistent = True
         self.type = "at_after_say"
-        self.obj.race = "eldar"
 
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+                caller.race = "eldar"
+                caller.msg("You are moving on now.")
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
+
+            return repeat
+
+        get_input(self.obj, "You chose eldar as the race for your character, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
 
 class ChooseElfScript(DefaultScript):
     def at_script_creation(self):
         self.desc = "Script for choosing elf as your player race."
         self.persistent = True
         self.type = "at_after_say"
-        self.obj.race = "elf"
 
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+                caller.race = "elf"
+                caller.msg("You are moving on now.")
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
+
+            return repeat
+
+        get_input(self.obj, "You chose elf as the race for your character, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
 
 class ChooseFemaleScript(DefaultScript):
     def at_script_creation(self):
         self.desc = "Script for choosing female as your player sex."
         self.persistent = True
         self.type = "at_after_say"
-        self.obj.sex = "female"
 
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+                caller.sex = "female"
+                caller.msg("You are moving on now.")
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the name of the sex you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
+
+            return repeat
+
+        get_input(self.obj, "You chose female as the race for your character, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
 
 class ChooseGnomeScript(DefaultScript):
     def at_script_creation(self):
         self.desc = "Script for choosing gnome as your player race."
         self.persistent = True
         self.type = "at_after_say"
-        self.obj.race = "gnome"
 
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+                caller.race = "gnome"
+                caller.msg("You are moving on now.")
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
+
+            return repeat
+
+        get_input(self.obj, "You chose gnome as the race for your character, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
 
 class ChooseHalfdwarfScript(DefaultScript):
     def at_script_creation(self):
         self.desc = "Script for choosing halfdwarf as your player race."
         self.persistent = True
         self.type = "at_after_say"
-        self.obj.race = "halfdwarf"
 
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+                caller.race = "halfdwarf"
+                caller.msg("You are moving on now.")
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
+
+            return repeat
+
+        get_input(self.obj, "You chose halfdwarf as the race for your character, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
 
 class ChooseHalfelfScript(DefaultScript):
     def at_script_creation(self):
         self.desc = "Script for choosing halfelf as your player race."
         self.persistent = True
         self.type = "at_after_say"
-        self.obj.race = "halfelf"
 
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+                caller.race = "halfelf"
+                caller.msg("You are moving on now.")
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
+
+            return repeat
+
+        get_input(self.obj, "You chose halfelf as the race for your character, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
 
 class ChooseHalfkoboldScript(DefaultScript):
     def at_script_creation(self):
         self.desc = "Script for choosing halfkobold as your player race."
         self.persistent = True
         self.type = "at_after_say"
-        self.obj.race = "halfkobold"
 
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+                caller.race = "halfkobold"
+                caller.msg("You are moving on now.")
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
+
+            return repeat
+
+        get_input(self.obj, "You chose halfkobold as the race for your character, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
 
 class ChooseHobbitScript(DefaultScript):
     def at_script_creation(self):
         self.desc = "Script for choosing hobbit as your player race."
         self.persistent = True
         self.type = "at_after_say"
-        self.obj.race = "hobbit"
 
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+                caller.race = "hobbit"
+                caller.msg("You are moving on now.")
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
+
+            return repeat
+
+        get_input(self.obj, "You chose hobbit as the race for your character, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
 
 class ChooseHumanScript(DefaultScript):
     def at_script_creation(self):
         self.desc = "Script for choosing human as your player race."
         self.persistent = True
         self.type = "at_after_say"
-        self.obj.race = "human"
 
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+                caller.race = "human"
+                caller.msg("You are moving on now.")
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
+
+            return repeat
+
+        get_input(self.obj, "You chose human as the race for your character, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
 
 class ChooseLizardmanScript(DefaultScript):
     def at_script_creation(self):
         self.desc = "Script for choosing lizardman as your player race."
         self.persistent = True
         self.type = "at_after_say"
-        self.obj.race = "lizardman"
 
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+                caller.race = "lizardman"
+                caller.msg("You are moving on now.")
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
+
+            return repeat
+
+        get_input(self.obj, "You chose lizardman as the race for your character, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
 
 class ChooseMaleScript(DefaultScript):
     def at_script_creation(self):
         self.desc = "Script for choosing male as your player sex."
         self.persistent = True
         self.type = "at_after_say"
-        self.obj.sex = "male"
 
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+                caller.sex = "male"
+                caller.msg("You are moving on now.")
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the name of the sex you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
+
+            return repeat
+
+        get_input(self.obj, "You chose male as the sex of your character, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
 
 class ChooseNeuterScript(DefaultScript):
     def at_script_creation(self):
         self.desc = "Script for choosing neuter as your player sex."
         self.persistent = True
         self.type = "at_after_say"
-        self.obj.sex = "neuter"
 
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+                caller.sex = "neuter"
+                caller.msg("You are moving on now.")
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the name of the sex you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
+
+            return repeat
+
+        get_input(self.obj, "You chose neuter as the sex of your character, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
 
 class ChooseOgreScript(DefaultScript):
     def at_script_creation(self):
         self.desc = "Script for choosing ogre as your player race."
         self.persistent = True
         self.type = "at_after_say"
-        self.obj.race = "ogre"
 
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+                caller.race = "ogre"
+                caller.msg("You are moving on now.")
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
+
+            return repeat
+
+        get_input(self.obj, "You chose ogre as the race for your character, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
 
 class ChooseOrcScript(DefaultScript):
     def at_script_creation(self):
         self.desc = "Script for choosing orc as your player race."
         self.persistent = True
         self.type = "at_after_say"
-        self.obj.race = "orc"
 
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+                caller.race = "orc"
+                caller.msg("You are moving on now.")
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
+
+            return repeat
+
+        get_input(self.obj, "You chose orc as the race for your character, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
 
 class RaceTableScript(DefaultScript):
     def at_script_creation(self):
