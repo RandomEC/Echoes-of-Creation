@@ -15,7 +15,6 @@ just overloads its hooks to have it perform its function.
 import evennia
 from evennia import DefaultScript
 from evennia.utils import search
-from evennia.utils.evmenu import get_input
 from evennia import TICKER_HANDLER as tickerhandler
 
 class Script(DefaultScript):
