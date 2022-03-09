@@ -657,10 +657,11 @@ class Mobile(Character):
                     # If it should be equipped, equip it.
                     if self.db.reset_objects[reset_object]["location"] == "equipped":
                         if not new_object.db.equipped:
-                            if new_object.db.item_type == "armor" or new_object.db.item_type == "light":
-                                new_object.wear_to(self)
-                            else:
+                            if new_object.db.item_type == "weapon":
                                 new_object.wield_to(self)
+                            else:
+                                new_object.wear_to(self)
+                                
 
             self.db.experience_total = rules.calculate_experience(self)
             self.db.experience_current = self.db.experience_total
