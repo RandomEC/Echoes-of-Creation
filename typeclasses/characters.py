@@ -41,19 +41,6 @@ class Character(DefaultCharacter):
         that get modified further by race and the rest of it.
         """
 
-        # set persistent attributes
-        self.db.attributes = {
-            "strength":13,
-            "intelligence":13,
-            "wisdom":13,
-            "dexterity":13,
-            "constitution":13,
-            "hitroll":0,
-            "damroll":0,
-            "armor class":100,
-            "saving throw":0
-            }
-
         # set hitpoints dictionary
         self.db.hitpoints = {
             "maximum":20,
@@ -73,6 +60,19 @@ class Character(DefaultCharacter):
             "maximum":100,
             "spent":0,
             "trains spent":0
+            }
+
+        # set persistent attributes
+        self.db.attributes = {
+            "strength":13,
+            "intelligence":13,
+            "wisdom":13,
+            "dexterity":13,
+            "constitution":13,
+            "hitroll":0,
+            "damroll":0,
+            "armor class":100,
+            "saving throw":0
             }
 
         # set other stats
@@ -117,30 +117,70 @@ class Character(DefaultCharacter):
     def hitpoints_maximum(self):
         modifier = 0
         
+        # Modification for equipment.
         for wear_location in self.db.eq_slots:
             equipment = self.db.eq_slots[wear_location]
             if equipment:
                 modifier = modifier + equipment.db.stat_modifiers["hitpoints"]
         return modifier + self.db.hitpoints["maximum"]
+    
+        # Modification for affects, to be determined.
 
     @hitpoints_maximum.setter
-    def hitpoints_maximum(self, value):
-        self.db.hitpoints["maximum"] = self.db.hitpoints["maximum"] + value
+    def hitpoints_maximum(self, new_value):
+        if "player" in self.tags.all():
+            if new_value >= (self.hitpoints_maximum + 3) and new_value <= (self.hitpoints_maximum + 27):
+                self.db.hitpoints["maximum"] = new_value
+            else:
+                self.msg("There was a problem setting your new hitpoints, as %s is outside the expected range." % (new_value - self.hitpoints_maximum))
+        else:
+            self.db.hitpoints["maximum"] = new_value
 
+    @property
+        def hitpoints_damaged(self):
+            return self.db.hitpoints["damaged"]
+    
+    @hitpoints_damaged.setter
+        def hitpoints_damaged(self, new_value):
+            if new_value > 0:
+                self.db.hitpoints["damaged"] = new_value
+            else:
+                self.msg("There was a problem setting your new damage, as having negative damage is impossible.")
+            
     @property
     def mana_maximum(self):
         modifier = 0
         
+        # Modification for equipment.
         for wear_location in self.db.eq_slots:
             equipment = self.db.eq_slots[wear_location]
             if equipment:
                 modifier = modifier + equipment.db.stat_modifiers["mana"]
         return modifier + self.db.mana["maximum"]
+    
+        # Modification for affects, to be determined.
 
     @mana_maximum.setter
     def mana_maximum(self, value):
-        self.db.mana["maximum"] = self.db.mana["maximum"] + value
+        if "player" in self.tags.all():
+            if new_value >= (self.mana_maximum + 7) and new_value <= (self.mana_maximum + 29):
+                self.db.mana["maximum"] = new_value
+            else:
+                self.msg("There was a problem setting your new mana, as %s is outside the expected range." % (new_value - self.hitpoints_maximum))
+        else:
+            self.db.mana["maximum"] = new_value
 
+    @property
+        def mana_spent(self):
+            return self.db.mana["spent"]
+    
+    @hitpoints_damaged.setter
+        def mana_spent(self, new_value):
+            if new_value > 0:
+                self.db.mana["spent"] = new_value
+            else:
+                self.msg("There was a problem setting your new spent mana, as having negative spent mana is impossible.")
+            
     @property
     def moves_maximum(self):
         modifier = 0
@@ -153,19 +193,37 @@ class Character(DefaultCharacter):
 
     @moves_maximum.setter
     def moves_maximum(self, value):
-        self.db.moves["maximum"] = self.db.moves["maximum"] + value
+        if "player" in self.tags.all():
+            if new_value >= (self.moves_maximum + 5) and new_value <= (self.moves_maximum + 13):
+                self.db.moves["maximum"] = new_value
+            else:
+                self.msg("There was a problem setting your new moves, as %s is outside the expected range." % (new_value - self.hitpoints_maximum))
+        else:
+            self.db.moves["maximum"] = new_value
+ 
+    @property
+        def moves_spent(self):
+            return self.db.moves["spent"]
+    
+    @hitpoints_damaged.setter
+        def moves_spent(self, new_value):
+            if new_value > 0:
+                self.db.moves["spent"] = new_value
+            else:
+                self.msg("There was a problem setting your new spent moves, as having negative spent moves is impossible.")
+            
 
     @property
     def hitpoints_current(self):
-        return self.hitpoints_maximum - self.db.hitpoints["damaged"]
+        return self.hitpoints_maximum - self.hitpoints_damaged
     
     @property
     def mana_current(self):
-        return self.mana_maximum - self.db.mana["spent"]
+        return self.mana_maximum - self.mana_spent
     
     @property
     def moves_current(self):
-        return self.moves_maximum - self.db.moves["spent"]
+        return self.moves_maximum - self.moves_spent
 
     def get_affect_status(self, affect_name):
         """
