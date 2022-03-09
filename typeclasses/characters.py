@@ -82,7 +82,7 @@ class Character(DefaultCharacter):
         self.db.character_type = ""
 
         # set race-based stats
-        self.db.race = ""
+        self.db.race = "default"
 
         # set spell_affects dictionary
         self.db.spell_affects = {}
