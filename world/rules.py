@@ -14,6 +14,41 @@ def classes_current(character):
     
     return ["default"]
 
+def constitution_hitpoint_bonus(character):
+    """
+    This function returns the amount of bonus hitpoints that a
+    character receives on gaining another set of hitpoints.
+    """
+    con = character.constitution
+    
+    if con == 0:
+        return -4
+    elif con == 1:
+        return -3
+    elif con < 4:
+        return -2
+    elif con < 7:
+        return -1
+    elif con < 15:
+        return 0
+    elif con < 16:
+        return 1
+    elif con < 18:
+        return 2
+    elif con < 20:
+        return 3
+    elif con < 22:
+        return 4
+    elif con < 23:
+        return 5
+    elif con < 24:
+        return 6
+    elif con < 25:
+        return 7
+    else:
+        return 8 
+        
+
 def remove_disintegrate_timer(obj):
     """
     This function removes the timer that comes from dropping an
