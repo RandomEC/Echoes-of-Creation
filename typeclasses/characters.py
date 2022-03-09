@@ -7,6 +7,7 @@ is setup to be the "default" character type created by the default
 creation commands.
 
 """
+import random
 from evennia import DefaultCharacter
 from evennia import create_script
 from evennia.utils import search
@@ -643,6 +644,13 @@ class Mobile(Character):
 
             # Fuzz up the mobile's level.
             self.db.level = rules.fuzz_number(self.db.level_base)
+            level = self.db.level
+            
+            # Set hitpoint maximum based on level.
+            self.hitpoints_maximum = level*8 + random.randint(
+                                                     int(level/4),
+                                                     (level*level)
+                                                     )
 
             # Check to see if there are objects that should be reset to it. This
             # dictionary takes the form of
