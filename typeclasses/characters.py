@@ -174,7 +174,7 @@ class Character(DefaultCharacter):
         def mana_spent(self):
             return self.db.mana["spent"]
     
-    @hitpoints_damaged.setter
+    @mana_spent.setter
         def mana_spent(self, new_value):
             if new_value > 0:
                 self.db.mana["spent"] = new_value
@@ -205,7 +205,7 @@ class Character(DefaultCharacter):
         def moves_spent(self):
             return self.db.moves["spent"]
     
-    @hitpoints_damaged.setter
+    @moves_spent.setter
         def moves_spent(self, new_value):
             if new_value > 0:
                 self.db.moves["spent"] = new_value
