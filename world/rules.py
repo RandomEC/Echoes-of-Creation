@@ -47,6 +47,49 @@ def constitution_hitpoint_bonus(character):
         return 7
     else:
         return 8 
+    
+    
+def intelligence_mana_bonus(character):
+    """
+    This function returns the amount of bonus mana that a
+    character receives on gaining another set of mana based
+    on intelligence.
+    """
+    int = character.intelligence
+    
+    if int < 16:
+        return 0
+    elif int < 20:
+        return 1
+    elif int < 22:
+        return 2
+    elif int < 24:
+        return 3
+    elif int < 25:
+        return 4
+    else:
+        return 5 
+    
+def wisdom_mana_bonus(character):
+    """
+    This function returns the amount of bonus mana that a
+    character receives on gaining another set of mana based
+    on wisdom.
+    """
+    wis = character.wisdom
+    
+    if wis < 10:
+        return 0
+    elif wis < 22:
+        return 1
+    elif wis < 23:
+        return 2
+    elif wis < 24:
+        return 3
+    elif wis < 25:
+        return 4
+    else:
+        return 5
         
 
 def remove_disintegrate_timer(obj):
