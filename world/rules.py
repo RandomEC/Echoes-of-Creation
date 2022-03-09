@@ -12,7 +12,7 @@ def classes_current(character):
     at higher levels) is. For now just returns default.
     """
     
-    return "default"
+    return ["default"]
 
 def remove_disintegrate_timer(obj):
     """
