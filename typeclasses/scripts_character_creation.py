@@ -255,6 +255,183 @@ class ChooseHalfkoboldScript(Script):
 
         get_input(self.obj, "You chose halfkobold as the race for your character, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
 
+class ChooseHardScript(Script):
+    def at_script_creation(self):
+        self.desc = "Script for choosing hard starting difficulty."
+        self.persistent = True
+        self.type = "at_after_say"
+
+        def make_object(location, equipped, reset_object):
+            # First, search for all objects of that type and pull out
+            # any that are at "None".
+            object_candidates = search.search_object(reset_object)
+
+            for object in object_candidates:
+                if not object.location:
+                    new_object = object
+
+            # If it is not in "None", find the existing object in the world
+            # and copy it.
+            if not new_object:
+
+                object_to_copy = object_candidates[0]
+                new_object = object_to_copy.copy()
+                new_object.key = object_to_copy.key
+                new_object.alias = object_to_copy.aliases
+                if new_object.db.equipped:
+                    new_object.db.equipped = False
+                new_object.home = location
+
+            # Either way, put it where it should be.
+            new_object.location = location
+
+            # Clear any enchantment/poison/other affects.
+            new_object.db.spell_affects = {}
+
+            # Set level, other values, and/or fuzz numbers as necessary
+            new_object.db.level = 1
+            if new_object.db.item_type == "armor":
+                new_object.db.armor = rules.set_armor(new_object.db.level)
+            elif new_object.db.item_type == "weapon":
+                new_object.db.damage_low, new_object.db.damage_high = rules.set_weapon_low_high(new_object.db.level)
+            elif new_object.db.item_type == "scroll":
+                new_object.db.spell_level = rules.fuzz_number(new_object.db.spell_level_base)
+            elif new_object.db.item_type == "wand" or new_object.db.item_type == "staff":
+                new_object.db.spell_level = rules.fuzz_number(new_object.db.spell_level_base)
+                new_object.db.charges_maximum = rules.fuzz_number(new_object.db.charges_maximum_base)
+                new_object.db.charges_current = new_object.db.charges_maximum
+            elif new_object.db.item_type == "potion" or new_object.db.item_type == "pill":
+                new_object.db.spell_level = rules.fuzz_number(rules.fuzz_number(new_object.db.spell_level_base))
+
+            # If it should be equipped, equip it.
+            if equipped:
+                if not new_object.db.equipped:
+                    if new_object.db.item_type == "weapon":
+                        new_object.wield_to(self)
+                    else:
+                        new_object.wear_to(self)
+
+            return new_object
+
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+
+                # Load and equip starting gear for normal level.
+                mace = make_object(caller, True, "o3700")
+                tunic = make_object(caller, True, "o3703")
+                newbie_bag = make_object(caller, False, "o19121")
+                light_ball = make_object(newbie_bag, False, "o21")
+                water_skin = make_object(newbie_bag, False, "o3138")
+                pot_pie = make_object(newbie_bag, False, "o3009")
+                brownie = make_object(newbie_bag, False, "o1117")
+                brownie = make_object(newbie_bag, False, "o1117")
+
+                destination = caller.search("r3700")
+                home = caller.search("r101")
+                caller.home = home
+                caller.move_to(destination, quiet=True)
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the difficulty level you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
+
+            return repeat
+
+        get_input(self.obj, "You chose hard difficulty, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
+
+class ChooseHardestScript(Script):
+    def at_script_creation(self):
+        self.desc = "Script for choosing hardest starting difficulty."
+        self.persistent = True
+        self.type = "at_after_say"
+
+        def make_object(location, equipped, reset_object):
+            # First, search for all objects of that type and pull out
+            # any that are at "None".
+            object_candidates = search.search_object(reset_object)
+
+            for object in object_candidates:
+                if not object.location:
+                    new_object = object
+
+            # If it is not in "None", find the existing object in the world
+            # and copy it.
+            if not new_object:
+
+                object_to_copy = object_candidates[0]
+                new_object = object_to_copy.copy()
+                new_object.key = object_to_copy.key
+                new_object.alias = object_to_copy.aliases
+                if new_object.db.equipped:
+                    new_object.db.equipped = False
+                new_object.home = location
+
+            # Either way, put it where it should be.
+            new_object.location = location
+
+            # Clear any enchantment/poison/other affects.
+            new_object.db.spell_affects = {}
+
+            # Set level, other values, and/or fuzz numbers as necessary
+            new_object.db.level = 1
+            if new_object.db.item_type == "armor":
+                new_object.db.armor = rules.set_armor(new_object.db.level)
+            elif new_object.db.item_type == "weapon":
+                new_object.db.damage_low, new_object.db.damage_high = rules.set_weapon_low_high(new_object.db.level)
+            elif new_object.db.item_type == "scroll":
+                new_object.db.spell_level = rules.fuzz_number(new_object.db.spell_level_base)
+            elif new_object.db.item_type == "wand" or new_object.db.item_type == "staff":
+                new_object.db.spell_level = rules.fuzz_number(new_object.db.spell_level_base)
+                new_object.db.charges_maximum = rules.fuzz_number(new_object.db.charges_maximum_base)
+                new_object.db.charges_current = new_object.db.charges_maximum
+            elif new_object.db.item_type == "potion" or new_object.db.item_type == "pill":
+                new_object.db.spell_level = rules.fuzz_number(rules.fuzz_number(new_object.db.spell_level_base))
+
+            # If it should be equipped, equip it.
+            if equipped:
+                if not new_object.db.equipped:
+                    if new_object.db.item_type == "weapon":
+                        new_object.wield_to(self)
+                    else:
+                        new_object.wear_to(self)
+
+            return new_object
+
+        def confirmation_check(caller, prompt, user_input):
+            """
+            This is a function to confirm a choice that you made
+            in the character creation process.
+            """
+            if user_input.lower() == "yes":
+
+                # Load and equip starting gear for normal level.
+                light_ball = make_object(caller, True, "o21")
+                water_skin = make_object(newbie_bag, False, "o3138")
+                
+                destination = caller.search("r3700")
+                home = caller.search("r101")
+                caller.home = home
+                caller.move_to(destination, quiet=True)
+                repeat = False
+            elif user_input.lower() == "no":
+                caller.msg("Please say the difficulty level you choose. You may enter look to see the description again.")
+                repeat = False
+            else:
+                caller.msg("Please answer yes or no.")
+                repeat = True
+
+            return repeat
+
+        get_input(self.obj, "You chose the hardest difficulty, %s. Is that correct? yes/(no):" % self.obj.key, confirmation_check)
+
+        
 class ChooseHobbitScript(Script):
     def at_script_creation(self):
         self.desc = "Script for choosing hobbit as your player race."
@@ -451,6 +628,7 @@ class ChooseNormalScript(Script):
                     else:
                         new_object.wear_to(self)
 
+            return new_object
 
         def confirmation_check(caller, prompt, user_input):
             """
@@ -459,19 +637,26 @@ class ChooseNormalScript(Script):
             """
             if user_input.lower() == "yes":
 
+                # Load and equip starting gear for normal level.
+                sword = make_object(caller, True, "o3702")
+                tunic = make_object(caller, True, "o3703")
+                shield = make_object(caller, True, "o3704")
+                newbie_bag = make_object(caller, False, "o19121")
+                war_banner = make_object(newbie_bag, False, "o3712")
+                light_ball = make_object(newbie_bag, False, "o21")
+                water_skin = make_object(newbie_bag, False, "o3138")
+                ice_ring = make_object(newbie_bag, False, "o6601")
+                pot_pie = make_object(newbie_bag, False, "o3009")
+                brownie = make_object(newbie_bag, False, "o1117")
+                brownie = make_object(newbie_bag, False, "o1117")
 
-
-
-
-
-
-
-                destination = caller.search("cc1")
-                caller.home = destination
+                destination = caller.search("r3700")
+                home = caller.search("r101")
+                caller.home = home
                 caller.move_to(destination, quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
-                caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
+                caller.msg("Please say the difficulty level you choose. You may enter look to see the description again.")
                 repeat = False
             else:
                 caller.msg("Please answer yes or no.")
