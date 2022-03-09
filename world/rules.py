@@ -4,6 +4,16 @@ from server.conf import settings
 from world import rules_race
 from evennia import TICKER_HANDLER as tickerhandler
 
+def classes_current(character):
+    """
+    This function will eventually evaluate all the skills that
+    a character has learned and compare them to the character's
+    level to determine what their most-used class (or classes,
+    at higher levels) is. For now just returns default.
+    """
+    
+    return "default"
+
 def remove_disintegrate_timer(obj):
     """
     This function removes the timer that comes from dropping an
