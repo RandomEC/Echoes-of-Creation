@@ -3,9 +3,80 @@ This file handles character growth, through levels, counting
 categories, attributes, skills and similar.
 """
 
+import random
 from commands.command import MuxCommand
 from world import rules
 
+def hitpoint_gain_minimum(character):
+    classes = rules.classes_current(character)
+    
+    if "default" in classes and len(classes) == 1:
+        return 9
+    elif "ranger" in classes:
+        return 13
+    elif "warrior" in classes or "paladin" in classes:
+        return 11
+    elif "bard" in classses:
+        return 9
+    elif "thief" in classes or "druid" in classes:
+        return 8
+    else:
+        return 7
+    
+def hitpoint_gain_maximum(character):
+    classes = rules.classes_current(character)
+    
+    if "default" in classes and len(classes) == 1:
+        return 13
+    elif "ranger" in classes:
+        return 19
+    elif "paladin" in classes:
+        return 18
+    elif "warrior" in classes":
+        return 17
+    elif "bard" in classses or "thief" in classes:
+        return 13
+    elif "druid" in classes:
+        return 11
+    elif "cleric" in classes or "psionist" in classes:
+        return 10
+    else:
+        return 9
+
+def mana_gain_minimum(character):
+    classes = rules.classes_current(character)
+    
+    if "default" in classes and len(classes) == 1:
+        return 8
+    elif "psionist" in classes:
+        return 13
+    elif "mage" in classes:
+        return 11
+    elif "cleric" in classses:
+        return 9
+    elif "bard" in classes or "druid" in classes:
+        return 8
+    else:
+        return 7
+    
+def mana_gain_maximum(character):
+    classes = rules.classes_current(character)
+    
+    if "default" in classes and len(classes) == 1:
+        return 12
+    elif "psionist" in classes:
+        return 19
+    elif "mage" in classes":
+        return 17
+    elif "cleric" in classses or "druid" in classes:
+        return 13
+    elif "bard" in classes:
+        return 11
+    elif "thief" in classes or "ranger" in classes or "paladin" in classes:
+        return 10
+    else:
+        return 9
+    
 class CmdTrain(MuxCommand):
     """
     drop something
@@ -72,3 +143,37 @@ class CmdTrain(MuxCommand):
                 caller.msg("Congratulations! You have reached level %d!!!!" % caller.db.level)
             else:
                 caller.msg("You are %d experience short of level %d." % (needed_to_level, (caller.db.level + 1)))
+        
+        elif self.args == "hitpoints":
+            
+            needed_for_hitpoints = rules.hitpoints_cost(caller) - caller.experience_available
+            
+            if needed_for_hitpoints <= 0:
+                caller.db.experience_spent += rules.hitpoints_cost(caller)
+                caller.db.hitpoints["trains spent"] += 1
+                new_hitpoints_maximum = (caller.hitpoints_maximum + 
+                                         random.randint(hitpoint_gain_minimum(caller), hitpoint_gain_maximum(caller)) + 
+                                         constitution_hitpoint_bonus(caller)
+                                         )
+                
+                caller.hitpoints_maximum = new_hitpoints_maximum
+            else:
+                caller.msg("You are %d experience short of being able to gain more hitpoints." % needed_for_hitpoints)
+        
+        elif self.args == "mana":
+            
+            needed_for_mana = rules.mana_cost(caller) - caller.experience_available
+            
+            if needed_for_mana <= 0:
+                caller.db.experience_spent += rules.mana_cost(caller)
+                caller.db.mana["trains spent"] += 1
+                new_mana_maximum = (caller.mana_maximum + 
+                                    random.randint(mana_gain_minimum(caller), mana_gain_maximum(caller)) + 
+                                    intelligence_mana_bonus(caller) + 
+                                    wisdom_mana_bonus(caller)
+                                    )
+                
+                caller.mana_maximum = new_mana_maximum
+            else:
+                caller.msg("You are %d experience short of being able to gain more mana." % needed_for_mana)
+        
