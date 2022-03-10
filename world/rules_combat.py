@@ -148,6 +148,11 @@ def do_damage(attacker, victim, eq_slot):
                 dam_bonus -= eq.db.stat_modifiers["damroll"]
 
             damage += dam_bonus
+            
+            # Check if player has enhanced damage.
+            if "enhanced damage" in attacker.db.skills:
+                damage += int(damage * attacker.db.skills["enhanced damage"] / 150)
+                # add in learn possibility
 
         else:
             damage = random.randint(1, 2) * attacker.size
