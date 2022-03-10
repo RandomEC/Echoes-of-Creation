@@ -138,16 +138,16 @@ class Character(DefaultCharacter):
             self.db.hitpoints["maximum"] = new_value
 
     @property
-        def hitpoints_damaged(self):
-            return self.db.hitpoints["damaged"]
+    def hitpoints_damaged(self):
+        return self.db.hitpoints["damaged"]
     
     @hitpoints_damaged.setter
-        def hitpoints_damaged(self, new_value):
-            if new_value > 0:
-                self.db.hitpoints["damaged"] = new_value
-            else:
-                self.msg("There was a problem setting your new damage, as having negative damage is impossible.")
-            
+    def hitpoints_damaged(self, new_value):
+        if new_value > 0:
+            self.db.hitpoints["damaged"] = new_value
+        else:
+            self.msg("There was a problem setting your new damage, as having negative damage is impossible.")
+
     @property
     def mana_maximum(self):
         modifier = 0
@@ -172,15 +172,15 @@ class Character(DefaultCharacter):
             self.db.mana["maximum"] = new_value
 
     @property
-        def mana_spent(self):
-            return self.db.mana["spent"]
-    
+    def mana_spent(self):
+        return self.db.mana["spent"]
+
     @mana_spent.setter
-        def mana_spent(self, new_value):
-            if new_value > 0:
-                self.db.mana["spent"] = new_value
-            else:
-                self.msg("There was a problem setting your new spent mana, as having negative spent mana is impossible.")
+    def mana_spent(self, new_value):
+        if new_value > 0:
+            self.db.mana["spent"] = new_value
+        else:
+            self.msg("There was a problem setting your new spent mana, as having negative spent mana is impossible.")
             
     @property
     def moves_maximum(self):
@@ -203,15 +203,15 @@ class Character(DefaultCharacter):
             self.db.moves["maximum"] = new_value
  
     @property
-        def moves_spent(self):
-            return self.db.moves["spent"]
+    def moves_spent(self):
+        return self.db.moves["spent"]
     
     @moves_spent.setter
-        def moves_spent(self, new_value):
-            if new_value > 0:
-                self.db.moves["spent"] = new_value
-            else:
-                self.msg("There was a problem setting your new spent moves, as having negative spent moves is impossible.")
+    def moves_spent(self, new_value):
+        if new_value > 0:
+            self.db.moves["spent"] = new_value
+        else:
+            self.msg("There was a problem setting your new spent moves, as having negative spent moves is impossible.")
             
 
     @property

@@ -32,7 +32,7 @@ def hitpoint_gain_maximum(character):
         return 19
     elif "paladin" in classes:
         return 18
-    elif "warrior" in classes":
+    elif "warrior" in classes:
         return 17
     elif "bard" in classses or "thief" in classes:
         return 13
@@ -66,9 +66,9 @@ def mana_gain_maximum(character):
         return 12
     elif "psionist" in classes:
         return 19
-    elif "mage" in classes":
+    elif "mage" in classes:
         return 17
-    elif "cleric" in classses or "druid" in classes:
+    elif "cleric" in classes or "druid" in classes:
         return 13
     elif "bard" in classes:
         return 11
