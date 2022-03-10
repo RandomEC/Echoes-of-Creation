@@ -8,9 +8,9 @@ from world import rules
 def check_skill_improve(character, skill_name, success):
     if "mobile" in character.tags.all():
         return False
-    elif skillname not in character.db.skills:
+    elif skill_name not in character.db.skills:
         return False
-    elif character.db.skills[skillname] >= 96:
+    elif character.db.skills[skill_name] >= 96:
         return False
     # Should also check for whether high enough level to learn.
     else:
@@ -48,8 +48,8 @@ def get_skill(skill_name):
     skills = {
         "enhanced damage": {
             "classes" : {
-                "warrior": 3
-                "ranger": 13
+                "warrior": 3,
+                "ranger": 13,
                 "paladin": 11
                 }
             }
