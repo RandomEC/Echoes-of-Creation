@@ -151,12 +151,11 @@ class CmdTrain(MuxCommand):
             if needed_for_hitpoints <= 0:
                 caller.db.experience_spent += rules.hitpoints_cost(caller)
                 caller.db.hitpoints["trains spent"] += 1
-                new_hitpoints_maximum = (caller.hitpoints_maximum + 
-                                         random.randint(hitpoint_gain_minimum(caller), hitpoint_gain_maximum(caller)) + 
-                                         constitution_hitpoint_bonus(caller)
-                                         )
+                hit_gain = random.randint(hitpoint_gain_minimum(caller), hitpoint_gain_maximum(caller)) + constitution_hitpoint_bonus(caller)
+                new_hitpoints_maximum = caller.hitpoints_maximum + hit_gain
                 
                 caller.hitpoints_maximum = new_hitpoints_maximum
+                caller.msg("Congratulations! Your maximum hitpoints have increased by %d to %d!" % (hit_gain, caller.hitpoints_maximum))
             else:
                 caller.msg("You are %d experience short of being able to gain more hitpoints." % needed_for_hitpoints)
         
@@ -167,13 +166,32 @@ class CmdTrain(MuxCommand):
             if needed_for_mana <= 0:
                 caller.db.experience_spent += rules.mana_cost(caller)
                 caller.db.mana["trains spent"] += 1
-                new_mana_maximum = (caller.mana_maximum + 
-                                    random.randint(mana_gain_minimum(caller), mana_gain_maximum(caller)) + 
-                                    intelligence_mana_bonus(caller) + 
-                                    wisdom_mana_bonus(caller)
-                                    )
+                mana_gain = (random.randint(mana_gain_minimum(caller), mana_gain_maximum(caller)) + 
+                             intelligence_mana_bonus(caller) + 
+                             wisdom_mana_bonus(caller)
+                             )
+                new_mana_maximum = caller.mana_maximum + mana_gain
                 
                 caller.mana_maximum = new_mana_maximum
+                caller.msg("Congratulations! Your maximum mana has increased by %d to %d!" % (mana_gain, caller.mana_maximum))
             else:
                 caller.msg("You are %d experience short of being able to gain more mana." % needed_for_mana)
-        
+       
+        elif self.args == "moves":
+            
+            needed_for_moves = rules.moves_cost(caller) - caller.experience_available
+            
+            if needed_for_moves <= 0:
+                caller.db.experience_spent += rules.moves_cost(caller)
+                caller.db.moves["trains spent"] += 1
+                moves_gain_maximum = int((caller.dexterity + caller.constitution)/4)
+                if moves_gain_maximum < 5:
+                    moves_gain_maximum = 5
+                moves_gain = random.randint(5, moves_gain_maximum)
+                
+                new_moves_maximum = caller.moves_maximum + moves_gain
+                
+                caller.moves_maximum = new_moves_maximum
+                caller.msg("Congratulations! Your maximum moves have increased by %d to %d!" % (moves_gain, caller.moves_maximum))
+            else:
+                caller.msg("You are %d experience short of being able to gain more moves." % needed_for_moves)        
