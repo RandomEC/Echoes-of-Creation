@@ -3,7 +3,7 @@ import random
 import evennia
 from evennia import create_object
 from evennia import TICKER_HANDLER as tickerhandler
-from world import rules_race, rules
+from world import rules_race, rules, rules_skills
 from server.conf import settings
 
 
@@ -152,7 +152,7 @@ def do_damage(attacker, victim, eq_slot):
             # Check if player has enhanced damage.
             if "enhanced damage" in attacker.db.skills:
                 damage += int(damage * attacker.db.skills["enhanced damage"] / 150)
-                # add in learn possibility
+                rules_skills.check_skill_improve(attacker, "enhanced damage", True)
 
         else:
             damage = random.randint(1, 2) * attacker.size
