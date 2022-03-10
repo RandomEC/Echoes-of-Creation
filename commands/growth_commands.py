@@ -195,3 +195,20 @@ class CmdTrain(MuxCommand):
                 caller.msg("Congratulations! Your maximum moves have increased by %d to %d!" % (moves_gain, caller.moves_maximum))
             else:
                 caller.msg("You are %d experience short of being able to gain more moves." % needed_for_moves)        
+
+        elif self.args == "strength" or self.args == "dexterity" or self.args == "intelligence" or self.args == "wisdom" or self.args == "constitution":
+            
+            attribute = self.args
+            needed_for_attribute = rules.attributes_cost(caller) - caller.experience_available
+            
+            if caller.db.attribute_trains[attribute] > 4:
+                caller.msg("You cannot train %s any further. Any additional gains must come from equipment or spells." % attribute)
+                return
+            elif needed_for_attribute <= 0:
+                caller.db.experience_spent += rules.attributes_cost(caller)
+                caller.db.attribute_trains[attribute] += 1
+                caller.msg("Congratulations! Your base %s has increased by one to %d!" % (attribute, caller.get_base_attribute[attribute]))
+            else:
+                caller.msg("You are %d experience short of being able to increase an attribute." % needed_for_moves)
+        else:
+            caller.msg("%s is not a trainable statistic. Choose from level, hitpoints, mana, moves or any attribute." % (self.args[0].upper() + self.args[1:]))
