@@ -68,7 +68,67 @@ def intelligence_mana_bonus(character):
     elif int < 25:
         return 4
     else:
-        return 5 
+        return 5
+
+def intelligence_learn_rating(character):
+    """
+    This function returns the learn rating of a character
+    based on their intelligence.
+    """
+    int = character.intelligence
+    
+    if int == 0:
+        return 3
+    elif int == 1:
+        return 5
+    elif int == 2:
+        return 7
+    elif int == 3:
+        return 8
+    elif int == 4:
+        return 9
+    elif int == 5:
+        return 10
+    elif int == 6:
+        return 11
+    elif int == 7:
+        return 12
+    elif int == 8:
+        return 13
+    elif int == 9:
+        return 15
+    elif int == 10:
+        return 17
+    elif int == 11:
+        return 19
+    elif int == 12:
+        return 22
+    elif int == 13:
+        return 25
+    elif int == 14:
+        return 28
+    elif int == 15:
+        return 31
+    elif int == 16:
+        return 34
+    elif int == 17:
+        return 37
+    elif int == 18:
+        return 40
+    elif int == 19:
+        return 44
+    elif int == 20:
+        return 49
+    elif int == 21:
+        return 55
+    elif int == 22:
+        return 60
+    elif int == 23:
+        return 70
+    elif int == 24:
+        return 85
+    else:
+        return 90
     
 def wisdom_mana_bonus(character):
     """
