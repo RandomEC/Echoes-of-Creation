@@ -7,7 +7,9 @@ is setup to be the "default" character type created by the default
 creation commands.
 
 """
+import random
 from evennia import DefaultCharacter
+from evennia import create_script
 from evennia.utils import search
 from world import rules_race
 from world import rules
@@ -40,19 +42,6 @@ class Character(DefaultCharacter):
         that get modified further by race and the rest of it.
         """
 
-        # set persistent attributes
-        self.db.attributes = {
-            "strength":13,
-            "intelligence":13,
-            "wisdom":13,
-            "dexterity":13,
-            "constitution":13,
-            "hitroll":0,
-            "damroll":0,
-            "armor class":100,
-            "saving throw":0
-            }
-
         # set hitpoints dictionary
         self.db.hitpoints = {
             "maximum":20,
@@ -74,6 +63,19 @@ class Character(DefaultCharacter):
             "trains spent":0
             }
 
+        # set persistent attributes
+        self.db.attributes = {
+            "strength":13,
+            "intelligence":13,
+            "wisdom":13,
+            "dexterity":13,
+            "constitution":13,
+            "hitroll":0,
+            "damroll":0,
+            "armor class":100,
+            "saving throw":0
+            }
+
         # set other stats
         self.db.sex = ""
         self.db.alignment = 0
@@ -81,7 +83,7 @@ class Character(DefaultCharacter):
         self.db.character_type = ""
 
         # set race-based stats
-        self.db.race = ""
+        self.db.race = "default"
 
         # set spell_affects dictionary
         self.db.spell_affects = {}
@@ -116,30 +118,70 @@ class Character(DefaultCharacter):
     def hitpoints_maximum(self):
         modifier = 0
         
+        # Modification for equipment.
         for wear_location in self.db.eq_slots:
             equipment = self.db.eq_slots[wear_location]
             if equipment:
                 modifier = modifier + equipment.db.stat_modifiers["hitpoints"]
         return modifier + self.db.hitpoints["maximum"]
+    
+        # Modification for affects, to be determined.
 
     @hitpoints_maximum.setter
-    def hitpoints_maximum(self, value):
-        self.db.hitpoints["maximum"] = self.db.hitpoints["maximum"] + value
+    def hitpoints_maximum(self, new_value):
+        if "player" in self.tags.all():
+            if new_value >= (self.hitpoints_maximum + 3) and new_value <= (self.hitpoints_maximum + 27):
+                self.db.hitpoints["maximum"] = new_value
+            else:
+                self.msg("There was a problem setting your new hitpoints, as %s is outside the expected range." % (new_value - self.hitpoints_maximum))
+        else:
+            self.db.hitpoints["maximum"] = new_value
 
+    @property
+        def hitpoints_damaged(self):
+            return self.db.hitpoints["damaged"]
+    
+    @hitpoints_damaged.setter
+        def hitpoints_damaged(self, new_value):
+            if new_value > 0:
+                self.db.hitpoints["damaged"] = new_value
+            else:
+                self.msg("There was a problem setting your new damage, as having negative damage is impossible.")
+            
     @property
     def mana_maximum(self):
         modifier = 0
         
+        # Modification for equipment.
         for wear_location in self.db.eq_slots:
             equipment = self.db.eq_slots[wear_location]
             if equipment:
                 modifier = modifier + equipment.db.stat_modifiers["mana"]
         return modifier + self.db.mana["maximum"]
+    
+        # Modification for affects, to be determined.
 
     @mana_maximum.setter
     def mana_maximum(self, value):
-        self.db.mana["maximum"] = self.db.mana["maximum"] + value
+        if "player" in self.tags.all():
+            if new_value >= (self.mana_maximum + 7) and new_value <= (self.mana_maximum + 29):
+                self.db.mana["maximum"] = new_value
+            else:
+                self.msg("There was a problem setting your new mana, as %s is outside the expected range." % (new_value - self.hitpoints_maximum))
+        else:
+            self.db.mana["maximum"] = new_value
 
+    @property
+        def mana_spent(self):
+            return self.db.mana["spent"]
+    
+    @mana_spent.setter
+        def mana_spent(self, new_value):
+            if new_value > 0:
+                self.db.mana["spent"] = new_value
+            else:
+                self.msg("There was a problem setting your new spent mana, as having negative spent mana is impossible.")
+            
     @property
     def moves_maximum(self):
         modifier = 0
@@ -152,19 +194,37 @@ class Character(DefaultCharacter):
 
     @moves_maximum.setter
     def moves_maximum(self, value):
-        self.db.moves["maximum"] = self.db.moves["maximum"] + value
+        if "player" in self.tags.all():
+            if new_value >= (self.moves_maximum + 5) and new_value <= (self.moves_maximum + 13):
+                self.db.moves["maximum"] = new_value
+            else:
+                self.msg("There was a problem setting your new moves, as %s is outside the expected range." % (new_value - self.hitpoints_maximum))
+        else:
+            self.db.moves["maximum"] = new_value
+ 
+    @property
+        def moves_spent(self):
+            return self.db.moves["spent"]
+    
+    @moves_spent.setter
+        def moves_spent(self, new_value):
+            if new_value > 0:
+                self.db.moves["spent"] = new_value
+            else:
+                self.msg("There was a problem setting your new spent moves, as having negative spent moves is impossible.")
+            
 
     @property
     def hitpoints_current(self):
-        return self.hitpoints_maximum - self.db.hitpoints["damaged"]
+        return self.hitpoints_maximum - self.hitpoints_damaged
     
     @property
     def mana_current(self):
-        return self.mana_maximum - self.db.mana["spent"]
+        return self.mana_maximum - self.mana_spent
     
     @property
     def moves_current(self):
-        return self.moves_maximum - self.db.moves["spent"]
+        return self.moves_maximum - self.moves_spent
 
     def get_affect_status(self, affect_name):
         """
@@ -413,6 +473,18 @@ class Character(DefaultCharacter):
         # once we implement spell affects, check for them here on race
         return self.db.race
 
+    @race.setter
+    def race(self, race):
+        self.db.race = race
+
+    @property
+    def sex(self):
+        return self.db.sex
+
+    @sex.setter
+    def sex(self, sex):
+        self.db.sex = sex
+
     def take_damage(self, damage):
         """
         Method to use to do damage to a character.
@@ -520,7 +592,18 @@ class Character(DefaultCharacter):
         # Add movement cost function here, after check for all the reasons why you couldn't move.
         
         return True
-                    
+
+    def at_after_say(self, speaker, message):
+        """
+        This is a hook for starting mobile scripts that trigger on
+        say.
+        """
+
+        if self.db.scripts:
+            if message in self.db.say_scripts:
+                create_script(self.db.say_scripts[message], key=message, obj=speaker)
+                speaker.scripts.delete(message)
+
 class Mobile(Character):
     """
     The Mobile class is intended to be used for the npcs on the MUD, and inherits from the
@@ -561,6 +644,13 @@ class Mobile(Character):
 
             # Fuzz up the mobile's level.
             self.db.level = rules.fuzz_number(self.db.level_base)
+            level = self.db.level
+            
+            # Set hitpoint maximum based on level.
+            self.hitpoints_maximum = level*8 + random.randint(
+                                                     int(level/4),
+                                                     (level*level)
+                                                     )
 
             # Check to see if there are objects that should be reset to it. This
             # dictionary takes the form of
@@ -633,10 +723,11 @@ class Mobile(Character):
                     # If it should be equipped, equip it.
                     if self.db.reset_objects[reset_object]["location"] == "equipped":
                         if not new_object.db.equipped:
-                            if new_object.db.item_type == "armor" or new_object.db.item_type == "light":
-                                new_object.wear_to(self)
-                            else:
+                            if new_object.db.item_type == "weapon":
                                 new_object.wield_to(self)
+                            else:
+                                new_object.wear_to(self)
+                                
 
             self.db.experience_total = rules.calculate_experience(self)
             self.db.experience_current = self.db.experience_total
@@ -718,7 +809,8 @@ class Player(Character):
         self.db.experience_spent = 0
         self.db.experience_spent_practices = 0
         self.db.level = 1
-
+        self.db.skills = {}
+        
         # set monetary stats
         self.db.gold = 0
         self.db.bank_balance = 0

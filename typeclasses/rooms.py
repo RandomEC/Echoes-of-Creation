@@ -8,9 +8,10 @@ Rooms are simple containers that has no location of their own.
 from collections import defaultdict
 
 from evennia import DefaultRoom
+from evennia import create_script
 from evennia.utils import search
-from world import rules
 from evennia.utils.utils import list_to_string
+from world import rules
 
 class Room(DefaultRoom):
     """
@@ -143,6 +144,18 @@ class Room(DefaultRoom):
                             new_object.db.spell_level_base))
 
         self.msg_contents("The mobs come scrambling back!")
+
+    def at_after_say(self, speaker, message):
+        """
+        This is a hook for starting room scripts that trigger on
+        say.
+        """
+
+        if self.db.say_scripts:
+            if message in self.db.say_scripts:
+                create_script(self.db.say_scripts[message], key=message, obj=speaker)
+                speaker.scripts.delete(message)
+
 
     def return_appearance(self, looker, **kwargs):
         """

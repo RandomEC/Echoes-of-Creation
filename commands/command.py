@@ -12,14 +12,7 @@ from evennia.commands.default.building import ObjManipCommand
 from evennia.utils import utils
 from evennia import TICKER_HANDLER as tickerhandler
 from server.conf import settings
-
-# Below is here for CmdCharCreate
-import time
-from codecs import lookup as codecs_lookup
-from django.conf import settings
-from evennia.server.sessionhandler import SESSIONS
-from evennia.utils import utils, create, logger, search
-_MAX_NR_CHARACTERS = settings.MAX_NR_CHARACTERS
+from world import rules
 
 # from evennia import default_cmds
 
@@ -346,187 +339,6 @@ class CmdScore(MuxCommand):
         self.caller.msg(score)
 
 
-class CmdCharCreate(MuxCommand):
-    """
-    create a new character
-
-    Usage:
-      charcreate <charname> [= desc]
-
-    Create a new character, optionally giving it a description. You
-    may use upper-case letters in the name - you will nevertheless
-    always be able to access your character using lower-case letters
-    if you want.
-    """
-
-    key = "charcreate"
-    locks = "cmd:pperm(Player)"
-    help_category = "General"
-
-    # this is used by the parent
-    account_caller = True
-
-    def func(self):
-        """create the new character"""
-        account = self.account
-        if not self.args:
-            self.msg("Usage: charcreate <charname> [= description]")
-            return
-        key = self.lhs
-        desc = self.rhs
-
-        race = yield("""=====================================================\
-===========
-                                     Infra- Detect
-  ##  Race       Str Dex Int Wis Con vision Hidden Size Hated By
-================================================================
-   1  Human                            No     No     3   4 races
-   2  Elf             +1  +1      -1  Yes    Yes     2  11 races
-   3  Eldar               +1  +1  -1  Yes    Yes     2  11 races
-   4  Halfelf         +1              Yes     No     3  10 races
-   5  Drow            +1      +1      Yes    Yes     2   6 races
-   6  Dwarf           -1          +1  Yes    Yes     2  12 races
-   7  Halfdwarf                   +1  Yes     No     2  12 races
-   8  Hobbit          +1          -1  Yes     No     2  12 races
-   9  Ogre        +1  -1  -1      +1   No     No     5   8 races
-  10  Orc         +1      -1      +1  Yes     No     4   8 races
-  11  Lizardman   +1  +1  -1  -1  +1   No     No     3   0 races
-  12  Gnome       -1  +1      +1  -1  Yes     No     2  10 races
-  13  Halfkobold  -2  +3  -1  -2  -2  Yes     No     2   5 races
-================================================================
-
-Please select a race for your character by selecting the number corresponding
-to your chosen race and hitting [Enter] (e.g. 7). Please note anything other
-than an input of a number 1 through 13 will result in a selection of the
-unenviable halfkobold race.\n\n""")
-
-        if race.isdigit():
-            race = int(race)
-            if(race == 1):
-                race = "human"
-            elif(race == 2):
-                race = "elf"
-            elif(race == 3):
-                race = "eldar"
-            elif(race == 4):
-                race = "halfelf"
-            elif(race == 5):
-                race = "drow"
-            elif(race == 6):
-                race = "dwarf"
-            elif(race == 7):
-                race = "halfdwarf"
-            elif(race == 8):
-                race = "hobbit"
-            elif(race == 9):
-                race = "ogre"
-            elif(race == 10):
-                race = "orc"
-            elif(race == 11):
-                race = "lizardman"
-            elif(race == 12):
-                race = "gnome"
-            elif(race == 13):
-                race = "halfkobold"
-            else:
-                self.msg("I warned you. You all heard me warn him. Enjoy your "
-                         "halfkobold.\n\n")
-                race = "halfkobold"
-        else:
-            self.msg("I warned you. You all heard me warn him. Enjoy your "
-                     "halfkobold.\n\n")
-            race = "halfkobold"
-
-        self.msg("You have selected the race of %s for your character.\n\n"
-                 % race)
-
-        sex = yield("""Please select a sex for your character by selecting the number corresponding
-to your chosen sex and hitting [Enter]: 0 Neuter, 1 Male, 2 Female. Default is
-neuter, if you decide to try to be cute again here.\n\n""")
-
-        if sex.isdigit():
-            sex = int(sex)
-            if(sex == 2):
-                sex = "female"
-            elif(sex == 1):
-                sex = "male"
-            elif(sex == 0):
-                sex = "neuter"
-            else:
-                self.msg("I warned you. Enjoy your neuter. Neutrality? "
-                         "Something.\n\n")
-                sex = "neuter"
-        else:
-            self.msg("I warned you. Enjoy your neuter. Neutrality? "
-                     "Something.\n\n")
-            sex = "neuter"
-
-        self.msg("You have selected the sex of %s for your character.\n\n"
-                 % sex)
-
-        charmax = _MAX_NR_CHARACTERS
-
-        if not account.is_superuser and (
-                                         account.db._playable_characters and
-                                         len(account.db._playable_characters) >=
-                                         charmax
-                                         ):
-            plural = "" if charmax == 1 else "s"
-            self.msg("You may only create a maximum of %s character%s."
-                     % (charmax, plural))
-            return
-        from evennia.objects.models import ObjectDB
-
-        typeclass = settings.BASE_CHARACTER_TYPECLASS
-
-        if ObjectDB.objects.filter(
-                                   db_typeclass_path=typeclass,
-                                   db_key__iexact=key
-                                  ):
-            # check if this Character already exists. Note that we are only
-            # searching the base character typeclass here, not any child
-            # classes.
-            self.msg("|rA character named '|w%s|r' already exists.|n" % key)
-            return
-
-        # create the character
-        start_location = ObjectDB.objects.get_id(settings.START_LOCATION)
-        default_home = ObjectDB.objects.get_id(settings.DEFAULT_HOME)
-        permissions = settings.PERMISSION_ACCOUNT_DEFAULT
-        new_character = create.create_object(
-                                             typeclass,
-                                             key=key,
-                                             location=start_location,
-                                             home=default_home,
-                                             permissions=permissions
-                                            )
-
-        # set up new character based on inputs
-        new_character.db.race = race
-        new_character.db.sex = sex
-
-        # only allow creator (and developers) to puppet this char
-        new_character.locks.add(
-            "puppet:id(%i) or pid(%i) or perm(Developer) or pperm(Developer);"
-            "delete:id(%i) or perm(Admin)"
-            % (new_character.id, account.id, account.id)
-        )
-        account.db._playable_characters.append(new_character)
-        if desc:
-            new_character.db.desc = desc
-        elif not new_character.db.desc:
-            new_character.db.desc = "This is a character."
-        self.msg(
-            "Created new character %s. Use |wic %s|n to enter the game as this"
-            "character."
-            % (new_character.key, new_character.key)
-        )
-        logger.log_sec(
-            "Character Created: %s (Caller: %s, IP: %s)."
-            % (new_character, account, self.session.address)
-        )
-
-
 class CmdInventory(MuxCommand):
     """
     view inventory
@@ -644,7 +456,7 @@ class CmdDrop(MuxCommand):
             caller.msg("This couldn't be dropped.")
         else:
             if caller.db.level < 103:
-                tickerhandler.add(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
+                rules.set_disintegrate.timer(obj)
             caller.msg("You drop %s." % (obj.name,))
             caller.location.msg_contents("%s drops %s."
                                          % (caller.name, obj.name),
@@ -981,7 +793,7 @@ class CmdPut(MuxCommand):
     """
     Put something in a container.
     Usage:
-      put <inventory obj> <=> <target>
+      put <inventory obj> in <target>
     Puts an item from your inventory in a container,
     placing it in its inventory.
     """
@@ -996,7 +808,7 @@ class CmdPut(MuxCommand):
 
         caller = self.caller
         if not self.args or not self.rhs:
-            caller.msg("Usage: put <inventory object> = <target>")
+            caller.msg("Usage: put <inventory object> in <target>")
             return
         to_put = caller.search(
             self.lhs,
@@ -1302,10 +1114,13 @@ class CmdTalk(MuxCommand):
             multimatch_string="There is more than one %s here:" % self.args,
         )
 
+        if not to_talk:
+            return
+
         if to_talk == caller:
             caller.msg("You mutter away to yourself quietly.")
             return
-        if not to_talk.is_typeclass("typeclasses.characters.Mobile"):
+        if "mobile" not in to_talk.tags.all():
             caller.msg("Try talking to a mobile.")
             return
         else:
@@ -1331,8 +1146,7 @@ class CmdInspect(MuxCommand):
     """
 
     key = "inspect"
-    alias = "read"
-    rhs_split = ("=")
+    aliases = ["read"]
     locks = "cmd:all()"
     arg_regex = r"\s|$"
 
@@ -1355,7 +1169,7 @@ class CmdInspect(MuxCommand):
             caller.msg("You see nothing special about the %s." % self.args)
             return
         else:
-            object = caller.search(self.lhs, location=(caller or caller.location))
+            object = caller.search(self.lhs, location=(caller, caller.location))
             aspect = self.rhs
 
             if not object:
@@ -1363,7 +1177,7 @@ class CmdInspect(MuxCommand):
             else:
                 for extra_keywords_string in object.db.extra_descriptions:
                     extra_keywords_list = extra_keywords_string.split()
-                    if self.rhs in extra_keywords_list:
+                    if aspect in extra_keywords_list:
                         caller.msg("You closely inspect the %s on the %s:\n%s" % (self.rhs, self.lhs, object.db.extra_descriptions[extra_keywords_string]))
                         return
                 caller.msg("You see nothing special about the %s on the %s." % (self.rhs, self.lhs))
@@ -1399,82 +1213,124 @@ class CmdGet(MuxCommand):
             if not self.lhs:
                 caller.msg("Get what from %s?" % self.rhs)
                 return
+
             container = caller.search(self.rhs, location=[caller, caller.location])
             
             if not container:
                 caller.msg("There is no %s here to get items from." % self.rhs)
                 return
-            if container.db.item_type != "container":
+            elif container.db.item_type != "container":
                 caller.msg("%s is not a container." % (container.key[0].upper() + container.key[1:]))
                 return
-            
-            if not container.access(caller, "put"):
+            elif not container.access(caller, "put"):
                 if "open" not in container.db.state:
                     caller.msg("You can neither see in nor access %s while it is closed."
                                % container.key
                                )
                 return
-            
-            obj = caller.search(self.lhs, location=container)
-            if not obj:
-                caller.msg("There is no %s in the %s." % (self.lhs, container.key))
-                return
 
-            if not obj.access(caller, "get"):
-                if obj.db.get_err_msg:
-                    caller.msg(obj.db.get_err_msg)
-                else:
-                    caller.msg("You can't get that.")
-                return
 
-            # calling at_before_get hook method
-            if not obj.at_before_get(caller):
-                return
+            get_list = []
 
-            success = obj.move_to(caller, quiet=True)
-            if not success:
-                caller.msg("%s can't be picked up." % (obj.key[0].upper() + obj.key[1:]))
+            if self.lhs == "all":
+                for object in container.contents:
+                    if "object" in object.tags.all():
+                        get_list.append(object)
+                if not get_list:
+                    caller.msg("There is nothing in %s to get." % container.key)
+                    return
             else:
-                if "pc corpse" in obj.tags.all():
-                    tickerhandler.remove(settings.PC_CORPSE_DISINTEGRATE_TIME, obj.at_disintegrate)
+                get_list = []
+                object = caller.search(self.lhs, location=container)
+                get_list.append(object)
+                if not object:
+                    caller.msg("There is no %s in %s to get." % (self.lhs, container.key))
+                    return
+
+            for obj in get_list:
+
+                get_output = ""
+                get_output_room = ""
+
+                if caller == obj:
+                    get_output += "You can't get yourself.\n"
+                elif not obj.access(caller, "get"):
+                    if obj.db.get_err_msg:
+                        get_output += "%s\n" % obj.db.get_err_msg
+                    else:
+                        get_output += "You can't get %s.\n" % obj.key
+
+                # calling at_before_get hook method
+                elif not obj.at_before_get(caller):
+                    pass
+
                 else:
-                    tickerhandler.remove(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
-                caller.msg("You get %s from %s." % (obj.name, container.key))
+                    success = obj.move_to(caller, quiet=True)
+                    if not success:
+                        get_output += "%s can't be picked up.\n" % (obj.key[0].upper() + obj.key[1:])
+                    else:
+                        rules.remove_disintegrate_timer(obj)
+                        get_output += "You take %s from %s.\n" % (obj.name, container.key)
+                        get_output_room = "%s takes %s from %s.\n" % (caller.name, obj.name, container.key)
+                        # calling at_get hook method
+                        obj.at_get(caller)
+
+                caller.msg(get_output)
                 caller.location.msg_contents(
-                    "%s gets %s from %s." % (caller.name, obj.name, container.key), exclude=caller
-                )
-                # calling at_get hook method
-                obj.at_get(caller)
+                            get_output_room, exclude=caller
+                        )
         
         # If just a regular get command.
         else:
-            obj = caller.search(self.args, location=caller.location)
-            if not obj:
-                return
-            if caller == obj:
-                caller.msg("You can't get yourself.")
-                return
-            if not obj.access(caller, "get"):
-                if obj.db.get_err_msg:
-                    caller.msg(obj.db.get_err_msg)
-                else:
-                    caller.msg("You can't get that.")
-                return
+            get_list = []
+            if self.args == "all":
+                for object in caller.location.contents:
+                    if "object" in object.tags.all():
+                        get_list.append(object)
+                if not get_list:
+                    caller.msg("There is nothing here to get.")
+                    return
 
-            # calling at_before_get hook method
-            if not obj.at_before_get(caller):
-                return
-
-            success = obj.move_to(caller, quiet=True)
-            if not success:
-                caller.msg("This can't be picked up.")
             else:
-                caller.msg("You pick up %s." % obj.name)
+                get_list = []
+                object = caller.search(self.args, location=caller.location)
+                get_list.append(object)
+                if not object:
+                    caller.msg("There is no %s here to get." % self.args)
+                    return
+
+            for obj in get_list:
+
+                get_output = ""
+                get_output_room = ""
+
+                if caller == obj:
+                    get_output += "You can't get yourself.\n"
+                elif not obj.access(caller, "get"):
+                    if obj.db.get_err_msg:
+                        get_output += "%s\n" % obj.db.get_err_msg
+                    else:
+                        get_output += "You can't get %s.\n" % obj.key
+
+                # calling at_before_get hook method
+                elif not obj.at_before_get(caller):
+                    pass
+
+                else:
+                    success = obj.move_to(caller, quiet=True)
+                    if not success:
+                        get_output += "%s can't be picked up.\n" % (obj.key[0].upper() + obj.key[1:])
+                    else:
+                        rules.remove_disintegrate_timer(obj)
+                        get_output += "You pick up %s.\n" % obj.name
+                        get_output_room = "%s picks up %s.\n" % (caller.name, obj.name)
+                        # calling at_get hook method
+                        obj.at_get(caller)
+
+                caller.msg(get_output)
                 caller.location.msg_contents(
-                    "%s picks up %s." % (caller.name, obj.name), exclude=caller
-                )
-                # calling at_get hook method
-                obj.at_get(caller)
+                            get_output_room, exclude=caller
+                        )
 
 class CmdSleep(MuxCommand):
     """
@@ -1585,4 +1441,43 @@ class CmdStand(MuxCommand):
         caller.db.position = "standing"
 
 
-        
+class CmdSay(MuxCommand):
+    """
+    speak as your character
+    Usage:
+      say <message>
+    Talk to those in your current location.
+    """
+
+    key = "say"
+    aliases = ['"', "'"]
+    locks = "cmd:all()"
+
+    def func(self):
+        """Run the say command"""
+
+        caller = self.caller
+
+        if not self.args:
+            caller.msg("Say what?")
+            return
+
+        speech = self.args
+
+        # Calling the at_before_say hook on the character
+        speech = caller.at_before_say(speech)
+
+        # If speech is empty, stop here
+        if not speech:
+            return
+
+        # Call the at_after_say hook on the character
+        caller.at_say(speech, msg_self=True)
+
+        # Call the at_after_say hook on the location and its contents.
+        # Primarily for scripts.
+        caller.location.at_after_say(caller, speech)
+        for object in caller.location.contents:
+            if "mobile" in object.tags.all() or "object" in object.tags.all():
+                object.at_after_say(caller, speech)
+

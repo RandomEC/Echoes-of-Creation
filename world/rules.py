@@ -2,6 +2,183 @@ import random
 import math
 from server.conf import settings
 from world import rules_race
+from evennia import TICKER_HANDLER as tickerhandler
+
+def classes_current(character):
+    """
+    This function will eventually evaluate all the skills that
+    a character has learned and compare them to the character's
+    level to determine what their most-used class (or classes,
+    at higher levels) is. For now just returns default.
+    """
+    
+    return ["default"]
+
+def constitution_hitpoint_bonus(character):
+    """
+    This function returns the amount of bonus hitpoints that a
+    character receives on gaining another set of hitpoints.
+    """
+    con = character.constitution
+    
+    if con == 0:
+        return -4
+    elif con == 1:
+        return -3
+    elif con < 4:
+        return -2
+    elif con < 7:
+        return -1
+    elif con < 15:
+        return 0
+    elif con < 16:
+        return 1
+    elif con < 18:
+        return 2
+    elif con < 20:
+        return 3
+    elif con < 22:
+        return 4
+    elif con < 23:
+        return 5
+    elif con < 24:
+        return 6
+    elif con < 25:
+        return 7
+    else:
+        return 8 
+    
+    
+def intelligence_mana_bonus(character):
+    """
+    This function returns the amount of bonus mana that a
+    character receives on gaining another set of mana based
+    on intelligence.
+    """
+    int = character.intelligence
+    
+    if int < 16:
+        return 0
+    elif int < 20:
+        return 1
+    elif int < 22:
+        return 2
+    elif int < 24:
+        return 3
+    elif int < 25:
+        return 4
+    else:
+        return 5
+
+def intelligence_learn_rating(character):
+    """
+    This function returns the learn rating of a character
+    based on their intelligence.
+    """
+    int = character.intelligence
+    
+    if int == 0:
+        return 3
+    elif int == 1:
+        return 5
+    elif int == 2:
+        return 7
+    elif int == 3:
+        return 8
+    elif int == 4:
+        return 9
+    elif int == 5:
+        return 10
+    elif int == 6:
+        return 11
+    elif int == 7:
+        return 12
+    elif int == 8:
+        return 13
+    elif int == 9:
+        return 15
+    elif int == 10:
+        return 17
+    elif int == 11:
+        return 19
+    elif int == 12:
+        return 22
+    elif int == 13:
+        return 25
+    elif int == 14:
+        return 28
+    elif int == 15:
+        return 31
+    elif int == 16:
+        return 34
+    elif int == 17:
+        return 37
+    elif int == 18:
+        return 40
+    elif int == 19:
+        return 44
+    elif int == 20:
+        return 49
+    elif int == 21:
+        return 55
+    elif int == 22:
+        return 60
+    elif int == 23:
+        return 70
+    elif int == 24:
+        return 85
+    else:
+        return 90
+    
+def wisdom_mana_bonus(character):
+    """
+    This function returns the amount of bonus mana that a
+    character receives on gaining another set of mana based
+    on wisdom.
+    """
+    wis = character.wisdom
+    
+    if wis < 10:
+        return 0
+    elif wis < 22:
+        return 1
+    elif wis < 23:
+        return 2
+    elif wis < 24:
+        return 3
+    elif wis < 25:
+        return 4
+    else:
+        return 5
+        
+
+def remove_disintegrate_timer(obj):
+    """
+    This function removes the timer that comes from dropping an
+    object.
+    """
+
+    if "pc corpse" in obj.tags.all() and "disintegrating" in obj.tags.all():
+        tickerhandler.remove(settings.PC_CORPSE_DISINTEGRATE_TIME, obj.at_disintegrate)
+        obj.tags.remove("disintegrating")
+    elif "disintegrating" in obj.tags.all():
+        tickerhandler.remove(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
+        obj.tags.remove("disintegrating")
+
+
+def set_disintegrate_timer(obj):
+    """
+    This function sets the timer that comes from dropping an
+    object.
+    """
+
+    if "pc corpse" in obj.tags.all():
+        tickerhandler.set(settings.PC_CORPSE_DISINTEGRATE_TIME, obj.at_disintegrate)
+        obj.tags.add("disintegrating")
+    else:
+        tickerhandler.add(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
+        obj.tags.add("disintegrating")
+
 
 def experience_cost_base(step):
     """
