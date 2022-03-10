@@ -16,9 +16,9 @@ class ChooseDrowScript(Script):
             """
             if user_input.lower() == "yes":
                 caller.race = "drow"
-                destination = caller.search("cc1")
-                caller.home = destination
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("cc1")
+                caller.home = destination[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
@@ -44,9 +44,9 @@ class ChooseDwarfScript(Script):
             """
             if user_input.lower() == "yes":
                 caller.race = "dwarf"
-                destination = caller.search("cc1")
-                caller.home = destination
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("cc1")
+                caller.home = destination[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
@@ -72,9 +72,9 @@ class ChooseEldarScript(Script):
             """
             if user_input.lower() == "yes":
                 caller.race = "eldar"
-                destination = caller.search("cc1")
-                caller.home = destination
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("cc1")
+                caller.home = destination[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
@@ -100,9 +100,9 @@ class ChooseElfScript(Script):
             """
             if user_input.lower() == "yes":
                 caller.race = "elf"
-                destination = caller.search("cc1")
-                caller.home = destination
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("cc1")
+                caller.home = destination[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
@@ -128,9 +128,9 @@ class ChooseFemaleScript(Script):
             """
             if user_input.lower() == "yes":
                 caller.sex = "female"
-                destination = caller.search("cc2")
-                caller.home = destination
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("cc2")
+                caller.home = destination[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the name of the sex you choose. You may enter look to see the description again.")
@@ -156,9 +156,9 @@ class ChooseGnomeScript(Script):
             """
             if user_input.lower() == "yes":
                 caller.race = "gnome"
-                destination = caller.search("cc1")
-                caller.home = destination
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("cc1")
+                caller.home = destination[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
@@ -184,9 +184,9 @@ class ChooseHalfdwarfScript(Script):
             """
             if user_input.lower() == "yes":
                 caller.race = "halfdwarf"
-                destination = caller.search("cc1")
-                caller.home = destination
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("cc1")
+                caller.home = destination[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
@@ -212,9 +212,9 @@ class ChooseHalfelfScript(Script):
             """
             if user_input.lower() == "yes":
                 caller.race = "halfelf"
-                destination = caller.search("cc1")
-                caller.home = destination
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("cc1")
+                caller.home = destination[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
@@ -240,9 +240,9 @@ class ChooseHalfkoboldScript(Script):
             """
             if user_input.lower() == "yes":
                 caller.race = "halfkobold"
-                destination = caller.search("cc1")
-                caller.home = destination
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("cc1")
+                caller.home = destination[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
@@ -330,10 +330,10 @@ class ChooseHardScript(Script):
                 brownie = make_object(newbie_bag, False, "o1117")
                 brownie = make_object(newbie_bag, False, "o1117")
 
-                destination = caller.search("r3700")
-                home = caller.search("r101")
-                caller.home = home
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("r3700")
+                home = search.object_search("r101")
+                caller.home = home[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the difficulty level you choose. You may enter look to see the description again.")
@@ -413,12 +413,12 @@ class ChooseHardestScript(Script):
 
                 # Load and equip starting gear for normal level.
                 light_ball = make_object(caller, True, "o21")
-                water_skin = make_object(newbie_bag, False, "o3138")
+                water_skin = make_object(caller, False, "o3138")
                 
-                destination = caller.search("r3700")
-                home = caller.search("r101")
-                caller.home = home
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("r3700")
+                home = search.object_search("r101")
+                caller.home = home[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the difficulty level you choose. You may enter look to see the description again.")
@@ -445,9 +445,9 @@ class ChooseHobbitScript(Script):
             """
             if user_input.lower() == "yes":
                 caller.race = "hobbit"
-                destination = caller.search("cc1")
-                caller.home = destination
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("cc1")
+                caller.home = destination[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
@@ -473,9 +473,9 @@ class ChooseHumanScript(Script):
             """
             if user_input.lower() == "yes":
                 caller.race = "human"
-                destination = caller.search("cc1")
-                caller.home = destination
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("cc1")
+                caller.home = destination[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
@@ -501,9 +501,9 @@ class ChooseLizardmanScript(Script):
             """
             if user_input.lower() == "yes":
                 caller.race = "lizardman"
-                destination = caller.search("cc1")
-                caller.home = destination
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("cc1")
+                caller.home = destination[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
@@ -529,9 +529,9 @@ class ChooseMaleScript(Script):
             """
             if user_input.lower() == "yes":
                 caller.sex = "male"
-                destination = caller.search("cc2")
-                caller.home = destination
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("cc2")
+                caller.home = destination[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the name of the sex you choose. You may enter look to see the description again.")
@@ -557,9 +557,9 @@ class ChooseNeuterScript(Script):
             """
             if user_input.lower() == "yes":
                 caller.sex = "neuter"
-                destination = caller.search("cc2")
-                caller.home = destination
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("cc2")
+                caller.home = destination[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the name of the sex you choose. You may enter look to see the description again.")
@@ -579,13 +579,20 @@ class ChooseNormalScript(Script):
         self.type = "at_after_say"
 
         def make_object(location, equipped, reset_object):
+
+            location.msg("In make_object 1")
+
             # First, search for all objects of that type and pull out
             # any that are at "None".
             object_candidates = search.search_object(reset_object)
 
+            location.msg("In make_object 2")
+
             for object in object_candidates:
                 if not object.location:
                     new_object = object
+
+            location.msg("In make_object 3")
 
             # If it is not in "None", find the existing object in the world
             # and copy it.
@@ -637,6 +644,8 @@ class ChooseNormalScript(Script):
             """
             if user_input.lower() == "yes":
 
+                caller.msg("At least we got this far.")
+
                 # Load and equip starting gear for normal level.
                 sword = make_object(caller, True, "o3702")
                 tunic = make_object(caller, True, "o3703")
@@ -650,10 +659,10 @@ class ChooseNormalScript(Script):
                 brownie = make_object(newbie_bag, False, "o1117")
                 brownie = make_object(newbie_bag, False, "o1117")
 
-                destination = caller.search("r3700")
-                home = caller.search("r101")
-                caller.home = home
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("r3700")
+                home = search.object_search("r101")
+                caller.home = home[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the difficulty level you choose. You may enter look to see the description again.")
@@ -679,9 +688,9 @@ class ChooseOgreScript(Script):
             """
             if user_input.lower() == "yes":
                 caller.race = "ogre"
-                destination = caller.search("cc1")
-                caller.home = destination
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("cc1")
+                caller.home = destination[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
@@ -707,9 +716,9 @@ class ChooseOrcScript(Script):
             """
             if user_input.lower() == "yes":
                 caller.race = "orc"
-                destination = caller.search("cc1")
-                caller.home = destination
-                caller.move_to(destination, quiet=True)
+                destination = search.object_search("cc1")
+                caller.home = destination[0]
+                caller.move_to(destination[0], quiet=True)
                 repeat = False
             elif user_input.lower() == "no":
                 caller.msg("Please say the name of the race you choose. You may enter look to see the description again.")
