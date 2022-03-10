@@ -809,7 +809,8 @@ class Player(Character):
         self.db.experience_spent = 0
         self.db.experience_spent_practices = 0
         self.db.level = 1
-
+        self.db.skills = {}
+        
         # set monetary stats
         self.db.gold = 0
         self.db.bank_balance = 0
