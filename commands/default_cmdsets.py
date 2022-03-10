@@ -16,7 +16,6 @@ own cmdsets by inheriting from them or directly from `evennia.CmdSet`.
 
 from evennia import default_cmds
 from commands.command import CmdScore
-from commands.command import CmdCharCreate
 from commands.command import CmdInventory
 from commands.command import CmdDrop
 from commands.command import CmdLook
@@ -131,7 +130,6 @@ class AccountCmdSet(default_cmds.AccountCmdSet):
         #
         # any commands you add below will overload the default ones.
         #
-        self.add(CmdCharCreate())          # character creation
 
 class UnloggedinCmdSet(default_cmds.UnloggedinCmdSet):
     """
