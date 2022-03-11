@@ -655,7 +655,7 @@ class ChooseNormalScript(Script):
                 tunic = make_object(caller, True, "o3703")
                 shield = make_object(caller, True, "o3704")
                 newbie_bag = make_object(caller, False, "o19121")
-                war_banner = make_object(newbie_bag, False, "o3712")
+                war_banner = make_object(newbie_bag, False, "o3716")
                 light_ball = make_object(newbie_bag, False, "o21")
                 water_skin = make_object(newbie_bag, False, "o3138")
                 ice_ring = make_object(newbie_bag, False, "o6601")
