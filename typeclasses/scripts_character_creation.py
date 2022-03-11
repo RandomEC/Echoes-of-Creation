@@ -580,23 +580,16 @@ class ChooseNormalScript(Script):
 
         def make_object(location, equipped, reset_object):
 
-            location.msg("In make_object 1")
-            location.msg(reset_object)
+            new_object = ""
 
             # First, search for all objects of that type and pull out
             # any that are at "None".
             object_candidates = search.search_object(reset_object)
 
-            location.msg("In make_object 2")
-            location.msg(object_candidates)
-
             for object in object_candidates:
                 location.msg(object.location)
                 if not object.location:
                     new_object = object
-
-            location.msg("In make_object 3")
-            location.msg(new_object)
 
             # If it is not in "None", find the existing object in the world
             # and copy it.
@@ -648,8 +641,6 @@ class ChooseNormalScript(Script):
             """
             if user_input.lower() == "yes":
 
-                caller.msg("At least we got this far.")
-
                 # Load and equip starting gear for normal level.
                 sword = make_object(caller, True, "o3702")
                 tunic = make_object(caller, True, "o3703")
@@ -662,8 +653,6 @@ class ChooseNormalScript(Script):
                 pot_pie = make_object(newbie_bag, False, "o3009")
                 brownie = make_object(newbie_bag, False, "o1117")
                 brownie = make_object(newbie_bag, False, "o1117")
-
-                caller.msg("Back to confirmation")
 
                 destination = search.object_search("r3700")
                 home = search.object_search("r101")
