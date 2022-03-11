@@ -456,7 +456,7 @@ class CmdDrop(MuxCommand):
             caller.msg("This couldn't be dropped.")
         else:
             if caller.db.level < 103:
-                rules.set_disintegrate.timer(obj)
+                rules.set_disintegrate_timer(obj)
             caller.msg("You drop %s." % (obj.name,))
             caller.location.msg_contents("%s drops %s."
                                          % (caller.name, obj.name),

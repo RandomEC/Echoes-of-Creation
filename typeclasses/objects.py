@@ -312,7 +312,7 @@ class Item(Object):
         # if there is no alignment restriction on the equipment, go no further.
 
         if not self.db.alignment_restriction:
-            return
+            return True
 
         # determine alignment of prospective wearer
 
@@ -347,6 +347,8 @@ class Item(Object):
                     caller.location.msg_contents(
                         "%s's %s drops to the ground after wearing it." % (caller.name, self.name), exclude=caller)
                     self.at_drop(caller)
+
+            return True
 
 
 class Equipment(Item):

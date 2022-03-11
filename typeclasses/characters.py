@@ -162,7 +162,7 @@ class Character(DefaultCharacter):
         # Modification for affects, to be determined.
 
     @mana_maximum.setter
-    def mana_maximum(self, value):
+    def mana_maximum(self, new_value):
         if "player" in self.tags.all():
             if new_value >= (self.mana_maximum + 7) and new_value <= (self.mana_maximum + 29):
                 self.db.mana["maximum"] = new_value
@@ -193,7 +193,7 @@ class Character(DefaultCharacter):
         return modifier + self.db.moves["maximum"]
 
     @moves_maximum.setter
-    def moves_maximum(self, value):
+    def moves_maximum(self, new_value):
         if "player" in self.tags.all():
             if new_value >= (self.moves_maximum + 5) and new_value <= (self.moves_maximum + 13):
                 self.db.moves["maximum"] = new_value
