@@ -11,8 +11,7 @@ import random
 from evennia import DefaultCharacter
 from evennia import create_script
 from evennia.utils import search
-from world import rules_race
-from world import rules
+from world import rules_race, rules, rules_combat
 from evennia import TICKER_HANDLER as tickerhandler
 
 class Character(DefaultCharacter):
@@ -411,7 +410,41 @@ class Character(DefaultCharacter):
         # assemble modifier with base stat, first for the "trainable" stats, which have an extra modifier for that
 
         if attribute_name == "strength" or attribute_name == "intelligence" or attribute_name == "wisdom" or attribute_name == "dexterity" or attribute_name == "constitution":
-            return self.get_base_attribute(attribute_name) + modifier
+
+            total_attribute = self.get_base_attribute(attribute_name) + modifier
+
+            if attribute_name == "strength" and total_attribute > 22:
+                if "warrior" in rules.classes_current(self) or "paladin" in rules.classes_current(self):
+                    if total_attribute > 25:
+                        total_attribute = 25
+                else:
+                    total_attribute = 22
+            elif attribute_name == "dexterity" and total_attribute > 22:
+                if "thief" in rules.classes_current(self) or "bard" in rules.classes_current(self):
+                    if total_attribute > 25:
+                        total_attribute = 25
+                else:
+                    total_attribute = 22
+            elif attribute_name == "intelligence" and total_attribute > 22:
+                if "mage" in rules.classes_current(self):
+                    if total_attribute > 25:
+                        total_attribute = 25
+                else:
+                    total_attribute = 22
+            elif attribute_name == "wisdom" and total_attribute > 22:
+                if "druid" in rules.classes_current(self) or "cleric" in rules.classes_current(self) or "psionist" in rules.classes_current(self):
+                    if total_attribute > 25:
+                        total_attribute = 25
+                else:
+                    total_attribute = 22
+            elif attribute_name == "constitution" and total_attribute > 22:
+                if "ranger" in rules.classes_current(self):
+                    if total_attribute > 25:
+                        total_attribute = 25
+                else:
+                    total_attribute = 22
+
+            return total_attribute
             
         # then, with everything else
         
@@ -766,6 +799,17 @@ class Mobile(Character):
 
         return string
 
+    def at_player_entered(self, character):
+        """
+        Hook used to implement aggressive mobiles.
+        """
+        if "aggressive" in self.db.act_flags:
+            if not character.ndb.combat_handler and not self.ndb.combat_handler:
+                character.msg("%s jumps forward and ATTACKS you!" % (self.key[0].upper() + self.key[1:]))
+                rules_combat.create_combat(self, character)
+            if not self.ndb.combat_handler:
+                combat = character.ndb.combat_handler
+                combat.add_combatant(self, character)
 
 class Player(Character):
     """

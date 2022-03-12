@@ -199,15 +199,6 @@ class CmdAttack(MuxCommand):
     locks = "cmd:all()"
     arg_regex = r"\s|$"
 
-    def create_combat(self, attacker, victim):
-        """Create a combat, if needed"""
-        combat = create_object("commands.combat_commands.Combat", key=("combat_handler_%s" % attacker.location.db.vnum))
-        combat.add_combatant(attacker, victim)
-        combat.add_combatant(victim, attacker)
-        combat.location = attacker.location
-        combat.db.desc = "This is a combat instance."
-        combat.at_repeat()
-
     def func(self):
         """Implement attack"""
 
@@ -227,7 +218,7 @@ class CmdAttack(MuxCommand):
         if attacker.db.combat_handler or victim.db.combat_handler:
             pass
         else:
-            self.create_combat(attacker, victim)
+            rules_combat.create_combat(attacker, victim)
 
 class CmdConsider(MuxCommand):
     """

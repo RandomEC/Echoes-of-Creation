@@ -7,6 +7,26 @@ from world import rules_race, rules, rules_skills
 from server.conf import settings
 
 
+def create_combat(attacker, victim):
+    """Create a combat, if needed"""
+
+    # Check if the attacker is in a safe room.
+    if "safe" in attacker.location.db.room_flags:
+        attacker.msg("You cannot attack in a safe room!")
+        return
+    # Check if the victim cannot be killed.
+    elif "no kill" in victim.db.act_flags:
+        attacker.msg("The forces of commerce and justice stop you from attacking %s." % victim.key)
+        return
+
+    combat = create_object("commands.combat_commands.Combat", key=("combat_handler_%s" % attacker.location.db.vnum))
+    combat.add_combatant(attacker, victim)
+    combat.add_combatant(victim, attacker)
+    combat.location = attacker.location
+    combat.db.desc = "This is a combat instance."
+    combat.at_repeat()
+
+
 def do_attack(attacker, victim, eq_slot):
     """
     This function implements the effects of a single hit. It
