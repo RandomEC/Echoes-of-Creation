@@ -310,9 +310,9 @@ class ChooseHardScript(Script):
             if equipped:
                 if not new_object.db.equipped:
                     if new_object.db.item_type == "weapon":
-                        new_object.wield_to(self)
+                        new_object.wield_to(location)
                     else:
-                        new_object.wear_to(self)
+                        new_object.wear_to(location)
 
             return new_object
 
@@ -404,9 +404,9 @@ class ChooseHardestScript(Script):
             if equipped:
                 if not new_object.db.equipped:
                     if new_object.db.item_type == "weapon":
-                        new_object.wield_to(self)
+                        new_object.wield_to(location)
                     else:
-                        new_object.wear_to(self)
+                        new_object.wear_to(location)
 
             return new_object
 

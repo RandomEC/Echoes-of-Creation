@@ -725,6 +725,15 @@ class Fountain(Drink_container):
         self.db.object_type = "item"
         self.db.item_type = "fountain"
 
+    def at_disintegrate(self):
+        self.location.msg_contents("%s dries up and disappears."
+                                    % (self.name[0].upper() + self.name[1:]), exclude=self)
+
+        # Remove the disintegrate timer and tag.
+        rules.remove_disintegrate_timer(self)
+
+        self.location = None
+
 class Food(Item):
 
     """

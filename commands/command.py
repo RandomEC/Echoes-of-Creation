@@ -93,7 +93,14 @@ class MuxCommand(Command):
         This hook is called after the command has finished executing
         (after self.func()).
         """
-        pass
+        caller = self.caller
+        prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n>" % (caller.hitpoints_current,
+                                                                 caller.hitpoints_maximum,
+                                                                 caller.mana_current,
+                                                                 caller.mana_maximum,
+                                                                 caller.moves_current,
+                                                                 caller.moves_maximum)
+        caller.msg(prompt = prompt)
 
     def parse(self):
         """
