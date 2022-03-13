@@ -157,18 +157,12 @@ class Room(DefaultRoom):
                 speaker.scripts.delete(message)
 
 
-    def at_object_receive(self, obj, source_location):
-        if "mobile" in obj.tags.all():
-            return
-        # If it is a player that entered.
-        elif "player" in obj.tags.all():
-            # Have the player look around.
-            obj.execute_cmd("look")
-            # Run through the contents of the room to look for mobile.
-            for item in self.contents:
-                # If there is a mobile in the room.
-                if "mobile" in item.tags.all():
-                    item.at_player_entered(obj)
+    def at_player_arrive(self, player):
+        # Run through the contents of the room to look for mobile.
+        for item in self.contents:
+            # If there is a mobile in the room.
+            if "mobile" in item.tags.all():
+                item.at_player_entered(player)
 
     def return_appearance(self, looker, **kwargs):
         """

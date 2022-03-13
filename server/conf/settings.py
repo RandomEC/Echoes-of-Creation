@@ -32,6 +32,7 @@ MULTISESSION_MODE = 2
 
 # Typeclass for character objects linked to an account (fallback)
 BASE_CHARACTER_TYPECLASS = "typeclasses.characters.Player"
+BASE_ACCOUNT_TYPECLASS = "typeclasses.accounts.Account"
 
 BASE_ROOM_TYPECLASS = "typeclasses.rooms.Room"
 

@@ -9,7 +9,7 @@ import re
 from evennia.commands.command import Command as BaseCommand
 from evennia.utils import evtable
 from evennia.commands.default.building import ObjManipCommand
-from evennia.utils import utils
+from evennia.utils import utils, search
 from evennia import TICKER_HANDLER as tickerhandler
 from server.conf import settings
 from world import rules
@@ -230,7 +230,7 @@ class CmdScore(MuxCommand):
             experience_total, experience_spent, damroll, gold, bank_balance, \
             armor_class, alignment, saving_throw, staff_position, \
             immortal_invisible, immortal_cloak, immortal_ghost, holy_light, \
-            level, age, wimpy, items, weight = self.caller.get_score_info()
+            level, age, wimpy, items, weight, maximum_damage_mobile, maximum_kill_experience_mobile = self.caller.get_score_info()
 
         unspent_experience = experience_total - experience_spent
         experience_to_level = experience_total
@@ -253,7 +253,7 @@ class CmdScore(MuxCommand):
                   "|c-|w=|c-|w=|c-|w=|c-|w=|c-|w=|c-|w=|c-|w=|c-|w=|c-|w=|c-"
                   "|w=|c-|w=|c-|w=|c-|w=|c-|w=|c-|w=|c-|w=|c-|w=|c-|x\n|w| "
                   "|cName: |W%-40s                        |w|\n|w| |cLevel: "
-                  "|W%-15d         |cRace: |W%-10s         |cAge: |W%-3d    "
+                  "|W%-12d          |cRace: |W%-12s         |cAge: |W%-3d    "
                   "  |w|\n" % (name_and_title, level, race, age))
         score = score + buffer
 
@@ -264,47 +264,39 @@ class CmdScore(MuxCommand):
 
         buffer = ("|C======================================================"
                   "===================|W\n|w| |cStr: |w%-2d(|G%-2d|c)       "
-                  "|c       Hit Points: |w%-12s     |cWimpy: |w%-4d     |w|\n"
+                  "|c     Hit Points: |w%-14s     |cWimpy: |w%-4d     |w|\n"
                   % (strength, modified_strength, hit_points_string, wimpy))
         score = score + buffer
 
-        buffer = ("|w| |cInt: |w%-2d|c(|G%-2d|c)                    |cMana:"
-                  " |w%-13s     |cDied: |r%-6d   |w|\n"
+        buffer = ("|w| |cInt: |w%-2d|c(|G%-2d|c)                  |cMana:"
+                  " |w%-15s     |cDied: |r%-6d   |w|\n"
                   % (intelligence, modified_intelligence, mana_string, died))
         score = score + buffer
 
-        buffer = ("|w| |cWis: |w%-2d|c(|G%-2d|c)                   |cMoves:"
-                  " |w%-13s    |cKills: |w%-9d|w|\n"
+        buffer = ("|w| |cWis: |w%-2d|c(|G%-2d|c)                 |cMoves:"
+                  " |w%-15s    |cKills: |w%-9d|w|\n"
                   % (wisdom, modified_wisdom, moves_string, kills))
         score = score + buffer
 
-        buffer = ("|w| |cDex: |w%-2d|c(|G%-2d|c)           |cItems carried: "
-                  "|w%-3d         |cMax Damage: |w%-9d|w|\n"
-                  % (dexterity, modified_dexterity, items, maximum_damage))
+        buffer = ("|w| |cDex: |w%-2d|c(|G%-2d|c)         |cItems carried: "
+                  "|w%-5d     |cWeight carried: |w%-9d|w|\n"
+                  % (dexterity, modified_dexterity, items, weight))
         score = score + buffer
 
-        buffer = ("|w| |cCon: |w%-2d|c(|G%-2d|c)          |cWeight carried: "
-                  "|w%-4d      |cMax Kill Exp: |w%-9d|w|\n"
+        buffer = ("|w| |cCon: |w%-2d|c(|G%-2d|c)               |cHitroll: |w%-8d         |cDamroll: |w%-5d    |w|\n"
                   % (
                       constitution,
                       modified_constitution,
-                      weight,
-                      maximum_kill_experience
+                      hitroll, damroll
                      ))
         score = score + buffer
 
-        buffer = ("|w| |cHitroll: |w%-3d           |cExp in level: |w%-9d  "
-                  "|cUnspent Exp: |w%-9d|w|\n"
-                  % (hitroll, experience_in_level, unspent_experience))
-        score = score + buffer
-
-        buffer = ("|w| |cDamroll: |w%-3d      |cExp to next level: |w%-15d "
-                  "                 |w|\n"
-                  % (damroll, experience_to_level))
-        score = score + buffer
-
-        buffer = ("|w| |cGold: |y%-9d        |cBank Balance: |y%-12d        "
-                  "             |w|\n" % (gold, bank_balance))
+        buffer = ("|w| |cExperience: |w%-12d|c     |cGold: |y%-10d  "
+                  "|cBank Balance: |y%-6d   |w|\n"
+                  % (
+                      unspent_experience,
+                      gold, bank_balance
+                     ))
         score = score + buffer
 
         buffer = ("|w| |C---------------------------------------------------"
@@ -317,6 +309,18 @@ class CmdScore(MuxCommand):
 
         buffer = ("|w| |cSaving throw: |w%-4d                           "
                   "                         |w|\n" % saving_throw)
+        score = score + buffer
+
+        buffer = ("|w| |C---------------------------------------------------"
+                  "------------------ |w|\n")
+        score = score + buffer
+
+        buffer = ("|w| |cMax Damage: |w%-13d   |cAgainst: |w%-8s                         |w|\n"
+                  % (maximum_damage, (maximum_damage_mobile[0].upper() + maximum_damage_mobile[1:])))
+        score = score + buffer
+
+        buffer = ("|w| |cMax Experience: |w%-9d   |cAgainst: |w%-5s                     |w|\n"
+                  % (maximum_kill_experience, (maximum_kill_experience_mobile[0].upper() + maximum_kill_experience_mobile[1:])))
         score = score + buffer
 
         if level > 101:

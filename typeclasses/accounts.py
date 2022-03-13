@@ -23,7 +23,10 @@ several more options for customizing the Guest account system.
 """
 
 from evennia import DefaultAccount, DefaultGuest
+from evennia.utils.utils import is_iter
+from server.conf import settings
 
+_MAX_NR_CHARACTERS = settings.MAX_NR_CHARACTERS
 
 class Account(DefaultAccount):
     """
@@ -92,7 +95,118 @@ class Account(DefaultAccount):
 
     """
 
-    pass
+    def at_look(self, target=None, session=None, **kwargs):
+        """
+        Called when this object executes a look. It allows to customize
+        just what this means.
+        Args:
+            target (Object or list, optional): An object or a list
+                objects to inspect.
+            session (Session, optional): The session doing this look.
+            **kwargs (dict): Arbitrary, optional arguments for users
+                overriding the call (unused by default).
+        Returns:
+            look_string (str): A prepared look string, ready to send
+                off to any recipient (usually to ourselves)
+        """
+
+        if target and not is_iter(target):
+            # single target - just show it
+            if hasattr(target, "return_appearance"):
+                return target.return_appearance(self)
+            else:
+                return _("{target} has no in-game appearance.").format(target=target)
+        else:
+            # list of targets - make list to disconnect from db
+            characters = list(tar for tar in target if tar) if target else []
+            sessions = self.sessions.all()
+            if not sessions:
+                # no sessions, nothing to report
+                return ""
+            is_su = self.is_superuser
+
+            # text shown when looking in the ooc area
+            result = [f"Echoes of Creation\nOut-of-Character Menu for Account |g{self.key}|n"]
+
+            nsess = len(sessions)
+            result.append(
+                nsess == 1
+                and "\n\n|wYour current connected session:|n"
+                or f"\n\n|wYour current connected sessions ({nsess}):|n"
+            )
+            for isess, sess in enumerate(sessions):
+                csessid = sess.sessid
+                addr = "%s (%s)" % (
+                    sess.protocol_key,
+                    isinstance(sess.address, tuple) and str(sess.address[0]) or str(sess.address),
+                )
+                result.append(
+                    "\n %s %s"
+                    % (
+                        session
+                        and session.sessid == csessid
+                        and "|w* %s|n" % (isess + 1)
+                        or "  %s" % (isess + 1),
+                        addr,
+                    )
+                )
+
+            charmax = _MAX_NR_CHARACTERS
+
+            if characters:
+                string_s_ending = len(characters) > 1 and "s" or ""
+                result.append("\n\n To enter Echoes of Creation in-character, type |w ic <character>|n \nwith any of your below characters:")
+                if is_su:
+                    result.append(
+                        f"\n\nAvailable character{string_s_ending} ({len(characters)}/unlimited):"
+                    )
+                else:
+                    result.append(
+                        "\n\nAvailable character%s%s:"
+                        % (
+                            string_s_ending,
+                            charmax > 1 and " (%i/%i)" % (len(characters), charmax) or "",
+                        )
+                    )
+
+                for char in characters:
+                    csessions = char.sessions.all()
+                    if csessions:
+                        for sess in csessions:
+                            # character is already puppeted
+                            sid = sess in sessions and sessions.index(sess) + 1
+                            if sess and sid:
+                                result.append(
+                                    f"\n - |G{char.key}|n [{', '.join(char.permissions.all())}] (played by you in session {sid})"
+                                )
+                            else:
+                                result.append(
+                                    f"\n - |R{char.key}|n [{', '.join(char.permissions.all())}] (played by someone else)"
+                                )
+                    else:
+                        # character is "free to puppet"
+                        result.append(f"\n - |Y{char.key}|n [{', '.join(char.permissions.all())}]")
+
+            result.append("\n\n |w ooc|n - entered in-game will return to this out-of-character menu")
+            result.append("\n |whelp|n - to view more commands")
+            result.append("\n |wpublic <Text>|n - talk on public channel")
+
+            if is_su or len(characters) < charmax:
+                if not characters:
+                    result.append(
+                        _(
+                            "\n\n You don't have any characters yet. See |whelp charcreate|n for creating one."
+                        )
+                    )
+                else:
+                    result.append("\n |wcharcreate <name> [=description]|n - create new character")
+                    result.append(
+                        "\n |wchardelete <name>|n - delete a character (cannot be undone!)"
+                    )
+
+            look_string = ("-" * 68) + "\n" + "".join(result) + "\n" + ("-" * 68)
+            return look_string
+
 
 
 class Guest(DefaultGuest):

@@ -104,7 +104,7 @@ class Combat(Object):
                 
                 # Make a free attempt to flee.
                 rules_combat.do_flee(combatant)
-            
+
             # Make sure this combatant and target are alive and both still in the same room.
             if combatant.location == self.location and self.allow_attacks(combatant, self.db.combatants[combatant]["target"]):
                 attacker = self.db.combatants[combatant]["combatant"]

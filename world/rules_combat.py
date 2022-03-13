@@ -15,9 +15,12 @@ def create_combat(attacker, victim):
         attacker.msg("You cannot attack in a safe room!")
         return
     # Check if the victim cannot be killed.
-    elif "no kill" in victim.db.act_flags:
-        attacker.msg("The forces of commerce and justice stop you from attacking %s." % victim.key)
-        return
+    elif "mobile" in victim.tags.all():
+        if "no kill" in victim.db.act_flags:
+            attacker.msg("The forces of commerce and justice stop you from attacking %s." % victim.key)
+            return
+
+    attacker.msg("Past the end of if checks")
 
     combat = create_object("commands.combat_commands.Combat", key=("combat_handler_%s" % attacker.location.db.vnum))
     combat.add_combatant(attacker, victim)
@@ -796,8 +799,6 @@ def modify_experience(attacker, victim, experience):
     else:
         experience_modified = experience
 
-    attacker.msg("Your align is %d and theirs is %d, so %d experience is modified to %d" % (attacker.db.alignment, victim.db.alignment, experience, experience_modified))
-
     # Modify experience award based on racial hatreds or affection.
 
     if "hate list" in rules_race.get_race(attacker.race):
@@ -807,7 +808,5 @@ def modify_experience(attacker, victim, experience):
         experience_modified *= 0.875
 
     experience_modified = math.ceil(experience_modified)
-
-    attacker.msg("And after race modification, it was %d" % experience_modified)
 
     return int(experience_modified)

@@ -544,7 +544,7 @@ class Character(DefaultCharacter):
             self.db.staff_position, self.db.immortal_invisible, \
             self.db.immortal_cloak, self.db.immortal_ghost, self.db.holy_light,\
             self.db.level, self.db.age, self.db.wimpy, self.db.items,\
-            self.db.weight
+            self.db.weight, self.db.damage_maximum_mobile, self.db.kill_experience_maximum_mobile
 
     def get_equipment_table(self):
         """
@@ -863,7 +863,9 @@ class Player(Character):
         self.db.died = 0
         self.db.kills = 0
         self.db.damage_maximum = 0
+        self.db.damage_maximum_mobile = ""
         self.db.kill_experience_maximum = 0
+        self.db.kill_experience_maximum_mobile = ""
 
         self.db.age = 18
         self.db.wimpy = 4
@@ -904,15 +906,12 @@ class Player(Character):
             if item.db.vnum == key_vnum:
                 return True
         return False
-        
 
-
-
-
-
-
-
-
-
-
+    def at_after_move(self, source_location, **kwargs):
+        """
+        We make sure to look around after a move.
+        """
+        if self.location.access(self, "view"):
+            self.msg(self.at_look(self.location))
+            self.location.at_player_arrive(self)
 
