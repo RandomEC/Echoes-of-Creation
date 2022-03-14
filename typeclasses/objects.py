@@ -312,7 +312,7 @@ class Item(Object):
         # if there is no alignment restriction on the equipment, go no further.
 
         if not self.db.alignment_restriction:
-            return
+            return True
 
         # determine alignment of prospective wearer
 
@@ -347,6 +347,8 @@ class Item(Object):
                     caller.location.msg_contents(
                         "%s's %s drops to the ground after wearing it." % (caller.name, self.name), exclude=caller)
                     self.at_drop(caller)
+
+            return True
 
 
 class Equipment(Item):
@@ -722,6 +724,15 @@ class Fountain(Drink_container):
         super().at_object_creation()
         self.db.object_type = "item"
         self.db.item_type = "fountain"
+
+    def at_disintegrate(self):
+        self.location.msg_contents("%s dries up and disappears."
+                                    % (self.name[0].upper() + self.name[1:]), exclude=self)
+
+        # Remove the disintegrate timer and tag.
+        rules.remove_disintegrate_timer(self)
+
+        self.location = None
 
 class Food(Item):
 

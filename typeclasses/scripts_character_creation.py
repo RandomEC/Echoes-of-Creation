@@ -262,6 +262,9 @@ class ChooseHardScript(Script):
         self.type = "at_after_say"
 
         def make_object(location, equipped, reset_object):
+
+            new_object = ""
+
             # First, search for all objects of that type and pull out
             # any that are at "None".
             object_candidates = search.search_object(reset_object)
@@ -307,9 +310,9 @@ class ChooseHardScript(Script):
             if equipped:
                 if not new_object.db.equipped:
                     if new_object.db.item_type == "weapon":
-                        new_object.wield_to(self)
+                        new_object.wield_to(location)
                     else:
-                        new_object.wear_to(self)
+                        new_object.wear_to(location)
 
             return new_object
 
@@ -353,6 +356,9 @@ class ChooseHardestScript(Script):
         self.type = "at_after_say"
 
         def make_object(location, equipped, reset_object):
+
+            new_object = ""
+
             # First, search for all objects of that type and pull out
             # any that are at "None".
             object_candidates = search.search_object(reset_object)
@@ -398,9 +404,9 @@ class ChooseHardestScript(Script):
             if equipped:
                 if not new_object.db.equipped:
                     if new_object.db.item_type == "weapon":
-                        new_object.wield_to(self)
+                        new_object.wield_to(location)
                     else:
-                        new_object.wear_to(self)
+                        new_object.wear_to(location)
 
             return new_object
 

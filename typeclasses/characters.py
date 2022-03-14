@@ -11,8 +11,7 @@ import random
 from evennia import DefaultCharacter
 from evennia import create_script
 from evennia.utils import search
-from world import rules_race
-from world import rules
+from world import rules_race, rules, rules_combat
 from evennia import TICKER_HANDLER as tickerhandler
 
 class Character(DefaultCharacter):
@@ -162,7 +161,7 @@ class Character(DefaultCharacter):
         # Modification for affects, to be determined.
 
     @mana_maximum.setter
-    def mana_maximum(self, value):
+    def mana_maximum(self, new_value):
         if "player" in self.tags.all():
             if new_value >= (self.mana_maximum + 7) and new_value <= (self.mana_maximum + 29):
                 self.db.mana["maximum"] = new_value
@@ -193,7 +192,7 @@ class Character(DefaultCharacter):
         return modifier + self.db.moves["maximum"]
 
     @moves_maximum.setter
-    def moves_maximum(self, value):
+    def moves_maximum(self, new_value):
         if "player" in self.tags.all():
             if new_value >= (self.moves_maximum + 5) and new_value <= (self.moves_maximum + 13):
                 self.db.moves["maximum"] = new_value
@@ -225,6 +224,15 @@ class Character(DefaultCharacter):
     @property
     def moves_current(self):
         return self.moves_maximum - self.moves_spent
+
+    @property
+    def level(self):
+        return self.db.level
+
+    @level.setter
+    def level(self, new_value):
+        self.db.level = new_value
+
 
     def get_affect_status(self, affect_name):
         """
@@ -411,7 +419,41 @@ class Character(DefaultCharacter):
         # assemble modifier with base stat, first for the "trainable" stats, which have an extra modifier for that
 
         if attribute_name == "strength" or attribute_name == "intelligence" or attribute_name == "wisdom" or attribute_name == "dexterity" or attribute_name == "constitution":
-            return self.get_base_attribute(attribute_name) + modifier
+
+            total_attribute = self.get_base_attribute(attribute_name) + modifier
+
+            if attribute_name == "strength" and total_attribute > 22:
+                if "warrior" in rules.classes_current(self) or "paladin" in rules.classes_current(self):
+                    if total_attribute > 25:
+                        total_attribute = 25
+                else:
+                    total_attribute = 22
+            elif attribute_name == "dexterity" and total_attribute > 22:
+                if "thief" in rules.classes_current(self) or "bard" in rules.classes_current(self):
+                    if total_attribute > 25:
+                        total_attribute = 25
+                else:
+                    total_attribute = 22
+            elif attribute_name == "intelligence" and total_attribute > 22:
+                if "mage" in rules.classes_current(self):
+                    if total_attribute > 25:
+                        total_attribute = 25
+                else:
+                    total_attribute = 22
+            elif attribute_name == "wisdom" and total_attribute > 22:
+                if "druid" in rules.classes_current(self) or "cleric" in rules.classes_current(self) or "psionist" in rules.classes_current(self):
+                    if total_attribute > 25:
+                        total_attribute = 25
+                else:
+                    total_attribute = 22
+            elif attribute_name == "constitution" and total_attribute > 22:
+                if "ranger" in rules.classes_current(self):
+                    if total_attribute > 25:
+                        total_attribute = 25
+                else:
+                    total_attribute = 22
+
+            return total_attribute
             
         # then, with everything else
         
@@ -511,7 +553,7 @@ class Character(DefaultCharacter):
             self.db.staff_position, self.db.immortal_invisible, \
             self.db.immortal_cloak, self.db.immortal_ghost, self.db.holy_light,\
             self.db.level, self.db.age, self.db.wimpy, self.db.items,\
-            self.db.weight
+            self.db.weight, self.db.damage_maximum_mobile, self.db.kill_experience_maximum_mobile
 
     def get_equipment_table(self):
         """
@@ -766,6 +808,17 @@ class Mobile(Character):
 
         return string
 
+    def at_player_entered(self, character):
+        """
+        Hook used to implement aggressive mobiles.
+        """
+        if "aggressive" in self.db.act_flags:
+            if not character.ndb.combat_handler and not self.ndb.combat_handler:
+                character.msg("%s jumps forward and ATTACKS you!" % (self.key[0].upper() + self.key[1:]))
+                rules_combat.create_combat(self, character)
+            if not self.ndb.combat_handler:
+                combat = character.ndb.combat_handler
+                combat.add_combatant(self, character)
 
 class Player(Character):
     """
@@ -819,7 +872,9 @@ class Player(Character):
         self.db.died = 0
         self.db.kills = 0
         self.db.damage_maximum = 0
+        self.db.damage_maximum_mobile = ""
         self.db.kill_experience_maximum = 0
+        self.db.kill_experience_maximum_mobile = ""
 
         self.db.age = 18
         self.db.wimpy = 4
@@ -860,15 +915,12 @@ class Player(Character):
             if item.db.vnum == key_vnum:
                 return True
         return False
-        
 
-
-
-
-
-
-
-
-
-
+    def at_after_move(self, source_location, **kwargs):
+        """
+        We make sure to look around after a move.
+        """
+        if self.location.access(self, "view"):
+            self.msg(self.at_look(self.location))
+            self.location.at_player_arrive(self)
 

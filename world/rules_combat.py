@@ -7,7 +7,40 @@ from world import rules_race, rules, rules_skills
 from server.conf import settings
 
 
-def do_attack(attacker, victim, eq_slot):
+def create_combat(attacker, victim):
+    """Create a combat, if needed, returns the combat object."""
+
+    # Check if the attacker is in a safe room.
+    if "safe" in attacker.location.db.room_flags:
+        attacker.msg("You cannot attack in a safe room!")
+        return
+    # Check if the victim cannot be killed.
+    elif "mobile" in victim.tags.all():
+        if "no kill" in victim.db.act_flags:
+            attacker.msg("The forces of commerce and justice stop you from attacking %s." % victim.key)
+            return
+
+    if not attacker.ndb.combat_handler and not victim.ndb.combat_handler:
+
+        combat = create_object("commands.combat_commands.Combat", key=("combat_handler_%s" % attacker.location.db.vnum))
+        combat.add_combatant(attacker, victim)
+        combat.add_combatant(victim, attacker)
+        combat.location = attacker.location
+        combat.db.desc = "This is a combat instance."
+        combat.at_repeat()
+
+    elif not attacker.ndb.combat_handler:
+        combat = victim.ndb.combat_handler
+        combat.add_combatant(attacker, victim)
+
+    elif not victim.ndb.combat_handler:
+        combat = attacker.ndb.combat_handler
+        combat.add_combatant(victim, attacker)
+        combat.change_target(attacker, victim)
+
+    return combat
+
+def do_attack(attacker, victim, eq_slot, **kwargs):
     """
     This function implements the effects of a single hit. It
     both calls the take_damage method on the victim, doing the
@@ -16,8 +49,16 @@ def do_attack(attacker, victim, eq_slot):
     that single hit attempt.
     """
 
-    hit = hit_check(attacker, victim)
-    damage = do_damage(attacker, victim, eq_slot)
+    if hit in kwargs:
+        hit = hit
+    else:
+        hit = hit_check(attacker, victim)
+        
+    if damage in kwargs:
+        damage = damage
+    else:
+        damage = do_damage(attacker, victim, eq_slot)
+    
     damage_type = get_damagetype(attacker)
     experience_modified = 0
 
@@ -57,25 +98,31 @@ def do_attack(attacker, victim, eq_slot):
             attacker.db.experience_total += experience_modified
 
         victim.take_damage(damage)
-        attacker_string = ("You |g%s|n %s with your %s.\n"
-                           % (get_damagestring("attacker", damage),
+        
+        if output in kwargs:
+            attacker_string = output[0]
+            victim_string = output[1]
+            room_string = output[2]
+        else:
+            attacker_string = ("You |g%s|n %s with your %s.\n"
+                               % (get_damagestring("attacker", damage),
+                                  victim.key,
+                                  damage_type
+                                  )
+                               )
+            victim_string = ("%s |r%s|n you with its %s.\n"
+                             % (attacker.key,
+                                get_damagestring("victim", damage),
+                                damage_type
+                                )
+                             )
+            room_string = ("%s %s %s with its %s.\n"
+                           % (attacker.key,
+                              get_damagestring("victim", damage),
                               victim.key,
                               damage_type
                               )
                            )
-        victim_string = ("%s |r%s|n you with its %s.\n"
-                         % (attacker.key,
-                            get_damagestring("victim", damage),
-                            damage_type
-                            )
-                         )
-        room_string = ("%s %s %s with its %s.\n"
-                       % (attacker.key,
-                          get_damagestring("victim", damage),
-                          victim.key,
-                          damage_type
-                          )
-                       )
 
         if "player" in attacker.tags.all():
             if experience_modified > 0:
@@ -89,16 +136,21 @@ def do_attack(attacker, victim, eq_slot):
                 attacker_string += ("Your %s for %d damage is your record for damage in one hit!!!\n"
                                     % (damage_type, damage))
     else:
-        attacker_string = ("You miss %s with your %s.\n" % (victim.key,
+        if output in kwargs:
+            attacker_string = output[0]
+            victim_string = output[1]
+            room_string = output[2]
+        else:
+            attacker_string = ("You miss %s with your %s.\n" % (victim.key,
+                                                                damage_type
+                                                                ))
+            victim_string = ("%s misses you with its %s.\n" % (attacker.key,
+                                                               damage_type
+                                                               ))
+            room_string = ("%s misses %s with its %s.\n" % (attacker.key,
+                                                            victim.key,
                                                             damage_type
                                                             ))
-        victim_string = ("%s misses you with its %s.\n" % (attacker.key,
-                                                           damage_type
-                                                           ))
-        room_string = ("%s misses %s with its %s.\n" % (attacker.key,
-                                                        victim.key,
-                                                        damage_type
-                                                        ))
 
     return (attacker_string, victim_string, room_string)
 
@@ -362,6 +414,37 @@ def do_flee(character):
                                      exclude=character)
 
 
+def do_kick(attacker, victim):
+    combat = attacker.ndb.combat_handler
+    
+    if random.randint(1, 100) > attacker.db.skills["kick"]:
+        if "player" in attacker.tags.all():
+            rules_skills.check_skill_improve(attacker, "kick", False)
+            attacker.moves_spent += 5
+
+        attacker_output = ("You kick wildly at %s and miss." % victim.key)
+        victim_outout = ("%s kicks wildly at you and misses." % (attacker.key[0].upper + attacker.key[1:]))
+        room_output = ("%s kicks at %s and misses." % (attacker.name, victim.name), exclude=(attacker, victim))
+        
+        combat.db.[attacker]["special_attack"]["output"] = [attacker_output, victim_output, room_output]
+        combat.db.[attacker]["special_attack"]["hit"] = False
+        combat.db.[attacker]["special_attack"]["damage"] = 0
+        
+    else:
+
+        if "player" in attacker.tags.all():
+            rules_skills.check_skill_improve(attacker, "kick", True)
+
+        damage = random.randint(1,attacker.level)
+        attacker_output = ("You %s %s with your vicious kick." % (get_damagestring(attacker, damage), victim.key))
+        victim_output = ("%s %s you with its vicious kick." % ((attacker.key[0].upper + attacker.key[1:]), get_damagestring(attacker, damage)))
+        room_output = ("%s %s %s with its vicious kick." % ((attacker.key[0].upper + attacker.key[1:]), get_damagestring(attacker, damage), victim.key))
+
+        combat.db.[attacker]["special_attack"]["output"] = [attacker_output, victim_output, room_output]
+        combat.db.[attacker]["special_attack"]["hit"] = True
+        combat.db.[attacker]["special_attack"]["damage"] = damage
+       
+
 def do_one_character_attacks(attacker, victim):
     """
     This calls do_one_weapon_attacks for all relevant weapon slots for one
@@ -369,9 +452,30 @@ def do_one_character_attacks(attacker, victim):
     attacker.
     """
 
-    attacker_string, victim_string, room_string = \
+    attacker_string = ""
+    victim_string = ""
+    room_string = ""
+    
+    # Check if special attack is necessary.
+    combat = attacker.ndb.combat_handler
+    if combat.db.combatants[attacker]["special_attack"]:
+        special_hit = combat.db.combatants[attacker]["special_attack"]["hit"]
+        special_damage = combat.db.combatants[attacker]["special_attack"]["damage"]
+        special_output = combat.db.combatants[attacker]["special_attack"]["output"]
+        
+        new_attacker_string, new_victim_string, new_room_string = do_attack(attacker, victim, None, hit = special_hit, damage = special_damage, output = special_output)
+        attacker_string += new_attacker_string
+        victim_string += new_victim_string
+        room_strong += new_room_string
+    
+    # Do base attacks.
+    new_attacker_string, new_victim_string, new_room_string = \
         do_one_weapon_attacks(attacker, victim, "wielded, primary")
-
+    attacker_string += new_attacker_string
+    victim_string += new_victim_string
+    room_strong += new_room_string
+    
+    # Check for dual wield.
     if attacker.db.eq_slots["wielded, primary"] and \
             attacker.db.eq_slots["wielded, secondary"]:
         new_attacker_string, new_victim_string, new_room_string = \
@@ -776,8 +880,6 @@ def modify_experience(attacker, victim, experience):
     else:
         experience_modified = experience
 
-    attacker.msg("Your align is %d and theirs is %d, so %d experience is modified to %d" % (attacker.db.alignment, victim.db.alignment, experience, experience_modified))
-
     # Modify experience award based on racial hatreds or affection.
 
     if "hate list" in rules_race.get_race(attacker.race):
@@ -787,7 +889,5 @@ def modify_experience(attacker, victim, experience):
         experience_modified *= 0.875
 
     experience_modified = math.ceil(experience_modified)
-
-    attacker.msg("And after race modification, it was %d" % experience_modified)
 
     return int(experience_modified)

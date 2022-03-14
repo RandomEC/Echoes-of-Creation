@@ -157,6 +157,13 @@ class Room(DefaultRoom):
                 speaker.scripts.delete(message)
 
 
+    def at_player_arrive(self, player):
+        # Run through the contents of the room to look for mobile.
+        for item in self.contents:
+            # If there is a mobile in the room.
+            if "mobile" in item.tags.all():
+                item.at_player_entered(player)
+
     def return_appearance(self, looker, **kwargs):
         """
         This formats a description. It is the hook a 'look' command

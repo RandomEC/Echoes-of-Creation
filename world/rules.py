@@ -3,6 +3,7 @@ import math
 from server.conf import settings
 from world import rules_race
 from evennia import TICKER_HANDLER as tickerhandler
+from evennia.utils import search
 
 def classes_current(character):
     """
@@ -557,3 +558,59 @@ def gain_experience(mobile, hp_gain):
     experience_gain = int(percent_hp_recovered * experience_awarded)
 
     return experience_gain
+
+
+def make_object(location, equipped, reset_object):
+    new_object = ""
+
+    # First, search for all objects of that type and pull out
+    # any that are at "None".
+    object_candidates = search.search_object(reset_object)
+
+    for object in object_candidates:
+        if not object.location:
+            new_object = object
+
+    # If it is not in "None", find the existing object in the world
+    # and copy it.
+    if not new_object:
+
+        object_to_copy = object_candidates[0]
+        new_object = object_to_copy.copy()
+        new_object.key = object_to_copy.key
+        new_object.alias = object_to_copy.aliases
+        if new_object.db.equipped:
+            new_object.db.equipped = False
+        new_object.home = location
+
+    # Either way, put it where it should be.
+    new_object.location = location
+
+    # Clear any enchantment/poison/other affects.
+    new_object.db.spell_affects = {}
+
+    # Set level, other values, and/or fuzz numbers as necessary
+    new_object.db.level = 1
+    if new_object.db.item_type == "armor":
+        new_object.db.armor = set_armor(new_object.db.level)
+    elif new_object.db.item_type == "weapon":
+        new_object.db.damage_low, new_object.db.damage_high = set_weapon_low_high(new_object.db.level)
+    elif new_object.db.item_type == "scroll":
+        new_object.db.spell_level = fuzz_number(new_object.db.spell_level_base)
+    elif new_object.db.item_type == "wand" or new_object.db.item_type == "staff":
+        new_object.db.spell_level = fuzz_number(new_object.db.spell_level_base)
+        new_object.db.charges_maximum = fuzz_number(new_object.db.charges_maximum_base)
+        new_object.db.charges_current = new_object.db.charges_maximum
+    elif new_object.db.item_type == "potion" or new_object.db.item_type == "pill":
+        new_object.db.spell_level = fuzz_number(fuzz_number(new_object.db.spell_level_base))
+
+    # If it should be equipped, equip it.
+    if equipped:
+        if not new_object.db.equipped:
+            if new_object.db.item_type == "weapon":
+                new_object.wield_to(location)
+            else:
+                new_object.wear_to(location)
+
+    return new_object
+

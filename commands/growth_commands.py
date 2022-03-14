@@ -151,7 +151,7 @@ class CmdTrain(MuxCommand):
             if needed_for_hitpoints <= 0:
                 caller.db.experience_spent += rules.hitpoints_cost(caller)
                 caller.db.hitpoints["trains spent"] += 1
-                hit_gain = random.randint(hitpoint_gain_minimum(caller), hitpoint_gain_maximum(caller)) + constitution_hitpoint_bonus(caller)
+                hit_gain = random.randint(hitpoint_gain_minimum(caller), hitpoint_gain_maximum(caller)) + rules.constitution_hitpoint_bonus(caller)
                 new_hitpoints_maximum = caller.hitpoints_maximum + hit_gain
                 
                 caller.hitpoints_maximum = new_hitpoints_maximum
@@ -167,8 +167,8 @@ class CmdTrain(MuxCommand):
                 caller.db.experience_spent += rules.mana_cost(caller)
                 caller.db.mana["trains spent"] += 1
                 mana_gain = (random.randint(mana_gain_minimum(caller), mana_gain_maximum(caller)) + 
-                             intelligence_mana_bonus(caller) + 
-                             wisdom_mana_bonus(caller)
+                             rules.intelligence_mana_bonus(caller) +
+                             rules.wisdom_mana_bonus(caller)
                              )
                 new_mana_maximum = caller.mana_maximum + mana_gain
                 
@@ -207,8 +207,8 @@ class CmdTrain(MuxCommand):
             elif needed_for_attribute <= 0:
                 caller.db.experience_spent += rules.attributes_cost(caller)
                 caller.db.attribute_trains[attribute] += 1
-                caller.msg("Congratulations! Your base %s has increased by one to %d!" % (attribute, caller.get_base_attribute[attribute]))
+                caller.msg("Congratulations! Your base %s has increased by one to %d!" % (attribute, caller.get_base_attribute(attribute)))
             else:
-                caller.msg("You are %d experience short of being able to increase an attribute." % needed_for_moves)
+                caller.msg("You are %d experience short of being able to increase an attribute." % needed_for_attribute)
         else:
             caller.msg("%s is not a trainable statistic. Choose from level, hitpoints, mana, moves or any attribute." % (self.args[0].upper() + self.args[1:]))

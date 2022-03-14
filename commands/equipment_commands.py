@@ -186,7 +186,7 @@ class CmdWear(MuxCommand):
                         self_wear_string = "You wear %s on your %s." % (eq.name, wear_location)
 
                     caller.msg(self_wear_string)
-                    caller.location.msg_contents(room_wear_string)
+                    caller.location.msg_contents(room_wear_string, exclude=caller)
 
                     if not eq.at_after_equip(caller):
                         return
