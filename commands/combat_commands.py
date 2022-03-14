@@ -122,6 +122,11 @@ class Combat(Object):
                     if combatant != attacker and combatant != victim:
                         self.db.combatants[combatant]["combat message"] += room_string
 
+            if self.db.combatants[combatant]["wait_state"]:
+                self.db.combatants[combatant]["wait_state"] -= 2
+                if self.db.combatants[combatant]["wait_state"] <= 0:
+                    self.db.combatants[combatant]["special attack"] = {}
+                
         # Generate output for everyone for the above round. Anyone that died this round is still in
         # self.db.combatants at this point. Make sure a flee didn't cause the destruction of the
         # combat with self check.
