@@ -167,8 +167,9 @@ class Combat(Object):
     # Combat-handler methods
 
     def add_combatant(self, combatant, combatant_target):
+        
         # Add combatant to handler
-        self.db.combatants[combatant] = {"combatant": combatant, "target": combatant_target, "combat message": ""}
+        self.db.combatants[combatant] = {"combatant": combatant, "target": combatant_target, "combat message": "", special_attack: {}, wait_state = 0}
 
         # set up back-reference
         self._init_combatant(combatant)
