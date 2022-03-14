@@ -8,7 +8,7 @@ from server.conf import settings
 
 
 def create_combat(attacker, victim):
-    """Create a combat, if needed"""
+    """Create a combat, if needed, returns the combat object."""
 
     # Check if the attacker is in a safe room.
     if "safe" in attacker.location.db.room_flags:
@@ -20,15 +20,25 @@ def create_combat(attacker, victim):
             attacker.msg("The forces of commerce and justice stop you from attacking %s." % victim.key)
             return
 
-    attacker.msg("Past the end of if checks")
+    if not attacker.ndb.combat_handler and not victim.ndb.combat_handler:
 
-    combat = create_object("commands.combat_commands.Combat", key=("combat_handler_%s" % attacker.location.db.vnum))
-    combat.add_combatant(attacker, victim)
-    combat.add_combatant(victim, attacker)
-    combat.location = attacker.location
-    combat.db.desc = "This is a combat instance."
-    combat.at_repeat()
+        combat = create_object("commands.combat_commands.Combat", key=("combat_handler_%s" % attacker.location.db.vnum))
+        combat.add_combatant(attacker, victim)
+        combat.add_combatant(victim, attacker)
+        combat.location = attacker.location
+        combat.db.desc = "This is a combat instance."
+        combat.at_repeat()
 
+    elif not attacker.ndb.combat_handler:
+        combat = victim.ndb.combat_handler
+        combat.add_combatant(attacker, victim)
+
+    elif not victim.ndb.combat_handler:
+        combat = attacker.ndb.combat_handler
+        combat.add_combatant(victim, attacker)
+        combat.change_target(attacker, victim)
+
+    return combat
 
 def do_attack(attacker, victim, eq_slot):
     """
@@ -383,6 +393,29 @@ def do_flee(character):
         character.location.msg_contents("%s looks around frantically for an escape, but can't get away!"
                                      % (character.name[0].upper() + character.name[1:]),
                                      exclude=character)
+
+
+def do_kick(attacker, victim):
+    if random.randint(1, 100) > attacker.db.skills["kick"]:
+        if "player" in attacker.tags.all():
+            rules_skills.check_skill_improve(attacker, "kick", False)
+            attacker.moves_spent += 5
+
+        attacker.msg("You kick wildly at %s and miss." % victim.key)
+        victim.msg("%s kicks wildly at you and misses." % (attacker.key[0].upper + attacker.key[1:]))
+        attacker.location.msg_contents("%s kicks at %s and misses."
+                                        % (attacker.name, victim.name), exclude=(attacker, victim))
+        return
+    else:
+
+        if "player" in attacker.tags.all():
+            rules_skills.check_skill_improve(attacker, "kick", True)
+
+        damage = random.randint(1,attacker.level)
+        attacker.msg("Your kick %s %s." % victim.key)
+        victim.msg("%s kicks wildly at you and misses." % (attacker.key[0].upper + attacker.key[1:]))
+        attacker.location.msg_contents("%s kicks at %s and misses."
+                                        % (attacker.name, victim.name), exclude=(attacker, victim))
 
 
 def do_one_character_attacks(attacker, victim):

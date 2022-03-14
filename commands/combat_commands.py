@@ -3,7 +3,7 @@ from evennia import create_object
 from evennia import TICKER_HANDLER as tickerhandler
 from commands.command import MuxCommand
 from typeclasses.objects import Object
-from world import rules_combat
+from world import rules_combat, rules_skills
 
 
 class Combat(Object):
@@ -173,6 +173,12 @@ class Combat(Object):
         # set up back-reference
         self._init_combatant(combatant)
 
+    def change_target(self, attacker, victim):
+        self.db.combatants[attacker]["target"] = victim
+
+    def get_target(self, attacker):
+        return self.db.combatants[attacker]["target"]
+
     def _cleanup_combatant(self, combatant):
         """
         Remove combatant from handler and clean
@@ -319,6 +325,64 @@ class CmdFlee(MuxCommand):
             return
 
         rules_combat.do_flee(caller)  
+
+class CmdKick(MuxCommand):
+    """
+    Make an aggressive kick strike at an enemy
+    Usage:
+      kick <target>
+      kick
+    Makes an aggressive kick strike at an enemy, if you have learned the
+    ability. Can only be used without a target in combat, where it will
+    attack your current target.
+    """
+
+    key = "kick"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        caller = self.caller
+
+        if "kick" not in caller.db.skills:
+            caller.msg("You'd better leave the martial arts to knowledgable fighters.")
+            return
+
+        if "blind" in caller.db.spell_affects:
+            caller.msg("It would help if you could see something to kick!")
+            return
+
+        if not self.args:
+
+            if not caller.ndb.combat_handler:
+                caller.msg("You kick at the air, and look foolish doing it.")
+                return
+            else:
+                combat = caller.ndb.combat_handler
+                target = combat.get_target(caller)
+
+        else:
+            target = caller.search(self.args, location=caller.location)
+            if not target:
+                caller.msg("There is no %s here to kick." % self.args)
+                return
+            else:
+
+                if "player" in target.tags.all():
+                    caller.msg("You cannot attack another player.")
+                    return
+
+                if not caller.ndb.combat_handler:
+                    combat = rules_combat.create_combat(caller, target)
+                else:
+                    combat = caller.ndb.combat_handler
+
+                if "berserk" in caller.db.spell_affects and target != combat.get_target(caller):
+                    caller.msg("You cannot switch targets while you are in the rage of battle!")
+                    return
+
+        rules_combat.do_kick(caller, target)
+
 
 class CmdWimpy(MuxCommand):
     """

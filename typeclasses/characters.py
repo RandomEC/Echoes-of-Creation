@@ -225,6 +225,15 @@ class Character(DefaultCharacter):
     def moves_current(self):
         return self.moves_maximum - self.moves_spent
 
+    @property
+    def level(self):
+        return self.db.level
+
+    @level.setter
+    def level(self, new_value):
+        self.db.level = new_value
+
+
     def get_affect_status(self, affect_name):
         """
         Method that returns a boolean for whether the affect is currently
