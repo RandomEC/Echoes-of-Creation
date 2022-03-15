@@ -64,15 +64,15 @@ class Character(DefaultCharacter):
 
         # set persistent attributes
         self.db.attributes = {
-            "strength":13,
-            "intelligence":13,
-            "wisdom":13,
-            "dexterity":13,
-            "constitution":13,
-            "hitroll":0,
-            "damroll":0,
-            "armor class":100,
-            "saving throw":0
+            "strength": 13,
+            "intelligence": 13,
+            "wisdom": 13,
+            "dexterity": 13,
+            "constitution": 13,
+            "hitroll": 0,
+            "damroll": 0,
+            "armor class": 100,
+            "saving throw": 0
             }
 
         # set other stats
@@ -306,7 +306,7 @@ class Character(DefaultCharacter):
                         multiplier = 1
 
                     # The other wear locations don't have armor, and will choke on this.
-                    if self.db.item_type == "armor" or self.db.item_type == "light":
+                    if wear_location != "wielded, primary" and wear_location != "wielded, secondary":
                         modifier = modifier - (equipment.db.armor*multiplier)
 
                     dexterity = self.dexterity
