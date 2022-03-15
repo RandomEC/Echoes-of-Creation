@@ -195,8 +195,12 @@ def do_damage(attacker, victim, eq_slot):
                                     weapon.db.damage_high
                                     )
 
+            attacker.msg("Base weapon damage = %d" % damage)
+            
             dam_bonus = int(attacker.damroll)
 
+            attacker.msg("Damroll = %d" % dam_bonus)
+            
             # You only get the damroll bonus for the weapon you are using
             # on the attack. As a result, we subtract out the damroll
             # from the weapon not being used in the attack, if there is
@@ -210,13 +214,19 @@ def do_damage(attacker, victim, eq_slot):
                 eq = attacker.db.eq_slots["wielded, secondary"]
                 dam_bonus -= eq.db.stat_modifiers["damroll"]
 
+            attacker.msg("Damroll after weapon mod = %d" % dam_bonus)
+                
             damage += dam_bonus
+            
+            attacker.msg("Damage after damroll add = %d" % damage)
             
             # Check if player has enhanced damage.
             if "enhanced damage" in attacker.db.skills:
                 damage += int(damage * attacker.db.skills["enhanced damage"] / 150)
                 rules_skills.check_skill_improve(attacker, "enhanced damage", True)
 
+            attacker.msg("Damage after enhanced damage = %d" % damage)
+                
         else:
             damage = random.randint(1, 2) * attacker.size
 
@@ -229,6 +239,8 @@ def do_damage(attacker, victim, eq_slot):
     if victim.db.position == "sleeping":
         damage *= 2
 
+    attacker.msg("Damage after sleep check = %d" % damage)
+        
     return damage
 
 
