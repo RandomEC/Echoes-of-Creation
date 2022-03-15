@@ -49,6 +49,10 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
     that single hit attempt.
     """
 
+    # Don't beat a dead horse.
+    if victim.current_hitpoints <= 0:
+        return
+    
     if "hit" in kwargs:
         hit = kwargs["hit"]
     else:
@@ -65,9 +69,16 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
     if hit:
 
         if "player" in attacker.tags.all():
+            # Make sure we aren't giving out experience for more damage than
+            # the mobile has hitpoints remaining.
+            if damage > victim.hitpoints_current:
+                experience_damage = hitpoints_current
+            else:
+                experience_damage = damage
+                        
             # Experience awarded for a hit is dependent on damage done as a
             # percent of total hitpoints.
-            percent_damage = damage / victim.hitpoints_maximum
+            percent_damage = experience_damage / victim.hitpoints_maximum
 
             if percent_damage > 1:
                 percent_damage = 1
@@ -125,11 +136,6 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
                            )
 
         if "player" in attacker.tags.all():
-            if experience_modified > 0:
-                attacker_string += \
-                    ("You gain %d experience points from your attack of %d total, causing experience current of %s.\n"
-                     % (experience_modified, victim.db.experience_total, victim.db.experience_current)
-                     )
             if damage > attacker.db.damage_maximum:
                 attacker.db.damage_maximum = damage
                 attacker.db.damage_maximum_mobile = victim.key
@@ -184,8 +190,12 @@ def do_damage(attacker, victim, eq_slot):
                                     weapon.db.damage_high
                                     )
 
+            attacker.msg("Base weapon damage = %d" % damage)
+            
             dam_bonus = int(attacker.damroll)
 
+            attacker.msg("Damroll = %d" % dam_bonus)
+            
             # You only get the damroll bonus for the weapon you are using
             # on the attack. As a result, we subtract out the damroll
             # from the weapon not being used in the attack, if there is
@@ -199,13 +209,19 @@ def do_damage(attacker, victim, eq_slot):
                 eq = attacker.db.eq_slots["wielded, secondary"]
                 dam_bonus -= eq.db.stat_modifiers["damroll"]
 
+            attacker.msg("Damroll after weapon mod = %d" % dam_bonus)
+                
             damage += dam_bonus
+            
+            attacker.msg("Damage after damroll add = %d" % damage)
             
             # Check if player has enhanced damage.
             if "enhanced damage" in attacker.db.skills:
                 damage += int(damage * attacker.db.skills["enhanced damage"] / 150)
                 rules_skills.check_skill_improve(attacker, "enhanced damage", True)
 
+            attacker.msg("Damage after enhanced damage = %d" % damage)
+                
         else:
             damage = random.randint(1, 2) * attacker.size
 
@@ -218,6 +234,8 @@ def do_damage(attacker, victim, eq_slot):
     if victim.db.position == "sleeping":
         damage *= 2
 
+    attacker.msg("Damage after sleep check = %d" % damage)
+        
     return damage
 
 
@@ -392,9 +410,11 @@ def do_flee(character):
         combat = character.ndb.combat_handler
         combat.remove_combatant(character)
 
-        experience_loss = int(settings.EXPERIENCE_LOSS_FLEE * rules.experience_cost_base(rules.current_experience_step(character) + 1))
+        # Only do experience loss if the character is past level 5.
+        if character.level > 5:
+            experience_loss = int(settings.EXPERIENCE_LOSS_FLEE * rules.experience_cost_base(rules.current_experience_step(character) + 1))
         
-        character.db.experience_total -= experience_loss
+            character.db.experience_total -= experience_loss
 
         character.msg("You show a good pair of heels and flee %s out of combat!\nYou lose %d experience for fleeing." % (direction, experience_loss))
         character.location.msg_contents("%s tucks tail and flees %s out of combat!"
@@ -405,8 +425,10 @@ def do_flee(character):
         combat.combat_end_check()
 
     else:
-        experience_loss = int(settings.EXPERIENCE_LOSS_FLEE_FAIL * rules.experience_cost_base(rules.current_experience_step(character) + 1))
-        character.db.experience_total -= experience_loss
+        # Only do experience loss if the character is past level 5.
+        if character.level > 5:
+            experience_loss = int(settings.EXPERIENCE_LOSS_FLEE_FAIL * rules.experience_cost_base(rules.current_experience_step(character) + 1))
+            character.db.experience_total -= experience_loss
         
         character.msg("You fail to flee from combat!\nYou lose %d experience for the attempt." % experience_loss)
         character.location.msg_contents("%s looks around frantically for an escape, but can't get away!"

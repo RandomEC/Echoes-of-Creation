@@ -337,8 +337,9 @@ class CmdFlee(MuxCommand):
       flee
     When you attempt to flee, you will try to exit from the room and combat. Your chance
     of success is decreased the less exits there are from the room, and you cannot flee
-    through non-standard (n/e/s/w/u/d) exits. You incur a slight experience penalty for
-    fleeing from combat, and a decreased penalty for trying and failing.
+    through non-standard (n/e/s/w/u/d) exits. After level 5, you incur a slight
+    experience penalty for fleeing from combat, and a decreased penalty for trying and
+    failing.
     """
 
     key = "flee"

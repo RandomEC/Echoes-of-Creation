@@ -352,68 +352,68 @@ class Character(DefaultCharacter):
                         level_bonus = int((self.db.level-1)*(-500)/100)
                         modifier += level_bonus
 
-                if attribute_name == "hitroll":
+        if attribute_name == "hitroll":
 
-                    strength = self.strength
+            strength = self.strength
 
-                    if strength < 2:
-                        modifier += -5
-                    elif strength < 4:
-                        modifier += -3
-                    elif strength < 6:
-                        modifier += -2
-                    elif strength < 8:
-                        modifier += -1
-                    elif strength < 15:
-                        modifier += 0
-                    elif strength < 17:
-                        modifier += 1
-                    elif strength < 19:
-                        modifier += 2
-                    elif strength < 21:
-                        modifier += 3
-                    elif strength < 22:
-                        modifier += 4
-                    elif strength < 23:
-                        modifier += 5
-                    elif strength < 24:
-                        modifier += 6
-                    elif strength < 25:
-                        modifier += 8
-                    elif strength < 26:
-                        modifier += 10
-                    
-                if attribute_name == "damroll":
-                    strength = self.strength
+            if strength < 2:
+                modifier += -5
+            elif strength < 4:
+                modifier += -3
+            elif strength < 6:
+                modifier += -2
+            elif strength < 8:
+                modifier += -1
+            elif strength < 15:
+                modifier += 0
+            elif strength < 17:
+                modifier += 1
+            elif strength < 19:
+                modifier += 2
+            elif strength < 21:
+                modifier += 3
+            elif strength < 22:
+                modifier += 4
+            elif strength < 23:
+                modifier += 5
+            elif strength < 24:
+                modifier += 6
+            elif strength < 25:
+                modifier += 8
+            elif strength < 26:
+                modifier += 10
 
-                    if strength < 2:
-                        modifier += -4
-                    elif strength < 3:
-                        modifier += -2
-                    elif strength < 6:
-                        modifier += -1
-                    elif strength < 14:
-                        modifier += 0
-                    elif strength < 16:
-                        modifier += 1
-                    elif strength < 17:
-                        modifier += 2
-                    elif strength < 18:
-                        modifier += 3
-                    elif strength < 19:
-                        modifier += 4
-                    elif strength < 20:
-                        modifier += 5
-                    elif strength < 21:
-                        modifier += 6
-                    elif strength < 23:
-                        modifier += 7
-                    elif strength < 24:
-                        modifier += 8
-                    elif strength < 25:
-                        modifier += 10
-                    elif strength < 26:
-                        modifier += 12
+        if attribute_name == "damroll":
+            strength = self.strength
+
+            if strength < 2:
+                modifier += -4
+            elif strength < 3:
+                modifier += -2
+            elif strength < 6:
+                modifier += -1
+            elif strength < 14:
+                modifier += 0
+            elif strength < 16:
+                modifier += 1
+            elif strength < 17:
+                modifier += 2
+            elif strength < 18:
+                modifier += 3
+            elif strength < 19:
+                modifier += 4
+            elif strength < 20:
+                modifier += 5
+            elif strength < 21:
+                modifier += 6
+            elif strength < 23:
+                modifier += 7
+            elif strength < 24:
+                modifier += 8
+            elif strength < 25:
+                modifier += 10
+            elif strength < 26:
+                modifier += 12
                     
 
         # assemble modifier with base stat, first for the "trainable" stats, which have an extra modifier for that
