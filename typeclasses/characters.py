@@ -676,7 +676,7 @@ class Mobile(Character):
         
         # Check to see if mobile is dead, and at "none".
         if self.location == None:
-            self.move_to(self.home, quiet = True)
+            self.move_to(self.home, quiet=True)
 
             # Reset spell affects on the mobile.
             self.db.spell_affects = self.db.spell_affects_reset
@@ -686,6 +686,8 @@ class Mobile(Character):
 
             # Fuzz up the mobile's level.
             self.db.level = rules.fuzz_number(self.db.level_base)
+            if self.db.level < 1:
+                self.db.level = 1
             level = self.db.level
             
             # Set hitpoint maximum based on level.

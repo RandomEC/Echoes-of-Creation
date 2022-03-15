@@ -40,6 +40,7 @@ from commands.build_commands import CmdName
 from commands.combat_commands import CmdAttack
 from commands.combat_commands import CmdConsider
 from commands.combat_commands import CmdFlee
+from commands.combat_commands import CmdKick
 from commands.combat_commands import CmdWimpy
 from commands.door_commands import CmdDoorOpen
 from commands.door_commands import CmdDoorClose
@@ -115,6 +116,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdSay())
         self.add(CmdDowse())
         self.add(CmdForage())
+        self.add(CmdKick())
 
 class AccountCmdSet(default_cmds.AccountCmdSet):
     """
