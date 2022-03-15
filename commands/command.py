@@ -1457,6 +1457,7 @@ class CmdStand(MuxCommand):
     """
 
     key = "stand"
+    aliases = ['wake']
     locks = "cmd:all()"
     arg_regex = r"\s|$"
 
