@@ -340,13 +340,24 @@ class CmdScore(MuxCommand):
                   "------------------ |w|\n")
         score = score + buffer
 
-        buffer = ("|w| |cMax Damage: |w%-13d   |cAgainst: |w%-33s|w|\n"
-                  % (maximum_damage, (maximum_damage_mobile[0].upper() + maximum_damage_mobile[1:])))
-        score = score + buffer
+        if maximum_damage:
 
-        buffer = ("|w| |cMax Experience: |w%-9d   |cAgainst: |w%-33s|w|\n"
-                  % (maximum_kill_experience, (maximum_kill_experience_mobile[0].upper() + maximum_kill_experience_mobile[1:])))
-        score = score + buffer
+            buffer = ("|w| |cMax Damage: |w%-13d   |cAgainst: |w%-33s|w|\n"
+                      % (maximum_damage, (maximum_damage_mobile[0].upper() + maximum_damage_mobile[1:])))
+            score = score + buffer
+        else:
+            buffer = ("|w| |cMax Damage: |w%-13d   |cAgainst: |w%-33s|w|\n"
+                      % (0, "None"))
+            score = score + buffer
+
+        if maximum_kill_experience:
+            buffer = ("|w| |cMax Experience: |w%-9d   |cAgainst: |w%-33s|w|\n"
+                      % (maximum_kill_experience, (maximum_kill_experience_mobile[0].upper() + maximum_kill_experience_mobile[1:])))
+            score = score + buffer
+        else:
+            buffer = ("|w| |cMax Experience: |w%-9d   |cAgainst: |w%-33s|w|\n"
+                      % (0, "None"))
+            score = score + buffer
 
         if level > 101:
             buffer = ("|w| |cHoly Light: |w%-3d       |cInvis: |w%-3d     |c"

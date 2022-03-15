@@ -50,7 +50,7 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
     """
 
     # Don't beat a dead horse.
-    if victim.current_hitpoints <= 0:
+    if victim.hitpoints_current <= 0:
         return
     
     if "hit" in kwargs:
