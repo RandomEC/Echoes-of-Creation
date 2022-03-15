@@ -149,7 +149,7 @@ class CmdWear(MuxCommand):
                                                                                     caller.name,
                                                                                     eq_current.name,
                                                                                     eq_current.db.wear_location
-                                                                                    ))
+                                                                                    ), exclude=caller)
                             
                 # If a location is open, just wear it.
                 success = eq.wear_to(caller)
