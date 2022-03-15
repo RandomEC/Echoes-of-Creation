@@ -94,6 +94,8 @@ class Combat(Object):
         # Iterate through combatants to do a round of attacks.
         for combatant in self.db.combatants:
 
+            combatant.msg("Your wait state is %d" % self.db.combatants[combatant]["wait state"])
+
             # First, check to see if the combatant is below their wimpy.
             if combatant.hitpoints_current > 0 and (("player" in combatant.tags.all() and
                 combatant.hitpoints_current <= combatant.db.wimpy) or \
@@ -113,6 +115,36 @@ class Combat(Object):
                 # Do the attacks for this attacker, and get output.
                 attacker_string, victim_string, room_string = rules_combat.do_one_character_attacks(attacker, victim)
 
+                # Clear special attack.
+                self.db.combatants[combatant]["special attack"] = {}
+
+                # Drop wait state
+                if self.db.combatants[combatant]["wait state"]:
+                    self.db.combatants[combatant]["wait state"] -= 2
+                    if self.db.combatants[combatant]["wait state"] <= 0:
+                        self.db.combatants[combatant]["wait state"] = 0
+
+                if "player" in attacker.tags.all():
+                    wait_state = self.db.combatants[attacker]["wait state"]
+                    prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n Recovery %d>" % (attacker.hitpoints_current,
+                                                                                                    attacker.hitpoints_maximum,
+                                                                                                    attacker.mana_current,
+                                                                                                    attacker.mana_maximum,
+                                                                                                    attacker.moves_current,
+                                                                                                    attacker.moves_maximum,
+                                                                                                    wait_state)
+                    attacker.msg(prompt=prompt)
+                if "player" in victim.tags.all():
+                    wait_state = self.db.combatants[victim]["wait state"]
+                    prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n Recovery %d>" % (victim.hitpoints_current,
+                                                                                                    victim.hitpoints_maximum,
+                                                                                                    victim.mana_current,
+                                                                                                    victim.mana_maximum,
+                                                                                                    victim.moves_current,
+                                                                                                    victim.moves_maximum,
+                                                                                                    wait_state)
+                    victim.msg(prompt=prompt)
+
                 # Add output to the rest of the output generated this round
                 self.db.combatants[attacker]["combat message"] += attacker_string
                 self.db.combatants[victim]["combat message"] += victim_string
@@ -122,11 +154,7 @@ class Combat(Object):
                     if combatant != attacker and combatant != victim:
                         self.db.combatants[combatant]["combat message"] += room_string
 
-            if self.db.combatants[combatant]["wait_state"]:
-                self.db.combatants[combatant]["wait_state"] -= 2
-                if self.db.combatants[combatant]["wait_state"] <= 0:
-                    self.db.combatants[combatant]["special attack"] = {}
-                
+
         # Generate output for everyone for the above round. Anyone that died this round is still in
         # self.db.combatants at this point. Make sure a flee didn't cause the destruction of the
         # combat with self check.
@@ -174,7 +202,7 @@ class Combat(Object):
     def add_combatant(self, combatant, combatant_target):
         
         # Add combatant to handler
-        self.db.combatants[combatant] = {"combatant": combatant, "target": combatant_target, "combat message": "", special_attack: {}, wait_state = 0}
+        self.db.combatants[combatant] = {"combatant": combatant, "target": combatant_target, "combat message": "", "special attack": {}, "wait state": 0}
 
         # set up back-reference
         self._init_combatant(combatant)
@@ -215,6 +243,9 @@ class CmdAttack(MuxCommand):
         """Implement attack"""
 
         attacker = self.caller
+
+        attacker.msg("in attack")
+
         if not self.args:
             attacker.msg("Usage: attack <mobile>")
             return
@@ -227,10 +258,7 @@ class CmdAttack(MuxCommand):
             attacker.msg("You cannot attack another player!")
             return
 
-        if attacker.db.combat_handler or victim.db.combat_handler:
-            pass
-        else:
-            rules_combat.create_combat(attacker, victim)
+        rules_combat.create_combat(attacker, victim)
 
 class CmdConsider(MuxCommand):
     """
@@ -346,6 +374,7 @@ class CmdKick(MuxCommand):
     key = "kick"
     locks = "cmd:all()"
     arg_regex = r"\s|$"
+    wait_state = 6
 
     def func(self):
         caller = self.caller
@@ -388,7 +417,7 @@ class CmdKick(MuxCommand):
                     return
 
         rules_combat.do_kick(caller, target)
-
+        combat.db.combatants[caller]["wait state"] = self.wait_state
 
 class CmdWimpy(MuxCommand):
     """

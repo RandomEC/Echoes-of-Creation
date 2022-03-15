@@ -86,6 +86,13 @@ class MuxCommand(Command):
         """
         This hook is called before self.parse() on all commands
         """
+        caller = self.caller
+        if "combat_handler" in caller.ndb.all:
+            combat = caller.ndb.combat_handler
+            wait_state = combat.db.combatants[caller]["wait state"]
+            if wait_state and self.wait_state:
+                caller.msg("You are still recovering from your last combat action!")
+                return
         pass
 
     def at_post_cmd(self):
@@ -94,12 +101,23 @@ class MuxCommand(Command):
         (after self.func()).
         """
         caller = self.caller
-        prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n>" % (caller.hitpoints_current,
-                                                                 caller.hitpoints_maximum,
-                                                                 caller.mana_current,
-                                                                 caller.mana_maximum,
-                                                                 caller.moves_current,
-                                                                 caller.moves_maximum)
+        if "combat_handler" in caller.ndb.all:
+            combat = caller.ndb.combat_handler
+            wait_state = combat.db.combatants[caller]["wait state"]
+            prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n Recovery %d>" % (caller.hitpoints_current,
+                                                                                        caller.hitpoints_maximum,
+                                                                                        caller.mana_current,
+                                                                                        caller.mana_maximum,
+                                                                                        caller.moves_current,
+                                                                                        caller.moves_maximum,
+                                                                                        wait_state)
+        else:
+            prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n>" % (caller.hitpoints_current,
+                                                                                caller.hitpoints_maximum,
+                                                                                caller.mana_current,
+                                                                                caller.mana_maximum,
+                                                                                caller.moves_current,
+                                                                                caller.moves_maximum)
         caller.msg(prompt = prompt)
 
     def parse(self):

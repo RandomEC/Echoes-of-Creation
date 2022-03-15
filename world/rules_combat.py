@@ -49,13 +49,13 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
     that single hit attempt.
     """
 
-    if hit in kwargs:
-        hit = hit
+    if "hit" in kwargs:
+        hit = kwargs["hit"]
     else:
         hit = hit_check(attacker, victim)
         
-    if damage in kwargs:
-        damage = damage
+    if "damage" in kwargs:
+        damage = kwargs["damage"]
     else:
         damage = do_damage(attacker, victim, eq_slot)
     
@@ -99,10 +99,10 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
 
         victim.take_damage(damage)
         
-        if output in kwargs:
-            attacker_string = output[0]
-            victim_string = output[1]
-            room_string = output[2]
+        if "output" in kwargs:
+            attacker_string = kwargs["output"][0]
+            victim_string = kwargs["output"][1]
+            room_string = kwargs["output"][2]
         else:
             attacker_string = ("You |g%s|n %s with your %s.\n"
                                % (get_damagestring("attacker", damage),
@@ -136,10 +136,10 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
                 attacker_string += ("Your %s for %d damage is your record for damage in one hit!!!\n"
                                     % (damage_type, damage))
     else:
-        if output in kwargs:
-            attacker_string = output[0]
-            victim_string = output[1]
-            room_string = output[2]
+        if "output" in kwargs:
+            attacker_string = kwargs["output"][0]
+            victim_string = kwargs["output"][1]
+            room_string = kwargs["output"][2]
         else:
             attacker_string = ("You miss %s with your %s.\n" % (victim.key,
                                                                 damage_type
@@ -383,7 +383,7 @@ def do_flee(character):
 
         if success:
             if "mobile" in character.tags.all():
-                if random.randint(1,2) == 2:
+                if random.randint(1, 2) == 2:
                     success = False
             break
 
@@ -422,27 +422,27 @@ def do_kick(attacker, victim):
             rules_skills.check_skill_improve(attacker, "kick", False)
             attacker.moves_spent += 5
 
-        attacker_output = ("You kick wildly at %s and miss." % victim.key)
-        victim_outout = ("%s kicks wildly at you and misses." % (attacker.key[0].upper + attacker.key[1:]))
-        room_output = ("%s kicks at %s and misses." % (attacker.name, victim.name), exclude=(attacker, victim))
+        attacker_output = ("You kick wildly at %s and miss.\n" % victim.key)
+        victim_output = ("%s kicks wildly at you and misses.\n" % (attacker.key[0].upper() + attacker.key[1:]))
+        room_output = ("%s kicks at %s and misses.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.name))
         
-        combat.db.[attacker]["special_attack"]["output"] = [attacker_output, victim_output, room_output]
-        combat.db.[attacker]["special_attack"]["hit"] = False
-        combat.db.[attacker]["special_attack"]["damage"] = 0
+        combat.db.combatants[attacker]["special attack"]["output"] = [attacker_output, victim_output, room_output]
+        combat.db.combatants[attacker]["special attack"]["hit"] = False
+        combat.db.combatants[attacker]["special attack"]["damage"] = 0
         
     else:
 
         if "player" in attacker.tags.all():
             rules_skills.check_skill_improve(attacker, "kick", True)
 
-        damage = random.randint(1,attacker.level)
-        attacker_output = ("You %s %s with your vicious kick." % (get_damagestring(attacker, damage), victim.key))
-        victim_output = ("%s %s you with its vicious kick." % ((attacker.key[0].upper + attacker.key[1:]), get_damagestring(attacker, damage)))
-        room_output = ("%s %s %s with its vicious kick." % ((attacker.key[0].upper + attacker.key[1:]), get_damagestring(attacker, damage), victim.key))
+        damage = random.randint(1, attacker.level)
+        attacker_output = ("You |g%s|n %s with your vicious kick.\n" % (get_damagestring("attacker", damage), victim.key))
+        victim_output = ("%s |r%s|n you with its vicious kick.\n" % ((attacker.key[0].upper() + attacker.key[1:]), get_damagestring("victim", damage)))
+        room_output = ("%s |r%s|n %s with its vicious kick.\n" % ((attacker.key[0].upper() + attacker.key[1:]), get_damagestring("victim", damage), victim.key))
 
-        combat.db.[attacker]["special_attack"]["output"] = [attacker_output, victim_output, room_output]
-        combat.db.[attacker]["special_attack"]["hit"] = True
-        combat.db.[attacker]["special_attack"]["damage"] = damage
+        combat.db.combatants[attacker]["special attack"]["output"] = [attacker_output, victim_output, room_output]
+        combat.db.combatants[attacker]["special attack"]["hit"] = True
+        combat.db.combatants[attacker]["special attack"]["damage"] = damage
        
 
 def do_one_character_attacks(attacker, victim):
@@ -458,22 +458,22 @@ def do_one_character_attacks(attacker, victim):
     
     # Check if special attack is necessary.
     combat = attacker.ndb.combat_handler
-    if combat.db.combatants[attacker]["special_attack"]:
-        special_hit = combat.db.combatants[attacker]["special_attack"]["hit"]
-        special_damage = combat.db.combatants[attacker]["special_attack"]["damage"]
-        special_output = combat.db.combatants[attacker]["special_attack"]["output"]
+    if combat.db.combatants[attacker]["special attack"]:
+        special_hit = combat.db.combatants[attacker]["special attack"]["hit"]
+        special_damage = combat.db.combatants[attacker]["special attack"]["damage"]
+        special_output = combat.db.combatants[attacker]["special attack"]["output"]
         
-        new_attacker_string, new_victim_string, new_room_string = do_attack(attacker, victim, None, hit = special_hit, damage = special_damage, output = special_output)
+        new_attacker_string, new_victim_string, new_room_string = do_attack(attacker, victim, None, hit=special_hit, damage=special_damage, output=special_output)
         attacker_string += new_attacker_string
         victim_string += new_victim_string
-        room_strong += new_room_string
+        room_string += new_room_string
     
     # Do base attacks.
     new_attacker_string, new_victim_string, new_room_string = \
         do_one_weapon_attacks(attacker, victim, "wielded, primary")
     attacker_string += new_attacker_string
     victim_string += new_victim_string
-    room_strong += new_room_string
+    room_string += new_room_string
     
     # Check for dual wield.
     if attacker.db.eq_slots["wielded, primary"] and \
