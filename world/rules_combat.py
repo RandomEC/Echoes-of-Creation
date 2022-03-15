@@ -49,6 +49,10 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
     that single hit attempt.
     """
 
+    # Don't beat a dead horse.
+    if victim.current_hitpoints <= 0:
+        return
+    
     if "hit" in kwargs:
         hit = kwargs["hit"]
     else:
@@ -65,9 +69,16 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
     if hit:
 
         if "player" in attacker.tags.all():
+            # Make sure we aren't giving out experience for more damage than
+            # the mobile has hitpoints remaining.
+            if damage > victim.hitpoints_current:
+                experience_damage = hitpoints_current
+            else:
+                experience_damage = damage
+                        
             # Experience awarded for a hit is dependent on damage done as a
             # percent of total hitpoints.
-            percent_damage = damage / victim.hitpoints_maximum
+            percent_damage = experience_damage / victim.hitpoints_maximum
 
             if percent_damage > 1:
                 percent_damage = 1
