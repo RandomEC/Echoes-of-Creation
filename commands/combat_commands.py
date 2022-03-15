@@ -94,8 +94,6 @@ class Combat(Object):
         # Iterate through combatants to do a round of attacks.
         for combatant in self.db.combatants:
 
-            combatant.msg("Your wait state is %d" % self.db.combatants[combatant]["wait state"])
-
             # First, check to see if the combatant is below their wimpy.
             if combatant.hitpoints_current > 0 and (("player" in combatant.tags.all() and
                 combatant.hitpoints_current <= combatant.db.wimpy) or \
