@@ -323,6 +323,8 @@ def do_death(attacker, victim):
 
     else:
 
+        corpse = False
+
         object_candidates = evennia.search_tag("pc corpse")
 
         for object in object_candidates:
@@ -349,12 +351,13 @@ def do_death(attacker, victim):
         victim.db.spell_affects = {}
 
         # Do xp penalty.
-        experience_loss = int(settings.EXPERIENCE_LOSS_DEATH * rules.experience_cost_base(rules.current_experience_step(character) + 1))
-        victim.db.experience_total -= experience_loss
-        
-        victim_string += ("You lose %s experience as a result of your death!" % experience_loss)
+        if victim.level > 5:
+            experience_loss = int(settings.EXPERIENCE_LOSS_DEATH * rules.experience_cost_base(rules.current_experience_step(victim) + 1))
+            victim.db.experience_total -= experience_loss
 
-        # Do gold penalty, after figuring out how much it should be.
+            victim_string += ("You lose %s experience as a result of your death!" % experience_loss)
+
+            # Do gold penalty, after figuring out how much it should be.
 
     return (attacker_string, victim_string, room_string)
 
@@ -404,10 +407,16 @@ def do_flee(character):
         
             character.db.experience_total -= experience_loss
 
-        character.msg("You show a good pair of heels and flee %s out of combat!\nYou lose %d experience for fleeing." % (direction, experience_loss))
-        character.location.msg_contents("%s tucks tail and flees %s out of combat!"
-                                     % ((character.name[0].upper() + character.name[1:]), direction),
-                                     exclude=character)
+            character.msg("You show a good pair of heels and flee %s out of combat!\nYou lose %d experience for fleeing." % (direction, experience_loss))
+            character.location.msg_contents("%s tucks tail and flees %s out of combat!"
+                                         % ((character.name[0].upper() + character.name[1:]), direction),
+                                         exclude=character)
+        else:
+            character.msg(
+                "You show a good pair of heels and flee %s out of combat!" % direction)
+            character.location.msg_contents("%s tucks tail and flees %s out of combat!"
+                                            % ((character.name[0].upper() + character.name[1:]), direction),
+                                            exclude=character)
 
         character.move_to(exit.destination, quiet=True)
         combat.combat_end_check()
@@ -418,11 +427,15 @@ def do_flee(character):
             experience_loss = int(settings.EXPERIENCE_LOSS_FLEE_FAIL * rules.experience_cost_base(rules.current_experience_step(character) + 1))
             character.db.experience_total -= experience_loss
         
-        character.msg("You fail to flee from combat!\nYou lose %d experience for the attempt." % experience_loss)
-        character.location.msg_contents("%s looks around frantically for an escape, but can't get away!"
-                                     % (character.name[0].upper() + character.name[1:]),
-                                     exclude=character)
-
+            character.msg("You fail to flee from combat!\nYou lose %d experience for the attempt." % experience_loss)
+            character.location.msg_contents("%s looks around frantically for an escape, but can't get away!"
+                                         % (character.name[0].upper() + character.name[1:]),
+                                         exclude=character)
+        else:
+            character.msg("You fail to flee from combat!")
+            character.location.msg_contents("%s looks around frantically for an escape, but can't get away!"
+                                            % (character.name[0].upper() + character.name[1:]),
+                                            exclude=character)
 
 def do_kick(attacker, victim):
     combat = attacker.ndb.combat_handler
@@ -468,7 +481,7 @@ def do_one_character_attacks(attacker, victim):
     
     # Check if special attack is necessary.
     combat = attacker.ndb.combat_handler
-    if combat.db.combatants[attacker]["special attack"]:
+    if combat.db.combatants[attacker]["special attack"] and victim.hitpoints_current > 0:
         special_hit = combat.db.combatants[attacker]["special attack"]["hit"]
         special_damage = combat.db.combatants[attacker]["special attack"]["damage"]
         special_output = combat.db.combatants[attacker]["special attack"]["output"]
@@ -479,20 +492,22 @@ def do_one_character_attacks(attacker, victim):
         room_string += new_room_string
     
     # Do base attacks.
-    new_attacker_string, new_victim_string, new_room_string = \
-        do_one_weapon_attacks(attacker, victim, "wielded, primary")
-    attacker_string += new_attacker_string
-    victim_string += new_victim_string
-    room_string += new_room_string
-    
-    # Check for dual wield.
-    if attacker.db.eq_slots["wielded, primary"] and \
-            attacker.db.eq_slots["wielded, secondary"]:
+    if victim.hitpoints_current > 0:
         new_attacker_string, new_victim_string, new_room_string = \
-            do_one_weapon_attacks(attacker, victim, "wielded, secondary")
+            do_one_weapon_attacks(attacker, victim, "wielded, primary")
         attacker_string += new_attacker_string
         victim_string += new_victim_string
         room_string += new_room_string
+    
+    # Check for dual wield.
+    if victim.hitpoints_current > 0:
+        if attacker.db.eq_slots["wielded, primary"] and \
+                attacker.db.eq_slots["wielded, secondary"]:
+            new_attacker_string, new_victim_string, new_room_string = \
+                do_one_weapon_attacks(attacker, victim, "wielded, secondary")
+            attacker_string += new_attacker_string
+            victim_string += new_victim_string
+            room_string += new_room_string
 
     if victim.hitpoints_current <= 0:
         new_attacker_string, new_victim_string, new_room_string = \
@@ -519,76 +534,80 @@ def do_one_weapon_attacks(attacker, victim, eq_slot):
     room_string = ""
 
     # If primary weapon, first hit is free.
-    if eq_slot == "wielded, primary":
-        attacker_string, victim_string, room_string = do_attack(attacker,
-                                                                victim,
-                                                                eq_slot
-                                                                )
-    else:
-        if "mobile" in attacker.tags.all():
-            if random.randint(1, 100) < attacker.db.level:
-                attacker_string, victim_string, room_string = \
-                    do_attack(attacker, victim, eq_slot)
+    if victim.hitpoints_current > 0:
+        if eq_slot == "wielded, primary":
+            attacker_string, victim_string, room_string = do_attack(attacker,
+                                                                    victim,
+                                                                    eq_slot
+                                                                    )
         else:
-            # Save hero for dual skill implementation.
-            pass
+            if "mobile" in attacker.tags.all():
+                if random.randint(1, 100) < attacker.db.level:
+                    attacker_string, victim_string, room_string = \
+                        do_attack(attacker, victim, eq_slot)
+            else:
+                # Save hero for dual skill implementation.
+                pass
 
     # Check for second attack.
-    if eq_slot == "wielded, primary":
-        if "mobile" in attacker.tags.all():
-            if random.randint(1, 100) < attacker.db.level:
-                new_attacker_string, new_victim_string, new_room_string = \
-                    do_attack(attacker, victim, eq_slot)
-                attacker_string += new_attacker_string
-                victim_string += new_victim_string
-                room_string += new_room_string
+    if victim.hitpoints_current > 0:
+        if eq_slot == "wielded, primary":
+            if "mobile" in attacker.tags.all():
+                if random.randint(1, 100) < attacker.db.level:
+                    new_attacker_string, new_victim_string, new_room_string = \
+                        do_attack(attacker, victim, eq_slot)
+                    attacker_string += new_attacker_string
+                    victim_string += new_victim_string
+                    room_string += new_room_string
+            else:
+                # Wait to build out hero until skills built
+                pass
         else:
-            # Wait to build out hero until skills built
-            pass
-    else:
-        if "mobile" in attacker.tags.all():
-            if random.randint(1, 100) < attacker.db.level:
-                new_attacker_string, new_victim_string, new_room_string = \
-                    do_attack(attacker, victim, eq_slot)
-                attacker_string += new_attacker_string
-                victim_string += new_victim_string
-                room_string += new_room_string
-        else:
-            # Wait to build out hero until skills built
-            pass
+            if "mobile" in attacker.tags.all():
+                if random.randint(1, 100) < attacker.db.level:
+                    new_attacker_string, new_victim_string, new_room_string = \
+                        do_attack(attacker, victim, eq_slot)
+                    attacker_string += new_attacker_string
+                    victim_string += new_victim_string
+                    room_string += new_room_string
+            else:
+                # Wait to build out hero until skills built
+                pass
 
     # Check for third attack.
-    if eq_slot == "wielded, primary":
-        if "mobile" in attacker.tags.all():
-            if random.randint(1, 100) < attacker.db.level:
-                new_attacker_string, new_victim_string, new_room_string = \
-                    do_attack(attacker, victim, eq_slot)
-                attacker_string += new_attacker_string
-                victim_string += new_victim_string
-                room_string += new_room_string
+    if victim.hitpoints_current > 0:
+        if eq_slot == "wielded, primary":
+            if "mobile" in attacker.tags.all():
+                if random.randint(1, 100) < attacker.db.level:
+                    new_attacker_string, new_victim_string, new_room_string = \
+                        do_attack(attacker, victim, eq_slot)
+                    attacker_string += new_attacker_string
+                    victim_string += new_victim_string
+                    room_string += new_room_string
+            else:
+                # Wait to build out hero until skills built
+                pass
         else:
-            # Wait to build out hero until skills built
-            pass
-    else:
-        if "mobile" in attacker.tags.all():
-            if random.randint(1, 100) < attacker.db.level:
-                new_attacker_string, new_victim_string, new_room_string = \
-                    do_attack(attacker, victim, eq_slot)
-                attacker_string += new_attacker_string
-                victim_string += new_victim_string
-                room_string += new_room_string
-        else:
-            # Wait to build out hero until skills built
-            pass
+            if "mobile" in attacker.tags.all():
+                if random.randint(1, 100) < attacker.db.level:
+                    new_attacker_string, new_victim_string, new_room_string = \
+                        do_attack(attacker, victim, eq_slot)
+                    attacker_string += new_attacker_string
+                    victim_string += new_victim_string
+                    room_string += new_room_string
+            else:
+                # Wait to build out hero until skills built
+                pass
 
     # Check for fourth attack, for mobiles only.
-    if "mobile" in attacker.tags.all():
-        if random.randint(1, 100) < (attacker.db.level / 2):
-            new_attacker_string, new_victim_string, new_room_string = \
-                do_attack(attacker, victim, eq_slot)
-            attacker_string += new_attacker_string
-            victim_string += new_victim_string
-            room_string += new_room_string
+    if victim.hitpoints_current > 0:
+        if "mobile" in attacker.tags.all():
+            if random.randint(1, 100) < (attacker.db.level / 2):
+                new_attacker_string, new_victim_string, new_room_string = \
+                    do_attack(attacker, victim, eq_slot)
+                attacker_string += new_attacker_string
+                victim_string += new_victim_string
+                room_string += new_room_string
 
     return (attacker_string, victim_string, room_string)
 
