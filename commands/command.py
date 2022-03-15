@@ -340,11 +340,11 @@ class CmdScore(MuxCommand):
                   "------------------ |w|\n")
         score = score + buffer
 
-        buffer = ("|w| |cMax Damage: |w%-13d   |cAgainst: |w%-8s                         |w|\n"
+        buffer = ("|w| |cMax Damage: |w%-13d   |cAgainst: |w%-33s|w|\n"
                   % (maximum_damage, (maximum_damage_mobile[0].upper() + maximum_damage_mobile[1:])))
         score = score + buffer
 
-        buffer = ("|w| |cMax Experience: |w%-9d   |cAgainst: |w%-5s                     |w|\n"
+        buffer = ("|w| |cMax Experience: |w%-9d   |cAgainst: |w%-26s|w|\n"
                   % (maximum_kill_experience, (maximum_kill_experience_mobile[0].upper() + maximum_kill_experience_mobile[1:])))
         score = score + buffer
 
