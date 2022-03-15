@@ -122,27 +122,6 @@ class Combat(Object):
                     if self.db.combatants[combatant]["wait state"] <= 0:
                         self.db.combatants[combatant]["wait state"] = 0
 
-                if "player" in attacker.tags.all():
-                    wait_state = self.db.combatants[attacker]["wait state"]
-                    prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n Recovery %d>" % (attacker.hitpoints_current,
-                                                                                                    attacker.hitpoints_maximum,
-                                                                                                    attacker.mana_current,
-                                                                                                    attacker.mana_maximum,
-                                                                                                    attacker.moves_current,
-                                                                                                    attacker.moves_maximum,
-                                                                                                    wait_state)
-                    attacker.msg(prompt=prompt)
-                if "player" in victim.tags.all():
-                    wait_state = self.db.combatants[victim]["wait state"]
-                    prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n Recovery %d>" % (victim.hitpoints_current,
-                                                                                                    victim.hitpoints_maximum,
-                                                                                                    victim.mana_current,
-                                                                                                    victim.mana_maximum,
-                                                                                                    victim.moves_current,
-                                                                                                    victim.moves_maximum,
-                                                                                                    wait_state)
-                    victim.msg(prompt=prompt)
-
                 # Add output to the rest of the output generated this round
                 self.db.combatants[attacker]["combat message"] += attacker_string
                 self.db.combatants[victim]["combat message"] += victim_string
@@ -166,6 +145,17 @@ class Combat(Object):
                     if combatant.hitpoints_current > 0 and target.hitpoints_current > 0:
                         combat_message += ("%s %s\n" % ((target.key[0].upper() + target.key[1:]), rules_combat.get_health_string(target)))
                     combatant.msg(combat_message)
+
+                    wait_state = self.db.combatants[combatant]["wait state"]
+                    prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n Recovery %d>" % (combatant.hitpoints_current,
+                                                                                                    combatant.hitpoints_maximum,
+                                                                                                    combatant.mana_current,
+                                                                                                    combatant.mana_maximum,
+                                                                                                    combatant.moves_current,
+                                                                                                    combatant.moves_maximum,
+                                                                                                    wait_state)
+                    combatant.msg(prompt=prompt)
+
 
                 # Check to see if the combatant is dead.
                 if combatant.hitpoints_current <= 0:

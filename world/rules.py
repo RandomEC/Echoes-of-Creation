@@ -442,7 +442,7 @@ def gain_hitpoints(character):
     if "heal modifier" in rules_race.get_race(character.race):
         hp_gain += rules_race.get_race(character.race)["heal modifier"]
 
-    hp_gain = int(hp_gain)
+    hp_gain = math.ceil(hp_gain)
 
     if hp_gain > character.db.hitpoints["damaged"]:
         return character.db.hitpoints["damaged"]
@@ -491,7 +491,7 @@ def gain_mana(character):
         mana_gain += character.db.level * \
             rules_race.get_race(character.race)["mana modifier"]
 
-    mana_gain = int(mana_gain)
+    mana_gain = math.ceil(mana_gain)
 
     if mana_gain > character.db.mana["spent"]:
         return character.db.mana["spent"]
@@ -536,7 +536,7 @@ def gain_moves(character):
         moves_gain += character.db.level * \
             rules_race.get_race(character.race)["moves modifier"]
 
-    moves_gain = int(moves_gain)
+    moves_gain = math.ceil(moves_gain)
 
     if moves_gain > character.db.moves["spent"]:
         return character.db.moves["spent"]
