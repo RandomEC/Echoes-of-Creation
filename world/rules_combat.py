@@ -136,11 +136,6 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
                            )
 
         if "player" in attacker.tags.all():
-            if experience_modified > 0:
-                attacker_string += \
-                    ("You gain %d experience points from your attack of %d total, causing experience current of %s.\n"
-                     % (experience_modified, victim.db.experience_total, victim.db.experience_current)
-                     )
             if damage > attacker.db.damage_maximum:
                 attacker.db.damage_maximum = damage
                 attacker.db.damage_maximum_mobile = victim.key
