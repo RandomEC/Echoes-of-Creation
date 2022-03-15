@@ -403,9 +403,11 @@ def do_flee(character):
         combat = character.ndb.combat_handler
         combat.remove_combatant(character)
 
-        experience_loss = int(settings.EXPERIENCE_LOSS_FLEE * rules.experience_cost_base(rules.current_experience_step(character) + 1))
+        # Only do experience loss if the character is past level 5.
+        if character.level > 5:
+            experience_loss = int(settings.EXPERIENCE_LOSS_FLEE * rules.experience_cost_base(rules.current_experience_step(character) + 1))
         
-        character.db.experience_total -= experience_loss
+            character.db.experience_total -= experience_loss
 
         character.msg("You show a good pair of heels and flee %s out of combat!\nYou lose %d experience for fleeing." % (direction, experience_loss))
         character.location.msg_contents("%s tucks tail and flees %s out of combat!"
@@ -416,8 +418,10 @@ def do_flee(character):
         combat.combat_end_check()
 
     else:
-        experience_loss = int(settings.EXPERIENCE_LOSS_FLEE_FAIL * rules.experience_cost_base(rules.current_experience_step(character) + 1))
-        character.db.experience_total -= experience_loss
+        # Only do experience loss if the character is past level 5.
+        if character.level > 5:
+            experience_loss = int(settings.EXPERIENCE_LOSS_FLEE_FAIL * rules.experience_cost_base(rules.current_experience_step(character) + 1))
+            character.db.experience_total -= experience_loss
         
         character.msg("You fail to flee from combat!\nYou lose %d experience for the attempt." % experience_loss)
         character.location.msg_contents("%s looks around frantically for an escape, but can't get away!"
