@@ -931,7 +931,7 @@ class Player(Character):
         if "combat_handler" in self.ndb.all:
             combat = self.ndb.combat_handler
             wait_state = combat.db.combatants[self]["wait state"]
-            prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n Recovery %d>" % (self.hitpoints_current,
+            prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n Recovery %d>\n" % (self.hitpoints_current,
                                                                                         self.hitpoints_maximum,
                                                                                         self.mana_current,
                                                                                         self.mana_maximum,
@@ -939,7 +939,7 @@ class Player(Character):
                                                                                         self.moves_maximum,
                                                                                         wait_state)
         else:
-            prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n>" % (self.hitpoints_current,
+            prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n>\n" % (self.hitpoints_current,
                                                                                 self.hitpoints_maximum,
                                                                                 self.mana_current,
                                                                                 self.mana_maximum,
