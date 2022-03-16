@@ -108,7 +108,7 @@ class MuxCommand(Command):
                                                                                   caller.mana_maximum,
                                                                                   caller.moves_current,
                                                                                   caller.moves_maximum)
-        caller.msg(prompt = prompt)
+            caller.msg(prompt = prompt)
 
     def parse(self):
         """
