@@ -187,7 +187,7 @@ class Account(DefaultAccount):
                         # character is "free to puppet"
                         result.append(f"\n - |Y{char.key}|n [{', '.join(char.permissions.all())}]")
 
-            result.append("\n\n |w ooc|n - entered in-game will return to this out-of-character menu")
+            result.append("\n\n |wooc|n - entered in-game will return to this out-of-character menu")
             result.append("\n |whelp|n - to view more commands")
             result.append("\n |wpublic <Text>|n - talk on public channel")
 
