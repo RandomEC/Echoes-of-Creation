@@ -101,23 +101,13 @@ class MuxCommand(Command):
         (after self.func()).
         """
         caller = self.caller
-        if "combat_handler" in caller.ndb.all:
-            combat = caller.ndb.combat_handler
-            wait_state = combat.db.combatants[caller]["wait state"]
-            prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n Recovery %d>" % (caller.hitpoints_current,
-                                                                                        caller.hitpoints_maximum,
-                                                                                        caller.mana_current,
-                                                                                        caller.mana_maximum,
-                                                                                        caller.moves_current,
-                                                                                        caller.moves_maximum,
-                                                                                        wait_state)
-        else:
-            prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n>" % (caller.hitpoints_current,
-                                                                                caller.hitpoints_maximum,
-                                                                                caller.mana_current,
-                                                                                caller.mana_maximum,
-                                                                                caller.moves_current,
-                                                                                caller.moves_maximum)
+        if "combat_handler" not in caller.ndb.all:
+            prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n>\n" % (caller.hitpoints_current,
+                                                                                  caller.hitpoints_maximum,
+                                                                                  caller.mana_current,
+                                                                                  caller.mana_maximum,
+                                                                                  caller.moves_current,
+                                                                                  caller.moves_maximum)
         caller.msg(prompt = prompt)
 
     def parse(self):
@@ -1522,3 +1512,37 @@ class CmdSay(MuxCommand):
             if "mobile" in object.tags.all() or "object" in object.tags.all():
                 object.at_after_say(caller, speech)
 
+class CmdHome(MuxCommand):
+    """
+    Return to the room you have set to recall.
+    Usage:
+      recall
+    If you are not in battle or otherwise in a cursed location, recall will
+    allow you to swiftly jump to where you are currently set to recall, at
+    the cost of a significant chunk of movement points. At present recall is
+    only available to the Town Square in Eden's Grove.
+    """
+
+    key = "home"
+    alias = ["recall"]
+    locks = "cmd:all()"
+    arg_regex = r"$"
+
+    def func(self):
+        """Implement the command"""
+        caller = self.caller
+        location = caller.location
+        home = caller.home
+        if not home:
+            caller.msg("You do not currently have a recall location set!")
+        elif home == caller.location:
+            caller.msg("You are already at your recall location!")
+        elif "no recall" in location.db.room_flags:
+            caller.msg("This location is cursed! You cannot recall!")
+        elif "curse" in caller.db.spell_affects:
+            caller.msg("You are cursed! You cannot recall!")
+        else:
+            caller.msg("You close your eyes, cross your fingers and utter your word of recall ...")
+            cost = int(caller.moves_current / 4)
+            caller.moves_spent += cost
+            caller.move_to(home)

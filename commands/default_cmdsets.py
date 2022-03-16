@@ -15,45 +15,46 @@ own cmdsets by inheriting from them or directly from `evennia.CmdSet`.
 """
 
 from evennia import default_cmds
-from commands.command import CmdScore
-from commands.command import CmdInventory
-from commands.command import CmdDrop
-from commands.command import CmdLook
-from commands.command import CmdRepop
 from commands.command import CmdDestroy
-from commands.command import CmdLock
-from commands.command import CmdPut
-from commands.command import CmdTag
-from commands.command import CmdSetHome
-from commands.command import CmdTalk
-from commands.command import CmdInspect
+from commands.command import CmdDrop
 from commands.command import CmdGet
-from commands.command import CmdSleep
+from commands.command import CmdHome
+from commands.command import CmdInspect
+from commands.command import CmdInventory
+from commands.command import CmdLock
+from commands.command import CmdLook
+from commands.command import CmdPut
+from commands.command import CmdRepop
 from commands.command import CmdRest
-from commands.command import CmdStand
 from commands.command import CmdSay
+from commands.command import CmdScore
+from commands.command import CmdSetHome
+from commands.command import CmdSleep
+from commands.command import CmdStand
+from commands.command import CmdTag
+from commands.command import CmdTalk
+from commands.build_commands import CmdCreate
+from commands.build_commands import CmdDig
+from commands.build_commands import CmdName
 from commands.build_commands import CmdOpen
 from commands.build_commands import CmdSetObjAlias
-from commands.build_commands import CmdDig
-from commands.build_commands import CmdCreate
-from commands.build_commands import CmdName
 from commands.combat_commands import CmdAttack
 from commands.combat_commands import CmdConsider
 from commands.combat_commands import CmdFlee
 from commands.combat_commands import CmdKick
 from commands.combat_commands import CmdWimpy
-from commands.door_commands import CmdDoorOpen
 from commands.door_commands import CmdDoorClose
-from commands.door_commands import CmdDoorUnlock
 from commands.door_commands import CmdDoorLock
-from commands.equipment_commands import CmdWear
-from commands.equipment_commands import CmdWield
-from commands.equipment_commands import CmdRemove
+from commands.door_commands import CmdDoorOpen
+from commands.door_commands import CmdDoorUnlock
 from commands.equipment_commands import CmdEquipment
 from commands.equipment_commands import CmdIdentify
-from commands.equipment_commands import CmdWearTo
-from commands.equipment_commands import CmdWieldTo
+from commands.equipment_commands import CmdRemove
 from commands.equipment_commands import CmdRemoveFrom
+from commands.equipment_commands import CmdWear
+from commands.equipment_commands import CmdWearTo
+from commands.equipment_commands import CmdWield
+from commands.equipment_commands import CmdWieldTo
 from commands.growth_commands import CmdTrain
 from commands.skill_commands import CmdDowse
 from commands.skill_commands import CmdForage
@@ -75,48 +76,49 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         #
         # any commands you add below will overload the default ones.
         #
-        self.add(CmdScore())
-        self.add(CmdWear())
-        self.add(CmdWield())
-        self.add(CmdRemove())
-        self.add(CmdEquipment())
-        self.add(CmdInventory())
-        self.add(CmdLook())
-        self.add(CmdDrop())
-        self.add(CmdIdentify())
-        self.add(CmdOpen())
-        self.add(CmdDoorOpen())
-        self.add(CmdDoorClose())
-        self.add(CmdDoorUnlock())
-        self.add(CmdDoorLock())
-        self.add(CmdRepop())
-        self.add(CmdDestroy())
-        self.add(CmdLock())
-        self.add(CmdPut())
-        self.add(CmdWearTo())
-        self.add(CmdWieldTo())
-        self.add(CmdRemoveFrom())
-        self.add(CmdTag())
-        self.add(CmdSetHome())
-        self.add(CmdTalk())
-        self.add(CmdInspect())
         self.add(CmdAttack())
-        self.add(CmdGet())
-        self.add(CmdSleep())
-        self.add(CmdRest())
-        self.add(CmdStand())
-        self.add(CmdSetObjAlias())
-        self.add(CmdDig())
-        self.add(CmdCreate())
-        self.add(CmdName())
         self.add(CmdConsider())
-        self.add(CmdFlee())
-        self.add(CmdWimpy())
-        self.add(CmdTrain())
-        self.add(CmdSay())
+        self.add(CmdCreate())
+        self.add(CmdDestroy())
+        self.add(CmdDig())
+        self.add(CmdDoorClose())
+        self.add(CmdDoorLock())
+        self.add(CmdDoorOpen())
+        self.add(CmdDoorUnlock())
         self.add(CmdDowse())
+        self.add(CmdDrop())
+        self.add(CmdEquipment())
+        self.add(CmdFlee())
         self.add(CmdForage())
+        self.add(CmdGet())
+        self.add(CmdHome())
+        self.add(CmdIdentify())
+        self.add(CmdInspect())
+        self.add(CmdInventory())
         self.add(CmdKick())
+        self.add(CmdLock())
+        self.add(CmdLook())
+        self.add(CmdName())
+        self.add(CmdOpen())
+        self.add(CmdPut())
+        self.add(CmdRemove())
+        self.add(CmdRemoveFrom())
+        self.add(CmdRepop())
+        self.add(CmdRest())
+        self.add(CmdSay())
+        self.add(CmdScore())
+        self.add(CmdSetHome())
+        self.add(CmdSetObjAlias())
+        self.add(CmdSleep())
+        self.add(CmdStand())
+        self.add(CmdTag())
+        self.add(CmdTalk())
+        self.add(CmdTrain())
+        self.add(CmdWear())
+        self.add(CmdWearTo())
+        self.add(CmdWield())
+        self.add(CmdWieldTo())
+        self.add(CmdWimpy())
 
 class AccountCmdSet(default_cmds.AccountCmdSet):
     """
