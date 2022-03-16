@@ -145,6 +145,8 @@ class Combat(Object):
                     if combatant.hitpoints_current > 0 and target.hitpoints_current > 0:
                         combat_message += ("%s %s\n" % ((target.key[0].upper() + target.key[1:]), rules_combat.get_health_string(target)))
                     combatant.msg(combat_message)
+                    if not target.location:
+                        combatant.msg(combatant.at_look(target.key))
 
                     wait_state = self.db.combatants[combatant]["wait state"]
                     prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n Recovery %d>\n" % (combatant.hitpoints_current,
