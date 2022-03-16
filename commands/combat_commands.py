@@ -245,6 +245,8 @@ class CmdAttack(MuxCommand):
 
         attacker = self.caller
 
+        attacker.msg("in attack")
+
         if not self.args:
             attacker.msg("Usage: attack <mobile>")
             return
