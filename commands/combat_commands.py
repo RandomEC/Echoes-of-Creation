@@ -148,15 +148,26 @@ class Combat(Object):
                     if not target.location:
                         combatant.msg(combatant.at_look(target.key))
 
-                    wait_state = self.db.combatants[combatant]["wait state"]
-                    prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n Recovery %d>\n" % (combatant.hitpoints_current,
-                                                                                                    combatant.hitpoints_maximum,
-                                                                                                    combatant.mana_current,
-                                                                                                    combatant.mana_maximum,
-                                                                                                    combatant.moves_current,
-                                                                                                    combatant.moves_maximum,
-                                                                                                    wait_state)
-                    combatant.msg(prompt=prompt)
+                    if "combat_handler" in combatant.ndb.all:
+                        wait_state = self.db.combatants[combatant]["wait state"]
+                        prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n Recovery %d>\n" % (combatant.hitpoints_current,
+                                                                                                        combatant.hitpoints_maximum,
+                                                                                                        combatant.mana_current,
+                                                                                                        combatant.mana_maximum,
+                                                                                                        combatant.moves_current,
+                                                                                                        combatant.moves_maximum,
+                                                                                                        wait_state)
+                        combatant.msg(prompt=prompt)
+                    else:
+                        prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n>\n" % (
+                                                                                            combatant.hitpoints_current,
+                                                                                            combatant.hitpoints_maximum,
+                                                                                            combatant.mana_current,
+                                                                                            combatant.mana_maximum,
+                                                                                            combatant.moves_current,
+                                                                                            combatant.moves_maximum
+                                                                                            )
+                        combatant.msg(prompt=prompt)
 
 
                 # Check to see if the combatant is dead.
