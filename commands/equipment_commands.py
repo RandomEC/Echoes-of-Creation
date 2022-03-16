@@ -425,21 +425,22 @@ class CmdIdentify(MuxCommand):
             spell_2 = item.db.spell2
             spell_3 = item.db.spell3
             spell_level = item.db.spell_level
+            spell_string = ", ".join(spell_1, spell_2, spell_3)
         elif item.db.item_type == "wand" or item.db.item_type == "staff":
             charges_maximum = item.db.charges_maximum
             charges_current = item.db.charges_current
             spell = item.db.spell_name
-            spell_string = ", ".join(spell_1, spell_2, spell_3)
 
-        if drop == True:
-            drop = "yes"
-        else:
+        if "no drop" in item.db.extra_flags:
             drop = "no"
-
-        if remove == True:
-            remove = "yes"
         else:
+            drop = "yes"
+
+
+        if "no remove" in item.db.extra_flags:
             remove = "no"
+        else:
+            remove = "yes"
 
         if not anti_alignment:
             anti_string = "none"
