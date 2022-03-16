@@ -309,48 +309,50 @@ class Character(DefaultCharacter):
                     if wear_location != "wielded, primary" and wear_location != "wielded, secondary":
                         modifier = modifier - (equipment.db.armor*multiplier)
 
-                    dexterity = self.dexterity
+        if attribute_name == "armor class":
 
-                    if dexterity < 1:
-                        modifier += 60
-                    elif dexterity < 2:
-                        modifier += 50
-                    elif dexterity < 3:
-                        modifier += 40
-                    elif dexterity < 4:
-                        modifier += 30
-                    elif dexterity < 5:
-                        modifier += 20
-                    elif dexterity < 6:
-                        modifier += 10
-                    elif dexterity < 15:
-                        modifier += 0
-                    elif dexterity < 16:
-                        modifier += -10
-                    elif dexterity < 17:
-                        modifier += -15
-                    elif dexterity < 18:
-                        modifier += -20
-                    elif dexterity < 19:
-                        modifier += -30
-                    elif dexterity < 20:
-                        modifier += -40
-                    elif dexterity < 21:
-                        modifier += -50
-                    elif dexterity < 22:
-                        modifier += -65
-                    elif dexterity < 23:
-                        modifier += -75
-                    elif dexterity < 24:
-                        modifier += -90
-                    elif dexterity < 25:
-                        modifier += -105
-                    elif dexterity < 26:
-                        modifier += -120
-                    
-                    if "mobile" in self.tags.all():
-                        level_bonus = int((self.db.level-1)*(-500)/100)
-                        modifier += level_bonus
+            dexterity = self.dexterity
+
+            if dexterity < 1:
+                modifier += 60
+            elif dexterity < 2:
+                modifier += 50
+            elif dexterity < 3:
+                modifier += 40
+            elif dexterity < 4:
+                modifier += 30
+            elif dexterity < 5:
+                modifier += 20
+            elif dexterity < 6:
+                modifier += 10
+            elif dexterity < 15:
+                modifier += 0
+            elif dexterity < 16:
+                modifier += -10
+            elif dexterity < 17:
+                modifier += -15
+            elif dexterity < 18:
+                modifier += -20
+            elif dexterity < 19:
+                modifier += -30
+            elif dexterity < 20:
+                modifier += -40
+            elif dexterity < 21:
+                modifier += -50
+            elif dexterity < 22:
+                modifier += -65
+            elif dexterity < 23:
+                modifier += -75
+            elif dexterity < 24:
+                modifier += -90
+            elif dexterity < 25:
+                modifier += -105
+            elif dexterity < 26:
+                modifier += -120
+
+            if "mobile" in self.tags.all():
+                level_bonus = int((self.db.level - 1) * (-500) / 100)
+                modifier += level_bonus
 
         if attribute_name == "hitroll":
 
