@@ -147,7 +147,7 @@ class Combat(Object):
                     combatant.msg(combat_message)
 
                     wait_state = self.db.combatants[combatant]["wait state"]
-                    prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n Recovery %d>" % (combatant.hitpoints_current,
+                    prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n Recovery %d>\n" % (combatant.hitpoints_current,
                                                                                                     combatant.hitpoints_maximum,
                                                                                                     combatant.mana_current,
                                                                                                     combatant.mana_maximum,
