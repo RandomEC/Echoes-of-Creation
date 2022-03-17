@@ -1157,7 +1157,72 @@ class CmdSay(MuxCommand):
             if "mobile" in object.tags.all() or "object" in object.tags.all():
                 object.at_after_say(caller, speech)
 
+                
+class CmdScan(MuxCommand):
+    """
+    Scan your surroundings to look for threats.
+    Usage:
+      scan
+    Scan will look up to three rooms away in each of the cardinal directions,
+    and let you know any of the mobiles that you would be able to see if you
+    were in that room.
+    """
 
+    key = "scan"
+    locks = "cmd:all()"
+    arg_regex = r"$"
+
+    def func(self):
+        """Implement the command"""
+        caller = self.caller
+        
+        def get_mobiles(self, player, room):
+            mobile_list = []
+            for object in room:
+                if "mobile" in tags.object.all():
+                    if rules.is_visible_character(object, player):
+                        mobile_list.append(object)
+        
+        def scan_direction(self, caller, exit)
+            scan_string = ""
+        
+            direction = caller.search(exit, location=caller.location)
+            if direction:
+                mobiles = get_mobiles(player, direction.destination)
+                for mobile in mobiles:
+                    if exit != "up" and exit != "down":
+                        scan_string += "%s is immediately to the %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
+                    else:
+                        scan_string += "%s is immediately %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
+                direction = caller.search(exit, location=direction.destination)
+                if direction:
+                    mobiles = get_mobiles(player, direction.destination)
+                    for mobile in mobiles:
+                        if exit != "up" and exit != "down":
+                            scan_string += "%s is a short distance to the %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
+                        else:
+                            scan_string += "%s is a short distance %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
+                    direction = caller.search(exit, location=direction.destination)
+                    if direction:
+                        mobiles = get_mobiles(player, direction.destination)
+                        for mobile in mobiles:
+                            if exit != "up" and exit != "down":
+                                scan_string += "%s is some distance to the %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
+                            else:
+                                scan_string += "%s is some distance %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
+            return scan_string
+        
+        output_string = ""
+        output_string += scan_direction(caller, "north")
+        output_string += scan_direction(caller, "east")
+        output_string += scan_direction(caller, "south")
+        output_string += scan_direction(caller, "west")
+        output_string += scan_direction(caller, "up")
+        output_string += scan_direction(caller, "down")
+
+        caller.msg(output_string)
+        
+        
 class CmdScore(MuxCommand):
     """
     List abilities
