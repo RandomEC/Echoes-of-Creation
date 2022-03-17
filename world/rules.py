@@ -214,6 +214,30 @@ def level_cost(character):
     return current_experience_step(character, 0)
 
 
+def check_ready_to_level(character):
+    """
+    This function checks if a character has grown sufficiently
+    to level up. Characters may level, at fastest, on every
+    sixth train. Attribute gains count as four.
+    """
+    
+    step = (character.level +
+            character.db.hitpoints["trains spent"] +
+            character.db.mana["trains spent"] +
+            character.db.moves["trains spent"] +
+            (character.db.attribute_trains["strength"] * 4) +
+            (character.db.attribute_trains["intelligence"] * 4) +
+            (character.db.attribute_trains["wisdom"] * 4) +
+            (character.db.attribute_trains["dexterity"] * 4) +
+            (character.db.attribute_trains["constitution"] * 4) +
+            int(character.db.practices_spent))
+    
+    if step >= ((character.level - 1) * 6) + 5:
+        return True
+    else:
+        return False
+    
+
 def hitpoints_cost(character):
     """
     This function determines the experience cost of getting an
