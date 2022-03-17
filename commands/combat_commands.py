@@ -244,7 +244,11 @@ class CmdAttack(MuxCommand):
             attacker.msg("You cannot attack another player!")
             return
 
-        rules_combat.create_combat(attacker, victim)
+        combat = rules_combat.create_combat(attacker, victim)
+
+        if combat:
+            attacker.msg("It worked!")
+            combat.at_repeat()
 
 class CmdConsider(MuxCommand):
     """
@@ -396,6 +400,7 @@ class CmdKick(MuxCommand):
 
                 if not caller.ndb.combat_handler:
                     combat = rules_combat.create_combat(caller, target)
+
                 else:
                     combat = caller.ndb.combat_handler
 

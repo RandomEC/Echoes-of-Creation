@@ -27,7 +27,7 @@ def create_combat(attacker, victim):
         combat.add_combatant(victim, attacker)
         combat.location = attacker.location
         combat.db.desc = "This is a combat instance."
-        combat.at_repeat()
+        return combat
 
     elif not attacker.ndb.combat_handler:
         combat = victim.ndb.combat_handler
@@ -38,7 +38,7 @@ def create_combat(attacker, victim):
         combat.add_combatant(victim, attacker)
         combat.change_target(attacker, victim)
 
-    return combat
+    return False
 
 def do_attack(attacker, victim, eq_slot, **kwargs):
     """
