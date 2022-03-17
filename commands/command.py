@@ -603,12 +603,19 @@ class CmdHome(MuxCommand):
         home = caller.home
         if not home:
             caller.msg("You do not currently have a recall location set!")
+            return
         elif home == caller.location:
             caller.msg("You are already at your recall location!")
+            return
         elif "no recall" in location.db.room_flags:
             caller.msg("This location is cursed! You cannot recall!")
+            return
         elif "curse" in caller.db.spell_affects:
             caller.msg("You are cursed! You cannot recall!")
+            return
+        elif "combat_handler" in caller.ndb.all:
+            caller.msg("You cannot focus enough to recall in combat!")
+            return
         else:
             caller.msg("You close your eyes, cross your fingers and utter your word of recall ...")
             cost = int(caller.moves_current / 4)
