@@ -247,7 +247,6 @@ class CmdAttack(MuxCommand):
         combat = rules_combat.create_combat(attacker, victim)
 
         if combat:
-            attacker.msg("It worked!")
             combat.at_repeat()
 
 class CmdConsider(MuxCommand):
@@ -400,16 +399,19 @@ class CmdKick(MuxCommand):
 
                 if not caller.ndb.combat_handler:
                     combat = rules_combat.create_combat(caller, target)
+                    rules_combat.do_kick(caller, target)
+                    combat.db.combatants[caller]["wait state"] = self.wait_state
+                    combat.at_repeat()
 
                 else:
                     combat = caller.ndb.combat_handler
 
-                if "berserk" in caller.db.spell_affects and target != combat.get_target(caller):
-                    caller.msg("You cannot switch targets while you are in the rage of battle!")
-                    return
+                    if "berserk" in caller.db.spell_affects and target != combat.get_target(caller):
+                        caller.msg("You cannot switch targets while you are in the rage of battle!")
+                        return
 
-        rules_combat.do_kick(caller, target)
-        combat.db.combatants[caller]["wait state"] = self.wait_state
+                    rules_combat.do_kick(caller, target)
+                    combat.db.combatants[caller]["wait state"] = self.wait_state
 
 class CmdWimpy(MuxCommand):
     """
