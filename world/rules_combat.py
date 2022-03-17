@@ -294,6 +294,10 @@ def do_death(attacker, victim):
                                 "experience obtained for a kill!\n"
                                 "You received a total of %d experience "
                                 "from %s.\n" % (victim.db.experience_total, victim.key))
+        
+        # Get a look at the corpse.
+        
+        attacker_string += "%s\n" % attacker.at_look(corpse)
 
         # Increment kills.
         attacker.db.kills += 1
