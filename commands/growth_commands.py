@@ -96,8 +96,8 @@ class CmdTrain(MuxCommand):
         caller = self.caller
 
         if not self.args:
-            if (rules.level_cost(caller.db.level + 1) - caller.experience_available) > 0:
-                needed_to_level = rules.level_cost(caller.db.level + 1) - caller.experience_available
+            if (rules.level_cost(caller) - caller.experience_available) > 0:
+                needed_to_level = rules.level_cost(caller) - caller.experience_available
             else:
                 needed_to_level = "You have enough"
 
@@ -121,13 +121,19 @@ class CmdTrain(MuxCommand):
             else:
                 needed_for_attribute = "You have enough"
 
+            if rules.check_ready_to_level(character):
+                check_level = "and you have grown sufficiently to level"
+            else:
+                check_level = "but you have not yet grown sufficiently to level"
+                
             caller.msg("In order to train yourself further, you require:\n"
-                       "%s experience to go up a level.\n"
+                       "%s experience to go up a level, %s.\n"
                        "%s experience to acquire more hitpoints.\n"
                        "%s experience to acquire more mana.\n"
                        "%s experience to acquire more moves.\n"
                        "%s experience to increase an attribute.\n"
                        % (needed_to_level,
+                          check_level,
                           needed_for_hitpoints,
                           needed_for_mana,
                           needed_for_moves,
@@ -135,14 +141,27 @@ class CmdTrain(MuxCommand):
                           ))
         elif self.args == "level":
 
-            needed_to_level = (rules.level_cost(caller.db.level + 1) - caller.experience_available)
+            needed_to_level = (rules.level_cost(caller) - caller.experience_available)
 
-            if needed_to_level <= 0:
-                caller.db.experience_spent += rules.level_cost(caller.db.level + 1)
+            if needed_to_level <= 0 and rules.check_ready_to_level(character):
+                caller.db.experience_spent += rules.level_cost(caller)
                 caller.db.level += 1
                 caller.msg("Congratulations! You have reached level %d!!!!" % caller.db.level)
             else:
-                caller.msg("You are %d experience short of level %d." % (needed_to_level, (caller.db.level + 1)))
+                if rules.check_ready_to_level(character):
+                    ready = "You have grown sufficiently to reach level %d.\n" % (caller.level + 1)
+                else:
+                    ready = "You must train in other ways to be ready for level %d.\n" % (caller.level + 1)
+                
+                if (rules.level_cost(caller) - caller.experience_available) > 0:
+                    needed_to_level = ("You need %d" % (rules.level_cost(caller) - caller.experience_available))
+                else:
+                    needed_to_level = "You have enough"
+                    
+                experience = ("%s experience to go up to level %d." % (needed_to_level, (caller.level + 1)))
+                
+                caller.msg("%s%s" % (ready, experience)
+                
         
         elif self.args == "hitpoints":
             
