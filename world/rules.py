@@ -181,47 +181,37 @@ def set_disintegrate_timer(obj):
         obj.tags.add("disintegrating")
 
 
-def experience_cost_base(step):
+def current_experience_step(character, extra_step):
     """
-    This function determines the base experience cost for a step
-    of experience, which is then split by other functions to get
-    the cost of a level, hitpoint gain, etc.
+    This function uses a character's current total trains and
+    practices spent to determine the experience step that the
+    character is currently at.
     """
+
+    step = (character.level +
+            character.db.hitpoints["trains spent"] +
+            character.db.mana["trains spent"] +
+            character.db.moves["trains spent"] +
+            character.db.attribute_trains["strength"] +
+            character.db.attribute_trains["intelligence"] +
+            character.db.attribute_trains["wisdom"] +
+            character.db.attribute_trains["dexterity"] +
+            character.db.attribute_trains["constitution"] +
+            int(character.db.practices_spent) +
+            extra_step)
     
-    if step == 2:
-        return settings.EXPERIENCE_STEP_TWO
-    else:
-        return ((step ** settings.EXPERIENCE_STEP_EXPONENT) * settings.EXPERIENCE_STEP_MULTIPLIER)
-
-def current_experience_step(character):
-    """
-    This function uses a character's current total experience to
-    determine the experience step that the character is currently
-    at.
-    """
-
-    step = 1
-    step_experience_total = 0
-    while character.db.experience_total <= step_experience_total:
-        step += 1
-        if step == 2:
-            step_experience_total += 2700
-        else:
-            step_experience_total += experience_cost_base(step)
-
-    # Since the above calculated one step past, reduce step by one.
-    step -= 1
-
-    return step
+    experience_cost = int((1 + (step/8.303)) ** 3) * 176.889
+    
+    return experience_cost
 
 
-def level_cost(level):
+def level_cost(character):
     """
     This function determines the experience cost of increasing a
     character one level.
     """
     
-    return int(settings.ECHOES_COST_LEVEL * experience_cost_base(level))
+    return current_experience_step(character, 0)
 
 
 def hitpoints_cost(character):
@@ -229,8 +219,7 @@ def hitpoints_cost(character):
     This function determines the experience cost of getting an
     additional amount of hitpoints.
     """
-    hitpoints_step = character.db.hitpoints["trains spent"] + 2
-    return int(settings.ECHOES_COST_HITPOINTS * experience_cost_base(hitpoints_step))
+    return current_experience_step(character, 0)
 
 
 def mana_cost(character):
@@ -238,8 +227,7 @@ def mana_cost(character):
     This function determines the experience cost of getting an
     additional amount of mana.
     """
-    mana_step = character.db.mana["trains spent"] + 2
-    return int(settings.ECHOES_COST_MANA * experience_cost_base(mana_step))
+    return current_experience_step(character, 0)
 
 
 def moves_cost(character):
@@ -247,36 +235,23 @@ def moves_cost(character):
     This function determines the experience cost of getting an
     additional amount of moves.
     """
-    moves_step = character.db.moves["trains spent"] + 2
-    return int(settings.ECHOES_COST_MOVES * experience_cost_base(moves_step))
+    return current_experience_step(character, 0)
 
 
 def attributes_cost(character):
     """
     This function determines the experience cost of getting an
     additional attribute (e.g. strength, dexterity, etc.) bonus.
-    The formula for this has to be calculated from the total xp
-    available for attributes, which may change.
+    The formula for this has to be calculated from the next four
+    xp steps.
     """
     
-    attributes_step = 1
-    for attribute in character.db.attribute_trains:
-        attributes_step += character.db.attribute_trains[attribute]
-    
-    # Calculate the amount of xp allocated to getting attributes.
-    attribute_total_xp = 0
-    for step in range(2, 102):
-        attribute_total_xp += int((experience_cost_base(step) * settings.ECHOES_COST_ATTRIBUTES))
+    cost = current_experience_step(character, 0)
+    cost += current_experience_step(character, 1)
+    cost += current_experience_step(character, 2)
+    cost += current_experience_step(character, 3)    
 
-    denominator = 0
-
-    for upgrade in range(1, settings.ATTRIBUTES_TOTAL_UPGRADES + 1):
-        denominator += (upgrade ** settings.ATTRIBUTES_EXPONENT)
-
-    attribute_factor = int(attribute_total_xp / denominator)
-    
-    return int(attributes_step ** settings.ATTRIBUTES_EXPONENT * attribute_factor)
-
+    return cost
 
 def practices_cost(character):
     """
@@ -306,22 +281,9 @@ def practices_cost(character):
     else:
         practice_factor = 8
     
-    # Calculate the first step that costs more accumulated experience
-    # spent practicing than the character has.
-    
-    step = 1
-    step_experience_total = 0
-    while character.db.experience_spent_practices <= step_experience_total:
-        step += 1
-        if step == 2:
-            step_experience_total += 2700 * settings.ECHOES_COST_PRACTICES
-        else:
-            step_experience_total += experience_cost_base(step) * settings.ECHOES_COST_PRACTICES
-            
-    # Since the above calculated one step past, reduce step by one.
-    step -= 1
-    
-    return experience_cost_base(step) * settings.ECHOES_COST_PRACTICES / practice_factor
+    cost = current_experience_step(character, 0) / practice_factor
+    return cost
+
     
 def fuzz_number(number):
     """
