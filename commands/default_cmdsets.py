@@ -26,6 +26,7 @@ from commands.command import CmdLook
 from commands.command import CmdPut
 from commands.command import CmdRepop
 from commands.command import CmdRest
+from commands.command import CmdSacrifice
 from commands.command import CmdSay
 from commands.command import CmdScore
 from commands.command import CmdSetHome
@@ -105,6 +106,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdRemoveFrom())
         self.add(CmdRepop())
         self.add(CmdRest())
+        self.add(CmdSacrifice())
         self.add(CmdSay())
         self.add(CmdScore())
         self.add(CmdSetHome())
