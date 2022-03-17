@@ -79,11 +79,18 @@ def mana_gain_maximum(character):
     
 class CmdTrain(MuxCommand):
     """
-    drop something
+    Train to gain addtional attributes for your character.
     Usage:
-        drop <obj>
-    Lets you drop an object from your inventory into the
-    location you are currently in.
+        train
+        train <level, hitpoints, mana, moves, strength, dexterity, etc.>
+    Train without argument will tell you the amount of experience needed to increase
+    in any trainable category. In the case of levels, it will also tell you whether
+    you have trained enough in other categories to be ready to level. Train with an
+    argument will attempt to gain an additional level or attribute, in those cases,
+    or an additional amount of hitpoints, mana or moves depending on your attributes
+    and skills you have learned.
+    
+    See help level, help practice and help skills for more.
     """
 
     key = "train"
