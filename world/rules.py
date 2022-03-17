@@ -130,6 +130,23 @@ def intelligence_learn_rating(character):
         return 85
     else:
         return 90
+
+def is_visible_character(target, looker):
+    """
+    This function returns a boolean as to whether one character
+    is visible to another currently.
+    """
+    if looker.get_affect_status("blind"):
+        return False
+    if target.get_affect_status("hide") and not looker.get_affect_status("detect hidden"):
+        return False
+    if target.get_affect_status("invisible") and not looker.get_affect_status("detect invis"):
+        return False
+    if "act_flags" in character.db.all:
+        if "total invis" in target.db.act_flags:
+            return False
+    
+    return True
     
 def wisdom_mana_bonus(character):
     """
