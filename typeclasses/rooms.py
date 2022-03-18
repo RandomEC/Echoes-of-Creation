@@ -163,7 +163,26 @@ class Room(DefaultRoom):
             # If there is a mobile in the room.
             if "mobile" in item.tags.all():
                 item.at_player_entered(player)
+                
+        if "delayed_transfer" in self.db.all and "delayed_transfer_room" in self.db.all:
+            delay = self.db.delayed_transfer["delay"]
+            room = self.db.delayed_transfer["room"]
+            player_output = self.db.delayed_transfer["player output"]
+            room_output = self.db.delayed_transfer["room output"]
+                        
+            def delay_move_callback():
+                """
+                This gets called after delay worth of seconds have passed.
+                """
+                destination = player.search(room)                
+                player.msg("%s" % player_output)                           
+                player.move_to(destination)
+                player.location.msg_contents("%s" % room_output, exclude=caller)
+                
+            transfer = utils.delay(delay, delay_move_callback)
 
+            player.ndb.delayed_transfer = transfer
+            
     def return_appearance(self, looker, **kwargs):
         """
         This formats a description. It is the hook a 'look' command
