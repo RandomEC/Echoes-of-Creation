@@ -225,6 +225,11 @@ class CmdWield(MuxCommand):
             caller.msg("You can't wear yourself.")
             return
         
+        # Check to make sure it is a weapon.
+        if weapon.db.item_type != "weapon":
+            caller.msg("%s is not a weapon. Try wearing it or holding it instead." % (weapon.key[0].upper() + weapon.key[1:]))
+            return
+        
         # check to make sure character is not already wearing the equipment.
         
         if weapon.db.equipped:
