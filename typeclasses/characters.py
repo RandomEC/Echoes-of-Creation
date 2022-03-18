@@ -740,7 +740,7 @@ class Mobile(Character):
                             object_to_copy = object_candidates[0]
                             new_object = object_to_copy.copy()
                             new_object.key = object_to_copy.key
-                            new_object.alias = object_to_copy.aliases
+                            new_object.aliases = object_to_copy.aliases
                             if new_object.db.equipped:
                                 new_object.db.equipped = False
                             new_object.home = self
