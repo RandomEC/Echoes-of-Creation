@@ -1,6 +1,7 @@
 import random
 from evennia import create_object
 from evennia import TICKER_HANDLER as tickerhandler
+from evennia.utils import search
 from commands.command import MuxCommand
 from typeclasses.objects import Object
 from world import rules_combat, rules_skills
@@ -387,7 +388,8 @@ class CmdKick(MuxCommand):
                 target = combat.get_target(caller)
 
         else:
-            target = caller.search(self.args, location=caller.location)
+            mobiles = search.search_object_by_tag("mobile")
+            target = caller.search(self.args, location=caller.location, candidates=mobiles)
             if not target:
                 caller.msg("There is no %s here to kick." % self.args)
                 return
@@ -402,6 +404,7 @@ class CmdKick(MuxCommand):
                     rules_combat.do_kick(caller, target)
                     combat.db.combatants[caller]["wait state"] = self.wait_state
                     combat.at_repeat()
+                    return
 
                 else:
                     combat = caller.ndb.combat_handler
@@ -410,8 +413,8 @@ class CmdKick(MuxCommand):
                         caller.msg("You cannot switch targets while you are in the rage of battle!")
                         return
 
-                    rules_combat.do_kick(caller, target)
-                    combat.db.combatants[caller]["wait state"] = self.wait_state
+        rules_combat.do_kick(caller, target)
+        combat.db.combatants[caller]["wait state"] = self.wait_state
 
 class CmdWimpy(MuxCommand):
     """

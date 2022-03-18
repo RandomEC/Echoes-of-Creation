@@ -142,7 +142,7 @@ def is_visible_character(target, looker):
         return False
     if target.get_affect_status("invisible") and not looker.get_affect_status("detect invis"):
         return False
-    if "act_flags" in character.db.all:
+    if "act_flags" in target.db.all:
         if "total invis" in target.db.act_flags:
             return False
     
@@ -217,7 +217,7 @@ def current_experience_step(character, extra_step):
             int(character.db.practices_spent) +
             extra_step)
     
-    experience_cost = int((1 + (step/8.303)) ** 3) * 176.889
+    experience_cost = int(((1 + (step/8.303)) ** 3) * 176.889)
     
     return experience_cost
 

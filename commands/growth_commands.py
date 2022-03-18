@@ -128,7 +128,7 @@ class CmdTrain(MuxCommand):
             else:
                 needed_for_attribute = "You have enough"
 
-            if rules.check_ready_to_level(character):
+            if rules.check_ready_to_level(caller):
                 check_level = "and you have grown sufficiently to level"
             else:
                 check_level = "but you have not yet grown sufficiently to level"
@@ -150,12 +150,12 @@ class CmdTrain(MuxCommand):
 
             needed_to_level = (rules.level_cost(caller) - caller.experience_available)
 
-            if needed_to_level <= 0 and rules.check_ready_to_level(character):
+            if needed_to_level <= 0 and rules.check_ready_to_level(caller):
                 caller.db.experience_spent += rules.level_cost(caller)
                 caller.db.level += 1
                 caller.msg("Congratulations! You have reached level %d!!!!" % caller.db.level)
             else:
-                if rules.check_ready_to_level(character):
+                if rules.check_ready_to_level(caller):
                     ready = "You have grown sufficiently to reach level %d.\n" % (caller.level + 1)
                 else:
                     ready = "You must train in other ways to be ready for level %d.\n" % (caller.level + 1)
@@ -167,7 +167,7 @@ class CmdTrain(MuxCommand):
                     
                 experience = ("%s experience to go up to level %d." % (needed_to_level, (caller.level + 1)))
                 
-                caller.msg("%s%s" % (ready, experience)
+                caller.msg("%s%s" % (ready, experience))
                 
         
         elif self.args == "hitpoints":

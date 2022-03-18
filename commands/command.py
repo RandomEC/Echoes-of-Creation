@@ -91,7 +91,7 @@ class MuxCommand(Command):
         if "combat_handler" in caller.ndb.all:
             combat = caller.ndb.combat_handler
             wait_state = combat.db.combatants[caller]["wait state"]
-            if wait_state and self.wait_state:
+            if wait_state and hasattr(self, "wait_state"):
                 caller.msg("You are still recovering from your last combat action!")
                 return
         pass
@@ -1176,40 +1176,43 @@ class CmdScan(MuxCommand):
         """Implement the command"""
         caller = self.caller
         
-        def get_mobiles(self, player, room):
+        def get_mobiles(player, room):
             mobile_list = []
-            for object in room:
-                if "mobile" in tags.object.all():
+            for object in room.contents:
+                if "mobile" in object.tags.all():
                     if rules.is_visible_character(object, player):
                         mobile_list.append(object)
         
-        def scan_direction(self, caller, exit)
+        def scan_direction(caller, exit):
             scan_string = ""
         
             direction = caller.search(exit, location=caller.location)
             if direction:
-                mobiles = get_mobiles(player, direction.destination)
-                for mobile in mobiles:
-                    if exit != "up" and exit != "down":
-                        scan_string += "%s is immediately to the %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
-                    else:
-                        scan_string += "%s is immediately %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
-                direction = caller.search(exit, location=direction.destination)
-                if direction:
-                    mobiles = get_mobiles(player, direction.destination)
+                mobiles = get_mobiles(caller, direction.destination)
+                if mobiles:
                     for mobile in mobiles:
                         if exit != "up" and exit != "down":
-                            scan_string += "%s is a short distance to the %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
+                            scan_string += "%s is immediately to the %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
                         else:
-                            scan_string += "%s is a short distance %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
-                    direction = caller.search(exit, location=direction.destination)
-                    if direction:
-                        mobiles = get_mobiles(player, direction.destination)
+                            scan_string += "%s is immediately %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
+                direction = caller.search(exit, location=direction.destination)
+                if direction:
+                    mobiles = get_mobiles(caller, direction.destination)
+                    if mobiles:
                         for mobile in mobiles:
                             if exit != "up" and exit != "down":
-                                scan_string += "%s is some distance to the %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
+                                scan_string += "%s is a short distance to the %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
                             else:
-                                scan_string += "%s is some distance %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
+                                scan_string += "%s is a short distance %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
+                    direction = caller.search(exit, location=direction.destination)
+                    if direction:
+                        mobiles = get_mobiles(caller, direction.destination)
+                        if mobiles:
+                            for mobile in mobiles:
+                                if exit != "up" and exit != "down":
+                                    scan_string += "%s is some distance to the %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
+                                else:
+                                    scan_string += "%s is some distance %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), exit)
             return scan_string
         
         output_string = ""
