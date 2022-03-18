@@ -5,280 +5,6 @@ from world import rules_race
 from evennia import TICKER_HANDLER as tickerhandler
 from evennia.utils import search
 
-def classes_current(character):
-    """
-    This function will eventually evaluate all the skills that
-    a character has learned and compare them to the character's
-    level to determine what their most-used class (or classes,
-    at higher levels) is. For now just returns default.
-    """
-    
-    return ["default"]
-
-def constitution_hitpoint_bonus(character):
-    """
-    This function returns the amount of bonus hitpoints that a
-    character receives on gaining another set of hitpoints.
-    """
-    con = character.constitution
-    
-    if con == 0:
-        return -4
-    elif con == 1:
-        return -3
-    elif con < 4:
-        return -2
-    elif con < 7:
-        return -1
-    elif con < 15:
-        return 0
-    elif con < 16:
-        return 1
-    elif con < 18:
-        return 2
-    elif con < 20:
-        return 3
-    elif con < 22:
-        return 4
-    elif con < 23:
-        return 5
-    elif con < 24:
-        return 6
-    elif con < 25:
-        return 7
-    else:
-        return 8 
-    
-    
-def intelligence_mana_bonus(character):
-    """
-    This function returns the amount of bonus mana that a
-    character receives on gaining another set of mana based
-    on intelligence.
-    """
-    int = character.intelligence
-    
-    if int < 16:
-        return 0
-    elif int < 20:
-        return 1
-    elif int < 22:
-        return 2
-    elif int < 24:
-        return 3
-    elif int < 25:
-        return 4
-    else:
-        return 5
-
-def intelligence_learn_rating(character):
-    """
-    This function returns the learn rating of a character
-    based on their intelligence.
-    """
-    int = character.intelligence
-    
-    if int == 0:
-        return 3
-    elif int == 1:
-        return 5
-    elif int == 2:
-        return 7
-    elif int == 3:
-        return 8
-    elif int == 4:
-        return 9
-    elif int == 5:
-        return 10
-    elif int == 6:
-        return 11
-    elif int == 7:
-        return 12
-    elif int == 8:
-        return 13
-    elif int == 9:
-        return 15
-    elif int == 10:
-        return 17
-    elif int == 11:
-        return 19
-    elif int == 12:
-        return 22
-    elif int == 13:
-        return 25
-    elif int == 14:
-        return 28
-    elif int == 15:
-        return 31
-    elif int == 16:
-        return 34
-    elif int == 17:
-        return 37
-    elif int == 18:
-        return 40
-    elif int == 19:
-        return 44
-    elif int == 20:
-        return 49
-    elif int == 21:
-        return 55
-    elif int == 22:
-        return 60
-    elif int == 23:
-        return 70
-    elif int == 24:
-        return 85
-    else:
-        return 90
-
-def is_visible_character(target, looker):
-    """
-    This function returns a boolean as to whether one character
-    is visible to another currently.
-    """
-    if looker.get_affect_status("blind"):
-        return False
-    if target.get_affect_status("hide") and not looker.get_affect_status("detect hidden"):
-        return False
-    if target.get_affect_status("invisible") and not looker.get_affect_status("detect invis"):
-        return False
-    if "act_flags" in target.db.all:
-        if "total invis" in target.db.act_flags:
-            return False
-    
-    return True
-    
-def wisdom_mana_bonus(character):
-    """
-    This function returns the amount of bonus mana that a
-    character receives on gaining another set of mana based
-    on wisdom.
-    """
-    wis = character.wisdom
-    
-    if wis < 10:
-        return 0
-    elif wis < 22:
-        return 1
-    elif wis < 23:
-        return 2
-    elif wis < 24:
-        return 3
-    elif wis < 25:
-        return 4
-    else:
-        return 5
-        
-
-def remove_disintegrate_timer(obj):
-    """
-    This function removes the timer that comes from dropping an
-    object.
-    """
-
-    if "pc corpse" in obj.tags.all() and "disintegrating" in obj.tags.all():
-        tickerhandler.remove(settings.PC_CORPSE_DISINTEGRATE_TIME, obj.at_disintegrate)
-        obj.tags.remove("disintegrating")
-    elif "disintegrating" in obj.tags.all():
-        tickerhandler.remove(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
-        obj.tags.remove("disintegrating")
-
-
-def set_disintegrate_timer(obj):
-    """
-    This function sets the timer that comes from dropping an
-    object.
-    """
-
-    if "pc corpse" in obj.tags.all():
-        tickerhandler.set(settings.PC_CORPSE_DISINTEGRATE_TIME, obj.at_disintegrate)
-        obj.tags.add("disintegrating")
-    else:
-        tickerhandler.add(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
-        obj.tags.add("disintegrating")
-
-
-def current_experience_step(character, extra_step):
-    """
-    This function uses a character's current total trains and
-    practices spent to determine the experience step that the
-    character is currently at.
-    """
-
-    step = (character.level +
-            character.db.hitpoints["trains spent"] +
-            character.db.mana["trains spent"] +
-            character.db.moves["trains spent"] +
-            (character.db.attribute_trains["strength"] * 4) +
-            (character.db.attribute_trains["intelligence"] * 4) +
-            (character.db.attribute_trains["wisdom"] * 4) +
-            (character.db.attribute_trains["dexterity"] * 4) +
-            (character.db.attribute_trains["constitution"] * 4) +
-            int(character.db.practices_spent) +
-            extra_step)
-    
-    experience_cost = int(((1 + (step/8.303)) ** 3) * 176.889)
-    
-    return experience_cost
-
-
-def level_cost(character):
-    """
-    This function determines the experience cost of increasing a
-    character one level.
-    """
-    
-    return current_experience_step(character, 0)
-
-
-def check_ready_to_level(character):
-    """
-    This function checks if a character has grown sufficiently
-    to level up. Characters may level, at fastest, on every
-    sixth train. Attribute gains count as four.
-    """
-    
-    step = (character.level +
-            character.db.hitpoints["trains spent"] +
-            character.db.mana["trains spent"] +
-            character.db.moves["trains spent"] +
-            (character.db.attribute_trains["strength"] * 4) +
-            (character.db.attribute_trains["intelligence"] * 4) +
-            (character.db.attribute_trains["wisdom"] * 4) +
-            (character.db.attribute_trains["dexterity"] * 4) +
-            (character.db.attribute_trains["constitution"] * 4) +
-            int(character.db.practices_spent))
-    
-    if step >= ((character.level - 1) * 6) + 5:
-        return True
-    else:
-        return False
-    
-
-def hitpoints_cost(character):
-    """
-    This function determines the experience cost of getting an
-    additional amount of hitpoints.
-    """
-    return current_experience_step(character, 0)
-
-
-def mana_cost(character):
-    """
-    This function determines the experience cost of getting an
-    additional amount of mana.
-    """
-    return current_experience_step(character, 0)
-
-
-def moves_cost(character):
-    """
-    This function determines the experience cost of getting an
-    additional amount of moves.
-    """
-    return current_experience_step(character, 0)
-
-
 def attributes_cost(character):
     """
     This function determines the experience cost of getting an
@@ -293,69 +19,6 @@ def attributes_cost(character):
     cost += current_experience_step(character, 3)    
 
     return cost
-
-def practices_cost(character):
-    """
-    This function determines current cost of practicing a skill,
-    based on the character's wisdom, and the amount of experience
-    already spent on practicing skills.
-    """
-    
-    # The cost of practicing is going to be divided by a factor,
-    # based on character wisdom.
-    if character.wisdom <= 4:
-        practice_factor = 0
-    elif character.wisdom <= 8:
-        practice_factor = 1
-    elif character.wisdom <= 14:
-        practice_factor = 2
-    elif character.wisdom <= 16:
-        practice_factor = 3
-    elif character.wisdom <= 18:
-        practice_factor = 4
-    elif character.wisdom <= 20:
-        practice_factor = 5
-    elif character.wisdom <= 21:
-        practice_factor = 6
-    elif character.wisdom <= 24:
-        practice_factor = 7
-    else:
-        practice_factor = 8
-    
-    cost = current_experience_step(character, 0) / practice_factor
-    return cost
-
-    
-def fuzz_number(number):
-    """
-    This function simply adds slight variation to a number.
-    """
-
-    random_number = random.randint(1, 4)
-    if random_number < 2:
-        return number - 1
-    elif random_number > 3:
-        return number + 1
-    else:
-        return number
-
-
-def set_armor(level):
-    """
-    This function sets the armor value of a piece of armor.
-    """
-
-    return round(fuzz_number((level/4) + 2))
-
-
-def set_weapon_low_high(level):
-    """
-    This function sets the damage range of a weapon.
-    """
-
-    low = round(fuzz_number(fuzz_number(level/4 + 2)))
-    high = round(fuzz_number(fuzz_number(3*level/4 + 6)))
-    return low, high
 
 
 def calculate_experience(mobile):
@@ -407,6 +70,145 @@ def calculate_experience(mobile):
         experience = 50
 
     return experience
+
+
+def check_ready_to_level(character):
+    """
+    This function checks if a character has grown sufficiently
+    to level up. Characters may level, at fastest, on every
+    sixth train. Attribute gains count as four.
+    """
+    
+    step = (character.level +
+            character.db.hitpoints["trains spent"] +
+            character.db.mana["trains spent"] +
+            character.db.moves["trains spent"] +
+            (character.db.attribute_trains["strength"] * 4) +
+            (character.db.attribute_trains["intelligence"] * 4) +
+            (character.db.attribute_trains["wisdom"] * 4) +
+            (character.db.attribute_trains["dexterity"] * 4) +
+            (character.db.attribute_trains["constitution"] * 4) +
+            int(character.db.practices_spent))
+    
+    if step >= ((character.level - 1) * 6) + 5:
+        return True
+    else:
+        return False
+    
+
+def classes_current(character):
+    """
+    This function will eventually evaluate all the skills that
+    a character has learned and compare them to the character's
+    level to determine what their most-used class (or classes,
+    at higher levels) is. For now just returns default.
+    """
+    
+    return ["default"]
+
+def constitution_hitpoint_bonus(character):
+    """
+    This function returns the amount of bonus hitpoints that a
+    character receives on gaining another set of hitpoints.
+    """
+    con = character.constitution
+    
+    if con == 0:
+        return -4
+    elif con == 1:
+        return -3
+    elif con < 4:
+        return -2
+    elif con < 7:
+        return -1
+    elif con < 15:
+        return 0
+    elif con < 16:
+        return 1
+    elif con < 18:
+        return 2
+    elif con < 20:
+        return 3
+    elif con < 22:
+        return 4
+    elif con < 23:
+        return 5
+    elif con < 24:
+        return 6
+    elif con < 25:
+        return 7
+    else:
+        return 8 
+    
+    
+def current_experience_step(character, extra_step):
+    """
+    This function uses a character's current total trains and
+    practices spent to determine the experience step that the
+    character is currently at.
+    """
+
+    step = (character.level +
+            character.db.hitpoints["trains spent"] +
+            character.db.mana["trains spent"] +
+            character.db.moves["trains spent"] +
+            (character.db.attribute_trains["strength"] * 4) +
+            (character.db.attribute_trains["intelligence"] * 4) +
+            (character.db.attribute_trains["wisdom"] * 4) +
+            (character.db.attribute_trains["dexterity"] * 4) +
+            (character.db.attribute_trains["constitution"] * 4) +
+            int(character.db.practices_spent) +
+            extra_step)
+    
+    experience_cost = int(((1 + (step/8.303)) ** 3) * 176.889)
+    
+    return experience_cost
+
+
+def experience_loss_base(character):
+    """
+    This function calculates the experience that fleeing, death,
+    and the like use to calculate proportional loss from.
+    """
+    
+    loss = (current_experience_step(character, -1) +
+            current_experience_step(character, -2) +
+            current_experience_step(character, -3) +
+            current_experience_step(character, -4) +
+            current_experience_step(character, -5)
+            )
+    
+    return loss
+
+
+def fuzz_number(number):
+    """
+    This function simply adds slight variation to a number.
+    """
+
+    random_number = random.randint(1, 4)
+    if random_number < 2:
+        return number - 1
+    elif random_number > 3:
+        return number + 1
+    else:
+        return number
+
+
+def gain_experience(mobile, hp_gain):
+    """
+    This function calculates the amount of experience that
+    needs to be regained by a mobile to accommodate its
+    hit point gain.
+    """
+
+    percent_hp_recovered = hp_gain / mobile.db.hitpoints["damaged"]
+    experience_awarded = math.ceil(mobile.db.experience_total -
+                                   mobile.db.experience_current)
+
+    experience_gain = int(percent_hp_recovered * experience_awarded)
+
+    return experience_gain
 
 
 def gain_hitpoints(character):
@@ -547,20 +349,119 @@ def gain_moves(character):
         return moves_gain
 
 
-def gain_experience(mobile, hp_gain):
+def hitpoints_cost(character):
     """
-    This function calculates the amount of experience that
-    needs to be regained by a mobile to accommodate its
-    hit point gain.
+    This function determines the experience cost of getting an
+    additional amount of hitpoints.
     """
+    return current_experience_step(character, 0)
 
-    percent_hp_recovered = hp_gain / mobile.db.hitpoints["damaged"]
-    experience_awarded = math.ceil(mobile.db.experience_total -
-                                   mobile.db.experience_current)
 
-    experience_gain = int(percent_hp_recovered * experience_awarded)
+def intelligence_learn_rating(character):
+    """
+    This function returns the learn rating of a character
+    based on their intelligence.
+    """
+    int = character.intelligence
+    
+    if int == 0:
+        return 3
+    elif int == 1:
+        return 5
+    elif int == 2:
+        return 7
+    elif int == 3:
+        return 8
+    elif int == 4:
+        return 9
+    elif int == 5:
+        return 10
+    elif int == 6:
+        return 11
+    elif int == 7:
+        return 12
+    elif int == 8:
+        return 13
+    elif int == 9:
+        return 15
+    elif int == 10:
+        return 17
+    elif int == 11:
+        return 19
+    elif int == 12:
+        return 22
+    elif int == 13:
+        return 25
+    elif int == 14:
+        return 28
+    elif int == 15:
+        return 31
+    elif int == 16:
+        return 34
+    elif int == 17:
+        return 37
+    elif int == 18:
+        return 40
+    elif int == 19:
+        return 44
+    elif int == 20:
+        return 49
+    elif int == 21:
+        return 55
+    elif int == 22:
+        return 60
+    elif int == 23:
+        return 70
+    elif int == 24:
+        return 85
+    else:
+        return 90
 
-    return experience_gain
+def intelligence_mana_bonus(character):
+    """
+    This function returns the amount of bonus mana that a
+    character receives on gaining another set of mana based
+    on intelligence.
+    """
+    int = character.intelligence
+    
+    if int < 16:
+        return 0
+    elif int < 20:
+        return 1
+    elif int < 22:
+        return 2
+    elif int < 24:
+        return 3
+    elif int < 25:
+        return 4
+    else:
+        return 5
+
+def is_visible_character(target, looker):
+    """
+    This function returns a boolean as to whether one character
+    is visible to another currently.
+    """
+    if looker.get_affect_status("blind"):
+        return False
+    if target.get_affect_status("hide") and not looker.get_affect_status("detect hidden"):
+        return False
+    if target.get_affect_status("invisible") and not looker.get_affect_status("detect invis"):
+        return False
+    if "act_flags" in target.db.all:
+        if "total invis" in target.db.act_flags:
+            return False
+    
+    return True
+    
+def level_cost(character):
+    """
+    This function determines the experience cost of increasing a
+    character one level.
+    """
+    
+    return current_experience_step(character, 0)
 
 
 def make_object(location, equipped, reset_object):
@@ -617,3 +518,119 @@ def make_object(location, equipped, reset_object):
 
     return new_object
 
+
+def mana_cost(character):
+    """
+    This function determines the experience cost of getting an
+    additional amount of mana.
+    """
+    return current_experience_step(character, 0)
+
+
+def moves_cost(character):
+    """
+    This function determines the experience cost of getting an
+    additional amount of moves.
+    """
+    return current_experience_step(character, 0)
+
+
+def practices_cost(character):
+    """
+    This function determines current cost of practicing a skill,
+    based on the character's wisdom, and the amount of experience
+    already spent on practicing skills.
+    """
+    
+    # The cost of practicing is going to be divided by a factor,
+    # based on character wisdom.
+    if character.wisdom <= 4:
+        practice_factor = 0
+    elif character.wisdom <= 8:
+        practice_factor = 1
+    elif character.wisdom <= 14:
+        practice_factor = 2
+    elif character.wisdom <= 16:
+        practice_factor = 3
+    elif character.wisdom <= 18:
+        practice_factor = 4
+    elif character.wisdom <= 20:
+        practice_factor = 5
+    elif character.wisdom <= 21:
+        practice_factor = 6
+    elif character.wisdom <= 24:
+        practice_factor = 7
+    else:
+        practice_factor = 8
+    
+    cost = current_experience_step(character, 0) / practice_factor
+    return cost
+
+    
+def remove_disintegrate_timer(obj):
+    """
+    This function removes the timer that comes from dropping an
+    object.
+    """
+
+    if "pc corpse" in obj.tags.all() and "disintegrating" in obj.tags.all():
+        tickerhandler.remove(settings.PC_CORPSE_DISINTEGRATE_TIME, obj.at_disintegrate)
+        obj.tags.remove("disintegrating")
+    elif "disintegrating" in obj.tags.all():
+        tickerhandler.remove(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
+        obj.tags.remove("disintegrating")
+
+
+def set_armor(level):
+    """
+    This function sets the armor value of a piece of armor.
+    """
+
+    return round(fuzz_number((level/4) + 2))
+
+
+def set_disintegrate_timer(obj):
+    """
+    This function sets the timer that comes from dropping an
+    object.
+    """
+
+    if "pc corpse" in obj.tags.all():
+        tickerhandler.set(settings.PC_CORPSE_DISINTEGRATE_TIME, obj.at_disintegrate)
+        obj.tags.add("disintegrating")
+    else:
+        tickerhandler.add(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
+        obj.tags.add("disintegrating")
+
+
+def set_weapon_low_high(level):
+    """
+    This function sets the damage range of a weapon.
+    """
+
+    low = round(fuzz_number(fuzz_number(level/4 + 2)))
+    high = round(fuzz_number(fuzz_number(3*level/4 + 6)))
+    return low, high
+
+
+def wisdom_mana_bonus(character):
+    """
+    This function returns the amount of bonus mana that a
+    character receives on gaining another set of mana based
+    on wisdom.
+    """
+    wis = character.wisdom
+    
+    if wis < 10:
+        return 0
+    elif wis < 22:
+        return 1
+    elif wis < 23:
+        return 2
+    elif wis < 24:
+        return 3
+    elif wis < 25:
+        return 4
+    else:
+        return 5
+        
