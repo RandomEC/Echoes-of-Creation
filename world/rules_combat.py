@@ -252,7 +252,7 @@ def do_death(attacker, victim):
         for object in object_candidates:
             if not object.location:
                 corpse = object
-                corpse.key = "corpse of %s" % victim.key
+                corpse.key = "the corpse of %s" % victim.key
 
         if not corpse:
 
@@ -295,6 +295,10 @@ def do_death(attacker, victim):
                                 "You received a total of %d experience "
                                 "from %s.\n" % (victim.db.experience_total, victim.key))
 
+        # Trying to give the attacker a look at the corpse after it dies
+        corpse_look = attacker.at_look(corpse)
+        attacker_string += ("%s\n" % corpse_look)
+            
         # Increment kills.
         attacker.db.kills += 1
 
