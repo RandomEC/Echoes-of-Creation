@@ -47,7 +47,7 @@ class Room(DefaultRoom):
         #         "location":<equipped, inventory, onum of container>
         #            }
         #                 }
-        if self.db.reset_objects:
+        if "reset_objects" in self.db.all:
 
             # Iterate through the onums reset to this room.
             for reset_object in self.db.reset_objects:
@@ -79,11 +79,12 @@ class Room(DefaultRoom):
                                 container = object
 
                                 # Iterate through objects in each container.
-                                for contained_object in object.contents:
-                                    aliases = contained_object.aliases.get()
-                                    if aliases:
-                                        if reset_object in aliases:
-                                            new_object = contained_object
+                                if object.contents:
+                                    for contained_object in object.contents:
+                                        aliases = contained_object.aliases.get()
+                                        if aliases:
+                                            if reset_object in aliases:
+                                                new_object = contained_object
 
                 # If the object does not already exist in the room, continue
                 # on.
@@ -104,7 +105,7 @@ class Room(DefaultRoom):
                         object_to_copy = object_candidates[0]
                         new_object = object_to_copy.copy()
                         new_object.key = object_to_copy.key
-                        new_object.alias = object_to_copy.aliases
+                        new_object.aliases = object_to_copy.aliases
                         if new_object.db.equipped:
                             new_object.db.equipped = False
                         new_object.home = self
