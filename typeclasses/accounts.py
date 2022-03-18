@@ -194,7 +194,7 @@ class Account(DefaultAccount):
             if is_su or len(characters) < charmax:
                 if not characters:
                     result.append(
-                        _(
+                        (
                             "\n\n You don't have any characters yet. See |whelp charcreate|n for creating one."
                         )
                     )
