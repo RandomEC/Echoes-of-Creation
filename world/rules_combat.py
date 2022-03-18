@@ -356,7 +356,7 @@ def do_death(attacker, victim):
 
         # Do xp penalty.
         if victim.level > 5:
-            experience_loss = int(settings.EXPERIENCE_LOSS_DEATH * rules.experience_cost_base(rules.current_experience_step(victim) + 1))
+            experience_loss = int(settings.EXPERIENCE_LOSS_DEATH * rules.experience_loss_base(victim))
             victim.db.experience_total -= experience_loss
 
             victim_string += ("You lose %s experience as a result of your death!" % experience_loss)
@@ -407,7 +407,7 @@ def do_flee(character):
 
         # Only do experience loss if the character is past level 5.
         if character.level > 5:
-            experience_loss = int(settings.EXPERIENCE_LOSS_FLEE * rules.experience_cost_base(rules.current_experience_step(character) + 1))
+            experience_loss = int(settings.EXPERIENCE_LOSS_FLEE * rules.experience_loss_base(character))
         
             character.db.experience_total -= experience_loss
 
@@ -428,7 +428,7 @@ def do_flee(character):
     else:
         # Only do experience loss if the character is past level 5.
         if character.level > 5:
-            experience_loss = int(settings.EXPERIENCE_LOSS_FLEE_FAIL * rules.experience_cost_base(rules.current_experience_step(character) + 1))
+            experience_loss = int(settings.EXPERIENCE_LOSS_FLEE_FAIL * rules.experience_loss_base(character))
             character.db.experience_total -= experience_loss
         
             character.msg("You fail to flee from combat!\nYou lose %d experience for the attempt." % experience_loss)
