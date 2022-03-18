@@ -814,7 +814,7 @@ class Mobile(Character):
 
     def at_player_entered(self, character):
         """
-        Hook used to implement aggressive mobiles.
+        Hook used to implement various actions on a player entering the room.
         """
         if "aggressive" in self.db.act_flags:
             if not character.ndb.combat_handler and not self.ndb.combat_handler:
@@ -823,6 +823,8 @@ class Mobile(Character):
             if not self.ndb.combat_handler:
                 combat = character.ndb.combat_handler
                 combat.add_combatant(self, character)
+        if "talk on enter" in self.tags.all():
+            character.msg('On entering the room, %s says to you, "%s"' % (self.key, self.db.talk))
 
 class Player(Character):
     """
