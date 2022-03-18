@@ -209,11 +209,11 @@ def current_experience_step(character, extra_step):
             character.db.hitpoints["trains spent"] +
             character.db.mana["trains spent"] +
             character.db.moves["trains spent"] +
-            character.db.attribute_trains["strength"] +
-            character.db.attribute_trains["intelligence"] +
-            character.db.attribute_trains["wisdom"] +
-            character.db.attribute_trains["dexterity"] +
-            character.db.attribute_trains["constitution"] +
+            (character.db.attribute_trains["strength"] * 4) +
+            (character.db.attribute_trains["intelligence"] * 4) +
+            (character.db.attribute_trains["wisdom"] * 4) +
+            (character.db.attribute_trains["dexterity"] * 4) +
+            (character.db.attribute_trains["constitution"] * 4) +
             int(character.db.practices_spent) +
             extra_step)
     
