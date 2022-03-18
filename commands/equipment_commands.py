@@ -443,7 +443,7 @@ class CmdIdentify(MuxCommand):
         else:
             remove = "yes"
 
-        if not anti_alignment:
+        if not item.db.anti_alignment:
             anti_string = "none"
         else:
             anti_string = " ".join(anti_alignment)
