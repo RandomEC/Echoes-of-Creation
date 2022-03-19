@@ -9,7 +9,7 @@ from collections import defaultdict
 
 from evennia import DefaultRoom
 from evennia import create_script
-from evennia.utils import search
+from evennia.utils import search, utils
 from evennia.utils.utils import list_to_string
 from world import rules
 
@@ -178,7 +178,7 @@ class Room(DefaultRoom):
                 destination = player.search(room)                
                 player.msg("%s" % player_output)                           
                 player.move_to(destination)
-                player.location.msg_contents("%s" % room_output, exclude=caller)
+                player.location.msg_contents("%s" % room_output, exclude=player)
                 
             transfer = utils.delay(delay, delay_move_callback)
 
