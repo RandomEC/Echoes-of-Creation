@@ -165,7 +165,7 @@ class Room(DefaultRoom):
             if "mobile" in item.tags.all():
                 item.at_player_entered(player)
                 
-        if "delayed_transfer" in self.db.all and "delayed_transfer_room" in self.db.all:
+        if "delayed_transfer" in self.db.all:
             delay = self.db.delayed_transfer["delay"]
             room = self.db.delayed_transfer["room"]
             player_output = self.db.delayed_transfer["player output"]

@@ -1237,6 +1237,9 @@ class CmdScan(MuxCommand):
             elif exit.key == "down":
                 output_string += scan_direction(caller, exit, "down")
 
+        if not output_string:
+            output_string = "There are no mobiles within your view."
+
         caller.msg(output_string)
         
         
