@@ -9,7 +9,8 @@ from collections import defaultdict
 
 from evennia import DefaultRoom
 from evennia import create_script
-from evennia.utils import search, utils
+from evennia import utils
+from evennia.utils import search
 from evennia.utils.utils import list_to_string
 from world import rules
 
@@ -47,7 +48,8 @@ class Room(DefaultRoom):
         #         "location":<equipped, inventory, onum of container>
         #            }
         #                 }
-        if "reset_objects" in self.db.all:
+
+        if self.attributes.has("reset_objects"):
 
             # Iterate through the onums reset to this room.
             for reset_object in self.db.reset_objects:
@@ -160,22 +162,27 @@ class Room(DefaultRoom):
 
     def at_player_arrive(self, player):
         # Run through the contents of the room to look for mobile.
-        for item in self.contents:
-            # If there is a mobile in the room.
-            if "mobile" in item.tags.all():
-                item.at_player_entered(player)
-                
-        if "delayed_transfer" in self.db.all:
-            delay = self.db.delayed_transfer["delay"]
-            room = self.db.delayed_transfer["room"]
-            player_output = self.db.delayed_transfer["player output"]
-            room_output = self.db.delayed_transfer["room output"]
-                        
+
+        if self.contents:
+            for item in self.contents:
+                # If there is a mobile in the room.
+                if "mobile" in item.tags.all():
+                    item.at_player_entered(player)
+
+        if player.location.attributes.has("delayed_transfer"):
+
+            delay = player.location.db.delayed_transfer["delay"]
+            room = player.location.db.delayed_transfer["room"]
+            player_output = player.location.db.delayed_transfer["player output"]
+            room_output = player.location.db.delayed_transfer["room output"]
+
             def delay_move_callback():
                 """
                 This gets called after delay worth of seconds have passed.
                 """
-                destination = player.search(room)                
+                source_location = player.location
+
+                destination = player.search(room, global_search=True)
                 player.msg("%s" % player_output)                           
                 player.move_to(destination)
                 player.location.msg_contents("%s" % room_output, exclude=player)
