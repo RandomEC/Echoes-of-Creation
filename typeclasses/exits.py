@@ -108,16 +108,24 @@ class Exit(DefaultExit):
                 terrain_cost = 11
             elif terrain == "max":
                 terrain_cost = 12
-            else:
-                terrain_cost = 0
+        else:
+            terrain_cost = 0
         
-        if terrain cost > traversing_object.moves_current:
-            traversing.obj.msg("You are too tired to move further.")
+        if terrain_cost > traversing_object.moves_current:
+            traversing_object.msg("You are too tired to move farther.")
             return
         
         if traversing_object.move_to(target_location):
             traversing_object.moves_spent += terrain_cost
             self.at_after_traverse(traversing_object, source_location)
+            prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n>" % (traversing_object.hitpoints_current,
+                                                                                traversing_object.hitpoints_maximum,
+                                                                                traversing_object.mana_current,
+                                                                                traversing_object.mana_maximum,
+                                                                                traversing_object.moves_current,
+                                                                                traversing_object.moves_maximum)
+            traversing_object.msg(prompt=prompt)
+
         else:
             if self.db.err_traverse:
                 # if exit has a better error message, let's use it.

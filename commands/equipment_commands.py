@@ -356,9 +356,9 @@ class CmdWear(MuxCommand):
                 return
         else:
             # First search for items on the caller that are not equipped.
-            equipped = search.search_object(False, attribute_name="equipped", location=caller)
+            equipped = search.search_object(False, attribute_name="equipped")
             # Then search those for the item to be worn.
-            object = caller.search(self.args, candidates=equipped)
+            object = caller.search(self.args, candidates=equipped, location=caller)
             # object = caller.search(self.args, location=caller)
             wear_list.append(object)
             if not object:
@@ -563,7 +563,7 @@ class CmdWearTo(MuxCommand):
             caller.location.msg_contents(room_wear_string)
 
 
-cclass CmdWield(MuxCommand):
+class CmdWield(MuxCommand):
     """
     Wield a weapon that is in your inventory. Armor cannot be equipped this
     way, you need to use wear.
@@ -657,7 +657,7 @@ cclass CmdWield(MuxCommand):
         if not weapon.at_after_equip(caller):
             return
 
-lass CmdWieldTo(MuxCommand):
+class CmdWieldTo(MuxCommand):
     """
     Give a weapon that is in your inventory to a mobile to wield. Armor
     cannot be equipped this way, you need to use wear.

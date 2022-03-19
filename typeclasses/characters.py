@@ -176,7 +176,7 @@ class Character(DefaultCharacter):
 
     @mana_spent.setter
     def mana_spent(self, new_value):
-        if new_value > 0:
+        if new_value >= 0:
             self.db.mana["spent"] = new_value
         else:
             self.msg("There was a problem setting your new spent mana, as having negative spent mana is impossible.")
@@ -207,7 +207,7 @@ class Character(DefaultCharacter):
     
     @moves_spent.setter
     def moves_spent(self, new_value):
-        if new_value > 0:
+        if new_value >= 0:
             self.db.moves["spent"] = new_value
         else:
             self.msg("There was a problem setting your new spent moves, as having negative spent moves is impossible.")
@@ -931,22 +931,4 @@ class Player(Character):
             self.msg(self.at_look(self.location))
             self.location.at_player_arrive(self)
 
-        if "combat_handler" in self.ndb.all:
-            combat = self.ndb.combat_handler
-            wait_state = combat.db.combatants[self]["wait state"]
-            prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n Recovery %d>" % (self.hitpoints_current,
-                                                                                        self.hitpoints_maximum,
-                                                                                        self.mana_current,
-                                                                                        self.mana_maximum,
-                                                                                        self.moves_current,
-                                                                                        self.moves_maximum,
-                                                                                        wait_state)
-        else:
-            prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n>" % (self.hitpoints_current,
-                                                                                self.hitpoints_maximum,
-                                                                                self.mana_current,
-                                                                                self.mana_maximum,
-                                                                                self.moves_current,
-                                                                                self.moves_maximum)
-        self.msg(prompt = prompt)
 

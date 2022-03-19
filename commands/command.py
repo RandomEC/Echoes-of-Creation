@@ -1176,44 +1176,41 @@ class CmdScan(MuxCommand):
         """Implement the command"""
         caller = self.caller
         room = caller.location
-        
+
         def get_mobiles(player, room):
+
             mobile_list = []
             for object in room.contents:
                 if "mobile" in object.tags.all():
                     if rules.is_visible_character(object, player):
                         mobile_list.append(object)
-        
+            return mobile_list
+
         def scan_direction(caller, exit, direction):
             scan_string = ""
+
+            mobiles = get_mobiles(caller, exit.destination)
+            if mobiles:
+                for mobile in mobiles:
+                    if direction != "up" and direction != "down":
+                        scan_string += "%s is immediately to the %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), direction)
+                    else:
+                        scan_string += "%s is immediately %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), direction)
+            room = exit.destination
             next_exit = ""
-        
-            for new_exit in exit.destination:
+            for new_exit in room.exits:
                 if new_exit.key == direction:
-                    mobiles = get_mobiles(caller, exit.destination)
+                    next_exit = new_exit
+                    mobiles = get_mobiles(caller, new_exit.destination)
                     if mobiles:
                         for mobile in mobiles:
                             if direction != "up" and direction != "down":
-                                scan_string += "%s is immediately to the %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), direction)
+                                scan_string += "%s is a short distance to the %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), direction)
                             else:
-                                scan_string += "%s is immediately %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), direction)
-                    next_exit = new_exit
+                                scan_string += "%s is a short distance %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), direction)
+                    room = new_exit.destination
             if next_exit:
-                exit = next_exit
-                next_exit = ""
-                for new_exit in exit.destination:
-                    if new_exit.key == direction:
-                        mobiles = get_mobiles(caller, exit.destination)
-                        if mobiles:
-                            for mobile in mobiles:
-                                if direction != "up" and direction != "down":
-                                    scan_string += "%s is a short distance to the %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), direction)
-                                else:
-                                    scan_string += "%s is a short distance %s.\n" % ((mobile.key[0].upper() + mobile.key[1:]), direction)
-                        next_exit = new_exit
-            if next_exit:
-                exit = next_exit
-                for new_exit in exit.destination:
+                for new_exit in room.exits:
                     if new_exit.key == direction:
                         mobiles = get_mobiles(caller, exit.destination)
                         if mobiles:

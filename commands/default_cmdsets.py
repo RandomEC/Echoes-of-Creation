@@ -28,6 +28,7 @@ from commands.command import CmdRepop
 from commands.command import CmdRest
 from commands.command import CmdSacrifice
 from commands.command import CmdSay
+from commands.command import CmdScan
 from commands.command import CmdScore
 from commands.command import CmdSetHome
 from commands.command import CmdSleep
@@ -108,6 +109,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdRest())
         self.add(CmdSacrifice())
         self.add(CmdSay())
+        self.add(CmdScan())
         self.add(CmdScore())
         self.add(CmdSetHome())
         self.add(CmdSetObjAlias())
