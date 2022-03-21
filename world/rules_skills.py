@@ -54,7 +54,7 @@ def do_dowse(character):
     spring = rules.make_object(character.location, False, "o22")
 
     # put a timer on the spring equal to skill level
-    timer = character.db.skills["dowse"]
+    timer = (character.level - lowest_learned_level("dowse")) * 60
     tickerhandler.add(timer, spring.at_disintegrate)
 
 def do_forage(character):
@@ -102,3 +102,14 @@ def get_skill(skill_name):
     for skill in skills:
         if skill == skill_name:
             return skill
+
+def lowest_learned_level(skill):
+    """Calculate the earliest that a player could have learned a skill"""
+    
+    minimum_level = 101
+    for class_name in skill["classes"]:
+        if skill["classes"][class_name] < minimum_level:
+            minimum_level = skill["classes"][class_name]
+    
+    return minimum_level
+        
