@@ -9,15 +9,18 @@ def check_cast(caster):
     """
     
     if "cone of silence" in caster.location.db.room_flags:
-        return "You can't ... You are in a Cone of Silence!"
+        return "You can't ... You are in a Cone of Silence!\n"
     
     elif "no magic" in caster.location.db.room_flags:
-        return "You feel a strong dampening field blocking your spell."
+        return "You feel a strong dampening field blocking your spell.\n"
     
     elif caster.get_affect_status("mute"):
-        return False
+        return "You can't ... You're mute!\n"
+    
+    elif caster.db.position != "standing":
+        return "You can't concentrate enough - stand up!\n"
 
-    return
+    return False
     
 def do_create_food(caster, mana_cost):
     """ Function implementing create food spell"""
