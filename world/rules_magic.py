@@ -134,7 +134,26 @@ def player_output_magic_chant(caster, spell_name):
         for player in cannot_understand:
             player.msg("%s chants '%s'.\n" % (caster.key, magic_name))
         
+def save_spell(cast_level, victim):
+    """
+    This function returns a boolean based on whether a spell is
+    resisted/saved by a victim (True) or not (False)
+    """
     
+    base_save = 50
+    if "mobile" in victim.tags.all():
+        base_save += 25
+    save = base + (victim.level - cast_level) * 2 - victim.saving_throw
+    if save < 5:
+        save = 5
+    elif save > 95:
+        save = 95
+    
+    if random.randint(1, 100) < save:
+        return True
+    else:
+        return False
+
 def say_spell(spell_name):
     """
     This function creates the magical gibberish that replaces the
