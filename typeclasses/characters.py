@@ -500,6 +500,10 @@ class Character(DefaultCharacter):
         return self.get_modified_attribute("armor class")
 
     @property
+    def saving_throw(self):
+        return self.get_modified_attribute("saving throw")
+    
+    @property
     def size(self):
         if "size" in rules_race.get_race(self.race).keys():
             size = rules_race.get_race(self.race)["size"]
