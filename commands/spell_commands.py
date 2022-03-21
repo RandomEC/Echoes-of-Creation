@@ -1,3 +1,16 @@
+"""
+Spell Commands
+
+This file handles most of the commands that deal with casting spells,
+and other magic-related commands. IMPORTANTLY, please note that the
+processing of the command input is handled here, but the actual "meat"
+of the spell itself is handled in a function entitled "do_ ..." in
+rules_magic. This is for two purposes - 1) to accommodate mobile
+casting, which does not need the command structure, and 2) to prepare
+for the implementation of wands, staves and scrolls, all of which
+will need the functional parts of the spell, but will have their own
+command-handling part.
+"""
 import random
 from commands.command import MuxCommand
 from world import rules_skills, rules_magic
