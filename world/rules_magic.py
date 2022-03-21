@@ -28,7 +28,8 @@ def do_create_food(caster, mana_cost):
 
 
     if random.randint(1, 100) > caster.db.skills["create food"]:
-        caster.mana_spent += mana_cost / 2
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost / 2
         caster.msg("You chant 'create food'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "create food")            
     else:
@@ -53,7 +54,8 @@ def do_create_food(caster, mana_cost):
         food.db.hours_fed = 5 + level
         rules.set_disintegrate_timer(food)
 
-        caster.mana_spent += mana_cost
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
         caster.msg("You chant 'create food'.\n%s suddenly appears." % (food.key[0].upper() + food.key[1:]))
         player_output_magic_chant(caster, "create food")
         caster.location.msg_contents("%s suddenly appears."
@@ -69,7 +71,8 @@ def do_create_water(caster, cost, target_container):
     level = caster.level - rules_skills.lowest_learned_level(spell)
 
     if random.randint(1, 100) > caster.db.skills["create water"]:
-        caster.mana_spent += mana_cost / 2
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost / 2
         caster.msg("You chant 'create water'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "create water")            
     else:
@@ -84,7 +87,8 @@ def do_create_water(caster, cost, target_container):
         
         target_container.db.liquid_type = "water"
         target_container.db.capacity_current += water
-        caster.mana_spent += mana_cost
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
         caster.msg("You chant 'create water'.\n%s is filled." % (target_container.key[0].upper() + target_container.key[1:]))
         player_output_magic_chant(caster, "create water")
     
