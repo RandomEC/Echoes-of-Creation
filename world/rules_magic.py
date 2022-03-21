@@ -50,7 +50,7 @@ def do_create_food(caster, mana_cost):
             else:
                 food = rules.make_object(caster.location, False, "o4444")
         
-            food.db.hours_fed = 5 + caster.level - lowest_cast_level(spell)
+            food.db.hours_fed = 5 + caster.level - rules_skills.lowest_learned_level(spell)
             rules.set_disintegrate_timer(food)
             
             caster.mana_spent += mana_cost
@@ -60,16 +60,7 @@ def do_create_food(caster, mana_cost):
                                          % (food.key[0].upper() + food.key[1:]),
                                          exclude=caster)
             
-def lowest_cast_level(spell):
-    """Calculate the earliest that a player could have learned a spell"""
-    
-    minimum_level = 101
-    for class_name in spell["classes"]:
-        if spell["classes"][class_name] < minimum_level:
-            minimum_level = spell["classes"][class_name]
-    
-    return minimum_level
-        
+
 def mana_cost(caster, spell):
     """Calculate mana cost for a spell"""
 
