@@ -1,5 +1,6 @@
 import random
 from evennia.utils import search
+from world import rules, rules_skills
 
 def check_cast(caster):
     """
@@ -19,33 +20,60 @@ def check_cast(caster):
     return
     
 def do_create_food(caster, mana_cost):
+    
+    spell = rules_skills.get_skill("create food")
     cast_name = say_spell("create food")
 
     if caster.ndb.combat_handler:
         pass
     else:
         if random.randint(1, 100) > caster.db.skills["create food"]:
-            caster.msg("You chant 'create food'.\nYou fail to cast create food.")
-
-            # Make a method that iterates through players in the room and dictates
-            # whether they get the gibberish or the actual name based on whether
-            # they have the skill.
-            caster.location.msg_contents("%s chants %s."
-                                         % (caster.name, cast_name),
-                                         exclude=caster)
-
             caster.mana_spent += mana_cost / 2
-            return
-
+            caster.msg("You chant 'create food'.\nYou lost your concentration.\n")
+            player_output_magic_chant(caster, "create food")            
+        else:
+            food = random.randint(1, 8)
+            if food == 1:
+                food = rules.make_object(caster.location, False, mushroom)
+            elif food == 2:
+                food = rules.make_object(caster.location, False, bigmac)
+            elif food == 3:
+                food = rules.make_object(caster.location, False, pizza)
+            elif food == 4:
+                food = rules.make_object(caster.location, False, cherry)
+            elif food == 5:
+                food = rules.make_object(caster.location, False, roast)
+            elif food == 6:
+                food = rules.make_object(caster.location, False, stuffing)
+            elif food == 7:
+                food = rules.make_object(caster.location, False, steak)
+            else:
+                food = rules.make_object(caster.location, False, turkey)
+        
+            food.db.hours_fed = 5 + caster.level - lowest_cast_level(spell)
+            
+            caster.mana_spent += mana_cost
+            caster.msg("You chant 'create food'.\n%s suddenly appears." % (food.key[0].upper() + food.key[1:]))
+            player_output_magic_chant(caster, "create food")
+            caster.location.msg_contents("%s suddenly appears."
+                                         % (food.key[0].upper() + food.key[1:]),
+                                         exclude=caster)
+def lowest_cast_level(spell):
+    """Calculate the earliest that a player could have learned a spell"""
+    
+    minimum_level = 101
+    for class_name in spell["classes"]:
+        if spell["classes"][class_name] < minimum_level:
+            minimum_level = spell["classes"][class_name]
+    
+    return minimum_level
+        
 def mana_cost(caster, spell):
     """Calculate mana cost for a spell"""
 
     minimum_cost = spell["minimum cost"]
 
-    minimum_level = 101
-    for class_name in spell["classes"]:
-        if spell["classes"][class_name] < minimum_level:
-            minimum_level = spell["classes"][class_name]
+    minimum_level = lowest_cast_level(spell)
 
     level_cost = 120 / (2 + (caster.level - minimum_level) / 2)
 
