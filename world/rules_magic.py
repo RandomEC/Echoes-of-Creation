@@ -20,47 +20,75 @@ def check_cast(caster):
     return
     
 def do_create_food(caster, mana_cost):
+    """ Function implementing create food spell"""
     
     spell = rules_skills.get_skill("create food")
     cast_name = say_spell("create food")
+    level = caster.level - rules_skills.lowest_learned_level(spell)
 
-    if caster.ndb.combat_handler:
-        pass
+
+    if random.randint(1, 100) > caster.db.skills["create food"]:
+        caster.mana_spent += mana_cost / 2
+        caster.msg("You chant 'create food'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "create food")            
     else:
-        if random.randint(1, 100) > caster.db.skills["create food"]:
-            caster.mana_spent += mana_cost / 2
-            caster.msg("You chant 'create food'.\nYou lost your concentration.\n")
-            player_output_magic_chant(caster, "create food")            
+        food = random.randint(1, 8)
+        if food == 1:
+            food = rules.make_object(caster.location, False, "o20")
+        elif food == 2:
+            food = rules.make_object(caster.location, False, "o4434")
+        elif food == 3:
+            food = rules.make_object(caster.location, False, "o4432")
+        elif food == 4:
+            food = rules.make_object(caster.location, False, "o4436")
+        elif food == 5:
+            food = rules.make_object(caster.location, False, "o4443")
+        elif food == 6:
+            food = rules.make_object(caster.location, False, "o4445")
+        elif food == 7:
+            food = rules.make_object(caster.location, False, "o4433")
         else:
-            food = random.randint(1, 8)
-            if food == 1:
-                food = rules.make_object(caster.location, False, "o20")
-            elif food == 2:
-                food = rules.make_object(caster.location, False, "o4434")
-            elif food == 3:
-                food = rules.make_object(caster.location, False, "o4432")
-            elif food == 4:
-                food = rules.make_object(caster.location, False, "o4436")
-            elif food == 5:
-                food = rules.make_object(caster.location, False, "o4443")
-            elif food == 6:
-                food = rules.make_object(caster.location, False, "o4445")
-            elif food == 7:
-                food = rules.make_object(caster.location, False, "o4433")
-            else:
-                food = rules.make_object(caster.location, False, "o4444")
-        
-            food.db.hours_fed = 5 + caster.level - rules_skills.lowest_learned_level(spell)
-            rules.set_disintegrate_timer(food)
-            
-            caster.mana_spent += mana_cost
-            caster.msg("You chant 'create food'.\n%s suddenly appears." % (food.key[0].upper() + food.key[1:]))
-            player_output_magic_chant(caster, "create food")
-            caster.location.msg_contents("%s suddenly appears."
-                                         % (food.key[0].upper() + food.key[1:]),
-                                         exclude=caster)
-            
+            food = rules.make_object(caster.location, False, "o4444")
 
+        food.db.hours_fed = 5 + level
+        rules.set_disintegrate_timer(food)
+
+        caster.mana_spent += mana_cost
+        caster.msg("You chant 'create food'.\n%s suddenly appears." % (food.key[0].upper() + food.key[1:]))
+        player_output_magic_chant(caster, "create food")
+        caster.location.msg_contents("%s suddenly appears."
+                                     % (food.key[0].upper() + food.key[1:]),
+                                     exclude=caster)
+
+
+def do_create_water(caster, cost, target_container):
+    """ Function implementing create water spell"""
+    
+    spell = rules_skills.get_skill("create water")
+    cast_name = say_spell("create water")
+    level = caster.level - rules_skills.lowest_learned_level(spell)
+
+    if random.randint(1, 100) > caster.db.skills["create water"]:
+        caster.mana_spent += mana_cost / 2
+        caster.msg("You chant 'create water'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "create water")            
+    else:
+        # If we implement weather at some point, the below 2 gets boosted to 4
+        # if it is raining.
+        # Just a quick reminder here, we treat capacity as amount of liquid in the 
+        # container, not amount remaining unfilled.
+        if level * 2 < (target_container.db.capacity_maximum - target_container.db.capacity_current):
+            water = level * 2
+        else:
+            water = target_container.db.capacity_maximum - target_container.db.capacity_current
+        
+        target_container.db.liquid_type = "water"
+        target_container.db.capacity_current += water
+        caster.mana_spent += mana_cost
+        caster.msg("You chant 'create water'.\n%s is filled." % (target_container.key[0].upper() + target_container.key[1:]))
+        player_output_magic_chant(caster, "create water")
+    
+            
 def mana_cost(caster, spell):
     """Calculate mana cost for a spell"""
 
