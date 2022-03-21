@@ -34,23 +34,24 @@ def do_create_food(caster, mana_cost):
         else:
             food = random.randint(1, 8)
             if food == 1:
-                food = rules.make_object(caster.location, False, mushroom)
+                food = rules.make_object(caster.location, False, "o20")
             elif food == 2:
-                food = rules.make_object(caster.location, False, bigmac)
+                food = rules.make_object(caster.location, False, "o4434")
             elif food == 3:
-                food = rules.make_object(caster.location, False, pizza)
+                food = rules.make_object(caster.location, False, "o4432")
             elif food == 4:
-                food = rules.make_object(caster.location, False, cherry)
+                food = rules.make_object(caster.location, False, "o4436")
             elif food == 5:
-                food = rules.make_object(caster.location, False, roast)
+                food = rules.make_object(caster.location, False, "o4443")
             elif food == 6:
-                food = rules.make_object(caster.location, False, stuffing)
+                food = rules.make_object(caster.location, False, "o4445")
             elif food == 7:
-                food = rules.make_object(caster.location, False, steak)
+                food = rules.make_object(caster.location, False, "o4433")
             else:
-                food = rules.make_object(caster.location, False, turkey)
+                food = rules.make_object(caster.location, False, "o4444")
         
             food.db.hours_fed = 5 + caster.level - lowest_cast_level(spell)
+            rules.set_disintegrate_timer(food)
             
             caster.mana_spent += mana_cost
             caster.msg("You chant 'create food'.\n%s suddenly appears." % (food.key[0].upper() + food.key[1:]))
@@ -58,6 +59,7 @@ def do_create_food(caster, mana_cost):
             caster.location.msg_contents("%s suddenly appears."
                                          % (food.key[0].upper() + food.key[1:]),
                                          exclude=caster)
+            
 def lowest_cast_level(spell):
     """Calculate the earliest that a player could have learned a spell"""
     
