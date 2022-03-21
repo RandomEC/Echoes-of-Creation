@@ -1,5 +1,23 @@
 import random
+from evennia.utils import search
 
+def check_cast(caster):
+    """
+    This function is used to check for any player or room-based
+    state effects that would prevent casting.
+    """
+    
+    if "cone of silence" in caster.location.db.room_flags:
+        return "You can't ... You are in a Cone of Silence!"
+    
+    elif "no magic" in caster.location.db.room_flags:
+        return "You feel a strong dampening field blocking your spell."
+    
+    elif caster.get_affect_status("mute"):
+        return False
+
+    return
+    
 def do_create_food(caster, mana_cost):
     cast_name = say_spell("create food")
 
@@ -19,7 +37,58 @@ def do_create_food(caster, mana_cost):
             caster.mana_spent += mana_cost / 2
             return
 
+def mana_cost(caster, spell):
+    """Calculate mana cost for a spell"""
+
+    minimum_cost = spell["minimum cost"]
+
+    minimum_level = 101
+    for class_name in spell["classes"]:
+        if spell["classes"][class_name] < minimum_level:
+            minimum_level = spell["classes"][class_name]
+
+    level_cost = 120 / (2 + (caster.level - minimum_level) / 2)
+
+    if level_cost > minimum_cost:
+        return level_cost
+    else:
+        return minimum_cost
+
+def player_output_magic_chant(caster, spell_name):
+    """
+    Sorts through players in a room where a spell is cast to determine
+    which players can understand the casting, and which cannot. Gives
+    output to players depending on which category they fall into.
+    """
+    
+    players = search.search_object_by_tag("player")
+    in_room_players = caster.search(candidates=players, location=caster.location)
+    
+    can_understand = []
+    cannot_understand = []
+    
+    for player in in_room_players:
+        if player.db.skills[spell_name] and player != caster:
+            can_understand.append(player)
+        else:
+            cannot_understand.append(player)
+    
+    if can_understand:
+        for player in can_understand:
+            player.msg("%s chants '%s'.\n" % (caster.key, spell_name))
+            
+    if cannot_understand
+        for player in cannot_understand:
+            player.msg("%s chants '%s'.\n" % (caster.key, magic_name))
+        
+    
 def say_spell(spell_name):
+    """
+    This function creates the magical gibberish that replaces the
+    name of the spell when the listening player does not know the
+    spell
+    """
+    
     magic_name = ""
 
     max_index = len(spell_name) - 1
