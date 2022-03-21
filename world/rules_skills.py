@@ -69,11 +69,36 @@ def do_forage(character):
 
 def get_skill(skill_name):
     skills = {
+        "create food": {
+            "classes": {
+                "cleric": 3
+                },
+            "minimum cost": 5,
+            "wait state": 12
+            },
         "enhanced damage": {
-            "classes" : {
+            "classes": {
                 "warrior": 3,
                 "ranger": 13,
                 "paladin": 11
                 }
+            },
+        "kick": {
+            "classes": {
+                "warrior": 3,
+                "ranger": 10,
+                "paladin": 12
+                }
+            },
+        "rescue": {
+            "classes": {
+                "warrior": 4,
+                "ranger": 11,
+                "paladin": 3
+                }
             }
         }
+
+    for skill in skills:
+        if skill == skill_name:
+            return skill

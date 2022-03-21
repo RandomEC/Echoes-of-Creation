@@ -92,8 +92,11 @@ class Combat(Object):
     def at_repeat(self):
         self.clear_messages()
 
+        # Copy the dictionary, in case changes are made to it during the round.
+        combat_dict = self.db.combatants
+
         # Iterate through combatants to do a round of attacks.
-        for combatant in self.db.combatants:
+        for combatant in combat_dict:
 
             # First, check to see if the combatant is below their wimpy.
             if combatant.hitpoints_current > 0 and (("player" in combatant.tags.all() and
@@ -107,9 +110,9 @@ class Combat(Object):
                 rules_combat.do_flee(combatant)
 
             # Make sure this combatant and target are alive and both still in the same room.
-            if combatant.location == self.location and self.allow_attacks(combatant, self.db.combatants[combatant]["target"]):
-                attacker = self.db.combatants[combatant]["combatant"]
-                victim = self.db.combatants[combatant]["target"]
+            if combatant.location == self.location and self.allow_attacks(combatant, combat_dict[combatant]["target"]):
+                attacker = combat_dict[combatant]["combatant"]
+                victim = combat_dict[combatant]["target"]
 
                 # Do the attacks for this attacker, and get output.
                 attacker_string, victim_string, room_string = rules_combat.do_one_character_attacks(attacker, victim)
@@ -128,7 +131,7 @@ class Combat(Object):
                 self.db.combatants[victim]["combat message"] += victim_string
 
                 # For everyone in the combat that was not the attacker or victim, give them their output.
-                for combatant in self.db.combatants:
+                for combatant in combat_dict:
                     if combatant != attacker and combatant != victim:
                         self.db.combatants[combatant]["combat message"] += room_string
 
@@ -371,7 +374,7 @@ class CmdKick(MuxCommand):
         caller = self.caller
 
         if "kick" not in caller.db.skills:
-            caller.msg("You'd better leave the martial arts to knowledgable fighters.")
+            caller.msg("You'd better leave the martial arts to knowledgeable fighters.")
             return
 
         if "blind" in caller.db.spell_affects:
@@ -415,6 +418,76 @@ class CmdKick(MuxCommand):
 
         rules_combat.do_kick(caller, target)
         combat.db.combatants[caller]["wait state"] = self.wait_state
+
+class CmdRescue(MuxCommand):
+    """
+    Rescue a friend currently being attacked by an enemy.
+    Usage:
+      rescue <target>
+    Makes an attempt at stepping between an enemy and a friendly
+    player, causing that enemy to begin attacking you, instead.
+    """
+
+    key = "rescue"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+    wait_state = 12
+
+    def func(self):
+        caller = self.caller
+
+        if "kick" not in caller.db.skills:
+            caller.msg("You'd better leave heroic acts to knowledgeable fighters.")
+            return
+
+        if "berserk" in caller.db.spell_affects:
+            caller.msg("You can't rescue anyone while you're BERSERK!")
+            return
+
+        if "blind" in caller.db.spell_affects:
+            caller.msg("It might be helpful if you could see!")
+            return
+
+        if not self.args:
+            caller.msg("Rescue whom?")
+            return
+
+        else:
+            players = search.search_object_by_tag("player")
+            target = caller.search(self.args, location=caller.location, candidates=players)
+            if not target:
+                caller.msg("There is no player named %s here to rescue." % self.args)
+                return
+            else:
+
+                if target == caller:
+                    caller.msg("You're never going to be able to rescue yourself.")
+                    return
+
+                if not target.ndb.combat_handler:
+                    caller.msg("You cannot rescue %s, as they are not in combat!" % target.key)
+                    return
+
+                combat = target.ndb.combat_handler
+                victim = False
+
+                # We need to iterate through the combat dictionary and make sure
+                # that target is being attacked by someone.
+                for combatant in combat.db.combatants:
+                    if combat.db.combatants[combatant]["target"] == target:
+                        victim = combatant
+
+                if not victim:
+                    caller.msg("You cannot rescue %s, as they not being attacked!" % target.key)
+                    return
+
+                if not caller.ndb.combat_handler:
+                    attack_target = combat.combatants[target]["target"]
+                    combat.add_combatant(caller, attack_target)
+
+                rules_combat.do_rescue(caller, target, victim)
+                combat.db.combatants[caller]["wait state"] = self.wait_state
+
 
 class CmdWimpy(MuxCommand):
     """

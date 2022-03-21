@@ -452,7 +452,7 @@ def do_kick(attacker, victim):
         attacker_output = ("You kick wildly at %s and miss.\n" % victim.key)
         victim_output = ("%s kicks wildly at you and misses.\n" % (attacker.key[0].upper() + attacker.key[1:]))
         room_output = ("%s kicks at %s and misses.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.name))
-        
+
         combat.db.combatants[attacker]["special attack"]["output"] = [attacker_output, victim_output, room_output]
         combat.db.combatants[attacker]["special attack"]["hit"] = False
         combat.db.combatants[attacker]["special attack"]["damage"] = 0
@@ -461,6 +461,7 @@ def do_kick(attacker, victim):
 
         if "player" in attacker.tags.all():
             rules_skills.check_skill_improve(attacker, "kick", True)
+            attacker.moves_spent += 10
 
         damage = random.randint(1, attacker.level)
         attacker_output = ("You |g%s|n %s with your vicious kick.\n" % (get_damagestring("attacker", damage), victim.key))
@@ -486,11 +487,23 @@ def do_one_character_attacks(attacker, victim):
     # Check if special attack is necessary.
     combat = attacker.ndb.combat_handler
     if combat.db.combatants[attacker]["special attack"] and victim.hitpoints_current > 0 and victim.location == attacker.location:
-        special_hit = combat.db.combatants[attacker]["special attack"]["hit"]
-        special_damage = combat.db.combatants[attacker]["special attack"]["damage"]
-        special_output = combat.db.combatants[attacker]["special attack"]["output"]
-        
-        new_attacker_string, new_victim_string, new_room_string = do_attack(attacker, victim, None, hit=special_hit, damage=special_damage, output=special_output)
+        if "hit" in combat.db.combatants[attacker]["special attack"]:
+            special_hit = combat.db.combatants[attacker]["special attack"]["hit"]
+            special_damage = combat.db.combatants[attacker]["special attack"]["damage"]
+            special_output = combat.db.combatants[attacker]["special attack"]["output"]
+
+            new_attacker_string, new_victim_string, new_room_string = do_attack(attacker, victim, None, hit=special_hit, damage=special_damage, output=special_output)
+        else:
+            special_output = combat.db.combatants[attacker]["special attack"]["output"]
+            new_attacker_string = special_output[0]
+            new_victim_string = special_output[1]
+            new_room_string = special_output[2]
+
+            if "extra" in combat.db.combatants[attacker]["special attack"]:
+                extra = combat.db.combatants[attacker]["special attack"]["extra"]
+                extra_string = special_output[3]
+                combat.db.combatants[extra]["combat message"] += extra_string
+
         attacker_string += new_attacker_string
         victim_string += new_victim_string
         room_string += new_room_string
@@ -614,6 +627,37 @@ def do_one_weapon_attacks(attacker, victim, eq_slot):
                 room_string += new_room_string
 
     return (attacker_string, victim_string, room_string)
+
+
+def do_rescue(attacker, extra, victim):
+    combat = attacker.ndb.combat_handler
+
+    if random.randint(1, 100) > attacker.db.skills["rescue"]:
+        if "player" in attacker.tags.all():
+            rules_skills.check_skill_improve(attacker, "rescue", False)
+            attacker.moves_spent += 5
+
+        attacker_output = ("You fail to rescue %s!\n" % extra.key)
+        victim_output = ("%s tries to get between you and %s and fails.\n" % ((attacker.key[0].upper() + attacker.key[1:]), extra.key))
+        room_output = ("%s tries to get between %s and %s and fails.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.key, extra.key))
+        extra_output = ("%s tries to get get between you and your attacker and fails!" % (attacker.key[0].upper() + attacker.key[1:]))
+
+        combat.db.combatants[attacker]["special attack"]["output"] = [attacker_output, victim_output, room_output, extra_output]
+        combat.db.combatants[attacker]["special attack"]["extra"] = extra
+
+    else:
+
+        if "player" in attacker.tags.all():
+            rules_skills.check_skill_improve(attacker, "rescue", True)
+
+        combat.db.combatants[victim]["target"] = attacker
+        attacker_output = ("You rescue %s!\n" % extra.key)
+        victim_output = ("%s rescues %s from you.\n" % ((attacker.key[0].upper() + attacker.key[1:]), extra.key))
+        room_output = ("%s rescues %s from %s.\n" % ((attacker.key[0].upper() + attacker.key[1:]), extra.key, victim.key))
+        extra_output = ("%s rescues you from %s!" % (attacker.key[0].upper() + attacker.key[1:]), victim.key)
+
+        combat.db.combatants[attacker]["special attack"]["output"] = [attacker_output, victim_output, room_output, extra_output]
+        combat.db.combatants[attacker]["special attack"]["extra"] = extra
 
 
 def hit_check(attacker, victim):

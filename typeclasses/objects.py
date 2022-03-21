@@ -10,8 +10,10 @@ the other types, you can do so by adding this as a multiple
 inheritance.
 
 """
+from collections import defaultdict
 from evennia import DefaultObject
 from evennia import create_script
+from evennia.utils.utils import list_to_string
 from evennia import TICKER_HANDLER as tickerhandler
 from server.conf import settings
 from world import rules
@@ -685,6 +687,75 @@ class Container(Armor):
 
         # locks that go along with the above attributes
         self.locks.add("put: is_open();open: can_open();close: can_close();lock: can_lock();unlock: can_unlock()")
+
+    def return_appearance(self, looker, **kwargs):
+        """
+        This formats a description. It is the hook a 'look' command
+        should call.
+        Args:
+            looker (Object): Object doing the looking.
+            **kwargs (dict): Arbitrary, optional arguments for users
+                overriding the call (unused by default).
+        """
+        if not looker:
+            return ""
+        # get and identify all objects
+        visible = (con for con in self.contents if con != looker and con.access(looker, "view"))
+        exits, users, mobiles, objects, things = [], [], [], [], defaultdict(list)
+        for con in visible:
+            key = con.get_display_name(looker)
+            if con.destination:
+                if "locked" in con.db.door_attributes:
+                    doorl = "{"
+                    doorr = "}"
+                elif "open" not in con.db.door_attributes:
+                    doorl = "["
+                    doorr = "]"
+                else:
+                    doorl = ""
+                    doorr = ""
+                keystring = doorl + key + doorr
+                exits.append(keystring)
+            elif con.has_account:
+                users.append("|c%s|n" % key)
+            # Below added to address mobiles and objects.
+            elif "mobile" in con.tags.all():
+                mobiles.append("|Y%s|n" % con.db.desc)
+            elif "object" in con.tags.all():
+                objects.append("|R%s|n" % con.db.desc)
+            else:
+                # things can be pluralized
+                things[key].append(con)
+        # get description, build string
+        # string = "|R%s|n\n" % self.get_display_name(looker)
+        string = ""
+        # Exits moved up from default Evennia.
+        if exits:
+            string += "|wExits:|n " + list_to_string(exits) + "\n"
+        desc = self.db.desc
+        if desc:
+            string += "|C%s\nIt contains:|n\n" % desc
+        if mobiles:
+            mobile_string = ""
+            index = 0
+            length = len(mobiles)
+            for index in range(0, length):
+                mobile_string = mobile_string + ("    |Y%s|n\n" % mobiles[index])
+            string += mobile_string
+        if objects:
+            object_string = ""
+            index = 0
+            length = len(objects)
+            if length > 0:
+                for index in range(0, length):
+                    object_string = object_string + ("    |R%s|n\n" % objects[index])
+            string += object_string
+        else:
+            object_string = "    |CNothing!|n\n"
+            string += object_string
+
+        return string
+
 
 class Drink_container(Item):
 
