@@ -634,3 +634,30 @@ def wisdom_mana_bonus(character):
     else:
         return 5
         
+def wisdom_practices(character):
+    """
+    This function returns the amount of practice sessions
+    that a character receives per experience step based
+    on wisdom.
+    """
+    wis = character.wisdom
+    
+    if wis < 5:
+        return 0
+    elif wis < 9:
+        return 1
+    elif wis < 15:
+        return 2
+    elif wis < 17:
+        return 3
+    elif wis < 19:
+        return 4
+    elif wis < 21:
+        return 5
+    elif wis < 22:
+        return 6
+    elif wis < 25:
+        return 7
+    else:
+        return 8
+        
