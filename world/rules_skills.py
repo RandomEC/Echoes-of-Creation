@@ -67,7 +67,7 @@ def do_forage(character):
 
     rules.set_disintegrate_timer(mushroom)
 
-def get_skill(skill_name):
+def get_skill(**kwargs):
     skills = {
         "create food": {
             "classes": {
@@ -115,9 +115,15 @@ def get_skill(skill_name):
             }
         }
 
-    for skill in skills:
-        if skill == skill_name:
-            return skills[skill]
+    if "skill_name" in kwargs:
+    
+        for skill in skills:
+            if skill == skill_name:
+                return skills[skill]
+            
+    elif "eligible" in kwargs:
+        
+        pass
 
 def lowest_learned_level(skill):
     """Calculate the earliest that a player could have learned a skill"""
