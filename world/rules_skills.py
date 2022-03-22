@@ -2,6 +2,7 @@
 This rules file is to handle anything related to skills and/or spells
 """
 
+import math
 import random
 from evennia import TICKER_HANDLER as tickerhandler
 from world import rules
@@ -68,6 +69,17 @@ def do_forage(character):
     rules.set_disintegrate_timer(mushroom)
 
 def get_skill(**kwargs):
+    """
+    This function holds the skill database, and has multiple kwargs
+    that will return different data.
+    skill_name - returns the dictionary of that skill, including
+                 classes that learn it and at what level,
+                 minimum mana cost and wait state.
+    eligible_character - returns a dictionary of skills that
+                         character is eligible to practice, and
+                         the cost for that practice.
+    """
+    
     skills = {
         "create food": {
             "classes": {
@@ -121,9 +133,20 @@ def get_skill(**kwargs):
             if skill == skill_name:
                 return skills[skill]
             
-    elif "eligible" in kwargs:
+    elif "eligible_character" in kwargs:
         
-        pass
+        level = eligible_character.level
+        eligible_skills = {}
+        for skill in skills:
+            for class_name in skills[skill][classes]:
+                if skills[skill][classes][class_name] <= level:
+                    if skill not in eligible_skills:
+                        cost_to_practice = rules.current_experience_step(eligible_character, 0)
+                        cost_to_practice = math.ceil(cost_to_practice / rules.wisdom_practices(eligible_character))
+                                                
+                        eligible_skills[skill] = cost_to_practice
+        
+        return eligible_skills
 
 def lowest_learned_level(skill):
     """Calculate the earliest that a player could have learned a skill"""
