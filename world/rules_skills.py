@@ -31,7 +31,7 @@ def check_skill_improve(character, skill_name, success):
             elif learn_chance > 95:
                 learn_chance = 95
             
-            if random.randint(1,100) < learn_chance:
+            if random.randint(1,100) < learn_chance and character.db.skills[skill_name] < 96:
                 character.msg("You have become better at %s!" % skill_name)
                 character.db.skills[skill_name] += 1
         else:
@@ -41,7 +41,7 @@ def check_skill_improve(character, skill_name, success):
             elif learn_chance > 30:
                 learn_chance = 30
                 
-            if random.randint(1, 100) < learn_chance:
+            if random.randint(1, 100) < learn_chance and character.db.skills[skill_name] < 96:
                 character.msg("You learn from your mistakes, and your %s skill improves!" % skill_name)
                 skill_increase = random.randint(1, 2)
                 character.db.skills[skill_name] += skill_increase
