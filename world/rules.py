@@ -535,38 +535,6 @@ def moves_cost(character):
     return current_experience_step(character, 0)
 
 
-def practices_cost(character):
-    """
-    This function determines current cost of practicing a skill,
-    based on the character's wisdom, and the amount of experience
-    already spent on practicing skills.
-    """
-    
-    # The cost of practicing is going to be divided by a factor,
-    # based on character wisdom.
-    if character.wisdom <= 4:
-        practice_factor = 0
-    elif character.wisdom <= 8:
-        practice_factor = 1
-    elif character.wisdom <= 14:
-        practice_factor = 2
-    elif character.wisdom <= 16:
-        practice_factor = 3
-    elif character.wisdom <= 18:
-        practice_factor = 4
-    elif character.wisdom <= 20:
-        practice_factor = 5
-    elif character.wisdom <= 21:
-        practice_factor = 6
-    elif character.wisdom <= 24:
-        practice_factor = 7
-    else:
-        practice_factor = 8
-    
-    cost = current_experience_step(character, 0) / practice_factor
-    return cost
-
-    
 def remove_disintegrate_timer(obj):
     """
     This function removes the timer that comes from dropping an
