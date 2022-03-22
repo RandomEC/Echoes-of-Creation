@@ -32,7 +32,7 @@ class CmdCreateFood(MuxCommand):
     def func(self):
         """Implement create food"""
 
-        spell = rules_skills.get_skill(self.key)
+        spell = rules_skills.get_skill(skill_name=self.key)
 
         caster = self.caller
 
@@ -76,7 +76,7 @@ class CmdCreateSound(MuxCommand):
     def func(self):
         """Implement create sound"""
 
-        spell = rules_skills.get_skill(self.key)
+        spell = rules_skills.get_skill(skill_name=self.key)
 
         caster = self.caller
 
@@ -129,7 +129,7 @@ class CmdCreateWater(MuxCommand):
     locks = "cmd:all()"
     arg_regex = r"\s|$"
 
-    spell = rules_skills.get_skill(key)
+    spell = rules_skills.get_skill(skill_name=key)
     wait_state = spell["wait state"]
 
     def func(self):
