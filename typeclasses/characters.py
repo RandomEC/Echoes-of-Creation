@@ -74,12 +74,12 @@ class Character(DefaultCharacter):
             "armor class": 100,
             "saving throw": 0
             }
+        self.db.level = 1
 
         # set other stats
         self.db.sex = ""
         self.db.alignment = 0
         self.db.position = "standing"
-        self.db.character_type = ""
 
         # set race-based stats
         self.db.race = "default"
@@ -148,6 +148,18 @@ class Character(DefaultCharacter):
             self.msg("There was a problem setting your new damage, as having negative damage is impossible.")
 
     @property
+    def hitpoints_trains_spent(self):
+        return self.db.hitpoints["trains spent"]
+    
+    @hitpoints_trains_spent.setter
+    def hitpoints_trains_spent(self, new_value):
+        if new_value > self.hitpoints_trains_spent + 1 or new_value < self.hitpoints_trains_spent + 1:
+            self.msg("There was a problem setting your new trains spent on hitpoints. This should increment one at a time.")
+        else:
+            self.db.hitpoints["trains spent"] = new_value
+
+            
+    @property
     def mana_maximum(self):
         modifier = 0
         
@@ -182,6 +194,17 @@ class Character(DefaultCharacter):
             self.msg("There was a problem setting your new spent mana, as having negative spent mana is impossible.")
             
     @property
+    def mana_trains_spent(self):
+        return self.db.mana["trains spent"]
+    
+    @mana_trains_spent.setter
+    def mana_trains_spent(self, new_value):
+        if new_value > self.mana_trains_spent + 1 or new_value < self.mana_trains_spent + 1:
+            self.msg("There was a problem setting your new trains spent on mana. This should increment one at a time.")
+        else:
+            self.db.mana["trains spent"] = new_value
+            
+    @property
     def moves_maximum(self):
         modifier = 0
        
@@ -212,7 +235,17 @@ class Character(DefaultCharacter):
         else:
             self.msg("There was a problem setting your new spent moves, as having negative spent moves is impossible.")
             
-
+    @property
+    def moves_trains_spent(self):
+        return self.db.moves["trains spent"]
+    
+    @moves_trains_spent.setter
+    def moves_trains_spent(self, new_value):
+        if new_value > self.moves_trains_spent + 1 or new_value < self.moves_trains_spent + 1:
+            self.msg("There was a problem setting your new trains spent on moves. This should increment one at a time.")
+        else:
+            self.db.moves["trains spent"] = new_value
+            
     @property
     def hitpoints_current(self):
         return self.hitpoints_maximum - self.hitpoints_damaged
@@ -233,7 +266,24 @@ class Character(DefaultCharacter):
     def level(self, new_value):
         self.db.level = new_value
 
-
+    @property
+    def spell_affects(self):
+        return self.db.spell_affects
+    
+    @alignment.setter
+    def alignment(self, new_value):
+        if new_value > 1000 or new_value < -1000:
+            self.msg("There was a problem setting your new alignment. Value should be between 1000 and -1000.\n")
+            if new_value > 1000:
+                self.db.alignment = 1000
+                self.msg("Alignment was set to 1000 instead of exceeding it.")
+            elif new_value < -1000:
+                self.db.alignment = -1000
+                self.msg("Alignment was set to -1000 instead of lower than that.")
+        else:
+            self.db.mana["trains spent"] = new_value
+        
+        
     def get_affect_status(self, affect_name):
         """
         Method that returns a boolean for whether the affect is currently
@@ -532,6 +582,35 @@ class Character(DefaultCharacter):
     @sex.setter
     def sex(self, sex):
         self.db.sex = sex
+
+    @property
+    def alignment(self):
+        return self.db.alignment
+    
+    @alignment.setter
+    def alignment(self, new_value):
+        if new_value > 1000 or new_value < -1000:
+            self.msg("There was a problem setting your new alignment. Value should be between 1000 and -1000.\n")
+            if new_value > 1000:
+                self.db.alignment = 1000
+                self.msg("Alignment was set to 1000 instead of exceeding it.")
+            elif new_value < -1000:
+                self.db.alignment = -1000
+                self.msg("Alignment was set to -1000 instead of lower than that.")
+        else:
+            self.db.alignment = new_value
+    
+    @property
+    def position(self):
+        return self.db.position
+    
+    @position.setter
+    def position(self, new_value):
+        if new_value != "standing" and new_value != "sleeping" and new_value != "resting":
+            self.msg("There was a problem setting your new position, as %s is not a valid value." % new_value)
+        else:
+            self.db.position = new_value
+
 
     def take_damage(self, damage):
         """
