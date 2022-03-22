@@ -76,7 +76,66 @@ def mana_gain_maximum(character):
         return 10
     else:
         return 9
+
+class CmdPractice(MuxCommand):
+    """
+    Practice to gain addtional skills or spells for your character, or to gain
+    additional ability at those skills or spells.
+    Usage:
+        practice
+        practice <skill or spell>
+    Practice without argument will tell you the skills that you are currently
+    eligible to practice, and the experience cost of that practice session. This
+    excludes skills that are too high level for you to practice, and those that
+    you are already at or above 70% learned on, which can only be practiced
+    through use. Practice with an argument will spend experience and practice
+    the skill in question. Unlike train, this practice session may not
+    automatically bump you to a higher experience bracket for your next practice
+    or train. Depending on your wisdom, you may get several practices at one
+    level of experience.
     
+    See help level, help practice and help skills for more.
+    """
+        
+    key = "practice"
+    aliases = ["prac"]
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement command"""
+
+        caller = self.caller
+
+        if not self.args:
+            output_string = ""
+            eligible_skills = rules_skills.get_skill(eligible_character=caller)
+            for skill in eligible_skills:
+                output_string += "%-20s%d\n" % (skill, eligible_skills[skill])
+            
+            caller.msg(output_string)
+        
+        else:
+            eligible_skills = rules_skills.get_skill(eligible_character=caller)
+            skill = self.args
+            if skill not in eligible_skills:
+                caller.msg("Please use the full name of a skill that you are eligible to practice.")
+                return
+            else:
+                cost = eligible_skills[skill]
+                amount_learned = rules.intelligence_learn_rating(caller)
+                
+                if skill not in caller.db.skills:
+                    caller.db.skills[skill] = amount_learned
+                    caller.msg("You have learned the %s skill at %d percent learned!" % (skill, amount_learned))
+                else:
+                    if caller.db.skills[skill] + amount_learned > 70:
+                        caller.db.skills[skill] = 70
+                        caller.msg("Your skill at %s has increased to %d percent!\nYou can only learn more through using your skill." % (skill, amount_learned))
+                    else:
+                        caller.db.skills[skill] += amount_learned
+                        caller.msg("Your skill at %s has increased to %d percent!" % (skill, amount_learned))
+                                    
 class CmdTrain(MuxCommand):
     """
     Train to gain addtional attributes for your character.
