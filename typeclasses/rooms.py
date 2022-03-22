@@ -154,6 +154,10 @@ class Room(DefaultRoom):
         say.
         """
 
+        speaker.msg(message)
+        message = message.lower()
+        speaker.msg(message)
+
         if self.db.say_scripts:
             if message in self.db.say_scripts:
                 create_script(self.db.say_scripts[message], key=message, obj=speaker)

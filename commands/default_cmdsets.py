@@ -60,6 +60,9 @@ from commands.equipment_commands import CmdWieldTo
 from commands.growth_commands import CmdTrain
 from commands.skill_commands import CmdDowse
 from commands.skill_commands import CmdForage
+from commands.spell_commands import CmdCreateFood
+from commands.spell_commands import CmdCreateSound
+from commands.spell_commands import CmdCreateWater
 
 class CharacterCmdSet(default_cmds.CharacterCmdSet):
     """
@@ -81,6 +84,9 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdAttack())
         self.add(CmdConsider())
         self.add(CmdCreate())
+        self.add(CmdCreateFood())
+        self.add(CmdCreateSound())
+        self.add(CmdCreateWater())
         self.add(CmdDestroy())
         self.add(CmdDig())
         self.add(CmdDoorClose())

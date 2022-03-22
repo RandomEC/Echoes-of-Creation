@@ -1065,6 +1065,10 @@ class CmdSacrifice(MuxCommand):
 
         if obj.db.item_type == "food":
             caller.msg("The gods appreciate your addition to their feast table.")
+            obj.location = None
+            caller.location.msg_contents("%s sacrifices %s to the gods."
+                                         % (caller.name, obj.name),
+                                         exclude=caller)
             return
 
 

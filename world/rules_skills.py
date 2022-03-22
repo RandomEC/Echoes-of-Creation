@@ -76,6 +76,22 @@ def get_skill(skill_name):
             "minimum cost": 5,
             "wait state": 12
             },
+        "create sound": {
+            "classes": {
+                "psionicist": 3,
+                "bard": 3
+                },
+            "minimum cost": 5,
+            "wait state": 12
+            },
+        "create water": {
+            "classes": {
+                "cleric": 3,
+                "paladin": 13
+                },
+            "minimum cost": 5,
+            "wait state": 12
+            },
         "enhanced damage": {
             "classes": {
                 "warrior": 3,
@@ -101,7 +117,7 @@ def get_skill(skill_name):
 
     for skill in skills:
         if skill == skill_name:
-            return skill
+            return skills[skill]
 
 def lowest_learned_level(skill):
     """Calculate the earliest that a player could have learned a skill"""
