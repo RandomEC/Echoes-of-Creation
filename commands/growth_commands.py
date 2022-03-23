@@ -125,18 +125,25 @@ class CmdPractice(MuxCommand):
                 cost = eligible_skills[skill]
                 amount_learned = rules.intelligence_learn_rating(caller)
                 
+                if cost > caller.experience_available:
+                    caller.msg("You cannot afford to practice %s!" % skill)
+                    return
+                
                 if skill not in caller.db.skills:
                     caller.db.skills[skill] = amount_learned
                     caller.experience_spent += eligible_skills[skill]
+                    caller.db.practices_spent += (1 / rules.wisdom_practices(caller))
                     caller.msg("You have learned the %s skill at %d percent learned!" % (skill, amount_learned))
                 else:
                     if caller.db.skills[skill] + amount_learned > 70:
                         caller.db.skills[skill] = 70
                         caller.experience_spent += eligible_skills[skill]
+                        caller.db.practices_spent += (1 / rules.wisdom_practices(caller))
                         caller.msg("Your skill at %s has increased to %d percent!\nYou can only learn more through using your skill." % (skill, amount_learned))
                     else:
                         caller.db.skills[skill] += amount_learned
                         caller.experience_spent += eligible_skills[skill]
+                        caller.db.practices_spent += (1 / rules.wisdom_practices(caller))
                         caller.msg("Your skill at %s has increased to %d percent!" % (skill, amount_learned))
                                     
 class CmdTrain(MuxCommand):
