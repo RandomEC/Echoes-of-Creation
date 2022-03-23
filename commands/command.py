@@ -1116,6 +1116,9 @@ class CmdSacrifice(MuxCommand):
                 caller.moves_spent -= moves_award
             caller.msg("The gods award you %d %s for your sacrifice." % (moves_award, award))
 
+        if obj.contents:
+            for item in obj.contents:
+                item.location = None
         obj.location = None
         rules.remove_disintegrate_timer(obj)
         caller.location.msg_contents("%s sacrifices %s to the gods."
