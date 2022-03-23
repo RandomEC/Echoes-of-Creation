@@ -1,6 +1,6 @@
 import random
 from commands.command import MuxCommand
-from world import rules_skills
+from world import rules_skills, rules_combat
 
 class CmdDowse(MuxCommand):
     """
@@ -175,3 +175,61 @@ class CmdSkills(MuxCommand):
                                                     skills[skills_list[index + 1]])
         
         caller.msg(output_string)
+
+class CmdSteal(MuxCommand):
+    """
+    Steal gold or an item from a mobile.
+    Usage:
+      steal gold from <mobile>
+      steal <item name> from <mobile>
+    Makes an attempt to steal either gold or an item from a mobile.
+    Stealing is NOT permitted (and not possible) from other players.
+    It is also not possible to steal items that cannot be dropped,
+    and worn equipment that cannot be removed.
+    """
+
+    key = "steal"
+    delimiter = " from "
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement steal"""
+
+        caller = self.caller
+        
+        if "steal" not in caller.db.skills:
+            caller.msg("You do not know how to steal!")
+            return
+
+        if not self.args or not self.rhs:
+            caller.msg("Steal what from which mobile?")
+            return
+        
+        mobiles = search.search_object_by_tag("mobile")
+        target = caller.search(self.args, location=caller.location, candidates=mobiles)
+        
+        if not target:
+            caller.msg("There is no %s here to steal from." % self.args)
+            return
+        elif caller == target:
+            caller.msg("That seems pointless.")
+            return
+        elif "player" in target.tags.all():
+            caller.msg("You cannot steal from another player.")
+            return
+        elif rules_combat.is_safe(target)::
+            caller.msg("You cannot steal from %s, they are under the protection of the gods." % target.key)
+            return
+        
+        if self.lhs != "gold":
+            to_steal = caller.search(
+                self.lhs,
+                location=target,
+                nofound_string="%s is not carrying %s." % ((target.key[0].upper() + target.key[1:]), self.lhs),
+                multimatch_string="%s carries more than one %s:" % ((target.key[0].upper() + target.key[1:]), self.lhs),
+            )
+        else:
+            to_steal = "gold"
+            
+        rules_skills.do_steal(caller, target, to_steal)
