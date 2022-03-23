@@ -71,6 +71,20 @@ def calculate_experience(mobile):
 
     return experience
 
+def can_see(target, looker):
+    """
+    This function checks to see (heh) if a target is visible to
+    a looker, and returns a boolean of True if the looker can
+    see the target, and False if not.
+    """
+    
+    if looker.get_affect_status("blind"):
+        return False
+    elif target.get_affect_status("hide") and not looker.get_affect_status("detect hidden"):
+        return False
+    elif target.get_affect_status("invisible") and not looker.get_affect_status("detect invis"):
+        return False
+
 
 def check_ready_to_level(character):
     """
