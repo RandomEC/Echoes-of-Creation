@@ -944,6 +944,20 @@ def get_warskill(combatant):
         return warskill
 
 
+def is_safe(character):
+    """
+    This function tests whether combat is possible with this character
+    in its location, and returns a boolean of True if combat is not
+    possible (they ARE safe) or False if it is possible (they are NOT
+    safe).
+    """
+    
+    if act_flags in character.db.all:
+        if "no kill" in target.db.act_flags:
+            return True
+    elif "safe" in caller.location.db.room_flags:
+        return True
+    
 def modify_experience(attacker, victim, experience):
     """
     This function applies the appropriate modifiers to experience
