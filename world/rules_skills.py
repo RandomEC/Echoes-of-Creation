@@ -68,6 +68,57 @@ def do_forage(character):
 
     rules.set_disintegrate_timer(mushroom)
 
+def do_steal(thief, target, to_steal):
+    """
+    This is the function that does the actual theft of gold or an
+    item (to_steal) by a character (thief) from a target.
+    """
+    skill = get_skill("steal")
+    minimum_moves = skill["minimum cost"]
+    wait_state = skill["wait state"]
+    
+    # Build chance of a successful steal.
+    percent = thief.db.skill["steal"]
+    percent += thief.level - target.level   # modify with level difference
+    percent += random.randint(0, 20) - 10   # luck factor
+    
+    if target.position == "sleeping":
+        percent += 25
+        
+    if thief.get_affect_status("sneak"):
+        percent += 5
+        
+    if not rules.can_see(thief, target):
+        percent += 10
+        
+    if to_steal == "gold":                   # gold is easier to steal
+        percent *= 1.2
+    elif to_steal.db.equipped:
+        percent *= 0.8                       # equipped items are harder
+    else:
+        percent *= 0.4                       # stuff packed away in invenory is hardest to steal
+
+    if percent < random.randint(1, 100):
+        thief.msg("Oops! That was NOT a success!\n")
+        check_skill_improve(thief, "steal", False)
+        if not thief.ndb.combat_handler and not target.ndb.combat_handler:
+            thief.msg("%s is not pleased with your attempt to steal, and jumps forward and ATTACKS you!" % (target.key[0].upper() + target.key[1:]))
+            rules_combat.create_combat(target, thief)
+        if not self.ndb.combat_handler:
+            combat = thief.ndb.combat_handler
+            combat.add_combatant(target, thief)
+    else:
+        if to_steal == "gold":
+            amount = math.ceil(target.db.gold * random.randint(1, 10) / 100)
+            if amount <= 0:
+                thief.db.gold("You check the pockets of %s, but come up empty." % target.key)
+                return
+            else:
+                thief.db.gold += amount
+                target.db.gold -= amount
+                thief.db.gold("|gBingo!|n You got %d gold coins." % amount)
+                check_skill_improve(thief, "steal", True)
+        
 def get_skill(**kwargs):
     """
     This function holds the skill database, and has multiple kwargs
