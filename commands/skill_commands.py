@@ -13,7 +13,7 @@ class CmdDowse(MuxCommand):
 
     key = "dowse"
     locks = "cmd:all()"
-    arg_regex = r"\s|$"
+    arg_regex = r"$"
 
     def func(self):
         """Implement dowse"""
@@ -72,7 +72,7 @@ class CmdForage(MuxCommand):
 
     key = "forage"
     locks = "cmd:all()"
-    arg_regex = r"\s|$"
+    arg_regex = r"$"
 
     def func(self):
         """Implement forage"""
@@ -119,3 +119,59 @@ class CmdForage(MuxCommand):
             caller.msg("You root around a bit, and find some food.")
             caller.location.msg_contents("%s roots around a bit, and finds some food."
                                          % caller.name, exclude=caller)
+
+class CmdSkills(MuxCommand):
+    """
+    List the skills you know, and the percentage you have learned of each.
+    Usage:
+      skills
+    List the skills you know, and the percentage you have learned of each.
+    """
+
+    key = "skills"
+    aliases = ["sk"]
+    locks = "cmd:all()"
+    arg_regex = r"$"
+
+    def func(self):
+        """Implement skills"""
+
+        caller = self.caller 
+        skills = caller.db.skills
+        
+        # Turn the skills from the dictionary into a list, so
+        # they can be alphabetized.
+        skills_list = []
+        for skill in skills:
+            skills_list.append(skill)
+        
+        # Alphabetize the list
+        skills_list.sort()
+        total_skills = len(skills_list)
+        leftover = total_skills % 3
+        
+        index = 1
+        output_string = "You know the following skills, to the following percentages:"
+        
+        # Run through the list indices to format a table of skills, at three per
+        # column.
+        while index <= (total_skills - leftover):
+            output_string += "%s %s%   %s %s%   %s %s%\n" % (skills_list[index],
+                                                             skills[skills_list[index]],
+                                                             skills_list[index + 1],
+                                                             skills[skills_list[index + 1]],
+                                                             skills_list[index + 2],
+                                                             skills[skills_list[index + 2]])
+            index += 3
+            
+        # Handle the remnant after the even three per column.
+        if leftover == 1:
+            output_string += "%s %s%\n" % (skills_list[index],
+                                           skills[skills_list[index]])
+        elif leftover == 2:
+            output_string += "%s %s%   %s %s%\n" % (skills_list[index],
+                                                    skills[skills_list[index]],
+                                                    skills_list[index + 1],
+                                                    skills[skills_list[index + 1]])
+        
+        caller.msg(output_string)
