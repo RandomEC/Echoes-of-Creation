@@ -1208,7 +1208,7 @@ class CmdScan(MuxCommand):
             room = exit.destination
             next_exit = ""
             for new_exit in room.exits:
-                if new_exit.key == direction:
+                if new_exit.key == direction and "open" in new_exit.db.door_attributes:
                     next_exit = new_exit
                     mobiles = get_mobiles(caller, new_exit.destination)
                     if mobiles:
@@ -1220,7 +1220,7 @@ class CmdScan(MuxCommand):
                     room = new_exit.destination
             if next_exit:
                 for new_exit in room.exits:
-                    if new_exit.key == direction:
+                    if new_exit.key == direction and "open" in new_exit.db.door_attributes:
                         mobiles = get_mobiles(caller, exit.destination)
                         if mobiles:
                             for mobile in mobiles:
@@ -1231,19 +1231,19 @@ class CmdScan(MuxCommand):
             return scan_string
         
         output_string = ""
-
+        
         for exit in room.exits:
-            if exit.key == "north":
+            if exit.key == "north" and "open" in exit.db.door_attributes:
                 output_string += scan_direction(caller, exit, "north")
-            elif exit.key == "east":
+            elif exit.key == "east" and "open" in exit.db.door_attributes:
                 output_string += scan_direction(caller, exit, "east")
-            elif exit.key == "south":
+            elif exit.key == "south" and "open" in exit.db.door_attributes:
                 output_string += scan_direction(caller, exit, "south")
-            elif exit.key == "west":
+            elif exit.key == "west" and "open" in exit.db.door_attributes:
                 output_string += scan_direction(caller, exit, "west")
-            elif exit.key == "up":
+            elif exit.key == "up" and "open" in exit.db.door_attributes:
                 output_string += scan_direction(caller, exit, "up")
-            elif exit.key == "down":
+            elif exit.key == "down" and "open" in exit.db.door_attributes:
                 output_string += scan_direction(caller, exit, "down")
 
         if not output_string:
