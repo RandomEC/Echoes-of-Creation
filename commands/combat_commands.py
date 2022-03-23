@@ -240,9 +240,10 @@ class CmdAttack(MuxCommand):
             attacker.msg("Usage: attack <mobile>")
             return
 
-        victim = attacker.search(self.args, location=attacker.location)
+        mobiles = search.search_object_by_tag("mobile")
+        victim = attacker.search(self.args, location=attacker.location, candidates=mobiles)
         if not victim:
-            attacker.msg("There is no %s here to attack." % self.args)
+            attacker.msg("There is no mobile named %s here to attack." % self.args)
             return
         elif "player" in victim.tags.all():
             attacker.msg("You cannot attack another player!")

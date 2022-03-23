@@ -203,6 +203,12 @@ def get_skill(**kwargs):
                 "ranger": 11,
                 "paladin": 3
                 }
+            },
+        "steal": {
+            "classes": {
+                "thief": 3,
+                "bard": 13
+                }
             }
         }
 

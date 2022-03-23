@@ -1,4 +1,5 @@
 import random
+from evennia.utils import search
 from commands.command import MuxCommand
 from world import rules_skills, rules_combat
 
@@ -144,32 +145,36 @@ class CmdSkills(MuxCommand):
         skills_list = []
         for skill in skills:
             skills_list.append(skill)
-        
+
         # Alphabetize the list
         skills_list.sort()
         total_skills = len(skills_list)
         leftover = total_skills % 3
+
+        index = 0
+        output_string = "You know the following skills, to the following percentages:\n"
         
-        index = 1
-        output_string = "You know the following skills, to the following percentages:"
-        
+        caller.msg("skill = %s" % skills_list[0])
+        caller.msg(skills[skills_list[0]])
+
         # Run through the list indices to format a table of skills, at three per
         # column.
-        while index <= (total_skills - leftover):
-            output_string += "%s %s%   %s %s%   %s %s%\n" % (skills_list[index],
-                                                             skills[skills_list[index]],
-                                                             skills_list[index + 1],
-                                                             skills[skills_list[index + 1]],
-                                                             skills_list[index + 2],
-                                                             skills[skills_list[index + 2]])
-            index += 3
+        if total_skills > 2:
+            while index + 1 <= (total_skills - leftover):
+                output_string += "%-20s%d%%   %-20s%-d%%   %-20s%d%%\n" % (skills_list[index],
+                                                                 skills[skills_list[index]],
+                                                                 skills_list[index + 1],
+                                                                 skills[skills_list[index + 1]],
+                                                                 skills_list[index + 2],
+                                                                 skills[skills_list[index + 2]])
+                index += 3
             
         # Handle the remnant after the even three per column.
         if leftover == 1:
-            output_string += "%s %s%\n" % (skills_list[index],
+            output_string += "%-20s%d%%\n" % (skills_list[index],
                                            skills[skills_list[index]])
         elif leftover == 2:
-            output_string += "%s %s%   %s %s%\n" % (skills_list[index],
+            output_string += "%-20s%d%%   %-20s%d%%\n" % (skills_list[index],
                                                     skills[skills_list[index]],
                                                     skills_list[index + 1],
                                                     skills[skills_list[index + 1]])
