@@ -111,14 +111,42 @@ def do_steal(thief, target, to_steal):
         if to_steal == "gold":
             amount = math.ceil(target.db.gold * random.randint(1, 10) / 100)
             if amount <= 0:
-                thief.db.gold("You check the pockets of %s, but come up empty." % target.key)
+                thief.msg("You check the pockets of %s, but come up empty." % target.key)
                 return
             else:
                 thief.db.gold += amount
                 target.db.gold -= amount
                 thief.db.gold("|gBingo!|n You got %d gold coins." % amount)
                 check_skill_improve(thief, "steal", True)
-        
+                if combat_handler in thief.ndb.all:
+                    combat = thief.ndb.combat_handler
+                    combat.db.combatants[thief]["wait state"] = skill["wait state"]
+        else:
+            if "no drop" in to_steal.db.extra_flags:
+                thief.msg("A magical force prevents you from prying %s away." % to_steal.key)
+                check_skill_improve(thief, "steal", True)
+                return
+            elif "no remove" in to_steal.db.extra_flags and not to_steal.db.equipped:
+                thief.msg("A magical force prevents you from removing %s from %s." % (to_steal.key, target.key))
+                check_skill_improve(thief, "steal", True)
+                return
+            # In the future, do weight and object number checks here.
+            elif not to_steal.db.equipped:
+                thief.msg("You daringly swipe %s from %s's inventory. Sneaky!" % (to_steal.key, target.key))
+                check_skill_improve(thief, "steal", True)
+                if combat_handler in thief.ndb.all:
+                    combat = thief.ndb.combat_handler
+                    combat.db.combatants[thief]["wait state"] = skill["wait state"]
+            else:
+                thief.msg("While %s is distracted, you swipe %s right off them!" % (target.key, to_steal.key))
+                check_skill_improve(thief, "steal", True)
+                to_steal.db.equipped = False
+                if combat_handler in thief.ndb.all:
+                    combat = thief.ndb.combat_handler
+                    combat.db.combatants[thief]["wait state"] = skill["wait state"]
+                    
+            to_steal.location = thief
+                
 def get_skill(**kwargs):
     """
     This function holds the skill database, and has multiple kwargs
