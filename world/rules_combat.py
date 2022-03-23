@@ -253,6 +253,7 @@ def do_death(attacker, victim):
             if not object.location:
                 corpse = object
                 corpse.key = "the corpse of %s" % victim.key
+                break
 
         if not corpse:
 
@@ -335,6 +336,7 @@ def do_death(attacker, victim):
             if not object.location:
                 corpse = object
                 corpse.key = "the corpse of %s" % victim.key
+                break
 
         if not corpse:
 
