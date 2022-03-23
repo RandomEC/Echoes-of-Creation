@@ -128,18 +128,20 @@ def get_skill(**kwargs):
         }
 
     if "skill_name" in kwargs:
-    
+        skill_name = kwargs["skill_name"]
+
         for skill in skills:
             if skill == skill_name:
                 return skills[skill]
             
     elif "eligible_character" in kwargs:
-        
+        eligible_character = kwargs["eligible_character"]
+
         level = eligible_character.level
         eligible_skills = {}
         for skill in skills:
-            for class_name in skills[skill][classes]:
-                if skills[skill][classes][class_name] <= level:
+            for class_name in skills[skill]["classes"]:
+                if skills[skill]["classes"][class_name] <= level:
                     if skill not in eligible_skills:
                         cost_to_practice = rules.current_experience_step(eligible_character, 0)
                         cost_to_practice = math.ceil(cost_to_practice / rules.wisdom_practices(eligible_character))

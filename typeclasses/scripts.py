@@ -168,11 +168,6 @@ class UpdateTimerScript(DefaultScript):
         mobiles = evennia.search_tag("mobile")
 
         for mobile in mobiles:
-            if "training tower" in mobile.tags.all() or \
-                    "dwarven daycare" in mobile.tags.all() or \
-                    "smurf village" in mobile.tags.all() or \
-                    "the circus" in mobile.tags.all() or \
-                    "crystalmir lake" in mobile.tags.all() or \
-                    "the rats lair" in mobile.tags.all() or \
-                    "edens grove" in mobile.tags.all():
+            if "the library" in mobile.tags.all() or "the rats' lair" in mobile.tags.all() or \
+                    "crystalmir lake" in mobile.tags.all() or "the circus" in mobile.tags.all():
                 tickerhandler.add(30, mobile.at_update)

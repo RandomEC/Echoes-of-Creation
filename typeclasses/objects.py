@@ -732,10 +732,12 @@ class Container(Armor):
         # Exits moved up from default Evennia.
         if exits:
             string += "|wExits:|n " + list_to_string(exits) + "\n"
-        if "open" in self.db.state:
-            string += "|C%s\nIt contains:|n\n" % desc
-        else:
-            string += "|C%s is closed.|n\n" % (self.key[0].upper() + self.key[1:])
+        desc = self.db.desc
+        if desc:
+            if "open" in self.db.state:
+                string += "|C%s\nIt contains:|n\n" % desc
+            else:
+                string += "|C%s\n%s is closed.|n\n" % (desc, (self.key[0].upper() + self.key[1:]))
         if mobiles:
             mobile_string = ""
             index = 0
@@ -786,7 +788,7 @@ class Drink_container(Item):
         self.db.liquid_food = 0
         self.db.liquid_thirst = 0
 
-        def return_appearance(self, looker, **kwargs):
+    def return_appearance(self, looker, **kwargs):
         """
         This formats a description. It is the hook a 'look' command
         should call.
@@ -830,6 +832,9 @@ class Drink_container(Item):
         # Exits moved up from default Evennia.
         if exits:
             string += "|wExits:|n " + list_to_string(exits) + "\n"
+        desc = self.db.desc
+        if desc:
+            string += "|C%s|n\n" % desc
         if mobiles:
             mobile_string = ""
             index = 0
@@ -848,9 +853,6 @@ class Drink_container(Item):
                 string += object_string
             else:
                 string += ""
-        else:
-            object_string = "    |CNothing!|n\n"
-            string += object_string
 
         full_state = self.db.capacity_current / self.db.capacity_maximum
         
@@ -867,7 +869,7 @@ class Drink_container(Item):
         else:
             full_string = "empty"
             
-        string += "%s is %s.\n" % ((self.key[0].upper() + self.key[1:]), full_string)
+        string += "|C%s is %s.\n|n" % ((self.key[0].upper() + self.key[1:]), full_string)
             
         return string
 

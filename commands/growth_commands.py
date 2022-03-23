@@ -5,7 +5,7 @@ categories, attributes, skills and similar.
 
 import random
 from commands.command import MuxCommand
-from world import rules
+from world import rules, rules_skills
 
 def hitpoint_gain_minimum(character):
     classes = rules.classes_current(character)
@@ -16,7 +16,7 @@ def hitpoint_gain_minimum(character):
         return 13
     elif "warrior" in classes or "paladin" in classes:
         return 11
-    elif "bard" in classses:
+    elif "bard" in classes:
         return 9
     elif "thief" in classes or "druid" in classes:
         return 8
@@ -34,7 +34,7 @@ def hitpoint_gain_maximum(character):
         return 18
     elif "warrior" in classes:
         return 17
-    elif "bard" in classses or "thief" in classes:
+    elif "bard" in classes or "thief" in classes:
         return 13
     elif "druid" in classes:
         return 11
@@ -52,7 +52,7 @@ def mana_gain_minimum(character):
         return 13
     elif "mage" in classes:
         return 11
-    elif "cleric" in classses:
+    elif "cleric" in classes:
         return 9
     elif "bard" in classes or "druid" in classes:
         return 8
@@ -108,7 +108,7 @@ class CmdPractice(MuxCommand):
         caller = self.caller
 
         if not self.args:
-            output_string = ""
+            output_string = "You can currently practice the following:\n"
             eligible_skills = rules_skills.get_skill(eligible_character=caller)
             for skill in eligible_skills:
                 output_string += "%-20s%d\n" % (skill, eligible_skills[skill])
@@ -127,13 +127,16 @@ class CmdPractice(MuxCommand):
                 
                 if skill not in caller.db.skills:
                     caller.db.skills[skill] = amount_learned
+                    caller.experience_spent += eligible_skills[skill]
                     caller.msg("You have learned the %s skill at %d percent learned!" % (skill, amount_learned))
                 else:
                     if caller.db.skills[skill] + amount_learned > 70:
                         caller.db.skills[skill] = 70
+                        caller.experience_spent += eligible_skills[skill]
                         caller.msg("Your skill at %s has increased to %d percent!\nYou can only learn more through using your skill." % (skill, amount_learned))
                     else:
                         caller.db.skills[skill] += amount_learned
+                        caller.experience_spent += eligible_skills[skill]
                         caller.msg("Your skill at %s has increased to %d percent!" % (skill, amount_learned))
                                     
 class CmdTrain(MuxCommand):

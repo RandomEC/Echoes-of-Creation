@@ -57,6 +57,7 @@ from commands.equipment_commands import CmdWear
 from commands.equipment_commands import CmdWearTo
 from commands.equipment_commands import CmdWield
 from commands.equipment_commands import CmdWieldTo
+from commands.growth_commands import CmdPractice
 from commands.growth_commands import CmdTrain
 from commands.skill_commands import CmdDowse
 from commands.skill_commands import CmdForage
@@ -108,6 +109,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdLook())
         self.add(CmdName())
         self.add(CmdOpen())
+        self.add(CmdPractice())
         self.add(CmdPut())
         self.add(CmdRemove())
         self.add(CmdRemoveFrom())

@@ -270,20 +270,6 @@ class Character(DefaultCharacter):
     def spell_affects(self):
         return self.db.spell_affects
     
-    @alignment.setter
-    def alignment(self, new_value):
-        if new_value > 1000 or new_value < -1000:
-            self.msg("There was a problem setting your new alignment. Value should be between 1000 and -1000.\n")
-            if new_value > 1000:
-                self.db.alignment = 1000
-                self.msg("Alignment was set to 1000 instead of exceeding it.")
-            elif new_value < -1000:
-                self.db.alignment = -1000
-                self.msg("Alignment was set to -1000 instead of lower than that.")
-        else:
-            self.db.mana["trains spent"] = new_value
-        
-        
     def get_affect_status(self, affect_name):
         """
         Method that returns a boolean for whether the affect is currently
@@ -599,7 +585,7 @@ class Character(DefaultCharacter):
                 self.msg("Alignment was set to -1000 instead of lower than that.")
         else:
             self.db.alignment = new_value
-    
+
     @property
     def position(self):
         return self.db.position
@@ -987,6 +973,17 @@ class Player(Character):
         self.db.holy_light = False
         
         self.tags.add("player")
+
+    @property
+    def experience_spent(self):
+        return self.db.experience_spent
+
+    @experience_spent.setter
+    def experience_spent(self, new_value):
+        if new_value >= 0:
+            self.db.experience_spent = new_value
+        else:
+            self.msg("There was a problem setting your new spent experience, as having negative spent experience is impossible.")
 
     @property
     def experience_available(self):
