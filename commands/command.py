@@ -1117,7 +1117,7 @@ class CmdSacrifice(MuxCommand):
             caller.msg("The gods award you %d %s for your sacrifice." % (moves_award, award))
 
         obj.location = None
-        remove_disintegrate_timer(obj)
+        rules.remove_disintegrate_timer(obj)
         caller.location.msg_contents("%s sacrifices %s to the gods."
                                          % (caller.name, obj.name),
                                          exclude=caller)
