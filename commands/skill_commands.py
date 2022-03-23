@@ -218,8 +218,11 @@ class CmdSteal(MuxCommand):
         elif "player" in target.tags.all():
             caller.msg("You cannot steal from another player.")
             return
-        elif rules_combat.is_safe(target)::
+        elif rules_combat.is_safe(target):
             caller.msg("You cannot steal from %s, they are under the protection of the gods." % target.key)
+            return
+        elif caller.level - target.level > 5:
+            caller.msg("Honestly, pick on someone your own size.")
             return
         
         if self.lhs != "gold":
