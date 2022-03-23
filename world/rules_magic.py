@@ -63,6 +63,9 @@ def do_create_food(caster, mana_cost):
         caster.location.msg_contents("%s suddenly appears."
                                      % (food.key[0].upper() + food.key[1:]),
                                      exclude=caster)
+        if combat_handler in caster.ndb.all:
+            combat = caster.ndb.combat_handler
+            combat.db.combatants[caster]["wait state"] = spell["wait state"]
 
 
 def do_create_sound(caster, mana_cost, target, sound):
@@ -80,7 +83,7 @@ def do_create_sound(caster, mana_cost, target, sound):
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
         caster.msg(
-            "You chant 'create sound'.\n%s says '%s'." % ((target.key[0].upper() + target.key[1:]), sound))
+            "You chant 'create sound'.\nYou make it appear that %s says '%s'." % ((target.key[0].upper() + target.key[1:]), sound))
         player_output_magic_chant(caster, "create sound")
         for object in caster.location.contents:
             if object == target and object.db.position != "sleeping":
@@ -90,6 +93,9 @@ def do_create_sound(caster, mana_cost, target, sound):
                     object.msg("%s makes %s say '%s'" % ((caster.key[0].upper() + caster.key[1:]), target, sound))
                 else:
                     object.msg("%s says '%s'" % ((target.key[0].upper() + target.key[1:]), sound))
+        if combat_handler in caster.ndb.all:
+            combat = caster.ndb.combat_handler
+            combat.db.combatants[caster]["wait state"] = spell["wait state"]
 
 def do_create_water(caster, mana_cost, target_container):
     """ Function implementing create water spell"""
@@ -118,7 +124,9 @@ def do_create_water(caster, mana_cost, target_container):
             caster.mana_spent += mana_cost
         caster.msg("You chant 'create water'.\n%s is filled." % (target_container.key[0].upper() + target_container.key[1:]))
         player_output_magic_chant(caster, "create water")
-    
+        if combat_handler in caster.ndb.all:
+            combat = caster.ndb.combat_handler
+            combat.db.combatants[caster]["wait state"] = spell["wait state"]    
             
 def mana_cost(caster, spell):
     """Calculate mana cost for a spell"""
