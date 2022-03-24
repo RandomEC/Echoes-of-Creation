@@ -356,9 +356,9 @@ class CmdWear(MuxCommand):
                 return
         else:
             # First search for items on the caller that are not equipped.
-            equipped = search.search_object(False, attribute_name="equipped")
+            equipped = search.search_object(False, attribute_name="equipped", candidates=caller.contents)
             # Then search those for the item to be worn.
-            object = caller.search(self.args, candidates=equipped, location=caller)
+            object = caller.search(self.args, candidates=equipped)
             # object = caller.search(self.args, location=caller)
             wear_list.append(object)
             if not object:
