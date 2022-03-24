@@ -207,11 +207,6 @@ def do_damage(attacker, victim, eq_slot):
 
             damage += dam_bonus
 
-            # Check if player has enhanced damage.
-            if "enhanced damage" in attacker.db.skills:
-                damage += int(damage * attacker.db.skills["enhanced damage"] / 150)
-                rules_skills.check_skill_improve(attacker, "enhanced damage", True)
-
         else:
             damage = random.randint(1, 2) * attacker.size
 
@@ -221,6 +216,12 @@ def do_damage(attacker, victim, eq_slot):
 
             damage += dam_bonus
 
+    # Check if player has enhanced damage.
+    if "player" in attacker.tags.all():
+        if "enhanced damage" in attacker.db.skills:
+            damage += int(damage * attacker.db.skills["enhanced damage"] / 150)
+            rules_skills.check_skill_improve(attacker, "enhanced damage", True)
+            
     if victim.db.position == "sleeping":
         damage *= 2
 
