@@ -58,16 +58,16 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
     else:
         hit = hit_check(attacker, victim)
         
-    if "damage" in kwargs:
-        damage = kwargs["damage"]
-    else:
-        damage = do_damage(attacker, victim, eq_slot)
-    
     damage_type = get_damagetype(attacker)
     experience_modified = 0
 
     if hit:
 
+        if "damage" in kwargs:
+            damage = kwargs["damage"]
+        else:
+            damage = do_damage(attacker, victim, eq_slot)
+        
         if "player" in attacker.tags.all():
             # Make sure we aren't giving out experience for more damage than
             # the mobile has hitpoints remaining.
