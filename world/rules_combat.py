@@ -227,67 +227,6 @@ def do_damage(attacker, victim, eq_slot):
     return damage
 
 
-def do_dirt_kicking(attacker, victim):
-    """
-    This does the dirty (heh) work of the dirt kick command.
-    """
-    
-    # Build basic chance of success.
-    chance = (attacker.db.skills["dirt kicking"] - victim.level) * 2
-    chance += attacker.dexterity
-    chance -= victim.dexterity
-    
-    # Correct for terrain.
-    
-    if "desert" in attacker.location.db.room_flags:
-        chance += 10
-    elif "field" in attacker.location.db.room_flags:
-        chance += 5
-    elif "city" in attacker.location.db.room_flags or "mountain" in attacker.location.db.room_flags:
-        chance -= 10
-    elif "inside" in attacker.location.db.room_flags:
-        chance -= 20
-    elif "forest" in attacker.location.db.room_flags or "hills" in attacker.location.db.room_flags:
-        pass
-    else:
-        chance = 0
-        
-    if chance == 0:
-        attacker.msg("There is no dirt to kick here!")
-        return
-    
-    if random.randint(1, 100) > chance:
-        
-        if "player" in attacker.tags.all():
-            rules_skills.check_skill_improve(attacker, "dirt kicking", False)
-            attacker.moves_spent += 5
-
-        attacker_output = ("Your attempt to kick dirt in the eyes of %s fails.\n" % victim.key)
-        victim_output = ("%s kicks dirt over your shoulder.\n" % (attacker.key[0].upper() + attacker.key[1:]))
-        room_output = ("%s kicks dirt past %s.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.name))
-
-        combat.db.combatants[attacker]["special attack"]["output"] = [attacker_output, victim_output, room_output]
-        
-    else:
-
-        if "player" in attacker.tags.all():
-            rules_skills.check_skill_improve(attacker, "dirt kicking", True)
-            attacker.moves_spent += 10
-
-        damage = random.randint(2, 5)
-        attacker_output = ("%s is blinded by the dirt in its eyes!\n" % (victim.key[0].upper() + victim.key[1:]))
-        victim_output = ("%s kicks dirt in your eyes!.\nYou can't see a thing!\n" % (attacker.key[0].upper() + attacker.key[1:]))
-        room_output = ("%s kicks dirt in %s's eyes, blinding them.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.key))
-
-        combat.db.combatants[attacker]["special attack"]["output"] = [attacker_output, victim_output, room_output]
-        combat.db.combatants[attacker]["special attack"]["hit"] = True
-        combat.db.combatants[attacker]["special attack"]["damage"] = damage
-        # Need to figure out how to pass info on duration, and put affect in as a kwarg in do_attack, with callback function for removing affect.
-        combat.db.combatants[attacker]["special attack"]["affect"] = {"name": "blind", "apply": "hitroll", "modifier": -4}
-        combat.db.combatants[attacker]["special attack"]["affect duration"] = attacker.level
-       
-        # Apply wait state.      
-        
 def do_death(attacker, victim):
     """
     This handles the death and returns some output.
@@ -429,6 +368,68 @@ def do_death(attacker, victim):
     return (attacker_string, victim_string, room_string)
 
 
+def do_dirt_kicking(attacker, victim):
+    """
+    This does the dirty (heh) work of the dirt kick command.
+    """
+    
+    # Build basic chance of success.
+    chance = (attacker.db.skills["dirt kicking"] - victim.level) * 2
+    chance += attacker.dexterity
+    chance -= victim.dexterity
+    
+    # Correct for terrain.
+    
+    if "desert" in attacker.location.db.room_flags:
+        chance += 10
+    elif "field" in attacker.location.db.room_flags:
+        chance += 5
+    elif "city" in attacker.location.db.room_flags or "mountain" in attacker.location.db.room_flags:
+        chance -= 10
+    elif "inside" in attacker.location.db.room_flags:
+        chance -= 20
+    elif "forest" in attacker.location.db.room_flags or "hills" in attacker.location.db.room_flags:
+        pass
+    else:
+        chance = 0
+        
+    if chance == 0:
+        attacker.msg("There is no dirt to kick here!")
+        return
+    
+    if random.randint(1, 100) > chance:
+        
+        if "player" in attacker.tags.all():
+            rules_skills.check_skill_improve(attacker, "dirt kicking", False, 1)
+            attacker.moves_spent += 5
+
+        attacker_output = ("Your attempt to kick dirt in the eyes of %s fails.\n" % victim.key)
+        victim_output = ("%s kicks dirt over your shoulder.\n" % (attacker.key[0].upper() + attacker.key[1:]))
+        room_output = ("%s kicks dirt past %s.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.name))
+
+        combat.db.combatants[attacker]["special attack"]["output"] = [attacker_output, victim_output, room_output]
+        
+    else:
+
+        if "player" in attacker.tags.all():
+            rules_skills.check_skill_improve(attacker, "dirt kicking", True, 1)
+            attacker.moves_spent += 10
+
+        damage = random.randint(2, 5)
+        attacker_output = ("%s is blinded by the dirt in its eyes!\n" % (victim.key[0].upper() + victim.key[1:]))
+        victim_output = ("%s kicks dirt in your eyes!.\nYou can't see a thing!\n" % (attacker.key[0].upper() + attacker.key[1:]))
+        room_output = ("%s kicks dirt in %s's eyes, blinding them.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.key))
+
+        combat.db.combatants[attacker]["special attack"]["output"] = [attacker_output, victim_output, room_output]
+        combat.db.combatants[attacker]["special attack"]["hit"] = True
+        combat.db.combatants[attacker]["special attack"]["damage"] = damage
+        # Need to figure out how to pass info on duration, and put affect in as a kwarg in do_attack, with callback function for removing affect.
+        combat.db.combatants[attacker]["special attack"]["affect"] = {"name": "blind", "apply": "hitroll", "modifier": -4}
+        combat.db.combatants[attacker]["special attack"]["affect duration"] = attacker.level
+       
+        # Apply wait state.      
+        
+
 def do_flee(character):
     
     if character.db.position == "sitting":
@@ -509,7 +510,7 @@ def do_kick(attacker, victim):
     
     if random.randint(1, 100) > attacker.db.skills["kick"]:
         if "player" in attacker.tags.all():
-            rules_skills.check_skill_improve(attacker, "kick", False)
+            rules_skills.check_skill_improve(attacker, "kick", False, 4)
             attacker.moves_spent += 5
 
         attacker_output = ("You kick wildly at %s and miss.\n" % victim.key)
@@ -523,7 +524,7 @@ def do_kick(attacker, victim):
     else:
 
         if "player" in attacker.tags.all():
-            rules_skills.check_skill_improve(attacker, "kick", True)
+            rules_skills.check_skill_improve(attacker, "kick", True, 4)
             attacker.moves_spent += 10
 
         damage = random.randint(1, attacker.level)
