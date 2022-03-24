@@ -36,16 +36,6 @@ BASE_ACCOUNT_TYPECLASS = "typeclasses.accounts.Account"
 
 BASE_ROOM_TYPECLASS = "typeclasses.rooms.Room"
 
-# Definitions for calculation of cost of various character improvements.
-# Measurement is proportion of what the xp cost of a full "level" would
-# have been for previous MUDs.
-ECHOES_COST_LEVEL = 1/6
-ECHOES_COST_HITPOINTS = 1/6
-ECHOES_COST_MANA = 1/6
-ECHOES_COST_MOVES = 1/6
-ECHOES_COST_PRACTICES = 1/6
-ECHOES_COST_ATTRIBUTES = 1/6
-
 # Definitions for experience cost calculations.
 EXPERIENCE_STEP_TWO = 2700
 EXPERIENCE_STEP_EXPONENT = 3
@@ -59,8 +49,9 @@ EXPERIENCE_LOSS_FLEE = 0.0125
 EXPERIENCE_LOSS_FLEE_FAIL = 0.005
 
 # Times for item disintegration.
-DEFAULT_DISINTEGRATE_TIME = 900
-PC_CORPSE_DISINTEGRATE_TIME = 1800
+TICK_OBJECT_TIMER = 30
+DEFAULT_DISINTEGRATE_TIME = 30 * TICK_OBJECT_TIMER
+PC_CORPSE_DISINTEGRATE_TIME = 60 * TICK_OBJECT_TIMER
 
 # Added to cleanup command parsing.
 COMMAND_DEFAULT_ARG_REGEX = r'^[ /]+.*$|$'
