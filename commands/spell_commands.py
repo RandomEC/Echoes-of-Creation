@@ -22,6 +22,9 @@ class CmdCreateFood(MuxCommand):
       cast create food
       create food
     Summons some food from among eight different types.
+    
+    Colleges that can teach (level):
+    Cleric (3)
     """
 
     key = "create food"
@@ -65,6 +68,9 @@ class CmdCreateSound(MuxCommand):
     A spell that attempts to make it seem as though a mobile or player
     has said a word or sentence. A player that saves against the spell
     will know that you forced the player or mobile to say the words.
+
+    Colleges that can teach (level):
+    Psionicist (3), Bard (3)
     """
 
     key = "create sound"
@@ -122,6 +128,9 @@ class CmdCreateWater(MuxCommand):
       cast create water <drink container>
       create water <drink container>
     Creates water in a drink container in your possession.
+    
+    Colleges that can teach (level):
+    Cleric (3), Paladin (13)
     """
 
     key = "create water"
