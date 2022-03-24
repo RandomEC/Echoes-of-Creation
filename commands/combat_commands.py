@@ -240,8 +240,11 @@ class CmdAttack(MuxCommand):
             attacker.msg("Usage: attack <mobile>")
             return
 
-        mobiles = search.search_object_by_tag("mobile")
-        victim = attacker.search(self.args, candidates=(mobiles, attacker.location.contents))
+        mobiles = []
+        for object in attacker.location.contents:
+            if "mobile" in object.tags.all():
+                mobiles.append(object)
+        victim = attacker.search(self.args, candidates=mobiles)
         if not victim:
             attacker.msg("There is no mobile named %s here to attack." % self.args)
             return
