@@ -329,6 +329,78 @@ class CmdConsider(MuxCommand):
         
         caller.msg("%s\n%s %s\n%s\n" % (level_string, (mobile.key[0].upper() + mobile.key[1:]), health_string, health_percent_string))
     
+class CmdDirtKick(MuxCommand):
+    """
+    Kick dirt in the eyes of a combatant to blind them.
+    Usage:
+      dirt kick <mobile>
+    Makes an attempt to kick dirt in the eyes of a combatant (or potential combatant),
+    blinding them and doing minor damage. The attempt is affected by the terrain
+    conditions - a desert dirt kick is more likely to be successful than one
+    indoors.
+    """
+
+    key = "dirt kick"
+    aliases = ["dirt", "dk"]
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+    wait_state = 12
+
+    def func(self):
+        caller = self.caller
+
+        if "kick" not in caller.db.skills:
+            caller.msg("You get your feet dirty, and not much else.")
+            return
+
+        if not self.args:
+
+            if not caller.ndb.combat_handler:
+                caller.msg("You are not in combat.")
+                return
+            else:
+                combat = caller.ndb.combat_handler
+                target = combat.get_target(caller)
+
+        else:
+            mobiles = []
+            for object in caller.location.contents:
+                if "mobile" in object.tags.all():
+                    mobiles.append(object)
+            target = attacker.search(self.args, candidates=mobiles)
+            if not target:
+                caller.msg("There is no %s here to kick." % self.args)
+                return
+            else:
+
+                if "player" in target.tags.all():
+                    caller.msg("You cannot attack another player.")
+                    return
+
+                if not caller.ndb.combat_handler:
+                    combat = rules_combat.create_combat(caller, target)
+                    rules_combat.do_kick(caller, target)
+                    combat.db.combatants[caller]["wait state"] = self.wait_state
+                    combat.at_repeat()
+                    return
+
+                else:
+                    combat = caller.ndb.combat_handler
+
+                    if "berserk" in caller.db.spell_affects and target != combat.get_target(caller):
+                        caller.msg("You cannot switch targets while you are in the rage of battle!")
+                        return
+
+        if target.get_affect_status("blind"):
+            caller.msg("%s has already been blinded." % (target.key[0].upper() + target.key[1:]))
+            return
+        
+        if is_safe(target):
+            caller.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
+            return
+                    
+        rules_combat.do_dirt_kick(caller, target)
+            
 class CmdFlee(MuxCommand):
     """
     Attempt to flee from combat.
@@ -395,8 +467,11 @@ class CmdKick(MuxCommand):
                 target = combat.get_target(caller)
 
         else:
-            mobiles = search.search_object_by_tag("mobile")
-            target = caller.search(self.args, location=caller.location, candidates=mobiles)
+            mobiles = []
+            for object in caller.location.contents:
+                if "mobile" in object.tags.all():
+                    mobiles.append(object)
+            target = attacker.search(self.args, candidates=mobiles)
             if not target:
                 caller.msg("There is no %s here to kick." % self.args)
                 return
@@ -420,6 +495,10 @@ class CmdKick(MuxCommand):
                         caller.msg("You cannot switch targets while you are in the rage of battle!")
                         return
 
+        if is_safe(target):
+            caller.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
+            return
+                    
         rules_combat.do_kick(caller, target)
         combat.db.combatants[caller]["wait state"] = self.wait_state
 
