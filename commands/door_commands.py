@@ -73,7 +73,7 @@ class CmdDoorOpen(MuxCommand):
     """
 
     key = "open"
-    alias = "op"
+    aliases = ["op"]
     locks = "cmd:all()"
     arg_regex = r"\s|$"
 
@@ -192,7 +192,7 @@ class CmdDoorClose(MuxCommand):
     """
 
     key = "close"
-    alias = "cl"
+    aliases = ["cl"]
     locks = "cmd:all()"
     arg_regex = r"\s|$"
 
@@ -309,7 +309,7 @@ class CmdDoorUnlock(MuxCommand):
     """
 
     key = "unlock"
-    alias = "unl"
+    aliases = ["unl"]
     locks = "cmd:all()"
     arg_regex = r"\s|$"
 
