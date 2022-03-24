@@ -119,6 +119,9 @@ class CmdIdentify(MuxCommand):
         item = caller.search(self.args, location=caller, nofound_string="You do not have %s to identify." % self.args,
             multimatch_string="You carry more than one %s, which do you want to identify:" % self.args)
         
+        if not item:
+            return
+        
         name = item.name
         level = item.db.level
         type = item.db.item_type
