@@ -122,7 +122,7 @@ class Combat(Object):
 
                 # Drop wait state
                 if self.db.combatants[combatant]["wait state"]:
-                    self.db.combatants[combatant]["wait state"] -= 2
+                    self.db.combatants[combatant]["wait state"] -= 8
                     if self.db.combatants[combatant]["wait state"] <= 0:
                         self.db.combatants[combatant]["wait state"] = 0
 
