@@ -27,7 +27,7 @@ def do_create_food(caster, mana_cost):
     
     spell = rules_skills.get_skill(skill_name="create food")
 
-    level = caster.level - rules_skills.lowest_learned_level(spell)
+    level = caster.level
 
     if random.randint(1, 100) > caster.db.skills["create food"]:
         if "player" in caster.tags.all():
@@ -72,7 +72,7 @@ def do_create_sound(caster, mana_cost, target, sound):
     """ Function implementing create sound spell"""
 
     spell = rules_skills.get_skill(skill_name="create sound")
-    level = caster.level - rules_skills.lowest_learned_level(spell)
+    level = caster.level
 
     if random.randint(1, 100) > caster.db.skills["create sound"]:
         if "player" in caster.tags.all():
@@ -101,7 +101,7 @@ def do_create_water(caster, mana_cost, target_container):
     """ Function implementing create water spell"""
     
     spell = rules_skills.get_skill(skill_name="create water")
-    level = caster.level - rules_skills.lowest_learned_level(spell)
+    level = caster.level
 
     if random.randint(1, 100) > caster.db.skills["create water"]:
         if "player" in caster.tags.all():
