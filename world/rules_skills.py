@@ -1,10 +1,11 @@
 """
-This rules file is to handle anything related to skills and/or spells
+This rules file is to handle anything related to non-combat skills.
 """
 
 import math
 import random
 from evennia import TICKER_HANDLER as tickerhandler
+from server.conf import settings
 from world import rules
 
 def check_skill_improve(character, skill_name, success):
@@ -55,7 +56,7 @@ def do_dowse(character):
     spring = rules.make_object(character.location, False, "o22")
 
     # put a timer on the spring equal to skill level
-    timer = (character.level - lowest_learned_level("dowse")) * 60
+    timer = character.level * settings.TICK_OBJECT_TIMER
     tickerhandler.add(timer, spring.at_disintegrate)
 
 def do_forage(character):
@@ -66,6 +67,7 @@ def do_forage(character):
     # create the magic mushroom
     mushroom = rules.make_object(character.location, False, "o20")
 
+    mushroom.db.hours_fed = 5 + level
     rules.set_disintegrate_timer(mushroom)
 
 def do_steal(thief, target, to_steal):
