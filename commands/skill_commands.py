@@ -40,12 +40,12 @@ class CmdDowse(MuxCommand):
 
         if random.randint(1, 100) > caller.db.skills["dowse"]:
             caller.msg("You did not find any water.")
-            rules_skills.check_skill_improve(caller, "dowse", False)
+            rules_skills.check_skill_improve(caller, "dowse", False, 1)
             caller.moves_spent += 50
             return
         else:
             rules_skills.do_dowse(caller)
-            rules_skills.check_skill_improve(caller, "dowse", True)
+            rules_skills.check_skill_improve(caller, "dowse", True, 1)
 
             if caller.db.skills["dowse"] > 80:
                 moves_cost = 20
@@ -99,12 +99,12 @@ class CmdForage(MuxCommand):
 
         if random.randint(1, 100) > caller.db.skills["forage"]:
             caller.msg("You failed to find any food.")
-            rules_skills.check_skill_improve(caller, "forage", False)
+            rules_skills.check_skill_improve(caller, "forage", False, 1)
             caller.moves_spent += 50
             return
         else:
             rules_skills.do_forage(caller)
-            rules_skills.check_skill_improve(caller, "forage", True)
+            rules_skills.check_skill_improve(caller, "forage", True, 1)
 
             if caller.db.skills["forage"] > 80:
                 moves_cost = 20
