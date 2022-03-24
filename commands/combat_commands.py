@@ -338,6 +338,9 @@ class CmdDirtKicking(MuxCommand):
     blinding them and doing minor damage. The attempt is affected by the terrain
     conditions - a desert dirt kick is more likely to be successful than one
     indoors.
+    
+    Colleges that can teach (level):
+    Warrior (4), Ranger (4), Thief (22), Bard (27)
     """
 
     key = "dirt kick"
@@ -447,6 +450,8 @@ class CmdKick(MuxCommand):
     Makes an aggressive kick strike at an enemy, if you have learned the
     ability. Can only be used without a target in combat, where it will
     attack your current target.
+    Colleges that can teach (level):
+    Warrior (3), Ranger (10), Paladin (12)
     """
 
     key = "kick"
@@ -517,6 +522,8 @@ class CmdRescue(MuxCommand):
       rescue <target>
     Makes an attempt at stepping between an enemy and a friendly
     player, causing that enemy to begin attacking you, instead.
+    Colleges that can teach (level):
+    Paladin (3), Warrior (4), Ranger (11)
     """
 
     key = "rescue"
