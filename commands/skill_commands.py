@@ -212,7 +212,7 @@ class CmdSteal(MuxCommand):
             return
         
         mobiles = search.search_object_by_tag("mobile")
-        target = caller.search(self.args, location=caller.location, candidates=mobiles)
+        target = caller.search(self.rhs, location=caller.location, candidates=mobiles)
         
         if not target:
             caller.msg("There is no %s here to steal from." % self.args)

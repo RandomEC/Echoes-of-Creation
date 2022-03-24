@@ -6,7 +6,7 @@ import math
 import random
 from evennia import TICKER_HANDLER as tickerhandler
 from server.conf import settings
-from world import rules
+from world import rules, rules_combat
 
 def check_skill_improve(character, skill_name, success, learn_factor):
     if "mobile" in character.tags.all():
@@ -67,7 +67,7 @@ def do_forage(character):
     # create the magic mushroom
     mushroom = rules.make_object(character.location, False, "o20")
 
-    mushroom.db.hours_fed = 5 + level
+    mushroom.db.hours_fed = 5 + character.level
     rules.set_disintegrate_timer(mushroom)
 
 def do_steal(thief, target, to_steal):
@@ -75,12 +75,12 @@ def do_steal(thief, target, to_steal):
     This is the function that does the actual theft of gold or an
     item (to_steal) by a character (thief) from a target.
     """
-    skill = get_skill("steal")
+    skill = get_skill(skill_name="steal")
     minimum_moves = skill["minimum cost"]
     wait_state = skill["wait state"]
     
     # Build chance of a successful steal.
-    percent = thief.db.skill["steal"]
+    percent = thief.db.skills["steal"]
     percent += thief.level - target.level   # modify with level difference
     percent += random.randint(0, 20) - 10   # luck factor
     
@@ -98,7 +98,7 @@ def do_steal(thief, target, to_steal):
     elif to_steal.db.equipped:
         percent *= 0.8                       # equipped items are harder
     else:
-        percent *= 0.4                       # stuff packed away in invenory is hardest to steal
+        percent *= 0.4                       # stuff packed away in inventory is hardest to steal
 
     if percent < random.randint(1, 100):
         thief.msg("Oops! That was NOT a success!\n")
@@ -106,7 +106,7 @@ def do_steal(thief, target, to_steal):
         if not thief.ndb.combat_handler and not target.ndb.combat_handler:
             thief.msg("%s is not pleased with your attempt to steal, and jumps forward and ATTACKS you!" % (target.key[0].upper() + target.key[1:]))
             rules_combat.create_combat(target, thief)
-        if not self.ndb.combat_handler:
+        if not thief.ndb.combat_handler:
             combat = thief.ndb.combat_handler
             combat.add_combatant(target, thief)
     else:
@@ -118,9 +118,9 @@ def do_steal(thief, target, to_steal):
             else:
                 thief.db.gold += amount
                 target.db.gold -= amount
-                thief.db.gold("|gBingo!|n You got %d gold coins." % amount)
+                thief.msg("|gBingo!|n You got %d gold coins." % amount)
                 check_skill_improve(thief, "steal", True, 4)
-                if combat_handler in thief.ndb.all:
+                if "combat_handler" in thief.ndb.all:
                     combat = thief.ndb.combat_handler
                     combat.db.combatants[thief]["wait state"] = skill["wait state"]
         else:
@@ -135,15 +135,15 @@ def do_steal(thief, target, to_steal):
             # In the future, do weight and object number checks here.
             elif not to_steal.db.equipped:
                 thief.msg("You daringly swipe %s from %s's inventory. Sneaky!" % (to_steal.key, target.key))
-                check_skill_improve(thief, "steal", True)
-                if combat_handler in thief.ndb.all:
+                check_skill_improve(thief, "steal", True, 4)
+                if "combat_handler" in thief.ndb.all:
                     combat = thief.ndb.combat_handler
                     combat.db.combatants[thief]["wait state"] = skill["wait state"]
             else:
                 thief.msg("While %s is distracted, you swipe %s right off them!" % (target.key, to_steal.key))
-                check_skill_improve(thief, "steal", True)
+                check_skill_improve(thief, "steal", True, 4)
                 to_steal.db.equipped = False
-                if combat_handler in thief.ndb.all:
+                if "combat_handler" in thief.ndb.all:
                     combat = thief.ndb.combat_handler
                     combat.db.combatants[thief]["wait state"] = skill["wait state"]
                     
@@ -210,7 +210,9 @@ def get_skill(**kwargs):
             "classes": {
                 "thief": 3,
                 "bard": 13
-                }
+                },
+            "minimum cost": 5,
+            "wait state": 24
             }
         }
 

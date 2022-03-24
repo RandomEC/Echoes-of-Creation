@@ -62,6 +62,7 @@ from commands.growth_commands import CmdTrain
 from commands.skill_commands import CmdDowse
 from commands.skill_commands import CmdForage
 from commands.skill_commands import CmdSkills
+from commands.skill_commands import CmdSteal
 from commands.spell_commands import CmdCreateFood
 from commands.spell_commands import CmdCreateSound
 from commands.spell_commands import CmdCreateWater
@@ -125,6 +126,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdSleep())
         self.add(CmdSkills())
         self.add(CmdStand())
+        self.add(CmdSteal())
         self.add(CmdTag())
         self.add(CmdTalk())
         self.add(CmdTrain())

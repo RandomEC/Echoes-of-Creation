@@ -370,7 +370,7 @@ class CmdDirtKicking(MuxCommand):
             for object in caller.location.contents:
                 if "mobile" in object.tags.all():
                     mobiles.append(object)
-            target = attacker.search(self.args, candidates=mobiles)
+            target = caller.search(self.args, candidates=mobiles)
             if not target:
                 caller.msg("There is no %s here to kick." % self.args)
                 return
@@ -384,7 +384,7 @@ class CmdDirtKicking(MuxCommand):
                     caller.msg("%s has already been blinded." % (target.key[0].upper() + target.key[1:]))
                     return
 
-                if is_safe(target):
+                if rules_combat.is_safe(target):
                     caller.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
                     return
                 
@@ -406,7 +406,7 @@ class CmdDirtKicking(MuxCommand):
             caller.msg("%s has already been blinded." % (target.key[0].upper() + target.key[1:]))
             return
         
-        if is_safe(target):
+        if rules_combat.is_safe(target):
             caller.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
             return
                     
@@ -484,7 +484,7 @@ class CmdKick(MuxCommand):
             for object in caller.location.contents:
                 if "mobile" in object.tags.all():
                     mobiles.append(object)
-            target = attacker.search(self.args, candidates=mobiles)
+            target = caller.search(self.args, candidates=mobiles)
             if not target:
                 caller.msg("There is no %s here to kick." % self.args)
                 return
@@ -508,7 +508,7 @@ class CmdKick(MuxCommand):
                         caller.msg("You cannot switch targets while you are in the rage of battle!")
                         return
 
-        if is_safe(target):
+        if rules_combat.is_safe(target):
             caller.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
             return
                     

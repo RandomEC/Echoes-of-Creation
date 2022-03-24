@@ -220,7 +220,7 @@ def do_damage(attacker, victim, eq_slot):
     if "player" in attacker.tags.all():
         if "enhanced damage" in attacker.db.skills:
             damage += int(damage * attacker.db.skills["enhanced damage"] / 150)
-            rules_skills.check_skill_improve(attacker, "enhanced damage", True)
+            rules_skills.check_skill_improve(attacker, "enhanced damage", True, 5)
             
     if victim.db.position == "sleeping":
         damage *= 2
@@ -1015,10 +1015,10 @@ def is_safe(character):
     safe).
     """
     
-    if act_flags in character.db.all:
+    if "act_flags" in character.db.all:
         if "no kill" in target.db.act_flags:
             return True
-    elif "safe" in caller.location.db.room_flags:
+    elif "safe" in character.location.db.room_flags:
         return True
     
 def modify_experience(attacker, victim, experience):
