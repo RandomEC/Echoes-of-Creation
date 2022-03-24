@@ -393,11 +393,13 @@ class CmdDrop(MuxCommand):
             caller.msg("Drop what?")
             return
 
-        # Because the DROP command by definition looks for items
-        # in inventory, call the search function using location = caller
+        # First, find items ont he caller, and filter out items
+        # that are equipped.
+        inventory = search.search_object(False, attribute_name="equipped", candidates=caller.contents)
+        # Then search those for the item to be dropped.
         obj = caller.search(
             self.args,
-            location=caller,
+            candidates=equipped,
             nofound_string="You aren't carrying %s." % self.args,
             multimatch_string="You carry more than one %s:" % self.args,
         )
