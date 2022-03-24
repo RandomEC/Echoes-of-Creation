@@ -8,7 +8,7 @@ from evennia import TICKER_HANDLER as tickerhandler
 from server.conf import settings
 from world import rules
 
-def check_skill_improve(character, skill_name, success):
+def check_skill_improve(character, skill_name, success, learn_factor):
     if "mobile" in character.tags.all():
         return False
     elif skill_name not in character.db.skills:
@@ -26,7 +26,7 @@ def check_skill_improve(character, skill_name, success):
             return False
         
         if success:
-            learn_chance = 100 - character.db.skills[skill_name]
+            learn_chance = (100 - character.db.skills[skill_name]) / learn_factor
             if learn_chance < 5:
                 learn_chance = 5
             elif learn_chance > 95:
@@ -102,7 +102,7 @@ def do_steal(thief, target, to_steal):
 
     if percent < random.randint(1, 100):
         thief.msg("Oops! That was NOT a success!\n")
-        check_skill_improve(thief, "steal", False)
+        check_skill_improve(thief, "steal", False, 4)
         if not thief.ndb.combat_handler and not target.ndb.combat_handler:
             thief.msg("%s is not pleased with your attempt to steal, and jumps forward and ATTACKS you!" % (target.key[0].upper() + target.key[1:]))
             rules_combat.create_combat(target, thief)
@@ -119,18 +119,18 @@ def do_steal(thief, target, to_steal):
                 thief.db.gold += amount
                 target.db.gold -= amount
                 thief.db.gold("|gBingo!|n You got %d gold coins." % amount)
-                check_skill_improve(thief, "steal", True)
+                check_skill_improve(thief, "steal", True, 4)
                 if combat_handler in thief.ndb.all:
                     combat = thief.ndb.combat_handler
                     combat.db.combatants[thief]["wait state"] = skill["wait state"]
         else:
             if "no drop" in to_steal.db.extra_flags:
                 thief.msg("A magical force prevents you from prying %s away." % to_steal.key)
-                check_skill_improve(thief, "steal", True)
+                check_skill_improve(thief, "steal", True, 4)
                 return
             elif "no remove" in to_steal.db.extra_flags and not to_steal.db.equipped:
                 thief.msg("A magical force prevents you from removing %s from %s." % (to_steal.key, target.key))
-                check_skill_improve(thief, "steal", True)
+                check_skill_improve(thief, "steal", True, 4)
                 return
             # In the future, do weight and object number checks here.
             elif not to_steal.db.equipped:
