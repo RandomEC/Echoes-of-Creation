@@ -32,6 +32,7 @@ def do_create_food(caster, mana_cost):
     if random.randint(1, 100) > caster.db.skills["create food"]:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "create food", False, 1)
         caster.msg("You chant 'create food'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "create food")
     else:
@@ -58,6 +59,7 @@ def do_create_food(caster, mana_cost):
 
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "create food", True, 1)
         caster.msg("You chant 'create food'.\n%s suddenly appears." % (food.key[0].upper() + food.key[1:]))
         player_output_magic_chant(caster, "create food")
         caster.location.msg_contents("%s suddenly appears."
@@ -77,11 +79,13 @@ def do_create_sound(caster, mana_cost, target, sound):
     if random.randint(1, 100) > caster.db.skills["create sound"]:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "create sound", False, 1)
         caster.msg("You chant 'create sound'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "create sound")
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "create sound", True, 1)
         caster.msg(
             "You chant 'create sound'.\nYou make it appear that %s says '%s'." % ((target.key[0].upper() + target.key[1:]), sound))
         player_output_magic_chant(caster, "create sound")
@@ -106,6 +110,7 @@ def do_create_water(caster, mana_cost, target_container):
     if random.randint(1, 100) > caster.db.skills["create water"]:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "create water", False, 1)
         caster.msg("You chant 'create water'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "create water")            
     else:
@@ -122,6 +127,7 @@ def do_create_water(caster, mana_cost, target_container):
         target_container.db.capacity_current += water
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "create water", True, 1)
         caster.msg("You chant 'create water'.\n%s is filled." % (target_container.key[0].upper() + target_container.key[1:]))
         player_output_magic_chant(caster, "create water")
         if combat_handler in caster.ndb.all:
