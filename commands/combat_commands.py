@@ -329,7 +329,7 @@ class CmdConsider(MuxCommand):
         
         caller.msg("%s\n%s %s\n%s\n" % (level_string, (mobile.key[0].upper() + mobile.key[1:]), health_string, health_percent_string))
     
-class CmdDirtKick(MuxCommand):
+class CmdDirtKicking(MuxCommand):
     """
     Kick dirt in the eyes of a combatant to blind them.
     Usage:
@@ -377,9 +377,17 @@ class CmdDirtKick(MuxCommand):
                     caller.msg("You cannot attack another player.")
                     return
 
+                if target.get_affect_status("blind"):
+                    caller.msg("%s has already been blinded." % (target.key[0].upper() + target.key[1:]))
+                    return
+
+                if is_safe(target):
+                    caller.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
+                    return
+                
                 if not caller.ndb.combat_handler:
                     combat = rules_combat.create_combat(caller, target)
-                    rules_combat.do_kick(caller, target)
+                    rules_combat.do_dirt_kicking(caller, target)
                     combat.db.combatants[caller]["wait state"] = self.wait_state
                     combat.at_repeat()
                     return
@@ -399,7 +407,7 @@ class CmdDirtKick(MuxCommand):
             caller.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
             return
                     
-        rules_combat.do_dirt_kick(caller, target)
+        rules_combat.do_dirt_kicking(caller, target)
             
 class CmdFlee(MuxCommand):
     """
