@@ -88,13 +88,9 @@ class MuxCommand(Command):
         This hook is called before self.parse() on all commands
         """
         caller = self.caller
-        if "combat_handler" in caller.ndb.all:
-            combat = caller.ndb.combat_handler
-            wait_state = combat.db.combatants[caller]["wait state"]
-            if wait_state and hasattr(self, "wait_state"):
-                caller.msg("You are still recovering from your last combat action!")
-                return
-        pass
+        if caller.ndb.wait_state:
+            caller.msg("You are still recovering from your last action!")
+            return        
 
     def at_post_cmd(self):
         """
