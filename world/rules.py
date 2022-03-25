@@ -7,15 +7,47 @@ from evennia import TICKER_HANDLER as tickerhandler
 from evennia import utils
 from evennia.utils import search
 
-def affect_remove(character, affect_name, target_message, room_message):
+def affect_apply(character, affect_name, duration, character_message, room_message, **kwargs)
     """
-    This function removes the spell a character is affected by
-    from their affects dictionary.
+    This function applies the spell a character is affected
+    by, and creates a delay call for removing it.
     """
     
-    del character.db.spell_affects[affect_name]
-    character.msg(target_message)
-    character.location.msg_contents(room_message, exclude=character)
+    duration = int(time.time() + duration)
+    
+    character.db.spell_affects[spell] = {"duration": duration} 
+    
+    if "apply_1" in kwargs:
+        apply_1_type = kwargs["apply_1"][0]
+        apply_1_amount = kwargs["apply_1"][1]
+        character.db.spell_affects[spell][apply_1_type] = apply_1_amount
+    if "apply_2" in kwargs:
+        apply_2_type = kwargs["apply_2"][0]
+        apply_2_amount = kwargs["apply_2"][1]
+        character.db.spell_affects[spell][apply_2_type] = apply_2_amount
+    if "apply_3" in kwargs:
+        apply_3_type = kwargs["apply_3"][0]
+        apply_3_amount = kwargs["apply_3"][1]
+        character.db.spell_affects[spell][apply_3_type] = apply_3_amount
+    
+    def affect_remove():
+        """
+        This function removes the spell a character is affected by
+        from their affects dictionary.
+        """
+
+        del character.db.spell_affects[affect_name]
+        character.msg(character_message)
+        character.location.msg_contents(room_message, exclude=character)
+    
+    affects_return = utils.delay(duration, affect_remove)
+    
+    if not character.ndb.affects_return:
+        character.ndb.affects_return = {}
+        character.ndb.affects_return[affect_name] = affects_return   
+    else:
+        character.ndb.affects_return[affect_name] = affects_return   
+   
 
 def attributes_cost(character):
     """
