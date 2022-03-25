@@ -374,6 +374,8 @@ def do_dirt_kicking(attacker, victim):
     This does the dirty (heh) work of the dirt kick command.
     """
     
+    skill = rules_skills.get_skill(skill_name="dirt kicking")
+    
     # Build basic chance of success.
     chance = (attacker.db.skills["dirt kicking"] - victim.level) * 2
     chance += attacker.dexterity
@@ -428,9 +430,10 @@ def do_dirt_kicking(attacker, victim):
         combat.db.combatants[attacker]["special attack"]["affect"] = {"name": "blind", "apply": "hitroll", "modifier": -4}
         combat.db.combatants[attacker]["special attack"]["affect duration"] = attacker.level
        
-        # Apply wait state.      
+        if "combat_handler" in caster.ndb.all:
+            combat = attacker.ndb.combat_handler
+            combat.db.combatants[attacker]["wait state"] = skill["wait state"]      
         
-
 def do_flee(character):
     
     if character.db.position == "sitting":
@@ -536,7 +539,7 @@ def do_kick(attacker, victim):
         combat.db.combatants[attacker]["special attack"]["output"] = [attacker_output, victim_output, room_output]
         combat.db.combatants[attacker]["special attack"]["hit"] = True
         combat.db.combatants[attacker]["special attack"]["damage"] = damage
-       
+        
 
 def do_one_character_attacks(attacker, victim):
     """
