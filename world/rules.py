@@ -21,6 +21,7 @@ def affect_apply(character, affect_name, duration, character_message, room_messa
     
     character.db.spell_affects[spell] = {"duration": duration} 
     
+    # Applies will take the form of ["strength": -2]
     if "apply_1" in kwargs:
         apply_1_type = kwargs["apply_1"][0]
         apply_1_amount = kwargs["apply_1"][1]
