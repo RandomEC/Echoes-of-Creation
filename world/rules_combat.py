@@ -43,18 +43,28 @@ def create_combat(attacker, victim):
 def do_attack(attacker, victim, eq_slot, **kwargs):
     """
     This function implements the effects of a single hit. It
-    both calls the take_damage method on the victim, doing the
+    is used in two different modes. It is called with no
+    kwargs when a standard attack-round attack, which both
+    calls the take_damage method on the victim, doing the
     damage, and returns a tuple of strings of output for the
     attacker, the victim, and those watching in the room for
-    that single hit attempt.
+    that single hit attempt. The second mode allows special
+    attacks (kick, fireball, damage on dirt kicking) to do
+    the work on determining whether they hit, the amount of
+    damage and output, and provide that to do_attack to
+    handle the dealing of the damage, awarding of xp, and
+    actually sending out output, rather than building into
+    a string.    
     """
 
     # Don't beat a dead horse.
     if victim.hitpoints_current <= 0:
         return
     
+    # Special attack.
     if "hit" in kwargs:
         hit = kwargs["hit"]
+    # Base combat round attacks.
     else:
         hit = hit_check(attacker, victim)
         
@@ -63,8 +73,10 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
 
     if hit:
 
+        # Special attack
         if "damage" in kwargs:
             damage = kwargs["damage"]
+        # Base combat round attacks.
         else:
             damage = do_damage(attacker, victim, eq_slot)
         
@@ -85,7 +97,8 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
 
             # Don't give out all the experience through single hits, to
             # preserve some to be awarded on kill. Amount awarded decreases
-            # round by round.
+            # round by round. Because of this, ALWAYS BE SURE combat is
+            # started before calling do_attack on a special attack!!!
 
             combat = victim.ndb.combat_handler
             round = combat.db.rounds
@@ -111,9 +124,9 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
         victim.take_damage(damage)
         
         if "output" in kwargs:
-            attacker_string = kwargs["output"][0]
-            victim_string = kwargs["output"][1]
-            room_string = kwargs["output"][2]
+            attacker.msg("%s" % kwargs["output"][0])
+            victim.msg("%s" % kwargs["output"][1])
+            attacker.location.msg_contents("%s" % kwargs["output"][2], exclude=(attacker, victim))
         else:
             attacker_string = ("You |g%s|n %s with your %s.\n"
                                % (get_damagestring("attacker", damage),
@@ -143,9 +156,9 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
                                     % (damage_type, damage))
     else:
         if "output" in kwargs:
-            attacker_string = kwargs["output"][0]
-            victim_string = kwargs["output"][1]
-            room_string = kwargs["output"][2]
+            attacker.msg("%s" % kwargs["output"][0])
+            victim.msg("%s" % kwargs["output"][1])
+            attacker.location.msg_contents("%s" % kwargs["output"][2], exclude=(attacker, victim))
         else:
             attacker_string = ("You miss %s with your %s.\n" % (victim.key,
                                                                 damage_type
@@ -157,8 +170,8 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
                                                             victim.key,
                                                             damage_type
                                                             ))
-
-    return (attacker_string, victim_string, room_string)
+    if not kwargs:
+        return (attacker_string, victim_string, room_string)
 
 
 def do_damage(attacker, victim, eq_slot):
