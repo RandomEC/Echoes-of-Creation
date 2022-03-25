@@ -144,7 +144,7 @@ class ResetScript(DefaultScript):
         for area in self.db.area_list:
             # Reset if there are no players in the area, or if counter is at 2.
             if not self.check_for_player(area) or self.db.area_list[area] == 2:
-                objects_to_reset = search.search_tag(area, category = "area name")
+                objects_to_reset = search.search_tag(area, category="area name")
                 if objects_to_reset:
                     for object in objects_to_reset:
                         object.at_reset()
@@ -170,3 +170,32 @@ class UpdateTimerScript(DefaultScript):
         for mobile in mobiles:
             if "haon dor" in mobile.tags.all():
                 tickerhandler.add(30, mobile.at_update)
+
+class FixAreaNames(DefaultScript):
+
+    # Start with scripts/start scripts.FixAreaNames
+
+    def at_script_creation(self):
+        self.key = "area_name_fix_script"
+        self.desc = "Corrects area name screwup"
+        self.persistent = True
+
+        self.db.area_list = {
+            "smurf village": 0,
+            "graveyard": 0,
+            "haon dor": 0,
+            "dwarven daycare": 0,
+            "training tower": 0,
+            "the circus": 0,
+            "the library": 0,
+            "edens grove": 0,
+            "crystalmir lake": 0,
+            "the rats' lair": 0
+        }
+
+        for area in self.db.area_list:
+            objects_to_retag = search.search_tag(area, category="area names")
+            if objects_to_retag:
+                for object in objects_to_retag:
+                    object.tags.remove(area, category="area names")
+                    object.tags.add(area, category="area name")

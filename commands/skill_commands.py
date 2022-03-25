@@ -154,9 +154,6 @@ class CmdSkills(MuxCommand):
         index = 0
         output_string = "You know the following skills, to the following percentages:\n"
         
-        caller.msg("skill = %s" % skills_list[0])
-        caller.msg(skills[skills_list[0]])
-
         # Run through the list indices to format a table of skills, at three per
         # column.
         if total_skills > 2:

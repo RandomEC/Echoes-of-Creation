@@ -399,7 +399,7 @@ class CmdDrop(MuxCommand):
         # Then search those for the item to be dropped.
         obj = caller.search(
             self.args,
-            candidates=equipped,
+            candidates=inventory,
             nofound_string="You aren't carrying %s." % self.args,
             multimatch_string="You carry more than one %s:" % self.args,
         )

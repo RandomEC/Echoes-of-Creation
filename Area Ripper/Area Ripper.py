@@ -1928,7 +1928,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as
 
         output.write("dig/tel %s; %s\n" % (rooms[room].name, rooms[room].vnum))
         output.write("#\n")
-        output.write("tag %s = %s:area names\n"
+        output.write("tag %s = %s:area name\n"
                      % (rooms[room].vnum, area_name.lower())
                      )
         output.write("#\n")
@@ -2026,7 +2026,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as
                                     rooms[room].doors[door]["destination"]
                                     ))
                     output.write("#\n")
-                    output.write("tag %s = %s:area names\n"
+                    output.write("tag %s = %s:area name\n"
                                  % (vnum, area_name.lower()))
                     output.write("#\n")
                     # Set the door as open by default, may be modified by
@@ -2046,7 +2046,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as
                     aliases = "^ ".join(alias_list)
                     output.write("alias %s = %s\n" % (door, aliases))
                     output.write("#\n")
-                    output.write("tag %s = %s:area names\n"
+                    output.write("tag %s = %s:area name\n"
                                  % (vnum, area_name.lower()))
                     output.write("#\n")
                     # Set the door as open by default, may be modified by
@@ -2169,7 +2169,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as
                              % (aliases, object.value_3)
                              )
                 output.write("#\n")
-                output.write("tag %s = %s:area names\n"
+                output.write("tag %s = %s:area name\n"
                              % (vnum, area_name.lower())
                              )
                 output.write("#\n")
@@ -2182,7 +2182,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as
                
                 output.write("alias portal = %s\n" % (aliases))
                 output.write("#\n")
-                output.write("tag %s = %s:area names\n"
+                output.write("tag %s = %s:area name\n"
                              % (vnum, area_name.lower())
                              )
                 output.write("#\n")
