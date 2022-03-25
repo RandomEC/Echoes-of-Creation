@@ -4,6 +4,7 @@ import time
 from server.conf import settings
 from world import rules_race
 from evennia import TICKER_HANDLER as tickerhandler
+from evennia import utils
 from evennia.utils import search
 
 def affect_remove(character, affect_name, target_message, room_message):
