@@ -40,7 +40,7 @@ def affect_apply(character, affect_name, duration, character_message, room_messa
         character.msg(character_message)
         character.location.msg_contents(room_message, exclude=character)
     
-    affects_return = utils.delay(duration, affect_remove)
+    affects_return = utils.delay(duration, affect_remove, persistent=True)
     
     if not character.ndb.affects_return:
         character.ndb.affects_return = {}
@@ -667,7 +667,7 @@ def wait_state_apply(character, wait_state):
                                                                                   prompt_wait)
         character.msg(prompt = prompt)
     
-    wait_state_return = utils.delay(wait_state, wait_state_remove)
+    wait_state_return = utils.delay(wait_state, wait_state_remove, persistent=True)
 
     character.ndb.wait_state_return = wait_state_return
 
