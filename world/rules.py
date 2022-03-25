@@ -13,6 +13,10 @@ def affect_apply(character, affect_name, duration, character_message, room_messa
     by, and creates a delay call for removing it.
     """
     
+    if affect_name in character.db.spell_affects:
+        character.msg("There was an error in adding %s to your spell affects, as it cannot be listed twice." % affect_name)
+        return
+    
     duration = int(time.time() + duration)
     
     character.db.spell_affects[spell] = {"duration": duration} 
@@ -36,10 +40,14 @@ def affect_apply(character, affect_name, duration, character_message, room_messa
         from their affects dictionary.
         """
 
-        del character.db.spell_affects[affect_name]
-        character.msg(character_message)
-        character.location.msg_contents(room_message, exclude=character)
+        # Make sure the affect hasn't been dispelled or similar.
+        if character.db.spell_affects[affect_name]:
+            del character.db.spell_affects[affect_name]
+            character.msg(character_message)
+            character.location.msg_contents(room_message, exclude=character)
     
+    # When do dispel magic, remember to figure out how to use this to delete
+    # the delay callback as well.
     affects_return = utils.delay(duration, affect_remove, persistent=True)
     
     if not character.ndb.affects_return:
