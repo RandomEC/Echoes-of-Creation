@@ -1,5 +1,6 @@
-import random
 import math
+import random
+import time
 from server.conf import settings
 from world import rules_race
 from evennia import TICKER_HANDLER as tickerhandler
@@ -603,6 +604,39 @@ def set_weapon_low_high(level):
     low = round(fuzz_number(fuzz_number(level/4 + 2)))
     high = round(fuzz_number(fuzz_number(3*level/4 + 6)))
     return low, high
+
+
+def wait_state_apply(character, wait_state):
+    """
+    This function takes a character and applies an ndb attribute
+    of wait_state, which is a Unix-type time that can be used
+    to determine how much longer the wait state will last, if
+    needed. The function also creates a delay to call the
+    function to eliminate the wait state once it has run.
+    """
+    
+    wait_state_time = int(time.time() + wait_state)
+    
+    character.ndb.wait_state = wait_state_time
+    
+    def wait_state_remove():
+        """
+        This gets called to remove the wait state after it has run.
+        """
+        character.ndb.wait_state = 0
+        prompt_wait = "|gReady!|n"
+        prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n %s>\n" % (caller.hitpoints_current,
+                                                                                  caller.hitpoints_maximum,
+                                                                                  caller.mana_current,
+                                                                                  caller.mana_maximum,
+                                                                                  caller.moves_current,
+                                                                                  caller.moves_maximum,
+                                                                                  prompt_wait)
+        character.msg(prompt = prompt)
+    
+    wait_state_return = utils.delay(wait_state, wait_state_remove)
+
+    character.ndb.wait_state_return = wait_state_return
 
 
 def wisdom_mana_bonus(character):
