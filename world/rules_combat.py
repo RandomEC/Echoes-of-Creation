@@ -388,6 +388,7 @@ def do_dirt_kicking(attacker, victim):
     """
     
     skill = rules_skills.get_skill(skill_name="dirt kicking")
+    wait_state = skill["wait state"]
     
     # Build basic chance of success.
     chance = (attacker.db.skills["dirt kicking"] - victim.level) * 2
@@ -443,9 +444,7 @@ def do_dirt_kicking(attacker, victim):
         combat.db.combatants[attacker]["special attack"]["affect"] = {"name": "blind", "apply": "hitroll", "modifier": -4}
         combat.db.combatants[attacker]["special attack"]["affect duration"] = attacker.level
        
-        if "combat_handler" in caster.ndb.all:
-            combat = attacker.ndb.combat_handler
-            combat.db.combatants[attacker]["wait state"] = skill["wait state"]      
+        rules.wait_state_apply(attacker, wait_state)
         
 def do_flee(character):
     
