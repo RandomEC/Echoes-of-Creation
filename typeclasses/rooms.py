@@ -191,7 +191,7 @@ class Room(DefaultRoom):
                 player.move_to(destination)
                 player.location.msg_contents("%s" % room_output, exclude=player)
                 
-            transfer = utils.delay(delay, delay_move_callback)
+            transfer = utils.delay(delay, delay_move_callback, persistent=True)
 
             player.ndb.delayed_transfer = transfer
             
