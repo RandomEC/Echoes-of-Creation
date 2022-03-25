@@ -5,6 +5,16 @@ from world import rules_race
 from evennia import TICKER_HANDLER as tickerhandler
 from evennia.utils import search
 
+def affect_remove(character, affect_name, target_message, room_message):
+    """
+    This function removes the spell a character is affected by
+    from their affects dictionary.
+    """
+    
+    del character.db.spell_affects[affect_name]
+    character.msg(target_message)
+    character.location.msg_contents(room_message, exclude=character)
+
 def attributes_cost(character):
     """
     This function determines the experience cost of getting an
