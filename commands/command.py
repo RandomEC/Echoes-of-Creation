@@ -103,12 +103,19 @@ class MuxCommand(Command):
         """
         caller = self.caller
         if "combat_handler" not in caller.ndb.all:
-            prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n>\n" % (caller.hitpoints_current,
+            if "wait_state" not in caller.ndb.all:
+                prompt_wait = "|gReady!|n"
+            elif caller.ndb.wait_state > 0:
+                prompt_wait = "|rRecovering.|n"
+            else:
+                prompt_wait = "|gReady!|n"
+            prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n %s>\n" % (caller.hitpoints_current,
                                                                                   caller.hitpoints_maximum,
                                                                                   caller.mana_current,
                                                                                   caller.mana_maximum,
                                                                                   caller.moves_current,
-                                                                                  caller.moves_maximum)
+                                                                                  caller.moves_maximum,
+                                                                                  prompt_wait)
             caller.msg(prompt = prompt)
 
     def parse(self):
