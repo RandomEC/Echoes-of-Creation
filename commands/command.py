@@ -101,8 +101,10 @@ class MuxCommand(Command):
         if "combat_handler" not in caller.ndb.all:
             if "wait_state" not in caller.ndb.all:
                 prompt_wait = "|gReady!|n"
+            elif caller.ndb.wait_state >= 12:
+                prompt_wait = "|rCompleting action!"
             elif caller.ndb.wait_state > 0:
-                prompt_wait = "|rRecovering.|n"
+                prompt_wait = "|yRecovering.|n"
             else:
                 prompt_wait = "|gReady!|n"
             prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n %s>\n" % (caller.hitpoints_current,

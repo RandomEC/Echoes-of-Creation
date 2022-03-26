@@ -3,8 +3,9 @@ from evennia import create_object
 from evennia import TICKER_HANDLER as tickerhandler
 from evennia.utils import search
 from commands.command import MuxCommand
+from server.conf import settings
 from typeclasses.objects import Object
-from world import rules_combat, rules_skills
+from world import rules_combat, rules_skills, rules
 
 
 class Combat(Object):
@@ -96,7 +97,7 @@ class Combat(Object):
         combat_dict = self.db.combatants
 
         # Iterate through combatants to do a round of attacks.
-        for combatant in combat_dict:
+        for combatant in self.db.combatants:
 
             # First, check to see if the combatant is below their wimpy.
             if combatant.hitpoints_current > 0 and (("player" in combatant.tags.all() and
@@ -110,9 +111,9 @@ class Combat(Object):
                 rules_combat.do_flee(combatant)
 
             # Make sure this combatant and target are alive and both still in the same room.
-            if combatant.location == self.location and self.allow_attacks(combatant, combat_dict[combatant]["target"]):
-                attacker = combat_dict[combatant]["combatant"]
-                victim = combat_dict[combatant]["target"]
+            if combatant.location == self.location and self.allow_attacks(combatant, self.db.combatants[combatant]["target"]):
+                attacker = self.db.combatants[combatant]["combatant"]
+                victim = self.db.combatants[combatant]["target"]
 
                 # Do the attacks for this attacker, and get output.
                 attacker_string, victim_string, room_string = rules_combat.do_one_character_attacks(attacker, victim)
@@ -131,10 +132,9 @@ class Combat(Object):
                 self.db.combatants[victim]["combat message"] += victim_string
 
                 # For everyone in the combat that was not the attacker or victim, give them their output.
-                for combatant in combat_dict:
+                for combatant in self.db.combatants:
                     if combatant != attacker and combatant != victim:
                         self.db.combatants[combatant]["combat message"] += room_string
-
 
         # Generate output for everyone for the above round. Anyone that died this round is still in
         # self.db.combatants at this point. Make sure a flee didn't cause the destruction of the
@@ -150,16 +150,22 @@ class Combat(Object):
                         combat_message += ("%s %s\n" % ((target.key[0].upper() + target.key[1:]), rules_combat.get_health_string(target)))
                     combatant.msg(combat_message)
 
-                    if "combat_handler" in combatant.ndb.all:
-                        wait_state = self.db.combatants[combatant]["wait state"]
-                        prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n Recovery %d>\n" % (combatant.hitpoints_current,
-                                                                                                        combatant.hitpoints_maximum,
-                                                                                                        combatant.mana_current,
-                                                                                                        combatant.mana_maximum,
-                                                                                                        combatant.moves_current,
-                                                                                                        combatant.moves_maximum,
-                                                                                                        wait_state)
-                        combatant.msg(prompt=prompt)
+                    if "wait_state" not in combatant.ndb.all:
+                        prompt_wait = "|gReady!|n"
+                    elif combatant.ndb.wait_state >= 12:
+                        prompt_wait = "|rCompleting action!"
+                    elif combatant.ndb.wait_state > 0:
+                        prompt_wait = "|yRecovering.|n"
+                    else:
+                        prompt_wait = "|gReady!|n"
+                    prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n %s>\n" % (combatant.hitpoints_current,
+                                                                                             combatant.hitpoints_maximum,
+                                                                                             combatant.mana_current,
+                                                                                             combatant.mana_maximum,
+                                                                                             combatant.moves_current,
+                                                                                             combatant.moves_maximum,
+                                                                                             prompt_wait)
+                    combatant.msg(prompt=prompt)
 
                 # Check to see if the combatant is dead.
                 if combatant.hitpoints_current <= 0:
@@ -192,7 +198,7 @@ class Combat(Object):
     # Combat-handler methods
 
     def add_combatant(self, combatant, combatant_target):
-        
+
         # Add combatant to handler
         self.db.combatants[combatant] = {"combatant": combatant, "target": combatant_target, "combat message": "", "special attack": {}, "wait state": 0}
 
@@ -256,6 +262,8 @@ class CmdAttack(MuxCommand):
 
         if combat:
             combat.at_repeat()
+
+        rules.wait_state_apply(attacker, settings.TICK_ATTACK_ROUND)
 
 class CmdConsider(MuxCommand):
     """
@@ -497,7 +505,6 @@ class CmdKick(MuxCommand):
                 if not caller.ndb.combat_handler:
                     combat = rules_combat.create_combat(caller, target)
                     rules_combat.do_kick(caller, target)
-                    combat.db.combatants[caller]["wait state"] = self.wait_state
                     combat.at_repeat()
                     return
 
@@ -513,7 +520,6 @@ class CmdKick(MuxCommand):
             return
                     
         rules_combat.do_kick(caller, target)
-        combat.db.combatants[caller]["wait state"] = self.wait_state
 
 class CmdRescue(MuxCommand):
     """
@@ -584,8 +590,7 @@ class CmdRescue(MuxCommand):
                     combat.add_combatant(caller, attack_target)
 
                 rules_combat.do_rescue(caller, target, victim)
-                combat.db.combatants[caller]["wait state"] = self.wait_state
-
+                rules.wait_state_apply(caller, self.wait_state)
 
 class CmdWimpy(MuxCommand):
     """

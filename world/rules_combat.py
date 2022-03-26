@@ -122,11 +122,12 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
             attacker.db.experience_total += experience_modified
 
         victim.take_damage(damage)
-        
+
         if "output" in kwargs:
             attacker.msg("%s" % kwargs["output"][0])
             victim.msg("%s" % kwargs["output"][1])
             attacker.location.msg_contents("%s" % kwargs["output"][2], exclude=(attacker, victim))
+
         else:
             attacker_string = ("You |g%s|n %s with your %s.\n"
                                % (get_damagestring("attacker", damage),
@@ -154,6 +155,12 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
                 attacker.db.damage_maximum_mobile = victim.key
                 attacker_string += ("Your %s for %d damage is your record for damage in one hit!!!\n"
                                     % (damage_type, damage))
+
+        # If a special attack kills the enemy outside the normal course,
+        # do death now to give output for death after damage.
+        if "damage" in kwargs and victim.hitpoints_current <= 0:
+            do_death(attacker, victim, special=True)
+
     else:
         if "output" in kwargs:
             attacker.msg("%s" % kwargs["output"][0])
@@ -241,19 +248,28 @@ def do_damage(attacker, victim, eq_slot):
     return damage
 
 
-def do_death(attacker, victim):
+def do_death(attacker, victim, **kwargs):
     """
     This handles the death and returns some output.
     """
 
-    # Build a string for reporting death to characters, and add to output
-    # strings.
-    attacker_string = ("With your final %s, %s falls to the ground, DEAD!!!\n"
-                       % (get_damagetype(attacker), victim.key))
-    victim_string = ("You have been |rKILLED|n!!!\n You awaken again at your "
-                     "home location.\n")
-    room_string = ("%s has been KILLED by %s!!!\n"
-                   % ((victim.key[0].upper() + victim.key[1:0]), attacker.key))
+    if "special" in kwargs:
+        # If killed by a special attack, message normally outside normal course.
+        attacker.msg("With your final %s, %s falls to the ground, DEAD!!!\n"
+                           % (get_damagetype(attacker), victim.key))
+        victim.msg("You have been |rKILLED|n!!!\n You awaken again at your "
+                         "home location.\n")
+        attacker.location.msg_contents("%s has been KILLED by %s!!!\n"
+                       % ((victim.key[0].upper() + victim.key[1:0]), attacker.key), exclude=(attacker, victim))
+    else:
+        # Build a string for reporting death to characters, and add to output
+        # strings.
+        attacker_string = ("With your final %s, %s falls to the ground, DEAD!!!\n"
+                           % (get_damagetype(attacker), victim.key))
+        victim_string = ("You have been |rKILLED|n!!!\n You awaken again at your "
+                         "home location.\n")
+        room_string = ("%s has been KILLED by %s!!!\n"
+                       % ((victim.key[0].upper() + victim.key[1:0]), attacker.key))
 
     if "mobile" in victim.tags.all():
 
@@ -288,6 +304,15 @@ def do_death(attacker, victim):
             # done testing.
             item.move_to(corpse)
 
+        # Clear spell affects and return calls.
+        if victim.db.spell_affects:
+            for affect_name in victim.db.spell_affects:
+                rules.affect_remove(victim, affect_name, "", "")
+
+        # Clear wait state.
+        if victim.ndb.wait_state:
+            rules.wait_state_remove(victim)
+
         # Move victim to None location to be reset later.
         victim.location = None
 
@@ -299,21 +324,35 @@ def do_death(attacker, victim):
                                   victim.db.experience_current
                                   )
             attacker.db.experience_total += experience_modified
-            attacker_string += ("You receive %s experience as a result of "
-                                "your kill!\n" % experience_modified)
+            if "special" in kwargs:
+                attacker.msg("You receive %s experience as a result of "
+                                    "your kill!\n" % experience_modified)
+
+            else:
+                attacker_string += ("You receive %s experience as a result of "
+                                    "your kill!\n" % experience_modified)
         # Check if experience was more than previous best kill.
         if victim.db.experience_total > attacker.db.kill_experience_maximum:
             attacker.db.kill_experience_maximum = victim.db.experience_total
             attacker.db.kill_experience_maximum_mobile = victim.key
-            attacker_string += ("That kill is your new record for most "
-                                "experience obtained for a kill!\n"
-                                "You received a total of %d experience "
-                                "from %s.\n" % (victim.db.experience_total, victim.key))
+            if "special" in kwargs:
+                attacker.msg("That kill is your new record for most "
+                                    "experience obtained for a kill!\n"
+                                    "You received a total of %d experience "
+                                    "from %s.\n" % (victim.db.experience_total, victim.key))
+            else:
+                attacker_string += ("That kill is your new record for most "
+                                    "experience obtained for a kill!\n"
+                                    "You received a total of %d experience "
+                                    "from %s.\n" % (victim.db.experience_total, victim.key))
 
         # Trying to give the attacker a look at the corpse after it dies
         corpse_look = attacker.at_look(corpse)
-        attacker_string += ("%s\n" % corpse_look)
-            
+        if "special" in kwargs:
+            attacker.msg("%s\n" % corpse_look)
+        else:
+            attacker_string += ("%s\n" % corpse_look)
+
         # Increment kills.
         attacker.db.kills += 1
 
@@ -367,8 +406,14 @@ def do_death(attacker, victim):
 
         # Heroes keep their items.
 
-        # Clear spell affects.
-        victim.db.spell_affects = {}
+        # Clear wait state.
+        if victim.ndb.wait_state:
+            rules.wait_state_remove(victim)
+
+        # Clear spell affects and return calls.
+        if victim.db.spell_affects:
+            for affect_name in victim.db.spell_affects:
+                rules.affect_remove(victim, affect_name, "", "")
 
         # Do xp penalty.
         if victim.level > 5:
@@ -391,25 +436,28 @@ def do_dirt_kicking(attacker, victim):
     wait_state = skill["wait state"]
     
     # Build basic chance of success.
-    chance = (attacker.db.skills["dirt kicking"] - victim.level) * 2
+    chance = attacker.db.skills["dirt kicking"]
+    chance += (attacker.level - victim.level) * 2
     chance += attacker.dexterity
-    chance -= victim.dexterity
+    chance -= (2 * victim.dexterity)
     
     # Correct for terrain.
     
-    if "desert" in attacker.location.db.room_flags:
+    if "desert" in attacker.location.db.terrain:
         chance += 10
-    elif "field" in attacker.location.db.room_flags:
+    elif "field" in attacker.location.db.terrain:
         chance += 5
-    elif "city" in attacker.location.db.room_flags or "mountain" in attacker.location.db.room_flags:
+    elif "city" in attacker.location.db.terrain or "mountain" in attacker.location.db.terrain:
         chance -= 10
-    elif "inside" in attacker.location.db.room_flags:
+    elif "inside" in attacker.location.db.terrain:
         chance -= 20
-    elif "forest" in attacker.location.db.room_flags or "hills" in attacker.location.db.room_flags:
+    elif "forest" in attacker.location.db.terrain or "hills" in attacker.location.db.terrain:
         pass
     else:
         chance = 0
-        
+
+    attacker.msg(chance)
+
     if chance == 0:
         attacker.msg("There is no dirt to kick here!")
         return
@@ -420,12 +468,10 @@ def do_dirt_kicking(attacker, victim):
             rules_skills.check_skill_improve(attacker, "dirt kicking", False, 1)
             attacker.moves_spent += 5
 
-        attacker_output = ("Your attempt to kick dirt in the eyes of %s fails.\n" % victim.key)
-        victim_output = ("%s kicks dirt over your shoulder.\n" % (attacker.key[0].upper() + attacker.key[1:]))
-        room_output = ("%s kicks dirt past %s.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.name))
+        attacker.msg("Your attempt to kick dirt in the eyes of %s fails.\n" % victim.key)
+        victim.msg("%s kicks dirt over your shoulder.\n" % (attacker.key[0].upper() + attacker.key[1:]))
+        attacker.location.msg_contents("%s kicks dirt past %s.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.name), exclude=(attacker, victim))
 
-        combat.db.combatants[attacker]["special attack"]["output"] = [attacker_output, victim_output, room_output]
-        
     else:
 
         if "player" in attacker.tags.all():
@@ -433,17 +479,26 @@ def do_dirt_kicking(attacker, victim):
             attacker.moves_spent += 10
 
         damage = random.randint(2, 5)
-        attacker_output = ("%s is blinded by the dirt in its eyes!\n" % (victim.key[0].upper() + victim.key[1:]))
-        victim_output = ("%s kicks dirt in your eyes!.\nYou can't see a thing!\n" % (attacker.key[0].upper() + attacker.key[1:]))
-        room_output = ("%s kicks dirt in %s's eyes, blinding them.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.key))
+        attacker.msg("%s is blinded by the dirt in its eyes!\n" % (victim.key[0].upper() + victim.key[1:]))
+        victim.msg("%s kicks dirt in your eyes!.\nYou can't see a thing!\n" % (attacker.key[0].upper() + attacker.key[1:]))
+        attacker.location.msg_contents("%s kicks dirt in %s's eyes, blinding them.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.key), exclude=(attacker, victim))
 
-        combat.db.combatants[attacker]["special attack"]["output"] = [attacker_output, victim_output, room_output]
-        combat.db.combatants[attacker]["special attack"]["hit"] = True
-        combat.db.combatants[attacker]["special attack"]["damage"] = damage
-        # Need to figure out how to pass info on duration, and put affect in as a kwarg in do_attack, with callback function for removing affect.
-        combat.db.combatants[attacker]["special attack"]["affect"] = {"name": "blind", "apply": "hitroll", "modifier": -4}
-        combat.db.combatants[attacker]["special attack"]["affect duration"] = attacker.level
-       
+        attacker_output = ("You |g%s|n %s with the dirt you kick in its eyes.\n" % (get_damagestring("attacker", damage), victim.key))
+        victim_output = ("%s |r%s|n you with the dirt it kicks in your eyes.\n" % ((attacker.key[0].upper() + attacker.key[1:]), get_damagestring("victim", damage)))
+        room_output = ("%s |r%s|n %s with its the dirt it kicks in its eyes.\n" % ((attacker.key[0].upper() + attacker.key[1:]), get_damagestring("victim", damage), victim.key))
+
+        output = [attacker_output, victim_output, room_output]
+
+        do_attack(attacker, victim, None, hit=True, damage=damage, output=output)
+
+        rules.affect_apply(victim,
+                           "blind",
+                           attacker.level,
+                           "You rub the dirt out of your eyes.",
+                           ("%s rubs the dirt out of its eyes" % (victim.key[0].upper() + victim.key[1:])),
+                           apply_1=["hitroll", -4]
+                           )
+
         rules.wait_state_apply(attacker, wait_state)
         
 def do_flee(character):
@@ -522,8 +577,10 @@ def do_flee(character):
                                             exclude=character)
 
 def do_kick(attacker, victim):
-    combat = attacker.ndb.combat_handler
-    
+
+    skill = rules_skills.get_skill(skill_name="dirt kicking")
+    wait_state = skill["wait state"]
+
     if random.randint(1, 100) > attacker.db.skills["kick"]:
         if "player" in attacker.tags.all():
             rules_skills.check_skill_improve(attacker, "kick", False, 4)
@@ -533,10 +590,10 @@ def do_kick(attacker, victim):
         victim_output = ("%s kicks wildly at you and misses.\n" % (attacker.key[0].upper() + attacker.key[1:]))
         room_output = ("%s kicks at %s and misses.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.name))
 
-        combat.db.combatants[attacker]["special attack"]["output"] = [attacker_output, victim_output, room_output]
-        combat.db.combatants[attacker]["special attack"]["hit"] = False
-        combat.db.combatants[attacker]["special attack"]["damage"] = 0
-        
+        output = [attacker_output, victim_output, room_output]
+
+        do_attack(attacker, victim, None, hit=False, output=output)
+
     else:
 
         if "player" in attacker.tags.all():
@@ -548,10 +605,12 @@ def do_kick(attacker, victim):
         victim_output = ("%s |r%s|n you with its vicious kick.\n" % ((attacker.key[0].upper() + attacker.key[1:]), get_damagestring("victim", damage)))
         room_output = ("%s |r%s|n %s with its vicious kick.\n" % ((attacker.key[0].upper() + attacker.key[1:]), get_damagestring("victim", damage), victim.key))
 
-        combat.db.combatants[attacker]["special attack"]["output"] = [attacker_output, victim_output, room_output]
-        combat.db.combatants[attacker]["special attack"]["hit"] = True
-        combat.db.combatants[attacker]["special attack"]["damage"] = damage
-        
+        output = [attacker_output, victim_output, room_output]
+
+        do_attack(attacker, victim, None, hit=True, damage=damage, output=output)
+
+        rules.wait_state_apply(attacker, wait_state)
+
 
 def do_one_character_attacks(attacker, victim):
     """
@@ -606,7 +665,7 @@ def do_one_character_attacks(attacker, victim):
             victim_string += new_victim_string
             room_string += new_room_string
 
-    if victim.hitpoints_current <= 0:
+    if victim.hitpoints_current <= 0 and victim.location == attacker.location:
         new_attacker_string, new_victim_string, new_room_string = \
             do_death(attacker, victim)
         attacker_string += new_attacker_string
@@ -709,7 +768,7 @@ def do_one_weapon_attacks(attacker, victim, eq_slot):
     return (attacker_string, victim_string, room_string)
 
 
-def do_rescue(attacker, extra, victim):
+def do_rescue(attacker, to_rescue, victim):
     combat = attacker.ndb.combat_handler
 
     if random.randint(1, 100) > attacker.db.skills["rescue"]:
@@ -717,13 +776,10 @@ def do_rescue(attacker, extra, victim):
             rules_skills.check_skill_improve(attacker, "rescue", False)
             attacker.moves_spent += 5
 
-        attacker_output = ("You fail to rescue %s!\n" % extra.key)
-        victim_output = ("%s tries to get between you and %s and fails.\n" % ((attacker.key[0].upper() + attacker.key[1:]), extra.key))
-        room_output = ("%s tries to get between %s and %s and fails.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.key, extra.key))
-        extra_output = ("%s tries to get get between you and your attacker and fails!" % (attacker.key[0].upper() + attacker.key[1:]))
-
-        combat.db.combatants[attacker]["special attack"]["output"] = [attacker_output, victim_output, room_output, extra_output]
-        combat.db.combatants[attacker]["special attack"]["extra"] = extra
+        attacker.msg("You fail to rescue %s!\n" % to_rescue.key)
+        victim.msg("%s tries to get between you and %s and fails.\n" % ((attacker.key[0].upper() + attacker.key[1:]), to_rescue.key))
+        attacker.location.msg_contents("%s tries to get between %s and %s and fails.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.key, to_rescue.key), exclude=(attacker, victim, extra))
+        to_rescue.msg("%s tries to get get between you and your attacker and fails!" % (attacker.key[0].upper() + attacker.key[1:]))
 
     else:
 
@@ -731,14 +787,10 @@ def do_rescue(attacker, extra, victim):
             rules_skills.check_skill_improve(attacker, "rescue", True)
 
         combat.db.combatants[victim]["target"] = attacker
-        attacker_output = ("You rescue %s!\n" % extra.key)
-        victim_output = ("%s rescues %s from you.\n" % ((attacker.key[0].upper() + attacker.key[1:]), extra.key))
-        room_output = ("%s rescues %s from %s.\n" % ((attacker.key[0].upper() + attacker.key[1:]), extra.key, victim.key))
-        extra_output = ("%s rescues you from %s!" % (attacker.key[0].upper() + attacker.key[1:]), victim.key)
-
-        combat.db.combatants[attacker]["special attack"]["output"] = [attacker_output, victim_output, room_output, extra_output]
-        combat.db.combatants[attacker]["special attack"]["extra"] = extra
-
+        attacker.msg("You rescue %s!\n" % to_rescue.key)
+        victim.msg("%s rescues %s from you.\n" % ((attacker.key[0].upper() + attacker.key[1:]), to_rescue.key))
+        attacker.location.msg_contents("%s rescues %s from %s.\n" % ((attacker.key[0].upper() + attacker.key[1:]), to_rescue.key, victim.key), exclude=(attacker, victim, to_rescue))
+        to_rescue.msg("%s rescues you from %s!" % (attacker.key[0].upper() + attacker.key[1:]), victim.key)
 
 def hit_check(attacker, victim):
     """
@@ -1031,7 +1083,7 @@ def is_safe(character):
     """
     
     if "act_flags" in character.db.all:
-        if "no kill" in target.db.act_flags:
+        if "no kill" in character.db.act_flags:
             return True
     elif "safe" in character.location.db.room_flags:
         return True

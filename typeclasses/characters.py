@@ -321,7 +321,14 @@ class Character(DefaultCharacter):
         """
         
         modifier = 0
-        
+
+        # Get modifiers from spell_affects first.
+        if self.db.spell_affects:
+            for affect in self.db.spell_affects:
+                for key in self.db.spell_affects[affect]:
+                    if key == attribute_name:
+                       modifier += self.db.spell_affects[affect][key]
+
         for wear_location in self.db.eq_slots:
 
             equipment = self.db.eq_slots.get(wear_location)

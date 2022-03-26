@@ -52,20 +52,28 @@ def do_dowse(character):
     This is the function that does the actual mechanics of the
     dowse skill.
     """
+    skill = get_skill(skill_name="dowse")
+
     # create the spring
     spring = rules.make_object(character.location, False, "o22")
+    rules.wait_state_apply(character, skill["wait state"])
 
     # put a timer on the spring equal to skill level
     timer = character.level * settings.TICK_OBJECT_TIMER
     tickerhandler.add(timer, spring.at_disintegrate)
+
+
 
 def do_forage(character):
     """
     This is the function that does the actual mechanics of the
     forage skill.
     """
+    skill = get_skill(skill_name="forage")
+
     # create the magic mushroom
     mushroom = rules.make_object(character.location, False, "o20")
+    rules.wait_state_apply(character, skill["wait state"])
 
     mushroom.db.hours_fed = 5 + character.level
     rules.set_disintegrate_timer(mushroom)
@@ -122,7 +130,7 @@ def do_steal(thief, target, to_steal):
                 check_skill_improve(thief, "steal", True, 4)
                 if "combat_handler" in thief.ndb.all:
                     combat = thief.ndb.combat_handler
-                    combat.db.combatants[thief]["wait state"] = skill["wait state"]
+                    rules.wait_state_apply(thief, wait_state)
         else:
             if "no drop" in to_steal.db.extra_flags:
                 thief.msg("A magical force prevents you from prying %s away." % to_steal.key)
@@ -136,17 +144,13 @@ def do_steal(thief, target, to_steal):
             elif not to_steal.db.equipped:
                 thief.msg("You daringly swipe %s from %s's inventory. Sneaky!" % (to_steal.key, target.key))
                 check_skill_improve(thief, "steal", True, 4)
-                if "combat_handler" in thief.ndb.all:
-                    combat = thief.ndb.combat_handler
-                    combat.db.combatants[thief]["wait state"] = skill["wait state"]
+                rules.wait_state_apply(thief, wait_state)
             else:
                 thief.msg("While %s is distracted, you swipe %s right off them!" % (target.key, to_steal.key))
                 check_skill_improve(thief, "steal", True, 4)
                 to_steal.db.equipped = False
-                if "combat_handler" in thief.ndb.all:
-                    combat = thief.ndb.combat_handler
-                    combat.db.combatants[thief]["wait state"] = skill["wait state"]
-                    
+                rules.wait_state_apply(thief, wait_state)
+
             to_steal.location = thief
                 
 def get_skill(**kwargs):
@@ -185,6 +189,22 @@ def get_skill(**kwargs):
             "minimum cost": 5,
             "wait state": 12
             },
+        "dirt kicking": {
+            "classes": {
+                "ranger": 4,
+                "thief": 22,
+                "bard": 27
+                },
+            "minimum cost": 5,
+            "wait state": 12
+            },
+        "dowse": {
+            "classes": {
+                "ranger": 3
+                },
+            "minimum cost": 5,
+            "wait state": 12
+            },
         "enhanced damage": {
             "classes": {
                 "warrior": 3,
@@ -192,19 +212,30 @@ def get_skill(**kwargs):
                 "paladin": 11
                 }
             },
+        "forage": {
+            "classes": {
+                "ranger": 3,
+                "druid": 6,
+                "bard": 9
+                },
+            "minimum cost": 5,
+            "wait state": 12
+            },
         "kick": {
             "classes": {
                 "warrior": 3,
                 "ranger": 10,
                 "paladin": 12
-                }
+                },
+            "wait state": 6
             },
         "rescue": {
             "classes": {
                 "warrior": 4,
                 "ranger": 11,
                 "paladin": 3
-                }
+                },
+            "wait state": 12
             },
         "steal": {
             "classes": {

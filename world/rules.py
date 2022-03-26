@@ -7,7 +7,7 @@ from evennia import TICKER_HANDLER as tickerhandler
 from evennia import utils
 from evennia.utils import search
 
-def affect_apply(character, affect_name, duration, character_message, room_message, **kwargs)
+def affect_apply(character, affect_name, duration, character_message, room_message, **kwargs):
     """
     This function applies the spell a character is affected
     by, and creates a delay call for removing it.
@@ -16,47 +16,53 @@ def affect_apply(character, affect_name, duration, character_message, room_messa
     if affect_name in character.db.spell_affects:
         character.msg("There was an error in adding %s to your spell affects, as it cannot be listed twice." % affect_name)
         return
+
+    character.db.spell_affects[affect_name] = {"duration": duration}
     
-    duration = int(time.time() + duration)
-    
-    character.db.spell_affects[spell] = {"duration": duration} 
-    
-    # Applies will take the form of ["strength": -2]
+    # Applies will take the form of ["strength", -2]
     if "apply_1" in kwargs:
         apply_1_type = kwargs["apply_1"][0]
         apply_1_amount = kwargs["apply_1"][1]
-        character.db.spell_affects[spell][apply_1_type] = apply_1_amount
+        character.db.spell_affects[affect_name][apply_1_type] = apply_1_amount
     if "apply_2" in kwargs:
         apply_2_type = kwargs["apply_2"][0]
         apply_2_amount = kwargs["apply_2"][1]
-        character.db.spell_affects[spell][apply_2_type] = apply_2_amount
+        character.db.spell_affects[affect_name][apply_2_type] = apply_2_amount
     if "apply_3" in kwargs:
         apply_3_type = kwargs["apply_3"][0]
         apply_3_amount = kwargs["apply_3"][1]
-        character.db.spell_affects[spell][apply_3_type] = apply_3_amount
-    
-    def affect_remove():
-        """
-        This function removes the spell a character is affected by
-        from their affects dictionary.
-        """
+        character.db.spell_affects[affect_name][apply_3_type] = apply_3_amount
 
-        # Make sure the affect hasn't been dispelled or similar.
-        if character.db.spell_affects[affect_name]:
-            del character.db.spell_affects[affect_name]
-            character.msg(character_message)
-            character.location.msg_contents(room_message, exclude=character)
-    
-    # When do dispel magic, remember to figure out how to use this to delete
-    # the delay callback as well.
-    affects_return = utils.delay(duration, affect_remove, persistent=True)
+    duration = int(duration * settings.TICK_OBJECT_TIMER)
+
+    affects_return = utils.delay(duration,
+                                 affect_remove, character, affect_name, character_message, room_message,
+                                 persistent=True)
     
     if not character.ndb.affects_return:
         character.ndb.affects_return = {}
         character.ndb.affects_return[affect_name] = affects_return   
     else:
-        character.ndb.affects_return[affect_name] = affects_return   
-   
+        character.ndb.affects_return[affect_name] = affects_return
+
+def affect_remove(character, affect_name, character_message, room_message):
+    """
+    This function removes the spell a character is affected by
+    from their affects dictionary.
+    """
+
+    if character.ndb.affects_return:
+        if character.ndb.affects_return[affect_name]:
+            del character.ndb.affects_return[affect_name]
+
+    # Make sure the affect hasn't been dispelled or similar.
+    if character.db.spell_affects[affect_name]:
+        del character.db.spell_affects[affect_name]
+        if character_message:
+            character.msg(character_message)
+        if room_message:
+            character.location.msg_contents(room_message, exclude=character)
+
 
 def attributes_cost(character):
     """
@@ -656,29 +662,37 @@ def wait_state_apply(character, wait_state):
     needed. The function also creates a delay to call the
     function to eliminate the wait state once it has run.
     """
-    
-    wait_state_time = int(time.time() + wait_state)
+
+    wait_state = wait_state / settings.PULSES_PER_SECOND
+
+    wait_state_time = time.time() + wait_state
     
     character.ndb.wait_state = wait_state_time
-    
-    def wait_state_remove():
-        """
-        This gets called to remove the wait state after it has run.
-        """
-        character.ndb.wait_state = 0
-        prompt_wait = "|gReady!|n"
-        prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n %s>\n" % (caller.hitpoints_current,
-                                                                                  caller.hitpoints_maximum,
-                                                                                  caller.mana_current,
-                                                                                  caller.mana_maximum,
-                                                                                  caller.moves_current,
-                                                                                  caller.moves_maximum,
-                                                                                  prompt_wait)
-        character.msg(prompt = prompt)
-    
-    wait_state_return = utils.delay(wait_state, wait_state_remove, persistent=True)
+
+    wait_state_return = utils.delay(wait_state,
+                                    wait_state_remove,
+                                    character,
+                                    persistent=True)
 
     character.ndb.wait_state_return = wait_state_return
+
+def wait_state_remove(character):
+    """
+    This gets called to remove the wait state after it has run.
+    """
+    if character.ndb.wait_state_return:
+        del character.ndb.wait_state_return
+
+    character.ndb.wait_state = 0
+    prompt_wait = "|gReady!|n"
+    prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n %s>\n" % (character.hitpoints_current,
+                                                                             character.hitpoints_maximum,
+                                                                             character.mana_current,
+                                                                             character.mana_maximum,
+                                                                             character.moves_current,
+                                                                             character.moves_maximum,
+                                                                             prompt_wait)
+    character.msg(prompt=prompt)
 
 
 def wisdom_mana_bonus(character):

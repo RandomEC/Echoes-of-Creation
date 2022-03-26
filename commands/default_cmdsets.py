@@ -42,6 +42,7 @@ from commands.build_commands import CmdOpen
 from commands.build_commands import CmdSetObjAlias
 from commands.combat_commands import CmdAttack
 from commands.combat_commands import CmdConsider
+from commands.combat_commands import CmdDirtKicking
 from commands.combat_commands import CmdFlee
 from commands.combat_commands import CmdKick
 from commands.combat_commands import CmdWimpy
@@ -92,6 +93,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdCreateWater())
         self.add(CmdDestroy())
         self.add(CmdDig())
+        self.add(CmdDirtKicking())
         self.add(CmdDoorClose())
         self.add(CmdDoorLock())
         self.add(CmdDoorOpen())

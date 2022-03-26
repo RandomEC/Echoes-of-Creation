@@ -162,14 +162,13 @@ class UpdateTimerScript(DefaultScript):
 
     def at_script_creation(self):
         self.key = "update_timer_script"
-        self.desc = "Adds update timers for Echoes Mobiles"
+        self.desc = "Adds update timers for Echoes Players"
         self.persistent = True
 
-        mobiles = evennia.search_tag("mobile")
+        mobiles = evennia.search_tag("player")
 
         for mobile in mobiles:
-            if "haon dor" in mobile.tags.all():
-                tickerhandler.add(30, mobile.at_update)
+            tickerhandler.add(30, mobile.at_update)
 
 class FixAreaNames(DefaultScript):
 
