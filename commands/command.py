@@ -225,6 +225,57 @@ class MuxCommand(Command):
                 self.character = None
 
 
+class CmdAffects(MuxCommand):
+    """
+    Check all the spells that you are currently affected by.
+    Usage:
+      affects
+    Will report all of the affects that currently exist on your
+    character, what statistics they are impacting, if any, as
+    well as the duration remaining on them.
+    """
+
+    key = "affects"
+    aliases = ["aff"]
+    locks = "cmd:all()"
+    arg_regex = r"$"
+
+    def func(self):
+        """Implements the command."""
+
+        caller = self.caller
+        output_string = "You are currently affected by the following:\n"
+
+        if caller.db.spell_affects:
+            for affect in caller.db.spell_affects:
+                # If all the affect has is duration.
+                if len(caller.db.spell_affects[affect]) == 1:
+                    output_string += "     %s, for a duration of %d.\n" % ((affect[0].upper() + affect[1:]),
+                                                                         caller.db.spell_affects[affect]["duration"]
+                                                                         )
+                else:
+                    apply = []
+                    apply_amount = []
+                    index = 0
+                    duration = caller.db.spell_affects[affect]["duration"]
+                    for property in caller.db.spell_affects[affect]:
+                        if property == "duration":
+                            pass
+                        else:
+                            apply.append(property)
+                            apply_amount.append(caller.db.spell_affects[affect][property])
+                            index += 1
+                    for apply_index in range(0, index):
+                        output_string += "     %s, for a duration of %d, which impacts %s by %d.\n" % ((affect[0].upper() + affect[1:]),
+                                                                                                    duration,
+                                                                                                    apply[apply_index],
+                                                                                                    apply_amount[apply_index],
+                                                                                                    )
+        else:
+            output_string += "    Nothing!\n"
+
+        caller.msg(output_string)
+
 class CmdDestroy(MuxCommand):
     """
     permanently delete objects

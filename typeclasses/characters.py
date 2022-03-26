@@ -142,7 +142,7 @@ class Character(DefaultCharacter):
     
     @hitpoints_damaged.setter
     def hitpoints_damaged(self, new_value):
-        if new_value > 0:
+        if new_value >= 0:
             self.db.hitpoints["damaged"] = new_value
         else:
             self.msg("There was a problem setting your new damage, as having negative damage is impossible.")
@@ -853,6 +853,8 @@ class Mobile(Character):
 
             self.db.experience_total = rules.calculate_experience(self)
             self.db.experience_current = self.db.experience_total
+
+            self.db.gold = rules.calculate_gold(self)
 
         # If it wasn't dead, just reset spell affects.
         else:

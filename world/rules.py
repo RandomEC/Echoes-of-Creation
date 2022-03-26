@@ -130,6 +130,17 @@ def calculate_experience(mobile):
 
     return experience
 
+def calculate_gold(mobile):
+    """
+    This function calculates the total gold carried by a
+    mobile.
+    """
+
+    gold = int(calculate_experience(mobile) // 3)
+
+    return gold
+
+
 def can_see(target, looker):
     """
     This function checks to see (heh) if a target is visible to
