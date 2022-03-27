@@ -595,12 +595,28 @@ class Character(DefaultCharacter):
 
     @property
     def position(self):
-        return self.db.position
+        if self.db.spell_affects:
+            for affect in self.db.spell_affects:
+                if "position" in self.db.spell_affects[affect]:
+                    return self.db.spell_affects[affect]["position"]
+        else:
+            return self.db.position
     
     @position.setter
     def position(self, new_value):
+        spell_position_affect = ""
+        if self.db.spell_affects:
+            for affect in self.db.spell_affects:
+                if "position" in self.db.spell_affects[affect]:
+                    spell_position_affect = affect
+
         if new_value != "standing" and new_value != "sleeping" and new_value != "resting":
             self.msg("There was a problem setting your new position, as %s is not a valid value." % new_value)
+        elif spell_position_affect:
+            del self.db.spell_affects[spell_position_affect]
+            if self.ndb.affects_return[spell_position_affect]:
+                del self.ndb.affects_return[spell_position_affect]
+            self.db.position = new_value
         else:
             self.db.position = new_value
 

@@ -8,10 +8,7 @@ Commands describe the input the account can do to the game.
 import re
 import random
 from evennia.commands.command import Command as BaseCommand
-from evennia.utils import evtable
-from evennia.commands.default.building import ObjManipCommand
 from evennia.utils import utils, search
-from evennia import TICKER_HANDLER as tickerhandler
 from server.conf import settings
 from world import rules
 
@@ -449,7 +446,7 @@ class CmdDrop(MuxCommand):
             caller.msg("Drop what?")
             return
 
-        # First, find items ont he caller, and filter out items
+        # First, find items on the caller, and filter out items
         # that are equipped.
         inventory = search.search_object(False, attribute_name="equipped", candidates=caller.contents)
         # Then search those for the item to be dropped.
@@ -753,7 +750,7 @@ class CmdInventory(MuxCommand):
         if not items:
             string = "You are not carrying anything."
         else:
-            from evennia.utils.ansi import raw as raw_ansi
+            from utils.ansi import raw as raw_ansi
 
             table = self.styled_table(border="header")
             for item in items:
@@ -1063,20 +1060,23 @@ class CmdRest(MuxCommand):
 
         caller = self.caller
 
-        if caller.db.position == "fighting":
+        if caller.ndb.combat_handler:
             caller.msg("You cannot rest while you are fighting!")
             return
-        if caller.db.position == "resting":
+        if caller.position == "resting":
             caller.msg("If you want to rest more, try sleeping.")
             return
 
-        if caller.db.position == "standing":
+        if caller.position == "standing":
             caller.msg("You sit down and rest your tired bones.")
             caller.location.msg_contents("%s sits down and rests." % (caller.name), exclude=caller)
+        elif caller.position == "sitting":
+            caller.msg("You convert from a seated position into a more comfortable rest.")
+            caller.location.msg_contents("%s readjusts and rests." % (caller.name), exclude=caller)
         else:
             caller.msg("You wake, sit up and rest.")
             caller.location.msg_contents("%s awakens and sits up to rest." % (caller.name), exclude=caller)
-        caller.db.position = "resting"
+        caller.position = "resting"
 
 
 class CmdSacrifice(MuxCommand):
@@ -1142,44 +1142,48 @@ class CmdSacrifice(MuxCommand):
                 hitpoint_award_max = 20
             else:
                 hitpoint_award_max = caller.hitpoints_damaged
-            hitpoint_award = random.randint(0, hitpoint_award_max)
-            if hitpoint_award == 1:
+            award_amount = random.randint(0, hitpoint_award_max)
+            if award_amount == 1:
                 award = "hitpoint"
             else:
                 award = "hitpoints"
-            if hitpoint_award != 0:
-                caller.hitpoints_damaged -= hitpoint_award
-            caller.msg("The gods award you %d %s for your sacrifice." % (hitpoint_award, award))
+            if award_amount != 0:
+                caller.hitpoints_damaged -= award_amount
         elif award == 2:
             if caller.mana_spent > 20:
                 mana_award_max = 20
             else:
                 mana_award_max = caller.mana_spent
-            mana_award = random.randint(0, mana_award_max)
+            award_amount = random.randint(0, mana_award_max)
             award = "mana"
-            if mana_award != 0:
-                caller.mana_spent -= mana_award
-            caller.msg("The gods award you %d %s for your sacrifice." % (mana_award, award))
+            if award_amount != 0:
+                caller.mana_spent -= award_amount
         else:
             if caller.moves_spent > 20:
                 moves_award_max = 20
             else:
                 moves_award_max = caller.moves_spent
-            moves_award = random.randint(0, moves_award_max)
-            if moves_award == 1:
+            award_amount = random.randint(0, moves_award_max)
+            if award_amount == 1:
                 award = "move"
             else:
                 award = "moves"
-            if moves_award != 0:
-                caller.moves_spent -= moves_award
-            caller.msg("The gods award you %d %s for your sacrifice." % (moves_award, award))
+            if award_amount != 0:
+                caller.moves_spent -= award_amount
+
+        if award_amount > 0:
+            caller.msg("You build a small pyre and sacrifice %s to the gods.\n"
+                       "The gods award you %d %s for your sacrifice." % (obj.name, award_amount, award))
+        else:
+            caller.msg("You build a small pyre and sacrifice %s to the gods.\n"
+                       "The gods are pleased with your sacrifice.")
 
         if obj.contents:
             for item in obj.contents:
                 item.location = None
         obj.location = None
         rules.remove_disintegrate_timer(obj)
-        caller.location.msg_contents("%s sacrifices %s to the gods."
+        caller.location.msg_contents("%s builds a small pyre, and sacrifices %s to the gods."
                                          % (caller.name, obj.name),
                                          exclude=caller)
 
@@ -1543,7 +1547,7 @@ class CmdSleep(MuxCommand):
 
         caller = self.caller
 
-        if caller.db.position == "fighting":
+        if caller.ndb.combat_handler:
             caller.msg("You cannot sleep while you are fighting!")
             return
         elif caller.db.position == "sleeping":
@@ -1557,7 +1561,7 @@ class CmdSleep(MuxCommand):
             caller.msg("More tired than you thought, you lay your head down, and drift off to sleep.")
             caller.location.msg_contents("%s lays down and falls asleep." % (caller.name), exclude=caller)
 
-        caller.db.position = "sleeping"
+        caller.position = "sleeping"
 
 
 class CmdStand(MuxCommand):
@@ -1594,7 +1598,7 @@ class CmdStand(MuxCommand):
         elif caller.db.position == "resting":
             caller.msg("You stop resting and stand up, ready for action.")
             caller.location.msg_contents("%s stands up." % (caller.name), exclude=caller)
-        caller.db.position = "standing"
+        caller.position = "standing"
 
 
 class CmdTag(MuxCommand):

@@ -618,6 +618,58 @@ def moves_cost(character):
     """
     return current_experience_step(character, 0)
 
+def pronoun_object(character):
+    """
+    This function determines the correct object pronoun for a
+    character.
+    """
+
+    if character.sex == "male":
+        return "him"
+    elif character.sex == "female":
+        return "her"
+    else:
+        return "them"
+
+def pronoun_possessive(character):
+    """
+    This function determines the correct possessive pronoun for a
+    character.
+    """
+
+    if character.sex == "male":
+        return "his"
+    elif character.sex == "female":
+        return "her"
+    else:
+        return "their"
+
+def pronoun_reflexive(character):
+    """
+    This function determines the correct reflexive pronoun for a
+    character.
+    """
+
+    if character.sex == "male":
+        return "himself"
+    elif character.sex == "female":
+        return "herself"
+    else:
+        return "themselves"
+
+def pronoun_subject(character):
+    """
+    This function determines the correct subject pronoun for a
+    character.
+    """
+
+    if character.sex == "male":
+        return "he"
+    elif character.sex == "female":
+        return "she"
+    else:
+        return "they"
+
 
 def remove_disintegrate_timer(obj):
     """
@@ -676,8 +728,12 @@ def wait_state_apply(character, wait_state):
 
     wait_state = wait_state / settings.PULSES_PER_SECOND
 
+    if character.ndb.wait_state:
+        wait_state = character.ndb.wait_state - time.time() + wait_state
+        del character.ndb.wait_state_return
+
     wait_state_time = time.time() + wait_state
-    
+
     character.ndb.wait_state = wait_state_time
 
     wait_state_return = utils.delay(wait_state,

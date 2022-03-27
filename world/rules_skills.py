@@ -244,7 +244,18 @@ def get_skill(**kwargs):
                 },
             "minimum cost": 5,
             "wait state": 24
+            },
+        "trip": {
+            "classes": {
+                "thief": 4,
+                "bard": 5,
+                "ranger": 14,
+                "warrior": 15
+                },
+            "minimum cost": 5,
+            "wait state": 24
             }
+
         }
 
     if "skill_name" in kwargs:

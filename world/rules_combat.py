@@ -170,13 +170,15 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
             attacker_string = ("You miss %s with your %s.\n" % (victim.key,
                                                                 damage_type
                                                                 ))
-            victim_string = ("%s misses you with its %s.\n" % (attacker.key,
-                                                               damage_type
-                                                               ))
-            room_string = ("%s misses %s with its %s.\n" % (attacker.key,
-                                                            victim.key,
-                                                            damage_type
-                                                            ))
+            victim_string = ("%s misses you with %s %s.\n" % (attacker.key,
+                                                              rules.pronoun_possessive(attacker),
+                                                              damage_type
+                                                              ))
+            room_string = ("%s misses %s with %s %s.\n" % (attacker.key,
+                                                           victim.key,
+                                                           rules.pronoun_possessive(attacker),
+                                                           damage_type
+                                                           ))
     if not kwargs:
         return (attacker_string, victim_string, room_string)
 
@@ -479,13 +481,30 @@ def do_dirt_kicking(attacker, victim):
             attacker.moves_spent += 10
 
         damage = random.randint(2, 5)
-        attacker.msg("%s is blinded by the dirt in its eyes!\n" % (victim.key[0].upper() + victim.key[1:]))
+        attacker.msg("%s is blinded by the dirt in %s eyes!\n" % ((victim.key[0].upper() + victim.key[1:]), rules.pronoun_possessive(victim)))
         victim.msg("%s kicks dirt in your eyes!.\nYou can't see a thing!\n" % (attacker.key[0].upper() + attacker.key[1:]))
         attacker.location.msg_contents("%s kicks dirt in %s's eyes, blinding them.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.key), exclude=(attacker, victim))
 
-        attacker_output = ("You |g%s|n %s with the dirt you kick in its eyes.\n" % (get_damagestring("attacker", damage), victim.key))
-        victim_output = ("%s |r%s|n you with the dirt it kicks in your eyes.\n" % ((attacker.key[0].upper() + attacker.key[1:]), get_damagestring("victim", damage)))
-        room_output = ("%s |r%s|n %s with its the dirt it kicks in its eyes.\n" % ((attacker.key[0].upper() + attacker.key[1:]), get_damagestring("victim", damage), victim.key))
+        attacker_output = ("You |g%s|n %s with the dirt you kick in %s eyes.\n" % (get_damagestring("attacker", damage),
+                                                                                   victim.key,
+                                                                                   rules.pronoun_possessive(victim)
+                                                                                   ))
+        pronoun = rules.pronoun_subject(attacker)
+        if pronoun == "they":
+            phrase = "they kick"
+        else:
+            phrase = "%s kicks" % pronoun
+
+        victim_output = ("%s |r%s|n you with the dirt %s in your eyes.\n" % ((attacker.key[0].upper() + attacker.key[1:]),
+                                                                             get_damagestring("victim", damage),
+                                                                             phrase
+                                                                             ))
+        room_output = ("%s |r%s|n %s with its the dirt %s in %s eyes.\n" % ((attacker.key[0].upper() + attacker.key[1:]),
+                                                                            get_damagestring("victim", damage),
+                                                                            victim.key,
+                                                                            phrase,
+                                                                            rules.pronoun_possessive(victim)
+                                                                            ))
 
         output = [attacker_output, victim_output, room_output]
 
@@ -495,7 +514,7 @@ def do_dirt_kicking(attacker, victim):
                            "blind",
                            attacker.level,
                            "You rub the dirt out of your eyes.",
-                           ("%s rubs the dirt out of its eyes" % (victim.key[0].upper() + victim.key[1:])),
+                           ("%s rubs the dirt out of %s eyes" % ((victim.key[0].upper() + victim.key[1:]), rules.pronoun_possessive(victim))),
                            apply_1=["hitroll", -4]
                            )
 
@@ -602,8 +621,15 @@ def do_kick(attacker, victim):
 
         damage = random.randint(1, attacker.level)
         attacker_output = ("You |g%s|n %s with your vicious kick.\n" % (get_damagestring("attacker", damage), victim.key))
-        victim_output = ("%s |r%s|n you with its vicious kick.\n" % ((attacker.key[0].upper() + attacker.key[1:]), get_damagestring("victim", damage)))
-        room_output = ("%s |r%s|n %s with its vicious kick.\n" % ((attacker.key[0].upper() + attacker.key[1:]), get_damagestring("victim", damage), victim.key))
+        victim_output = ("%s |r%s|n you with %s vicious kick.\n" % ((attacker.key[0].upper() + attacker.key[1:]),
+                                                                    get_damagestring("victim", damage),
+                                                                    rules.pronoun_possessive(attacker)
+                                                                    ))
+        room_output = ("%s |r%s|n %s with %s vicious kick.\n" % ((attacker.key[0].upper() + attacker.key[1:]),
+                                                                 get_damagestring("victim", damage),
+                                                                 victim.key,
+                                                                 rules.pronoun_possessive(attacker)
+                                                                 ))
 
         output = [attacker_output, victim_output, room_output]
 
@@ -778,7 +804,7 @@ def do_rescue(attacker, to_rescue, victim):
 
         attacker.msg("You fail to rescue %s!\n" % to_rescue.key)
         victim.msg("%s tries to get between you and %s and fails.\n" % ((attacker.key[0].upper() + attacker.key[1:]), to_rescue.key))
-        attacker.location.msg_contents("%s tries to get between %s and %s and fails.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.key, to_rescue.key), exclude=(attacker, victim, extra))
+        attacker.location.msg_contents("%s tries to get between %s and %s and fails.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.key, to_rescue.key), exclude=(attacker, victim, to_rescue))
         to_rescue.msg("%s tries to get get between you and your attacker and fails!" % (attacker.key[0].upper() + attacker.key[1:]))
 
     else:
@@ -791,6 +817,112 @@ def do_rescue(attacker, to_rescue, victim):
         victim.msg("%s rescues %s from you.\n" % ((attacker.key[0].upper() + attacker.key[1:]), to_rescue.key))
         attacker.location.msg_contents("%s rescues %s from %s.\n" % ((attacker.key[0].upper() + attacker.key[1:]), to_rescue.key, victim.key), exclude=(attacker, victim, to_rescue))
         to_rescue.msg("%s rescues you from %s!" % (attacker.key[0].upper() + attacker.key[1:]), victim.key)
+
+
+def do_trip(attacker, victim):
+    """
+    This does the action of the trip command.
+    """
+
+    skill = rules_skills.get_skill(skill_name="trip")
+    wait_state = skill["wait state"]
+
+    # Build basic chance of success.
+    chance = (attacker.size - victim.size) * 10
+    chance += attacker.dexterity
+
+    if "mobile" in victim.tags.all:
+        chance -= (victim.dexterity + 10)
+    else:
+        chance -= victim.dexterity
+
+    if "mobile" in attacker.tags.all:
+        level_modifier = attacker.level - victim.level
+    else:
+        skill_level = rules_skills.lowest_learned_level(skill)
+        level_modifier = (((skill_level + attacker.db.skills["trip"]) / 2 - victim.level) / 3)
+
+    chance += 50 + level_modifier
+
+    if chance < 20:
+        chance = 20
+    elif chance > 80:
+        chance = 80
+
+    if random.randint(1, 100) < chance:
+        attacker.msg("You trip %s and %s goes down!\n" % (victim.key, victim.key))
+        victim.msg("%s trips you and you go down!\n" % (attacker.key[0].upper(), attacker.key[1:]))
+        attacker.location.msg_contents(
+            "%s trips %s, sending %s to the ground.\n" % ((attacker.key[0].upper() + attacker.key[1:]),
+                                                          victim.name,
+                                                          rules.pronoun_object(victim)
+                                                          ),
+            exclude=(attacker, victim))
+
+        rules.apply_affect(victim,
+                           "sitting",
+                           (wait_state * 2),
+                           "You jump back to your feet.",
+                           "%s gets back to %s feet." % ((victim.key[0].upper() + victim.key[1:]), rules.pronoun_possessive(victim)),
+                           apply_1=["position", "sitting"]
+                           )
+
+        if "mobile" in victim.tags.all:
+            wait_modifier = 0
+        else:
+            wait_modifier = 1
+
+        victim_wait_state = random.randint(1, 2) + wait_modifier * settings.TICK_ATTACK_ROUND
+        rules.wait_state_apply(victim, victim_wait_state)
+        rules.wait_state_apply(attacker, settings.TICK_ATTACK_ROUND)
+        if "player" in attacker.tags.all():
+            rules_skills.check_skill_improve(attacker, "trip", True, 1)
+            attacker.moves_spent += 10
+
+    else:
+        if random.randint(1, 2) > 1:
+            attacker.msg("%s dodges your attempt to trip them, and you fall down!\n" % (victim.key[0].upper(), victim.key[1:]))
+            victim.msg("%s fails to trip you and falls down!\n" % (attacker.key[0].upper(), attacker.key[1:]))
+            attacker.location.msg_contents(
+                "%s tries to trip %s, misses, and falls on the ground.\n" % (
+                (attacker.key[0].upper() + attacker.key[1:]), victim.name),
+                exclude=(attacker, victim))
+
+            rules.apply_affect(attacker,
+                               "sitting",
+                               wait_state,
+                               "You jump back to your feet.",
+                               "%s gets back to %s feet." % ((victim.key[0].upper() + victim.key[1:]), rules.pronoun_possessive(victim)),
+                               apply_1=["position", "sitting"]
+                               )
+            rules.wait_state_apply(attacker, wait_state)
+
+        else:
+            attacker.msg
+            victim.msg("%s fails to trip you and falls down!\n" % (attacker.key[0].upper(), attacker.key[1:]))
+            attacker.location.msg_contents(
+                "%s tries to trip %s, misses, and falls on the ground.\n" % (
+                (attacker.key[0].upper() + attacker.key[1:]), victim.name),
+                exclude=(attacker, victim))
+
+            damage = 1
+
+            attacker_output = ("You miss, but kick %s ineffectually in the ankle/pseudopod/whatever.\n" % victim.key)
+            victim_output = ("%s tries to trip you, but kicks you ineffectually instead.\n" % (attacker.key[0].upper() + attacker.key[1:]))
+            room_output = ("%s tries to trip %s, and kicks %s instead.\n" % ((attacker.key[0].upper() + attacker.key[1:]),
+                                                                             victim.key,
+                                                                             rules.pronoun_object(victim)
+                                                                             ))
+
+            output = [attacker_output, victim_output, room_output]
+
+            do_attack(attacker, victim, None, hit=True, damage=damage, output=output)
+
+            rules.wait_state_apply(attacker, (wait_state * 2 / 3))
+
+        if "player" in attacker.tags.all():
+            rules_skills.check_skill_improve(attacker, "trip", False, 1)
+            attacker.moves_spent += 5
 
 def hit_check(attacker, victim):
     """

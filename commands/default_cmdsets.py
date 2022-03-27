@@ -46,6 +46,7 @@ from commands.combat_commands import CmdConsider
 from commands.combat_commands import CmdDirtKicking
 from commands.combat_commands import CmdFlee
 from commands.combat_commands import CmdKick
+from commands.combat_commands import CmdTrip
 from commands.combat_commands import CmdWimpy
 from commands.door_commands import CmdDoorClose
 from commands.door_commands import CmdDoorLock
@@ -134,6 +135,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdTag())
         self.add(CmdTalk())
         self.add(CmdTrain())
+        self.add(CmdTrip())
         self.add(CmdWear())
         self.add(CmdWearTo())
         self.add(CmdWield())

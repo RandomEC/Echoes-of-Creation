@@ -502,6 +502,10 @@ class CmdKick(MuxCommand):
                     caller.msg("You cannot attack another player.")
                     return
 
+                if rules_combat.is_safe(target):
+                    caller.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
+                    return
+
                 if not caller.ndb.combat_handler:
                     combat = rules_combat.create_combat(caller, target)
                     rules_combat.do_kick(caller, target)
@@ -515,11 +519,7 @@ class CmdKick(MuxCommand):
                         caller.msg("You cannot switch targets while you are in the rage of battle!")
                         return
 
-        if rules_combat.is_safe(target):
-            caller.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
-            return
-                    
-        rules_combat.do_kick(caller, target)
+                    rules_combat.do_kick(caller, target)
 
 class CmdRescue(MuxCommand):
     """
@@ -569,7 +569,13 @@ class CmdRescue(MuxCommand):
                     return
 
                 if not target.ndb.combat_handler:
-                    caller.msg("You cannot rescue %s, as they are not in combat!" % target.key)
+                    subject = rules.pronoun_subject(target)
+                    if subject == "they":
+                        phrase = "they are"
+                    else:
+                        phrase = "%s is" % rules.pronoun_subject(target)
+
+                    caller.msg("You cannot rescue %s, as %s not in combat!" % (target.key, phrase))
                     return
 
                 combat = target.ndb.combat_handler
@@ -582,7 +588,13 @@ class CmdRescue(MuxCommand):
                         victim = combatant
 
                 if not victim:
-                    caller.msg("You cannot rescue %s, as they not being attacked!" % target.key)
+                    subject = rules.pronoun_subject(target)
+                    if subject == "they":
+                        phrase = "they are"
+                    else:
+                        phrase = "%s is" % rules.pronoun_subject(target)
+
+                    caller.msg("You cannot rescue %s, as %s not being attacked!" % (target.key, phrase))
                     return
 
                 if not caller.ndb.combat_handler:
@@ -591,6 +603,92 @@ class CmdRescue(MuxCommand):
 
                 rules_combat.do_rescue(caller, target, victim)
                 rules.wait_state_apply(caller, self.wait_state)
+
+
+class CmdTrip(MuxCommand):
+    """
+    Make an aggressive tripping strike at an enemy
+    Usage:
+      trip <target>
+      trip
+    Makes an aggressive tripping strike at an enemy, if you have
+    learned the ability. Can only be used without a target in
+    combat, where it will attack your current target.
+
+    Colleges that can teach (level):
+    Thief (4), Bard (5), Ranger (14), Warrior (15)
+    """
+
+    key = "trip"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+    wait_state = 24
+
+    def func(self):
+        caller = self.caller
+
+        if "kick" not in caller.db.skills:
+            caller.msg("Tripping? What's that?")
+            return
+
+        if not self.args:
+
+            if not caller.ndb.combat_handler:
+                caller.msg("But you aren't fighting anyone!")
+                return
+            else:
+                combat = caller.ndb.combat_handler
+                target = combat.get_target(caller)
+
+        else:
+            mobiles = []
+            for object in caller.location.contents:
+                if "mobile" in object.tags.all():
+                    mobiles.append(object)
+            target = caller.search(self.args, candidates=mobiles)
+            if not target:
+                caller.msg("There is no %s here to trip." % self.args)
+                return
+            elif target.get_affect_status("fly"):
+                caller.msg("It is challenging to trip %s when %s feet aren't on the ground." % (target.key, rules.pronoun_possessive(target)))
+                return
+            elif caller.get_affect_status("fly"):
+                caller.msg("%s's feet are on the ground ... but yours aren't." % (target.key[0].upper() + target.key[1:]))
+                return
+            elif target.get_affect_status("sitting"):
+                caller.msg("%s is already down." % (target.key[0].upper() + target.key[1:]))
+                return
+            elif caller == target:
+                caller.msg("You fall flat on your face! What did you expect?")
+                skill = rules_skills.get_skill(skill_name="trip")
+                wait_state = skill["wait state"]
+                rules.apply_affect(caller,
+                                   "sitting",
+                                   (wait_state * 2),
+                                   "You slowly get to your feet, embarrassed at having tripped yourself.",
+                                   "%s gets up after tripping %s, likely hoping no one notices." % (caller, rules.pronoun_reflexive(caller)),
+                                   apply_1=["position", "sitting"]
+                                   )
+                return
+            elif "player" in target.tags.all():
+                caller.msg("You cannot attack another player.")
+                return
+
+            elif rules_combat.is_safe(target):
+                caller.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
+                return
+
+            else:
+
+                if not caller.ndb.combat_handler:
+                    combat = rules_combat.create_combat(caller, target)
+                    rules_combat.do_trip(caller, target)
+                    combat.at_repeat()
+                    return
+
+                else:
+                    rules_combat.do_trip(caller, target)
+
 
 class CmdWimpy(MuxCommand):
     """

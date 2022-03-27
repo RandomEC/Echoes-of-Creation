@@ -1,7 +1,7 @@
 import random
 from evennia.utils import search
 from commands.command import MuxCommand
-from world import rules_skills, rules_combat
+from world import rules_skills, rules_combat, rules
 
 class CmdDowse(MuxCommand):
     """
@@ -221,7 +221,14 @@ class CmdSteal(MuxCommand):
             caller.msg("You cannot steal from another player.")
             return
         elif rules_combat.is_safe(target):
-            caller.msg("You cannot steal from %s, they are under the protection of the gods." % target.key)
+
+            pronoun = rules.pronoun_subject(target)
+            if pronoun == "they":
+                phrase = "they are"
+            else:
+                phrase = "%s is" % pronoun
+
+            caller.msg("You cannot steal from %s, %s under the protection of the gods." % (target.key, phrase))
             return
         elif caller.level - target.level > 5:
             caller.msg("Honestly, pick on someone your own size.")
