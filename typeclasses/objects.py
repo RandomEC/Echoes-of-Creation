@@ -170,6 +170,39 @@ class Object(DefaultObject):
         self.db.level_base = 1
         self.db.special_function = []
 
+    @property
+    def vnum(self):
+        return self.db.vnum
+    
+    @vnum.setter
+    def vnum(self, new_value):
+        if new_value[0] != "o" or not new_value.isnumeric():
+            self.msg("A vnum for an object must be an 'o' followed by a number.")
+        else:
+            self.db.vnum = new_value
+            
+    @property
+    def level(self):
+        return self.db.level
+    
+    @level.setter
+    def level(self, new_value):
+        if new_value < 1:
+            self.msg("Level must be greater than zero.")
+        else:
+            self.db.level = new_value
+    
+    @property
+    def level_base(self):
+        return self.db.level_base
+    
+    @level_base.setter
+    def level_base(self, new_value):
+        if new_value < 1:
+            self.msg("Base level must be greater than zero.")
+        else:
+            self.db.level_base = new_value
+            
     def at_reset(self):
         # just here to keep objects from erroring on call to at_reset
         pass
@@ -203,11 +236,41 @@ class Item(Object):
         self.db.extra_descriptions = {}
         self.db.alignment_restriction = []
         self.db.cost = 0
+        self.db.weight = 0
         self.tags.add("object")
 
         # This lock added to enable the use of nodrop items
-
         self.locks.add("drop: true()")
+
+    @property
+    def object_type(self):
+        return self.db.object_type
+    
+    @object_type.setter
+    def object_type(self, new_value):
+        self.db.object_type = new_value
+
+    @property
+    def cost(self):
+        return self.db.cost
+    
+    @cost.setter
+    def cost(self, new_value):
+        if new_value < 0 or not new_value.isnumeric():
+            self.msg("Cost must be a non-negative whole number.")
+        else:
+            self.db.cost = new_value
+    
+    @property
+    def weight(self):
+        return self.db.weight
+    
+    @weight.setter
+    def weight(self, new_value):
+        if new_value < 0 or not new_value.isnumeric():
+            self.msg("Weight must be a non-negative whole number.")
+        else:
+            self.db.weight = new_value
         
     def at_disintegrate(self):
         if self.contents:
