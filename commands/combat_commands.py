@@ -627,7 +627,7 @@ class CmdTrip(MuxCommand):
     def func(self):
         caller = self.caller
 
-        if "kick" not in caller.db.skills:
+        if "trip" not in caller.db.skills:
             caller.msg("Tripping? What's that?")
             return
 
@@ -649,45 +649,46 @@ class CmdTrip(MuxCommand):
             if not target:
                 caller.msg("There is no %s here to trip." % self.args)
                 return
-            elif target.get_affect_status("fly"):
-                caller.msg("It is challenging to trip %s when %s feet aren't on the ground." % (target.key, rules.pronoun_possessive(target)))
-                return
-            elif caller.get_affect_status("fly"):
-                caller.msg("%s's feet are on the ground ... but yours aren't." % (target.key[0].upper() + target.key[1:]))
-                return
-            elif target.get_affect_status("sitting"):
-                caller.msg("%s is already down." % (target.key[0].upper() + target.key[1:]))
-                return
-            elif caller == target:
-                caller.msg("You fall flat on your face! What did you expect?")
-                skill = rules_skills.get_skill(skill_name="trip")
-                wait_state = skill["wait state"]
-                rules.apply_affect(caller,
-                                   "sitting",
-                                   (wait_state * 2),
-                                   "You slowly get to your feet, embarrassed at having tripped yourself.",
-                                   "%s gets up after tripping %s, likely hoping no one notices." % (caller, rules.pronoun_reflexive(caller)),
-                                   apply_1=["position", "sitting"]
-                                   )
-                return
-            elif "player" in target.tags.all():
-                caller.msg("You cannot attack another player.")
-                return
 
-            elif rules_combat.is_safe(target):
-                caller.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
+        if target.get_affect_status("fly"):
+            caller.msg("It is challenging to trip %s when %s feet aren't on the ground." % (target.key, rules.pronoun_possessive(target)))
+            return
+        elif caller.get_affect_status("fly"):
+            caller.msg("%s's feet are on the ground ... but yours aren't." % (target.key[0].upper() + target.key[1:]))
+            return
+        elif target.get_affect_status("sitting"):
+            caller.msg("%s is already down." % (target.key[0].upper() + target.key[1:]))
+            return
+        elif caller == target:
+            caller.msg("You fall flat on your face! What did you expect?")
+            skill = rules_skills.get_skill(skill_name="trip")
+            wait_state = skill["wait state"]
+            rules.affect_apply(caller,
+                               "sitting",
+                               (wait_state * 2),
+                               "You slowly get to your feet, embarrassed at having tripped yourself.",
+                               "%s gets up after tripping %s, likely hoping no one notices." % (caller, rules.pronoun_reflexive(caller)),
+                               apply_1=["position", "sitting"]
+                               )
+            return
+        elif "player" in target.tags.all():
+            caller.msg("You cannot attack another player.")
+            return
+
+        elif rules_combat.is_safe(target):
+            caller.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
+            return
+
+        else:
+
+            if not caller.ndb.combat_handler:
+                combat = rules_combat.create_combat(caller, target)
+                rules_combat.do_trip(caller, target)
+                combat.at_repeat()
                 return
 
             else:
-
-                if not caller.ndb.combat_handler:
-                    combat = rules_combat.create_combat(caller, target)
-                    rules_combat.do_trip(caller, target)
-                    combat.at_repeat()
-                    return
-
-                else:
-                    rules_combat.do_trip(caller, target)
+                rules_combat.do_trip(caller, target)
 
 
 class CmdWimpy(MuxCommand):

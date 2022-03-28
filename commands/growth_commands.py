@@ -143,12 +143,16 @@ class CmdPractice(MuxCommand):
                         caller.db.skills[skill] = 70
                         caller.experience_spent += eligible_skills[skill]
                         caller.db.practices_spent += (1 / rules.wisdom_practices(caller))
-                        caller.msg("Your skill at %s has increased to %d percent!\nYou can only learn more through using your skill." % (skill, amount_learned))
+                        caller.msg("Your skill at %s has increased to 70 percent!\n"
+                                   "You can only learn more through using your skill." % skill)
                     else:
                         caller.db.skills[skill] += amount_learned
                         caller.experience_spent += eligible_skills[skill]
                         caller.db.practices_spent += (1 / rules.wisdom_practices(caller))
-                        caller.msg("Your skill at %s has increased to %d percent!" % (skill, amount_learned))
+                        caller.msg("Your skill at %s has increased by %d to %d percent!" % (skill,
+                                                                                            amount_learned,
+                                                                                            caller.db.skills[skill]
+                                                                                            ))
                                     
 class CmdTrain(MuxCommand):
     """

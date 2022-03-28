@@ -80,6 +80,59 @@ def attributes_cost(character):
     return cost
 
 
+def auras_objects(looker, object):
+    """
+    This function takes a character looking at an object, and
+    determines what auras will show up before the object's
+    description in a room, and will return a string of those
+    auras.
+    """
+
+    aura_string = ""
+
+    if "invisible" in object.db.extra_flags and looker.get_affect_status("detect invis"):
+        aura_string += "(Invis)"
+    if "evil" in object.db.extra_flags and looker.alignment > 333 and looker.get_affect_status("detect evil"):
+        aura_string += "(|rRed Aura|R)"
+    if "magic" in object.db.extra_flags and looker.get_affect_status("detect magic"):
+        aura_string += "(Magical)"
+    if "glow" in object.db.extra_flags:
+        aura_string += "(Glowing)"
+    if "hum" in object.db.extra_flags:
+        aura_string += "(Humming)"
+
+    if aura_string:
+        aura_string += " "
+    return aura_string
+
+def auras_characters(looker, character):
+    """
+    This function takes a character looking at a character,
+    and determines what auras will show up before the
+    character's description in a room, and will return a
+    string of those auras.
+    """
+
+    aura_string = ""
+
+    if character.get_affect_status("invisible") and looker.get_affect_status("detect invis"):
+        aura_string += "(Invis)"
+    if character.alignment < -333 and looker.alignment > 333 and looker.get_affect_status("detect evil"):
+        aura_string += "(|RRed Aura|Y)"
+    if character.get_affect_status("faerie fire"):
+        aura_string += "(|MPink Aura|Y)"
+    if character.get_affect_status("sanctuary"):
+        aura_string += "(|WWhite Aura|Y)"
+    if character.get_affect_status("flaming shield"):
+        aura_string += "(|rF|Rl|ra|Rm|ri|Rn|rg |RA|ru|Rr|ra|Y)"
+    if character.get_affect_status("fly"):
+        aura_string += "(Flying)"
+
+    if aura_string:
+        aura_string += " "
+    return aura_string
+
+
 def calculate_experience(mobile):
     """
     This function calculates the total experience awarded for

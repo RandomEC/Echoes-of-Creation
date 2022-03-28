@@ -166,6 +166,20 @@ def get_skill(**kwargs):
     """
     
     skills = {
+        "chill touch": {
+            "classes": {
+                "druid": 4
+                },
+            "minimum cost": 15,
+            "wait state": 12
+            },
+        "continual light": {
+            "classes": {
+                "mage": 4
+                },
+            "minimum cost": 7,
+            "wait state": 12
+            },
         "create food": {
             "classes": {
                 "cleric": 3
@@ -185,6 +199,14 @@ def get_skill(**kwargs):
             "classes": {
                 "cleric": 3,
                 "paladin": 13
+                },
+            "minimum cost": 5,
+            "wait state": 12
+            },
+        "detect evil": {
+            "classes": {
+                "cleric": 4,
+                "paladin": 4
                 },
             "minimum cost": 5,
             "wait state": 12

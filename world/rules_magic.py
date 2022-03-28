@@ -1,6 +1,6 @@
 import random
 from evennia.utils import search
-from world import rules, rules_skills
+from world import rules, rules_combat, rules_skills
 
 def check_cast(caster):
     """
@@ -21,7 +21,115 @@ def check_cast(caster):
         return "You can't concentrate enough - stand up!\n"
 
     return False
-    
+
+
+def do_chill_touch(caster, target, mana_cost):
+    """ Function implementing chill touch spell"""
+
+    spell = rules_skills.get_skill(skill_name="chill touch")
+
+    level = caster.level
+
+    # This list creates a seed for how high damage will be,
+    # with the caster's level corresponding to the list
+    # index.
+    damage_seed = [0,
+                   0, 0, 6, 7, 8, 9, 12, 13, 13, 13,
+                   14, 14, 14, 15, 15, 15, 16, 16, 16, 17,
+                   17, 17, 18, 18, 18, 19, 19, 19, 20, 20,
+                   20, 21, 21, 21, 22, 22, 22, 23, 23, 23,
+                   24, 24, 24, 25, 25, 25, 26, 26, 26, 27
+                   ]
+
+    # Make sure you do not exceed the list boundaries.
+    if level > len(damage_seed):
+        level = len(damage_seed)
+    elif level < 0:
+        level = 0
+
+    # Use the seed to create a damage range from seed/2 up to
+    # seed*2, then get a value randomly in that range.
+    damage = random.randint(int(damage_seed[level] / 2), int(damage_seed[level] * 2))
+
+    if save_spell(caster.level, target):
+        damage = int(damage / 2)
+
+    if random.randint(1, 100) > caster.db.skills["chill touch"]:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "chill touch", False, 4)
+        caster.msg("You chant 'chill touch'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "chill touch")
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "chill touch", True, 1)
+
+        caster.msg("You chant 'chill touch'.\n")
+        player_output_magic_chant(caster, "chill touch")
+
+        attacker_output = ("You |g%s|n %s with your chilling touch.\n" % (rules_combat.get_damagestring("attacker", damage),
+                                                                          target.key
+                                                                          ))
+        victim_output = ("%s |r%s|n you with %s chilling touch.\n" % ((caster.key[0].upper() + caster.key[1:]),
+                                                                      rules_combat.get_damagestring("victim", damage),
+                                                                      rules.pronoun_possessive(caster)
+                                                                      ))
+        room_output = ("%s |r%s|n %s with %s chilling touch.\n" % ((caster.key[0].upper() + caster.key[1:]),
+                                                                   rules_combat.get_damagestring("victim", damage),
+                                                                   target.key,
+                                                                   rules.pronoun_possessive(caster)
+                                                                   ))
+
+        output = [attacker_output, victim_output, room_output]
+
+        rules_combat.do_attack(caster, target, None, hit=True, damage=damage, output=output, type="chilling touch")
+
+        rules.affect_apply(target,
+                           "chill touch",
+                           6,
+                           "You feel less cold.",
+                           "%s appears to warm significantly." % (target.key[0].upper() + target.key[1:]),
+                           apply_1=["strength", -1]
+                           )
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+
+def do_continual_light(caster, mana_cost):
+    """ Function implementing continual light spell"""
+
+    spell = rules_skills.get_skill(skill_name="continual light")
+
+    level = caster.level
+
+    if random.randint(1, 100) > caster.db.skills["continual light"]:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "continual light", False, 1)
+        caster.msg("You chant 'continual light'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "continual light")
+    else:
+        light = rules.make_object(caster.location, False, "o21")
+
+        light.db.cost = 0
+        rules.set_disintegrate_timer(light)
+
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "continual light", True, 1)
+
+        caster.msg("You chant 'continual light'.\nYou twiddle your thumbs and %s appears." % light.key)
+        player_output_magic_chant(caster, "create food")
+        caster.location.msg_contents("%s twiddles %s thumbs and %s appears."
+                                     % ((caster.key[0].upper() + caster.key[1:]),
+                                        rules.pronoun_possessive(caster),
+                                        light.key),
+                                     exclude=caster)
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+
 def do_create_food(caster, mana_cost):
     """ Function implementing create food spell"""
     
@@ -97,6 +205,7 @@ def do_create_sound(caster, mana_cost, target, sound):
                     object.msg("%s says '%s'" % ((target.key[0].upper() + target.key[1:]), sound))
         rules.wait_state_apply(caster, spell["wait state"])
 
+
 def do_create_water(caster, mana_cost, target_container):
     """ Function implementing create water spell"""
     
@@ -127,7 +236,43 @@ def do_create_water(caster, mana_cost, target_container):
         caster.msg("You chant 'create water'.\n%s is filled." % (target_container.key[0].upper() + target_container.key[1:]))
         player_output_magic_chant(caster, "create water")
         rules.wait_state_apply(caster, spell["wait state"])
-            
+
+
+def do_detect_evil(caster, target, mana_cost):
+    """Implements the detect evil spell."""
+
+    spell = rules_skills.get_skill(skill_name="detect evil")
+    level = caster.level
+    wait_state = spell["wait state"]
+
+    if random.randint(1, 100) > caster.db.skills["detect evil"]:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "detect evil", False, 2)
+        caster.msg("You chant 'detect evil'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "detect evil")
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "detect evil", True, 2)
+
+        caster.msg("You chant 'detect evil'.\n")
+        player_output_magic_chant(caster, "detect evil")
+
+        if caster != target:
+            caster.msg("%s can now detect evil." % (target.key[0].upper() + target.key[1:]))
+        target.msg("Your eyes tingle.")
+
+        rules.affect_apply(target,
+                           "detect evil",
+                           caster.level,
+                           "Your eyes no longer tingle.",
+                           ""
+                           )
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+
 def mana_cost(caster, spell):
     """Calculate mana cost for a spell"""
 
@@ -141,6 +286,7 @@ def mana_cost(caster, spell):
         return level_cost
     else:
         return minimum_cost
+
 
 def player_output_magic_chant(caster, spell_name):
     """
@@ -175,6 +321,7 @@ def player_output_magic_chant(caster, spell_name):
         for player in cannot_understand:
             player.msg("%s chants '%s'.\n" % (caster.key, magic_name))
 
+
 def save_spell(cast_level, victim):
     """
     This function returns a boolean based on whether a spell is
@@ -194,6 +341,7 @@ def save_spell(cast_level, victim):
         return True
     else:
         return False
+
 
 def say_spell(spell_name):
     """

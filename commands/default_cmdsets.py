@@ -66,9 +66,12 @@ from commands.skill_commands import CmdDowse
 from commands.skill_commands import CmdForage
 from commands.skill_commands import CmdSkills
 from commands.skill_commands import CmdSteal
+from commands.spell_commands import CmdChillTouch
+from commands.spell_commands import CmdContinualLight
 from commands.spell_commands import CmdCreateFood
 from commands.spell_commands import CmdCreateSound
 from commands.spell_commands import CmdCreateWater
+from commands.spell_commands import CmdDetectEvil
 
 class CharacterCmdSet(default_cmds.CharacterCmdSet):
     """
@@ -89,12 +92,15 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         #
         self.add(CmdAffects())
         self.add(CmdAttack())
+        self.add(CmdChillTouch())
         self.add(CmdConsider())
+        self.add(CmdContinualLight())
         self.add(CmdCreate())
         self.add(CmdCreateFood())
         self.add(CmdCreateSound())
         self.add(CmdCreateWater())
         self.add(CmdDestroy())
+        self.add(CmdDetectEvil())
         self.add(CmdDig())
         self.add(CmdDirtKicking())
         self.add(CmdDoorClose())

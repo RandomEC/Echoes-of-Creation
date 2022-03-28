@@ -1176,7 +1176,7 @@ class CmdSacrifice(MuxCommand):
                        "The gods award you %d %s for your sacrifice." % (obj.name, award_amount, award))
         else:
             caller.msg("You build a small pyre and sacrifice %s to the gods.\n"
-                       "The gods are pleased with your sacrifice.")
+                       "The gods are pleased with your sacrifice." % obj.name)
 
         if obj.contents:
             for item in obj.contents:

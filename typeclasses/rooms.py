@@ -154,10 +154,6 @@ class Room(DefaultRoom):
         say.
         """
 
-        speaker.msg(message)
-        message = message.lower()
-        speaker.msg(message)
-
         if self.db.say_scripts:
             if message in self.db.say_scripts:
                 create_script(self.db.say_scripts[message], key=message, obj=speaker)
@@ -227,9 +223,9 @@ class Room(DefaultRoom):
                 users.append("|c%s|n" % key)
             # Below added to address mobiles and objects.
             elif "mobile" in con.tags.all():
-                mobiles.append("|Y%s|n" % con.db.desc)
+                mobiles.append("|Y%s%s|n" % (rules.auras_characters(looker, con), con.db.desc))
             elif "object" in con.tags.all():
-                objects.append("|R%s|n" % con.db.desc)
+                objects.append("|R%s%s|n" % (rules.auras_objects(looker, con), con.db.desc))
             else:
                 # things can be pluralized
                 things[key].append(con)
