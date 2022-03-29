@@ -411,7 +411,7 @@ def do_detect_hidden(caster, target, mana_cost):
         target.msg("Your awareness improves.")
 
         rules.affect_apply(target,
-                           "detect evil",
+                           "detect hidden",
                            caster.level,
                            "You feel less aware of your surroundings.",
                            ""
@@ -427,7 +427,7 @@ def do_detect_hidden(caster, target, mana_cost):
         player_output_magic_chant(caster, "detect hidden")
 
 
-def do_detect_magci(caster, target, mana_cost):
+def do_detect_magic(caster, target, mana_cost):
     """Implements the detect magic spell."""
 
     spell = rules_skills.get_skill(skill_name="detect magic")
@@ -447,7 +447,7 @@ def do_detect_magci(caster, target, mana_cost):
         target.msg("Your eyes tingle.")
 
         rules.affect_apply(target,
-                           "detect evil",
+                           "detect magic",
                            caster.level,
                            "The detect magic wears off.",
                            ""
@@ -458,9 +458,9 @@ def do_detect_magci(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "detect hidden", False, 2)
-        caster.msg("You chant 'detect hidden'.\nYou lost your concentration.\n")
-        player_output_magic_chant(caster, "detect hidden")
+        rules_skills.check_skill_improve(caster, "detect magic", False, 2)
+        caster.msg("You chant 'detect magic'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "detect magic")
 
 
 def do_magic_missile(caster, target, mana_cost):

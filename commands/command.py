@@ -5,8 +5,10 @@ Commands describe the input the account can do to the game.
 
 """
 
+import math
 import re
 import random
+import time
 from evennia.commands.command import Command as BaseCommand
 from evennia.utils import utils, search
 from server.conf import settings
@@ -246,15 +248,15 @@ class CmdAffects(MuxCommand):
         if caller.db.spell_affects:
             for affect in caller.db.spell_affects:
                 # If all the affect has is duration.
+                duration = math.ceil((caller.db.spell_affects[affect]["duration"] - time.time()) / settings.TICK_OBJECT_TIMER)
                 if len(caller.db.spell_affects[affect]) == 1:
                     output_string += "     %s, for a duration of %d.\n" % ((affect[0].upper() + affect[1:]),
-                                                                         caller.db.spell_affects[affect]["duration"]
-                                                                         )
+                                                                           duration
+                                                                           )
                 else:
                     apply = []
                     apply_amount = []
                     index = 0
-                    duration = caller.db.spell_affects[affect]["duration"]
                     for property in caller.db.spell_affects[affect]:
                         if property == "duration":
                             pass

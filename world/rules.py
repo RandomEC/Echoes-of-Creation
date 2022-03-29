@@ -17,7 +17,10 @@ def affect_apply(character, affect_name, duration, character_message, room_messa
         character.msg("There was an error in adding %s to your spell affects, as it cannot be listed twice." % affect_name)
         return
 
-    character.db.spell_affects[affect_name] = {"duration": duration}
+    duration = int(duration * settings.TICK_OBJECT_TIMER)
+    duration_time = time.time() + duration
+
+    character.db.spell_affects[affect_name] = {"duration": duration_time}
     
     # Applies will take the form of ["strength", -2]
     if "apply_1" in kwargs:
@@ -32,8 +35,6 @@ def affect_apply(character, affect_name, duration, character_message, room_messa
         apply_3_type = kwargs["apply_3"][0]
         apply_3_amount = kwargs["apply_3"][1]
         character.db.spell_affects[affect_name][apply_3_type] = apply_3_amount
-
-    duration = int(duration * settings.TICK_OBJECT_TIMER)
 
     affects_return = utils.delay(duration,
                                  affect_remove, character, affect_name, character_message, room_message,
@@ -93,7 +94,7 @@ def auras_objects(looker, object):
     if "invisible" in object.db.extra_flags and looker.get_affect_status("detect invis"):
         aura_string += "(Invis)"
     if "evil" in object.db.extra_flags and looker.alignment > 333 and looker.get_affect_status("detect evil"):
-        aura_string += "(|rRed Aura|R)"
+        aura_string += "|r(Red Aura)|R"
     if "magic" in object.db.extra_flags and looker.get_affect_status("detect magic"):
         aura_string += "(Magical)"
     if "glow" in object.db.extra_flags:
@@ -118,13 +119,13 @@ def auras_characters(looker, character):
     if character.get_affect_status("invisible") and looker.get_affect_status("detect invis"):
         aura_string += "(Invis)"
     if character.alignment < -333 and looker.alignment > 333 and looker.get_affect_status("detect evil"):
-        aura_string += "(|RRed Aura|Y)"
+        aura_string += "|R(Red Aura)|Y"
     if character.get_affect_status("faerie fire"):
-        aura_string += "(|MPink Aura|Y)"
+        aura_string += "|M(Pink Aura)|Y"
     if character.get_affect_status("sanctuary"):
-        aura_string += "(|WWhite Aura|Y)"
+        aura_string += "|W(White Aura)|Y"
     if character.get_affect_status("flaming shield"):
-        aura_string += "(|rF|Rl|ra|Rm|ri|Rn|rg |RA|ru|Rr|ra|Y)"
+        aura_string += "|R(|rF|Rl|ra|Rm|ri|Rn|rg |RA|ru|Rr|ra|R)|Y"
     if character.get_affect_status("fly"):
         aura_string += "(Flying)"
 

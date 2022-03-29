@@ -75,6 +75,7 @@ from commands.spell_commands import CmdCreateSound
 from commands.spell_commands import CmdCreateWater
 from commands.spell_commands import CmdDetectEvil
 from commands.spell_commands import CmdDetectHidden
+from commands.spell_commands import CmdDetectMagic
 from commands.spell_commands import CmdMagicMissile
 
 class CharacterCmdSet(default_cmds.CharacterCmdSet):
@@ -108,6 +109,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdDestroy())
         self.add(CmdDetectEvil())
         self.add(CmdDetectHidden())
+        self.add(CmdDetectMagic())
         self.add(CmdDig())
         self.add(CmdDirtKicking())
         self.add(CmdDoorClose())
