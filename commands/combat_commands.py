@@ -291,9 +291,13 @@ class CmdConsider(MuxCommand):
             caller.msg("Usage: consider <mobile>")
             return
 
-        mobile = caller.search(self.args, location=caller.location)
+        mobiles = []
+        for object in caller.location.contents:
+            if "mobile" in object.tags.all():
+                mobiles.append(object)
+        mobile = caller.search(self.args, candidates=mobiles)
         if not mobile:
-            caller.msg("There is no %s here to consider." % self.args)
+            caller.msg("There is no mobile named %s here to attack." % self.args)
             return
         elif "mobile" not in mobile.tags.all():
             caller.msg("You can only use consider on mobiles.")
