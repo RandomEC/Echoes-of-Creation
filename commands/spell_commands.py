@@ -803,3 +803,72 @@ class CmdMagicMissile(MuxCommand):
             rules_magic.do_magic_missile(caster, target, cost)
 
 
+class CmdVentriloquate(MuxCommand):
+    """
+    A spell that puts words in the mouths of other players and
+    mobiles.
+
+    Usage:
+      cast ventriloquate <target> says <speech string>
+      ventriloquate <target> says <speech string>
+
+    A spell that attempts to make it seem as though a mobile or player
+    has said a word or sentence. A player that saves against the spell
+    will know that you forced the player or mobile to say the words.
+
+    Colleges that can teach (level):
+    Bard (5)
+    """
+
+    key = "ventriloquate"
+    aliases = ["cast ventriloquate", "vent"]
+    delimiter = " says "
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement ventriloquate"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+
+        caster = self.caller
+
+        if "ventriloquate" not in caster.db.skills:
+            caster.msg("You do not know the spell 'ventriloquate' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        if not self.args or not self.lhs or not self.rhs:
+            caster.msg("Usage: ventriloquate <target> says <speech string>")
+            return
+
+        speakers = []
+        for object in caster.location.contents:
+            if "player" in object.tags.all() or "mobile" in object.tags.all():
+                speakers.append(object)
+
+        target = caster.search(self.lhs, location=[caster.location], candidates=speakers)
+
+        if not target:
+            caster.msg("There is no %s here to ventriloquate on." % self.lhs)
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+
+        cost = rules_magic.mana_cost(caster, spell)
+
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast ventriloquate!")
+            return
+
+        rules_magic.do_ventriloquate(caster, cost, target, self.rhs)
+
+
