@@ -77,19 +77,8 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
         if hit:
             # Randomize order of parry and dodge check.
             if random.randint(1, 2) > 1:
-                if "parry" in victim.db.skills:
-                    
-                    if "mobile" in victim.tags.all():
-                        chance = 2 * victim.level
-                        if chance > 57:
-                            chance = 57
-                        if not victim.db.eq_slots["wielded, primary"]:
-                            if not victim.db.eq_slots["wielded, secondary"]:
-                                chance /= 2
-                            else:
-                                chance = chance * 3 / 4
-                    
-                    else:
+                if "player" in victim.tags.all():
+                    if "parry" in victim.db.skills:
                         if not victim.db.eq_slots["wielded, primary"]:
                             if not victim.db.eq_slots["wielded, secondary"]:
                                 chance = 0
@@ -97,58 +86,55 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
                                 chance = victim.db.skills["parry"] / 4
                         else:
                             chance = victim.db.skills["parry"] / 2
-                    
-                    if random.randint(1, 100) >= (chance + victim.level - attacker.level):
-                        hit = False
-                        parry = True
-                        if "player" in victim.tags.all():
-                            rules_skills.check_skill_improve(victim, "parry", True, 5)
-                            
-                if "dodge" in victim.db.skills and parry == False:
-                    
-                    if "mobile" in victim.tags.all():
-                        chance = 2 * victim.level
-                        if chance > 55:
-                            chance = 55                        
-                            
-                    else:
+
+                elif "mobile" in victim.tags.all():
+                    chance = 2 * victim.level
+                    if chance > 57:
+                        chance = 57
+                    if not victim.db.eq_slots["wielded, primary"]:
+                        if not victim.db.eq_slots["wielded, secondary"]:
+                            chance /= 2
+                        else:
+                            chance = chance * 3 / 4
+
+                if random.randint(1, 100) >= (chance + victim.level - attacker.level):
+                    hit = False
+                    parry = True
+                    if "player" in victim.tags.all():
+                        rules_skills.check_skill_improve(victim, "parry", True, 5)
+
+                if "player" in victim.tags.all():
+                    if "dodge" in victim.db.skills and parry == False:
                         chance = victim.db.skills["dodge"] / 2
-                        
-                    if random.randint(1, 100) >= (chance + victim.level - attacker.level):
-                        hit = False
-                        dodge = True
-                        if "player" in victim.tags.all():
-                            rules_skills.check_skill_improve(victim, "dodge", True, 5)
+
+                elif "mobile" in victim.tags.all() and parry == False:
+                    chance = 2 * victim.level
+                    if chance > 55:
+                        chance = 55
+
+                if random.randint(1, 100) >= (chance + victim.level - attacker.level) and parry == False:
+                    hit = False
+                    dodge = True
+                    if "player" in victim.tags.all():
+                        rules_skills.check_skill_improve(victim, "dodge", True, 5)
             else:
-                if "dodge" in victim.db.skills:
-                                        
-                    if "mobile" in victim.tags.all():
-                        chance = 2 * victim.level
-                        if chance > 55:
-                            chance = 55                        
-                            
-                    else:
+                if "player" in victim.tags.all():
+                    if "dodge" in victim.db.skills:
                         chance = victim.db.skills["dodge"] / 2
-                        
-                    if random.randint(1, 100) >= (chance + victim.level - attacker.level):
-                        hit = False
-                        dodge = True
-                        if "player" in victim.tags.all():
-                            rules_skills.check_skill_improve(victim, "dodge", True, 5)
-                            
-                if "parry" in victim.db.skills:
-                    
-                    if "mobile" in victim.tags.all():                        
-                        chance = 2 * victim.level
-                        if chance > 57:
-                            chance = 57
-                        if not victim.db.eq_slots["wielded, primary"]:
-                            if not victim.db.eq_slots["wielded, secondary"]:
-                                chance /= 2
-                            else:
-                                chance = chance * 3 / 4
-                    
-                    else:
+
+                elif "mobile" in victim.tags.all():
+                    chance = 2 * victim.level
+                    if chance > 55:
+                        chance = 55
+
+                if random.randint(1, 100) >= (chance + victim.level - attacker.level):
+                    hit = False
+                    dodge = True
+                    if "player" in victim.tags.all():
+                        rules_skills.check_skill_improve(victim, "dodge", True, 5)
+
+                if "player" in victim.tags.all() and dodge == False:
+                    if "parry" in victim.db.skills:
                         if not victim.db.eq_slots["wielded, primary"]:
                             if not victim.db.eq_slots["wielded, secondary"]:
                                 chance = 0
@@ -156,13 +142,22 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
                                 chance = victim.db.skills["parry"] / 4
                         else:
                             chance = victim.db.skills["parry"] / 2
-                    
-                    if random.randint(1, 100) >= (chance + victim.level - attacker.level):
-                        hit = False
-                        parry = True
-                        if "player" in victim.tags.all():
-                            rules_skills.check_skill_improve(victim, "parry", True, 5)
-   
+
+                elif "mobile" in victim.tags.all() and dodge == False:
+                    chance = 2 * victim.level
+                    if chance > 57:
+                        chance = 57
+                    if not victim.db.eq_slots["wielded, primary"]:
+                        if not victim.db.eq_slots["wielded, secondary"]:
+                            chance /= 2
+                        else:
+                            chance = chance * 3 / 4
+
+                if random.randint(1, 100) >= (chance + victim.level - attacker.level) and dodge == False:
+                    hit = False
+                    parry = True
+                    if "player" in victim.tags.all():
+                        rules_skills.check_skill_improve(victim, "parry", True, 5)
 
     if "type" in kwargs:
         damage_type = kwargs["type"]
