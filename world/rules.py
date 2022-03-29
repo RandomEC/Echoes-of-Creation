@@ -926,10 +926,12 @@ def weight_contents(object):
 
     if object.contents:
         for obj in object.contents:
-            weight += obj.weight
+            if obj.weight:
+                weight += obj.weight
             if obj.contents:
                 for contained_object in obj.contents:
-                    weight += contained_object.weight
+                    if contained_object.weight:
+                        weight += contained_object.weight
 
     return weight
 
