@@ -299,7 +299,7 @@ def do_create_sound(caster, mana_cost, target, sound):
     if random.randint(1, 100) <= caster.db.skills["create sound"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "create sound", True, 1)
+            rules_skills.check_skill_improve(caster, "create sound", True, 1)
         caster.msg(
             "You chant 'create sound'.\nYou make it appear that %s says '%s'." % ((target.key[0].upper() + target.key[1:]), sound))
         player_output_magic_chant(caster, "create sound")
@@ -316,7 +316,7 @@ def do_create_sound(caster, mana_cost, target, sound):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "create sound", False, 1)
+            rules_skills.check_skill_improve(caster, "create sound", False, 1)
         caster.msg("You chant 'create sound'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "create sound")
 
@@ -529,6 +529,37 @@ def do_magic_missile(caster, target, mana_cost):
         player_output_magic_chant(caster, "magic missile")
 
 
+def do_ventriloquate(caster, mana_cost, target, sound):
+    """ Function implementing ventriloquate spell"""
+
+    spell = rules_skills.get_skill(skill_name="ventriloquate")
+    level = caster.level
+
+    if random.randint(1, 100) <= caster.db.skills["ventriloquate"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+            rules_skills.check_skill_improve(caster, "ventriloquate", True, 1)
+        caster.msg(
+            "You chant 'ventriloquate'.\nYou make it appear that %s says '%s'." % ((target.key[0].upper() + target.key[1:]), sound))
+        player_output_magic_chant(caster, "ventriloquate")
+        for object in caster.location.contents:
+            if object == target and object.db.position != "sleeping":
+                object.msg("A sound seemingly emanates from you saying '%s'" % sound)
+            elif ("player" in object.tags.all() or "mobile" in object.tags.all()) and object != caster and object.db.position != "sleeping":
+                if save_spell(level, target):
+                    object.msg("%s makes %s say '%s'" % ((caster.key[0].upper() + caster.key[1:]), target, sound))
+                else:
+                    object.msg("%s says '%s'" % ((target.key[0].upper() + target.key[1:]), sound))
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+            rules_skills.check_skill_improve(caster, "ventriloquate", False, 1)
+        caster.msg("You chant 'ventriloquate'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "ventriloquate")
+
+
 def mana_cost(caster, spell):
     """Calculate mana cost for a spell"""
 
@@ -537,7 +568,6 @@ def mana_cost(caster, spell):
     minimum_level = rules_skills.lowest_learned_level(spell)
 
     level_cost = int(120 / (2 + (caster.level - minimum_level) / 2))
-
     if level_cost > minimum_cost:
         return level_cost
     else:
