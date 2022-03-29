@@ -57,6 +57,9 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
     a string.    
     """
 
+    parry = False
+    dodge = False
+    
     # Don't beat a dead horse.
     if victim.hitpoints_current <= 0:
         return
@@ -67,6 +70,99 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
     # Base combat round attacks.
     else:
         hit = hit_check(attacker, victim)
+        
+        # Do checks for hit prevention here, as they do
+        # not apply to special attacks like kick, fireball,
+        # etc.
+        if hit:
+            # Randomize order of parry and dodge check.
+            if random.randint(1, 2) > 1:
+                if "parry" in victim.db.skills:
+                    
+                    if "mobile" in victim.tags.all():
+                        chance = 2 * victim.level
+                        if chance > 57:
+                            chance = 57
+                        if not victim.db.eq_slots["wielded, primary"]:
+                            if not victim.db.eq_slots["wielded, secondary"]:
+                                chance /= 2
+                            else:
+                                chance = chance * 3 / 4
+                    
+                    else:
+                        if not victim.db.eq_slots["wielded, primary"]:
+                            if not victim.db.eq_slots["wielded, secondary"]:
+                                chance = 0
+                            else:
+                                chance = victim.db.skills["parry"] / 4
+                        else:
+                            chance = victim.db.skills["parry"] / 2
+                    
+                    if random.randint(1, 100) >= (chance + victim.level - attacker.level)
+                        hit = False
+                        parry = True
+                        if "player" in victim.tags.all():
+                            rules_skills.check_skill_improve(victim, "parry", True, 5)
+                            
+                if "dodge" in victim.db.skills and parry == False:
+                    
+                    if "mobile" in victim.tags.all():
+                        chance = 2 * victim.level
+                        if chance > 55:
+                            chance = 55                        
+                            
+                    else:
+                        chance = victim.db.skills["dodge"] / 2
+                        
+                    if random.randint(1, 100) >= (chance + victim.level - attacker.level)
+                        hit = False
+                        dodge = True
+                        if "player" in victim.tags.all():
+                            rules_skills.check_skill_improve(victim, "dodge", True, 5)
+            else:
+                if "dodge" in victim.db.skills:
+                                        
+                    if "mobile" in victim.tags.all():
+                        chance = 2 * victim.level
+                        if chance > 55:
+                            chance = 55                        
+                            
+                    else:
+                        chance = victim.db.skills["dodge"] / 2
+                        
+                    if random.randint(1, 100) >= (chance + victim.level - attacker.level)
+                        hit = False
+                        dodge = True
+                        if "player" in victim.tags.all():
+                            rules_skills.check_skill_improve(victim, "dodge", True, 5)
+                            
+                if "parry" in victim.db.skills:
+                    
+                    if "mobile" in victim.tags.all():                        
+                        chance = 2 * victim.level
+                        if chance > 57:
+                            chance = 57
+                        if not victim.db.eq_slots["wielded, primary"]:
+                            if not victim.db.eq_slots["wielded, secondary"]:
+                                chance /= 2
+                            else:
+                                chance = chance * 3 / 4
+                    
+                    else:
+                        if not victim.db.eq_slots["wielded, primary"]:
+                            if not victim.db.eq_slots["wielded, secondary"]:
+                                chance = 0
+                            else:
+                                chance = victim.db.skills["parry"] / 4
+                        else:
+                            chance = victim.db.skills["parry"] / 2
+                    
+                    if random.randint(1, 100) >= (chance + victim.level - attacker.level)
+                        hit = False
+                        parry = True
+                        if "player" in victim.tags.all():
+                            rules_skills.check_skill_improve(victim, "parry", True, 5)
+   
 
     if "type" in kwargs:
         damage_type = kwargs["type"]
@@ -177,6 +273,28 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
             attacker.msg("%s" % kwargs["output"][0])
             victim.msg("%s" % kwargs["output"][1])
             attacker.location.msg_contents("%s" % kwargs["output"][2], exclude=(attacker, victim))
+        elif parry == True:
+            attacker_string = ("%s parries your %s.\n" % ((victim.key[0].upper + victim.key[1:]),
+                                                          damage_type
+                                                          ))
+            victim_string = ("You parry %s's %s.\n" % (attacker.key,
+                                                       damage_type
+                                                       ))
+            room_string = ("%s parries %s's %s.\n" % ((victim.key[0].upper + victim.key[1:]),
+                                                      attacker.key,                                                           
+                                                      damage_type
+                                                      ))
+        elif dodge == True:
+            attacker_string = ("%s dodges your %s.\n" % ((victim.key[0].upper + victim.key[1:]),
+                                                         damage_type
+                                                         ))
+            victim_string = ("You dodge %s's %s.\n" % (attacker.key,
+                                                       damage_type
+                                                       ))
+            room_string = ("%s dodges %s's %s.\n" % ((victim.key[0].upper + victim.key[1:]),
+                                                      attacker.key,                                                           
+                                                      damage_type
+                                                      ))
         else:
             attacker_string = ("You miss %s with your %s.\n" % (victim.key,
                                                                 damage_type
