@@ -364,7 +364,7 @@ class CmdDirtKicking(MuxCommand):
     def func(self):
         caller = self.caller
 
-        if "kick" not in caller.db.skills:
+        if "dirt kicking" not in caller.db.skills:
             caller.msg("You get your feet dirty, and not much else.")
             return
 
