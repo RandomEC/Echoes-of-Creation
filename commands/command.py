@@ -10,7 +10,7 @@ import re
 import random
 import time
 from evennia.commands.command import Command as BaseCommand
-from evennia.utils import utils, search
+from evennia.utils import utils, search, ansi
 from server.conf import settings
 from world import rules
 
@@ -825,7 +825,7 @@ class CmdInventory(MuxCommand):
         if not items:
             string = "You are not carrying anything."
         else:
-            from utils.ansi import raw as raw_ansi
+            from ansi import raw as raw_ansi
 
             table = self.styled_table(border="header")
             for item in items:
