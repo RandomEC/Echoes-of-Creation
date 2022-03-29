@@ -337,6 +337,13 @@ def get_skill(**kwargs):
                 },
             "minimum cost": 5,
             "wait state": 24
+            },
+        "ventriloquate": {
+            "classes": {
+                "bard": 5
+                },
+            "minimum cost": 5,
+            "wait state": 12
             }
 
         }
