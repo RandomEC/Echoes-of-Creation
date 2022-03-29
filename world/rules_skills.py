@@ -255,6 +255,15 @@ def get_skill(**kwargs):
             "minimum cost": 5,
             "wait state": 12
             },
+        "dodge": {
+            "classes": {
+                "thief": 6,
+                "ranger": 6,
+                "bard": 7,
+                "warrior": 25,
+                "paladin": 25
+                },
+            },
         "dowse": {
             "classes": {
                 "ranger": 3
@@ -293,6 +302,15 @@ def get_skill(**kwargs):
                 },
             "minimum cost": 15,
             "wait state": 12
+            },
+        "parry": {
+            "classes": {
+                "warrior": 5,
+                "paladin": 7,
+                "ranger": 9,
+                "bard": 15,
+                "thief": 16
+                },
             },
         "rescue": {
             "classes": {
