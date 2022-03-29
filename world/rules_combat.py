@@ -270,24 +270,24 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
             victim.msg("%s" % kwargs["output"][1])
             attacker.location.msg_contents("%s" % kwargs["output"][2], exclude=(attacker, victim))
         elif parry == True:
-            attacker_string = ("%s parries your %s.\n" % ((victim.key[0].upper + victim.key[1:]),
+            attacker_string = ("%s parries your %s.\n" % ((victim.key[0].upper() + victim.key[1:]),
                                                           damage_type
                                                           ))
             victim_string = ("You parry %s's %s.\n" % (attacker.key,
                                                        damage_type
                                                        ))
-            room_string = ("%s parries %s's %s.\n" % ((victim.key[0].upper + victim.key[1:]),
+            room_string = ("%s parries %s's %s.\n" % ((victim.key[0].upper() + victim.key[1:]),
                                                       attacker.key,                                                           
                                                       damage_type
                                                       ))
         elif dodge == True:
-            attacker_string = ("%s dodges your %s.\n" % ((victim.key[0].upper + victim.key[1:]),
+            attacker_string = ("%s dodges your %s.\n" % ((victim.key[0].upper() + victim.key[1:]),
                                                          damage_type
                                                          ))
             victim_string = ("You dodge %s's %s.\n" % (attacker.key,
                                                        damage_type
                                                        ))
-            room_string = ("%s dodges %s's %s.\n" % ((victim.key[0].upper + victim.key[1:]),
+            room_string = ("%s dodges %s's %s.\n" % ((victim.key[0].upper() + victim.key[1:]),
                                                       attacker.key,                                                           
                                                       damage_type
                                                       ))
