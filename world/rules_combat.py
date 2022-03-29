@@ -474,8 +474,6 @@ def do_dirt_kicking(attacker, victim):
     else:
         chance = 0
 
-    attacker.msg(chance)
-
     if chance == 0:
         attacker.msg("There is no dirt to kick here!")
         return
