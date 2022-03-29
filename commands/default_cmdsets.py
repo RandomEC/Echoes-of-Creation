@@ -66,12 +66,16 @@ from commands.skill_commands import CmdDowse
 from commands.skill_commands import CmdForage
 from commands.skill_commands import CmdSkills
 from commands.skill_commands import CmdSteal
+from commands.spell_commands import CmdAgitation
+from commands.spell_commands import CmdCauseLight
 from commands.spell_commands import CmdChillTouch
 from commands.spell_commands import CmdContinualLight
 from commands.spell_commands import CmdCreateFood
 from commands.spell_commands import CmdCreateSound
 from commands.spell_commands import CmdCreateWater
 from commands.spell_commands import CmdDetectEvil
+from commands.spell_commands import CmdDetectHidden
+from commands.spell_commands import CmdMagicMissile
 
 class CharacterCmdSet(default_cmds.CharacterCmdSet):
     """
@@ -91,7 +95,9 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         # any commands you add below will overload the default ones.
         #
         self.add(CmdAffects())
+        self.add(CmdAgitation())
         self.add(CmdAttack())
+        self.add(CmdCauseLight())
         self.add(CmdChillTouch())
         self.add(CmdConsider())
         self.add(CmdContinualLight())
@@ -101,6 +107,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdCreateWater())
         self.add(CmdDestroy())
         self.add(CmdDetectEvil())
+        self.add(CmdDetectHidden())
         self.add(CmdDig())
         self.add(CmdDirtKicking())
         self.add(CmdDoorClose())
@@ -120,6 +127,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdKick())
         self.add(CmdLock())
         self.add(CmdLook())
+        self.add(CmdMagicMissile())
         self.add(CmdName())
         self.add(CmdOpen())
         self.add(CmdPractice())

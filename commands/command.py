@@ -562,6 +562,13 @@ class CmdGet(MuxCommand):
                     else:
                         get_output += "You can't get %s.\n" % obj.key
 
+                if rules.carry_permitted(caller, obj) == "weight_fail":
+                    caller.msg("You cannot carry that much weight!")
+                    return
+                elif rules.carry_permitted(caller, obj) == "number_fail":
+                    caller.msg("Your hands are already full!")
+                    return
+
                 # calling at_before_get hook method
                 elif not obj.at_before_get(caller):
                     pass
@@ -614,6 +621,13 @@ class CmdGet(MuxCommand):
                     else:
                         get_output += "You can't get %s.\n" % obj.key
 
+                if rules.carry_permitted(caller, obj) == "weight_fail":
+                    caller.msg("You cannot carry that much weight!")
+                    return
+                elif rules.carry_permitted(caller, obj) == "number_fail":
+                    caller.msg("Your hands are already full!")
+                    return
+
                 # calling at_before_get hook method
                 elif not obj.at_before_get(caller):
                     pass
@@ -633,6 +647,65 @@ class CmdGet(MuxCommand):
                 caller.location.msg_contents(
                     get_output_room, exclude=caller
                 )
+
+
+class CmdGive(MuxCommand):
+    """
+    Give away something to someone.
+    Usage:
+      give <inventory obj> to <target>
+    Gives an items from your inventory to another character,
+    placing it in their inventory.
+    """
+
+    key = "give"
+    delimiter = " to "
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement give"""
+
+        caller = self.caller
+        if not self.args or not self.rhs:
+            caller.msg("Usage: give <inventory object> to <target>")
+            return
+        to_give = caller.search(
+            self.lhs,
+            location=caller,
+            nofound_string="You aren't carrying %s." % self.lhs,
+            multimatch_string="You carry more than one %s:" % self.lhs,
+        )
+        target = caller.search(self.rhs)
+        if not (to_give and target):
+            return
+        if target == caller:
+            caller.msg("You keep %s to yourself." % to_give.key)
+            return
+        if not to_give.location == caller:
+            caller.msg("You are not holding %s." % to_give.key)
+            return
+
+        if rules.carry_permitted(target, to_give) == "weight_fail":
+            caller.msg("You cannot carry that much weight!")
+            return
+        elif rules.carry_permitted(target, to_give) == "number_fail":
+            caller.msg("Your hands are already full!")
+            return
+
+        # calling at_before_give hook method
+        if not to_give.at_before_give(caller, target):
+            return
+
+        # give object
+        success = to_give.move_to(target, quiet=True)
+        if not success:
+            caller.msg("This could not be given.")
+        else:
+            caller.msg("You give %s to %s." % (to_give.key, target.key))
+            target.msg("%s gives you %s." % (caller.key, to_give.key))
+            # Call the object script's at_give() method.
+            to_give.at_give(caller, target)
 
 
 class CmdHome(MuxCommand):
@@ -982,6 +1055,9 @@ class CmdPut(MuxCommand):
                 caller.msg("%s is closed." % (target.key[0].upper() + target.key[1:]))
             return
 
+        if rules.carry_permitted(target, to_put) == "weight_fail":
+            caller.msg("%s cannot contain that much weight." % (target.key[0].upper() + target.key[1:]))
+            return
 
         # Put object in the container.
         success = to_put.move_to(target, quiet=True)

@@ -208,6 +208,52 @@ def can_see(target, looker):
     elif target.get_affect_status("invisible") and not looker.get_affect_status("detect invis"):
         return False
 
+def carry_permitted(object, new_object):
+    """
+    This function will take an object (mobile, player or container),
+    and return a boolean based on whether the new_object can be
+    carried/contained, as the case may be.
+    """
+
+    carry_weight_maximum = 0
+
+    if "player" in object.tags.all():
+
+        average_attribute = (object.strength + object.constitution) / 2
+
+        if object.level > 65:
+            carry_weight_maximum = (strength_carry(average_attribute) + (object.level * object.strength) / 8)
+        else:
+            carry_weight_maximum = strength_carry(average_attribute)
+
+    elif "mobile" in object.tags.all():
+        carry_weight_maximum = 9999999
+
+    elif "object" in object.tags.all():
+        if object.db.item_type == "container":
+            carry_weight_maximum = object.db.weight_maximum
+
+    current_contents_weight = weight_contents(object)
+
+    if current_contents_weight + new_object.weight > carry_weight_maximum:
+        return "weight_fail"
+
+    if "player" in object.tags.all() or "mobile" in object.tags.all():
+        carry_number_maximum = int(object.level / 4) + 2 + int((object.strength + object.dexterity + object.constitution) / 3)
+
+        total_equipped = 0
+
+        for obj in object.contents:
+            if obj.equipped:
+                total_equipped += 1
+
+        current_contents_number = len(object.contents) - total_equipped
+
+        if current_contents_number + 1 > carry_number_maximum:
+            return "number_fail"
+
+    return True
+
 
 def check_ready_to_level(character):
     """
@@ -770,6 +816,58 @@ def set_weapon_low_high(level):
     return low, high
 
 
+def strength_carry(rating):
+    """
+    This function takes a rating and returns the amount of
+    weight that can be carried as a result of that rating.
+    Differs from other attribute functions because at least
+    one use of this function uses an average of strength and
+    constitution.
+    """
+
+    if rating == 0:
+        return 0
+    elif rating < 3:
+        return 3
+    elif rating < 4:
+        return 10
+    elif rating < 5:
+        return 25
+    elif rating < 6:
+        return 55
+    elif rating < 7:
+        return 80
+    elif rating < 8:
+        return 90
+    elif rating < 10:
+        return 100
+    elif rating < 12:
+        return 115
+    elif rating < 14:
+        return 140
+    elif rating < 16:
+        return 170
+    elif rating < 17:
+        return 195
+    elif rating < 18:
+        return 220
+    elif rating < 19:
+        return 250
+    elif rating < 20:
+        return 400
+    elif rating < 21:
+        return 500
+    elif rating < 22:
+        return 600
+    elif rating < 23:
+        return 700
+    elif rating < 24:
+        return 800
+    elif rating < 25:
+        return 900
+    else:
+        return 1000
+
 def wait_state_apply(character, wait_state):
     """
     This function takes a character and applies an ndb attribute
@@ -813,6 +911,26 @@ def wait_state_remove(character):
                                                                              character.moves_maximum,
                                                                              prompt_wait)
     character.msg(prompt=prompt)
+
+
+def weight_contents(object):
+    """
+    This function will take an object (player, mobile or
+    container), and report back the total weight it is
+    currently carrying. Checks the weight in the containers
+    on the player/mobile.
+    """
+
+    weight = 0
+
+    if object.contents:
+        for obj in object.contents:
+            weight += obj.weight
+            if obj.contents:
+                for contained_object in obj.contents:
+                    weight += contained_object.weight
+
+    return weight
 
 
 def wisdom_mana_bonus(character):

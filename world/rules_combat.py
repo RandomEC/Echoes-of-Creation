@@ -480,18 +480,7 @@ def do_dirt_kicking(attacker, victim):
         attacker.msg("There is no dirt to kick here!")
         return
     
-    if random.randint(1, 100) > chance:
-        
-        if "player" in attacker.tags.all():
-            rules_skills.check_skill_improve(attacker, "dirt kicking", False, 1)
-            attacker.moves_spent += 5
-
-        attacker.msg("Your attempt to kick dirt in the eyes of %s fails.\n" % victim.key)
-        victim.msg("%s kicks dirt over your shoulder.\n" % (attacker.key[0].upper() + attacker.key[1:]))
-        attacker.location.msg_contents("%s kicks dirt past %s.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.name), exclude=(attacker, victim))
-
-    else:
-
+    if random.randint(1, 100) <= chance or "mobile" in attacker.tags.all():
         if "player" in attacker.tags.all():
             rules_skills.check_skill_improve(attacker, "dirt kicking", True, 1)
             attacker.moves_spent += 10
@@ -535,7 +524,17 @@ def do_dirt_kicking(attacker, victim):
                            )
 
         rules.wait_state_apply(attacker, wait_state)
-        
+
+    else:
+        if "player" in attacker.tags.all():
+            rules_skills.check_skill_improve(attacker, "dirt kicking", False, 1)
+            attacker.moves_spent += 5
+
+        attacker.msg("Your attempt to kick dirt in the eyes of %s fails.\n" % victim.key)
+        victim.msg("%s kicks dirt over your shoulder.\n" % (attacker.key[0].upper() + attacker.key[1:]))
+        attacker.location.msg_contents("%s kicks dirt past %s.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.name), exclude=(attacker, victim))
+
+
 def do_flee(character):
     
     if character.db.position == "sitting":
@@ -616,21 +615,7 @@ def do_kick(attacker, victim):
     skill = rules_skills.get_skill(skill_name="dirt kicking")
     wait_state = skill["wait state"]
 
-    if random.randint(1, 100) > attacker.db.skills["kick"]:
-        if "player" in attacker.tags.all():
-            rules_skills.check_skill_improve(attacker, "kick", False, 4)
-            attacker.moves_spent += 5
-
-        attacker_output = ("You kick wildly at %s and miss.\n" % victim.key)
-        victim_output = ("%s kicks wildly at you and misses.\n" % (attacker.key[0].upper() + attacker.key[1:]))
-        room_output = ("%s kicks at %s and misses.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.name))
-
-        output = [attacker_output, victim_output, room_output]
-
-        do_attack(attacker, victim, None, hit=False, output=output, type="kick")
-
-    else:
-
+    if random.randint(1, 100) <= attacker.db.skills["kick"] or "mobile" in attacker.tags.all():
         if "player" in attacker.tags.all():
             rules_skills.check_skill_improve(attacker, "kick", True, 4)
             attacker.moves_spent += 10
@@ -652,6 +637,19 @@ def do_kick(attacker, victim):
         do_attack(attacker, victim, None, hit=True, damage=damage, output=output, type="kick")
 
         rules.wait_state_apply(attacker, wait_state)
+
+    else:
+        if "player" in attacker.tags.all():
+            rules_skills.check_skill_improve(attacker, "kick", False, 4)
+            attacker.moves_spent += 5
+
+        attacker_output = ("You kick wildly at %s and miss.\n" % victim.key)
+        victim_output = ("%s kicks wildly at you and misses.\n" % (attacker.key[0].upper() + attacker.key[1:]))
+        room_output = ("%s kicks at %s and misses.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.name))
+
+        output = [attacker_output, victim_output, room_output]
+
+        do_attack(attacker, victim, None, hit=False, output=output, type="kick")
 
 
 def do_one_character_attacks(attacker, victim):
@@ -791,18 +789,7 @@ def do_one_weapon_attacks(attacker, victim, eq_slot):
 def do_rescue(attacker, to_rescue, victim):
     combat = attacker.ndb.combat_handler
 
-    if random.randint(1, 100) > attacker.db.skills["rescue"]:
-        if "player" in attacker.tags.all():
-            rules_skills.check_skill_improve(attacker, "rescue", False)
-            attacker.moves_spent += 5
-
-        attacker.msg("You fail to rescue %s!\n" % to_rescue.key)
-        victim.msg("%s tries to get between you and %s and fails.\n" % ((attacker.key[0].upper() + attacker.key[1:]), to_rescue.key))
-        attacker.location.msg_contents("%s tries to get between %s and %s and fails.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.key, to_rescue.key), exclude=(attacker, victim, to_rescue))
-        to_rescue.msg("%s tries to get get between you and your attacker and fails!" % (attacker.key[0].upper() + attacker.key[1:]))
-
-    else:
-
+    if random.randint(1, 100) <= attacker.db.skills["rescue"] or "mobile" in attacker.tags.all():
         if "player" in attacker.tags.all():
             rules_skills.check_skill_improve(attacker, "rescue", True)
 
@@ -811,6 +798,16 @@ def do_rescue(attacker, to_rescue, victim):
         victim.msg("%s rescues %s from you.\n" % ((attacker.key[0].upper() + attacker.key[1:]), to_rescue.key))
         attacker.location.msg_contents("%s rescues %s from %s.\n" % ((attacker.key[0].upper() + attacker.key[1:]), to_rescue.key, victim.key), exclude=(attacker, victim, to_rescue))
         to_rescue.msg("%s rescues you from %s!" % ((attacker.key[0].upper() + attacker.key[1:]), victim.key))
+
+    else:
+        if "player" in attacker.tags.all():
+            rules_skills.check_skill_improve(attacker, "rescue", False)
+            attacker.moves_spent += 5
+
+        attacker.msg("You fail to rescue %s!\n" % to_rescue.key)
+        victim.msg("%s tries to get between you and %s and fails.\n" % ((attacker.key[0].upper() + attacker.key[1:]), to_rescue.key))
+        attacker.location.msg_contents("%s tries to get between %s and %s and fails.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.key, to_rescue.key), exclude=(attacker, victim, to_rescue))
+        to_rescue.msg("%s tries to get get between you and your attacker and fails!" % (attacker.key[0].upper() + attacker.key[1:]))
 
 
 def do_trip(attacker, victim):
@@ -843,7 +840,7 @@ def do_trip(attacker, victim):
     elif chance > 80:
         chance = 80
 
-    if random.randint(1, 100) < chance:
+    if random.randint(1, 100) <= chance or "mobile" in attacker.tags.all():
         attacker.msg("You trip %s and %s goes down!\n" % (victim.key, victim.key))
         victim.msg("%s trips you and you go down!\n" % (attacker.key[0].upper() + attacker.key[1:]))
         attacker.location.msg_contents(

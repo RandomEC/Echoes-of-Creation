@@ -30,6 +30,10 @@ class CmdDowse(MuxCommand):
             caller.msg("You do not know how to dowse!")
             return
 
+        if caller.position != "standing":
+            caller.msg("You have to wander a bit to dowse, try standing.")
+            return
+
         if location.db.terrain == "inside" or location.db.terrain == "city" or "indoors" in location.db.room_flags:
             caller.msg("You cannot dowse in these surroundings.")
             return
@@ -87,6 +91,10 @@ class CmdForage(MuxCommand):
 
         if "forage" not in caller.db.skills:
             caller.msg("You do not know how to forage!")
+            return
+
+        if caller.position != "standing":
+            caller.msg("You have to wander a bit to forage, try standing.")
             return
 
         if location.db.terrain == "inside" or location.db.terrain == "city" or "indoors" in location.db.room_flags:
@@ -208,6 +216,10 @@ class CmdSteal(MuxCommand):
             caller.msg("Steal what from which mobile?")
             return
         
+        if caller.position != "standing":
+            caller.msg("You aren't stealing anything on the ground, stand up first.")
+            return
+
         mobiles = search.search_object_by_tag("mobile")
         target = caller.search(self.rhs, location=caller.location, candidates=mobiles)
         

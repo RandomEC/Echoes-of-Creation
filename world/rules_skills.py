@@ -166,6 +166,21 @@ def get_skill(**kwargs):
     """
     
     skills = {
+        "agitation": {
+            "classes": {
+                "psionicist": 5
+                },
+            "minimum cost": 10,
+            "wait state": 12
+            },
+        "cause light": {
+            "classes": {
+                "cleric": 5,
+                "paladin": 15
+                },
+            "minimum cost": 15,
+            "wait state": 12
+            },
         "chill touch": {
             "classes": {
                 "druid": 4
@@ -211,6 +226,26 @@ def get_skill(**kwargs):
             "minimum cost": 5,
             "wait state": 12
             },
+        "detect hidden": {
+            "classes": {
+                "mage": 5,
+                "cleric": 8,
+                "druid": 10,
+                "ranger": 18,
+                "thief": 25
+                },
+            "minimum cost": 5,
+            "wait state": 12
+            },
+        "detect magic": {
+            "classes": {
+                "mage": 5,
+                "cleric": 8,
+                "bard": 12
+                },
+            "minimum cost": 5,
+            "wait state": 12
+            },
         "dirt kicking": {
             "classes": {
                 "ranger": 4,
@@ -250,6 +285,14 @@ def get_skill(**kwargs):
                 "paladin": 12
                 },
             "wait state": 6
+            },
+        "magic missile": {
+            "classes": {
+                "mage": 4,
+                "bard": 8
+                },
+            "minimum cost": 15,
+            "wait state": 12
             },
         "rescue": {
             "classes": {

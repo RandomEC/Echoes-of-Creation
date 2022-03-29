@@ -246,6 +246,10 @@ class CmdAttack(MuxCommand):
             attacker.msg("Usage: attack <mobile>")
             return
 
+        if attacker.position != "standing":
+            attacker.msg("You might want to try standing before initiating combat.")
+            return
+
         mobiles = []
         for object in attacker.location.contents:
             if "mobile" in object.tags.all():
@@ -364,6 +368,10 @@ class CmdDirtKicking(MuxCommand):
             caller.msg("You get your feet dirty, and not much else.")
             return
 
+        if caller.position != "standing":
+            caller.msg("You may want to get up out of the dirt before kicking it.")
+            return
+
         if not self.args:
 
             if not caller.ndb.combat_handler:
@@ -474,6 +482,10 @@ class CmdKick(MuxCommand):
             caller.msg("You'd better leave the martial arts to knowledgeable fighters.")
             return
 
+        if caller.position != "standing":
+            caller.msg("You can't kick from the ground.")
+            return
+
         if "blind" in caller.db.spell_affects:
             caller.msg("It would help if you could see something to kick!")
             return
@@ -542,6 +554,10 @@ class CmdRescue(MuxCommand):
 
         if "kick" not in caller.db.skills:
             caller.msg("You'd better leave heroic acts to knowledgeable fighters.")
+            return
+
+        if caller.position != "standing":
+            caller.msg("You can't rescue anyone on the ground.")
             return
 
         if "berserk" in caller.db.spell_affects:
@@ -629,6 +645,10 @@ class CmdTrip(MuxCommand):
 
         if "trip" not in caller.db.skills:
             caller.msg("Tripping? What's that?")
+            return
+
+        if caller.position != "standing":
+            caller.msg("You might want to try standing before trying to trip.")
             return
 
         if not self.args:

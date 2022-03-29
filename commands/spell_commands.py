@@ -16,6 +16,168 @@ from commands.command import MuxCommand
 from world import rules_skills, rules_magic, rules_combat
 
 
+class CmdAgitation(MuxCommand):
+    """
+    Cast a spell to cause magical damage to an enemy.
+
+    Usage:
+      cast agitation <target>
+      agitation <target>
+
+    Agitation causes the cells in your victim to become
+    agitated, moving so fast as to cause burn damage.
+
+    Colleges that can teach (level):
+    Psionicist (5)
+    """
+
+    key = "agitation"
+    aliases = ["cast agitation"]
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement agitation"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+
+        caster = self.caller
+
+        if "agitation" not in caster.db.skills:
+            caster.msg("You do not know the spell 'agitation' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+
+        cost = rules_magic.mana_cost(caster, spell)
+
+        caster.msg("Casting cost is %d" % cost)
+
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast agitation!")
+            return
+
+        if not self.args:
+
+            if not caster.ndb.combat_handler:
+                caster.msg("You are not in combat, so you must choose a target for your spell.")
+                return
+            else:
+                combat = caster.ndb.combat_handler
+                target = combat.get_target(caster)
+
+        else:
+            mobiles = []
+            for object in caster.location.contents:
+                if "mobile" in object.tags.all():
+                    mobiles.append(object)
+            target = caster.search(self.args, candidates=mobiles)
+            if not target:
+                caster.msg("There is no %s here to inflict agitation on." % self.args)
+                return
+
+        if rules_combat.is_safe(target):
+            caster.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
+            return
+
+        if not caster.ndb.combat_handler:
+            combat = rules_combat.create_combat(caster, target)
+            rules_magic.do_agitation(caster, target, cost)
+            combat.at_repeat()
+        else:
+            rules_magic.do_agitation(caster, target, cost)
+
+
+class CmdCauseLight(MuxCommand):
+    """
+    Cast a spell to inflict damage on an enemy.
+
+    Usage:
+      cast cause light <target>
+      cause light <target>
+
+    Cause light wounds is one of a family of healing-type
+    spells that essentially reverse healing.
+
+    Colleges that can teach (level):
+    Cleric (5), Paladin (15)
+    """
+
+    key = "cause light"
+    aliases = ["cast cause light"]
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement cause light"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+
+        caster = self.caller
+
+        if "cause light" not in caster.db.skills:
+            caster.msg("You do not know the spell 'cause light' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+
+        cost = rules_magic.mana_cost(caster, spell)
+
+        caster.msg("Casting cost is %d" % cost)
+
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast cause light!")
+            return
+
+        if not self.args:
+
+            if not caster.ndb.combat_handler:
+                caster.msg("You are not in combat, so you must choose a target for your spell.")
+                return
+            else:
+                combat = caster.ndb.combat_handler
+                target = combat.get_target(caster)
+
+        else:
+            mobiles = []
+            for object in caster.location.contents:
+                if "mobile" in object.tags.all():
+                    mobiles.append(object)
+            target = caster.search(self.args, candidates=mobiles)
+            if not target:
+                caster.msg("There is no %s here to cause light wounds to." % self.args)
+                return
+
+        if rules_combat.is_safe(target):
+            caster.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
+            return
+
+        if not caster.ndb.combat_handler:
+            combat = rules_combat.create_combat(caster, target)
+            rules_magic.do_cause_light(caster, target, cost)
+            combat.at_repeat()
+        else:
+            rules_magic.do_cause_light(caster, target, cost)
+
+
 class CmdChillTouch(MuxCommand):
     """
     Cast a spell to cause chilling damage to an enemy.
@@ -46,6 +208,10 @@ class CmdChillTouch(MuxCommand):
 
         if "chill touch" not in caster.db.skills:
             caster.msg("You do not know the spell 'chill touch' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
             return
 
         # Check whether anything about the room or affects on the caster
@@ -125,6 +291,10 @@ class CmdContinualLight(MuxCommand):
             caster.msg("You do not know the spell 'continual light' yet!")
             return
 
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
         # Check whether anything about the room or affects on the caster
         # would prevent casting. Check_cast returns output for the state
         # if true, False if not.
@@ -169,6 +339,10 @@ class CmdCreateFood(MuxCommand):
 
         if "create food" not in caster.db.skills:
             caster.msg("You do not know the spell 'create food' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
             return
 
         # Check whether anything about the room or affects on the caster
@@ -218,6 +392,10 @@ class CmdCreateSound(MuxCommand):
 
         if "create sound" not in caster.db.skills:
             caster.msg("You do not know the spell 'create sound' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
             return
 
         if not self.args or not self.lhs or not self.rhs:
@@ -280,6 +458,10 @@ class CmdCreateWater(MuxCommand):
 
         if "create water" not in caster.db.skills:
             caster.msg("You do not know the spell 'create water' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
             return
 
         # Check whether anything about the room or affects on the caster
@@ -349,6 +531,10 @@ class CmdDetectEvil(MuxCommand):
             caster.msg("You do not know the spell 'detect evil' yet!")
             return
 
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
         # Check whether anything about the room or affects on the caster
         # would prevent casting. Check_cast returns output for the state
         # if true, False if not.
@@ -375,14 +561,245 @@ class CmdDetectEvil(MuxCommand):
                 caster.msg("There is no %s here on whom to cast detect evil on." % self.args)
                 return
 
-        if target.get_affect_status("detect magic"):
+        if target.get_affect_status("detect evil"):
             if target == caster:
                 subject = "You"
             else:
-                subject = (target.key[0].upper() + target.key[1:])
+                subject = "%s is" % (target.key[0].upper() + target.key[1:])
 
-            caster.msg("%s is already affected by detect magic.\n")
+            caster.msg("%s is already affected by detect evil.\n" % subject)
             return
 
         rules_magic.do_detect_evil(caster, target, cost)
+
+
+class CmdDetectHidden(MuxCommand):
+    """
+    Allow yourself or a target to detect hidden characters.
+
+    Usage:
+      cast detect hidden <target>
+      cast detect hidden
+      detect hidden
+
+    Detect hidden will cause any hidden characters to become
+    visible for a time. Cast with no target, it targets the
+    caster.
+
+    Colleges that can teach (level):
+    Mage (5), Cleric (8), Druid (10), Ranger (18), Thief (25)
+    """
+
+    key = "detect hidden"
+    aliases = ["cast detect hidden"]
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement detect hidden"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+
+        caster = self.caller
+
+        if "detect hidden" not in caster.db.skills:
+            caster.msg("You do not know the spell 'detect hidden' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+
+        cost = rules_magic.mana_cost(caster, spell)
+
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast detect hidden!")
+            return
+
+        if not self.args:
+            target = caster
+
+        else:
+            targets = []
+            for object in caster.location.contents:
+                if "mobile" in object.tags.all() or "player" in object.tags.all():
+                    targets.append(object)
+            target = caster.search(self.args, candidates=targets)
+            if not target:
+                caster.msg("There is no %s here on whom to cast detect hidden on." % self.args)
+                return
+
+        if target.get_affect_status("detect hidden"):
+            if target == caster:
+                subject = "You are"
+            else:
+                subject = "%s is" % (target.key[0].upper() + target.key[1:])
+
+            caster.msg("%s already affected by detect hidden.\n" % subject)
+            return
+
+        rules_magic.do_detect_hidden(caster, target, cost)
+
+
+class CmdDetectMagic(MuxCommand):
+    """
+    Allow yourself or a target to detect magic in items.
+
+    Usage:
+      cast detect magic <target>
+      cast detect magic
+      detect magic
+
+    Detect magic will cause any magical items to show up with
+    a (Magical) aura for a time. Cast with no target, it
+    targets the caster.
+
+    Colleges that can teach (level):
+    Mage (5), Cleric (8), Bard (12)
+    """
+
+    key = "detect magic"
+    aliases = ["cast detect magic"]
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement detect magic"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+
+        caster = self.caller
+
+        if "detect magic" not in caster.db.skills:
+            caster.msg("You do not know the spell 'detect magic' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+
+        cost = rules_magic.mana_cost(caster, spell)
+
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast detect magic!")
+            return
+
+        if not self.args:
+            target = caster
+
+        else:
+            targets = []
+            for object in caster.location.contents:
+                if "mobile" in object.tags.all() or "player" in object.tags.all():
+                    targets.append(object)
+            target = caster.search(self.args, candidates=targets)
+            if not target:
+                caster.msg("There is no %s here on whom to cast detect magic on." % self.args)
+                return
+
+        if target.get_affect_status("detect magic"):
+            if target == caster:
+                subject = "You are"
+            else:
+                subject = "%s is" % (target.key[0].upper() + target.key[1:])
+
+            caster.msg("%s already affected by detect magic.\n" % subject)
+            return
+
+        rules_magic.do_detect_magic(caster, target, cost)
+
+
+class CmdMagicMissile(MuxCommand):
+    """
+    Cast a spell to cause magical damage to an enemy.
+
+    Usage:
+      cast magic missile <target>
+      magic missile <target>
+
+    Magic missile simply does damage to your enemy.
+
+    Colleges that can teach (level):
+    Mage (4), Bard (8)
+    """
+
+    key = "magic missile"
+    aliases = ["cast magic missile"]
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement magic missile"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+
+        caster = self.caller
+
+        if "magic missile" not in caster.db.skills:
+            caster.msg("You do not know the spell 'magic missile' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+
+        cost = rules_magic.mana_cost(caster, spell)
+
+        caster.msg("Casting cost is %d" % cost)
+
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast magic missile!")
+            return
+
+        if not self.args:
+
+            if not caster.ndb.combat_handler:
+                caster.msg("You are not in combat, so you must choose a target for your spell.")
+                return
+            else:
+                combat = caster.ndb.combat_handler
+                target = combat.get_target(caster)
+
+        else:
+            mobiles = []
+            for object in caster.location.contents:
+                if "mobile" in object.tags.all():
+                    mobiles.append(object)
+            target = caster.search(self.args, candidates=mobiles)
+            if not target:
+                caster.msg("There is no %s here to hit with your magic missile." % self.args)
+                return
+
+        if rules_combat.is_safe(target):
+            caster.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
+            return
+
+        if not caster.ndb.combat_handler:
+            combat = rules_combat.create_combat(caster, target)
+            rules_magic.do_magic_missile(caster, target, cost)
+            combat.at_repeat()
+        else:
+            rules_magic.do_magic_missile(caster, target, cost)
+
 
