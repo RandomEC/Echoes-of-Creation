@@ -245,8 +245,9 @@ def carry_permitted(object, new_object):
         total_equipped = 0
 
         for obj in object.contents:
-            if obj.equipped:
-                total_equipped += 1
+            if "equipped" in obj.db.all:
+                if obj.equipped:
+                    total_equipped += 1
 
         current_contents_number = len(object.contents) - total_equipped
 
