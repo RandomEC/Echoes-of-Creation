@@ -98,7 +98,7 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
                         else:
                             chance = victim.db.skills["parry"] / 2
                     
-                    if random.randint(1, 100) >= (chance + victim.level - attacker.level)
+                    if random.randint(1, 100) >= (chance + victim.level - attacker.level):
                         hit = False
                         parry = True
                         if "player" in victim.tags.all():
@@ -114,7 +114,7 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
                     else:
                         chance = victim.db.skills["dodge"] / 2
                         
-                    if random.randint(1, 100) >= (chance + victim.level - attacker.level)
+                    if random.randint(1, 100) >= (chance + victim.level - attacker.level):
                         hit = False
                         dodge = True
                         if "player" in victim.tags.all():
@@ -130,7 +130,7 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
                     else:
                         chance = victim.db.skills["dodge"] / 2
                         
-                    if random.randint(1, 100) >= (chance + victim.level - attacker.level)
+                    if random.randint(1, 100) >= (chance + victim.level - attacker.level):
                         hit = False
                         dodge = True
                         if "player" in victim.tags.all():
@@ -157,7 +157,7 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
                         else:
                             chance = victim.db.skills["parry"] / 2
                     
-                    if random.randint(1, 100) >= (chance + victim.level - attacker.level)
+                    if random.randint(1, 100) >= (chance + victim.level - attacker.level):
                         hit = False
                         parry = True
                         if "player" in victim.tags.all():
