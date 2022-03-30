@@ -289,7 +289,83 @@ def classes_current(character):
     at higher levels) is. For now just returns default.
     """
     
-    return ["default"]
+    # As the sort is done below, the below order is also the
+    # tiebreaker order.
+    colleges = {"warrior": 0,
+                "thief": 0,
+                "druid": 0,
+                "ranger": 0,
+                "paladin": 0,
+                "mage": 0,
+                "bard": 0,
+                "cleric": 0,
+                "psionicist": 0
+                }
+    
+    # Each college has more or less skills in it than others, from
+    # the most (psionicist) to least (druid/warrior/thief). We
+    # apply a weighting factor to each skill learned in each college
+    # to make up for this. Eventually, this should be calculated,
+    # rather than magic numbers.
+    factor = {"psionicist": 1.00,
+              "cleric": 1.16,
+              "bard": 1.35,
+              "mage": 1.52,
+              "paladin": 1.560,
+              "ranger": 1.561,
+              "druid": 1.790,
+              "thief": 1.791,
+              "warrior": 1.792
+              }
+    
+    if not character.db.skills:
+        return["default"]
+    
+    # Run through skills known to character.
+    for skill in character.db.skills:
+        
+        # Grab the skill dictionary for each skill.
+        skill_dict = rules_skills.get_skill(skill_name=skill)
+        
+        # Run through the classes eligible to learn each skill.
+        for college in skill_dict:
+            
+            # If their level equals or exceeds the level to learn
+            # the skill in that college, they get credit for work
+            # in that college.
+            if skill_dict[college] <= character.level:
+                colleges[college] += factor[college]
+    
+    # Sorting the colleges based on weighted skills in each.
+    
+    # Make a copy to operate on.
+    sortable_colleges = colleges.copy()
+    ordered_list = []
+    number_results = int(character.level / 20 + 1)
+    rank = 1
+    total = len(sortable_colleges)
+
+    while rank <= total:
+        
+        # Find the highest value still in the list, and append to
+        # the ordered list.
+        ordered_list.append(max(sortable_colleges, key=sortable_colleges.get))
+        
+        # Delete that value from the colleges copy.
+        del sortable_colleges[ordered_list[rank-1]]
+        rank += 1
+
+    if number_results > 1:
+        
+        # Check to make sure that you aren't returning colleges with
+        # no skills in them.
+        for index in range(0, total):
+            if colleges[ordered_list[index]] == 0 or index == number_results + 1:
+                break
+                        
+        return ordered_list[0:index - 1]
+    else:
+        return ordered_list[0]
 
 def constitution_hitpoint_bonus(character):
     """
