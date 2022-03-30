@@ -312,6 +312,13 @@ def get_skill(**kwargs):
                 "thief": 16
                 },
             },
+        "refresh": {
+            "classes": {
+                "druid": 4,
+                "ranger": 16
+                },
+            "wait state": 12
+            },
         "rescue": {
             "classes": {
                 "warrior": 4,
