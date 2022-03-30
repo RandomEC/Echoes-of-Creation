@@ -502,6 +502,7 @@ class CmdKick(MuxCommand):
             else:
                 combat = caller.ndb.combat_handler
                 target = combat.get_target(caller)
+                rules_combat.do_kick(caller, target)
 
         else:
             mobiles = []

@@ -556,7 +556,8 @@ def do_death(attacker, victim, **kwargs):
 
             # Do gold penalty, after figuring out how much it should be.
 
-    return (attacker_string, victim_string, room_string)
+    if "special" not in kwargs:
+        return (attacker_string, victim_string, room_string)
 
 
 def do_dirt_kicking(attacker, victim):
