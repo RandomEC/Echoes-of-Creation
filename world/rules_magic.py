@@ -555,7 +555,11 @@ def do_refresh(caster, target, mana_cost):
                 
         if target != caster:
             target.msg("You feel less tired.\n")
-            
+        
+        if refresh >= target.moves_spent:
+            refresh = target.moves_spent
+        target.moves_spent -= refresh
+        
         rules.wait_state_apply(caster, spell["wait state"])
 
     else:
