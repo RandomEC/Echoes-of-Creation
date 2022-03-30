@@ -528,6 +528,43 @@ def do_magic_missile(caster, target, mana_cost):
         caster.msg("You chant 'magic missile'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "magic missile")
 
+        
+def do_refresh(caster, target, mana_cost):
+    """ Function implementing refresh spell"""
+
+    spell = rules_skills.get_skill(skill_name="refresh")
+
+    level = caster.level
+
+    refresh = random.randint(1, 8) + caster.level - 4
+
+    if random.randint(1, 100) <= caster.db.skills["refresh"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "refresh", True, 1)
+
+        caster.msg("You chant 'refresh'.\n")
+        player_output_magic_chant(caster, "refresh")
+
+        if target == caster:
+            target_string = "yourself"
+        else:
+            target_string = target.key
+        
+        caster.msg("You cast refresh on %s.\n" % target_string)
+                
+        if target != caster:
+            target.msg("You feel less tired.\n")
+            
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "refresh", False, 1)
+        caster.msg("You chant 'refresh'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "refresh")
+
 
 def do_ventriloquate(caster, mana_cost, target, sound):
     """ Function implementing ventriloquate spell"""
