@@ -803,6 +803,72 @@ class CmdMagicMissile(MuxCommand):
             rules_magic.do_magic_missile(caster, target, cost)
 
 
+class CmdRefresh(MuxCommand):
+    """
+    Cast a spell to restore movement points to a target.
+
+    Usage:
+      cast refresh <target>
+      refresh <target>
+
+    Refresh restores some amount of the lost movement points
+    of a target.
+
+    Colleges that can teach (level):
+    Druid (4), Ranger (16)
+    """
+
+    key = "refresh"
+    aliases = ["cast refresh"]
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement refresh"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+
+        caster = self.caller
+
+        if "refresh" not in caster.db.skills:
+            caster.msg("You do not know the spell 'refresh' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+
+        cost = rules_magic.mana_cost(caster, spell)
+
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast refresh!")
+            return
+
+        if not self.args:
+
+            target = caster
+
+        else:
+            mobiles = []
+            for object in caster.location.contents:
+                if "mobile" in object.tags.all() or "player" in object.tags.all():
+                    mobiles.append(object)
+            target = caster.search(self.args, candidates=mobiles)
+            if not target:
+                caster.msg("There is no %s here to refresh." % self.args)
+                return
+
+        if target:
+            rules_magic.do_refresh(caster, target, cost)
+
+            
 class CmdVentriloquate(MuxCommand):
     """
     A spell that puts words in the mouths of other players and
