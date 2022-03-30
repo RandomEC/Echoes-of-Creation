@@ -537,6 +537,9 @@ def do_refresh(caster, target, mana_cost):
     level = caster.level
 
     refresh = random.randint(1, 8) + caster.level - 4
+    
+    if refresh < 1:
+        refresh = 1
 
     if random.randint(1, 100) <= caster.db.skills["refresh"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
