@@ -577,6 +577,20 @@ class Character(DefaultCharacter):
         self.db.sex = sex
 
     @property
+    def items(self):
+        item_count = 0
+
+        for object in self.contents:
+            if not object.db.equipped:
+                item_count += 1
+
+        return item_count
+
+    @property
+    def weight_carried(self):
+        return rules.weight_contents(self)
+
+    @property
     def alignment(self):
         return self.db.alignment
     
@@ -646,8 +660,8 @@ class Character(DefaultCharacter):
             self.get_modified_attribute("armor class"), self.db.alignment, self.get_modified_attribute("saving throw"), \
             self.db.staff_position, self.db.immortal_invisible, \
             self.db.immortal_cloak, self.db.immortal_ghost, self.db.holy_light,\
-            self.db.level, self.db.age, self.db.wimpy, self.db.items,\
-            self.db.weight, self.db.damage_maximum_mobile, self.db.kill_experience_maximum_mobile
+            self.db.level, self.db.age, self.db.wimpy, self.items,\
+            self.weight_carried, self.db.damage_maximum_mobile, self.db.kill_experience_maximum_mobile
 
     def get_equipment_table(self):
         """

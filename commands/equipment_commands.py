@@ -253,14 +253,31 @@ class CmdRemove(MuxCommand):
         if not success:
             caller.msg("You cannot remove this.")
         else:
-            caller.msg("You remove %s from your %s." % (eq.name,eq.db.wear_location))
-            caller.location.msg_contents(
-                "%s removes a %s from %s %s." % (caller.name,
-                                                 eq.name,
-                                                 rules.pronoun_possessive(caller),
-                                                 eq.db.wear_location
-                                                 ), exclude=caller
-            )
+            if eq.db.wear_location == "light":
+                caller.msg("You extinguish %s and no longer use it as a light." % eq.name)
+                caller.location.msg_contents(
+                    "%s extinguishes %s and no longer uses it as a light." % (caller.name, eq.name), exclude=caller)
+            elif eq.db.wear_location == "shield":
+                caller.msg("You no longer use %s as a shield." % eq.name)
+                caller.location.msg_contents(
+                    "%s no longer uses %s as a shield." % (caller.name, eq.name), exclude=caller)
+            elif eq.db.wear_location == "about body":
+                caller.msg("You remove %s from about your body." % eq.name)
+                caller.location.msg_contents(
+                    "%s removes %s from about %s body." % (caller.name, eq.name, rules.pronoun_possessive(caller)), exclude=caller)
+            elif eq.db.wear_location == "held, in hands":
+                caller.msg("You no longer hold %s in your hands." % eq.name)
+                caller.location.msg_contents(
+                    "%s no longer holds %s in %s hands." % (caller.name, eq.name, rules.pronoun_possessive(caller)), exclude=caller)
+            else:
+                caller.msg("You remove %s from your %s." % (eq.name, eq.db.wear_location))
+                caller.location.msg_contents(
+                    "%s removes a %s from %s %s." % (caller.name,
+                                                     eq.name,
+                                                     rules.pronoun_possessive(caller),
+                                                     eq.db.wear_location
+                                                     ), exclude=caller
+                )
 
 class CmdRemoveFrom(MuxCommand):
     """
@@ -428,14 +445,34 @@ class CmdWear(MuxCommand):
                         if not success:
                             caller.msg("You cannot remove %s." % eq_current.key)
                         else:
-                            caller.msg("You remove %s from your %s." % (eq_current.name, eq_current.db.wear_location))
-                            caller.location.msg_contents("%s removes a %s from %s %s." % (
-                                                                                    caller.name,
-                                                                                    eq_current.name,
-                                                                                    rules.pronoun_possessive(caller),
-                                                                                    eq_current.db.wear_location
-                                                                                    ), exclude=caller)
-                            
+                            if eq_current.db.wear_location == "light":
+                                caller.msg("You extinguish %s and no longer use it as a light." % eq_current.name)
+                                caller.location.msg_contents(
+                                    "%s extinguishes %s and no longer uses it as a light." % (caller.name, eq_current.name), exclude=caller)
+                            elif eq_current.db.wear_location == "shield":
+                                caller.msg("You no longer use %s as a shield." % eq_current.name)
+                                caller.location.msg_contents(
+                                    "%s no longer uses %s as a shield." % (caller.name, eq_current.name), exclude=caller)
+                            elif eq_current.db.wear_location == "about body":
+                                caller.msg("You remove %s from about your body." % eq_current.name)
+                                caller.location.msg_contents(
+                                    "%s removes %s from about %s body." % (caller.name, eq_current.name, rules.pronoun_possessive(caller)),
+                                    exclude=caller)
+                            elif eq_current.db.wear_location == "held, in hands":
+                                caller.msg("You no longer hold %s in your hands." % eq_current.name)
+                                caller.location.msg_contents(
+                                    "%s no longer holds %s in %s hands." % (caller.name, eq_current.name, rules.pronoun_possessive(caller)),
+                                    exclude=caller)
+                            else:
+                                caller.msg("You remove %s from your %s." % (eq_current.name, eq_current.db.wear_location))
+                                caller.location.msg_contents(
+                                    "%s removes a %s from %s %s." % (caller.name,
+                                                                     eq_current.name,
+                                                                     rules.pronoun_possessive(caller),
+                                                                     eq_current.db.wear_location
+                                                                     ), exclude=caller
+                                )
+
                 # If a location is open, just wear it.
                 success = eq.wear_to(caller)
                 if not success:
@@ -473,9 +510,9 @@ class CmdWear(MuxCommand):
                         room_wear_string = "%s wears %s on %s %s." % (caller.name,
                                                                       eq.name,
                                                                       rules.pronoun_possessive(caller),
-                                                                      wear_location
+                                                                      eq.db.wear_location
                                                                       )
-                        self_wear_string = "You wear %s on your %s." % (eq.name, wear_location)
+                        self_wear_string = "You wear %s on your %s." % (eq.name, eq.db.wear_location)
 
                     caller.msg(self_wear_string)
                     caller.location.msg_contents(room_wear_string, exclude=caller)
@@ -669,8 +706,8 @@ class CmdWield(MuxCommand):
                 if not success:
                     caller.msg("You cannot remove this.")
                 else:
-                    caller.msg("You no longer wield %s." % eq.name)
-                    caller.location.msg_contents("%s no longer wields %s."
+                    caller.msg("You no longer wield %s as a weapon." % eq.name)
+                    caller.location.msg_contents("%s no longer wields %s as a weapon."
                                                  % (
                                                     caller.name,
                                                     eq.name

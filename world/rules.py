@@ -236,8 +236,9 @@ def carry_permitted(object, new_object):
 
     current_contents_weight = weight_contents(object)
 
-    if current_contents_weight + new_object.weight > carry_weight_maximum:
-        return "weight_fail"
+    if new_object.weight:
+        if current_contents_weight + new_object.weight > carry_weight_maximum:
+            return "weight_fail"
 
     if "player" in object.tags.all() or "mobile" in object.tags.all():
         carry_number_maximum = int(object.level / 4) + 2 + int((object.strength + object.dexterity + object.constitution) / 3)
@@ -245,9 +246,8 @@ def carry_permitted(object, new_object):
         total_equipped = 0
 
         for obj in object.contents:
-            if "equipped" in obj.db.all:
-                if obj.equipped:
-                    total_equipped += 1
+            if obj.db.equipped:
+                total_equipped += 1
 
         current_contents_number = len(object.contents) - total_equipped
 

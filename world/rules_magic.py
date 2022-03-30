@@ -226,7 +226,7 @@ def do_continual_light(caster, mana_cost):
         rules_skills.check_skill_improve(caster, "continual light", True, 1)
 
         caster.msg("You chant 'continual light'.\nYou twiddle your thumbs and %s appears." % light.key)
-        player_output_magic_chant(caster, "create food")
+        player_output_magic_chant(caster, "continual light")
         caster.location.msg_contents("%s twiddles %s thumbs and %s appears."
                                      % ((caster.key[0].upper() + caster.key[1:]),
                                         rules.pronoun_possessive(caster),
