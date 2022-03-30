@@ -317,7 +317,8 @@ def get_skill(**kwargs):
                 "druid": 4,
                 "ranger": 16
                 },
-            "wait state": 12
+            "minimum cost": 12,
+            "wait state": 18
             },
         "rescue": {
             "classes": {
