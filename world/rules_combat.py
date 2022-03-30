@@ -1291,15 +1291,53 @@ def get_race_hitbonus(attacker, victim):
 
 
 def get_warskill(combatant):
+    """
+    This function returns the innate basic fighting skill
+    for the combatant. For players, this is based on what
+    colleges they are specializing in.
+    """
+
     if "mobile" in combatant.tags.all():
         warskill_factor = combatant.db.level/101
         warskill = int(120*warskill_factor)
         return warskill
     else:
-        # Will eventually deal with variable player warskill based on
-        # class-type skills learned.
+        colleges = rules.classes_current(combatant)
+        max_warskill = 0
+
+        for college in colleges:
+            if college == "default" and len(colleges) == 1:
+                max_warskill = 120
+            elif college == "mage":
+                if max_warskill < 65:
+                    max_warskill = 65
+            elif college == "cleric":
+                if max_warskill < 85:
+                    max_warskill = 85
+            elif college == "thief":
+                if max_warskill < 120:
+                    max_warskill = 120
+            elif college == "warrior":
+                if max_warskill < 180:
+                    max_warskill = 180
+            elif college == "psionicist":
+                if max_warskill < 50:
+                    max_warskill = 50
+            elif college == "druid":
+                if max_warskill < 100:
+                    max_warskill = 100
+            elif college == "ranger":
+                if max_warskill < 140:
+                    max_warskill = 140
+            elif college == "paladin":
+                if max_warskill < 160:
+                    max_warskill = 160
+            elif college == "bard"
+                if max_warskill < 100:
+                    max_warskill = 100
+     
         warskill_factor = combatant.db.level/101
-        warskill = int(120*warskill_factor)
+        warskill = int(max_warskill*warskill_factor)
         return warskill
 
 
