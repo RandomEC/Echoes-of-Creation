@@ -486,6 +486,10 @@ class CmdKick(MuxCommand):
             caller.msg("It would help if you could see something to kick!")
             return
 
+        if caller.moves_current < 10:
+            caller.msg("You are too tired to kick your enemy currently!")
+            return
+        
         if not self.args:
 
             if not caller.ndb.combat_handler:
