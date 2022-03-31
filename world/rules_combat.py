@@ -383,6 +383,8 @@ def do_death(attacker, victim, **kwargs):
     This handles the death and returns some output.
     """
 
+    combat = attacker.ndb.combat_handler
+    
     if "special" in kwargs:
         if "type" in kwargs:
             damage_type = kwargs["type"]
@@ -558,7 +560,17 @@ def do_death(attacker, victim, **kwargs):
             victim_string += ("You lose %s experience as a result of your death!" % experience_loss)
 
             # Do gold penalty, after figuring out how much it should be.
+    
+    # Remove dead combatants from combat.
+    combat.remove_combatant(victim)
 
+    if "player" in victim.tags.all():
+
+        # Reset dead players to one hitpoint, and move to home. Mobile hitpoints will get reset by reset
+        # function.
+        victim.hitpoints_damaged = (victim.hitpoints_maximum - 1)
+        victim.move_to(victim.home, quiet=True)           
+            
     if "special" not in kwargs:
         return (attacker_string, victim_string, room_string)
 
