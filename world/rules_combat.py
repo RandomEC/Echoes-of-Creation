@@ -740,7 +740,7 @@ def do_flee(character):
 
 def do_kick(attacker, victim):
 
-    skill = rules_skills.get_skill(skill_name="dirt kicking")
+    skill = rules_skills.get_skill(skill_name="kick")
     wait_state = skill["wait state"]
 
     if random.randint(1, 100) <= attacker.db.skills["kick"] or "mobile" in attacker.tags.all():
