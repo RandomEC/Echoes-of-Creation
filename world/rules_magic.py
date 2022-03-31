@@ -354,7 +354,48 @@ def do_create_water(caster, mana_cost, target_container):
         caster.msg("You chant 'create water'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "create water")            
 
+        
+def do_cure_light(caster, target, mana_cost):
+    """ Function implementing cure light wounds spell"""
 
+    spell = rules_skills.get_skill(skill_name="cure light")
+
+    level = caster.level
+
+    heal = random.randint(1, 8) + (caster.level / 3)
+
+    if random.randint(1, 100) <= caster.db.skills["cure light"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "cure light", True, 1)
+
+        caster.msg("You chant 'cure light'.\n")
+        player_output_magic_chant(caster, "cure light")
+
+        if target == caster:
+            target_string = "your"
+        else:
+            target_string = "%s's" % target.key
+        
+        caster.msg("You cure some of %s light wounds.\n" % target_string)
+                
+        if target != caster:
+            target.msg("You feel better!\n")
+        
+        if heal >= target.hitpoints_damaged:
+            heal = target.hitooints_damaged
+        target.hitpoints_damaged -= heal
+        
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "cure light", False, 1)
+        caster.msg("You chant 'cure light'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "cure light")
+
+        
 def do_detect_evil(caster, target, mana_cost):
     """Implements the detect evil spell."""
 
@@ -571,6 +612,43 @@ def do_refresh(caster, target, mana_cost):
         rules_skills.check_skill_improve(caster, "refresh", False, 1)
         caster.msg("You chant 'refresh'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "refresh")
+
+        
+def do_summon_weapon(caster, mana_cost):
+    """ Function implementing summon weapon spell"""
+
+    spell = rules_skills.get_skill(skill_name="summon weapon")
+
+    level = caster.level
+
+    if random.randint(1, 100) <= caster.db.skills["summon weapon"] or "mobile" in caster.tags.all():
+        weapon = rules.make_object(caster.location, False, "o36")
+
+        weapon.db.cost = 0
+        weapon.db.level = level
+        weapon.db.damage_low, weapon.db.damage_high = rules.set_weapon_low_high(weapon.db.level)
+        
+        rules.set_disintegrate_timer(weapon)
+
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "summon weapon", True, 1)
+
+        caster.msg("You chant 'summon weapon'.\nYou pray to the Paladin gods and %s appears." % weapon.key)
+        player_output_magic_chant(caster, "summon weapon")
+        caster.location.msg_contents("%s prays to the Paladin gods and %s appears."
+                                     % ((caster.key[0].upper() + caster.key[1:]),
+                                        weapon.key),
+                                     exclude=caster)
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "summon weapon", False, 1)
+        caster.msg("You chant 'summon weapon'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "summon weapon")
 
 
 def do_ventriloquate(caster, mana_cost, target, sound):
