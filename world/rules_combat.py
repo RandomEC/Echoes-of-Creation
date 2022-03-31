@@ -175,8 +175,11 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
         # Base combat round attacks.
         else:
             damage = do_damage(attacker, victim, eq_slot)
-        
-        if "player" in attacker.tags.all():
+
+        # Combat handler check is below to make sure that they didn't get pulled
+        # from combat (because they are dead) by the main combat handler while
+        # processing a special attack separately.
+        if "player" in attacker.tags.all() and "combat_handler" in victim.ndb.all:
             # Make sure we aren't giving out experience for more damage than
             # the mobile has hitpoints remaining.
             if damage > victim.hitpoints_current:
