@@ -218,6 +218,16 @@ def get_skill(**kwargs):
             "minimum cost": 5,
             "wait state": 12
             },
+        "cure light": {
+            "classes": {
+                "cleric": 5,
+                "druid": 7,                
+                "paladin": 15,
+                "bard": 18
+                },
+            "minimum cost": 10,
+            "wait state": 12
+            },
         "detect evil": {
             "classes": {
                 "cleric": 4,
@@ -335,6 +345,13 @@ def get_skill(**kwargs):
                 },
             "minimum cost": 5,
             "wait state": 24
+            },
+        "summon weapon": {
+            "classes": {
+                "paladin": 4
+                },
+            "minimum cost": 7,
+            "wait state": 12
             },
         "trip": {
             "classes": {
