@@ -305,7 +305,7 @@ class CmdContinualLight(MuxCommand):
         cost = rules_magic.mana_cost(caster, spell)
 
         if caster.mana_current < cost:
-            caster.msg("You do not have sufficient mana to cast create food!")
+            caster.msg("You do not have sufficient mana to cast continual light!")
             return
 
         rules_magic.do_continual_light(caster, cost)
@@ -497,7 +497,73 @@ class CmdCreateWater(MuxCommand):
 
         rules_magic.do_create_water(caster, cost, target_container)
 
+        
+class CmdCureLight(MuxCommand):
+    """
+    Cast a spell to restore hitpoints to a target.
 
+    Usage:
+      cast cure light <target>
+      cure light <target>
+
+    Cure light wounds restores a small amount of hitpoints to a wounded
+    target.
+
+    Colleges that can teach (level):
+    Cleric (5), Druid (7), Paladin (15), Bard (18)
+    """
+
+    key = "cure light"
+    aliases = ["cast cure light"]
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement cure light"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+
+        caster = self.caller
+
+        if "cure light" not in caster.db.skills:
+            caster.msg("You do not know the spell 'cure light' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+
+        cost = rules_magic.mana_cost(caster, spell)
+
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast cure light!")
+            return
+
+        if not self.args:
+
+            target = caster
+
+        else:
+            mobiles = []
+            for object in caster.location.contents:
+                if "mobile" in object.tags.all() or "player" in object.tags.all():
+                    mobiles.append(object)
+            target = caster.search(self.args, candidates=mobiles)
+            if not target:
+                caster.msg("There is no %s here to cure light wounds on." % self.args)
+                return
+
+        if target:
+            rules_magic.do_cure_light(caster, target, cost)
+
+            
 class CmdDetectEvil(MuxCommand):
     """
     Allow yourself or a target to detect evil.
@@ -867,6 +933,56 @@ class CmdRefresh(MuxCommand):
 
         if target:
             rules_magic.do_refresh(caster, target, cost)
+
+            
+class CmdSummonWeapon(MuxCommand):
+    """
+    Summon a Paladin's holy weapon.
+
+    Usage:
+      cast summon weapon
+      summon weapon
+
+    Summons a Paladin's holy weapon, equal to caster's level.
+
+    Colleges that can teach (level):
+    Paladin (4)
+    """
+
+    key = "summon weapon"
+    aliases = ["cast summon weapon"]
+    locks = "cmd:all()"
+    arg_regex = r"$"
+
+    def func(self):
+        """Implement summon weapon"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+
+        caster = self.caller
+
+        if "summon weapon" not in caster.db.skills:
+            caster.msg("You do not know the spell 'summon weapon' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+
+        cost = rules_magic.mana_cost(caster, spell)
+
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast summon weapon!")
+            return
+
+        rules_magic.do_summon_weapon(caster, cost)
 
             
 class CmdVentriloquate(MuxCommand):
