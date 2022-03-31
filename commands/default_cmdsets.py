@@ -74,11 +74,13 @@ from commands.spell_commands import CmdContinualLight
 from commands.spell_commands import CmdCreateFood
 from commands.spell_commands import CmdCreateSound
 from commands.spell_commands import CmdCreateWater
+from commands.spell_commands import CmdCureLight
 from commands.spell_commands import CmdDetectEvil
 from commands.spell_commands import CmdDetectHidden
 from commands.spell_commands import CmdDetectMagic
 from commands.spell_commands import CmdMagicMissile
 from commands.spell_commands import CmdRefresh
+from commands.spell_commands import CmdSummonWeapon
 from commands.spell_commands import CmdVentriloquate
 
 class CharacterCmdSet(default_cmds.CharacterCmdSet):
@@ -110,6 +112,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdCreateFood())
         self.add(CmdCreateSound())
         self.add(CmdCreateWater())
+        self.add(CmdCureLight())
         self.add(CmdDestroy())
         self.add(CmdDetectEvil())
         self.add(CmdDetectHidden())
@@ -153,6 +156,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdSkills())
         self.add(CmdStand())
         self.add(CmdSteal())
+        self.add(CmdSummonWeapon())
         self.add(CmdTag())
         self.add(CmdTalk())
         self.add(CmdTrain())
