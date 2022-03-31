@@ -129,6 +129,79 @@ class CmdForage(MuxCommand):
             caller.location.msg_contents("%s roots around a bit, and finds some food."
                                          % caller.name, exclude=caller)
 
+class CmdPickLock(MuxCommand):
+    """
+    Pick a lock to unlock a door or container.
+    
+    Usage:
+      pick lock <direction of door>
+      pick lock <container>
+      
+    Makes an attempt to pick a lock on a door in a given direction,
+    or the lock on a container.
+    """
+
+    key = "pick lock"
+    aliases = ["pick"]    
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement pick lock"""
+
+        caller = self.caller
+        
+        if "pick lock" not in caller.db.skills:
+            caller.msg("You do not know how to pick locks!")
+            return
+
+        if not self.args:
+            caller.msg("Pick a lock in what direction or on what container?")
+            return
+        
+        if caller.position != "standing":
+            caller.msg("You aren't picking any locks on the ground, stand up first.")
+            return
+
+        target = ""
+        if caller.location.exits:
+            for exit in caller.location.exits:
+                if self.args == "exit.key":
+                    target = exit
+        
+        if target:
+        
+            if "locked" not in target.db.door_attributes:
+                caller.msg("That door is not locked.")
+                return                          
+        
+            rules_skills.do_pick_lock(caller, target, "door")
+        
+        objects = []
+        for object in caller.location.contents:
+            if "object" in object.tags.all():
+                objects.append(object)
+        for object in caller.contents:
+            if "object" in object.tags.all():
+                objects.append(object)
+                
+        target = caller.search(self.args, candidates=objects)
+        
+        if not target:
+            caller.msg("There is no %s here pick the lock of." % self.args)
+            return
+
+        if target.db.item_type != "container":
+            caller.msg("%s is not a container." % (target.key[0].upper() + target.key[1:]))
+            return
+        
+        if "locked" not in target.db.state:
+            caller.msg("%s is not locked." % (target.key[0].upper() + target.key[1:]))
+            return
+        
+        rules_skills.do_pick_lock(caller, target, to_steal)
+
+            
 class CmdSkills(MuxCommand):
     """
     List the skills you know, and the percentage you have learned of each.
