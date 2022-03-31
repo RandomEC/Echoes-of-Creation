@@ -199,7 +199,7 @@ class CmdPickLock(MuxCommand):
             caller.msg("%s is not locked." % (target.key[0].upper() + target.key[1:]))
             return
         
-        rules_skills.do_pick_lock(caller, target, to_steal)
+        rules_skills.do_pick_lock(caller, target, "container")
 
             
 class CmdSkills(MuxCommand):
