@@ -94,10 +94,10 @@ class Combat(Object):
         self.clear_messages()
 
         # Copy the dictionary, in case changes are made to it during the round.
-        combat_dict = self.db.combatants
+        combat_dict = self.db.combatants.copy()
 
         # Iterate through combatants to do a round of attacks.
-        for combatant in self.db.combatants:
+        for combatant in combat_dict:
 
             # First, check to see if the combatant is below their wimpy.
             if combatant.hitpoints_current > 0 and (("player" in combatant.tags.all() and
@@ -111,39 +111,30 @@ class Combat(Object):
                 rules_combat.do_flee(combatant)
 
             # Make sure this combatant and target are alive and both still in the same room.
-            if combatant.location == self.location and self.allow_attacks(combatant, self.db.combatants[combatant]["target"]):
-                attacker = self.db.combatants[combatant]["combatant"]
-                victim = self.db.combatants[combatant]["target"]
+            if combatant.location == self.location and self.allow_attacks(combatant, combat_dict[combatant]["target"]):
+                attacker = combat_dict[combatant]["combatant"]
+                victim = combat_dict[combatant]["target"]
 
                 # Do the attacks for this attacker, and get output.
                 attacker_string, victim_string, room_string = rules_combat.do_one_character_attacks(attacker, victim)
 
-                # Clear special attack.
-                self.db.combatants[combatant]["special attack"] = {}
-
-                # Drop wait state
-                if self.db.combatants[combatant]["wait state"]:
-                    self.db.combatants[combatant]["wait state"] -= 8
-                    if self.db.combatants[combatant]["wait state"] <= 0:
-                        self.db.combatants[combatant]["wait state"] = 0
-
                 # Add output to the rest of the output generated this round
-                self.db.combatants[attacker]["combat message"] += attacker_string
-                self.db.combatants[victim]["combat message"] += victim_string
+                combat_dict[attacker]["combat message"] += attacker_string
+                combat_dict[victim]["combat message"] += victim_string
 
                 # For everyone in the combat that was not the attacker or victim, give them their output.
-                for combatant in self.db.combatants:
+                for combatant in combat_dict:
                     if combatant != attacker and combatant != victim:
-                        self.db.combatants[combatant]["combat message"] += room_string
+                        combat_dict[combatant]["combat message"] += room_string
 
         # Generate output for everyone for the above round. Anyone that died this round is still in
         # self.db.combatants at this point. Make sure a flee didn't cause the destruction of the
         # combat with self check.
-        if self.db.combatants:
-            for combatant in self.db.combatants:
+        if combat_dict:
+            for combatant in combat_dict:
                 if "player" in combatant.tags.all():
-                    combat_message = self.db.combatants[combatant]["combat message"]
-                    target = self.db.combatants[combatant]["target"]
+                    combat_message = combat_dict[combatant]["combat message"]
+                    target = combat_dict[combatant]["target"]
 
                     # If the player and their target are still alive, tell them the status of their target.
                     if combatant.hitpoints_current > 0 and target.hitpoints_current > 0:
@@ -167,18 +158,18 @@ class Combat(Object):
                                                                                              prompt_wait)
                     combatant.msg(prompt=prompt)
 
-                # Check to see if the combatant is dead.
-                if combatant.hitpoints_current <= 0:
+                # Check to see if the combatant is dead. - MOVING ALL OF THIS TO do_attack
+                #if combatant.hitpoints_current <= 0:
 
                     # Remove dead combatants from combat.
-                    self.remove_combatant(combatant)
+                    #self.remove_combatant(combatant)
 
-                    if "player" in combatant.tags.all():
+                    #if "player" in combatant.tags.all():
 
                         # Reset dead players to one hitpoint, and move to home. Mobile hitpoints will get reset by reset
                         # function.
-                        combatant.db.hitpoints["damaged"] = (combatant.hitpoints_maximum - 1)
-                        combatant.move_to(combatant.home, quiet=True)
+                        #combatant.db.hitpoints["damaged"] = (combatant.hitpoints_maximum - 1)
+                        #combatant.move_to(combatant.home, quiet=True)
 
         if self.db.combatants:
             self.db.rounds += 1
