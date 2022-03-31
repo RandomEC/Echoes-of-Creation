@@ -261,6 +261,10 @@ class CmdRemove(MuxCommand):
                 caller.msg("You no longer use %s as a shield." % eq.name)
                 caller.location.msg_contents(
                     "%s no longer uses %s as a shield." % (caller.name, eq.name), exclude=caller)
+            elif eq.db.wear_location == "wield":
+                caller.msg("You no longer wield %s as a weapon." % eq.name)
+                caller.location.msg_contents(
+                    "%s no longer wields %s as a weapon." % (caller.name, eq.name), exclude=caller)
             elif eq.db.wear_location == "about body":
                 caller.msg("You remove %s from about your body." % eq.name)
                 caller.location.msg_contents(

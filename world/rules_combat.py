@@ -1332,7 +1332,7 @@ def get_warskill(combatant):
             elif college == "paladin":
                 if max_warskill < 160:
                     max_warskill = 160
-            elif college == "bard"
+            elif college == "bard":
                 if max_warskill < 100:
                     max_warskill = 100
      

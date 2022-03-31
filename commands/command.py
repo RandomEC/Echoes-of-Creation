@@ -276,6 +276,50 @@ class CmdAffects(MuxCommand):
 
         caller.msg(output_string)
 
+
+class CmdColleges(MuxCommand):
+    """
+    Provides you with a ranked list of the colleges in which you
+    have currently learned skills.
+
+    Usage:
+      colleges
+
+    Returns a ranked list of those colleges that you have learned
+    skills in, where you are high enough level to have learned
+    that skill in that college. Will not return colleges in which
+    you have learned no skills.
+    """
+
+    key = "colleges"
+    aliases = ["coll"]
+    lock = "cmd:all()"
+    help_category = "General"
+
+    def func(self):
+        """implements the actual functionality"""
+
+        caller = self.caller
+
+        if caller.db.skills:
+            college_list = rules.classes_current(caller, all=True)
+
+            college_output = "You currently have made progress in the following colleges:\n"\
+                             "Colleges currently being considered for statistics are in |ggreen|n.\n\n"
+            index = 1
+
+            for college in college_list:
+                if index <= int(caller.level / 20) + 1:
+                    college_output += "     |g%d. %s|n\n" % (index, (college[0].upper() + college[1:]))
+                else:
+                    college_output += "     %d. %s\n" % (index, (college[0].upper() + college[1:]))
+                index += 1
+
+        if not caller.db.skills:
+            caller.msg("You have not yet learned skills in any college yet.")
+        else:
+            caller.msg(college_output)
+
 class CmdDestroy(MuxCommand):
     """
     permanently delete objects

@@ -16,6 +16,7 @@ own cmdsets by inheriting from them or directly from `evennia.CmdSet`.
 
 from evennia import default_cmds
 from commands.command import CmdAffects
+from commands.command import CmdColleges
 from commands.command import CmdDestroy
 from commands.command import CmdDrop
 from commands.command import CmdGet
@@ -77,6 +78,8 @@ from commands.spell_commands import CmdDetectEvil
 from commands.spell_commands import CmdDetectHidden
 from commands.spell_commands import CmdDetectMagic
 from commands.spell_commands import CmdMagicMissile
+from commands.spell_commands import CmdRefresh
+from commands.spell_commands import CmdVentriloquate
 
 class CharacterCmdSet(default_cmds.CharacterCmdSet):
     """
@@ -100,6 +103,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdAttack())
         self.add(CmdCauseLight())
         self.add(CmdChillTouch())
+        self.add(CmdColleges())
         self.add(CmdConsider())
         self.add(CmdContinualLight())
         self.add(CmdCreate())
@@ -134,6 +138,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdOpen())
         self.add(CmdPractice())
         self.add(CmdPut())
+        self.add(CmdRefresh())
         self.add(CmdRemove())
         self.add(CmdRemoveFrom())
         self.add(CmdRepop())
@@ -157,6 +162,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdWield())
         self.add(CmdWieldTo())
         self.add(CmdWimpy())
+        self.add(CmdVentriloquate())
 
 class AccountCmdSet(default_cmds.AccountCmdSet):
     """

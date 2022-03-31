@@ -172,6 +172,7 @@ class Combat(Object):
 
                     # Remove dead combatants from combat.
                     self.remove_combatant(combatant)
+
                     if "player" in combatant.tags.all():
 
                         # Reset dead players to one hitpoint, and move to home. Mobile hitpoints will get reset by reset

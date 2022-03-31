@@ -176,21 +176,23 @@ class Room(DefaultRoom):
             player_output = player.location.db.delayed_transfer["player output"]
             room_output = player.location.db.delayed_transfer["room output"]
 
-            def delay_move_callback():
-                """
-                This gets called after delay worth of seconds have passed.
-                """
-                source_location = player.location
-
-                destination = player.search(room, global_search=True)
-                player.msg("%s" % player_output)                           
-                player.move_to(destination)
-                player.location.msg_contents("%s" % room_output, exclude=player)
-                
-            transfer = utils.delay(delay, delay_move_callback, persistent=True)
+            transfer = utils.delay(delay, self.delay_move_callback, player, room, player_output, room_output, persistent=True)
 
             player.ndb.delayed_transfer = transfer
-            
+
+    def delay_move_callback(self, player, room, player_output, room_output):
+        """
+        This gets called after delay worth of seconds have passed.
+        """
+        source_location = player.location
+
+        destination = player.search(room, global_search=True)
+        player.msg("%s" % player_output)
+        player.move_to(destination)
+        player.location.msg_contents("%s" % room_output, exclude=player)
+
+
+
     def return_appearance(self, looker, **kwargs):
         """
         This formats a description. It is the hook a 'look' command

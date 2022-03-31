@@ -56,6 +56,7 @@ def is_open(accessing_obj, accessed_obj, *args, **kwargs):
         if "open" in accessed_obj.db.door_attributes:
             return True
         else:
+            accessing_obj.msg("The door is closed in that direction.")
             return False
 
 def can_open(accessing_obj, accessed_obj, *args, **kwargs):

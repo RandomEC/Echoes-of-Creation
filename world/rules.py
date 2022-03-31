@@ -2,7 +2,7 @@ import math
 import random
 import time
 from server.conf import settings
-from world import rules_race
+from world import rules_race, rules_skills
 from evennia import TICKER_HANDLER as tickerhandler
 from evennia import utils
 from evennia.utils import search
@@ -281,7 +281,7 @@ def check_ready_to_level(character):
         return False
     
 
-def classes_current(character):
+def classes_current(character, **kwargs):
     """
     This function will eventually evaluate all the skills that
     a character has learned and compare them to the character's
@@ -328,12 +328,12 @@ def classes_current(character):
         skill_dict = rules_skills.get_skill(skill_name=skill)
         
         # Run through the classes eligible to learn each skill.
-        for college in skill_dict:
+        for college in skill_dict["classes"]:
             
             # If their level equals or exceeds the level to learn
             # the skill in that college, they get credit for work
             # in that college.
-            if skill_dict[college] <= character.level:
+            if skill_dict["classes"][college] <= character.level:
                 colleges[college] += factor[college]
     
     # Sorting the colleges based on weighted skills in each.
@@ -355,17 +355,25 @@ def classes_current(character):
         del sortable_colleges[ordered_list[rank-1]]
         rank += 1
 
-    if number_results > 1:
-        
-        # Check to make sure that you aren't returning colleges with
-        # no skills in them.
-        for index in range(0, total):
-            if colleges[ordered_list[index]] == 0 or index == number_results + 1:
-                break
-                        
-        return ordered_list[0:index - 1]
+    if "all" in kwargs:
+        output_list = []
+        for output_college in ordered_list:
+            if colleges[output_college] > 0:
+                output_list.append(output_college)
+
+        return output_list
     else:
-        return ordered_list[0]
+        if number_results > 1:
+
+            # Check to make sure that you aren't returning colleges with
+            # no skills in them.
+            for index in range(0, total):
+                if colleges[ordered_list[index]] == 0 or index == number_results + 1:
+                    break
+
+            return ordered_list[0:index - 1]
+        else:
+            return ordered_list[0]
 
 def constitution_hitpoint_bonus(character):
     """
