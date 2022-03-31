@@ -594,7 +594,7 @@ class CmdDetectEvil(MuxCommand):
         caster = self.caller
 
         if "detect evil" not in caster.db.skills:
-            caster.msg("You do not know the spell 'detect evil' yet!")
+            caster.msg("You do not know the spell '%s' yet!" % self.key)
             return
 
         if caster.position != "standing":
@@ -611,7 +611,7 @@ class CmdDetectEvil(MuxCommand):
         cost = rules_magic.mana_cost(caster, spell)
 
         if caster.mana_current < cost:
-            caster.msg("You do not have sufficient mana to cast detect evil!")
+            caster.msg("You do not have sufficient mana to cast %s!" % self.key)
             return
 
         if not self.args:
@@ -624,16 +624,16 @@ class CmdDetectEvil(MuxCommand):
                     targets.append(object)
             target = caster.search(self.args, candidates=targets)
             if not target:
-                caster.msg("There is no %s here on whom to cast detect evil on." % self.args)
+                caster.msg("There is no %s here on whom to cast %s on." % (self.args, self.key))
                 return
 
-        if target.get_affect_status("detect evil"):
+        if target.get_affect_status(self.key):
             if target == caster:
                 subject = "You"
             else:
                 subject = "%s is" % (target.key[0].upper() + target.key[1:])
 
-            caster.msg("%s is already affected by detect evil.\n" % subject)
+            caster.msg("%s is already affected by %s.\n" % (subject, self.key))
             return
 
         rules_magic.do_detect_evil(caster, target, cost)
