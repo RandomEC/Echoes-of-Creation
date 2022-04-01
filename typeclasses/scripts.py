@@ -16,6 +16,8 @@ import evennia
 from evennia import DefaultScript
 from evennia.utils import search
 from evennia import TICKER_HANDLER as tickerhandler
+from server.conf import settings
+from world import rules
 
 class Script(DefaultScript):
     """
@@ -98,7 +100,7 @@ class ResetScript(DefaultScript):
 
     def at_script_creation(self):
         self.key = "reset_script"
-        self.interval = 300   # 5 minute repeat, make a global
+        self.interval = settings.EMPTY_AREA_RESET_TIME
         self.desc = "Handles resets for Echoes of Creation"
         self.persistent = True
 
@@ -143,7 +145,7 @@ class ResetScript(DefaultScript):
 
         for area in self.db.area_list:
             # Reset if there are no players in the area, or if counter is at 2.
-            if not self.check_for_player(area) or self.db.area_list[area] == 2:
+            if not rules.player_in_area(area) or self.db.area_list[area] == 2:
                 objects_to_reset = search.search_tag(area, category="area name")
                 if objects_to_reset:
                     for object in objects_to_reset:
