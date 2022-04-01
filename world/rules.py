@@ -803,6 +803,19 @@ def moves_cost(character):
     """
     return current_experience_step(character, 0)
 
+def player_in_area(area_name):
+    """
+    This function checks whether there is a player in an area
+    or not.
+    """
+    players = search.search_tag("player")
+    
+    for player in players:
+        if area_name in player.location.tags.all():
+            return True
+    
+    return False
+    
 def pronoun_object(character):
     """
     This function determines the correct object pronoun for a
