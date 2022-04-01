@@ -93,6 +93,42 @@ class Combat(Object):
     def at_repeat(self):
         self.clear_messages()
 
+        # Check to see if any other mobiles in the room jump in.
+        
+        # Get all possible assisting mobiles.
+        possible_assists = []
+        for object in self.location.contents:
+            if "mobile" in object.tags.all():
+                if not object.ndb.combat_handler:
+                    possible_assists.append(object)
+        
+        # Get players that are in combat.
+        possible_targets = []
+        for combatant in self.db.combatants:
+            if "player" in self.db.combatants[combatant]["combatant"]
+                possible_targets.append(self.db.combatants[combatant]["combatant"])
+        
+        # Run through possible assisting mobiles.
+        for candidate in possible_assists:
+            
+            # Get a random seen player from those found.
+            seen_targets = []
+            for target in possible_targets:
+                if rules.can_see(candidate, target):
+                    seen_targets.append(target)
+            if seen_targets:
+                random_player = seen_targets[random.randint(0, (len(seen_targets) -1))]
+                if random_player.level > (candidate.level - 7) and\
+                        random_player.level < candidate.level + 7) and not\
+                        (random_player.alignment > 333 and candidate.alignment > 333):
+                    to_be_assisted = self.db.combatants[random_player]["target"]
+                    if candidate.db.vnum == to_be_assisted.db.vnum:
+                        self.add_combatant(candidate, random_player)
+                        break
+                    elif random.randint(1, 8) == 1:
+                        self.add_combatant(candidate, random_player)
+                        break
+
         # Copy the dictionary, in case changes are made to it during the round.
         combat_dict = self.db.combatants.copy()
 
