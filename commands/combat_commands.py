@@ -225,6 +225,19 @@ class Combat(Object):
 
     # Combat-handler methods
 
+    def find_other_attackers(self, seeking_target):
+        """
+        This method is called when the target of a
+        combatant dies, to see if there is anyone else
+        attacking that combatant. If so, it will automatically
+        make that its new target.
+        """
+                
+        for combatant in self.db.combatants:
+            if self.db.combatants[combatant]["target"] == seeking_target
+                self.db.combatants[seeking_target]["target"] = combatant
+                break
+            
     def add_combatant(self, combatant, combatant_target):
 
         # Add combatant to handler
