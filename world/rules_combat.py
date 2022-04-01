@@ -563,6 +563,10 @@ def do_death(attacker, victim, **kwargs):
     
     # Remove dead combatants from combat.
     combat.remove_combatant(victim)
+    
+    # Add someone else attacking the attacker as its new
+    # target, if any.
+    combat.find_other_attackers(attacker)
 
     if "player" in victim.tags.all():
 
