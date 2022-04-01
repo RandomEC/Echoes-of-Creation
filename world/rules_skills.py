@@ -78,6 +78,41 @@ def do_forage(character):
     mushroom.db.hours_fed = 5 + character.level
     rules.set_disintegrate_timer(mushroom)
 
+def do_pick_lock(character, target, target_type):
+    """
+    This is the function that does the actual mechanics of
+    picking a lock.
+    """
+    skill = get_skill(skill_name="pick lock")
+
+    if target.key == "up" or target.key == "down":
+        target_string = "door %s" % target.key
+    else:
+        target_string = "%s door" % target.key
+
+    if not target.access(character, "pick"):
+        if target_type == "object":
+            character.msg("The lock on %s cannot be picked." % target.key)
+            return
+
+        character.msg("The lock on the %s cannot be picked." % target_string)
+        return
+
+    if random.randint(1, 100) > character.db.skills["pick lock"]:
+        character.msg("You failed.")
+        return
+
+    character.msg("*Click*")
+
+    if target_type == "container":
+        character.location.msg_contents("%s picks %s." % ((character.key[0].upper() + character.key[1:]), target.key), exclude=(character))
+        target.db.state.remove("locked")
+    else:
+        character.location.msg_contents("%s picks the %s." % ((character.key[0].upper() + character.key[1:]), target_string),
+                                        exclude=(character))
+        target.db.door_attributes.remove("locked")
+
+
 def do_steal(thief, target, to_steal):
     """
     This is the function that does the actual theft of gold or an

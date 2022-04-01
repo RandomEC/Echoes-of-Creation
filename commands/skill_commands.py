@@ -173,8 +173,8 @@ class CmdPickLock(MuxCommand):
         
             if "locked" not in target.db.door_attributes:
                 caller.msg("That door is not locked.")
-                return                          
-        
+                return
+
             rules_skills.do_pick_lock(caller, target, "door")
         
         objects = []
@@ -198,7 +198,11 @@ class CmdPickLock(MuxCommand):
         if "locked" not in target.db.state:
             caller.msg("%s is not locked." % (target.key[0].upper() + target.key[1:]))
             return
-        
+
+        if not target.access(caller, "pick"):
+            caller.msg("The lock on %s cannot be picked." % target.key)
+            return
+
         rules_skills.do_pick_lock(caller, target, "container")
 
             
@@ -293,9 +297,13 @@ class CmdSteal(MuxCommand):
             caller.msg("You aren't stealing anything on the ground, stand up first.")
             return
 
-        mobiles = search.search_object_by_tag("mobile")
-        target = caller.search(self.rhs, location=caller.location, candidates=mobiles)
-        
+
+        mobiles = []
+        for object in caller.location.contents:
+            if "mobile" in object.tags.all():
+                mobiles.append(object)
+        target = caller.search(self.args, candidates=mobiles)
+
         if not target:
             caller.msg("There is no %s here to steal from." % self.args)
             return
