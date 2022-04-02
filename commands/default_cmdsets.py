@@ -65,6 +65,7 @@ from commands.growth_commands import CmdPractice
 from commands.growth_commands import CmdTrain
 from commands.skill_commands import CmdDowse
 from commands.skill_commands import CmdForage
+from commands.skill_commands import CmdPickLock
 from commands.skill_commands import CmdSkills
 from commands.skill_commands import CmdSteal
 from commands.spell_commands import CmdAgitation
@@ -139,6 +140,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdMagicMissile())
         self.add(CmdName())
         self.add(CmdOpen())
+        self.add(CmdPickLock())
         self.add(CmdPractice())
         self.add(CmdPut())
         self.add(CmdRefresh())

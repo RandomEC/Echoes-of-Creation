@@ -166,7 +166,7 @@ class CmdPickLock(MuxCommand):
         target = ""
         if caller.location.exits:
             for exit in caller.location.exits:
-                if self.args == "exit.key":
+                if self.args == exit.key:
                     target = exit
         
         if target:
@@ -176,6 +176,7 @@ class CmdPickLock(MuxCommand):
                 return
 
             rules_skills.do_pick_lock(caller, target, "door")
+            return
         
         objects = []
         for object in caller.location.contents:

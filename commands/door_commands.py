@@ -110,15 +110,15 @@ class CmdDoorOpen(MuxCommand):
             # output if not.
             if not container.access(caller, "open"):
                 if "open" in container.db.state:
-                    caller.msg("The %s is already open." % container.key)
+                    caller.msg("%s is already open." % (container.key[0].upper() + container.key[1:]))
                 elif "locked" in container.db.state:
-                    caller.msg("The %s is locked." % container.key)
+                    caller.msg("%s is locked." % (container.key[0].upper() + container.key[1:]))
                 return
 
             # If the container state does not already include "open", add it.
             if "open" not in container.db.state:
                 container.db.state.append("open")
-                caller.msg("You open the %s." % container.key)
+                caller.msg("You open %s." % container.key)
             
         else:
             # Check to make sure it is actually a door.
@@ -216,7 +216,7 @@ class CmdDoorClose(MuxCommand):
                 # If the searched-for thing is an object, it should be a container.
         if "object" in door.tags.all():
             container = door
-            
+
             # Check to make sure it is actually a container.
             if container.db.item_type != "container":
                 caller.msg("%s is neither a container nor a door."
@@ -228,15 +228,15 @@ class CmdDoorClose(MuxCommand):
             # output if not.
             if not container.access(caller, "close"):
                 if "open" not in container.db.state:
-                    caller.msg("The %s is already closed." % container.key)
+                    caller.msg("%s is already closed." % (container.key[0].upper + container[1:]))
                 elif "closeable" not in container.db.state:
-                    caller.msg("The %s cannot be closed." % container.key)
+                    caller.msg("%s cannot be closed." % (container.key[0].upper + container[1:]))
                 return
 
             # If the container state includes "open", remove it.
-            if "open" not in container.db.state:
+            if "open" in container.db.state:
                 container.db.state.remove("open")
-                caller.msg("You close the %s." % container.key)
+                caller.msg("You close %s." % container.key)
             
         else:
             # Check to make sure it is actually a door.

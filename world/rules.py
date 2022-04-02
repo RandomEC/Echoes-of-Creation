@@ -208,6 +208,8 @@ def can_see(target, looker):
         return False
     elif target.get_affect_status("invisible") and not looker.get_affect_status("detect invis"):
         return False
+    else:
+        return True
 
 def carry_permitted(object, new_object):
     """

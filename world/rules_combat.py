@@ -566,15 +566,10 @@ def do_death(attacker, victim, **kwargs):
     
     # Add someone else attacking the attacker as its new
     # target, if any.
-    combat.find_other_attackers(attacker)
+    new_target = combat.find_other_attackers(attacker)
+    if new_target:
+        attacker_string += ("Having dispatched %s, you turn to attack %s!\n" % (victim.key, new_target.key))
 
-    if "player" in victim.tags.all():
-
-        # Reset dead players to one hitpoint, and move to home. Mobile hitpoints will get reset by reset
-        # function.
-        victim.hitpoints_damaged = (victim.hitpoints_maximum - 1)
-        victim.move_to(victim.home, quiet=True)           
-            
     if "special" not in kwargs:
         return (attacker_string, victim_string, room_string)
 
@@ -794,8 +789,6 @@ def do_one_character_attacks(attacker, victim):
     attacker_string = ""
     victim_string = ""
     room_string = ""
-    
-    combat = attacker.ndb.combat_handler
 
     # Do base attacks.
     if victim.hitpoints_current > 0 and victim.location == attacker.location:
@@ -816,6 +809,7 @@ def do_one_character_attacks(attacker, victim):
             room_string += new_room_string
 
     if victim.hitpoints_current <= 0 and victim.location == attacker.location:
+        attacker.msg("In death if check")
         new_attacker_string, new_victim_string, new_room_string = \
             do_death(attacker, victim)
         attacker_string += new_attacker_string

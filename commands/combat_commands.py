@@ -66,6 +66,7 @@ class Combat(Object):
         # Check to see whether everyone in the combat is on the "same side" (player or mobile), and
         # end the combat.
         combatant_list = list(self.db.combatants.keys())
+
         # Check to see what type of combatant the first one is.
         if "mobile" in combatant_list[0].tags.all():
             first_combatant_type = "mobile"
@@ -91,90 +92,66 @@ class Combat(Object):
             self.delete()
 
     def at_repeat(self):
+
         self.clear_messages()
 
-        # Check to see if any other mobiles in the room jump in.
-        
-        # Get all possible assisting mobiles.
-        possible_assists = []
-        for object in self.location.contents:
-            if "mobile" in object.tags.all():
-                if not object.ndb.combat_handler:
-                    possible_assists.append(object)
-        
-        # Get players that are in combat.
-        possible_targets = []
-        for combatant in self.db.combatants:
-            if "player" in self.db.combatants[combatant]["combatant"]
-                possible_targets.append(self.db.combatants[combatant]["combatant"])
-        
-        # Run through possible assisting mobiles.
-        for candidate in possible_assists:
-            
-            # Get a random seen player from those found.
-            seen_targets = []
-            for target in possible_targets:
-                if rules.can_see(candidate, target):
-                    seen_targets.append(target)
-            if seen_targets:
-                random_player = seen_targets[random.randint(0, (len(seen_targets) -1))]
-                if random_player.level > (candidate.level - 7) and\
-                        random_player.level < candidate.level + 7) and not\
-                        (random_player.alignment > 333 and candidate.alignment > 333):
-                    to_be_assisted = self.db.combatants[random_player]["target"]
-                    if candidate.db.vnum == to_be_assisted.db.vnum:
-                        self.add_combatant(candidate, random_player)
-                        break
-                    elif random.randint(1, 8) == 1:
-                        self.add_combatant(candidate, random_player)
-                        break
-
         # Copy the dictionary, in case changes are made to it during the round.
-        combat_dict = self.db.combatants.copy()
+        # combat_dict = dict(self.db.combatants)
+        round_output = {}
+        round_combatants_list = []
+        for combatant in self.db.combatants:
+            round_combatants_list.append(combatant)
 
         # Iterate through combatants to do a round of attacks.
-        for combatant in combat_dict:
+        for combatant in round_combatants_list:
+            if combatant in self.db.combatants:
 
-            # First, check to see if the combatant is below their wimpy.
-            if combatant.hitpoints_current > 0 and (("player" in combatant.tags.all() and
-                combatant.hitpoints_current <= combatant.db.wimpy) or \
-                    ("mobile" in combatant.tags.all() and
-                     "wimpy" in combatant.db.act_flags and
-                     combatant.hitpoints_current <= (0.15 * combatant.hitpoints_maximum
-                     ))):
-                
-                # Make a free attempt to flee.
-                rules_combat.do_flee(combatant)
+                # First, check to see if the combatant is below their wimpy.
+                if combatant.hitpoints_current > 0 and (("player" in combatant.tags.all() and
+                    combatant.hitpoints_current <= combatant.db.wimpy) or \
+                        ("mobile" in combatant.tags.all() and
+                         "wimpy" in combatant.db.act_flags and
+                         combatant.hitpoints_current <= (0.15 * combatant.hitpoints_maximum
+                         ))):
 
-            # Make sure this combatant and target are alive and both still in the same room.
-            if combatant.location == self.location and self.allow_attacks(combatant, combat_dict[combatant]["target"]):
-                attacker = combat_dict[combatant]["combatant"]
-                victim = combat_dict[combatant]["target"]
+                    # Make a free attempt to flee.
+                    rules_combat.do_flee(combatant)
 
-                # Do the attacks for this attacker, and get output.
-                attacker_string, victim_string, room_string = rules_combat.do_one_character_attacks(attacker, victim)
+                # Make sure this combatant and target are alive and both still in the same room.
+                if combatant.location == self.location and self.allow_attacks(combatant, self.db.combatants[combatant]["target"]):
+                    attacker = self.db.combatants[combatant]["combatant"]
+                    victim = self.db.combatants[combatant]["target"]
 
-                # Add output to the rest of the output generated this round
-                combat_dict[attacker]["combat message"] += attacker_string
-                combat_dict[victim]["combat message"] += victim_string
+                    # Do the attacks for this attacker, and get output.
+                    attacker_string, victim_string, room_string = rules_combat.do_one_character_attacks(attacker, victim)
 
-                # For everyone in the combat that was not the attacker or victim, give them their output.
-                for combatant in combat_dict:
-                    if combatant != attacker and combatant != victim:
-                        combat_dict[combatant]["combat message"] += room_string
+                    # Add output to the rest of the output generated this round
 
-        # Generate output for everyone for the above round. Anyone that died this round is still in
-        # self.db.combatants at this point. Make sure a flee didn't cause the destruction of the
-        # combat with self check.
-        if combat_dict:
-            for combatant in combat_dict:
-                if "player" in combatant.tags.all():
-                    combat_message = combat_dict[combatant]["combat message"]
-                    target = combat_dict[combatant]["target"]
+                    for output_receiver in round_combatants_list:
+                        if output_receiver == attacker:
+                            if output_receiver not in round_output:
+                                round_output[output_receiver] = attacker_string
+                            else:
+                                round_output[output_receiver] += attacker_string
+                        elif output_receiver == victim:
+                            if output_receiver not in round_output:
+                                round_output[output_receiver] = victim_string
+                            else:
+                                round_output[output_receiver] += victim_string
+                        else:
+                            if output_receiver not in round_output:
+                                round_output[output_receiver] = room_string
+                            else:
+                                round_output[output_receiver] += room_string
 
-                    # If the player and their target are still alive, tell them the status of their target.
-                    if combatant.hitpoints_current > 0 and target.hitpoints_current > 0:
-                        combat_message += ("%s %s\n" % ((target.key[0].upper() + target.key[1:]), rules_combat.get_health_string(target)))
+        for combatant in round_combatants_list:
+            combatant.msg(round_output[combatant])
+
+            # If the player and their target are still alive, tell them the status of their target.
+            if combatant.ndb.combat_handler and "player" in combatant.tags.all():
+                if self.db.combatants[combatant]["target"].location == combatant.location:
+                    target = self.db.combatants[combatant]["target"]
+                    combat_message = ("%s %s\n" % ((target.key[0].upper() + target.key[1:]), rules_combat.get_health_string(target)))
                     combatant.msg(combat_message)
 
                     if "wait_state" not in combatant.ndb.all:
@@ -194,24 +171,53 @@ class Combat(Object):
                                                                                              prompt_wait)
                     combatant.msg(prompt=prompt)
 
-                # Check to see if the combatant is dead. - MOVING ALL OF THIS TO do_attack
-                #if combatant.hitpoints_current <= 0:
+        if combatant.hitpoints_current <= 0 and "player" in combatant.tags.all():
 
-                    # Remove dead combatants from combat.
-                    #self.remove_combatant(combatant)
-
-                    #if "player" in combatant.tags.all():
-
-                        # Reset dead players to one hitpoint, and move to home. Mobile hitpoints will get reset by reset
-                        # function.
-                        #combatant.db.hitpoints["damaged"] = (combatant.hitpoints_maximum - 1)
-                        #combatant.move_to(combatant.home, quiet=True)
+            # Reset dead players to one hitpoint, and move to home. Mobile hitpoints will get reset by reset
+            # function.
+            combatant.db.hitpoints["damaged"] = (combatant.hitpoints_maximum - 1)
+            combatant.move_to(combatant.home, quiet=True)
 
         if self.db.combatants:
             self.db.rounds += 1
 
             self.combat_end_check()
 
+        if self.db.combatants:
+            # Check to see if any other mobiles in the room jump in.
+
+            # Get all possible assisting mobiles.
+            possible_assists = []
+            for object in self.location.contents:
+                if "mobile" in object.tags.all():
+                    if not object.ndb.combat_handler:
+                        possible_assists.append(object)
+
+            # Get players that are in combat.
+            possible_targets = []
+            for combatant in self.db.combatants:
+                if "player" in combatant.tags.all():
+                    possible_targets.append(combatant)
+
+            # Run through possible assisting mobiles.
+            for candidate in possible_assists:
+
+                # Get a random seen player from those found.
+                seen_targets = []
+                for target in possible_targets:
+                    if rules.can_see(target, candidate):
+                        seen_targets.append(target)
+                if seen_targets:
+                    random_player = seen_targets[random.randint(0, (len(seen_targets) - 1))]
+                    if (candidate.level - 7) < random_player.level < (candidate.level + 7) and not (
+                            random_player.alignment > 333 and candidate.alignment > 333):
+                        to_be_assisted = self.db.combatants[random_player]["target"]
+                        if candidate.db.vnum == to_be_assisted.db.vnum:
+                            self.add_combatant(candidate, random_player)
+                            break
+                        elif random.randint(1, 8) == 1:
+                            self.add_combatant(candidate, random_player)
+                            break
 
     def clear_messages(self):
         for combatant in self.db.combatants:
@@ -230,14 +236,18 @@ class Combat(Object):
         This method is called when the target of a
         combatant dies, to see if there is anyone else
         attacking that combatant. If so, it will automatically
-        make that its new target.
+        make that its new target, and return the target. If
+        not, returns False
         """
-                
+
         for combatant in self.db.combatants:
-            if self.db.combatants[combatant]["target"] == seeking_target
+            if self.db.combatants[combatant]["target"] == seeking_target:
                 self.db.combatants[seeking_target]["target"] = combatant
-                break
-            
+                return combatant
+
+        return False
+
+
     def add_combatant(self, combatant, combatant_target):
 
         # Add combatant to handler
@@ -262,6 +272,7 @@ class Combat(Object):
         
     def remove_combatant(self, combatant):
         "Remove combatant from handler"
+
         if combatant in self.db.combatants:
             self._cleanup_combatant(combatant)
 

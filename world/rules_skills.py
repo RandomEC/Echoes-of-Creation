@@ -357,6 +357,15 @@ def get_skill(**kwargs):
                 "thief": 16
                 },
             },
+        "pick lock": {
+            "classes": {
+                "warrior": 5,
+                "paladin": 7,
+                "ranger": 9,
+                "bard": 15,
+                "thief": 16
+                },
+            },
         "refresh": {
             "classes": {
                 "druid": 4,
