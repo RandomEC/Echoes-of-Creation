@@ -58,14 +58,14 @@ class TestQuestScript(Script):
 
         self.stop()
 
-class Mobile103Script(Script):
+class Mobile104Script(Script):
     """
     This is the script for Tabitha to lead you to the Smurf
     Village quest.
     """
 
     def at_script_creation(self):
-        self.key = "m103_script"
+        self.key = "m104_script"
         self.desc = "Script for Tabitha to send you to Papa Smurf."
         self.persistent = True
         self.db.player = ""
@@ -73,7 +73,7 @@ class Mobile103Script(Script):
     def quest_talk(self):
         player = self.db.player
 
-        if not player.db.quests:
+        if "quests" not in player.db.all:
             player.db.quests = {}
 
         if "smurfs" not in player.db.quests:
