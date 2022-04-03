@@ -9,6 +9,7 @@ import math
 import re
 import random
 import time
+from evennia import create_script
 from evennia.commands.command import Command as BaseCommand
 from evennia.utils import utils, search
 from evennia.utils.ansi import raw as raw_ansi
@@ -749,11 +750,15 @@ class CmdGive(MuxCommand):
         if not success:
             caller.msg("This could not be given.")
         else:
+            caller.msg("Testing this.")
             caller.msg("You give %s to %s." % (to_give.key, target.key))
-            target.msg("%s gives you %s." % (caller.key, to_give.key))
-            # Call the object script's at_give() method.
+            if "player" in target.tags.all():
+                target.msg("%s gives you %s." % (caller.key, to_give.key))
+            caller.msg("After target message.")
+            # Call the target's at_give() method.
+            target.at_give(caller, to_give)
+            # Call the object's at_give() method.
             to_give.at_give(caller, target)
-
 
 class CmdHome(MuxCommand):
     """
@@ -803,7 +808,7 @@ class CmdInspect(MuxCommand):
     Look more closely at an aspect of a room or object.
     Usage:
       inspect <room aspect>
-      inspect <object> = <object aspect>
+      inspect <object aspect> on <object>
     Looks at extra descriptions that are on rooms or objects. Remember
     that this is not a replacement for using "look" at the objects
     themselves.
@@ -811,6 +816,7 @@ class CmdInspect(MuxCommand):
 
     key = "inspect"
     aliases = ["read"]
+    delimiter = " on "
     locks = "cmd:all()"
     arg_regex = r"\s|$"
 
@@ -819,7 +825,7 @@ class CmdInspect(MuxCommand):
 
         caller = self.caller
         if not self.args:
-            caller.msg("Usage: inspect <room aspect> OR inspect <object> = <object aspect>")
+            caller.msg("Usage: inspect <room aspect> OR inspect <object aspect> on <object>")
             return
 
         if not self.rhs:
@@ -834,8 +840,8 @@ class CmdInspect(MuxCommand):
             caller.msg("You see nothing special about the %s." % self.args)
             return
         else:
-            object = caller.search(self.lhs, location=(caller, caller.location))
-            aspect = self.rhs
+            object = caller.search(self.rhs, location=(caller, caller.location))
+            aspect = self.lhs
 
             if not object:
                 caller.msg("There is no %s here." % self.lhs)
@@ -843,8 +849,8 @@ class CmdInspect(MuxCommand):
                 for extra_keywords_string in object.db.extra_descriptions:
                     extra_keywords_list = extra_keywords_string.split()
                     if aspect in extra_keywords_list:
-                        caller.msg("You closely inspect the %s on the %s:\n%s" % (
-                        self.rhs, self.lhs, object.db.extra_descriptions[extra_keywords_string]))
+                        caller.msg("You closely inspect the %s on %s:\n%s" % (
+                        self.lhs, object.key, object.db.extra_descriptions[extra_keywords_string]))
                         return
                 caller.msg("You see nothing special about the %s on the %s." % (self.rhs, self.lhs))
                 return
@@ -1076,8 +1082,8 @@ class CmdPut(MuxCommand):
 
         # For ease of programming reasons, you cannot put a container in
         # another container.
-        if to_put.db.item_type == "container":
-            caller.msg("You cannot put a container in another container.")
+        if to_put.db.item_type == "container" and to_put.contents:
+            caller.msg("You cannot put a container with items in it in another container.")
             return
 
         target = caller.search(self.rhs, location=[caller, caller.location])
@@ -1939,10 +1945,33 @@ class CmdTalk(MuxCommand):
                 caller.msg("Talk cannot be used on other players. Try say or tell.")
                 return
             else:
+                quest_status = "done"
                 # Talk to the mobile.
-                if to_talk.db.talk:
-                    caller.msg('You strike up a conversation with %s.\n%s says, "%s"' % (to_talk.key, (to_talk.key[0].upper() + to_talk.key[1:]), to_talk.db.talk))
-                else:
-                    caller.msg("%s chatters along about nothing for a while." % to_talk.key)
+                if to_talk.db.quests:
+                    for quest in to_talk.db.quests:
+                        if quest in caller.db.quests:
+                            if caller.db.quests[quest] != "done":
+                                quest_status = "not done"
+                                break
+                        else:
+                            quest_status = "not done"
+                            break
 
+                if quest_status == "done":
+                    if to_talk.db.talk:
+                        caller.msg('You strike up a conversation with %s.\n%s says, "%s"' % (to_talk.key, (to_talk.key[0].upper() + to_talk.key[1:]), to_talk.db.talk))
+                    else:
+                        caller.msg("%s chatters along about nothing for a while." % to_talk.key)
+                else:
+                    for quest in to_talk.db.quests:
+                        if quest not in caller.db.quests:
+                            if "talk" in to_talk.db.quests[quest]:
+                                quest_script = create_script(to_talk.db.quests[quest]["talk"], obj=to_talk)
+                                quest_script.db.player = caller
+                                quest_script.quest_talk()
+                        elif caller.db.quests[quest] != "done":
+                            if "talk" in to_talk.db.quests[quest]:
+                                quest_script = create_script(to_talk.db.quests[quest]["talk"], obj=to_talk)
+                                quest_script.db.player = caller
+                                quest_script.quest_talk()
 

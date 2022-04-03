@@ -119,7 +119,10 @@ class CmdDoorOpen(MuxCommand):
             if "open" not in container.db.state:
                 container.db.state.append("open")
                 caller.msg("You open %s." % container.key)
-            
+
+            # Call at_after_open.
+            container.at_after_open(caller)
+
         else:
             # Check to make sure it is actually a door.
             if "exit" not in door.tags.all():
@@ -237,7 +240,10 @@ class CmdDoorClose(MuxCommand):
             if "open" in container.db.state:
                 container.db.state.remove("open")
                 caller.msg("You close %s." % container.key)
-            
+
+            # Call at_after_close.
+            container.at_after_close(caller)
+
         else:
             # Check to make sure it is actually a door.
             if "exit" not in door.tags.all():

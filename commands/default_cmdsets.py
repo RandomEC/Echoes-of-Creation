@@ -20,6 +20,7 @@ from commands.command import CmdColleges
 from commands.command import CmdDestroy
 from commands.command import CmdDrop
 from commands.command import CmdGet
+from commands.command import CmdGive
 from commands.command import CmdHome
 from commands.command import CmdInspect
 from commands.command import CmdInventory
@@ -130,6 +131,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdFlee())
         self.add(CmdForage())
         self.add(CmdGet())
+        self.add(CmdGive())
         self.add(CmdHome())
         self.add(CmdIdentify())
         self.add(CmdInspect())

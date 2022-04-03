@@ -157,7 +157,6 @@ class ResetScript(DefaultScript):
                 self.db.area_list[area] += 1
 
 
-
 class UpdateTimerScript(DefaultScript):
 
     # Start with scripts/start scripts.UpdateTimerScript

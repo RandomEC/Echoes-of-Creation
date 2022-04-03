@@ -78,7 +78,18 @@ class Exit(DefaultExit):
 
         """
         source_location = traversing_object.location
-        
+
+        characters = 0
+        for object in target_location.contents:
+            if "player" in object.tags.all() or "mobile" in object.tags.all():
+                characters += 1
+                if characters > 1 and "private" in target_location.db.room_flags:
+                    traversing_object.msg("That room is private right now.")
+                    return
+                if characters > 0 and "solitary" in target_location.db.room_flags:
+                    traversing_object.msg("That room is private right now.")
+                    return
+
         terrain = source_location.db.terrain
         
         if terrain:

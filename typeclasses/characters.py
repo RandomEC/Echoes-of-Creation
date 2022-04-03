@@ -727,12 +727,9 @@ class Character(DefaultCharacter):
             tag = self.location.tags.all(return_key_and_category=True)
             total_tags = len(tag)
 
-            if total_tags == 1:
-                area = tag[0][0]
-            else:
-                for index in range(0, (total_tags - 1)):
-                    if tag[index][1] == "area name":
-                        area = tag[index][0]
+            for index in range(0, total_tags):
+                if tag[index][1] == "area name":
+                    area = tag[index][0]
 
             if rules.player_in_area(area):
 
@@ -758,10 +755,11 @@ class Character(DefaultCharacter):
                                 destination = exit.destination
 
                                 if "no mob" not in destination.db.room_flags:
-                                    for tag in self.location.tags.all():
+                                    if ("solitary" not in destination.db.room_flags and "private" not in destination.db.room_flags) or self.home == destination:
+                                        for tag in self.location.tags.all():
 
-                                        if tag in destination.tags.all():
-                                            self.move_to(destination)
+                                            if tag in destination.tags.all():
+                                                self.move_to(destination)
 
     def at_before_move(self, destination):
         """
@@ -794,6 +792,33 @@ class Character(DefaultCharacter):
                 create_script(self.db.say_scripts[message], key=message, obj=speaker)
                 speaker.scripts.delete(message)
 
+
+    def at_give(self, player, given_object):
+        """
+        Hook called on a mobile after it is given an object.
+        """
+
+        if "mobile" in self.tags.all():
+            player.msg("In at_give")
+
+            if self.db.quests:
+                for quest in self.db.quests:
+                    if quest not in player.db.quests:
+                        if "give" in self.db.quests[quest]:
+                            quest_script = create_script(self.db.quests[quest]["give"], obj=self)
+                            quest_script.db.player = player
+                            quest_script.db.given_object = given_object
+                            quest_script.quest_give()
+                    elif player.db.quests[quest] != "done":
+                        if "give" in self.db.quests[quest]:
+                            quest_script = create_script(self.db.quests[quest]["give"], obj=self)
+                            quest_script.db.player = player
+                            quest_script.db.given_object = given_object
+                            quest_script.quest_give()
+        else:
+            pass
+
+
 class Mobile(Character):
     """
     The Mobile class is intended to be used for the npcs on the MUD, and inherits from the
@@ -819,6 +844,12 @@ class Mobile(Character):
         self.db.character_type = "mobile"
         self.tags.add("mobile")
         self.db.spell_affects_reset = {}
+
+        # If the mobile is involved in a quest, the dictionary for that quest
+        # takes the following form:
+        # "questname": {"trigger type 1": "script 1", "trigger type 2": "script 2", ...}
+
+        self.db.quests = {}
 
     def at_reset(self):
         
@@ -973,6 +1004,7 @@ class Mobile(Character):
                 combat.add_combatant(self, character)
         if "talk on enter" in self.tags.all():
             character.msg('On entering the room, %s says to you, "%s"' % (self.key, self.db.talk))
+
 
 class Player(Character):
     """

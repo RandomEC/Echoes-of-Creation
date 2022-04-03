@@ -170,6 +170,11 @@ class Object(DefaultObject):
         self.db.level_base = 1
         self.db.special_function = []
 
+        # If the object is involved in a quest, the dictionary entry for
+        # that quest takes the following form:
+        # "questname": {"trigger type 1": "script 1", "trigger type 2": "script 2", ...}
+        self.db.quests = {}
+
     @property
     def vnum(self):
         return self.db.vnum
@@ -217,6 +222,118 @@ class Object(DefaultObject):
             if message in self.db.say_scripts:
                 create_script(self.db.say_scripts[message], key=message, obj=speaker)
                 speaker.scripts.delete(message)
+
+    def return_appearance(self, looker, **kwargs):
+        """
+        This formats a description. It is the hook a 'look' command
+        should call.
+        Args:
+            looker (Object): Object doing the looking.
+            **kwargs (dict): Arbitrary, optional arguments for users
+                overriding the call (unused by default).
+        """
+        if not looker:
+            return ""
+        # get and identify all objects
+        visible = (con for con in self.contents if con != looker and con.access(looker, "view"))
+        exits, users, mobiles, objects, things = [], [], [], [], defaultdict(list)
+        for con in visible:
+            key = con.get_display_name(looker)
+            if con.destination:
+                if "locked" in con.db.door_attributes:
+                    doorl = "{"
+                    doorr = "}"
+                elif "open" not in con.db.door_attributes:
+                    doorl = "["
+                    doorr = "]"
+                else:
+                    doorl = ""
+                    doorr = ""
+                keystring = doorl + key + doorr
+                exits.append(keystring)
+            elif con.has_account:
+                users.append("|c%s|n" % key)
+            # Below added to address mobiles and objects.
+            elif "mobile" in con.tags.all():
+                mobiles.append("|Y%s|n" % con.db.desc)
+            elif "object" in con.tags.all():
+                objects.append("|R%s|n" % con.db.desc)
+            else:
+                # things can be pluralized
+                things[key].append(con)
+        # get description, build string
+        # string = "|R%s|n\n" % self.get_display_name(looker)
+        string = ""
+        # Exits moved up from default Evennia.
+        if exits:
+            string += "|wExits:|n " + list_to_string(exits) + "\n"
+
+        desc = ""
+
+        # Get the most detailed description you can.
+        if self.db.extra_descriptions:
+            aliases = self.aliases.get()
+            for alias in aliases:
+                for extra in self.db.extra_descriptions:
+                    if alias in extra:
+                        desc = self.db.extra_descriptions[extra]
+
+        if not desc:
+            if "look_description" in self.db.all:
+                desc = self.db.look_description
+            else:
+                desc = self.db.desc
+
+        if desc:
+            if "open" in self.db.state:
+                string += "|C%s\nIt contains:|n\n" % desc
+            else:
+                string += "|C%s\n%s is closed.|n\n" % (desc, (self.key[0].upper() + self.key[1:]))
+        if mobiles:
+            mobile_string = ""
+            index = 0
+            length = len(mobiles)
+            for index in range(0, length):
+                mobile_string = mobile_string + ("    |Y%s|n\n" % mobiles[index])
+            string += mobile_string
+        if objects:
+            object_string = ""
+            index = 0
+            length = len(objects)
+            if length > 0:
+                for index in range(0, length):
+                    object_string = object_string + ("    |R%s|n\n" % objects[index])
+            if "open" in self.db.state:
+                string += object_string
+            else:
+                string += ""
+        else:
+            if "open" in self.db.state:
+                string += "    |CNothing!|n\n"
+            else:
+                string += ""
+
+        return string
+
+    def at_give(self, player, receiver):
+        """
+        Hook called on an object after it is given to someone else.
+        """
+
+        if self.db.quests:
+            for quest in self.db.quests:
+                if quest not in player.db.quests:
+                    if "give" in self.db.quests[quest]:
+                        quest_script = create_script(self.db.quests[quest]["give"], obj=self)
+                        quest_script.db.player = player
+                        quest_script.db.receiver = receiver
+                        quest_script.quest_give()
+                elif player.db.quests[quest] != "done":
+                    if "give" in self.db.quests[quest]:
+                        quest_script = create_script(self.db.quests[quest]["give"], obj=self)
+                        quest_script.db.player = player
+                        quest_script.db.receiver = receiver
+                        quest_script.quest_give()
 
 
 class Item(Object):
@@ -751,79 +868,43 @@ class Container(Armor):
         # locks that go along with the above attributes
         self.locks.add("put: is_open();open: can_open();close: can_close();lock: can_lock();unlock: can_unlock()")
 
-    def return_appearance(self, looker, **kwargs):
+    def at_after_open(self, player):
         """
-        This formats a description. It is the hook a 'look' command
-        should call.
-        Args:
-            looker (Object): Object doing the looking.
-            **kwargs (dict): Arbitrary, optional arguments for users
-                overriding the call (unused by default).
+        Hook called on a container after it is opened by a player.
         """
-        if not looker:
-            return ""
-        # get and identify all objects
-        visible = (con for con in self.contents if con != looker and con.access(looker, "view"))
-        exits, users, mobiles, objects, things = [], [], [], [], defaultdict(list)
-        for con in visible:
-            key = con.get_display_name(looker)
-            if con.destination:
-                if "locked" in con.db.door_attributes:
-                    doorl = "{"
-                    doorr = "}"
-                elif "open" not in con.db.door_attributes:
-                    doorl = "["
-                    doorr = "]"
-                else:
-                    doorl = ""
-                    doorr = ""
-                keystring = doorl + key + doorr
-                exits.append(keystring)
-            elif con.has_account:
-                users.append("|c%s|n" % key)
-            # Below added to address mobiles and objects.
-            elif "mobile" in con.tags.all():
-                mobiles.append("|Y%s|n" % con.db.desc)
-            elif "object" in con.tags.all():
-                objects.append("|R%s|n" % con.db.desc)
-            else:
-                # things can be pluralized
-                things[key].append(con)
-        # get description, build string
-        # string = "|R%s|n\n" % self.get_display_name(looker)
-        string = ""
-        # Exits moved up from default Evennia.
-        if exits:
-            string += "|wExits:|n " + list_to_string(exits) + "\n"
-        desc = self.db.desc
-        if desc:
-            if "open" in self.db.state:
-                string += "|C%s\nIt contains:|n\n" % desc
-            else:
-                string += "|C%s\n%s is closed.|n\n" % (desc, (self.key[0].upper() + self.key[1:]))
-        if mobiles:
-            mobile_string = ""
-            index = 0
-            length = len(mobiles)
-            for index in range(0, length):
-                mobile_string = mobile_string + ("    |Y%s|n\n" % mobiles[index])
-            string += mobile_string
-        if objects:
-            object_string = ""
-            index = 0
-            length = len(objects)
-            if length > 0:
-                for index in range(0, length):
-                    object_string = object_string + ("    |R%s|n\n" % objects[index])
-            if "open" in self.db.state:
-                string += object_string
-            else:
-                string += ""
-        else:
-            object_string = "    |CNothing!|n\n"
-            string += object_string
 
-        return string
+        if self.db.quests:
+            for quest in self.db.quests:
+                if quest not in player.db.quests:
+                    if "open" in self.db.quests[quest]:
+                        quest_script = create_script(self.db.quests[quest]["open"], obj=self)
+                        quest_script.db.player = player
+                        quest_script.quest_open()
+                elif player.db.quests[quest] != "done":
+                    if "open" in self.db.quests[quest]:
+                        quest_script = create_script(self.db.quests[quest]["open"], obj=self)
+                        quest_script.db.player = player
+                        quest_script.quest_open()
+
+
+    def at_after_close(self, player):
+        """
+        Hook called on a container after it is closed by a player.
+        """
+
+        if self.db.quests:
+            for quest in self.db.quests:
+                if quest not in player.db.quests:
+                    if "close" in self.db.quests[quest]:
+                        quest_script = create_script(self.db.quests[quest]["close"], obj=self)
+                        quest_script.db.player = player
+                        quest_script.quest_close()
+                elif player.db.quests[quest] != "done":
+                    if "close" in self.db.quests[quest]:
+                        quest_script = create_script(self.db.quests[quest]["close"], obj=self)
+                        quest_script.db.player = player
+                        quest_script.quest_close()
+
 
 
 class Drink_container(Item):
