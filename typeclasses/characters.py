@@ -996,7 +996,7 @@ class Mobile(Character):
         """
         Hook used to implement various actions on a player entering the room.
         """
-        if "aggressive" in self.db.act_flags:
+        if "aggressive" in self.db.act_flags and character.level < self.level + 10:
             if not character.ndb.combat_handler and not self.ndb.combat_handler:
                 character.msg("%s jumps forward and ATTACKS you!" % (self.key[0].upper() + self.key[1:]))
                 rules_combat.create_combat(self, character)

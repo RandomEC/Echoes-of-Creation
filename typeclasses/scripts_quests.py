@@ -252,6 +252,7 @@ class Mobile3600Script(Script):
             player.msg("Henry the Gardener says to you, 'Just steer clear of that ghastly ghoul, if you see it.'")
             player.msg("Henry the Gardener shudders violently.")
             player.db.quests["graveyard"] = 2
+
         elif 1 < player.db.quests["graveyard"] < 7:
             skeletons = 7 - player.db.quests["graveyard"]
             if skeletons == 1:
@@ -259,6 +260,7 @@ class Mobile3600Script(Script):
             else:
                 skeleton_string = "%d skeletons" % skeletons
             player.msg("Henry the Gardener says to you, 'Looks as though you've made some progress, fella. Just %s to go.'" % skeleton_string)
+
         elif player.db.quests["graveyard"] == 7:
             player.msg("Henry the Gardener says to you, 'Well, done, fella! I suspect I can get out to see the Marshal now.'")
             player.msg("You gain 800 experience points!")
@@ -267,7 +269,7 @@ class Mobile3600Script(Script):
             player.msg("Henry the Gardener says to you, 'Guess I won't need it now, but I suppose you might.'")
             
             # Load the shovel shield.
-            shield = rules.make_object(receiver, False, "o3614")
+            shield = rules.make_object(player, False, "o3614")
 
             shield.db.level = 5
             shield.db.armor = rules.set_armor(shield.db.level)
@@ -276,10 +278,68 @@ class Mobile3600Script(Script):
             player.msg("Henry the Gardener says to you, 'Use it in good health, and if you take it in mind to go after that ghastly ghoul, come see me first.'")
             player.db.quests["graveyard"] = 8
 
-            
+        elif player.db.quests["graveyard"] == 8:
+            player.msg("Henry the Gardener says to you, 'Back for more, eh? Well, that ghastly ghoul is pretty tough.'")
+            player.msg("Henry the Gardener says to you, 'It seems to be sort of the boss of the undead in the graveyard.'")
+            player.msg("Henry the Gardener says to you, 'My worry is that there is more beyond the graveyard, but let's worry about that another day.'")
+            player.msg("Henry the Gardener says to you, 'If you can polish it off, I'll have some more gear for you.'")
+            player.msg("Henry the Gardener says to you, 'Good luck, I guess?'")
+            if player.sex == "male":
+                mutter = "That boy is crazy."
+            elif player.sex == "female":
+                mutter = "That girl is crazy."
+            else:
+                mutter = "They are crazy."
+            player.msg("As you turn to walk away, you hear Henry the Gardener mutter '%s'" % mutter)
+            player.db.quests["graveyard"] = 9
+
+        elif player.db.quests["graveyard"] == 8:
+            player.msg("Henry the Gardener says to you, 'You are amazing! Polished off that ghastly ghoul, huh?'")
+            player.msg("Henry the Gardener says to you, 'I watched you right out my window here.'")
+            player.msg("Henry the Gardener says to you, 'Well, fair is fair, here's your reward.'")
+            player.msg("Henry the Gardener says to you, 'I've crafted these out of the enchanted bones of the undead you've killed.'")
+            player.msg("Henry the Gardener hands you a pair of bone leg guards.")
+
+            # Load a pair of bone leg guards.
+            guards = rules.make_object(player, False, "o3615")
+
+            guards.db.level = 10
+            guards.db.armor = rules.set_armor(guards.db.level)
+
+            player.msg("Henry the Gardener says to you, 'I managed to reverse the magic on them, soooo, I hope you're not evil!'")
+            player.msg("Henry the Gardener says to you, 'As I was afraid, there still seems to be undead out there.'")
+            player.msg("Henry the Gardener says to you, 'Ah, well, come back when you want to take a shot at the Chapel Catacombs.'")
+            player.msg("Henry the Gardener says to you, 'I have a feeling that's where the ultimate evil here is.'")
+            player.db.quests["graveyard"] == "done"
+
         self.stop()
 
-        
+
+class Mobile3602Script(Script):
+    """
+    This is the death script for the ghastly ghoul in the
+    Graveyard quest.
+    """
+
+    def at_script_creation(self):
+        self.key = "m3602_script"
+        self.desc = "Death script for ghastly ghoul in Graveyard."
+        self.persistent = True
+        self.db.player = ""
+
+    def quest_death(self):
+        player = self.db.player
+
+        if not player.db.quests:
+            player.db.quests = {}
+
+        if "graveyard" in player.db.quests:
+            if player.db.quests["graveyard"] == 9:
+                player.db.quests["graveyard"] += 1
+
+        self.stop()
+
+
 class Mobile3603Script(Script):
     """
     This is the death script for a skeleton type 1 in the 
@@ -302,8 +362,34 @@ class Mobile3603Script(Script):
             if 1 < player.db.quests["graveyard"] < 7:
                 player.db.quests["graveyard"] += 1
                 
-    self.stop()
-                       
+        self.stop()
+
+
+class Mobile3604Script(Script):
+    """
+    This is the death script for a skeleton type 2 in the
+    Graveyard quest.
+    """
+
+    def at_script_creation(self):
+        self.key = "m3603_script"
+        self.desc = "Death script for skeleton type 2 in Graveyard."
+        self.persistent = True
+        self.db.player = ""
+
+    def quest_death(self):
+        player = self.db.player
+
+        if not player.db.quests:
+            player.db.quests = {}
+
+        if "graveyard" in player.db.quests:
+            if 1 < player.db.quests["graveyard"] < 7:
+                player.db.quests["graveyard"] += 1
+
+        self.stop()
+
+
 class Mobile6210Script(Script):
     """
     This is the script for Papa Smurf to give you some xp for coming
