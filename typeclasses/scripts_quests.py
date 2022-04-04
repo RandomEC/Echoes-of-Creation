@@ -297,6 +297,69 @@ class Mobile6211Script(Script):
         self.stop()
 
         
+class Mobile6612Script(Script):
+    """
+    This is the script for the teacher in the Dwarven
+    Daycare quest.
+    """
+
+    def at_script_creation(self):
+        self.key = "m104_script"
+        self.desc = "Script for teacher to handle Dwarven Daycare."
+        self.persistent = True
+        self.db.player = ""
+
+    def quest_talk(self):
+        player = self.db.player
+
+        if not player.db.quests:
+            player.db.quests = {}
+
+        if "daycare" in player.db.quests:
+            if player.db.quests["daycare"] == 1:
+                player.msg("The teacher begins writing tomorrow's lesson on the board for you.")
+                player.msg("The teacher says to you, 'Butterflies are such beautiful creatures. For your homework get some paint. Then we can fingerpaint.'")
+                player.msg("The teacher says to you, 'There should be some around the daycare somewhere.'")
+                player.msg("You got your assignment, and 1000 experience points!")
+                player.experience_total += 1000
+                player.db.quests["daycare"] = 2
+                
+        elif player.db.quests["daycare"] == 2:
+            player.msg("The teacher says to you, 'Well, where's your fingerpaint? Give it to me when you have some.'")
+
+        self.stop()
+
+    def quest_give(self):
+
+        player = self.db.player
+        receiver = self.obj
+        given_object = self.db.given_object
+
+        if "daycare" in player.db.quests:
+            if player.db.quests["daycare"] > 2 or player.db.quests["daycare"] == "done":
+                player.msg("The teacher says to you, 'One painting per student.'")
+                player.msg("The teacher gives you a pot of fingerpaint.")                       
+                given_object.location = player
+            elif player.db.quests["daycare"] == 2:
+                if given_object.db.vnum == "o6657":
+                    player.msg("The teacher beams at you.")
+                    player.msg("The teacher says to you, 'Good job, %s! You get an A!'" % player.key)
+                    given_object.location = None
+                    player.msg("The teacher sets you up with a blank sheet and some fingerpaint.")
+                    player.msg("A whirl of fingerpaint, and a bunch of hand-washing later, and you have a fingerpainting of a butterfly!")
+                    
+                    # Load the fingerpainting.
+                    fingerpainting = rules.make_object(player, False, "o6656")
+
+                    fingerpainting.db.level = 7
+                    
+                    player.msg("The teacher says to you, 'Well done. Remember, the world is full of miracles. Butterflies are but one of them.")
+                    player.msg("The teacher says to you, 'Enjoy your painting.'")
+                    player.msg("You had probably better head back to Sabrina.")
+                    player.db.quests["daycare"] = 3
+
+        self.stop()
+               
 class Object6217Script(Script):
     """
     This is the script for Papa Smurf's magic box to give you xp
