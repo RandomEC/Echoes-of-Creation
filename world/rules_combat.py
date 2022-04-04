@@ -515,6 +515,9 @@ def do_death(attacker, victim, **kwargs):
 
         # attacker_string += ("You receive |y%s gold|n as a result of your
         # kill!" % victim.)
+        
+        # Call the at_death hook for the mobile.
+        victim.at_death(attacker)
 
     else:
 
