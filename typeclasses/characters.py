@@ -1006,6 +1006,28 @@ class Mobile(Character):
         if "talk on enter" in self.tags.all():
             character.msg('On entering the room, %s says to you, "%s"' % (self.key, self.db.talk))
 
+    def at_death(self, player):
+        """
+        Hook called on a mobile after it is killed.
+        """
+
+        if self.db.quests:
+            if not player.db.quests:
+                player.db.quests = {}
+
+            for quest in self.db.quests:
+                if quest not in player.db.quests:
+                    if "death" in self.db.quests[quest]:
+                        quest_script = create_script(self.db.quests[quest]["death"], obj=self)
+                        quest_script.db.player = player
+                        quest_script.quest_death()
+                elif player.db.quests[quest] != "done":
+                    if "death" in self.db.quests[quest]:
+                        quest_script = create_script(self.db.quests[quest]["death"], obj=self)
+                        quest_script.db.player = player
+                        quest_script.quest_death()
+        else:
+            pass
 
 class Player(Character):
     """
