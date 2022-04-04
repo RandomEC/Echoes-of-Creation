@@ -59,6 +59,65 @@ class TestQuestScript(Script):
 
         self.stop()
 
+class Mobile103Script(Script):
+    """
+    This is the script for Sabrina to lead you to the Dwarven
+    Daycare quest.
+    """
+
+    def at_script_creation(self):
+        self.key = "m104_script"
+        self.desc = "Script for Sabrina to handle Dwarven Daycare."
+        self.persistent = True
+        self.db.player = ""
+
+    def quest_talk(self):
+        player = self.db.player
+
+        if not player.db.quests:
+            player.db.quests = {}
+
+        if "daycare" not in player.db.quests:
+            def callback(caller, prompt, user_input):
+                if user_input == "yes":
+                    caller.msg("Sabrina, clearly holding her breath, releases it in a 'Whoosh!'")
+                    caller.msg("Sabrina says to you, 'Thanks so much.'")
+                    caller.msg("Sabrina says to you, 'Just go and see if you can get them to give you an assignment, then check it out.'")
+                    caller.msg("Sabrina says to you, 'Come back and talk to me afterwards, and thanks again.'")
+                    caller.db.quests["daycare"] = 1
+                    return False
+                elif user_input == "no":
+                    caller.msg("Sabrina sighs and says to you, 'I understand, we're all busy.'")
+                    caller.msg("Sabrina says to you, 'Come back if you change your mind.'")
+                    return False
+                else:
+                    caller.msg("Sabrina says, 'Try just typing yes or no.'")                    
+                    return True
+
+            player.msg("Sabrina whirls on you quickly, seeming on the verge of yelling, or breaking down.")            
+            player.msg("Sabrina says to you, 'Oh, you're not Tabitha.'")
+            player.msg("Sabrina says to you, 'I love that girl, but my gods, she is a handful.'")
+            player.msg("Sabrina sighs.")
+            player.msg("Sabrina says to you, 'I used to send her to the Dwarven Daycare in town, which was great for her.'")
+            player.msg("Sabrina says to you, 'But recently, some things that Tabitha told me made me question their ... curriculum.'")
+            
+            get_input(player, "Sabrina says to you, 'I'd like to send her back, but I'm nervous. Could you look into it for me?'", callback)            
+            
+        elif player.db.quests["daycare"] < 3:
+            player.msg("Sabrina says to you, 'I hope you can find something out!'")
+            
+        elif player.db.quests["daycare"] == 3:
+            player.msg("Sabrina says to you, 'Exploring scary tunnels and beating up naughty kids for fingerpaint, huh?'")
+            player.msg("Sabrina sighs again. It's a wonder the woman has any air left in her.")
+            player.msg("Sabrina says to you, 'Well, it's non-traditional, but for a girl with Tabitha's ... energy, it's probably perfect for her.'")
+            player.msg("Sabrina says to you, 'Thanks again!'")
+            player.experience_total += 2000
+            player.msg("You gain 2,000 experience points!")
+            player.db.quests["daycare"] = "done"
+
+        self.stop()
+
+       
 class Mobile104Script(Script):
     """
     This is the script for Tabitha to lead you to the Smurf
@@ -172,66 +231,6 @@ class Mobile6210Script(Script):
 
         self.stop()
 
-class Object6217Script(Script):
-    """
-    This is the script for Papa Smurf's magic box to give you xp
-    when you are done putting the objects away, load Gargamel's
-    Girdle in the reward room, if not there, and transfer you
-    there.
-    """
-
-    def at_script_creation(self):
-        self.key = "o6217_script"
-        self.desc = "Script for Papa's Magic box in the smurf quest."
-        self.persistent = True
-        self.db.player = ""
-
-    def quest_open(self):
-        player = self.db.player
-
-        if "smurfs" in player.db.quests:
-            if player.db.quests["smurfs"] > 2 or player.db.quests["smurfs"] == "done":
-                player.msg("Papa's magic box says, 'Thanks for putting everything away! There's nothing more to do!")
-                return
-
-        player.msg("Papa's magic box says, 'Now be good boys, and put your toys away neatly.'")
-
-    def quest_close(self):
-        player = self.db.player
-        box = self.obj
-        box_contents = box.contents
-        trophy_room = player.search("r6231", global_search=True)
-
-        contents_required = ["o6201", "o6210", "o6212", "o6213", "o6214", "o6216"]
-        contents_present = []
-
-        if len(box_contents) == 6:
-            for object in box_contents:
-                contents_present.append(object.db.vnum)
-
-            contents_present.sort()
-            contents_required.sort()
-
-            if contents_present == contents_required:
-
-                for object in box_contents:
-                    object.location = None
-                trophy_case = player.search("o6218", location=trophy_room)
-                girdle = player.search("o6219", location=trophy_case)
-                if not girdle:
-                    girdle = rules.make_object(trophy_case, False, "o6219")
-
-                girdle.db.level = 5
-                girdle.db.armor = rules.set_armor(girdle.db.level)
-
-                player.experience_total += 800
-                player.msg("You gain 800 experience points!")
-                player.msg("Papa's magic box says to you, 'Good boys! Now enjoy your prize!")
-                player.move_to(trophy_room, quiet=True)
-                player.db.quests["smurfs"] = 3
-
-        self.stop()
-
 class Mobile6211Script(Script):
     """
     This is the script for Gargamel's girdle being given to
@@ -296,3 +295,65 @@ class Mobile6211Script(Script):
                 given_object.location = player
 
         self.stop()
+
+        
+class Object6217Script(Script):
+    """
+    This is the script for Papa Smurf's magic box to give you xp
+    when you are done putting the objects away, load Gargamel's
+    Girdle in the reward room, if not there, and transfer you
+    there.
+    """
+
+    def at_script_creation(self):
+        self.key = "o6217_script"
+        self.desc = "Script for Papa's Magic box in the smurf quest."
+        self.persistent = True
+        self.db.player = ""
+
+    def quest_open(self):
+        player = self.db.player
+
+        if "smurfs" in player.db.quests:
+            if player.db.quests["smurfs"] > 2 or player.db.quests["smurfs"] == "done":
+                player.msg("Papa's magic box says, 'Thanks for putting everything away! There's nothing more to do!")
+                return
+
+        player.msg("Papa's magic box says, 'Now be good boys, and put your toys away neatly.'")
+
+    def quest_close(self):
+        player = self.db.player
+        box = self.obj
+        box_contents = box.contents
+        trophy_room = player.search("r6231", global_search=True)
+
+        contents_required = ["o6201", "o6210", "o6212", "o6213", "o6214", "o6216"]
+        contents_present = []
+
+        if len(box_contents) == 6:
+            for object in box_contents:
+                contents_present.append(object.db.vnum)
+
+            contents_present.sort()
+            contents_required.sort()
+
+            if contents_present == contents_required:
+
+                for object in box_contents:
+                    object.location = None
+                trophy_case = player.search("o6218", location=trophy_room)
+                girdle = player.search("o6219", location=trophy_case)
+                if not girdle:
+                    girdle = rules.make_object(trophy_case, False, "o6219")
+
+                girdle.db.level = 5
+                girdle.db.armor = rules.set_armor(girdle.db.level)
+
+                player.experience_total += 800
+                player.msg("You gain 800 experience points!")
+                player.msg("Papa's magic box says to you, 'Good boys! Now enjoy your prize!")
+                player.move_to(trophy_room, quiet=True)
+                player.db.quests["smurfs"] = 3
+
+        self.stop()
+
