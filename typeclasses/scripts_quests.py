@@ -132,8 +132,8 @@ class Mobile6210Script(Script):
             def callback(caller, prompt, user_input):
                 if "yes" in user_input:
                     caller.msg("You tell Papa Smurf that you would be happy to help.")
-                    caller.msg("Papa Smurf says to you, 'Finally, someone else responsible.")
-                    caller.msg("Papa Smurf says to you, 'As I say, just gather them up and put them away in my house.")
+                    caller.msg("Papa Smurf says to you, 'Finally, someone else responsible.'")
+                    caller.msg("Papa Smurf says to you, 'As I say, just gather them up and put them away in my house.'")
                     caller.msg("Papa Smurf says to you, 'Hrm, you may need the key as well. I'm sure it's around somewhere.'")
                     caller.msg("Papa Smurf says to you, 'Don't forget to close the lid when you are done.'")
                     player.msg("Papa Smurf says to you, 'Don't worry, I'll know when you are done.'")
@@ -141,7 +141,7 @@ class Mobile6210Script(Script):
 
                 elif "no" in user_input:
                     caller.msg("You decline to help Papa Smurf at the present time.")
-                    caller.msg("Papa Smurf says to you, 'Perhaps another time.")
+                    caller.msg("Papa Smurf says to you, 'Perhaps another time.'")
 
             player.msg("Papa Smurf sighs, exhausted.")
             player.msg("Papa Smurf says to you, 'These kids these days.'")
@@ -152,12 +152,12 @@ class Mobile6210Script(Script):
 
         elif player.db.quests["smurfs"] == 1:
             player.msg("You talk to Papa Smurf, and explain that Tabitha sent you.")
-            player.msg("Papa Smurf says to you, 'Ah, wonderful!")
+            player.msg("Papa Smurf says to you, 'Ah, wonderful!'")
             player.experience_total += 50
             player.msg("You gain 50 experience points!")
             player.msg("Papa Smurf sighs, exhausted.")
             player.msg("Papa Smurf says to you, 'I need you to help me by gathering up my children's toys and putting them away.'")
-            player.msg("Papa Smurf says to you, 'Just gather them up and put them away in my house.")
+            player.msg("Papa Smurf says to you, 'Just gather them up and put them away in my house.'")
             player.msg("Papa Smurf says to you, 'Hrm, you may need the key as well. I'm sure it's around somewhere.'")
             player.msg("Papa Smurf says to you, 'Don't forget to close the lid when you are done.'")
             player.msg("Papa Smurf says to you, 'Don't worry, I'll know when you are done.'")

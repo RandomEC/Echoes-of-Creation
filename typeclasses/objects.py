@@ -285,10 +285,7 @@ class Object(DefaultObject):
                 desc = self.db.desc
 
         if desc:
-            if "open" in self.db.state:
-                string += "|C%s\nIt contains:|n\n" % desc
-            else:
-                string += "|C%s\n%s is closed.|n\n" % (desc, (self.key[0].upper() + self.key[1:]))
+            string += "|C%s\n" % desc
         if mobiles:
             mobile_string = ""
             index = 0
@@ -305,11 +302,6 @@ class Object(DefaultObject):
                     object_string = object_string + ("    |R%s|n\n" % objects[index])
             if "open" in self.db.state:
                 string += object_string
-            else:
-                string += ""
-        else:
-            if "open" in self.db.state:
-                string += "    |CNothing!|n\n"
             else:
                 string += ""
 
@@ -911,6 +903,98 @@ class Container(Armor):
                         quest_script.db.player = player
                         quest_script.quest_close()
 
+
+    def return_appearance(self, looker, **kwargs):
+        """
+        This formats a description. It is the hook a 'look' command
+        should call.
+        Args:
+            looker (Object): Object doing the looking.
+            **kwargs (dict): Arbitrary, optional arguments for users
+                overriding the call (unused by default).
+        """
+        if not looker:
+            return ""
+        # get and identify all objects
+        visible = (con for con in self.contents if con != looker and con.access(looker, "view"))
+        exits, users, mobiles, objects, things = [], [], [], [], defaultdict(list)
+        for con in visible:
+            key = con.get_display_name(looker)
+            if con.destination:
+                if "locked" in con.db.door_attributes:
+                    doorl = "{"
+                    doorr = "}"
+                elif "open" not in con.db.door_attributes:
+                    doorl = "["
+                    doorr = "]"
+                else:
+                    doorl = ""
+                    doorr = ""
+                keystring = doorl + key + doorr
+                exits.append(keystring)
+            elif con.has_account:
+                users.append("|c%s|n" % key)
+            # Below added to address mobiles and objects.
+            elif "mobile" in con.tags.all():
+                mobiles.append("|Y%s|n" % con.db.desc)
+            elif "object" in con.tags.all():
+                objects.append("|R%s|n" % con.db.desc)
+            else:
+                # things can be pluralized
+                things[key].append(con)
+        # get description, build string
+        # string = "|R%s|n\n" % self.get_display_name(looker)
+        string = ""
+        # Exits moved up from default Evennia.
+        if exits:
+            string += "|wExits:|n " + list_to_string(exits) + "\n"
+
+        desc = ""
+
+        # Get the most detailed description you can.
+        if self.db.extra_descriptions:
+            aliases = self.aliases.get()
+            for alias in aliases:
+                for extra in self.db.extra_descriptions:
+                    if alias in extra:
+                        desc = self.db.extra_descriptions[extra]
+
+        if not desc:
+            if "look_description" in self.db.all:
+                desc = self.db.look_description
+            else:
+                desc = self.db.desc
+
+        if desc:
+            if "open" in self.db.state:
+                string += "|C%s\nIt contains:|n\n" % desc
+            else:
+                string += "|C%s\n%s is closed.|n\n" % (desc, (self.key[0].upper() + self.key[1:]))
+        if mobiles:
+            mobile_string = ""
+            index = 0
+            length = len(mobiles)
+            for index in range(0, length):
+                mobile_string = mobile_string + ("    |Y%s|n\n" % mobiles[index])
+            string += mobile_string
+        if objects:
+            object_string = ""
+            index = 0
+            length = len(objects)
+            if length > 0:
+                for index in range(0, length):
+                    object_string = object_string + ("    |R%s|n\n" % objects[index])
+            if "open" in self.db.state:
+                string += object_string
+            else:
+                string += ""
+        else:
+            if "open" in self.db.state:
+                string += "    |CNothing!|n\n"
+            else:
+                string += ""
+
+        return string
 
 
 class Drink_container(Item):

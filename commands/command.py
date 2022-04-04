@@ -750,11 +750,9 @@ class CmdGive(MuxCommand):
         if not success:
             caller.msg("This could not be given.")
         else:
-            caller.msg("Testing this.")
             caller.msg("You give %s to %s." % (to_give.key, target.key))
             if "player" in target.tags.all():
                 target.msg("%s gives you %s." % (caller.key, to_give.key))
-            caller.msg("After target message.")
             # Call the target's at_give() method.
             target.at_give(caller, to_give)
             # Call the object's at_give() method.
