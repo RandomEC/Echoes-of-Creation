@@ -1078,16 +1078,23 @@ class CmdPut(MuxCommand):
             multimatch_string="You carry more than one %s:" % self.lhs,
         )
 
+        if not to_put:
+            return
+        
         # For ease of programming reasons, you cannot put a container in
         # another container.
         if to_put.db.item_type == "container" and to_put.contents:
             caller.msg("You cannot put a container with items in it in another container.")
             return
 
-        target = caller.search(self.rhs, location=[caller, caller.location])
+        target = caller.search(self.rhs, 
+                               location=[caller, caller.location],
+                               nofound_string="There is no %s here." % self.rhs,
+                               multimatch_string="There is more than one %s here:" % self.rhs
+                               )
 
         if not target:
-            caller.msg("There is no %s here to put %s in." % (self.rhs, to_put.key))
+            return
 
         if not (to_put and target):
             return
