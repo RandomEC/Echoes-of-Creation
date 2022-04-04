@@ -1088,6 +1088,17 @@ class Player(Character):
         self.tags.add("player")
 
     @property
+    def experience_total(self):
+        return self.db.experience_total
+
+    @experience_total.setter
+    def experience_total(self, new_value):
+        if new_value >= self.experience_total:
+            self.db.experience_total = new_value
+        else:
+            self.msg("There was a problem setting your new total experience, as you can never have less total experience.")
+
+    @property
     def experience_spent(self):
         return self.db.experience_spent
 
