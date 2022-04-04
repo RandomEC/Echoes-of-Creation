@@ -112,7 +112,7 @@ class CmdPractice(MuxCommand):
             eligible_skills = rules_skills.get_skill(eligible_character=caller)
             for skill in eligible_skills:
                 if skill in caller.db.skills:
-                    if caller.db.skills[skill] <= 70:
+                    if caller.db.skills[skill] < 70:
                         output_string += "%-20s%d\n" % (skill, eligible_skills[skill])
                 else:
                     output_string += "%-20s%d\n" % (skill, eligible_skills[skill])
