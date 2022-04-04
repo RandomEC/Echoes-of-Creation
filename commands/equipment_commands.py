@@ -121,8 +121,11 @@ class CmdIdentify(MuxCommand):
             caller.msg("What do you want to identify?")
             return
             
-        item = caller.search(self.args, location=caller, nofound_string="You do not have %s to identify." % self.args,
-            multimatch_string="You carry more than one %s, which do you want to identify:" % self.args)
+        item = caller.search(self.args, 
+                             location=caller, 
+                             nofound_string="You do not have %s to identify." % self.args,
+                             multimatch_string="You carry more than one %s, which do you want to identify:" % self.args
+                             )
         
         if not item:
             return
