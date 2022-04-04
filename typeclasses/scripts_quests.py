@@ -19,8 +19,9 @@ class TestQuestScript(Script):
     def quest_talk(self):
         player = self.db.player
 
-        if not player.db.quests:
-            player.db.quests = {}
+        if not player.db.frank:
+            player.msg("in the test.")
+            player.db.frank = {}
 
         if "test" not in player.db.quests:
             def callback(caller, prompt, user_input):
@@ -73,7 +74,7 @@ class Mobile104Script(Script):
     def quest_talk(self):
         player = self.db.player
 
-        if "quests" not in player.db.all:
+        if not player.db.quests:
             player.db.quests = {}
 
         if "smurfs" not in player.db.quests:
