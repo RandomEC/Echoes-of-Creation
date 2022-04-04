@@ -59,6 +59,50 @@ class TestQuestScript(Script):
 
         self.stop()
 
+class Mobile101Script(Script):
+    """
+    This is the script for Marshal Marshall to lead you to the 
+    Graveyard quest.
+    """
+
+    def at_script_creation(self):
+        self.key = "m101_script"
+        self.desc = "Script for Marshal to handle Graveyard."
+        self.persistent = True
+        self.db.player = ""
+
+    def quest_talk(self):
+        player = self.db.player
+
+        if not player.db.quests:
+            player.db.quests = {}
+
+        if "graveyard" not in player.db.quests:
+            def callback(caller, prompt, user_input):
+                if user_input == "yes":
+                    caller.msg("Marshal Marshall says to you, 'Thanks a lot, friend!'")
+                    caller.db.quests["graveyard"] = 1
+                    return False
+                elif user_input == "no":
+                    caller.msg("Marshal Marshall says to you, 'Yeah, I'm sure it's not a big deal. I'll look into it later.'")
+                    caller.msg("Marshal Marshall says to you, 'Come back if you change your mind.'")
+                    return False
+                else:
+                    caller.msg("Marshal Marshall says, 'Try just typing yes or no.'")                    
+                    return True
+
+            player.msg("Marshal Marshall smiles at your approach.")            
+            player.msg("Marshal Marshall says to you, 'Well, Seeker, do you think you can take some time from diving into portals to help me out?'")
+            player.msg("Marshal Marshall says to you, 'My friend Henry is the gardener and caretaker over at the graveyard at the south end of town.'")
+            player.msg("Marshal Marshall says to you, 'He didn't come by for our regular card game the other night, and I'm a mite worried about him.'")
+            player.msg("Marshal Marshall says to you, 'I would go myself, but I'm afraid I'm a bit tied up, what with all the ... er ....'")
+            player.msg("Marshal Marshall trails off into mumbling.")
+            
+            get_input(player, "Marshal Marshall says to you, 'Anyways, will you go take a look?'", callback)            
+  
+        self.stop()
+
+
 class Mobile103Script(Script):
     """
     This is the script for Sabrina to lead you to the Dwarven
@@ -167,6 +211,99 @@ class Mobile104Script(Script):
 
         self.stop()
 
+class Mobile3600Script(Script):
+    """
+    This is the script for Henry the Gardener in the 
+    Graveyard quest.
+    """
+
+    def at_script_creation(self):
+        self.key = "m3600_script"
+        self.desc = "Script for Henry the Gardener to handle Graveyard."
+        self.persistent = True
+        self.db.player = ""
+
+    def quest_talk(self):
+        player = self.db.player
+
+        if not player.db.quests:
+            player.db.quests = {}
+
+        if "graveyard" not in player.db.quests:
+            player.msg("Henry the Gardener says to you, 'Say, friend, I don't suppose you've noticed the dead being a little, uh, lively out there, have you?'")
+            player.db.quests["graveyard"] = 1
+        elif player.db.quests["graveyard"] == 1:
+            player.msg("You explain to Henry the Gardener that the Marshal sent you.")
+            player.msg("Henry the Gardener says to you, 'Ah, the Marshal, a good friend.'")
+            player.msg("You gain 100 experience points!")
+            player.experience_current += 100                       
+            player.msg("Henry the Gardener chuckles nervously, though it is not at all clear what is funny about that.")
+            player.msg("Henry the Gardener says to you, 'The truth is, I've not been out of this hut in days.'")
+            player.msg("Henry the Gardener says to you, 'The dead have been a little ... uh ... active lately.'")
+        
+        if player.db.quests["graveyard"] == 1:
+            player.msg("Henry the Gardener says to you, 'I'm not sure what's come over them, but they don't seem that sanguine about staying in the ground.'")
+            player.msg("Henry the Gardener says to you, 'Though I guess, once you're as dried up as some of them, it's hard to be sanguine about much!'")
+            player.msg("Henry the Gardener laughs exremely nervously, almost manically, at this.")
+            player.msg("Henry the Gardener collects himself briefly.")
+            player.msg("Henry the Gardener says to you, 'Anyways, I think that if you could kill five of the skeletons around these parts, I could probably get out safely.'")
+            player.msg("Henry the Gardener says to you, 'Once you do, come back and talk to me again.'")
+            player.msg("Henry the Gardener sits back, takes a long draw off a dark bottle, and shakes his head.")
+            player.msg("Henry the Gardener says to you, 'Just steer clear of that ghastly ghoul, if you see it.'")
+            player.msg("Henry the Gardener shudders violently.")
+            player.db.quests["graveyard"] = 2
+        elif 1 < player.db.quests["graveyard"] < 7:
+            skeletons = 7 - player.db.quests["graveyard"]
+            if skeletons == 1:
+                skeleton_string = "one skeleton"
+            else:
+                skeleton_string = "%d skeletons" % skeletons
+            player.msg("Henry the Gardener says to you, 'Looks as though you've made some progress, fella. Just %s to go.'" % skeleton_string)
+        elif player.db.quests["graveyard"] == 7:
+            player.msg("Henry the Gardener says to you, 'Well, done, fella! I suspect I can get out to see the Marshal now.'")
+            player.msg("You gain 800 experience points!")
+            player.experience_current += 800                       
+            player.msg("Henry the Gardener says to you, 'You know, I busted up my good snow shovel to use in defense against those things if I had to.'")
+            player.msg("Henry the Gardener says to you, 'Guess I won't need it now, but I suppose you might.'")
+            
+            # Load the shovel shield.
+            shield = rules.make_object(receiver, False, "o3614")
+
+            shield.db.level = 5
+            shield.db.armor = rules.set_armor(shield.db.level)
+            
+            player.msg("Henry the Gardener hands you the shovel shield.")
+            player.msg("Henry the Gardener says to you, 'Use it in good health, and if you take it in mind to go after that ghastly ghoul, come see me first.'")
+            player.db.quests["graveyard"] = 8
+
+            
+        self.stop()
+
+        
+class Mobile3603Script(Script):
+    """
+    This is the death script for a skeleton type 1 in the 
+    Graveyard quest.
+    """
+
+    def at_script_creation(self):
+        self.key = "m3603_script"
+        self.desc = "Death script for skeleton type 1 in Graveyard."
+        self.persistent = True
+        self.db.player = ""
+
+    def quest_death(self):
+        player = self.db.player
+
+        if not player.db.quests:
+            player.db.quests = {}
+
+        if "graveyard" in player.db.quests:
+            if 1 < player.db.quests["graveyard"] < 7:
+                player.db.quests["graveyard"] += 1
+                
+    self.stop()
+                       
 class Mobile6210Script(Script):
     """
     This is the script for Papa Smurf to give you some xp for coming
