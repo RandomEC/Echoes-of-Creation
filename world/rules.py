@@ -812,9 +812,10 @@ def player_in_area(area_name):
     """
     players = search.search_tag("player")
     
-    for player in players:
-        if area_name in player.location.tags.all():
-            return True
+    if players:
+        for player in players:
+            if area_name in player.location.tags.all():
+                return True
     
     return False
     
