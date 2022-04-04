@@ -321,6 +321,8 @@ class Object(DefaultObject):
         """
 
         if self.db.quests:
+            if not player.db.quests:
+                player.db.quests = {}
             for quest in self.db.quests:
                 if quest not in player.db.quests:
                     if "give" in self.db.quests[quest]:
@@ -874,6 +876,8 @@ class Container(Armor):
         """
 
         if self.db.quests:
+            if not player.db.quests:
+                player.db.quests = {}
             for quest in self.db.quests:
                 if quest not in player.db.quests:
                     if "open" in self.db.quests[quest]:
@@ -893,6 +897,8 @@ class Container(Armor):
         """
 
         if self.db.quests:
+            if not player.db.quests:
+                player.db.quests = {}
             for quest in self.db.quests:
                 if quest not in player.db.quests:
                     if "close" in self.db.quests[quest]:

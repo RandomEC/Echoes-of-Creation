@@ -799,9 +799,10 @@ class Character(DefaultCharacter):
         """
 
         if "mobile" in self.tags.all():
-            player.msg("In at_give")
-
             if self.db.quests:
+                if not player.db.quests:
+                    player.db.quests = {}
+
                 for quest in self.db.quests:
                     if quest not in player.db.quests:
                         if "give" in self.db.quests[quest]:

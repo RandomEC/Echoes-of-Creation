@@ -1948,6 +1948,9 @@ class CmdTalk(MuxCommand):
                 quest_status = "done"
                 # Talk to the mobile.
                 if to_talk.db.quests:
+                    if not caller.db.quests:
+                        caller.db.quests = {}
+
                     for quest in to_talk.db.quests:
                         if quest not in caller.db.quests:
                             quest_status = "not done"
