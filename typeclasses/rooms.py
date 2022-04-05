@@ -251,7 +251,7 @@ class Room(DefaultRoom):
             index = 0
             length = len(users)
             for index in range(0, length):
-                users_string = users_string + ("    |Y%s|n\n" % mobiles[index])
+                users_string = users_string + ("    |Y%s|n\n" % users[index])
             string += users_string
         if mobiles:
             mobile_string = ""
