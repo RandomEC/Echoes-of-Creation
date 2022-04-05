@@ -222,7 +222,14 @@ class Room(DefaultRoom):
                 keystring = doorl + key + doorr
                 exits.append(keystring)
             elif con.has_account:
-                users.append("|c%s|n" % key)
+                position_string = ""
+                if con.ndb.combat_handler:
+                    combat = con.ndb.combat_handler
+                    target = combat[con]["target"]
+                    position_string = "is here, fighting %s" % target.key
+                else:
+                    position_string = "is %s here" % con.position
+                users.append("|Y%s %s.|n" % (con.key, position_string))
             # Below added to address mobiles and objects.
             elif "mobile" in con.tags.all():
                 mobiles.append("|Y%s%s|n" % (rules.auras_characters(looker, con), con.db.desc))
@@ -239,6 +246,13 @@ class Room(DefaultRoom):
         desc = self.db.desc
         if desc:
             string += "|C%s|n\n" % desc
+        if users:
+            users_string = ""
+            index = 0
+            length = len(users)
+            for index in range(0, length):
+                users_string = users_string + ("    |Y%s|n\n" % mobiles[index])
+            string += users_string
         if mobiles:
             mobile_string = ""
             index = 0
@@ -254,7 +268,7 @@ class Room(DefaultRoom):
                 object_string = object_string + ("    |R%s|n\n" % objects[index])
             string += object_string
         # Below remains just in case we want to use it again.
-        if users or things:
+        if things:
             # handle pluralization of things (never pluralize users)
             thing_strings = []
             for key, itemlist in sorted(things.items()):
