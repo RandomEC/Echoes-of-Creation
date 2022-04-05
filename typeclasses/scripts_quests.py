@@ -547,8 +547,8 @@ class Mobile6612Script(Script):
                 player.experience_total += 1000
                 player.db.quests["daycare"] = 2
                 
-        elif player.db.quests["daycare"] == 2:
-            player.msg("The teacher says to you, 'Well, where's your fingerpaint? Give it to me when you have some.'")
+            elif player.db.quests["daycare"] == 2:
+                player.msg("The teacher says to you, 'Well, where's your fingerpaint? Give it to me when you have some.'")
 
         self.stop()
 
