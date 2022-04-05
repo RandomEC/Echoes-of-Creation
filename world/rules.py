@@ -124,7 +124,7 @@ def auras_characters(looker, character):
                     if "starter" in character.db.quests[quest]:
                         if looker.attributes.has("quests"):
                             if looker.db.quests:
-                                if quest not in looker.db.all:
+                                if quest not in looker.db.quests:
                                     # The starter mobile has the level guidepost for the quest
                                     # as the value corresponding to starter.
                                     if character.db.quests[quest]["starter"] - looker.level <= -2:
@@ -133,7 +133,7 @@ def auras_characters(looker, character):
                                         color = "|y"
                                     else:
                                         color = "|r"
-                                    aura_string += "%s(!)|n" % color
+                                    aura_string += "%s(!)|Y" % color
                             else:
                                 # The starter mobile has the level guidepost for the quest
                                 # as the value corresponding to starter.
