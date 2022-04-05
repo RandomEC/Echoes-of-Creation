@@ -236,7 +236,7 @@ class Mobile3600Script(Script):
             player.msg("You explain to Henry the Gardener that the Marshal sent you.")
             player.msg("Henry the Gardener says to you, 'Ah, the Marshal, a good friend.'")
             player.msg("You gain 100 experience points!")
-            player.experience_current += 100                       
+            player.experience_total += 100
             player.msg("Henry the Gardener chuckles nervously, though it is not at all clear what is funny about that.")
             player.msg("Henry the Gardener says to you, 'The truth is, I've not been out of this hut in days.'")
             player.msg("Henry the Gardener says to you, 'The dead have been a little ... uh ... active lately.'")
@@ -264,7 +264,7 @@ class Mobile3600Script(Script):
         elif player.db.quests["graveyard"] == 7:
             player.msg("Henry the Gardener says to you, 'Well, done, fella! I suspect I can get out to see the Marshal now.'")
             player.msg("You gain 800 experience points!")
-            player.experience_current += 800                       
+            player.experience_total += 800
             player.msg("Henry the Gardener says to you, 'You know, I busted up my good snow shovel to use in defense against those things if I had to.'")
             player.msg("Henry the Gardener says to you, 'Guess I won't need it now, but I suppose you might.'")
             
@@ -527,7 +527,7 @@ class Mobile6612Script(Script):
     """
 
     def at_script_creation(self):
-        self.key = "m104_script"
+        self.key = "m6612_script"
         self.desc = "Script for teacher to handle Dwarven Daycare."
         self.persistent = True
         self.db.player = ""
