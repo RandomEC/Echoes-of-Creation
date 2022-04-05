@@ -293,7 +293,7 @@ class Mobile3600Script(Script):
             player.msg("As you turn to walk away, you hear Henry the Gardener mutter '%s'" % mutter)
             player.db.quests["graveyard"] = 9
 
-        elif player.db.quests["graveyard"] == 8:
+        elif player.db.quests["graveyard"] == 10:
             player.msg("Henry the Gardener says to you, 'You are amazing! Polished off that ghastly ghoul, huh?'")
             player.msg("Henry the Gardener says to you, 'I watched you right out my window here.'")
             player.msg("Henry the Gardener says to you, 'Well, fair is fair, here's your reward.'")
