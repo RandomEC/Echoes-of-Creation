@@ -64,6 +64,7 @@ from commands.equipment_commands import CmdWield
 from commands.equipment_commands import CmdWieldTo
 from commands.growth_commands import CmdPractice
 from commands.growth_commands import CmdTrain
+from commands.quest_commands import CmdQuestList
 from commands.skill_commands import CmdDowse
 from commands.skill_commands import CmdForage
 from commands.skill_commands import CmdPickLock
@@ -145,6 +146,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdPickLock())
         self.add(CmdPractice())
         self.add(CmdPut())
+        self.add(CmdQuestList())
         self.add(CmdRefresh())
         self.add(CmdRemove())
         self.add(CmdRemoveFrom())

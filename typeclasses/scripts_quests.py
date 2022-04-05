@@ -607,6 +607,9 @@ class Object6217Script(Script):
 
         player.msg("Papa's magic box says, 'Now be good boys, and put your toys away neatly.'")
 
+        self.stop()
+
+
     def quest_close(self):
         player = self.db.player
         box = self.obj

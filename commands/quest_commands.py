@@ -59,10 +59,11 @@ class CmdQuestList(MuxCommand):
         if not player_quests:
             output_string += "You are not currently on any quests."
         else:            
-            for quest in player_quests:                
+            output_string += "You are currently on the following quests:\n"
+            for quest in player_quests:
                 if player_quests[quest] != "done":
-                    quest_names_list.append(quest_status[quest]["name"])
-                    quest_status_list.append(quest_status[quest][player_quests[quest]])
+                    quest_names_list.append(self.quest_status[quest]["name"])
+                    quest_status_list.append(self.quest_status[quest][player_quests[quest]])
                                                                     
             table = evtable.EvTable("Quest", "Status", table=[quest_names_list, quest_status_list], border=None, width=80)                                                                             
             output_string += ("%s" % table)
