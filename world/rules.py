@@ -116,6 +116,23 @@ def auras_characters(looker, character):
 
     aura_string = ""
 
+    # Handle quest starter notification.
+    if "mobile" in character.tags.all():
+        if character.db.quests:
+            for quest in character.db.quests:
+                if "starter" in character.db.quests[quest]:
+                    if "quests" in looker.db.all:
+                        if looker.db.quests:
+                            if quest not in looker.db.all:
+                                if character.db.quests[quest]["level"] - looker.level <= -2:
+                                    color = "|g"
+                                elif character.db.quests[quest]["level"] - looker.level <= 4:
+                                    color = "|y"
+                                else:
+                                    color = "|r"
+                                aura_string += "%s(!)|n" % color
+                                
+    # Handle actual auras.
     if character.get_affect_status("invisible") and looker.get_affect_status("detect invis"):
         aura_string += "(Invis)"
     if character.alignment < -333 and looker.alignment > 333 and looker.get_affect_status("detect evil"):
