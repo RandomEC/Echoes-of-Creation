@@ -22,17 +22,25 @@ def affect_apply(character, affect_name, duration, character_message, room_messa
 
     character.db.spell_affects[affect_name] = {"duration": duration_time}
     
+    def remove_underscore(string):
+        if "_" in string:
+            string = string.replace("_", " ")
+        return string
+    
     # Applies will take the form of ["strength", -2]
     if "apply_1" in kwargs:
-        apply_1_type = kwargs["apply_1"][0]
+        apply_type = remove_underscore(kwargs["apply_1"][0])
+        apply_1_type = apply_type
         apply_1_amount = kwargs["apply_1"][1]
         character.db.spell_affects[affect_name][apply_1_type] = apply_1_amount
     if "apply_2" in kwargs:
-        apply_2_type = kwargs["apply_2"][0]
+        apply_type = remove_underscore(kwargs["apply_2"][0])
+        apply_2_type = apply_type
         apply_2_amount = kwargs["apply_2"][1]
         character.db.spell_affects[affect_name][apply_2_type] = apply_2_amount
     if "apply_3" in kwargs:
-        apply_3_type = kwargs["apply_3"][0]
+        apply_type = remove_underscore(kwargs["apply_3"][0])
+        apply_3_type = apply_type
         apply_3_amount = kwargs["apply_3"][1]
         character.db.spell_affects[affect_name][apply_3_type] = apply_3_amount
 
