@@ -91,7 +91,7 @@ class MuxCommand(Command):
         caller = self.caller
         if caller.ndb.wait_state:
             caller.msg("You are still recovering from your last action!")
-            return        
+            return False
 
     def at_post_cmd(self):
         """
