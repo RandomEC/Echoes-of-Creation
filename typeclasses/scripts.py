@@ -143,7 +143,7 @@ class ResetScript(DefaultScript):
 
     def at_repeat(self):
 
-        Random = search.search_object("Random", global_search=True)
+        Random = search.search_object("Random")
 
         for area in self.db.area_list:
             Random.msg("Area that is up = %s" % area)
