@@ -55,7 +55,7 @@ TICK_OBJECT_TIMER = 30
 DEFAULT_DISINTEGRATE_TIME = 30 * TICK_OBJECT_TIMER
 PC_CORPSE_DISINTEGRATE_TIME = 60 * TICK_OBJECT_TIMER
 
-EMPTY_AREA_RESET_TIME = 30 #300   # 5 minute reset if no player in area
+EMPTY_AREA_RESET_TIME = 30#0   # 5 minute reset if no player in area
 
 # Added to cleanup command parsing.
 COMMAND_DEFAULT_ARG_REGEX = r'^[ /]+.*$|$'

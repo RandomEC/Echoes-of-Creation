@@ -1983,3 +1983,25 @@ class CmdTalk(MuxCommand):
                                 quest_script.db.player = caller
                                 quest_script.quest_talk()
 
+
+class CmdTest(MuxCommand):
+    """
+    Talk to a mobile to see what they have to say.
+    Usage:
+      talk <mobile>
+    Talks to a mobile.
+    """
+
+    key = "test"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement talk"""
+
+        caller = self.caller
+
+        if not rules.player_in_area(self.args):
+            caller.msg("no %s here" % self.args)
+
+        caller.msg("Done.")

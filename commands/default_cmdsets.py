@@ -38,6 +38,7 @@ from commands.command import CmdSleep
 from commands.command import CmdStand
 from commands.command import CmdTag
 from commands.command import CmdTalk
+from commands.command import CmdTest
 from commands.build_commands import CmdCreate
 from commands.build_commands import CmdDig
 from commands.build_commands import CmdName
@@ -165,6 +166,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdSummonWeapon())
         self.add(CmdTag())
         self.add(CmdTalk())
+        self.add(CmdTest())
         self.add(CmdTrain())
         self.add(CmdTrip())
         self.add(CmdWear())

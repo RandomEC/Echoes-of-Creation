@@ -844,8 +844,9 @@ def player_in_area(area_name):
     
     if players:
         for player in players:
-            if area_name in player.location.tags.all():
-                return True
+            if player.location.tags.all():
+                if area_name in player.location.tags.all():
+                    return True
     
     return False
     
