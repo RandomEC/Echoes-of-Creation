@@ -88,7 +88,44 @@ def do_agitation(caster, target, mana_cost):
         caster.msg("You chant 'agitation'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "agitation")
 
+        
+def do_armor(caster, target, mana_cost):
+    """Implements the armor spell."""
 
+    spell = rules_skills.get_skill(skill_name="armor")
+    level = caster.level
+    wait_state = spell["wait state"]
+
+    if random.randint(1, 100) <= caster.db.skills["armor"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "armor", True, 2)
+
+        caster.msg("You chant 'armor'.\n")
+        player_output_magic_chant(caster, "armor")
+
+        if caster != target:
+            caster.msg("You temporarily enhance %s's armor." % (target.key[0].upper() + target.key[1:]))
+        target.msg("Your armor has been temporarily enhanced.")
+
+        rules.affect_apply(target,
+                           "armor",
+                           24,
+                           "You feel less armored.",
+                           "",
+                           armor_class=-20
+                           )
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "armor", False, 2)
+        caster.msg("You chant 'armor'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "armor")
+
+        
 def do_cause_light(caster, target, mana_cost):
     """ Function implementing cause light wounds spell"""
 
