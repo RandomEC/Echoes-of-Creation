@@ -96,6 +96,82 @@ class CmdAgitation(MuxCommand):
         else:
             rules_magic.do_agitation(caster, target, cost)
 
+            
+class CmdArmor(MuxCommand):
+   """
+   Provide additional armor for yourself or a target.
+
+   Usage:
+     cast armor <target>
+     cast armor
+     armor
+
+   Armor will provide extra defense for you or a
+   target. Cast with no target, it targets the caster.
+
+   Colleges that can teach (level):
+   Cleric (6), Druid (9), Paladin (14)
+   """
+
+   key = "armor"
+   aliases = ["cast armor"]
+   locks = "cmd:all()"
+   arg_regex = r"\s|$"
+
+   def func(self):
+       """Implement armor"""
+
+       spell = rules_skills.get_skill(skill_name=self.key)
+       caster = self.caller
+       cost = rules_magic.mana_cost(caster, spell)
+
+
+       if "armor" not in caster.db.skills:
+           caster.msg("You do not know the spell '%s' yet!" % self.key)
+           return
+
+       if caster.position != "standing":
+           caster.msg("You have to stand to concentrate enough to cast.")
+           return
+
+       # Check whether anything about the room or affects on the caster
+       # would prevent casting. Check_cast returns output for the state
+       # if true, False if not.
+
+       if rules_magic.check_cast(caster):
+           caster.msg(rules_magic.check_cast(caster))
+           return
+       if caster.mana_current < cost:
+           caster.msg("You do not have sufficient mana to cast %s!" % self.key)
+           return
+
+       if not self.args:
+           target = caster
+
+       else:
+
+           targets = []
+           for object in caster.location.contents:
+               if "mobile" in object.tags.all() or "player" in object.tags.all():
+                   targets.append(object)
+
+           target = caster.search(self.args, candidates=targets)
+
+           if not target:
+               caster.msg("There is no %s here on whom to cast %s on." % (self.args, self.key))
+               return
+
+       if target.get_affect_status(self.key):
+           if target == caster:
+               subject = "You"
+           else:
+               subject = "%s is" % (target.key[0].upper() + target.key[1:])
+
+           caster.msg("%s is already affected by %s.\n" % (subject, self.key))
+           return
+
+       rules_magic.do_armor(caster, target, cost)
+
 
 class CmdCauseLight(MuxCommand):
     """
