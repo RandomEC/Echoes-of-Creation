@@ -208,6 +208,15 @@ def get_skill(**kwargs):
             "minimum cost": 10,
             "wait state": 12
             },
+        "armor": {
+            "classes": {
+                "cleric": 6,
+                "druid": 9,
+                "paladin": 14
+                },
+            "minimum cost": 5,
+            "wait state": 12
+            },
         "cause light": {
             "classes": {
                 "cleric": 5,
