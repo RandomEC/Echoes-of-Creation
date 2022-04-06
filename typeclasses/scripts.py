@@ -143,16 +143,15 @@ class ResetScript(DefaultScript):
 
     def at_repeat(self):
 
-        Random = search.search_object("Random")
+        players = search.search_tag("player")
+        for player in players:
+            player.msg("Testing this.")
 
         for area in self.db.area_list:
-            Random.msg("Area that is up = %s" % area)
             # Reset if there are no players in the area, or if counter is at 2.
-            if not rules.player_in_area(area) or self.db.area_list[area] == 2:
-                Random.msg("Area to be reset = %s" % area)
+            if not self.check_for_player(area) or self.db.area_list[area] == 2:
                 objects_to_reset = search.search_tag(area, category="area name")
                 if objects_to_reset:
-                    Random.msg("Objects to reset in %s" % area)
                     for object in objects_to_reset:
                         object.at_reset()
                 # Since you reset, reset the timer on the area.
