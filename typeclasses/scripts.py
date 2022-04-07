@@ -199,3 +199,15 @@ class FixAreaNames(DefaultScript):
                 for object in objects_to_retag:
                     object.tags.remove(area, category="area names")
                     object.tags.add(area, category="area name")
+
+class TickerCleanupFixAreaNames(DefaultScript):
+
+    # Start with scripts/start scripts.FixAreaNames
+
+    def at_script_creation(self):
+        self.key = "ticker_cleanup_script"
+        self.desc = "Cleans up old tickers"
+        self.persistent = True
+
+        tickerhandler.clear(interval=900)
+        tickerhandler.clear(interval=1800)
