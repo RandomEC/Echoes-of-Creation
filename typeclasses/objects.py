@@ -175,6 +175,30 @@ class Object(DefaultObject):
         # "questname": {"trigger type 1": "script 1", "trigger type 2": "script 2", ...}
         self.db.quests = {}
 
+    def at_disintegrate(self):
+        if self.contents:
+            if len(self.contents) == 1:
+                number = "an item drops"
+            else:
+                number = "items drop"
+            self.location.msg_contents("As %s crumbles away to dust, %s to the floor."
+                                         % (self.name, number),
+                                         exclude=self)
+
+            for item in self.contents:
+                item.move_to(self.location, quiet=True)
+                rules.set_disintegrate_timer(item)
+
+        else:
+            self.location.msg_contents("%s crumbles away to dust."
+                                         % (self.name[0].upper() + self.name[1:]), exclude=self)
+
+        # Remove the disintegrate timer and tag.
+        rules.remove_disintegrate_timer(self)
+
+        self.location = None
+
+        
     @property
     def vnum(self):
         return self.db.vnum
