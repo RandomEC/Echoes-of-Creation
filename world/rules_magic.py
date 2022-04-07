@@ -58,7 +58,7 @@ def do_agitation(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["agitation"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "agitation", True, 1)
+        rules_skills.check_skill_improve(caster, "agitation", True, 4)
 
         caster.msg("You chant 'agitation'.\n")
         player_output_magic_chant(caster, "agitation")
@@ -177,7 +177,7 @@ def do_cause_light(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["cause light"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "cause light", True, 1)
+        rules_skills.check_skill_improve(caster, "cause light", True, 4)
 
         caster.msg("You chant 'cause light'.\n")
         player_output_magic_chant(caster, "cause light")
@@ -243,7 +243,7 @@ def do_chill_touch(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["chill touch"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "chill touch", True, 1)
+        rules_skills.check_skill_improve(caster, "chill touch", True, 4)
 
         caster.msg("You chant 'chill touch'.\n")
         player_output_magic_chant(caster, "chill touch")
@@ -722,7 +722,7 @@ def do_magic_missile(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["magic missile"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "magic missile", True, 1)
+        rules_skills.check_skill_improve(caster, "magic missile", True, 4)
 
         caster.msg("You chant 'magic missile'.\n")
         player_output_magic_chant(caster, "magic missile")
