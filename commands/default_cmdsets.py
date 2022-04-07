@@ -72,6 +72,7 @@ from commands.skill_commands import CmdPickLock
 from commands.skill_commands import CmdSkills
 from commands.skill_commands import CmdSteal
 from commands.spell_commands import CmdAgitation
+from commands.spell_commands import CmdBless
 from commands.spell_commands import CmdCauseLight
 from commands.spell_commands import CmdChillTouch
 from commands.spell_commands import CmdContinualLight
@@ -81,9 +82,16 @@ from commands.spell_commands import CmdCreateWater
 from commands.spell_commands import CmdCureLight
 from commands.spell_commands import CmdDetectEvil
 from commands.spell_commands import CmdDetectHidden
+from commands.spell_commands import CmdDetectInvis
+from commands.spell_commands import CmdFly
 from commands.spell_commands import CmdDetectMagic
+from commands.spell_commands import CmdLevitation
 from commands.spell_commands import CmdMagicMissile
+from commands.spell_commands import CmdMentalBarrier
+from commands.spell_commands import CmdProtection
 from commands.spell_commands import CmdRefresh
+from commands.spell_commands import CmdShield
+from commands.spell_commands import CmdSleep
 from commands.spell_commands import CmdSummonWeapon
 from commands.spell_commands import CmdVentriloquate
 
@@ -107,6 +115,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdAffects())
         self.add(CmdAgitation())
         self.add(CmdAttack())
+        self.add(CmdBless())
         self.add(CmdCauseLight())
         self.add(CmdChillTouch())
         self.add(CmdColleges())
@@ -120,6 +129,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdDestroy())
         self.add(CmdDetectEvil())
         self.add(CmdDetectHidden())
+        self.add(CmdDetectInvis())
         self.add(CmdDetectMagic())
         self.add(CmdDig())
         self.add(CmdDirtKicking())
@@ -131,6 +141,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdDrop())
         self.add(CmdEquipment())
         self.add(CmdFlee())
+        self.add(CmdFly())
         self.add(CmdForage())
         self.add(CmdGet())
         self.add(CmdGive())
@@ -139,13 +150,16 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdInspect())
         self.add(CmdInventory())
         self.add(CmdKick())
+        self.add(CmdLevitation())
         self.add(CmdLock())
         self.add(CmdLook())
         self.add(CmdMagicMissile())
+        self.add(CmdMentalBarrier())
         self.add(CmdName())
         self.add(CmdOpen())
         self.add(CmdPickLock())
         self.add(CmdPractice())
+        self.add(CmdProtection())
         self.add(CmdPut())
         self.add(CmdQuestList())
         self.add(CmdRefresh())
@@ -159,6 +173,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdScore())
         self.add(CmdSetHome())
         self.add(CmdSetObjAlias())
+        self.add(CmdShield())
         self.add(CmdSleep())
         self.add(CmdSkills())
         self.add(CmdStand())

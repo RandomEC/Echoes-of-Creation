@@ -217,6 +217,14 @@ def get_skill(**kwargs):
             "minimum cost": 5,
             "wait state": 12
             },
+        "bless": {
+            "classes": {
+                "cleric": 6,
+                "paladin": 12
+                },
+            "minimum cost": 5,
+            "wait state": 12
+            },
         "cause light": {
             "classes": {
                 "cleric": 5,
@@ -291,6 +299,15 @@ def get_skill(**kwargs):
             "minimum cost": 5,
             "wait state": 12
             },
+        "detect invis": {
+            "classes": {
+                "mage": 6,
+                "cleric": 13,
+                "thief": 33
+                },
+            "minimum cost": 5,
+            "wait state": 12
+            },
         "detect magic": {
             "classes": {
                 "mage": 5,
@@ -332,6 +349,13 @@ def get_skill(**kwargs):
                 "paladin": 11
                 }
             },
+        "fly": {
+            "classes": {
+                "mage": 9
+                },
+            "minimum cost": 10,
+            "wait state": 18
+            },
         "forage": {
             "classes": {
                 "ranger": 3,
@@ -349,12 +373,26 @@ def get_skill(**kwargs):
                 },
             "wait state": 6
             },
+        "levitation": {
+            "classes": {
+                "psionicist": 7
+                },
+            "minimum cost": 10,
+            "wait state": 18
+            },
         "magic missile": {
             "classes": {
                 "mage": 4,
                 "bard": 8
                 },
             "minimum cost": 15,
+            "wait state": 12
+            },
+        "mental barrier": {
+            "classes": {
+                "psionicist": 6
+                },
+            "minimum cost": 8,
             "wait state": 12
             },
         "parry": {
@@ -374,6 +412,15 @@ def get_skill(**kwargs):
                 "bard": 15,
                 "thief": 16
                 },
+            },
+        "protection": {
+            "classes": {
+                "cleric": 7,
+                "druid": 8,
+                "paladin": 16
+                },
+            "minimum cost": 12,
+            "wait state": 18
             },
         "refresh": {
             "classes": {
@@ -398,6 +445,20 @@ def get_skill(**kwargs):
                 },
             "minimum cost": 5,
             "wait state": 24
+            },
+        "shield": {
+            "classes": {
+                "mage": 7
+                },
+            "minimum cost": 12,
+            "wait state": 18
+            },
+        "sleep": {
+            "classes": {
+                "bard": 8
+                },
+            "minimum cost": 15,
+            "wait state": 12
             },
         "summon weapon": {
             "classes": {

@@ -1,3 +1,4 @@
+import math
 import random
 from evennia.utils import search
 from world import rules, rules_combat, rules_skills
@@ -125,7 +126,45 @@ def do_armor(caster, target, mana_cost):
         caster.msg("You chant 'armor'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "armor")
 
-        
+
+def do_bless(caster, target, mana_cost):
+    """Implements the bless spell."""
+
+    spell = rules_skills.get_skill(skill_name="bless")
+    level = caster.level
+    wait_state = spell["wait state"]
+
+    if random.randint(1, 100) <= caster.db.skills["bless"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "bless", True, 2)
+
+        caster.msg("You chant 'bless'.\n")
+        player_output_magic_chant(caster, "bless")
+
+        if caster != target:
+            caster.msg("You bless %s." % (target.key[0].upper() + target.key[1:]))
+        target.msg("You feel righteous.")
+
+        rules.affect_apply(target,
+                           "bless",
+                           (6 + caster.level),
+                           "You feel less righteous.",
+                           "",
+                           hitroll=math.ceil((caster.level + 2) / 8),
+                           saving_throw=math.ceil((caster.level + 2) / 8)
+                           )
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "bless", False, 2)
+        caster.msg("You chant 'bless'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "bless")
+
+
 def do_cause_light(caster, target, mana_cost):
     """ Function implementing cause light wounds spell"""
 
@@ -505,6 +544,42 @@ def do_detect_hidden(caster, target, mana_cost):
         player_output_magic_chant(caster, "detect hidden")
 
 
+def do_detect_invis(caster, target, mana_cost):
+    """Implements the detect invis spell."""
+
+    spell = rules_skills.get_skill(skill_name="detect invis")
+    level = caster.level
+    wait_state = spell["wait state"]
+
+    if random.randint(1, 100) <= caster.db.skills["detect invis"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "detect invis", True, 2)
+
+        caster.msg("You chant 'detect invis'.\n")
+        player_output_magic_chant(caster, "detect invis")
+
+        if caster != target:
+            caster.msg("%s can now detect invisible." % (target.key[0].upper() + target.key[1:]))
+        target.msg("Your eyes tingle.")
+
+        rules.affect_apply(target,
+                           "detect invis",
+                           caster.level,
+                           "You no longer see invisible things.",
+                           ""
+                           )
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "detect invis", False, 2)
+        caster.msg("You chant 'detect invis'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "detect invis")
+
+
 def do_detect_magic(caster, target, mana_cost):
     """Implements the detect magic spell."""
 
@@ -539,6 +614,78 @@ def do_detect_magic(caster, target, mana_cost):
         rules_skills.check_skill_improve(caster, "detect magic", False, 2)
         caster.msg("You chant 'detect magic'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "detect magic")
+
+
+def do_fly(caster, target, mana_cost):
+    """Implements the fly spell."""
+
+    spell = rules_skills.get_skill(skill_name="fly")
+    level = caster.level
+    wait_state = spell["wait state"]
+
+    if random.randint(1, 100) <= caster.db.skills["fly"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "fly", True, 2)
+
+        caster.msg("You chant 'fly'.\n")
+        player_output_magic_chant(caster, "fly")
+
+        if caster != target:
+            caster.msg("%s's feet rise off the ground." % (target.key[0].upper() + target.key[1:]))
+        target.msg("Your feet rise off the ground.")
+
+        rules.affect_apply(target,
+                           "fly",
+                           (caster.level + 3),
+                           "You slowly float to the ground.",
+                           "%s slowly floats to the ground." % (target.key[0].upper() + target.key[1:])
+                           )
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "fly", False, 2)
+        caster.msg("You chant 'fly'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "fly")
+
+
+def do_levitation(caster, target, mana_cost):
+    """Implements the levitation spell."""
+
+    spell = rules_skills.get_skill(skill_name="levitation")
+    level = caster.level
+    wait_state = spell["wait state"]
+
+    if random.randint(1, 100) <= caster.db.skills["levitation"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "levitation", True, 2)
+
+        caster.msg("You chant 'levitation'.\n")
+        player_output_magic_chant(caster, "levitation")
+
+        if caster != target:
+            caster.msg("%s's feet rise off the ground." % (target.key[0].upper() + target.key[1:]))
+        target.msg("Your feet rise off the ground.")
+
+        rules.affect_apply(target,
+                           "fly",
+                           (caster.level + 3),
+                           "You slowly float to the ground.",
+                           "%s slowly floats to the ground." % (target.key[0].upper() + target.key[1:])
+                           )
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "levitation", False, 2)
+        caster.msg("You chant 'levitation'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "levitation")
 
 
 def do_magic_missile(caster, target, mana_cost):
@@ -606,7 +753,78 @@ def do_magic_missile(caster, target, mana_cost):
         caster.msg("You chant 'magic missile'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "magic missile")
 
-        
+
+def do_mental_barrier(caster, target, mana_cost):
+    """Implements the mental barrier spell."""
+
+    spell = rules_skills.get_skill(skill_name="mental barrier")
+    level = caster.level
+    wait_state = spell["wait state"]
+
+    if random.randint(1, 100) <= caster.db.skills["mental barrier"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "mental barrier", True, 2)
+
+        caster.msg("You chant 'mental barrier'.\n")
+        player_output_magic_chant(caster, "mental barrier")
+
+        caster.msg("You erect a mental barrier around yourself.")
+
+        rules.affect_apply(target,
+                           "mental barrier",
+                           24,
+                           "Your mental barrier breaks down.",
+                           "",
+                           armor_class=-20
+                           )
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "mental barrier", False, 2)
+        caster.msg("You chant 'mental barrier'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "mental barrier")
+
+
+def do_protection(caster, target, mana_cost):
+    """Implements the protection spell."""
+
+    spell = rules_skills.get_skill(skill_name="protection")
+    level = caster.level
+    wait_state = spell["wait state"]
+
+    if random.randint(1, 100) <= caster.db.skills["protection"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "protection", True, 2)
+
+        caster.msg("You chant 'protection'.\n")
+        player_output_magic_chant(caster, "protection")
+
+        if caster != target:
+            caster.msg("You protection %s." % (target.key[0].upper() + target.key[1:]))
+        target.msg("You feel righteous.")
+
+        rules.affect_apply(target,
+                           "protection",
+                           24,
+                           "You feel less protected.",
+                           ""
+                           )
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "protection", False, 2)
+        caster.msg("You chant 'protection'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "protection")
+
+
 def do_refresh(caster, target, mana_cost):
     """ Function implementing refresh spell"""
 
@@ -650,7 +868,92 @@ def do_refresh(caster, target, mana_cost):
         caster.msg("You chant 'refresh'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "refresh")
 
-        
+
+def do_shield(caster, target, mana_cost):
+    """Implements the shield spell."""
+
+    spell = rules_skills.get_skill(skill_name="shield")
+    level = caster.level
+    wait_state = spell["wait state"]
+
+    if random.randint(1, 100) <= caster.db.skills["shield"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "shield", True, 2)
+
+        caster.msg("You chant 'shield'.\n")
+        player_output_magic_chant(caster, "shield")
+
+        if caster != target:
+            caster.msg("%s is surrounded by a force shield." % (target.key[0].upper() + target.key[1:]))
+        target.msg("You are surrounded by a force shield.")
+
+        rules.affect_apply(target,
+                           "shield",
+                           (8 + caster.level),
+                           "Your force shield shimmers then fades away.",
+                           "",
+                           armor_class=-20
+                           )
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "shield", False, 2)
+        caster.msg("You chant 'shield'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "shield")
+
+
+def do_sleep(caster, target, mana_cost):
+    """ Function implementing sleep spell"""
+
+    spell = rules_skills.get_skill(skill_name="sleep")
+    level = caster.level
+
+    if target.level > caster.level or save_spell(caster.level, target):
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+            rules_skills.check_skill_improve(caster, "sleep", False, 1)
+        caster.msg("You chant 'sleep'.\nYou failed.\n")
+        player_output_magic_chant(caster, "sleep")
+
+    if random.randint(1, 100) <= caster.db.skills["sleep"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+            rules_skills.check_skill_improve(caster, "sleep", True, 1)
+        caster.msg("You chant 'sleep'.\nYou put %s to sleep." % (target.key[0].upper() + target.key[1:]))
+        player_output_magic_chant(caster, "sleep")
+        target.msg("You feel very sleepy ... zzzzzz.")
+        if target.sex == "neuter":
+            verb = "drift"
+        else:
+            verb = "drifts"
+        caster.location.msg_contents("%s's eyes close and %s slowly %s off to sleep."
+                                     % ((caster.key[0].upper() + caster.key[1:]),
+                                        rules.pronoun_subject(target),
+                                        verb),
+                                     exclude=(caster, target))
+
+        rules.affect_apply(target,
+                           "sleep",
+                           (4 + caster.level),
+                           "You feel less tired and wake up.",
+                           "",
+                           position="sleeping"
+                           )
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+            rules_skills.check_skill_improve(caster, "create sound", False, 1)
+        caster.msg("You chant 'create sound'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "create sound")
+
+
 def do_summon_weapon(caster, mana_cost):
     """ Function implementing summon weapon spell"""
 

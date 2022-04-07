@@ -375,7 +375,13 @@ def do_damage(attacker, victim, eq_slot):
     if victim.db.position == "sleeping":
         damage *= 2
 
-    return damage
+    if victim.get_affect_status("sanctuary"):
+        damage /= 2
+
+    if victim.get_affect_status("protection"):
+        damage -= damage/4
+
+    return math.ceil(damage)
 
 
 def do_death(attacker, victim, **kwargs):
