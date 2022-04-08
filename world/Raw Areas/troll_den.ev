@@ -1,0 +1,1976 @@
+dig/tel Troll's Living Room; r8933
+#
+tag r8933 = troll den:area name
+#
+desc r8933 = This part of the den actually seems peaceful and serene...well, relatively.  It's still a troll den, and it still stinks to high heaven. But there is a nice sitting rock here. 
+#
+desc/edit r8933
+#
+:j l
+#
+:wq
+#
+set r8933/vnum = "r8933"
+#
+set r8933/terrain = "inside"
+#
+set r8933/room_flags = ['indoors', 'dark']
+#
+dig/tel Waste Dump; r8920
+#
+tag r8920 = troll den:area name
+#
+desc r8920 = This room is filled with chewed bone shards and fragments, those that haven't fallen into the pit below.  Something (or things) very big live here.  The cave continues north and east.  You can actually distinguish two different awful odors, one from the east and one, stronger, from below. 
+#
+desc/edit r8920
+#
+:j l
+#
+:wq
+#
+set r8920/vnum = "r8920"
+#
+set r8920/terrain = "inside"
+#
+set r8920/room_flags = ['indoors', 'dark']
+#
+dig/tel Troll's Larder; r8921
+#
+tag r8921 = troll den:area name
+#
+desc r8921 = This room has blood and grime all over the walls.  You see maggots and other insects crawling up them.  The resident is definitely uncivilized.  Half-eaten and rotting body parts scatter the floor, each having its own colony of flies, worms, and maggots. 
+#
+desc/edit r8921
+#
+:j l
+#
+:wq
+#
+set r8921/vnum = "r8921"
+#
+set r8921/terrain = "inside"
+#
+set r8921/extra_description = {'Half-eaten body rotting corpse': 'YUCK!  You find worms crawling in and out this poor unfortunate former human. '}
+#
+set r8921/room_flags = ['indoors', 'dark']
+#
+dig/tel Troll's Living Room; r8922
+#
+tag r8922 = troll den:area name
+#
+desc r8922 = It takes a brave soul to wander this deep into a troll's lair, and this brave soul's nose will regret every step.  There's no less dirt and grime on the walls here, and the perpetual stink might actually be worse. 
+#
+desc/edit r8922
+#
+:j l
+#
+:wq
+#
+set r8922/vnum = "r8922"
+#
+set r8922/terrain = "inside"
+#
+set r8922/room_flags = ['indoors', 'dark']
+#
+dig/tel The Playpen; r8923
+#
+tag r8923 = troll den:area name
+#
+desc r8923 = The walls are covered with blood (and body parts!?!?).  Plastered on the far wall you see what looks like a human arm.  A half-eaten body lies here with its chest ripped out.  The predator seems disinterested in it. 
+#
+desc/edit r8923
+#
+:j l
+#
+:wq
+#
+set r8923/vnum = "r8923"
+#
+set r8923/terrain = "inside"
+#
+set r8923/extra_description = {'arm rotting': 'This reminds you of what a baby would do to its formula during dinnertime, plastering it on the wall. '}
+#
+set r8923/room_flags = ['indoors', 'dark']
+#
+dig/tel Troll's Bedroom; r8924
+#
+tag r8924 = troll den:area name
+#
+desc r8924 = Obviously something REALLY big lives here.  The stench is quite unbearable. There are piles and piles of rotten and half-eaten body parts of animals, orcs, (and humans?) strewn across the floor.  There is a larger, more prominent pile of rotten parts over in a corner.  It seems to have been flattened by something. 
+#
+desc/edit r8924
+#
+:j l
+#
+:wq
+#
+set r8924/vnum = "r8924"
+#
+set r8924/terrain = "inside"
+#
+set r8924/room_flags = ['indoors', 'no mob', 'dark']
+#
+dig/tel A Cave Mouth; r8925
+#
+tag r8925 = troll den:area name
+#
+desc r8925 = To the west is the mouth of the cave.  It leads down, down a tricky little slope, and stinks pretty badly below.  There is a small plaque on the wall. 
+#
+desc/edit r8925
+#
+:j l
+#
+:wq
+#
+set r8925/vnum = "r8925"
+#
+set r8925/terrain = "inside"
+#
+set r8925/extra_description = {'plaque': 'This zone (Troll Den) is created by MERC for any MERC Mud. Copyright 1992 Modified and enlarged by Ceivar, for Castle Arcanum, just for the hell of it. 2001 '}
+#
+set r8925/room_flags = ['indoors', 'no mob']
+#
+dig/tel In a Cave; r8926
+#
+tag r8926 = troll den:area name
+#
+desc r8926 = The cave is pretty dark, and this part feels kind of moist, due to river water collecting in a puddle on the floor here.  The ground slopes up a little as the cave leads south, which probably means it's drier in there. 
+#
+desc/edit r8926
+#
+:j l
+#
+:wq
+#
+set r8926/vnum = "r8926"
+#
+set r8926/terrain = "inside"
+#
+set r8926/room_flags = ['indoors', 'dark']
+#
+dig/tel Bone Pit; r8927
+#
+tag r8927 = troll den:area name
+#
+desc r8927 = This steep rocky slope of the cave is a nearly vertical pit, and there are lots of broken, cracked, and shattered bones here.  Most of them are picked clean of flesh...most of them. 
+#
+desc/edit r8927
+#
+:j l
+#
+:wq
+#
+set r8927/vnum = "r8927"
+#
+set r8927/terrain = "inside"
+#
+set r8927/room_flags = ['indoors', 'no mob', 'dark']
+#
+dig/tel In the Bone Pit; r8928
+#
+tag r8928 = troll den:area name
+#
+desc r8928 = This is the depths of the bone pit, and the bones are pretty broken up down here.  A lot of them are jagged and pointed, and falling in here could seriously injure someone.  There's a fair stench in here too, from the rotting flesh left on some of the bones. 
+#
+desc/edit r8928
+#
+:j l
+#
+:wq
+#
+set r8928/vnum = "r8928"
+#
+set r8928/terrain = "inside"
+#
+set r8928/room_flags = ['indoors', 'dark']
+#
+dig/tel Cave; r8929
+#
+tag r8929 = troll den:area name
+#
+desc r8929 = There's a turn in the cave here, and it leads west and south.  There's a good bit of slick and half-dried blood on the ground here, and a few little pieces of flesh on sharp parts of the rock.  They must have torn off something... 
+#
+desc/edit r8929
+#
+:j l
+#
+:wq
+#
+set r8929/vnum = "r8929"
+#
+set r8929/terrain = "inside"
+#
+set r8929/room_flags = ['indoors', 'no mob', 'dark']
+#
+dig/tel Troll's Living Room; r8930
+#
+tag r8930 = troll den:area name
+#
+desc r8930 = There's a big awful mess on the floor here, where a body has been left lying, squashed, and tracked all over by various large and unrefined feet. Flies buzz all over, and a mass of maggots swarms all over the body. 
+#
+desc/edit r8930
+#
+:j l
+#
+:wq
+#
+set r8930/vnum = "r8930"
+#
+set r8930/terrain = "inside"
+#
+set r8930/room_flags = ['indoors', 'dark']
+#
+dig/tel Troll's Living Room; r8931
+#
+tag r8931 = troll den:area name
+#
+desc r8931 = This part of the cave opens east, west, and south.  Any sane person would turn around: the stench is overwhelming! 
+#
+desc/edit r8931
+#
+:j l
+#
+:wq
+#
+set r8931/vnum = "r8931"
+#
+set r8931/terrain = "inside"
+#
+set r8931/room_flags = ['indoors', 'dark']
+#
+dig/tel The Playpen; r8932
+#
+tag r8932 = troll den:area name
+#
+desc r8932 = The walls here are even more covered with blood and body parts!  The ceiling, being lower here, isn't exempt, either.  The bodies here have been so consumed that it's impossible to make out what many of them were. 
+#
+desc/edit r8932
+#
+:j l
+#
+:wq
+#
+set r8932/vnum = "r8932"
+#
+set r8932/terrain = "inside"
+#
+set r8932/room_flags = ['indoors', 'dark']
+#
+tel r8933
+#
+openexit south; s; e3600^ north = r8923
+#
+tag e3600 = troll den:area name
+#
+set e3600/door_attributes = ["open"]
+#
+set e3600/reset_door_attributes = ["open"]
+#
+desc south = Good God!  You spy corpses all over the floor in there.  It looks like a virtual graveyard in there. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3601^ east = r8931
+#
+tag e3601 = troll den:area name
+#
+set e3601/door_attributes = ["open"]
+#
+set e3601/reset_door_attributes = ["open"]
+#
+desc west = A welcome fresh breeze blows in from the west, but it carries with it the horrible stench. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r8920
+#
+openexit north; n; e3602^ south = r8926
+#
+tag e3602 = troll den:area name
+#
+set e3602/door_attributes = ["open"]
+#
+set e3602/reset_door_attributes = ["open"]
+#
+desc north = The floor slopes down just a bit that way. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3603^ west = r8929
+#
+tag e3603 = troll den:area name
+#
+set e3603/door_attributes = ["open"]
+#
+set e3603/reset_door_attributes = ["open"]
+#
+desc east = Darker, gloomier, smellier. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit down; d; e3604^ up = r8927
+#
+tag e3604 = troll den:area name
+#
+set e3604/door_attributes = ["open"]
+#
+set e3604/reset_door_attributes = ["open"]
+#
+desc down = Darker, gloomier, smellier.
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r8921
+#
+openexit east; e; e3605^ west = r8930
+#
+tag e3605 = troll den:area name
+#
+set e3605/door_attributes = ["open"]
+#
+set e3605/reset_door_attributes = ["open"]
+#
+desc east = A welcome fresh breeze blows in from the east, but it carries with it the horrible stench. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r8922
+#
+openexit north; n; e3606^ south = r8931
+#
+tag e3606 = troll den:area name
+#
+set e3606/door_attributes = ["open"]
+#
+set e3606/reset_door_attributes = ["open"]
+#
+desc north = A welcome fresh breeze blows in from the north, but it carries with it the horrible stench. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3607^ west = r8923
+#
+tag e3607 = troll den:area name
+#
+set e3607/door_attributes = ["open"]
+#
+set e3607/reset_door_attributes = ["open"]
+#
+desc east = Good God!  You spy corpses all over the floor in there.  It looks like a virtual graveyard in there. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3608^ east = r8924
+#
+tag e3608 = troll den:area name
+#
+set e3608/door_attributes = ["open"]
+#
+set e3608/reset_door_attributes = ["open"]
+#
+desc west = Whoa!  You reel back from the stench.  You believe you have found the source of this bad smell. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r8923
+#
+alias north = n^ e3609
+#
+tag e3609 = troll den:area name
+#
+set e3609/door_attributes = ["open"]
+#
+set e3609/reset_door_attributes = ["open"]
+#
+desc north = A welcome fresh breeze blows in from the north, but it carries with it the horrible stench. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3610^ north = r8932
+#
+tag e3610 = troll den:area name
+#
+set e3610/door_attributes = ["open"]
+#
+set e3610/reset_door_attributes = ["open"]
+#
+desc south = The nasty smell continues here.  It's hard to tell whether it's better or worse anymore. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3611
+#
+tag e3611 = troll den:area name
+#
+set e3611/door_attributes = ["open"]
+#
+set e3611/reset_door_attributes = ["open"]
+#
+desc west = A welcome fresh breeze blows in from the west, but it carries with it the horrible stench. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r8924
+#
+alias east = e^ e3612
+#
+tag e3612 = troll den:area name
+#
+set e3612/door_attributes = ["open"]
+#
+set e3612/reset_door_attributes = ["open"]
+#
+desc east = A welcome fresh breeze blows in from the east, but it carries with it the horrible stench. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r8925
+#
+openexit west; w; e3613^ east = r3585
+#
+tag e3613 = troll den:area name
+#
+set e3613/door_attributes = ["open"]
+#
+set e3613/reset_door_attributes = ["open"]
+#
+desc west = You see the path outside of the mountain here. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+openexit down; d; e3614^ up = r8926
+#
+tag e3614 = troll den:area name
+#
+set e3614/door_attributes = ["open"]
+#
+set e3614/reset_door_attributes = ["open"]
+#
+desc down = It stinks down there.
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r8926
+#
+alias south = s^ e3615
+#
+tag e3615 = troll den:area name
+#
+set e3615/door_attributes = ["open"]
+#
+set e3615/reset_door_attributes = ["open"]
+#
+desc south = The stench is much stronger deeper in the cave.
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias up = u^ e3616
+#
+tag e3616 = troll den:area name
+#
+set e3616/door_attributes = ["open"]
+#
+set e3616/reset_door_attributes = ["open"]
+#
+desc up = You can see faint light that way. 
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r8927
+#
+alias up = u^ e3617
+#
+tag e3617 = troll den:area name
+#
+set e3617/door_attributes = ["open"]
+#
+set e3617/reset_door_attributes = ["open"]
+#
+desc up = It smells better.  Not a surprise.  It would take some doing to smell worse.
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+openexit down; d; e3618^ up = r8928
+#
+tag e3618 = troll den:area name
+#
+set e3618/door_attributes = ["open"]
+#
+set e3618/reset_door_attributes = ["open"]
+#
+desc down = More bones.  LOTS more bones.
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r8928
+#
+alias up = u^ e3619
+#
+tag e3619 = troll den:area name
+#
+set e3619/door_attributes = ["open"]
+#
+set e3619/reset_door_attributes = ["open"]
+#
+desc up = Dem bones.
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r8929
+#
+openexit south; s; e3620^ north = r8930
+#
+tag e3620 = troll den:area name
+#
+set e3620/door_attributes = ["open"]
+#
+set e3620/reset_door_attributes = ["open"]
+#
+desc south = A smear of blood leads along the cave floor to the south. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3621
+#
+tag e3621 = troll den:area name
+#
+set e3621/door_attributes = ["open"]
+#
+set e3621/reset_door_attributes = ["open"]
+#
+desc west = There is a trail of bone shards and fragments leading west.
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r8930
+#
+alias north = n^ e3622
+#
+tag e3622 = troll den:area name
+#
+set e3622/door_attributes = ["open"]
+#
+set e3622/reset_door_attributes = ["open"]
+#
+desc north = The blood trail comes from this direction. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3623^ west = r8931
+#
+tag e3623 = troll den:area name
+#
+set e3623/door_attributes = ["open"]
+#
+set e3623/reset_door_attributes = ["open"]
+#
+desc east = The stench is stronger this way. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3624
+#
+tag e3624 = troll den:area name
+#
+set e3624/door_attributes = ["open"]
+#
+set e3624/reset_door_attributes = ["open"]
+#
+desc west = The blood smear leads this way, and there are some slimy worm trails here too. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r8931
+#
+alias east = e^ e3625
+#
+tag e3625 = troll den:area name
+#
+set e3625/door_attributes = ["open"]
+#
+set e3625/reset_door_attributes = ["open"]
+#
+desc east = Somehow, the smell is even WORSE here! 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3626
+#
+tag e3626 = troll den:area name
+#
+set e3626/door_attributes = ["open"]
+#
+set e3626/reset_door_attributes = ["open"]
+#
+desc south = Somehow, the smell is even WORSE here! 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3627
+#
+tag e3627 = troll den:area name
+#
+set e3627/door_attributes = ["open"]
+#
+set e3627/reset_door_attributes = ["open"]
+#
+desc west = A welcome fresh breeze blows in from the west, but it carries with it the horrible stench. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r8932
+#
+alias north = n^ e3628
+#
+tag e3628 = troll den:area name
+#
+set e3628/door_attributes = ["open"]
+#
+set e3628/reset_door_attributes = ["open"]
+#
+desc north = The nasty smell continues here.  It's hard to tell whether it's better or worse anymore. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r8921
+#
+create/drop the roving beast;roving;beast;m8927:characters.Mobile
+#
+desc m8927 = A roving beast is searching for prey. 
+#
+set m8927/level = 5
+#
+set m8927/level_base = 5
+#
+set m8927/vnum = "m8927"
+#
+set m8927/look_description = "Jet black fur covers this beast. You stare at his two huge red eyes.  You can count at least 50 teeth on this beast.  You can't tell whether it is blood or saliva dripping from the beast's jaw.  The roving beast snarls at you. "
+#
+set m8927/act_flags = ['aggressive', 'scavenger', 'npc']
+#
+set m8927/alignment = -200
+#
+set m8927/sex = "male"
+#
+set m8927/spell_affects = {'sneak': '', 'detect invis': ''}
+#
+set m8927/race = "animal"
+#
+tag m8927 = troll den:area name
+#
+tag m8927 = mobile
+#
+set m8927/hitpoints[maximum] = 60
+#
+set m8927/position = "standing"
+#
+set m8927/experience_total = 1009
+#
+set m8927/experience_current = 1009
+#
+tel r8920
+#
+create a cracked bone;bone;cracked;o8925:objects.Weapon
+#
+sethome o8925 = r8920
+#
+desc o8925 = A cracked piece of bone lies here.
+#
+set o8925/level = 3
+#
+set o8925/level_base = 3
+#
+set o8925/vnum = "o8925"
+#
+set o8925/item_type = "weapon"
+#
+set o8925/wear_location = "wield"
+#
+set o8925/weight = 3
+#
+tag o8925 = troll den:area name
+#
+tag o8925 = object
+#
+set o8925/extra_descriptions = {'bone': " This piece of bone looks sturdy enough to be used as a weapon, but you wouldn't want to entrust your life to it. "}
+#
+set o8925/stat_modifiers[damroll] = -1
+#
+set o8925/stat_modifiers[hitroll] = -1
+#
+set o8925/weapon_type = "pound"
+#
+set o8925/damage_low = 3
+#
+set o8925/damage_high = 8
+#
+drop o8925
+#
+set r8920/reset_objects["o8925"] = {"location":"inventory"}
+#
+tel r8921
+#
+openexit portal; hole; portal; e3629^ portal = R8927
+#
+tag e3629 = troll den:area name
+#
+desc e3629 = There's a big hole in the north wall, near the ground.
+#
+tel r8921
+#
+create/drop the young troll;young;troll;m8921:characters.Mobile
+#
+desc m8921 = A young troll is sitting down, chewing on a bone. 
+#
+set m8921/level = 11
+#
+set m8921/level_base = 11
+#
+set m8921/vnum = "m8921"
+#
+set m8921/look_description = "He is a tall, wiry, furry humanoid. Your eyes lock with his.  He smiles, puts down his bone, and reaches for one of yours!! "
+#
+set m8921/act_flags = ['aggressive', 'scavenger', 'npc']
+#
+set m8921/alignment = -500
+#
+set m8921/sex = "male"
+#
+set m8921/spell_affects = {'sneak': ''}
+#
+set m8921/race = "troll"
+#
+tag m8921 = troll den:area name
+#
+tag m8921 = mobile
+#
+set m8921/hitpoints[maximum] = 199
+#
+set m8921/position = "standing"
+#
+set m8921/experience_total = 8203
+#
+set m8921/experience_current = 8203
+#
+tel r8921
+#
+create/drop the young troll;young;troll;m8921; m8921-2:characters.Mobile
+#
+desc m8921-2 = A young troll is sitting down, chewing on a bone. 
+#
+set m8921-2/level = 11
+#
+set m8921-2/level_base = 11
+#
+set m8921-2/vnum = "m8921"
+#
+set m8921-2/look_description = "He is a tall, wiry, furry humanoid. Your eyes lock with his.  He smiles, puts down his bone, and reaches for one of yours!! "
+#
+set m8921-2/act_flags = ['aggressive', 'scavenger', 'npc']
+#
+set m8921-2/alignment = -500
+#
+set m8921-2/sex = "male"
+#
+set m8921-2/spell_affects = {'sneak': ''}
+#
+set m8921-2/race = "troll"
+#
+tag m8921-2 = troll den:area name
+#
+tag m8921-2 = mobile
+#
+set m8921-2/hitpoints[maximum] = 119
+#
+set m8921-2/position = "standing"
+#
+set m8921-2/experience_total = 7970
+#
+set m8921-2/experience_current = 7970
+#
+tel r8921
+#
+create/drop a fat worm;fat;worm;m8926:characters.Mobile
+#
+desc m8926 = A fat worm scurries around, looking for food. 
+#
+set m8926/level = 2
+#
+set m8926/level_base = 2
+#
+set m8926/vnum = "m8926"
+#
+set m8926/look_description = "It is thick and long.  You can't find a head on this thing. It moves quickly, from corpse to corpse. "
+#
+set m8926/act_flags = ['wimpy', 'aggressive', 'scavenger', 'npc']
+#
+set m8926/alignment = 0
+#
+set m8926/sex = "neuter"
+#
+set m8926/spell_affects = {'hide': '', 'sneak': ''}
+#
+set m8926/race = "worm"
+#
+tag m8926 = troll den:area name
+#
+tag m8926 = mobile
+#
+set m8926/hitpoints[maximum] = 17
+#
+set m8926/position = "standing"
+#
+set m8926/experience_total = 246
+#
+set m8926/experience_current = 246
+#
+tel r8922
+#
+create/drop the medium troll;medium;troll;m8922:characters.Mobile
+#
+desc m8922 = A troll is grooming his pet, a guardian beast. 
+#
+set m8922/level = 13
+#
+set m8922/level_base = 13
+#
+set m8922/vnum = "m8922"
+#
+set m8922/look_description = "He is a tall, lean, furry humanoid. He is busy licking the ticks off of his beast. His eyes dart toward you, as he realizes you are one third his size. "
+#
+set m8922/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+#
+set m8922/alignment = -500
+#
+set m8922/sex = "male"
+#
+set m8922/spell_affects = {'sneak': ''}
+#
+set m8922/race = "troll"
+#
+tag m8922 = troll den:area name
+#
+tag m8922 = mobile
+#
+set m8922/hitpoints[maximum] = 115
+#
+set m8922/position = "standing"
+#
+set m8922/experience_total = 12640
+#
+set m8922/experience_current = 12640
+#
+tel r8922
+#
+create/drop the medium troll;medium;troll;m8928:characters.Mobile
+#
+desc m8928 = A troll is wandering around, attending to his duties. 
+#
+set m8928/level = 15
+#
+set m8928/level_base = 15
+#
+set m8928/vnum = "m8928"
+#
+set m8928/look_description = "He is a tall, lean, furry humanoid. He notices you, and is satisfied to find what he is looking for. He advances toward you. "
+#
+set m8928/act_flags = ['aggressive', 'scavenger', 'npc']
+#
+set m8928/alignment = -500
+#
+set m8928/sex = "male"
+#
+set m8928/spell_affects = {'sneak': ''}
+#
+set m8928/race = "troll"
+#
+tag m8928 = troll den:area name
+#
+tag m8928 = mobile
+#
+set m8928/hitpoints[maximum] = 186
+#
+set m8928/position = "standing"
+#
+set m8928/experience_total = 16748
+#
+set m8928/experience_current = 16748
+#
+tel r8922
+#
+create a bone club;bone;club;femur;o8926:objects.Weapon
+#
+sethome o8926 = m8928
+#
+desc o8926 = A good strong thigh-bone, this long femur may be useful as a club.
+#
+set o8926/level = 13
+#
+set o8926/level_base = 13
+#
+set o8926/vnum = "o8926"
+#
+set o8926/item_type = "weapon"
+#
+set o8926/wear_location = "wield"
+#
+set o8926/weight = 6
+#
+tag o8926 = troll den:area name
+#
+tag o8926 = object
+#
+set o8926/extra_descriptions = {'bone femur': 'Ah, the femur.  Good for walking around on, or breaking other femurs.'}
+#
+set o8926/stat_modifiers[hitroll] = 2
+#
+set o8926/weapon_type = "pound"
+#
+set o8926/damage_low = 3
+#
+set o8926/damage_high = 16
+#
+wieldto o8926 = m8928
+#
+set m8928/experience_total = 20935
+#
+set m8928/experience_current = 20935
+#
+set m8928/reset_objects["o8926"] = {"location":"equipped"}
+#
+tel r8922
+#
+create/drop the guardian beast;guardian;beast;m8920:characters.Mobile
+#
+desc m8920 = A guardian beast stares at you and snarls in rage. 
+#
+set m8920/level = 5
+#
+set m8920/level_base = 5
+#
+set m8920/vnum = "m8920"
+#
+set m8920/look_description = "Jet black fur covers this beast.  You stare at his two huge red eyes.  You can count at least 50 teeth on this monster.  You can't tell whether it is blood or saliva dripping from the beast's jaw.  The guardian beast snarls again. "
+#
+set m8920/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+#
+set m8920/alignment = -200
+#
+set m8920/sex = "male"
+#
+set m8920/spell_affects = {'hide': '', 'sneak': '', 'detect invis': ''}
+#
+set m8920/race = "animal"
+#
+tag m8920 = troll den:area name
+#
+tag m8920 = mobile
+#
+set m8920/hitpoints[maximum] = 47
+#
+set m8920/position = "standing"
+#
+set m8920/experience_total = 1041
+#
+set m8920/experience_current = 1041
+#
+tel r8922
+#
+create/drop a fat worm;fat;worm;m8926:characters.Mobile
+#
+desc m8926 = A fat worm scurries around, looking for food. 
+#
+set m8926/level = 2
+#
+set m8926/level_base = 2
+#
+set m8926/vnum = "m8926"
+#
+set m8926/look_description = "It is thick and long.  You can't find a head on this thing. It moves quickly, from corpse to corpse. "
+#
+set m8926/act_flags = ['wimpy', 'aggressive', 'scavenger', 'npc']
+#
+set m8926/alignment = 0
+#
+set m8926/sex = "neuter"
+#
+set m8926/spell_affects = {'hide': '', 'sneak': ''}
+#
+set m8926/race = "worm"
+#
+tag m8926 = troll den:area name
+#
+tag m8926 = mobile
+#
+set m8926/hitpoints[maximum] = 18
+#
+set m8926/position = "standing"
+#
+set m8926/experience_total = 235
+#
+set m8926/experience_current = 235
+#
+tel r8923
+#
+create the cadaver-toy;corpse;cadaver;o8920:objects.Container
+#
+sethome o8920 = r8923
+#
+desc o8920 = A half eaten corpse is laying here.
+#
+set o8920/level = 1
+#
+set o8920/level_base = 1
+#
+set o8920/vnum = "o8920"
+#
+set o8920/item_type = "container"
+#
+objectlock o8920 = "get:perm(Admin)"
+#
+set o8920/weight = 50
+#
+tag o8920 = troll den:area name
+#
+tag o8920 = object
+#
+set o8920/weight_maximum = 30
+#
+set o8920/state = []
+#
+set o8920/state_base = []
+#
+drop o8920
+#
+set r8923/reset_objects["o8920"] = {"location":"inventory"}
+#
+tel r8923
+#
+create a leather belt;leather;belt;o8924:objects.Armor
+#
+sethome o8924 = o8920
+#
+desc o8924 = An old leather belt is left on the floor.
+#
+set o8924/level = 1
+#
+set o8924/level_base = 1
+#
+set o8924/vnum = "o8924"
+#
+set o8924/item_type = "armor"
+#
+set o8924/wear_location = "waist"
+#
+set o8924/weight = 5
+#
+tag o8924 = troll den:area name
+#
+tag o8924 = object
+#
+set o8924/extra_descriptions = {'leather belt': ' This old, smelly belt looks like it is barely better than rotting cloth. '}
+#
+set o8924/armor = 2
+#
+put o8924 in o8920
+#
+set r8923/reset_objects["o8924"] = {"location":"o8920"}
+#
+tel r8923
+#
+create/drop a baby troll;baby;troll;m8923:characters.Mobile
+#
+desc m8923 = A baby troll is playing Doctor with a cadaver. 
+#
+set m8923/level = 10
+#
+set m8923/level_base = 10
+#
+set m8923/vnum = "m8923"
+#
+set m8923/look_description = "He is a large, chubby, furry humanoid. He is trying to stuff an arm in a hole in the wall. He notices you and gargles 'WANNA JOIN?'. "
+#
+set m8923/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+#
+set m8923/alignment = -100
+#
+set m8923/sex = "male"
+#
+set m8923/spell_affects = {'sneak': ''}
+#
+set m8923/race = "troll"
+#
+tag m8923 = troll den:area name
+#
+tag m8923 = mobile
+#
+set m8923/hitpoints[maximum] = 83
+#
+set m8923/position = "standing"
+#
+set m8923/experience_total = 5858
+#
+set m8923/experience_current = 5858
+#
+tel r8923
+#
+create/drop a fat worm;fat;worm;m8926:characters.Mobile
+#
+desc m8926 = A fat worm scurries around, looking for food. 
+#
+set m8926/level = 2
+#
+set m8926/level_base = 2
+#
+set m8926/vnum = "m8926"
+#
+set m8926/look_description = "It is thick and long.  You can't find a head on this thing. It moves quickly, from corpse to corpse. "
+#
+set m8926/act_flags = ['wimpy', 'aggressive', 'scavenger', 'npc']
+#
+set m8926/alignment = 0
+#
+set m8926/sex = "neuter"
+#
+set m8926/spell_affects = {'hide': '', 'sneak': ''}
+#
+set m8926/race = "worm"
+#
+tag m8926 = troll den:area name
+#
+tag m8926 = mobile
+#
+set m8926/hitpoints[maximum] = 19
+#
+set m8926/position = "standing"
+#
+set m8926/experience_total = 247
+#
+set m8926/experience_current = 247
+#
+tel r8924
+#
+create/drop the giant troll;giant;troll;m8924:characters.Mobile
+#
+desc m8924 = A giant troll is lying on a pile of carnage. 
+#
+set m8924/level = 17
+#
+set m8924/level_base = 17
+#
+set m8924/vnum = "m8924"
+#
+set m8924/look_description = "He is a gigantic, muscular, furry humanoid. "
+#
+set m8924/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+#
+set m8924/alignment = -1000
+#
+set m8924/sex = "male"
+#
+set m8924/spell_affects = {'sneak': ''}
+#
+set m8924/race = "troll"
+#
+tag m8924 = troll den:area name
+#
+tag m8924 = mobile
+#
+set m8924/hitpoints[maximum] = 174
+#
+set m8924/position = "standing"
+#
+set m8924/experience_total = 26954
+#
+set m8924/experience_current = 26954
+#
+tel r8924
+#
+create the troll skin;trollskin;skin;hide;o8922:objects.Armor
+#
+sethome o8922 = m8924
+#
+desc o8922 = The filthy hide of a beast is laying here.
+#
+set o8922/level = 15
+#
+set o8922/level_base = 15
+#
+set o8922/vnum = "o8922"
+#
+set o8922/item_type = "armor"
+#
+set o8922/wear_location = "about body"
+#
+set o8922/weight = 25
+#
+tag o8922 = troll den:area name
+#
+tag o8922 = object
+#
+set o8922/extra_descriptions = {'troll skin': ' This is the skin from a huge (and dead) beast.  It looks bad, smells bad, and feels bad. '}
+#
+set o8922/stat_modifiers[strength] = 1
+#
+set o8922/armor = 5
+#
+wearto o8922 = m8924
+#
+set m8924/reset_objects["o8922"] = {"location":"equipped"}
+#
+tel r8924
+#
+create/drop the large female troll;large;troll;female;m8925:characters.Mobile
+#
+desc m8925 = A large female troll is lying on the pile of carnage. 
+#
+set m8925/level = 13
+#
+set m8925/level_base = 13
+#
+set m8925/vnum = "m8925"
+#
+set m8925/look_description = "She is a huge, grotesque, furry humanoid. "
+#
+set m8925/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+#
+set m8925/alignment = -800
+#
+set m8925/sex = "female"
+#
+set m8925/spell_affects = {'sneak': ''}
+#
+set m8925/race = "troll"
+#
+tag m8925 = troll den:area name
+#
+tag m8925 = mobile
+#
+set m8925/hitpoints[maximum] = 161
+#
+set m8925/position = "standing"
+#
+set m8925/experience_total = 11147
+#
+set m8925/experience_current = 11147
+#
+tel r8924
+#
+create the heap of carnage;carnage;heap;bed;o8921:objects.Container
+#
+sethome o8921 = r8924
+#
+desc o8921 = There is a bed made of carnage here.
+#
+set o8921/level = 11
+#
+set o8921/level_base = 11
+#
+set o8921/vnum = "o8921"
+#
+set o8921/item_type = "container"
+#
+objectlock o8921 = "get:perm(Admin)"
+#
+set o8921/weight = 0
+#
+tag o8921 = troll den:area name
+#
+tag o8921 = object
+#
+set o8921/weight_maximum = 30
+#
+set o8921/state = []
+#
+set o8921/state_base = []
+#
+drop o8921
+#
+set r8924/reset_objects["o8921"] = {"location":"inventory"}
+#
+tel r8924
+#
+create an opal ring;ring;opal;o8923:objects.Armor
+#
+sethome o8923 = o8921
+#
+desc o8923 = A ring of black opal lies here gathering dust.
+#
+set o8923/level = 11
+#
+set o8923/level_base = 11
+#
+set o8923/vnum = "o8923"
+#
+set o8923/item_type = "armor"
+#
+set o8923/wear_location = "finger"
+#
+set o8923/weight = 1
+#
+tag o8923 = troll den:area name
+#
+tag o8923 = object
+#
+set o8923/extra_descriptions = {'ring opal': ' It is a full circle of opal, smooth and simple. '}
+#
+set o8923/extra_flags = ['magic']
+#
+set o8923/stat_modifiers[damroll] = 2
+#
+set o8923/armor = 4
+#
+put o8923 in o8921
+#
+set r8924/reset_objects["o8923"] = {"location":"o8921"}
+#
+tel r8926
+#
+create/drop the guardian beast;guardian;beast;m8920:characters.Mobile
+#
+desc m8920 = A guardian beast stares at you and snarls in rage. 
+#
+set m8920/level = 5
+#
+set m8920/level_base = 5
+#
+set m8920/vnum = "m8920"
+#
+set m8920/look_description = "Jet black fur covers this beast.  You stare at his two huge red eyes.  You can count at least 50 teeth on this monster.  You can't tell whether it is blood or saliva dripping from the beast's jaw.  The guardian beast snarls again. "
+#
+set m8920/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+#
+set m8920/alignment = -200
+#
+set m8920/sex = "male"
+#
+set m8920/spell_affects = {'hide': '', 'sneak': '', 'detect invis': ''}
+#
+set m8920/race = "animal"
+#
+tag m8920 = troll den:area name
+#
+tag m8920 = mobile
+#
+set m8920/hitpoints[maximum] = 49
+#
+set m8920/position = "standing"
+#
+set m8920/experience_total = 962
+#
+set m8920/experience_current = 962
+#
+tel r8927
+#
+create a cracked bone;bone;cracked;o8925:objects.Weapon
+#
+sethome o8925 = r8927
+#
+desc o8925 = A cracked piece of bone lies here.
+#
+set o8925/level = 3
+#
+set o8925/level_base = 3
+#
+set o8925/vnum = "o8925"
+#
+set o8925/item_type = "weapon"
+#
+set o8925/wear_location = "wield"
+#
+set o8925/weight = 3
+#
+tag o8925 = troll den:area name
+#
+tag o8925 = object
+#
+set o8925/extra_descriptions = {'bone': " This piece of bone looks sturdy enough to be used as a weapon, but you wouldn't want to entrust your life to it. "}
+#
+set o8925/stat_modifiers[damroll] = -1
+#
+set o8925/stat_modifiers[hitroll] = -1
+#
+set o8925/weapon_type = "pound"
+#
+set o8925/damage_low = 5
+#
+set o8925/damage_high = 9
+#
+drop o8925
+#
+set r8927/reset_objects["o8925"] = {"location":"inventory"}
+#
+tel r8928
+#
+create blood moss;blood;moss;o8927:objects.Pill
+#
+sethome o8927 = r8928
+#
+desc o8927 = Dark blackish-red moss grows on the floor and cave walls here.
+#
+set o8927/level = 3
+#
+set o8927/level_base = 3
+#
+set o8927/vnum = "o8927"
+#
+set o8927/item_type = "pill"
+#
+set o8927/weight = 3
+#
+tag o8927 = troll den:area name
+#
+tag o8927 = object
+#
+set o8927/extra_descriptions = {'blood moss': " This stuff looks pretty icky.  It's like a cross between slimy dirt and semicoagulated blood.  It doesn't smell very good either."}
+#
+set o8927/spell_level = 5
+#
+set o8927/spell_level_base = 5
+#
+set o8927/spell_name_1 = "cure light"
+#
+set o8927/spell_name_2 = "cure light"
+#
+drop o8927
+#
+set r8928/reset_objects["o8927"] = {"location":"inventory"}
+#
+tel r8928
+#
+create/drop the starving troll;starving;troll;m8929:characters.Mobile
+#
+desc m8929 = A bone-thin troll is stuck down here, he must've fallen in and broken his leg. 
+#
+set m8929/level = 12
+#
+set m8929/level_base = 12
+#
+set m8929/vnum = "m8929"
+#
+set m8929/look_description = "He is a tall, skeletal, furry humanoid. The other trolls either don't know he's gone, or don't care. He's ravenous and half-crazed! "
+#
+set m8929/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m8929/alignment = -600
+#
+set m8929/sex = "male"
+#
+set m8929/spell_affects = {'sneak': ''}
+#
+set m8929/race = "troll"
+#
+tag m8929 = troll den:area name
+#
+tag m8929 = mobile
+#
+set m8929/hitpoints[maximum] = 208
+#
+set m8929/position = "standing"
+#
+set m8929/experience_total = 9962
+#
+set m8929/experience_current = 9962
+#
+tel r8928
+#
+create a cracked bone;bone;cracked;o8925:objects.Weapon
+#
+sethome o8925 = r8928
+#
+desc o8925 = A cracked piece of bone lies here.
+#
+set o8925/level = 10
+#
+set o8925/level_base = 10
+#
+set o8925/vnum = "o8925"
+#
+set o8925/item_type = "weapon"
+#
+set o8925/wear_location = "wield"
+#
+set o8925/weight = 3
+#
+tag o8925 = troll den:area name
+#
+tag o8925 = object
+#
+set o8925/extra_descriptions = {'bone': " This piece of bone looks sturdy enough to be used as a weapon, but you wouldn't want to entrust your life to it. "}
+#
+set o8925/stat_modifiers[damroll] = -1
+#
+set o8925/stat_modifiers[hitroll] = -1
+#
+set o8925/weapon_type = "pound"
+#
+set o8925/damage_low = 4
+#
+set o8925/damage_high = 14
+#
+drop o8925
+#
+set r8928/reset_objects["o8925"] = {"location":"inventory"}
+#
+tel r8929
+#
+create/drop the guardian beast;guardian;beast;m8920:characters.Mobile
+#
+desc m8920 = A guardian beast stares at you and snarls in rage. 
+#
+set m8920/level = 5
+#
+set m8920/level_base = 5
+#
+set m8920/vnum = "m8920"
+#
+set m8920/look_description = "Jet black fur covers this beast.  You stare at his two huge red eyes.  You can count at least 50 teeth on this monster.  You can't tell whether it is blood or saliva dripping from the beast's jaw.  The guardian beast snarls again. "
+#
+set m8920/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+#
+set m8920/alignment = -200
+#
+set m8920/sex = "male"
+#
+set m8920/spell_affects = {'hide': '', 'sneak': '', 'detect invis': ''}
+#
+set m8920/race = "animal"
+#
+tag m8920 = troll den:area name
+#
+tag m8920 = mobile
+#
+set m8920/hitpoints[maximum] = 52
+#
+set m8920/position = "standing"
+#
+set m8920/experience_total = 969
+#
+set m8920/experience_current = 969
+#
+tel r8930
+#
+create/drop the maggots;maggots;m8930:characters.Mobile
+#
+desc m8930 = A writhing swarm of maggots is EVERYWHERE here! 
+#
+set m8930/level = 3
+#
+set m8930/level_base = 3
+#
+set m8930/vnum = "m8930"
+#
+set m8930/look_description = "Oh, gross!  How can you stand to look at them...squirming, wriggling...a great white mass consuming the dead flesh, multiplying... "
+#
+set m8930/act_flags = ['sentinel', 'npc']
+#
+set m8930/alignment = 0
+#
+set m8930/sex = "neuter"
+#
+set m8930/race = "insect"
+#
+tag m8930 = troll den:area name
+#
+tag m8930 = mobile
+#
+set m8930/hitpoints[maximum] = 32
+#
+set m8930/position = "standing"
+#
+set m8930/experience_total = 403
+#
+set m8930/experience_current = 403
+#
+tel r8930
+#
+create the smashed and splattered body;corpse;body;cadaver;o8930:objects.NPC_Corpse
+#
+sethome o8930 = r8930
+#
+desc o8930 = This nearly obliterated cadaver has been ground until it's unidentifiable.
+#
+set o8930/level = 1
+#
+set o8930/level_base = 1
+#
+set o8930/vnum = "o8930"
+#
+set o8930/item_type = "NPC_Corpse"
+#
+objectlock o8930 = "get:perm(Admin)"
+#
+set o8930/weight = 0
+#
+tag o8930 = troll den:area name
+#
+tag o8930 = object
+#
+drop o8930
+#
+set r8930/reset_objects["o8930"] = {"location":"inventory"}
+#
+tel r8931
+#
+create/drop a fat worm;fat;worm;m8926:characters.Mobile
+#
+desc m8926 = A fat worm scurries around, looking for food. 
+#
+set m8926/level = 2
+#
+set m8926/level_base = 2
+#
+set m8926/vnum = "m8926"
+#
+set m8926/look_description = "It is thick and long.  You can't find a head on this thing. It moves quickly, from corpse to corpse. "
+#
+set m8926/act_flags = ['wimpy', 'aggressive', 'scavenger', 'npc']
+#
+set m8926/alignment = 0
+#
+set m8926/sex = "neuter"
+#
+set m8926/spell_affects = {'hide': '', 'sneak': ''}
+#
+set m8926/race = "worm"
+#
+tag m8926 = troll den:area name
+#
+tag m8926 = mobile
+#
+set m8926/hitpoints[maximum] = 20
+#
+set m8926/position = "standing"
+#
+set m8926/experience_total = 221
+#
+set m8926/experience_current = 221
+#
+tel r8932
+#
+create/drop a baby troll;baby;troll;m8923:characters.Mobile
+#
+desc m8923 = A baby troll is playing Doctor with a cadaver. 
+#
+set m8923/level = 10
+#
+set m8923/level_base = 10
+#
+set m8923/vnum = "m8923"
+#
+set m8923/look_description = "He is a large, chubby, furry humanoid. He is trying to stuff an arm in a hole in the wall. He notices you and gargles 'WANNA JOIN?'. "
+#
+set m8923/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+#
+set m8923/alignment = -100
+#
+set m8923/sex = "male"
+#
+set m8923/spell_affects = {'sneak': ''}
+#
+set m8923/race = "troll"
+#
+tag m8923 = troll den:area name
+#
+tag m8923 = mobile
+#
+set m8923/hitpoints[maximum] = 156
+#
+set m8923/position = "standing"
+#
+set m8923/experience_total = 5246
+#
+set m8923/experience_current = 5246
+#
+tel r8933
+#
+create the sitting rock;rock;o8931:objects.Furniture
+#
+sethome o8931 = r8933
+#
+desc o8931 = A big rock with a flat top is here.
+#
+set o8931/level = 8
+#
+set o8931/level_base = 8
+#
+set o8931/vnum = "o8931"
+#
+set o8931/item_type = "furniture"
+#
+objectlock o8931 = "get:perm(Admin)"
+#
+set o8931/weight = 0
+#
+tag o8931 = troll den:area name
+#
+tag o8931 = object
+#
+set o8931/people_maximum = 1
+#
+set o8931/weight_maximum = 0
+#
+set o8931/use_positions = ['sit on']
+#
+set o8931/heal_mana_gain = 0
+#
+drop o8931
+#
+set r8933/reset_objects["o8931"] = {"location":"inventory"}
+#
+tel r8933
+#
+create/drop the bitter old troll;old;troll;m8931:characters.Mobile
+#
+desc m8931 = This bitter old troll is mumbling incoherently. 
+#
+set m8931/level = 9
+#
+set m8931/level_base = 9
+#
+set m8931/vnum = "m8931"
+#
+set m8931/look_description = "He is a large, hunched-over, withered, furry humanoid. He wheezes and glares at you. His lips draw back threateningly from bare gums. "
+#
+set m8931/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m8931/alignment = -932
+#
+set m8931/sex = "male"
+#
+set m8931/spell_affects = {'sneak': ''}
+#
+set m8931/race = "troll"
+#
+tag m8931 = troll den:area name
+#
+tag m8931 = mobile
+#
+set m8931/hitpoints[maximum] = 143
+#
+set m8931/position = "standing"
+#
+set m8931/experience_total = 4094
+#
+set m8931/experience_current = 4094
+#
+tel r8933
+#
+create bone dice;dice;knucklebones;o8928:objects.Trash
+#
+sethome o8928 = m8931
+#
+desc o8928 = A pair of dice...genuine knucklebones!
+#
+set o8928/level = 7
+#
+set o8928/level_base = 7
+#
+set o8928/vnum = "o8928"
+#
+set o8928/item_type = "trash"
+#
+set o8928/wear_location = "held, in hands"
+#
+set o8928/weight = 2
+#
+tag o8928 = troll den:area name
+#
+tag o8928 = object
+#
+set o8928/extra_descriptions = {'dice knucklebones': ' You\'ve heard of dice called "knucklebones," but these dice actually are!'}
+#
+set o8928/stat_modifiers[hitroll] = 2
+#
+give o8928 to m8931
+#
+set m8931/reset_objects["o8928"] = {"location":"inventory"}
+#
+tel r8933
+#
+create/drop the young troll;young;troll;m8921:characters.Mobile
+#
+desc m8921 = A young troll is sitting down, chewing on a bone. 
+#
+set m8921/level = 11
+#
+set m8921/level_base = 11
+#
+set m8921/vnum = "m8921"
+#
+set m8921/look_description = "He is a tall, wiry, furry humanoid. Your eyes lock with his.  He smiles, puts down his bone, and reaches for one of yours!! "
+#
+set m8921/act_flags = ['aggressive', 'scavenger', 'npc']
+#
+set m8921/alignment = -500
+#
+set m8921/sex = "male"
+#
+set m8921/spell_affects = {'sneak': ''}
+#
+set m8921/race = "troll"
+#
+tag m8921 = troll den:area name
+#
+tag m8921 = mobile
+#
+set m8921/hitpoints[maximum] = 134
+#
+set m8921/position = "standing"
+#
+set m8921/experience_total = 6805
+#
+set m8921/experience_current = 6805
+#
+tel r8933
+#
+create/drop a fat worm;fat;worm;m8926:characters.Mobile
+#
+desc m8926 = A fat worm scurries around, looking for food. 
+#
+set m8926/level = 2
+#
+set m8926/level_base = 2
+#
+set m8926/vnum = "m8926"
+#
+set m8926/look_description = "It is thick and long.  You can't find a head on this thing. It moves quickly, from corpse to corpse. "
+#
+set m8926/act_flags = ['wimpy', 'aggressive', 'scavenger', 'npc']
+#
+set m8926/alignment = 0
+#
+set m8926/sex = "neuter"
+#
+set m8926/spell_affects = {'hide': '', 'sneak': ''}
+#
+set m8926/race = "worm"
+#
+tag m8926 = troll den:area name
+#
+tag m8926 = mobile
+#
+set m8926/hitpoints[maximum] = 16
+#
+set m8926/position = "standing"
+#
+set m8926/experience_total = 254
+#
+set m8926/experience_current = 254
+#

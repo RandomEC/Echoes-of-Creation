@@ -1,0 +1,549 @@
+#AREA {  10  15 } Lok - Faerie Ring~
+
+#HELPS
+
+-99 Title     ~  Faerie Ring~
+-99 Authors   ~  Lok~
+-99 Levels    ~  {  10  15 }~
+-99 Builders  ~  ~
+-99 LowerVnum ~   8955 ~
+-99 UpperVnum ~   8968 ~
+-99 Security  ~      1 ~
+-99 Recall    ~  12001 ~
+-99 Flags     ~  0 ~
+-99 Zone      ~      0 ~
+
+0 $~
+
+#MOBILES
+#8955
+pixie faerie~
+A giggling pixie~
+A pixie pokes you in the butt with its sword and giggles! 
+~
+The pixie is about 6" tall, is human-like, and has dragonfly wings.
+~
+133 524288 0 S
+11 0 0 1d1+1 1d1+1
+0 0
+0 Human~ 1
+#8956
+nixie faerie~
+A fluttering nixie~
+A fluttering nixie rummages through your possessions looking for wine! 
+~
+The nixie, like the pixie, has dragonfly wings, but is taller (9").
+~
+133 524288 0 S
+12 0 0 1d1+1 1d1+1
+0 0
+0 Human~ 1
+#8957
+sprite faerie~
+A dancing sprite~
+A sprite casts a spell and you do a merry little dance! 
+~
+The sprite has dragonfly wings like the nixie and pixie, but she towers over 
+them at an amazing 12" height!
+~
+129 557058 0 S
+12 0 0 1d1+1 1d1+1
+0 0
+0 Human~ 2
+#8958
+brownie faerie~
+A stern brownie~
+A stern brownie stands guard here - you better watch it bub! 
+~
+The beefy 2' tall brownie wears earth colored clothing, and seems intent on 
+its task of guarding.
+~
+3 8232 0 S
+16 0 0 1d1+1 1d1+1
+0 0
+0 Human~ 1
+#8959
+puck faerie~
+Puck~
+Uh oh! You see Puck!
+~
+Puck is an amazing 3' tall. He snaps his head back and forth in quick darting 
+motions checking if his pile is still there.
+~
+7 65568 0 S
+20 0 0 1d1+1 1d1+1
+0 0
+0 Human~ 1
+#8960
+queen faerie~
+The Faerie Queen~
+The Faerie Queen sits in a circle of dancing twinkling faeries! 
+~
+The faerie queen is here teaching her subjects court in a gossamer gown  of 
+moonbeams. She towers at 4' tall. She is by far the most beautiful creature
+you have ever seen. Maybe you should stay here a while. Hmmm. Why bother
+going back?
+~
+1539 8376 0 S
+20 0 0 1d1+1 1d1+1
+0 0
+0 Human~ 2
+#8961
+lucky leprechaun faerie~
+Lucky~
+A little leprechaun garbed in green says 'Wooo-hooo-hoo' and tickles you! 
+~
+Lucky wears green and is mumbling something about blue diamonds.
+~
+129 1081346 0 S
+18 0 0 1d1+1 1d1+1
+0 0
+0 Human~ 1
+#8962
+faerie drunken~
+A drunken faerie~
+A drunken faerie snores happily on the floor.  
+~
+The drunken faerie lies nude on the floor, snoring happily away. Looks like 
+somebody is playing a practical joke on him.
+~
+3 131072 0 S
+12 0 0 1d1+1 1d1+1
+0 0
+0 Human~ 1
+#8963
+twinkletoes bartender faerie~
+Twinkletoes~
+A faerie bartender is here, serving up faerie wine and finger food. 
+~
+Twinkletoes is a fierce, old looking brownie. Maybe you should leave her 
+alone.
+~
+65539 8232 0 S
+21 0 0 1d1+1 1d1+1
+0 0
+0 Human~ 2
+#0
+
+#OBJECTS
+#8955
+rhyme catchy paper~
+a catchy little rhyme~
+There is a tiny rolled up paper lying on the ground. ~
+~
+2
+65
+16385
+10~ faerie fog~  ~  ~
+1 0 0
+E
+rhyme catchy little~
+You look at the rhyme. It reads:
+-
+Turn your clothes inside out
+Circle three times and shout
+Iron and cross, make you be
+Revealed to all, and to me
+~
+#8956
+light twinkle twinkling ball~
+a *twinkling* ball of light~
+A twinkling ball of light sparkles here! ~
+~
+1
+321
+16385
+0~ 0~ -1~ 0~
+0 0 0
+A
+4 1
+A
+3 1
+A
+18 1
+A
+19 1
+#8957
+belt sprite~
+a sprite belt~
+A loop of rainbow thread lies here.~
+~
+9
+4128
+2049
+0~ 0~ 0~ 0~
+1 0 0
+A
+24 -3
+#8958
+bracer brownie~
+a brownie bracer~
+An earthen colored band lies here.~
+~
+9
+64
+4097
+0~ 0~ 0~ 0~
+1 0 0
+A
+2 1
+A
+13 8
+#8959
+bottle moonlight vial liquid~
+a vial of bottled moonlight~
+A vial of sparkling liquid emits a soft white glow. ~
+~
+10
+65
+16385
+15~ fly~ cure poison~ cure critical~
+1 0 0
+#8960
+robe gossamer~
+a gossamer robe~
+A gossamer robe sparkles with a pale white glow! ~
+~
+9
+4352
+1025
+0~ 0~ 0~ 0~
+1 0 0
+A
+12 10
+A
+24 -2
+#8961
+moonbeam~
+a moonbeam~
+A sparkling pale light ray glows here! ~
+~
+5
+33
+8193
+0~ 0~ 0~ 11~
+0 0 0
+A
+19 2
+A
+18 2
+#8962
+wine goblet faerie~
+a goblet of faerie wine~
+A crystal goblet filled with sparkling wine is here. ~
+~
+10
+64
+1
+1~ change sex~ invis~ cure blindness~
+0 0 0
+#8963
+britches dirty~
+a pair of dirty britches~
+A pair of dirty britches lies here. Get the laundry soap. ~
+~
+9
+4
+33
+0~ 0~ 0~ 0~
+0 0 0
+A
+13 8
+A
+19 2
+#8964
+key sparkling~
+a sparkling key~
+A sparkling key glistens on the ground. ~
+~
+18
+66
+16385
+0~ 0~ 0~ 0~
+1 0 0
+#8965
+cloak dirty~
+a dirty cloak~
+A dirty cloak lies here. Ugh! Get the laundry soap.~
+~
+9
+4
+5
+0~ 0~ 0~ 0~
+2 0 0
+A
+2 1
+A
+1 1
+#8966
+wand blue diamond~
+a blue diamond wand~
+A wand with a huge blue diamond on it is just lying here! Pick it up! ~
+~
+3
+64
+16385
+14~ 12~ 12~ create food~
+2 0 0
+E
+diamond blue~
+They're magically delicious!
+~
+#8967
+gold~
+whoooooopie! Gold!~
+A rainbow ends at this pot of gold!~
+~
+20
+1
+16385
+5000~ 0~ 0~ 0~
+0 0 0
+#8968
+food finger~
+delicious finger food~
+A delicious little plate of scrumptious finger foods lies here beckoning to you. ~
+~
+19
+0
+8193
+24~ 0~ 0~ 0~
+0 0 0
+#0
+
+
+
+#ROOMS
+#8955
+A Ring of Mushrooms~
+In this little field, the grass and weeds grow tall.  Yet oddly, a small
+circular patch grows low, bordered by a ring of purple mushrooms.  Inside
+that circle, the grass, greener than the surrounding field, huddles close to
+the ground. 
+~
+0 4 2
+D0
+~
+~
+0 0 61008
+D3
+~
+~
+0 0 61021
+D5
+A small trap door~
+door trap~
+1 -1 8956
+E
+mushrooms circle~
+You look at the mushroom circle. You see tiny footprints and the faint outline 
+of a trap door in the center of the ring.
+~
+S
+#8956
+Entrance Hall~
+You are in a cramped, low ceiling tunnel. Roots dangle overhead and caress 
+you. There are tiny doors to the north, south and west, which you think you 
+could crawl your way into. A ladder fashioned of woven roots leads up. You 
+hear sounds of a raucous celebration to the east.
+~
+0 8 0
+D0
+A tiny door~
+door tiny~
+1 -1 8957
+D1
+A smoky hallway~
+~
+0 -1 8958
+D2
+A tiny door~
+door tiny~
+1 -1 8959
+D3
+A tiny door~
+door tiny~
+1 -1 8960
+D4
+A small trap door~
+door trap~
+1 -1 8955
+S
+#8957
+Puck's Room~
+You are hunched over in Puck's room. You know this by the sign that says 
+"Pucks stuff - keep your grubby hands off". There is a bed of forest leaves, 
+some rude hollowed out shelves, a tiny table with a half full jack of ale, 
+and a great pile of junk beneath the sign.
+~
+0 8 0
+D2
+A tiny door~
+door tiny~
+1 -1 8956
+E
+sign~
+The sign says: "Puck's stuff- keep your grubby hands off" 
+~
+S
+#8958
+Little People's Bar and Grill~
+You squeeze into the famous Little People's Bar and Grill! Conversation 
+abruptly stops as you enter. Around you little people are drinking from 
+beautifully crafted crystal glasses. The smoke is thick and buoys your 
+spirits. Maybe you should stay a while and try the faerie wine? A low tunnel 
+heads west, and you hear a thunderous racket coming from the east.
+~
+0 8 0
+D1
+Towards the racket~
+~
+0 -1 8961
+D3
+A smoky hallway~
+~
+0 -1 8956
+S
+#8959
+Snooze Den~
+You hunker in the snooze den. A large sign is on the wall. Many little people 
+lie collapsed in drunken heaps about this large room. To the north is a tiny 
+door.
+~
+0 8 0
+D0
+A tiny door~
+door tiny~
+1 -1 8956
+E
+sign~
+The sign says 'Close the door, stupid'
+~
+S
+#8960
+Guarded Burrow~
+You are once again hunched over in an earthy burrow. There is sign of much 
+passage through here, many little feet have packed the dirt hard. To the east 
+lies a door, and to the south is a normal sized door.
+~
+0 8 0
+D1
+A tiny door~
+door tiny~
+1 -1 8956
+D2
+A normal sized door~
+door normal~
+1 8964 8962
+S
+#8961
+Bowling Alley~
+You are hunched over in a bowling alley! Little people are rolling round 
+objects down grooved tracks at long white targets. The whole cave echoes in a 
+dreadful crash each time they hit the targets! Oh you wish you had that glass 
+of faerie wine. To the west is the Little People's Bar and grill.
+~
+0 8 0
+D3
+Little People's Bar and Grill~
+~
+0 -1 8958
+E
+round objects~
+You look at the round objects. Each object is a human head! Yikes! 
+~
+E
+targets white~
+You look carefully at the white targets and discover they are human bones! 
+~
+S
+#8962
+Hall of the Faerie Queen~
+You stand in the hall of the Faerie Queen. Rainbow colors dance across the 
+room in a colorful display. Faerie folk flutter furiously fanning forge fires. 
+Say that 3 times fast. Maybe you should have had that faerie wine.
+~
+0 8 0
+D0
+A normal sized door~
+door normal~
+1 8964 8960
+E
+forge fires~
+They are being fanned furiously by fluttering faerie folk.
+~
+S
+#0
+
+#SPECIALS
+M 8959 spec_thief
+M 8960 spec_cast_mage
+S
+
+
+
+#RESETS
+D 0  8955 5 1
+M 0 8955 4 8956
+G 0 8955 0
+D 0  8956 0 1
+D 0  8956 2 1
+D 0  8956 3 1
+D 0  8956 4 1
+M 0 8959 1 8957
+E 0 8963 0 7
+E 0 8965 0 4
+O 0 8962 0 8957
+D 0  8957 2 1
+M 0 8956 3 8958
+G 0 8959 0
+M 0 8955 4 8958
+G 0 8955 0
+M 0 8957 3 8958
+E 0 8957 0 13
+M 0 8963 1 8958
+G 0 8962 0
+G 0 8968 0
+M 0 8961 1 8958
+G 0 8966 0
+G 0 8967 0
+M 0 8962 2 8959
+G 0 8962 0
+D 0  8959 0 1
+M 0 8958 3 8960
+E 0 8958 0 14
+G 0 8964 0
+D 0  8960 1 1
+D 0  8960 2 2
+M 0 8955 4 8961
+G 0 8955 0
+M 0 8956 3 8961
+G 0 8959 0
+M 0 8957 3 8961
+E 0 8957 0 13
+M 0 8960 1 8962
+E 0 8956 0 0
+E 0 8960 0 5
+E 0 8961 0 16
+M 0 8955 4 8962
+G 0 8955 0
+M 0 8956 3 8962
+G 0 8959 0
+M 0 8957 3 8962
+E 0 8957 0 13
+M 0 8958 3 8962
+E 0 8958 0 14
+D 0  8962 0 2
+S
+
+
+
+#SHOPS
+8963 1 2 3 4 18 120 80 0 23
+0
+
+
+
+#$
+
+

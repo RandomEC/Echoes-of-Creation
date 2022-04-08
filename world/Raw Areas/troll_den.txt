@@ -1,0 +1,685 @@
+#AREA {  10  15 } Merc/Ceivar - Troll Den~
+
+#MOBILES
+#8920
+guardian beast~
+the guardian beast~
+A guardian beast stares at you and snarls in rage.
+~
+Jet black fur covers this beast.  You stare at his two huge red eyes.  You can
+count at least 50 teeth on this monster.  You can't tell whether it is blood or
+saliva dripping from the beast's jaw.  The guardian beast snarls again.
+~
+39 98312 -200 S
+5 12 2 7d7+70 2d6+1
+0 0
+0 Animal~ 1
+#8921
+young troll~
+the young troll~
+A young troll is sitting down, chewing on a bone.
+~
+He is a tall, wiry, furry humanoid.
+Your eyes lock with his.  He smiles, puts down his bone, and reaches for one
+of yours!!
+~
+37 32768 -500 S
+11 13 3 6d6+60 2d5+1
+500 0
+0 Troll~ 1
+>death_prog 100~
+if ispc($n)
+ if mpcalc($n bountytracking 0 6) == 10
+  if mpcalc($n currentbounty 0 7) != 0
+   mpset $1 mpcalc $n currentbounty 0 7
+   mpset $1 = $1 - 1
+   mpechoat $n You obtain 1 troll fingernail! $1 left until bounty complete.
+   mpcalc $n currentbounty 0 7 $1
+  endif
+ endif
+endif
+~
+|
+#8922
+medium troll~
+the medium troll~
+A troll is grooming his pet, a guardian beast.
+~
+He is a tall, lean, furry humanoid.
+He is busy licking the ticks off of his beast.
+His eyes dart toward you, as he realizes you are one third his size.
+~
+39 32768 -500 S
+13 11 1 8d8+80 2d6+3
+1500 0
+0 Troll~ 1
+#8923
+baby troll~
+a baby troll~
+A baby troll is playing Doctor with a cadaver.
+~
+He is a large, chubby, furry humanoid.
+He is trying to stuff an arm in a hole in the wall.
+He notices you and gargles 'WANNA JOIN?'.
+~
+39 32768 -100 S
+10 14 4 5d5+50 2d4+1
+250 0
+0 Troll~ 1
+#8924
+giant troll~
+the giant troll~
+A giant troll is lying on a pile of carnage.
+~
+He is a gigantic, muscular, furry humanoid.
+~
+39 32768 -1000 S
+17 6 -4 13d13+130 3d6+4
+3000 0
+0 Troll~ 1
+#8925
+large troll female~
+the large female troll~
+A large female troll is lying on the pile of carnage.
+~
+She is a huge, grotesque, furry humanoid.
+~
+39 32768 -800 S
+13 8 -3 11d11+110 3d5+3
+2500 0
+0 Troll~ 2
+#8926
+fat worm~
+a fat worm~
+A fat worm scurries around, looking for food.
+~
+It is thick and long.  You can't find a head on this thing.
+It moves quickly, from corpse to corpse.
+~
+165 98304 0 S
+2 13 3 3d3+30 2d4+0
+0 0
+0 Worm~ 0
+#8927
+roving beast~
+the roving beast~
+A roving beast is searching for prey.
+~
+Jet black fur covers this beast.
+You stare at his two huge red eyes.  You can count at least 50 teeth on this
+beast.  You can't tell whether it is blood or saliva dripping from the beast's
+jaw.  The roving beast snarls at you.
+~
+37 32776 -200 S
+5 12 2 7d7+70 2d6+1
+0 0
+0 Animal~ 1
+#8928
+medium troll~
+the medium troll~
+A troll is wandering around, attending to his duties.
+~
+He is a tall, lean, furry humanoid.
+He notices you, and is satisfied to find what he is looking for.
+He advances toward you.
+~
+37 32768 -500 S
+15 11 1 8d8+80 2d6+3
+1500 0
+0 Troll~ 1
+#8929
+starving troll~
+the starving troll~
+A bone-thin troll is stuck down here, he must've fallen in and broken his leg.
+~
+He is a tall, skeletal, furry humanoid.
+The other trolls either don't know he's gone, or don't care.
+He's ravenous and half-crazed!
+~
+35 32768 -600 S
+12 0 0 0d0+0 0d0+0
+0 2
+0 Troll~ 1
+#8930
+maggots~
+the maggots~
+A writhing swarm of maggots is EVERYWHERE here!
+~
+Oh, gross!  How can you stand to look at them...squirming, wriggling...a
+great white mass consuming the dead flesh, multiplying... 
+~
+3 0 0 S
+3 0 0 0d0+0 0d0+0
+0 0
+0 Insect~ 0
+#8931
+old troll~
+the bitter old troll~
+This bitter old troll is mumbling incoherently.
+~
+He is a large, hunched-over, withered, furry humanoid.
+He wheezes and glares at you.
+His lips draw back threateningly from bare gums.
+~
+35 32768 -932 S
+9 0 0 0d0+0 0d0+0
+0 0
+0 Troll~ 1
+>greet_prog 40~
+mutter
+say I'll get those billy goats if it's the last thing I do...
+emote wheezes and spits up some nasty phlegm.
+mutter
+~
+|
+#0
+
+#OBJECTS
+#8920
+corpse cadaver~
+the cadaver-toy~
+A half eaten corpse is laying here.~
+~
+15
+0
+0
+30~ 0~ 0~ 0~
+50 0 0
+#8921
+carnage heap bed~
+the heap of carnage~
+There is a bed made of carnage here.~
+~
+15
+0
+0
+30~ 0~ 0~ 0~
+0 0 0
+#8922
+trollskin skin hide~
+the troll skin~
+The filthy hide of a beast is laying here.~
+~
+9
+0
+1025
+5~ 0~ 0~ 0~
+25 50 0
+A
+1 1
+E
+troll skin~
+This is the skin from a huge (and dead) beast.  It looks bad, smells bad,
+and feels bad.
+~
+#8923
+ring opal~
+an opal ring~
+A ring of black opal lies here gathering dust.~
+~
+9
+64
+3
+3~ 0~ 0~ 0~
+1 1000 0
+A
+19 2
+E
+ring opal~
+It is a full circle of opal, smooth and simple.
+~
+#8924
+leather belt~
+a leather belt~
+An old leather belt is left on the floor.~
+~
+9
+0
+2049
+6~ 0~ 0~ 0~
+5 100 0
+E
+leather belt~
+This old, smelly belt looks like it is barely better than rotting cloth.
+~
+#8925
+bone cracked~
+a cracked bone~
+A cracked piece of bone lies here.~
+~
+5
+0
+8193
+0~ 3~ 3~ 7~
+3 3 0
+A
+19 -1
+A
+18 -1
+E
+bone~
+This piece of bone looks sturdy enough to be used as a weapon, but you
+wouldn't want to entrust your life to it.
+~
+#8926
+bone club femur~
+a bone club~
+A good strong thigh-bone, this long femur may be useful as a club.~
+~
+5
+0
+8193
+0~ 4~ 6~ 7~
+6 0 0
+A
+18 2
+E
+bone femur~
+Ah, the femur.  Good for walking around on, or breaking other femurs.~
+#8927
+blood moss~
+blood moss~
+Dark blackish-red moss grows on the floor and cave walls here.~
+~
+26
+0
+1
+5~ cure light~ cure light~  ~
+3 0 0
+E
+blood moss~
+This stuff looks pretty icky.  It's like a cross between slimy dirt and
+semicoagulated blood.  It doesn't smell very good either.~
+#8928
+dice knucklebones~
+bone dice~
+A pair of dice...genuine knucklebones!~
+~
+13
+0
+16385
+0~ 0~ 0~ 0~
+2 0 0
+A
+18 2
+E
+dice knucklebones~
+You've heard of dice called "knucklebones," but these dice
+actually are!~
+#8929
+hole~
+the hole~
+There's a big hole in the north wall, near the ground.~
+~
+28
+0
+0
+-1~ 0~ 1~ 8927~
+5 0 0
+E
+hole~
+Looks like it's just big enough to squeeze through.~
+#8930
+corpse body cadaver~
+the smashed and splattered body~
+This nearly obliterated cadaver has been ground until it's unidentifiable.~
+~
+23
+0
+0
+0~ 0~ 0~ 0~
+0 0 0
+#8931
+rock~
+the sitting rock~
+A big rock with a flat top is here.~
+~
+12
+0
+0
+1~ 0~ 16~ 0~
+0 0 0
+#0
+
+
+
+#ROOMS
+#8920
+Waste Dump~
+This room is filled with chewed bone shards and fragments, those that
+haven't fallen into the pit below.  Something (or things) very big live
+here.  The cave continues north and east.  You can actually distinguish two
+different awful odors, one from the east and one, stronger, from below. 
+~
+0 9 0
+D0
+The floor slopes down just a bit that way.
+~
+~
+0 -1 8926
+D1
+Darker, gloomier, smellier.
+~
+~
+0 -1 8929
+D5
+Darker, gloomier, smellier.~
+~
+0 -1 8927
+S
+#8921
+Troll's Larder~
+This room has blood and grime all over the walls.  You see maggots and other
+insects crawling up them.  The resident is definitely uncivilized.  Half-eaten
+and rotting body parts scatter the floor, each having its own colony of flies,
+worms, and maggots.
+~
+0 9 0
+D1
+A welcome fresh breeze blows in from the east, but it carries with it the
+horrible stench. 
+~
+~
+0 -1 8930
+E
+Half-eaten body rotting corpse~
+YUCK!  You find worms crawling in and out this poor unfortunate former human.
+~
+S
+#8922
+Troll's Living Room~
+It takes a brave soul to wander this deep into a troll's lair, and this
+brave soul's nose will regret every step.  There's no less dirt and grime on
+the walls here, and the perpetual stink might actually be worse. 
+~
+0 9 0
+D0
+A welcome fresh breeze blows in from the north, but it carries with it the
+horrible stench.
+~
+~
+0 -1 8931
+D1
+Good God!  You spy corpses all over the floor in there.  It looks like a
+virtual graveyard in there.
+~
+~
+0 -1 8923
+D3
+Whoa!  You reel back from the stench.  You believe you have found the source
+of this bad smell.
+~
+~
+0 -1 8924
+S
+#8923
+The Playpen~
+The walls are covered with blood (and body parts!?!?).  Plastered on the far
+wall you see what looks like a human arm.  A half-eaten body lies here with
+its chest ripped out.  The predator seems disinterested in it.
+~
+0 9 0
+D0
+A welcome fresh breeze blows in from the north, but it carries with it the
+horrible stench.
+~
+~
+0 -1 8933
+D2
+The nasty smell continues here.  It's hard to tell whether it's better or
+worse anymore. 
+~
+~
+0 -1 8932
+D3
+A welcome fresh breeze blows in from the west, but it carries with it the
+horrible stench.
+~
+~
+0 -1 8922
+E
+arm rotting~
+This reminds you of what a baby would do to its formula during dinnertime,
+plastering it on the wall.
+~
+S
+#8924
+Troll's Bedroom~
+Obviously something REALLY big lives here.  The stench is quite unbearable.
+There are piles and piles of rotten and half-eaten body parts of animals,
+orcs, (and humans?) strewn across the floor.  There is a larger, more
+prominent pile of rotten parts over in a corner.  It seems to have been
+flattened by something.
+~
+0 13 0
+D1
+A welcome fresh breeze blows in from the east, but it carries with it the
+horrible stench.
+~
+~
+0 -1 8922
+S
+#8925
+A Cave Mouth~
+To the west is the mouth of the cave.  It leads down, down a tricky
+little slope, and stinks pretty badly below.  There is a small plaque on the
+wall. 
+~
+0 12 0
+D3
+You see the path outside of the mountain here.
+~
+~
+0 0 3585
+D5
+It stinks down there.~
+~
+0 -1 8926
+E
+plaque~
+This zone (Troll Den) is created by MERC for any MERC Mud.
+Copyright 1992
+ 
+Modified and enlarged by Ceivar, for Castle Arcanum, just for the hell of it.
+2001
+~
+S
+#8926
+In a Cave~
+The cave is pretty dark, and this part feels kind of moist, due to river
+water collecting in a puddle on the floor here.  The ground slopes up a
+little as the cave leads south, which probably means it's drier in there.
+~
+0 9 0
+D2
+The stench is much stronger deeper in the cave.~
+~
+0 -1 8920
+D4
+You can see faint light that way.
+~
+~
+0 -1 8925
+S
+#8927
+Bone Pit~
+This steep rocky slope of the cave is a nearly vertical pit, and there
+are lots of broken, cracked, and shattered bones here.  Most of them are
+picked clean of flesh...most of them. 
+~
+0 13 0
+D4
+It smells better.  Not a surprise.  It would take some doing to smell worse.~
+~
+0 -1 8920
+D5
+More bones.  LOTS more bones.~
+~
+0 -1 8928
+S
+#8928
+In the Bone Pit~
+This is the depths of the bone pit, and the bones are pretty broken up
+down here.  A lot of them are jagged and pointed, and falling in here could
+seriously injure someone.  There's a fair stench in here too, from the
+rotting flesh left on some of the bones. 
+~
+0 9 0
+D4
+Dem bones.~
+~
+0 -1 8927
+S
+#8929
+Cave~
+There's a turn in the cave here, and it leads west and south.  There's a
+good bit of slick and half-dried blood on the ground here, and a few little
+pieces of flesh on sharp parts of the rock.  They must have torn off
+something... 
+~
+0 13 0
+D2
+A smear of blood leads along the cave floor to the south.
+~
+~
+0 -1 8930
+D3
+There is a trail of bone shards and fragments leading west.~
+~
+0 -1 8920
+S
+#8930
+Troll's Living Room~
+There's a big awful mess on the floor here, where a body has been left
+lying, squashed, and tracked all over by various large and unrefined feet. 
+Flies buzz all over, and a mass of maggots swarms all over the body. 
+~
+0 9 0
+D0
+The blood trail comes from this direction.
+~
+~
+0 -1 8929
+D1
+The stench is stronger this way.
+~
+~
+0 -1 8931
+D3
+The blood smear leads this way, and there are some slimy worm trails here too.
+~
+~
+0 -1 8921
+S
+#8931
+Troll's Living Room~
+This part of the cave opens east, west, and south.  Any sane person would
+turn around: the stench is overwhelming!  
+~
+0 9 0
+D1
+Somehow, the smell is even WORSE here!
+~
+~
+0 -1 8933
+D2
+Somehow, the smell is even WORSE here!
+~
+~
+0 -1 8922
+D3
+A welcome fresh breeze blows in from the west, but it carries with it the
+horrible stench.
+~
+~
+0 -1 8930
+S
+#8932
+The Playpen~
+The walls here are even more covered with blood and body parts!  The
+ceiling, being lower here, isn't exempt, either.  The bodies here have been
+so consumed that it's impossible to make out what many of them were. 
+~
+0 9 0
+D0
+The nasty smell continues here.  It's hard to tell whether it's better or
+worse anymore. 
+~
+~
+0 -1 8923
+S
+#8933
+Troll's Living Room~
+This part of the den actually seems peaceful and serene...well,
+relatively.  It's still a troll den, and it still stinks to high heaven. 
+But there is a nice sitting rock here. 
+~
+0 9 0
+D2
+Good God!  You spy corpses all over the floor in there.  It looks like a
+virtual graveyard in there.
+~
+~
+0 -1 8923
+D3
+A welcome fresh breeze blows in from the west, but it carries with it the
+horrible stench.
+~
+~
+0 -1 8931
+S
+#0
+
+#SPECIALS
+S
+
+
+#SHOPS
+0
+
+
+
+#RESETS
+M 0 8927 2 8921
+O 0 8925 0 8920
+O 0 8929 0 8921
+M 0 8921 4 8921
+M 0 8921 4 8921
+M 0 8926 10 8921
+M 0 8922 1 8922
+M 0 8928 1 8922
+E 0 8926 0 16
+M 0 8920 1 8922
+M 0 8926 10 8922
+O 0 8920 0 8923
+P 0 8924 0 8920
+M 0 8923 2 8923
+M 0 8926 10 8923
+M 0 8924 1 8924
+E 0 8922 0 12
+M 0 8925 1 8924
+O 0 8921 0 8924
+P 0 8923 0 8921
+M 0 8920 1 8926
+O 0 8925 0 8927
+O 0 8927 0 8928
+M 0 8929 1 8928
+O 0 8925 0 8928
+M 0 8920 1 8929
+M 0 8930 1 8930
+O 0 8930 0 8930
+M 0 8926 10 8931
+M 0 8923 2 8932
+O 0 8931 0 8933
+M 0 8931 1 8933
+G 0 8928 0
+M 0 8921 4 8933
+M 0 8926 10 8933
+S
+
+
+
+
+#$
+
+
