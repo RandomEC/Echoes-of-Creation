@@ -497,6 +497,10 @@ class CmdDrop(MuxCommand):
         # First, find items on the caller, and filter out items
         # that are equipped.
         inventory = search.search_object(False, attribute_name="equipped", candidates=caller.contents)
+        inventory = list(inventory)
+        for item in caller.contents:
+            if not item.attributes.has("equipped"):
+                inventory.append(item)
         # Then search those for the item to be dropped.
         obj = caller.search(
             self.args,

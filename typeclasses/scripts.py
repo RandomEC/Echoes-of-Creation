@@ -143,9 +143,20 @@ class ResetScript(DefaultScript):
 
     def at_repeat(self):
 
+        players = search.search_tag("player")
+        for player in players:
+            player.msg("Your name is %s" % player.key)
+            if player.key == "Random":
+                Random = player
+
         for area in self.db.area_list:
+            Random.msg("%s = %d" % (area, self.db.area_list[area]))
+
+        for area in self.db.area_list:
+            Random.msg("area = %s" % area)
             # Reset if there are no players in the area, or if counter is at 2.
-            if not self.check_for_player(area) or self.db.area_list[area] >= 2:
+            if not rules.player_in_area(area) or self.db.area_list[area] >= 2:
+                Random.msg("made it into resetting for %s" % area)
                 objects_to_reset = search.search_tag(area, category="area name")
                 if objects_to_reset:
                     for object in objects_to_reset:

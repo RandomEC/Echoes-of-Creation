@@ -24,6 +24,44 @@ def check_cast(caster):
     return False
 
 
+def do_adrenaline_control(caster, target, mana_cost):
+    """Implements the adrenaline control spell."""
+
+    spell = rules_skills.get_skill(skill_name="adrenaline control")
+    level = caster.level
+    wait_state = spell["wait state"]
+
+
+    if random.randint(1, 100) <= caster.db.skills["adrenaline control"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "adrenaline control", True, 2)
+
+        caster.msg("You chant 'adrenaline control'.\n")
+        player_output_magic_chant(caster, "adrenaline control")
+
+        target.msg("You have given yourself an adrenaline rush!")
+        caster.location.msg_contents("%s has given %s an adrenaline rush!" % ((target.key[0].upper() + target.key[1:]), rules.pronoun_reflexive(target)), exclude=caster)
+
+        rules.affect_apply(target,
+                           "adrenaline control",
+                           (caster.level - 5),
+                           "You feel weaker.",
+                           "",
+                           dexterity=2,
+                           constitution=2
+                          )
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "adrenaline control", False, 2)
+        caster.msg("You chant 'adrenaline control'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "adrenaline control")
+
+
 def do_agitation(caster, target, mana_cost):
     """ Function implementing agitation spell"""
 
@@ -163,6 +201,72 @@ def do_bless(caster, target, mana_cost):
         rules_skills.check_skill_improve(caster, "bless", False, 2)
         caster.msg("You chant 'bless'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "bless")
+
+
+def do_burning_hands(caster, target, mana_cost):
+    """ Function implementing burning hands spell"""
+
+    spell = rules_skills.get_skill(skill_name="burning hands")
+
+    level = caster.level
+
+    # This list creates a seed for how high damage will be,
+    # with the caster's level corresponding to the list
+    # index.
+    damage_seed = [0,
+                   0, 0, 0, 0, 14, 17, 20, 23, 26, 29,
+                   29, 29, 30, 30, 31, 31, 32, 32, 33, 33,
+                   34, 34, 35, 35, 36, 36, 37, 37, 38, 38,
+                   39, 39, 40, 40, 41, 41, 42, 42, 43, 43,
+                   44, 44, 45, 45, 46, 46, 47, 47, 48, 48
+                   ]
+
+    # Make sure you do not exceed the list boundaries.
+    if level > len(damage_seed):
+        level = len(damage_seed)
+    elif level < 0:
+        level = 0
+
+    # Use the seed to create a damage range from seed/2 up to
+    # seed*2, then get a value randomly in that range.
+    damage = random.randint(int(damage_seed[level] / 2), int(damage_seed[level] * 2))
+
+    if save_spell(caster.level, target):
+        damage = int(damage / 2)
+
+    if random.randint(1, 100) <= caster.db.skills["burning hands"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "burning hands", True, 4)
+
+        caster.msg("You chant 'burning hands'.\n")
+        player_output_magic_chant(caster, "burning hands")
+
+        attacker_output = ("You |g%s|n %s with your burning hands.\n" % (rules_combat.get_damagestring("attacker", damage),
+                                                                          target.key
+                                                                          ))
+        victim_output = ("%s |r%s|n you with %s burning hands.\n" % ((caster.key[0].upper() + caster.key[1:]),
+                                                                      rules_combat.get_damagestring("victim", damage),
+                                                                      rules.pronoun_possessive(caster)
+                                                                      ))
+        room_output = ("%s |r%s|n %s with %s burning hands.\n" % ((caster.key[0].upper() + caster.key[1:]),
+                                                                   rules_combat.get_damagestring("victim", damage),
+                                                                   target.key,
+                                                                   rules.pronoun_possessive(caster)
+                                                                   ))
+
+        output = [attacker_output, victim_output, room_output]
+
+        rules_combat.do_attack(caster, target, None, hit=True, damage=damage, output=output, type="burning hands")
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "burning hands", False, 4)
+        caster.msg("You chant 'burning hands'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "burning hands")
 
 
 def do_cause_light(caster, target, mana_cost):
@@ -652,6 +756,124 @@ def do_fly(caster, target, mana_cost):
         player_output_magic_chant(caster, "fly")
 
 
+def do_giant_strength(caster, target, mana_cost):
+    """Implements the giant strength spell."""
+
+    spell = rules_skills.get_skill(skill_name="giant strength")
+    level = caster.level
+    wait_state = spell["wait state"]
+
+    if random.randint(1, 100) <= caster.db.skills["giant strength"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "giant strength", True, 2)
+
+        caster.msg("You chant 'giant strength'.\n")
+        player_output_magic_chant(caster, "giant strength")
+
+        if caster != target:
+            caster.msg("You cast giant strength on %s." % (target.key[0].upper() + target.key[1:]))
+        target.msg("You feel stronger.")
+
+        if caster.level >= 25:
+            modifier = 3
+        elif caster.level >= 18:
+            modifier = 2
+        else:
+            modifier = 1
+
+        rules.affect_apply(target,
+                           "giant strength",
+                           caster.level,
+                           "You feel weaker.",
+                           "",
+                           strength=modifier
+                           )
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "giant strength", False, 2)
+        caster.msg("You chant 'giant strength'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "giant strength")
+
+
+def do_infravision(caster, target, mana_cost):
+    """Implements the infravision spell."""
+
+    spell = rules_skills.get_skill(skill_name="infravision")
+    level = caster.level
+    wait_state = spell["wait state"]
+
+    if random.randint(1, 100) <= caster.db.skills["infravision"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "infravision", True, 2)
+
+        caster.msg("You chant 'infravision'.\n")
+        player_output_magic_chant(caster, "infravision")
+
+        if caster != target:
+            caster.msg("%s's eyes glow red." % (target.key[0].upper() + target.key[1:]))
+        target.msg("Your eyes glow red.")
+
+        rules.affect_apply(target,
+                           "infravision",
+                           (caster.level * 2),
+                           "You no longer see in the dark.",
+                           "The red glow in %s's eyes fades." % (target.key[0].upper() + target.key[1:])
+                           )
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "infravision", False, 2)
+        caster.msg("You chant 'infravision'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "infravision")
+
+
+def do_invis(caster, target, mana_cost):
+    """Implements the invis spell."""
+
+    spell = rules_skills.get_skill(skill_name="invis")
+    level = caster.level
+    wait_state = spell["wait state"]
+
+
+    if random.randint(1, 100) <= caster.db.skills["invis"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "invis", True, 2)
+
+        caster.msg("You chant 'invis'.\n")
+        player_output_magic_chant(caster, "invis")
+
+        target.msg("You fade out of existence.")
+        caster.location.msg_contents("%s fades out of existence." % ((target.key[0].upper() + target.key[1:]), rules.pronoun_reflexive(target)), exclude=target)
+
+        rules.affect_apply(target,
+                           "invis",
+                           24,
+                           "You are no longer invisible.",
+                           "%s is no longer invisible." % (target.key[0].upper() + target.key[1:])
+                          )
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "invis", False, 2)
+        caster.msg("You chant 'invis'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "invis")
+
+
 def do_levitation(caster, target, mana_cost):
     """Implements the levitation spell."""
 
@@ -787,6 +1009,50 @@ def do_mental_barrier(caster, target, mana_cost):
         rules_skills.check_skill_improve(caster, "mental barrier", False, 2)
         caster.msg("You chant 'mental barrier'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "mental barrier")
+
+
+def do_mind_thrust(caster, target, mana_cost):
+    """ Function implementing mind thrust spell"""
+
+    spell = rules_skills.get_skill(skill_name="mind thrust")
+
+    level = caster.level
+
+    damage = random.randint(1, 10) + level / 2
+
+    if random.randint(1, 100) <= caster.db.skills["mind thrust"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "mind thrust", True, 4)
+
+        caster.msg("You chant 'mind thrust'.\n")
+        player_output_magic_chant(caster, "mind thrust")
+
+        attacker_output = ("You |g%s|n %s with your mind thrust.\n" % (rules_combat.get_damagestring("attacker", damage),
+                                                                          target.key
+                                                                          ))
+        victim_output = ("%s |r%s|n you with %s mind thrust.\n" % ((caster.key[0].upper() + caster.key[1:]),
+                                                                      rules_combat.get_damagestring("victim", damage),
+                                                                      rules.pronoun_possessive(caster)
+                                                                      ))
+        room_output = ("%s |r%s|n %s with %s mind thrust.\n" % ((caster.key[0].upper() + caster.key[1:]),
+                                                                   rules_combat.get_damagestring("victim", damage),
+                                                                   target.key,
+                                                                   rules.pronoun_possessive(caster)
+                                                                   ))
+
+        output = [attacker_output, victim_output, room_output]
+
+        rules_combat.do_attack(caster, target, None, hit=True, damage=damage, output=output, type="mind thrust")
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "mind thrust", False, 4)
+        caster.msg("You chant 'mind thrust'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "mind thrust")
 
 
 def do_protection(caster, target, mana_cost):
@@ -989,6 +1255,42 @@ def do_summon_weapon(caster, mana_cost):
         rules_skills.check_skill_improve(caster, "summon weapon", False, 1)
         caster.msg("You chant 'summon weapon'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "summon weapon")
+
+
+def do_thought_shield(caster, target, mana_cost):
+    """Implements the thought shield spell."""
+
+    spell = rules_skills.get_skill(skill_name="thought shield")
+    level = caster.level
+    wait_state = spell["wait state"]
+
+
+    if random.randint(1, 100) <= caster.db.skills["thought shield"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "thought shield", True, 2)
+
+        caster.msg("You chant 'thought shield'.\n")
+        player_output_magic_chant(caster, "thought shield")
+
+        target.msg("You have created a shield around yourself.")
+
+        rules.affect_apply(target,
+                           "thought shield",
+                           caster.level,
+                           "You no longer feel so protected.",
+                           "",
+                           armor_class=-20
+                          )
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "thought shield", False, 2)
+        caster.msg("You chant 'thought shield'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "thought shield")
 
 
 def do_ventriloquate(caster, mana_cost, target, sound):

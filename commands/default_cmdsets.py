@@ -71,8 +71,10 @@ from commands.skill_commands import CmdForage
 from commands.skill_commands import CmdPickLock
 from commands.skill_commands import CmdSkills
 from commands.skill_commands import CmdSteal
+from commands.spell_commands import CmdAdrenalineControl
 from commands.spell_commands import CmdAgitation
 from commands.spell_commands import CmdBless
+from commands.spell_commands import CmdBurningHands
 from commands.spell_commands import CmdCauseLight
 from commands.spell_commands import CmdChillTouch
 from commands.spell_commands import CmdContinualLight
@@ -83,16 +85,21 @@ from commands.spell_commands import CmdCureLight
 from commands.spell_commands import CmdDetectEvil
 from commands.spell_commands import CmdDetectHidden
 from commands.spell_commands import CmdDetectInvis
-from commands.spell_commands import CmdFly
 from commands.spell_commands import CmdDetectMagic
+from commands.spell_commands import CmdFly
+from commands.spell_commands import CmdGiantStrength
+from commands.spell_commands import CmdInfravision
+from commands.spell_commands import CmdInvis
 from commands.spell_commands import CmdLevitation
 from commands.spell_commands import CmdMagicMissile
 from commands.spell_commands import CmdMentalBarrier
+from commands.spell_commands import CmdMindThrust
 from commands.spell_commands import CmdProtection
 from commands.spell_commands import CmdRefresh
 from commands.spell_commands import CmdShield
 from commands.spell_commands import CmdSleep
 from commands.spell_commands import CmdSummonWeapon
+from commands.spell_commands import CmdThoughtShield
 from commands.spell_commands import CmdVentriloquate
 
 class CharacterCmdSet(default_cmds.CharacterCmdSet):
@@ -112,10 +119,12 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         #
         # any commands you add below will overload the default ones.
         #
+        self.add(CmdAdrenalineControl())
         self.add(CmdAffects())
         self.add(CmdAgitation())
         self.add(CmdAttack())
         self.add(CmdBless())
+        self.add(CmdBurningHands())
         self.add(CmdCauseLight())
         self.add(CmdChillTouch())
         self.add(CmdColleges())
@@ -144,17 +153,21 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdFly())
         self.add(CmdForage())
         self.add(CmdGet())
+        self.add(CmdGiantStrength())
         self.add(CmdGive())
         self.add(CmdHome())
         self.add(CmdIdentify())
+        self.add(CmdInfravision())
         self.add(CmdInspect())
         self.add(CmdInventory())
+        self.add(CmdInvis())
         self.add(CmdKick())
         self.add(CmdLevitation())
         self.add(CmdLock())
         self.add(CmdLook())
         self.add(CmdMagicMissile())
         self.add(CmdMentalBarrier())
+        self.add(CmdMindThrust())
         self.add(CmdName())
         self.add(CmdOpen())
         self.add(CmdPickLock())
@@ -182,6 +195,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdTag())
         self.add(CmdTalk())
         self.add(CmdTest())
+        self.add(CmdThoughtShield())
         self.add(CmdTrain())
         self.add(CmdTrip())
         self.add(CmdWear())

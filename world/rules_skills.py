@@ -201,6 +201,14 @@ def get_skill(**kwargs):
     """
     
     skills = {
+        "adrenaline control": {
+            "classes": {
+                "psionicist": 10,
+                "bard": 30
+                },
+            "minimum cost": 6,
+            "wait state": 12
+            },
         "agitation": {
             "classes": {
                 "psionicist": 5
@@ -223,6 +231,13 @@ def get_skill(**kwargs):
                 "paladin": 12
                 },
             "minimum cost": 5,
+            "wait state": 12
+            },
+        "burning hands": {
+            "classes": {
+                "mage": 6
+                },
+            "minimum cost": 15,
             "wait state": 12
             },
         "cause light": {
@@ -365,6 +380,31 @@ def get_skill(**kwargs):
             "minimum cost": 5,
             "wait state": 12
             },
+        "giant strength": {
+            "classes": {
+                "mage": 9,
+                "warrior": 66
+                },
+            "minimum cost": 20,
+            "wait state": 12
+            },
+        "infravision": {
+            "classes": {
+                "druid": 9,
+                "ranger": 22
+                },
+            "minimum cost": 5,
+            "wait state": 18
+            },
+        "invis": {
+            "classes": {
+                "mage": 10,
+                "druid": 35,
+                "thief": 60
+                },
+            "minimum cost": 5,
+            "wait state": 12
+            },
         "kick": {
             "classes": {
                 "warrior": 3,
@@ -391,6 +431,13 @@ def get_skill(**kwargs):
         "mental barrier": {
             "classes": {
                 "psionicist": 6
+                },
+            "minimum cost": 8,
+            "wait state": 12
+            },
+        "mind thrust": {
+            "classes": {
+                "psionicist": 7
                 },
             "minimum cost": 8,
             "wait state": 12
@@ -476,6 +523,13 @@ def get_skill(**kwargs):
                 },
             "minimum cost": 5,
             "wait state": 24
+            },
+        "thought shield": {
+            "classes": {
+                "psionicist": 10
+                },
+            "minimum cost": 5,
+            "wait state": 12
             },
         "ventriloquate": {
             "classes": {

@@ -89,7 +89,7 @@ def calculate_experience(mobile):
         
     return experience
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.txt", "rt") as myfile:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/troll_den.txt", "rt") as myfile:
 
     class Object:
         def __init__(self):
@@ -1394,9 +1394,9 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.txt", "rt") 
                 elif item_type == 22:
                     item_type = "boat"
                 elif item_type == 23:
-                    item_type = "corpse npc"
+                    item_type = "NPC_Corpse"
                 elif item_type == 24:
-                    item_type = "corpse pc"
+                    item_type = "PC_Corpse"
                 elif item_type == 25:
                     item_type = "fountain"
                 elif item_type == 26:
@@ -1863,9 +1863,9 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.txt", "rt") 
                     elif item_type == 22:
                         item_type = "boat"
                     elif item_type == 23:
-                        item_type = "corpse npc"
+                        item_type = "NPC_Corpse"
                     elif item_type == 24:
-                        item_type = "corpse pc"
+                        item_type = "PC_Corpse"
                     elif item_type == 25:
                         item_type = "fountain"
                     elif item_type == 26:
@@ -1909,7 +1909,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.txt", "rt") 
                     objects[onum].special_function\
                         = special_function_list[2][6:]
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as output:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/troll_den.ev", "w") as output:
 
     # Now we are going to build out the batch file by iterating through each
     # room.
@@ -2298,10 +2298,19 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as
                         else:
                             mobile_object_amount = 0
 
+                if object.item_type.lower() == "npc_corpse" or object.item_type.lower() == "pc_corpse":
+                    if object.item_type.lower() == "npc_corpse":
+                        object_item_type = "NPC_Corpse"
+                    elif object.item_type.lower() == "pc_corpse":
+                        object_item_type = "PC_Corpse"
+                else:
+                    object_item_type = object.item_type.capitalize()
+
+
                 output.write("create %s;%s:objects.%s\n"
                              % (object.short_description,
                                 keyword_string,
-                                object.item_type.capitalize()
+                                object_item_type
                                 )
                              )
                 output.write("#\n")
@@ -2872,7 +2881,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/graveyard.ev", "w") as
                         output.write("#\n")
                 elif reset_type == "object, in mobile inventory":
                     # Give the object to the mobile.
-                    output.write("give %s = %s\n" % (reset_vnum, index_reset_location))
+                    output.write("give %s to %s\n" % (reset_vnum, index_reset_location))
                     output.write("#\n")
                 elif reset_type == "object, room":
                     # Drop the object.
