@@ -158,8 +158,12 @@ class ResetScript(DefaultScript):
             if not rules.player_in_area(area) or self.db.area_list[area] >= 2:
                 Random.msg("made it into resetting for %s" % area)
                 objects_to_reset = search.search_tag(area, category="area name")
+                if area == "the library":
+                    Random.msg("Reset list = %s" % objects_to_reset)
                 if objects_to_reset:
                     for object in objects_to_reset:
+                        if area == "the library":
+                            Random.msg("Reset list = %s" % object)
                         object.at_reset()
                 # Since you reset, reset the timer on the area.
                 self.db.area_list[area] = 0
