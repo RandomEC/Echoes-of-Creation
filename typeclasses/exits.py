@@ -117,7 +117,7 @@ class Exit(DefaultExit):
                 terrain_cost = 10
             elif terrain == "vacuum":
                 terrain_cost = 11
-            elif terrain == "max":
+            else:
                 terrain_cost = 12
         else:
             terrain_cost = 0

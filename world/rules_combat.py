@@ -818,7 +818,6 @@ def do_one_character_attacks(attacker, victim):
             room_string += new_room_string
 
     if victim.hitpoints_current <= 0 and victim.location == attacker.location:
-        attacker.msg("In death if check")
         new_attacker_string, new_victim_string, new_room_string = \
             do_death(attacker, victim)
         attacker_string += new_attacker_string
