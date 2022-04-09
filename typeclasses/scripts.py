@@ -119,7 +119,15 @@ class ResetScript(DefaultScript):
             "the library": 0,
             "edens grove": 0,
             "crystalmir lake": 0,
-            "the rats' lair": 0
+            "the rats' lair": 0,
+            "gnome village": 0,
+            "dragon cult": 0,
+            "holy grove": 0,
+            "troll den": 0,
+            "faerie ring": 0,
+            "miden'nir": 0,
+            "fire newts": 0,
+            "dangerous neighborhood": 0
         }
 
 
