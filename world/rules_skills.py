@@ -500,7 +500,7 @@ def get_skill(**kwargs):
             "minimum cost": 12,
             "wait state": 18
             },
-        "sleep": {
+        "slumber": {
             "classes": {
                 "bard": 8
                 },

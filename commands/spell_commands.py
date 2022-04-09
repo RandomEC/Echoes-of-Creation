@@ -1974,20 +1974,20 @@ class CmdShield(MuxCommand):
 
 class CmdSleep(MuxCommand):
     """
-    Induce a magical sleep in a target.
+    Induce a magical slumber in a target.
 
     Usage:
-      cast sleep <target>
-      sleep <target>
+      cast slumber <target>
+      slumber <target>
 
-    Magically induce sleep in your target.
+    Magically induce slumber in your target.
 
     Colleges that can teach (level):
     Bard (8)
     """
 
-    key = "sleep"
-    aliases = ["cast sleep"]
+    key = "slumber"
+    aliases = ["cast slumber"]
     locks = "cmd:all()"
     arg_regex = r"\s|$"
 
