@@ -776,13 +776,13 @@ tag m8927 = troll den:area name
 #
 tag m8927 = mobile
 #
-set m8927/hitpoints[maximum] = 60
+set m8927/hitpoints[maximum] = 57
 #
 set m8927/position = "standing"
 #
-set m8927/experience_total = 1009
+set m8927/experience_total = 1030
 #
-set m8927/experience_current = 1009
+set m8927/experience_current = 1030
 #
 tel r8920
 #
@@ -816,9 +816,9 @@ set o8925/stat_modifiers[hitroll] = -1
 #
 set o8925/weapon_type = "pound"
 #
-set o8925/damage_low = 3
+set o8925/damage_low = 4
 #
-set o8925/damage_high = 8
+set o8925/damage_high = 7
 #
 drop o8925
 #
@@ -860,13 +860,13 @@ tag m8921 = troll den:area name
 #
 tag m8921 = mobile
 #
-set m8921/hitpoints[maximum] = 199
+set m8921/hitpoints[maximum] = 158
 #
 set m8921/position = "standing"
 #
-set m8921/experience_total = 8203
+set m8921/experience_total = 6731
 #
-set m8921/experience_current = 8203
+set m8921/experience_current = 6731
 #
 tel r8921
 #
@@ -896,13 +896,13 @@ tag m8921-2 = troll den:area name
 #
 tag m8921-2 = mobile
 #
-set m8921-2/hitpoints[maximum] = 119
+set m8921-2/hitpoints[maximum] = 169
 #
 set m8921-2/position = "standing"
 #
-set m8921-2/experience_total = 7970
+set m8921-2/experience_total = 6771
 #
-set m8921-2/experience_current = 7970
+set m8921-2/experience_current = 6771
 #
 tel r8921
 #
@@ -932,13 +932,13 @@ tag m8926 = troll den:area name
 #
 tag m8926 = mobile
 #
-set m8926/hitpoints[maximum] = 17
+set m8926/hitpoints[maximum] = 20
 #
 set m8926/position = "standing"
 #
-set m8926/experience_total = 246
+set m8926/experience_total = 247
 #
-set m8926/experience_current = 246
+set m8926/experience_current = 247
 #
 tel r8922
 #
@@ -968,13 +968,13 @@ tag m8922 = troll den:area name
 #
 tag m8922 = mobile
 #
-set m8922/hitpoints[maximum] = 115
+set m8922/hitpoints[maximum] = 190
 #
 set m8922/position = "standing"
 #
-set m8922/experience_total = 12640
+set m8922/experience_total = 11622
 #
-set m8922/experience_current = 12640
+set m8922/experience_current = 11622
 #
 tel r8922
 #
@@ -1004,13 +1004,13 @@ tag m8928 = troll den:area name
 #
 tag m8928 = mobile
 #
-set m8928/hitpoints[maximum] = 186
+set m8928/hitpoints[maximum] = 142
 #
 set m8928/position = "standing"
 #
-set m8928/experience_total = 16748
+set m8928/experience_total = 16217
 #
-set m8928/experience_current = 16748
+set m8928/experience_current = 16217
 #
 tel r8922
 #
@@ -1042,15 +1042,15 @@ set o8926/stat_modifiers[hitroll] = 2
 #
 set o8926/weapon_type = "pound"
 #
-set o8926/damage_low = 3
+set o8926/damage_low = 5
 #
-set o8926/damage_high = 16
+set o8926/damage_high = 17
 #
 wieldto o8926 = m8928
 #
-set m8928/experience_total = 20935
+set m8928/experience_total = 20271
 #
-set m8928/experience_current = 20935
+set m8928/experience_current = 20271
 #
 set m8928/reset_objects["o8926"] = {"location":"equipped"}
 #
@@ -1082,13 +1082,13 @@ tag m8920 = troll den:area name
 #
 tag m8920 = mobile
 #
-set m8920/hitpoints[maximum] = 47
+set m8920/hitpoints[maximum] = 51
 #
 set m8920/position = "standing"
 #
-set m8920/experience_total = 1041
+set m8920/experience_total = 980
 #
-set m8920/experience_current = 1041
+set m8920/experience_current = 980
 #
 tel r8922
 #
@@ -1118,7 +1118,7 @@ tag m8926 = troll den:area name
 #
 tag m8926 = mobile
 #
-set m8926/hitpoints[maximum] = 18
+set m8926/hitpoints[maximum] = 20
 #
 set m8926/position = "standing"
 #
@@ -1186,7 +1186,7 @@ tag o8924 = object
 #
 set o8924/extra_descriptions = {'leather belt': ' This old, smelly belt looks like it is barely better than rotting cloth. '}
 #
-set o8924/armor = 2
+set o8924/armor = 1
 #
 put o8924 in o8920
 #
@@ -1220,13 +1220,13 @@ tag m8923 = troll den:area name
 #
 tag m8923 = mobile
 #
-set m8923/hitpoints[maximum] = 83
+set m8923/hitpoints[maximum] = 89
 #
 set m8923/position = "standing"
 #
-set m8923/experience_total = 5858
+set m8923/experience_total = 5308
 #
-set m8923/experience_current = 5858
+set m8923/experience_current = 5308
 #
 tel r8923
 #
@@ -1256,13 +1256,13 @@ tag m8926 = troll den:area name
 #
 tag m8926 = mobile
 #
-set m8926/hitpoints[maximum] = 19
+set m8926/hitpoints[maximum] = 16
 #
 set m8926/position = "standing"
 #
-set m8926/experience_total = 247
+set m8926/experience_total = 221
 #
-set m8926/experience_current = 247
+set m8926/experience_current = 221
 #
 tel r8924
 #
@@ -1292,13 +1292,13 @@ tag m8924 = troll den:area name
 #
 tag m8924 = mobile
 #
-set m8924/hitpoints[maximum] = 174
+set m8924/hitpoints[maximum] = 167
 #
 set m8924/position = "standing"
 #
-set m8924/experience_total = 26954
+set m8924/experience_total = 25470
 #
-set m8924/experience_current = 26954
+set m8924/experience_current = 25470
 #
 tel r8924
 #
@@ -1362,13 +1362,13 @@ tag m8925 = troll den:area name
 #
 tag m8925 = mobile
 #
-set m8925/hitpoints[maximum] = 161
+set m8925/hitpoints[maximum] = 264
 #
 set m8925/position = "standing"
 #
-set m8925/experience_total = 11147
+set m8925/experience_total = 12887
 #
-set m8925/experience_current = 11147
+set m8925/experience_current = 12887
 #
 tel r8924
 #
@@ -1468,13 +1468,13 @@ tag m8920 = troll den:area name
 #
 tag m8920 = mobile
 #
-set m8920/hitpoints[maximum] = 49
+set m8920/hitpoints[maximum] = 59
 #
 set m8920/position = "standing"
 #
-set m8920/experience_total = 962
+set m8920/experience_total = 940
 #
-set m8920/experience_current = 962
+set m8920/experience_current = 940
 #
 tel r8927
 #
@@ -1508,9 +1508,9 @@ set o8925/stat_modifiers[hitroll] = -1
 #
 set o8925/weapon_type = "pound"
 #
-set o8925/damage_low = 5
+set o8925/damage_low = 2
 #
-set o8925/damage_high = 9
+set o8925/damage_high = 7
 #
 drop o8925
 #
@@ -1580,13 +1580,13 @@ tag m8929 = troll den:area name
 #
 tag m8929 = mobile
 #
-set m8929/hitpoints[maximum] = 208
+set m8929/hitpoints[maximum] = 107
 #
 set m8929/position = "standing"
 #
-set m8929/experience_total = 9962
+set m8929/experience_total = 10029
 #
-set m8929/experience_current = 9962
+set m8929/experience_current = 10029
 #
 tel r8928
 #
@@ -1622,7 +1622,7 @@ set o8925/weapon_type = "pound"
 #
 set o8925/damage_low = 4
 #
-set o8925/damage_high = 14
+set o8925/damage_high = 12
 #
 drop o8925
 #
@@ -1656,13 +1656,13 @@ tag m8920 = troll den:area name
 #
 tag m8920 = mobile
 #
-set m8920/hitpoints[maximum] = 52
+set m8920/hitpoints[maximum] = 63
 #
 set m8920/position = "standing"
 #
-set m8920/experience_total = 969
+set m8920/experience_total = 922
 #
-set m8920/experience_current = 969
+set m8920/experience_current = 922
 #
 tel r8930
 #
@@ -1690,13 +1690,13 @@ tag m8930 = troll den:area name
 #
 tag m8930 = mobile
 #
-set m8930/hitpoints[maximum] = 32
+set m8930/hitpoints[maximum] = 33
 #
 set m8930/position = "standing"
 #
-set m8930/experience_total = 403
+set m8930/experience_total = 421
 #
-set m8930/experience_current = 403
+set m8930/experience_current = 421
 #
 tel r8930
 #
@@ -1754,13 +1754,13 @@ tag m8926 = troll den:area name
 #
 tag m8926 = mobile
 #
-set m8926/hitpoints[maximum] = 20
+set m8926/hitpoints[maximum] = 17
 #
 set m8926/position = "standing"
 #
-set m8926/experience_total = 221
+set m8926/experience_total = 265
 #
-set m8926/experience_current = 221
+set m8926/experience_current = 265
 #
 tel r8932
 #
@@ -1790,13 +1790,13 @@ tag m8923 = troll den:area name
 #
 tag m8923 = mobile
 #
-set m8923/hitpoints[maximum] = 156
+set m8923/hitpoints[maximum] = 110
 #
 set m8923/position = "standing"
 #
-set m8923/experience_total = 5246
+set m8923/experience_total = 6184
 #
-set m8923/experience_current = 5246
+set m8923/experience_current = 6184
 #
 tel r8933
 #
@@ -1862,13 +1862,13 @@ tag m8931 = troll den:area name
 #
 tag m8931 = mobile
 #
-set m8931/hitpoints[maximum] = 143
+set m8931/hitpoints[maximum] = 107
 #
 set m8931/position = "standing"
 #
-set m8931/experience_total = 4094
+set m8931/experience_total = 4054
 #
-set m8931/experience_current = 4094
+set m8931/experience_current = 4054
 #
 tel r8933
 #
@@ -1930,13 +1930,13 @@ tag m8921 = troll den:area name
 #
 tag m8921 = mobile
 #
-set m8921/hitpoints[maximum] = 134
+set m8921/hitpoints[maximum] = 183
 #
 set m8921/position = "standing"
 #
-set m8921/experience_total = 6805
+set m8921/experience_total = 6954
 #
-set m8921/experience_current = 6805
+set m8921/experience_current = 6954
 #
 tel r8933
 #
@@ -1966,11 +1966,11 @@ tag m8926 = troll den:area name
 #
 tag m8926 = mobile
 #
-set m8926/hitpoints[maximum] = 16
+set m8926/hitpoints[maximum] = 20
 #
 set m8926/position = "standing"
 #
-set m8926/experience_total = 254
+set m8926/experience_total = 251
 #
-set m8926/experience_current = 254
+set m8926/experience_current = 251
 #

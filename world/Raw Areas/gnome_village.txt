@@ -1,35 +1,5 @@
 #AREA {   5  15 } Vougon - Gnome Village~
 
-#HELPS
-
--99 Title     ~  Gnome Village~
--99 Authors   ~  Vougon~
--99 Levels    ~  {   5  15 }~
--99 Builders  ~  None~
--99 LowerVnum ~   1500 ~
--99 UpperVnum ~   1591 ~
--99 Security  ~      1 ~
--99 Recall    ~  12001 ~
--99 Flags     ~  0 ~
--99 Zone      ~      0 ~
--1 GNOME GNOMES~
-^w ___________
-^w|  ^D^N GNOME ^x  |
-^BI^bR ^W_________^w!^W________________________________________________________________
-^BN^bA^W|                                                                          !
-^BF^bC^W| Gnomes are small peace loving creatures much like a mix of Dwarves and    :
-^BO^bE^W| Hobbits. Not relatives of either race, Gnomes do not feel so negatively  .
-^BR^bS^W| toward other races. Having on average less strength than many other
-^BM ^W| races, they make up this deficiency through a higher-than-average
-^BA ^W| wisdom, as well as the ability to recover quickly from using magic. Also
-^BT ^W| agile, Gnomes regularly rival Hobbits in the inter-racial Olympics.      .
-^BI ^W| Gnomes are endowed with infravision.                                     :
-^BO ^W!__________________________________________________________________________!
-^BN           ^w|
-^w!___________!^x
-~
-
-0 $~
 
 #MOBILES
 #1500
@@ -2423,6 +2393,10 @@ M 1528 spec_cast_mage
 S
 
 
+#SHOPS
+0
+
+
 
 #RESETS
 M 0 1502 3 1503
@@ -2550,10 +2524,6 @@ E 0 1527 0 15
 E 0 1529 0 16
 S
 
-
-
-#SHOPS
-0
 
 
 

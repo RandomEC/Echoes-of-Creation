@@ -1,19 +1,5 @@
 #AREA {   5  20 } Alfa - Holy Grove~
 
-#HELPS
-
--99 Title     ~  Holy Grove~
--99 Authors   ~  Alfa~
--99 Levels    ~  {   5  20 }~
--99 Builders  ~  ~
--99 LowerVnum ~   8900 ~
--99 UpperVnum ~   8919 ~
--99 Security  ~      1 ~
--99 Recall    ~  12001 ~
--99 Flags     ~  0 ~
--99 Zone      ~      0 ~
-
-0 $~
 
 #MOBILES
 #8900
@@ -871,6 +857,11 @@ S
 
 
 
+
+#SHOPS
+0
+
+
 #RESETS
 M 0 8901 1 8901
 E 0 8910 0 16
@@ -932,11 +923,6 @@ D 0  8918 3 1
 D 0  8919 0 1
 D 0  8919 1 1
 S
-
-
-
-#SHOPS
-0
 
 
 

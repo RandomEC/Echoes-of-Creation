@@ -1,18 +1,5 @@
 #AREA {   5  15 } Nirrad Land of the Fire Newts~
 
-#HELPS
-
--99 Title     ~  Land of the Fire Newts~
--99 Authors   ~  Nirrad~
--99 Levels    ~  {   5  15 }~
--99 Builders  ~  ~
--99 LowerVnum ~   2900 ~
--99 UpperVnum ~   2931 ~
--99 Security  ~      1 ~
--99 Recall    ~  12001 ~
--99 Flags     ~      0 ~
-
-0 $~
 
 #MOBILES
 #2901
@@ -894,6 +881,9 @@ M 2914 spec_breath_fire
 S
 
 
+#SHOPS
+0
+
 
 #RESETS
 M 0 2901 1 2903
@@ -1003,9 +993,6 @@ O 0 2915 0 2931
 S
 
 
-
-#SHOPS
-0
 
 
 

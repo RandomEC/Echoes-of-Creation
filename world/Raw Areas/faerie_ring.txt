@@ -1,20 +1,5 @@
 #AREA {  10  15 } Lok - Faerie Ring~
 
-#HELPS
-
--99 Title     ~  Faerie Ring~
--99 Authors   ~  Lok~
--99 Levels    ~  {  10  15 }~
--99 Builders  ~  ~
--99 LowerVnum ~   8955 ~
--99 UpperVnum ~   8968 ~
--99 Security  ~      1 ~
--99 Recall    ~  12001 ~
--99 Flags     ~  0 ~
--99 Zone      ~      0 ~
-
-0 $~
-
 #MOBILES
 #8955
 pixie faerie~
@@ -482,6 +467,12 @@ S
 
 
 
+#SHOPS
+8963 1 2 3 4 18 120 80 0 23
+0
+
+
+
 #RESETS
 D 0  8955 5 1
 M 0 8955 4 8956
@@ -535,12 +526,6 @@ M 0 8958 3 8962
 E 0 8958 0 14
 D 0  8962 0 2
 S
-
-
-
-#SHOPS
-8963 1 2 3 4 18 120 80 0 23
-0
 
 
 

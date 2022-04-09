@@ -1,19 +1,5 @@
 #AREA {   5  30 } Raff - Elemental Canyon~
 
-#HELPS
-
--99 Title     ~  Elemental Canyon~
--99 Authors   ~  Raff~
--99 Levels    ~  {   5  30 }~
--99 Builders  ~  ~
--99 LowerVnum ~   9201 ~
--99 UpperVnum ~   9260 ~
--99 Security  ~      1 ~
--99 Recall    ~  12001 ~
--99 Flags     ~  0 ~
--99 Zone      ~      0 ~
-
-0 $~
 
 #MOBILES
 #9201
@@ -1924,6 +1910,11 @@ M 9238 spec_cast_mage
 S
 
 
+#SHOPS
+9238 0 0 0 0 0 105 15 0 23
+0
+
+
 
 #RESETS
 M 0 9238 1 9203
@@ -2092,11 +2083,6 @@ M 0 9225 8 9260
 M 0 9225 8 9260
 S
 
-
-
-#SHOPS
-9238 0 0 0 0 0 105 15 0 23
-0
 
 
 

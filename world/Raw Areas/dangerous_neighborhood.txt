@@ -1,20 +1,5 @@
 #AREA {   5  15 } Raff - Dangerous Neighborhood~
 
-#HELPS
-
--99 Title     ~  Dangerous Neighborhood~
--99 Authors   ~  Raff~
--99 Levels    ~  {   5  15 }~
--99 Builders  ~  ~
--99 LowerVnum ~   2101 ~
--99 UpperVnum ~   2172 ~
--99 Security  ~      1 ~
--99 Recall    ~  12001 ~
--99 Flags     ~  0 ~
--99 Zone      ~      8 ~
-
-0 $~
-
 #MOBILES
 #2101
 ogre gang member~
@@ -1620,6 +1605,10 @@ S
 
 
 
+#SHOPS
+0
+
+
 #RESETS
 M 0 2107 4 2102
 E 0 2105 0 17
@@ -1766,10 +1755,6 @@ E 0 2111 0 1
 E 0 2104 0 11
 S
 
-
-
-#SHOPS
-0
 
 
 

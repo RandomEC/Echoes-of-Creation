@@ -89,7 +89,7 @@ def calculate_experience(mobile):
         
     return experience
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/troll_den.txt", "rt") as myfile:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/dangerous_neighborhood.txt", "rt") as myfile:
 
     class Object:
         def __init__(self):
@@ -1909,7 +1909,7 @@ with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/troll_den.txt", "rt") 
                     objects[onum].special_function\
                         = special_function_list[2][6:]
 
-with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/troll_den.ev", "w") as output:
+with open("C:/Users/bradm/mudstuff/mygame/world/Raw Areas/dangerous_neighborhood.ev", "w") as output:
 
     # Now we are going to build out the batch file by iterating through each
     # room.

@@ -1,20 +1,5 @@
 #AREA {   5  15 } Copper - Miden'nir~
 
-#HELPS
-
--99 Title     ~  Miden'nir~
--99 Authors   ~  Copper~
--99 Levels    ~  {   5  15 }~
--99 Builders  ~  None~
--99 LowerVnum ~   3500 ~
--99 UpperVnum ~   3588 ~
--99 Security  ~      1 ~
--99 Recall    ~  12001 ~
--99 Flags     ~  0 ~
--99 Zone      ~      0 ~
-
-0 $~
-
 #MOBILES
 #3500
 wyvern~
@@ -1312,6 +1297,10 @@ M 3502 spec_thief
 S
 
 
+#SHOPS
+0
+
+
 
 #RESETS
 M 0 3501 8 3504
@@ -1356,10 +1345,6 @@ E 0 3505 0 12
 E 0 3506 0 16
 S
 
-
-
-#SHOPS
-0
 
 
 

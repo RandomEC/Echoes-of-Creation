@@ -1,19 +1,5 @@
 #AREA {   5  25 } Sandman Dragon Cult~
 
-#HELPS
-
--99 Title     ~  Dragon Cult~
--99 Authors   ~  Sandman~
--99 Levels    ~  {   5  25 }~
--99 Builders  ~  ~
--99 LowerVnum ~   9800 ~
--99 UpperVnum ~   9899 ~
--99 Security  ~      1 ~
--99 Recall    ~  12001 ~
--99 Flags     ~      0 ~
-
-0 $~
-
 #MOBILES
 #9800
 receptionist~
@@ -1473,6 +1459,11 @@ S
 
 
 
+#SHOPS
+9817 0 0 0 0 0 400 400 0 23
+0
+
+
 #RESETS
 M 0 9800 1 9850
 E 0 9825 0 17
@@ -1562,11 +1553,6 @@ G 0 9847 0
 G 0 9848 0
 S
 
-
-
-#SHOPS
-9817 0 0 0 0 0 400 400 0 23
-0
 
 
 
