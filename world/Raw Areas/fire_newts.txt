@@ -466,6 +466,11 @@ You see the entrance to the mountain to the north.
 ~
 ~
 0 0 2906
+D2
+You see a steep path downwards.
+~
+~
+0 0 2932
 S
 #2910
 Inside the Mountain~
@@ -855,7 +860,7 @@ You see two large doors.
 ~
 1 -1 2909
 S
-#2931
+#2932
 A Steep Path Down~
 You can see the top of the mountain just ahead of you to the north, but to the
 south, the ground drops off precipitously into a canyon.

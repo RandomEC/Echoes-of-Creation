@@ -1,0 +1,8460 @@
+dig/tel Hallway; r2170
+#
+tag r2170 = dangerous neighborhood:area name
+#
+desc r2170 = The hallway heads back north to the main part of the inn/pub. The stairs leading up to the guest rooms here do not seem advisable to climb.  A doorway empties out into Solomon street to the west. 
+#
+desc/edit r2170
+#
+:j l
+#
+:wq
+#
+set r2170/vnum = "r2170"
+#
+set r2170/terrain = "inside"
+#
+set r2170/room_flags = ['indoors', 'dark']
+#
+dig/tel Beginning of White Dragon Boulevard; r2102
+#
+tag r2102 = dangerous neighborhood:area name
+#
+desc r2102 = This section of town has been overrun by the Troll gang.  Even the police stay out of here for fear of being brutalized.  This was once a nice lower-middle class neighborhood, but know the gangs run the streets.  All the shops and homes have been boarded up and abandoned. An alleyway is to the west and the street continues east.  An overgrown lot is to the south. 
+#
+desc/edit r2102
+#
+:j l
+#
+:wq
+#
+set r2102/vnum = "r2102"
+#
+set r2102/terrain = "city"
+#
+dig/tel Along White Dragon Boulevard; r2103
+#
+tag r2103 = dangerous neighborhood:area name
+#
+desc r2103 = Everywhere you look you see signs of recent violence.  Patches of blood lie everywhere and broken sticks and abandoned knives are strewn here and there.  An overgrown lot is to the south.  White Dragon Boulevard leads east and west. 
+#
+desc/edit r2103
+#
+:j l
+#
+:wq
+#
+set r2103/vnum = "r2103"
+#
+set r2103/terrain = "city"
+#
+dig/tel White Dragon Boulevard at Armory; r2104
+#
+tag r2104 = dangerous neighborhood:area name
+#
+desc r2104 = Only gang members dare wander the streets here. What used to be the armory lies to the south.  White Dragon Boulevard leads east and west. 
+#
+desc/edit r2104
+#
+:j l
+#
+:wq
+#
+set r2104/vnum = "r2104"
+#
+set r2104/terrain = "city"
+#
+dig/tel White Dragon Blvd.; r2105
+#
+tag r2105 = dangerous neighborhood:area name
+#
+desc r2105 = Black Dragon Avenue used to run south from here but the way has been blocked by the toppling of a building into the street.  White Dragon Boulevard continues east and west. 
+#
+desc/edit r2105
+#
+:j l
+#
+:wq
+#
+set r2105/vnum = "r2105"
+#
+set r2105/terrain = "city"
+#
+dig/tel Corner of Ice and White Dragon; r2106
+#
+tag r2106 = dangerous neighborhood:area name
+#
+desc r2106 = Ice Dragon Way leads south from here.  It used to run the whole length of the neighborhood and way lined with beautiful crystal sculptures. White Dragon boulevard leads east and west from here. 
+#
+desc/edit r2106
+#
+:j l
+#
+:wq
+#
+set r2106/vnum = "r2106"
+#
+set r2106/terrain = "city"
+#
+dig/tel White Dragon Boulevard; r2107
+#
+tag r2107 = dangerous neighborhood:area name
+#
+desc r2107 = A once majestic inn with a white marble facade lies to the south. Unfortunately, it has fallen into disrepair and decay.  You can continue east or west. 
+#
+desc/edit r2107
+#
+:j l
+#
+:wq
+#
+set r2107/vnum = "r2107"
+#
+set r2107/terrain = "city"
+#
+dig/tel Corner of Bronze and White Dragon; r2108
+#
+tag r2108 = dangerous neighborhood:area name
+#
+desc r2108 = This is the north-east corner of the neighborhood. White Dragon boulevard heads west and Bronze Dragon street heads south. 
+#
+desc/edit r2108
+#
+:j l
+#
+:wq
+#
+set r2108/vnum = "r2108"
+#
+set r2108/terrain = "city"
+#
+dig/tel An Overgrown Lot; r2109
+#
+tag r2109 = dangerous neighborhood:area name
+#
+desc r2109 = A huge building was going to be built here, but they gave the project up when violence took over the town.  Now it is just a weed-strewn plot of land.  The lot continues east and there is a road north. 
+#
+desc/edit r2109
+#
+:j l
+#
+:wq
+#
+set r2109/vnum = "r2109"
+#
+set r2109/terrain = "field"
+#
+dig/tel East End of an Overgrown Plot of Land; r2110
+#
+tag r2110 = dangerous neighborhood:area name
+#
+desc r2110 = This was planned to be a park, but the developer was scared out of town by the gang.  Now it is just a dusty square of land. The park was started to the south.  The lot continues west and there is a street to the north. 
+#
+desc/edit r2110
+#
+:j l
+#
+:wq
+#
+set r2110/vnum = "r2110"
+#
+set r2110/terrain = "field"
+#
+dig/tel Armory; r2111
+#
+tag r2111 = dangerous neighborhood:area name
+#
+desc r2111 = Well actually, this is what USED to be the armory.  The equipment has all been stolen or broken beyond repair. The back wall of the building has been bashed down, allowing you to go south.  White Dragon Boulevard is north. 
+#
+desc/edit r2111
+#
+:j l
+#
+:wq
+#
+set r2111/vnum = "r2111"
+#
+set r2111/terrain = "city"
+#
+set r2111/room_flags = ['indoors']
+#
+dig/tel A Bend in the Way; r2112
+#
+tag r2112 = dangerous neighborhood:area name
+#
+desc r2112 = Ice Dragon Way bends east and south from here.  You notice a lot of blood dried into the dirt here. 
+#
+desc/edit r2112
+#
+:j l
+#
+:wq
+#
+set r2112/vnum = "r2112"
+#
+set r2112/terrain = "city"
+#
+dig/tel Ice Dragon Bend; r2113
+#
+tag r2113 = dangerous neighborhood:area name
+#
+desc r2113 = Ice Dragon Way bends to the north and west here.  There are footprints here.  They seem to indicate a large struggle took place here recently.  What used to be the town Magic shop is to the east. 
+#
+desc/edit r2113
+#
+:j l
+#
+:wq
+#
+set r2113/vnum = "r2113"
+#
+set r2113/terrain = "city"
+#
+dig/tel The Remains of the Magic Shop; r2114
+#
+tag r2114 = dangerous neighborhood:area name
+#
+desc r2114 = The wizard was tough but he couldn't take on 50 of them at once.  So he died and they took all his stuff and used it on their fellowmen. The front door leads west back out to the street.  There is a back door leading to another street to the east. 
+#
+desc/edit r2114
+#
+:j l
+#
+:wq
+#
+set r2114/vnum = "r2114"
+#
+set r2114/terrain = "city"
+#
+set r2114/room_flags = ['indoors']
+#
+dig/tel Bronze Dragon Street at wizard's back door; r2115
+#
+tag r2115 = dangerous neighborhood:area name
+#
+desc r2115 = Bronze Dragon street goes north and south.  The back door to what remains of the magic shop is west. 
+#
+desc/edit r2115
+#
+:j l
+#
+:wq
+#
+set r2115/vnum = "r2115"
+#
+set r2115/terrain = "city"
+#
+dig/tel Dracolich Plaza; r2116
+#
+tag r2116 = dangerous neighborhood:area name
+#
+desc r2116 = They began construction of a pleasant plaza here.  You wouldn't have known it though if I hadn't told you.  It has been renamed in honor of the Troll gang's idol, the Dracolich.  It has become sort of a training ground.  There is a short cut to the east and an overgrown lot of land to the north. 
+#
+desc/edit r2116
+#
+:j l
+#
+:wq
+#
+set r2116/vnum = "r2116"
+#
+set r2116/terrain = "field"
+#
+dig/tel Shortcut; r2117
+#
+tag r2117 = dangerous neighborhood:area name
+#
+desc r2117 = This is a shortcut between Dracolich Plaza and the center of town. Dracolich Plaza is to the west and the shortcut continues south. 
+#
+desc/edit r2117
+#
+:j l
+#
+:wq
+#
+set r2117/vnum = "r2117"
+#
+set r2117/terrain = "city"
+#
+dig/tel Ice Dragon Way; r2118
+#
+tag r2118 = dangerous neighborhood:area name
+#
+desc r2118 = Several smashed crystal statues line the Way here.  You begin to wonder who smashed them, and with what.  The Way bends out of sight to the north and continues south.  To the east is a courtyard. 
+#
+desc/edit r2118
+#
+:j l
+#
+:wq
+#
+set r2118/vnum = "r2118"
+#
+set r2118/terrain = "city"
+#
+dig/tel Courtyard North; r2119
+#
+tag r2119 = dangerous neighborhood:area name
+#
+desc r2119 = Once it was the courtyard of a beautiful building complex.  But alas, someone forgot to water the plants and they all died.  Then again, you wonder how many people have died here too.  The courtyard extends to the south and there is a road to the west. 
+#
+desc/edit r2119
+#
+:j l
+#
+:wq
+#
+set r2119/vnum = "r2119"
+#
+set r2119/terrain = "city"
+#
+set r2119/room_flags = ['indoors']
+#
+dig/tel Bronze Dragon Street; r2120
+#
+tag r2120 = dangerous neighborhood:area name
+#
+desc r2120 = There used to be a gate out to the east here which led to distant lands. The gate has rusted permanently shut.  The street goes north and south. 
+#
+desc/edit r2120
+#
+:j l
+#
+:wq
+#
+set r2120/vnum = "r2120"
+#
+set r2120/terrain = "city"
+#
+dig/tel Shortcut; r2121
+#
+tag r2121 = dangerous neighborhood:area name
+#
+desc r2121 = The shortcut extends north.  There is a street to the east. 
+#
+desc/edit r2121
+#
+:j l
+#
+:wq
+#
+set r2121/vnum = "r2121"
+#
+set r2121/terrain = "city"
+#
+dig/tel Ice Dragon Way; r2122
+#
+tag r2122 = dangerous neighborhood:area name
+#
+desc r2122 = The Way continues north and intersects with Yellow Dragon Avenue to the south.  For some reason, you somehow realize that there is a shortcut to the west that leads to Dracolich Plaza. 
+#
+desc/edit r2122
+#
+:j l
+#
+:wq
+#
+set r2122/vnum = "r2122"
+#
+set r2122/terrain = "city"
+#
+dig/tel Courtyard South; r2123
+#
+tag r2123 = dangerous neighborhood:area name
+#
+desc r2123 = Once full of lush green plants, it is now barren of growth.  A set of stairs used to extend up to a suite of rooms but the set is missing stairs 3-15.  The courtyard extends north and there is a street to the south. 
+#
+desc/edit r2123
+#
+:j l
+#
+:wq
+#
+set r2123/vnum = "r2123"
+#
+set r2123/terrain = "city"
+#
+set r2123/room_flags = ['indoors']
+#
+dig/tel Old Abandoned Warehouse; r2124
+#
+tag r2124 = dangerous neighborhood:area name
+#
+desc r2124 = Once the center of a lucrative storage business, it has fallen to disrepair like everything else.  It is now the hideout of the Troll gang.  The gang leader runs his reign of terror from here. There is a wooden door barely on the hinges to the east. 
+#
+desc/edit r2124
+#
+:j l
+#
+:wq
+#
+set r2124/vnum = "r2124"
+#
+set r2124/terrain = "city"
+#
+set r2124/room_flags = ['indoors', 'dark']
+#
+dig/tel Bronze Dragon Street at Warehouse; r2125
+#
+tag r2125 = dangerous neighborhood:area name
+#
+desc r2125 = The street runs north and south.  There is an old wooden door leading to a warehouse to the west.  The warehouse LOOKS abandoned. . . 
+#
+desc/edit r2125
+#
+:j l
+#
+:wq
+#
+set r2125/vnum = "r2125"
+#
+set r2125/terrain = "city"
+#
+dig/tel Yellow Dragon Road; r2126
+#
+tag r2126 = dangerous neighborhood:area name
+#
+desc r2126 = Yellow Dragon Road is the southern boundary of Troll Territory.  The road extends east.  You enter "no-man's land" to the south. 
+#
+desc/edit r2126
+#
+:j l
+#
+:wq
+#
+set r2126/vnum = "r2126"
+#
+set r2126/terrain = "city"
+#
+dig/tel Yellow Dragon Road; r2127
+#
+tag r2127 = dangerous neighborhood:area name
+#
+desc r2127 = The road runs east and west.  Ice Dragon Way leads north from here. 
+#
+desc/edit r2127
+#
+:j l
+#
+:wq
+#
+set r2127/vnum = "r2127"
+#
+set r2127/terrain = "city"
+#
+dig/tel Yellow Dragon Road; r2128
+#
+tag r2128 = dangerous neighborhood:area name
+#
+desc r2128 = The road continues east and west.  There is a courtyard to the north. You enter "no man's land" to the south. 
+#
+desc/edit r2128
+#
+:j l
+#
+:wq
+#
+set r2128/vnum = "r2128"
+#
+set r2128/terrain = "city"
+#
+dig/tel Yellow Dragon Road; r2129
+#
+tag r2129 = dangerous neighborhood:area name
+#
+desc r2129 = There is a barred window to the north.  There appears to be a light coming from the cracks around it.  The road extends east and west from here.  Or you can enter "no man's land" south from here. 
+#
+desc/edit r2129
+#
+:j l
+#
+:wq
+#
+set r2129/vnum = "r2129"
+#
+set r2129/terrain = "city"
+#
+dig/tel Yellow Dragon Road; r2130
+#
+tag r2130 = dangerous neighborhood:area name
+#
+desc r2130 = Bronze Dragon Street intersects here and runs north.  Yellow Dragon ends here but continues to the west. 
+#
+desc/edit r2130
+#
+:j l
+#
+:wq
+#
+set r2130/vnum = "r2130"
+#
+set r2130/terrain = "city"
+#
+dig/tel NO MAN'S LAND; r2131
+#
+tag r2131 = dangerous neighborhood:area name
+#
+desc r2131 = This is the section of town between the two gang's territories.  This is usually where the violence starts.  No Man's land continues south and east; or there is a street to the north. 
+#
+desc/edit r2131
+#
+:j l
+#
+:wq
+#
+set r2131/vnum = "r2131"
+#
+set r2131/terrain = "mountain"
+#
+dig/tel NO MAN'S LAND; r2132
+#
+tag r2132 = dangerous neighborhood:area name
+#
+desc r2132 = This is the section of town between the two gang's territories.  This is usually where the violence starts.  No Man's land continues south east and west. 
+#
+desc/edit r2132
+#
+:j l
+#
+:wq
+#
+set r2132/vnum = "r2132"
+#
+set r2132/terrain = "mountain"
+#
+dig/tel NO MAN'S LAND; r2133
+#
+tag r2133 = dangerous neighborhood:area name
+#
+desc r2133 = This is the section of town between the two gang's territories.  This is usually where the violence starts.  No Man's land continues south, east and west; or there is a street to the north. 
+#
+desc/edit r2133
+#
+:j l
+#
+:wq
+#
+set r2133/vnum = "r2133"
+#
+set r2133/terrain = "mountain"
+#
+dig/tel NO MAN'S LAND; r2134
+#
+tag r2134 = dangerous neighborhood:area name
+#
+desc r2134 = This is the section of town between the two gang's territories.  This is usually where the violence starts.  No Man's land continues south, east, and west; or there is a street to the north. 
+#
+desc/edit r2134
+#
+:j l
+#
+:wq
+#
+set r2134/vnum = "r2134"
+#
+set r2134/terrain = "mountain"
+#
+dig/tel NO MAN'S LAND; r2135
+#
+tag r2135 = dangerous neighborhood:area name
+#
+desc r2135 = This is the section of town between the two gang's territories.  This is usually where the violence starts.  No Man's land continues south and west. 
+#
+desc/edit r2135
+#
+:j l
+#
+:wq
+#
+set r2135/vnum = "r2135"
+#
+set r2135/terrain = "mountain"
+#
+dig/tel NO MAN'S LAND; r2136
+#
+tag r2136 = dangerous neighborhood:area name
+#
+desc r2136 = This is the section of town between the two gang's territories.  This is usually where the violence starts.  No Man's land continues north and east; or there is a street to the south. 
+#
+desc/edit r2136
+#
+:j l
+#
+:wq
+#
+set r2136/vnum = "r2136"
+#
+set r2136/terrain = "mountain"
+#
+dig/tel NO MAN'S LAND; r2137
+#
+tag r2137 = dangerous neighborhood:area name
+#
+desc r2137 = This is the section of town between the two gang's territories.  This is usually where the violence starts.  No Man's land continues north, east and west. 
+#
+desc/edit r2137
+#
+:j l
+#
+:wq
+#
+set r2137/vnum = "r2137"
+#
+set r2137/terrain = "mountain"
+#
+dig/tel NO MAN'S LAND; r2138
+#
+tag r2138 = dangerous neighborhood:area name
+#
+desc r2138 = This is the section of town between the two gang's territories.  This is usually where the violence starts.  No Man's land continues north, east, and west; or there is a street to the south. 
+#
+desc/edit r2138
+#
+:j l
+#
+:wq
+#
+set r2138/vnum = "r2138"
+#
+set r2138/terrain = "mountain"
+#
+dig/tel NO MAN'S LAND; r2139
+#
+tag r2139 = dangerous neighborhood:area name
+#
+desc r2139 = This is the section of town between the two gang's territories.  This is usually where the violence starts.  No Man's land continues north, east, and west. 
+#
+desc/edit r2139
+#
+:j l
+#
+:wq
+#
+set r2139/vnum = "r2139"
+#
+set r2139/terrain = "mountain"
+#
+dig/tel NO MAN'S LAND; r2140
+#
+tag r2140 = dangerous neighborhood:area name
+#
+desc r2140 = This is the section of town between the two gangs' territories.  This is usually where the violence starts.  No Man's land continues north and west; or there is a street to the south. 
+#
+desc/edit r2140
+#
+:j l
+#
+:wq
+#
+set r2140/vnum = "r2140"
+#
+set r2140/terrain = "mountain"
+#
+dig/tel Bend in Hector Street; r2141
+#
+tag r2141 = dangerous neighborhood:area name
+#
+desc r2141 = Hector street bends to the east and the south here.  "No Man's Land" entrance is to the north. 
+#
+desc/edit r2141
+#
+:j l
+#
+:wq
+#
+set r2141/vnum = "r2141"
+#
+set r2141/terrain = "city"
+#
+dig/tel Hector Street at Bakery; r2142
+#
+tag r2142 = dangerous neighborhood:area name
+#
+desc r2142 = Hector street runs east and west.  The Bakery used to be to the south but the entrance is sealed off.  Probably just a bunch of stale pies in there anyways. 
+#
+desc/edit r2142
+#
+:j l
+#
+:wq
+#
+set r2142/vnum = "r2142"
+#
+set r2142/terrain = "city"
+#
+dig/tel Another Corner of Hector and Achilles streets; r2143
+#
+tag r2143 = dangerous neighborhood:area name
+#
+desc r2143 = Achilles street heads to the south and Hector runs east and west. There is an entrance to "No Man's Land" to the north.  On the southwest corner of this intersection, it looks like a building was recently burned down. 
+#
+desc/edit r2143
+#
+:j l
+#
+:wq
+#
+set r2143/vnum = "r2143"
+#
+set r2143/terrain = "city"
+#
+dig/tel Hector Street at Jeweler; r2144
+#
+tag r2144 = dangerous neighborhood:area name
+#
+desc r2144 = Once a bright spot in the town, it now looks like one of the hardest hit by the violence.  The building could collapse at any moment.  The street continues east and west. 
+#
+desc/edit r2144
+#
+:j l
+#
+:wq
+#
+set r2144/vnum = "r2144"
+#
+set r2144/terrain = "city"
+#
+dig/tel Corner of Ajax and Hector; r2145
+#
+tag r2145 = dangerous neighborhood:area name
+#
+desc r2145 = There is a grand fountain to the east but the water doesn't look good to drink.  Ajax street heads south and Hector goes back west.  "No Man's Land" is to the north. 
+#
+desc/edit r2145
+#
+:j l
+#
+:wq
+#
+set r2145/vnum = "r2145"
+#
+set r2145/terrain = "city"
+#
+dig/tel Hector Street; r2146
+#
+tag r2146 = dangerous neighborhood:area name
+#
+desc r2146 = The street is full of garbage here.  An odd building lies to the west, but you don't seem to be able to find a way into it.  The street runs north and south here. 
+#
+desc/edit r2146
+#
+:j l
+#
+:wq
+#
+set r2146/vnum = "r2146"
+#
+set r2146/terrain = "city"
+#
+dig/tel Achilles Avenue; r2147
+#
+tag r2147 = dangerous neighborhood:area name
+#
+desc r2147 = The town bards sang of the victory parades that used to pass along this route.  It was once a major way through the center of town.  The street goes south to a bend and north to an intersection. 
+#
+desc/edit r2147
+#
+:j l
+#
+:wq
+#
+set r2147/vnum = "r2147"
+#
+set r2147/terrain = "city"
+#
+dig/tel A Small, Ruined Chapel; r2148
+#
+tag r2148 = dangerous neighborhood:area name
+#
+desc r2148 = This was a small temple built to honor the minor gods and goddesses. It is now desecrated by graffiti and vandalism.  Perhaps its worst defilement is that it is the hangout of the Ogre gang.  There is a street to the east through a rusty metal door. 
+#
+desc/edit r2148
+#
+:j l
+#
+:wq
+#
+set r2148/vnum = "r2148"
+#
+set r2148/terrain = "city"
+#
+set r2148/room_flags = ['indoors', 'dark']
+#
+dig/tel Ajax Avenue at Chapel; r2149
+#
+tag r2149 = dangerous neighborhood:area name
+#
+desc r2149 = The temple to honor the minor gods is through a rusty metal door to the west.  The street continues north and south.  You hear the muffled sounds of screams coming from the chapel. 
+#
+desc/edit r2149
+#
+:j l
+#
+:wq
+#
+set r2149/vnum = "r2149"
+#
+set r2149/terrain = "city"
+#
+dig/tel First Intersection of Hector and Achilles; r2150
+#
+tag r2150 = dangerous neighborhood:area name
+#
+desc r2150 = There is a large statue here depicting a battle between two great warriors.  You think it's odd that it has not been defiled, but then you sense an aura protecting it.  Achilles runs east and south, while Hector heads out to the north. 
+#
+desc/edit r2150
+#
+:j l
+#
+:wq
+#
+set r2150/vnum = "r2150"
+#
+set r2150/terrain = "city"
+#
+dig/tel Hector Street; r2151
+#
+tag r2151 = dangerous neighborhood:area name
+#
+desc r2151 = A large open space, possibly a cemetery, lies to the south. There is a large wrought-iron fence with spikes on top which prevents you from entering the area.  The street continues east and west. 
+#
+desc/edit r2151
+#
+:j l
+#
+:wq
+#
+set r2151/vnum = "r2151"
+#
+set r2151/terrain = "city"
+#
+dig/tel A bend in the road; r2152
+#
+tag r2152 = dangerous neighborhood:area name
+#
+desc r2152 = Achilles Avenue bends to the north and west here.  There is also a narrow alley to the south. 
+#
+desc/edit r2152
+#
+:j l
+#
+:wq
+#
+set r2152/vnum = "r2152"
+#
+set r2152/terrain = "city"
+#
+dig/tel What Is Left of the Weapon Shop; r2153
+#
+tag r2153 = dangerous neighborhood:area name
+#
+desc r2153 = It doesn't even look like those punks gave the weaponsmith a proper burial.  But what a going away present he seems to have received!  Blood is splattered and dried all over the walls here. It looks like a great deal of carnage happened here.  The way out to the east leads out onto a street. 
+#
+desc/edit r2153
+#
+:j l
+#
+:wq
+#
+set r2153/vnum = "r2153"
+#
+set r2153/terrain = "inside"
+#
+set r2153/room_flags = ['indoors']
+#
+dig/tel Ajax Street at Weapon Shop (or What's Left of It); r2154
+#
+tag r2154 = dangerous neighborhood:area name
+#
+desc r2154 = The street goes north and south.  The stables used to be to the east, but I bet all the horses are dead or gone. 
+#
+desc/edit r2154
+#
+:j l
+#
+:wq
+#
+set r2154/vnum = "r2154"
+#
+set r2154/terrain = "city"
+#
+dig/tel Khan Park; r2155
+#
+tag r2155 = dangerous neighborhood:area name
+#
+desc r2155 = Not really a "park" as you and I would think of it but it seems queerly peaceful here in comparison to the rest of the area.  There seems to be some kind of memorial to the great Mongol warrior Khan being crudely constructed here. There is a street to the east and another to the south. 
+#
+desc/edit r2155
+#
+:j l
+#
+:wq
+#
+set r2155/vnum = "r2155"
+#
+set r2155/terrain = "field"
+#
+dig/tel Achilles Avenue at Entrance to Park; r2156
+#
+tag r2156 = dangerous neighborhood:area name
+#
+desc r2156 = A ... park?! lies to the west.  The street runs south to an intersection and curves to the north. 
+#
+desc/edit r2156
+#
+:j l
+#
+:wq
+#
+set r2156/vnum = "r2156"
+#
+set r2156/terrain = "city"
+#
+dig/tel A Bend in Ajax; r2157
+#
+tag r2157 = dangerous neighborhood:area name
+#
+desc r2157 = The roads bends south and east here.  You barely notice a small alley leading north.  Some kind of tunnel entrance is to the west but it has been crushed under its own weight. 
+#
+desc/edit r2157
+#
+:j l
+#
+:wq
+#
+set r2157/vnum = "r2157"
+#
+set r2157/terrain = "city"
+#
+dig/tel Ajax Street; r2158
+#
+tag r2158 = dangerous neighborhood:area name
+#
+desc r2158 = A once prideful guildhouse was on the northeast corner of this intersection.  Most of the walls and ceiling have long since been demolished.  An inn/pub is to the south.  The street bends to the east or west. 
+#
+desc/edit r2158
+#
+:j l
+#
+:wq
+#
+set r2158/vnum = "r2158"
+#
+set r2158/terrain = "city"
+#
+dig/tel Curve in the Road; r2159
+#
+tag r2159 = dangerous neighborhood:area name
+#
+desc r2159 = The street goes north or west from here.  A narrow street once headed southeast from here. 
+#
+desc/edit r2159
+#
+:j l
+#
+:wq
+#
+set r2159/vnum = "r2159"
+#
+set r2159/terrain = "city"
+#
+dig/tel A Wide Alleyway; r2160
+#
+tag r2160 = dangerous neighborhood:area name
+#
+desc r2160 = The sides of the alleyway have been vandalized many times. One patch of graffiti actually looks readable: This section has been designed for levels 5 through 10 If you are above level 10 please don't expect much. If you are below level 5 enter at your own risk. In another spot it says "now entering Ogre territory..." A street lies to the east, and west, it seems to fade into a blur, like some sort of magical pathway. 
+#
+desc/edit r2160
+#
+:j l
+#
+:wq
+#
+set r2160/vnum = "r2160"
+#
+set r2160/terrain = "city"
+#
+set r2160/room_flags = ['no mob', 'dark']
+#
+dig/tel Alexander Road; r2161
+#
+tag r2161 = dangerous neighborhood:area name
+#
+desc r2161 = You see many gang members walking around looking for fights to pick and things to break.  It seems as if all of the other citizens have been run out of town.  All the former homes are boarded up and uninhabitable.  The road continues east and west. 
+#
+desc/edit r2161
+#
+:j l
+#
+:wq
+#
+set r2161/vnum = "r2161"
+#
+set r2161/terrain = "city"
+#
+dig/tel Alexander Street at Park Entrance; r2162
+#
+tag r2162 = dangerous neighborhood:area name
+#
+desc r2162 = A park-looking area lies to the north and a passage between two buildings leads to another street to the south. 
+#
+desc/edit r2162
+#
+:j l
+#
+:wq
+#
+set r2162/vnum = "r2162"
+#
+set r2162/terrain = "city"
+#
+dig/tel Achilles Avenue; r2163
+#
+tag r2163 = dangerous neighborhood:area name
+#
+desc r2163 = The Avenue Runs north and south.  You sense you are deep within Ogre gang territory, and a chill goes up your spine. 
+#
+desc/edit r2163
+#
+:j l
+#
+:wq
+#
+set r2163/vnum = "r2163"
+#
+set r2163/terrain = "city"
+#
+dig/tel Ajax Street; r2164
+#
+tag r2164 = dangerous neighborhood:area name
+#
+desc r2164 = You can see a sinister black wrought-iron fence to the west. You wonder if it's keeping you out, or the ghouls in? 
+#
+desc/edit r2164
+#
+:j l
+#
+:wq
+#
+set r2164/vnum = "r2164"
+#
+set r2164/terrain = "city"
+#
+dig/tel The Inn/Pub; r2165
+#
+tag r2165 = dangerous neighborhood:area name
+#
+desc r2165 = The inn actually looks fairly functional despite its lack of repair.  The boys come here to hoot it up and drink themselves into oblivion sometimes.  It looks as if the beer is still on tap!!! A hallway leads south and you spy a street through the doorway to the north. 
+#
+desc/edit r2165
+#
+:j l
+#
+:wq
+#
+set r2165/vnum = "r2165"
+#
+set r2165/terrain = "inside"
+#
+set r2165/room_flags = ['indoors']
+#
+dig/tel Solomon Street; r2166
+#
+tag r2166 = dangerous neighborhood:area name
+#
+desc r2166 = This street forms the southern boundary of Ogre territory.  The street extends far to the east.  There is also a pathway between buildings which leads to another street to the north. 
+#
+desc/edit r2166
+#
+:j l
+#
+:wq
+#
+set r2166/vnum = "r2166"
+#
+set r2166/terrain = "city"
+#
+dig/tel Intersection of Achilles and Solomon; r2167
+#
+tag r2167 = dangerous neighborhood:area name
+#
+desc r2167 = Solomon street is to the east and west.  The other part of the T is Achilles Avenue, starting here and winding to the north. 
+#
+desc/edit r2167
+#
+:j l
+#
+:wq
+#
+set r2167/vnum = "r2167"
+#
+set r2167/terrain = "city"
+#
+dig/tel Solomon Street; r2168
+#
+tag r2168 = dangerous neighborhood:area name
+#
+desc r2168 = A wrought-iron fence blocks off what used to be an entrance to the cemetery here to the north.  The evil just seems too strong to consider entering.  You feel you should stick with the "lesser" evils along the road to the east and west. 
+#
+desc/edit r2168
+#
+:j l
+#
+:wq
+#
+set r2168/vnum = "r2168"
+#
+set r2168/terrain = "city"
+#
+dig/tel Intersection of Ajax and Solomon; r2169
+#
+tag r2169 = dangerous neighborhood:area name
+#
+desc r2169 = The two roads meet at a corner here.  Ajax runs north and Solomon heads west.  An inn/pub is through a back doorway to the east. 
+#
+desc/edit r2169
+#
+:j l
+#
+:wq
+#
+set r2169/vnum = "r2169"
+#
+set r2169/terrain = "city"
+#
+tel r2170
+#
+openexit north; n; e3600^ south = r2165
+#
+tag e3600 = dangerous neighborhood:area name
+#
+set e3600/door_attributes = ["open"]
+#
+set e3600/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit west; w; e3601^ east = r2169
+#
+tag e3601 = dangerous neighborhood:area name
+#
+set e3601/door_attributes = ["open"]
+#
+set e3601/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2102
+#
+openexit east; e; e3602^ west = r2103
+#
+tag e3602 = dangerous neighborhood:area name
+#
+set e3602/door_attributes = ["open"]
+#
+set e3602/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3603^ north = r2109
+#
+tag e3603 = dangerous neighborhood:area name
+#
+set e3603/door_attributes = ["open"]
+#
+set e3603/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2103
+#
+openexit east; e; e3604^ west = r2104
+#
+tag e3604 = dangerous neighborhood:area name
+#
+set e3604/door_attributes = ["open"]
+#
+set e3604/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3605^ north = r2110
+#
+tag e3605 = dangerous neighborhood:area name
+#
+set e3605/door_attributes = ["open"]
+#
+set e3605/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3606
+#
+tag e3606 = dangerous neighborhood:area name
+#
+set e3606/door_attributes = ["open"]
+#
+set e3606/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2104
+#
+openexit east; e; e3607^ west = r2105
+#
+tag e3607 = dangerous neighborhood:area name
+#
+set e3607/door_attributes = ["open"]
+#
+set e3607/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3608^ north = r2111
+#
+tag e3608 = dangerous neighborhood:area name
+#
+set e3608/door_attributes = ["open"]
+#
+set e3608/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3609
+#
+tag e3609 = dangerous neighborhood:area name
+#
+set e3609/door_attributes = ["open"]
+#
+set e3609/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2105
+#
+openexit east; e; e3610^ west = r2106
+#
+tag e3610 = dangerous neighborhood:area name
+#
+set e3610/door_attributes = ["open"]
+#
+set e3610/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3611
+#
+tag e3611 = dangerous neighborhood:area name
+#
+set e3611/door_attributes = ["open"]
+#
+set e3611/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2106
+#
+openexit east; e; e3612^ west = r2107
+#
+tag e3612 = dangerous neighborhood:area name
+#
+set e3612/door_attributes = ["open"]
+#
+set e3612/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3613^ north = r2113
+#
+tag e3613 = dangerous neighborhood:area name
+#
+set e3613/door_attributes = ["open"]
+#
+set e3613/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3614
+#
+tag e3614 = dangerous neighborhood:area name
+#
+set e3614/door_attributes = ["open"]
+#
+set e3614/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2107
+#
+openexit east; e; e3615^ west = r2108
+#
+tag e3615 = dangerous neighborhood:area name
+#
+set e3615/door_attributes = ["open"]
+#
+set e3615/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3616
+#
+tag e3616 = dangerous neighborhood:area name
+#
+set e3616/door_attributes = ["open"]
+#
+set e3616/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2108
+#
+openexit south; s; e3617^ north = r2115
+#
+tag e3617 = dangerous neighborhood:area name
+#
+set e3617/door_attributes = ["open"]
+#
+set e3617/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3618
+#
+tag e3618 = dangerous neighborhood:area name
+#
+set e3618/door_attributes = ["open"]
+#
+set e3618/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2109
+#
+alias north = n^ e3619
+#
+tag e3619 = dangerous neighborhood:area name
+#
+set e3619/door_attributes = ["open"]
+#
+set e3619/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3620^ west = r2110
+#
+tag e3620 = dangerous neighborhood:area name
+#
+set e3620/door_attributes = ["open"]
+#
+set e3620/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r2110
+#
+alias north = n^ e3621
+#
+tag e3621 = dangerous neighborhood:area name
+#
+set e3621/door_attributes = ["open"]
+#
+set e3621/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3622^ north = r2116
+#
+tag e3622 = dangerous neighborhood:area name
+#
+set e3622/door_attributes = ["open"]
+#
+set e3622/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3623
+#
+tag e3623 = dangerous neighborhood:area name
+#
+set e3623/door_attributes = ["open"]
+#
+set e3623/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2111
+#
+alias north = n^ e3624
+#
+tag e3624 = dangerous neighborhood:area name
+#
+set e3624/door_attributes = ["open"]
+#
+set e3624/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3625^ north = r2117
+#
+tag e3625 = dangerous neighborhood:area name
+#
+set e3625/door_attributes = ["open"]
+#
+set e3625/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2112
+#
+openexit east; e; e3626^ west = r2113
+#
+tag e3626 = dangerous neighborhood:area name
+#
+set e3626/door_attributes = ["open"]
+#
+set e3626/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3627^ north = r2118
+#
+tag e3627 = dangerous neighborhood:area name
+#
+set e3627/door_attributes = ["open"]
+#
+set e3627/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2113
+#
+alias north = n^ e3628
+#
+tag e3628 = dangerous neighborhood:area name
+#
+set e3628/door_attributes = ["open"]
+#
+set e3628/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3629^ west = r2114
+#
+tag e3629 = dangerous neighborhood:area name
+#
+set e3629/door_attributes = ["open"]
+#
+set e3629/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3630
+#
+tag e3630 = dangerous neighborhood:area name
+#
+set e3630/door_attributes = ["open"]
+#
+set e3630/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2114
+#
+openexit east; e; e3631^ west = r2115
+#
+tag e3631 = dangerous neighborhood:area name
+#
+set e3631/door_attributes = ["open"]
+#
+set e3631/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3632
+#
+tag e3632 = dangerous neighborhood:area name
+#
+set e3632/door_attributes = ["open"]
+#
+set e3632/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2115
+#
+alias north = n^ e3633
+#
+tag e3633 = dangerous neighborhood:area name
+#
+set e3633/door_attributes = ["open"]
+#
+set e3633/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3634^ north = r2120
+#
+tag e3634 = dangerous neighborhood:area name
+#
+set e3634/door_attributes = ["open"]
+#
+set e3634/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3635
+#
+tag e3635 = dangerous neighborhood:area name
+#
+set e3635/door_attributes = ["open"]
+#
+set e3635/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2116
+#
+alias north = n^ e3636
+#
+tag e3636 = dangerous neighborhood:area name
+#
+set e3636/door_attributes = ["open"]
+#
+set e3636/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3637^ west = r2117
+#
+tag e3637 = dangerous neighborhood:area name
+#
+set e3637/door_attributes = ["open"]
+#
+set e3637/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r2117
+#
+alias north = n^ e3638
+#
+tag e3638 = dangerous neighborhood:area name
+#
+set e3638/door_attributes = ["open"]
+#
+set e3638/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3639^ north = r2121
+#
+tag e3639 = dangerous neighborhood:area name
+#
+set e3639/door_attributes = ["open"]
+#
+set e3639/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3640
+#
+tag e3640 = dangerous neighborhood:area name
+#
+set e3640/door_attributes = ["open"]
+#
+set e3640/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2118
+#
+alias north = n^ e3641
+#
+tag e3641 = dangerous neighborhood:area name
+#
+set e3641/door_attributes = ["open"]
+#
+set e3641/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3642^ west = r2119
+#
+tag e3642 = dangerous neighborhood:area name
+#
+set e3642/door_attributes = ["open"]
+#
+set e3642/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3643^ north = r2122
+#
+tag e3643 = dangerous neighborhood:area name
+#
+set e3643/door_attributes = ["open"]
+#
+set e3643/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2119
+#
+openexit south; s; e3644^ north = r2123
+#
+tag e3644 = dangerous neighborhood:area name
+#
+set e3644/door_attributes = ["open"]
+#
+set e3644/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3645
+#
+tag e3645 = dangerous neighborhood:area name
+#
+set e3645/door_attributes = ["open"]
+#
+set e3645/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2120
+#
+alias north = n^ e3646
+#
+tag e3646 = dangerous neighborhood:area name
+#
+set e3646/door_attributes = ["open"]
+#
+set e3646/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3647^ north = r2125
+#
+tag e3647 = dangerous neighborhood:area name
+#
+set e3647/door_attributes = ["open"]
+#
+set e3647/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2121
+#
+alias north = n^ e3648
+#
+tag e3648 = dangerous neighborhood:area name
+#
+set e3648/door_attributes = ["open"]
+#
+set e3648/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3649^ west = r2122
+#
+tag e3649 = dangerous neighborhood:area name
+#
+set e3649/door_attributes = ["open"]
+#
+set e3649/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r2122
+#
+alias north = n^ e3650
+#
+tag e3650 = dangerous neighborhood:area name
+#
+set e3650/door_attributes = ["open"]
+#
+set e3650/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3651^ north = r2127
+#
+tag e3651 = dangerous neighborhood:area name
+#
+set e3651/door_attributes = ["open"]
+#
+set e3651/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3652
+#
+tag e3652 = dangerous neighborhood:area name
+#
+set e3652/door_attributes = ["open"]
+#
+set e3652/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2123
+#
+alias north = n^ e3653
+#
+tag e3653 = dangerous neighborhood:area name
+#
+set e3653/door_attributes = ["open"]
+#
+set e3653/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3654^ north = r2128
+#
+tag e3654 = dangerous neighborhood:area name
+#
+set e3654/door_attributes = ["open"]
+#
+set e3654/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2124
+#
+openexit east; wooden; door; east; e; e3655^ west = r2125
+#
+tag e3655 = dangerous neighborhood:area name
+#
+set e3655/door_attributes = ["open"]
+#
+set e3655/reset_door_attributes = ["open"]
+#
+tel r2125
+#
+alias north = n^ e3656
+#
+tag e3656 = dangerous neighborhood:area name
+#
+set e3656/door_attributes = ["open"]
+#
+set e3656/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3657^ north = r2130
+#
+tag e3657 = dangerous neighborhood:area name
+#
+set e3657/door_attributes = ["open"]
+#
+set e3657/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = wooden^ door^ west^ w^ e3658
+#
+tag e3658 = dangerous neighborhood:area name
+#
+set e3658/door_attributes = ["open"]
+#
+set e3658/reset_door_attributes = ["open"]
+#
+tel r2126
+#
+openexit east; e; e3659^ west = r2127
+#
+tag e3659 = dangerous neighborhood:area name
+#
+set e3659/door_attributes = ["open"]
+#
+set e3659/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3660^ north = r2131
+#
+tag e3660 = dangerous neighborhood:area name
+#
+set e3660/door_attributes = ["open"]
+#
+set e3660/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2127
+#
+alias north = n^ e3661
+#
+tag e3661 = dangerous neighborhood:area name
+#
+set e3661/door_attributes = ["open"]
+#
+set e3661/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3662^ west = r2128
+#
+tag e3662 = dangerous neighborhood:area name
+#
+set e3662/door_attributes = ["open"]
+#
+set e3662/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3663
+#
+tag e3663 = dangerous neighborhood:area name
+#
+set e3663/door_attributes = ["open"]
+#
+set e3663/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2128
+#
+alias north = n^ e3664
+#
+tag e3664 = dangerous neighborhood:area name
+#
+set e3664/door_attributes = ["open"]
+#
+set e3664/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3665^ west = r2129
+#
+tag e3665 = dangerous neighborhood:area name
+#
+set e3665/door_attributes = ["open"]
+#
+set e3665/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3666^ north = r2133
+#
+tag e3666 = dangerous neighborhood:area name
+#
+set e3666/door_attributes = ["open"]
+#
+set e3666/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3667
+#
+tag e3667 = dangerous neighborhood:area name
+#
+set e3667/door_attributes = ["open"]
+#
+set e3667/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2129
+#
+openexit east; e; e3668^ west = r2130
+#
+tag e3668 = dangerous neighborhood:area name
+#
+set e3668/door_attributes = ["open"]
+#
+set e3668/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3669^ north = r2134
+#
+tag e3669 = dangerous neighborhood:area name
+#
+set e3669/door_attributes = ["open"]
+#
+set e3669/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3670
+#
+tag e3670 = dangerous neighborhood:area name
+#
+set e3670/door_attributes = ["open"]
+#
+set e3670/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2130
+#
+alias north = n^ e3671
+#
+tag e3671 = dangerous neighborhood:area name
+#
+set e3671/door_attributes = ["open"]
+#
+set e3671/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias west = w^ e3672
+#
+tag e3672 = dangerous neighborhood:area name
+#
+set e3672/door_attributes = ["open"]
+#
+set e3672/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2131
+#
+alias north = n^ e3673
+#
+tag e3673 = dangerous neighborhood:area name
+#
+set e3673/door_attributes = ["open"]
+#
+set e3673/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3674^ west = r2132
+#
+tag e3674 = dangerous neighborhood:area name
+#
+set e3674/door_attributes = ["open"]
+#
+set e3674/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3675^ north = r2136
+#
+tag e3675 = dangerous neighborhood:area name
+#
+set e3675/door_attributes = ["open"]
+#
+set e3675/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2132
+#
+openexit east; e; e3676^ west = r2133
+#
+tag e3676 = dangerous neighborhood:area name
+#
+set e3676/door_attributes = ["open"]
+#
+set e3676/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3677^ north = r2137
+#
+tag e3677 = dangerous neighborhood:area name
+#
+set e3677/door_attributes = ["open"]
+#
+set e3677/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3678
+#
+tag e3678 = dangerous neighborhood:area name
+#
+set e3678/door_attributes = ["open"]
+#
+set e3678/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2133
+#
+alias north = n^ e3679
+#
+tag e3679 = dangerous neighborhood:area name
+#
+set e3679/door_attributes = ["open"]
+#
+set e3679/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3680^ west = r2134
+#
+tag e3680 = dangerous neighborhood:area name
+#
+set e3680/door_attributes = ["open"]
+#
+set e3680/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3681^ north = r2138
+#
+tag e3681 = dangerous neighborhood:area name
+#
+set e3681/door_attributes = ["open"]
+#
+set e3681/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3682
+#
+tag e3682 = dangerous neighborhood:area name
+#
+set e3682/door_attributes = ["open"]
+#
+set e3682/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2134
+#
+alias north = n^ e3683
+#
+tag e3683 = dangerous neighborhood:area name
+#
+set e3683/door_attributes = ["open"]
+#
+set e3683/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3684^ west = r2135
+#
+tag e3684 = dangerous neighborhood:area name
+#
+set e3684/door_attributes = ["open"]
+#
+set e3684/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3685^ north = r2139
+#
+tag e3685 = dangerous neighborhood:area name
+#
+set e3685/door_attributes = ["open"]
+#
+set e3685/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3686
+#
+tag e3686 = dangerous neighborhood:area name
+#
+set e3686/door_attributes = ["open"]
+#
+set e3686/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2135
+#
+openexit south; s; e3687^ north = r2140
+#
+tag e3687 = dangerous neighborhood:area name
+#
+set e3687/door_attributes = ["open"]
+#
+set e3687/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3688
+#
+tag e3688 = dangerous neighborhood:area name
+#
+set e3688/door_attributes = ["open"]
+#
+set e3688/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2136
+#
+alias north = n^ e3689
+#
+tag e3689 = dangerous neighborhood:area name
+#
+set e3689/door_attributes = ["open"]
+#
+set e3689/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3690^ west = r2137
+#
+tag e3690 = dangerous neighborhood:area name
+#
+set e3690/door_attributes = ["open"]
+#
+set e3690/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3691^ north = r2141
+#
+tag e3691 = dangerous neighborhood:area name
+#
+set e3691/door_attributes = ["open"]
+#
+set e3691/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2137
+#
+alias north = n^ e3692
+#
+tag e3692 = dangerous neighborhood:area name
+#
+set e3692/door_attributes = ["open"]
+#
+set e3692/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3693^ west = r2138
+#
+tag e3693 = dangerous neighborhood:area name
+#
+set e3693/door_attributes = ["open"]
+#
+set e3693/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3694
+#
+tag e3694 = dangerous neighborhood:area name
+#
+set e3694/door_attributes = ["open"]
+#
+set e3694/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2138
+#
+alias north = n^ e3695
+#
+tag e3695 = dangerous neighborhood:area name
+#
+set e3695/door_attributes = ["open"]
+#
+set e3695/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3696^ west = r2139
+#
+tag e3696 = dangerous neighborhood:area name
+#
+set e3696/door_attributes = ["open"]
+#
+set e3696/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3697^ north = r2143
+#
+tag e3697 = dangerous neighborhood:area name
+#
+set e3697/door_attributes = ["open"]
+#
+set e3697/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3698
+#
+tag e3698 = dangerous neighborhood:area name
+#
+set e3698/door_attributes = ["open"]
+#
+set e3698/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2139
+#
+alias north = n^ e3699
+#
+tag e3699 = dangerous neighborhood:area name
+#
+set e3699/door_attributes = ["open"]
+#
+set e3699/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3700^ west = r2140
+#
+tag e3700 = dangerous neighborhood:area name
+#
+set e3700/door_attributes = ["open"]
+#
+set e3700/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3701
+#
+tag e3701 = dangerous neighborhood:area name
+#
+set e3701/door_attributes = ["open"]
+#
+set e3701/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2140
+#
+alias north = n^ e3702
+#
+tag e3702 = dangerous neighborhood:area name
+#
+set e3702/door_attributes = ["open"]
+#
+set e3702/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3703^ north = r2145
+#
+tag e3703 = dangerous neighborhood:area name
+#
+set e3703/door_attributes = ["open"]
+#
+set e3703/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3704
+#
+tag e3704 = dangerous neighborhood:area name
+#
+set e3704/door_attributes = ["open"]
+#
+set e3704/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2141
+#
+alias north = n^ e3705
+#
+tag e3705 = dangerous neighborhood:area name
+#
+set e3705/door_attributes = ["open"]
+#
+set e3705/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3706^ west = r2142
+#
+tag e3706 = dangerous neighborhood:area name
+#
+set e3706/door_attributes = ["open"]
+#
+set e3706/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3707^ north = r2146
+#
+tag e3707 = dangerous neighborhood:area name
+#
+set e3707/door_attributes = ["open"]
+#
+set e3707/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2142
+#
+openexit east; e; e3708^ west = r2143
+#
+tag e3708 = dangerous neighborhood:area name
+#
+set e3708/door_attributes = ["open"]
+#
+set e3708/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3709
+#
+tag e3709 = dangerous neighborhood:area name
+#
+set e3709/door_attributes = ["open"]
+#
+set e3709/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2143
+#
+alias north = n^ e3710
+#
+tag e3710 = dangerous neighborhood:area name
+#
+set e3710/door_attributes = ["open"]
+#
+set e3710/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3711^ west = r2144
+#
+tag e3711 = dangerous neighborhood:area name
+#
+set e3711/door_attributes = ["open"]
+#
+set e3711/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3712^ north = r2147
+#
+tag e3712 = dangerous neighborhood:area name
+#
+set e3712/door_attributes = ["open"]
+#
+set e3712/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3713
+#
+tag e3713 = dangerous neighborhood:area name
+#
+set e3713/door_attributes = ["open"]
+#
+set e3713/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2144
+#
+openexit east; e; e3714^ west = r2145
+#
+tag e3714 = dangerous neighborhood:area name
+#
+set e3714/door_attributes = ["open"]
+#
+set e3714/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3715
+#
+tag e3715 = dangerous neighborhood:area name
+#
+set e3715/door_attributes = ["open"]
+#
+set e3715/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2145
+#
+alias north = n^ e3716
+#
+tag e3716 = dangerous neighborhood:area name
+#
+set e3716/door_attributes = ["open"]
+#
+set e3716/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3717^ north = r2149
+#
+tag e3717 = dangerous neighborhood:area name
+#
+set e3717/door_attributes = ["open"]
+#
+set e3717/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3718
+#
+tag e3718 = dangerous neighborhood:area name
+#
+set e3718/door_attributes = ["open"]
+#
+set e3718/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2146
+#
+alias north = n^ e3719
+#
+tag e3719 = dangerous neighborhood:area name
+#
+set e3719/door_attributes = ["open"]
+#
+set e3719/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3720^ north = r2150
+#
+tag e3720 = dangerous neighborhood:area name
+#
+set e3720/door_attributes = ["open"]
+#
+set e3720/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2147
+#
+alias north = n^ e3721
+#
+tag e3721 = dangerous neighborhood:area name
+#
+set e3721/door_attributes = ["open"]
+#
+set e3721/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3722^ north = r2152
+#
+tag e3722 = dangerous neighborhood:area name
+#
+set e3722/door_attributes = ["open"]
+#
+set e3722/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2148
+#
+openexit east; rusted; door; metal; e; e3723^ west = r2149
+#
+tag e3723 = dangerous neighborhood:area name
+#
+set e3723/door_attributes = ["open"]
+#
+set e3723/reset_door_attributes = ["open"]
+#
+tel r2149
+#
+alias north = n^ e3724
+#
+tag e3724 = dangerous neighborhood:area name
+#
+set e3724/door_attributes = ["open"]
+#
+set e3724/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3725^ north = r2154
+#
+tag e3725 = dangerous neighborhood:area name
+#
+set e3725/door_attributes = ["open"]
+#
+set e3725/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = rusted^ door^ metal^ w^ e3726
+#
+tag e3726 = dangerous neighborhood:area name
+#
+set e3726/door_attributes = ["open"]
+#
+set e3726/reset_door_attributes = ["open"]
+#
+tel r2150
+#
+alias north = n^ e3727
+#
+tag e3727 = dangerous neighborhood:area name
+#
+set e3727/door_attributes = ["open"]
+#
+set e3727/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3728^ west = r2151
+#
+tag e3728 = dangerous neighborhood:area name
+#
+set e3728/door_attributes = ["open"]
+#
+set e3728/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3729^ north = r2156
+#
+tag e3729 = dangerous neighborhood:area name
+#
+set e3729/door_attributes = ["open"]
+#
+set e3729/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2151
+#
+openexit east; e; e3730^ west = r2152
+#
+tag e3730 = dangerous neighborhood:area name
+#
+set e3730/door_attributes = ["open"]
+#
+set e3730/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3731
+#
+tag e3731 = dangerous neighborhood:area name
+#
+set e3731/door_attributes = ["open"]
+#
+set e3731/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2152
+#
+alias north = n^ e3732
+#
+tag e3732 = dangerous neighborhood:area name
+#
+set e3732/door_attributes = ["open"]
+#
+set e3732/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3733^ north = r2157
+#
+tag e3733 = dangerous neighborhood:area name
+#
+set e3733/door_attributes = ["open"]
+#
+set e3733/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3734
+#
+tag e3734 = dangerous neighborhood:area name
+#
+set e3734/door_attributes = ["open"]
+#
+set e3734/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2153
+#
+openexit east; e; e3735^ west = r2154
+#
+tag e3735 = dangerous neighborhood:area name
+#
+set e3735/door_attributes = ["open"]
+#
+set e3735/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r2154
+#
+alias north = n^ e3736
+#
+tag e3736 = dangerous neighborhood:area name
+#
+set e3736/door_attributes = ["open"]
+#
+set e3736/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3737^ north = r2159
+#
+tag e3737 = dangerous neighborhood:area name
+#
+set e3737/door_attributes = ["open"]
+#
+set e3737/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3738
+#
+tag e3738 = dangerous neighborhood:area name
+#
+set e3738/door_attributes = ["open"]
+#
+set e3738/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2155
+#
+openexit east; e; e3739^ west = r2156
+#
+tag e3739 = dangerous neighborhood:area name
+#
+set e3739/door_attributes = ["open"]
+#
+set e3739/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3740^ north = r2162
+#
+tag e3740 = dangerous neighborhood:area name
+#
+set e3740/door_attributes = ["open"]
+#
+set e3740/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2156
+#
+alias north = n^ e3741
+#
+tag e3741 = dangerous neighborhood:area name
+#
+set e3741/door_attributes = ["open"]
+#
+set e3741/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3742^ north = r2163
+#
+tag e3742 = dangerous neighborhood:area name
+#
+set e3742/door_attributes = ["open"]
+#
+set e3742/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3743
+#
+tag e3743 = dangerous neighborhood:area name
+#
+set e3743/door_attributes = ["open"]
+#
+set e3743/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2157
+#
+alias north = n^ e3744
+#
+tag e3744 = dangerous neighborhood:area name
+#
+set e3744/door_attributes = ["open"]
+#
+set e3744/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3745^ west = r2158
+#
+tag e3745 = dangerous neighborhood:area name
+#
+set e3745/door_attributes = ["open"]
+#
+set e3745/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3746^ north = r2164
+#
+tag e3746 = dangerous neighborhood:area name
+#
+set e3746/door_attributes = ["open"]
+#
+set e3746/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2158
+#
+openexit east; e; e3747^ west = r2159
+#
+tag e3747 = dangerous neighborhood:area name
+#
+set e3747/door_attributes = ["open"]
+#
+set e3747/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3748^ north = r2165
+#
+tag e3748 = dangerous neighborhood:area name
+#
+set e3748/door_attributes = ["open"]
+#
+set e3748/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3749
+#
+tag e3749 = dangerous neighborhood:area name
+#
+set e3749/door_attributes = ["open"]
+#
+set e3749/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2159
+#
+alias north = n^ e3750
+#
+tag e3750 = dangerous neighborhood:area name
+#
+set e3750/door_attributes = ["open"]
+#
+set e3750/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias west = w^ e3751
+#
+tag e3751 = dangerous neighborhood:area name
+#
+set e3751/door_attributes = ["open"]
+#
+set e3751/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2160
+#
+openexit east; e; e3752^ west = r2161
+#
+tag e3752 = dangerous neighborhood:area name
+#
+set e3752/door_attributes = ["open"]
+#
+set e3752/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3753^ east = r13348
+#
+tag e3753 = dangerous neighborhood:area name
+#
+set e3753/door_attributes = ["open"]
+#
+set e3753/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2161
+#
+openexit east; e; e3754^ west = r2162
+#
+tag e3754 = dangerous neighborhood:area name
+#
+set e3754/door_attributes = ["open"]
+#
+set e3754/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3755
+#
+tag e3755 = dangerous neighborhood:area name
+#
+set e3755/door_attributes = ["open"]
+#
+set e3755/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2162
+#
+alias north = n^ e3756
+#
+tag e3756 = dangerous neighborhood:area name
+#
+set e3756/door_attributes = ["open"]
+#
+set e3756/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3757^ north = r2166
+#
+tag e3757 = dangerous neighborhood:area name
+#
+set e3757/door_attributes = ["open"]
+#
+set e3757/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3758
+#
+tag e3758 = dangerous neighborhood:area name
+#
+set e3758/door_attributes = ["open"]
+#
+set e3758/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2163
+#
+alias north = n^ e3759
+#
+tag e3759 = dangerous neighborhood:area name
+#
+set e3759/door_attributes = ["open"]
+#
+set e3759/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3760^ north = r2167
+#
+tag e3760 = dangerous neighborhood:area name
+#
+set e3760/door_attributes = ["open"]
+#
+set e3760/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2164
+#
+alias north = n^ e3761
+#
+tag e3761 = dangerous neighborhood:area name
+#
+set e3761/door_attributes = ["open"]
+#
+set e3761/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3762^ north = r2169
+#
+tag e3762 = dangerous neighborhood:area name
+#
+set e3762/door_attributes = ["open"]
+#
+set e3762/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2165
+#
+alias north = n^ e3763
+#
+tag e3763 = dangerous neighborhood:area name
+#
+set e3763/door_attributes = ["open"]
+#
+set e3763/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3764
+#
+tag e3764 = dangerous neighborhood:area name
+#
+set e3764/door_attributes = ["open"]
+#
+set e3764/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2166
+#
+alias north = n^ e3765
+#
+tag e3765 = dangerous neighborhood:area name
+#
+set e3765/door_attributes = ["open"]
+#
+set e3765/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3766^ west = r2167
+#
+tag e3766 = dangerous neighborhood:area name
+#
+set e3766/door_attributes = ["open"]
+#
+set e3766/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r2167
+#
+alias north = n^ e3767
+#
+tag e3767 = dangerous neighborhood:area name
+#
+set e3767/door_attributes = ["open"]
+#
+set e3767/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3768^ west = r2168
+#
+tag e3768 = dangerous neighborhood:area name
+#
+set e3768/door_attributes = ["open"]
+#
+set e3768/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3769
+#
+tag e3769 = dangerous neighborhood:area name
+#
+set e3769/door_attributes = ["open"]
+#
+set e3769/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2168
+#
+openexit east; e; e3770^ west = r2169
+#
+tag e3770 = dangerous neighborhood:area name
+#
+set e3770/door_attributes = ["open"]
+#
+set e3770/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3771
+#
+tag e3771 = dangerous neighborhood:area name
+#
+set e3771/door_attributes = ["open"]
+#
+set e3771/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2169
+#
+alias north = n^ e3772
+#
+tag e3772 = dangerous neighborhood:area name
+#
+set e3772/door_attributes = ["open"]
+#
+set e3772/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3773
+#
+tag e3773 = dangerous neighborhood:area name
+#
+set e3773/door_attributes = ["open"]
+#
+set e3773/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3774
+#
+tag e3774 = dangerous neighborhood:area name
+#
+set e3774/door_attributes = ["open"]
+#
+set e3774/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2102
+#
+create/drop a vandal;vandal;m2107:characters.Mobile
+#
+desc m2107 = A vandal is spray painting pro-gang slogans on the wall here. 
+#
+set m2107/level = 8
+#
+set m2107/level_base = 8
+#
+set m2107/vnum = "m2107"
+#
+set m2107/look_description = "He has a wary eye and a fine hand for art. "
+#
+set m2107/act_flags = ['wimpy', 'npc']
+#
+set m2107/alignment = -400
+#
+set m2107/sex = "male"
+#
+set m2107/spell_affects = {'sneak': ''}
+#
+set m2107/race = "dwarf"
+#
+tag m2107 = dangerous neighborhood:area name
+#
+tag m2107 = mobile
+#
+set m2107/hitpoints[maximum] = 69
+#
+set m2107/position = "standing"
+#
+set m2107/experience_total = 3060
+#
+set m2107/experience_current = 3060
+#
+tel r2102
+#
+create a spray paint can;spray;paint;can;o2105:objects.Wand
+#
+sethome o2105 = m2107
+#
+desc o2105 = A can of spray paint has been discarded here.
+#
+set o2105/level = 6
+#
+set o2105/level_base = 6
+#
+set o2105/vnum = "o2105"
+#
+set o2105/item_type = "wand"
+#
+set o2105/wear_location = "held, in hands"
+#
+set o2105/weight = 1
+#
+tag o2105 = dangerous neighborhood:area name
+#
+tag o2105 = object
+#
+set o2105/extra_flags = ['hum']
+#
+set o2105/spell_level = 11
+#
+set o2105/spell_level_base = 11
+#
+set o2105/charges_maximum = 2
+#
+set o2105/charges_maximum_base = 2
+#
+set o2105/charges_current = 2
+#
+set o2105/spell_name = "colour spray"
+#
+wearto o2105 = m2107
+#
+set m2107/reset_objects["o2105"] = {"location":"equipped"}
+#
+tel r2102
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 104
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2308
+#
+set m2101/experience_current = 2308
+#
+tel r2102
+#
+create an Ogre gang jacket;ogre;jacket;o2101:objects.Armor
+#
+sethome o2101 = m2101
+#
+desc o2101 = An Ogre gang jacket has been carelessly tossed here.
+#
+set o2101/level = 5
+#
+set o2101/level_base = 5
+#
+set o2101/vnum = "o2101"
+#
+set o2101/item_type = "armor"
+#
+set o2101/wear_location = "body"
+#
+set o2101/weight = 2
+#
+tag o2101 = dangerous neighborhood:area name
+#
+tag o2101 = object
+#
+set o2101/armor = 4
+#
+wearto o2101 = m2101
+#
+set m2101/reset_objects["o2101"] = {"location":"equipped"}
+#
+tel r2103
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 103
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2232
+#
+set m2101/experience_current = 2232
+#
+tel r2103
+#
+create an Ogre gang jacket;ogre;jacket;o2101:objects.Armor
+#
+sethome o2101 = m2101
+#
+desc o2101 = An Ogre gang jacket has been carelessly tossed here.
+#
+set o2101/level = 5
+#
+set o2101/level_base = 5
+#
+set o2101/vnum = "o2101"
+#
+set o2101/item_type = "armor"
+#
+set o2101/wear_location = "body"
+#
+set o2101/weight = 2
+#
+tag o2101 = dangerous neighborhood:area name
+#
+tag o2101 = object
+#
+set o2101/armor = 3
+#
+wearto o2101 = m2101
+#
+set m2101/reset_objects["o2101"] = {"location":"equipped"}
+#
+tel r2104
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 102
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2421
+#
+set m2101/experience_current = 2421
+#
+tel r2104
+#
+create an Ogre gang jacket;ogre;jacket;o2101:objects.Armor
+#
+sethome o2101 = m2101
+#
+desc o2101 = An Ogre gang jacket has been carelessly tossed here.
+#
+set o2101/level = 5
+#
+set o2101/level_base = 5
+#
+set o2101/vnum = "o2101"
+#
+set o2101/item_type = "armor"
+#
+set o2101/wear_location = "body"
+#
+set o2101/weight = 2
+#
+tag o2101 = dangerous neighborhood:area name
+#
+tag o2101 = object
+#
+set o2101/armor = 3
+#
+wearto o2101 = m2101
+#
+set m2101/reset_objects["o2101"] = {"location":"equipped"}
+#
+tel r2105
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 92
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2133
+#
+set m2101/experience_current = 2133
+#
+tel r2106
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 79
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2337
+#
+set m2101/experience_current = 2337
+#
+tel r2106
+#
+create an Ogre gang jacket;ogre;jacket;o2101:objects.Armor
+#
+sethome o2101 = m2101
+#
+desc o2101 = An Ogre gang jacket has been carelessly tossed here.
+#
+set o2101/level = 5
+#
+set o2101/level_base = 5
+#
+set o2101/vnum = "o2101"
+#
+set o2101/item_type = "armor"
+#
+set o2101/wear_location = "body"
+#
+set o2101/weight = 2
+#
+tag o2101 = dangerous neighborhood:area name
+#
+tag o2101 = object
+#
+set o2101/armor = 4
+#
+wearto o2101 = m2101
+#
+set m2101/reset_objects["o2101"] = {"location":"equipped"}
+#
+tel r2107
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 104
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2190
+#
+set m2101/experience_current = 2190
+#
+tel r2107
+#
+create an Ogre gang jacket;ogre;jacket;o2101:objects.Armor
+#
+sethome o2101 = m2101
+#
+desc o2101 = An Ogre gang jacket has been carelessly tossed here.
+#
+set o2101/level = 5
+#
+set o2101/level_base = 5
+#
+set o2101/vnum = "o2101"
+#
+set o2101/item_type = "armor"
+#
+set o2101/wear_location = "body"
+#
+set o2101/weight = 2
+#
+tag o2101 = dangerous neighborhood:area name
+#
+tag o2101 = object
+#
+set o2101/armor = 3
+#
+wearto o2101 = m2101
+#
+set m2101/reset_objects["o2101"] = {"location":"equipped"}
+#
+tel r2108
+#
+create/drop a bruiser;bruiser;m2104:characters.Mobile
+#
+desc m2104 = A big, mean bruiser is looking for limbs to break. 
+#
+set m2104/level = 6
+#
+set m2104/level_base = 6
+#
+set m2104/vnum = "m2104"
+#
+set m2104/look_description = "He's 6'6" 245 pounds and enough muscle to bash your head in. "
+#
+set m2104/act_flags = ['wimpy', 'stay area', 'aggressive', 'scavenger', 'npc']
+#
+set m2104/alignment = -333
+#
+set m2104/sex = "male"
+#
+set m2104/spell_affects = {'detect invis': ''}
+#
+set m2104/race = "orc"
+#
+tag m2104 = dangerous neighborhood:area name
+#
+tag m2104 = mobile
+#
+set m2104/hitpoints[maximum] = 71
+#
+set m2104/position = "standing"
+#
+set m2104/experience_total = 1572
+#
+set m2104/experience_current = 1572
+#
+tel r2108
+#
+create comfortable leather gloves;gloves;o2109:objects.Armor
+#
+sethome o2109 = m2104
+#
+desc o2109 = A pair of soft lined leather gloves lie here.
+#
+set o2109/level = 4
+#
+set o2109/level_base = 4
+#
+set o2109/vnum = "o2109"
+#
+set o2109/item_type = "armor"
+#
+set o2109/wear_location = "hands"
+#
+set o2109/weight = 2
+#
+tag o2109 = dangerous neighborhood:area name
+#
+tag o2109 = object
+#
+set o2109/stat_modifiers[strength] = 1
+#
+set o2109/armor = 4
+#
+wearto o2109 = m2104
+#
+set m2104/reset_objects["o2109"] = {"location":"equipped"}
+#
+tel r2108
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 83
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2274
+#
+set m2101/experience_current = 2274
+#
+tel r2109
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 89
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2057
+#
+set m2101/experience_current = 2057
+#
+tel r2109
+#
+create an Ogre gang jacket;ogre;jacket;o2101:objects.Armor
+#
+sethome o2101 = m2101
+#
+desc o2101 = An Ogre gang jacket has been carelessly tossed here.
+#
+set o2101/level = 5
+#
+set o2101/level_base = 5
+#
+set o2101/vnum = "o2101"
+#
+set o2101/item_type = "armor"
+#
+set o2101/wear_location = "body"
+#
+set o2101/weight = 2
+#
+tag o2101 = dangerous neighborhood:area name
+#
+tag o2101 = object
+#
+set o2101/armor = 3
+#
+wearto o2101 = m2101
+#
+set m2101/reset_objects["o2101"] = {"location":"equipped"}
+#
+tel r2110
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 57
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2140
+#
+set m2101/experience_current = 2140
+#
+tel r2110
+#
+create an Ogre gang jacket;ogre;jacket;o2101:objects.Armor
+#
+sethome o2101 = m2101
+#
+desc o2101 = An Ogre gang jacket has been carelessly tossed here.
+#
+set o2101/level = 5
+#
+set o2101/level_base = 5
+#
+set o2101/vnum = "o2101"
+#
+set o2101/item_type = "armor"
+#
+set o2101/wear_location = "body"
+#
+set o2101/weight = 2
+#
+tag o2101 = dangerous neighborhood:area name
+#
+tag o2101 = object
+#
+set o2101/armor = 3
+#
+wearto o2101 = m2101
+#
+set m2101/reset_objects["o2101"] = {"location":"equipped"}
+#
+tel r2111
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 75
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2058
+#
+set m2101/experience_current = 2058
+#
+tel r2112
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 105
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2186
+#
+set m2101/experience_current = 2186
+#
+tel r2112
+#
+create an Ogre gang jacket;ogre;jacket;o2101:objects.Armor
+#
+sethome o2101 = m2101
+#
+desc o2101 = An Ogre gang jacket has been carelessly tossed here.
+#
+set o2101/level = 5
+#
+set o2101/level_base = 5
+#
+set o2101/vnum = "o2101"
+#
+set o2101/item_type = "armor"
+#
+set o2101/wear_location = "body"
+#
+set o2101/weight = 2
+#
+tag o2101 = dangerous neighborhood:area name
+#
+tag o2101 = object
+#
+set o2101/armor = 4
+#
+wearto o2101 = m2101
+#
+set m2101/reset_objects["o2101"] = {"location":"equipped"}
+#
+tel r2113
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 71
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2153
+#
+set m2101/experience_current = 2153
+#
+tel r2113
+#
+create an Ogre gang jacket;ogre;jacket;o2101:objects.Armor
+#
+sethome o2101 = m2101
+#
+desc o2101 = An Ogre gang jacket has been carelessly tossed here.
+#
+set o2101/level = 5
+#
+set o2101/level_base = 5
+#
+set o2101/vnum = "o2101"
+#
+set o2101/item_type = "armor"
+#
+set o2101/wear_location = "body"
+#
+set o2101/weight = 2
+#
+tag o2101 = dangerous neighborhood:area name
+#
+tag o2101 = object
+#
+set o2101/armor = 2
+#
+wearto o2101 = m2101
+#
+set m2101/reset_objects["o2101"] = {"location":"equipped"}
+#
+tel r2114
+#
+create/drop a bruiser;bruiser;m2104:characters.Mobile
+#
+desc m2104 = A big, mean bruiser is looking for limbs to break. 
+#
+set m2104/level = 6
+#
+set m2104/level_base = 6
+#
+set m2104/vnum = "m2104"
+#
+set m2104/look_description = "He's 6'6" 245 pounds and enough muscle to bash your head in. "
+#
+set m2104/act_flags = ['wimpy', 'stay area', 'aggressive', 'scavenger', 'npc']
+#
+set m2104/alignment = -333
+#
+set m2104/sex = "male"
+#
+set m2104/spell_affects = {'detect invis': ''}
+#
+set m2104/race = "orc"
+#
+tag m2104 = dangerous neighborhood:area name
+#
+tag m2104 = mobile
+#
+set m2104/hitpoints[maximum] = 69
+#
+set m2104/position = "standing"
+#
+set m2104/experience_total = 1633
+#
+set m2104/experience_current = 1633
+#
+tel r2114
+#
+create a hefty length of chain;chain;o2103:objects.Weapon
+#
+sethome o2103 = m2104
+#
+desc o2103 = A hefty length of chain lies in a heap here on the floor.
+#
+set o2103/level = 4
+#
+set o2103/level_base = 4
+#
+set o2103/vnum = "o2103"
+#
+set o2103/item_type = "weapon"
+#
+set o2103/wear_location = "wield"
+#
+set o2103/weight = 10
+#
+tag o2103 = dangerous neighborhood:area name
+#
+tag o2103 = object
+#
+set o2103/extra_flags = ['glow']
+#
+set o2103/stat_modifiers[hitroll] = 1
+#
+set o2103/weapon_type = "whip"
+#
+set o2103/damage_low = 1
+#
+set o2103/damage_high = 8
+#
+wieldto o2103 = m2104
+#
+set m2104/experience_total = 2041
+#
+set m2104/experience_current = 2041
+#
+set m2104/reset_objects["o2103"] = {"location":"equipped"}
+#
+tel r2114
+#
+create/drop a vandal;vandal;m2107:characters.Mobile
+#
+desc m2107 = A vandal is spray painting pro-gang slogans on the wall here. 
+#
+set m2107/level = 8
+#
+set m2107/level_base = 8
+#
+set m2107/vnum = "m2107"
+#
+set m2107/look_description = "He has a wary eye and a fine hand for art. "
+#
+set m2107/act_flags = ['wimpy', 'npc']
+#
+set m2107/alignment = -400
+#
+set m2107/sex = "male"
+#
+set m2107/spell_affects = {'sneak': ''}
+#
+set m2107/race = "dwarf"
+#
+tag m2107 = dangerous neighborhood:area name
+#
+tag m2107 = mobile
+#
+set m2107/hitpoints[maximum] = 108
+#
+set m2107/position = "standing"
+#
+set m2107/experience_total = 3136
+#
+set m2107/experience_current = 3136
+#
+tel r2114
+#
+create a spray paint can;spray;paint;can;o2105:objects.Wand
+#
+sethome o2105 = m2107
+#
+desc o2105 = A can of spray paint has been discarded here.
+#
+set o2105/level = 6
+#
+set o2105/level_base = 6
+#
+set o2105/vnum = "o2105"
+#
+set o2105/item_type = "wand"
+#
+set o2105/wear_location = "held, in hands"
+#
+set o2105/weight = 1
+#
+tag o2105 = dangerous neighborhood:area name
+#
+tag o2105 = object
+#
+set o2105/extra_flags = ['hum']
+#
+set o2105/spell_level = 11
+#
+set o2105/spell_level_base = 11
+#
+set o2105/charges_maximum = 2
+#
+set o2105/charges_maximum_base = 2
+#
+set o2105/charges_current = 2
+#
+set o2105/spell_name = "colour spray"
+#
+wearto o2105 = m2107
+#
+set m2107/reset_objects["o2105"] = {"location":"equipped"}
+#
+tel r2114
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 85
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2148
+#
+set m2101/experience_current = 2148
+#
+tel r2115
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 79
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2289
+#
+set m2101/experience_current = 2289
+#
+tel r2115
+#
+create an Ogre gang jacket;ogre;jacket;o2101:objects.Armor
+#
+sethome o2101 = m2101
+#
+desc o2101 = An Ogre gang jacket has been carelessly tossed here.
+#
+set o2101/level = 5
+#
+set o2101/level_base = 5
+#
+set o2101/vnum = "o2101"
+#
+set o2101/item_type = "armor"
+#
+set o2101/wear_location = "body"
+#
+set o2101/weight = 2
+#
+tag o2101 = dangerous neighborhood:area name
+#
+tag o2101 = object
+#
+set o2101/armor = 4
+#
+wearto o2101 = m2101
+#
+set m2101/reset_objects["o2101"] = {"location":"equipped"}
+#
+tel r2116
+#
+create/drop a bruiser;bruiser;m2104:characters.Mobile
+#
+desc m2104 = A big, mean bruiser is looking for limbs to break. 
+#
+set m2104/level = 6
+#
+set m2104/level_base = 6
+#
+set m2104/vnum = "m2104"
+#
+set m2104/look_description = "He's 6'6" 245 pounds and enough muscle to bash your head in. "
+#
+set m2104/act_flags = ['wimpy', 'stay area', 'aggressive', 'scavenger', 'npc']
+#
+set m2104/alignment = -333
+#
+set m2104/sex = "male"
+#
+set m2104/spell_affects = {'detect invis': ''}
+#
+set m2104/race = "orc"
+#
+tag m2104 = dangerous neighborhood:area name
+#
+tag m2104 = mobile
+#
+set m2104/hitpoints[maximum] = 71
+#
+set m2104/position = "standing"
+#
+set m2104/experience_total = 1442
+#
+set m2104/experience_current = 1442
+#
+tel r2116
+#
+create a metal shield;metal;shield;garbage;can;lid;o2104:objects.Armor
+#
+sethome o2104 = m2104
+#
+desc o2104 = A garbage can lid has been dropped on the floor.
+#
+set o2104/level = 4
+#
+set o2104/level_base = 4
+#
+set o2104/vnum = "o2104"
+#
+set o2104/item_type = "armor"
+#
+set o2104/wear_location = "shield"
+#
+set o2104/weight = 3
+#
+tag o2104 = dangerous neighborhood:area name
+#
+tag o2104 = object
+#
+set o2104/armor = 3
+#
+wearto o2104 = m2104
+#
+set m2104/reset_objects["o2104"] = {"location":"equipped"}
+#
+tel r2116
+#
+create a hefty length of chain;chain;o2103:objects.Weapon
+#
+sethome o2103 = m2104
+#
+desc o2103 = A hefty length of chain lies in a heap here on the floor.
+#
+set o2103/level = 4
+#
+set o2103/level_base = 4
+#
+set o2103/vnum = "o2103"
+#
+set o2103/item_type = "weapon"
+#
+set o2103/wear_location = "wield"
+#
+set o2103/weight = 10
+#
+tag o2103 = dangerous neighborhood:area name
+#
+tag o2103 = object
+#
+set o2103/extra_flags = ['glow']
+#
+set o2103/stat_modifiers[hitroll] = 1
+#
+set o2103/weapon_type = "whip"
+#
+set o2103/damage_low = 4
+#
+set o2103/damage_high = 10
+#
+wieldto o2103 = m2104
+#
+set m2104/experience_total = 1802
+#
+set m2104/experience_current = 1802
+#
+set m2104/reset_objects["o2103"] = {"location":"equipped"}
+#
+tel r2116
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 69
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2113
+#
+set m2101/experience_current = 2113
+#
+tel r2116
+#
+create an Ogre gang jacket;ogre;jacket;o2101:objects.Armor
+#
+sethome o2101 = m2101
+#
+desc o2101 = An Ogre gang jacket has been carelessly tossed here.
+#
+set o2101/level = 5
+#
+set o2101/level_base = 5
+#
+set o2101/vnum = "o2101"
+#
+set o2101/item_type = "armor"
+#
+set o2101/wear_location = "body"
+#
+set o2101/weight = 2
+#
+tag o2101 = dangerous neighborhood:area name
+#
+tag o2101 = object
+#
+set o2101/armor = 3
+#
+wearto o2101 = m2101
+#
+set m2101/reset_objects["o2101"] = {"location":"equipped"}
+#
+tel r2117
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 103
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2212
+#
+set m2101/experience_current = 2212
+#
+tel r2117
+#
+create an Ogre gang jacket;ogre;jacket;o2101:objects.Armor
+#
+sethome o2101 = m2101
+#
+desc o2101 = An Ogre gang jacket has been carelessly tossed here.
+#
+set o2101/level = 5
+#
+set o2101/level_base = 5
+#
+set o2101/vnum = "o2101"
+#
+set o2101/item_type = "armor"
+#
+set o2101/wear_location = "body"
+#
+set o2101/weight = 2
+#
+tag o2101 = dangerous neighborhood:area name
+#
+tag o2101 = object
+#
+set o2101/armor = 3
+#
+wearto o2101 = m2101
+#
+set m2101/reset_objects["o2101"] = {"location":"equipped"}
+#
+tel r2118
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 81
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2031
+#
+set m2101/experience_current = 2031
+#
+tel r2118
+#
+create an Ogre gang jacket;ogre;jacket;o2101:objects.Armor
+#
+sethome o2101 = m2101
+#
+desc o2101 = An Ogre gang jacket has been carelessly tossed here.
+#
+set o2101/level = 5
+#
+set o2101/level_base = 5
+#
+set o2101/vnum = "o2101"
+#
+set o2101/item_type = "armor"
+#
+set o2101/wear_location = "body"
+#
+set o2101/weight = 2
+#
+tag o2101 = dangerous neighborhood:area name
+#
+tag o2101 = object
+#
+set o2101/armor = 3
+#
+wearto o2101 = m2101
+#
+set m2101/reset_objects["o2101"] = {"location":"equipped"}
+#
+tel r2119
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 72
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2118
+#
+set m2101/experience_current = 2118
+#
+tel r2120
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 93
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2448
+#
+set m2101/experience_current = 2448
+#
+tel r2121
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 88
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2218
+#
+set m2101/experience_current = 2218
+#
+tel r2121
+#
+create an Ogre gang jacket;ogre;jacket;o2101:objects.Armor
+#
+sethome o2101 = m2101
+#
+desc o2101 = An Ogre gang jacket has been carelessly tossed here.
+#
+set o2101/level = 5
+#
+set o2101/level_base = 5
+#
+set o2101/vnum = "o2101"
+#
+set o2101/item_type = "armor"
+#
+set o2101/wear_location = "body"
+#
+set o2101/weight = 2
+#
+tag o2101 = dangerous neighborhood:area name
+#
+tag o2101 = object
+#
+set o2101/armor = 4
+#
+wearto o2101 = m2101
+#
+set m2101/reset_objects["o2101"] = {"location":"equipped"}
+#
+tel r2122
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 87
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2059
+#
+set m2101/experience_current = 2059
+#
+tel r2122
+#
+create an Ogre gang jacket;ogre;jacket;o2101:objects.Armor
+#
+sethome o2101 = m2101
+#
+desc o2101 = An Ogre gang jacket has been carelessly tossed here.
+#
+set o2101/level = 5
+#
+set o2101/level_base = 5
+#
+set o2101/vnum = "o2101"
+#
+set o2101/item_type = "armor"
+#
+set o2101/wear_location = "body"
+#
+set o2101/weight = 2
+#
+tag o2101 = dangerous neighborhood:area name
+#
+tag o2101 = object
+#
+set o2101/armor = 2
+#
+wearto o2101 = m2101
+#
+set m2101/reset_objects["o2101"] = {"location":"equipped"}
+#
+tel r2123
+#
+create/drop a doll;doll;m2105:characters.Mobile
+#
+desc m2105 = A gang doll looks naughty and nice. 
+#
+set m2105/level = 6
+#
+set m2105/level_base = 6
+#
+set m2105/vnum = "m2105"
+#
+set m2105/look_description = "She's a beauty (ok in RELATIVE terms) but you better not touch! "
+#
+set m2105/act_flags = ['wimpy', 'stay area', 'scavenger', 'npc']
+#
+set m2105/alignment = 0
+#
+set m2105/sex = "female"
+#
+set m2105/race = "orc"
+#
+tag m2105 = dangerous neighborhood:area name
+#
+tag m2105 = mobile
+#
+set m2105/hitpoints[maximum] = 65
+#
+set m2105/position = "standing"
+#
+set m2105/experience_total = 1477
+#
+set m2105/experience_current = 1477
+#
+tel r2123
+#
+create a mirror;mirror;o2108:objects.Wand
+#
+sethome o2108 = m2105
+#
+desc o2108 = A small mirror has been left here.
+#
+set o2108/level = 4
+#
+set o2108/level_base = 4
+#
+set o2108/vnum = "o2108"
+#
+set o2108/item_type = "wand"
+#
+set o2108/wear_location = "held, in hands"
+#
+set o2108/weight = 1
+#
+tag o2108 = dangerous neighborhood:area name
+#
+tag o2108 = object
+#
+set o2108/extra_flags = ['magic', 'glow']
+#
+set o2108/spell_level = 20
+#
+set o2108/spell_level_base = 20
+#
+set o2108/charges_maximum = 10
+#
+set o2108/charges_maximum_base = 10
+#
+set o2108/charges_current = 10
+#
+set o2108/spell_name = "blindness"
+#
+wearto o2108 = m2105
+#
+set m2105/reset_objects["o2108"] = {"location":"equipped"}
+#
+tel r2124
+#
+create/drop the gang leader;gang;leader;m2103:characters.Mobile
+#
+desc m2103 = The gang leader is not pleased you found his hideout! 
+#
+set m2103/level = 8
+#
+set m2103/level_base = 8
+#
+set m2103/vnum = "m2103"
+#
+set m2103/look_description = "He's risen to be leader through brute force and cunning leadership. "
+#
+set m2103/act_flags = ['stay area', 'aggressive', 'sentinel', 'npc']
+#
+set m2103/alignment = 0
+#
+set m2103/sex = "male"
+#
+set m2103/race = "troll"
+#
+tag m2103 = dangerous neighborhood:area name
+#
+tag m2103 = mobile
+#
+set m2103/hitpoints[maximum] = 112
+#
+set m2103/position = "standing"
+#
+set m2103/experience_total = 3428
+#
+set m2103/experience_current = 3428
+#
+tel r2124
+#
+create a troll signet ring;signet;troll;ring;o2111:objects.Armor
+#
+sethome o2111 = m2103
+#
+desc o2111 = A signet ring bearing the crest of a troll lies in the dust here.
+#
+set o2111/level = 6
+#
+set o2111/level_base = 6
+#
+set o2111/vnum = "o2111"
+#
+set o2111/item_type = "armor"
+#
+set o2111/wear_location = "finger"
+#
+set o2111/weight = 1
+#
+tag o2111 = dangerous neighborhood:area name
+#
+tag o2111 = object
+#
+set o2111/alignment_restriction = ['neutral', 'good', 'evil']
+#
+set o2111/extra_flags = ['timed', 'machine', 'holy', 'vampire bane', 'poisoned', 'inventory', 'no remove', 'bless', 'no drop', 'magic', 'invisible', 'evil', 'lock', 'dark', 'hum', 'glow']
+#
+set o2111/stat_modifiers[strength] = 1
+#
+set o2111/armor = 4
+#
+wearto o2111 = m2103
+#
+set m2103/reset_objects["o2111"] = {"location":"equipped"}
+#
+tel r2124
+#
+create/drop a pitbull;dog;bull;pitbull;m2108:characters.Mobile
+#
+desc m2108 = A vicious pitbull is foaming at the mouth in rabid anticipation. 
+#
+set m2108/level = 3
+#
+set m2108/level_base = 3
+#
+set m2108/vnum = "m2108"
+#
+set m2108/look_description = "You get a nice close look at him while he's tearing at your throat. His fangs are blood-stained from hearty meals of ... steak?! "
+#
+set m2108/act_flags = ['stay area', 'aggressive', 'sentinel', 'npc']
+#
+set m2108/alignment = -100
+#
+set m2108/sex = "male"
+#
+set m2108/spell_affects = {'hide': '', 'detect invis': ''}
+#
+set m2108/race = "animal"
+#
+tag m2108 = dangerous neighborhood:area name
+#
+tag m2108 = mobile
+#
+set m2108/hitpoints[maximum] = 25
+#
+set m2108/position = "standing"
+#
+set m2108/experience_total = 410
+#
+set m2108/experience_current = 410
+#
+tel r2124
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r2125
+#
+create/drop a doll;doll;m2105:characters.Mobile
+#
+desc m2105 = A gang doll looks naughty and nice. 
+#
+set m2105/level = 6
+#
+set m2105/level_base = 6
+#
+set m2105/vnum = "m2105"
+#
+set m2105/look_description = "She's a beauty (ok in RELATIVE terms) but you better not touch! "
+#
+set m2105/act_flags = ['wimpy', 'stay area', 'scavenger', 'npc']
+#
+set m2105/alignment = 0
+#
+set m2105/sex = "female"
+#
+set m2105/race = "orc"
+#
+tag m2105 = dangerous neighborhood:area name
+#
+tag m2105 = mobile
+#
+set m2105/hitpoints[maximum] = 64
+#
+set m2105/position = "standing"
+#
+set m2105/experience_total = 1622
+#
+set m2105/experience_current = 1622
+#
+tel r2125
+#
+create a mirror;mirror;o2108:objects.Wand
+#
+sethome o2108 = m2105
+#
+desc o2108 = A small mirror has been left here.
+#
+set o2108/level = 4
+#
+set o2108/level_base = 4
+#
+set o2108/vnum = "o2108"
+#
+set o2108/item_type = "wand"
+#
+set o2108/wear_location = "held, in hands"
+#
+set o2108/weight = 1
+#
+tag o2108 = dangerous neighborhood:area name
+#
+tag o2108 = object
+#
+set o2108/extra_flags = ['magic', 'glow']
+#
+set o2108/spell_level = 20
+#
+set o2108/spell_level_base = 20
+#
+set o2108/charges_maximum = 10
+#
+set o2108/charges_maximum_base = 10
+#
+set o2108/charges_current = 10
+#
+set o2108/spell_name = "blindness"
+#
+wearto o2108 = m2105
+#
+set m2105/reset_objects["o2108"] = {"location":"equipped"}
+#
+tel r2125
+#
+create spiked heeled boots;spiked;heel;boots;o2107:objects.Armor
+#
+sethome o2107 = m2105
+#
+desc o2107 = A pair of black leather boots with 6 inch spikes have been left here.
+#
+set o2107/level = 4
+#
+set o2107/level_base = 4
+#
+set o2107/vnum = "o2107"
+#
+set o2107/item_type = "armor"
+#
+set o2107/wear_location = "feet"
+#
+set o2107/weight = 4
+#
+tag o2107 = dangerous neighborhood:area name
+#
+tag o2107 = object
+#
+set o2107/stat_modifiers[dexterity] = -1
+#
+set o2107/stat_modifiers[hitroll] = 1
+#
+set o2107/armor = 2
+#
+wearto o2107 = m2105
+#
+set m2105/reset_objects["o2107"] = {"location":"equipped"}
+#
+tel r2125
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r2128
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 101
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2077
+#
+set m2101/experience_current = 2077
+#
+tel r2130
+#
+create/drop a gang member;ogre;gang;member;m2101:characters.Mobile
+#
+desc m2101 = A member of the Ogres wanders about here. 
+#
+set m2101/level = 7
+#
+set m2101/level_base = 7
+#
+set m2101/vnum = "m2101"
+#
+set m2101/look_description = "He's lived a life of violence ever since he was little. "
+#
+set m2101/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2101/alignment = -100
+#
+set m2101/sex = "male"
+#
+set m2101/race = "ogre"
+#
+tag m2101 = dangerous neighborhood:area name
+#
+tag m2101 = mobile
+#
+set m2101/hitpoints[maximum] = 61
+#
+set m2101/position = "standing"
+#
+set m2101/experience_total = 2231
+#
+set m2101/experience_current = 2231
+#
+tel r2130
+#
+create an Ogre gang jacket;ogre;jacket;o2101:objects.Armor
+#
+sethome o2101 = m2101
+#
+desc o2101 = An Ogre gang jacket has been carelessly tossed here.
+#
+set o2101/level = 5
+#
+set o2101/level_base = 5
+#
+set o2101/vnum = "o2101"
+#
+set o2101/item_type = "armor"
+#
+set o2101/wear_location = "body"
+#
+set o2101/weight = 2
+#
+tag o2101 = dangerous neighborhood:area name
+#
+tag o2101 = object
+#
+set o2101/armor = 3
+#
+wearto o2101 = m2101
+#
+set m2101/reset_objects["o2101"] = {"location":"equipped"}
+#
+tel r2131
+#
+create/drop a patrolman;patrolman;man;m2106:characters.Mobile
+#
+desc m2106 = A patrolman is trying to keep the peace. 
+#
+set m2106/level = 9
+#
+set m2106/level_base = 9
+#
+set m2106/vnum = "m2106"
+#
+set m2106/look_description = "He'd rather be at the local pub than out here with these nasty kids. "
+#
+set m2106/act_flags = ['stay area', 'npc']
+#
+set m2106/alignment = 700
+#
+set m2106/sex = "male"
+#
+set m2106/race = "human"
+#
+tag m2106 = dangerous neighborhood:area name
+#
+tag m2106 = mobile
+#
+set m2106/hitpoints[maximum] = 97
+#
+set m2106/position = "standing"
+#
+set m2106/experience_total = 4274
+#
+set m2106/experience_current = 4274
+#
+tel r2131
+#
+create a patrol club;patrol;club;o2110:objects.Weapon
+#
+sethome o2110 = m2106
+#
+desc o2110 = A patrolman's club has carelessly been forgotten here.
+#
+set o2110/level = 7
+#
+set o2110/level_base = 7
+#
+set o2110/vnum = "o2110"
+#
+set o2110/item_type = "weapon"
+#
+set o2110/wear_location = "wield"
+#
+set o2110/weight = 1
+#
+tag o2110 = dangerous neighborhood:area name
+#
+tag o2110 = object
+#
+set o2110/stat_modifiers[hitroll] = 1
+#
+set o2110/weapon_type = "pound"
+#
+set o2110/damage_low = 4
+#
+set o2110/damage_high = 11
+#
+wieldto o2110 = m2106
+#
+set m2106/experience_total = 5342
+#
+set m2106/experience_current = 5342
+#
+set m2106/reset_objects["o2110"] = {"location":"equipped"}
+#
+tel r2132
+#
+create/drop a patrolman;patrolman;man;m2106:characters.Mobile
+#
+desc m2106 = A patrolman is trying to keep the peace. 
+#
+set m2106/level = 9
+#
+set m2106/level_base = 9
+#
+set m2106/vnum = "m2106"
+#
+set m2106/look_description = "He'd rather be at the local pub than out here with these nasty kids. "
+#
+set m2106/act_flags = ['stay area', 'npc']
+#
+set m2106/alignment = 700
+#
+set m2106/sex = "male"
+#
+set m2106/race = "human"
+#
+tag m2106 = dangerous neighborhood:area name
+#
+tag m2106 = mobile
+#
+set m2106/hitpoints[maximum] = 95
+#
+set m2106/position = "standing"
+#
+set m2106/experience_total = 4186
+#
+set m2106/experience_current = 4186
+#
+tel r2132
+#
+create a patrol club;patrol;club;o2110:objects.Weapon
+#
+sethome o2110 = m2106
+#
+desc o2110 = A patrolman's club has carelessly been forgotten here.
+#
+set o2110/level = 7
+#
+set o2110/level_base = 7
+#
+set o2110/vnum = "o2110"
+#
+set o2110/item_type = "weapon"
+#
+set o2110/wear_location = "wield"
+#
+set o2110/weight = 1
+#
+tag o2110 = dangerous neighborhood:area name
+#
+tag o2110 = object
+#
+set o2110/stat_modifiers[hitroll] = 1
+#
+set o2110/weapon_type = "pound"
+#
+set o2110/damage_low = 3
+#
+set o2110/damage_high = 11
+#
+wieldto o2110 = m2106
+#
+set m2106/experience_total = 5232
+#
+set m2106/experience_current = 5232
+#
+set m2106/reset_objects["o2110"] = {"location":"equipped"}
+#
+tel r2133
+#
+create/drop a patrolman;patrolman;man;m2106:characters.Mobile
+#
+desc m2106 = A patrolman is trying to keep the peace. 
+#
+set m2106/level = 9
+#
+set m2106/level_base = 9
+#
+set m2106/vnum = "m2106"
+#
+set m2106/look_description = "He'd rather be at the local pub than out here with these nasty kids. "
+#
+set m2106/act_flags = ['stay area', 'npc']
+#
+set m2106/alignment = 700
+#
+set m2106/sex = "male"
+#
+set m2106/race = "human"
+#
+tag m2106 = dangerous neighborhood:area name
+#
+tag m2106 = mobile
+#
+set m2106/hitpoints[maximum] = 127
+#
+set m2106/position = "standing"
+#
+set m2106/experience_total = 4696
+#
+set m2106/experience_current = 4696
+#
+tel r2133
+#
+create a patrol club;patrol;club;o2110:objects.Weapon
+#
+sethome o2110 = m2106
+#
+desc o2110 = A patrolman's club has carelessly been forgotten here.
+#
+set o2110/level = 7
+#
+set o2110/level_base = 7
+#
+set o2110/vnum = "o2110"
+#
+set o2110/item_type = "weapon"
+#
+set o2110/wear_location = "wield"
+#
+set o2110/weight = 1
+#
+tag o2110 = dangerous neighborhood:area name
+#
+tag o2110 = object
+#
+set o2110/stat_modifiers[hitroll] = 1
+#
+set o2110/weapon_type = "pound"
+#
+set o2110/damage_low = 4
+#
+set o2110/damage_high = 11
+#
+wieldto o2110 = m2106
+#
+set m2106/experience_total = 5870
+#
+set m2106/experience_current = 5870
+#
+set m2106/reset_objects["o2110"] = {"location":"equipped"}
+#
+tel r2134
+#
+create/drop a patrolman;patrolman;man;m2106:characters.Mobile
+#
+desc m2106 = A patrolman is trying to keep the peace. 
+#
+set m2106/level = 9
+#
+set m2106/level_base = 9
+#
+set m2106/vnum = "m2106"
+#
+set m2106/look_description = "He'd rather be at the local pub than out here with these nasty kids. "
+#
+set m2106/act_flags = ['stay area', 'npc']
+#
+set m2106/alignment = 700
+#
+set m2106/sex = "male"
+#
+set m2106/race = "human"
+#
+tag m2106 = dangerous neighborhood:area name
+#
+tag m2106 = mobile
+#
+set m2106/hitpoints[maximum] = 76
+#
+set m2106/position = "standing"
+#
+set m2106/experience_total = 3894
+#
+set m2106/experience_current = 3894
+#
+tel r2134
+#
+create a patrol club;patrol;club;o2110:objects.Weapon
+#
+sethome o2110 = m2106
+#
+desc o2110 = A patrolman's club has carelessly been forgotten here.
+#
+set o2110/level = 7
+#
+set o2110/level_base = 7
+#
+set o2110/vnum = "o2110"
+#
+set o2110/item_type = "weapon"
+#
+set o2110/wear_location = "wield"
+#
+set o2110/weight = 1
+#
+tag o2110 = dangerous neighborhood:area name
+#
+tag o2110 = object
+#
+set o2110/stat_modifiers[hitroll] = 1
+#
+set o2110/weapon_type = "pound"
+#
+set o2110/damage_low = 5
+#
+set o2110/damage_high = 11
+#
+wieldto o2110 = m2106
+#
+set m2106/experience_total = 4867
+#
+set m2106/experience_current = 4867
+#
+set m2106/reset_objects["o2110"] = {"location":"equipped"}
+#
+tel r2135
+#
+create/drop a patrolman;patrolman;man;m2106:characters.Mobile
+#
+desc m2106 = A patrolman is trying to keep the peace. 
+#
+set m2106/level = 9
+#
+set m2106/level_base = 9
+#
+set m2106/vnum = "m2106"
+#
+set m2106/look_description = "He'd rather be at the local pub than out here with these nasty kids. "
+#
+set m2106/act_flags = ['stay area', 'npc']
+#
+set m2106/alignment = 700
+#
+set m2106/sex = "male"
+#
+set m2106/race = "human"
+#
+tag m2106 = dangerous neighborhood:area name
+#
+tag m2106 = mobile
+#
+set m2106/hitpoints[maximum] = 124
+#
+set m2106/position = "standing"
+#
+set m2106/experience_total = 4579
+#
+set m2106/experience_current = 4579
+#
+tel r2135
+#
+create a patrol club;patrol;club;o2110:objects.Weapon
+#
+sethome o2110 = m2106
+#
+desc o2110 = A patrolman's club has carelessly been forgotten here.
+#
+set o2110/level = 7
+#
+set o2110/level_base = 7
+#
+set o2110/vnum = "o2110"
+#
+set o2110/item_type = "weapon"
+#
+set o2110/wear_location = "wield"
+#
+set o2110/weight = 1
+#
+tag o2110 = dangerous neighborhood:area name
+#
+tag o2110 = object
+#
+set o2110/stat_modifiers[hitroll] = 1
+#
+set o2110/weapon_type = "pound"
+#
+set o2110/damage_low = 3
+#
+set o2110/damage_high = 12
+#
+wieldto o2110 = m2106
+#
+set m2106/experience_total = 5723
+#
+set m2106/experience_current = 5723
+#
+set m2106/reset_objects["o2110"] = {"location":"equipped"}
+#
+tel r2136
+#
+create/drop a patrolman;patrolman;man;m2106:characters.Mobile
+#
+desc m2106 = A patrolman is trying to keep the peace. 
+#
+set m2106/level = 9
+#
+set m2106/level_base = 9
+#
+set m2106/vnum = "m2106"
+#
+set m2106/look_description = "He'd rather be at the local pub than out here with these nasty kids. "
+#
+set m2106/act_flags = ['stay area', 'npc']
+#
+set m2106/alignment = 700
+#
+set m2106/sex = "male"
+#
+set m2106/race = "human"
+#
+tag m2106 = dangerous neighborhood:area name
+#
+tag m2106 = mobile
+#
+set m2106/hitpoints[maximum] = 93
+#
+set m2106/position = "standing"
+#
+set m2106/experience_total = 4126
+#
+set m2106/experience_current = 4126
+#
+tel r2136
+#
+create a patrol club;patrol;club;o2110:objects.Weapon
+#
+sethome o2110 = m2106
+#
+desc o2110 = A patrolman's club has carelessly been forgotten here.
+#
+set o2110/level = 7
+#
+set o2110/level_base = 7
+#
+set o2110/vnum = "o2110"
+#
+set o2110/item_type = "weapon"
+#
+set o2110/wear_location = "wield"
+#
+set o2110/weight = 1
+#
+tag o2110 = dangerous neighborhood:area name
+#
+tag o2110 = object
+#
+set o2110/stat_modifiers[hitroll] = 1
+#
+set o2110/weapon_type = "pound"
+#
+set o2110/damage_low = 4
+#
+set o2110/damage_high = 11
+#
+wieldto o2110 = m2106
+#
+set m2106/experience_total = 5157
+#
+set m2106/experience_current = 5157
+#
+set m2106/reset_objects["o2110"] = {"location":"equipped"}
+#
+tel r2137
+#
+create/drop a patrolman;patrolman;man;m2106:characters.Mobile
+#
+desc m2106 = A patrolman is trying to keep the peace. 
+#
+set m2106/level = 9
+#
+set m2106/level_base = 9
+#
+set m2106/vnum = "m2106"
+#
+set m2106/look_description = "He'd rather be at the local pub than out here with these nasty kids. "
+#
+set m2106/act_flags = ['stay area', 'npc']
+#
+set m2106/alignment = 700
+#
+set m2106/sex = "male"
+#
+set m2106/race = "human"
+#
+tag m2106 = dangerous neighborhood:area name
+#
+tag m2106 = mobile
+#
+set m2106/hitpoints[maximum] = 140
+#
+set m2106/position = "standing"
+#
+set m2106/experience_total = 4346
+#
+set m2106/experience_current = 4346
+#
+tel r2137
+#
+create a patrol club;patrol;club;o2110:objects.Weapon
+#
+sethome o2110 = m2106
+#
+desc o2110 = A patrolman's club has carelessly been forgotten here.
+#
+set o2110/level = 7
+#
+set o2110/level_base = 7
+#
+set o2110/vnum = "o2110"
+#
+set o2110/item_type = "weapon"
+#
+set o2110/wear_location = "wield"
+#
+set o2110/weight = 1
+#
+tag o2110 = dangerous neighborhood:area name
+#
+tag o2110 = object
+#
+set o2110/stat_modifiers[hitroll] = 1
+#
+set o2110/weapon_type = "pound"
+#
+set o2110/damage_low = 3
+#
+set o2110/damage_high = 10
+#
+wieldto o2110 = m2106
+#
+set m2106/experience_total = 5432
+#
+set m2106/experience_current = 5432
+#
+set m2106/reset_objects["o2110"] = {"location":"equipped"}
+#
+tel r2138
+#
+create/drop a patrolman;patrolman;man;m2106:characters.Mobile
+#
+desc m2106 = A patrolman is trying to keep the peace. 
+#
+set m2106/level = 9
+#
+set m2106/level_base = 9
+#
+set m2106/vnum = "m2106"
+#
+set m2106/look_description = "He'd rather be at the local pub than out here with these nasty kids. "
+#
+set m2106/act_flags = ['stay area', 'npc']
+#
+set m2106/alignment = 700
+#
+set m2106/sex = "male"
+#
+set m2106/race = "human"
+#
+tag m2106 = dangerous neighborhood:area name
+#
+tag m2106 = mobile
+#
+set m2106/hitpoints[maximum] = 146
+#
+set m2106/position = "standing"
+#
+set m2106/experience_total = 4300
+#
+set m2106/experience_current = 4300
+#
+tel r2138
+#
+create a patrol club;patrol;club;o2110:objects.Weapon
+#
+sethome o2110 = m2106
+#
+desc o2110 = A patrolman's club has carelessly been forgotten here.
+#
+set o2110/level = 7
+#
+set o2110/level_base = 7
+#
+set o2110/vnum = "o2110"
+#
+set o2110/item_type = "weapon"
+#
+set o2110/wear_location = "wield"
+#
+set o2110/weight = 1
+#
+tag o2110 = dangerous neighborhood:area name
+#
+tag o2110 = object
+#
+set o2110/stat_modifiers[hitroll] = 1
+#
+set o2110/weapon_type = "pound"
+#
+set o2110/damage_low = 2
+#
+set o2110/damage_high = 10
+#
+wieldto o2110 = m2106
+#
+set m2106/experience_total = 5375
+#
+set m2106/experience_current = 5375
+#
+set m2106/reset_objects["o2110"] = {"location":"equipped"}
+#
+tel r2139
+#
+create/drop a patrolman;patrolman;man;m2106:characters.Mobile
+#
+desc m2106 = A patrolman is trying to keep the peace. 
+#
+set m2106/level = 9
+#
+set m2106/level_base = 9
+#
+set m2106/vnum = "m2106"
+#
+set m2106/look_description = "He'd rather be at the local pub than out here with these nasty kids. "
+#
+set m2106/act_flags = ['stay area', 'npc']
+#
+set m2106/alignment = 700
+#
+set m2106/sex = "male"
+#
+set m2106/race = "human"
+#
+tag m2106 = dangerous neighborhood:area name
+#
+tag m2106 = mobile
+#
+set m2106/hitpoints[maximum] = 82
+#
+set m2106/position = "standing"
+#
+set m2106/experience_total = 4427
+#
+set m2106/experience_current = 4427
+#
+tel r2139
+#
+create a patrol club;patrol;club;o2110:objects.Weapon
+#
+sethome o2110 = m2106
+#
+desc o2110 = A patrolman's club has carelessly been forgotten here.
+#
+set o2110/level = 7
+#
+set o2110/level_base = 7
+#
+set o2110/vnum = "o2110"
+#
+set o2110/item_type = "weapon"
+#
+set o2110/wear_location = "wield"
+#
+set o2110/weight = 1
+#
+tag o2110 = dangerous neighborhood:area name
+#
+tag o2110 = object
+#
+set o2110/stat_modifiers[hitroll] = 1
+#
+set o2110/weapon_type = "pound"
+#
+set o2110/damage_low = 4
+#
+set o2110/damage_high = 12
+#
+wieldto o2110 = m2106
+#
+set m2106/experience_total = 5533
+#
+set m2106/experience_current = 5533
+#
+set m2106/reset_objects["o2110"] = {"location":"equipped"}
+#
+tel r2140
+#
+create/drop a patrolman;patrolman;man;m2106:characters.Mobile
+#
+desc m2106 = A patrolman is trying to keep the peace. 
+#
+set m2106/level = 9
+#
+set m2106/level_base = 9
+#
+set m2106/vnum = "m2106"
+#
+set m2106/look_description = "He'd rather be at the local pub than out here with these nasty kids. "
+#
+set m2106/act_flags = ['stay area', 'npc']
+#
+set m2106/alignment = 700
+#
+set m2106/sex = "male"
+#
+set m2106/race = "human"
+#
+tag m2106 = dangerous neighborhood:area name
+#
+tag m2106 = mobile
+#
+set m2106/hitpoints[maximum] = 91
+#
+set m2106/position = "standing"
+#
+set m2106/experience_total = 4049
+#
+set m2106/experience_current = 4049
+#
+tel r2140
+#
+create a patrol club;patrol;club;o2110:objects.Weapon
+#
+sethome o2110 = m2106
+#
+desc o2110 = A patrolman's club has carelessly been forgotten here.
+#
+set o2110/level = 7
+#
+set o2110/level_base = 7
+#
+set o2110/vnum = "o2110"
+#
+set o2110/item_type = "weapon"
+#
+set o2110/wear_location = "wield"
+#
+set o2110/weight = 1
+#
+tag o2110 = dangerous neighborhood:area name
+#
+tag o2110 = object
+#
+set o2110/stat_modifiers[hitroll] = 1
+#
+set o2110/weapon_type = "pound"
+#
+set o2110/damage_low = 4
+#
+set o2110/damage_high = 10
+#
+wieldto o2110 = m2106
+#
+set m2106/experience_total = 5061
+#
+set m2106/experience_current = 5061
+#
+set m2106/reset_objects["o2110"] = {"location":"equipped"}
+#
+tel r2142
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 132
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 9000
+#
+set m2102/experience_current = 9000
+#
+tel r2142
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 4
+#
+wearto o2102 = m2102
+#
+set m2102/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2145
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 227
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 8912
+#
+set m2102/experience_current = 8912
+#
+tel r2145
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 4
+#
+wearto o2102 = m2102
+#
+set m2102/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2146
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 182
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 10151
+#
+set m2102/experience_current = 10151
+#
+tel r2146
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 4
+#
+wearto o2102 = m2102
+#
+set m2102/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2148
+#
+create/drop the gang leader;gang;leader;m2109:characters.Mobile
+#
+desc m2109 = The gang leader looks you over appraisingly. 
+#
+set m2109/level = 19
+#
+set m2109/level_base = 19
+#
+set m2109/vnum = "m2109"
+#
+set m2109/look_description = "He's risen to be leader through brute force and cunning leadership. "
+#
+set m2109/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m2109/alignment = 0
+#
+set m2109/sex = "male"
+#
+set m2109/race = "ogre"
+#
+tag m2109 = dangerous neighborhood:area name
+#
+tag m2109 = mobile
+#
+set m2109/hitpoints[maximum] = 412
+#
+set m2109/position = "standing"
+#
+set m2109/experience_total = 35102
+#
+set m2109/experience_current = 35102
+#
+tel r2148
+#
+create a stiletto;stiletto;o2106:objects.Weapon
+#
+sethome o2106 = m2109
+#
+desc o2106 = A killer stiletto has been forgotten here.
+#
+set o2106/level = 17
+#
+set o2106/level_base = 17
+#
+set o2106/vnum = "o2106"
+#
+set o2106/item_type = "weapon"
+#
+set o2106/wear_location = "wield"
+#
+set o2106/weight = 2
+#
+tag o2106 = dangerous neighborhood:area name
+#
+tag o2106 = object
+#
+set o2106/stat_modifiers[hitroll] = 4
+#
+set o2106/stat_modifiers[armor class] = 3
+#
+set o2106/weapon_type = "pierce"
+#
+set o2106/damage_low = 5
+#
+set o2106/damage_high = 21
+#
+wieldto o2106 = m2109
+#
+set m2109/experience_total = 43877
+#
+set m2109/experience_current = 43877
+#
+set m2109/reset_objects["o2106"] = {"location":"equipped"}
+#
+tel r2148
+#
+create brass knuckles;knuckles;brass;o2112:objects.Armor
+#
+sethome o2112 = m2109
+#
+desc o2112 = A set of brass knuckles left from a fight are here on the ground.
+#
+set o2112/level = 17
+#
+set o2112/level_base = 17
+#
+set o2112/vnum = "o2112"
+#
+set o2112/item_type = "armor"
+#
+set o2112/wear_location = "hands"
+#
+set o2112/weight = 1
+#
+tag o2112 = dangerous neighborhood:area name
+#
+tag o2112 = object
+#
+set o2112/extra_flags = ['hum']
+#
+set o2112/stat_modifiers[hitpoints] = -15
+#
+set o2112/stat_modifiers[hitroll] = 5
+#
+set o2112/armor = 7
+#
+wearto o2112 = m2109
+#
+set m2109/reset_objects["o2112"] = {"location":"equipped"}
+#
+tel r2148
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r2149
+#
+create/drop a doll;doll;m2105:characters.Mobile
+#
+desc m2105 = A gang doll looks naughty and nice. 
+#
+set m2105/level = 6
+#
+set m2105/level_base = 6
+#
+set m2105/vnum = "m2105"
+#
+set m2105/look_description = "She's a beauty (ok in RELATIVE terms) but you better not touch! "
+#
+set m2105/act_flags = ['wimpy', 'stay area', 'scavenger', 'npc']
+#
+set m2105/alignment = 0
+#
+set m2105/sex = "female"
+#
+set m2105/race = "orc"
+#
+tag m2105 = dangerous neighborhood:area name
+#
+tag m2105 = mobile
+#
+set m2105/hitpoints[maximum] = 66
+#
+set m2105/position = "standing"
+#
+set m2105/experience_total = 1456
+#
+set m2105/experience_current = 1456
+#
+tel r2149
+#
+create spiked heeled boots;spiked;heel;boots;o2107:objects.Armor
+#
+sethome o2107 = m2105
+#
+desc o2107 = A pair of black leather boots with 6 inch spikes have been left here.
+#
+set o2107/level = 4
+#
+set o2107/level_base = 4
+#
+set o2107/vnum = "o2107"
+#
+set o2107/item_type = "armor"
+#
+set o2107/wear_location = "feet"
+#
+set o2107/weight = 4
+#
+tag o2107 = dangerous neighborhood:area name
+#
+tag o2107 = object
+#
+set o2107/stat_modifiers[dexterity] = -1
+#
+set o2107/stat_modifiers[hitroll] = 1
+#
+set o2107/armor = 2
+#
+wearto o2107 = m2105
+#
+set m2105/reset_objects["o2107"] = {"location":"equipped"}
+#
+tel r2149
+#
+create a mirror;mirror;o2108:objects.Wand
+#
+sethome o2108 = m2105
+#
+desc o2108 = A small mirror has been left here.
+#
+set o2108/level = 4
+#
+set o2108/level_base = 4
+#
+set o2108/vnum = "o2108"
+#
+set o2108/item_type = "wand"
+#
+set o2108/wear_location = "held, in hands"
+#
+set o2108/weight = 1
+#
+tag o2108 = dangerous neighborhood:area name
+#
+tag o2108 = object
+#
+set o2108/extra_flags = ['magic', 'glow']
+#
+set o2108/spell_level = 20
+#
+set o2108/spell_level_base = 20
+#
+set o2108/charges_maximum = 10
+#
+set o2108/charges_maximum_base = 10
+#
+set o2108/charges_current = 10
+#
+set o2108/spell_name = "blindness"
+#
+wearto o2108 = m2105
+#
+set m2105/reset_objects["o2108"] = {"location":"equipped"}
+#
+tel r2149
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r2150
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 189
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 8866
+#
+set m2102/experience_current = 8866
+#
+tel r2151
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 126
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 9544
+#
+set m2102/experience_current = 9544
+#
+tel r2151
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 4
+#
+wearto o2102 = m2102
+#
+set m2102/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2152
+#
+create/drop a doll;doll;m2105:characters.Mobile
+#
+desc m2105 = A gang doll looks naughty and nice. 
+#
+set m2105/level = 6
+#
+set m2105/level_base = 6
+#
+set m2105/vnum = "m2105"
+#
+set m2105/look_description = "She's a beauty (ok in RELATIVE terms) but you better not touch! "
+#
+set m2105/act_flags = ['wimpy', 'stay area', 'scavenger', 'npc']
+#
+set m2105/alignment = 0
+#
+set m2105/sex = "female"
+#
+set m2105/race = "orc"
+#
+tag m2105 = dangerous neighborhood:area name
+#
+tag m2105 = mobile
+#
+set m2105/hitpoints[maximum] = 72
+#
+set m2105/position = "standing"
+#
+set m2105/experience_total = 1505
+#
+set m2105/experience_current = 1505
+#
+tel r2152
+#
+create a mirror;mirror;o2108:objects.Wand
+#
+sethome o2108 = m2105
+#
+desc o2108 = A small mirror has been left here.
+#
+set o2108/level = 4
+#
+set o2108/level_base = 4
+#
+set o2108/vnum = "o2108"
+#
+set o2108/item_type = "wand"
+#
+set o2108/wear_location = "held, in hands"
+#
+set o2108/weight = 1
+#
+tag o2108 = dangerous neighborhood:area name
+#
+tag o2108 = object
+#
+set o2108/extra_flags = ['magic', 'glow']
+#
+set o2108/spell_level = 20
+#
+set o2108/spell_level_base = 20
+#
+set o2108/charges_maximum = 10
+#
+set o2108/charges_maximum_base = 10
+#
+set o2108/charges_current = 10
+#
+set o2108/spell_name = "blindness"
+#
+wearto o2108 = m2105
+#
+set m2105/reset_objects["o2108"] = {"location":"equipped"}
+#
+tel r2152
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 177
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 9944
+#
+set m2102/experience_current = 9944
+#
+tel r2152
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 6
+#
+wearto o2102 = m2102
+#
+set m2102/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2153
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 117
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 9677
+#
+set m2102/experience_current = 9677
+#
+tel r2153
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 4
+#
+wearto o2102 = m2102
+#
+set m2102/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2154
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 225
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 9246
+#
+set m2102/experience_current = 9246
+#
+tel r2155
+#
+create/drop a bruiser;bruiser;m2104:characters.Mobile
+#
+desc m2104 = A big, mean bruiser is looking for limbs to break. 
+#
+set m2104/level = 6
+#
+set m2104/level_base = 6
+#
+set m2104/vnum = "m2104"
+#
+set m2104/look_description = "He's 6'6" 245 pounds and enough muscle to bash your head in. "
+#
+set m2104/act_flags = ['wimpy', 'stay area', 'aggressive', 'scavenger', 'npc']
+#
+set m2104/alignment = -333
+#
+set m2104/sex = "male"
+#
+set m2104/spell_affects = {'detect invis': ''}
+#
+set m2104/race = "orc"
+#
+tag m2104 = dangerous neighborhood:area name
+#
+tag m2104 = mobile
+#
+set m2104/hitpoints[maximum] = 78
+#
+set m2104/position = "standing"
+#
+set m2104/experience_total = 1522
+#
+set m2104/experience_current = 1522
+#
+tel r2155
+#
+create a metal shield;metal;shield;garbage;can;lid;o2104:objects.Armor
+#
+sethome o2104 = m2104
+#
+desc o2104 = A garbage can lid has been dropped on the floor.
+#
+set o2104/level = 4
+#
+set o2104/level_base = 4
+#
+set o2104/vnum = "o2104"
+#
+set o2104/item_type = "armor"
+#
+set o2104/wear_location = "shield"
+#
+set o2104/weight = 3
+#
+tag o2104 = dangerous neighborhood:area name
+#
+tag o2104 = object
+#
+set o2104/armor = 4
+#
+wearto o2104 = m2104
+#
+set m2104/reset_objects["o2104"] = {"location":"equipped"}
+#
+tel r2155
+#
+create comfortable leather gloves;gloves;o2109:objects.Armor
+#
+sethome o2109 = m2104
+#
+desc o2109 = A pair of soft lined leather gloves lie here.
+#
+set o2109/level = 4
+#
+set o2109/level_base = 4
+#
+set o2109/vnum = "o2109"
+#
+set o2109/item_type = "armor"
+#
+set o2109/wear_location = "hands"
+#
+set o2109/weight = 2
+#
+tag o2109 = dangerous neighborhood:area name
+#
+tag o2109 = object
+#
+set o2109/stat_modifiers[strength] = 1
+#
+set o2109/armor = 3
+#
+wearto o2109 = m2104
+#
+set m2104/reset_objects["o2109"] = {"location":"equipped"}
+#
+tel r2155
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 212
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 9122
+#
+set m2102/experience_current = 9122
+#
+tel r2156
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 121
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 9325
+#
+set m2102/experience_current = 9325
+#
+tel r2156
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 4
+#
+wearto o2102 = m2102
+#
+set m2102/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2157
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 181
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 8726
+#
+set m2102/experience_current = 8726
+#
+tel r2158
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 101
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 8544
+#
+set m2102/experience_current = 8544
+#
+tel r2158
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 4
+#
+wearto o2102 = m2102
+#
+set m2102/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2159
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 109
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 9503
+#
+set m2102/experience_current = 9503
+#
+tel r2159
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 6
+#
+wearto o2102 = m2102
+#
+set m2102/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2160
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 195
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 9557
+#
+set m2102/experience_current = 9557
+#
+tel r2161
+#
+create/drop a vandal;vandal;m2107:characters.Mobile
+#
+desc m2107 = A vandal is spray painting pro-gang slogans on the wall here. 
+#
+set m2107/level = 8
+#
+set m2107/level_base = 8
+#
+set m2107/vnum = "m2107"
+#
+set m2107/look_description = "He has a wary eye and a fine hand for art. "
+#
+set m2107/act_flags = ['wimpy', 'npc']
+#
+set m2107/alignment = -400
+#
+set m2107/sex = "male"
+#
+set m2107/spell_affects = {'sneak': ''}
+#
+set m2107/race = "dwarf"
+#
+tag m2107 = dangerous neighborhood:area name
+#
+tag m2107 = mobile
+#
+set m2107/hitpoints[maximum] = 99
+#
+set m2107/position = "standing"
+#
+set m2107/experience_total = 3339
+#
+set m2107/experience_current = 3339
+#
+tel r2161
+#
+create a spray paint can;spray;paint;can;o2105:objects.Wand
+#
+sethome o2105 = m2107
+#
+desc o2105 = A can of spray paint has been discarded here.
+#
+set o2105/level = 6
+#
+set o2105/level_base = 6
+#
+set o2105/vnum = "o2105"
+#
+set o2105/item_type = "wand"
+#
+set o2105/wear_location = "held, in hands"
+#
+set o2105/weight = 1
+#
+tag o2105 = dangerous neighborhood:area name
+#
+tag o2105 = object
+#
+set o2105/extra_flags = ['hum']
+#
+set o2105/spell_level = 11
+#
+set o2105/spell_level_base = 11
+#
+set o2105/charges_maximum = 2
+#
+set o2105/charges_maximum_base = 2
+#
+set o2105/charges_current = 2
+#
+set o2105/spell_name = "colour spray"
+#
+wearto o2105 = m2107
+#
+set m2107/reset_objects["o2105"] = {"location":"equipped"}
+#
+tel r2161
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 231
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 9457
+#
+set m2102/experience_current = 9457
+#
+tel r2161
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 4
+#
+wearto o2102 = m2102
+#
+set m2102/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2162
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 173
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 9978
+#
+set m2102/experience_current = 9978
+#
+tel r2162
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 4
+#
+wearto o2102 = m2102
+#
+set m2102/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2163
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 236
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 8652
+#
+set m2102/experience_current = 8652
+#
+tel r2164
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 130
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 9020
+#
+set m2102/experience_current = 9020
+#
+tel r2164
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 4
+#
+wearto o2102 = m2102
+#
+set m2102/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2165
+#
+create/drop a vandal;vandal;m2107:characters.Mobile
+#
+desc m2107 = A vandal is spray painting pro-gang slogans on the wall here. 
+#
+set m2107/level = 8
+#
+set m2107/level_base = 8
+#
+set m2107/vnum = "m2107"
+#
+set m2107/look_description = "He has a wary eye and a fine hand for art. "
+#
+set m2107/act_flags = ['wimpy', 'npc']
+#
+set m2107/alignment = -400
+#
+set m2107/sex = "male"
+#
+set m2107/spell_affects = {'sneak': ''}
+#
+set m2107/race = "dwarf"
+#
+tag m2107 = dangerous neighborhood:area name
+#
+tag m2107 = mobile
+#
+set m2107/hitpoints[maximum] = 128
+#
+set m2107/position = "standing"
+#
+set m2107/experience_total = 3027
+#
+set m2107/experience_current = 3027
+#
+tel r2165
+#
+create a spray paint can;spray;paint;can;o2105:objects.Wand
+#
+sethome o2105 = m2107
+#
+desc o2105 = A can of spray paint has been discarded here.
+#
+set o2105/level = 6
+#
+set o2105/level_base = 6
+#
+set o2105/vnum = "o2105"
+#
+set o2105/item_type = "wand"
+#
+set o2105/wear_location = "held, in hands"
+#
+set o2105/weight = 1
+#
+tag o2105 = dangerous neighborhood:area name
+#
+tag o2105 = object
+#
+set o2105/extra_flags = ['hum']
+#
+set o2105/spell_level = 11
+#
+set o2105/spell_level_base = 11
+#
+set o2105/charges_maximum = 2
+#
+set o2105/charges_maximum_base = 2
+#
+set o2105/charges_current = 2
+#
+set o2105/spell_name = "colour spray"
+#
+wearto o2105 = m2107
+#
+set m2107/reset_objects["o2105"] = {"location":"equipped"}
+#
+tel r2165
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 107
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 9901
+#
+set m2102/experience_current = 9901
+#
+tel r2165
+#
+create/drop a gang member;troll;gang;member;m2102; m2102-2:characters.Mobile
+#
+desc m2102-2 = A member of the Trolls wanders about here. 
+#
+set m2102-2/level = 12
+#
+set m2102-2/level_base = 12
+#
+set m2102-2/vnum = "m2102"
+#
+set m2102-2/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102-2/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102-2/alignment = 100
+#
+set m2102-2/sex = "male"
+#
+set m2102-2/race = "troll"
+#
+tag m2102-2 = dangerous neighborhood:area name
+#
+tag m2102-2 = mobile
+#
+set m2102-2/hitpoints[maximum] = 171
+#
+set m2102-2/position = "standing"
+#
+set m2102-2/experience_total = 8592
+#
+set m2102-2/experience_current = 8592
+#
+tel r2165
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102-2
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 6
+#
+wearto o2102 = m2102-2
+#
+set m2102-2/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2165
+#
+create/drop a gang member;troll;gang;member;m2102; m2102-3:characters.Mobile
+#
+desc m2102-3 = A member of the Trolls wanders about here. 
+#
+set m2102-3/level = 12
+#
+set m2102-3/level_base = 12
+#
+set m2102-3/vnum = "m2102"
+#
+set m2102-3/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102-3/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102-3/alignment = 100
+#
+set m2102-3/sex = "male"
+#
+set m2102-3/race = "troll"
+#
+tag m2102-3 = dangerous neighborhood:area name
+#
+tag m2102-3 = mobile
+#
+set m2102-3/hitpoints[maximum] = 156
+#
+set m2102-3/position = "standing"
+#
+set m2102-3/experience_total = 9665
+#
+set m2102-3/experience_current = 9665
+#
+tel r2165
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102-3
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 4
+#
+wearto o2102 = m2102-3
+#
+set m2102-3/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2165
+#
+create/drop a gang member;troll;gang;member;m2102; m2102-4:characters.Mobile
+#
+desc m2102-4 = A member of the Trolls wanders about here. 
+#
+set m2102-4/level = 12
+#
+set m2102-4/level_base = 12
+#
+set m2102-4/vnum = "m2102"
+#
+set m2102-4/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102-4/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102-4/alignment = 100
+#
+set m2102-4/sex = "male"
+#
+set m2102-4/race = "troll"
+#
+tag m2102-4 = dangerous neighborhood:area name
+#
+tag m2102-4 = mobile
+#
+set m2102-4/hitpoints[maximum] = 211
+#
+set m2102-4/position = "standing"
+#
+set m2102-4/experience_total = 9077
+#
+set m2102-4/experience_current = 9077
+#
+tel r2165
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102-4
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 4
+#
+wearto o2102 = m2102-4
+#
+set m2102-4/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2166
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 139
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 9484
+#
+set m2102/experience_current = 9484
+#
+tel r2166
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 4
+#
+wearto o2102 = m2102
+#
+set m2102/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2167
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 205
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 10148
+#
+set m2102/experience_current = 10148
+#
+tel r2167
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 4
+#
+wearto o2102 = m2102
+#
+set m2102/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2169
+#
+create/drop a gang member;troll;gang;member;m2102:characters.Mobile
+#
+desc m2102 = A member of the Trolls wanders about here. 
+#
+set m2102/level = 12
+#
+set m2102/level_base = 12
+#
+set m2102/vnum = "m2102"
+#
+set m2102/look_description = "He wants to rid the world of every last Ogre gang member. "
+#
+set m2102/act_flags = ['stay area', 'scavenger', 'npc']
+#
+set m2102/alignment = 100
+#
+set m2102/sex = "male"
+#
+set m2102/race = "troll"
+#
+tag m2102 = dangerous neighborhood:area name
+#
+tag m2102 = mobile
+#
+set m2102/hitpoints[maximum] = 158
+#
+set m2102/position = "standing"
+#
+set m2102/experience_total = 9266
+#
+set m2102/experience_current = 9266
+#
+tel r2169
+#
+create a Troll gang jacket;troll;jacket;o2102:objects.Armor
+#
+sethome o2102 = m2102
+#
+desc o2102 = A Troll gang jacket has been carelessly tossed here.
+#
+set o2102/level = 10
+#
+set o2102/level_base = 10
+#
+set o2102/vnum = "o2102"
+#
+set o2102/item_type = "armor"
+#
+set o2102/wear_location = "body"
+#
+set o2102/weight = 2
+#
+tag o2102 = dangerous neighborhood:area name
+#
+tag o2102 = object
+#
+set o2102/armor = 6
+#
+wearto o2102 = m2102
+#
+set m2102/reset_objects["o2102"] = {"location":"equipped"}
+#
+tel r2170
+#
+create/drop a bruiser;bruiser;m2104:characters.Mobile
+#
+desc m2104 = A big, mean bruiser is looking for limbs to break. 
+#
+set m2104/level = 6
+#
+set m2104/level_base = 6
+#
+set m2104/vnum = "m2104"
+#
+set m2104/look_description = "He's 6'6" 245 pounds and enough muscle to bash your head in. "
+#
+set m2104/act_flags = ['wimpy', 'stay area', 'aggressive', 'scavenger', 'npc']
+#
+set m2104/alignment = -333
+#
+set m2104/sex = "male"
+#
+set m2104/spell_affects = {'detect invis': ''}
+#
+set m2104/race = "orc"
+#
+tag m2104 = dangerous neighborhood:area name
+#
+tag m2104 = mobile
+#
+set m2104/hitpoints[maximum] = 75
+#
+set m2104/position = "standing"
+#
+set m2104/experience_total = 1500
+#
+set m2104/experience_current = 1500
+#
+tel r2170
+#
+create a troll signet ring;signet;troll;ring;o2111:objects.Armor
+#
+sethome o2111 = m2104
+#
+desc o2111 = A signet ring bearing the crest of a troll lies in the dust here.
+#
+set o2111/level = 4
+#
+set o2111/level_base = 4
+#
+set o2111/vnum = "o2111"
+#
+set o2111/item_type = "armor"
+#
+set o2111/wear_location = "finger"
+#
+set o2111/weight = 1
+#
+tag o2111 = dangerous neighborhood:area name
+#
+tag o2111 = object
+#
+set o2111/alignment_restriction = ['neutral', 'good', 'evil']
+#
+set o2111/extra_flags = ['timed', 'machine', 'holy', 'vampire bane', 'poisoned', 'inventory', 'no remove', 'bless', 'no drop', 'magic', 'invisible', 'evil', 'lock', 'dark', 'hum', 'glow']
+#
+set o2111/stat_modifiers[strength] = 1
+#
+set o2111/armor = 4
+#
+wearto o2111 = m2104
+#
+set m2104/reset_objects["o2111"] = {"location":"equipped"}
+#
+tel r2170
+#
+create a metal shield;metal;shield;garbage;can;lid;o2104:objects.Armor
+#
+sethome o2104 = m2104
+#
+desc o2104 = A garbage can lid has been dropped on the floor.
+#
+set o2104/level = 4
+#
+set o2104/level_base = 4
+#
+set o2104/vnum = "o2104"
+#
+set o2104/item_type = "armor"
+#
+set o2104/wear_location = "shield"
+#
+set o2104/weight = 3
+#
+tag o2104 = dangerous neighborhood:area name
+#
+tag o2104 = object
+#
+set o2104/armor = 4
+#
+wearto o2104 = m2104
+#
+set m2104/reset_objects["o2104"] = {"location":"equipped"}
+#

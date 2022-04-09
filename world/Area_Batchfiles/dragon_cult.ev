@@ -1,0 +1,4456 @@
+dig/tel Sandman's Study; r9899
+#
+tag r9899 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9899 = You have the rare pleasure of seeing Sandman's study.  The room is small but not cramped.  There are lazy boy recliners  about the room. The walls are composed of bookshelves which are filled with texts from far off lands. 
+#
+desc/edit r9899
+#
+:j l
+#
+:wq
+#
+set r9899/vnum = "r9899"
+#
+set r9899/terrain = "inside"
+#
+set r9899/room_flags = ['solitary', 'safe', 'private', 'indoors', 'no mob']
+#
+dig/tel The Reception Area; r9850
+#
+tag r9850 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9850 = This room is very barren.  There is a desk in the center of the room which looks very functional.  There is one painting on the wall, you can't quite make it out, because it is what these new artist fools call abstract. There is a small sign here and a door to the north. 
+#
+desc/edit r9850
+#
+:j l
+#
+:wq
+#
+set r9850/vnum = "r9850"
+#
+set r9850/terrain = "inside"
+#
+set r9850/extra_description = {'painting': 'You think it looks a bit like a dragon. ', 'sign': "********  WARNING  ******** This area is not for level grubbers.  It can be very dangerous, and you could die.  It was designed to be a challenging area with many secrets and some cool EQ, but if you plan on an easy ride forget it, it's not here. - Sandman "}
+#
+set r9850/room_flags = ['indoors']
+#
+dig/tel A Dimly Lit Corridor; r9851
+#
+tag r9851 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9851 = Except for the fact that there is not much light here, this corridor looks very plain.  To the south is the reception desk, and to the north the corridor continues. 
+#
+desc/edit r9851
+#
+:j l
+#
+:wq
+#
+set r9851/vnum = "r9851"
+#
+set r9851/terrain = "inside"
+#
+set r9851/room_flags = ['indoors']
+#
+dig/tel Dragon Hall; r9852
+#
+tag r9852 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9852 = The walls in this room are definitely lined with paintings of Dragons and battles with Dragons.  In the later it always appears the Dragons are winning.  To the north there is an office and to the south there is a corridor. 
+#
+desc/edit r9852
+#
+:j l
+#
+:wq
+#
+set r9852/vnum = "r9852"
+#
+set r9852/terrain = "inside"
+#
+set r9852/extra_description = {'walls': 'The walls have intricate paintings of dragons upon them.  You see none of the good dragons in the paintings though, they are all of famous evil dragons like Tiamat the five headed. '}
+#
+set r9852/room_flags = ['indoors', 'no mob']
+#
+dig/tel Tourist Office; r9853
+#
+tag r9853 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9853 = Brochures everywhere!  Wow..... you wonder where they printed all of this, because printing hasn't been invented yet. To the south you see Dragon Hall, there is a room to the west and a door to the east. There is a very prominent plaque on the wall. 
+#
+desc/edit r9853
+#
+:j l
+#
+:wq
+#
+set r9853/vnum = "r9853"
+#
+set r9853/terrain = "inside"
+#
+set r9853/extra_description = {'plaque': "The Dragon Cult Temple was created by Sandman, late one night, when he should have been studying for finals.  12/13/93 Dragon Cult Temple revised & expanded Spring Break '94 by Sandman when he should have been his paper. ", 'brochures': 'The brochure reads: ____________________________________ | C U L T  O F  T H E  D R A G O N | |                                  | | Join today and you too can share | | in the many benefits a cult      | | member can have.                 | | advantages like:                 | |   - never having a heating bill  | |   - those cool robes             | |   - free virgin sacrifice        | |     tickets!                     | |   - a cool haircut               | |                                  | | For all this and more call       | | 1-800-FOR-DRGN                   | |                                  | | Remember: vote no on 13          | | Citizens of Gnome Village ban on      | | Draconian activity.  If you      | | feel like we do, Kill the Mayor  | | TODAY!                           | |__________________________________| '}
+#
+set r9853/room_flags = ['indoors']
+#
+dig/tel A Five Way Intersection; r9854
+#
+tag r9854 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9854 = Not much to say about this room, there are exits north, south, east, west, and up.  There is a bright light coming from the south. 
+#
+desc/edit r9854
+#
+:j l
+#
+:wq
+#
+set r9854/vnum = "r9854"
+#
+set r9854/terrain = "inside"
+#
+set r9854/room_flags = ['indoors', 'no mob']
+#
+dig/tel A Shrine; r9855
+#
+tag r9855 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9855 = So THIS is where the light came from.  There are candles everywhere. In the center of the room there is a shrine with a statue of a Dragon on top of it.  It appears to be a place of worship. The only exit is to the north. 
+#
+desc/edit r9855
+#
+:j l
+#
+:wq
+#
+set r9855/vnum = "r9855"
+#
+set r9855/terrain = "inside"
+#
+set r9855/room_flags = ['indoors']
+#
+dig/tel The Tapestry Room; r9856
+#
+tag r9856 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9856 = The wall of this room are covered with tapestries depicting, you guessed it, DRAGONS, of all sizes and colors.  You take a closer look and you see that the pictures are moving.  You feel uncomfortable in this room, you better leave.  The only exit is to the south. 
+#
+desc/edit r9856
+#
+:j l
+#
+:wq
+#
+set r9856/vnum = "r9856"
+#
+set r9856/terrain = "inside"
+#
+set r9856/room_flags = ['indoors']
+#
+dig/tel A VERY Ordinary Hallway; r9857
+#
+tag r9857 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9857 = This hallway is SO ordinary it almost BORES you to death.  The intersection is to the west and there is a door to the east. 
+#
+desc/edit r9857
+#
+:j l
+#
+:wq
+#
+set r9857/vnum = "r9857"
+#
+set r9857/terrain = "inside"
+#
+set r9857/room_flags = ['indoors']
+#
+dig/tel The Bathroom; r9858
+#
+tag r9858 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9858 = Well even cultists have to answer nature's call once in a while!  There is a horrible stench that is rising from the toilet, and you don't even want to think about what this guy had for lunch. The only exit lies to the west. 
+#
+desc/edit r9858
+#
+:j l
+#
+:wq
+#
+set r9858/vnum = "r9858"
+#
+set r9858/terrain = "inside"
+#
+set r9858/room_flags = ['indoors']
+#
+dig/tel A Hallway; r9859
+#
+tag r9859 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9859 = This portion of the hallway is lit by a strange glow that seems to be rising from the floor.  The farther you walk, the more you begin to sweat, which is very odd, because you are not hot at all.  The hallway leads both north and south. 
+#
+desc/edit r9859
+#
+:j l
+#
+:wq
+#
+set r9859/vnum = "r9859"
+#
+set r9859/terrain = "inside"
+#
+set r9859/room_flags = ['indoors']
+#
+dig/tel Bend in the Hallway; r9860
+#
+tag r9860 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9860 = You wonder what lies around the corner to the north.  You could always head back by going east. 
+#
+desc/edit r9860
+#
+:j l
+#
+:wq
+#
+set r9860/vnum = "r9860"
+#
+set r9860/terrain = "inside"
+#
+set r9860/room_flags = ['indoors']
+#
+dig/tel A Place of Worship; r9861
+#
+tag r9861 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9861 = This must be where the cultists conduct their ceremonies, glorifying the Dragon.  You are now treading on their sanctified ground, take care not to step in the center where a circle is drawn in chalk upon the ground.  It seems this circle  is the center of attention of this entire room. And to think the cult wanted you to join! 
+#
+desc/edit r9861
+#
+:j l
+#
+:wq
+#
+set r9861/vnum = "r9861"
+#
+set r9861/terrain = "inside"
+#
+set r9861/room_flags = ['indoors']
+#
+dig/tel Dark Room; r9862
+#
+tag r9862 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9862 = This room is very dark.  There is a ladder leading up, and an exit to the south. 
+#
+desc/edit r9862
+#
+:j l
+#
+:wq
+#
+set r9862/vnum = "r9862"
+#
+set r9862/terrain = "inside"
+#
+set r9862/room_flags = ['safe', 'indoors', 'no mob', 'dark']
+#
+dig/tel The Inner Circle; r9863
+#
+tag r9863 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9863 = This is where plans for the future of the Dragon Cult are made.  Only High Priests are allowed in here, and, oh yeah, someone else.  There are exits to the north, east, and west. 
+#
+desc/edit r9863
+#
+:j l
+#
+:wq
+#
+set r9863/vnum = "r9863"
+#
+set r9863/terrain = "inside"
+#
+set r9863/room_flags = ['indoors']
+#
+dig/tel Priests Quarters; r9864
+#
+tag r9864 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9864 = The Priests of the Dragon Cult sleep here. The room is very neat and tidy, except for one large tile on the floor with dirt around the edges. The only way out is west. 
+#
+desc/edit r9864
+#
+:j l
+#
+:wq
+#
+set r9864/vnum = "r9864"
+#
+set r9864/terrain = "inside"
+#
+set r9864/room_flags = ['indoors']
+#
+dig/tel A Foreboding Corridor; r9865
+#
+tag r9865 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9865 = Whew this place really gives you the chills.  Exits are east and west and there is a cell to the south.  You hear a soft weeping coming from the cell. 
+#
+desc/edit r9865
+#
+:j l
+#
+:wq
+#
+set r9865/vnum = "r9865"
+#
+set r9865/terrain = "inside"
+#
+set r9865/room_flags = ['indoors', 'dark']
+#
+dig/tel The Cell; r9866
+#
+tag r9866 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9866 = This dark damp place is the cell where they keep the virgin sacrifices.  Beyond the door to the north is a foreboding corridor. 
+#
+desc/edit r9866
+#
+:j l
+#
+:wq
+#
+set r9866/vnum = "r9866"
+#
+set r9866/terrain = "inside"
+#
+set r9866/room_flags = ['indoors', 'dark']
+#
+dig/tel An Even MORE Foreboding Corridor; r9867
+#
+tag r9867 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9867 = You are really getting somewhere now.  You can tell by the knots forming in your stomach.  Exits are east and if you REALLY wish to continue onward, west. 
+#
+desc/edit r9867
+#
+:j l
+#
+:wq
+#
+set r9867/vnum = "r9867"
+#
+set r9867/terrain = "inside"
+#
+set r9867/room_flags = ['indoors']
+#
+dig/tel The Chamber of the High Priestess; r9868
+#
+tag r9868 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9868 = You have entered the Bed Chamber of the High Priestess.  Now you're in trouble.  The high priestess is rumored to mate with Dragons, some even say that she is half Dragon herself... but a half Dragons and Dragons near Gnome Village? Impossible. 
+#
+desc/edit r9868
+#
+:j l
+#
+:wq
+#
+set r9868/vnum = "r9868"
+#
+set r9868/terrain = "inside"
+#
+set r9868/room_flags = ['indoors']
+#
+dig/tel A Foul-Smelling Hallway; r9869
+#
+tag r9869 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9869 = WHERE IS THAT AWFUL STENCH COMING FROM? WHAT COULD PRODUCE SUCH A SMELL? I don't know but it must be BIG!  Doors are to the north and south, it sure smells better to the south. 
+#
+desc/edit r9869
+#
+:j l
+#
+:wq
+#
+set r9869/vnum = "r9869"
+#
+set r9869/terrain = "inside"
+#
+set r9869/room_flags = ['indoors']
+#
+dig/tel Chamber of the Wyrmling; r9870
+#
+tag r9870 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9870 = You have discovered what the Cult was hiding, and if the Black Dragon Wyrmling didn't "tell" you himself, the gnawed bones and large piles of dragon defecation should.  And they were intending on feeding another virgin to this horrible creature.  You shudder to think what this Wyrmling will be like if it ever grows up.  The only exit is to the south. 
+#
+desc/edit r9870
+#
+:j l
+#
+:wq
+#
+set r9870/vnum = "r9870"
+#
+set r9870/terrain = "inside"
+#
+set r9870/room_flags = ['indoors']
+#
+dig/tel The Waiting Room; r9871
+#
+tag r9871 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9871 = This room is filled with chairs, coffee tables and magazines.  You may sit and rest here until your appointment.  The office has a number of sales representatives that can help you, provided you made an appointment.  You did make an appointment didn't you? The tourist office is to the east and you see the main offices to the north. 
+#
+desc/edit r9871
+#
+:j l
+#
+:wq
+#
+set r9871/vnum = "r9871"
+#
+set r9871/terrain = "inside"
+#
+set r9871/room_flags = ['indoors']
+#
+dig/tel Entranceway to the Main Office; r9872
+#
+tag r9872 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9872 = As you enter this place you feel it gets stranger and stranger. People are running around in odd clothes, moving papers from one place to another.  There is a shrill ringing sound, and then they pick up these things and put it up to their ears and mouths.  This sort of place is not meant to exist. 
+#
+desc/edit r9872
+#
+:j l
+#
+:wq
+#
+set r9872/vnum = "r9872"
+#
+set r9872/terrain = "inside"
+#
+set r9872/room_flags = ['indoors']
+#
+dig/tel A Strange Room; r9873
+#
+tag r9873 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9873 = The door snaps shut and you are left standing, locked in a small tight room... it does not look like there is any way out so you may as well lie down on the rug that covers the floor. 
+#
+desc/edit r9873
+#
+:j l
+#
+:wq
+#
+set r9873/vnum = "r9873"
+#
+set r9873/terrain = "inside"
+#
+set r9873/extra_description = {'rug': "It's pretty big but It isn't nailed down or anything.... hey you think there could be something under it? ", 'under': 'Yep you found it, a trapdoor.... '}
+#
+set r9873/room_flags = ['no recall', 'indoors']
+#
+dig/tel A Hallway in the Office; r9874
+#
+tag r9874 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9874 = This is a pretty normal place in an odd sort of way.  The craftsmanship seems incredible compared to the inns you've been to in the past, but all in all it is a very ordinary building.  There is a picture on the wall.  Exits are south, back to the main part of the office, and there is a glass wall and open door to the west... there is some lettering in the glass. 
+#
+desc/edit r9874
+#
+:j l
+#
+:wq
+#
+set r9874/vnum = "r9874"
+#
+set r9874/terrain = "inside"
+#
+set r9874/room_flags = ['indoors']
+#
+dig/tel Gale's Office; r9875
+#
+tag r9875 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9875 = Gale's office is very neat and organized, almost to the point of obsessive.  It seems that she runs the organization just as well as she runs her own office.  Gale is the backbone behind the business side of the organization.  The employees don't even bother with Fred, the boss, they just come here.  There is a desk here with some papers on it and some certificates on the wall. The only way out is back to the east. 
+#
+desc/edit r9875
+#
+:j l
+#
+:wq
+#
+set r9875/vnum = "r9875"
+#
+set r9875/terrain = "inside"
+#
+set r9875/room_flags = ['indoors']
+#
+dig/tel Fred's Office; r9876
+#
+tag r9876 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9876 = What a mess!  Fred's office is the epitome of disarray.  There are papers, cigar butts, and other random junk everywhere.  It's amazing that anything ever gets done here, or maybe not so, because nothing ever really does get done here.  A huge desk is in the middle of the room, and the only way out is south. 
+#
+desc/edit r9876
+#
+:j l
+#
+:wq
+#
+set r9876/vnum = "r9876"
+#
+set r9876/terrain = "inside"
+#
+set r9876/room_flags = ['indoors']
+#
+dig/tel The Break Room; r9877
+#
+tag r9877 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9877 = This heavily-used room has all the necessary components of a perfect break room: coffee, donuts, and more coffee.  Marie spends lots of time in here, because she really doesn't have that much to do.  The only exit is south. 
+#
+desc/edit r9877
+#
+:j l
+#
+:wq
+#
+set r9877/vnum = "r9877"
+#
+set r9877/terrain = "inside"
+#
+set r9877/room_flags = ['indoors']
+#
+dig/tel The Middle of the Office; r9878
+#
+tag r9878 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9878 = This is an area where the employees try to work, on the various desks scattered around the room.  Unfortunately this is also a major office intersection so they really can't concentrate that well.  Fred observes this area from his office to the north.  The entranceway lies west and there is a copy room to the east. 
+#
+desc/edit r9878
+#
+:j l
+#
+:wq
+#
+set r9878/vnum = "r9878"
+#
+set r9878/terrain = "inside"
+#
+set r9878/room_flags = ['indoors']
+#
+dig/tel A Sales Booth; r9879
+#
+tag r9879 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9879 = This is a small room in which the salesman for the … ummm … "organization" will give you his pitch.  The furniture is nice, but sterile, and there is nothing in the room that will distract your attention.  Somehow you feel like a trapped animal in this room.  The only exit is east. 
+#
+desc/edit r9879
+#
+:j l
+#
+:wq
+#
+set r9879/vnum = "r9879"
+#
+set r9879/terrain = "inside"
+#
+set r9879/room_flags = ['indoors']
+#
+dig/tel A Back Hallway; r9880
+#
+tag r9880 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9880 = This is a hallway that people use to sneak around, just in case.  It is not used very much, except by Fred and Marie who come in here to discuss cleaning sometimes.  Oh yeah then Bob and Marie also use this back area too.  But never Bob and Fred oh no that would cause trouble, though Fred wouldn't mind using this hallway with Gale, that wouldn't be bad at all, But secretly Gale wants to use the hallway with Bob, but Bob doesn't know this and spends his time in here with Marie, wishing that Marie looked like Cindy (no there is no Cindy in this area). Oh well maybe this hallway is used a lot. 
+#
+desc/edit r9880
+#
+:j l
+#
+:wq
+#
+set r9880/vnum = "r9880"
+#
+set r9880/terrain = "inside"
+#
+set r9880/room_flags = ['indoors']
+#
+dig/tel End of the Hallway; r9881
+#
+tag r9881 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9881 = This is the end of a back hallway that is used for dubious purposes. There is a door west, the hallway continues south, and a trapdoor down. 
+#
+desc/edit r9881
+#
+:j l
+#
+:wq
+#
+set r9881/vnum = "r9881"
+#
+set r9881/terrain = "inside"
+#
+set r9881/room_flags = ['indoors']
+#
+dig/tel The Copy Room; r9882
+#
+tag r9882 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9882 = This is the all important room in the office, the copy room.  It contains a copy machine that seems to produce an aura of office supply awe. There are all sorts of nifty office supplies here, and there is a desk in the corner. What someone actually has their desk here? Weird.  The middle of the office is west, the break room is north, and there is a door to the east. 
+#
+desc/edit r9882
+#
+:j l
+#
+:wq
+#
+set r9882/vnum = "r9882"
+#
+set r9882/terrain = "inside"
+#
+set r9882/room_flags = ['indoors']
+#
+dig/tel The Dungeon; r9883
+#
+tag r9883 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9883 = This is a dark dismal cell.  It looks like the only way out is a locked door to the west.  The hatch you came through opens up about 15 feet above you, but it's a little late to try to get back that way now. 
+#
+desc/edit r9883
+#
+:j l
+#
+:wq
+#
+set r9883/vnum = "r9883"
+#
+set r9883/terrain = "inside"
+#
+set r9883/room_flags = ['indoors']
+#
+dig/tel The Torture Chamber; r9884
+#
+tag r9884 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9884 = All sorts of horrible devices and implements of pain are strewn about the room.  There is a skeleton that is rotting on a rack.  The only visible exit is a cell door where prisoners are kept, to the east. 
+#
+desc/edit r9884
+#
+:j l
+#
+:wq
+#
+set r9884/vnum = "r9884"
+#
+set r9884/terrain = "inside"
+#
+set r9884/room_flags = ['indoors']
+#
+dig/tel A Secret Passageway; r9886
+#
+tag r9886 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9886 = This is a dark damp passageway with spiders and cobwebs all around. Excluding all the twists and turns it takes the passageway has a door to the south and a door to the west. 
+#
+desc/edit r9886
+#
+:j l
+#
+:wq
+#
+set r9886/vnum = "r9886"
+#
+set r9886/terrain = "inside"
+#
+set r9886/room_flags = ['indoors']
+#
+dig/tel A Downward Tunnel; r9887
+#
+tag r9887 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9887 = Something about this place is not right.  There is great danger below, and to continue further downward would be like flirting with death.  There is the stench of human flesh that rises into your nostrils, making you ill.  Whatever is downward is not going to like your presence.  You can go up and down, though to go down you'd have to be a fool. 
+#
+desc/edit r9887
+#
+:j l
+#
+:wq
+#
+set r9887/vnum = "r9887"
+#
+set r9887/terrain = "inside"
+#
+set r9887/room_flags = ['indoors', 'no mob', 'dark']
+#
+dig/tel Deeper Into the Pit; r9888
+#
+tag r9888 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9888 = There is a great evil that radiates from the earth below.  It is very dark down there, an unnatural darkness.  Go back up while you still can. 
+#
+desc/edit r9888
+#
+:j l
+#
+:wq
+#
+set r9888/vnum = "r9888"
+#
+set r9888/terrain = "inside"
+#
+set r9888/room_flags = ['indoors', 'dark']
+#
+dig/tel Before the Jaws of Dark Death; r9889
+#
+tag r9889 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9889 = This is your last chance to turn away and leave the evil below.  It would not be cowardly to turn from danger such as this.  Go back and live to tell of this close encounter with death. 
+#
+desc/edit r9889
+#
+:j l
+#
+:wq
+#
+set r9889/vnum = "r9889"
+#
+set r9889/terrain = "inside"
+#
+set r9889/room_flags = ['indoors', 'dark']
+#
+dig/tel A Hidden Alcove; r9890
+#
+tag r9890 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9890 = This small hidden area must have been the home to some sort of creature. It looks long abandoned, but the creature's hoard of treasure is still here. 
+#
+desc/edit r9890
+#
+:j l
+#
+:wq
+#
+set r9890/vnum = "r9890"
+#
+set r9890/terrain = "inside"
+#
+set r9890/room_flags = ['indoors', 'dark']
+#
+dig/tel The Bottom of the Pit; r9891
+#
+tag r9891 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9891 = You look around and see torn human skeletons.  A damp coldness sinks into your spine as you realize the full magnitude of what you've stumbled in upon.  This is the home of a lich, and a powerful one at that. 
+#
+desc/edit r9891
+#
+:j l
+#
+:wq
+#
+set r9891/vnum = "r9891"
+#
+set r9891/terrain = "inside"
+#
+set r9891/room_flags = ['indoors', 'dark']
+#
+dig/tel Candy Store; r9892
+#
+tag r9892 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9892 = This is the cult's own personal candy shop.  You might want to try it, but be careful, as some of the candies are known for their strange effects. 
+#
+desc/edit r9892
+#
+:j l
+#
+:wq
+#
+set r9892/vnum = "r9892"
+#
+set r9892/terrain = "inside"
+#
+set r9892/room_flags = ['indoors']
+#
+dig/tel Top of the Staircase; r9893
+#
+tag r9893 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9893 = This is a staircase that leads downwards into another part of the temple.  The walls change from the white office type walls to a dark stone wall, perhaps it is an indication of what lies below.  Exits are south and down. 
+#
+desc/edit r9893
+#
+:j l
+#
+:wq
+#
+set r9893/vnum = "r9893"
+#
+set r9893/terrain = "inside"
+#
+set r9893/room_flags = ['indoors', 'no mob']
+#
+dig/tel Bottom of the Staircase; r9894
+#
+tag r9894 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9894 = The staircase ends here.  The room is quiet and dismal, but there are strange sounds, possibly chants coming from the south.  The only other way out is up. 
+#
+desc/edit r9894
+#
+:j l
+#
+:wq
+#
+set r9894/vnum = "r9894"
+#
+set r9894/terrain = "inside"
+#
+set r9894/room_flags = ['indoors', 'no mob']
+#
+dig/tel End of the Hallway; r9895
+#
+tag r9895 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9895 = This is the end of a back hallway that is used for dubious purposes. The hallway runs east from here and there is a door west. 
+#
+desc/edit r9895
+#
+:j l
+#
+:wq
+#
+set r9895/vnum = "r9895"
+#
+set r9895/terrain = "inside"
+#
+set r9895/room_flags = ['indoors']
+#
+dig/tel A Hallway; r9896
+#
+tag r9896 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9896 = More unadorned hallway continues to the north and south here, though the room to the north looks to have some promise. 
+#
+desc/edit r9896
+#
+:j l
+#
+:wq
+#
+set r9896/vnum = "r9896"
+#
+set r9896/terrain = "inside"
+#
+set r9896/room_flags = ['indoors']
+#
+dig/tel Falling Through the Trapdoor; r9896
+#
+tag r9896 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9896 = Heading blindly through a trapdoor was maybe not your best decision ever … AH! You're falling!  There is really only one way to get out of this mess and that is to hit the ground at the bottom of this chute. 
+#
+desc/edit r9896
+#
+:j l
+#
+:wq
+#
+set r9896/vnum = "r9896"
+#
+set r9896/terrain = "inside"
+#
+set r9896/room_flags = ['indoors']
+#
+dig/tel Morpheus's Study; r9898
+#
+tag r9898 = #area { 5 25 } sandman dragon cult:area name
+#
+desc r9898 = You have the rare pleasure of seeing Sandman's study.  The room is small but not cramped.  There are lazy boy recliners about the room. The walls are composed of bookshelves which are filled with texts from far off lands. 
+#
+desc/edit r9898
+#
+:j l
+#
+:wq
+#
+set r9898/vnum = "r9898"
+#
+set r9898/terrain = "inside"
+#
+set r9898/room_flags = ['solitary', 'safe', 'private', 'indoors', 'no mob']
+#
+tel r9899
+#
+tel r9850
+#
+openexit north; door; n; e3600^ south = r9851
+#
+tag e3600 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3600/door_attributes = ["open"]
+#
+set e3600/reset_door_attributes = ["open"]
+#
+desc north = A door leads into the temple. 
+#
+set north/key = "o9825"
+#
+openexit south; s; e3601^ north = r1593
+#
+tag e3601 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3601/door_attributes = ["open"]
+#
+set e3601/reset_door_attributes = ["open"]
+#
+desc south = You see a road. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9851
+#
+openexit north; n; e3602^ south = r9852
+#
+tag e3602 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3602/door_attributes = ["open"]
+#
+set e3602/reset_door_attributes = ["open"]
+#
+desc north = The Corridor continues North. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = door^ s^ e3603
+#
+tag e3603 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3603/door_attributes = ["open"]
+#
+set e3603/reset_door_attributes = ["open"]
+#
+desc south = A door leads into the Reception Area. 
+#
+set south/key = "o9825"
+#
+tel r9852
+#
+openexit north; n; e3604^ south = r9853
+#
+tag e3604 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3604/door_attributes = ["open"]
+#
+set e3604/reset_door_attributes = ["open"]
+#
+desc north = You see an office. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3605
+#
+tag e3605 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3605/door_attributes = ["open"]
+#
+set e3605/reset_door_attributes = ["open"]
+#
+desc south = You see a corridor. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9853
+#
+openexit east; door; e; e3606^ west = r9895
+#
+tag e3606 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3606/door_attributes = ["open"]
+#
+set e3606/reset_door_attributes = ["open"]
+#
+desc east = There is a door to the east. 
+#
+alias south = s^ e3607
+#
+tag e3607 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3607/door_attributes = ["open"]
+#
+set e3607/reset_door_attributes = ["open"]
+#
+desc south = You see Dragon Hall. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3608^ east = r9871
+#
+tag e3608 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3608/door_attributes = ["open"]
+#
+set e3608/reset_door_attributes = ["open"]
+#
+desc west = You see the waiting room. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+openexit down; trapdoor; d; e3609^ up = r9854
+#
+tag e3609 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3609/door_attributes = ["open"]
+#
+set e3609/reset_door_attributes = ["open"]
+#
+desc down = There is a trapdoor leading down. 
+#
+tel r9854
+#
+openexit north; n; e3610^ south = r9896
+#
+tag e3610 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3610/door_attributes = ["open"]
+#
+set e3610/reset_door_attributes = ["open"]
+#
+desc north = There is an exit. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3611^ west = r9857
+#
+tag e3611 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3611/door_attributes = ["open"]
+#
+set e3611/reset_door_attributes = ["open"]
+#
+desc east = A hallway leads east. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3612^ north = r9855
+#
+tag e3612 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3612/door_attributes = ["open"]
+#
+set e3612/reset_door_attributes = ["open"]
+#
+desc south = You see a bright light. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3613^ east = r9860
+#
+tag e3613 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3613/door_attributes = ["open"]
+#
+set e3613/reset_door_attributes = ["open"]
+#
+desc west = You see a hallway. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+alias up = trapdoor^ u^ e3614
+#
+tag e3614 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3614/door_attributes = ["open"]
+#
+set e3614/reset_door_attributes = ["open"]
+#
+desc up = As you look up you can see a trapdoor. 
+#
+tel r9855
+#
+alias north = n^ e3615
+#
+tag e3615 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3615/door_attributes = ["open"]
+#
+set e3615/reset_door_attributes = ["open"]
+#
+desc north = You see the intersection. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r9856
+#
+openexit east; secret; e; e3616^ west = r9886
+#
+tag e3616 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3616/door_attributes = ["open"]
+#
+set e3616/reset_door_attributes = ["open"]
+#
+openexit south; s; e3617^ north = r9896
+#
+tag e3617 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3617/door_attributes = ["open"]
+#
+set e3617/reset_door_attributes = ["open"]
+#
+desc south = You see a hallway. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9857
+#
+openexit east; door; e; e3618^ west = r9858
+#
+tag e3618 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3618/door_attributes = ["open"]
+#
+set e3618/reset_door_attributes = ["open"]
+#
+desc east = You see a door. 
+#
+openexit south; s; e3619^ north = r9892
+#
+tag e3619 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3619/door_attributes = ["open"]
+#
+set e3619/reset_door_attributes = ["open"]
+#
+desc south = You see a small store. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3620
+#
+tag e3620 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3620/door_attributes = ["open"]
+#
+set e3620/reset_door_attributes = ["open"]
+#
+desc west = You see the intersection. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9858
+#
+alias west = door^ w^ e3621
+#
+tag e3621 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3621/door_attributes = ["open"]
+#
+set e3621/reset_door_attributes = ["open"]
+#
+desc west = You see a door. 
+#
+tel r9859
+#
+openexit north; n; e3622^ south = r9861
+#
+tag e3622 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3622/door_attributes = ["open"]
+#
+set e3622/reset_door_attributes = ["open"]
+#
+desc north = It's too far to make out. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3623^ north = r9860
+#
+tag e3623 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3623/door_attributes = ["open"]
+#
+set e3623/reset_door_attributes = ["open"]
+#
+desc south = You see a bend in the hallway. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9860
+#
+alias north = n^ e3624
+#
+tag e3624 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3624/door_attributes = ["open"]
+#
+set e3624/reset_door_attributes = ["open"]
+#
+desc north = It's too far to make out. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3625
+#
+tag e3625 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3625/door_attributes = ["open"]
+#
+set e3625/reset_door_attributes = ["open"]
+#
+desc east = You see the intersection. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r9861
+#
+openexit north; n; e3626^ south = r9894
+#
+tag e3626 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3626/door_attributes = ["open"]
+#
+set e3626/reset_door_attributes = ["open"]
+#
+desc north = You see a staircase. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3627
+#
+tag e3627 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3627/door_attributes = ["open"]
+#
+set e3627/reset_door_attributes = ["open"]
+#
+desc south = You still can run back to the hallway. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit down; trapdoor; d; e3628^ up = r9862
+#
+tag e3628 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3628/door_attributes = ["open"]
+#
+set e3628/reset_door_attributes = ["open"]
+#
+desc down = After searching you find a trapdoor. 
+#
+tel r9862
+#
+openexit south; s; e3629^ north = r9863
+#
+tag e3629 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3629/door_attributes = ["open"]
+#
+set e3629/reset_door_attributes = ["open"]
+#
+desc south = It's too dark to see anything. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias up = trapdoor^ u^ e3630
+#
+tag e3630 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3630/door_attributes = ["open"]
+#
+set e3630/reset_door_attributes = ["open"]
+#
+desc up = You see a trapdoor. 
+#
+tel r9863
+#
+alias north = n^ e3631
+#
+tag e3631 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3631/door_attributes = ["open"]
+#
+set e3631/reset_door_attributes = ["open"]
+#
+desc north = It's very dark. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3632^ west = r9864
+#
+tag e3632 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3632/door_attributes = ["open"]
+#
+set e3632/reset_door_attributes = ["open"]
+#
+desc east = You see a room. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3633^ east = r9865
+#
+tag e3633 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3633/door_attributes = ["open"]
+#
+set e3633/reset_door_attributes = ["open"]
+#
+desc west = You see a corridor. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9864
+#
+alias west = w^ e3634
+#
+tag e3634 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3634/door_attributes = ["open"]
+#
+set e3634/reset_door_attributes = ["open"]
+#
+desc west = You see the inner circle. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+openexit down; tile; d; e3635^ up = r9887
+#
+tag e3635 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3635/door_attributes = ["open"]
+#
+set e3635/reset_door_attributes = ["open"]
+#
+desc down = You see an opening in the floor. 
+#
+tel r9865
+#
+alias east = e^ e3636
+#
+tag e3636 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3636/door_attributes = ["open"]
+#
+set e3636/reset_door_attributes = ["open"]
+#
+desc east = You see the inner circle. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; cell; s; e3637^ north = r9866
+#
+tag e3637 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3637/door_attributes = ["open"]
+#
+set e3637/reset_door_attributes = ["open"]
+#
+desc south = There is a cell door here. 
+#
+set south/key = "o9826"
+#
+openexit west; w; e3638^ east = r9867
+#
+tag e3638 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3638/door_attributes = ["open"]
+#
+set e3638/reset_door_attributes = ["open"]
+#
+desc west = It's not a safe place to go. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9866
+#
+alias north = cell^ n^ e3639
+#
+tag e3639 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3639/door_attributes = ["open"]
+#
+set e3639/reset_door_attributes = ["open"]
+#
+desc north = You see a cell door. 
+#
+tel r9867
+#
+alias east = e^ e3640
+#
+tag e3640 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3640/door_attributes = ["open"]
+#
+set e3640/reset_door_attributes = ["open"]
+#
+desc east = It's the hallway you just came from. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; door; w; e3641^ east = r9868
+#
+tag e3641 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3641/door_attributes = ["open"]
+#
+set e3641/reset_door_attributes = ["open"]
+#
+desc west = Better not go that way. 
+#
+tel r9868
+#
+openexit north; n; e3642^ south = r9869
+#
+tag e3642 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3642/door_attributes = ["open"]
+#
+set e3642/reset_door_attributes = ["open"]
+#
+desc north = That way smells REALLY bad. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = door^ e^ e3643
+#
+tag e3643 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3643/door_attributes = ["open"]
+#
+set e3643/reset_door_attributes = ["open"]
+#
+desc east = The foreboding hallway isn't NEARLY as foreboding as what lies beyond it. 
+#
+tel r9869
+#
+openexit north; door; n; e3644^ south = r9870
+#
+tag e3644 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3644/door_attributes = ["open"]
+#
+set e3644/reset_door_attributes = ["open"]
+#
+desc north = You see A BIG STEEL DOOR. 
+#
+set north/key = "o9827"
+#
+alias south = s^ e3645
+#
+tag e3645 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3645/door_attributes = ["open"]
+#
+set e3645/reset_door_attributes = ["open"]
+#
+desc south = You see the room in which the High Priestess resides. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9870
+#
+alias south = door^ s^ e3646
+#
+tag e3646 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3646/door_attributes = ["open"]
+#
+set e3646/reset_door_attributes = ["open"]
+#
+desc south = You see a BIG STEEL DOOR, probably meant to keep the Wyrmling IN. 
+#
+set south/key = "o9826"
+#
+tel r9871
+#
+openexit north; n; e3647^ south = r9872
+#
+tag e3647 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3647/door_attributes = ["open"]
+#
+set e3647/reset_door_attributes = ["open"]
+#
+desc north = The main office. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3648
+#
+tag e3648 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3648/door_attributes = ["open"]
+#
+set e3648/reset_door_attributes = ["open"]
+#
+desc east = You see the tourist office. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; door; w; e3649^ east = r9873
+#
+tag e3649 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3649/door_attributes = ["open"]
+#
+set e3649/reset_door_attributes = ["open"]
+#
+desc west = You see an evil glow. 
+#
+tel r9872
+#
+openexit north; n; e3650^ south = r9874
+#
+tag e3650 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3650/door_attributes = ["open"]
+#
+set e3650/reset_door_attributes = ["open"]
+#
+desc north = You see a hallway in the office. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3651^ west = r9878
+#
+tag e3651 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3651/door_attributes = ["open"]
+#
+set e3651/reset_door_attributes = ["open"]
+#
+desc east = You see the middle of the office. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3652
+#
+tag e3652 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3652/door_attributes = ["open"]
+#
+set e3652/reset_door_attributes = ["open"]
+#
+desc south = You see the waiting room. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3653^ east = r9879
+#
+tag e3653 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3653/door_attributes = ["open"]
+#
+set e3653/reset_door_attributes = ["open"]
+#
+desc west = You see a sales booth. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9873
+#
+openexit down; trapdoor; d; e3654^ up = r9866
+#
+tag e3654 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3654/door_attributes = ["open"]
+#
+set e3654/reset_door_attributes = ["open"]
+#
+tel r9874
+#
+openexit north; n; e3655^ south = r9893
+#
+tag e3655 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3655/door_attributes = ["open"]
+#
+set e3655/reset_door_attributes = ["open"]
+#
+desc north = You see a staircase. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3656
+#
+tag e3656 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3656/door_attributes = ["open"]
+#
+set e3656/reset_door_attributes = ["open"]
+#
+desc south = You see the main office. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3657^ east = r9875
+#
+tag e3657 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3657/door_attributes = ["open"]
+#
+set e3657/reset_door_attributes = ["open"]
+#
+desc west = You see Gale's office. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9875
+#
+alias east = e^ e3658
+#
+tag e3658 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3658/door_attributes = ["open"]
+#
+set e3658/reset_door_attributes = ["open"]
+#
+desc east = You see a hallway in the office. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r9876
+#
+openexit south; s; e3659^ north = r9878
+#
+tag e3659 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3659/door_attributes = ["open"]
+#
+set e3659/reset_door_attributes = ["open"]
+#
+desc south = You see the middle of the office. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9877
+#
+openexit south; s; e3660^ north = r9882
+#
+tag e3660 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3660/door_attributes = ["open"]
+#
+set e3660/reset_door_attributes = ["open"]
+#
+desc south = You see the copy room. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9878
+#
+alias north = n^ e3661
+#
+tag e3661 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3661/door_attributes = ["open"]
+#
+set e3661/reset_door_attributes = ["open"]
+#
+desc north = You see Fred's office 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3662^ west = r9882
+#
+tag e3662 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3662/door_attributes = ["open"]
+#
+set e3662/reset_door_attributes = ["open"]
+#
+desc east = You see the copy room. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3663
+#
+tag e3663 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3663/door_attributes = ["open"]
+#
+set e3663/reset_door_attributes = ["open"]
+#
+desc west = The entranceway to the office. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9879
+#
+alias east = e^ e3664
+#
+tag e3664 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3664/door_attributes = ["open"]
+#
+set e3664/reset_door_attributes = ["open"]
+#
+desc east = You see the entranceway to the office. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r9880
+#
+openexit north; n; e3665^ south = r9881
+#
+tag e3665 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3665/door_attributes = ["open"]
+#
+set e3665/reset_door_attributes = ["open"]
+#
+desc north = The hallway ends. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit west; w; e3666^ east = r9895
+#
+tag e3666 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3666/door_attributes = ["open"]
+#
+set e3666/reset_door_attributes = ["open"]
+#
+desc west = The hallway ends. 
+#
+tel r9881
+#
+alias south = s^ e3667
+#
+tag e3667 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3667/door_attributes = ["open"]
+#
+set e3667/reset_door_attributes = ["open"]
+#
+desc south = You see the beginning of the hallway. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; door; w; e3668^ east = r9882
+#
+tag e3668 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3668/door_attributes = ["open"]
+#
+set e3668/reset_door_attributes = ["open"]
+#
+desc west = You see a door. 
+#
+openexit down; trapdoor; d; e3669^ up = r9883
+#
+tag e3669 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3669/door_attributes = ["open"]
+#
+set e3669/reset_door_attributes = ["open"]
+#
+desc down = You see a prominent trapdoor in the floor. 
+#
+tel r9882
+#
+alias north = n^ e3670
+#
+tag e3670 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3670/door_attributes = ["open"]
+#
+set e3670/reset_door_attributes = ["open"]
+#
+desc north = You see the break room. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = door^ e^ e3671
+#
+tag e3671 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3671/door_attributes = ["open"]
+#
+set e3671/reset_door_attributes = ["open"]
+#
+desc east = You see a door. 
+#
+alias west = w^ e3672
+#
+tag e3672 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3672/door_attributes = ["open"]
+#
+set e3672/reset_door_attributes = ["open"]
+#
+desc west = You see the middle of the office. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9883
+#
+openexit west; door; w; e3673^ east = r9884
+#
+tag e3673 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3673/door_attributes = ["open"]
+#
+set e3673/reset_door_attributes = ["open"]
+#
+desc west = You see a big rusty iron door. 
+#
+set west/key = "o9837"
+#
+tel r9884
+#
+openexit north; secret; n; e3674^ south = r9886
+#
+tag e3674 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3674/door_attributes = ["open"]
+#
+set e3674/reset_door_attributes = ["open"]
+#
+alias east = door^ e^ e3675
+#
+tag e3675 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3675/door_attributes = ["open"]
+#
+set e3675/reset_door_attributes = ["open"]
+#
+desc east = You see a big rusty iron door. 
+#
+set east/key = "o9837"
+#
+tel r9886
+#
+alias south = secret^ s^ e3676
+#
+tag e3676 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3676/door_attributes = ["open"]
+#
+set e3676/reset_door_attributes = ["open"]
+#
+desc south = You see the inside of a secret door. 
+#
+alias west = secret^ w^ e3677
+#
+tag e3677 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3677/door_attributes = ["open"]
+#
+set e3677/reset_door_attributes = ["open"]
+#
+desc west = You see the inside of a secret door. 
+#
+tel r9887
+#
+alias up = tile^ u^ e3678
+#
+tag e3678 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3678/door_attributes = ["open"]
+#
+set e3678/reset_door_attributes = ["open"]
+#
+desc up = You see a dim light through the opening. 
+#
+openexit down; d; e3679^ up = r9888
+#
+tag e3679 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3679/door_attributes = ["open"]
+#
+set e3679/reset_door_attributes = ["open"]
+#
+desc down = It is too dark to see. 
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r9888
+#
+alias up = u^ e3680
+#
+tag e3680 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3680/door_attributes = ["open"]
+#
+set e3680/reset_door_attributes = ["open"]
+#
+desc up = It is too dark to see. 
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+openexit down; d; e3681^ up = r9889
+#
+tag e3681 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3681/door_attributes = ["open"]
+#
+set e3681/reset_door_attributes = ["open"]
+#
+desc down = It is too dark to see. 
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r9889
+#
+openexit east; mud; e; e3682^ west = r9890
+#
+tag e3682 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3682/door_attributes = ["open"]
+#
+set e3682/reset_door_attributes = ["open"]
+#
+desc east = It is too dark to see. 
+#
+alias up = u^ e3683
+#
+tag e3683 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3683/door_attributes = ["open"]
+#
+set e3683/reset_door_attributes = ["open"]
+#
+desc up = It is too dark to see. 
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+openexit down; d; e3684^ up = r9891
+#
+tag e3684 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3684/door_attributes = ["open"]
+#
+set e3684/reset_door_attributes = ["open"]
+#
+desc down = It is too dark to see. 
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r9890
+#
+alias west = mud^ w^ e3685
+#
+tag e3685 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3685/door_attributes = ["open"]
+#
+set e3685/reset_door_attributes = ["open"]
+#
+desc west = It is too dark to see. 
+#
+tel r9891
+#
+alias up = u^ e3686
+#
+tag e3686 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3686/door_attributes = ["open"]
+#
+set e3686/reset_door_attributes = ["open"]
+#
+desc up = It is too dark to see. 
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r9892
+#
+alias north = n^ e3687
+#
+tag e3687 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3687/door_attributes = ["open"]
+#
+set e3687/reset_door_attributes = ["open"]
+#
+desc north = You see the hallway. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r9893
+#
+alias south = s^ e3688
+#
+tag e3688 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3688/door_attributes = ["open"]
+#
+set e3688/reset_door_attributes = ["open"]
+#
+desc south = You see a hallway in the office. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit down; d; e3689^ up = r9894
+#
+tag e3689 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3689/door_attributes = ["open"]
+#
+set e3689/reset_door_attributes = ["open"]
+#
+desc down = You see the bottom of the staircase. 
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r9894
+#
+alias south = s^ e3690
+#
+tag e3690 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3690/door_attributes = ["open"]
+#
+set e3690/reset_door_attributes = ["open"]
+#
+desc south = It is too blurred to see anything of note. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias up = u^ e3691
+#
+tag e3691 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3691/door_attributes = ["open"]
+#
+set e3691/reset_door_attributes = ["open"]
+#
+desc up = You see the top of the staircase. 
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r9895
+#
+alias east = e^ e3692
+#
+tag e3692 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3692/door_attributes = ["open"]
+#
+set e3692/reset_door_attributes = ["open"]
+#
+desc east = You see the beginning of the hallway where Fred and Marie are.... 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = door^ w^ e3693
+#
+tag e3693 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3693/door_attributes = ["open"]
+#
+set e3693/reset_door_attributes = ["open"]
+#
+desc west = You see a door. 
+#
+tel r9896
+#
+alias north = n^ e3694
+#
+tag e3694 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3694/door_attributes = ["open"]
+#
+set e3694/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3695
+#
+tag e3695 = #area { 5 25 } sandman dragon cult:area name
+#
+set e3695/door_attributes = ["open"]
+#
+set e3695/reset_door_attributes = ["open"]
+#
+desc south = You see the intersection. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9896
+#
+tel r9898
+#
+tel r9850
+#
+create/drop the receptionist;receptionist;m9800:characters.Mobile
+#
+desc m9800 = A receptionist greets you with a knowing grin. 
+#
+set m9800/level = 7
+#
+set m9800/level_base = 7
+#
+set m9800/vnum = "m9800"
+#
+set m9800/look_description = "The Receptionist appears to be friendly. "
+#
+set m9800/act_flags = ['sentinel', 'npc']
+#
+set m9800/alignment = 0
+#
+set m9800/sex = "female"
+#
+set m9800/race = "human"
+#
+tag m9800 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9800 = mobile
+#
+set m9800/hitpoints[maximum] = 93
+#
+set m9800/position = "standing"
+#
+set m9800/experience_total = 2420
+#
+set m9800/experience_current = 2420
+#
+tel r9850
+#
+create a black key;black;key;o9825:objects.Key
+#
+sethome o9825 = m9800
+#
+desc o9825 = You see a very important key here!
+#
+set o9825/level = 5
+#
+set o9825/level_base = 5
+#
+set o9825/vnum = "o9825"
+#
+set o9825/item_type = "key"
+#
+set o9825/weight = 1
+#
+tag o9825 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9825 = object
+#
+wearto o9825 = m9800
+#
+set m9800/reset_objects["o9825"] = {"location":"equipped"}
+#
+tel r9850
+#
+create/drop a fanatic monk;fanatic;monk;m9808:characters.Mobile
+#
+desc m9808 = A fanatic monk is here raving about the day of the great black death! 
+#
+set m9808/level = 7
+#
+set m9808/level_base = 7
+#
+set m9808/vnum = "m9808"
+#
+set m9808/look_description = "The monk is sincere, if loony, and he has a look of terror on his eyes. "
+#
+set m9808/act_flags = ['npc']
+#
+set m9808/alignment = 0
+#
+set m9808/sex = "male"
+#
+set m9808/spell_affects = {'detect invis': ''}
+#
+set m9808/race = "human"
+#
+tag m9808 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9808 = mobile
+#
+set m9808/hitpoints[maximum] = 105
+#
+set m9808/position = "standing"
+#
+set m9808/experience_total = 2266
+#
+set m9808/experience_current = 2266
+#
+tel r9850
+#
+create A brochure;brochure;o9850:objects.Treasure
+#
+sethome o9850 = m9808
+#
+desc o9850 = A sharp-looking brochure is lying here
+#
+set o9850/level = 5
+#
+set o9850/level_base = 5
+#
+set o9850/vnum = "o9850"
+#
+set o9850/item_type = "treasure"
+#
+set o9850/wear_location = "held, in hands"
+#
+set o9850/weight = 1
+#
+tag o9850 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9850 = object
+#
+set o9850/extra_descriptions = {'brochure': ' the brochure reads: ____________________________________ | C U L T  O F  T H E  D R A G O N | |                                  | | Join today and you too can share | | in the many benefits a cult      | | member can have.                 | | advantages like:                 | |   - never having a heating bill  | |   - those cool robes             | |   - free virgin sacrifice        | |     tickets!                     | |   - a cool haircut               | |                                  | | For all this and more call       | | 1-800-FOR-DRGN                   | |                                  | | Remember: vote no on 13          | | Citizens of Gnome Village ban on      | | Draconian activity.  If you      | | feel like we do, Kill the Mayor  | | TODAY!                           | |__________________________________| '}
+#
+set o9850/extra_flags = ['no remove', 'no drop']
+#
+wearto o9850 = m9808
+#
+set m9808/reset_objects["o9850"] = {"location":"equipped"}
+#
+tel r9850
+#
+set north/door_attributes = ['lockable', 'locked']
+#
+set north/reset_door_attributes = ['lockable', 'locked']
+#
+tel r9851
+#
+set south/door_attributes = ['lockable', 'locked']
+#
+set south/reset_door_attributes = ['lockable', 'locked']
+#
+tel r9853
+#
+create/drop Bob;bob;director;m9809:characters.Mobile
+#
+desc m9809 = Bob the PR Director greets you with the smile of a used car salesman. 
+#
+set m9809/level = 10
+#
+set m9809/level_base = 10
+#
+set m9809/vnum = "m9809"
+#
+set m9809/look_description = "Bob is about 6 feet tall and very lanky.  He wears a cheap polyester suit, his hair is slicked back, and he has quite a large gap between his front teeth, but that doesn't stop him from talking. Incidentally, he talks a lot. "
+#
+set m9809/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9809/alignment = -1000
+#
+set m9809/sex = "male"
+#
+set m9809/spell_affects = {'detect invis': ''}
+#
+set m9809/race = "human"
+#
+tag m9809 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9809 = mobile
+#
+set m9809/hitpoints[maximum] = 126
+#
+set m9809/position = "standing"
+#
+set m9809/experience_total = 5164
+#
+set m9809/experience_current = 5164
+#
+tel r9853
+#
+create a black pen;black;pen;o9831:objects.Weapon
+#
+sethome o9831 = m9809
+#
+desc o9831 = A Black pen catches your eye
+#
+set o9831/level = 8
+#
+set o9831/level_base = 8
+#
+set o9831/vnum = "o9831"
+#
+set o9831/item_type = "weapon"
+#
+set o9831/wear_location = "wield"
+#
+set o9831/weight = 8
+#
+tag o9831 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9831 = object
+#
+set o9831/weapon_type = "pierce"
+#
+set o9831/damage_low = 6
+#
+set o9831/damage_high = 13
+#
+wieldto o9831 = m9809
+#
+set m9809/experience_total = 6455
+#
+set m9809/experience_current = 6455
+#
+set m9809/reset_objects["o9831"] = {"location":"equipped"}
+#
+tel r9853
+#
+create A brochure;brochure;o9850:objects.Treasure
+#
+sethome o9850 = r9853
+#
+desc o9850 = A sharp-looking brochure is lying here
+#
+set o9850/level = 8
+#
+set o9850/level_base = 8
+#
+set o9850/vnum = "o9850"
+#
+set o9850/item_type = "treasure"
+#
+set o9850/wear_location = "held, in hands"
+#
+set o9850/weight = 1
+#
+tag o9850 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9850 = object
+#
+set o9850/extra_descriptions = {'brochure': ' the brochure reads: ____________________________________ | C U L T  O F  T H E  D R A G O N | |                                  | | Join today and you too can share | | in the many benefits a cult      | | member can have.                 | | advantages like:                 | |   - never having a heating bill  | |   - those cool robes             | |   - free virgin sacrifice        | |     tickets!                     | |   - a cool haircut               | |                                  | | For all this and more call       | | 1-800-FOR-DRGN                   | |                                  | | Remember: vote no on 13          | | Citizens of Gnome Village ban on      | | Draconian activity.  If you      | | feel like we do, Kill the Mayor  | | TODAY!                           | |__________________________________| '}
+#
+set o9850/extra_flags = ['no remove', 'no drop']
+#
+drop o9850
+#
+set r9853/reset_objects["o9850"] = {"location":"inventory"}
+#
+tel r9853
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r9853
+#
+set down/door_attributes = ['closeable']
+#
+set down/reset_door_attributes = ['closeable']
+#
+tel r9854
+#
+set up/door_attributes = ['closeable']
+#
+set up/reset_door_attributes = ['closeable']
+#
+tel r9855
+#
+create/drop the minor priest;minor;priest;m9801:characters.Mobile
+#
+desc m9801 = A minor priest of the cult scuffles along. 
+#
+set m9801/level = 10
+#
+set m9801/level_base = 10
+#
+set m9801/vnum = "m9801"
+#
+set m9801/look_description = "The minor priest seems preoccupied. "
+#
+set m9801/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m9801/alignment = -100
+#
+set m9801/sex = "male"
+#
+set m9801/spell_affects = {'detect invis': ''}
+#
+set m9801/race = "human"
+#
+tag m9801 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9801 = mobile
+#
+set m9801/hitpoints[maximum] = 175
+#
+set m9801/position = "standing"
+#
+set m9801/experience_total = 6133
+#
+set m9801/experience_current = 6133
+#
+tel r9855
+#
+create some dark robes;robes;o9830:objects.Armor
+#
+sethome o9830 = m9801
+#
+desc o9830 = Some dark robes lie here
+#
+set o9830/level = 8
+#
+set o9830/level_base = 8
+#
+set o9830/vnum = "o9830"
+#
+set o9830/item_type = "armor"
+#
+set o9830/wear_location = "body"
+#
+set o9830/weight = 5
+#
+tag o9830 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9830 = object
+#
+set o9830/stat_modifiers[mana] = 10
+#
+set o9830/armor = 3
+#
+wearto o9830 = m9801
+#
+set m9801/reset_objects["o9830"] = {"location":"equipped"}
+#
+tel r9855
+#
+create a black staff;black;staff;o9833:objects.Weapon
+#
+sethome o9833 = m9801
+#
+desc o9833 = A long blackened stick is here
+#
+set o9833/level = 8
+#
+set o9833/level_base = 8
+#
+set o9833/vnum = "o9833"
+#
+set o9833/item_type = "weapon"
+#
+set o9833/wear_location = "wield"
+#
+set o9833/weight = 10
+#
+tag o9833 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9833 = object
+#
+set o9833/extra_flags = ['magic', 'evil']
+#
+set o9833/stat_modifiers[hitroll] = 2
+#
+set o9833/weapon_type = "pound"
+#
+set o9833/damage_low = 4
+#
+set o9833/damage_high = 12
+#
+wieldto o9833 = m9801
+#
+set m9801/experience_total = 7666
+#
+set m9801/experience_current = 7666
+#
+set m9801/reset_objects["o9833"] = {"location":"equipped"}
+#
+tel r9856
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r9857
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r9858
+#
+create/drop the minor priest;minor;priest;m9807:characters.Mobile
+#
+desc m9807 = A minor priest of the cult is in the bathroom "doing his duty".. 
+#
+set m9807/level = 9
+#
+set m9807/level_base = 9
+#
+set m9807/vnum = "m9807"
+#
+set m9807/look_description = "The minor priest seems preoccupied. "
+#
+set m9807/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9807/alignment = -100
+#
+set m9807/sex = "male"
+#
+set m9807/spell_affects = {'detect invis': ''}
+#
+set m9807/race = "human"
+#
+tag m9807 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9807 = mobile
+#
+set m9807/hitpoints[maximum] = 106
+#
+set m9807/position = "standing"
+#
+set m9807/experience_total = 4677
+#
+set m9807/experience_current = 4677
+#
+tel r9858
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r9860
+#
+create/drop the minor priest;minor;priest;m9801:characters.Mobile
+#
+desc m9801 = A minor priest of the cult scuffles along. 
+#
+set m9801/level = 10
+#
+set m9801/level_base = 10
+#
+set m9801/vnum = "m9801"
+#
+set m9801/look_description = "The minor priest seems preoccupied. "
+#
+set m9801/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m9801/alignment = -100
+#
+set m9801/sex = "male"
+#
+set m9801/spell_affects = {'detect invis': ''}
+#
+set m9801/race = "human"
+#
+tag m9801 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9801 = mobile
+#
+set m9801/hitpoints[maximum] = 148
+#
+set m9801/position = "standing"
+#
+set m9801/experience_total = 6208
+#
+set m9801/experience_current = 6208
+#
+tel r9860
+#
+create some dark robes;robes;o9830:objects.Armor
+#
+sethome o9830 = m9801
+#
+desc o9830 = Some dark robes lie here
+#
+set o9830/level = 8
+#
+set o9830/level_base = 8
+#
+set o9830/vnum = "o9830"
+#
+set o9830/item_type = "armor"
+#
+set o9830/wear_location = "body"
+#
+set o9830/weight = 5
+#
+tag o9830 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9830 = object
+#
+set o9830/stat_modifiers[mana] = 10
+#
+set o9830/armor = 4
+#
+wearto o9830 = m9801
+#
+set m9801/reset_objects["o9830"] = {"location":"equipped"}
+#
+tel r9860
+#
+create a black staff;black;staff;o9833:objects.Weapon
+#
+sethome o9833 = m9801
+#
+desc o9833 = A long blackened stick is here
+#
+set o9833/level = 8
+#
+set o9833/level_base = 8
+#
+set o9833/vnum = "o9833"
+#
+set o9833/item_type = "weapon"
+#
+set o9833/wear_location = "wield"
+#
+set o9833/weight = 10
+#
+tag o9833 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9833 = object
+#
+set o9833/extra_flags = ['magic', 'evil']
+#
+set o9833/stat_modifiers[hitroll] = 2
+#
+set o9833/weapon_type = "pound"
+#
+set o9833/damage_low = 3
+#
+set o9833/damage_high = 12
+#
+wieldto o9833 = m9801
+#
+set m9801/experience_total = 7760
+#
+set m9801/experience_current = 7760
+#
+set m9801/reset_objects["o9833"] = {"location":"equipped"}
+#
+tel r9861
+#
+create/drop the minor priest;minor;priest;m9801:characters.Mobile
+#
+desc m9801 = A minor priest of the cult scuffles along. 
+#
+set m9801/level = 10
+#
+set m9801/level_base = 10
+#
+set m9801/vnum = "m9801"
+#
+set m9801/look_description = "The minor priest seems preoccupied. "
+#
+set m9801/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m9801/alignment = -100
+#
+set m9801/sex = "male"
+#
+set m9801/spell_affects = {'detect invis': ''}
+#
+set m9801/race = "human"
+#
+tag m9801 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9801 = mobile
+#
+set m9801/hitpoints[maximum] = 169
+#
+set m9801/position = "standing"
+#
+set m9801/experience_total = 6298
+#
+set m9801/experience_current = 6298
+#
+tel r9861
+#
+create some dark robes;robes;o9830:objects.Armor
+#
+sethome o9830 = m9801
+#
+desc o9830 = Some dark robes lie here
+#
+set o9830/level = 8
+#
+set o9830/level_base = 8
+#
+set o9830/vnum = "o9830"
+#
+set o9830/item_type = "armor"
+#
+set o9830/wear_location = "body"
+#
+set o9830/weight = 5
+#
+tag o9830 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9830 = object
+#
+set o9830/stat_modifiers[mana] = 10
+#
+set o9830/armor = 3
+#
+wearto o9830 = m9801
+#
+set m9801/reset_objects["o9830"] = {"location":"equipped"}
+#
+tel r9861
+#
+create/drop the minor priest;minor;priest;m9801; m9801-2:characters.Mobile
+#
+desc m9801-2 = A minor priest of the cult scuffles along. 
+#
+set m9801-2/level = 10
+#
+set m9801-2/level_base = 10
+#
+set m9801-2/vnum = "m9801"
+#
+set m9801-2/look_description = "The minor priest seems preoccupied. "
+#
+set m9801-2/act_flags = ['wimpy', 'stay area', 'npc']
+#
+set m9801-2/alignment = -100
+#
+set m9801-2/sex = "male"
+#
+set m9801-2/spell_affects = {'detect invis': ''}
+#
+set m9801-2/race = "human"
+#
+tag m9801-2 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9801-2 = mobile
+#
+set m9801-2/hitpoints[maximum] = 115
+#
+set m9801-2/position = "standing"
+#
+set m9801-2/experience_total = 5933
+#
+set m9801-2/experience_current = 5933
+#
+tel r9861
+#
+create some dark robes;robes;o9830:objects.Armor
+#
+sethome o9830 = m9801-2
+#
+desc o9830 = Some dark robes lie here
+#
+set o9830/level = 8
+#
+set o9830/level_base = 8
+#
+set o9830/vnum = "o9830"
+#
+set o9830/item_type = "armor"
+#
+set o9830/wear_location = "body"
+#
+set o9830/weight = 5
+#
+tag o9830 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9830 = object
+#
+set o9830/stat_modifiers[mana] = 10
+#
+set o9830/armor = 5
+#
+wearto o9830 = m9801-2
+#
+set m9801-2/reset_objects["o9830"] = {"location":"equipped"}
+#
+tel r9861
+#
+create/drop the robed priest;robed;priest;m9802:characters.Mobile
+#
+desc m9802 = A robed priest is alarmed by your presence. 
+#
+set m9802/level = 9
+#
+set m9802/level_base = 9
+#
+set m9802/vnum = "m9802"
+#
+set m9802/look_description = "The robed priest is not to be trifled with. "
+#
+set m9802/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m9802/alignment = -200
+#
+set m9802/sex = "male"
+#
+set m9802/spell_affects = {'detect hidden': '', 'detect magic': '', 'detect invis': ''}
+#
+set m9802/race = "human"
+#
+tag m9802 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9802 = mobile
+#
+set m9802/hitpoints[maximum] = 82
+#
+set m9802/position = "standing"
+#
+set m9802/experience_total = 4171
+#
+set m9802/experience_current = 4171
+#
+tel r9861
+#
+create an evil looking black dagger;evil;black;dagger;o9832:objects.Weapon
+#
+sethome o9832 = m9802
+#
+desc o9832 = A black dagger is here radiating evil.
+#
+set o9832/level = 7
+#
+set o9832/level_base = 7
+#
+set o9832/vnum = "o9832"
+#
+set o9832/item_type = "weapon"
+#
+set o9832/wear_location = "wield"
+#
+set o9832/weight = 10
+#
+tag o9832 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9832 = object
+#
+set o9832/extra_flags = ['magic', 'evil']
+#
+set o9832/stat_modifiers[damroll] = 1
+#
+set o9832/weapon_type = "pierce"
+#
+set o9832/damage_low = 4
+#
+set o9832/damage_high = 12
+#
+wieldto o9832 = m9802
+#
+set m9802/experience_total = 5213
+#
+set m9802/experience_current = 5213
+#
+set m9802/reset_objects["o9832"] = {"location":"equipped"}
+#
+tel r9861
+#
+create ornate robes;ornate;robes;o9835:objects.Armor
+#
+sethome o9835 = m9802
+#
+desc o9835 = You see a pile of finely woven cloth.
+#
+set o9835/level = 7
+#
+set o9835/level_base = 7
+#
+set o9835/vnum = "o9835"
+#
+set o9835/item_type = "armor"
+#
+set o9835/wear_location = "body"
+#
+set o9835/weight = 20
+#
+tag o9835 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9835 = object
+#
+set o9835/stat_modifiers[intelligence] = 1
+#
+set o9835/stat_modifiers[wisdom] = 1
+#
+set o9835/armor = 4
+#
+wearto o9835 = m9802
+#
+set m9802/reset_objects["o9835"] = {"location":"equipped"}
+#
+tel r9861
+#
+set down/door_attributes = ['closeable']
+#
+set down/reset_door_attributes = ['closeable']
+#
+tel r9862
+#
+set up/door_attributes = ['closeable']
+#
+set up/reset_door_attributes = ['closeable']
+#
+tel r9863
+#
+create/drop the robed priest;robed;priest;m9802:characters.Mobile
+#
+desc m9802 = A robed priest is alarmed by your presence. 
+#
+set m9802/level = 9
+#
+set m9802/level_base = 9
+#
+set m9802/vnum = "m9802"
+#
+set m9802/look_description = "The robed priest is not to be trifled with. "
+#
+set m9802/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m9802/alignment = -200
+#
+set m9802/sex = "male"
+#
+set m9802/spell_affects = {'detect hidden': '', 'detect magic': '', 'detect invis': ''}
+#
+set m9802/race = "human"
+#
+tag m9802 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9802 = mobile
+#
+set m9802/hitpoints[maximum] = 130
+#
+set m9802/position = "standing"
+#
+set m9802/experience_total = 4704
+#
+set m9802/experience_current = 4704
+#
+tel r9863
+#
+create an evil looking black dagger;evil;black;dagger;o9832:objects.Weapon
+#
+sethome o9832 = m9802
+#
+desc o9832 = A black dagger is here radiating evil.
+#
+set o9832/level = 7
+#
+set o9832/level_base = 7
+#
+set o9832/vnum = "o9832"
+#
+set o9832/item_type = "weapon"
+#
+set o9832/wear_location = "wield"
+#
+set o9832/weight = 10
+#
+tag o9832 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9832 = object
+#
+set o9832/extra_flags = ['magic', 'evil']
+#
+set o9832/stat_modifiers[damroll] = 1
+#
+set o9832/weapon_type = "pierce"
+#
+set o9832/damage_low = 3
+#
+set o9832/damage_high = 13
+#
+wieldto o9832 = m9802
+#
+set m9802/experience_total = 5880
+#
+set m9802/experience_current = 5880
+#
+set m9802/reset_objects["o9832"] = {"location":"equipped"}
+#
+tel r9863
+#
+create ornate robes;ornate;robes;o9835:objects.Armor
+#
+sethome o9835 = m9802
+#
+desc o9835 = You see a pile of finely woven cloth.
+#
+set o9835/level = 7
+#
+set o9835/level_base = 7
+#
+set o9835/vnum = "o9835"
+#
+set o9835/item_type = "armor"
+#
+set o9835/wear_location = "body"
+#
+set o9835/weight = 20
+#
+tag o9835 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9835 = object
+#
+set o9835/stat_modifiers[intelligence] = 1
+#
+set o9835/stat_modifiers[wisdom] = 1
+#
+set o9835/armor = 5
+#
+wearto o9835 = m9802
+#
+set m9802/reset_objects["o9835"] = {"location":"equipped"}
+#
+tel r9863
+#
+create/drop the robed priest;robed;priest;m9802; m9802-2:characters.Mobile
+#
+desc m9802-2 = A robed priest is alarmed by your presence. 
+#
+set m9802-2/level = 9
+#
+set m9802-2/level_base = 9
+#
+set m9802-2/vnum = "m9802"
+#
+set m9802-2/look_description = "The robed priest is not to be trifled with. "
+#
+set m9802-2/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m9802-2/alignment = -200
+#
+set m9802-2/sex = "male"
+#
+set m9802-2/spell_affects = {'detect hidden': '', 'detect magic': '', 'detect invis': ''}
+#
+set m9802-2/race = "human"
+#
+tag m9802-2 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9802-2 = mobile
+#
+set m9802-2/hitpoints[maximum] = 80
+#
+set m9802-2/position = "standing"
+#
+set m9802-2/experience_total = 4345
+#
+set m9802-2/experience_current = 4345
+#
+tel r9863
+#
+create ornate robes;ornate;robes;o9835:objects.Armor
+#
+sethome o9835 = m9802-2
+#
+desc o9835 = You see a pile of finely woven cloth.
+#
+set o9835/level = 7
+#
+set o9835/level_base = 7
+#
+set o9835/vnum = "o9835"
+#
+set o9835/item_type = "armor"
+#
+set o9835/wear_location = "body"
+#
+set o9835/weight = 20
+#
+tag o9835 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9835 = object
+#
+set o9835/stat_modifiers[intelligence] = 1
+#
+set o9835/stat_modifiers[wisdom] = 1
+#
+set o9835/armor = 5
+#
+wearto o9835 = m9802-2
+#
+set m9802-2/reset_objects["o9835"] = {"location":"equipped"}
+#
+tel r9864
+#
+set down/door_attributes = ['closeable']
+#
+set down/reset_door_attributes = ['closeable']
+#
+tel r9865
+#
+create/drop the draconian knight;draconian;knight;m9803:characters.Mobile
+#
+desc m9803 = The draconian knight sees you and attacks! 
+#
+set m9803/level = 9
+#
+set m9803/level_base = 9
+#
+set m9803/vnum = "m9803"
+#
+set m9803/look_description = "The draconian knight's sole purpose is to kill you. "
+#
+set m9803/act_flags = ['stay area', 'aggressive', 'sentinel', 'npc']
+#
+set m9803/alignment = -400
+#
+set m9803/sex = "male"
+#
+set m9803/spell_affects = {'detect hidden': '', 'detect magic': '', 'detect invis': ''}
+#
+set m9803/race = "dragon"
+#
+tag m9803 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9803 = mobile
+#
+set m9803/hitpoints[maximum] = 125
+#
+set m9803/position = "standing"
+#
+set m9803/experience_total = 4672
+#
+set m9803/experience_current = 4672
+#
+tel r9865
+#
+create a primitive key;primitive;key;o9826:objects.Key
+#
+sethome o9826 = m9803
+#
+desc o9826 = You see a primitive key here!
+#
+set o9826/level = 7
+#
+set o9826/level_base = 7
+#
+set o9826/vnum = "o9826"
+#
+set o9826/item_type = "key"
+#
+set o9826/weight = 1
+#
+tag o9826 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9826 = object
+#
+give o9826 to m9803
+#
+set m9803/reset_objects["o9826"] = {"location":"inventory"}
+#
+tel r9865
+#
+create a bone sword;bone;sword;o9828:objects.Weapon
+#
+sethome o9828 = m9803
+#
+desc o9828 = A sharp looking piece of bone lies here.
+#
+set o9828/level = 7
+#
+set o9828/level_base = 7
+#
+set o9828/vnum = "o9828"
+#
+set o9828/item_type = "weapon"
+#
+set o9828/wear_location = "wield"
+#
+set o9828/weight = 40
+#
+tag o9828 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9828 = object
+#
+set o9828/alignment_restriction = ['good']
+#
+set o9828/extra_flags = ['magic']
+#
+set o9828/stat_modifiers[dexterity] = 1
+#
+set o9828/stat_modifiers[intelligence] = -1
+#
+set o9828/stat_modifiers[wisdom] = -1
+#
+set o9828/stat_modifiers[hitroll] = 1
+#
+set o9828/stat_modifiers[damroll] = 1
+#
+set o9828/weapon_type = "slice"
+#
+set o9828/damage_low = 5
+#
+set o9828/damage_high = 12
+#
+wieldto o9828 = m9803
+#
+set m9803/experience_total = 5840
+#
+set m9803/experience_current = 5840
+#
+set m9803/reset_objects["o9828"] = {"location":"equipped"}
+#
+tel r9865
+#
+create a helm made from a dragon's skull;skull;helm;dragon;o9829:objects.Armor
+#
+sethome o9829 = m9803
+#
+desc o9829 = The skull of a dragon lies here
+#
+set o9829/level = 7
+#
+set o9829/level_base = 7
+#
+set o9829/vnum = "o9829"
+#
+set o9829/item_type = "armor"
+#
+set o9829/wear_location = "head"
+#
+set o9829/weight = 15
+#
+tag o9829 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9829 = object
+#
+set o9829/extra_flags = ['glow']
+#
+set o9829/stat_modifiers[intelligence] = -1
+#
+set o9829/stat_modifiers[constitution] = 2
+#
+set o9829/armor = 3
+#
+wearto o9829 = m9803
+#
+set m9803/reset_objects["o9829"] = {"location":"equipped"}
+#
+tel r9865
+#
+set north/door_attributes = ['lockable', 'locked']
+#
+set north/reset_door_attributes = ['lockable', 'locked']
+#
+tel r9866
+#
+create/drop a virgin sacrifice;virgin;sacrifice;m9805:characters.Mobile
+#
+desc m9805 = A virgin weeping about her pending death is here. 
+#
+set m9805/level = 7
+#
+set m9805/level_base = 7
+#
+set m9805/vnum = "m9805"
+#
+set m9805/look_description = "This innocent, beautiful girl is waiting for some brave, handsome adventurer to save her. "
+#
+set m9805/act_flags = ['sentinel', 'npc']
+#
+set m9805/alignment = 0
+#
+set m9805/sex = "female"
+#
+set m9805/race = "human"
+#
+tag m9805 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9805 = mobile
+#
+set m9805/hitpoints[maximum] = 105
+#
+set m9805/position = "standing"
+#
+set m9805/experience_total = 2350
+#
+set m9805/experience_current = 2350
+#
+tel r9866
+#
+create A torn white dress;white;dress;torn;o9836:objects.Armor
+#
+sethome o9836 = m9805
+#
+desc o9836 = A once-pretty dress is lying here with holes torn in it.
+#
+set o9836/level = 5
+#
+set o9836/level_base = 5
+#
+set o9836/vnum = "o9836"
+#
+set o9836/item_type = "armor"
+#
+set o9836/wear_location = "body"
+#
+set o9836/weight = 5
+#
+tag o9836 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9836 = object
+#
+set o9836/armor = 3
+#
+wearto o9836 = m9805
+#
+set m9805/reset_objects["o9836"] = {"location":"equipped"}
+#
+tel r9866
+#
+set south/door_attributes = ['lockable', 'locked']
+#
+set south/reset_door_attributes = ['lockable', 'locked']
+#
+tel r9867
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r9868
+#
+create/drop the High Priestess;high;priestess;m9804:characters.Mobile
+#
+desc m9804 = The High Priestess is FURIOUS about your intrusion! 
+#
+set m9804/level = 10
+#
+set m9804/level_base = 10
+#
+set m9804/vnum = "m9804"
+#
+set m9804/look_description = "This is the High Priestess of the Dragon Cult, she would be quite beautiful if it weren't for her SCALES! "
+#
+set m9804/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m9804/alignment = -600
+#
+set m9804/sex = "female"
+#
+set m9804/spell_affects = {'detect hidden': '', 'detect magic': '', 'detect invis': ''}
+#
+set m9804/race = "dragon"
+#
+tag m9804 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9804 = mobile
+#
+set m9804/hitpoints[maximum] = 128
+#
+set m9804/position = "standing"
+#
+set m9804/experience_total = 5436
+#
+set m9804/experience_current = 5436
+#
+set m9804/special_function = "cast_mage"
+#
+tel r9868
+#
+create a skull key;skull;key;o9827:objects.Key
+#
+sethome o9827 = m9804
+#
+desc o9827 = You see a skull key here!
+#
+set o9827/level = 8
+#
+set o9827/level_base = 8
+#
+set o9827/vnum = "o9827"
+#
+set o9827/item_type = "key"
+#
+set o9827/weight = 1
+#
+tag o9827 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9827 = object
+#
+give o9827 to m9804
+#
+set m9804/reset_objects["o9827"] = {"location":"inventory"}
+#
+tel r9868
+#
+create dragonscale robes;heap;scales;black;dragonscale;robes;o9834:objects.Armor
+#
+sethome o9834 = m9804
+#
+desc o9834 = You see a shimmering black heap of scales.
+#
+set o9834/level = 8
+#
+set o9834/level_base = 8
+#
+set o9834/vnum = "o9834"
+#
+set o9834/item_type = "armor"
+#
+set o9834/wear_location = "body"
+#
+set o9834/weight = 20
+#
+tag o9834 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9834 = object
+#
+set o9834/alignment_restriction = ['neutral', 'good']
+#
+set o9834/extra_flags = ['magic', 'evil']
+#
+set o9834/stat_modifiers[mana] = 4
+#
+set o9834/stat_modifiers[hitpoints] = 5
+#
+set o9834/stat_modifiers[intelligence] = 1
+#
+set o9834/stat_modifiers[wisdom] = 1
+#
+set o9834/armor = 3
+#
+wearto o9834 = m9804
+#
+set m9804/reset_objects["o9834"] = {"location":"equipped"}
+#
+tel r9868
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r9869
+#
+set north/door_attributes = ['lockable', 'locked']
+#
+set north/reset_door_attributes = ['lockable', 'locked']
+#
+tel r9870
+#
+create/drop The Black Dragon Wyrmling;dragon;wyrmling;m9806:characters.Mobile
+#
+desc m9806 = The Black Dragon Wyrmling wants to feed ON YOU. 
+#
+set m9806/level = 10
+#
+set m9806/level_base = 10
+#
+set m9806/vnum = "m9806"
+#
+set m9806/look_description = "The Black Dragon Wyrmling is the center of this obscure Dragon Cult. It is vicious and has a nasty bite, so you better be ready! "
+#
+set m9806/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+#
+set m9806/alignment = -1000
+#
+set m9806/sex = "male"
+#
+set m9806/spell_affects = {'infrared': '', 'sanctuary': '', 'detect invis': ''}
+#
+set m9806/race = "dragon"
+#
+tag m9806 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9806 = mobile
+#
+set m9806/hitpoints[maximum] = 108
+#
+set m9806/position = "standing"
+#
+set m9806/experience_total = 9179
+#
+set m9806/experience_current = 9179
+#
+set m9806/special_function = "breath_acid"
+#
+tel r9870
+#
+set south/door_attributes = ['lockable', 'locked']
+#
+set south/reset_door_attributes = ['lockable', 'locked']
+#
+tel r9871
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r9873
+#
+set down/door_attributes = ['closeable']
+#
+set down/reset_door_attributes = ['closeable']
+#
+tel r9875
+#
+create/drop Gale;gale;coordinator;m9811:characters.Mobile
+#
+desc m9811 = Gale the office coordinator bustles around the office. 
+#
+set m9811/level = 10
+#
+set m9811/level_base = 10
+#
+set m9811/vnum = "m9811"
+#
+set m9811/look_description = "Gale looks very busy, she runs around the office to make sure everything runs well.  She might be attractive if she weren't so work oriented. "
+#
+set m9811/act_flags = ['stay area', 'npc']
+#
+set m9811/alignment = -1000
+#
+set m9811/sex = "female"
+#
+set m9811/spell_affects = {'detect invis': ''}
+#
+set m9811/race = "human"
+#
+tag m9811 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9811 = mobile
+#
+set m9811/hitpoints[maximum] = 90
+#
+set m9811/position = "standing"
+#
+set m9811/experience_total = 5115
+#
+set m9811/experience_current = 5115
+#
+tel r9876
+#
+create/drop Fred;fred;boss;m9812:characters.Mobile
+#
+desc m9812 = Fred, the boss of the office, is here smoking a cheap cigar. 
+#
+set m9812/level = 6
+#
+set m9812/level_base = 6
+#
+set m9812/vnum = "m9812"
+#
+set m9812/look_description = "Fred is good at being boss, but there isn't much else he is good at, at all.  He basically sits around in his office all day, occasionally yelling at people, and checking out Gale. "
+#
+set m9812/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9812/alignment = -1000
+#
+set m9812/sex = "male"
+#
+set m9812/spell_affects = {'detect invis': ''}
+#
+set m9812/race = "human"
+#
+tag m9812 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9812 = mobile
+#
+set m9812/hitpoints[maximum] = 61
+#
+set m9812/position = "standing"
+#
+set m9812/experience_total = 1424
+#
+set m9812/experience_current = 1424
+#
+tel r9877
+#
+create/drop Marie;marie;maid;m9810:characters.Mobile
+#
+desc m9810 = Marie is here on her break sipping some coffee. 
+#
+set m9810/level = 7
+#
+set m9810/level_base = 7
+#
+set m9810/vnum = "m9810"
+#
+set m9810/look_description = "Marie is the maid of this fine institution, but she never seems very busy at all.  There are some places that she just won't clean, like that basement... it's really terrible down there. "
+#
+set m9810/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9810/alignment = 200
+#
+set m9810/sex = "female"
+#
+set m9810/spell_affects = {'detect invis': ''}
+#
+set m9810/race = "human"
+#
+tag m9810 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9810 = mobile
+#
+set m9810/hitpoints[maximum] = 65
+#
+set m9810/position = "standing"
+#
+set m9810/experience_total = 2284
+#
+set m9810/experience_current = 2284
+#
+tel r9877
+#
+create a donut;donut;o9839:objects.Food
+#
+sethome o9839 = r9877
+#
+desc o9839 = There is a jelly-filled donut here.
+#
+set o9839/level = 5
+#
+set o9839/level_base = 5
+#
+set o9839/vnum = "o9839"
+#
+set o9839/item_type = "food"
+#
+set o9839/weight = 1
+#
+tag o9839 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9839 = object
+#
+set o9839/hours_fed = 100
+#
+set o9839/poison = 0
+#
+drop o9839
+#
+set r9877/reset_objects["o9839"] = {"location":"inventory"}
+#
+tel r9877
+#
+create a cup of coffee;coffee;o9840:objects.Drink_container
+#
+sethome o9840 = r9877
+#
+desc o9840 = There is a piping hot cup of coffee here
+#
+set o9840/level = 5
+#
+set o9840/level_base = 5
+#
+set o9840/vnum = "o9840"
+#
+set o9840/item_type = "drink_container"
+#
+set o9840/weight = 1
+#
+tag o9840 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9840 = object
+#
+set o9840/capacity_current = 15
+#
+set o9840/liquid_type = "coffee"
+#
+set o9840/poison = 0
+#
+drop o9840
+#
+set r9877/reset_objects["o9840"] = {"location":"inventory"}
+#
+tel r9879
+#
+create/drop Jim;jim;sales;director;m9814:characters.Mobile
+#
+desc m9814 = Jim the sales Director eyes you like a hungry vulture. 
+#
+set m9814/level = 9
+#
+set m9814/level_base = 9
+#
+set m9814/vnum = "m9814"
+#
+set m9814/look_description = "Hello, I'm Jim.  Let me explain the organization to you.  First, it costs nothing....... "
+#
+set m9814/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9814/alignment = -1000
+#
+set m9814/sex = "male"
+#
+set m9814/spell_affects = {'detect invis': ''}
+#
+set m9814/race = "human"
+#
+tag m9814 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9814 = mobile
+#
+set m9814/hitpoints[maximum] = 132
+#
+set m9814/position = "standing"
+#
+set m9814/experience_total = 4416
+#
+set m9814/experience_current = 4416
+#
+set m9814/special_function = "cast_undead"
+#
+tel r9881
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r9881
+#
+set down/door_attributes = ['closeable']
+#
+set down/reset_door_attributes = ['closeable']
+#
+tel r9882
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r9883
+#
+create/drop the Zombie;zombie;m9815:characters.Mobile
+#
+desc m9815 = The Zombie hates everything alive, namely you. 
+#
+set m9815/level = 11
+#
+set m9815/level_base = 11
+#
+set m9815/vnum = "m9815"
+#
+set m9815/look_description = "The zombie is pretty fresh, not too much flesh has rotted off, but the guy who died and became a zombie, he was very strong, so... this zombie is nothing to be laughed at. "
+#
+set m9815/act_flags = ['stay area', 'aggressive', 'sentinel', 'npc']
+#
+set m9815/alignment = -1000
+#
+set m9815/sex = "male"
+#
+set m9815/spell_affects = {'detect invis': ''}
+#
+set m9815/race = "undead"
+#
+tag m9815 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9815 = mobile
+#
+set m9815/hitpoints[maximum] = 208
+#
+set m9815/position = "standing"
+#
+set m9815/experience_total = 6848
+#
+set m9815/experience_current = 6848
+#
+tel r9883
+#
+set west/door_attributes = ['lockable', 'locked']
+#
+set west/reset_door_attributes = ['lockable', 'locked']
+#
+tel r9884
+#
+create/drop the Torturer;torturer;m9813:characters.Mobile
+#
+desc m9813 = The Torturer is here ready to inflict great pain upon you. 
+#
+set m9813/level = 10
+#
+set m9813/level_base = 10
+#
+set m9813/vnum = "m9813"
+#
+set m9813/look_description = "Yuck! What an ugly sight, I'm surprised you looked! "
+#
+set m9813/act_flags = ['stay area', 'aggressive', 'sentinel', 'npc']
+#
+set m9813/alignment = -1000
+#
+set m9813/sex = "male"
+#
+set m9813/spell_affects = {'detect invis': ''}
+#
+set m9813/race = "human"
+#
+tag m9813 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9813 = mobile
+#
+set m9813/hitpoints[maximum] = 166
+#
+set m9813/position = "standing"
+#
+set m9813/experience_total = 5661
+#
+set m9813/experience_current = 5661
+#
+tel r9884
+#
+create a rusty key;rusty;key;o9837:objects.Key
+#
+sethome o9837 = m9813
+#
+desc o9837 = A hunk of metal is on the ground.
+#
+set o9837/level = 8
+#
+set o9837/level_base = 8
+#
+set o9837/vnum = "o9837"
+#
+set o9837/item_type = "key"
+#
+set o9837/weight = 1
+#
+tag o9837 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9837 = object
+#
+give o9837 to m9813
+#
+set m9813/reset_objects["o9837"] = {"location":"inventory"}
+#
+tel r9884
+#
+set north/door_attributes = ['closeable']
+#
+set north/reset_door_attributes = ['closeable']
+#
+tel r9884
+#
+set east/door_attributes = ['lockable', 'locked']
+#
+set east/reset_door_attributes = ['lockable', 'locked']
+#
+tel r9886
+#
+set south/door_attributes = ['closeable']
+#
+set south/reset_door_attributes = ['closeable']
+#
+tel r9886
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r9887
+#
+set up/door_attributes = ['closeable']
+#
+set up/reset_door_attributes = ['closeable']
+#
+tel r9889
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r9890
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r9891
+#
+create/drop the Lich Priest;lich;priest;m9816:characters.Mobile
+#
+desc m9816 = The Lich Priest glares at you through dead eyes. 
+#
+set m9816/level = 15
+#
+set m9816/level_base = 15
+#
+set m9816/vnum = "m9816"
+#
+set m9816/look_description = "This is the living corpse of a once powerful priest of the cult.  In his quest for power he learned the ways of the mage and made himself a monstrosity.  He is a creature to be reckoned with. "
+#
+set m9816/act_flags = ['stay area', 'aggressive', 'sentinel', 'npc']
+#
+set m9816/alignment = -1000
+#
+set m9816/sex = "male"
+#
+set m9816/spell_affects = {'sanctuary': '', 'detect hidden': '', 'detect magic': '', 'detect invis': ''}
+#
+set m9816/race = "lich"
+#
+tag m9816 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9816 = mobile
+#
+set m9816/hitpoints[maximum] = 272
+#
+set m9816/position = "standing"
+#
+set m9816/experience_total = 28863
+#
+set m9816/experience_current = 28863
+#
+set m9816/special_function = "fido"
+#
+tel r9892
+#
+create/drop An old monk;monk;old;m9817:characters.Mobile
+#
+desc m9817 = An old monk is here, attempting to sell you candy. 
+#
+set m9817/level = 15
+#
+set m9817/level_base = 15
+#
+set m9817/vnum = "m9817"
+#
+set m9817/look_description = "He has rotten teeth. "
+#
+set m9817/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9817/alignment = -200
+#
+set m9817/sex = "male"
+#
+set m9817/spell_affects = {'detect invis': ''}
+#
+set m9817/race = "human"
+#
+tag m9817 = #area { 5 25 } sandman dragon cult:area name
+#
+tag m9817 = mobile
+#
+set m9817/hitpoints[maximum] = 138
+#
+set m9817/position = "standing"
+#
+set m9817/experience_total = 19530
+#
+set m9817/experience_current = 19530
+#
+set m9817/shopkeeper = {'item will buy 1': 'trash', 'item will buy 2': 'trash', 'item will buy 3': 'trash', 'item will buy 4': 'trash', 'sell percentage': '0', 'buy percentage': '400', 'opening hour': '400', 'closing hour': '0'}
+#
+tel r9892
+#
+create Dragon Candy <tm>;dragon;candy;o9841:objects.Pill
+#
+sethome o9841 = m9817
+#
+desc o9841 = A piece of Dragon Candy
+#
+set o9841/level = 13
+#
+set o9841/level_base = 13
+#
+set o9841/vnum = "o9841"
+#
+set o9841/item_type = "pill"
+#
+set o9841/weight = 1
+#
+tag o9841 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9841 = object
+#
+set o9841/spell_level = 1
+#
+set o9841/spell_level_base = 1
+#
+set o9841/spell_name_1 = "blindness"
+#
+set o9841/spell_name_2 = "harm"
+#
+set o9841/spell_name_3 = "harm"
+#
+give o9841 to m9817
+#
+set m9817/reset_objects["o9841"] = {"location":"inventory"}
+#
+tel r9892
+#
+create Dragon Candy <tm>;dragon;candy;o9842:objects.Pill
+#
+sethome o9842 = m9817
+#
+desc o9842 = A piece of Dragon Candy
+#
+set o9842/level = 13
+#
+set o9842/level_base = 13
+#
+set o9842/vnum = "o9842"
+#
+set o9842/item_type = "pill"
+#
+set o9842/weight = 1
+#
+tag o9842 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9842 = object
+#
+set o9842/spell_level = 2
+#
+set o9842/spell_level_base = 2
+#
+set o9842/spell_name_1 = "bless"
+#
+set o9842/spell_name_2 = "cause light"
+#
+give o9842 to m9817
+#
+set m9817/reset_objects["o9842"] = {"location":"inventory"}
+#
+tel r9892
+#
+create Dragon Candy <tm>;dragon;candy;o9843:objects.Pill
+#
+sethome o9843 = m9817
+#
+desc o9843 = A piece of Dragon Candy
+#
+set o9843/level = 13
+#
+set o9843/level_base = 13
+#
+set o9843/vnum = "o9843"
+#
+set o9843/item_type = "pill"
+#
+set o9843/weight = 1
+#
+tag o9843 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9843 = object
+#
+set o9843/spell_level = 3
+#
+set o9843/spell_level_base = 3
+#
+set o9843/spell_name_1 = "change sex"
+#
+set o9843/spell_name_2 = "teleport"
+#
+give o9843 to m9817
+#
+set m9817/reset_objects["o9843"] = {"location":"inventory"}
+#
+tel r9892
+#
+create Dragon Candy <tm>;dragon;candy;o9844:objects.Pill
+#
+sethome o9844 = m9817
+#
+desc o9844 = A piece of Dragon Candy
+#
+set o9844/level = 13
+#
+set o9844/level_base = 13
+#
+set o9844/vnum = "o9844"
+#
+set o9844/item_type = "pill"
+#
+set o9844/weight = 1
+#
+tag o9844 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9844 = object
+#
+set o9844/spell_level = 5
+#
+set o9844/spell_level_base = 5
+#
+set o9844/spell_name_1 = "detect hidden"
+#
+set o9844/spell_name_2 = "detect invis"
+#
+set o9844/spell_name_3 = "detect magic"
+#
+give o9844 to m9817
+#
+set m9817/reset_objects["o9844"] = {"location":"inventory"}
+#
+tel r9892
+#
+create Dragon Candy <tm>;dragon;candy;o9845:objects.Pill
+#
+sethome o9845 = m9817
+#
+desc o9845 = A piece of Dragon Candy
+#
+set o9845/level = 13
+#
+set o9845/level_base = 13
+#
+set o9845/vnum = "o9845"
+#
+set o9845/item_type = "pill"
+#
+set o9845/weight = 1
+#
+tag o9845 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9845 = object
+#
+set o9845/spell_level = 33
+#
+set o9845/spell_level_base = 33
+#
+give o9845 to m9817
+#
+set m9817/reset_objects["o9845"] = {"location":"inventory"}
+#
+tel r9892
+#
+create Dragon Candy <tm>;dragon;candy;o9846:objects.Pill
+#
+sethome o9846 = m9817
+#
+desc o9846 = A piece of Dragon Candy
+#
+set o9846/level = 13
+#
+set o9846/level_base = 13
+#
+set o9846/vnum = "o9846"
+#
+set o9846/item_type = "pill"
+#
+set o9846/weight = 1
+#
+tag o9846 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9846 = object
+#
+set o9846/spell_level = 17
+#
+set o9846/spell_level_base = 17
+#
+set o9846/spell_name_1 = "curse"
+#
+set o9846/spell_name_2 = "harm"
+#
+set o9846/spell_name_3 = "poison"
+#
+give o9846 to m9817
+#
+set m9817/reset_objects["o9846"] = {"location":"inventory"}
+#
+tel r9892
+#
+create Dragon Candy <tm>;dragon;candy;o9847:objects.Pill
+#
+sethome o9847 = m9817
+#
+desc o9847 = A piece of Dragon Candy
+#
+set o9847/level = 13
+#
+set o9847/level_base = 13
+#
+set o9847/vnum = "o9847"
+#
+set o9847/item_type = "pill"
+#
+set o9847/weight = 1
+#
+tag o9847 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9847 = object
+#
+set o9847/spell_level = 23
+#
+set o9847/spell_level_base = 23
+#
+set o9847/spell_name_1 = "refresh"
+#
+set o9847/spell_name_2 = "cure blindness"
+#
+set o9847/spell_name_3 = "cure poison"
+#
+give o9847 to m9817
+#
+set m9817/reset_objects["o9847"] = {"location":"inventory"}
+#
+tel r9892
+#
+create Dragon Candy <tm>;dragon;candy;o9848:objects.Pill
+#
+sethome o9848 = m9817
+#
+desc o9848 = A piece of Dragon Candy
+#
+set o9848/level = 13
+#
+set o9848/level_base = 13
+#
+set o9848/vnum = "o9848"
+#
+set o9848/item_type = "pill"
+#
+set o9848/weight = 1
+#
+tag o9848 = #area { 5 25 } sandman dragon cult:area name
+#
+tag o9848 = object
+#
+set o9848/spell_level = 28
+#
+set o9848/spell_level_base = 28
+#
+give o9848 to m9817
+#
+set m9817/reset_objects["o9848"] = {"location":"inventory"}
+#
+tel r9895
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#

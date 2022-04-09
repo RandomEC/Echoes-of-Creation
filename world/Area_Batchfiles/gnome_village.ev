@@ -1,0 +1,8914 @@
+dig/tel A Road Before a Compound; r1593
+#
+tag r1593 = gnome village:area name
+#
+desc r1593 = This road, far newer than the road it branches off from,  runs west and north through the countryside here. The front doorway of some sort of odd compound is immediately before you to the north, and the main road is to the west. 
+#
+desc/edit r1593
+#
+:j l
+#
+:wq
+#
+set r1593/vnum = "r1593"
+#
+set r1593/terrain = "city"
+#
+dig/tel Entrance to Gnome Village; r1501
+#
+tag r1501 = gnome village:area name
+#
+desc r1501 = You stand on a dusty path that leads west and east.  To the east you hear the sounds of a small village. 
+#
+desc/edit r1501
+#
+:j l
+#
+:wq
+#
+set r1501/vnum = "r1501"
+#
+set r1501/terrain = "field"
+#
+set r1501/room_flags = ['no mob']
+#
+dig/tel A Dusty Path; r1502
+#
+tag r1502 = gnome village:area name
+#
+desc r1502 = This is a path leading into the village.  It continues east and west and there is a small house to the north. 
+#
+desc/edit r1502
+#
+:j l
+#
+:wq
+#
+set r1502/vnum = "r1502"
+#
+set r1502/terrain = "city"
+#
+dig/tel A Road in the Village; r1503
+#
+tag r1503 = gnome village:area name
+#
+desc r1503 = This road runs north and south through the center of the village.  There are a few people moving around, but not many. 
+#
+desc/edit r1503
+#
+:j l
+#
+:wq
+#
+set r1503/vnum = "r1503"
+#
+set r1503/terrain = "city"
+#
+dig/tel A Dusty Path; r1504
+#
+tag r1504 = gnome village:area name
+#
+desc r1504 = You are on a dusty path on the far side of the village.  Houses are to the north and south, while the path continues east.  There is a sign here. 
+#
+desc/edit r1504
+#
+:j l
+#
+:wq
+#
+set r1504/vnum = "r1504"
+#
+set r1504/terrain = "city"
+#
+set r1504/extra_description = {'sign': 'Warning:  The area to the east was written mostly by Vougon (giggle)    - Sandman '}
+#
+dig/tel A Road in the Village; r1505
+#
+tag r1505 = gnome village:area name
+#
+desc r1505 = This road runs north and south through the center of the village.  There are a few people moving around, but not many. 
+#
+desc/edit r1505
+#
+:j l
+#
+:wq
+#
+set r1505/vnum = "r1505"
+#
+set r1505/terrain = "city"
+#
+dig/tel A Road in the Village; r1506
+#
+tag r1506 = gnome village:area name
+#
+desc r1506 = This road runs north and south through the center of the village.  There are a few people moving around, but not many. 
+#
+desc/edit r1506
+#
+:j l
+#
+:wq
+#
+set r1506/vnum = "r1506"
+#
+set r1506/terrain = "city"
+#
+dig/tel A Road in the Village; r1507
+#
+tag r1507 = gnome village:area name
+#
+desc r1507 = This road runs north and south through the center of the village.  There are a few people moving around, but not many. 
+#
+desc/edit r1507
+#
+:j l
+#
+:wq
+#
+set r1507/vnum = "r1507"
+#
+set r1507/terrain = "city"
+#
+dig/tel A Road in the Village; r1508
+#
+tag r1508 = gnome village:area name
+#
+desc r1508 = This road runs north and south through the center of the village.  There are a few people moving around, but not many. 
+#
+desc/edit r1508
+#
+:j l
+#
+:wq
+#
+set r1508/vnum = "r1508"
+#
+set r1508/terrain = "city"
+#
+dig/tel A Small Gnome House; r1509
+#
+tag r1509 = gnome village:area name
+#
+desc r1509 = This is a small suburban house made from quality wood.  You can see the expert workmanship that went into making it, but it lacks creativity. 
+#
+desc/edit r1509
+#
+:j l
+#
+:wq
+#
+set r1509/vnum = "r1509"
+#
+set r1509/terrain = "inside"
+#
+set r1509/room_flags = ['indoors']
+#
+dig/tel A Small Gnome House; r1510
+#
+tag r1510 = gnome village:area name
+#
+desc r1510 = This is a small suburban house made from quality wood.  You can see the expert workmanship that went into making it, but it lacks creativity. 
+#
+desc/edit r1510
+#
+:j l
+#
+:wq
+#
+set r1510/vnum = "r1510"
+#
+set r1510/terrain = "inside"
+#
+set r1510/room_flags = ['indoors']
+#
+dig/tel A Small Gnome House; r1511
+#
+tag r1511 = gnome village:area name
+#
+desc r1511 = This is a small suburban house made from quality wood.  You can see the expert workmanship that went into making it, but it lacks creativity. 
+#
+desc/edit r1511
+#
+:j l
+#
+:wq
+#
+set r1511/vnum = "r1511"
+#
+set r1511/terrain = "inside"
+#
+set r1511/room_flags = ['indoors']
+#
+dig/tel A Small Gnome House; r1512
+#
+tag r1512 = gnome village:area name
+#
+desc r1512 = This is a small suburban house made from quality wood.  You can see the expert workmanship that went into making it, but it lacks creativity. 
+#
+desc/edit r1512
+#
+:j l
+#
+:wq
+#
+set r1512/vnum = "r1512"
+#
+set r1512/terrain = "inside"
+#
+set r1512/room_flags = ['indoors']
+#
+dig/tel A Small Gnome House; r1513
+#
+tag r1513 = gnome village:area name
+#
+desc r1513 = This is a small suburban house made from quality wood.  You can see the expert workmanship that went into making it, but it lacks creativity. 
+#
+desc/edit r1513
+#
+:j l
+#
+:wq
+#
+set r1513/vnum = "r1513"
+#
+set r1513/terrain = "inside"
+#
+set r1513/room_flags = ['indoors']
+#
+dig/tel A Gnome Shop; r1514
+#
+tag r1514 = gnome village:area name
+#
+desc r1514 = You are in one of the several shops of this fine town.  The wares look fine, but unfortunately the gnomes don't do business with outsiders. 
+#
+desc/edit r1514
+#
+:j l
+#
+:wq
+#
+set r1514/vnum = "r1514"
+#
+set r1514/terrain = "inside"
+#
+set r1514/room_flags = ['indoors']
+#
+dig/tel A Gnome Shop; r1515
+#
+tag r1515 = gnome village:area name
+#
+desc r1515 = You are in one of the several shops of this fine town.  The wares look fine, but unfortunately the gnomes don't do business with outsiders. 
+#
+desc/edit r1515
+#
+:j l
+#
+:wq
+#
+set r1515/vnum = "r1515"
+#
+set r1515/terrain = "inside"
+#
+set r1515/room_flags = ['indoors']
+#
+dig/tel A Gnome Shop; r1516
+#
+tag r1516 = gnome village:area name
+#
+desc r1516 = You are in one of the several shops of this fine town.  The wares look fine, but unfortunately the gnomes don't do business with outsiders. 
+#
+desc/edit r1516
+#
+:j l
+#
+:wq
+#
+set r1516/vnum = "r1516"
+#
+set r1516/terrain = "inside"
+#
+set r1516/room_flags = ['indoors']
+#
+dig/tel Path by a Stream; r1517
+#
+tag r1517 = gnome village:area name
+#
+desc r1517 = You are on a small path leading north and west, that is surrounded on the other two sides by a small stream.  The water looks mighty cold. 
+#
+desc/edit r1517
+#
+:j l
+#
+:wq
+#
+set r1517/vnum = "r1517"
+#
+set r1517/terrain = "field"
+#
+set r1517/extra_description = {'stream': 'The stream is pretty small, but it looks too cold to swim. '}
+#
+set r1517/room_flags = ['no mob']
+#
+dig/tel Path by a Stream; r1518
+#
+tag r1518 = gnome village:area name
+#
+desc r1518 = You are on a small east-west path.  The path shows new grass, as if it has stopped being used sometime in the recent past.  A river is to the south, and a small hut is to the west. 
+#
+desc/edit r1518
+#
+:j l
+#
+:wq
+#
+set r1518/vnum = "r1518"
+#
+set r1518/terrain = "field"
+#
+set r1518/extra_description = {'stream': 'The stream is pretty small, but it looks too cold to swim. ', 'hut': 'The hut looks well built, but it seems to have taken some damage. '}
+#
+dig/tel A Small Hut; r1519
+#
+tag r1519 = gnome village:area name
+#
+desc r1519 = The hut is a mess!  Blood has stained the grass walls into a dark rich crimson color.  Torn clothes and trash lie all around, and you think you see a skeleton in the corner. 
+#
+desc/edit r1519
+#
+:j l
+#
+:wq
+#
+set r1519/vnum = "r1519"
+#
+set r1519/terrain = "inside"
+#
+set r1519/extra_description = {'skeleton': 'The skeleton still has a little flesh clinging to it and it is definitely humanoid.  The skull has been cracked open, but it is otherwise undamaged, except by time. '}
+#
+set r1519/room_flags = ['indoors']
+#
+dig/tel On the Stream; r1520
+#
+tag r1520 = gnome village:area name
+#
+desc r1520 = The stream is cold and frigid, yet it supports plenty of life beneath its surface.  The current trickles west, there is a field to the south. The path continues both north and south of the stream. 
+#
+desc/edit r1520
+#
+:j l
+#
+:wq
+#
+set r1520/vnum = "r1520"
+#
+set r1520/terrain = "water noswim"
+#
+dig/tel On the Stream; r1521
+#
+tag r1521 = gnome village:area name
+#
+desc r1521 = The current here flows from the east, but a logjam blocks you from continuing onward. 
+#
+desc/edit r1521
+#
+:j l
+#
+:wq
+#
+set r1521/vnum = "r1521"
+#
+set r1521/terrain = "water noswim"
+#
+dig/tel The Field of Mice's Dreams; r1522
+#
+tag r1522 = gnome village:area name
+#
+desc r1522 = This is a large green field of waist high grass.  You feel something scurry over your feet.  There is a cave to the east, and you can see a slight path leading to a stream to the north. 
+#
+desc/edit r1522
+#
+:j l
+#
+:wq
+#
+set r1522/vnum = "r1522"
+#
+set r1522/terrain = "field"
+#
+dig/tel The Dark Cave; r1523
+#
+tag r1523 = gnome village:area name
+#
+desc r1523 = The cave gleams as your light reflects off of it.  As you squint your eyes and try to look ahead, you think you see something move. 
+#
+desc/edit r1523
+#
+:j l
+#
+:wq
+#
+set r1523/vnum = "r1523"
+#
+set r1523/terrain = "inside"
+#
+set r1523/room_flags = ['indoors', 'dark']
+#
+dig/tel Darker Cave; r1524
+#
+tag r1524 = gnome village:area name
+#
+desc r1524 = The cave gets even darker and your terror grows stronger.  You fear for your life as something moves in the shadows. 
+#
+desc/edit r1524
+#
+:j l
+#
+:wq
+#
+set r1524/vnum = "r1524"
+#
+set r1524/terrain = "inside"
+#
+set r1524/room_flags = ['indoors', 'dark']
+#
+dig/tel A Dusty Path; r1526
+#
+tag r1526 = gnome village:area name
+#
+desc r1526 = You are on a well traveled path that leads in many directions.  To the north is a large house, and to the west is a fortress. 
+#
+desc/edit r1526
+#
+:j l
+#
+:wq
+#
+set r1526/vnum = "r1526"
+#
+set r1526/terrain = "city"
+#
+set r1526/extra_description = {'fortress': 'The fortress is a large gnome stronghold to defend the city. '}
+#
+set r1526/room_flags = ['no mob']
+#
+dig/tel The Iron Gateway; r1527
+#
+tag r1527 = gnome village:area name
+#
+desc r1527 = You stand at the entrance to the gnome fortress.  The place seems to be well fortified. 
+#
+desc/edit r1527
+#
+:j l
+#
+:wq
+#
+set r1527/vnum = "r1527"
+#
+set r1527/terrain = "city"
+#
+dig/tel A Long Hallway; r1528
+#
+tag r1528 = gnome village:area name
+#
+desc r1528 = You are now inside of the fortress; you must be lucky that the guards haven't killed you.  As you glance around, you notice that the walls and floors are spotlessly clean.  The barracks are to the north and a storage room is to the south. 
+#
+desc/edit r1528
+#
+:j l
+#
+:wq
+#
+set r1528/vnum = "r1528"
+#
+set r1528/terrain = "inside"
+#
+set r1528/room_flags = ['indoors']
+#
+dig/tel A Long Hallway; r1529
+#
+tag r1529 = gnome village:area name
+#
+desc r1529 = You are now inside of the fortress; you must be lucky that the guards haven't killed you.  As you glance around, you notice that the walls and floors are spotlessly clean.  A mess hall is to the south. 
+#
+desc/edit r1529
+#
+:j l
+#
+:wq
+#
+set r1529/vnum = "r1529"
+#
+set r1529/terrain = "inside"
+#
+set r1529/room_flags = ['indoors']
+#
+dig/tel The Barracks; r1530
+#
+tag r1530 = gnome village:area name
+#
+desc r1530 = You now stand in the sleeping quarters of the gnome guards.  Every bed is made perfectly, and not a single article of clothing is on the floor.  There is a small storage room to the east. 
+#
+desc/edit r1530
+#
+:j l
+#
+:wq
+#
+set r1530/vnum = "r1530"
+#
+set r1530/terrain = "inside"
+#
+set r1530/room_flags = ['indoors']
+#
+dig/tel A Small Storage Room; r1531
+#
+tag r1531 = gnome village:area name
+#
+desc r1531 = This is where the gnomes store all their spare clothing and armor. There is not much here, but you might come up with something. 
+#
+desc/edit r1531
+#
+:j l
+#
+:wq
+#
+set r1531/vnum = "r1531"
+#
+set r1531/terrain = "inside"
+#
+set r1531/room_flags = ['indoors']
+#
+dig/tel A Small Storage Room; r1532
+#
+tag r1532 = gnome village:area name
+#
+desc r1532 = This is where the gnomes store all their spare weapons.  A door leads off to the east. 
+#
+desc/edit r1532
+#
+:j l
+#
+:wq
+#
+set r1532/vnum = "r1532"
+#
+set r1532/terrain = "inside"
+#
+set r1532/room_flags = ['indoors']
+#
+dig/tel A Small Storage Room; r1533
+#
+tag r1533 = gnome village:area name
+#
+desc r1533 = This is yet another room for storing gnome stuff.  Maps and battle plans are stored in neat stacks on the shelves. 
+#
+desc/edit r1533
+#
+:j l
+#
+:wq
+#
+set r1533/vnum = "r1533"
+#
+set r1533/terrain = "inside"
+#
+set r1533/room_flags = ['indoors']
+#
+dig/tel The Mess Hall; r1534
+#
+tag r1534 = gnome village:area name
+#
+desc r1534 = You are in the room where the guards come to get their grub.  The benches and tables are neatly cleaned and straightened, while shiny plates line the walls. You see an outline of a trapdoor under the table. 
+#
+desc/edit r1534
+#
+:j l
+#
+:wq
+#
+set r1534/vnum = "r1534"
+#
+set r1534/terrain = "inside"
+#
+set r1534/room_flags = ['indoors']
+#
+dig/tel A Small Room; r1535
+#
+tag r1535 = gnome village:area name
+#
+desc r1535 = This is a small plain room.  It's only interesting feature is a ladder down. 
+#
+desc/edit r1535
+#
+:j l
+#
+:wq
+#
+set r1535/vnum = "r1535"
+#
+set r1535/terrain = "inside"
+#
+set r1535/room_flags = ['indoors']
+#
+dig/tel A Small Unused Room; r1536
+#
+tag r1536 = gnome village:area name
+#
+desc r1536 = You stand in a small room in an unused section of the fortress.  The whole room is coated with dust and cobwebs.  The ladder leads back up, and a rusty door with a large keyhole is to the east. 
+#
+desc/edit r1536
+#
+:j l
+#
+:wq
+#
+set r1536/vnum = "r1536"
+#
+set r1536/terrain = "city"
+#
+set r1536/extra_description = {'door rusty keyhole': 'The keyhole is encrusted with blood. '}
+#
+set r1536/room_flags = ['indoors', 'dark']
+#
+dig/tel Dark Hallway; r1537
+#
+tag r1537 = gnome village:area name
+#
+desc r1537 = You find yourself in a very old section of the fortress.  You must be the first person to pass through here in years.  The hallway continues south and a door leads off to the east. 
+#
+desc/edit r1537
+#
+:j l
+#
+:wq
+#
+set r1537/vnum = "r1537"
+#
+set r1537/terrain = "field"
+#
+set r1537/room_flags = ['indoors', 'dark']
+#
+dig/tel Torture Chamber; r1538
+#
+tag r1538 = gnome village:area name
+#
+desc r1538 = This is a room that was once used to extract lies out of helpless victims. The machines look unused, but could still work. 
+#
+desc/edit r1538
+#
+:j l
+#
+:wq
+#
+set r1538/vnum = "r1538"
+#
+set r1538/terrain = "field"
+#
+set r1538/extra_description = {'machine': 'The machine consists of a large rack with winches on each end.  You can almost feel them pulling your arms out of their sockets. '}
+#
+set r1538/room_flags = ['indoors', 'dark']
+#
+dig/tel Dark Hallway; r1539
+#
+tag r1539 = gnome village:area name
+#
+desc r1539 = The hall continues in a north-south direction.  The floor is coated with some kind of molded slime.  Doors lead east and west. 
+#
+desc/edit r1539
+#
+:j l
+#
+:wq
+#
+set r1539/vnum = "r1539"
+#
+set r1539/terrain = "field"
+#
+set r1539/room_flags = ['indoors', 'dark']
+#
+dig/tel Dark Hallway; r1540
+#
+tag r1540 = gnome village:area name
+#
+desc r1540 = The hall continues in a north-south direction.  The floor is coated with some kind of molded slime.  Doors lead east and west. 
+#
+desc/edit r1540
+#
+:j l
+#
+:wq
+#
+set r1540/vnum = "r1540"
+#
+set r1540/terrain = "field"
+#
+set r1540/room_flags = ['indoors', 'dark']
+#
+dig/tel Prison Cell; r1541
+#
+tag r1541 = gnome village:area name
+#
+desc r1541 = You are in a dark and nasty prison cell.  Bodies lying on the floor give off an unbearable stench. 
+#
+desc/edit r1541
+#
+:j l
+#
+:wq
+#
+set r1541/vnum = "r1541"
+#
+set r1541/terrain = "field"
+#
+set r1541/room_flags = ['indoors', 'dark']
+#
+dig/tel Prison Cell; r1542
+#
+tag r1542 = gnome village:area name
+#
+desc r1542 = You are in a dark and nasty prison cell.  Bodies lying on the floor give off an unbearable stench. 
+#
+desc/edit r1542
+#
+:j l
+#
+:wq
+#
+set r1542/vnum = "r1542"
+#
+set r1542/terrain = "field"
+#
+set r1542/room_flags = ['indoors', 'dark']
+#
+dig/tel Prison Cell; r1543
+#
+tag r1543 = gnome village:area name
+#
+desc r1543 = You are in a dark and nasty prison cell.  Bodies lying on the floor give off an unbearable stench. 
+#
+desc/edit r1543
+#
+:j l
+#
+:wq
+#
+set r1543/vnum = "r1543"
+#
+set r1543/terrain = "field"
+#
+set r1543/room_flags = ['indoors', 'dark']
+#
+dig/tel Prison Cell; r1544
+#
+tag r1544 = gnome village:area name
+#
+desc r1544 = You are in a dark and nasty prison cell.  Bodies lying on the floor give off an unbearable stench. 
+#
+desc/edit r1544
+#
+:j l
+#
+:wq
+#
+set r1544/vnum = "r1544"
+#
+set r1544/terrain = "field"
+#
+set r1544/room_flags = ['indoors', 'dark']
+#
+dig/tel End of the Dark Hallway; r1545
+#
+tag r1545 = gnome village:area name
+#
+desc r1545 = You have reached the end of the dark hallway and maybe the end of your puny life.  Something lumbers its way out of the shadows. 
+#
+desc/edit r1545
+#
+:j l
+#
+:wq
+#
+set r1545/vnum = "r1545"
+#
+set r1545/terrain = "field"
+#
+set r1545/room_flags = ['indoors', 'dark']
+#
+dig/tel A Ladder; r1546
+#
+tag r1546 = gnome village:area name
+#
+desc r1546 = You have come into a vertical tunnel with a ladder. 
+#
+desc/edit r1546
+#
+:j l
+#
+:wq
+#
+set r1546/vnum = "r1546"
+#
+set r1546/terrain = "forest"
+#
+set r1546/room_flags = ['indoors', 'dark']
+#
+dig/tel Lair; r1547
+#
+tag r1547 = gnome village:area name
+#
+desc r1547 = You have entered a new lair in the fortress.  Anything could be lurking around the corner. 
+#
+desc/edit r1547
+#
+:j l
+#
+:wq
+#
+set r1547/vnum = "r1547"
+#
+set r1547/terrain = "field"
+#
+set r1547/room_flags = ['indoors', 'dark']
+#
+dig/tel A Damp Hallway; r1548
+#
+tag r1548 = gnome village:area name
+#
+desc r1548 = You are wandering in a dark, damp, twisting hallway.  The temperature seems to be greater here, as well as your fear. 
+#
+desc/edit r1548
+#
+:j l
+#
+:wq
+#
+set r1548/vnum = "r1548"
+#
+set r1548/terrain = "field"
+#
+set r1548/room_flags = ['no recall', 'indoors', 'dark']
+#
+dig/tel A Damp Hallway; r1549
+#
+tag r1549 = gnome village:area name
+#
+desc r1549 = You are wandering in a dark, damp, twisting hallway.  The temperature seems to be greater here, as well as your fear. 
+#
+desc/edit r1549
+#
+:j l
+#
+:wq
+#
+set r1549/vnum = "r1549"
+#
+set r1549/terrain = "field"
+#
+set r1549/room_flags = ['no recall', 'indoors', 'dark']
+#
+dig/tel A Damp Hallway; r1550
+#
+tag r1550 = gnome village:area name
+#
+desc r1550 = You are wandering in a dark, damp, twisting hallway.  The temperature seems to be greater here, as well as your fear. 
+#
+desc/edit r1550
+#
+:j l
+#
+:wq
+#
+set r1550/vnum = "r1550"
+#
+set r1550/terrain = "field"
+#
+set r1550/room_flags = ['no recall', 'indoors', 'dark']
+#
+dig/tel A Damp Hallway; r1551
+#
+tag r1551 = gnome village:area name
+#
+desc r1551 = You are wandering in a dark, damp, twisting hallway.  The temperature seems to be greater here, as well as your fear. 
+#
+desc/edit r1551
+#
+:j l
+#
+:wq
+#
+set r1551/vnum = "r1551"
+#
+set r1551/terrain = "field"
+#
+set r1551/room_flags = ['no recall', 'indoors', 'dark']
+#
+dig/tel A Damp Hallway; r1552
+#
+tag r1552 = gnome village:area name
+#
+desc r1552 = You are wandering in a dark, damp, twisting hallway.  The temperature seems to be greater here, as well as your fear. 
+#
+desc/edit r1552
+#
+:j l
+#
+:wq
+#
+set r1552/vnum = "r1552"
+#
+set r1552/terrain = "field"
+#
+set r1552/room_flags = ['no recall', 'indoors', 'dark']
+#
+dig/tel A Damp Hallway; r1553
+#
+tag r1553 = gnome village:area name
+#
+desc r1553 = You are wandering in a dark, damp, twisting hallway.  The temperature seems to be greater here, as well as your fear. 
+#
+desc/edit r1553
+#
+:j l
+#
+:wq
+#
+set r1553/vnum = "r1553"
+#
+set r1553/terrain = "field"
+#
+set r1553/room_flags = ['no recall', 'indoors', 'dark']
+#
+dig/tel A Damp Hallway; r1554
+#
+tag r1554 = gnome village:area name
+#
+desc r1554 = You are wandering in a dark, damp, twisting hallway.  The temperature seems to be greater here, as well as your fear. 
+#
+desc/edit r1554
+#
+:j l
+#
+:wq
+#
+set r1554/vnum = "r1554"
+#
+set r1554/terrain = "field"
+#
+set r1554/room_flags = ['no recall', 'indoors', 'dark']
+#
+dig/tel A Damp Hallway; r1555
+#
+tag r1555 = gnome village:area name
+#
+desc r1555 = You are wandering in a dark, damp, twisting hallway.  The temperature seems to be greater here, as well as your fear. 
+#
+desc/edit r1555
+#
+:j l
+#
+:wq
+#
+set r1555/vnum = "r1555"
+#
+set r1555/terrain = "field"
+#
+set r1555/room_flags = ['no recall', 'indoors', 'dark']
+#
+dig/tel The End of the Hallway; r1556
+#
+tag r1556 = gnome village:area name
+#
+desc r1556 = You make your way out of the hallway, just to find yourself in greater danger.  Below you looms the source of the great heat. 
+#
+desc/edit r1556
+#
+:j l
+#
+:wq
+#
+set r1556/vnum = "r1556"
+#
+set r1556/terrain = "field"
+#
+set r1556/room_flags = ['no recall', 'indoors', 'dark']
+#
+dig/tel The Altar; r1557
+#
+tag r1557 = gnome village:area name
+#
+desc r1557 = You finally reach the end of the maze.  There is a great altar here in the shape of a bat.  A passageway leads back up. 
+#
+desc/edit r1557
+#
+:j l
+#
+:wq
+#
+set r1557/vnum = "r1557"
+#
+set r1557/terrain = "field"
+#
+set r1557/room_flags = ['no teleport in', 'no summon from', 'no recall', 'indoors', 'dark']
+#
+dig/tel The Chief's House; r1558
+#
+tag r1558 = gnome village:area name
+#
+desc r1558 = You enter into a large and luxurious house.  The floor is coated with carpets and the walls are covered in paintings.  You feel privileged just for stepping inside. 
+#
+desc/edit r1558
+#
+:j l
+#
+:wq
+#
+set r1558/vnum = "r1558"
+#
+set r1558/terrain = "inside"
+#
+set r1558/room_flags = ['indoors']
+#
+dig/tel The Unused Path; r1559
+#
+tag r1559 = gnome village:area name
+#
+desc r1559 = You are now on a fairly unused path that leads east out of the village. You wonder what could be out this way. 
+#
+desc/edit r1559
+#
+:j l
+#
+:wq
+#
+set r1559/vnum = "r1559"
+#
+set r1559/terrain = "city"
+#
+set r1559/room_flags = ['no mob']
+#
+dig/tel The Overgrown Path; r1560
+#
+tag r1560 = gnome village:area name
+#
+desc r1560 = As the path continues on, the grass grows higher.  You can't imagine what could possibly be out this way. 
+#
+desc/edit r1560
+#
+:j l
+#
+:wq
+#
+set r1560/vnum = "r1560"
+#
+set r1560/terrain = "field"
+#
+dig/tel The Clearing; r1561
+#
+tag r1561 = gnome village:area name
+#
+desc r1561 = Your progress is suddenly stopped by mountains on all sides.  The path leads back to the west, and there appears to be an old mine shaft to the north. 
+#
+desc/edit r1561
+#
+:j l
+#
+:wq
+#
+set r1561/vnum = "r1561"
+#
+set r1561/terrain = "field"
+#
+dig/tel Entrance to the Mine Shaft; r1562
+#
+tag r1562 = gnome village:area name
+#
+desc r1562 = As you enter the mine shaft, you get a sudden fear of the walls closing in on you.  You are surprised to notice that you don't need a light. 
+#
+desc/edit r1562
+#
+:j l
+#
+:wq
+#
+set r1562/vnum = "r1562"
+#
+set r1562/terrain = "field"
+#
+set r1562/room_flags = ['indoors']
+#
+dig/tel Mine Shaft; r1563
+#
+tag r1563 = gnome village:area name
+#
+desc r1563 = This mine shaft looks stable, at least in this area.  The wooden supports are thick and strong.  Torches line the walls.  Exits lead in all directions. 
+#
+desc/edit r1563
+#
+:j l
+#
+:wq
+#
+set r1563/vnum = "r1563"
+#
+set r1563/terrain = "field"
+#
+set r1563/room_flags = ['indoors']
+#
+dig/tel Mine Shaft; r1564
+#
+tag r1564 = gnome village:area name
+#
+desc r1564 = This mine shaft looks stable, at least in this area.  The wooden supports are thick and strong.  Torches line the walls.  Exits lead in all directions. 
+#
+desc/edit r1564
+#
+:j l
+#
+:wq
+#
+set r1564/vnum = "r1564"
+#
+set r1564/terrain = "field"
+#
+set r1564/room_flags = ['indoors']
+#
+dig/tel Mine Shaft; r1565
+#
+tag r1565 = gnome village:area name
+#
+desc r1565 = This mine shaft looks stable, at least in this area.  The wooden supports are thick and strong.  Torches line the walls.  Exits lead in all directions except north. 
+#
+desc/edit r1565
+#
+:j l
+#
+:wq
+#
+set r1565/vnum = "r1565"
+#
+set r1565/terrain = "field"
+#
+set r1565/room_flags = ['indoors']
+#
+dig/tel Walkway; r1566
+#
+tag r1566 = gnome village:area name
+#
+desc r1566 = You are on a well built path in the middle of a mountain.  You sense something great up ahead, considering the hard work that must have gone into creating this passage. 
+#
+desc/edit r1566
+#
+:j l
+#
+:wq
+#
+set r1566/vnum = "r1566"
+#
+set r1566/terrain = "city"
+#
+set r1566/room_flags = ['indoors']
+#
+dig/tel Walkway; r1567
+#
+tag r1567 = gnome village:area name
+#
+desc r1567 = You are on a well built path in the middle of a mountain.  You sense something great up ahead, considering the hard work that must have gone into creating this passage. 
+#
+desc/edit r1567
+#
+:j l
+#
+:wq
+#
+set r1567/vnum = "r1567"
+#
+set r1567/terrain = "city"
+#
+set r1567/room_flags = ['indoors']
+#
+dig/tel The Grand Hall; r1568
+#
+tag r1568 = gnome village:area name
+#
+desc r1568 = You have stepped into the Grand Hall of the hobgoblin kingdom; your luck must be running low by now.  Golden pillars span the hallway, and you notice a red carpet beneath your feet. 
+#
+desc/edit r1568
+#
+:j l
+#
+:wq
+#
+set r1568/vnum = "r1568"
+#
+set r1568/terrain = "inside"
+#
+set r1568/room_flags = ['indoors']
+#
+dig/tel The Throne Room; r1569
+#
+tag r1569 = gnome village:area name
+#
+desc r1569 = This is a large, bright room.  In the center of the southern wall, a large golden throne stands against the wall.  On both sides of it, matched doorways lead south. 
+#
+desc/edit r1569
+#
+:j l
+#
+:wq
+#
+set r1569/vnum = "r1569"
+#
+set r1569/terrain = "inside"
+#
+set r1569/room_flags = ['indoors']
+#
+dig/tel The Treasury; r1570
+#
+tag r1570 = gnome village:area name
+#
+desc r1570 = You are inside the hobgoblin's treasury.  Your eyes are almost blinded by the gold, silver and copper coins. 
+#
+desc/edit r1570
+#
+:j l
+#
+:wq
+#
+set r1570/vnum = "r1570"
+#
+set r1570/terrain = "inside"
+#
+set r1570/room_flags = ['indoors']
+#
+dig/tel Guarded Room; r1571
+#
+tag r1571 = gnome village:area name
+#
+desc r1571 = You are inside a well guarded room.  The place is slightly better built than the mine shafts, and is lit by lanterns. 
+#
+desc/edit r1571
+#
+:j l
+#
+:wq
+#
+set r1571/vnum = "r1571"
+#
+set r1571/terrain = "city"
+#
+set r1571/room_flags = ['indoors']
+#
+dig/tel Guarded Room; r1572
+#
+tag r1572 = gnome village:area name
+#
+desc r1572 = You are inside a well guarded room.  The place is slightly better built than the mine shafts, and is lit by lanterns. 
+#
+desc/edit r1572
+#
+:j l
+#
+:wq
+#
+set r1572/vnum = "r1572"
+#
+set r1572/terrain = "city"
+#
+set r1572/room_flags = ['indoors']
+#
+dig/tel Hobgoblin Armory; r1573
+#
+tag r1573 = gnome village:area name
+#
+desc r1573 = The guards store their spare weapons and armor here.  There are rusty swords on rotting shelves, and armor hanging from hooks or laying on the floor. 
+#
+desc/edit r1573
+#
+:j l
+#
+:wq
+#
+set r1573/vnum = "r1573"
+#
+set r1573/terrain = "city"
+#
+set r1573/room_flags = ['indoors']
+#
+dig/tel Mine Shaft; r1574
+#
+tag r1574 = gnome village:area name
+#
+desc r1574 = You enter a part of the mine shaft where the torches have grown dim and are almost ready to go out.  From what you can see, there are plenty of cobwebs on the walls and rats at your feet. 
+#
+desc/edit r1574
+#
+:j l
+#
+:wq
+#
+set r1574/vnum = "r1574"
+#
+set r1574/terrain = "field"
+#
+set r1574/room_flags = ['indoors']
+#
+dig/tel Entrance to a Dungeon; r1575
+#
+tag r1575 = gnome village:area name
+#
+desc r1575 = The floor dips slightly as you walk into this dark and nasty place.  Your skin crawls as you look at the filth on the walls and see it move.  Most of the exits lead into jail cells. 
+#
+desc/edit r1575
+#
+:j l
+#
+:wq
+#
+set r1575/vnum = "r1575"
+#
+set r1575/terrain = "field"
+#
+set r1575/room_flags = ['indoors']
+#
+dig/tel A Dungeon; r1576
+#
+tag r1576 = gnome village:area name
+#
+desc r1576 = You are in the deepest and darkest part of the mine shafts.  The light from the torches barely reaches to where you are.  Most directions from here lead to jail cells. 
+#
+desc/edit r1576
+#
+:j l
+#
+:wq
+#
+set r1576/vnum = "r1576"
+#
+set r1576/terrain = "field"
+#
+set r1576/room_flags = ['indoors']
+#
+dig/tel A Jail Cell; r1577
+#
+tag r1577 = gnome village:area name
+#
+desc r1577 = You are in a musty, dark jail cell.  Wet and dirty straw covers the floor. The walls glisten with slime.  You see something stir in the straw. 
+#
+desc/edit r1577
+#
+:j l
+#
+:wq
+#
+set r1577/vnum = "r1577"
+#
+set r1577/terrain = "field"
+#
+set r1577/room_flags = ['indoors']
+#
+dig/tel The Jail Cell; r1578
+#
+tag r1578 = gnome village:area name
+#
+desc r1578 = You are in a musty, dark jail cell.  Wet and dirty straw covers the floor. The walls glisten with slime.  You see something stir in the straw. 
+#
+desc/edit r1578
+#
+:j l
+#
+:wq
+#
+set r1578/vnum = "r1578"
+#
+set r1578/terrain = "field"
+#
+set r1578/room_flags = ['indoors']
+#
+dig/tel The Jail Cell; r1579
+#
+tag r1579 = gnome village:area name
+#
+desc r1579 = You are in a musty, dark jail cell.  Wet and dirty straw covers the floor. The walls glisten with slime.  You see something stir in the straw. 
+#
+desc/edit r1579
+#
+:j l
+#
+:wq
+#
+set r1579/vnum = "r1579"
+#
+set r1579/terrain = "field"
+#
+set r1579/room_flags = ['indoors']
+#
+dig/tel The Jail Cell; r1580
+#
+tag r1580 = gnome village:area name
+#
+desc r1580 = You are in a musty, dark jail cell.  Wet and dirty straw covers the floor. The walls glisten with slime.  You see something stir in the straw. 
+#
+desc/edit r1580
+#
+:j l
+#
+:wq
+#
+set r1580/vnum = "r1580"
+#
+set r1580/terrain = "field"
+#
+set r1580/room_flags = ['indoors']
+#
+dig/tel The Jail Cell; r1581
+#
+tag r1581 = gnome village:area name
+#
+desc r1581 = You are in a musty, dark jail cell.  Wet and dirty straw covers the floor. The walls glisten with slime.  You see something stir in the straw. 
+#
+desc/edit r1581
+#
+:j l
+#
+:wq
+#
+set r1581/vnum = "r1581"
+#
+set r1581/terrain = "field"
+#
+set r1581/room_flags = ['indoors']
+#
+dig/tel Small Mine Shaft; r1582
+#
+tag r1582 = gnome village:area name
+#
+desc r1582 = You are in a small extension of the mine shaft.  The dust on the floor is undisturbed by footprints. 
+#
+desc/edit r1582
+#
+:j l
+#
+:wq
+#
+set r1582/vnum = "r1582"
+#
+set r1582/terrain = "field"
+#
+set r1582/room_flags = ['indoors']
+#
+dig/tel Hobgoblin Barracks; r1583
+#
+tag r1583 = gnome village:area name
+#
+desc r1583 = You are suddenly surrounded by a small army of hobgoblin guards.  The room itself is a mess with clothes and armor everywhere.  The beds are unmade and stained. 
+#
+desc/edit r1583
+#
+:j l
+#
+:wq
+#
+set r1583/vnum = "r1583"
+#
+set r1583/terrain = "field"
+#
+set r1583/room_flags = ['indoors']
+#
+dig/tel Hobgoblin Barracks; r1584
+#
+tag r1584 = gnome village:area name
+#
+desc r1584 = Yech!  As you continue forward, the smell just keeps getting worse. What are you DOING here? 
+#
+desc/edit r1584
+#
+:j l
+#
+:wq
+#
+set r1584/vnum = "r1584"
+#
+set r1584/terrain = "field"
+#
+set r1584/room_flags = ['indoors']
+#
+dig/tel Mess Hall; r1585
+#
+tag r1585 = gnome village:area name
+#
+desc r1585 = You stand in the hobgoblin eating area.  There are a few rotting tables and many broken dishes scattered around the room.  You almost slip on a rotten piece of meat, but catch yourself just in time. 
+#
+desc/edit r1585
+#
+:j l
+#
+:wq
+#
+set r1585/vnum = "r1585"
+#
+set r1585/terrain = "field"
+#
+set r1585/room_flags = ['indoors']
+#
+dig/tel A Store Room; r1586
+#
+tag r1586 = gnome village:area name
+#
+desc r1586 = You stand in a small room filled with flour, grain, fruit, and bat droppings. 
+#
+desc/edit r1586
+#
+:j l
+#
+:wq
+#
+set r1586/vnum = "r1586"
+#
+set r1586/terrain = "city"
+#
+set r1586/room_flags = ['indoors']
+#
+dig/tel The Kitchen; r1587
+#
+tag r1587 = gnome village:area name
+#
+desc r1587 = This kitchen hasn't been cleaned since the creation of humans.  The trash and spoiled food laying on the floor reaches up to your knees.  Off to the side a pot is boiling over.  A human hand floats in it. 
+#
+desc/edit r1587
+#
+:j l
+#
+:wq
+#
+set r1587/vnum = "r1587"
+#
+set r1587/terrain = "field"
+#
+set r1587/room_flags = ['indoors']
+#
+dig/tel A Small Mine Shaft; r1588
+#
+tag r1588 = gnome village:area name
+#
+desc r1588 = You come to a place in the mine shaft where a tunnel leads down.  The small passage continues north and south. 
+#
+desc/edit r1588
+#
+:j l
+#
+:wq
+#
+set r1588/vnum = "r1588"
+#
+set r1588/terrain = "field"
+#
+set r1588/room_flags = ['indoors']
+#
+dig/tel Hermit's Lair; r1589
+#
+tag r1589 = gnome village:area name
+#
+desc r1589 = You are in a small section where the mine wall has collapsed to reveal a tiny one-room cave.  The area is barely lit, but you can make out something moving towards you. 
+#
+desc/edit r1589
+#
+:j l
+#
+:wq
+#
+set r1589/vnum = "r1589"
+#
+set r1589/terrain = "inside"
+#
+set r1589/room_flags = ['indoors']
+#
+dig/tel A Hole; r1590
+#
+tag r1590 = gnome village:area name
+#
+desc r1590 = You are in a hole. 
+#
+desc/edit r1590
+#
+:j l
+#
+:wq
+#
+set r1590/vnum = "r1590"
+#
+set r1590/terrain = "forest"
+#
+set r1590/room_flags = ['indoors']
+#
+dig/tel A Chapel; r1591
+#
+tag r1591 = gnome village:area name
+#
+desc r1591 = You are standing in the hobgoblin king's private chapel. Befitting the evil ways of the hobgoblins, there are inverted crosses hanging on the walls, and an idol of Sathogua (the underwater slimeball god, little brother of Cthulhu) is perched above the sacrificial altar. 
+#
+desc/edit r1591
+#
+:j l
+#
+:wq
+#
+set r1591/vnum = "r1591"
+#
+set r1591/terrain = "inside"
+#
+set r1591/extra_description = {'idol Sathogua': "You don't want to know what Sathogua looks like. ", 'altar': 'The altar is stained with blood. '}
+#
+set r1591/room_flags = ['no teleport in', 'no summon from', 'indoors']
+#
+dig/tel A Road in the Village; r1592
+#
+tag r1592 = gnome village:area name
+#
+desc r1592 = This road runs north and south through the center of the village.  There are a few people moving around, but not many. 
+#
+desc/edit r1592
+#
+:j l
+#
+:wq
+#
+set r1592/vnum = "r1592"
+#
+set r1592/terrain = "city"
+#
+tel r1593
+#
+openexit north; n; e3600^ south = r9850
+#
+tag e3600 = gnome village:area name
+#
+set e3600/door_attributes = ["open"]
+#
+set e3600/reset_door_attributes = ["open"]
+#
+desc north = You see a doorway. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit west; w; e3601^ east = r1526
+#
+tag e3601 = gnome village:area name
+#
+set e3601/door_attributes = ["open"]
+#
+set e3601/reset_door_attributes = ["open"]
+#
+desc west = You see a road. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1501
+#
+openexit east; e; e3602^ west = r1502
+#
+tag e3602 = gnome village:area name
+#
+set e3602/door_attributes = ["open"]
+#
+set e3602/reset_door_attributes = ["open"]
+#
+desc east = You see a dusty path. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3603^ east = r0
+#
+tag e3603 = gnome village:area name
+#
+set e3603/door_attributes = ["open"]
+#
+set e3603/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1502
+#
+openexit north; n; e3604^ south = r1509
+#
+tag e3604 = gnome village:area name
+#
+set e3604/door_attributes = ["open"]
+#
+set e3604/reset_door_attributes = ["open"]
+#
+desc north = You see a small house. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3605^ west = r1503
+#
+tag e3605 = gnome village:area name
+#
+set e3605/door_attributes = ["open"]
+#
+set e3605/reset_door_attributes = ["open"]
+#
+desc east = You see a road. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3606
+#
+tag e3606 = gnome village:area name
+#
+set e3606/door_attributes = ["open"]
+#
+set e3606/reset_door_attributes = ["open"]
+#
+desc west = You see a path. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1503
+#
+openexit north; n; e3607^ south = r1592
+#
+tag e3607 = gnome village:area name
+#
+set e3607/door_attributes = ["open"]
+#
+set e3607/reset_door_attributes = ["open"]
+#
+desc north = You see a road. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3608^ west = r1504
+#
+tag e3608 = gnome village:area name
+#
+set e3608/door_attributes = ["open"]
+#
+set e3608/reset_door_attributes = ["open"]
+#
+desc east = You see a path. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3609^ north = r1507
+#
+tag e3609 = gnome village:area name
+#
+set e3609/door_attributes = ["open"]
+#
+set e3609/reset_door_attributes = ["open"]
+#
+desc south = You see a road. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3610
+#
+tag e3610 = gnome village:area name
+#
+set e3610/door_attributes = ["open"]
+#
+set e3610/reset_door_attributes = ["open"]
+#
+desc west = You see a road. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1504
+#
+openexit north; n; e3611^ south = r1512
+#
+tag e3611 = gnome village:area name
+#
+set e3611/door_attributes = ["open"]
+#
+set e3611/reset_door_attributes = ["open"]
+#
+desc north = You see a house. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3612^ west = r1559
+#
+tag e3612 = gnome village:area name
+#
+set e3612/door_attributes = ["open"]
+#
+set e3612/reset_door_attributes = ["open"]
+#
+desc east = You see a path. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3613^ north = r1513
+#
+tag e3613 = gnome village:area name
+#
+set e3613/door_attributes = ["open"]
+#
+set e3613/reset_door_attributes = ["open"]
+#
+desc south = You see a house. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3614
+#
+tag e3614 = gnome village:area name
+#
+set e3614/door_attributes = ["open"]
+#
+set e3614/reset_door_attributes = ["open"]
+#
+desc west = You see a road. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1505
+#
+openexit north; n; e3615^ south = r1506
+#
+tag e3615 = gnome village:area name
+#
+set e3615/door_attributes = ["open"]
+#
+set e3615/reset_door_attributes = ["open"]
+#
+desc north = You see a road. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3616^ west = r1511
+#
+tag e3616 = gnome village:area name
+#
+set e3616/door_attributes = ["open"]
+#
+set e3616/reset_door_attributes = ["open"]
+#
+desc east = You see a house. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3617^ north = r1592
+#
+tag e3617 = gnome village:area name
+#
+set e3617/door_attributes = ["open"]
+#
+set e3617/reset_door_attributes = ["open"]
+#
+desc south = You see a road. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3618^ east = r1510
+#
+tag e3618 = gnome village:area name
+#
+set e3618/door_attributes = ["open"]
+#
+set e3618/reset_door_attributes = ["open"]
+#
+desc west = You see a house. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1506
+#
+openexit north; n; e3619^ south = r1526
+#
+tag e3619 = gnome village:area name
+#
+set e3619/door_attributes = ["open"]
+#
+set e3619/reset_door_attributes = ["open"]
+#
+desc north = You see a road. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3620
+#
+tag e3620 = gnome village:area name
+#
+set e3620/door_attributes = ["open"]
+#
+set e3620/reset_door_attributes = ["open"]
+#
+desc south = You see a road. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1507
+#
+alias north = n^ e3621
+#
+tag e3621 = gnome village:area name
+#
+set e3621/door_attributes = ["open"]
+#
+set e3621/reset_door_attributes = ["open"]
+#
+desc north = You see a road. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3622^ north = r1508
+#
+tag e3622 = gnome village:area name
+#
+set e3622/door_attributes = ["open"]
+#
+set e3622/reset_door_attributes = ["open"]
+#
+desc south = You see a road. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3623^ east = r1514
+#
+tag e3623 = gnome village:area name
+#
+set e3623/door_attributes = ["open"]
+#
+set e3623/reset_door_attributes = ["open"]
+#
+desc west = You see a shop. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1508
+#
+alias north = n^ e3624
+#
+tag e3624 = gnome village:area name
+#
+set e3624/door_attributes = ["open"]
+#
+set e3624/reset_door_attributes = ["open"]
+#
+desc north = You see a road. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3625^ west = r1516
+#
+tag e3625 = gnome village:area name
+#
+set e3625/door_attributes = ["open"]
+#
+set e3625/reset_door_attributes = ["open"]
+#
+desc east = You see a shop. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3626^ north = r1517
+#
+tag e3626 = gnome village:area name
+#
+set e3626/door_attributes = ["open"]
+#
+set e3626/reset_door_attributes = ["open"]
+#
+desc south = You see a small path. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3627^ east = r1515
+#
+tag e3627 = gnome village:area name
+#
+set e3627/door_attributes = ["open"]
+#
+set e3627/reset_door_attributes = ["open"]
+#
+desc west = You see a shop. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1509
+#
+alias south = s^ e3628
+#
+tag e3628 = gnome village:area name
+#
+set e3628/door_attributes = ["open"]
+#
+set e3628/reset_door_attributes = ["open"]
+#
+desc south = You see a path. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1510
+#
+alias east = e^ e3629
+#
+tag e3629 = gnome village:area name
+#
+set e3629/door_attributes = ["open"]
+#
+set e3629/reset_door_attributes = ["open"]
+#
+desc east = You see a path. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r1511
+#
+alias west = w^ e3630
+#
+tag e3630 = gnome village:area name
+#
+set e3630/door_attributes = ["open"]
+#
+set e3630/reset_door_attributes = ["open"]
+#
+desc west = You see a path. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1512
+#
+alias south = s^ e3631
+#
+tag e3631 = gnome village:area name
+#
+set e3631/door_attributes = ["open"]
+#
+set e3631/reset_door_attributes = ["open"]
+#
+desc south = You see a path. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1513
+#
+alias north = n^ e3632
+#
+tag e3632 = gnome village:area name
+#
+set e3632/door_attributes = ["open"]
+#
+set e3632/reset_door_attributes = ["open"]
+#
+desc north = You see a path. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r1514
+#
+alias east = e^ e3633
+#
+tag e3633 = gnome village:area name
+#
+set e3633/door_attributes = ["open"]
+#
+set e3633/reset_door_attributes = ["open"]
+#
+desc east = You see a road. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r1515
+#
+alias east = e^ e3634
+#
+tag e3634 = gnome village:area name
+#
+set e3634/door_attributes = ["open"]
+#
+set e3634/reset_door_attributes = ["open"]
+#
+desc east = You see a road. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r1516
+#
+alias west = w^ e3635
+#
+tag e3635 = gnome village:area name
+#
+set e3635/door_attributes = ["open"]
+#
+set e3635/reset_door_attributes = ["open"]
+#
+desc west = You see a road. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1517
+#
+alias north = n^ e3636
+#
+tag e3636 = gnome village:area name
+#
+set e3636/door_attributes = ["open"]
+#
+set e3636/reset_door_attributes = ["open"]
+#
+desc north = You see a road. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3637^ north = r1520
+#
+tag e3637 = gnome village:area name
+#
+set e3637/door_attributes = ["open"]
+#
+set e3637/reset_door_attributes = ["open"]
+#
+desc south = You see the stream. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3638^ east = r1518
+#
+tag e3638 = gnome village:area name
+#
+set e3638/door_attributes = ["open"]
+#
+set e3638/reset_door_attributes = ["open"]
+#
+desc west = You see a small path. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1518
+#
+alias east = e^ e3639
+#
+tag e3639 = gnome village:area name
+#
+set e3639/door_attributes = ["open"]
+#
+set e3639/reset_door_attributes = ["open"]
+#
+desc east = You see a small path. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3640^ north = r1521
+#
+tag e3640 = gnome village:area name
+#
+set e3640/door_attributes = ["open"]
+#
+set e3640/reset_door_attributes = ["open"]
+#
+desc south = You see the stream. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3641^ east = r1519
+#
+tag e3641 = gnome village:area name
+#
+set e3641/door_attributes = ["open"]
+#
+set e3641/reset_door_attributes = ["open"]
+#
+desc west = You see a small hut that is starting to fall apart. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1519
+#
+alias east = e^ e3642
+#
+tag e3642 = gnome village:area name
+#
+set e3642/door_attributes = ["open"]
+#
+set e3642/reset_door_attributes = ["open"]
+#
+desc east = You see a small path. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r1520
+#
+alias north = n^ e3643
+#
+tag e3643 = gnome village:area name
+#
+set e3643/door_attributes = ["open"]
+#
+set e3643/reset_door_attributes = ["open"]
+#
+desc north = You see a small path. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3644^ north = r1522
+#
+tag e3644 = gnome village:area name
+#
+set e3644/door_attributes = ["open"]
+#
+set e3644/reset_door_attributes = ["open"]
+#
+desc south = You see a grassy field. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3645^ east = r1521
+#
+tag e3645 = gnome village:area name
+#
+set e3645/door_attributes = ["open"]
+#
+set e3645/reset_door_attributes = ["open"]
+#
+desc west = You see a small stream. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1521
+#
+alias north = n^ e3646
+#
+tag e3646 = gnome village:area name
+#
+set e3646/door_attributes = ["open"]
+#
+set e3646/reset_door_attributes = ["open"]
+#
+desc north = You see a small path. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3647
+#
+tag e3647 = gnome village:area name
+#
+set e3647/door_attributes = ["open"]
+#
+set e3647/reset_door_attributes = ["open"]
+#
+desc east = You see a small stream. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r1522
+#
+alias north = n^ e3648
+#
+tag e3648 = gnome village:area name
+#
+set e3648/door_attributes = ["open"]
+#
+set e3648/reset_door_attributes = ["open"]
+#
+desc north = You see a small stream. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3649^ west = r1523
+#
+tag e3649 = gnome village:area name
+#
+set e3649/door_attributes = ["open"]
+#
+set e3649/reset_door_attributes = ["open"]
+#
+desc east = You see a dark mysterious cave. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r1523
+#
+openexit north; n; e3650^ south = r1524
+#
+tag e3650 = gnome village:area name
+#
+set e3650/door_attributes = ["open"]
+#
+set e3650/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias west = w^ e3651
+#
+tag e3651 = gnome village:area name
+#
+set e3651/door_attributes = ["open"]
+#
+set e3651/reset_door_attributes = ["open"]
+#
+desc west = You see a grassy field. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1524
+#
+alias south = s^ e3652
+#
+tag e3652 = gnome village:area name
+#
+set e3652/door_attributes = ["open"]
+#
+set e3652/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1526
+#
+openexit north; n; e3653^ south = r1558
+#
+tag e3653 = gnome village:area name
+#
+set e3653/door_attributes = ["open"]
+#
+set e3653/reset_door_attributes = ["open"]
+#
+desc north = You see a large white house. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3654
+#
+tag e3654 = gnome village:area name
+#
+set e3654/door_attributes = ["open"]
+#
+set e3654/reset_door_attributes = ["open"]
+#
+desc east = You see a path leading off to a compound to the northeast. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3655
+#
+tag e3655 = gnome village:area name
+#
+set e3655/door_attributes = ["open"]
+#
+set e3655/reset_door_attributes = ["open"]
+#
+desc south = You see a road. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3656^ east = r1527
+#
+tag e3656 = gnome village:area name
+#
+set e3656/door_attributes = ["open"]
+#
+set e3656/reset_door_attributes = ["open"]
+#
+desc west = You see the gateway to a large fortress. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1527
+#
+alias east = e^ e3657
+#
+tag e3657 = gnome village:area name
+#
+set e3657/door_attributes = ["open"]
+#
+set e3657/reset_door_attributes = ["open"]
+#
+desc east = You see a small path. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3658^ east = r1528
+#
+tag e3658 = gnome village:area name
+#
+set e3658/door_attributes = ["open"]
+#
+set e3658/reset_door_attributes = ["open"]
+#
+desc west = You see a long hallway. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1528
+#
+openexit north; n; e3659^ south = r1530
+#
+tag e3659 = gnome village:area name
+#
+set e3659/door_attributes = ["open"]
+#
+set e3659/reset_door_attributes = ["open"]
+#
+desc north = You see the barracks. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3660
+#
+tag e3660 = gnome village:area name
+#
+set e3660/door_attributes = ["open"]
+#
+set e3660/reset_door_attributes = ["open"]
+#
+desc east = You see the gateway. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3661^ north = r1532
+#
+tag e3661 = gnome village:area name
+#
+set e3661/door_attributes = ["open"]
+#
+set e3661/reset_door_attributes = ["open"]
+#
+desc south = You see a storage room. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3662^ east = r1529
+#
+tag e3662 = gnome village:area name
+#
+set e3662/door_attributes = ["open"]
+#
+set e3662/reset_door_attributes = ["open"]
+#
+desc west = You see a long hallway. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1529
+#
+alias east = e^ e3663
+#
+tag e3663 = gnome village:area name
+#
+set e3663/door_attributes = ["open"]
+#
+set e3663/reset_door_attributes = ["open"]
+#
+desc east = You see a long hallway. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3664^ north = r1534
+#
+tag e3664 = gnome village:area name
+#
+set e3664/door_attributes = ["open"]
+#
+set e3664/reset_door_attributes = ["open"]
+#
+desc south = You see the mess hall. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3665^ east = r1535
+#
+tag e3665 = gnome village:area name
+#
+set e3665/door_attributes = ["open"]
+#
+set e3665/reset_door_attributes = ["open"]
+#
+desc west = You see a small room. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1530
+#
+openexit east; e; e3666^ west = r1531
+#
+tag e3666 = gnome village:area name
+#
+set e3666/door_attributes = ["open"]
+#
+set e3666/reset_door_attributes = ["open"]
+#
+desc east = You see a small storage room. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3667
+#
+tag e3667 = gnome village:area name
+#
+set e3667/door_attributes = ["open"]
+#
+set e3667/reset_door_attributes = ["open"]
+#
+desc south = You see a long hallway. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1531
+#
+alias west = w^ e3668
+#
+tag e3668 = gnome village:area name
+#
+set e3668/door_attributes = ["open"]
+#
+set e3668/reset_door_attributes = ["open"]
+#
+desc west = You see the barracks. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1532
+#
+alias north = n^ e3669
+#
+tag e3669 = gnome village:area name
+#
+set e3669/door_attributes = ["open"]
+#
+set e3669/reset_door_attributes = ["open"]
+#
+desc north = You see a long hallway. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3670^ west = r1533
+#
+tag e3670 = gnome village:area name
+#
+set e3670/door_attributes = ["open"]
+#
+set e3670/reset_door_attributes = ["open"]
+#
+desc east = You see a small room. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r1533
+#
+alias west = w^ e3671
+#
+tag e3671 = gnome village:area name
+#
+set e3671/door_attributes = ["open"]
+#
+set e3671/reset_door_attributes = ["open"]
+#
+desc west = You see a small room. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1534
+#
+alias north = n^ e3672
+#
+tag e3672 = gnome village:area name
+#
+set e3672/door_attributes = ["open"]
+#
+set e3672/reset_door_attributes = ["open"]
+#
+desc north = You see a long hallway. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r1535
+#
+alias east = e^ e3673
+#
+tag e3673 = gnome village:area name
+#
+set e3673/door_attributes = ["open"]
+#
+set e3673/reset_door_attributes = ["open"]
+#
+desc east = You see a long hallway. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit down; d; e3674^ up = r1536
+#
+tag e3674 = gnome village:area name
+#
+set e3674/door_attributes = ["open"]
+#
+set e3674/reset_door_attributes = ["open"]
+#
+desc down = You see darkness. 
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r1536
+#
+openexit east; rusty; door; e; e3675^ west = r1537
+#
+tag e3675 = gnome village:area name
+#
+set e3675/door_attributes = ["open"]
+#
+set e3675/reset_door_attributes = ["open"]
+#
+desc east = The keyhole is encrusted with blood. 
+#
+set east/key = "o1500"
+#
+objectlock east = "pick:false()"
+#
+alias up = u^ e3676
+#
+tag e3676 = gnome village:area name
+#
+set e3676/door_attributes = ["open"]
+#
+set e3676/reset_door_attributes = ["open"]
+#
+desc up = You see a small room. 
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r1537
+#
+openexit east; e; e3677^ west = r1538
+#
+tag e3677 = gnome village:area name
+#
+set e3677/door_attributes = ["open"]
+#
+set e3677/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3678^ north = r1539
+#
+tag e3678 = gnome village:area name
+#
+set e3678/door_attributes = ["open"]
+#
+set e3678/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = door^ w^ e3679
+#
+tag e3679 = gnome village:area name
+#
+set e3679/door_attributes = ["open"]
+#
+set e3679/reset_door_attributes = ["open"]
+#
+desc west = You see a rusty door. 
+#
+set west/key = "o1500"
+#
+objectlock west = "pick:false()"
+#
+tel r1538
+#
+alias west = w^ e3680
+#
+tag e3680 = gnome village:area name
+#
+set e3680/door_attributes = ["open"]
+#
+set e3680/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1539
+#
+alias north = n^ e3681
+#
+tag e3681 = gnome village:area name
+#
+set e3681/door_attributes = ["open"]
+#
+set e3681/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3682^ west = r1542
+#
+tag e3682 = gnome village:area name
+#
+set e3682/door_attributes = ["open"]
+#
+set e3682/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3683^ north = r1540
+#
+tag e3683 = gnome village:area name
+#
+set e3683/door_attributes = ["open"]
+#
+set e3683/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3684^ east = r1541
+#
+tag e3684 = gnome village:area name
+#
+set e3684/door_attributes = ["open"]
+#
+set e3684/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1540
+#
+alias north = n^ e3685
+#
+tag e3685 = gnome village:area name
+#
+set e3685/door_attributes = ["open"]
+#
+set e3685/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3686^ west = r1544
+#
+tag e3686 = gnome village:area name
+#
+set e3686/door_attributes = ["open"]
+#
+set e3686/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3687^ north = r1543
+#
+tag e3687 = gnome village:area name
+#
+set e3687/door_attributes = ["open"]
+#
+set e3687/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3688^ east = r1545
+#
+tag e3688 = gnome village:area name
+#
+set e3688/door_attributes = ["open"]
+#
+set e3688/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1541
+#
+alias east = e^ e3689
+#
+tag e3689 = gnome village:area name
+#
+set e3689/door_attributes = ["open"]
+#
+set e3689/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r1542
+#
+alias west = w^ e3690
+#
+tag e3690 = gnome village:area name
+#
+set e3690/door_attributes = ["open"]
+#
+set e3690/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1543
+#
+alias north = n^ e3691
+#
+tag e3691 = gnome village:area name
+#
+set e3691/door_attributes = ["open"]
+#
+set e3691/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r1544
+#
+alias west = w^ e3692
+#
+tag e3692 = gnome village:area name
+#
+set e3692/door_attributes = ["open"]
+#
+set e3692/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1545
+#
+alias east = e^ e3693
+#
+tag e3693 = gnome village:area name
+#
+set e3693/door_attributes = ["open"]
+#
+set e3693/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; door; w; e3694^ east = r1546
+#
+tag e3694 = gnome village:area name
+#
+set e3694/door_attributes = ["open"]
+#
+set e3694/reset_door_attributes = ["open"]
+#
+desc west = You see a decaying door. 
+#
+set west/key = "o1501"
+#
+objectlock west = "pick:false()"
+#
+tel r1546
+#
+alias east = door^ e^ e3695
+#
+tag e3695 = gnome village:area name
+#
+set e3695/door_attributes = ["open"]
+#
+set e3695/reset_door_attributes = ["open"]
+#
+desc east = You see a decaying door. 
+#
+set east/key = "o1501"
+#
+objectlock east = "pick:false()"
+#
+openexit down; d; e3696^ up = r1547
+#
+tag e3696 = gnome village:area name
+#
+set e3696/door_attributes = ["open"]
+#
+set e3696/reset_door_attributes = ["open"]
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r1547
+#
+openexit south; s; e3697^ north = r1548
+#
+tag e3697 = gnome village:area name
+#
+set e3697/door_attributes = ["open"]
+#
+set e3697/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias up = u^ e3698
+#
+tag e3698 = gnome village:area name
+#
+set e3698/door_attributes = ["open"]
+#
+set e3698/reset_door_attributes = ["open"]
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r1548
+#
+alias north = n^ e3699
+#
+tag e3699 = gnome village:area name
+#
+set e3699/door_attributes = ["open"]
+#
+set e3699/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3700^ west = r1549
+#
+tag e3700 = gnome village:area name
+#
+set e3700/door_attributes = ["open"]
+#
+set e3700/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3701^ east = r1551
+#
+tag e3701 = gnome village:area name
+#
+set e3701/door_attributes = ["open"]
+#
+set e3701/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1549
+#
+openexit south; s; e3702^ north = r1550
+#
+tag e3702 = gnome village:area name
+#
+set e3702/door_attributes = ["open"]
+#
+set e3702/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3703
+#
+tag e3703 = gnome village:area name
+#
+set e3703/door_attributes = ["open"]
+#
+set e3703/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1550
+#
+alias north = n^ e3704
+#
+tag e3704 = gnome village:area name
+#
+set e3704/door_attributes = ["open"]
+#
+set e3704/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3705^ north = r1555
+#
+tag e3705 = gnome village:area name
+#
+set e3705/door_attributes = ["open"]
+#
+set e3705/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1551
+#
+alias east = e^ e3706
+#
+tag e3706 = gnome village:area name
+#
+set e3706/door_attributes = ["open"]
+#
+set e3706/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3707^ north = r1552
+#
+tag e3707 = gnome village:area name
+#
+set e3707/door_attributes = ["open"]
+#
+set e3707/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1552
+#
+alias north = n^ e3708
+#
+tag e3708 = gnome village:area name
+#
+set e3708/door_attributes = ["open"]
+#
+set e3708/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3709^ north = r1553
+#
+tag e3709 = gnome village:area name
+#
+set e3709/door_attributes = ["open"]
+#
+set e3709/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1553
+#
+alias north = n^ e3710
+#
+tag e3710 = gnome village:area name
+#
+set e3710/door_attributes = ["open"]
+#
+set e3710/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3711^ west = r1554
+#
+tag e3711 = gnome village:area name
+#
+set e3711/door_attributes = ["open"]
+#
+set e3711/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r1554
+#
+openexit north; n; e3712^ south = r1556
+#
+tag e3712 = gnome village:area name
+#
+set e3712/door_attributes = ["open"]
+#
+set e3712/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3713^ west = r1555
+#
+tag e3713 = gnome village:area name
+#
+set e3713/door_attributes = ["open"]
+#
+set e3713/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3714
+#
+tag e3714 = gnome village:area name
+#
+set e3714/door_attributes = ["open"]
+#
+set e3714/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1555
+#
+alias north = n^ e3715
+#
+tag e3715 = gnome village:area name
+#
+set e3715/door_attributes = ["open"]
+#
+set e3715/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias west = w^ e3716
+#
+tag e3716 = gnome village:area name
+#
+set e3716/door_attributes = ["open"]
+#
+set e3716/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1556
+#
+alias south = s^ e3717
+#
+tag e3717 = gnome village:area name
+#
+set e3717/door_attributes = ["open"]
+#
+set e3717/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit down; d; e3718^ up = r1557
+#
+tag e3718 = gnome village:area name
+#
+set e3718/door_attributes = ["open"]
+#
+set e3718/reset_door_attributes = ["open"]
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r1557
+#
+alias up = u^ e3719
+#
+tag e3719 = gnome village:area name
+#
+set e3719/door_attributes = ["open"]
+#
+set e3719/reset_door_attributes = ["open"]
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r1558
+#
+alias south = s^ e3720
+#
+tag e3720 = gnome village:area name
+#
+set e3720/door_attributes = ["open"]
+#
+set e3720/reset_door_attributes = ["open"]
+#
+desc south = You see a path. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1559
+#
+openexit east; e; e3721^ west = r1560
+#
+tag e3721 = gnome village:area name
+#
+set e3721/door_attributes = ["open"]
+#
+set e3721/reset_door_attributes = ["open"]
+#
+desc east = You see a path. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3722
+#
+tag e3722 = gnome village:area name
+#
+set e3722/door_attributes = ["open"]
+#
+set e3722/reset_door_attributes = ["open"]
+#
+desc west = You see a path. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1560
+#
+openexit east; e; e3723^ west = r1561
+#
+tag e3723 = gnome village:area name
+#
+set e3723/door_attributes = ["open"]
+#
+set e3723/reset_door_attributes = ["open"]
+#
+desc east = You see a clearing. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3724
+#
+tag e3724 = gnome village:area name
+#
+set e3724/door_attributes = ["open"]
+#
+set e3724/reset_door_attributes = ["open"]
+#
+desc west = You see a path. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1561
+#
+openexit north; n; e3725^ south = r1562
+#
+tag e3725 = gnome village:area name
+#
+set e3725/door_attributes = ["open"]
+#
+set e3725/reset_door_attributes = ["open"]
+#
+desc north = You see a mine shaft. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias west = w^ e3726
+#
+tag e3726 = gnome village:area name
+#
+set e3726/door_attributes = ["open"]
+#
+set e3726/reset_door_attributes = ["open"]
+#
+desc west = You see a path. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1562
+#
+openexit east; e; e3727^ west = r1563
+#
+tag e3727 = gnome village:area name
+#
+set e3727/door_attributes = ["open"]
+#
+set e3727/reset_door_attributes = ["open"]
+#
+desc east = You see the shaft. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3728
+#
+tag e3728 = gnome village:area name
+#
+set e3728/door_attributes = ["open"]
+#
+set e3728/reset_door_attributes = ["open"]
+#
+desc south = You see the clearing. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1563
+#
+openexit north; n; e3729^ south = r1582
+#
+tag e3729 = gnome village:area name
+#
+set e3729/door_attributes = ["open"]
+#
+set e3729/reset_door_attributes = ["open"]
+#
+desc north = You see a small mine shaft. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3730^ west = r1564
+#
+tag e3730 = gnome village:area name
+#
+set e3730/door_attributes = ["open"]
+#
+set e3730/reset_door_attributes = ["open"]
+#
+desc east = You see the shaft. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3731^ north = r1574
+#
+tag e3731 = gnome village:area name
+#
+set e3731/door_attributes = ["open"]
+#
+set e3731/reset_door_attributes = ["open"]
+#
+desc south = You see the shaft. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3732
+#
+tag e3732 = gnome village:area name
+#
+set e3732/door_attributes = ["open"]
+#
+set e3732/reset_door_attributes = ["open"]
+#
+desc west = You see the entrance. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1564
+#
+openexit north; n; e3733^ south = r1583
+#
+tag e3733 = gnome village:area name
+#
+set e3733/door_attributes = ["open"]
+#
+set e3733/reset_door_attributes = ["open"]
+#
+desc north = You see a large room. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3734^ west = r1565
+#
+tag e3734 = gnome village:area name
+#
+set e3734/door_attributes = ["open"]
+#
+set e3734/reset_door_attributes = ["open"]
+#
+desc east = You see the shaft. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3735^ north = r1573
+#
+tag e3735 = gnome village:area name
+#
+set e3735/door_attributes = ["open"]
+#
+set e3735/reset_door_attributes = ["open"]
+#
+desc south = You see a large room. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3736
+#
+tag e3736 = gnome village:area name
+#
+set e3736/door_attributes = ["open"]
+#
+set e3736/reset_door_attributes = ["open"]
+#
+desc west = You see the shaft. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1565
+#
+openexit east; e; e3737^ west = r1566
+#
+tag e3737 = gnome village:area name
+#
+set e3737/door_attributes = ["open"]
+#
+set e3737/reset_door_attributes = ["open"]
+#
+desc east = You see the walkway. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3738^ north = r1572
+#
+tag e3738 = gnome village:area name
+#
+set e3738/door_attributes = ["open"]
+#
+set e3738/reset_door_attributes = ["open"]
+#
+desc south = You see a large room. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3739
+#
+tag e3739 = gnome village:area name
+#
+set e3739/door_attributes = ["open"]
+#
+set e3739/reset_door_attributes = ["open"]
+#
+desc west = You see the shaft. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1566
+#
+openexit south; s; e3740^ north = r1567
+#
+tag e3740 = gnome village:area name
+#
+set e3740/door_attributes = ["open"]
+#
+set e3740/reset_door_attributes = ["open"]
+#
+desc south = You see the walkway. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3741
+#
+tag e3741 = gnome village:area name
+#
+set e3741/door_attributes = ["open"]
+#
+set e3741/reset_door_attributes = ["open"]
+#
+desc west = You see the shaft. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1567
+#
+alias north = n^ e3742
+#
+tag e3742 = gnome village:area name
+#
+set e3742/door_attributes = ["open"]
+#
+set e3742/reset_door_attributes = ["open"]
+#
+desc north = You see the walkway. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3743^ north = r1568
+#
+tag e3743 = gnome village:area name
+#
+set e3743/door_attributes = ["open"]
+#
+set e3743/reset_door_attributes = ["open"]
+#
+desc south = You see a large hall. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1568
+#
+alias north = n^ e3744
+#
+tag e3744 = gnome village:area name
+#
+set e3744/door_attributes = ["open"]
+#
+set e3744/reset_door_attributes = ["open"]
+#
+desc north = You see the walkway. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3745^ north = r1569
+#
+tag e3745 = gnome village:area name
+#
+set e3745/door_attributes = ["open"]
+#
+set e3745/reset_door_attributes = ["open"]
+#
+desc south = You see a large room. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1569
+#
+alias north = n^ e3746
+#
+tag e3746 = gnome village:area name
+#
+set e3746/door_attributes = ["open"]
+#
+set e3746/reset_door_attributes = ["open"]
+#
+desc north = You see a large hall. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3747^ north = r1591
+#
+tag e3747 = gnome village:area name
+#
+set e3747/door_attributes = ["open"]
+#
+set e3747/reset_door_attributes = ["open"]
+#
+tel r1570
+#
+openexit north; n; e3748^ south = r1571
+#
+tag e3748 = gnome village:area name
+#
+set e3748/door_attributes = ["open"]
+#
+set e3748/reset_door_attributes = ["open"]
+#
+desc north = You see a large room. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r1571
+#
+openexit north; n; e3749^ south = r1572
+#
+tag e3749 = gnome village:area name
+#
+set e3749/door_attributes = ["open"]
+#
+set e3749/reset_door_attributes = ["open"]
+#
+desc north = You see a large room. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3750
+#
+tag e3750 = gnome village:area name
+#
+set e3750/door_attributes = ["open"]
+#
+set e3750/reset_door_attributes = ["open"]
+#
+desc south = You see a large room. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1572
+#
+alias north = n^ e3751
+#
+tag e3751 = gnome village:area name
+#
+set e3751/door_attributes = ["open"]
+#
+set e3751/reset_door_attributes = ["open"]
+#
+desc north = You see a large room. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3752
+#
+tag e3752 = gnome village:area name
+#
+set e3752/door_attributes = ["open"]
+#
+set e3752/reset_door_attributes = ["open"]
+#
+desc south = You see a large room. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1573
+#
+alias north = n^ e3753
+#
+tag e3753 = gnome village:area name
+#
+set e3753/door_attributes = ["open"]
+#
+set e3753/reset_door_attributes = ["open"]
+#
+desc north = You see the shaft. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r1574
+#
+alias north = n^ e3754
+#
+tag e3754 = gnome village:area name
+#
+set e3754/door_attributes = ["open"]
+#
+set e3754/reset_door_attributes = ["open"]
+#
+desc north = You see the shaft. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3755^ north = r1575
+#
+tag e3755 = gnome village:area name
+#
+set e3755/door_attributes = ["open"]
+#
+set e3755/reset_door_attributes = ["open"]
+#
+desc south = You see a dark and nasty room. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1575
+#
+alias north = n^ e3756
+#
+tag e3756 = gnome village:area name
+#
+set e3756/door_attributes = ["open"]
+#
+set e3756/reset_door_attributes = ["open"]
+#
+desc north = You see the shaft. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3757^ west = r1577
+#
+tag e3757 = gnome village:area name
+#
+set e3757/door_attributes = ["open"]
+#
+set e3757/reset_door_attributes = ["open"]
+#
+desc east = You see a cell. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3758^ north = r1576
+#
+tag e3758 = gnome village:area name
+#
+set e3758/door_attributes = ["open"]
+#
+set e3758/reset_door_attributes = ["open"]
+#
+desc south = You see a dark and nasty room. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3759^ east = r1581
+#
+tag e3759 = gnome village:area name
+#
+set e3759/door_attributes = ["open"]
+#
+set e3759/reset_door_attributes = ["open"]
+#
+desc west = You see a cell. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1576
+#
+alias north = n^ e3760
+#
+tag e3760 = gnome village:area name
+#
+set e3760/door_attributes = ["open"]
+#
+set e3760/reset_door_attributes = ["open"]
+#
+desc north = You see a dark and nasty room. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3761^ west = r1578
+#
+tag e3761 = gnome village:area name
+#
+set e3761/door_attributes = ["open"]
+#
+set e3761/reset_door_attributes = ["open"]
+#
+desc east = You see a cell. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3762^ north = r1579
+#
+tag e3762 = gnome village:area name
+#
+set e3762/door_attributes = ["open"]
+#
+set e3762/reset_door_attributes = ["open"]
+#
+desc south = You see a cell. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3763^ east = r1580
+#
+tag e3763 = gnome village:area name
+#
+set e3763/door_attributes = ["open"]
+#
+set e3763/reset_door_attributes = ["open"]
+#
+desc west = You see a cell. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1577
+#
+alias west = w^ e3764
+#
+tag e3764 = gnome village:area name
+#
+set e3764/door_attributes = ["open"]
+#
+set e3764/reset_door_attributes = ["open"]
+#
+desc west = You see a dark and nasty room. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1578
+#
+alias west = w^ e3765
+#
+tag e3765 = gnome village:area name
+#
+set e3765/door_attributes = ["open"]
+#
+set e3765/reset_door_attributes = ["open"]
+#
+desc west = You see a dark and nasty room. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1579
+#
+alias north = n^ e3766
+#
+tag e3766 = gnome village:area name
+#
+set e3766/door_attributes = ["open"]
+#
+set e3766/reset_door_attributes = ["open"]
+#
+desc north = You see a dark and nasty room. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r1580
+#
+alias east = e^ e3767
+#
+tag e3767 = gnome village:area name
+#
+set e3767/door_attributes = ["open"]
+#
+set e3767/reset_door_attributes = ["open"]
+#
+desc east = You see a dark and nasty room. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r1581
+#
+alias east = e^ e3768
+#
+tag e3768 = gnome village:area name
+#
+set e3768/door_attributes = ["open"]
+#
+set e3768/reset_door_attributes = ["open"]
+#
+desc east = You see a dark and nasty room. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r1582
+#
+openexit north; n; e3769^ south = r1588
+#
+tag e3769 = gnome village:area name
+#
+set e3769/door_attributes = ["open"]
+#
+set e3769/reset_door_attributes = ["open"]
+#
+desc north = You see a small mine shaft. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3770
+#
+tag e3770 = gnome village:area name
+#
+set e3770/door_attributes = ["open"]
+#
+set e3770/reset_door_attributes = ["open"]
+#
+desc south = You see the shaft. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1583
+#
+openexit north; n; e3771^ south = r1584
+#
+tag e3771 = gnome village:area name
+#
+set e3771/door_attributes = ["open"]
+#
+set e3771/reset_door_attributes = ["open"]
+#
+desc north = You see a large room. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3772^ west = r1585
+#
+tag e3772 = gnome village:area name
+#
+set e3772/door_attributes = ["open"]
+#
+set e3772/reset_door_attributes = ["open"]
+#
+desc east = You see the mess hall. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3773
+#
+tag e3773 = gnome village:area name
+#
+set e3773/door_attributes = ["open"]
+#
+set e3773/reset_door_attributes = ["open"]
+#
+desc south = You see the mine shaft. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1584
+#
+alias south = s^ e3774
+#
+tag e3774 = gnome village:area name
+#
+set e3774/door_attributes = ["open"]
+#
+set e3774/reset_door_attributes = ["open"]
+#
+desc south = You see a large room
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1585
+#
+openexit north; n; e3775^ south = r1586
+#
+tag e3775 = gnome village:area name
+#
+set e3775/door_attributes = ["open"]
+#
+set e3775/reset_door_attributes = ["open"]
+#
+desc north = You see a small room. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3776^ west = r1587
+#
+tag e3776 = gnome village:area name
+#
+set e3776/door_attributes = ["open"]
+#
+set e3776/reset_door_attributes = ["open"]
+#
+desc east = You see a kitchen. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3777
+#
+tag e3777 = gnome village:area name
+#
+set e3777/door_attributes = ["open"]
+#
+set e3777/reset_door_attributes = ["open"]
+#
+desc west = You see a large room. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1586
+#
+alias south = s^ e3778
+#
+tag e3778 = gnome village:area name
+#
+set e3778/door_attributes = ["open"]
+#
+set e3778/reset_door_attributes = ["open"]
+#
+desc south = You see the mess hall. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1587
+#
+alias west = w^ e3779
+#
+tag e3779 = gnome village:area name
+#
+set e3779/door_attributes = ["open"]
+#
+set e3779/reset_door_attributes = ["open"]
+#
+desc west = You see the mess hall. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r1588
+#
+openexit north; n; e3780^ south = r1589
+#
+tag e3780 = gnome village:area name
+#
+set e3780/door_attributes = ["open"]
+#
+set e3780/reset_door_attributes = ["open"]
+#
+desc north = You see an almost caved-in area. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3781
+#
+tag e3781 = gnome village:area name
+#
+set e3781/door_attributes = ["open"]
+#
+set e3781/reset_door_attributes = ["open"]
+#
+desc south = You see a small mine shaft. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit down; d; e3782^ up = r1590
+#
+tag e3782 = gnome village:area name
+#
+set e3782/door_attributes = ["open"]
+#
+set e3782/reset_door_attributes = ["open"]
+#
+desc down = You see a hole. 
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r1589
+#
+alias south = s^ e3783
+#
+tag e3783 = gnome village:area name
+#
+set e3783/door_attributes = ["open"]
+#
+set e3783/reset_door_attributes = ["open"]
+#
+desc south = You see a small mine shaft. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1590
+#
+alias up = u^ e3784
+#
+tag e3784 = gnome village:area name
+#
+set e3784/door_attributes = ["open"]
+#
+set e3784/reset_door_attributes = ["open"]
+#
+desc up = You see a small mine shaft. 
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r1591
+#
+alias north = n^ e3785
+#
+tag e3785 = gnome village:area name
+#
+set e3785/door_attributes = ["open"]
+#
+set e3785/reset_door_attributes = ["open"]
+#
+tel r1592
+#
+alias north = n^ e3786
+#
+tag e3786 = gnome village:area name
+#
+set e3786/door_attributes = ["open"]
+#
+set e3786/reset_door_attributes = ["open"]
+#
+desc north = You see a road. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3787
+#
+tag e3787 = gnome village:area name
+#
+set e3787/door_attributes = ["open"]
+#
+set e3787/reset_door_attributes = ["open"]
+#
+desc south = You see a road. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r1503
+#
+create/drop a gnome man;man;gnome;m1502:characters.Mobile
+#
+desc m1502 = A gnome man is walking here, on his way to work. 
+#
+set m1502/level = 2
+#
+set m1502/level_base = 2
+#
+set m1502/vnum = "m1502"
+#
+set m1502/look_description = "This is a prime example of a gnome.  He looks short and weak, but at the same time an intelligent creature who could outsmart you. "
+#
+set m1502/act_flags = ['scavenger', 'npc']
+#
+set m1502/alignment = 500
+#
+set m1502/sex = "male"
+#
+set m1502/race = "gnome"
+#
+tag m1502 = gnome village:area name
+#
+tag m1502 = mobile
+#
+set m1502/hitpoints[maximum] = 19
+#
+set m1502/position = "standing"
+#
+set m1502/experience_total = 245
+#
+set m1502/experience_current = 245
+#
+tel r1503
+#
+create a gnarled staff;staff;gnarled;o1503:objects.Weapon
+#
+sethome o1503 = m1502
+#
+desc o1503 = A gnarled staff is here.
+#
+set o1503/level = 1
+#
+set o1503/level_base = 1
+#
+set o1503/vnum = "o1503"
+#
+set o1503/item_type = "weapon"
+#
+set o1503/wear_location = "wield"
+#
+set o1503/weight = 15
+#
+tag o1503 = gnome village:area name
+#
+tag o1503 = object
+#
+set o1503/weapon_type = "pound"
+#
+set o1503/damage_low = 4
+#
+set o1503/damage_high = 7
+#
+wieldto o1503 = m1502
+#
+set m1502/experience_total = 306
+#
+set m1502/experience_current = 306
+#
+set m1502/reset_objects["o1503"] = {"location":"equipped"}
+#
+tel r1505
+#
+create/drop a gnome man;man;gnome;m1502:characters.Mobile
+#
+desc m1502 = A gnome man is walking here, on his way to work. 
+#
+set m1502/level = 2
+#
+set m1502/level_base = 2
+#
+set m1502/vnum = "m1502"
+#
+set m1502/look_description = "This is a prime example of a gnome.  He looks short and weak, but at the same time an intelligent creature who could outsmart you. "
+#
+set m1502/act_flags = ['scavenger', 'npc']
+#
+set m1502/alignment = 500
+#
+set m1502/sex = "male"
+#
+set m1502/race = "gnome"
+#
+tag m1502 = gnome village:area name
+#
+tag m1502 = mobile
+#
+set m1502/hitpoints[maximum] = 20
+#
+set m1502/position = "standing"
+#
+set m1502/experience_total = 223
+#
+set m1502/experience_current = 223
+#
+tel r1505
+#
+create a gnarled staff;staff;gnarled;o1503:objects.Weapon
+#
+sethome o1503 = m1502
+#
+desc o1503 = A gnarled staff is here.
+#
+set o1503/level = 1
+#
+set o1503/level_base = 1
+#
+set o1503/vnum = "o1503"
+#
+set o1503/item_type = "weapon"
+#
+set o1503/wear_location = "wield"
+#
+set o1503/weight = 15
+#
+tag o1503 = gnome village:area name
+#
+tag o1503 = object
+#
+set o1503/weapon_type = "pound"
+#
+set o1503/damage_low = 2
+#
+set o1503/damage_high = 7
+#
+wieldto o1503 = m1502
+#
+set m1502/experience_total = 278
+#
+set m1502/experience_current = 278
+#
+set m1502/reset_objects["o1503"] = {"location":"equipped"}
+#
+tel r1506
+#
+create/drop a gnome man;man;gnome;m1502:characters.Mobile
+#
+desc m1502 = A gnome man is walking here, on his way to work. 
+#
+set m1502/level = 2
+#
+set m1502/level_base = 2
+#
+set m1502/vnum = "m1502"
+#
+set m1502/look_description = "This is a prime example of a gnome.  He looks short and weak, but at the same time an intelligent creature who could outsmart you. "
+#
+set m1502/act_flags = ['scavenger', 'npc']
+#
+set m1502/alignment = 500
+#
+set m1502/sex = "male"
+#
+set m1502/race = "gnome"
+#
+tag m1502 = gnome village:area name
+#
+tag m1502 = mobile
+#
+set m1502/hitpoints[maximum] = 18
+#
+set m1502/position = "standing"
+#
+set m1502/experience_total = 222
+#
+set m1502/experience_current = 222
+#
+tel r1506
+#
+create a gnarled staff;staff;gnarled;o1503:objects.Weapon
+#
+sethome o1503 = m1502
+#
+desc o1503 = A gnarled staff is here.
+#
+set o1503/level = 1
+#
+set o1503/level_base = 1
+#
+set o1503/vnum = "o1503"
+#
+set o1503/item_type = "weapon"
+#
+set o1503/wear_location = "wield"
+#
+set o1503/weight = 15
+#
+tag o1503 = gnome village:area name
+#
+tag o1503 = object
+#
+set o1503/weapon_type = "pound"
+#
+set o1503/damage_low = 1
+#
+set o1503/damage_high = 8
+#
+wieldto o1503 = m1502
+#
+set m1502/experience_total = 277
+#
+set m1502/experience_current = 277
+#
+set m1502/reset_objects["o1503"] = {"location":"equipped"}
+#
+tel r1509
+#
+create/drop a gnome child;child;gnome;m1500:characters.Mobile
+#
+desc m1500 = A gnome child is playing around here. 
+#
+set m1500/level = 7
+#
+set m1500/level_base = 7
+#
+set m1500/vnum = "m1500"
+#
+set m1500/look_description = "The little tyke looks so innocent playing with his boomerang that you just want to pick him up and hug him. "
+#
+set m1500/act_flags = ['scavenger', 'npc']
+#
+set m1500/alignment = 600
+#
+set m1500/sex = "male"
+#
+set m1500/race = "gnome"
+#
+tag m1500 = gnome village:area name
+#
+tag m1500 = mobile
+#
+set m1500/hitpoints[maximum] = 90
+#
+set m1500/position = "standing"
+#
+set m1500/experience_total = 2320
+#
+set m1500/experience_current = 2320
+#
+tel r1509
+#
+create a toy boomerang;toy;boomerang;o1502:objects.Weapon
+#
+sethome o1502 = m1500
+#
+desc o1502 = A toy boomerang wants to be picked up.
+#
+set o1502/level = 5
+#
+set o1502/level_base = 5
+#
+set o1502/vnum = "o1502"
+#
+set o1502/item_type = "weapon"
+#
+set o1502/wear_location = "wield"
+#
+set o1502/weight = 5
+#
+tag o1502 = gnome village:area name
+#
+tag o1502 = object
+#
+set o1502/weapon_type = "pound"
+#
+set o1502/damage_low = 2
+#
+set o1502/damage_high = 10
+#
+wieldto o1502 = m1500
+#
+set m1500/experience_total = 2900
+#
+set m1500/experience_current = 2900
+#
+set m1500/reset_objects["o1502"] = {"location":"equipped"}
+#
+tel r1509
+#
+create/drop a gnome woman;woman;gnome;m1501:characters.Mobile
+#
+desc m1501 = A gnome woman is standing here, trying to look beautiful. 
+#
+set m1501/level = 7
+#
+set m1501/level_base = 7
+#
+set m1501/vnum = "m1501"
+#
+set m1501/look_description = "The woman is short and gnarled, but acts like a woman several times her beauty. She's starting to look pretty attractive to you ... "
+#
+set m1501/act_flags = ['scavenger', 'npc']
+#
+set m1501/alignment = 600
+#
+set m1501/sex = "female"
+#
+set m1501/race = "gnome"
+#
+tag m1501 = gnome village:area name
+#
+tag m1501 = mobile
+#
+set m1501/hitpoints[maximum] = 100
+#
+set m1501/position = "standing"
+#
+set m1501/experience_total = 2282
+#
+set m1501/experience_current = 2282
+#
+tel r1510
+#
+create/drop a gnome child;child;gnome;m1500:characters.Mobile
+#
+desc m1500 = A gnome child is playing around here. 
+#
+set m1500/level = 7
+#
+set m1500/level_base = 7
+#
+set m1500/vnum = "m1500"
+#
+set m1500/look_description = "The little tyke looks so innocent playing with his boomerang that you just want to pick him up and hug him. "
+#
+set m1500/act_flags = ['scavenger', 'npc']
+#
+set m1500/alignment = 600
+#
+set m1500/sex = "male"
+#
+set m1500/race = "gnome"
+#
+tag m1500 = gnome village:area name
+#
+tag m1500 = mobile
+#
+set m1500/hitpoints[maximum] = 88
+#
+set m1500/position = "standing"
+#
+set m1500/experience_total = 2067
+#
+set m1500/experience_current = 2067
+#
+tel r1510
+#
+create a toy boomerang;toy;boomerang;o1502:objects.Weapon
+#
+sethome o1502 = m1500
+#
+desc o1502 = A toy boomerang wants to be picked up.
+#
+set o1502/level = 5
+#
+set o1502/level_base = 5
+#
+set o1502/vnum = "o1502"
+#
+set o1502/item_type = "weapon"
+#
+set o1502/wear_location = "wield"
+#
+set o1502/weight = 5
+#
+tag o1502 = gnome village:area name
+#
+tag o1502 = object
+#
+set o1502/weapon_type = "pound"
+#
+set o1502/damage_low = 2
+#
+set o1502/damage_high = 11
+#
+wieldto o1502 = m1500
+#
+set m1500/experience_total = 2583
+#
+set m1500/experience_current = 2583
+#
+set m1500/reset_objects["o1502"] = {"location":"equipped"}
+#
+tel r1510
+#
+create/drop a gnome woman;woman;gnome;m1501:characters.Mobile
+#
+desc m1501 = A gnome woman is standing here, trying to look beautiful. 
+#
+set m1501/level = 7
+#
+set m1501/level_base = 7
+#
+set m1501/vnum = "m1501"
+#
+set m1501/look_description = "The woman is short and gnarled, but acts like a woman several times her beauty. She's starting to look pretty attractive to you ... "
+#
+set m1501/act_flags = ['scavenger', 'npc']
+#
+set m1501/alignment = 600
+#
+set m1501/sex = "female"
+#
+set m1501/race = "gnome"
+#
+tag m1501 = gnome village:area name
+#
+tag m1501 = mobile
+#
+set m1501/hitpoints[maximum] = 90
+#
+set m1501/position = "standing"
+#
+set m1501/experience_total = 2388
+#
+set m1501/experience_current = 2388
+#
+tel r1511
+#
+create/drop a gnome child;child;gnome;m1500:characters.Mobile
+#
+desc m1500 = A gnome child is playing around here. 
+#
+set m1500/level = 7
+#
+set m1500/level_base = 7
+#
+set m1500/vnum = "m1500"
+#
+set m1500/look_description = "The little tyke looks so innocent playing with his boomerang that you just want to pick him up and hug him. "
+#
+set m1500/act_flags = ['scavenger', 'npc']
+#
+set m1500/alignment = 600
+#
+set m1500/sex = "male"
+#
+set m1500/race = "gnome"
+#
+tag m1500 = gnome village:area name
+#
+tag m1500 = mobile
+#
+set m1500/hitpoints[maximum] = 78
+#
+set m1500/position = "standing"
+#
+set m1500/experience_total = 2350
+#
+set m1500/experience_current = 2350
+#
+tel r1511
+#
+create a toy boomerang;toy;boomerang;o1502:objects.Weapon
+#
+sethome o1502 = m1500
+#
+desc o1502 = A toy boomerang wants to be picked up.
+#
+set o1502/level = 5
+#
+set o1502/level_base = 5
+#
+set o1502/vnum = "o1502"
+#
+set o1502/item_type = "weapon"
+#
+set o1502/wear_location = "wield"
+#
+set o1502/weight = 5
+#
+tag o1502 = gnome village:area name
+#
+tag o1502 = object
+#
+set o1502/weapon_type = "pound"
+#
+set o1502/damage_low = 3
+#
+set o1502/damage_high = 9
+#
+wieldto o1502 = m1500
+#
+set m1500/experience_total = 2937
+#
+set m1500/experience_current = 2937
+#
+set m1500/reset_objects["o1502"] = {"location":"equipped"}
+#
+tel r1511
+#
+create/drop a gnome woman;woman;gnome;m1501:characters.Mobile
+#
+desc m1501 = A gnome woman is standing here, trying to look beautiful. 
+#
+set m1501/level = 7
+#
+set m1501/level_base = 7
+#
+set m1501/vnum = "m1501"
+#
+set m1501/look_description = "The woman is short and gnarled, but acts like a woman several times her beauty. She's starting to look pretty attractive to you ... "
+#
+set m1501/act_flags = ['scavenger', 'npc']
+#
+set m1501/alignment = 600
+#
+set m1501/sex = "female"
+#
+set m1501/race = "gnome"
+#
+tag m1501 = gnome village:area name
+#
+tag m1501 = mobile
+#
+set m1501/hitpoints[maximum] = 99
+#
+set m1501/position = "standing"
+#
+set m1501/experience_total = 2044
+#
+set m1501/experience_current = 2044
+#
+tel r1513
+#
+create/drop a gnome scientist;scientist;gnome;m1503:characters.Mobile
+#
+desc m1503 = A scientist wanders around deep in thought. 
+#
+set m1503/level = 1
+#
+set m1503/level_base = 1
+#
+set m1503/vnum = "m1503"
+#
+set m1503/look_description = "You see a gnome who is lost deep into some invention that he is about to make.  His hair is white, but he looks fairly strong. "
+#
+set m1503/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m1503/alignment = 500
+#
+set m1503/sex = "male"
+#
+set m1503/race = "gnome"
+#
+tag m1503 = gnome village:area name
+#
+tag m1503 = mobile
+#
+set m1503/hitpoints[maximum] = 9
+#
+set m1503/position = "standing"
+#
+set m1503/experience_total = 152
+#
+set m1503/experience_current = 152
+#
+set m1503/special_function = "cast_mage"
+#
+tel r1513
+#
+create a wicker basket;basket;wicker;o1511:objects.Container
+#
+sethome o1511 = m1503
+#
+desc o1511 = A wicker basket sits here.
+#
+set o1511/level = 1
+#
+set o1511/level_base = 1
+#
+set o1511/vnum = "o1511"
+#
+set o1511/item_type = "container"
+#
+set o1511/weight = 5
+#
+tag o1511 = gnome village:area name
+#
+tag o1511 = object
+#
+set o1511/weight_maximum = 90
+#
+set o1511/state = []
+#
+set o1511/state_base = []
+#
+give o1511 to m1503
+#
+set m1503/reset_objects["o1511"] = {"location":"inventory"}
+#
+tel r1513
+#
+create some grain;grain;o1513:objects.Food
+#
+sethome o1513 = o1511
+#
+desc o1513 = There is some grain here.
+#
+set o1513/level = 1
+#
+set o1513/level_base = 1
+#
+set o1513/vnum = "o1513"
+#
+set o1513/item_type = "food"
+#
+set o1513/weight = 8
+#
+tag o1513 = gnome village:area name
+#
+tag o1513 = object
+#
+set o1513/hours_fed = 15
+#
+set o1513/poison = 0
+#
+tel m1503
+#
+put o1513 in o1511
+#
+tel r1513
+#
+set r1513/reset_objects["o1513"] = {"location":"o1511"}
+#
+tel r1514
+#
+create/drop a gnome scientist;scientist;gnome;m1503:characters.Mobile
+#
+desc m1503 = A scientist wanders around deep in thought. 
+#
+set m1503/level = 1
+#
+set m1503/level_base = 1
+#
+set m1503/vnum = "m1503"
+#
+set m1503/look_description = "You see a gnome who is lost deep into some invention that he is about to make.  His hair is white, but he looks fairly strong. "
+#
+set m1503/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m1503/alignment = 500
+#
+set m1503/sex = "male"
+#
+set m1503/race = "gnome"
+#
+tag m1503 = gnome village:area name
+#
+tag m1503 = mobile
+#
+set m1503/hitpoints[maximum] = 9
+#
+set m1503/position = "standing"
+#
+set m1503/experience_total = 142
+#
+set m1503/experience_current = 142
+#
+set m1503/special_function = "cast_mage"
+#
+tel r1514
+#
+create a wicker basket;basket;wicker;o1511:objects.Container
+#
+sethome o1511 = m1503
+#
+desc o1511 = A wicker basket sits here.
+#
+set o1511/level = 1
+#
+set o1511/level_base = 1
+#
+set o1511/vnum = "o1511"
+#
+set o1511/item_type = "container"
+#
+set o1511/weight = 5
+#
+tag o1511 = gnome village:area name
+#
+tag o1511 = object
+#
+set o1511/weight_maximum = 90
+#
+set o1511/state = []
+#
+set o1511/state_base = []
+#
+give o1511 to m1503
+#
+set m1503/reset_objects["o1511"] = {"location":"inventory"}
+#
+tel r1514
+#
+create some peanuts;peanuts;o1512:objects.Food
+#
+sethome o1512 = o1511
+#
+desc o1512 = Peanuts lie here.
+#
+set o1512/level = 1
+#
+set o1512/level_base = 1
+#
+set o1512/vnum = "o1512"
+#
+set o1512/item_type = "food"
+#
+set o1512/weight = 9
+#
+tag o1512 = gnome village:area name
+#
+tag o1512 = object
+#
+set o1512/hours_fed = 16
+#
+set o1512/poison = 0
+#
+tel m1503
+#
+put o1512 in o1511
+#
+tel r1514
+#
+set r1514/reset_objects["o1512"] = {"location":"o1511"}
+#
+tel r1515
+#
+create/drop a gnome scientist;scientist;gnome;m1503:characters.Mobile
+#
+desc m1503 = A scientist wanders around deep in thought. 
+#
+set m1503/level = 1
+#
+set m1503/level_base = 1
+#
+set m1503/vnum = "m1503"
+#
+set m1503/look_description = "You see a gnome who is lost deep into some invention that he is about to make.  His hair is white, but he looks fairly strong. "
+#
+set m1503/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m1503/alignment = 500
+#
+set m1503/sex = "male"
+#
+set m1503/race = "gnome"
+#
+tag m1503 = gnome village:area name
+#
+tag m1503 = mobile
+#
+set m1503/hitpoints[maximum] = 8
+#
+set m1503/position = "standing"
+#
+set m1503/experience_total = 142
+#
+set m1503/experience_current = 142
+#
+set m1503/special_function = "cast_mage"
+#
+tel r1515
+#
+create a skiff;skiff;o1514:objects.Boat
+#
+sethome o1514 = m1503
+#
+desc o1514 = A small skiff is here.
+#
+set o1514/level = 1
+#
+set o1514/level_base = 1
+#
+set o1514/vnum = "o1514"
+#
+set o1514/item_type = "boat"
+#
+set o1514/weight = 24
+#
+tag o1514 = gnome village:area name
+#
+tag o1514 = object
+#
+wearto o1514 = m1503
+#
+set m1503/reset_objects["o1514"] = {"location":"equipped"}
+#
+tel r1519
+#
+create/drop a gnome guard;guard;gnome;m1504:characters.Mobile
+#
+desc m1504 = A gnome guard stands here guarding something. 
+#
+set m1504/level = 5
+#
+set m1504/level_base = 5
+#
+set m1504/vnum = "m1504"
+#
+set m1504/look_description = "This is a well trained gnome.  He might not have a lot of strength but he makes up for it with his weapons skill. "
+#
+set m1504/act_flags = ['sentinel', 'npc']
+#
+set m1504/alignment = 400
+#
+set m1504/sex = "male"
+#
+set m1504/race = "gnome"
+#
+tag m1504 = gnome village:area name
+#
+tag m1504 = mobile
+#
+set m1504/hitpoints[maximum] = 48
+#
+set m1504/position = "standing"
+#
+set m1504/experience_total = 950
+#
+set m1504/experience_current = 950
+#
+tel r1519
+#
+create a bloody cloak;cloak;bloody;o1507:objects.Armor
+#
+sethome o1507 = m1504
+#
+desc o1507 = A bloody cloak lies in a corner.
+#
+set o1507/level = 3
+#
+set o1507/level_base = 3
+#
+set o1507/vnum = "o1507"
+#
+set o1507/item_type = "armor"
+#
+set o1507/wear_location = "neck"
+#
+set o1507/weight = 15
+#
+tag o1507 = gnome village:area name
+#
+tag o1507 = object
+#
+set o1507/extra_flags = ['magic']
+#
+set o1507/armor = 2
+#
+wearto o1507 = m1504
+#
+set m1504/reset_objects["o1507"] = {"location":"equipped"}
+#
+tel r1519
+#
+create a bloody key;key;bloody;o1500:objects.Key
+#
+sethome o1500 = m1504
+#
+desc o1500 = A bloody key is partially stuck to the floor.
+#
+set o1500/level = 3
+#
+set o1500/level_base = 3
+#
+set o1500/vnum = "o1500"
+#
+set o1500/item_type = "key"
+#
+set o1500/weight = 1
+#
+tag o1500 = gnome village:area name
+#
+tag o1500 = object
+#
+give o1500 to m1504
+#
+set m1504/reset_objects["o1500"] = {"location":"inventory"}
+#
+tel r1519
+#
+create a bloody potion;potion;bloody;o1506:objects.Potion
+#
+sethome o1506 = m1504
+#
+desc o1506 = A bloody potion lies here.
+#
+set o1506/level = 3
+#
+set o1506/level_base = 3
+#
+set o1506/vnum = "o1506"
+#
+set o1506/item_type = "potion"
+#
+set o1506/weight = 22
+#
+tag o1506 = gnome village:area name
+#
+tag o1506 = object
+#
+set o1506/spell_level = 5
+#
+set o1506/spell_level_base = 5
+#
+set o1506/spell_name_1 = "cure critical"
+#
+set o1506/spell_name_2 = "cure critical"
+#
+set o1506/spell_name_3 = "giant strength"
+#
+give o1506 to m1504
+#
+set m1504/reset_objects["o1506"] = {"location":"inventory"}
+#
+tel r1522
+#
+create/drop a field mouse;mouse;field;m1508:characters.Mobile
+#
+desc m1508 = A small mouse runs across your foot. 
+#
+set m1508/level = 2
+#
+set m1508/level_base = 2
+#
+set m1508/vnum = "m1508"
+#
+set m1508/look_description = "The Mouse is a cute little creature. "
+#
+set m1508/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m1508/alignment = 100
+#
+set m1508/sex = "male"
+#
+set m1508/race = "rat"
+#
+tag m1508 = gnome village:area name
+#
+tag m1508 = mobile
+#
+set m1508/hitpoints[maximum] = 20
+#
+set m1508/position = "standing"
+#
+set m1508/experience_total = 237
+#
+set m1508/experience_current = 237
+#
+tel r1522
+#
+create/drop a field mouse;mouse;field;m1508; m1508-2:characters.Mobile
+#
+desc m1508-2 = A small mouse runs across your foot. 
+#
+set m1508-2/level = 2
+#
+set m1508-2/level_base = 2
+#
+set m1508-2/vnum = "m1508"
+#
+set m1508-2/look_description = "The Mouse is a cute little creature. "
+#
+set m1508-2/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m1508-2/alignment = 100
+#
+set m1508-2/sex = "male"
+#
+set m1508-2/race = "rat"
+#
+tag m1508-2 = gnome village:area name
+#
+tag m1508-2 = mobile
+#
+set m1508-2/hitpoints[maximum] = 18
+#
+set m1508-2/position = "standing"
+#
+set m1508-2/experience_total = 242
+#
+set m1508-2/experience_current = 242
+#
+tel r1524
+#
+create/drop a small troll;troll;small;m1507:characters.Mobile
+#
+desc m1507 = A small troll stares at you in surprise. 
+#
+set m1507/level = 9
+#
+set m1507/level_base = 9
+#
+set m1507/vnum = "m1507"
+#
+set m1507/look_description = "The small troll is a short and stocky beast with a human-like face but with the eyes and fangs of a wild beast. "
+#
+set m1507/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m1507/alignment = -900
+#
+set m1507/sex = "male"
+#
+set m1507/race = "troll"
+#
+tag m1507 = gnome village:area name
+#
+tag m1507 = mobile
+#
+set m1507/hitpoints[maximum] = 75
+#
+set m1507/position = "standing"
+#
+set m1507/experience_total = 4220
+#
+set m1507/experience_current = 4220
+#
+tel r1524
+#
+create/drop a quietmob;quietmob;m1529:characters.Mobile
+#
+desc m1529 = 
+#
+set m1529/level = 14
+#
+set m1529/level_base = 14
+#
+set m1529/vnum = "m1529"
+#
+set m1529/act_flags = ['no kill', 'sentinel', 'npc']
+#
+set m1529/alignment = -800
+#
+set m1529/sex = "female"
+#
+set m1529/spell_affects = {'infrared': '', 'detect hidden': '', 'detect invis': ''}
+#
+set m1529/race = "hobgoblin"
+#
+tag m1529 = gnome village:area name
+#
+tag m1529 = mobile
+#
+set m1529/hitpoints[maximum] = 266
+#
+set m1529/position = "standing"
+#
+set m1529/experience_total = 15834
+#
+set m1529/experience_current = 15834
+#
+tel r1524
+#
+create the transmogrifier;altar;transmogrification;transmogrifier;o1525:objects.Container
+#
+sethome o1525 = r1524
+#
+desc o1525 = The Altar of Transmogrification stands before you.
+#
+set o1525/level = 12
+#
+set o1525/level_base = 12
+#
+set o1525/vnum = "o1525"
+#
+set o1525/item_type = "container"
+#
+objectlock o1525 = "get:perm(Admin)"
+#
+set o1525/weight = 5
+#
+tag o1525 = gnome village:area name
+#
+tag o1525 = object
+#
+set o1525/extra_descriptions = {'altar transmogrifier transmogrification': 'The altar has two circular indentations in its top.'}
+#
+set o1525/extra_flags = ['magic', 'evil', 'hum']
+#
+set o1525/weight_maximum = 100
+#
+set o1525/state = []
+#
+set o1525/state_base = []
+#
+drop o1525
+#
+set r1524/reset_objects["o1525"] = {"location":"inventory"}
+#
+tel r1527
+#
+create/drop a gnome guard;guard;gnome;m1504:characters.Mobile
+#
+desc m1504 = A gnome guard stands here guarding something. 
+#
+set m1504/level = 5
+#
+set m1504/level_base = 5
+#
+set m1504/vnum = "m1504"
+#
+set m1504/look_description = "This is a well trained gnome.  He might not have a lot of strength but he makes up for it with his weapons skill. "
+#
+set m1504/act_flags = ['sentinel', 'npc']
+#
+set m1504/alignment = 400
+#
+set m1504/sex = "male"
+#
+set m1504/race = "gnome"
+#
+tag m1504 = gnome village:area name
+#
+tag m1504 = mobile
+#
+set m1504/hitpoints[maximum] = 65
+#
+set m1504/position = "standing"
+#
+set m1504/experience_total = 938
+#
+set m1504/experience_current = 938
+#
+tel r1527
+#
+create a gnome sword;sword;gnome;o1504:objects.Weapon
+#
+sethome o1504 = m1504
+#
+desc o1504 = A gnome sword catches your eye.
+#
+set o1504/level = 3
+#
+set o1504/level_base = 3
+#
+set o1504/vnum = "o1504"
+#
+set o1504/item_type = "weapon"
+#
+set o1504/wear_location = "wield"
+#
+set o1504/weight = 15
+#
+tag o1504 = gnome village:area name
+#
+tag o1504 = object
+#
+set o1504/weapon_type = "slash"
+#
+set o1504/damage_low = 3
+#
+set o1504/damage_high = 9
+#
+wieldto o1504 = m1504
+#
+set m1504/experience_total = 1172
+#
+set m1504/experience_current = 1172
+#
+set m1504/reset_objects["o1504"] = {"location":"equipped"}
+#
+tel r1530
+#
+create/drop a gnome guard;guard;gnome;m1504:characters.Mobile
+#
+desc m1504 = A gnome guard stands here guarding something. 
+#
+set m1504/level = 5
+#
+set m1504/level_base = 5
+#
+set m1504/vnum = "m1504"
+#
+set m1504/look_description = "This is a well trained gnome.  He might not have a lot of strength but he makes up for it with his weapons skill. "
+#
+set m1504/act_flags = ['sentinel', 'npc']
+#
+set m1504/alignment = 400
+#
+set m1504/sex = "male"
+#
+set m1504/race = "gnome"
+#
+tag m1504 = gnome village:area name
+#
+tag m1504 = mobile
+#
+set m1504/hitpoints[maximum] = 50
+#
+set m1504/position = "standing"
+#
+set m1504/experience_total = 1085
+#
+set m1504/experience_current = 1085
+#
+tel r1530
+#
+create a gnome sword;sword;gnome;o1504:objects.Weapon
+#
+sethome o1504 = m1504
+#
+desc o1504 = A gnome sword catches your eye.
+#
+set o1504/level = 3
+#
+set o1504/level_base = 3
+#
+set o1504/vnum = "o1504"
+#
+set o1504/item_type = "weapon"
+#
+set o1504/wear_location = "wield"
+#
+set o1504/weight = 15
+#
+tag o1504 = gnome village:area name
+#
+tag o1504 = object
+#
+set o1504/weapon_type = "slash"
+#
+set o1504/damage_low = 4
+#
+set o1504/damage_high = 8
+#
+wieldto o1504 = m1504
+#
+set m1504/experience_total = 1356
+#
+set m1504/experience_current = 1356
+#
+set m1504/reset_objects["o1504"] = {"location":"equipped"}
+#
+tel r1530
+#
+create/drop a gnome guard;guard;gnome;m1504; m1504-2:characters.Mobile
+#
+desc m1504-2 = A gnome guard stands here guarding something. 
+#
+set m1504-2/level = 5
+#
+set m1504-2/level_base = 5
+#
+set m1504-2/vnum = "m1504"
+#
+set m1504-2/look_description = "This is a well trained gnome.  He might not have a lot of strength but he makes up for it with his weapons skill. "
+#
+set m1504-2/act_flags = ['sentinel', 'npc']
+#
+set m1504-2/alignment = 400
+#
+set m1504-2/sex = "male"
+#
+set m1504-2/race = "gnome"
+#
+tag m1504-2 = gnome village:area name
+#
+tag m1504-2 = mobile
+#
+set m1504-2/hitpoints[maximum] = 65
+#
+set m1504-2/position = "standing"
+#
+set m1504-2/experience_total = 1051
+#
+set m1504-2/experience_current = 1051
+#
+tel r1530
+#
+create a gnome sword;sword;gnome;o1504:objects.Weapon
+#
+sethome o1504 = m1504-2
+#
+desc o1504 = A gnome sword catches your eye.
+#
+set o1504/level = 3
+#
+set o1504/level_base = 3
+#
+set o1504/vnum = "o1504"
+#
+set o1504/item_type = "weapon"
+#
+set o1504/wear_location = "wield"
+#
+set o1504/weight = 15
+#
+tag o1504 = gnome village:area name
+#
+tag o1504 = object
+#
+set o1504/weapon_type = "slash"
+#
+set o1504/damage_low = 1
+#
+set o1504/damage_high = 8
+#
+wieldto o1504 = m1504-2
+#
+set m1504-2/experience_total = 1313
+#
+set m1504-2/experience_current = 1313
+#
+set m1504-2/reset_objects["o1504"] = {"location":"equipped"}
+#
+tel r1534
+#
+create/drop a gnome guard;guard;gnome;m1504:characters.Mobile
+#
+desc m1504 = A gnome guard stands here guarding something. 
+#
+set m1504/level = 5
+#
+set m1504/level_base = 5
+#
+set m1504/vnum = "m1504"
+#
+set m1504/look_description = "This is a well trained gnome.  He might not have a lot of strength but he makes up for it with his weapons skill. "
+#
+set m1504/act_flags = ['sentinel', 'npc']
+#
+set m1504/alignment = 400
+#
+set m1504/sex = "male"
+#
+set m1504/race = "gnome"
+#
+tag m1504 = gnome village:area name
+#
+tag m1504 = mobile
+#
+set m1504/hitpoints[maximum] = 65
+#
+set m1504/position = "standing"
+#
+set m1504/experience_total = 990
+#
+set m1504/experience_current = 990
+#
+tel r1534
+#
+create a gnome sword;sword;gnome;o1504:objects.Weapon
+#
+sethome o1504 = m1504
+#
+desc o1504 = A gnome sword catches your eye.
+#
+set o1504/level = 3
+#
+set o1504/level_base = 3
+#
+set o1504/vnum = "o1504"
+#
+set o1504/item_type = "weapon"
+#
+set o1504/wear_location = "wield"
+#
+set o1504/weight = 15
+#
+tag o1504 = gnome village:area name
+#
+tag o1504 = object
+#
+set o1504/weapon_type = "slash"
+#
+set o1504/damage_low = 4
+#
+set o1504/damage_high = 7
+#
+wieldto o1504 = m1504
+#
+set m1504/experience_total = 1237
+#
+set m1504/experience_current = 1237
+#
+set m1504/reset_objects["o1504"] = {"location":"equipped"}
+#
+tel r1536
+#
+set east/door_attributes = ['lockable', 'locked']
+#
+set east/reset_door_attributes = ['lockable', 'locked']
+#
+tel r1541
+#
+create/drop a rat;rat;m1509:characters.Mobile
+#
+desc m1509 = A small rat shrieks and runs around. 
+#
+set m1509/level = 6
+#
+set m1509/level_base = 6
+#
+set m1509/vnum = "m1509"
+#
+set m1509/look_description = "The rat is a little evil creature that deserves death. "
+#
+set m1509/act_flags = ['scavenger', 'npc']
+#
+set m1509/alignment = -200
+#
+set m1509/sex = "male"
+#
+set m1509/race = "rat"
+#
+tag m1509 = gnome village:area name
+#
+tag m1509 = mobile
+#
+set m1509/hitpoints[maximum] = 59
+#
+set m1509/position = "standing"
+#
+set m1509/experience_total = 1515
+#
+set m1509/experience_current = 1515
+#
+set m1509/special_function = "poison"
+#
+tel r1541
+#
+create a studded shield;shield;studded;o1505:objects.Armor
+#
+sethome o1505 = m1509
+#
+desc o1505 = A studded wooden shield lies here.
+#
+set o1505/level = 4
+#
+set o1505/level_base = 4
+#
+set o1505/vnum = "o1505"
+#
+set o1505/item_type = "armor"
+#
+set o1505/wear_location = "shield"
+#
+set o1505/weight = 16
+#
+tag o1505 = gnome village:area name
+#
+tag o1505 = object
+#
+set o1505/armor = 3
+#
+wearto o1505 = m1509
+#
+set m1509/reset_objects["o1505"] = {"location":"equipped"}
+#
+tel r1542
+#
+create/drop a large rat;rat;large;m1510:characters.Mobile
+#
+desc m1510 = A large rat runs up to you and nibbles on your boots. 
+#
+set m1510/level = 3
+#
+set m1510/level_base = 3
+#
+set m1510/vnum = "m1510"
+#
+set m1510/look_description = "You have the urge to kill this vile creature. "
+#
+set m1510/act_flags = ['scavenger', 'npc']
+#
+set m1510/alignment = -200
+#
+set m1510/sex = "male"
+#
+set m1510/race = "rat"
+#
+tag m1510 = gnome village:area name
+#
+tag m1510 = mobile
+#
+set m1510/hitpoints[maximum] = 25
+#
+set m1510/position = "standing"
+#
+set m1510/experience_total = 437
+#
+set m1510/experience_current = 437
+#
+set m1510/special_function = "poison"
+#
+tel r1542
+#
+create a gnarled staff;staff;gnarled;o1503:objects.Weapon
+#
+sethome o1503 = m1510
+#
+desc o1503 = A gnarled staff is here.
+#
+set o1503/level = 1
+#
+set o1503/level_base = 1
+#
+set o1503/vnum = "o1503"
+#
+set o1503/item_type = "weapon"
+#
+set o1503/wear_location = "wield"
+#
+set o1503/weight = 15
+#
+tag o1503 = gnome village:area name
+#
+tag o1503 = object
+#
+set o1503/weapon_type = "pound"
+#
+set o1503/damage_low = 2
+#
+set o1503/damage_high = 6
+#
+wieldto o1503 = m1510
+#
+set m1510/experience_total = 546
+#
+set m1510/experience_current = 546
+#
+set m1510/reset_objects["o1503"] = {"location":"equipped"}
+#
+tel r1543
+#
+create/drop a giant rat;rat;giant;m1511:characters.Mobile
+#
+desc m1511 = A giant rat growls at you and prepares to attack. 
+#
+set m1511/level = 8
+#
+set m1511/level_base = 8
+#
+set m1511/vnum = "m1511"
+#
+set m1511/look_description = "This rat has grown up to be the size of an average dog. "
+#
+set m1511/act_flags = ['scavenger', 'npc']
+#
+set m1511/alignment = -200
+#
+set m1511/sex = "male"
+#
+set m1511/race = "rat"
+#
+tag m1511 = gnome village:area name
+#
+tag m1511 = mobile
+#
+set m1511/hitpoints[maximum] = 89
+#
+set m1511/position = "standing"
+#
+set m1511/experience_total = 3032
+#
+set m1511/experience_current = 3032
+#
+set m1511/special_function = "poison"
+#
+tel r1545
+#
+create/drop the troll;troll;m1512:characters.Mobile
+#
+desc m1512 = A giant troll lumbers around. 
+#
+set m1512/level = 13
+#
+set m1512/level_base = 13
+#
+set m1512/vnum = "m1512"
+#
+set m1512/look_description = "You see before you a huge mass of living flesh.  You cringe in fear as he lifts his powerful arm to bludgeon you. "
+#
+set m1512/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m1512/alignment = -800
+#
+set m1512/sex = "male"
+#
+set m1512/race = "troll"
+#
+tag m1512 = gnome village:area name
+#
+tag m1512 = mobile
+#
+set m1512/hitpoints[maximum] = 261
+#
+set m1512/position = "standing"
+#
+set m1512/experience_total = 10998
+#
+set m1512/experience_current = 10998
+#
+tel r1545
+#
+create a dirty key;key;dirty;o1501:objects.Key
+#
+sethome o1501 = m1512
+#
+desc o1501 = A dirty key lies here.
+#
+set o1501/level = 11
+#
+set o1501/level_base = 11
+#
+set o1501/vnum = "o1501"
+#
+set o1501/item_type = "key"
+#
+set o1501/weight = 1
+#
+tag o1501 = gnome village:area name
+#
+tag o1501 = object
+#
+give o1501 to m1512
+#
+set m1512/reset_objects["o1501"] = {"location":"inventory"}
+#
+tel r1545
+#
+set west/door_attributes = ['lockable', 'locked']
+#
+set west/reset_door_attributes = ['lockable', 'locked']
+#
+tel r1546
+#
+set east/door_attributes = ['lockable', 'locked']
+#
+set east/reset_door_attributes = ['lockable', 'locked']
+#
+tel r1548
+#
+create/drop a black bat;bat;black;m1513:characters.Mobile
+#
+desc m1513 = A black bat hangs from the ceiling. 
+#
+set m1513/level = 5
+#
+set m1513/level_base = 5
+#
+set m1513/vnum = "m1513"
+#
+set m1513/look_description = "The bat is a grotesque little creature with large wings and fangs. "
+#
+set m1513/act_flags = ['npc']
+#
+set m1513/alignment = -500
+#
+set m1513/sex = "neuter"
+#
+set m1513/race = "bat"
+#
+tag m1513 = gnome village:area name
+#
+tag m1513 = mobile
+#
+set m1513/hitpoints[maximum] = 59
+#
+set m1513/position = "standing"
+#
+set m1513/experience_total = 1000
+#
+set m1513/experience_current = 1000
+#
+set m1513/special_function = "breath_acid"
+#
+tel r1548
+#
+create/drop the zombie gnome;zombie;gnome;m1514:characters.Mobile
+#
+desc m1514 = A zombie gnome shuffles his way towards you. 
+#
+set m1514/level = 8
+#
+set m1514/level_base = 8
+#
+set m1514/vnum = "m1514"
+#
+set m1514/look_description = "This is a creature which has passed away long ago.  His body has been pulled out of its resting place by some evil force. "
+#
+set m1514/act_flags = ['npc']
+#
+set m1514/alignment = -700
+#
+set m1514/sex = "neuter"
+#
+set m1514/race = "undead"
+#
+tag m1514 = gnome village:area name
+#
+tag m1514 = mobile
+#
+set m1514/hitpoints[maximum] = 83
+#
+set m1514/position = "standing"
+#
+set m1514/experience_total = 2822
+#
+set m1514/experience_current = 2822
+#
+set m1514/special_function = "cast_undead"
+#
+tel r1550
+#
+create/drop a black bat;bat;black;m1513:characters.Mobile
+#
+desc m1513 = A black bat hangs from the ceiling. 
+#
+set m1513/level = 5
+#
+set m1513/level_base = 5
+#
+set m1513/vnum = "m1513"
+#
+set m1513/look_description = "The bat is a grotesque little creature with large wings and fangs. "
+#
+set m1513/act_flags = ['npc']
+#
+set m1513/alignment = -500
+#
+set m1513/sex = "neuter"
+#
+set m1513/race = "bat"
+#
+tag m1513 = gnome village:area name
+#
+tag m1513 = mobile
+#
+set m1513/hitpoints[maximum] = 53
+#
+set m1513/position = "standing"
+#
+set m1513/experience_total = 1087
+#
+set m1513/experience_current = 1087
+#
+set m1513/special_function = "breath_acid"
+#
+tel r1550
+#
+create/drop the zombie gnome;zombie;gnome;m1514:characters.Mobile
+#
+desc m1514 = A zombie gnome shuffles his way towards you. 
+#
+set m1514/level = 8
+#
+set m1514/level_base = 8
+#
+set m1514/vnum = "m1514"
+#
+set m1514/look_description = "This is a creature which has passed away long ago.  His body has been pulled out of its resting place by some evil force. "
+#
+set m1514/act_flags = ['npc']
+#
+set m1514/alignment = -700
+#
+set m1514/sex = "neuter"
+#
+set m1514/race = "undead"
+#
+tag m1514 = gnome village:area name
+#
+tag m1514 = mobile
+#
+set m1514/hitpoints[maximum] = 91
+#
+set m1514/position = "standing"
+#
+set m1514/experience_total = 3407
+#
+set m1514/experience_current = 3407
+#
+set m1514/special_function = "cast_undead"
+#
+tel r1551
+#
+create/drop a black bat;bat;black;m1513:characters.Mobile
+#
+desc m1513 = A black bat hangs from the ceiling. 
+#
+set m1513/level = 5
+#
+set m1513/level_base = 5
+#
+set m1513/vnum = "m1513"
+#
+set m1513/look_description = "The bat is a grotesque little creature with large wings and fangs. "
+#
+set m1513/act_flags = ['npc']
+#
+set m1513/alignment = -500
+#
+set m1513/sex = "neuter"
+#
+set m1513/race = "bat"
+#
+tag m1513 = gnome village:area name
+#
+tag m1513 = mobile
+#
+set m1513/hitpoints[maximum] = 50
+#
+set m1513/position = "standing"
+#
+set m1513/experience_total = 981
+#
+set m1513/experience_current = 981
+#
+set m1513/special_function = "breath_acid"
+#
+tel r1551
+#
+create/drop the zombie gnome;zombie;gnome;m1514:characters.Mobile
+#
+desc m1514 = A zombie gnome shuffles his way towards you. 
+#
+set m1514/level = 8
+#
+set m1514/level_base = 8
+#
+set m1514/vnum = "m1514"
+#
+set m1514/look_description = "This is a creature which has passed away long ago.  His body has been pulled out of its resting place by some evil force. "
+#
+set m1514/act_flags = ['npc']
+#
+set m1514/alignment = -700
+#
+set m1514/sex = "neuter"
+#
+set m1514/race = "undead"
+#
+tag m1514 = gnome village:area name
+#
+tag m1514 = mobile
+#
+set m1514/hitpoints[maximum] = 121
+#
+set m1514/position = "standing"
+#
+set m1514/experience_total = 3174
+#
+set m1514/experience_current = 3174
+#
+set m1514/special_function = "cast_undead"
+#
+tel r1553
+#
+create/drop a black bat;bat;black;m1513:characters.Mobile
+#
+desc m1513 = A black bat hangs from the ceiling. 
+#
+set m1513/level = 5
+#
+set m1513/level_base = 5
+#
+set m1513/vnum = "m1513"
+#
+set m1513/look_description = "The bat is a grotesque little creature with large wings and fangs. "
+#
+set m1513/act_flags = ['npc']
+#
+set m1513/alignment = -500
+#
+set m1513/sex = "neuter"
+#
+set m1513/race = "bat"
+#
+tag m1513 = gnome village:area name
+#
+tag m1513 = mobile
+#
+set m1513/hitpoints[maximum] = 48
+#
+set m1513/position = "standing"
+#
+set m1513/experience_total = 1053
+#
+set m1513/experience_current = 1053
+#
+set m1513/special_function = "breath_acid"
+#
+tel r1553
+#
+create/drop the zombie gnome;zombie;gnome;m1514:characters.Mobile
+#
+desc m1514 = A zombie gnome shuffles his way towards you. 
+#
+set m1514/level = 8
+#
+set m1514/level_base = 8
+#
+set m1514/vnum = "m1514"
+#
+set m1514/look_description = "This is a creature which has passed away long ago.  His body has been pulled out of its resting place by some evil force. "
+#
+set m1514/act_flags = ['npc']
+#
+set m1514/alignment = -700
+#
+set m1514/sex = "neuter"
+#
+set m1514/race = "undead"
+#
+tag m1514 = gnome village:area name
+#
+tag m1514 = mobile
+#
+set m1514/hitpoints[maximum] = 71
+#
+set m1514/position = "standing"
+#
+set m1514/experience_total = 3287
+#
+set m1514/experience_current = 3287
+#
+set m1514/special_function = "cast_undead"
+#
+tel r1555
+#
+create/drop a black bat;bat;black;m1513:characters.Mobile
+#
+desc m1513 = A black bat hangs from the ceiling. 
+#
+set m1513/level = 5
+#
+set m1513/level_base = 5
+#
+set m1513/vnum = "m1513"
+#
+set m1513/look_description = "The bat is a grotesque little creature with large wings and fangs. "
+#
+set m1513/act_flags = ['npc']
+#
+set m1513/alignment = -500
+#
+set m1513/sex = "neuter"
+#
+set m1513/race = "bat"
+#
+tag m1513 = gnome village:area name
+#
+tag m1513 = mobile
+#
+set m1513/hitpoints[maximum] = 43
+#
+set m1513/position = "standing"
+#
+set m1513/experience_total = 1011
+#
+set m1513/experience_current = 1011
+#
+set m1513/special_function = "breath_acid"
+#
+tel r1555
+#
+create/drop the zombie gnome;zombie;gnome;m1514:characters.Mobile
+#
+desc m1514 = A zombie gnome shuffles his way towards you. 
+#
+set m1514/level = 8
+#
+set m1514/level_base = 8
+#
+set m1514/vnum = "m1514"
+#
+set m1514/look_description = "This is a creature which has passed away long ago.  His body has been pulled out of its resting place by some evil force. "
+#
+set m1514/act_flags = ['npc']
+#
+set m1514/alignment = -700
+#
+set m1514/sex = "neuter"
+#
+set m1514/race = "undead"
+#
+tag m1514 = gnome village:area name
+#
+tag m1514 = mobile
+#
+set m1514/hitpoints[maximum] = 90
+#
+set m1514/position = "standing"
+#
+set m1514/experience_total = 2947
+#
+set m1514/experience_current = 2947
+#
+set m1514/special_function = "cast_undead"
+#
+tel r1556
+#
+create/drop the fire bat;bat;fire;m1515:characters.Mobile
+#
+desc m1515 = The fire bat flames brightly and prepares to attack. 
+#
+set m1515/level = 11
+#
+set m1515/level_base = 11
+#
+set m1515/vnum = "m1515"
+#
+set m1515/look_description = "You see a huge flame which resembles the shape of a bat.  The creature hangs from the ceiling and bites at you. "
+#
+set m1515/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+#
+set m1515/alignment = -900
+#
+set m1515/sex = "male"
+#
+set m1515/spell_affects = {'detect invis': ''}
+#
+set m1515/race = "bat"
+#
+tag m1515 = gnome village:area name
+#
+tag m1515 = mobile
+#
+set m1515/hitpoints[maximum] = 162
+#
+set m1515/position = "standing"
+#
+set m1515/experience_total = 8874
+#
+set m1515/experience_current = 8874
+#
+set m1515/special_function = "breath_fire"
+#
+tel r1556
+#
+create a studded shield;shield;studded;o1505:objects.Armor
+#
+sethome o1505 = m1515
+#
+desc o1505 = A studded wooden shield lies here.
+#
+set o1505/level = 9
+#
+set o1505/level_base = 9
+#
+set o1505/vnum = "o1505"
+#
+set o1505/item_type = "armor"
+#
+set o1505/wear_location = "shield"
+#
+set o1505/weight = 16
+#
+tag o1505 = gnome village:area name
+#
+tag o1505 = object
+#
+set o1505/armor = 3
+#
+give o1505 to m1515
+#
+set m1515/reset_objects["o1505"] = {"location":"inventory"}
+#
+tel r1556
+#
+create some peanuts;peanuts;o1512:objects.Food
+#
+sethome o1512 = m1515
+#
+desc o1512 = Peanuts lie here.
+#
+set o1512/level = 9
+#
+set o1512/level_base = 9
+#
+set o1512/vnum = "o1512"
+#
+set o1512/item_type = "food"
+#
+set o1512/weight = 9
+#
+tag o1512 = gnome village:area name
+#
+tag o1512 = object
+#
+set o1512/hours_fed = 16
+#
+set o1512/poison = 0
+#
+give o1512 to m1515
+#
+set m1515/reset_objects["o1512"] = {"location":"inventory"}
+#
+tel r1556
+#
+create a pile of coins;coins;o1516:objects.Money
+#
+sethome o1516 = m1515
+#
+desc o1516 = A pile of coins.
+#
+set o1516/level = 9
+#
+set o1516/level_base = 9
+#
+set o1516/vnum = "o1516"
+#
+set o1516/item_type = "money"
+#
+set o1516/weight = 1
+#
+tag o1516 = gnome village:area name
+#
+tag o1516 = object
+#
+set o1516/value = 1000
+#
+give o1516 to m1515
+#
+set m1515/reset_objects["o1516"] = {"location":"inventory"}
+#
+tel r1557
+#
+create a pile of coins;coins;o1517:objects.Money
+#
+sethome o1517 = r1557
+#
+desc o1517 = A pile of coins.
+#
+set o1517/level = 9
+#
+set o1517/level_base = 9
+#
+set o1517/vnum = "o1517"
+#
+set o1517/item_type = "money"
+#
+set o1517/weight = 1
+#
+tag o1517 = gnome village:area name
+#
+tag o1517 = object
+#
+set o1517/value = 5000
+#
+drop o1517
+#
+set r1557/reset_objects["o1517"] = {"location":"inventory"}
+#
+tel r1557
+#
+create a pile of coins;coins;o1518:objects.Money
+#
+sethome o1518 = r1557
+#
+desc o1518 = A pile of coins.
+#
+set o1518/level = 9
+#
+set o1518/level_base = 9
+#
+set o1518/vnum = "o1518"
+#
+set o1518/item_type = "money"
+#
+set o1518/weight = 1
+#
+tag o1518 = gnome village:area name
+#
+tag o1518 = object
+#
+set o1518/value = 1000
+#
+drop o1518
+#
+set r1557/reset_objects["o1518"] = {"location":"inventory"}
+#
+tel r1557
+#
+create/drop the priest of Sathogua;priest;m1527:characters.Mobile
+#
+desc m1527 = The priest of Sathogua stands before you. 
+#
+set m1527/level = 12
+#
+set m1527/level_base = 12
+#
+set m1527/vnum = "m1527"
+#
+set m1527/look_description = "The priest is dressed completely in black. Well, except for the bloodstains on his robe. And the white ashes from earlier sacrifices. He looks at you, considers whether you'd make a good sacrifice, and decides ... yes! "
+#
+set m1527/act_flags = ['sentinel', 'npc']
+#
+set m1527/alignment = -800
+#
+set m1527/sex = "male"
+#
+set m1527/spell_affects = {'infrared': '', 'detect hidden': '', 'detect invis': ''}
+#
+set m1527/race = "hobgoblin"
+#
+tag m1527 = gnome village:area name
+#
+tag m1527 = mobile
+#
+set m1527/hitpoints[maximum] = 101
+#
+set m1527/position = "standing"
+#
+set m1527/experience_total = 9003
+#
+set m1527/experience_current = 9003
+#
+set m1527/special_function = "cast_cleric"
+#
+tel r1557
+#
+create the Left Bracelet of Evil;bracelet;left;evil;questleftbraceletevil;o1526:objects.Armor
+#
+sethome o1526 = m1527
+#
+desc o1526 = The Left Bracelet of Evil lies here.
+#
+set o1526/level = 10
+#
+set o1526/level_base = 10
+#
+set o1526/vnum = "o1526"
+#
+set o1526/item_type = "armor"
+#
+set o1526/wear_location = "wrist"
+#
+set o1526/weight = 5
+#
+tag o1526 = gnome village:area name
+#
+tag o1526 = object
+#
+set o1526/alignment_restriction = ['neutral', 'good', 'evil']
+#
+set o1526/extra_flags = ['timed', 'machine', 'holy', 'vampire bane', 'poisoned', 'inventory', 'no remove', 'bless', 'no drop', 'magic', 'invisible', 'evil', 'lock', 'dark', 'hum', 'glow']
+#
+set o1526/special_function = ['one_owner']
+#
+set o1526/armor = 4
+#
+wearto o1526 = m1527
+#
+set m1527/reset_objects["o1526"] = {"location":"equipped"}
+#
+tel r1557
+#
+create a large club;club;large;o1521:objects.Weapon
+#
+sethome o1521 = m1527
+#
+desc o1521 = A large club sits here.
+#
+set o1521/level = 10
+#
+set o1521/level_base = 10
+#
+set o1521/vnum = "o1521"
+#
+set o1521/item_type = "weapon"
+#
+set o1521/wear_location = "wield"
+#
+set o1521/weight = 22
+#
+tag o1521 = gnome village:area name
+#
+tag o1521 = object
+#
+set o1521/weapon_type = "pound"
+#
+set o1521/damage_low = 6
+#
+set o1521/damage_high = 12
+#
+wieldto o1521 = m1527
+#
+set m1527/experience_total = 11253
+#
+set m1527/experience_current = 11253
+#
+set m1527/reset_objects["o1521"] = {"location":"equipped"}
+#
+tel r1558
+#
+create/drop the chief gnome;chief;gnome;m1505:characters.Mobile
+#
+desc m1505 = A powerful looking gnome stands here wearing ornate clothes. 
+#
+set m1505/level = 14
+#
+set m1505/level_base = 14
+#
+set m1505/vnum = "m1505"
+#
+set m1505/look_description = "The Chief looks like he could whap you hard.  He looks not only powerful but wise and resourceful.  You better not mess with him. "
+#
+set m1505/act_flags = ['sentinel', 'npc']
+#
+set m1505/alignment = 550
+#
+set m1505/sex = "male"
+#
+set m1505/spell_affects = {'detect hidden': '', 'detect invis': ''}
+#
+set m1505/race = "gnome"
+#
+tag m1505 = gnome village:area name
+#
+tag m1505 = mobile
+#
+set m1505/hitpoints[maximum] = 274
+#
+set m1505/position = "standing"
+#
+set m1505/experience_total = 14998
+#
+set m1505/experience_current = 14998
+#
+set m1505/special_function = "cast_cleric"
+#
+tel r1558
+#
+create a bat ring;ring;bat;o1508:objects.Armor
+#
+sethome o1508 = m1505
+#
+desc o1508 = A ring in the shape of a bat lies here.
+#
+set o1508/level = 12
+#
+set o1508/level_base = 12
+#
+set o1508/vnum = "o1508"
+#
+set o1508/item_type = "armor"
+#
+set o1508/wear_location = "finger"
+#
+set o1508/weight = 2
+#
+tag o1508 = gnome village:area name
+#
+tag o1508 = object
+#
+set o1508/extra_flags = ['magic']
+#
+set o1508/stat_modifiers[moves] = 12
+#
+set o1508/armor = 5
+#
+wearto o1508 = m1505
+#
+set m1505/reset_objects["o1508"] = {"location":"equipped"}
+#
+tel r1558
+#
+create a bead necklace;necklace;bead;o1509:objects.Armor
+#
+sethome o1509 = m1505
+#
+desc o1509 = A string of beads is here.
+#
+set o1509/level = 12
+#
+set o1509/level_base = 12
+#
+set o1509/vnum = "o1509"
+#
+set o1509/item_type = "armor"
+#
+set o1509/wear_location = "neck"
+#
+set o1509/weight = 8
+#
+tag o1509 = gnome village:area name
+#
+tag o1509 = object
+#
+set o1509/stat_modifiers[hitroll] = 2
+#
+set o1509/armor = 5
+#
+wearto o1509 = m1505
+#
+set m1505/reset_objects["o1509"] = {"location":"equipped"}
+#
+tel r1558
+#
+create an electrum sword;sword;electrum;o1510:objects.Weapon
+#
+sethome o1510 = m1505
+#
+desc o1510 = An electrum sword lies here.
+#
+set o1510/level = 12
+#
+set o1510/level_base = 12
+#
+set o1510/vnum = "o1510"
+#
+set o1510/item_type = "weapon"
+#
+set o1510/wear_location = "wield"
+#
+set o1510/weight = 20
+#
+tag o1510 = gnome village:area name
+#
+tag o1510 = object
+#
+set o1510/extra_flags = ['magic', 'glow']
+#
+set o1510/weapon_type = "slash"
+#
+set o1510/damage_low = 5
+#
+set o1510/damage_high = 16
+#
+wieldto o1510 = m1505
+#
+set m1505/experience_total = 18747
+#
+set m1505/experience_current = 18747
+#
+set m1505/reset_objects["o1510"] = {"location":"equipped"}
+#
+tel r1558
+#
+create a pair of gnome boots;boots;gnome;o1515:objects.Armor
+#
+sethome o1515 = m1505
+#
+desc o1515 = You notice a pair of gnome boots.
+#
+set o1515/level = 12
+#
+set o1515/level_base = 12
+#
+set o1515/vnum = "o1515"
+#
+set o1515/item_type = "armor"
+#
+set o1515/wear_location = "feet"
+#
+set o1515/weight = 12
+#
+tag o1515 = gnome village:area name
+#
+tag o1515 = object
+#
+set o1515/stat_modifiers[moves] = 10
+#
+set o1515/armor = 4
+#
+wearto o1515 = m1505
+#
+set m1505/reset_objects["o1515"] = {"location":"equipped"}
+#
+tel r1563
+#
+create/drop a hobgoblin miner;miner;hobgoblin;m1520:characters.Mobile
+#
+desc m1520 = A hobgoblin miner stands here looking for gold. 
+#
+set m1520/level = 4
+#
+set m1520/level_base = 4
+#
+set m1520/vnum = "m1520"
+#
+set m1520/look_description = "The miner is totally covered in dust. "
+#
+set m1520/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m1520/alignment = -400
+#
+set m1520/sex = "male"
+#
+set m1520/race = "hobgoblin"
+#
+tag m1520 = gnome village:area name
+#
+tag m1520 = mobile
+#
+set m1520/hitpoints[maximum] = 35
+#
+set m1520/position = "standing"
+#
+set m1520/experience_total = 696
+#
+set m1520/experience_current = 696
+#
+tel r1565
+#
+create/drop a hobgoblin miner;miner;hobgoblin;m1520:characters.Mobile
+#
+desc m1520 = A hobgoblin miner stands here looking for gold. 
+#
+set m1520/level = 4
+#
+set m1520/level_base = 4
+#
+set m1520/vnum = "m1520"
+#
+set m1520/look_description = "The miner is totally covered in dust. "
+#
+set m1520/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m1520/alignment = -400
+#
+set m1520/sex = "male"
+#
+set m1520/race = "hobgoblin"
+#
+tag m1520 = gnome village:area name
+#
+tag m1520 = mobile
+#
+set m1520/hitpoints[maximum] = 42
+#
+set m1520/position = "standing"
+#
+set m1520/experience_total = 691
+#
+set m1520/experience_current = 691
+#
+tel r1569
+#
+create/drop the hobgoblin bodyguard;bodyguard;hobgoblin;m1518:characters.Mobile
+#
+desc m1518 = A hobgoblin bodyguard guards the king with his life. 
+#
+set m1518/level = 8
+#
+set m1518/level_base = 8
+#
+set m1518/vnum = "m1518"
+#
+set m1518/look_description = "This is one of the elite hobgoblin guards.  He stands tall for his short stature.  He grins a toothy grin as he prepares to attack. "
+#
+set m1518/act_flags = ['sentinel', 'npc']
+#
+set m1518/alignment = -500
+#
+set m1518/sex = "male"
+#
+set m1518/race = "hobgoblin"
+#
+tag m1518 = gnome village:area name
+#
+tag m1518 = mobile
+#
+set m1518/hitpoints[maximum] = 72
+#
+set m1518/position = "standing"
+#
+set m1518/experience_total = 3082
+#
+set m1518/experience_current = 3082
+#
+tel r1569
+#
+create a large club;club;large;o1521:objects.Weapon
+#
+sethome o1521 = m1518
+#
+desc o1521 = A large club sits here.
+#
+set o1521/level = 6
+#
+set o1521/level_base = 6
+#
+set o1521/vnum = "o1521"
+#
+set o1521/item_type = "weapon"
+#
+set o1521/wear_location = "wield"
+#
+set o1521/weight = 22
+#
+tag o1521 = gnome village:area name
+#
+tag o1521 = object
+#
+set o1521/weapon_type = "pound"
+#
+set o1521/damage_low = 4
+#
+set o1521/damage_high = 10
+#
+wieldto o1521 = m1518
+#
+set m1518/experience_total = 3852
+#
+set m1518/experience_current = 3852
+#
+set m1518/reset_objects["o1521"] = {"location":"equipped"}
+#
+tel r1569
+#
+create/drop the hobgoblin bodyguard;bodyguard;hobgoblin;m1518; m1518-2:characters.Mobile
+#
+desc m1518-2 = A hobgoblin bodyguard guards the king with his life. 
+#
+set m1518-2/level = 8
+#
+set m1518-2/level_base = 8
+#
+set m1518-2/vnum = "m1518"
+#
+set m1518-2/look_description = "This is one of the elite hobgoblin guards.  He stands tall for his short stature.  He grins a toothy grin as he prepares to attack. "
+#
+set m1518-2/act_flags = ['sentinel', 'npc']
+#
+set m1518-2/alignment = -500
+#
+set m1518-2/sex = "male"
+#
+set m1518-2/race = "hobgoblin"
+#
+tag m1518-2 = gnome village:area name
+#
+tag m1518-2 = mobile
+#
+set m1518-2/hitpoints[maximum] = 66
+#
+set m1518-2/position = "standing"
+#
+set m1518-2/experience_total = 3403
+#
+set m1518-2/experience_current = 3403
+#
+tel r1569
+#
+create a large club;club;large;o1521:objects.Weapon
+#
+sethome o1521 = m1518-2
+#
+desc o1521 = A large club sits here.
+#
+set o1521/level = 6
+#
+set o1521/level_base = 6
+#
+set o1521/vnum = "o1521"
+#
+set o1521/item_type = "weapon"
+#
+set o1521/wear_location = "wield"
+#
+set o1521/weight = 22
+#
+tag o1521 = gnome village:area name
+#
+tag o1521 = object
+#
+set o1521/weapon_type = "pound"
+#
+set o1521/damage_low = 4
+#
+set o1521/damage_high = 10
+#
+wieldto o1521 = m1518-2
+#
+set m1518-2/experience_total = 4253
+#
+set m1518-2/experience_current = 4253
+#
+set m1518-2/reset_objects["o1521"] = {"location":"equipped"}
+#
+tel r1569
+#
+create/drop the hobgoblin bodyguard;bodyguard;hobgoblin;m1518; m1518-3:characters.Mobile
+#
+desc m1518-3 = A hobgoblin bodyguard guards the king with his life. 
+#
+set m1518-3/level = 8
+#
+set m1518-3/level_base = 8
+#
+set m1518-3/vnum = "m1518"
+#
+set m1518-3/look_description = "This is one of the elite hobgoblin guards.  He stands tall for his short stature.  He grins a toothy grin as he prepares to attack. "
+#
+set m1518-3/act_flags = ['sentinel', 'npc']
+#
+set m1518-3/alignment = -500
+#
+set m1518-3/sex = "male"
+#
+set m1518-3/race = "hobgoblin"
+#
+tag m1518-3 = gnome village:area name
+#
+tag m1518-3 = mobile
+#
+set m1518-3/hitpoints[maximum] = 71
+#
+set m1518-3/position = "standing"
+#
+set m1518-3/experience_total = 3128
+#
+set m1518-3/experience_current = 3128
+#
+tel r1569
+#
+create a large club;club;large;o1521:objects.Weapon
+#
+sethome o1521 = m1518-3
+#
+desc o1521 = A large club sits here.
+#
+set o1521/level = 6
+#
+set o1521/level_base = 6
+#
+set o1521/vnum = "o1521"
+#
+set o1521/item_type = "weapon"
+#
+set o1521/wear_location = "wield"
+#
+set o1521/weight = 22
+#
+tag o1521 = gnome village:area name
+#
+tag o1521 = object
+#
+set o1521/weapon_type = "pound"
+#
+set o1521/damage_low = 4
+#
+set o1521/damage_high = 12
+#
+wieldto o1521 = m1518-3
+#
+set m1518-3/experience_total = 3910
+#
+set m1518-3/experience_current = 3910
+#
+set m1518-3/reset_objects["o1521"] = {"location":"equipped"}
+#
+tel r1569
+#
+create/drop the hobgoblin bodyguard;bodyguard;hobgoblin;m1518; m1518-4:characters.Mobile
+#
+desc m1518-4 = A hobgoblin bodyguard guards the king with his life. 
+#
+set m1518-4/level = 8
+#
+set m1518-4/level_base = 8
+#
+set m1518-4/vnum = "m1518"
+#
+set m1518-4/look_description = "This is one of the elite hobgoblin guards.  He stands tall for his short stature.  He grins a toothy grin as he prepares to attack. "
+#
+set m1518-4/act_flags = ['sentinel', 'npc']
+#
+set m1518-4/alignment = -500
+#
+set m1518-4/sex = "male"
+#
+set m1518-4/race = "hobgoblin"
+#
+tag m1518-4 = gnome village:area name
+#
+tag m1518-4 = mobile
+#
+set m1518-4/hitpoints[maximum] = 125
+#
+set m1518-4/position = "standing"
+#
+set m1518-4/experience_total = 3283
+#
+set m1518-4/experience_current = 3283
+#
+tel r1569
+#
+create a large club;club;large;o1521:objects.Weapon
+#
+sethome o1521 = m1518-4
+#
+desc o1521 = A large club sits here.
+#
+set o1521/level = 6
+#
+set o1521/level_base = 6
+#
+set o1521/vnum = "o1521"
+#
+set o1521/item_type = "weapon"
+#
+set o1521/wear_location = "wield"
+#
+set o1521/weight = 22
+#
+tag o1521 = gnome village:area name
+#
+tag o1521 = object
+#
+set o1521/weapon_type = "pound"
+#
+set o1521/damage_low = 2
+#
+set o1521/damage_high = 8
+#
+wieldto o1521 = m1518-4
+#
+set m1518-4/experience_total = 4103
+#
+set m1518-4/experience_current = 4103
+#
+set m1518-4/reset_objects["o1521"] = {"location":"equipped"}
+#
+tel r1569
+#
+create/drop the hobgoblin bodyguard;bodyguard;hobgoblin;m1518; m1518-5:characters.Mobile
+#
+desc m1518-5 = A hobgoblin bodyguard guards the king with his life. 
+#
+set m1518-5/level = 8
+#
+set m1518-5/level_base = 8
+#
+set m1518-5/vnum = "m1518"
+#
+set m1518-5/look_description = "This is one of the elite hobgoblin guards.  He stands tall for his short stature.  He grins a toothy grin as he prepares to attack. "
+#
+set m1518-5/act_flags = ['sentinel', 'npc']
+#
+set m1518-5/alignment = -500
+#
+set m1518-5/sex = "male"
+#
+set m1518-5/race = "hobgoblin"
+#
+tag m1518-5 = gnome village:area name
+#
+tag m1518-5 = mobile
+#
+set m1518-5/hitpoints[maximum] = 103
+#
+set m1518-5/position = "standing"
+#
+set m1518-5/experience_total = 3114
+#
+set m1518-5/experience_current = 3114
+#
+tel r1569
+#
+create a large club;club;large;o1521:objects.Weapon
+#
+sethome o1521 = m1518-5
+#
+desc o1521 = A large club sits here.
+#
+set o1521/level = 6
+#
+set o1521/level_base = 6
+#
+set o1521/vnum = "o1521"
+#
+set o1521/item_type = "weapon"
+#
+set o1521/wear_location = "wield"
+#
+set o1521/weight = 22
+#
+tag o1521 = gnome village:area name
+#
+tag o1521 = object
+#
+set o1521/weapon_type = "pound"
+#
+set o1521/damage_low = 4
+#
+set o1521/damage_high = 12
+#
+wieldto o1521 = m1518-5
+#
+set m1518-5/experience_total = 3892
+#
+set m1518-5/experience_current = 3892
+#
+set m1518-5/reset_objects["o1521"] = {"location":"equipped"}
+#
+tel r1569
+#
+create/drop the king of the hobgoblins;king;hobgoblin;m1519:characters.Mobile
+#
+desc m1519 = There is a great king here, sitting on his throne. 
+#
+set m1519/level = 11
+#
+set m1519/level_base = 11
+#
+set m1519/vnum = "m1519"
+#
+set m1519/look_description = "The king is a silly looking hobgoblin whose muscles bulge out of his robes, destroying the sophisticated effect he was trying to create. "
+#
+set m1519/act_flags = ['sentinel', 'npc']
+#
+set m1519/alignment = -500
+#
+set m1519/sex = "male"
+#
+set m1519/race = "hobgoblin"
+#
+tag m1519 = gnome village:area name
+#
+tag m1519 = mobile
+#
+set m1519/hitpoints[maximum] = 103
+#
+set m1519/position = "standing"
+#
+set m1519/experience_total = 7195
+#
+set m1519/experience_current = 7195
+#
+set m1519/special_function = "cast_mage"
+#
+tel r1569
+#
+create heavy banded mail;mail;heavy;banded;o1520:objects.Armor
+#
+sethome o1520 = m1519
+#
+desc o1520 = A large suit of heavy banded mail is here
+#
+set o1520/level = 9
+#
+set o1520/level_base = 9
+#
+set o1520/vnum = "o1520"
+#
+set o1520/item_type = "armor"
+#
+set o1520/wear_location = "body"
+#
+set o1520/weight = 30
+#
+tag o1520 = gnome village:area name
+#
+tag o1520 = object
+#
+set o1520/armor = 4
+#
+wearto o1520 = m1519
+#
+set m1519/reset_objects["o1520"] = {"location":"equipped"}
+#
+tel r1570
+#
+create/drop the treasurer;treasurer;hobgoblin;m1521:characters.Mobile
+#
+desc m1521 = A treasurer is here counting out money. 
+#
+set m1521/level = 6
+#
+set m1521/level_base = 6
+#
+set m1521/vnum = "m1521"
+#
+set m1521/look_description = "The hobgoblin treasurer is an old goblin with glasses.  It appears that he can only see a couple feet in front of him. "
+#
+set m1521/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m1521/alignment = -200
+#
+set m1521/sex = "male"
+#
+set m1521/race = "hobgoblin"
+#
+tag m1521 = gnome village:area name
+#
+tag m1521 = mobile
+#
+set m1521/hitpoints[maximum] = 77
+#
+set m1521/position = "standing"
+#
+set m1521/experience_total = 1392
+#
+set m1521/experience_current = 1392
+#
+tel r1570
+#
+create a pile of coins;coins;o1516:objects.Money
+#
+sethome o1516 = r1570
+#
+desc o1516 = A pile of coins.
+#
+set o1516/level = 4
+#
+set o1516/level_base = 4
+#
+set o1516/vnum = "o1516"
+#
+set o1516/item_type = "money"
+#
+set o1516/weight = 1
+#
+tag o1516 = gnome village:area name
+#
+tag o1516 = object
+#
+set o1516/value = 1000
+#
+drop o1516
+#
+set r1570/reset_objects["o1516"] = {"location":"inventory"}
+#
+tel r1570
+#
+create a pile of coins;coins;o1517:objects.Money
+#
+sethome o1517 = r1570
+#
+desc o1517 = A pile of coins.
+#
+set o1517/level = 4
+#
+set o1517/level_base = 4
+#
+set o1517/vnum = "o1517"
+#
+set o1517/item_type = "money"
+#
+set o1517/weight = 1
+#
+tag o1517 = gnome village:area name
+#
+tag o1517 = object
+#
+set o1517/value = 5000
+#
+drop o1517
+#
+set r1570/reset_objects["o1517"] = {"location":"inventory"}
+#
+tel r1571
+#
+create/drop the hobgoblin soldier;soldier;hobgoblin;m1517:characters.Mobile
+#
+desc m1517 = A hobgoblin soldier stands here. 
+#
+set m1517/level = 4
+#
+set m1517/level_base = 4
+#
+set m1517/vnum = "m1517"
+#
+set m1517/look_description = "This is just a low life hobgoblin, who couldn't make it to the ranks of the elite guards.  He looks pissed. "
+#
+set m1517/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m1517/alignment = -600
+#
+set m1517/sex = "male"
+#
+set m1517/race = "hobgoblin"
+#
+tag m1517 = gnome village:area name
+#
+tag m1517 = mobile
+#
+set m1517/hitpoints[maximum] = 33
+#
+set m1517/position = "standing"
+#
+set m1517/experience_total = 583
+#
+set m1517/experience_current = 583
+#
+tel r1571
+#
+create a large club;club;large;o1521:objects.Weapon
+#
+sethome o1521 = m1517
+#
+desc o1521 = A large club sits here.
+#
+set o1521/level = 2
+#
+set o1521/level_base = 2
+#
+set o1521/vnum = "o1521"
+#
+set o1521/item_type = "weapon"
+#
+set o1521/wear_location = "wield"
+#
+set o1521/weight = 22
+#
+tag o1521 = gnome village:area name
+#
+tag o1521 = object
+#
+set o1521/weapon_type = "pound"
+#
+set o1521/damage_low = 2
+#
+set o1521/damage_high = 6
+#
+wieldto o1521 = m1517
+#
+set m1517/experience_total = 728
+#
+set m1517/experience_current = 728
+#
+set m1517/reset_objects["o1521"] = {"location":"equipped"}
+#
+tel r1571
+#
+create/drop the hobgoblin soldier;soldier;hobgoblin;m1517; m1517-2:characters.Mobile
+#
+desc m1517-2 = A hobgoblin soldier stands here. 
+#
+set m1517-2/level = 4
+#
+set m1517-2/level_base = 4
+#
+set m1517-2/vnum = "m1517"
+#
+set m1517-2/look_description = "This is just a low life hobgoblin, who couldn't make it to the ranks of the elite guards.  He looks pissed. "
+#
+set m1517-2/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m1517-2/alignment = -600
+#
+set m1517-2/sex = "male"
+#
+set m1517-2/race = "hobgoblin"
+#
+tag m1517-2 = gnome village:area name
+#
+tag m1517-2 = mobile
+#
+set m1517-2/hitpoints[maximum] = 33
+#
+set m1517-2/position = "standing"
+#
+set m1517-2/experience_total = 647
+#
+set m1517-2/experience_current = 647
+#
+tel r1571
+#
+create a large club;club;large;o1521:objects.Weapon
+#
+sethome o1521 = m1517-2
+#
+desc o1521 = A large club sits here.
+#
+set o1521/level = 2
+#
+set o1521/level_base = 2
+#
+set o1521/vnum = "o1521"
+#
+set o1521/item_type = "weapon"
+#
+set o1521/wear_location = "wield"
+#
+set o1521/weight = 22
+#
+tag o1521 = gnome village:area name
+#
+tag o1521 = object
+#
+set o1521/weapon_type = "pound"
+#
+set o1521/damage_low = 0
+#
+set o1521/damage_high = 8
+#
+wieldto o1521 = m1517-2
+#
+set m1517-2/experience_total = 808
+#
+set m1517-2/experience_current = 808
+#
+set m1517-2/reset_objects["o1521"] = {"location":"equipped"}
+#
+tel r1571
+#
+create/drop the hobgoblin soldier;soldier;hobgoblin;m1517; m1517-3:characters.Mobile
+#
+desc m1517-3 = A hobgoblin soldier stands here. 
+#
+set m1517-3/level = 4
+#
+set m1517-3/level_base = 4
+#
+set m1517-3/vnum = "m1517"
+#
+set m1517-3/look_description = "This is just a low life hobgoblin, who couldn't make it to the ranks of the elite guards.  He looks pissed. "
+#
+set m1517-3/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m1517-3/alignment = -600
+#
+set m1517-3/sex = "male"
+#
+set m1517-3/race = "hobgoblin"
+#
+tag m1517-3 = gnome village:area name
+#
+tag m1517-3 = mobile
+#
+set m1517-3/hitpoints[maximum] = 43
+#
+set m1517-3/position = "standing"
+#
+set m1517-3/experience_total = 689
+#
+set m1517-3/experience_current = 689
+#
+tel r1571
+#
+create a large club;club;large;o1521:objects.Weapon
+#
+sethome o1521 = m1517-3
+#
+desc o1521 = A large club sits here.
+#
+set o1521/level = 2
+#
+set o1521/level_base = 2
+#
+set o1521/vnum = "o1521"
+#
+set o1521/item_type = "weapon"
+#
+set o1521/wear_location = "wield"
+#
+set o1521/weight = 22
+#
+tag o1521 = gnome village:area name
+#
+tag o1521 = object
+#
+set o1521/weapon_type = "pound"
+#
+set o1521/damage_low = 2
+#
+set o1521/damage_high = 6
+#
+wieldto o1521 = m1517-3
+#
+set m1517-3/experience_total = 861
+#
+set m1517-3/experience_current = 861
+#
+set m1517-3/reset_objects["o1521"] = {"location":"equipped"}
+#
+tel r1571
+#
+create/drop the hobgoblin soldier;soldier;hobgoblin;m1517; m1517-4:characters.Mobile
+#
+desc m1517-4 = A hobgoblin soldier stands here. 
+#
+set m1517-4/level = 4
+#
+set m1517-4/level_base = 4
+#
+set m1517-4/vnum = "m1517"
+#
+set m1517-4/look_description = "This is just a low life hobgoblin, who couldn't make it to the ranks of the elite guards.  He looks pissed. "
+#
+set m1517-4/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m1517-4/alignment = -600
+#
+set m1517-4/sex = "male"
+#
+set m1517-4/race = "hobgoblin"
+#
+tag m1517-4 = gnome village:area name
+#
+tag m1517-4 = mobile
+#
+set m1517-4/hitpoints[maximum] = 44
+#
+set m1517-4/position = "standing"
+#
+set m1517-4/experience_total = 654
+#
+set m1517-4/experience_current = 654
+#
+tel r1571
+#
+create a large club;club;large;o1521:objects.Weapon
+#
+sethome o1521 = m1517-4
+#
+desc o1521 = A large club sits here.
+#
+set o1521/level = 2
+#
+set o1521/level_base = 2
+#
+set o1521/vnum = "o1521"
+#
+set o1521/item_type = "weapon"
+#
+set o1521/wear_location = "wield"
+#
+set o1521/weight = 22
+#
+tag o1521 = gnome village:area name
+#
+tag o1521 = object
+#
+set o1521/weapon_type = "pound"
+#
+set o1521/damage_low = 2
+#
+set o1521/damage_high = 8
+#
+wieldto o1521 = m1517-4
+#
+set m1517-4/experience_total = 817
+#
+set m1517-4/experience_current = 817
+#
+set m1517-4/reset_objects["o1521"] = {"location":"equipped"}
+#
+tel r1572
+#
+create/drop the hobgoblin soldier;soldier;hobgoblin;m1517:characters.Mobile
+#
+desc m1517 = A hobgoblin soldier stands here. 
+#
+set m1517/level = 4
+#
+set m1517/level_base = 4
+#
+set m1517/vnum = "m1517"
+#
+set m1517/look_description = "This is just a low life hobgoblin, who couldn't make it to the ranks of the elite guards.  He looks pissed. "
+#
+set m1517/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m1517/alignment = -600
+#
+set m1517/sex = "male"
+#
+set m1517/race = "hobgoblin"
+#
+tag m1517 = gnome village:area name
+#
+tag m1517 = mobile
+#
+set m1517/hitpoints[maximum] = 48
+#
+set m1517/position = "standing"
+#
+set m1517/experience_total = 620
+#
+set m1517/experience_current = 620
+#
+tel r1572
+#
+create a large club;club;large;o1521:objects.Weapon
+#
+sethome o1521 = m1517
+#
+desc o1521 = A large club sits here.
+#
+set o1521/level = 2
+#
+set o1521/level_base = 2
+#
+set o1521/vnum = "o1521"
+#
+set o1521/item_type = "weapon"
+#
+set o1521/wear_location = "wield"
+#
+set o1521/weight = 22
+#
+tag o1521 = gnome village:area name
+#
+tag o1521 = object
+#
+set o1521/weapon_type = "pound"
+#
+set o1521/damage_low = 4
+#
+set o1521/damage_high = 8
+#
+wieldto o1521 = m1517
+#
+set m1517/experience_total = 775
+#
+set m1517/experience_current = 775
+#
+set m1517/reset_objects["o1521"] = {"location":"equipped"}
+#
+tel r1572
+#
+create/drop the hobgoblin soldier;soldier;hobgoblin;m1517; m1517-2:characters.Mobile
+#
+desc m1517-2 = A hobgoblin soldier stands here. 
+#
+set m1517-2/level = 4
+#
+set m1517-2/level_base = 4
+#
+set m1517-2/vnum = "m1517"
+#
+set m1517-2/look_description = "This is just a low life hobgoblin, who couldn't make it to the ranks of the elite guards.  He looks pissed. "
+#
+set m1517-2/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m1517-2/alignment = -600
+#
+set m1517-2/sex = "male"
+#
+set m1517-2/race = "hobgoblin"
+#
+tag m1517-2 = gnome village:area name
+#
+tag m1517-2 = mobile
+#
+set m1517-2/hitpoints[maximum] = 40
+#
+set m1517-2/position = "standing"
+#
+set m1517-2/experience_total = 671
+#
+set m1517-2/experience_current = 671
+#
+tel r1572
+#
+create a large club;club;large;o1521:objects.Weapon
+#
+sethome o1521 = m1517-2
+#
+desc o1521 = A large club sits here.
+#
+set o1521/level = 2
+#
+set o1521/level_base = 2
+#
+set o1521/vnum = "o1521"
+#
+set o1521/item_type = "weapon"
+#
+set o1521/wear_location = "wield"
+#
+set o1521/weight = 22
+#
+tag o1521 = gnome village:area name
+#
+tag o1521 = object
+#
+set o1521/weapon_type = "pound"
+#
+set o1521/damage_low = 2
+#
+set o1521/damage_high = 6
+#
+wieldto o1521 = m1517-2
+#
+set m1517-2/experience_total = 838
+#
+set m1517-2/experience_current = 838
+#
+set m1517-2/reset_objects["o1521"] = {"location":"equipped"}
+#
+tel r1572
+#
+create/drop the hobgoblin soldier;soldier;hobgoblin;m1517; m1517-3:characters.Mobile
+#
+desc m1517-3 = A hobgoblin soldier stands here. 
+#
+set m1517-3/level = 4
+#
+set m1517-3/level_base = 4
+#
+set m1517-3/vnum = "m1517"
+#
+set m1517-3/look_description = "This is just a low life hobgoblin, who couldn't make it to the ranks of the elite guards.  He looks pissed. "
+#
+set m1517-3/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m1517-3/alignment = -600
+#
+set m1517-3/sex = "male"
+#
+set m1517-3/race = "hobgoblin"
+#
+tag m1517-3 = gnome village:area name
+#
+tag m1517-3 = mobile
+#
+set m1517-3/hitpoints[maximum] = 46
+#
+set m1517-3/position = "standing"
+#
+set m1517-3/experience_total = 672
+#
+set m1517-3/experience_current = 672
+#
+tel r1572
+#
+create a large club;club;large;o1521:objects.Weapon
+#
+sethome o1521 = m1517-3
+#
+desc o1521 = A large club sits here.
+#
+set o1521/level = 2
+#
+set o1521/level_base = 2
+#
+set o1521/vnum = "o1521"
+#
+set o1521/item_type = "weapon"
+#
+set o1521/wear_location = "wield"
+#
+set o1521/weight = 22
+#
+tag o1521 = gnome village:area name
+#
+tag o1521 = object
+#
+set o1521/weapon_type = "pound"
+#
+set o1521/damage_low = 4
+#
+set o1521/damage_high = 6
+#
+wieldto o1521 = m1517-3
+#
+set m1517-3/experience_total = 840
+#
+set m1517-3/experience_current = 840
+#
+set m1517-3/reset_objects["o1521"] = {"location":"equipped"}
+#
+tel r1572
+#
+create/drop the hobgoblin soldier;soldier;hobgoblin;m1517; m1517-4:characters.Mobile
+#
+desc m1517-4 = A hobgoblin soldier stands here. 
+#
+set m1517-4/level = 4
+#
+set m1517-4/level_base = 4
+#
+set m1517-4/vnum = "m1517"
+#
+set m1517-4/look_description = "This is just a low life hobgoblin, who couldn't make it to the ranks of the elite guards.  He looks pissed. "
+#
+set m1517-4/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m1517-4/alignment = -600
+#
+set m1517-4/sex = "male"
+#
+set m1517-4/race = "hobgoblin"
+#
+tag m1517-4 = gnome village:area name
+#
+tag m1517-4 = mobile
+#
+set m1517-4/hitpoints[maximum] = 42
+#
+set m1517-4/position = "standing"
+#
+set m1517-4/experience_total = 702
+#
+set m1517-4/experience_current = 702
+#
+tel r1572
+#
+create a large club;club;large;o1521:objects.Weapon
+#
+sethome o1521 = m1517-4
+#
+desc o1521 = A large club sits here.
+#
+set o1521/level = 2
+#
+set o1521/level_base = 2
+#
+set o1521/vnum = "o1521"
+#
+set o1521/item_type = "weapon"
+#
+set o1521/wear_location = "wield"
+#
+set o1521/weight = 22
+#
+tag o1521 = gnome village:area name
+#
+tag o1521 = object
+#
+set o1521/weapon_type = "pound"
+#
+set o1521/damage_low = 2
+#
+set o1521/damage_high = 6
+#
+wieldto o1521 = m1517-4
+#
+set m1517-4/experience_total = 877
+#
+set m1517-4/experience_current = 877
+#
+set m1517-4/reset_objects["o1521"] = {"location":"equipped"}
+#
+tel r1573
+#
+create a large club;club;large;o1521:objects.Weapon
+#
+sethome o1521 = r1573
+#
+desc o1521 = A large club sits here.
+#
+set o1521/level = 2
+#
+set o1521/level_base = 2
+#
+set o1521/vnum = "o1521"
+#
+set o1521/item_type = "weapon"
+#
+set o1521/wear_location = "wield"
+#
+set o1521/weight = 22
+#
+tag o1521 = gnome village:area name
+#
+tag o1521 = object
+#
+set o1521/weapon_type = "pound"
+#
+set o1521/damage_low = 4
+#
+set o1521/damage_high = 8
+#
+drop o1521
+#
+set r1573/reset_objects["o1521"] = {"location":"inventory"}
+#
+tel r1577
+#
+create/drop a gnome prisoner;prisoner;gnome;m1522:characters.Mobile
+#
+desc m1522 = A gnome prisoner is here resting in the straw. 
+#
+set m1522/level = 3
+#
+set m1522/level_base = 3
+#
+set m1522/vnum = "m1522"
+#
+set m1522/look_description = "The prisoner is just barely alive. "
+#
+set m1522/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m1522/alignment = 100
+#
+set m1522/sex = "male"
+#
+set m1522/race = "gnome"
+#
+tag m1522 = gnome village:area name
+#
+tag m1522 = mobile
+#
+set m1522/hitpoints[maximum] = 26
+#
+set m1522/position = "standing"
+#
+set m1522/experience_total = 357
+#
+set m1522/experience_current = 357
+#
+tel r1578
+#
+create/drop a gnome prisoner;prisoner;gnome;m1522:characters.Mobile
+#
+desc m1522 = A gnome prisoner is here resting in the straw. 
+#
+set m1522/level = 3
+#
+set m1522/level_base = 3
+#
+set m1522/vnum = "m1522"
+#
+set m1522/look_description = "The prisoner is just barely alive. "
+#
+set m1522/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m1522/alignment = 100
+#
+set m1522/sex = "male"
+#
+set m1522/race = "gnome"
+#
+tag m1522 = gnome village:area name
+#
+tag m1522 = mobile
+#
+set m1522/hitpoints[maximum] = 32
+#
+set m1522/position = "standing"
+#
+set m1522/experience_total = 407
+#
+set m1522/experience_current = 407
+#
+tel r1579
+#
+create/drop a gnome prisoner;prisoner;gnome;m1522:characters.Mobile
+#
+desc m1522 = A gnome prisoner is here resting in the straw. 
+#
+set m1522/level = 3
+#
+set m1522/level_base = 3
+#
+set m1522/vnum = "m1522"
+#
+set m1522/look_description = "The prisoner is just barely alive. "
+#
+set m1522/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m1522/alignment = 100
+#
+set m1522/sex = "male"
+#
+set m1522/race = "gnome"
+#
+tag m1522 = gnome village:area name
+#
+tag m1522 = mobile
+#
+set m1522/hitpoints[maximum] = 25
+#
+set m1522/position = "standing"
+#
+set m1522/experience_total = 371
+#
+set m1522/experience_current = 371
+#
+tel r1580
+#
+create/drop a human prisoner;prisoner;human;m1523:characters.Mobile
+#
+desc m1523 = A human prisoner is here resting in the straw. 
+#
+set m1523/level = 7
+#
+set m1523/level_base = 7
+#
+set m1523/vnum = "m1523"
+#
+set m1523/look_description = "The prisoner is just barely alive. "
+#
+set m1523/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m1523/alignment = 100
+#
+set m1523/sex = "female"
+#
+set m1523/race = "human"
+#
+tag m1523 = gnome village:area name
+#
+tag m1523 = mobile
+#
+set m1523/hitpoints[maximum] = 66
+#
+set m1523/position = "standing"
+#
+set m1523/experience_total = 2051
+#
+set m1523/experience_current = 2051
+#
+tel r1581
+#
+create/drop a human prisoner;prisoner;human;m1523:characters.Mobile
+#
+desc m1523 = A human prisoner is here resting in the straw. 
+#
+set m1523/level = 7
+#
+set m1523/level_base = 7
+#
+set m1523/vnum = "m1523"
+#
+set m1523/look_description = "The prisoner is just barely alive. "
+#
+set m1523/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m1523/alignment = 100
+#
+set m1523/sex = "female"
+#
+set m1523/race = "human"
+#
+tag m1523 = gnome village:area name
+#
+tag m1523 = mobile
+#
+set m1523/hitpoints[maximum] = 81
+#
+set m1523/position = "standing"
+#
+set m1523/experience_total = 2272
+#
+set m1523/experience_current = 2272
+#
+tel r1583
+#
+create/drop the hobgoblin soldier;soldier;hobgoblin;m1517:characters.Mobile
+#
+desc m1517 = A hobgoblin soldier stands here. 
+#
+set m1517/level = 4
+#
+set m1517/level_base = 4
+#
+set m1517/vnum = "m1517"
+#
+set m1517/look_description = "This is just a low life hobgoblin, who couldn't make it to the ranks of the elite guards.  He looks pissed. "
+#
+set m1517/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m1517/alignment = -600
+#
+set m1517/sex = "male"
+#
+set m1517/race = "hobgoblin"
+#
+tag m1517 = gnome village:area name
+#
+tag m1517 = mobile
+#
+set m1517/hitpoints[maximum] = 39
+#
+set m1517/position = "standing"
+#
+set m1517/experience_total = 588
+#
+set m1517/experience_current = 588
+#
+tel r1583
+#
+create/drop the hobgoblin soldier;soldier;hobgoblin;m1517; m1517-2:characters.Mobile
+#
+desc m1517-2 = A hobgoblin soldier stands here. 
+#
+set m1517-2/level = 4
+#
+set m1517-2/level_base = 4
+#
+set m1517-2/vnum = "m1517"
+#
+set m1517-2/look_description = "This is just a low life hobgoblin, who couldn't make it to the ranks of the elite guards.  He looks pissed. "
+#
+set m1517-2/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m1517-2/alignment = -600
+#
+set m1517-2/sex = "male"
+#
+set m1517-2/race = "hobgoblin"
+#
+tag m1517-2 = gnome village:area name
+#
+tag m1517-2 = mobile
+#
+set m1517-2/hitpoints[maximum] = 39
+#
+set m1517-2/position = "standing"
+#
+set m1517-2/experience_total = 680
+#
+set m1517-2/experience_current = 680
+#
+tel r1584
+#
+create/drop the hobgoblin soldier;soldier;hobgoblin;m1517:characters.Mobile
+#
+desc m1517 = A hobgoblin soldier stands here. 
+#
+set m1517/level = 4
+#
+set m1517/level_base = 4
+#
+set m1517/vnum = "m1517"
+#
+set m1517/look_description = "This is just a low life hobgoblin, who couldn't make it to the ranks of the elite guards.  He looks pissed. "
+#
+set m1517/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m1517/alignment = -600
+#
+set m1517/sex = "male"
+#
+set m1517/race = "hobgoblin"
+#
+tag m1517 = gnome village:area name
+#
+tag m1517 = mobile
+#
+set m1517/hitpoints[maximum] = 40
+#
+set m1517/position = "standing"
+#
+set m1517/experience_total = 653
+#
+set m1517/experience_current = 653
+#
+tel r1584
+#
+create/drop the hobgoblin soldier;soldier;hobgoblin;m1517; m1517-2:characters.Mobile
+#
+desc m1517-2 = A hobgoblin soldier stands here. 
+#
+set m1517-2/level = 4
+#
+set m1517-2/level_base = 4
+#
+set m1517-2/vnum = "m1517"
+#
+set m1517-2/look_description = "This is just a low life hobgoblin, who couldn't make it to the ranks of the elite guards.  He looks pissed. "
+#
+set m1517-2/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m1517-2/alignment = -600
+#
+set m1517-2/sex = "male"
+#
+set m1517-2/race = "hobgoblin"
+#
+tag m1517-2 = gnome village:area name
+#
+tag m1517-2 = mobile
+#
+set m1517-2/hitpoints[maximum] = 42
+#
+set m1517-2/position = "standing"
+#
+set m1517-2/experience_total = 694
+#
+set m1517-2/experience_current = 694
+#
+tel r1587
+#
+create/drop the cook;cook;hobgoblin;m1526:characters.Mobile
+#
+desc m1526 = A hobgoblin cook stands here cooking something. 
+#
+set m1526/level = 13
+#
+set m1526/level_base = 13
+#
+set m1526/vnum = "m1526"
+#
+set m1526/look_description = "The cook is a dirty and fat hobgoblin.  He burps as he stirs up something in a pot. "
+#
+set m1526/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m1526/alignment = -300
+#
+set m1526/sex = "male"
+#
+set m1526/race = "hobgoblin"
+#
+tag m1526 = gnome village:area name
+#
+tag m1526 = mobile
+#
+set m1526/hitpoints[maximum] = 179
+#
+set m1526/position = "standing"
+#
+set m1526/experience_total = 11839
+#
+set m1526/experience_current = 11839
+#
+tel r1589
+#
+create/drop a hermit;hermit;crab;m1524:characters.Mobile
+#
+desc m1524 = A hermit crab crawls towards you. 
+#
+set m1524/level = 6
+#
+set m1524/level_base = 6
+#
+set m1524/vnum = "m1524"
+#
+set m1524/look_description = "The hermit crab is about 5 feet high and looks mad that you had the nerve to wake it up. "
+#
+set m1524/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+#
+set m1524/alignment = -10
+#
+set m1524/sex = "male"
+#
+set m1524/race = "animal"
+#
+tag m1524 = gnome village:area name
+#
+tag m1524 = mobile
+#
+set m1524/hitpoints[maximum] = 64
+#
+set m1524/position = "standing"
+#
+set m1524/experience_total = 1404
+#
+set m1524/experience_current = 1404
+#
+tel r1590
+#
+create/drop a hobgoblin miner;miner;hobgoblin;m1520:characters.Mobile
+#
+desc m1520 = A hobgoblin miner stands here looking for gold. 
+#
+set m1520/level = 4
+#
+set m1520/level_base = 4
+#
+set m1520/vnum = "m1520"
+#
+set m1520/look_description = "The miner is totally covered in dust. "
+#
+set m1520/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m1520/alignment = -400
+#
+set m1520/sex = "male"
+#
+set m1520/race = "hobgoblin"
+#
+tag m1520 = gnome village:area name
+#
+tag m1520 = mobile
+#
+set m1520/hitpoints[maximum] = 37
+#
+set m1520/position = "standing"
+#
+set m1520/experience_total = 663
+#
+set m1520/experience_current = 663
+#
+tel r1591
+#
+create/drop the priestess of Sathogua;priestess;m1528:characters.Mobile
+#
+desc m1528 = The priestess of Sathogua stands before you. 
+#
+set m1528/level = 6
+#
+set m1528/level_base = 6
+#
+set m1528/vnum = "m1528"
+#
+set m1528/look_description = "Sathogua has good taste. The priestess is a knockout. Her black robe hangs open to just below her navel. You'd stand here and stare at her forever, were it not for the grin on her lips and the sacrificial dagger in her hand. "
+#
+set m1528/act_flags = ['sentinel', 'npc']
+#
+set m1528/alignment = -800
+#
+set m1528/sex = "female"
+#
+set m1528/spell_affects = {'infrared': '', 'detect hidden': '', 'detect invis': ''}
+#
+set m1528/race = "hobgoblin"
+#
+tag m1528 = gnome village:area name
+#
+tag m1528 = mobile
+#
+set m1528/hitpoints[maximum] = 63
+#
+set m1528/position = "standing"
+#
+set m1528/experience_total = 1645
+#
+set m1528/experience_current = 1645
+#
+set m1528/special_function = "cast_mage"
+#
+tel r1591
+#
+create the Right Bracelet of Evil;bracelet;right;evil;questrightbraceletevil;o1527:objects.Armor
+#
+sethome o1527 = m1528
+#
+desc o1527 = The Right Bracelet of Evil lies here.
+#
+set o1527/level = 4
+#
+set o1527/level_base = 4
+#
+set o1527/vnum = "o1527"
+#
+set o1527/item_type = "armor"
+#
+set o1527/wear_location = "wrist"
+#
+set o1527/weight = 5
+#
+tag o1527 = gnome village:area name
+#
+tag o1527 = object
+#
+set o1527/alignment_restriction = ['neutral', 'good', 'evil']
+#
+set o1527/extra_flags = ['timed', 'machine', 'holy', 'vampire bane', 'poisoned', 'inventory', 'no remove', 'bless', 'no drop', 'magic', 'invisible', 'evil', 'lock', 'dark', 'hum', 'glow']
+#
+set o1527/special_function = ['one_owner']
+#
+set o1527/armor = 3
+#
+wearto o1527 = m1528
+#
+set m1528/reset_objects["o1527"] = {"location":"equipped"}
+#
+tel r1591
+#
+create a sacrificial dagger;dagger;o1529:objects.Weapon
+#
+sethome o1529 = m1528
+#
+desc o1529 = A sacrificial dagger lies here.
+#
+set o1529/level = 4
+#
+set o1529/level_base = 4
+#
+set o1529/vnum = "o1529"
+#
+set o1529/item_type = "weapon"
+#
+set o1529/wear_location = "wield"
+#
+set o1529/weight = 5
+#
+tag o1529 = gnome village:area name
+#
+tag o1529 = object
+#
+set o1529/extra_descriptions = {'dagger sacrificial': 'The dagger is sharp, stained with blood, and reeking of evil. It appears to have seen a lot of use.'}
+#
+set o1529/extra_flags = ['evil']
+#
+set o1529/weapon_type = "pierce"
+#
+set o1529/damage_low = 3
+#
+set o1529/damage_high = 10
+#
+wieldto o1529 = m1528
+#
+set m1528/experience_total = 2056
+#
+set m1528/experience_current = 2056
+#
+set m1528/reset_objects["o1529"] = {"location":"equipped"}
+#

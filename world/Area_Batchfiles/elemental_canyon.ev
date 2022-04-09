@@ -1,0 +1,8924 @@
+dig/tel Mesa Central; r9262
+#
+tag r9262 = elemental canyon:area name
+#
+desc r9262 = The mesa continues both east and west from here. The alternative is a steep path almost straight up out of the canyon towards a mountain in the distance to the north. 
+#
+desc/edit r9262
+#
+:j l
+#
+:wq
+#
+set r9262/vnum = "r9262"
+#
+set r9262/terrain = "hills"
+#
+dig/tel A Mountain Path; r9201
+#
+tag r9201 = elemental canyon:area name
+#
+desc r9201 = You are on a mountain path which ascends a steep mountainside.  The trail curves around the mountain so that you cannot really see what lies ahead. You do sense great power though coming from the area behind the mountain. 
+#
+desc/edit r9201
+#
+:j l
+#
+:wq
+#
+set r9201/vnum = "r9201"
+#
+set r9201/terrain = "mountain"
+#
+set r9201/room_flags = ['no mob']
+#
+dig/tel A Mountain Path; r9202
+#
+tag r9202 = elemental canyon:area name
+#
+desc r9202 = You are on a rocky mountain path leading up and around a steep mountainside. You sense a glow from the area beyond the mountain, which you cannot see yet. 
+#
+desc/edit r9202
+#
+:j l
+#
+:wq
+#
+set r9202/vnum = "r9202"
+#
+set r9202/terrain = "mountain"
+#
+dig/tel Mountainside Tombs; r9203
+#
+tag r9203 = elemental canyon:area name
+#
+desc r9203 = There are a few stone heaps here and there, the tombs of those who did not last the arduous journey up the mountain.  Curiously you notice a few uncovered bodies which don't seem to have died of exhaustion.  The path curves east around the mountain. 
+#
+desc/edit r9203
+#
+:j l
+#
+:wq
+#
+set r9203/vnum = "r9203"
+#
+set r9203/terrain = "mountain"
+#
+set r9203/extra_description = {'heaps stones tombs': "You are sure glad that YOU aren't under one of those piles! Many of the tombstones have the same name on them, 'Raff'.  He must come here a lot. ", 'bodies body dead': 'They look as if their necks have been broken and their flesh, chewed. '}
+#
+dig/tel A Blind Curve on the Mountain Path.; r9204
+#
+tag r9204 = elemental canyon:area name
+#
+desc r9204 = This looks like a normal mountain path, but it is NOT!  This section of the path is inhabited by a huge (and of course, man-eating) Cyclops.  The path makes its final ascent to an overlook. 
+#
+desc/edit r9204
+#
+:j l
+#
+:wq
+#
+set r9204/vnum = "r9204"
+#
+set r9204/terrain = "mountain"
+#
+dig/tel Vista; r9205
+#
+tag r9205 = elemental canyon:area name
+#
+desc r9205 = This is a stunning vista overlooking a canyon.  There is a sign here that says: BEHOLD -- ELEMENTAL CANYON Fire leaps up from firepits in the western part of the canyon.  The sky looks funny, and the air seems hazy to the northwest.  Electricity sparks intermittently in the northeast.  To the east you see a strong, magic-looking river flowing through the canyon.  Also to the east you spy a cave entrance leading into the canyon wall.  The path descends to the north to another overlook. 
+#
+desc/edit r9205
+#
+:j l
+#
+:wq
+#
+set r9205/vnum = "r9205"
+#
+set r9205/terrain = "mountain"
+#
+set r9205/room_flags = ['no mob']
+#
+dig/tel The Overlook; r9206
+#
+tag r9206 = elemental canyon:area name
+#
+desc r9206 = You see various elemental servants wandering around the canyon.  The noise of humming coming from the canyon gets louder.  The path makes a steep descent into the canyon here. 
+#
+desc/edit r9206
+#
+:j l
+#
+:wq
+#
+set r9206/vnum = "r9206"
+#
+set r9206/terrain = "mountain"
+#
+dig/tel Entrance to Elemental Canyon; r9207
+#
+tag r9207 = elemental canyon:area name
+#
+desc r9207 = You are awed by the sounds and sights of great powers at work here. Elemental servants bustle back and forth doing the bidding of the elemental rulers.  You see a sort of cross roads to the north, and you can climb up to the overlook here. 
+#
+desc/edit r9207
+#
+:j l
+#
+:wq
+#
+set r9207/vnum = "r9207"
+#
+set r9207/terrain = "forest"
+#
+dig/tel The Floor of the Canyon; r9208
+#
+tag r9208 = elemental canyon:area name
+#
+desc r9208 = Various elemental forms wander the floor of the canyon.  Some seem to be going about their business, while others seem to have no business at all. In general, it is calm, yet there is always a incessant buzz of things going on about.  The canyon continues north and east. 
+#
+desc/edit r9208
+#
+:j l
+#
+:wq
+#
+set r9208/vnum = "r9208"
+#
+set r9208/terrain = "forest"
+#
+dig/tel Elemental Gateway; r9209
+#
+tag r9209 = elemental canyon:area name
+#
+desc r9209 = To the west a path dips and winds among some flowing firepits.  To the northeast a path goes toward the river.  Beyond toward the northeast and northwest are outcrops which rise up from the canyon floor. To the east there is a cave mouth which leads into the canyon wall.  And to the south the path leads up, away, and out of the canyon.  Various pure and cross-breeds of elemental forms wander the canyon floor, which extends in a wide swath northwards. 
+#
+desc/edit r9209
+#
+:j l
+#
+:wq
+#
+set r9209/vnum = "r9209"
+#
+set r9209/terrain = "forest"
+#
+dig/tel The Floor of the Canyon; r9210
+#
+tag r9210 = elemental canyon:area name
+#
+desc r9210 = Various elemental forms wander the floor of the canyon.  Some seem to be going about their business, while others seem to have no business at all.  In general, it is calm, yet there is always a incessant buzz of things going on about.  The canyon floor extends north and west.  There is a cave mouth set into the canyon wall to the east. 
+#
+desc/edit r9210
+#
+:j l
+#
+:wq
+#
+set r9210/vnum = "r9210"
+#
+set r9210/terrain = "forest"
+#
+dig/tel The Floor of the Canyon; r9211
+#
+tag r9211 = elemental canyon:area name
+#
+desc r9211 = Various elemental forms wander the floor of the canyon.  Some seem to be going about their business, while others seem to have no business at all.  In general, it is calm, yet there is always an incessant buzz of things going on about.  The canyon floor extends off to the north, east, and south. 
+#
+desc/edit r9211
+#
+:j l
+#
+:wq
+#
+set r9211/vnum = "r9211"
+#
+set r9211/terrain = "forest"
+#
+dig/tel The Floor of the Canyon; r9212
+#
+tag r9212 = elemental canyon:area name
+#
+desc r9212 = Various elemental forms wander the floor of the canyon.  Some seem to be going about their business, while others seem to have no business at all.  In general, it is calm, yet there is always an incessant buzz of things going on about.  The canyon floor extends in all directions. 
+#
+desc/edit r9212
+#
+:j l
+#
+:wq
+#
+set r9212/vnum = "r9212"
+#
+set r9212/terrain = "forest"
+#
+dig/tel The Floor of the Canyon; r9213
+#
+tag r9213 = elemental canyon:area name
+#
+desc r9213 = Various elemental forms wander the floor of the canyon.  Some seem to be going about their business, while others seem to have no business at all.  In general, it is calm, yet there is always an incessant buzz of things going on about.  The canyon floor extends north, south, and west. A path follows a stream to the east. 
+#
+desc/edit r9213
+#
+:j l
+#
+:wq
+#
+set r9213/vnum = "r9213"
+#
+set r9213/terrain = "forest"
+#
+dig/tel The Floor of the Canyon; r9214
+#
+tag r9214 = elemental canyon:area name
+#
+desc r9214 = Various elemental forms wander the floor of the canyon.  Some seem to be going about their business, while others seem to have no business at all.  In general, it is calm, yet there is always an incessant buzz of things going on about. The canyon floor extends north, east, and south. To the west a garden is on fire. 
+#
+desc/edit r9214
+#
+:j l
+#
+:wq
+#
+set r9214/vnum = "r9214"
+#
+set r9214/terrain = "forest"
+#
+dig/tel The Floor of the Canyon; r9215
+#
+tag r9215 = elemental canyon:area name
+#
+desc r9215 = Various elemental forms wander the floor of the canyon.  Some seem to be going about their business, while others seem to have no business at all.  In general, it is calm, yet there is always an incessant buzz of things going on about.  The canyon floor extends in all directions. 
+#
+desc/edit r9215
+#
+:j l
+#
+:wq
+#
+set r9215/vnum = "r9215"
+#
+set r9215/terrain = "forest"
+#
+dig/tel The Floor of the Canyon; r9216
+#
+tag r9216 = elemental canyon:area name
+#
+desc r9216 = Various elemental forms wander the floor of the canyon.  Some seem to be going about their business, while others seem to have no business at all.  In general, it is calm, yet there is always an incessant buzz of things going on about.  The Canyon floor extends north, south and west. 
+#
+desc/edit r9216
+#
+:j l
+#
+:wq
+#
+set r9216/vnum = "r9216"
+#
+set r9216/terrain = "forest"
+#
+dig/tel The Floor of the Canyon; r9217
+#
+tag r9217 = elemental canyon:area name
+#
+desc r9217 = Various elemental forms wander the floor of the canyon.  Some seem to be going about their business, while others seem to have no business at all.  In general, it is calm, yet there is always an incessant buzz of things going on about. The canyon floor extends east and south.  You can climb a rise in the canyon floor to the north. 
+#
+desc/edit r9217
+#
+:j l
+#
+:wq
+#
+set r9217/vnum = "r9217"
+#
+set r9217/terrain = "forest"
+#
+dig/tel The Floor of the Canyon; r9218
+#
+tag r9218 = elemental canyon:area name
+#
+desc r9218 = Various elemental forms wander the floor of the canyon.  Some seem to be going about their business, while others seem to have no business at all.  In general, it is calm, yet there is always an incessant buzz of things going on about.  The canyon floor extends east, south, and west. 
+#
+desc/edit r9218
+#
+:j l
+#
+:wq
+#
+set r9218/vnum = "r9218"
+#
+set r9218/terrain = "forest"
+#
+dig/tel The Floor of the Canyon; r9219
+#
+tag r9219 = elemental canyon:area name
+#
+desc r9219 = Various elemental forms wander the floor of the canyon.  Some seem to be going about their business, while others seem to have no business at all.  In general, it is calm, yet there is always an incessant buzz of things going on about.  The canyon floor extends south and west.  You can climb a rise in the canyon floor to the north. 
+#
+desc/edit r9219
+#
+:j l
+#
+:wq
+#
+set r9219/vnum = "r9219"
+#
+set r9219/terrain = "forest"
+#
+dig/tel Dark Cave; r9220
+#
+tag r9220 = elemental canyon:area name
+#
+desc r9220 = You notice a path winding east among some huge boulders.  You feel a powerful source of energy from that direction. 
+#
+desc/edit r9220
+#
+:j l
+#
+:wq
+#
+set r9220/vnum = "r9220"
+#
+set r9220/terrain = "forest"
+#
+set r9220/room_flags = ['indoors', 'dark']
+#
+dig/tel Darker Caves; r9221
+#
+tag r9221 = elemental canyon:area name
+#
+desc r9221 = You can barely see your way even with a light source.  The rocks of the cave are even darker than the darkness.  You hear a powerful humming all around you.  Cave paths go south and east roughly, it's hard to tell exactly when you can't see where you are going. 
+#
+desc/edit r9221
+#
+:j l
+#
+:wq
+#
+set r9221/vnum = "r9221"
+#
+set r9221/terrain = "forest"
+#
+set r9221/room_flags = ['indoors', 'dark']
+#
+dig/tel Darker Caves; r9222
+#
+tag r9222 = elemental canyon:area name
+#
+desc r9222 = You can barely see your way even with a light source.  The rocks of the cave are even darker than the darkness.  You hear a powerful humming all around you.  Cave paths go south and west roughly; it's hard to tell exactly when you can't see where you are going. 
+#
+desc/edit r9222
+#
+:j l
+#
+:wq
+#
+set r9222/vnum = "r9222"
+#
+set r9222/terrain = "forest"
+#
+set r9222/room_flags = ['indoors', 'dark']
+#
+dig/tel Darker Caves; r9223
+#
+tag r9223 = elemental canyon:area name
+#
+desc r9223 = You can barely see your way even with a light source.  The rocks of the cave are even darker than the darkness.  You hear a powerful humming all around you. Cave paths go north, south and east roughly; it's hard to tell exactly when you can't see where you are going. 
+#
+desc/edit r9223
+#
+:j l
+#
+:wq
+#
+set r9223/vnum = "r9223"
+#
+set r9223/terrain = "forest"
+#
+set r9223/room_flags = ['indoors', 'dark']
+#
+dig/tel Darker Caves; r9224
+#
+tag r9224 = elemental canyon:area name
+#
+desc r9224 = You can barely see your way even with a light source.  The rocks of the cave are even darker than the darkness.  You hear a powerful humming all around you. Cave paths go north, south and west roughly, it's hard to tell exactly when you can't see where you are going. 
+#
+desc/edit r9224
+#
+:j l
+#
+:wq
+#
+set r9224/vnum = "r9224"
+#
+set r9224/terrain = "forest"
+#
+set r9224/room_flags = ['indoors', 'dark']
+#
+dig/tel Darkest Caves; r9225
+#
+tag r9225 = elemental canyon:area name
+#
+desc r9225 = Your light doesn't even seem to work here.  Even magical light sources seem only to illuminate about a foot ahead of you.  You suddenly realize that the path has descended quite a bit but you didn't notice before because of the darkness.  You sense a great presence off to the east a ways. 
+#
+desc/edit r9225
+#
+:j l
+#
+:wq
+#
+set r9225/vnum = "r9225"
+#
+set r9225/terrain = "forest"
+#
+set r9225/room_flags = ['indoors', 'dark']
+#
+dig/tel Darkest Caves; r9226
+#
+tag r9226 = elemental canyon:area name
+#
+desc r9226 = Your light doesn't even seem to work here.  Even magical light sources seem only to illuminate about a foot ahead of you.  You suddenly realize that the path has descended quite a bit but you didn't notice before because of the darkness.  You sense a great presence directly to the east. 
+#
+desc/edit r9226
+#
+:j l
+#
+:wq
+#
+set r9226/vnum = "r9226"
+#
+set r9226/terrain = "forest"
+#
+set r9226/room_flags = ['indoors', 'dark']
+#
+dig/tel Earth Chamber; r9227
+#
+tag r9227 = elemental canyon:area name
+#
+desc r9227 = This is the abode of the Earth Ruler.  He decides about earthquakes, landslides, and avalanches.  The Earth Ruler sits upon a huge marble throne carved into the wall. 
+#
+desc/edit r9227
+#
+:j l
+#
+:wq
+#
+set r9227/vnum = "r9227"
+#
+set r9227/terrain = "forest"
+#
+set r9227/extra_description = {'marble throne': "The ruler notices your stare, and doesn't like it one bit!  The whole Earth seems to shake with his emotion. "}
+#
+set r9227/room_flags = ['indoors', 'dark']
+#
+dig/tel By the River; r9228
+#
+tag r9228 = elemental canyon:area name
+#
+desc r9228 = The water in the river seems to bubble and froth with magic.  Though it splashes playfully on you, it does not seem wet.  The path leads north closer to the water. To the west you see a T-intersection. 
+#
+desc/edit r9228
+#
+:j l
+#
+:wq
+#
+set r9228/vnum = "r9228"
+#
+set r9228/terrain = "forest"
+#
+dig/tel In the River; r9229
+#
+tag r9229 = elemental canyon:area name
+#
+desc r9229 = To continue you had to walk right in the river.  Though you walk along in water up to your knees, you do not seem to get wet.  A bay stretches out to the north and the river goes south. 
+#
+desc/edit r9229
+#
+:j l
+#
+:wq
+#
+set r9229/vnum = "r9229"
+#
+set r9229/terrain = "water swim"
+#
+dig/tel Elemental Bay; r9230
+#
+tag r9230 = elemental canyon:area name
+#
+desc r9230 = The water is crystal clear here and you can see the bottom of the bay 30 feet below you.  Then you realize you are walking on the water itself.  Truly magical water indeed.  Though you splash through the bay you do not get wet. 
+#
+desc/edit r9230
+#
+:j l
+#
+:wq
+#
+set r9230/vnum = "r9230"
+#
+set r9230/terrain = "water swim"
+#
+dig/tel Elemental Bay; r9231
+#
+tag r9231 = elemental canyon:area name
+#
+desc r9231 = The water is crystal clear here and you can see the bottom of the bay 30 feet below you.  Then you realize you are walking on the water itself.  Truly magical water indeed.  Though you splash through the bay you do not get wet. 
+#
+desc/edit r9231
+#
+:j l
+#
+:wq
+#
+set r9231/vnum = "r9231"
+#
+set r9231/terrain = "water swim"
+#
+dig/tel Elemental Bay; r9232
+#
+tag r9232 = elemental canyon:area name
+#
+desc r9232 = The water is crystal clear here and you can see the bottom of the bay 30 feet below you.  Then you realize you are walking on the water itself.  Truly magical water indeed.  Though you splash through the bay you do not get wet. 
+#
+desc/edit r9232
+#
+:j l
+#
+:wq
+#
+set r9232/vnum = "r9232"
+#
+set r9232/terrain = "water swim"
+#
+dig/tel Elemental Bay; r9233
+#
+tag r9233 = elemental canyon:area name
+#
+desc r9233 = The water is crystal clear here and you can see the bottom of the bay 30 feet below you.  Then you realize you are walking on the water itself.  Truly magical water indeed.  Though you splash through the bay you do not get wet. 
+#
+desc/edit r9233
+#
+:j l
+#
+:wq
+#
+set r9233/vnum = "r9233"
+#
+set r9233/terrain = "water swim"
+#
+dig/tel Elemental Bay; r9234
+#
+tag r9234 = elemental canyon:area name
+#
+desc r9234 = The water is crystal clear here and you can see the bottom of the bay 30 feet below you.  Then you realize you are walking on the water itself.  Truly magical water indeed.  Though you splash through the bay you do not get wet. 
+#
+desc/edit r9234
+#
+:j l
+#
+:wq
+#
+set r9234/vnum = "r9234"
+#
+set r9234/terrain = "water swim"
+#
+dig/tel Elemental Bay; r9235
+#
+tag r9235 = elemental canyon:area name
+#
+desc r9235 = The water is crystal clear here and you can see the bottom of the bay 30 feet below you.  Then you realize you are walking on the water itself.  Truly magical water indeed.  Though you splash through the bay you do not get wet. 
+#
+desc/edit r9235
+#
+:j l
+#
+:wq
+#
+set r9235/vnum = "r9235"
+#
+set r9235/terrain = "water swim"
+#
+dig/tel Water Chamber; r9236
+#
+tag r9236 = elemental canyon:area name
+#
+desc r9236 = This chamber was magically created here on the floor of the bay.  It looks like it's been here for a long, long time.  Though you are 'under water' there is no difficulty breathing normally, and oddly you do not feel the pressure of the water above you. 
+#
+desc/edit r9236
+#
+:j l
+#
+:wq
+#
+set r9236/vnum = "r9236"
+#
+set r9236/terrain = "water swim"
+#
+set r9236/room_flags = ['indoors']
+#
+dig/tel A Fiery Pathway; r9237
+#
+tag r9237 = elemental canyon:area name
+#
+desc r9237 = You tread carefully along a path which dips and turns among geysers of fire. Miniature volcanoes spew lava in rivers.  The fire is hot but not altogether dangerous.  The path extends east and south. 
+#
+desc/edit r9237
+#
+:j l
+#
+:wq
+#
+set r9237/vnum = "r9237"
+#
+set r9237/terrain = "mountain"
+#
+dig/tel A Fiery Pathway; r9238
+#
+tag r9238 = elemental canyon:area name
+#
+desc r9238 = You tread carefully along a path which dips and turns among pits of fire and beds of coals.  A garden to the west glows with an everlasting fire. 
+#
+desc/edit r9238
+#
+:j l
+#
+:wq
+#
+set r9238/vnum = "r9238"
+#
+set r9238/terrain = "mountain"
+#
+dig/tel The Burning Gardens; r9242
+#
+tag r9242 = elemental canyon:area name
+#
+desc r9242 = Everywhere around you the landscape is afire; the rocks, the shrubs and even the air seems to be aflame.  Curiously, the magical fire does not seem to consume its hosts.  A path leads east among some fire pits. 
+#
+desc/edit r9242
+#
+:j l
+#
+:wq
+#
+set r9242/vnum = "r9242"
+#
+set r9242/terrain = "mountain"
+#
+dig/tel The Fire Chamber; r9245
+#
+tag r9245 = elemental canyon:area name
+#
+desc r9245 = The fire ruler sits upon a throne made of blue flame.  Little flickers of flame dance to and fro for the entertainment of the ruler. 
+#
+desc/edit r9245
+#
+:j l
+#
+:wq
+#
+set r9245/vnum = "r9245"
+#
+set r9245/terrain = "forest"
+#
+dig/tel Electric Pathway; r9246
+#
+tag r9246 = elemental canyon:area name
+#
+desc r9246 = The pathway glows and hums because of the electricity pulsing through it. It seems almost soothing to your weary feet.  To the north there is a sunken-in area.  A path leads east also. 
+#
+desc/edit r9246
+#
+:j l
+#
+:wq
+#
+set r9246/vnum = "r9246"
+#
+set r9246/terrain = "forest"
+#
+dig/tel The Electric Playground; r9247
+#
+tag r9247 = elemental canyon:area name
+#
+desc r9247 = Though there is a seemingly carefree atmosphere here, you sense that something much more important takes place nearby.  The electric playground extends north and east. 
+#
+desc/edit r9247
+#
+:j l
+#
+:wq
+#
+set r9247/vnum = "r9247"
+#
+set r9247/terrain = "hills"
+#
+dig/tel The Electric Playground; r9248
+#
+tag r9248 = elemental canyon:area name
+#
+desc r9248 = Though there is a seemingly carefree atmosphere here, you sense that something much more important takes place nearby.  There is an electric path heading away south.  The playground extends north and west. 
+#
+desc/edit r9248
+#
+:j l
+#
+:wq
+#
+set r9248/vnum = "r9248"
+#
+set r9248/terrain = "hills"
+#
+dig/tel The Electric Playground; r9249
+#
+tag r9249 = elemental canyon:area name
+#
+desc r9249 = Though there is a seemingly carefree atmosphere here, you sense that something much more important takes place nearby.  The playground continues south and east. 
+#
+desc/edit r9249
+#
+:j l
+#
+:wq
+#
+set r9249/vnum = "r9249"
+#
+set r9249/terrain = "hills"
+#
+dig/tel The Electric Playground; r9250
+#
+tag r9250 = elemental canyon:area name
+#
+desc r9250 = Though there is a seemingly carefree atmosphere here, you sense that something much more important takes place nearby.  The playground is south and west.  Something more important catches your eye to the east. 
+#
+desc/edit r9250
+#
+:j l
+#
+:wq
+#
+set r9250/vnum = "r9250"
+#
+set r9250/terrain = "hills"
+#
+dig/tel Lightning Causeway; r9251
+#
+tag r9251 = elemental canyon:area name
+#
+desc r9251 = Up a set of stairs carved into the hill you see intermittent flashes of lightning.  A continuous hum also comes from that direction.  To the west is the electric playground. 
+#
+desc/edit r9251
+#
+:j l
+#
+:wq
+#
+set r9251/vnum = "r9251"
+#
+set r9251/terrain = "hills"
+#
+dig/tel Lightning Chamber; r9252
+#
+tag r9252 = elemental canyon:area name
+#
+desc r9252 = There is some sort of control panel here. Apparently the Lightning Ruler observes and controls electric forces from here.  A set of steps carved into the hill leads down to a causeway. 
+#
+desc/edit r9252
+#
+:j l
+#
+:wq
+#
+set r9252/vnum = "r9252"
+#
+set r9252/terrain = "water swim"
+#
+set r9252/room_flags = ['indoors']
+#
+dig/tel Mesa West; r9253
+#
+tag r9253 = elemental canyon:area name
+#
+desc r9253 = An electric path starts to the west.  The mesa continues to the east. Or you can climb down to the canyon floor to the south. 
+#
+desc/edit r9253
+#
+:j l
+#
+:wq
+#
+set r9253/vnum = "r9253"
+#
+set r9253/terrain = "hills"
+#
+dig/tel Mesa East; r9254
+#
+tag r9254 = elemental canyon:area name
+#
+desc r9254 = A path starts to the north.  The mesa continues to the west. Or you can climb down to the canyon floor to the south. 
+#
+desc/edit r9254
+#
+:j l
+#
+:wq
+#
+set r9254/vnum = "r9254"
+#
+set r9254/terrain = "hills"
+#
+dig/tel Floating in Air; r9255
+#
+tag r9255 = elemental canyon:area name
+#
+desc r9255 = Last you knew, you were walking on the mesa.  Abruptly the path dropped from beneath your feet much too quickly for you to recover.  Instead of plunging to your death, you seemingly miss the ground and begin walking on air.  The space to the north and east seems just thin air, but you can walk there.  The pathway you came from is to the south. 
+#
+desc/edit r9255
+#
+:j l
+#
+:wq
+#
+set r9255/vnum = "r9255"
+#
+set r9255/terrain = "hills"
+#
+dig/tel Floating in Air; r9256
+#
+tag r9256 = elemental canyon:area name
+#
+desc r9256 = You look down and see the ground 100 feet below you.  The wind whispering in your ear seems to reassure you that this is fine.  To the north a ways you spy a portal of sorts.  To the west is more thin air. 
+#
+desc/edit r9256
+#
+:j l
+#
+:wq
+#
+set r9256/vnum = "r9256"
+#
+set r9256/terrain = "hills"
+#
+dig/tel Floating in Air; r9257
+#
+tag r9257 = elemental canyon:area name
+#
+desc r9257 = You look down and see the ground 100 feet below you.  The wind whispering in your ear seems to reassure you that this is fine.  To the east a ways you spy a portal of sorts.  To the south is more thin air. 
+#
+desc/edit r9257
+#
+:j l
+#
+:wq
+#
+set r9257/vnum = "r9257"
+#
+set r9257/terrain = "hills"
+#
+dig/tel Floating in Air; r9258
+#
+tag r9258 = elemental canyon:area name
+#
+desc r9258 = You look down and see the ground 100 feet below you.  The wind whispering in your ear seems to reassure you that this is fine. There is a portal hanging in midair here. It is to the east.  You can float south or west if you'd like. 
+#
+desc/edit r9258
+#
+:j l
+#
+:wq
+#
+set r9258/vnum = "r9258"
+#
+set r9258/terrain = "hills"
+#
+set r9258/extra_description = {'portal': 'Through the portal you see a tunnel. '}
+#
+dig/tel Windy Tunnel; r9259
+#
+tag r9259 = elemental canyon:area name
+#
+desc r9259 = A tunnel leads east.  To the west you can enter a portal. The wind in this tunnel is quite fierce, it seems as if it's forced. 
+#
+desc/edit r9259
+#
+:j l
+#
+:wq
+#
+set r9259/vnum = "r9259"
+#
+set r9259/terrain = "hills"
+#
+set r9259/extra_description = {'portal': 'Through the portal you see nothing but sky. '}
+#
+dig/tel Air Chamber; r9260
+#
+tag r9260 = elemental canyon:area name
+#
+desc r9260 = Tiny tornadoes come and go and dance along the ground here.  At the back of the chamber you notice a huge throne made of swirling clouds. A tunnel leads west. 
+#
+desc/edit r9260
+#
+:j l
+#
+:wq
+#
+set r9260/vnum = "r9260"
+#
+set r9260/terrain = "water swim"
+#
+set r9260/extra_description = {'throne clouds': "Although the cloud throne appears solid enough to sit on, I wouldn't try it if I were you! "}
+#
+set r9260/room_flags = ['indoors']
+#
+dig/tel Climbing the Wall of the Canyon; r9261
+#
+tag r9261 = elemental canyon:area name
+#
+desc r9261 = There is a large mesa below you, which appears to branch to both the east and west. The more pressing situation, however, is that you appear to be in the middle of an almost sheer wall heading up from the mesa to a ridge heading off to the north. 
+#
+desc/edit r9261
+#
+:j l
+#
+:wq
+#
+set r9261/vnum = "r9261"
+#
+set r9261/terrain = "hills"
+#
+tel r9262
+#
+openexit east; e; e3600^ west = r9254
+#
+tag e3600 = elemental canyon:area name
+#
+set e3600/door_attributes = ["open"]
+#
+set e3600/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3601^ east = r9253
+#
+tag e3601 = elemental canyon:area name
+#
+set e3601/door_attributes = ["open"]
+#
+set e3601/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+openexit up; u; e3602^ down = r9261
+#
+tag e3602 = elemental canyon:area name
+#
+set e3602/door_attributes = ["open"]
+#
+set e3602/reset_door_attributes = ["open"]
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r9201
+#
+openexit south; s; e3603^ north = r10018
+#
+tag e3603 = elemental canyon:area name
+#
+set e3603/door_attributes = ["open"]
+#
+set e3603/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit up; u; e3604^ down = r9202
+#
+tag e3604 = elemental canyon:area name
+#
+set e3604/door_attributes = ["open"]
+#
+set e3604/reset_door_attributes = ["open"]
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r9202
+#
+openexit up; u; e3605^ down = r9203
+#
+tag e3605 = elemental canyon:area name
+#
+set e3605/door_attributes = ["open"]
+#
+set e3605/reset_door_attributes = ["open"]
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+alias down = d^ e3606
+#
+tag e3606 = elemental canyon:area name
+#
+set e3606/door_attributes = ["open"]
+#
+set e3606/reset_door_attributes = ["open"]
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r9203
+#
+openexit up; u; e3607^ down = r9204
+#
+tag e3607 = elemental canyon:area name
+#
+set e3607/door_attributes = ["open"]
+#
+set e3607/reset_door_attributes = ["open"]
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+alias down = d^ e3608
+#
+tag e3608 = elemental canyon:area name
+#
+set e3608/door_attributes = ["open"]
+#
+set e3608/reset_door_attributes = ["open"]
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r9204
+#
+openexit up; u; e3609^ down = r9205
+#
+tag e3609 = elemental canyon:area name
+#
+set e3609/door_attributes = ["open"]
+#
+set e3609/reset_door_attributes = ["open"]
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+alias down = d^ e3610
+#
+tag e3610 = elemental canyon:area name
+#
+set e3610/door_attributes = ["open"]
+#
+set e3610/reset_door_attributes = ["open"]
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r9205
+#
+openexit north; n; e3611^ south = r9206
+#
+tag e3611 = elemental canyon:area name
+#
+set e3611/door_attributes = ["open"]
+#
+set e3611/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias down = d^ e3612
+#
+tag e3612 = elemental canyon:area name
+#
+set e3612/door_attributes = ["open"]
+#
+set e3612/reset_door_attributes = ["open"]
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r9206
+#
+alias south = s^ e3613
+#
+tag e3613 = elemental canyon:area name
+#
+set e3613/door_attributes = ["open"]
+#
+set e3613/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit down; d; e3614^ up = r9207
+#
+tag e3614 = elemental canyon:area name
+#
+set e3614/door_attributes = ["open"]
+#
+set e3614/reset_door_attributes = ["open"]
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r9207
+#
+openexit north; n; e3615^ south = r9209
+#
+tag e3615 = elemental canyon:area name
+#
+set e3615/door_attributes = ["open"]
+#
+set e3615/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias up = u^ e3616
+#
+tag e3616 = elemental canyon:area name
+#
+set e3616/door_attributes = ["open"]
+#
+set e3616/reset_door_attributes = ["open"]
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r9208
+#
+openexit north; n; e3617^ south = r9211
+#
+tag e3617 = elemental canyon:area name
+#
+set e3617/door_attributes = ["open"]
+#
+set e3617/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3618^ west = r9209
+#
+tag e3618 = elemental canyon:area name
+#
+set e3618/door_attributes = ["open"]
+#
+set e3618/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r9209
+#
+openexit north; n; e3619^ south = r9212
+#
+tag e3619 = elemental canyon:area name
+#
+set e3619/door_attributes = ["open"]
+#
+set e3619/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3620^ west = r9210
+#
+tag e3620 = elemental canyon:area name
+#
+set e3620/door_attributes = ["open"]
+#
+set e3620/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3621
+#
+tag e3621 = elemental canyon:area name
+#
+set e3621/door_attributes = ["open"]
+#
+set e3621/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3622
+#
+tag e3622 = elemental canyon:area name
+#
+set e3622/door_attributes = ["open"]
+#
+set e3622/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9210
+#
+openexit north; n; e3623^ south = r9213
+#
+tag e3623 = elemental canyon:area name
+#
+set e3623/door_attributes = ["open"]
+#
+set e3623/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3624^ west = r9220
+#
+tag e3624 = elemental canyon:area name
+#
+set e3624/door_attributes = ["open"]
+#
+set e3624/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3625
+#
+tag e3625 = elemental canyon:area name
+#
+set e3625/door_attributes = ["open"]
+#
+set e3625/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9211
+#
+openexit north; n; e3626^ south = r9214
+#
+tag e3626 = elemental canyon:area name
+#
+set e3626/door_attributes = ["open"]
+#
+set e3626/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3627^ west = r9212
+#
+tag e3627 = elemental canyon:area name
+#
+set e3627/door_attributes = ["open"]
+#
+set e3627/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3628
+#
+tag e3628 = elemental canyon:area name
+#
+set e3628/door_attributes = ["open"]
+#
+set e3628/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9212
+#
+openexit north; n; e3629^ south = r9215
+#
+tag e3629 = elemental canyon:area name
+#
+set e3629/door_attributes = ["open"]
+#
+set e3629/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3630^ west = r9213
+#
+tag e3630 = elemental canyon:area name
+#
+set e3630/door_attributes = ["open"]
+#
+set e3630/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3631
+#
+tag e3631 = elemental canyon:area name
+#
+set e3631/door_attributes = ["open"]
+#
+set e3631/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3632
+#
+tag e3632 = elemental canyon:area name
+#
+set e3632/door_attributes = ["open"]
+#
+set e3632/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9213
+#
+openexit north; n; e3633^ south = r9216
+#
+tag e3633 = elemental canyon:area name
+#
+set e3633/door_attributes = ["open"]
+#
+set e3633/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3634^ west = r9228
+#
+tag e3634 = elemental canyon:area name
+#
+set e3634/door_attributes = ["open"]
+#
+set e3634/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3635
+#
+tag e3635 = elemental canyon:area name
+#
+set e3635/door_attributes = ["open"]
+#
+set e3635/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3636
+#
+tag e3636 = elemental canyon:area name
+#
+set e3636/door_attributes = ["open"]
+#
+set e3636/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9214
+#
+openexit north; n; e3637^ south = r9217
+#
+tag e3637 = elemental canyon:area name
+#
+set e3637/door_attributes = ["open"]
+#
+set e3637/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3638^ west = r9215
+#
+tag e3638 = elemental canyon:area name
+#
+set e3638/door_attributes = ["open"]
+#
+set e3638/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3639
+#
+tag e3639 = elemental canyon:area name
+#
+set e3639/door_attributes = ["open"]
+#
+set e3639/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3640^ east = r9237
+#
+tag e3640 = elemental canyon:area name
+#
+set e3640/door_attributes = ["open"]
+#
+set e3640/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9215
+#
+openexit north; n; e3641^ south = r9218
+#
+tag e3641 = elemental canyon:area name
+#
+set e3641/door_attributes = ["open"]
+#
+set e3641/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3642^ west = r9216
+#
+tag e3642 = elemental canyon:area name
+#
+set e3642/door_attributes = ["open"]
+#
+set e3642/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3643
+#
+tag e3643 = elemental canyon:area name
+#
+set e3643/door_attributes = ["open"]
+#
+set e3643/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3644
+#
+tag e3644 = elemental canyon:area name
+#
+set e3644/door_attributes = ["open"]
+#
+set e3644/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9216
+#
+openexit north; n; e3645^ south = r9219
+#
+tag e3645 = elemental canyon:area name
+#
+set e3645/door_attributes = ["open"]
+#
+set e3645/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3646
+#
+tag e3646 = elemental canyon:area name
+#
+set e3646/door_attributes = ["open"]
+#
+set e3646/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3647
+#
+tag e3647 = elemental canyon:area name
+#
+set e3647/door_attributes = ["open"]
+#
+set e3647/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9217
+#
+openexit north; n; e3648^ south = r9253
+#
+tag e3648 = elemental canyon:area name
+#
+set e3648/door_attributes = ["open"]
+#
+set e3648/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3649^ west = r9218
+#
+tag e3649 = elemental canyon:area name
+#
+set e3649/door_attributes = ["open"]
+#
+set e3649/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3650
+#
+tag e3650 = elemental canyon:area name
+#
+set e3650/door_attributes = ["open"]
+#
+set e3650/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9218
+#
+openexit east; e; e3651^ west = r9219
+#
+tag e3651 = elemental canyon:area name
+#
+set e3651/door_attributes = ["open"]
+#
+set e3651/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3652
+#
+tag e3652 = elemental canyon:area name
+#
+set e3652/door_attributes = ["open"]
+#
+set e3652/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3653
+#
+tag e3653 = elemental canyon:area name
+#
+set e3653/door_attributes = ["open"]
+#
+set e3653/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9219
+#
+openexit north; n; e3654^ south = r9254
+#
+tag e3654 = elemental canyon:area name
+#
+set e3654/door_attributes = ["open"]
+#
+set e3654/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3655
+#
+tag e3655 = elemental canyon:area name
+#
+set e3655/door_attributes = ["open"]
+#
+set e3655/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3656
+#
+tag e3656 = elemental canyon:area name
+#
+set e3656/door_attributes = ["open"]
+#
+set e3656/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9220
+#
+openexit east; e; e3657^ west = r9221
+#
+tag e3657 = elemental canyon:area name
+#
+set e3657/door_attributes = ["open"]
+#
+set e3657/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3658
+#
+tag e3658 = elemental canyon:area name
+#
+set e3658/door_attributes = ["open"]
+#
+set e3658/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9221
+#
+openexit east; e; e3659^ west = r9222
+#
+tag e3659 = elemental canyon:area name
+#
+set e3659/door_attributes = ["open"]
+#
+set e3659/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3660^ north = r9223
+#
+tag e3660 = elemental canyon:area name
+#
+set e3660/door_attributes = ["open"]
+#
+set e3660/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3661
+#
+tag e3661 = elemental canyon:area name
+#
+set e3661/door_attributes = ["open"]
+#
+set e3661/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9222
+#
+openexit south; s; e3662^ north = r9224
+#
+tag e3662 = elemental canyon:area name
+#
+set e3662/door_attributes = ["open"]
+#
+set e3662/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3663
+#
+tag e3663 = elemental canyon:area name
+#
+set e3663/door_attributes = ["open"]
+#
+set e3663/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9223
+#
+alias north = n^ e3664
+#
+tag e3664 = elemental canyon:area name
+#
+set e3664/door_attributes = ["open"]
+#
+set e3664/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3665^ west = r9224
+#
+tag e3665 = elemental canyon:area name
+#
+set e3665/door_attributes = ["open"]
+#
+set e3665/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3666^ north = r9225
+#
+tag e3666 = elemental canyon:area name
+#
+set e3666/door_attributes = ["open"]
+#
+set e3666/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9224
+#
+alias north = n^ e3667
+#
+tag e3667 = elemental canyon:area name
+#
+set e3667/door_attributes = ["open"]
+#
+set e3667/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3668^ north = r9226
+#
+tag e3668 = elemental canyon:area name
+#
+set e3668/door_attributes = ["open"]
+#
+set e3668/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3669
+#
+tag e3669 = elemental canyon:area name
+#
+set e3669/door_attributes = ["open"]
+#
+set e3669/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9225
+#
+alias north = n^ e3670
+#
+tag e3670 = elemental canyon:area name
+#
+set e3670/door_attributes = ["open"]
+#
+set e3670/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3671^ west = r9226
+#
+tag e3671 = elemental canyon:area name
+#
+set e3671/door_attributes = ["open"]
+#
+set e3671/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r9226
+#
+alias north = n^ e3672
+#
+tag e3672 = elemental canyon:area name
+#
+set e3672/door_attributes = ["open"]
+#
+set e3672/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3673^ west = r9227
+#
+tag e3673 = elemental canyon:area name
+#
+set e3673/door_attributes = ["open"]
+#
+set e3673/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3674
+#
+tag e3674 = elemental canyon:area name
+#
+set e3674/door_attributes = ["open"]
+#
+set e3674/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9227
+#
+alias west = w^ e3675
+#
+tag e3675 = elemental canyon:area name
+#
+set e3675/door_attributes = ["open"]
+#
+set e3675/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9228
+#
+openexit north; n; e3676^ south = r9229
+#
+tag e3676 = elemental canyon:area name
+#
+set e3676/door_attributes = ["open"]
+#
+set e3676/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias west = w^ e3677
+#
+tag e3677 = elemental canyon:area name
+#
+set e3677/door_attributes = ["open"]
+#
+set e3677/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9229
+#
+openexit north; n; e3678^ south = r9230
+#
+tag e3678 = elemental canyon:area name
+#
+set e3678/door_attributes = ["open"]
+#
+set e3678/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3679
+#
+tag e3679 = elemental canyon:area name
+#
+set e3679/door_attributes = ["open"]
+#
+set e3679/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9230
+#
+openexit north; n; e3680^ south = r9233
+#
+tag e3680 = elemental canyon:area name
+#
+set e3680/door_attributes = ["open"]
+#
+set e3680/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3681^ west = r9231
+#
+tag e3681 = elemental canyon:area name
+#
+set e3681/door_attributes = ["open"]
+#
+set e3681/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3682
+#
+tag e3682 = elemental canyon:area name
+#
+set e3682/door_attributes = ["open"]
+#
+set e3682/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9231
+#
+openexit north; n; e3683^ south = r9234
+#
+tag e3683 = elemental canyon:area name
+#
+set e3683/door_attributes = ["open"]
+#
+set e3683/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3684^ west = r9232
+#
+tag e3684 = elemental canyon:area name
+#
+set e3684/door_attributes = ["open"]
+#
+set e3684/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3685
+#
+tag e3685 = elemental canyon:area name
+#
+set e3685/door_attributes = ["open"]
+#
+set e3685/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9232
+#
+openexit north; n; e3686^ south = r9235
+#
+tag e3686 = elemental canyon:area name
+#
+set e3686/door_attributes = ["open"]
+#
+set e3686/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias west = w^ e3687
+#
+tag e3687 = elemental canyon:area name
+#
+set e3687/door_attributes = ["open"]
+#
+set e3687/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9233
+#
+openexit east; e; e3688^ west = r9234
+#
+tag e3688 = elemental canyon:area name
+#
+set e3688/door_attributes = ["open"]
+#
+set e3688/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3689
+#
+tag e3689 = elemental canyon:area name
+#
+set e3689/door_attributes = ["open"]
+#
+set e3689/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9234
+#
+openexit east; e; e3690^ west = r9235
+#
+tag e3690 = elemental canyon:area name
+#
+set e3690/door_attributes = ["open"]
+#
+set e3690/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3691
+#
+tag e3691 = elemental canyon:area name
+#
+set e3691/door_attributes = ["open"]
+#
+set e3691/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3692
+#
+tag e3692 = elemental canyon:area name
+#
+set e3692/door_attributes = ["open"]
+#
+set e3692/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9235
+#
+alias south = s^ e3693
+#
+tag e3693 = elemental canyon:area name
+#
+set e3693/door_attributes = ["open"]
+#
+set e3693/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3694
+#
+tag e3694 = elemental canyon:area name
+#
+set e3694/door_attributes = ["open"]
+#
+set e3694/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+openexit down; d; e3695^ up = r9236
+#
+tag e3695 = elemental canyon:area name
+#
+set e3695/door_attributes = ["open"]
+#
+set e3695/reset_door_attributes = ["open"]
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r9236
+#
+alias up = u^ e3696
+#
+tag e3696 = elemental canyon:area name
+#
+set e3696/door_attributes = ["open"]
+#
+set e3696/reset_door_attributes = ["open"]
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r9237
+#
+alias east = e^ e3697
+#
+tag e3697 = elemental canyon:area name
+#
+set e3697/door_attributes = ["open"]
+#
+set e3697/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3698^ north = r9238
+#
+tag e3698 = elemental canyon:area name
+#
+set e3698/door_attributes = ["open"]
+#
+set e3698/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9238
+#
+alias north = n^ e3699
+#
+tag e3699 = elemental canyon:area name
+#
+set e3699/door_attributes = ["open"]
+#
+set e3699/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit west; w; e3700^ east = r9242
+#
+tag e3700 = elemental canyon:area name
+#
+set e3700/door_attributes = ["open"]
+#
+set e3700/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9242
+#
+alias east = e^ e3701
+#
+tag e3701 = elemental canyon:area name
+#
+set e3701/door_attributes = ["open"]
+#
+set e3701/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3702^ east = r9245
+#
+tag e3702 = elemental canyon:area name
+#
+set e3702/door_attributes = ["open"]
+#
+set e3702/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9245
+#
+alias east = e^ e3703
+#
+tag e3703 = elemental canyon:area name
+#
+set e3703/door_attributes = ["open"]
+#
+set e3703/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r9246
+#
+openexit north; n; e3704^ south = r9248
+#
+tag e3704 = elemental canyon:area name
+#
+set e3704/door_attributes = ["open"]
+#
+set e3704/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3705^ west = r9253
+#
+tag e3705 = elemental canyon:area name
+#
+set e3705/door_attributes = ["open"]
+#
+set e3705/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r9247
+#
+openexit north; n; e3706^ south = r9249
+#
+tag e3706 = elemental canyon:area name
+#
+set e3706/door_attributes = ["open"]
+#
+set e3706/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3707^ west = r9248
+#
+tag e3707 = elemental canyon:area name
+#
+set e3707/door_attributes = ["open"]
+#
+set e3707/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r9248
+#
+openexit north; n; e3708^ south = r9250
+#
+tag e3708 = elemental canyon:area name
+#
+set e3708/door_attributes = ["open"]
+#
+set e3708/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3709
+#
+tag e3709 = elemental canyon:area name
+#
+set e3709/door_attributes = ["open"]
+#
+set e3709/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3710
+#
+tag e3710 = elemental canyon:area name
+#
+set e3710/door_attributes = ["open"]
+#
+set e3710/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9249
+#
+openexit east; e; e3711^ west = r9250
+#
+tag e3711 = elemental canyon:area name
+#
+set e3711/door_attributes = ["open"]
+#
+set e3711/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3712
+#
+tag e3712 = elemental canyon:area name
+#
+set e3712/door_attributes = ["open"]
+#
+set e3712/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9250
+#
+openexit east; e; e3713^ west = r9251
+#
+tag e3713 = elemental canyon:area name
+#
+set e3713/door_attributes = ["open"]
+#
+set e3713/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3714
+#
+tag e3714 = elemental canyon:area name
+#
+set e3714/door_attributes = ["open"]
+#
+set e3714/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3715
+#
+tag e3715 = elemental canyon:area name
+#
+set e3715/door_attributes = ["open"]
+#
+set e3715/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9251
+#
+alias west = w^ e3716
+#
+tag e3716 = elemental canyon:area name
+#
+set e3716/door_attributes = ["open"]
+#
+set e3716/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+openexit up; u; e3717^ down = r9252
+#
+tag e3717 = elemental canyon:area name
+#
+set e3717/door_attributes = ["open"]
+#
+set e3717/reset_door_attributes = ["open"]
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r9252
+#
+alias down = d^ e3718
+#
+tag e3718 = elemental canyon:area name
+#
+set e3718/door_attributes = ["open"]
+#
+set e3718/reset_door_attributes = ["open"]
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r9253
+#
+openexit east; e; e3719^ west = r9254
+#
+tag e3719 = elemental canyon:area name
+#
+set e3719/door_attributes = ["open"]
+#
+set e3719/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3720
+#
+tag e3720 = elemental canyon:area name
+#
+set e3720/door_attributes = ["open"]
+#
+set e3720/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3721
+#
+tag e3721 = elemental canyon:area name
+#
+set e3721/door_attributes = ["open"]
+#
+set e3721/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9254
+#
+openexit north; n; e3722^ south = r9255
+#
+tag e3722 = elemental canyon:area name
+#
+set e3722/door_attributes = ["open"]
+#
+set e3722/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3723
+#
+tag e3723 = elemental canyon:area name
+#
+set e3723/door_attributes = ["open"]
+#
+set e3723/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3724
+#
+tag e3724 = elemental canyon:area name
+#
+set e3724/door_attributes = ["open"]
+#
+set e3724/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9255
+#
+openexit north; n; e3725^ south = r9257
+#
+tag e3725 = elemental canyon:area name
+#
+set e3725/door_attributes = ["open"]
+#
+set e3725/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3726^ west = r9256
+#
+tag e3726 = elemental canyon:area name
+#
+set e3726/door_attributes = ["open"]
+#
+set e3726/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3727
+#
+tag e3727 = elemental canyon:area name
+#
+set e3727/door_attributes = ["open"]
+#
+set e3727/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9256
+#
+openexit north; n; e3728^ south = r9258
+#
+tag e3728 = elemental canyon:area name
+#
+set e3728/door_attributes = ["open"]
+#
+set e3728/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias west = w^ e3729
+#
+tag e3729 = elemental canyon:area name
+#
+set e3729/door_attributes = ["open"]
+#
+set e3729/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9257
+#
+openexit east; e; e3730^ west = r9258
+#
+tag e3730 = elemental canyon:area name
+#
+set e3730/door_attributes = ["open"]
+#
+set e3730/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3731
+#
+tag e3731 = elemental canyon:area name
+#
+set e3731/door_attributes = ["open"]
+#
+set e3731/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r9258
+#
+openexit east; e; e3732^ west = r9259
+#
+tag e3732 = elemental canyon:area name
+#
+set e3732/door_attributes = ["open"]
+#
+set e3732/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3733
+#
+tag e3733 = elemental canyon:area name
+#
+set e3733/door_attributes = ["open"]
+#
+set e3733/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3734
+#
+tag e3734 = elemental canyon:area name
+#
+set e3734/door_attributes = ["open"]
+#
+set e3734/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9259
+#
+openexit east; e; e3735^ west = r9260
+#
+tag e3735 = elemental canyon:area name
+#
+set e3735/door_attributes = ["open"]
+#
+set e3735/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3736
+#
+tag e3736 = elemental canyon:area name
+#
+set e3736/door_attributes = ["open"]
+#
+set e3736/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9260
+#
+alias west = w^ e3737
+#
+tag e3737 = elemental canyon:area name
+#
+set e3737/door_attributes = ["open"]
+#
+set e3737/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r9261
+#
+openexit up; u; e3738^ down = r2909
+#
+tag e3738 = elemental canyon:area name
+#
+set e3738/door_attributes = ["open"]
+#
+set e3738/reset_door_attributes = ["open"]
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+alias down = d^ e3739
+#
+tag e3739 = elemental canyon:area name
+#
+set e3739/door_attributes = ["open"]
+#
+set e3739/reset_door_attributes = ["open"]
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r9203
+#
+create/drop the elixir vendor;vendor;m9238:characters.Mobile
+#
+desc m9238 = A vendor is willing to sell you elixirs. 
+#
+set m9238/level = 20
+#
+set m9238/level_base = 20
+#
+set m9238/vnum = "m9238"
+#
+set m9238/look_description = "I WOULD NOT suggest you attack me ...! "
+#
+set m9238/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9238/alignment = 900
+#
+set m9238/sex = "male"
+#
+set m9238/race = "human"
+#
+tag m9238 = elemental canyon:area name
+#
+tag m9238 = mobile
+#
+set m9238/hitpoints[maximum] = 230
+#
+set m9238/position = "standing"
+#
+set m9238/experience_total = 39739
+#
+set m9238/experience_current = 39739
+#
+set m9238/special_function = "cast_mage"
+#
+set m9238/shopkeeper = {'item will buy 1': 'trash', 'item will buy 2': 'trash', 'item will buy 3': 'trash', 'item will buy 4': 'trash', 'sell percentage': '0', 'buy percentage': '105', 'opening hour': '15', 'closing hour': '0'}
+#
+tel r9203
+#
+create anti-cyclops elixir;elixir;anti;o9231:objects.Potion
+#
+sethome o9231 = m9238
+#
+desc o9231 = An elixir to ward off cyclopi has been bought then left behind here.
+#
+set o9231/level = 18
+#
+set o9231/level_base = 18
+#
+set o9231/vnum = "o9231"
+#
+set o9231/item_type = "potion"
+#
+set o9231/wear_location = "held, in hands"
+#
+set o9231/weight = 1
+#
+tag o9231 = elemental canyon:area name
+#
+tag o9231 = object
+#
+set o9231/spell_level = 15
+#
+set o9231/spell_level_base = 15
+#
+set o9231/spell_name_1 = "invis"
+#
+give o9231 to m9238
+#
+set m9238/reset_objects["o9231"] = {"location":"inventory"}
+#
+tel r9204
+#
+create/drop the cyclops;cyclops;m9202:characters.Mobile
+#
+desc m9202 = A hungry cyclops snarls at you! 
+#
+set m9202/level = 13
+#
+set m9202/level_base = 13
+#
+set m9202/vnum = "m9202"
+#
+set m9202/look_description = "The cyclops looks like he's about to have dinner (maybe it's you?). "
+#
+set m9202/act_flags = ['stay area', 'aggressive', 'sentinel', 'npc']
+#
+set m9202/alignment = -700
+#
+set m9202/sex = "male"
+#
+set m9202/race = "cyclops"
+#
+tag m9202 = elemental canyon:area name
+#
+tag m9202 = mobile
+#
+set m9202/hitpoints[maximum] = 186
+#
+set m9202/position = "standing"
+#
+set m9202/experience_total = 12964
+#
+set m9202/experience_current = 12964
+#
+tel r9204
+#
+create some platinum arm bands;armbands;platinum;bands;o9213:objects.Armor
+#
+sethome o9213 = m9202
+#
+desc o9213 = A pair of platinum arm bands, once worn by the Cyclops, lie here.
+#
+set o9213/level = 11
+#
+set o9213/level_base = 11
+#
+set o9213/vnum = "o9213"
+#
+set o9213/item_type = "armor"
+#
+set o9213/wear_location = "arms"
+#
+set o9213/weight = 4
+#
+tag o9213 = elemental canyon:area name
+#
+tag o9213 = object
+#
+set o9213/stat_modifiers[strength] = 1
+#
+set o9213/armor = 5
+#
+wearto o9213 = m9202
+#
+set m9202/reset_objects["o9213"] = {"location":"equipped"}
+#
+tel r9204
+#
+create some platinum leg bands;legbands;platinum;bands;o9214:objects.Armor
+#
+sethome o9214 = m9202
+#
+desc o9214 = A pair of platinum leg bands, once worn by the Cyclops, lie here.
+#
+set o9214/level = 11
+#
+set o9214/level_base = 11
+#
+set o9214/vnum = "o9214"
+#
+set o9214/item_type = "armor"
+#
+set o9214/wear_location = "legs"
+#
+set o9214/weight = 4
+#
+tag o9214 = elemental canyon:area name
+#
+tag o9214 = object
+#
+set o9214/stat_modifiers[dexterity] = 1
+#
+set o9214/armor = 5
+#
+wearto o9214 = m9202
+#
+set m9202/reset_objects["o9214"] = {"location":"equipped"}
+#
+tel r9207
+#
+create/drop a small elemental;small;elemental;m9205:characters.Mobile
+#
+desc m9205 = A small, rather nondescript elemental. 
+#
+set m9205/level = 7
+#
+set m9205/level_base = 7
+#
+set m9205/vnum = "m9205"
+#
+set m9205/look_description = "A small elemental, a resident of the canyon. "
+#
+set m9205/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9205/alignment = 0
+#
+set m9205/sex = "neuter"
+#
+set m9205/race = "elemental"
+#
+tag m9205 = elemental canyon:area name
+#
+tag m9205 = mobile
+#
+set m9205/hitpoints[maximum] = 83
+#
+set m9205/position = "standing"
+#
+set m9205/experience_total = 2208
+#
+set m9205/experience_current = 2208
+#
+tel r9207
+#
+create/drop a little imp;imp;m9236:characters.Mobile
+#
+desc m9236 = A little imp runs along being annoying. 
+#
+set m9236/level = 7
+#
+set m9236/level_base = 7
+#
+set m9236/vnum = "m9236"
+#
+set m9236/look_description = "The little bugger steals stuff and is generally obnoxious. "
+#
+set m9236/act_flags = ['wimpy', 'stay area', 'scavenger', 'npc']
+#
+set m9236/alignment = -500
+#
+set m9236/sex = "neuter"
+#
+set m9236/spell_affects = {'hide': '', 'sneak': ''}
+#
+set m9236/race = "kobold"
+#
+tag m9236 = elemental canyon:area name
+#
+tag m9236 = mobile
+#
+set m9236/hitpoints[maximum] = 57
+#
+set m9236/position = "standing"
+#
+set m9236/experience_total = 2127
+#
+set m9236/experience_current = 2127
+#
+tel r9208
+#
+create/drop a tiny elemental;tiny;elemental;m9203:characters.Mobile
+#
+desc m9203 = A tiny elemental form wanders about. 
+#
+set m9203/level = 7
+#
+set m9203/level_base = 7
+#
+set m9203/vnum = "m9203"
+#
+set m9203/look_description = "Rather small for an elemental form, looks like a reject. "
+#
+set m9203/act_flags = ['stay area', 'npc']
+#
+set m9203/alignment = 0
+#
+set m9203/sex = "neuter"
+#
+set m9203/race = "elemental"
+#
+tag m9203 = elemental canyon:area name
+#
+tag m9203 = mobile
+#
+set m9203/hitpoints[maximum] = 72
+#
+set m9203/position = "standing"
+#
+set m9203/experience_total = 2398
+#
+set m9203/experience_current = 2398
+#
+tel r9208
+#
+create/drop a rainbow warrior;rainbow;warrior;m9232:characters.Mobile
+#
+desc m9232 = A warrior of the Rainbow Cult swears his loyalty. 
+#
+set m9232/level = 11
+#
+set m9232/level_base = 11
+#
+set m9232/vnum = "m9232"
+#
+set m9232/look_description = "The Rainbow Cult has received special powers for their service to the elemental forces. "
+#
+set m9232/act_flags = ['stay area', 'npc']
+#
+set m9232/alignment = 150
+#
+set m9232/sex = "neuter"
+#
+set m9232/race = "human"
+#
+tag m9232 = elemental canyon:area name
+#
+tag m9232 = mobile
+#
+set m9232/hitpoints[maximum] = 115
+#
+set m9232/position = "standing"
+#
+set m9232/experience_total = 7205
+#
+set m9232/experience_current = 7205
+#
+set m9232/special_function = "cast_cleric"
+#
+tel r9208
+#
+create a bolt of lightning;lightning;bolt;o9232:objects.Weapon
+#
+sethome o9232 = m9232
+#
+desc o9232 = A bolt of lightning whizzes about the room!
+#
+set o9232/level = 9
+#
+set o9232/level_base = 9
+#
+set o9232/vnum = "o9232"
+#
+set o9232/item_type = "weapon"
+#
+set o9232/wear_location = "wield"
+#
+set o9232/weight = 8
+#
+tag o9232 = elemental canyon:area name
+#
+tag o9232 = object
+#
+set o9232/extra_flags = ['magic']
+#
+set o9232/stat_modifiers[hitroll] = 3
+#
+set o9232/weapon_type = "blast"
+#
+set o9232/damage_low = 4
+#
+set o9232/damage_high = 14
+#
+wieldto o9232 = m9232
+#
+set m9232/experience_total = 9006
+#
+set m9232/experience_current = 9006
+#
+set m9232/reset_objects["o9232"] = {"location":"equipped"}
+#
+tel r9209
+#
+create/drop the elemental guardian;elemental;guardian;m9204:characters.Mobile
+#
+desc m9204 = The elemental guardian of the canyon. 
+#
+set m9204/level = 13
+#
+set m9204/level_base = 13
+#
+set m9204/vnum = "m9204"
+#
+set m9204/look_description = "You can't tell which kind of elemental it is, maybe it's a bit o' all of them? "
+#
+set m9204/act_flags = ['sentinel', 'npc']
+#
+set m9204/alignment = 0
+#
+set m9204/sex = "neuter"
+#
+set m9204/race = "elemental"
+#
+tag m9204 = elemental canyon:area name
+#
+tag m9204 = mobile
+#
+set m9204/hitpoints[maximum] = 245
+#
+set m9204/position = "standing"
+#
+set m9204/experience_total = 15413
+#
+set m9204/experience_current = 15413
+#
+set m9204/special_function = "breath_any"
+#
+tel r9209
+#
+create an elemental amulet;amulet;elemental;o9211:objects.Armor
+#
+sethome o9211 = m9204
+#
+desc o9211 = An amulet depicting fire, water, lightning, earth, and air lies here.
+#
+set o9211/level = 11
+#
+set o9211/level_base = 11
+#
+set o9211/vnum = "o9211"
+#
+set o9211/item_type = "armor"
+#
+set o9211/wear_location = "neck"
+#
+set o9211/weight = 1
+#
+tag o9211 = elemental canyon:area name
+#
+tag o9211 = object
+#
+set o9211/extra_flags = ['glow']
+#
+set o9211/stat_modifiers[23] = -5
+#
+set o9211/armor = 5
+#
+wearto o9211 = m9204
+#
+set m9204/reset_objects["o9211"] = {"location":"equipped"}
+#
+tel r9209
+#
+create an elemental bracelet;bracelet;elemental;o9212:objects.Armor
+#
+sethome o9212 = m9204
+#
+desc o9212 = A bracelet made of elemental magic lies here.
+#
+set o9212/level = 11
+#
+set o9212/level_base = 11
+#
+set o9212/vnum = "o9212"
+#
+set o9212/item_type = "armor"
+#
+set o9212/wear_location = "wrist"
+#
+set o9212/weight = 4
+#
+tag o9212 = elemental canyon:area name
+#
+tag o9212 = object
+#
+set o9212/stat_modifiers[hitpoints] = 13
+#
+set o9212/armor = 4
+#
+wearto o9212 = m9204
+#
+set m9204/reset_objects["o9212"] = {"location":"equipped"}
+#
+tel r9209
+#
+create/drop a small elemental;small;elemental;m9205:characters.Mobile
+#
+desc m9205 = A small, rather nondescript elemental. 
+#
+set m9205/level = 7
+#
+set m9205/level_base = 7
+#
+set m9205/vnum = "m9205"
+#
+set m9205/look_description = "A small elemental, a resident of the canyon. "
+#
+set m9205/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9205/alignment = 0
+#
+set m9205/sex = "neuter"
+#
+set m9205/race = "elemental"
+#
+tag m9205 = elemental canyon:area name
+#
+tag m9205 = mobile
+#
+set m9205/hitpoints[maximum] = 104
+#
+set m9205/position = "standing"
+#
+set m9205/experience_total = 2386
+#
+set m9205/experience_current = 2386
+#
+tel r9209
+#
+create/drop a large elemental;large;elemental;m9207:characters.Mobile
+#
+desc m9207 = A large elemental. 
+#
+set m9207/level = 10
+#
+set m9207/level_base = 10
+#
+set m9207/vnum = "m9207"
+#
+set m9207/look_description = "A large elemental, a resident of the canyon. "
+#
+set m9207/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9207/alignment = 20
+#
+set m9207/sex = "neuter"
+#
+set m9207/race = "elemental"
+#
+tag m9207 = elemental canyon:area name
+#
+tag m9207 = mobile
+#
+set m9207/hitpoints[maximum] = 104
+#
+set m9207/position = "standing"
+#
+set m9207/experience_total = 6855
+#
+set m9207/experience_current = 6855
+#
+set m9207/special_function = "breath_any"
+#
+tel r9209
+#
+create/drop a rainbow warrior;rainbow;warrior;m9232:characters.Mobile
+#
+desc m9232 = A warrior of the Rainbow Cult swears his loyalty. 
+#
+set m9232/level = 11
+#
+set m9232/level_base = 11
+#
+set m9232/vnum = "m9232"
+#
+set m9232/look_description = "The Rainbow Cult has received special powers for their service to the elemental forces. "
+#
+set m9232/act_flags = ['stay area', 'npc']
+#
+set m9232/alignment = 150
+#
+set m9232/sex = "neuter"
+#
+set m9232/race = "human"
+#
+tag m9232 = elemental canyon:area name
+#
+tag m9232 = mobile
+#
+set m9232/hitpoints[maximum] = 183
+#
+set m9232/position = "standing"
+#
+set m9232/experience_total = 7417
+#
+set m9232/experience_current = 7417
+#
+set m9232/special_function = "cast_cleric"
+#
+tel r9209
+#
+create a stone club;stone;club;o9220:objects.Weapon
+#
+sethome o9220 = m9232
+#
+desc o9220 = A large stone club lies on the ground.
+#
+set o9220/level = 9
+#
+set o9220/level_base = 9
+#
+set o9220/vnum = "o9220"
+#
+set o9220/item_type = "weapon"
+#
+set o9220/wear_location = "wield"
+#
+set o9220/weight = 16
+#
+tag o9220 = elemental canyon:area name
+#
+tag o9220 = object
+#
+set o9220/extra_flags = ['magic']
+#
+set o9220/stat_modifiers[damroll] = 2
+#
+set o9220/weapon_type = "pound"
+#
+set o9220/damage_low = 4
+#
+set o9220/damage_high = 11
+#
+wieldto o9220 = m9232
+#
+set m9232/experience_total = 9271
+#
+set m9232/experience_current = 9271
+#
+set m9232/reset_objects["o9220"] = {"location":"equipped"}
+#
+tel r9210
+#
+create/drop a tiny elemental;tiny;elemental;m9203:characters.Mobile
+#
+desc m9203 = A tiny elemental form wanders about. 
+#
+set m9203/level = 7
+#
+set m9203/level_base = 7
+#
+set m9203/vnum = "m9203"
+#
+set m9203/look_description = "Rather small for an elemental form, looks like a reject. "
+#
+set m9203/act_flags = ['stay area', 'npc']
+#
+set m9203/alignment = 0
+#
+set m9203/sex = "neuter"
+#
+set m9203/race = "elemental"
+#
+tag m9203 = elemental canyon:area name
+#
+tag m9203 = mobile
+#
+set m9203/hitpoints[maximum] = 69
+#
+set m9203/position = "standing"
+#
+set m9203/experience_total = 2401
+#
+set m9203/experience_current = 2401
+#
+tel r9210
+#
+create/drop a particle;particle;elemental;m9223:characters.Mobile
+#
+desc m9223 = A subatomic particle is too small for you to see. 
+#
+set m9223/level = 8
+#
+set m9223/level_base = 8
+#
+set m9223/vnum = "m9223"
+#
+set m9223/look_description = "The magical manifestation of energy. "
+#
+set m9223/act_flags = ['stay area', 'npc']
+#
+set m9223/alignment = 0
+#
+set m9223/sex = "neuter"
+#
+set m9223/race = "elemental"
+#
+tag m9223 = elemental canyon:area name
+#
+tag m9223 = mobile
+#
+set m9223/hitpoints[maximum] = 121
+#
+set m9223/position = "standing"
+#
+set m9223/experience_total = 3344
+#
+set m9223/experience_current = 3344
+#
+set m9223/special_function = "breath_lightning"
+#
+tel r9210
+#
+create a lodestone;lode;load;lodestone;loadstone;stone;o9221:objects.Wand
+#
+sethome o9221 = m9223
+#
+desc o9221 = A dull red rock lies here amid the weeds.
+#
+set o9221/level = 6
+#
+set o9221/level_base = 6
+#
+set o9221/vnum = "o9221"
+#
+set o9221/item_type = "wand"
+#
+set o9221/wear_location = "held, in hands"
+#
+set o9221/weight = 2
+#
+tag o9221 = elemental canyon:area name
+#
+tag o9221 = object
+#
+set o9221/spell_level = 19
+#
+set o9221/spell_level_base = 19
+#
+set o9221/charges_maximum = 2
+#
+set o9221/charges_maximum_base = 2
+#
+set o9221/charges_current = 2
+#
+set o9221/spell_name = "harm"
+#
+wearto o9221 = m9223
+#
+set m9223/reset_objects["o9221"] = {"location":"equipped"}
+#
+tel r9211
+#
+create/drop an elemental magician;magician;m9231:characters.Mobile
+#
+desc m9231 = An elemental magician seeks magical stones for a spell. 
+#
+set m9231/level = 11
+#
+set m9231/level_base = 11
+#
+set m9231/vnum = "m9231"
+#
+set m9231/look_description = "The elemental magician has come here in search of the fabled Stone of Surrender which can be used to render opponents senseless. "
+#
+set m9231/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9231/alignment = -50
+#
+set m9231/sex = "neuter"
+#
+set m9231/spell_affects = {'invisible': ''}
+#
+set m9231/race = "elemental"
+#
+tag m9231 = elemental canyon:area name
+#
+tag m9231 = mobile
+#
+set m9231/hitpoints[maximum] = 97
+#
+set m9231/position = "standing"
+#
+set m9231/experience_total = 7344
+#
+set m9231/experience_current = 7344
+#
+set m9231/special_function = "cast_mage"
+#
+tel r9211
+#
+create elemental wand of fire;wand;o9215:objects.Wand
+#
+sethome o9215 = m9231
+#
+desc o9215 = A fire wand lies forgotten on the ground.
+#
+set o9215/level = 9
+#
+set o9215/level_base = 9
+#
+set o9215/vnum = "o9215"
+#
+set o9215/item_type = "wand"
+#
+set o9215/wear_location = "held, in hands"
+#
+set o9215/weight = 7
+#
+tag o9215 = elemental canyon:area name
+#
+tag o9215 = object
+#
+set o9215/extra_flags = ['glow']
+#
+set o9215/spell_level = 15
+#
+set o9215/spell_level_base = 15
+#
+set o9215/charges_maximum = 3
+#
+set o9215/charges_maximum_base = 3
+#
+set o9215/charges_current = 3
+#
+set o9215/spell_name = "fireball"
+#
+wearto o9215 = m9231
+#
+set m9231/reset_objects["o9215"] = {"location":"equipped"}
+#
+tel r9212
+#
+create/drop a medium elemental;medium;elemental;m9206:characters.Mobile
+#
+desc m9206 = A medium-sized elemental. 
+#
+set m9206/level = 8
+#
+set m9206/level_base = 8
+#
+set m9206/vnum = "m9206"
+#
+set m9206/look_description = "A medium elemental, a resident of the canyon. "
+#
+set m9206/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9206/alignment = 10
+#
+set m9206/sex = "neuter"
+#
+set m9206/race = "elemental"
+#
+tag m9206 = elemental canyon:area name
+#
+tag m9206 = mobile
+#
+set m9206/hitpoints[maximum] = 71
+#
+set m9206/position = "standing"
+#
+set m9206/experience_total = 2970
+#
+set m9206/experience_current = 2970
+#
+tel r9212
+#
+create a lodestone;lode;load;lodestone;loadstone;stone;o9221:objects.Wand
+#
+sethome o9221 = m9206
+#
+desc o9221 = A dull red rock lies here amid the weeds.
+#
+set o9221/level = 6
+#
+set o9221/level_base = 6
+#
+set o9221/vnum = "o9221"
+#
+set o9221/item_type = "wand"
+#
+set o9221/wear_location = "held, in hands"
+#
+set o9221/weight = 2
+#
+tag o9221 = elemental canyon:area name
+#
+tag o9221 = object
+#
+set o9221/spell_level = 19
+#
+set o9221/spell_level_base = 19
+#
+set o9221/charges_maximum = 2
+#
+set o9221/charges_maximum_base = 2
+#
+set o9221/charges_current = 2
+#
+set o9221/spell_name = "harm"
+#
+wearto o9221 = m9206
+#
+set m9206/reset_objects["o9221"] = {"location":"equipped"}
+#
+tel r9212
+#
+create/drop a small snowflake;snowflake;snow;flake;ice;elemental;m9216:characters.Mobile
+#
+desc m9216 = A frozen snowflake water elemental. 
+#
+set m9216/level = 7
+#
+set m9216/level_base = 7
+#
+set m9216/vnum = "m9216"
+#
+set m9216/look_description = "It looks a little blue. "
+#
+set m9216/act_flags = ['stay area', 'npc']
+#
+set m9216/alignment = 520
+#
+set m9216/sex = "neuter"
+#
+set m9216/race = "elemental"
+#
+tag m9216 = elemental canyon:area name
+#
+tag m9216 = mobile
+#
+set m9216/hitpoints[maximum] = 86
+#
+set m9216/position = "standing"
+#
+set m9216/experience_total = 2067
+#
+set m9216/experience_current = 2067
+#
+tel r9213
+#
+create/drop an elemental mist;mist;elemental;m9222:characters.Mobile
+#
+desc m9222 = The air is magically misty here. 
+#
+set m9222/level = 6
+#
+set m9222/level_base = 6
+#
+set m9222/vnum = "m9222"
+#
+set m9222/look_description = "The magical mist is a cross between water and air. "
+#
+set m9222/act_flags = ['stay area', 'npc']
+#
+set m9222/alignment = 0
+#
+set m9222/sex = "neuter"
+#
+set m9222/race = "elemental"
+#
+tag m9222 = elemental canyon:area name
+#
+tag m9222 = mobile
+#
+set m9222/hitpoints[maximum] = 83
+#
+set m9222/position = "standing"
+#
+set m9222/experience_total = 1424
+#
+set m9222/experience_current = 1424
+#
+tel r9215
+#
+create/drop a tiny elemental;tiny;elemental;m9203:characters.Mobile
+#
+desc m9203 = A tiny elemental form wanders about. 
+#
+set m9203/level = 7
+#
+set m9203/level_base = 7
+#
+set m9203/vnum = "m9203"
+#
+set m9203/look_description = "Rather small for an elemental form, looks like a reject. "
+#
+set m9203/act_flags = ['stay area', 'npc']
+#
+set m9203/alignment = 0
+#
+set m9203/sex = "neuter"
+#
+set m9203/race = "elemental"
+#
+tag m9203 = elemental canyon:area name
+#
+tag m9203 = mobile
+#
+set m9203/hitpoints[maximum] = 73
+#
+set m9203/position = "standing"
+#
+set m9203/experience_total = 1996
+#
+set m9203/experience_current = 1996
+#
+tel r9215
+#
+create/drop a tiny elemental;tiny;elemental;m9203; m9203-2:characters.Mobile
+#
+desc m9203-2 = A tiny elemental form wanders about. 
+#
+set m9203-2/level = 7
+#
+set m9203-2/level_base = 7
+#
+set m9203-2/vnum = "m9203"
+#
+set m9203-2/look_description = "Rather small for an elemental form, looks like a reject. "
+#
+set m9203-2/act_flags = ['stay area', 'npc']
+#
+set m9203-2/alignment = 0
+#
+set m9203-2/sex = "neuter"
+#
+set m9203-2/race = "elemental"
+#
+tag m9203-2 = elemental canyon:area name
+#
+tag m9203-2 = mobile
+#
+set m9203-2/hitpoints[maximum] = 71
+#
+set m9203-2/position = "standing"
+#
+set m9203-2/experience_total = 2099
+#
+set m9203-2/experience_current = 2099
+#
+tel r9216
+#
+create/drop an elemental magician;magician;m9231:characters.Mobile
+#
+desc m9231 = An elemental magician seeks magical stones for a spell. 
+#
+set m9231/level = 11
+#
+set m9231/level_base = 11
+#
+set m9231/vnum = "m9231"
+#
+set m9231/look_description = "The elemental magician has come here in search of the fabled Stone of Surrender which can be used to render opponents senseless. "
+#
+set m9231/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9231/alignment = -50
+#
+set m9231/sex = "neuter"
+#
+set m9231/spell_affects = {'invisible': ''}
+#
+set m9231/race = "elemental"
+#
+tag m9231 = elemental canyon:area name
+#
+tag m9231 = mobile
+#
+set m9231/hitpoints[maximum] = 148
+#
+set m9231/position = "standing"
+#
+set m9231/experience_total = 6771
+#
+set m9231/experience_current = 6771
+#
+set m9231/special_function = "cast_mage"
+#
+tel r9216
+#
+create elemental wand of fire;wand;o9215:objects.Wand
+#
+sethome o9215 = m9231
+#
+desc o9215 = A fire wand lies forgotten on the ground.
+#
+set o9215/level = 9
+#
+set o9215/level_base = 9
+#
+set o9215/vnum = "o9215"
+#
+set o9215/item_type = "wand"
+#
+set o9215/wear_location = "held, in hands"
+#
+set o9215/weight = 7
+#
+tag o9215 = elemental canyon:area name
+#
+tag o9215 = object
+#
+set o9215/extra_flags = ['glow']
+#
+set o9215/spell_level = 15
+#
+set o9215/spell_level_base = 15
+#
+set o9215/charges_maximum = 3
+#
+set o9215/charges_maximum_base = 3
+#
+set o9215/charges_current = 3
+#
+set o9215/spell_name = "fireball"
+#
+wearto o9215 = m9231
+#
+set m9231/reset_objects["o9215"] = {"location":"equipped"}
+#
+tel r9217
+#
+create/drop a tiny elemental;tiny;elemental;m9203:characters.Mobile
+#
+desc m9203 = A tiny elemental form wanders about. 
+#
+set m9203/level = 7
+#
+set m9203/level_base = 7
+#
+set m9203/vnum = "m9203"
+#
+set m9203/look_description = "Rather small for an elemental form, looks like a reject. "
+#
+set m9203/act_flags = ['stay area', 'npc']
+#
+set m9203/alignment = 0
+#
+set m9203/sex = "neuter"
+#
+set m9203/race = "elemental"
+#
+tag m9203 = elemental canyon:area name
+#
+tag m9203 = mobile
+#
+set m9203/hitpoints[maximum] = 95
+#
+set m9203/position = "standing"
+#
+set m9203/experience_total = 2200
+#
+set m9203/experience_current = 2200
+#
+tel r9218
+#
+create/drop a tiny elemental;tiny;elemental;m9203:characters.Mobile
+#
+desc m9203 = A tiny elemental form wanders about. 
+#
+set m9203/level = 7
+#
+set m9203/level_base = 7
+#
+set m9203/vnum = "m9203"
+#
+set m9203/look_description = "Rather small for an elemental form, looks like a reject. "
+#
+set m9203/act_flags = ['stay area', 'npc']
+#
+set m9203/alignment = 0
+#
+set m9203/sex = "neuter"
+#
+set m9203/race = "elemental"
+#
+tag m9203 = elemental canyon:area name
+#
+tag m9203 = mobile
+#
+set m9203/hitpoints[maximum] = 77
+#
+set m9203/position = "standing"
+#
+set m9203/experience_total = 2140
+#
+set m9203/experience_current = 2140
+#
+tel r9218
+#
+create/drop a small elemental;small;elemental;m9205:characters.Mobile
+#
+desc m9205 = A small, rather nondescript elemental. 
+#
+set m9205/level = 7
+#
+set m9205/level_base = 7
+#
+set m9205/vnum = "m9205"
+#
+set m9205/look_description = "A small elemental, a resident of the canyon. "
+#
+set m9205/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9205/alignment = 0
+#
+set m9205/sex = "neuter"
+#
+set m9205/race = "elemental"
+#
+tag m9205 = elemental canyon:area name
+#
+tag m9205 = mobile
+#
+set m9205/hitpoints[maximum] = 66
+#
+set m9205/position = "standing"
+#
+set m9205/experience_total = 2240
+#
+set m9205/experience_current = 2240
+#
+tel r9218
+#
+create/drop a large elemental;large;elemental;m9207:characters.Mobile
+#
+desc m9207 = A large elemental. 
+#
+set m9207/level = 10
+#
+set m9207/level_base = 10
+#
+set m9207/vnum = "m9207"
+#
+set m9207/look_description = "A large elemental, a resident of the canyon. "
+#
+set m9207/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9207/alignment = 20
+#
+set m9207/sex = "neuter"
+#
+set m9207/race = "elemental"
+#
+tag m9207 = elemental canyon:area name
+#
+tag m9207 = mobile
+#
+set m9207/hitpoints[maximum] = 126
+#
+set m9207/position = "standing"
+#
+set m9207/experience_total = 7085
+#
+set m9207/experience_current = 7085
+#
+set m9207/special_function = "breath_any"
+#
+tel r9218
+#
+create/drop a large elemental;large;elemental;m9207; m9207-2:characters.Mobile
+#
+desc m9207-2 = A large elemental. 
+#
+set m9207-2/level = 10
+#
+set m9207-2/level_base = 10
+#
+set m9207-2/vnum = "m9207"
+#
+set m9207-2/look_description = "A large elemental, a resident of the canyon. "
+#
+set m9207-2/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9207-2/alignment = 20
+#
+set m9207-2/sex = "neuter"
+#
+set m9207-2/race = "elemental"
+#
+tag m9207-2 = elemental canyon:area name
+#
+tag m9207-2 = mobile
+#
+set m9207-2/hitpoints[maximum] = 98
+#
+set m9207-2/position = "standing"
+#
+set m9207-2/experience_total = 7887
+#
+set m9207-2/experience_current = 7887
+#
+set m9207-2/special_function = "breath_any"
+#
+tel r9218
+#
+create an energy scroll;energy;scroll;o9223:objects.Scroll
+#
+sethome o9223 = m9207-2
+#
+desc o9223 = A scroll of energy replacement lies here.
+#
+set o9223/level = 8
+#
+set o9223/level_base = 8
+#
+set o9223/vnum = "o9223"
+#
+set o9223/item_type = "scroll"
+#
+set o9223/weight = 1
+#
+tag o9223 = elemental canyon:area name
+#
+tag o9223 = object
+#
+set o9223/extra_flags = ['hum']
+#
+set o9223/spell_level = 19
+#
+set o9223/spell_level_base = 19
+#
+set o9223/spell_name_1 = "cure critical"
+#
+set o9223/spell_name_2 = "refresh"
+#
+wearto o9223 = m9207-2
+#
+set m9207-2/reset_objects["o9223"] = {"location":"equipped"}
+#
+tel r9218
+#
+create/drop an illusionist;illusionist;m9233:characters.Mobile
+#
+desc m9233 = The illusionist seeks the aid of the elemental forces. 
+#
+set m9233/level = 9
+#
+set m9233/level_base = 9
+#
+set m9233/vnum = "m9233"
+#
+set m9233/look_description = "He seeks their aid for a powerful new spell of deception. <wielded>            The Sword of Illusions "
+#
+set m9233/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9233/alignment = -50
+#
+set m9233/sex = "neuter"
+#
+set m9233/race = "human"
+#
+tag m9233 = elemental canyon:area name
+#
+tag m9233 = mobile
+#
+set m9233/hitpoints[maximum] = 149
+#
+set m9233/position = "standing"
+#
+set m9233/experience_total = 4475
+#
+set m9233/experience_current = 4475
+#
+set m9233/special_function = "cast_mage"
+#
+tel r9219
+#
+create/drop a tiny elemental;tiny;elemental;m9203:characters.Mobile
+#
+desc m9203 = A tiny elemental form wanders about. 
+#
+set m9203/level = 7
+#
+set m9203/level_base = 7
+#
+set m9203/vnum = "m9203"
+#
+set m9203/look_description = "Rather small for an elemental form, looks like a reject. "
+#
+set m9203/act_flags = ['stay area', 'npc']
+#
+set m9203/alignment = 0
+#
+set m9203/sex = "neuter"
+#
+set m9203/race = "elemental"
+#
+tag m9203 = elemental canyon:area name
+#
+tag m9203 = mobile
+#
+set m9203/hitpoints[maximum] = 65
+#
+set m9203/position = "standing"
+#
+set m9203/experience_total = 2086
+#
+set m9203/experience_current = 2086
+#
+tel r9219
+#
+create magic dust;dust;o9225:objects.Pill
+#
+sethome o9225 = m9203
+#
+desc o9225 = A pile of dust of appearance has gathered here.
+#
+set o9225/level = 5
+#
+set o9225/level_base = 5
+#
+set o9225/vnum = "o9225"
+#
+set o9225/item_type = "pill"
+#
+set o9225/weight = 1
+#
+tag o9225 = elemental canyon:area name
+#
+tag o9225 = object
+#
+set o9225/spell_level = 20
+#
+set o9225/spell_level_base = 20
+#
+set o9225/spell_name_1 = "detect invis"
+#
+wearto o9225 = m9203
+#
+set m9203/reset_objects["o9225"] = {"location":"equipped"}
+#
+tel r9220
+#
+create/drop a little imp;imp;m9236:characters.Mobile
+#
+desc m9236 = A little imp runs along being annoying. 
+#
+set m9236/level = 7
+#
+set m9236/level_base = 7
+#
+set m9236/vnum = "m9236"
+#
+set m9236/look_description = "The little bugger steals stuff and is generally obnoxious. "
+#
+set m9236/act_flags = ['wimpy', 'stay area', 'scavenger', 'npc']
+#
+set m9236/alignment = -500
+#
+set m9236/sex = "neuter"
+#
+set m9236/spell_affects = {'hide': '', 'sneak': ''}
+#
+set m9236/race = "kobold"
+#
+tag m9236 = elemental canyon:area name
+#
+tag m9236 = mobile
+#
+set m9236/hitpoints[maximum] = 64
+#
+set m9236/position = "standing"
+#
+set m9236/experience_total = 2125
+#
+set m9236/experience_current = 2125
+#
+tel r9220
+#
+create/drop a lava beast;lava;elemental;m9220:characters.Mobile
+#
+desc m9220 = A lava beast spews from place to place. 
+#
+set m9220/level = 6
+#
+set m9220/level_base = 6
+#
+set m9220/vnum = "m9220"
+#
+set m9220/look_description = "The magical lava beast is a cross between fire and earth. "
+#
+set m9220/act_flags = ['stay area', 'npc']
+#
+set m9220/alignment = 0
+#
+set m9220/sex = "neuter"
+#
+set m9220/race = "elemental"
+#
+tag m9220 = elemental canyon:area name
+#
+tag m9220 = mobile
+#
+set m9220/hitpoints[maximum] = 49
+#
+set m9220/position = "standing"
+#
+set m9220/experience_total = 1637
+#
+set m9220/experience_current = 1637
+#
+tel r9220
+#
+create a lava lamp;lava;lamp;o9222:objects.Light
+#
+sethome o9222 = m9220
+#
+desc o9222 = A lantern which glows with a red glowing light has been dumped.
+#
+set o9222/level = 4
+#
+set o9222/level_base = 4
+#
+set o9222/vnum = "o9222"
+#
+set o9222/item_type = "light"
+#
+set o9222/weight = 4
+#
+tag o9222 = elemental canyon:area name
+#
+tag o9222 = object
+#
+set o9222/extra_flags = ['glow']
+#
+set o9222/light_hours= 200
+#
+wearto o9222 = m9220
+#
+set m9220/reset_objects["o9222"] = {"location":"equipped"}
+#
+tel r9221
+#
+create/drop a small rock;pebble;rock;earth;stone;elemental;m9217:characters.Mobile
+#
+desc m9217 = A small rock. 
+#
+set m9217/level = 6
+#
+set m9217/level_base = 6
+#
+set m9217/vnum = "m9217"
+#
+set m9217/look_description = "It seems to be a small living pebble! "
+#
+set m9217/act_flags = ['stay area', 'npc']
+#
+set m9217/alignment = 0
+#
+set m9217/sex = "neuter"
+#
+set m9217/race = "elemental"
+#
+tag m9217 = elemental canyon:area name
+#
+tag m9217 = mobile
+#
+set m9217/hitpoints[maximum] = 75
+#
+set m9217/position = "standing"
+#
+set m9217/experience_total = 1619
+#
+set m9217/experience_current = 1619
+#
+tel r9221
+#
+create/drop a lava beast;lava;elemental;m9220:characters.Mobile
+#
+desc m9220 = A lava beast spews from place to place. 
+#
+set m9220/level = 6
+#
+set m9220/level_base = 6
+#
+set m9220/vnum = "m9220"
+#
+set m9220/look_description = "The magical lava beast is a cross between fire and earth. "
+#
+set m9220/act_flags = ['stay area', 'npc']
+#
+set m9220/alignment = 0
+#
+set m9220/sex = "neuter"
+#
+set m9220/race = "elemental"
+#
+tag m9220 = elemental canyon:area name
+#
+tag m9220 = mobile
+#
+set m9220/hitpoints[maximum] = 79
+#
+set m9220/position = "standing"
+#
+set m9220/experience_total = 1637
+#
+set m9220/experience_current = 1637
+#
+tel r9221
+#
+create/drop a particle;particle;elemental;m9223:characters.Mobile
+#
+desc m9223 = A subatomic particle is too small for you to see. 
+#
+set m9223/level = 8
+#
+set m9223/level_base = 8
+#
+set m9223/vnum = "m9223"
+#
+set m9223/look_description = "The magical manifestation of energy. "
+#
+set m9223/act_flags = ['stay area', 'npc']
+#
+set m9223/alignment = 0
+#
+set m9223/sex = "neuter"
+#
+set m9223/race = "elemental"
+#
+tag m9223 = elemental canyon:area name
+#
+tag m9223 = mobile
+#
+set m9223/hitpoints[maximum] = 80
+#
+set m9223/position = "standing"
+#
+set m9223/experience_total = 3289
+#
+set m9223/experience_current = 3289
+#
+set m9223/special_function = "breath_lightning"
+#
+tel r9222
+#
+create/drop a small elemental;small;elemental;m9205:characters.Mobile
+#
+desc m9205 = A small, rather nondescript elemental. 
+#
+set m9205/level = 7
+#
+set m9205/level_base = 7
+#
+set m9205/vnum = "m9205"
+#
+set m9205/look_description = "A small elemental, a resident of the canyon. "
+#
+set m9205/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9205/alignment = 0
+#
+set m9205/sex = "neuter"
+#
+set m9205/race = "elemental"
+#
+tag m9205 = elemental canyon:area name
+#
+tag m9205 = mobile
+#
+set m9205/hitpoints[maximum] = 105
+#
+set m9205/position = "standing"
+#
+set m9205/experience_total = 2358
+#
+set m9205/experience_current = 2358
+#
+tel r9222
+#
+create a water jug;water;jug;o9224:objects.Drink_container
+#
+sethome o9224 = m9205
+#
+desc o9224 = A large but surprisingly light jug of water stands here.
+#
+set o9224/level = 5
+#
+set o9224/level_base = 5
+#
+set o9224/vnum = "o9224"
+#
+set o9224/item_type = "drink_container"
+#
+set o9224/weight = 5
+#
+tag o9224 = elemental canyon:area name
+#
+tag o9224 = object
+#
+set o9224/capacity_current = 150
+#
+set o9224/liquid_type = "water"
+#
+set o9224/poison = 0
+#
+wearto o9224 = m9205
+#
+set m9205/reset_objects["o9224"] = {"location":"equipped"}
+#
+tel r9222
+#
+create/drop a small rock;pebble;rock;earth;stone;elemental;m9217:characters.Mobile
+#
+desc m9217 = A small rock. 
+#
+set m9217/level = 6
+#
+set m9217/level_base = 6
+#
+set m9217/vnum = "m9217"
+#
+set m9217/look_description = "It seems to be a small living pebble! "
+#
+set m9217/act_flags = ['stay area', 'npc']
+#
+set m9217/alignment = 0
+#
+set m9217/sex = "neuter"
+#
+set m9217/race = "elemental"
+#
+tag m9217 = elemental canyon:area name
+#
+tag m9217 = mobile
+#
+set m9217/hitpoints[maximum] = 73
+#
+set m9217/position = "standing"
+#
+set m9217/experience_total = 1589
+#
+set m9217/experience_current = 1589
+#
+tel r9222
+#
+create/drop a mud monster;mud;elemental;m9221:characters.Mobile
+#
+desc m9221 = A mud monster slops around. 
+#
+set m9221/level = 8
+#
+set m9221/level_base = 8
+#
+set m9221/vnum = "m9221"
+#
+set m9221/look_description = "The magical mud monster is a cross between water and earth. "
+#
+set m9221/act_flags = ['stay area', 'npc']
+#
+set m9221/alignment = 0
+#
+set m9221/sex = "neuter"
+#
+set m9221/race = "elemental"
+#
+tag m9221 = elemental canyon:area name
+#
+tag m9221 = mobile
+#
+set m9221/hitpoints[maximum] = 70
+#
+set m9221/position = "standing"
+#
+set m9221/experience_total = 3054
+#
+set m9221/experience_current = 3054
+#
+tel r9222
+#
+create/drop a mud monster;mud;elemental;m9221; m9221-2:characters.Mobile
+#
+desc m9221-2 = A mud monster slops around. 
+#
+set m9221-2/level = 8
+#
+set m9221-2/level_base = 8
+#
+set m9221-2/vnum = "m9221"
+#
+set m9221-2/look_description = "The magical mud monster is a cross between water and earth. "
+#
+set m9221-2/act_flags = ['stay area', 'npc']
+#
+set m9221-2/alignment = 0
+#
+set m9221-2/sex = "neuter"
+#
+set m9221-2/race = "elemental"
+#
+tag m9221-2 = elemental canyon:area name
+#
+tag m9221-2 = mobile
+#
+set m9221-2/hitpoints[maximum] = 120
+#
+set m9221-2/position = "standing"
+#
+set m9221-2/experience_total = 2990
+#
+set m9221-2/experience_current = 2990
+#
+tel r9222
+#
+create/drop a dust cloud;dust;elemental;m9224:characters.Mobile
+#
+desc m9224 = A dust cloud blowing by makes you sneeze. 
+#
+set m9224/level = 9
+#
+set m9224/level_base = 9
+#
+set m9224/vnum = "m9224"
+#
+set m9224/look_description = "The magical dust cloud is a cross between air and earth. "
+#
+set m9224/act_flags = ['stay area', 'npc']
+#
+set m9224/alignment = 0
+#
+set m9224/sex = "neuter"
+#
+set m9224/race = "elemental"
+#
+tag m9224 = elemental canyon:area name
+#
+tag m9224 = mobile
+#
+set m9224/hitpoints[maximum] = 105
+#
+set m9224/position = "standing"
+#
+set m9224/experience_total = 4398
+#
+set m9224/experience_current = 4398
+#
+set m9224/special_function = "thief"
+#
+tel r9222
+#
+create magic dust;dust;o9225:objects.Pill
+#
+sethome o9225 = m9224
+#
+desc o9225 = A pile of dust of appearance has gathered here.
+#
+set o9225/level = 7
+#
+set o9225/level_base = 7
+#
+set o9225/vnum = "o9225"
+#
+set o9225/item_type = "pill"
+#
+set o9225/weight = 1
+#
+tag o9225 = elemental canyon:area name
+#
+tag o9225 = object
+#
+set o9225/spell_level = 20
+#
+set o9225/spell_level_base = 20
+#
+set o9225/spell_name_1 = "detect invis"
+#
+wearto o9225 = m9224
+#
+set m9224/reset_objects["o9225"] = {"location":"equipped"}
+#
+tel r9223
+#
+create/drop a small rock;pebble;rock;earth;stone;elemental;m9217:characters.Mobile
+#
+desc m9217 = A small rock. 
+#
+set m9217/level = 6
+#
+set m9217/level_base = 6
+#
+set m9217/vnum = "m9217"
+#
+set m9217/look_description = "It seems to be a small living pebble! "
+#
+set m9217/act_flags = ['stay area', 'npc']
+#
+set m9217/alignment = 0
+#
+set m9217/sex = "neuter"
+#
+set m9217/race = "elemental"
+#
+tag m9217 = elemental canyon:area name
+#
+tag m9217 = mobile
+#
+set m9217/hitpoints[maximum] = 68
+#
+set m9217/position = "standing"
+#
+set m9217/experience_total = 1663
+#
+set m9217/experience_current = 1663
+#
+tel r9223
+#
+create elemental staff of earthquake;staff;earthquake;o9217:objects.Staff
+#
+sethome o9217 = m9217
+#
+desc o9217 = A earthquake staff lies forgotten on the ground.
+#
+set o9217/level = 4
+#
+set o9217/level_base = 4
+#
+set o9217/vnum = "o9217"
+#
+set o9217/item_type = "staff"
+#
+set o9217/wear_location = "held, in hands"
+#
+set o9217/weight = 7
+#
+tag o9217 = elemental canyon:area name
+#
+tag o9217 = object
+#
+set o9217/extra_flags = ['glow']
+#
+set o9217/spell_level = 7
+#
+set o9217/spell_level_base = 7
+#
+set o9217/charges_maximum = 3
+#
+set o9217/charges_maximum_base = 3
+#
+set o9217/charges_current = 3
+#
+set o9217/spell_name = "earthquake"
+#
+wearto o9217 = m9217
+#
+set m9217/reset_objects["o9217"] = {"location":"equipped"}
+#
+tel r9224
+#
+create/drop a small rock;pebble;rock;earth;stone;elemental;m9217:characters.Mobile
+#
+desc m9217 = A small rock. 
+#
+set m9217/level = 6
+#
+set m9217/level_base = 6
+#
+set m9217/vnum = "m9217"
+#
+set m9217/look_description = "It seems to be a small living pebble! "
+#
+set m9217/act_flags = ['stay area', 'npc']
+#
+set m9217/alignment = 0
+#
+set m9217/sex = "neuter"
+#
+set m9217/race = "elemental"
+#
+tag m9217 = elemental canyon:area name
+#
+tag m9217 = mobile
+#
+set m9217/hitpoints[maximum] = 51
+#
+set m9217/position = "standing"
+#
+set m9217/experience_total = 1409
+#
+set m9217/experience_current = 1409
+#
+tel r9225
+#
+create/drop a medium elemental;medium;elemental;m9206:characters.Mobile
+#
+desc m9206 = A medium-sized elemental. 
+#
+set m9206/level = 8
+#
+set m9206/level_base = 8
+#
+set m9206/vnum = "m9206"
+#
+set m9206/look_description = "A medium elemental, a resident of the canyon. "
+#
+set m9206/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9206/alignment = 10
+#
+set m9206/sex = "neuter"
+#
+set m9206/race = "elemental"
+#
+tag m9206 = elemental canyon:area name
+#
+tag m9206 = mobile
+#
+set m9206/hitpoints[maximum] = 74
+#
+set m9206/position = "standing"
+#
+set m9206/experience_total = 3145
+#
+set m9206/experience_current = 3145
+#
+tel r9225
+#
+create elemental wand of lightning;wand;o9219:objects.Wand
+#
+sethome o9219 = m9206
+#
+desc o9219 = A lightning wand lies forgotten on the ground.
+#
+set o9219/level = 6
+#
+set o9219/level_base = 6
+#
+set o9219/vnum = "o9219"
+#
+set o9219/item_type = "wand"
+#
+set o9219/wear_location = "held, in hands"
+#
+set o9219/weight = 7
+#
+tag o9219 = elemental canyon:area name
+#
+tag o9219 = object
+#
+set o9219/extra_flags = ['glow']
+#
+set o9219/spell_level = 9
+#
+set o9219/spell_level_base = 9
+#
+set o9219/charges_maximum = 1
+#
+set o9219/charges_maximum_base = 1
+#
+set o9219/charges_current = 1
+#
+set o9219/spell_name = "lightning bolt"
+#
+wearto o9219 = m9206
+#
+set m9206/reset_objects["o9219"] = {"location":"equipped"}
+#
+tel r9225
+#
+create/drop a small rock;pebble;rock;earth;stone;elemental;m9217:characters.Mobile
+#
+desc m9217 = A small rock. 
+#
+set m9217/level = 6
+#
+set m9217/level_base = 6
+#
+set m9217/vnum = "m9217"
+#
+set m9217/look_description = "It seems to be a small living pebble! "
+#
+set m9217/act_flags = ['stay area', 'npc']
+#
+set m9217/alignment = 0
+#
+set m9217/sex = "neuter"
+#
+set m9217/race = "elemental"
+#
+tag m9217 = elemental canyon:area name
+#
+tag m9217 = mobile
+#
+set m9217/hitpoints[maximum] = 70
+#
+set m9217/position = "standing"
+#
+set m9217/experience_total = 1613
+#
+set m9217/experience_current = 1613
+#
+tel r9225
+#
+create/drop a small snowflake;snowflake;snow;flake;ice;elemental;m9216:characters.Mobile
+#
+desc m9216 = A frozen snowflake water elemental. 
+#
+set m9216/level = 7
+#
+set m9216/level_base = 7
+#
+set m9216/vnum = "m9216"
+#
+set m9216/look_description = "It looks a little blue. "
+#
+set m9216/act_flags = ['stay area', 'npc']
+#
+set m9216/alignment = 520
+#
+set m9216/sex = "neuter"
+#
+set m9216/race = "elemental"
+#
+tag m9216 = elemental canyon:area name
+#
+tag m9216 = mobile
+#
+set m9216/hitpoints[maximum] = 80
+#
+set m9216/position = "standing"
+#
+set m9216/experience_total = 2351
+#
+set m9216/experience_current = 2351
+#
+tel r9226
+#
+create/drop a small rock;pebble;rock;earth;stone;elemental;m9217:characters.Mobile
+#
+desc m9217 = A small rock. 
+#
+set m9217/level = 6
+#
+set m9217/level_base = 6
+#
+set m9217/vnum = "m9217"
+#
+set m9217/look_description = "It seems to be a small living pebble! "
+#
+set m9217/act_flags = ['stay area', 'npc']
+#
+set m9217/alignment = 0
+#
+set m9217/sex = "neuter"
+#
+set m9217/race = "elemental"
+#
+tag m9217 = elemental canyon:area name
+#
+tag m9217 = mobile
+#
+set m9217/hitpoints[maximum] = 81
+#
+set m9217/position = "standing"
+#
+set m9217/experience_total = 1542
+#
+set m9217/experience_current = 1542
+#
+tel r9227
+#
+create/drop the Earth Ruler;earth;elemental;ruler;m9208:characters.Mobile
+#
+desc m9208 = The Ruler of the earth elementals. 
+#
+set m9208/level = 14
+#
+set m9208/level_base = 14
+#
+set m9208/vnum = "m9208"
+#
+set m9208/look_description = "He looks as old as the earth itself.  He seems to know all the secrets and knowledge of the Earth.  You can't really tell where he begins and the rock wall ends. "
+#
+set m9208/act_flags = ['sentinel', 'npc']
+#
+set m9208/alignment = 0
+#
+set m9208/sex = "neuter"
+#
+set m9208/spell_affects = {'sanctuary': ''}
+#
+set m9208/race = "elemental"
+#
+tag m9208 = elemental canyon:area name
+#
+tag m9208 = mobile
+#
+set m9208/hitpoints[maximum] = 234
+#
+set m9208/position = "standing"
+#
+set m9208/experience_total = 20386
+#
+set m9208/experience_current = 20386
+#
+set m9208/special_function = "cast_cleric"
+#
+tel r9227
+#
+create the earth ring;ring;earth;o9201:objects.Armor
+#
+sethome o9201 = m9208
+#
+desc o9201 = A dark ring which seems to absorb all the light around it lies here.
+#
+set o9201/level = 12
+#
+set o9201/level_base = 12
+#
+set o9201/vnum = "o9201"
+#
+set o9201/item_type = "armor"
+#
+set o9201/wear_location = "finger"
+#
+set o9201/weight = 5
+#
+tag o9201 = elemental canyon:area name
+#
+tag o9201 = object
+#
+set o9201/extra_flags = ['bless']
+#
+set o9201/stat_modifiers[intelligence] = 1
+#
+set o9201/stat_modifiers[wisdom] = 1
+#
+set o9201/armor = 5
+#
+wearto o9201 = m9208
+#
+set m9208/reset_objects["o9201"] = {"location":"equipped"}
+#
+tel r9227
+#
+create a stony breastplate;breastplate;stony;plate;o9202:objects.Armor
+#
+sethome o9202 = m9208
+#
+desc o9202 = A breastplate made of the stone from deep within the earth lies here.
+#
+set o9202/level = 12
+#
+set o9202/level_base = 12
+#
+set o9202/vnum = "o9202"
+#
+set o9202/item_type = "armor"
+#
+set o9202/wear_location = "body"
+#
+set o9202/weight = 70
+#
+tag o9202 = elemental canyon:area name
+#
+tag o9202 = object
+#
+set o9202/stat_modifiers[constitution] = 1
+#
+set o9202/armor = 6
+#
+wearto o9202 = m9208
+#
+set m9208/reset_objects["o9202"] = {"location":"equipped"}
+#
+tel r9227
+#
+create/drop a small rock;pebble;rock;earth;stone;elemental;m9217:characters.Mobile
+#
+desc m9217 = A small rock. 
+#
+set m9217/level = 6
+#
+set m9217/level_base = 6
+#
+set m9217/vnum = "m9217"
+#
+set m9217/look_description = "It seems to be a small living pebble! "
+#
+set m9217/act_flags = ['stay area', 'npc']
+#
+set m9217/alignment = 0
+#
+set m9217/sex = "neuter"
+#
+set m9217/race = "elemental"
+#
+tag m9217 = elemental canyon:area name
+#
+tag m9217 = mobile
+#
+set m9217/hitpoints[maximum] = 73
+#
+set m9217/position = "standing"
+#
+set m9217/experience_total = 1526
+#
+set m9217/experience_current = 1526
+#
+tel r9227
+#
+create a stone club;stone;club;o9220:objects.Weapon
+#
+sethome o9220 = m9217
+#
+desc o9220 = A large stone club lies on the ground.
+#
+set o9220/level = 4
+#
+set o9220/level_base = 4
+#
+set o9220/vnum = "o9220"
+#
+set o9220/item_type = "weapon"
+#
+set o9220/wear_location = "wield"
+#
+set o9220/weight = 16
+#
+tag o9220 = elemental canyon:area name
+#
+tag o9220 = object
+#
+set o9220/extra_flags = ['magic']
+#
+set o9220/stat_modifiers[damroll] = 2
+#
+set o9220/weapon_type = "pound"
+#
+set o9220/damage_low = 3
+#
+set o9220/damage_high = 7
+#
+wieldto o9220 = m9217
+#
+set m9217/experience_total = 1907
+#
+set m9217/experience_current = 1907
+#
+set m9217/reset_objects["o9220"] = {"location":"equipped"}
+#
+tel r9227
+#
+create/drop a small rock;pebble;rock;earth;stone;elemental;m9217; m9217-2:characters.Mobile
+#
+desc m9217-2 = A small rock. 
+#
+set m9217-2/level = 6
+#
+set m9217-2/level_base = 6
+#
+set m9217-2/vnum = "m9217"
+#
+set m9217-2/look_description = "It seems to be a small living pebble! "
+#
+set m9217-2/act_flags = ['stay area', 'npc']
+#
+set m9217-2/alignment = 0
+#
+set m9217-2/sex = "neuter"
+#
+set m9217-2/race = "elemental"
+#
+tag m9217-2 = elemental canyon:area name
+#
+tag m9217-2 = mobile
+#
+set m9217-2/hitpoints[maximum] = 80
+#
+set m9217-2/position = "standing"
+#
+set m9217-2/experience_total = 1656
+#
+set m9217-2/experience_current = 1656
+#
+tel r9227
+#
+create/drop a dust cloud;dust;elemental;m9224:characters.Mobile
+#
+desc m9224 = A dust cloud blowing by makes you sneeze. 
+#
+set m9224/level = 9
+#
+set m9224/level_base = 9
+#
+set m9224/vnum = "m9224"
+#
+set m9224/look_description = "The magical dust cloud is a cross between air and earth. "
+#
+set m9224/act_flags = ['stay area', 'npc']
+#
+set m9224/alignment = 0
+#
+set m9224/sex = "neuter"
+#
+set m9224/race = "elemental"
+#
+tag m9224 = elemental canyon:area name
+#
+tag m9224 = mobile
+#
+set m9224/hitpoints[maximum] = 119
+#
+set m9224/position = "standing"
+#
+set m9224/experience_total = 4576
+#
+set m9224/experience_current = 4576
+#
+set m9224/special_function = "thief"
+#
+tel r9228
+#
+create/drop a little imp;imp;m9236:characters.Mobile
+#
+desc m9236 = A little imp runs along being annoying. 
+#
+set m9236/level = 7
+#
+set m9236/level_base = 7
+#
+set m9236/vnum = "m9236"
+#
+set m9236/look_description = "The little bugger steals stuff and is generally obnoxious. "
+#
+set m9236/act_flags = ['wimpy', 'stay area', 'scavenger', 'npc']
+#
+set m9236/alignment = -500
+#
+set m9236/sex = "neuter"
+#
+set m9236/spell_affects = {'hide': '', 'sneak': ''}
+#
+set m9236/race = "kobold"
+#
+tag m9236 = elemental canyon:area name
+#
+tag m9236 = mobile
+#
+set m9236/hitpoints[maximum] = 80
+#
+set m9236/position = "standing"
+#
+set m9236/experience_total = 2126
+#
+set m9236/experience_current = 2126
+#
+tel r9228
+#
+create/drop a small blob of acid;acid;blob;elemental;m9219:characters.Mobile
+#
+desc m9219 = A small blob of acid eats away at the stone aimlessly. 
+#
+set m9219/level = 10
+#
+set m9219/level_base = 10
+#
+set m9219/vnum = "m9219"
+#
+set m9219/look_description = "The magical blob of acid is a cross between lightning and water. "
+#
+set m9219/act_flags = ['stay area', 'npc']
+#
+set m9219/alignment = 0
+#
+set m9219/sex = "neuter"
+#
+set m9219/race = "elemental"
+#
+tag m9219 = elemental canyon:area name
+#
+tag m9219 = mobile
+#
+set m9219/hitpoints[maximum] = 108
+#
+set m9219/position = "standing"
+#
+set m9219/experience_total = 5480
+#
+set m9219/experience_current = 5480
+#
+set m9219/special_function = "breath_acid"
+#
+tel r9229
+#
+create/drop a small blob of acid;acid;blob;elemental;m9219:characters.Mobile
+#
+desc m9219 = A small blob of acid eats away at the stone aimlessly. 
+#
+set m9219/level = 10
+#
+set m9219/level_base = 10
+#
+set m9219/vnum = "m9219"
+#
+set m9219/look_description = "The magical blob of acid is a cross between lightning and water. "
+#
+set m9219/act_flags = ['stay area', 'npc']
+#
+set m9219/alignment = 0
+#
+set m9219/sex = "neuter"
+#
+set m9219/race = "elemental"
+#
+tag m9219 = elemental canyon:area name
+#
+tag m9219 = mobile
+#
+set m9219/hitpoints[maximum] = 115
+#
+set m9219/position = "standing"
+#
+set m9219/experience_total = 6171
+#
+set m9219/experience_current = 6171
+#
+set m9219/special_function = "breath_acid"
+#
+tel r9230
+#
+create/drop an alchemist;alchemist;m9234:characters.Mobile
+#
+desc m9234 = An alchemist wanders by in search of magical herbs. 
+#
+set m9234/level = 10
+#
+set m9234/level_base = 10
+#
+set m9234/vnum = "m9234"
+#
+set m9234/look_description = "Rare herbs are rumored to grow only in the canyon. "
+#
+set m9234/act_flags = ['stay area', 'npc']
+#
+set m9234/alignment = -50
+#
+set m9234/sex = "neuter"
+#
+set m9234/race = "human"
+#
+tag m9234 = elemental canyon:area name
+#
+tag m9234 = mobile
+#
+set m9234/hitpoints[maximum] = 136
+#
+set m9234/position = "standing"
+#
+set m9234/experience_total = 5360
+#
+set m9234/experience_current = 5360
+#
+set m9234/special_function = "thief"
+#
+tel r9230
+#
+create elemental wand of wind and air;wand;air;wind;o9218:objects.Wand
+#
+sethome o9218 = m9234
+#
+desc o9218 = An air wand lies forgotten on the ground.
+#
+set o9218/level = 8
+#
+set o9218/level_base = 8
+#
+set o9218/vnum = "o9218"
+#
+set o9218/item_type = "wand"
+#
+set o9218/wear_location = "held, in hands"
+#
+set o9218/weight = 7
+#
+tag o9218 = elemental canyon:area name
+#
+tag o9218 = object
+#
+set o9218/extra_flags = ['glow']
+#
+set o9218/spell_level = 11
+#
+set o9218/spell_level_base = 11
+#
+set o9218/charges_maximum = 1
+#
+set o9218/charges_maximum_base = 1
+#
+set o9218/charges_current = 1
+#
+set o9218/spell_name = "gas breath"
+#
+wearto o9218 = m9234
+#
+set m9234/reset_objects["o9218"] = {"location":"equipped"}
+#
+tel r9230
+#
+create/drop a puddle;water;puddle;elemental;m9214:characters.Mobile
+#
+desc m9214 = A small puddle of water elemental. 
+#
+set m9214/level = 8
+#
+set m9214/level_base = 8
+#
+set m9214/vnum = "m9214"
+#
+set m9214/look_description = "It trickles along the ground and gets your feet wet. "
+#
+set m9214/act_flags = ['stay area', 'npc']
+#
+set m9214/alignment = 0
+#
+set m9214/sex = "neuter"
+#
+set m9214/race = "elemental"
+#
+tag m9214 = elemental canyon:area name
+#
+tag m9214 = mobile
+#
+set m9214/hitpoints[maximum] = 116
+#
+set m9214/position = "standing"
+#
+set m9214/experience_total = 3270
+#
+set m9214/experience_current = 3270
+#
+tel r9231
+#
+create/drop a puddle;water;puddle;elemental;m9214:characters.Mobile
+#
+desc m9214 = A small puddle of water elemental. 
+#
+set m9214/level = 8
+#
+set m9214/level_base = 8
+#
+set m9214/vnum = "m9214"
+#
+set m9214/look_description = "It trickles along the ground and gets your feet wet. "
+#
+set m9214/act_flags = ['stay area', 'npc']
+#
+set m9214/alignment = 0
+#
+set m9214/sex = "neuter"
+#
+set m9214/race = "elemental"
+#
+tag m9214 = elemental canyon:area name
+#
+tag m9214 = mobile
+#
+set m9214/hitpoints[maximum] = 125
+#
+set m9214/position = "standing"
+#
+set m9214/experience_total = 2922
+#
+set m9214/experience_current = 2922
+#
+tel r9231
+#
+create/drop a mud monster;mud;elemental;m9221:characters.Mobile
+#
+desc m9221 = A mud monster slops around. 
+#
+set m9221/level = 8
+#
+set m9221/level_base = 8
+#
+set m9221/vnum = "m9221"
+#
+set m9221/look_description = "The magical mud monster is a cross between water and earth. "
+#
+set m9221/act_flags = ['stay area', 'npc']
+#
+set m9221/alignment = 0
+#
+set m9221/sex = "neuter"
+#
+set m9221/race = "elemental"
+#
+tag m9221 = elemental canyon:area name
+#
+tag m9221 = mobile
+#
+set m9221/hitpoints[maximum] = 107
+#
+set m9221/position = "standing"
+#
+set m9221/experience_total = 3388
+#
+set m9221/experience_current = 3388
+#
+tel r9231
+#
+create/drop a mud monster;mud;elemental;m9221; m9221-2:characters.Mobile
+#
+desc m9221-2 = A mud monster slops around. 
+#
+set m9221-2/level = 8
+#
+set m9221-2/level_base = 8
+#
+set m9221-2/vnum = "m9221"
+#
+set m9221-2/look_description = "The magical mud monster is a cross between water and earth. "
+#
+set m9221-2/act_flags = ['stay area', 'npc']
+#
+set m9221-2/alignment = 0
+#
+set m9221-2/sex = "neuter"
+#
+set m9221-2/race = "elemental"
+#
+tag m9221-2 = elemental canyon:area name
+#
+tag m9221-2 = mobile
+#
+set m9221-2/hitpoints[maximum] = 120
+#
+set m9221-2/position = "standing"
+#
+set m9221-2/experience_total = 3241
+#
+set m9221-2/experience_current = 3241
+#
+tel r9232
+#
+create/drop a puddle;water;puddle;elemental;m9214:characters.Mobile
+#
+desc m9214 = A small puddle of water elemental. 
+#
+set m9214/level = 8
+#
+set m9214/level_base = 8
+#
+set m9214/vnum = "m9214"
+#
+set m9214/look_description = "It trickles along the ground and gets your feet wet. "
+#
+set m9214/act_flags = ['stay area', 'npc']
+#
+set m9214/alignment = 0
+#
+set m9214/sex = "neuter"
+#
+set m9214/race = "elemental"
+#
+tag m9214 = elemental canyon:area name
+#
+tag m9214 = mobile
+#
+set m9214/hitpoints[maximum] = 114
+#
+set m9214/position = "standing"
+#
+set m9214/experience_total = 3388
+#
+set m9214/experience_current = 3388
+#
+tel r9232
+#
+create/drop a small snowflake;snowflake;snow;flake;ice;elemental;m9216:characters.Mobile
+#
+desc m9216 = A frozen snowflake water elemental. 
+#
+set m9216/level = 7
+#
+set m9216/level_base = 7
+#
+set m9216/vnum = "m9216"
+#
+set m9216/look_description = "It looks a little blue. "
+#
+set m9216/act_flags = ['stay area', 'npc']
+#
+set m9216/alignment = 520
+#
+set m9216/sex = "neuter"
+#
+set m9216/race = "elemental"
+#
+tag m9216 = elemental canyon:area name
+#
+tag m9216 = mobile
+#
+set m9216/hitpoints[maximum] = 88
+#
+set m9216/position = "standing"
+#
+set m9216/experience_total = 2306
+#
+set m9216/experience_current = 2306
+#
+tel r9232
+#
+create/drop a small snowflake;snowflake;snow;flake;ice;elemental;m9216; m9216-2:characters.Mobile
+#
+desc m9216-2 = A frozen snowflake water elemental. 
+#
+set m9216-2/level = 7
+#
+set m9216-2/level_base = 7
+#
+set m9216-2/vnum = "m9216"
+#
+set m9216-2/look_description = "It looks a little blue. "
+#
+set m9216-2/act_flags = ['stay area', 'npc']
+#
+set m9216-2/alignment = 520
+#
+set m9216-2/sex = "neuter"
+#
+set m9216-2/race = "elemental"
+#
+tag m9216-2 = elemental canyon:area name
+#
+tag m9216-2 = mobile
+#
+set m9216-2/hitpoints[maximum] = 85
+#
+set m9216-2/position = "standing"
+#
+set m9216-2/experience_total = 2264
+#
+set m9216-2/experience_current = 2264
+#
+tel r9232
+#
+create/drop an elemental mist;mist;elemental;m9222:characters.Mobile
+#
+desc m9222 = The air is magically misty here. 
+#
+set m9222/level = 6
+#
+set m9222/level_base = 6
+#
+set m9222/vnum = "m9222"
+#
+set m9222/look_description = "The magical mist is a cross between water and air. "
+#
+set m9222/act_flags = ['stay area', 'npc']
+#
+set m9222/alignment = 0
+#
+set m9222/sex = "neuter"
+#
+set m9222/race = "elemental"
+#
+tag m9222 = elemental canyon:area name
+#
+tag m9222 = mobile
+#
+set m9222/hitpoints[maximum] = 55
+#
+set m9222/position = "standing"
+#
+set m9222/experience_total = 1539
+#
+set m9222/experience_current = 1539
+#
+tel r9233
+#
+create/drop a puddle;water;puddle;elemental;m9214:characters.Mobile
+#
+desc m9214 = A small puddle of water elemental. 
+#
+set m9214/level = 8
+#
+set m9214/level_base = 8
+#
+set m9214/vnum = "m9214"
+#
+set m9214/look_description = "It trickles along the ground and gets your feet wet. "
+#
+set m9214/act_flags = ['stay area', 'npc']
+#
+set m9214/alignment = 0
+#
+set m9214/sex = "neuter"
+#
+set m9214/race = "elemental"
+#
+tag m9214 = elemental canyon:area name
+#
+tag m9214 = mobile
+#
+set m9214/hitpoints[maximum] = 96
+#
+set m9214/position = "standing"
+#
+set m9214/experience_total = 2904
+#
+set m9214/experience_current = 2904
+#
+tel r9233
+#
+create an ice staff;ice;staff;o9216:objects.Staff
+#
+sethome o9216 = m9214
+#
+desc o9216 = An ice staff lies forgotten on the ground.
+#
+set o9216/level = 6
+#
+set o9216/level_base = 6
+#
+set o9216/vnum = "o9216"
+#
+set o9216/item_type = "staff"
+#
+set o9216/wear_location = "held, in hands"
+#
+set o9216/weight = 7
+#
+tag o9216 = elemental canyon:area name
+#
+tag o9216 = object
+#
+set o9216/extra_flags = ['glow']
+#
+set o9216/spell_level = 21
+#
+set o9216/spell_level_base = 21
+#
+set o9216/charges_maximum = 3
+#
+set o9216/charges_maximum_base = 3
+#
+set o9216/charges_current = 3
+#
+set o9216/spell_name = "frost breath"
+#
+wearto o9216 = m9214
+#
+set m9214/reset_objects["o9216"] = {"location":"equipped"}
+#
+tel r9234
+#
+create/drop a small elemental;small;elemental;m9205:characters.Mobile
+#
+desc m9205 = A small, rather nondescript elemental. 
+#
+set m9205/level = 7
+#
+set m9205/level_base = 7
+#
+set m9205/vnum = "m9205"
+#
+set m9205/look_description = "A small elemental, a resident of the canyon. "
+#
+set m9205/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9205/alignment = 0
+#
+set m9205/sex = "neuter"
+#
+set m9205/race = "elemental"
+#
+tag m9205 = elemental canyon:area name
+#
+tag m9205 = mobile
+#
+set m9205/hitpoints[maximum] = 100
+#
+set m9205/position = "standing"
+#
+set m9205/experience_total = 2147
+#
+set m9205/experience_current = 2147
+#
+tel r9234
+#
+create/drop a puddle;water;puddle;elemental;m9214:characters.Mobile
+#
+desc m9214 = A small puddle of water elemental. 
+#
+set m9214/level = 8
+#
+set m9214/level_base = 8
+#
+set m9214/vnum = "m9214"
+#
+set m9214/look_description = "It trickles along the ground and gets your feet wet. "
+#
+set m9214/act_flags = ['stay area', 'npc']
+#
+set m9214/alignment = 0
+#
+set m9214/sex = "neuter"
+#
+set m9214/race = "elemental"
+#
+tag m9214 = elemental canyon:area name
+#
+tag m9214 = mobile
+#
+set m9214/hitpoints[maximum] = 68
+#
+set m9214/position = "standing"
+#
+set m9214/experience_total = 3105
+#
+set m9214/experience_current = 3105
+#
+tel r9235
+#
+create/drop a puddle;water;puddle;elemental;m9214:characters.Mobile
+#
+desc m9214 = A small puddle of water elemental. 
+#
+set m9214/level = 8
+#
+set m9214/level_base = 8
+#
+set m9214/vnum = "m9214"
+#
+set m9214/look_description = "It trickles along the ground and gets your feet wet. "
+#
+set m9214/act_flags = ['stay area', 'npc']
+#
+set m9214/alignment = 0
+#
+set m9214/sex = "neuter"
+#
+set m9214/race = "elemental"
+#
+tag m9214 = elemental canyon:area name
+#
+tag m9214 = mobile
+#
+set m9214/hitpoints[maximum] = 121
+#
+set m9214/position = "standing"
+#
+set m9214/experience_total = 3075
+#
+set m9214/experience_current = 3075
+#
+tel r9235
+#
+create a water jug;water;jug;o9224:objects.Drink_container
+#
+sethome o9224 = m9214
+#
+desc o9224 = A large but surprisingly light jug of water stands here.
+#
+set o9224/level = 6
+#
+set o9224/level_base = 6
+#
+set o9224/vnum = "o9224"
+#
+set o9224/item_type = "drink_container"
+#
+set o9224/weight = 5
+#
+tag o9224 = elemental canyon:area name
+#
+tag o9224 = object
+#
+set o9224/capacity_current = 150
+#
+set o9224/liquid_type = "water"
+#
+set o9224/poison = 0
+#
+wearto o9224 = m9214
+#
+set m9214/reset_objects["o9224"] = {"location":"equipped"}
+#
+tel r9236
+#
+create/drop The Water Ruler;water;elemental;ruler;m9212:characters.Mobile
+#
+desc m9212 = The Ruler of the water elementals. 
+#
+set m9212/level = 15
+#
+set m9212/level_base = 15
+#
+set m9212/vnum = "m9212"
+#
+set m9212/look_description = "As you look at him he changes to mist, which swirls around you.  Just as you get scared, it reforms in elemental form. "
+#
+set m9212/act_flags = ['sentinel', 'npc']
+#
+set m9212/alignment = 0
+#
+set m9212/sex = "neuter"
+#
+set m9212/spell_affects = {'sanctuary': ''}
+#
+set m9212/race = "elemental"
+#
+tag m9212 = elemental canyon:area name
+#
+tag m9212 = mobile
+#
+set m9212/hitpoints[maximum] = 277
+#
+set m9212/position = "standing"
+#
+set m9212/experience_total = 28192
+#
+set m9212/experience_current = 28192
+#
+set m9212/special_function = "breath_acid"
+#
+tel r9236
+#
+create an icy girth;girth;icy;o9209:objects.Armor
+#
+sethome o9209 = m9212
+#
+desc o9209 = A girth made of magical ice has been left here.
+#
+set o9209/level = 13
+#
+set o9209/level_base = 13
+#
+set o9209/vnum = "o9209"
+#
+set o9209/item_type = "armor"
+#
+set o9209/wear_location = "waist"
+#
+set o9209/weight = 10
+#
+tag o9209 = elemental canyon:area name
+#
+tag o9209 = object
+#
+set o9209/stat_modifiers[constitution] = -2
+#
+set o9209/armor = 5
+#
+wearto o9209 = m9212
+#
+set m9212/reset_objects["o9209"] = {"location":"equipped"}
+#
+tel r9236
+#
+create a waterfall cloak;cloak;waterfall;o9210:objects.Armor
+#
+sethome o9210 = m9212
+#
+desc o9210 = A cloak fashioned from a small magical waterfall is here.
+#
+set o9210/level = 13
+#
+set o9210/level_base = 13
+#
+set o9210/vnum = "o9210"
+#
+set o9210/item_type = "armor"
+#
+set o9210/wear_location = "about body"
+#
+set o9210/weight = 6
+#
+tag o9210 = elemental canyon:area name
+#
+tag o9210 = object
+#
+set o9210/stat_modifiers[mana] = 25
+#
+set o9210/stat_modifiers[hitroll] = -2
+#
+set o9210/armor = 5
+#
+wearto o9210 = m9212
+#
+set m9212/reset_objects["o9210"] = {"location":"equipped"}
+#
+tel r9236
+#
+create/drop a puddle;water;puddle;elemental;m9214:characters.Mobile
+#
+desc m9214 = A small puddle of water elemental. 
+#
+set m9214/level = 8
+#
+set m9214/level_base = 8
+#
+set m9214/vnum = "m9214"
+#
+set m9214/look_description = "It trickles along the ground and gets your feet wet. "
+#
+set m9214/act_flags = ['stay area', 'npc']
+#
+set m9214/alignment = 0
+#
+set m9214/sex = "neuter"
+#
+set m9214/race = "elemental"
+#
+tag m9214 = elemental canyon:area name
+#
+tag m9214 = mobile
+#
+set m9214/hitpoints[maximum] = 75
+#
+set m9214/position = "standing"
+#
+set m9214/experience_total = 2815
+#
+set m9214/experience_current = 2815
+#
+tel r9236
+#
+create/drop a puddle;water;puddle;elemental;m9214; m9214-2:characters.Mobile
+#
+desc m9214-2 = A small puddle of water elemental. 
+#
+set m9214-2/level = 8
+#
+set m9214-2/level_base = 8
+#
+set m9214-2/vnum = "m9214"
+#
+set m9214-2/look_description = "It trickles along the ground and gets your feet wet. "
+#
+set m9214-2/act_flags = ['stay area', 'npc']
+#
+set m9214-2/alignment = 0
+#
+set m9214-2/sex = "neuter"
+#
+set m9214-2/race = "elemental"
+#
+tag m9214-2 = elemental canyon:area name
+#
+tag m9214-2 = mobile
+#
+set m9214-2/hitpoints[maximum] = 123
+#
+set m9214-2/position = "standing"
+#
+set m9214-2/experience_total = 3400
+#
+set m9214-2/experience_current = 3400
+#
+tel r9237
+#
+create/drop a little imp;imp;m9236:characters.Mobile
+#
+desc m9236 = A little imp runs along being annoying. 
+#
+set m9236/level = 7
+#
+set m9236/level_base = 7
+#
+set m9236/vnum = "m9236"
+#
+set m9236/look_description = "The little bugger steals stuff and is generally obnoxious. "
+#
+set m9236/act_flags = ['wimpy', 'stay area', 'scavenger', 'npc']
+#
+set m9236/alignment = -500
+#
+set m9236/sex = "neuter"
+#
+set m9236/spell_affects = {'hide': '', 'sneak': ''}
+#
+set m9236/race = "kobold"
+#
+tag m9236 = elemental canyon:area name
+#
+tag m9236 = mobile
+#
+set m9236/hitpoints[maximum] = 76
+#
+set m9236/position = "standing"
+#
+set m9236/experience_total = 2024
+#
+set m9236/experience_current = 2024
+#
+tel r9238
+#
+create/drop the Blue Flame;blue;flame;m9226:characters.Mobile
+#
+desc m9226 = The Blue Flame burns mysteriously here. 
+#
+set m9226/level = 13
+#
+set m9226/level_base = 13
+#
+set m9226/vnum = "m9226"
+#
+set m9226/look_description = "As you look you see what seems to be a face and almost a humanoid figure somehow trapped in the fire. "
+#
+set m9226/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9226/alignment = -100
+#
+set m9226/sex = "neuter"
+#
+set m9226/race = "human"
+#
+tag m9226 = elemental canyon:area name
+#
+tag m9226 = mobile
+#
+set m9226/hitpoints[maximum] = 236
+#
+set m9226/position = "standing"
+#
+set m9226/experience_total = 14297
+#
+set m9226/experience_current = 14297
+#
+set m9226/special_function = "breath_fire"
+#
+tel r9238
+#
+create a flame lance;flame;lance;o9226:objects.Weapon
+#
+sethome o9226 = m9226
+#
+desc o9226 = A lance of blue flame burns the ground around it.
+#
+set o9226/level = 11
+#
+set o9226/level_base = 11
+#
+set o9226/vnum = "o9226"
+#
+set o9226/item_type = "weapon"
+#
+set o9226/wear_location = "wield"
+#
+set o9226/weight = 14
+#
+tag o9226 = elemental canyon:area name
+#
+tag o9226 = object
+#
+set o9226/extra_flags = ['glow']
+#
+set o9226/stat_modifiers[hitpoints] = -20
+#
+set o9226/stat_modifiers[hitroll] = 2
+#
+set o9226/weapon_type = "slash"
+#
+set o9226/damage_low = 4
+#
+set o9226/damage_high = 13
+#
+wieldto o9226 = m9226
+#
+set m9226/experience_total = 17871
+#
+set m9226/experience_current = 17871
+#
+set m9226/reset_objects["o9226"] = {"location":"equipped"}
+#
+tel r9238
+#
+create/drop the Magneto;magneto;m9227:characters.Mobile
+#
+desc m9227 = The Magneto considers zapping you for the heck of it. 
+#
+set m9227/level = 12
+#
+set m9227/level_base = 12
+#
+set m9227/vnum = "m9227"
+#
+set m9227/look_description = "A humanoid figure seems to be trapped in the field of the Magneto. "
+#
+set m9227/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9227/alignment = -150
+#
+set m9227/sex = "neuter"
+#
+set m9227/race = "human"
+#
+tag m9227 = elemental canyon:area name
+#
+tag m9227 = mobile
+#
+set m9227/hitpoints[maximum] = 105
+#
+set m9227/position = "standing"
+#
+set m9227/experience_total = 10290
+#
+set m9227/experience_current = 10290
+#
+set m9227/special_function = "breath_lightning"
+#
+tel r9238
+#
+create the Shock Whip;shock;whip;o9230:objects.Weapon
+#
+sethome o9230 = m9227
+#
+desc o9230 = A whip hums innocently to itself.
+#
+set o9230/level = 10
+#
+set o9230/level_base = 10
+#
+set o9230/vnum = "o9230"
+#
+set o9230/item_type = "weapon"
+#
+set o9230/wear_location = "wield"
+#
+set o9230/weight = 10
+#
+tag o9230 = elemental canyon:area name
+#
+tag o9230 = object
+#
+set o9230/extra_flags = ['magic', 'hum']
+#
+set o9230/stat_modifiers[damroll] = 2
+#
+set o9230/stat_modifiers[strength] = -1
+#
+set o9230/weapon_type = "stab"
+#
+set o9230/damage_low = 6
+#
+set o9230/damage_high = 14
+#
+wieldto o9230 = m9227
+#
+set m9227/experience_total = 12862
+#
+set m9227/experience_current = 12862
+#
+set m9227/reset_objects["o9230"] = {"location":"equipped"}
+#
+tel r9238
+#
+create/drop an alchemist;alchemist;m9234:characters.Mobile
+#
+desc m9234 = An alchemist wanders by in search of magical herbs. 
+#
+set m9234/level = 10
+#
+set m9234/level_base = 10
+#
+set m9234/vnum = "m9234"
+#
+set m9234/look_description = "Rare herbs are rumored to grow only in the canyon. "
+#
+set m9234/act_flags = ['stay area', 'npc']
+#
+set m9234/alignment = -50
+#
+set m9234/sex = "neuter"
+#
+set m9234/race = "human"
+#
+tag m9234 = elemental canyon:area name
+#
+tag m9234 = mobile
+#
+set m9234/hitpoints[maximum] = 99
+#
+set m9234/position = "standing"
+#
+set m9234/experience_total = 5147
+#
+set m9234/experience_current = 5147
+#
+set m9234/special_function = "thief"
+#
+tel r9238
+#
+create elemental staff of earthquake;staff;earthquake;o9217:objects.Staff
+#
+sethome o9217 = m9234
+#
+desc o9217 = A earthquake staff lies forgotten on the ground.
+#
+set o9217/level = 8
+#
+set o9217/level_base = 8
+#
+set o9217/vnum = "o9217"
+#
+set o9217/item_type = "staff"
+#
+set o9217/wear_location = "held, in hands"
+#
+set o9217/weight = 7
+#
+tag o9217 = elemental canyon:area name
+#
+tag o9217 = object
+#
+set o9217/extra_flags = ['glow']
+#
+set o9217/spell_level = 7
+#
+set o9217/spell_level_base = 7
+#
+set o9217/charges_maximum = 3
+#
+set o9217/charges_maximum_base = 3
+#
+set o9217/charges_current = 3
+#
+set o9217/spell_name = "earthquake"
+#
+wearto o9217 = m9234
+#
+set m9234/reset_objects["o9217"] = {"location":"equipped"}
+#
+tel r9238
+#
+create/drop a small blob of acid;acid;blob;elemental;m9219:characters.Mobile
+#
+desc m9219 = A small blob of acid eats away at the stone aimlessly. 
+#
+set m9219/level = 10
+#
+set m9219/level_base = 10
+#
+set m9219/vnum = "m9219"
+#
+set m9219/look_description = "The magical blob of acid is a cross between lightning and water. "
+#
+set m9219/act_flags = ['stay area', 'npc']
+#
+set m9219/alignment = 0
+#
+set m9219/sex = "neuter"
+#
+set m9219/race = "elemental"
+#
+tag m9219 = elemental canyon:area name
+#
+tag m9219 = mobile
+#
+set m9219/hitpoints[maximum] = 163
+#
+set m9219/position = "standing"
+#
+set m9219/experience_total = 6257
+#
+set m9219/experience_current = 6257
+#
+set m9219/special_function = "breath_acid"
+#
+tel r9238
+#
+create/drop a lava beast;lava;elemental;m9220:characters.Mobile
+#
+desc m9220 = A lava beast spews from place to place. 
+#
+set m9220/level = 6
+#
+set m9220/level_base = 6
+#
+set m9220/vnum = "m9220"
+#
+set m9220/look_description = "The magical lava beast is a cross between fire and earth. "
+#
+set m9220/act_flags = ['stay area', 'npc']
+#
+set m9220/alignment = 0
+#
+set m9220/sex = "neuter"
+#
+set m9220/race = "elemental"
+#
+tag m9220 = elemental canyon:area name
+#
+tag m9220 = mobile
+#
+set m9220/hitpoints[maximum] = 53
+#
+set m9220/position = "standing"
+#
+set m9220/experience_total = 1627
+#
+set m9220/experience_current = 1627
+#
+tel r9242
+#
+create/drop a large elemental;large;elemental;m9207:characters.Mobile
+#
+desc m9207 = A large elemental. 
+#
+set m9207/level = 10
+#
+set m9207/level_base = 10
+#
+set m9207/vnum = "m9207"
+#
+set m9207/look_description = "A large elemental, a resident of the canyon. "
+#
+set m9207/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9207/alignment = 20
+#
+set m9207/sex = "neuter"
+#
+set m9207/race = "elemental"
+#
+tag m9207 = elemental canyon:area name
+#
+tag m9207 = mobile
+#
+set m9207/hitpoints[maximum] = 136
+#
+set m9207/position = "standing"
+#
+set m9207/experience_total = 7895
+#
+set m9207/experience_current = 7895
+#
+set m9207/special_function = "breath_any"
+#
+tel r9242
+#
+create/drop the Ice Bandit;ice;bandit;m9228:characters.Mobile
+#
+desc m9228 = The Ice Bandit strikes cold fear in your heart. 
+#
+set m9228/level = 11
+#
+set m9228/level_base = 11
+#
+set m9228/vnum = "m9228"
+#
+set m9228/look_description = "A humanoid figure encased in ice but still apparently alive. "
+#
+set m9228/act_flags = ['wimpy', 'stay area', 'sentinel', 'npc']
+#
+set m9228/alignment = -250
+#
+set m9228/sex = "neuter"
+#
+set m9228/spell_affects = {'sneak': ''}
+#
+set m9228/race = "human"
+#
+tag m9228 = elemental canyon:area name
+#
+tag m9228 = mobile
+#
+set m9228/hitpoints[maximum] = 152
+#
+set m9228/position = "standing"
+#
+set m9228/experience_total = 7528
+#
+set m9228/experience_current = 7528
+#
+set m9228/special_function = "breath_frost"
+#
+tel r9242
+#
+create an icicle;icicle;dagger;ice;o9227:objects.Weapon
+#
+sethome o9227 = m9228
+#
+desc o9227 = A glowing icicle dagger lies here amid a patch of frost.
+#
+set o9227/level = 9
+#
+set o9227/level_base = 9
+#
+set o9227/vnum = "o9227"
+#
+set o9227/item_type = "weapon"
+#
+set o9227/wear_location = "wield"
+#
+set o9227/weight = 1
+#
+tag o9227 = elemental canyon:area name
+#
+tag o9227 = object
+#
+set o9227/extra_flags = ['magic', 'glow']
+#
+set o9227/stat_modifiers[damroll] = 2
+#
+set o9227/stat_modifiers[strength] = -1
+#
+set o9227/weapon_type = "pierce"
+#
+set o9227/damage_low = 3
+#
+set o9227/damage_high = 14
+#
+wieldto o9227 = m9228
+#
+set m9228/experience_total = 9410
+#
+set m9228/experience_current = 9410
+#
+set m9228/reset_objects["o9227"] = {"location":"equipped"}
+#
+tel r9242
+#
+create/drop the Rock Monster;rock;monster;m9229:characters.Mobile
+#
+desc m9229 = The Rock Monster considers you in stony silence. 
+#
+set m9229/level = 14
+#
+set m9229/level_base = 14
+#
+set m9229/vnum = "m9229"
+#
+set m9229/look_description = "A humanoid figure trapped in stone seems alive. "
+#
+set m9229/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9229/alignment = -310
+#
+set m9229/sex = "neuter"
+#
+set m9229/race = "human"
+#
+tag m9229 = elemental canyon:area name
+#
+tag m9229 = mobile
+#
+set m9229/hitpoints[maximum] = 277
+#
+set m9229/position = "standing"
+#
+set m9229/experience_total = 14522
+#
+set m9229/experience_current = 14522
+#
+tel r9242
+#
+create the Avalanche;avalanche;o9228:objects.Weapon
+#
+sethome o9228 = m9229
+#
+desc o9228 = An avalanche is about to crush you!
+#
+set o9228/level = 12
+#
+set o9228/level_base = 12
+#
+set o9228/vnum = "o9228"
+#
+set o9228/item_type = "weapon"
+#
+set o9228/wear_location = "wield"
+#
+set o9228/weight = 16
+#
+tag o9228 = elemental canyon:area name
+#
+tag o9228 = object
+#
+set o9228/extra_flags = ['magic']
+#
+set o9228/stat_modifiers[hitroll] = -1
+#
+set o9228/weapon_type = "blast"
+#
+set o9228/damage_low = 4
+#
+set o9228/damage_high = 16
+#
+wieldto o9228 = m9229
+#
+set m9229/experience_total = 18152
+#
+set m9229/experience_current = 18152
+#
+set m9229/reset_objects["o9228"] = {"location":"equipped"}
+#
+tel r9242
+#
+create/drop the Hurricane;hurricane;m9230:characters.Mobile
+#
+desc m9230 = A Hurricane rages across the sky. 
+#
+set m9230/level = 14
+#
+set m9230/level_base = 14
+#
+set m9230/vnum = "m9230"
+#
+set m9230/look_description = "A humanoid figure is trapped in the rushing wind. "
+#
+set m9230/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9230/alignment = -10
+#
+set m9230/sex = "neuter"
+#
+set m9230/spell_affects = {'sneak': ''}
+#
+set m9230/race = "human"
+#
+tag m9230 = elemental canyon:area name
+#
+tag m9230 = mobile
+#
+set m9230/hitpoints[maximum] = 243
+#
+set m9230/position = "standing"
+#
+set m9230/experience_total = 15673
+#
+set m9230/experience_current = 15673
+#
+set m9230/special_function = "breath_gas"
+#
+tel r9242
+#
+create the Morning Star;star;morning;o9229:objects.Weapon
+#
+sethome o9229 = m9230
+#
+desc o9229 = A chain with a star on the end lies here.
+#
+set o9229/level = 12
+#
+set o9229/level_base = 12
+#
+set o9229/vnum = "o9229"
+#
+set o9229/item_type = "weapon"
+#
+set o9229/wear_location = "wield"
+#
+set o9229/weight = 11
+#
+tag o9229 = elemental canyon:area name
+#
+tag o9229 = object
+#
+set o9229/extra_flags = ['magic', 'glow']
+#
+set o9229/stat_modifiers[23] = -5
+#
+set o9229/stat_modifiers[armor class] = -3
+#
+set o9229/weapon_type = "pierce"
+#
+set o9229/damage_low = 5
+#
+set o9229/damage_high = 15
+#
+wieldto o9229 = m9230
+#
+set m9230/experience_total = 19591
+#
+set m9230/experience_current = 19591
+#
+set m9230/reset_objects["o9229"] = {"location":"equipped"}
+#
+tel r9242
+#
+create/drop a flame;fire;flame;elemental;m9215:characters.Mobile
+#
+desc m9215 = A small flickering flame elemental. 
+#
+set m9215/level = 8
+#
+set m9215/level_base = 8
+#
+set m9215/vnum = "m9215"
+#
+set m9215/look_description = "It smolders along the grass aimlessly. "
+#
+set m9215/act_flags = ['stay area', 'npc']
+#
+set m9215/alignment = 0
+#
+set m9215/sex = "neuter"
+#
+set m9215/race = "elemental"
+#
+tag m9215 = elemental canyon:area name
+#
+tag m9215 = mobile
+#
+set m9215/hitpoints[maximum] = 110
+#
+set m9215/position = "standing"
+#
+set m9215/experience_total = 3121
+#
+set m9215/experience_current = 3121
+#
+tel r9242
+#
+create/drop a flame;fire;flame;elemental;m9215; m9215-2:characters.Mobile
+#
+desc m9215-2 = A small flickering flame elemental. 
+#
+set m9215-2/level = 8
+#
+set m9215-2/level_base = 8
+#
+set m9215-2/vnum = "m9215"
+#
+set m9215-2/look_description = "It smolders along the grass aimlessly. "
+#
+set m9215-2/act_flags = ['stay area', 'npc']
+#
+set m9215-2/alignment = 0
+#
+set m9215-2/sex = "neuter"
+#
+set m9215-2/race = "elemental"
+#
+tag m9215-2 = elemental canyon:area name
+#
+tag m9215-2 = mobile
+#
+set m9215-2/hitpoints[maximum] = 119
+#
+set m9215-2/position = "standing"
+#
+set m9215-2/experience_total = 3330
+#
+set m9215-2/experience_current = 3330
+#
+tel r9242
+#
+create elemental wand of fire;wand;o9215:objects.Wand
+#
+sethome o9215 = m9215-2
+#
+desc o9215 = A fire wand lies forgotten on the ground.
+#
+set o9215/level = 6
+#
+set o9215/level_base = 6
+#
+set o9215/vnum = "o9215"
+#
+set o9215/item_type = "wand"
+#
+set o9215/wear_location = "held, in hands"
+#
+set o9215/weight = 7
+#
+tag o9215 = elemental canyon:area name
+#
+tag o9215 = object
+#
+set o9215/extra_flags = ['glow']
+#
+set o9215/spell_level = 15
+#
+set o9215/spell_level_base = 15
+#
+set o9215/charges_maximum = 3
+#
+set o9215/charges_maximum_base = 3
+#
+set o9215/charges_current = 3
+#
+set o9215/spell_name = "fireball"
+#
+wearto o9215 = m9215-2
+#
+set m9215-2/reset_objects["o9215"] = {"location":"equipped"}
+#
+tel r9242
+#
+create/drop a flame;fire;flame;elemental;m9215; m9215-3:characters.Mobile
+#
+desc m9215-3 = A small flickering flame elemental. 
+#
+set m9215-3/level = 8
+#
+set m9215-3/level_base = 8
+#
+set m9215-3/vnum = "m9215"
+#
+set m9215-3/look_description = "It smolders along the grass aimlessly. "
+#
+set m9215-3/act_flags = ['stay area', 'npc']
+#
+set m9215-3/alignment = 0
+#
+set m9215-3/sex = "neuter"
+#
+set m9215-3/race = "elemental"
+#
+tag m9215-3 = elemental canyon:area name
+#
+tag m9215-3 = mobile
+#
+set m9215-3/hitpoints[maximum] = 125
+#
+set m9215-3/position = "standing"
+#
+set m9215-3/experience_total = 3140
+#
+set m9215-3/experience_current = 3140
+#
+tel r9242
+#
+create/drop a lava beast;lava;elemental;m9220:characters.Mobile
+#
+desc m9220 = A lava beast spews from place to place. 
+#
+set m9220/level = 6
+#
+set m9220/level_base = 6
+#
+set m9220/vnum = "m9220"
+#
+set m9220/look_description = "The magical lava beast is a cross between fire and earth. "
+#
+set m9220/act_flags = ['stay area', 'npc']
+#
+set m9220/alignment = 0
+#
+set m9220/sex = "neuter"
+#
+set m9220/race = "elemental"
+#
+tag m9220 = elemental canyon:area name
+#
+tag m9220 = mobile
+#
+set m9220/hitpoints[maximum] = 61
+#
+set m9220/position = "standing"
+#
+set m9220/experience_total = 1425
+#
+set m9220/experience_current = 1425
+#
+tel r9245
+#
+create/drop the Fire Ruler;fire;elemental;ruler;m9209:characters.Mobile
+#
+desc m9209 = The Ruler of the fire elementals. 
+#
+set m9209/level = 14
+#
+set m9209/level_base = 14
+#
+set m9209/vnum = "m9209"
+#
+set m9209/look_description = "As you look at him he seems to blend in with the fire in his throne. "
+#
+set m9209/act_flags = ['sentinel', 'npc']
+#
+set m9209/alignment = 0
+#
+set m9209/sex = "neuter"
+#
+set m9209/spell_affects = {'sanctuary': ''}
+#
+set m9209/race = "elemental"
+#
+tag m9209 = elemental canyon:area name
+#
+tag m9209 = mobile
+#
+set m9209/hitpoints[maximum] = 260
+#
+set m9209/position = "standing"
+#
+set m9209/experience_total = 28575
+#
+set m9209/experience_current = 28575
+#
+set m9209/special_function = "breath_fire"
+#
+tel r9245
+#
+create a fiery dagger;dagger;fiery;o9203:objects.Weapon
+#
+sethome o9203 = m9209
+#
+desc o9203 = A dagger made of fire crackles mysteriously here.
+#
+set o9203/level = 12
+#
+set o9203/level_base = 12
+#
+set o9203/vnum = "o9203"
+#
+set o9203/item_type = "weapon"
+#
+set o9203/wear_location = "wield"
+#
+set o9203/weight = 2
+#
+tag o9203 = elemental canyon:area name
+#
+tag o9203 = object
+#
+set o9203/extra_flags = ['magic', 'glow']
+#
+set o9203/stat_modifiers[damroll] = 3
+#
+set o9203/weapon_type = "pierce"
+#
+set o9203/damage_low = 4
+#
+set o9203/damage_high = 16
+#
+wieldto o9203 = m9209
+#
+set m9209/experience_total = 35718
+#
+set m9209/experience_current = 35718
+#
+set m9209/reset_objects["o9203"] = {"location":"equipped"}
+#
+tel r9245
+#
+create a flame red cape;cape;flame;flaming;red;o9204:objects.Armor
+#
+sethome o9204 = m9209
+#
+desc o9204 = A cape made of ethereal red fiber lies neatly folded on the ground here.
+#
+set o9204/level = 12
+#
+set o9204/level_base = 12
+#
+set o9204/vnum = "o9204"
+#
+set o9204/item_type = "armor"
+#
+set o9204/wear_location = "neck"
+#
+set o9204/weight = 3
+#
+tag o9204 = elemental canyon:area name
+#
+tag o9204 = object
+#
+set o9204/extra_flags = ['glow']
+#
+set o9204/stat_modifiers[damroll] = 1
+#
+set o9204/armor = 6
+#
+wearto o9204 = m9209
+#
+set m9209/reset_objects["o9204"] = {"location":"equipped"}
+#
+tel r9245
+#
+create/drop a flame;fire;flame;elemental;m9215:characters.Mobile
+#
+desc m9215 = A small flickering flame elemental. 
+#
+set m9215/level = 8
+#
+set m9215/level_base = 8
+#
+set m9215/vnum = "m9215"
+#
+set m9215/look_description = "It smolders along the grass aimlessly. "
+#
+set m9215/act_flags = ['stay area', 'npc']
+#
+set m9215/alignment = 0
+#
+set m9215/sex = "neuter"
+#
+set m9215/race = "elemental"
+#
+tag m9215 = elemental canyon:area name
+#
+tag m9215 = mobile
+#
+set m9215/hitpoints[maximum] = 83
+#
+set m9215/position = "standing"
+#
+set m9215/experience_total = 3313
+#
+set m9215/experience_current = 3313
+#
+tel r9245
+#
+create elemental wand of fire;wand;o9215:objects.Wand
+#
+sethome o9215 = m9215
+#
+desc o9215 = A fire wand lies forgotten on the ground.
+#
+set o9215/level = 6
+#
+set o9215/level_base = 6
+#
+set o9215/vnum = "o9215"
+#
+set o9215/item_type = "wand"
+#
+set o9215/wear_location = "held, in hands"
+#
+set o9215/weight = 7
+#
+tag o9215 = elemental canyon:area name
+#
+tag o9215 = object
+#
+set o9215/extra_flags = ['glow']
+#
+set o9215/spell_level = 15
+#
+set o9215/spell_level_base = 15
+#
+set o9215/charges_maximum = 3
+#
+set o9215/charges_maximum_base = 3
+#
+set o9215/charges_current = 3
+#
+set o9215/spell_name = "fireball"
+#
+wearto o9215 = m9215
+#
+set m9215/reset_objects["o9215"] = {"location":"equipped"}
+#
+tel r9245
+#
+create/drop a flame;fire;flame;elemental;m9215; m9215-2:characters.Mobile
+#
+desc m9215-2 = A small flickering flame elemental. 
+#
+set m9215-2/level = 8
+#
+set m9215-2/level_base = 8
+#
+set m9215-2/vnum = "m9215"
+#
+set m9215-2/look_description = "It smolders along the grass aimlessly. "
+#
+set m9215-2/act_flags = ['stay area', 'npc']
+#
+set m9215-2/alignment = 0
+#
+set m9215-2/sex = "neuter"
+#
+set m9215-2/race = "elemental"
+#
+tag m9215-2 = elemental canyon:area name
+#
+tag m9215-2 = mobile
+#
+set m9215-2/hitpoints[maximum] = 115
+#
+set m9215-2/position = "standing"
+#
+set m9215-2/experience_total = 3426
+#
+set m9215-2/experience_current = 3426
+#
+tel r9245
+#
+create/drop a flame;fire;flame;elemental;m9215; m9215-3:characters.Mobile
+#
+desc m9215-3 = A small flickering flame elemental. 
+#
+set m9215-3/level = 8
+#
+set m9215-3/level_base = 8
+#
+set m9215-3/vnum = "m9215"
+#
+set m9215-3/look_description = "It smolders along the grass aimlessly. "
+#
+set m9215-3/act_flags = ['stay area', 'npc']
+#
+set m9215-3/alignment = 0
+#
+set m9215-3/sex = "neuter"
+#
+set m9215-3/race = "elemental"
+#
+tag m9215-3 = elemental canyon:area name
+#
+tag m9215-3 = mobile
+#
+set m9215-3/hitpoints[maximum] = 67
+#
+set m9215-3/position = "standing"
+#
+set m9215-3/experience_total = 2865
+#
+set m9215-3/experience_current = 2865
+#
+tel r9246
+#
+create/drop a medium elemental;medium;elemental;m9206:characters.Mobile
+#
+desc m9206 = A medium-sized elemental. 
+#
+set m9206/level = 8
+#
+set m9206/level_base = 8
+#
+set m9206/vnum = "m9206"
+#
+set m9206/look_description = "A medium elemental, a resident of the canyon. "
+#
+set m9206/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9206/alignment = 10
+#
+set m9206/sex = "neuter"
+#
+set m9206/race = "elemental"
+#
+tag m9206 = elemental canyon:area name
+#
+tag m9206 = mobile
+#
+set m9206/hitpoints[maximum] = 74
+#
+set m9206/position = "standing"
+#
+set m9206/experience_total = 2822
+#
+set m9206/experience_current = 2822
+#
+tel r9246
+#
+create/drop a little imp;imp;m9236:characters.Mobile
+#
+desc m9236 = A little imp runs along being annoying. 
+#
+set m9236/level = 7
+#
+set m9236/level_base = 7
+#
+set m9236/vnum = "m9236"
+#
+set m9236/look_description = "The little bugger steals stuff and is generally obnoxious. "
+#
+set m9236/act_flags = ['wimpy', 'stay area', 'scavenger', 'npc']
+#
+set m9236/alignment = -500
+#
+set m9236/sex = "neuter"
+#
+set m9236/spell_affects = {'hide': '', 'sneak': ''}
+#
+set m9236/race = "kobold"
+#
+tag m9236 = elemental canyon:area name
+#
+tag m9236 = mobile
+#
+set m9236/hitpoints[maximum] = 76
+#
+set m9236/position = "standing"
+#
+set m9236/experience_total = 2191
+#
+set m9236/experience_current = 2191
+#
+tel r9246
+#
+create/drop a small spark;spark;lightning;energy;elemental;m9218:characters.Mobile
+#
+desc m9218 = A small spark of electricity fizzles here. 
+#
+set m9218/level = 6
+#
+set m9218/level_base = 6
+#
+set m9218/vnum = "m9218"
+#
+set m9218/look_description = "Zipping from place to place at the speed of light is tough work. "
+#
+set m9218/act_flags = ['stay area', 'npc']
+#
+set m9218/alignment = 0
+#
+set m9218/sex = "neuter"
+#
+set m9218/race = "elemental"
+#
+tag m9218 = elemental canyon:area name
+#
+tag m9218 = mobile
+#
+set m9218/hitpoints[maximum] = 56
+#
+set m9218/position = "standing"
+#
+set m9218/experience_total = 1475
+#
+set m9218/experience_current = 1475
+#
+tel r9246
+#
+create/drop a small blob of acid;acid;blob;elemental;m9219:characters.Mobile
+#
+desc m9219 = A small blob of acid eats away at the stone aimlessly. 
+#
+set m9219/level = 10
+#
+set m9219/level_base = 10
+#
+set m9219/vnum = "m9219"
+#
+set m9219/look_description = "The magical blob of acid is a cross between lightning and water. "
+#
+set m9219/act_flags = ['stay area', 'npc']
+#
+set m9219/alignment = 0
+#
+set m9219/sex = "neuter"
+#
+set m9219/race = "elemental"
+#
+tag m9219 = elemental canyon:area name
+#
+tag m9219 = mobile
+#
+set m9219/hitpoints[maximum] = 100
+#
+set m9219/position = "standing"
+#
+set m9219/experience_total = 5159
+#
+set m9219/experience_current = 5159
+#
+set m9219/special_function = "breath_acid"
+#
+tel r9247
+#
+create/drop a small spark;spark;lightning;energy;elemental;m9218:characters.Mobile
+#
+desc m9218 = A small spark of electricity fizzles here. 
+#
+set m9218/level = 6
+#
+set m9218/level_base = 6
+#
+set m9218/vnum = "m9218"
+#
+set m9218/look_description = "Zipping from place to place at the speed of light is tough work. "
+#
+set m9218/act_flags = ['stay area', 'npc']
+#
+set m9218/alignment = 0
+#
+set m9218/sex = "neuter"
+#
+set m9218/race = "elemental"
+#
+tag m9218 = elemental canyon:area name
+#
+tag m9218 = mobile
+#
+set m9218/hitpoints[maximum] = 61
+#
+set m9218/position = "standing"
+#
+set m9218/experience_total = 1614
+#
+set m9218/experience_current = 1614
+#
+tel r9248
+#
+create/drop a small spark;spark;lightning;energy;elemental;m9218:characters.Mobile
+#
+desc m9218 = A small spark of electricity fizzles here. 
+#
+set m9218/level = 6
+#
+set m9218/level_base = 6
+#
+set m9218/vnum = "m9218"
+#
+set m9218/look_description = "Zipping from place to place at the speed of light is tough work. "
+#
+set m9218/act_flags = ['stay area', 'npc']
+#
+set m9218/alignment = 0
+#
+set m9218/sex = "neuter"
+#
+set m9218/race = "elemental"
+#
+tag m9218 = elemental canyon:area name
+#
+tag m9218 = mobile
+#
+set m9218/hitpoints[maximum] = 66
+#
+set m9218/position = "standing"
+#
+set m9218/experience_total = 1592
+#
+set m9218/experience_current = 1592
+#
+tel r9248
+#
+create/drop a particle;particle;elemental;m9223:characters.Mobile
+#
+desc m9223 = A subatomic particle is too small for you to see. 
+#
+set m9223/level = 8
+#
+set m9223/level_base = 8
+#
+set m9223/vnum = "m9223"
+#
+set m9223/look_description = "The magical manifestation of energy. "
+#
+set m9223/act_flags = ['stay area', 'npc']
+#
+set m9223/alignment = 0
+#
+set m9223/sex = "neuter"
+#
+set m9223/race = "elemental"
+#
+tag m9223 = elemental canyon:area name
+#
+tag m9223 = mobile
+#
+set m9223/hitpoints[maximum] = 77
+#
+set m9223/position = "standing"
+#
+set m9223/experience_total = 2938
+#
+set m9223/experience_current = 2938
+#
+set m9223/special_function = "breath_lightning"
+#
+tel r9249
+#
+create/drop a baby rainbow dragon;baby;rainbow;dragon;m9235:characters.Mobile
+#
+desc m9235 = A baby rainbow dragon plays among the elements here. 
+#
+set m9235/level = 8
+#
+set m9235/level_base = 8
+#
+set m9235/vnum = "m9235"
+#
+set m9235/look_description = "It's only a baby by dragon standards. "
+#
+set m9235/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9235/alignment = 0
+#
+set m9235/sex = "neuter"
+#
+set m9235/spell_affects = {'detect hidden': '', 'detect invis': ''}
+#
+set m9235/race = "dragon"
+#
+tag m9235 = elemental canyon:area name
+#
+tag m9235 = mobile
+#
+set m9235/hitpoints[maximum] = 103
+#
+set m9235/position = "standing"
+#
+set m9235/experience_total = 3963
+#
+set m9235/experience_current = 3963
+#
+set m9235/special_function = "breath_any"
+#
+tel r9249
+#
+create/drop a small spark;spark;lightning;energy;elemental;m9218:characters.Mobile
+#
+desc m9218 = A small spark of electricity fizzles here. 
+#
+set m9218/level = 6
+#
+set m9218/level_base = 6
+#
+set m9218/vnum = "m9218"
+#
+set m9218/look_description = "Zipping from place to place at the speed of light is tough work. "
+#
+set m9218/act_flags = ['stay area', 'npc']
+#
+set m9218/alignment = 0
+#
+set m9218/sex = "neuter"
+#
+set m9218/race = "elemental"
+#
+tag m9218 = elemental canyon:area name
+#
+tag m9218 = mobile
+#
+set m9218/hitpoints[maximum] = 69
+#
+set m9218/position = "standing"
+#
+set m9218/experience_total = 1392
+#
+set m9218/experience_current = 1392
+#
+tel r9250
+#
+create/drop a small elemental;small;elemental;m9205:characters.Mobile
+#
+desc m9205 = A small, rather nondescript elemental. 
+#
+set m9205/level = 7
+#
+set m9205/level_base = 7
+#
+set m9205/vnum = "m9205"
+#
+set m9205/look_description = "A small elemental, a resident of the canyon. "
+#
+set m9205/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9205/alignment = 0
+#
+set m9205/sex = "neuter"
+#
+set m9205/race = "elemental"
+#
+tag m9205 = elemental canyon:area name
+#
+tag m9205 = mobile
+#
+set m9205/hitpoints[maximum] = 103
+#
+set m9205/position = "standing"
+#
+set m9205/experience_total = 2276
+#
+set m9205/experience_current = 2276
+#
+tel r9250
+#
+create/drop a small spark;spark;lightning;energy;elemental;m9218:characters.Mobile
+#
+desc m9218 = A small spark of electricity fizzles here. 
+#
+set m9218/level = 6
+#
+set m9218/level_base = 6
+#
+set m9218/vnum = "m9218"
+#
+set m9218/look_description = "Zipping from place to place at the speed of light is tough work. "
+#
+set m9218/act_flags = ['stay area', 'npc']
+#
+set m9218/alignment = 0
+#
+set m9218/sex = "neuter"
+#
+set m9218/race = "elemental"
+#
+tag m9218 = elemental canyon:area name
+#
+tag m9218 = mobile
+#
+set m9218/hitpoints[maximum] = 74
+#
+set m9218/position = "standing"
+#
+set m9218/experience_total = 1512
+#
+set m9218/experience_current = 1512
+#
+tel r9250
+#
+create elemental wand of lightning;wand;o9219:objects.Wand
+#
+sethome o9219 = m9218
+#
+desc o9219 = A lightning wand lies forgotten on the ground.
+#
+set o9219/level = 4
+#
+set o9219/level_base = 4
+#
+set o9219/vnum = "o9219"
+#
+set o9219/item_type = "wand"
+#
+set o9219/wear_location = "held, in hands"
+#
+set o9219/weight = 7
+#
+tag o9219 = elemental canyon:area name
+#
+tag o9219 = object
+#
+set o9219/extra_flags = ['glow']
+#
+set o9219/spell_level = 9
+#
+set o9219/spell_level_base = 9
+#
+set o9219/charges_maximum = 1
+#
+set o9219/charges_maximum_base = 1
+#
+set o9219/charges_current = 1
+#
+set o9219/spell_name = "lightning bolt"
+#
+wearto o9219 = m9218
+#
+set m9218/reset_objects["o9219"] = {"location":"equipped"}
+#
+tel r9251
+#
+create/drop a small spark;spark;lightning;energy;elemental;m9218:characters.Mobile
+#
+desc m9218 = A small spark of electricity fizzles here. 
+#
+set m9218/level = 6
+#
+set m9218/level_base = 6
+#
+set m9218/vnum = "m9218"
+#
+set m9218/look_description = "Zipping from place to place at the speed of light is tough work. "
+#
+set m9218/act_flags = ['stay area', 'npc']
+#
+set m9218/alignment = 0
+#
+set m9218/sex = "neuter"
+#
+set m9218/race = "elemental"
+#
+tag m9218 = elemental canyon:area name
+#
+tag m9218 = mobile
+#
+set m9218/hitpoints[maximum] = 62
+#
+set m9218/position = "standing"
+#
+set m9218/experience_total = 1408
+#
+set m9218/experience_current = 1408
+#
+tel r9252
+#
+create/drop The Lightning Ruler;lightning;elemental;ruler;m9211:characters.Mobile
+#
+desc m9211 = The Ruler of the lightning elementals. 
+#
+set m9211/level = 15
+#
+set m9211/level_base = 15
+#
+set m9211/vnum = "m9211"
+#
+set m9211/look_description = "As you examine him there is a blinding flash of light and a deafening boom! You rub your eyes and look and the ruler is there grinning at you. "
+#
+set m9211/act_flags = ['sentinel', 'npc']
+#
+set m9211/alignment = 0
+#
+set m9211/sex = "neuter"
+#
+set m9211/spell_affects = {'sanctuary': ''}
+#
+set m9211/race = "elemental"
+#
+tag m9211 = elemental canyon:area name
+#
+tag m9211 = mobile
+#
+set m9211/hitpoints[maximum] = 177
+#
+set m9211/position = "standing"
+#
+set m9211/experience_total = 28317
+#
+set m9211/experience_current = 28317
+#
+set m9211/special_function = "breath_lightning"
+#
+tel r9252
+#
+create a sparking lightning sword;sword;lightning;bolt;o9207:objects.Weapon
+#
+sethome o9207 = m9211
+#
+desc o9207 = A lightning bolt fashioned into a sword spits sparks here.
+#
+set o9207/level = 13
+#
+set o9207/level_base = 13
+#
+set o9207/vnum = "o9207"
+#
+set o9207/item_type = "weapon"
+#
+set o9207/wear_location = "wield"
+#
+set o9207/weight = 10
+#
+tag o9207 = elemental canyon:area name
+#
+tag o9207 = object
+#
+set o9207/extra_flags = ['magic', 'hum', 'glow']
+#
+set o9207/stat_modifiers[hitroll] = 2
+#
+set o9207/stat_modifiers[damroll] = 2
+#
+set o9207/weapon_type = "slash"
+#
+set o9207/damage_low = 6
+#
+set o9207/damage_high = 18
+#
+wieldto o9207 = m9211
+#
+set m9211/experience_total = 35396
+#
+set m9211/experience_current = 35396
+#
+set m9211/reset_objects["o9207"] = {"location":"equipped"}
+#
+tel r9252
+#
+create an electric shield;shield;electric;o9208:objects.Armor
+#
+sethome o9208 = m9211
+#
+desc o9208 = A shield made entirely of energy buzzes here.
+#
+set o9208/level = 13
+#
+set o9208/level_base = 13
+#
+set o9208/vnum = "o9208"
+#
+set o9208/item_type = "armor"
+#
+set o9208/wear_location = "shield"
+#
+set o9208/weight = 8
+#
+tag o9208 = elemental canyon:area name
+#
+tag o9208 = object
+#
+set o9208/extra_flags = ['hum']
+#
+set o9208/stat_modifiers[strength] = -1
+#
+set o9208/stat_modifiers[constitution] = 1
+#
+set o9208/armor = 5
+#
+wearto o9208 = m9211
+#
+set m9211/reset_objects["o9208"] = {"location":"equipped"}
+#
+tel r9252
+#
+create/drop a small spark;spark;lightning;energy;elemental;m9218:characters.Mobile
+#
+desc m9218 = A small spark of electricity fizzles here. 
+#
+set m9218/level = 6
+#
+set m9218/level_base = 6
+#
+set m9218/vnum = "m9218"
+#
+set m9218/look_description = "Zipping from place to place at the speed of light is tough work. "
+#
+set m9218/act_flags = ['stay area', 'npc']
+#
+set m9218/alignment = 0
+#
+set m9218/sex = "neuter"
+#
+set m9218/race = "elemental"
+#
+tag m9218 = elemental canyon:area name
+#
+tag m9218 = mobile
+#
+set m9218/hitpoints[maximum] = 67
+#
+set m9218/position = "standing"
+#
+set m9218/experience_total = 1504
+#
+set m9218/experience_current = 1504
+#
+tel r9252
+#
+create elemental wand of wind and air;wand;air;wind;o9218:objects.Wand
+#
+sethome o9218 = m9218
+#
+desc o9218 = An air wand lies forgotten on the ground.
+#
+set o9218/level = 4
+#
+set o9218/level_base = 4
+#
+set o9218/vnum = "o9218"
+#
+set o9218/item_type = "wand"
+#
+set o9218/wear_location = "held, in hands"
+#
+set o9218/weight = 7
+#
+tag o9218 = elemental canyon:area name
+#
+tag o9218 = object
+#
+set o9218/extra_flags = ['glow']
+#
+set o9218/spell_level = 11
+#
+set o9218/spell_level_base = 11
+#
+set o9218/charges_maximum = 1
+#
+set o9218/charges_maximum_base = 1
+#
+set o9218/charges_current = 1
+#
+set o9218/spell_name = "gas breath"
+#
+wearto o9218 = m9218
+#
+set m9218/reset_objects["o9218"] = {"location":"equipped"}
+#
+tel r9252
+#
+create/drop a small spark;spark;lightning;energy;elemental;m9218; m9218-2:characters.Mobile
+#
+desc m9218-2 = A small spark of electricity fizzles here. 
+#
+set m9218-2/level = 6
+#
+set m9218-2/level_base = 6
+#
+set m9218-2/vnum = "m9218"
+#
+set m9218-2/look_description = "Zipping from place to place at the speed of light is tough work. "
+#
+set m9218-2/act_flags = ['stay area', 'npc']
+#
+set m9218-2/alignment = 0
+#
+set m9218-2/sex = "neuter"
+#
+set m9218-2/race = "elemental"
+#
+tag m9218-2 = elemental canyon:area name
+#
+tag m9218-2 = mobile
+#
+set m9218-2/hitpoints[maximum] = 63
+#
+set m9218-2/position = "standing"
+#
+set m9218-2/experience_total = 1493
+#
+set m9218-2/experience_current = 1493
+#
+tel r9253
+#
+create/drop an illusionist;illusionist;m9233:characters.Mobile
+#
+desc m9233 = The illusionist seeks the aid of the elemental forces. 
+#
+set m9233/level = 9
+#
+set m9233/level_base = 9
+#
+set m9233/vnum = "m9233"
+#
+set m9233/look_description = "He seeks their aid for a powerful new spell of deception. <wielded>            The Sword of Illusions "
+#
+set m9233/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9233/alignment = -50
+#
+set m9233/sex = "neuter"
+#
+set m9233/race = "human"
+#
+tag m9233 = elemental canyon:area name
+#
+tag m9233 = mobile
+#
+set m9233/hitpoints[maximum] = 121
+#
+set m9233/position = "standing"
+#
+set m9233/experience_total = 4191
+#
+set m9233/experience_current = 4191
+#
+set m9233/special_function = "cast_mage"
+#
+tel r9253
+#
+create/drop a particle;particle;elemental;m9223:characters.Mobile
+#
+desc m9223 = A subatomic particle is too small for you to see. 
+#
+set m9223/level = 8
+#
+set m9223/level_base = 8
+#
+set m9223/vnum = "m9223"
+#
+set m9223/look_description = "The magical manifestation of energy. "
+#
+set m9223/act_flags = ['stay area', 'npc']
+#
+set m9223/alignment = 0
+#
+set m9223/sex = "neuter"
+#
+set m9223/race = "elemental"
+#
+tag m9223 = elemental canyon:area name
+#
+tag m9223 = mobile
+#
+set m9223/hitpoints[maximum] = 86
+#
+set m9223/position = "standing"
+#
+set m9223/experience_total = 3099
+#
+set m9223/experience_current = 3099
+#
+set m9223/special_function = "breath_lightning"
+#
+tel r9254
+#
+create/drop a medium elemental;medium;elemental;m9206:characters.Mobile
+#
+desc m9206 = A medium-sized elemental. 
+#
+set m9206/level = 8
+#
+set m9206/level_base = 8
+#
+set m9206/vnum = "m9206"
+#
+set m9206/look_description = "A medium elemental, a resident of the canyon. "
+#
+set m9206/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9206/alignment = 10
+#
+set m9206/sex = "neuter"
+#
+set m9206/race = "elemental"
+#
+tag m9206 = elemental canyon:area name
+#
+tag m9206 = mobile
+#
+set m9206/hitpoints[maximum] = 98
+#
+set m9206/position = "standing"
+#
+set m9206/experience_total = 2983
+#
+set m9206/experience_current = 2983
+#
+tel r9254
+#
+create/drop an elemental mist;mist;elemental;m9222:characters.Mobile
+#
+desc m9222 = The air is magically misty here. 
+#
+set m9222/level = 6
+#
+set m9222/level_base = 6
+#
+set m9222/vnum = "m9222"
+#
+set m9222/look_description = "The magical mist is a cross between water and air. "
+#
+set m9222/act_flags = ['stay area', 'npc']
+#
+set m9222/alignment = 0
+#
+set m9222/sex = "neuter"
+#
+set m9222/race = "elemental"
+#
+tag m9222 = elemental canyon:area name
+#
+tag m9222 = mobile
+#
+set m9222/hitpoints[maximum] = 71
+#
+set m9222/position = "standing"
+#
+set m9222/experience_total = 1615
+#
+set m9222/experience_current = 1615
+#
+tel r9255
+#
+create/drop an illusionist;illusionist;m9233:characters.Mobile
+#
+desc m9233 = The illusionist seeks the aid of the elemental forces. 
+#
+set m9233/level = 9
+#
+set m9233/level_base = 9
+#
+set m9233/vnum = "m9233"
+#
+set m9233/look_description = "He seeks their aid for a powerful new spell of deception. <wielded>            The Sword of Illusions "
+#
+set m9233/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9233/alignment = -50
+#
+set m9233/sex = "neuter"
+#
+set m9233/race = "human"
+#
+tag m9233 = elemental canyon:area name
+#
+tag m9233 = mobile
+#
+set m9233/hitpoints[maximum] = 120
+#
+set m9233/position = "standing"
+#
+set m9233/experience_total = 4416
+#
+set m9233/experience_current = 4416
+#
+set m9233/special_function = "cast_mage"
+#
+tel r9255
+#
+create/drop a little imp;imp;m9236:characters.Mobile
+#
+desc m9236 = A little imp runs along being annoying. 
+#
+set m9236/level = 7
+#
+set m9236/level_base = 7
+#
+set m9236/vnum = "m9236"
+#
+set m9236/look_description = "The little bugger steals stuff and is generally obnoxious. "
+#
+set m9236/act_flags = ['wimpy', 'stay area', 'scavenger', 'npc']
+#
+set m9236/alignment = -500
+#
+set m9236/sex = "neuter"
+#
+set m9236/spell_affects = {'hide': '', 'sneak': ''}
+#
+set m9236/race = "kobold"
+#
+tag m9236 = elemental canyon:area name
+#
+tag m9236 = mobile
+#
+set m9236/hitpoints[maximum] = 97
+#
+set m9236/position = "standing"
+#
+set m9236/experience_total = 2409
+#
+set m9236/experience_current = 2409
+#
+tel r9255
+#
+create/drop an eddie;eddie;elemental;m9225:characters.Mobile
+#
+desc m9225 = A small eddie current swirls junk around here. 
+#
+set m9225/level = 6
+#
+set m9225/level_base = 6
+#
+set m9225/vnum = "m9225"
+#
+set m9225/look_description = "The magical eddie current is a manifestation of an air elemental. "
+#
+set m9225/act_flags = ['stay area', 'npc']
+#
+set m9225/alignment = 0
+#
+set m9225/sex = "neuter"
+#
+set m9225/race = "elemental"
+#
+tag m9225 = elemental canyon:area name
+#
+tag m9225 = mobile
+#
+set m9225/hitpoints[maximum] = 63
+#
+set m9225/position = "standing"
+#
+set m9225/experience_total = 1550
+#
+set m9225/experience_current = 1550
+#
+set m9225/special_function = "thief"
+#
+tel r9255
+#
+create elemental wand of wind and air;wand;air;wind;o9218:objects.Wand
+#
+sethome o9218 = m9225
+#
+desc o9218 = An air wand lies forgotten on the ground.
+#
+set o9218/level = 4
+#
+set o9218/level_base = 4
+#
+set o9218/vnum = "o9218"
+#
+set o9218/item_type = "wand"
+#
+set o9218/wear_location = "held, in hands"
+#
+set o9218/weight = 7
+#
+tag o9218 = elemental canyon:area name
+#
+tag o9218 = object
+#
+set o9218/extra_flags = ['glow']
+#
+set o9218/spell_level = 11
+#
+set o9218/spell_level_base = 11
+#
+set o9218/charges_maximum = 1
+#
+set o9218/charges_maximum_base = 1
+#
+set o9218/charges_current = 1
+#
+set o9218/spell_name = "gas breath"
+#
+wearto o9218 = m9225
+#
+set m9225/reset_objects["o9218"] = {"location":"equipped"}
+#
+tel r9255
+#
+create/drop an eddie;eddie;elemental;m9225; m9225-2:characters.Mobile
+#
+desc m9225-2 = A small eddie current swirls junk around here. 
+#
+set m9225-2/level = 6
+#
+set m9225-2/level_base = 6
+#
+set m9225-2/vnum = "m9225"
+#
+set m9225-2/look_description = "The magical eddie current is a manifestation of an air elemental. "
+#
+set m9225-2/act_flags = ['stay area', 'npc']
+#
+set m9225-2/alignment = 0
+#
+set m9225-2/sex = "neuter"
+#
+set m9225-2/race = "elemental"
+#
+tag m9225-2 = elemental canyon:area name
+#
+tag m9225-2 = mobile
+#
+set m9225-2/hitpoints[maximum] = 49
+#
+set m9225-2/position = "standing"
+#
+set m9225-2/experience_total = 1357
+#
+set m9225-2/experience_current = 1357
+#
+set m9225-2/special_function = "thief"
+#
+tel r9255
+#
+create magic dust;dust;o9225:objects.Pill
+#
+sethome o9225 = m9225-2
+#
+desc o9225 = A pile of dust of appearance has gathered here.
+#
+set o9225/level = 4
+#
+set o9225/level_base = 4
+#
+set o9225/vnum = "o9225"
+#
+set o9225/item_type = "pill"
+#
+set o9225/weight = 1
+#
+tag o9225 = elemental canyon:area name
+#
+tag o9225 = object
+#
+set o9225/spell_level = 20
+#
+set o9225/spell_level_base = 20
+#
+set o9225/spell_name_1 = "detect invis"
+#
+wearto o9225 = m9225-2
+#
+set m9225-2/reset_objects["o9225"] = {"location":"equipped"}
+#
+tel r9255
+#
+create/drop an elemental mist;mist;elemental;m9222:characters.Mobile
+#
+desc m9222 = The air is magically misty here. 
+#
+set m9222/level = 6
+#
+set m9222/level_base = 6
+#
+set m9222/vnum = "m9222"
+#
+set m9222/look_description = "The magical mist is a cross between water and air. "
+#
+set m9222/act_flags = ['stay area', 'npc']
+#
+set m9222/alignment = 0
+#
+set m9222/sex = "neuter"
+#
+set m9222/race = "elemental"
+#
+tag m9222 = elemental canyon:area name
+#
+tag m9222 = mobile
+#
+set m9222/hitpoints[maximum] = 65
+#
+set m9222/position = "standing"
+#
+set m9222/experience_total = 1431
+#
+set m9222/experience_current = 1431
+#
+tel r9256
+#
+create/drop an eddie;eddie;elemental;m9225:characters.Mobile
+#
+desc m9225 = A small eddie current swirls junk around here. 
+#
+set m9225/level = 6
+#
+set m9225/level_base = 6
+#
+set m9225/vnum = "m9225"
+#
+set m9225/look_description = "The magical eddie current is a manifestation of an air elemental. "
+#
+set m9225/act_flags = ['stay area', 'npc']
+#
+set m9225/alignment = 0
+#
+set m9225/sex = "neuter"
+#
+set m9225/race = "elemental"
+#
+tag m9225 = elemental canyon:area name
+#
+tag m9225 = mobile
+#
+set m9225/hitpoints[maximum] = 75
+#
+set m9225/position = "standing"
+#
+set m9225/experience_total = 1438
+#
+set m9225/experience_current = 1438
+#
+set m9225/special_function = "thief"
+#
+tel r9257
+#
+create/drop a baby rainbow dragon;baby;rainbow;dragon;m9235:characters.Mobile
+#
+desc m9235 = A baby rainbow dragon plays among the elements here. 
+#
+set m9235/level = 8
+#
+set m9235/level_base = 8
+#
+set m9235/vnum = "m9235"
+#
+set m9235/look_description = "It's only a baby by dragon standards. "
+#
+set m9235/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9235/alignment = 0
+#
+set m9235/sex = "neuter"
+#
+set m9235/spell_affects = {'detect hidden': '', 'detect invis': ''}
+#
+set m9235/race = "dragon"
+#
+tag m9235 = elemental canyon:area name
+#
+tag m9235 = mobile
+#
+set m9235/hitpoints[maximum] = 128
+#
+set m9235/position = "standing"
+#
+set m9235/experience_total = 3819
+#
+set m9235/experience_current = 3819
+#
+set m9235/special_function = "breath_any"
+#
+tel r9257
+#
+create an ice staff;ice;staff;o9216:objects.Staff
+#
+sethome o9216 = m9235
+#
+desc o9216 = An ice staff lies forgotten on the ground.
+#
+set o9216/level = 6
+#
+set o9216/level_base = 6
+#
+set o9216/vnum = "o9216"
+#
+set o9216/item_type = "staff"
+#
+set o9216/wear_location = "held, in hands"
+#
+set o9216/weight = 7
+#
+tag o9216 = elemental canyon:area name
+#
+tag o9216 = object
+#
+set o9216/extra_flags = ['glow']
+#
+set o9216/spell_level = 21
+#
+set o9216/spell_level_base = 21
+#
+set o9216/charges_maximum = 3
+#
+set o9216/charges_maximum_base = 3
+#
+set o9216/charges_current = 3
+#
+set o9216/spell_name = "frost breath"
+#
+wearto o9216 = m9235
+#
+set m9235/reset_objects["o9216"] = {"location":"equipped"}
+#
+tel r9257
+#
+create/drop an eddie;eddie;elemental;m9225:characters.Mobile
+#
+desc m9225 = A small eddie current swirls junk around here. 
+#
+set m9225/level = 6
+#
+set m9225/level_base = 6
+#
+set m9225/vnum = "m9225"
+#
+set m9225/look_description = "The magical eddie current is a manifestation of an air elemental. "
+#
+set m9225/act_flags = ['stay area', 'npc']
+#
+set m9225/alignment = 0
+#
+set m9225/sex = "neuter"
+#
+set m9225/race = "elemental"
+#
+tag m9225 = elemental canyon:area name
+#
+tag m9225 = mobile
+#
+set m9225/hitpoints[maximum] = 55
+#
+set m9225/position = "standing"
+#
+set m9225/experience_total = 1643
+#
+set m9225/experience_current = 1643
+#
+set m9225/special_function = "thief"
+#
+tel r9257
+#
+create/drop a dust cloud;dust;elemental;m9224:characters.Mobile
+#
+desc m9224 = A dust cloud blowing by makes you sneeze. 
+#
+set m9224/level = 9
+#
+set m9224/level_base = 9
+#
+set m9224/vnum = "m9224"
+#
+set m9224/look_description = "The magical dust cloud is a cross between air and earth. "
+#
+set m9224/act_flags = ['stay area', 'npc']
+#
+set m9224/alignment = 0
+#
+set m9224/sex = "neuter"
+#
+set m9224/race = "elemental"
+#
+tag m9224 = elemental canyon:area name
+#
+tag m9224 = mobile
+#
+set m9224/hitpoints[maximum] = 91
+#
+set m9224/position = "standing"
+#
+set m9224/experience_total = 4389
+#
+set m9224/experience_current = 4389
+#
+set m9224/special_function = "thief"
+#
+tel r9258
+#
+create/drop an eddie;eddie;elemental;m9225:characters.Mobile
+#
+desc m9225 = A small eddie current swirls junk around here. 
+#
+set m9225/level = 6
+#
+set m9225/level_base = 6
+#
+set m9225/vnum = "m9225"
+#
+set m9225/look_description = "The magical eddie current is a manifestation of an air elemental. "
+#
+set m9225/act_flags = ['stay area', 'npc']
+#
+set m9225/alignment = 0
+#
+set m9225/sex = "neuter"
+#
+set m9225/race = "elemental"
+#
+tag m9225 = elemental canyon:area name
+#
+tag m9225 = mobile
+#
+set m9225/hitpoints[maximum] = 80
+#
+set m9225/position = "standing"
+#
+set m9225/experience_total = 1540
+#
+set m9225/experience_current = 1540
+#
+set m9225/special_function = "thief"
+#
+tel r9259
+#
+create/drop an eddie;eddie;elemental;m9225:characters.Mobile
+#
+desc m9225 = A small eddie current swirls junk around here. 
+#
+set m9225/level = 6
+#
+set m9225/level_base = 6
+#
+set m9225/vnum = "m9225"
+#
+set m9225/look_description = "The magical eddie current is a manifestation of an air elemental. "
+#
+set m9225/act_flags = ['stay area', 'npc']
+#
+set m9225/alignment = 0
+#
+set m9225/sex = "neuter"
+#
+set m9225/race = "elemental"
+#
+tag m9225 = elemental canyon:area name
+#
+tag m9225 = mobile
+#
+set m9225/hitpoints[maximum] = 66
+#
+set m9225/position = "standing"
+#
+set m9225/experience_total = 1553
+#
+set m9225/experience_current = 1553
+#
+set m9225/special_function = "thief"
+#
+tel r9259
+#
+create/drop a dust cloud;dust;elemental;m9224:characters.Mobile
+#
+desc m9224 = A dust cloud blowing by makes you sneeze. 
+#
+set m9224/level = 9
+#
+set m9224/level_base = 9
+#
+set m9224/vnum = "m9224"
+#
+set m9224/look_description = "The magical dust cloud is a cross between air and earth. "
+#
+set m9224/act_flags = ['stay area', 'npc']
+#
+set m9224/alignment = 0
+#
+set m9224/sex = "neuter"
+#
+set m9224/race = "elemental"
+#
+tag m9224 = elemental canyon:area name
+#
+tag m9224 = mobile
+#
+set m9224/hitpoints[maximum] = 124
+#
+set m9224/position = "standing"
+#
+set m9224/experience_total = 4686
+#
+set m9224/experience_current = 4686
+#
+set m9224/special_function = "thief"
+#
+tel r9260
+#
+create/drop The Air Ruler;air;elemental;ruler;m9210:characters.Mobile
+#
+desc m9210 = The Ruler of the air elementals. 
+#
+set m9210/level = 14
+#
+set m9210/level_base = 14
+#
+set m9210/vnum = "m9210"
+#
+set m9210/look_description = "As you peer at him you seem to be looking at the sky itself. "
+#
+set m9210/act_flags = ['sentinel', 'npc']
+#
+set m9210/alignment = 0
+#
+set m9210/sex = "neuter"
+#
+set m9210/spell_affects = {'sanctuary': ''}
+#
+set m9210/race = "elemental"
+#
+tag m9210 = elemental canyon:area name
+#
+tag m9210 = mobile
+#
+set m9210/hitpoints[maximum] = 167
+#
+set m9210/position = "standing"
+#
+set m9210/experience_total = 23422
+#
+set m9210/experience_current = 23422
+#
+set m9210/special_function = "breath_gas"
+#
+tel r9260
+#
+create the wind boots;boots;wind;o9205:objects.Armor
+#
+sethome o9205 = m9210
+#
+desc o9205 = A pair of boots that look fast standing still are here.
+#
+set o9205/level = 12
+#
+set o9205/level_base = 12
+#
+set o9205/vnum = "o9205"
+#
+set o9205/item_type = "armor"
+#
+set o9205/wear_location = "feet"
+#
+set o9205/weight = 1
+#
+tag o9205 = elemental canyon:area name
+#
+tag o9205 = object
+#
+set o9205/extra_flags = ['magic']
+#
+set o9205/stat_modifiers[dexterity] = 2
+#
+set o9205/armor = 6
+#
+wearto o9205 = m9210
+#
+set m9210/reset_objects["o9205"] = {"location":"equipped"}
+#
+tel r9260
+#
+create a humming hurricane helmet;helmet;hurricane;o9206:objects.Armor
+#
+sethome o9206 = m9210
+#
+desc o9206 = A helmet that looks like it has weathered many storms has been set here.
+#
+set o9206/level = 12
+#
+set o9206/level_base = 12
+#
+set o9206/vnum = "o9206"
+#
+set o9206/item_type = "armor"
+#
+set o9206/wear_location = "head"
+#
+set o9206/weight = 4
+#
+tag o9206 = elemental canyon:area name
+#
+tag o9206 = object
+#
+set o9206/extra_flags = ['hum']
+#
+set o9206/stat_modifiers[23] = -4
+#
+set o9206/armor = 4
+#
+wearto o9206 = m9210
+#
+set m9210/reset_objects["o9206"] = {"location":"equipped"}
+#
+tel r9260
+#
+create/drop a large elemental;large;elemental;m9207:characters.Mobile
+#
+desc m9207 = A large elemental. 
+#
+set m9207/level = 10
+#
+set m9207/level_base = 10
+#
+set m9207/vnum = "m9207"
+#
+set m9207/look_description = "A large elemental, a resident of the canyon. "
+#
+set m9207/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m9207/alignment = 20
+#
+set m9207/sex = "neuter"
+#
+set m9207/race = "elemental"
+#
+tag m9207 = elemental canyon:area name
+#
+tag m9207 = mobile
+#
+set m9207/hitpoints[maximum] = 126
+#
+set m9207/position = "standing"
+#
+set m9207/experience_total = 6926
+#
+set m9207/experience_current = 6926
+#
+set m9207/special_function = "breath_any"
+#
+tel r9260
+#
+create a stone club;stone;club;o9220:objects.Weapon
+#
+sethome o9220 = m9207
+#
+desc o9220 = A large stone club lies on the ground.
+#
+set o9220/level = 8
+#
+set o9220/level_base = 8
+#
+set o9220/vnum = "o9220"
+#
+set o9220/item_type = "weapon"
+#
+set o9220/wear_location = "wield"
+#
+set o9220/weight = 16
+#
+tag o9220 = elemental canyon:area name
+#
+tag o9220 = object
+#
+set o9220/extra_flags = ['magic']
+#
+set o9220/stat_modifiers[damroll] = 2
+#
+set o9220/weapon_type = "pound"
+#
+set o9220/damage_low = 4
+#
+set o9220/damage_high = 12
+#
+wieldto o9220 = m9207
+#
+set m9207/experience_total = 8657
+#
+set m9207/experience_current = 8657
+#
+set m9207/reset_objects["o9220"] = {"location":"equipped"}
+#
+tel r9260
+#
+create/drop an eddie;eddie;elemental;m9225:characters.Mobile
+#
+desc m9225 = A small eddie current swirls junk around here. 
+#
+set m9225/level = 6
+#
+set m9225/level_base = 6
+#
+set m9225/vnum = "m9225"
+#
+set m9225/look_description = "The magical eddie current is a manifestation of an air elemental. "
+#
+set m9225/act_flags = ['stay area', 'npc']
+#
+set m9225/alignment = 0
+#
+set m9225/sex = "neuter"
+#
+set m9225/race = "elemental"
+#
+tag m9225 = elemental canyon:area name
+#
+tag m9225 = mobile
+#
+set m9225/hitpoints[maximum] = 82
+#
+set m9225/position = "standing"
+#
+set m9225/experience_total = 1455
+#
+set m9225/experience_current = 1455
+#
+set m9225/special_function = "thief"
+#
+tel r9260
+#
+create/drop an eddie;eddie;elemental;m9225; m9225-2:characters.Mobile
+#
+desc m9225-2 = A small eddie current swirls junk around here. 
+#
+set m9225-2/level = 6
+#
+set m9225-2/level_base = 6
+#
+set m9225-2/vnum = "m9225"
+#
+set m9225-2/look_description = "The magical eddie current is a manifestation of an air elemental. "
+#
+set m9225-2/act_flags = ['stay area', 'npc']
+#
+set m9225-2/alignment = 0
+#
+set m9225-2/sex = "neuter"
+#
+set m9225-2/race = "elemental"
+#
+tag m9225-2 = elemental canyon:area name
+#
+tag m9225-2 = mobile
+#
+set m9225-2/hitpoints[maximum] = 69
+#
+set m9225-2/position = "standing"
+#
+set m9225-2/experience_total = 1585
+#
+set m9225-2/experience_current = 1585
+#
+set m9225-2/special_function = "thief"
+#

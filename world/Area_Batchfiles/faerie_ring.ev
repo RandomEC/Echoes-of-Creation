@@ -1,0 +1,1934 @@
+dig/tel Hall of the Faerie Queen; r8962
+#
+tag r8962 = faerie ring:area name
+#
+desc r8962 = You stand in the hall of the Faerie Queen. Rainbow colors dance across the room in a colorful display. Faerie folk flutter furiously fanning forge fires. Say that 3 times fast. Maybe you should have had that faerie wine. 
+#
+desc/edit r8962
+#
+:j l
+#
+:wq
+#
+set r8962/vnum = "r8962"
+#
+set r8962/terrain = "inside"
+#
+set r8962/extra_description = {'forge fires': 'They are being fanned furiously by fluttering faerie folk. '}
+#
+set r8962/room_flags = ['indoors']
+#
+dig/tel A Ring of Mushrooms; r8955
+#
+tag r8955 = faerie ring:area name
+#
+desc r8955 = In this little field, the grass and weeds grow tall.  Yet oddly, a small circular patch grows low, bordered by a ring of purple mushrooms.  Inside that circle, the grass, greener than the surrounding field, huddles close to the ground. 
+#
+desc/edit r8955
+#
+:j l
+#
+:wq
+#
+set r8955/vnum = "r8955"
+#
+set r8955/terrain = "field"
+#
+set r8955/extra_description = {'mushrooms circle': 'You look at the mushroom circle. You see tiny footprints and the faint outline of a trap door in the center of the ring. '}
+#
+set r8955/room_flags = ['no mob']
+#
+dig/tel Entrance Hall; r8956
+#
+tag r8956 = faerie ring:area name
+#
+desc r8956 = You are in a cramped, low ceiling tunnel. Roots dangle overhead and caress you. There are tiny doors to the north, south and west, which you think you could crawl your way into. A ladder fashioned of woven roots leads up. You hear sounds of a raucous celebration to the east. 
+#
+desc/edit r8956
+#
+:j l
+#
+:wq
+#
+set r8956/vnum = "r8956"
+#
+set r8956/terrain = "inside"
+#
+set r8956/room_flags = ['indoors']
+#
+dig/tel Puck's Room; r8957
+#
+tag r8957 = faerie ring:area name
+#
+desc r8957 = You are hunched over in Puck's room. You know this by the sign that says "Pucks stuff - keep your grubby hands off". There is a bed of forest leaves, some rude hollowed out shelves, a tiny table with a half full jack of ale, and a great pile of junk beneath the sign. 
+#
+desc/edit r8957
+#
+:j l
+#
+:wq
+#
+set r8957/vnum = "r8957"
+#
+set r8957/terrain = "inside"
+#
+set r8957/extra_description = {'sign': 'The sign says: "Puck\'s stuff- keep your grubby hands off" '}
+#
+set r8957/room_flags = ['indoors']
+#
+dig/tel Little People's Bar and Grill; r8958
+#
+tag r8958 = faerie ring:area name
+#
+desc r8958 = You squeeze into the famous Little People's Bar and Grill! Conversation abruptly stops as you enter. Around you little people are drinking from beautifully crafted crystal glasses. The smoke is thick and buoys your spirits. Maybe you should stay a while and try the faerie wine? A low tunnel heads west, and you hear a thunderous racket coming from the east. 
+#
+desc/edit r8958
+#
+:j l
+#
+:wq
+#
+set r8958/vnum = "r8958"
+#
+set r8958/terrain = "inside"
+#
+set r8958/room_flags = ['indoors']
+#
+dig/tel Snooze Den; r8959
+#
+tag r8959 = faerie ring:area name
+#
+desc r8959 = You hunker in the snooze den. A large sign is on the wall. Many little people lie collapsed in drunken heaps about this large room. To the north is a tiny door. 
+#
+desc/edit r8959
+#
+:j l
+#
+:wq
+#
+set r8959/vnum = "r8959"
+#
+set r8959/terrain = "inside"
+#
+set r8959/extra_description = {'sign': "The sign says 'Close the door, stupid' "}
+#
+set r8959/room_flags = ['indoors']
+#
+dig/tel Guarded Burrow; r8960
+#
+tag r8960 = faerie ring:area name
+#
+desc r8960 = You are once again hunched over in an earthy burrow. There is sign of much passage through here, many little feet have packed the dirt hard. To the east lies a door, and to the south is a normal sized door. 
+#
+desc/edit r8960
+#
+:j l
+#
+:wq
+#
+set r8960/vnum = "r8960"
+#
+set r8960/terrain = "inside"
+#
+set r8960/room_flags = ['indoors']
+#
+dig/tel Bowling Alley; r8961
+#
+tag r8961 = faerie ring:area name
+#
+desc r8961 = You are hunched over in a bowling alley! Little people are rolling round objects down grooved tracks at long white targets. The whole cave echoes in a dreadful crash each time they hit the targets! Oh you wish you had that glass of faerie wine. To the west is the Little People's Bar and grill. 
+#
+desc/edit r8961
+#
+:j l
+#
+:wq
+#
+set r8961/vnum = "r8961"
+#
+set r8961/terrain = "inside"
+#
+set r8961/extra_description = {'round objects': 'You look at the round objects. Each object is a human head! Yikes! ', 'targets white': 'You look carefully at the white targets and discover they are human bones! '}
+#
+set r8961/room_flags = ['indoors']
+#
+tel r8962
+#
+openexit north; door; normal; n; e3600^ south = r8960
+#
+tag e3600 = faerie ring:area name
+#
+set e3600/door_attributes = ["open"]
+#
+set e3600/reset_door_attributes = ["open"]
+#
+desc north = A normal sized door
+#
+set north/key = "o8964"
+#
+tel r8955
+#
+openexit north; n; e3601^ south = r61008
+#
+tag e3601 = faerie ring:area name
+#
+set e3601/door_attributes = ["open"]
+#
+set e3601/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit west; w; e3602^ east = r61021
+#
+tag e3602 = faerie ring:area name
+#
+set e3602/door_attributes = ["open"]
+#
+set e3602/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+openexit down; door; trap; d; e3603^ up = r8956
+#
+tag e3603 = faerie ring:area name
+#
+set e3603/door_attributes = ["open"]
+#
+set e3603/reset_door_attributes = ["open"]
+#
+desc down = A small trap door
+#
+tel r8956
+#
+openexit north; door; tiny; n; e3604^ south = r8957
+#
+tag e3604 = faerie ring:area name
+#
+set e3604/door_attributes = ["open"]
+#
+set e3604/reset_door_attributes = ["open"]
+#
+desc north = A tiny door
+#
+openexit east; e; e3605^ west = r8958
+#
+tag e3605 = faerie ring:area name
+#
+set e3605/door_attributes = ["open"]
+#
+set e3605/reset_door_attributes = ["open"]
+#
+desc east = A smoky hallway
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; door; tiny; s; e3606^ north = r8959
+#
+tag e3606 = faerie ring:area name
+#
+set e3606/door_attributes = ["open"]
+#
+set e3606/reset_door_attributes = ["open"]
+#
+desc south = A tiny door
+#
+openexit west; door; tiny; w; e3607^ east = r8960
+#
+tag e3607 = faerie ring:area name
+#
+set e3607/door_attributes = ["open"]
+#
+set e3607/reset_door_attributes = ["open"]
+#
+desc west = A tiny door
+#
+alias up = door^ trap^ u^ e3608
+#
+tag e3608 = faerie ring:area name
+#
+set e3608/door_attributes = ["open"]
+#
+set e3608/reset_door_attributes = ["open"]
+#
+desc up = A small trap door
+#
+tel r8957
+#
+alias south = door^ tiny^ s^ e3609
+#
+tag e3609 = faerie ring:area name
+#
+set e3609/door_attributes = ["open"]
+#
+set e3609/reset_door_attributes = ["open"]
+#
+desc south = A tiny door
+#
+tel r8958
+#
+openexit east; e; e3610^ west = r8961
+#
+tag e3610 = faerie ring:area name
+#
+set e3610/door_attributes = ["open"]
+#
+set e3610/reset_door_attributes = ["open"]
+#
+desc east = Towards the racket
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3611
+#
+tag e3611 = faerie ring:area name
+#
+set e3611/door_attributes = ["open"]
+#
+set e3611/reset_door_attributes = ["open"]
+#
+desc west = A smoky hallway
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r8959
+#
+alias north = door^ tiny^ n^ e3612
+#
+tag e3612 = faerie ring:area name
+#
+set e3612/door_attributes = ["open"]
+#
+set e3612/reset_door_attributes = ["open"]
+#
+desc north = A tiny door
+#
+tel r8960
+#
+alias east = door^ tiny^ e^ e3613
+#
+tag e3613 = faerie ring:area name
+#
+set e3613/door_attributes = ["open"]
+#
+set e3613/reset_door_attributes = ["open"]
+#
+desc east = A tiny door
+#
+alias south = door^ normal^ s^ e3614
+#
+tag e3614 = faerie ring:area name
+#
+set e3614/door_attributes = ["open"]
+#
+set e3614/reset_door_attributes = ["open"]
+#
+desc south = A normal sized door
+#
+set south/key = "o8964"
+#
+tel r8961
+#
+alias west = w^ e3615
+#
+tag e3615 = faerie ring:area name
+#
+set e3615/door_attributes = ["open"]
+#
+set e3615/reset_door_attributes = ["open"]
+#
+desc west = Little People's Bar and Grill
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r8955
+#
+set down/door_attributes = ['closeable']
+#
+set down/reset_door_attributes = ['closeable']
+#
+tel r8956
+#
+create/drop A giggling pixie;pixie;faerie;m8955:characters.Mobile
+#
+desc m8955 = A pixie pokes you in the butt with its sword and giggles! 
+#
+set m8955/level = 11
+#
+set m8955/level_base = 11
+#
+set m8955/vnum = "m8955"
+#
+set m8955/look_description = 'The pixie is about 6" tall, is human-like, and has dragonfly wings. '
+#
+set m8955/act_flags = ['wimpy', 'scavenger', 'npc']
+#
+set m8955/alignment = 0
+#
+set m8955/sex = "male"
+#
+set m8955/spell_affects = {'flying': ''}
+#
+set m8955/race = "human"
+#
+tag m8955 = faerie ring:area name
+#
+tag m8955 = mobile
+#
+set m8955/hitpoints[maximum] = 184
+#
+set m8955/position = "standing"
+#
+set m8955/experience_total = 6814
+#
+set m8955/experience_current = 6814
+#
+tel r8956
+#
+create a catchy little rhyme;rhyme;catchy;paper;o8955:objects.Scroll
+#
+sethome o8955 = m8955
+#
+desc o8955 = There is a tiny rolled up paper lying on the ground. 
+#
+set o8955/level = 9
+#
+set o8955/level_base = 9
+#
+set o8955/vnum = "o8955"
+#
+set o8955/item_type = "scroll"
+#
+set o8955/wear_location = "held, in hands"
+#
+set o8955/weight = 1
+#
+tag o8955 = faerie ring:area name
+#
+tag o8955 = object
+#
+set o8955/extra_descriptions = {'rhyme catchy little': ' You look at the rhyme. It reads: - Turn your clothes inside out Circle three times and shout Iron and cross, make you be Revealed to all, and to me '}
+#
+set o8955/extra_flags = ['magic', 'glow']
+#
+set o8955/spell_level = 10
+#
+set o8955/spell_level_base = 10
+#
+set o8955/spell_name_1 = "faerie fog"
+#
+give o8955 to m8955
+#
+set m8955/reset_objects["o8955"] = {"location":"inventory"}
+#
+tel r8956
+#
+set north/door_attributes = ['closeable']
+#
+set north/reset_door_attributes = ['closeable']
+#
+tel r8956
+#
+set south/door_attributes = ['closeable']
+#
+set south/reset_door_attributes = ['closeable']
+#
+tel r8956
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r8956
+#
+set up/door_attributes = ['closeable']
+#
+set up/reset_door_attributes = ['closeable']
+#
+tel r8957
+#
+create/drop Puck;puck;faerie;m8959:characters.Mobile
+#
+desc m8959 = Uh oh! You see Puck! 
+#
+set m8959/level = 20
+#
+set m8959/level_base = 20
+#
+set m8959/vnum = "m8959"
+#
+set m8959/look_description = "Puck is an amazing 3' tall. He snaps his head back and forth in quick darting motions checking if his pile is still there. "
+#
+set m8959/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m8959/alignment = 0
+#
+set m8959/sex = "male"
+#
+set m8959/spell_affects = {'hide': '', 'detect hidden': ''}
+#
+set m8959/race = "human"
+#
+tag m8959 = faerie ring:area name
+#
+tag m8959 = mobile
+#
+set m8959/hitpoints[maximum] = 513
+#
+set m8959/position = "standing"
+#
+set m8959/experience_total = 38676
+#
+set m8959/experience_current = 38676
+#
+set m8959/special_function = "thief"
+#
+tel r8957
+#
+create a pair of dirty britches;britches;dirty;o8963:objects.Armor
+#
+sethome o8963 = m8959
+#
+desc o8963 = A pair of dirty britches lies here. Get the laundry soap. 
+#
+set o8963/level = 18
+#
+set o8963/level_base = 18
+#
+set o8963/vnum = "o8963"
+#
+set o8963/item_type = "armor"
+#
+set o8963/wear_location = "legs"
+#
+set o8963/weight = 0
+#
+tag o8963 = faerie ring:area name
+#
+tag o8963 = object
+#
+set o8963/extra_flags = ['dark']
+#
+set o8963/stat_modifiers[hitpoints] = 8
+#
+set o8963/stat_modifiers[damroll] = 2
+#
+set o8963/armor = 6
+#
+wearto o8963 = m8959
+#
+set m8959/reset_objects["o8963"] = {"location":"equipped"}
+#
+tel r8957
+#
+create a dirty cloak;cloak;dirty;o8965:objects.Armor
+#
+sethome o8965 = m8959
+#
+desc o8965 = A dirty cloak lies here. Ugh! Get the laundry soap.
+#
+set o8965/level = 18
+#
+set o8965/level_base = 18
+#
+set o8965/vnum = "o8965"
+#
+set o8965/item_type = "armor"
+#
+set o8965/wear_location = "neck"
+#
+set o8965/weight = 2
+#
+tag o8965 = faerie ring:area name
+#
+tag o8965 = object
+#
+set o8965/extra_flags = ['dark']
+#
+set o8965/stat_modifiers[dexterity] = 1
+#
+set o8965/stat_modifiers[strength] = 1
+#
+set o8965/armor = 6
+#
+wearto o8965 = m8959
+#
+set m8959/reset_objects["o8965"] = {"location":"equipped"}
+#
+tel r8957
+#
+create a goblet of faerie wine;wine;goblet;faerie;o8962:objects.Potion
+#
+sethome o8962 = r8957
+#
+desc o8962 = A crystal goblet filled with sparkling wine is here. 
+#
+set o8962/level = 18
+#
+set o8962/level_base = 18
+#
+set o8962/vnum = "o8962"
+#
+set o8962/item_type = "potion"
+#
+set o8962/weight = 0
+#
+tag o8962 = faerie ring:area name
+#
+tag o8962 = object
+#
+set o8962/extra_flags = ['magic']
+#
+set o8962/spell_level = 1
+#
+set o8962/spell_level_base = 1
+#
+set o8962/spell_name_1 = "change sex"
+#
+set o8962/spell_name_2 = "invis"
+#
+set o8962/spell_name_3 = "cure blindness"
+#
+drop o8962
+#
+set r8957/reset_objects["o8962"] = {"location":"inventory"}
+#
+tel r8957
+#
+set south/door_attributes = ['closeable']
+#
+set south/reset_door_attributes = ['closeable']
+#
+tel r8958
+#
+create/drop A fluttering nixie;nixie;faerie;m8956:characters.Mobile
+#
+desc m8956 = A fluttering nixie rummages through your possessions looking for wine! 
+#
+set m8956/level = 12
+#
+set m8956/level_base = 12
+#
+set m8956/vnum = "m8956"
+#
+set m8956/look_description = 'The nixie, like the pixie, has dragonfly wings, but is taller (9"). '
+#
+set m8956/act_flags = ['wimpy', 'scavenger', 'npc']
+#
+set m8956/alignment = 0
+#
+set m8956/sex = "male"
+#
+set m8956/spell_affects = {'flying': ''}
+#
+set m8956/race = "human"
+#
+tag m8956 = faerie ring:area name
+#
+tag m8956 = mobile
+#
+set m8956/hitpoints[maximum] = 120
+#
+set m8956/position = "standing"
+#
+set m8956/experience_total = 9578
+#
+set m8956/experience_current = 9578
+#
+tel r8958
+#
+create a vial of bottled moonlight;bottle;moonlight;vial;liquid;o8959:objects.Potion
+#
+sethome o8959 = m8956
+#
+desc o8959 = A vial of sparkling liquid emits a soft white glow. 
+#
+set o8959/level = 10
+#
+set o8959/level_base = 10
+#
+set o8959/vnum = "o8959"
+#
+set o8959/item_type = "potion"
+#
+set o8959/wear_location = "held, in hands"
+#
+set o8959/weight = 1
+#
+tag o8959 = faerie ring:area name
+#
+tag o8959 = object
+#
+set o8959/extra_flags = ['magic', 'glow']
+#
+set o8959/spell_level = 15
+#
+set o8959/spell_level_base = 15
+#
+set o8959/spell_name_1 = "fly"
+#
+set o8959/spell_name_2 = "cure poison"
+#
+set o8959/spell_name_3 = "cure critical"
+#
+give o8959 to m8956
+#
+set m8956/reset_objects["o8959"] = {"location":"inventory"}
+#
+tel r8958
+#
+create/drop A giggling pixie;pixie;faerie;m8955:characters.Mobile
+#
+desc m8955 = A pixie pokes you in the butt with its sword and giggles! 
+#
+set m8955/level = 11
+#
+set m8955/level_base = 11
+#
+set m8955/vnum = "m8955"
+#
+set m8955/look_description = 'The pixie is about 6" tall, is human-like, and has dragonfly wings. '
+#
+set m8955/act_flags = ['wimpy', 'scavenger', 'npc']
+#
+set m8955/alignment = 0
+#
+set m8955/sex = "male"
+#
+set m8955/spell_affects = {'flying': ''}
+#
+set m8955/race = "human"
+#
+tag m8955 = faerie ring:area name
+#
+tag m8955 = mobile
+#
+set m8955/hitpoints[maximum] = 203
+#
+set m8955/position = "standing"
+#
+set m8955/experience_total = 7224
+#
+set m8955/experience_current = 7224
+#
+tel r8958
+#
+create a catchy little rhyme;rhyme;catchy;paper;o8955:objects.Scroll
+#
+sethome o8955 = m8955
+#
+desc o8955 = There is a tiny rolled up paper lying on the ground. 
+#
+set o8955/level = 9
+#
+set o8955/level_base = 9
+#
+set o8955/vnum = "o8955"
+#
+set o8955/item_type = "scroll"
+#
+set o8955/wear_location = "held, in hands"
+#
+set o8955/weight = 1
+#
+tag o8955 = faerie ring:area name
+#
+tag o8955 = object
+#
+set o8955/extra_descriptions = {'rhyme catchy little': ' You look at the rhyme. It reads: - Turn your clothes inside out Circle three times and shout Iron and cross, make you be Revealed to all, and to me '}
+#
+set o8955/extra_flags = ['magic', 'glow']
+#
+set o8955/spell_level = 10
+#
+set o8955/spell_level_base = 10
+#
+set o8955/spell_name_1 = "faerie fog"
+#
+give o8955 to m8955
+#
+set m8955/reset_objects["o8955"] = {"location":"inventory"}
+#
+tel r8958
+#
+create/drop A dancing sprite;sprite;faerie;m8957:characters.Mobile
+#
+desc m8957 = A sprite casts a spell and you do a merry little dance! 
+#
+set m8957/level = 12
+#
+set m8957/level_base = 12
+#
+set m8957/vnum = "m8957"
+#
+set m8957/look_description = 'The sprite has dragonfly wings like the nixie and pixie, but she towers over them at an amazing 12" height! '
+#
+set m8957/act_flags = ['wimpy', 'npc']
+#
+set m8957/alignment = 0
+#
+set m8957/sex = "female"
+#
+set m8957/spell_affects = {'flying': '', 'sneak': '', 'invisible': ''}
+#
+set m8957/race = "human"
+#
+tag m8957 = faerie ring:area name
+#
+tag m8957 = mobile
+#
+set m8957/hitpoints[maximum] = 172
+#
+set m8957/position = "standing"
+#
+set m8957/experience_total = 9906
+#
+set m8957/experience_current = 9906
+#
+tel r8958
+#
+create a sprite belt;belt;sprite;o8957:objects.Armor
+#
+sethome o8957 = m8957
+#
+desc o8957 = A loop of rainbow thread lies here.
+#
+set o8957/level = 10
+#
+set o8957/level_base = 10
+#
+set o8957/vnum = "o8957"
+#
+set o8957/item_type = "armor"
+#
+set o8957/wear_location = "waist"
+#
+set o8957/weight = 1
+#
+tag o8957 = faerie ring:area name
+#
+tag o8957 = object
+#
+set o8957/extra_flags = ['no remove', 'invisible']
+#
+set o8957/stat_modifiers[saving throw] = -3
+#
+set o8957/armor = 4
+#
+wearto o8957 = m8957
+#
+set m8957/reset_objects["o8957"] = {"location":"equipped"}
+#
+tel r8958
+#
+create/drop Twinkletoes;twinkletoes;bartender;faerie;m8963:characters.Mobile
+#
+desc m8963 = A faerie bartender is here, serving up faerie wine and finger food. 
+#
+set m8963/level = 21
+#
+set m8963/level_base = 21
+#
+set m8963/vnum = "m8963"
+#
+set m8963/look_description = "Twinkletoes is a fierce, old looking brownie. Maybe you should leave her alone. "
+#
+set m8963/act_flags = ['no kill', 'sentinel', 'npc']
+#
+set m8963/alignment = 0
+#
+set m8963/sex = "female"
+#
+set m8963/spell_affects = {'protect': '', 'detect hidden': '', 'detect invis': ''}
+#
+set m8963/race = "human"
+#
+tag m8963 = faerie ring:area name
+#
+tag m8963 = mobile
+#
+set m8963/hitpoints[maximum] = 328
+#
+set m8963/position = "standing"
+#
+set m8963/experience_total = 49864
+#
+set m8963/experience_current = 49864
+#
+set m8963/shopkeeper = {'item will buy 1': 'light', 'item will buy 2': 'scroll', 'item will buy 3': 'wand', 'item will buy 4': 'staff', 'sell percentage': '18', 'buy percentage': '120', 'opening hour': '80', 'closing hour': '0'}
+#
+tel r8958
+#
+create a goblet of faerie wine;wine;goblet;faerie;o8962:objects.Potion
+#
+sethome o8962 = m8963
+#
+desc o8962 = A crystal goblet filled with sparkling wine is here. 
+#
+set o8962/level = 19
+#
+set o8962/level_base = 19
+#
+set o8962/vnum = "o8962"
+#
+set o8962/item_type = "potion"
+#
+set o8962/weight = 0
+#
+tag o8962 = faerie ring:area name
+#
+tag o8962 = object
+#
+set o8962/extra_flags = ['magic']
+#
+set o8962/spell_level = 1
+#
+set o8962/spell_level_base = 1
+#
+set o8962/spell_name_1 = "change sex"
+#
+set o8962/spell_name_2 = "invis"
+#
+set o8962/spell_name_3 = "cure blindness"
+#
+give o8962 to m8963
+#
+set m8963/reset_objects["o8962"] = {"location":"inventory"}
+#
+tel r8958
+#
+create delicious finger food;food;finger;o8968:objects.Food
+#
+sethome o8968 = m8963
+#
+desc o8968 = A delicious little plate of scrumptious finger foods lies here beckoning to you. 
+#
+set o8968/level = 19
+#
+set o8968/level_base = 19
+#
+set o8968/vnum = "o8968"
+#
+set o8968/item_type = "food"
+#
+set o8968/wear_location = "wield"
+#
+set o8968/weight = 0
+#
+tag o8968 = faerie ring:area name
+#
+tag o8968 = object
+#
+set o8968/hours_fed = 24
+#
+set o8968/poison = 0
+#
+give o8968 to m8963
+#
+set m8963/reset_objects["o8968"] = {"location":"inventory"}
+#
+tel r8958
+#
+create/drop Lucky;lucky;leprechaun;faerie;m8961:characters.Mobile
+#
+desc m8961 = A little leprechaun garbed in green says 'Wooo-hooo-hoo' and tickles you! 
+#
+set m8961/level = 18
+#
+set m8961/level_base = 18
+#
+set m8961/vnum = "m8961"
+#
+set m8961/look_description = "Lucky wears green and is mumbling something about blue diamonds. "
+#
+set m8961/act_flags = ['wimpy', 'npc']
+#
+set m8961/alignment = 0
+#
+set m8961/sex = "male"
+#
+set m8961/spell_affects = {'pass door': '', 'sneak': '', 'invisible': ''}
+#
+set m8961/race = "human"
+#
+tag m8961 = faerie ring:area name
+#
+tag m8961 = mobile
+#
+set m8961/hitpoints[maximum] = 191
+#
+set m8961/position = "standing"
+#
+set m8961/experience_total = 27724
+#
+set m8961/experience_current = 27724
+#
+tel r8958
+#
+create a blue diamond wand;wand;blue;diamond;o8966:objects.Wand
+#
+sethome o8966 = m8961
+#
+desc o8966 = A wand with a huge blue diamond on it is just lying here! Pick it up! 
+#
+set o8966/level = 16
+#
+set o8966/level_base = 16
+#
+set o8966/vnum = "o8966"
+#
+set o8966/item_type = "wand"
+#
+set o8966/wear_location = "held, in hands"
+#
+set o8966/weight = 2
+#
+tag o8966 = faerie ring:area name
+#
+tag o8966 = object
+#
+set o8966/extra_descriptions = {'diamond blue': " They're magically delicious! "}
+#
+set o8966/extra_flags = ['magic']
+#
+set o8966/spell_level = 14
+#
+set o8966/spell_level_base = 14
+#
+set o8966/charges_maximum = 12
+#
+set o8966/charges_maximum_base = 12
+#
+set o8966/charges_current = 12
+#
+set o8966/spell_name = "create food"
+#
+give o8966 to m8961
+#
+set m8961/reset_objects["o8966"] = {"location":"inventory"}
+#
+tel r8958
+#
+create whoooooopie! Gold!;gold;o8967:objects.Money
+#
+sethome o8967 = m8961
+#
+desc o8967 = A rainbow ends at this pot of gold!
+#
+set o8967/level = 16
+#
+set o8967/level_base = 16
+#
+set o8967/vnum = "o8967"
+#
+set o8967/item_type = "money"
+#
+set o8967/wear_location = "held, in hands"
+#
+set o8967/weight = 0
+#
+tag o8967 = faerie ring:area name
+#
+tag o8967 = object
+#
+set o8967/extra_flags = ['glow']
+#
+set o8967/value = 5000
+#
+give o8967 to m8961
+#
+set m8961/reset_objects["o8967"] = {"location":"inventory"}
+#
+tel r8959
+#
+create/drop A drunken faerie;faerie;drunken;m8962:characters.Mobile
+#
+desc m8962 = A drunken faerie snores happily on the floor. 
+#
+set m8962/level = 12
+#
+set m8962/level_base = 12
+#
+set m8962/vnum = "m8962"
+#
+set m8962/look_description = "The drunken faerie lies nude on the floor, snoring happily away. Looks like somebody is playing a practical joke on him. "
+#
+set m8962/act_flags = ['sentinel', 'npc']
+#
+set m8962/alignment = 0
+#
+set m8962/sex = "male"
+#
+set m8962/spell_affects = {'sleep': ''}
+#
+set m8962/race = "human"
+#
+tag m8962 = faerie ring:area name
+#
+tag m8962 = mobile
+#
+set m8962/hitpoints[maximum] = 141
+#
+set m8962/position = "standing"
+#
+set m8962/experience_total = 9060
+#
+set m8962/experience_current = 9060
+#
+tel r8959
+#
+create a goblet of faerie wine;wine;goblet;faerie;o8962:objects.Potion
+#
+sethome o8962 = m8962
+#
+desc o8962 = A crystal goblet filled with sparkling wine is here. 
+#
+set o8962/level = 10
+#
+set o8962/level_base = 10
+#
+set o8962/vnum = "o8962"
+#
+set o8962/item_type = "potion"
+#
+set o8962/weight = 0
+#
+tag o8962 = faerie ring:area name
+#
+tag o8962 = object
+#
+set o8962/extra_flags = ['magic']
+#
+set o8962/spell_level = 1
+#
+set o8962/spell_level_base = 1
+#
+set o8962/spell_name_1 = "change sex"
+#
+set o8962/spell_name_2 = "invis"
+#
+set o8962/spell_name_3 = "cure blindness"
+#
+give o8962 to m8962
+#
+set m8962/reset_objects["o8962"] = {"location":"inventory"}
+#
+tel r8959
+#
+set north/door_attributes = ['closeable']
+#
+set north/reset_door_attributes = ['closeable']
+#
+tel r8960
+#
+create/drop A stern brownie;brownie;faerie;m8958:characters.Mobile
+#
+desc m8958 = A stern brownie stands guard here - you better watch it bub! 
+#
+set m8958/level = 16
+#
+set m8958/level_base = 16
+#
+set m8958/vnum = "m8958"
+#
+set m8958/look_description = "The beefy 2' tall brownie wears earth colored clothing, and seems intent on its task of guarding. "
+#
+set m8958/act_flags = ['sentinel', 'npc']
+#
+set m8958/alignment = 0
+#
+set m8958/sex = "male"
+#
+set m8958/spell_affects = {'protect': '', 'detect hidden': '', 'detect invis': ''}
+#
+set m8958/race = "human"
+#
+tag m8958 = faerie ring:area name
+#
+tag m8958 = mobile
+#
+set m8958/hitpoints[maximum] = 179
+#
+set m8958/position = "standing"
+#
+set m8958/experience_total = 23162
+#
+set m8958/experience_current = 23162
+#
+tel r8960
+#
+create a brownie bracer;bracer;brownie;o8958:objects.Armor
+#
+sethome o8958 = m8958
+#
+desc o8958 = An earthen colored band lies here.
+#
+set o8958/level = 14
+#
+set o8958/level_base = 14
+#
+set o8958/vnum = "o8958"
+#
+set o8958/item_type = "armor"
+#
+set o8958/wear_location = "wrist"
+#
+set o8958/weight = 1
+#
+tag o8958 = faerie ring:area name
+#
+tag o8958 = object
+#
+set o8958/extra_flags = ['magic']
+#
+set o8958/stat_modifiers[dexterity] = 1
+#
+set o8958/stat_modifiers[hitpoints] = 8
+#
+set o8958/armor = 4
+#
+wearto o8958 = m8958
+#
+set m8958/reset_objects["o8958"] = {"location":"equipped"}
+#
+tel r8960
+#
+create a sparkling key;key;sparkling;o8964:objects.Key
+#
+sethome o8964 = m8958
+#
+desc o8964 = A sparkling key glistens on the ground. 
+#
+set o8964/level = 14
+#
+set o8964/level_base = 14
+#
+set o8964/vnum = "o8964"
+#
+set o8964/item_type = "key"
+#
+set o8964/wear_location = "held, in hands"
+#
+set o8964/weight = 1
+#
+tag o8964 = faerie ring:area name
+#
+tag o8964 = object
+#
+set o8964/extra_flags = ['magic', 'hum']
+#
+give o8964 to m8958
+#
+set m8958/reset_objects["o8964"] = {"location":"inventory"}
+#
+tel r8960
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r8960
+#
+set south/door_attributes = ['lockable', 'locked']
+#
+set south/reset_door_attributes = ['lockable', 'locked']
+#
+tel r8961
+#
+create/drop A giggling pixie;pixie;faerie;m8955:characters.Mobile
+#
+desc m8955 = A pixie pokes you in the butt with its sword and giggles! 
+#
+set m8955/level = 11
+#
+set m8955/level_base = 11
+#
+set m8955/vnum = "m8955"
+#
+set m8955/look_description = 'The pixie is about 6" tall, is human-like, and has dragonfly wings. '
+#
+set m8955/act_flags = ['wimpy', 'scavenger', 'npc']
+#
+set m8955/alignment = 0
+#
+set m8955/sex = "male"
+#
+set m8955/spell_affects = {'flying': ''}
+#
+set m8955/race = "human"
+#
+tag m8955 = faerie ring:area name
+#
+tag m8955 = mobile
+#
+set m8955/hitpoints[maximum] = 122
+#
+set m8955/position = "standing"
+#
+set m8955/experience_total = 7632
+#
+set m8955/experience_current = 7632
+#
+tel r8961
+#
+create a catchy little rhyme;rhyme;catchy;paper;o8955:objects.Scroll
+#
+sethome o8955 = m8955
+#
+desc o8955 = There is a tiny rolled up paper lying on the ground. 
+#
+set o8955/level = 9
+#
+set o8955/level_base = 9
+#
+set o8955/vnum = "o8955"
+#
+set o8955/item_type = "scroll"
+#
+set o8955/wear_location = "held, in hands"
+#
+set o8955/weight = 1
+#
+tag o8955 = faerie ring:area name
+#
+tag o8955 = object
+#
+set o8955/extra_descriptions = {'rhyme catchy little': ' You look at the rhyme. It reads: - Turn your clothes inside out Circle three times and shout Iron and cross, make you be Revealed to all, and to me '}
+#
+set o8955/extra_flags = ['magic', 'glow']
+#
+set o8955/spell_level = 10
+#
+set o8955/spell_level_base = 10
+#
+set o8955/spell_name_1 = "faerie fog"
+#
+give o8955 to m8955
+#
+set m8955/reset_objects["o8955"] = {"location":"inventory"}
+#
+tel r8961
+#
+create/drop A fluttering nixie;nixie;faerie;m8956:characters.Mobile
+#
+desc m8956 = A fluttering nixie rummages through your possessions looking for wine! 
+#
+set m8956/level = 12
+#
+set m8956/level_base = 12
+#
+set m8956/vnum = "m8956"
+#
+set m8956/look_description = 'The nixie, like the pixie, has dragonfly wings, but is taller (9"). '
+#
+set m8956/act_flags = ['wimpy', 'scavenger', 'npc']
+#
+set m8956/alignment = 0
+#
+set m8956/sex = "male"
+#
+set m8956/spell_affects = {'flying': ''}
+#
+set m8956/race = "human"
+#
+tag m8956 = faerie ring:area name
+#
+tag m8956 = mobile
+#
+set m8956/hitpoints[maximum] = 206
+#
+set m8956/position = "standing"
+#
+set m8956/experience_total = 10241
+#
+set m8956/experience_current = 10241
+#
+tel r8961
+#
+create a vial of bottled moonlight;bottle;moonlight;vial;liquid;o8959:objects.Potion
+#
+sethome o8959 = m8956
+#
+desc o8959 = A vial of sparkling liquid emits a soft white glow. 
+#
+set o8959/level = 10
+#
+set o8959/level_base = 10
+#
+set o8959/vnum = "o8959"
+#
+set o8959/item_type = "potion"
+#
+set o8959/wear_location = "held, in hands"
+#
+set o8959/weight = 1
+#
+tag o8959 = faerie ring:area name
+#
+tag o8959 = object
+#
+set o8959/extra_flags = ['magic', 'glow']
+#
+set o8959/spell_level = 15
+#
+set o8959/spell_level_base = 15
+#
+set o8959/spell_name_1 = "fly"
+#
+set o8959/spell_name_2 = "cure poison"
+#
+set o8959/spell_name_3 = "cure critical"
+#
+give o8959 to m8956
+#
+set m8956/reset_objects["o8959"] = {"location":"inventory"}
+#
+tel r8961
+#
+create/drop A dancing sprite;sprite;faerie;m8957:characters.Mobile
+#
+desc m8957 = A sprite casts a spell and you do a merry little dance! 
+#
+set m8957/level = 12
+#
+set m8957/level_base = 12
+#
+set m8957/vnum = "m8957"
+#
+set m8957/look_description = 'The sprite has dragonfly wings like the nixie and pixie, but she towers over them at an amazing 12" height! '
+#
+set m8957/act_flags = ['wimpy', 'npc']
+#
+set m8957/alignment = 0
+#
+set m8957/sex = "female"
+#
+set m8957/spell_affects = {'flying': '', 'sneak': '', 'invisible': ''}
+#
+set m8957/race = "human"
+#
+tag m8957 = faerie ring:area name
+#
+tag m8957 = mobile
+#
+set m8957/hitpoints[maximum] = 156
+#
+set m8957/position = "standing"
+#
+set m8957/experience_total = 9077
+#
+set m8957/experience_current = 9077
+#
+tel r8961
+#
+create a sprite belt;belt;sprite;o8957:objects.Armor
+#
+sethome o8957 = m8957
+#
+desc o8957 = A loop of rainbow thread lies here.
+#
+set o8957/level = 10
+#
+set o8957/level_base = 10
+#
+set o8957/vnum = "o8957"
+#
+set o8957/item_type = "armor"
+#
+set o8957/wear_location = "waist"
+#
+set o8957/weight = 1
+#
+tag o8957 = faerie ring:area name
+#
+tag o8957 = object
+#
+set o8957/extra_flags = ['no remove', 'invisible']
+#
+set o8957/stat_modifiers[saving throw] = -3
+#
+set o8957/armor = 6
+#
+wearto o8957 = m8957
+#
+set m8957/reset_objects["o8957"] = {"location":"equipped"}
+#
+tel r8962
+#
+create/drop The Faerie Queen;queen;faerie;m8960:characters.Mobile
+#
+desc m8960 = The Faerie Queen sits in a circle of dancing twinkling faeries! 
+#
+set m8960/level = 20
+#
+set m8960/level_base = 20
+#
+set m8960/vnum = "m8960"
+#
+set m8960/look_description = "The faerie queen is here teaching her subjects court in a gossamer gown  of moonbeams. She towers at 4' tall. She is by far the most beautiful creature you have ever seen. Maybe you should stay here a while. Hmmm. Why bother going back? "
+#
+set m8960/act_flags = ['practice', 'train', 'sentinel', 'npc']
+#
+set m8960/alignment = 0
+#
+set m8960/sex = "female"
+#
+set m8960/spell_affects = {'protect': '', 'sanctuary': '', 'detect hidden': '', 'detect magic': '', 'detect invis': ''}
+#
+set m8960/race = "human"
+#
+tag m8960 = faerie ring:area name
+#
+tag m8960 = mobile
+#
+set m8960/hitpoints[maximum] = 284
+#
+set m8960/position = "standing"
+#
+set m8960/experience_total = 64000
+#
+set m8960/experience_current = 64000
+#
+set m8960/special_function = "cast_mage"
+#
+tel r8962
+#
+create a *twinkling* ball of light;light;twinkle;twinkling;ball;o8956:objects.Light
+#
+sethome o8956 = m8960
+#
+desc o8956 = A twinkling ball of light sparkles here! 
+#
+set o8956/level = 18
+#
+set o8956/level_base = 18
+#
+set o8956/vnum = "o8956"
+#
+set o8956/item_type = "light"
+#
+set o8956/wear_location = "held, in hands"
+#
+set o8956/weight = 0
+#
+tag o8956 = faerie ring:area name
+#
+tag o8956 = object
+#
+set o8956/extra_flags = ['bless', 'magic', 'glow']
+#
+set o8956/stat_modifiers[wisdom] = 1
+#
+set o8956/stat_modifiers[intelligence] = 1
+#
+set o8956/stat_modifiers[hitroll] = 1
+#
+set o8956/stat_modifiers[damroll] = 1
+#
+set o8956/light_hours= -1
+#
+wearto o8956 = m8960
+#
+set m8960/reset_objects["o8956"] = {"location":"equipped"}
+#
+tel r8962
+#
+create a gossamer robe;robe;gossamer;o8960:objects.Armor
+#
+sethome o8960 = m8960
+#
+desc o8960 = A gossamer robe sparkles with a pale white glow! 
+#
+set o8960/level = 18
+#
+set o8960/level_base = 18
+#
+set o8960/vnum = "o8960"
+#
+set o8960/item_type = "armor"
+#
+set o8960/wear_location = "about body"
+#
+set o8960/weight = 1
+#
+tag o8960 = faerie ring:area name
+#
+tag o8960 = object
+#
+set o8960/extra_flags = ['no remove', 'bless']
+#
+set o8960/stat_modifiers[mana] = 10
+#
+set o8960/stat_modifiers[saving throw] = -2
+#
+set o8960/armor = 6
+#
+wearto o8960 = m8960
+#
+set m8960/reset_objects["o8960"] = {"location":"equipped"}
+#
+tel r8962
+#
+create a moonbeam;moonbeam;o8961:objects.Weapon
+#
+sethome o8961 = m8960
+#
+desc o8961 = A sparkling pale light ray glows here! 
+#
+set o8961/level = 18
+#
+set o8961/level_base = 18
+#
+set o8961/vnum = "o8961"
+#
+set o8961/item_type = "weapon"
+#
+set o8961/wear_location = "wield"
+#
+set o8961/weight = 0
+#
+tag o8961 = faerie ring:area name
+#
+tag o8961 = object
+#
+set o8961/extra_flags = ['invisible', 'glow']
+#
+set o8961/stat_modifiers[damroll] = 2
+#
+set o8961/stat_modifiers[hitroll] = 2
+#
+set o8961/weapon_type = "pierce"
+#
+set o8961/damage_low = 6
+#
+set o8961/damage_high = 20
+#
+wieldto o8961 = m8960
+#
+set m8960/experience_total = 80000
+#
+set m8960/experience_current = 80000
+#
+set m8960/reset_objects["o8961"] = {"location":"equipped"}
+#
+tel r8962
+#
+create/drop A giggling pixie;pixie;faerie;m8955:characters.Mobile
+#
+desc m8955 = A pixie pokes you in the butt with its sword and giggles! 
+#
+set m8955/level = 11
+#
+set m8955/level_base = 11
+#
+set m8955/vnum = "m8955"
+#
+set m8955/look_description = 'The pixie is about 6" tall, is human-like, and has dragonfly wings. '
+#
+set m8955/act_flags = ['wimpy', 'scavenger', 'npc']
+#
+set m8955/alignment = 0
+#
+set m8955/sex = "male"
+#
+set m8955/spell_affects = {'flying': ''}
+#
+set m8955/race = "human"
+#
+tag m8955 = faerie ring:area name
+#
+tag m8955 = mobile
+#
+set m8955/hitpoints[maximum] = 117
+#
+set m8955/position = "standing"
+#
+set m8955/experience_total = 6736
+#
+set m8955/experience_current = 6736
+#
+tel r8962
+#
+create a catchy little rhyme;rhyme;catchy;paper;o8955:objects.Scroll
+#
+sethome o8955 = m8955
+#
+desc o8955 = There is a tiny rolled up paper lying on the ground. 
+#
+set o8955/level = 9
+#
+set o8955/level_base = 9
+#
+set o8955/vnum = "o8955"
+#
+set o8955/item_type = "scroll"
+#
+set o8955/wear_location = "held, in hands"
+#
+set o8955/weight = 1
+#
+tag o8955 = faerie ring:area name
+#
+tag o8955 = object
+#
+set o8955/extra_descriptions = {'rhyme catchy little': ' You look at the rhyme. It reads: - Turn your clothes inside out Circle three times and shout Iron and cross, make you be Revealed to all, and to me '}
+#
+set o8955/extra_flags = ['magic', 'glow']
+#
+set o8955/spell_level = 10
+#
+set o8955/spell_level_base = 10
+#
+set o8955/spell_name_1 = "faerie fog"
+#
+give o8955 to m8955
+#
+set m8955/reset_objects["o8955"] = {"location":"inventory"}
+#
+tel r8962
+#
+create/drop A fluttering nixie;nixie;faerie;m8956:characters.Mobile
+#
+desc m8956 = A fluttering nixie rummages through your possessions looking for wine! 
+#
+set m8956/level = 12
+#
+set m8956/level_base = 12
+#
+set m8956/vnum = "m8956"
+#
+set m8956/look_description = 'The nixie, like the pixie, has dragonfly wings, but is taller (9"). '
+#
+set m8956/act_flags = ['wimpy', 'scavenger', 'npc']
+#
+set m8956/alignment = 0
+#
+set m8956/sex = "male"
+#
+set m8956/spell_affects = {'flying': ''}
+#
+set m8956/race = "human"
+#
+tag m8956 = faerie ring:area name
+#
+tag m8956 = mobile
+#
+set m8956/hitpoints[maximum] = 197
+#
+set m8956/position = "standing"
+#
+set m8956/experience_total = 10392
+#
+set m8956/experience_current = 10392
+#
+tel r8962
+#
+create a vial of bottled moonlight;bottle;moonlight;vial;liquid;o8959:objects.Potion
+#
+sethome o8959 = m8956
+#
+desc o8959 = A vial of sparkling liquid emits a soft white glow. 
+#
+set o8959/level = 10
+#
+set o8959/level_base = 10
+#
+set o8959/vnum = "o8959"
+#
+set o8959/item_type = "potion"
+#
+set o8959/wear_location = "held, in hands"
+#
+set o8959/weight = 1
+#
+tag o8959 = faerie ring:area name
+#
+tag o8959 = object
+#
+set o8959/extra_flags = ['magic', 'glow']
+#
+set o8959/spell_level = 15
+#
+set o8959/spell_level_base = 15
+#
+set o8959/spell_name_1 = "fly"
+#
+set o8959/spell_name_2 = "cure poison"
+#
+set o8959/spell_name_3 = "cure critical"
+#
+give o8959 to m8956
+#
+set m8956/reset_objects["o8959"] = {"location":"inventory"}
+#
+tel r8962
+#
+create/drop A dancing sprite;sprite;faerie;m8957:characters.Mobile
+#
+desc m8957 = A sprite casts a spell and you do a merry little dance! 
+#
+set m8957/level = 12
+#
+set m8957/level_base = 12
+#
+set m8957/vnum = "m8957"
+#
+set m8957/look_description = 'The sprite has dragonfly wings like the nixie and pixie, but she towers over them at an amazing 12" height!'
+#
+set m8957/act_flags = ['wimpy', 'npc']
+#
+set m8957/alignment = 0
+#
+set m8957/sex = "female"
+#
+set m8957/spell_affects = {'flying': '', 'sneak': '', 'invisible': ''}
+#
+set m8957/race = "human"
+#
+tag m8957 = faerie ring:area name
+#
+tag m8957 = mobile
+#
+set m8957/hitpoints[maximum] = 152
+#
+set m8957/position = "standing"
+#
+set m8957/experience_total = 9118
+#
+set m8957/experience_current = 9118
+#
+tel r8962
+#
+create a sprite belt;belt;sprite;o8957:objects.Armor
+#
+sethome o8957 = m8957
+#
+desc o8957 = A loop of rainbow thread lies here.
+#
+set o8957/level = 10
+#
+set o8957/level_base = 10
+#
+set o8957/vnum = "o8957"
+#
+set o8957/item_type = "armor"
+#
+set o8957/wear_location = "waist"
+#
+set o8957/weight = 1
+#
+tag o8957 = faerie ring:area name
+#
+tag o8957 = object
+#
+set o8957/extra_flags = ['no remove', 'invisible']
+#
+set o8957/stat_modifiers[saving throw] = -3
+#
+set o8957/armor = 4
+#
+wearto o8957 = m8957
+#
+set m8957/reset_objects["o8957"] = {"location":"equipped"}
+#
+tel r8962
+#
+create/drop A stern brownie;brownie;faerie;m8958:characters.Mobile
+#
+desc m8958 = A stern brownie stands guard here - you better watch it bub! 
+#
+set m8958/level = 16
+#
+set m8958/level_base = 16
+#
+set m8958/vnum = "m8958"
+#
+set m8958/look_description = "The beefy 2' tall brownie wears earth colored clothing, and seems intent on its task of guarding. "
+#
+set m8958/act_flags = ['sentinel', 'npc']
+#
+set m8958/alignment = 0
+#
+set m8958/sex = "male"
+#
+set m8958/spell_affects = {'protect': '', 'detect hidden': '', 'detect invis': ''}
+#
+set m8958/race = "human"
+#
+tag m8958 = faerie ring:area name
+#
+tag m8958 = mobile
+#
+set m8958/hitpoints[maximum] = 163
+#
+set m8958/position = "standing"
+#
+set m8958/experience_total = 21408
+#
+set m8958/experience_current = 21408
+#
+tel r8962
+#
+create a brownie bracer;bracer;brownie;o8958:objects.Armor
+#
+sethome o8958 = m8958
+#
+desc o8958 = An earthen colored band lies here.
+#
+set o8958/level = 14
+#
+set o8958/level_base = 14
+#
+set o8958/vnum = "o8958"
+#
+set o8958/item_type = "armor"
+#
+set o8958/wear_location = "wrist"
+#
+set o8958/weight = 1
+#
+tag o8958 = faerie ring:area name
+#
+tag o8958 = object
+#
+set o8958/extra_flags = ['magic']
+#
+set o8958/stat_modifiers[dexterity] = 1
+#
+set o8958/stat_modifiers[hitpoints] = 8
+#
+set o8958/armor = 6
+#
+wearto o8958 = m8958
+#
+set m8958/reset_objects["o8958"] = {"location":"equipped"}
+#
+tel r8962
+#
+set north/door_attributes = ['lockable', 'locked']
+#
+set north/reset_door_attributes = ['lockable', 'locked']
+#

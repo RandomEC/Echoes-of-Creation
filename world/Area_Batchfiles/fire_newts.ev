@@ -1,0 +1,5308 @@
+dig/tel A Steep Path Down; r2932
+#
+tag r2932 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2932 = You can see the top of the mountain just ahead of you to the north, but to the south, the ground drops off precipitously into a canyon. 
+#
+desc/edit r2932
+#
+:j l
+#
+:wq
+#
+set r2932/vnum = "r2932"
+#
+set r2932/terrain = "hills"
+#
+set r2932/room_flags = ['no mob']
+#
+dig/tel Obsidian Hills; r2900
+#
+tag r2900 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2900 = You see before you some shiny black hills. There is very little vegetation here. The hills appear to lead to a high mountain to the southwest. 
+#
+desc/edit r2900
+#
+:j l
+#
+:wq
+#
+set r2900/vnum = "r2900"
+#
+set r2900/terrain = "forest"
+#
+set r2900/extra_description = {'hills': 'The hills are a very shiny black color. '}
+#
+set r2900/room_flags = ['no mob']
+#
+dig/tel Obsidian Hills; r2901
+#
+tag r2901 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2901 = You see before you some shiny black hills. There is very little vegetation here. The hills appear to lead to a high mountain to the southwest. 
+#
+desc/edit r2901
+#
+:j l
+#
+:wq
+#
+set r2901/vnum = "r2901"
+#
+set r2901/terrain = "forest"
+#
+set r2901/extra_description = {'hills': 'The hills are a very shiny black color. '}
+#
+set r2901/room_flags = ['no mob']
+#
+dig/tel Obsidian Hills; r2902
+#
+tag r2902 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2902 = You see before you some shiny black hills. There is very little vegetation here. The hills appear to lead to a high mountain to the southwest. 
+#
+desc/edit r2902
+#
+:j l
+#
+:wq
+#
+set r2902/vnum = "r2902"
+#
+set r2902/terrain = "forest"
+#
+set r2902/extra_description = {'hills': 'They are a very shiny black color. '}
+#
+set r2902/room_flags = ['no mob']
+#
+dig/tel Mountainside; r2903
+#
+tag r2903 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2903 = The mountain is very high and looks to be quite old. There are a few cracks in the side of the mountain. 
+#
+desc/edit r2903
+#
+:j l
+#
+:wq
+#
+set r2903/vnum = "r2903"
+#
+set r2903/terrain = "hills"
+#
+set r2903/extra_description = {'mountain': 'The mountain looks like it was formed from something sliding down and stopping. '}
+#
+dig/tel Mountainside; r2904
+#
+tag r2904 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2904 = The mountain is very high and looks to be quite old. There is smoke coming from the top of the mountain. 
+#
+desc/edit r2904
+#
+:j l
+#
+:wq
+#
+set r2904/vnum = "r2904"
+#
+set r2904/terrain = "hills"
+#
+set r2904/extra_description = {'smoke': 'The smoke is gray and puffs out of the top of the mountain. '}
+#
+dig/tel Mountaintop; r2905
+#
+tag r2905 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2905 = You've reached the top of the mountain. You can see more smoke from up here. The smoke seems to come from a hole to the south. 
+#
+desc/edit r2905
+#
+:j l
+#
+:wq
+#
+set r2905/vnum = "r2905"
+#
+set r2905/terrain = "hills"
+#
+set r2905/extra_description = {'top of mountain': 'The top of the mountain is a large area with a hole in the middle. ', 'smoke': 'The smoke is gray and is coming from the hole. '}
+#
+set r2905/room_flags = ['no mob']
+#
+dig/tel Entrance to the Mountain; r2906
+#
+tag r2906 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2906 = The smoke comes from inside the hole.  It also looks like there is a path that leads down into the mountain. 
+#
+desc/edit r2906
+#
+:j l
+#
+:wq
+#
+set r2906/vnum = "r2906"
+#
+set r2906/terrain = "hills"
+#
+set r2906/room_flags = ['no mob']
+#
+dig/tel Mountaintop; r2907
+#
+tag r2907 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2907 = You are standing at the top of the mountain. The mountain looks like it has been ravaged by something. 
+#
+desc/edit r2907
+#
+:j l
+#
+:wq
+#
+set r2907/vnum = "r2907"
+#
+set r2907/terrain = "hills"
+#
+set r2907/room_flags = ['no mob']
+#
+dig/tel Mountaintop; r2908
+#
+tag r2908 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2908 = You are standing at the top of the mountain. There are several cracks in the ground and you don't feel safe! 
+#
+desc/edit r2908
+#
+:j l
+#
+:wq
+#
+set r2908/vnum = "r2908"
+#
+set r2908/terrain = "hills"
+#
+set r2908/room_flags = ['no mob']
+#
+dig/tel Mountaintop; r2909
+#
+tag r2909 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2909 = You are standing on the top of the mountain and think you should move north. 
+#
+desc/edit r2909
+#
+:j l
+#
+:wq
+#
+set r2909/vnum = "r2909"
+#
+set r2909/terrain = "hills"
+#
+set r2909/room_flags = ['no mob']
+#
+dig/tel Inside the Mountain; r2910
+#
+tag r2910 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2910 = You are standing inside the mountain. 
+#
+desc/edit r2910
+#
+:j l
+#
+:wq
+#
+set r2910/vnum = "r2910"
+#
+set r2910/terrain = "field"
+#
+set r2910/room_flags = ['indoors', 'dark']
+#
+dig/tel Guard Room; r2911
+#
+tag r2911 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2911 = You are standing in a room with beds, tables, and fire newts! There are paintings on the wall.  They show battle scenes. 
+#
+desc/edit r2911
+#
+:j l
+#
+:wq
+#
+set r2911/vnum = "r2911"
+#
+set r2911/terrain = "field"
+#
+set r2911/extra_description = {'beds': 'The beds are made of metal and rock. ', 'chairs': 'The chairs are made of stone and look very heavy. ', 'tables': 'The tables are long and wide.  They are made of stone and obviously too heavy to move. '}
+#
+set r2911/room_flags = ['indoors', 'dark']
+#
+dig/tel Guard Room; r2912
+#
+tag r2912 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2912 = You are standing in a room with beds, chairs, tables, and fire newts! There are paintings on the wall that show great leaders. 
+#
+desc/edit r2912
+#
+:j l
+#
+:wq
+#
+set r2912/vnum = "r2912"
+#
+set r2912/terrain = "field"
+#
+set r2912/extra_description = {'beds': 'The beds are made of metal and rock. ', 'chairs': 'The chairs are made of stone and look very heavy. ', 'tables': 'The tables are long and wide.  They are made of stone and are obviously to heavy to move. '}
+#
+set r2912/room_flags = ['indoors', 'dark']
+#
+dig/tel Inside the Mountain; r2913
+#
+tag r2913 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2913 = You are standing inside the mountain. 
+#
+desc/edit r2913
+#
+:j l
+#
+:wq
+#
+set r2913/vnum = "r2913"
+#
+set r2913/terrain = "field"
+#
+set r2913/room_flags = ['indoors', 'dark']
+#
+dig/tel Storeroom; r2914
+#
+tag r2914 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2914 = You see nothing special in this room.  There are some boxes and fire newt workers here.  There is also some trash piled up in the room. 
+#
+desc/edit r2914
+#
+:j l
+#
+:wq
+#
+set r2914/vnum = "r2914"
+#
+set r2914/terrain = "field"
+#
+set r2914/room_flags = ['indoors', 'dark']
+#
+dig/tel Workers' Quarters; r2915
+#
+tag r2915 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2915 = You are standing in the workers' quarters.  There are several workers here. The room is messy and has nothing of value in it.  The party the night before must have destroyed everything. 
+#
+desc/edit r2915
+#
+:j l
+#
+:wq
+#
+set r2915/vnum = "r2915"
+#
+set r2915/terrain = "field"
+#
+set r2915/room_flags = ['indoors', 'dark']
+#
+dig/tel Bottom of the Mountain; r2916
+#
+tag r2916 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2916 = You are standing at the bottom of the shaft. 
+#
+desc/edit r2916
+#
+:j l
+#
+:wq
+#
+set r2916/vnum = "r2916"
+#
+set r2916/terrain = "field"
+#
+set r2916/room_flags = ['indoors', 'dark']
+#
+dig/tel The Tunnel; r2917
+#
+tag r2917 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2917 = You are standing in a dry, dark tunnel. 
+#
+desc/edit r2917
+#
+:j l
+#
+:wq
+#
+set r2917/vnum = "r2917"
+#
+set r2917/terrain = "field"
+#
+set r2917/room_flags = ['indoors', 'dark']
+#
+dig/tel Bend in the Tunnel; r2918
+#
+tag r2918 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2918 = You are standing in a dark tunnel. 
+#
+desc/edit r2918
+#
+:j l
+#
+:wq
+#
+set r2918/vnum = "r2918"
+#
+set r2918/terrain = "field"
+#
+set r2918/room_flags = ['indoors', 'dark']
+#
+dig/tel The Tunnel; r2919
+#
+tag r2919 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2919 = You are standing in a dark tunnel. 
+#
+desc/edit r2919
+#
+:j l
+#
+:wq
+#
+set r2919/vnum = "r2919"
+#
+set r2919/terrain = "field"
+#
+set r2919/room_flags = ['indoors', 'dark']
+#
+dig/tel Fire Newt House; r2920
+#
+tag r2920 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2920 = You are standing in a fire newt house.  There is a mother fire newt here playing with her children.  The room is full of newt toys- they look very boring. 
+#
+desc/edit r2920
+#
+:j l
+#
+:wq
+#
+set r2920/vnum = "r2920"
+#
+set r2920/terrain = "field"
+#
+set r2920/room_flags = ['indoors', 'dark']
+#
+dig/tel The Tunnel; r2921
+#
+tag r2921 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2921 = You are standing in a dark tunnel. 
+#
+desc/edit r2921
+#
+:j l
+#
+:wq
+#
+set r2921/vnum = "r2921"
+#
+set r2921/terrain = "field"
+#
+set r2921/room_flags = ['indoors', 'dark']
+#
+dig/tel Fire Newt House; r2922
+#
+tag r2922 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2922 = You are standing in a fire newt house.  There is a fire newt mother here playing with her children.  The room has several torn baby newt diapers here ... how disgusting! 
+#
+desc/edit r2922
+#
+:j l
+#
+:wq
+#
+set r2922/vnum = "r2922"
+#
+set r2922/terrain = "field"
+#
+set r2922/room_flags = ['indoors', 'dark']
+#
+dig/tel The Tunnel; r2923
+#
+tag r2923 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2923 = You are standing in the dark tunnel. 
+#
+desc/edit r2923
+#
+:j l
+#
+:wq
+#
+set r2923/vnum = "r2923"
+#
+set r2923/terrain = "field"
+#
+set r2923/room_flags = ['indoors', 'dark']
+#
+dig/tel Entrance to the Town Hall; r2924
+#
+tag r2924 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2924 = You are standing in the entrance to the town hall.  The room is large and ornate. 
+#
+desc/edit r2924
+#
+:j l
+#
+:wq
+#
+set r2924/vnum = "r2924"
+#
+set r2924/terrain = "field"
+#
+set r2924/room_flags = ['indoors', 'dark']
+#
+dig/tel The Waiting Room; r2925
+#
+tag r2925 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2925 = You are standing in the waiting room of the town hall.  There is a big door to the west.  The room has pictures of the village's history. 
+#
+desc/edit r2925
+#
+:j l
+#
+:wq
+#
+set r2925/vnum = "r2925"
+#
+set r2925/terrain = "field"
+#
+set r2925/room_flags = ['indoors', 'dark']
+#
+dig/tel The Leader's Office; r2926
+#
+tag r2926 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2926 = You are standing in the fire newt leader's office. 
+#
+desc/edit r2926
+#
+:j l
+#
+:wq
+#
+set r2926/vnum = "r2926"
+#
+set r2926/terrain = "field"
+#
+set r2926/room_flags = ['indoors', 'dark']
+#
+dig/tel Outside the Temple; r2927
+#
+tag r2927 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2927 = You are standing outside the fire newt temple.  The temple has some very large arches and towers. 
+#
+desc/edit r2927
+#
+:j l
+#
+:wq
+#
+set r2927/vnum = "r2927"
+#
+set r2927/terrain = "field"
+#
+set r2927/room_flags = ['indoors', 'dark']
+#
+dig/tel Entrance to the Temple; r2928
+#
+tag r2928 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2928 = You are standing at the entrance to the temple.  The temple is very neat. The seats are set in straight rows and the altar is very large. 
+#
+desc/edit r2928
+#
+:j l
+#
+:wq
+#
+set r2928/vnum = "r2928"
+#
+set r2928/terrain = "field"
+#
+set r2928/room_flags = ['indoors', 'dark']
+#
+dig/tel Inside the Temple; r2929
+#
+tag r2929 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2929 = You are standing inside the fire newt temple. 
+#
+desc/edit r2929
+#
+:j l
+#
+:wq
+#
+set r2929/vnum = "r2929"
+#
+set r2929/terrain = "field"
+#
+set r2929/room_flags = ['indoors', 'dark']
+#
+dig/tel The Room Before the Doors; r2930
+#
+tag r2930 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2930 = You are standing before a pair of huge doors. 
+#
+desc/edit r2930
+#
+:j l
+#
+:wq
+#
+set r2930/vnum = "r2930"
+#
+set r2930/terrain = "field"
+#
+set r2930/room_flags = ['indoors', 'dark']
+#
+dig/tel The Egg Room; r2931
+#
+tag r2931 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+desc r2931 = You are standing in a room that has several dozen piles of eggs.  You can also make out a rectangular spot where a large heavy object once sat.  It looks like the object could have possibly been a chest. 
+#
+desc/edit r2931
+#
+:j l
+#
+:wq
+#
+set r2931/vnum = "r2931"
+#
+set r2931/terrain = "field"
+#
+set r2931/room_flags = ['indoors', 'no mob', 'dark']
+#
+tel r2932
+#
+openexit north; n; e3600^ south = r2909
+#
+tag e3600 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3600/door_attributes = ["open"]
+#
+set e3600/reset_door_attributes = ["open"]
+#
+desc north = You see the mountaintop to the north. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3601^ north = r9261
+#
+tag e3601 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3601/door_attributes = ["open"]
+#
+set e3601/reset_door_attributes = ["open"]
+#
+desc south = You see the entrance to a canyon to the south. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2900
+#
+openexit east; e; e3602^ west = r4785
+#
+tag e3602 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3602/door_attributes = ["open"]
+#
+set e3602/reset_door_attributes = ["open"]
+#
+desc east = You see a path leading back towards the Turning Point. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3603^ east = r2901
+#
+tag e3603 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3603/door_attributes = ["open"]
+#
+set e3603/reset_door_attributes = ["open"]
+#
+desc west = You see some more hills.  They continue west. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2901
+#
+alias east = e^ e3604
+#
+tag e3604 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3604/door_attributes = ["open"]
+#
+set e3604/reset_door_attributes = ["open"]
+#
+desc east = You see some hills to the east. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3605^ east = r2902
+#
+tag e3605 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3605/door_attributes = ["open"]
+#
+set e3605/reset_door_attributes = ["open"]
+#
+desc west = You see some more hills to the west. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2902
+#
+alias east = e^ e3606
+#
+tag e3606 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3606/door_attributes = ["open"]
+#
+set e3606/reset_door_attributes = ["open"]
+#
+desc east = You see some hills to the east. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3607^ east = r2903
+#
+tag e3607 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3607/door_attributes = ["open"]
+#
+set e3607/reset_door_attributes = ["open"]
+#
+desc west = You see the side of the mountain to the west. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2903
+#
+alias east = e^ e3608
+#
+tag e3608 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3608/door_attributes = ["open"]
+#
+set e3608/reset_door_attributes = ["open"]
+#
+desc east = You see some hills to the east. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3609^ north = r2904
+#
+tag e3609 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3609/door_attributes = ["open"]
+#
+set e3609/reset_door_attributes = ["open"]
+#
+desc south = The mountain continues. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2904
+#
+alias north = n^ e3610
+#
+tag e3610 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3610/door_attributes = ["open"]
+#
+set e3610/reset_door_attributes = ["open"]
+#
+desc north = You see mountains to the north. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3611^ north = r2905
+#
+tag e3611 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3611/door_attributes = ["open"]
+#
+set e3611/reset_door_attributes = ["open"]
+#
+desc south = The mountain continues. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2905
+#
+alias north = n^ e3612
+#
+tag e3612 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3612/door_attributes = ["open"]
+#
+set e3612/reset_door_attributes = ["open"]
+#
+desc north = You see the side of the mountain to the north. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3613^ north = r2906
+#
+tag e3613 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3613/door_attributes = ["open"]
+#
+set e3613/reset_door_attributes = ["open"]
+#
+desc south = You see a hole to the south. It looks like an entrance. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2906
+#
+alias north = n^ e3614
+#
+tag e3614 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3614/door_attributes = ["open"]
+#
+set e3614/reset_door_attributes = ["open"]
+#
+desc north = You see the top of the mountain to the north. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3615^ west = r2907
+#
+tag e3615 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3615/door_attributes = ["open"]
+#
+set e3615/reset_door_attributes = ["open"]
+#
+desc east = You see the top of the mountain to the east. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3616^ north = r2909
+#
+tag e3616 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3616/door_attributes = ["open"]
+#
+set e3616/reset_door_attributes = ["open"]
+#
+desc south = You see the top of the mountain to the south. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3617^ east = r2908
+#
+tag e3617 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3617/door_attributes = ["open"]
+#
+set e3617/reset_door_attributes = ["open"]
+#
+desc west = You see the top of the mountain to the west. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+openexit down; d; e3618^ up = r2910
+#
+tag e3618 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3618/door_attributes = ["open"]
+#
+set e3618/reset_door_attributes = ["open"]
+#
+desc down = You can see down inside the mountain. 
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r2907
+#
+alias west = w^ e3619
+#
+tag e3619 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3619/door_attributes = ["open"]
+#
+set e3619/reset_door_attributes = ["open"]
+#
+desc west = You see the entrance to the mountain to the west. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2908
+#
+alias east = e^ e3620
+#
+tag e3620 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3620/door_attributes = ["open"]
+#
+set e3620/reset_door_attributes = ["open"]
+#
+desc east = You see the entrance to the mountain to the north. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r2909
+#
+alias north = n^ e3621
+#
+tag e3621 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3621/door_attributes = ["open"]
+#
+set e3621/reset_door_attributes = ["open"]
+#
+desc north = You see the entrance to the mountain to the north. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3622
+#
+tag e3622 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3622/door_attributes = ["open"]
+#
+set e3622/reset_door_attributes = ["open"]
+#
+desc south = You see a steep path downwards. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2910
+#
+openexit east; e; e3623^ west = r2911
+#
+tag e3623 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3623/door_attributes = ["open"]
+#
+set e3623/reset_door_attributes = ["open"]
+#
+desc east = You see guard barracks. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3624^ east = r2912
+#
+tag e3624 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3624/door_attributes = ["open"]
+#
+set e3624/reset_door_attributes = ["open"]
+#
+desc west = You see guard barracks. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+alias up = u^ e3625
+#
+tag e3625 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3625/door_attributes = ["open"]
+#
+set e3625/reset_door_attributes = ["open"]
+#
+desc up = Entrance to the mountain. 
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+openexit down; d; e3626^ up = r2913
+#
+tag e3626 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3626/door_attributes = ["open"]
+#
+set e3626/reset_door_attributes = ["open"]
+#
+desc down = The shaft continues down. 
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r2911
+#
+alias west = w^ e3627
+#
+tag e3627 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3627/door_attributes = ["open"]
+#
+set e3627/reset_door_attributes = ["open"]
+#
+desc west = You see the dark tunnel shaft. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2912
+#
+alias east = e^ e3628
+#
+tag e3628 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3628/door_attributes = ["open"]
+#
+set e3628/reset_door_attributes = ["open"]
+#
+desc east = You see the shaft in the mountain. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r2913
+#
+openexit north; n; e3629^ south = r2914
+#
+tag e3629 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3629/door_attributes = ["open"]
+#
+set e3629/reset_door_attributes = ["open"]
+#
+desc north = You see a large storage room. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3630^ north = r2915
+#
+tag e3630 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3630/door_attributes = ["open"]
+#
+set e3630/reset_door_attributes = ["open"]
+#
+desc south = You see workers' quarters. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias up = u^ e3631
+#
+tag e3631 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3631/door_attributes = ["open"]
+#
+set e3631/reset_door_attributes = ["open"]
+#
+desc up = You see the dark mountain shaft. 
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+openexit down; d; e3632^ up = r2916
+#
+tag e3632 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3632/door_attributes = ["open"]
+#
+set e3632/reset_door_attributes = ["open"]
+#
+desc down = The shaft continues down. 
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r2914
+#
+alias south = s^ e3633
+#
+tag e3633 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3633/door_attributes = ["open"]
+#
+set e3633/reset_door_attributes = ["open"]
+#
+desc south = You see the dark mountain shaft. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2915
+#
+alias north = n^ e3634
+#
+tag e3634 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3634/door_attributes = ["open"]
+#
+set e3634/reset_door_attributes = ["open"]
+#
+desc north = You see the dark mountain shaft. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r2916
+#
+openexit north; n; e3635^ south = r2917
+#
+tag e3635 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3635/door_attributes = ["open"]
+#
+set e3635/reset_door_attributes = ["open"]
+#
+desc north = You see the dark tunnel. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias up = u^ e3636
+#
+tag e3636 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3636/door_attributes = ["open"]
+#
+set e3636/reset_door_attributes = ["open"]
+#
+desc up = You see the mountain shaft. 
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r2917
+#
+openexit north; n; e3637^ south = r2918
+#
+tag e3637 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3637/door_attributes = ["open"]
+#
+set e3637/reset_door_attributes = ["open"]
+#
+desc north = You see a bend in the tunnel. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3638
+#
+tag e3638 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3638/door_attributes = ["open"]
+#
+set e3638/reset_door_attributes = ["open"]
+#
+desc south = You see the bottom of the shaft. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2918
+#
+openexit east; e; e3639^ west = r2919
+#
+tag e3639 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3639/door_attributes = ["open"]
+#
+set e3639/reset_door_attributes = ["open"]
+#
+desc east = The tunnel continues into the dark. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3640
+#
+tag e3640 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3640/door_attributes = ["open"]
+#
+set e3640/reset_door_attributes = ["open"]
+#
+desc south = You see that the tunnel leads back. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r2919
+#
+openexit north; n; e3641^ south = r2921
+#
+tag e3641 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3641/door_attributes = ["open"]
+#
+set e3641/reset_door_attributes = ["open"]
+#
+desc north = The tunnel continues into the dark. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3642^ west = r2920
+#
+tag e3642 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3642/door_attributes = ["open"]
+#
+set e3642/reset_door_attributes = ["open"]
+#
+desc east = You see a small fire newt house. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3643
+#
+tag e3643 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3643/door_attributes = ["open"]
+#
+set e3643/reset_door_attributes = ["open"]
+#
+desc west = You see a bend in the tunnel. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2920
+#
+alias west = w^ e3644
+#
+tag e3644 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3644/door_attributes = ["open"]
+#
+set e3644/reset_door_attributes = ["open"]
+#
+desc west = You see the dark tunnel. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2921
+#
+openexit north; n; e3645^ south = r2923
+#
+tag e3645 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3645/door_attributes = ["open"]
+#
+set e3645/reset_door_attributes = ["open"]
+#
+desc north = The tunnel continues on. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3646
+#
+tag e3646 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3646/door_attributes = ["open"]
+#
+set e3646/reset_door_attributes = ["open"]
+#
+desc south = The dark tunnel. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3647^ east = r2922
+#
+tag e3647 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3647/door_attributes = ["open"]
+#
+set e3647/reset_door_attributes = ["open"]
+#
+desc west = You see a fire newt house. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2922
+#
+alias east = e^ e3648
+#
+tag e3648 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3648/door_attributes = ["open"]
+#
+set e3648/reset_door_attributes = ["open"]
+#
+desc east = You see the dark tunnel. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r2923
+#
+openexit east; e; e3649^ west = r2927
+#
+tag e3649 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3649/door_attributes = ["open"]
+#
+set e3649/reset_door_attributes = ["open"]
+#
+desc east = You see a fire newt temple. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias south = s^ e3650
+#
+tag e3650 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3650/door_attributes = ["open"]
+#
+set e3650/reset_door_attributes = ["open"]
+#
+desc south = You see the dark tunnel. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3651^ east = r2924
+#
+tag e3651 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3651/door_attributes = ["open"]
+#
+set e3651/reset_door_attributes = ["open"]
+#
+desc west = You see the entrance to the town hall. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2924
+#
+alias east = e^ e3652
+#
+tag e3652 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3652/door_attributes = ["open"]
+#
+set e3652/reset_door_attributes = ["open"]
+#
+desc east = You see the dark tunnel. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3653^ east = r2925
+#
+tag e3653 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3653/door_attributes = ["open"]
+#
+set e3653/reset_door_attributes = ["open"]
+#
+desc west = You see a waiting room. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2925
+#
+alias east = e^ e3654
+#
+tag e3654 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3654/door_attributes = ["open"]
+#
+set e3654/reset_door_attributes = ["open"]
+#
+desc east = You see the entrance to the town hall. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3655^ east = r2926
+#
+tag e3655 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3655/door_attributes = ["open"]
+#
+set e3655/reset_door_attributes = ["open"]
+#
+desc west = You see a large office. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2926
+#
+alias east = e^ e3656
+#
+tag e3656 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3656/door_attributes = ["open"]
+#
+set e3656/reset_door_attributes = ["open"]
+#
+desc east = You see the waiting room. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r2927
+#
+openexit east; e; e3657^ west = r2928
+#
+tag e3657 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3657/door_attributes = ["open"]
+#
+set e3657/reset_door_attributes = ["open"]
+#
+desc east = You see the entrance to the fire newt temple. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3658
+#
+tag e3658 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3658/door_attributes = ["open"]
+#
+set e3658/reset_door_attributes = ["open"]
+#
+desc west = You see the dark tunnel. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2928
+#
+openexit east; door; e; e3659^ west = r2929
+#
+tag e3659 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3659/door_attributes = ["open"]
+#
+set e3659/reset_door_attributes = ["open"]
+#
+desc east = You see the door that leads to the inside of the temple. 
+#
+alias west = w^ e3660
+#
+tag e3660 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3660/door_attributes = ["open"]
+#
+set e3660/reset_door_attributes = ["open"]
+#
+desc west = You see the outside of the temple. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r2929
+#
+alias west = door^ w^ e3661
+#
+tag e3661 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3661/door_attributes = ["open"]
+#
+set e3661/reset_door_attributes = ["open"]
+#
+desc west = You see the door that leads to the temple entrance. 
+#
+openexit down; d; e3662^ up = r2930
+#
+tag e3662 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3662/door_attributes = ["open"]
+#
+set e3662/reset_door_attributes = ["open"]
+#
+desc down = You see a large trap door. 
+#
+objectlock down = "pick:false()"
+#
+objectlock down = "bash:false()"
+#
+objectlock down = "pass:false()"
+#
+tel r2930
+#
+openexit east; doors; e; e3663^ west = r2931
+#
+tag e3663 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3663/door_attributes = ["open"]
+#
+set e3663/reset_door_attributes = ["open"]
+#
+desc east = You see two large doors. 
+#
+alias up = u^ e3664
+#
+tag e3664 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3664/door_attributes = ["open"]
+#
+set e3664/reset_door_attributes = ["open"]
+#
+desc up = You see the inside of the temple. 
+#
+objectlock up = "pick:false()"
+#
+objectlock up = "bash:false()"
+#
+objectlock up = "pass:false()"
+#
+tel r2931
+#
+openexit north; n; e3665^ south = r2909
+#
+tag e3665 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+set e3665/door_attributes = ["open"]
+#
+set e3665/reset_door_attributes = ["open"]
+#
+desc north = You see two large doors. 
+#
+tel r2903
+#
+create/drop a mountain goat;black;mountain;goat;m2901:characters.Mobile
+#
+desc m2901 = A mountain goat is standing here. 
+#
+set m2901/level = 7
+#
+set m2901/level_base = 7
+#
+set m2901/vnum = "m2901"
+#
+set m2901/look_description = "The mountain goat looks hungry and searches for food. "
+#
+set m2901/act_flags = ['sentinel', 'npc']
+#
+set m2901/alignment = -100
+#
+set m2901/sex = "male"
+#
+set m2901/race = "animal"
+#
+tag m2901 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2901 = mobile
+#
+set m2901/hitpoints[maximum] = 60
+#
+set m2901/position = "standing"
+#
+set m2901/experience_total = 2086
+#
+set m2901/experience_current = 2086
+#
+tel r2903
+#
+create horns;horns;o2901:objects.Weapon
+#
+sethome o2901 = m2901
+#
+desc o2901 = A set of horns lies here.
+#
+set o2901/level = 5
+#
+set o2901/level_base = 5
+#
+set o2901/vnum = "o2901"
+#
+set o2901/item_type = "weapon"
+#
+set o2901/wear_location = "wield"
+#
+set o2901/weight = 2
+#
+tag o2901 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2901 = object
+#
+set o2901/weapon_type = "pound"
+#
+set o2901/damage_low = 4
+#
+set o2901/damage_high = 10
+#
+wieldto o2901 = m2901
+#
+set m2901/experience_total = 2607
+#
+set m2901/experience_current = 2607
+#
+set m2901/reset_objects["o2901"] = {"location":"equipped"}
+#
+tel r2904
+#
+create/drop a mountain goat;black;mountain;goat;m2901:characters.Mobile
+#
+desc m2901 = A mountain goat is standing here. 
+#
+set m2901/level = 7
+#
+set m2901/level_base = 7
+#
+set m2901/vnum = "m2901"
+#
+set m2901/look_description = "The mountain goat looks hungry and searches for food. "
+#
+set m2901/act_flags = ['sentinel', 'npc']
+#
+set m2901/alignment = -100
+#
+set m2901/sex = "male"
+#
+set m2901/race = "animal"
+#
+tag m2901 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2901 = mobile
+#
+set m2901/hitpoints[maximum] = 85
+#
+set m2901/position = "standing"
+#
+set m2901/experience_total = 2410
+#
+set m2901/experience_current = 2410
+#
+tel r2904
+#
+create horns;horns;o2901:objects.Weapon
+#
+sethome o2901 = m2901
+#
+desc o2901 = A set of horns lies here.
+#
+set o2901/level = 5
+#
+set o2901/level_base = 5
+#
+set o2901/vnum = "o2901"
+#
+set o2901/item_type = "weapon"
+#
+set o2901/wear_location = "wield"
+#
+set o2901/weight = 2
+#
+tag o2901 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2901 = object
+#
+set o2901/weapon_type = "pound"
+#
+set o2901/damage_low = 4
+#
+set o2901/damage_high = 11
+#
+wieldto o2901 = m2901
+#
+set m2901/experience_total = 3012
+#
+set m2901/experience_current = 3012
+#
+set m2901/reset_objects["o2901"] = {"location":"equipped"}
+#
+tel r2904
+#
+create/drop a mountain ewe;black;mountain;ewe;m2902:characters.Mobile
+#
+desc m2902 = A mountain ewe is standing here. 
+#
+set m2902/level = 6
+#
+set m2902/level_base = 6
+#
+set m2902/vnum = "m2902"
+#
+set m2902/look_description = "The ewe is watching her young. "
+#
+set m2902/act_flags = ['sentinel', 'npc']
+#
+set m2902/alignment = -100
+#
+set m2902/sex = "female"
+#
+set m2902/race = "animal"
+#
+tag m2902 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2902 = mobile
+#
+set m2902/hitpoints[maximum] = 82
+#
+set m2902/position = "standing"
+#
+set m2902/experience_total = 1524
+#
+set m2902/experience_current = 1524
+#
+tel r2904
+#
+create milk bladder;bladder;milk;o2902:objects.Drink_container
+#
+sethome o2902 = m2902
+#
+desc o2902 = A milk bladder lies here.
+#
+set o2902/level = 4
+#
+set o2902/level_base = 4
+#
+set o2902/vnum = "o2902"
+#
+set o2902/item_type = "drink_container"
+#
+set o2902/weight = 1
+#
+tag o2902 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2902 = object
+#
+set o2902/capacity_current = 20
+#
+set o2902/liquid_type = "milk"
+#
+set o2902/poison = 0
+#
+give o2902 to m2902
+#
+set m2902/reset_objects["o2902"] = {"location":"inventory"}
+#
+tel r2904
+#
+create/drop a mountain ewe;black;mountain;ewe;m2902; m2902-2:characters.Mobile
+#
+desc m2902-2 = A mountain ewe is standing here. 
+#
+set m2902-2/level = 6
+#
+set m2902-2/level_base = 6
+#
+set m2902-2/vnum = "m2902"
+#
+set m2902-2/look_description = "The ewe is watching her young. "
+#
+set m2902-2/act_flags = ['sentinel', 'npc']
+#
+set m2902-2/alignment = -100
+#
+set m2902-2/sex = "female"
+#
+set m2902-2/race = "animal"
+#
+tag m2902-2 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2902-2 = mobile
+#
+set m2902-2/hitpoints[maximum] = 71
+#
+set m2902-2/position = "standing"
+#
+set m2902-2/experience_total = 1606
+#
+set m2902-2/experience_current = 1606
+#
+tel r2904
+#
+create milk bladder;bladder;milk;o2902:objects.Drink_container
+#
+sethome o2902 = m2902-2
+#
+desc o2902 = A milk bladder lies here.
+#
+set o2902/level = 4
+#
+set o2902/level_base = 4
+#
+set o2902/vnum = "o2902"
+#
+set o2902/item_type = "drink_container"
+#
+set o2902/weight = 1
+#
+tag o2902 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2902 = object
+#
+set o2902/capacity_current = 20
+#
+set o2902/liquid_type = "milk"
+#
+set o2902/poison = 0
+#
+give o2902 to m2902-2
+#
+set m2902-2/reset_objects["o2902"] = {"location":"inventory"}
+#
+tel r2904
+#
+create/drop a mountain kid;black;mountain;kid;m2903:characters.Mobile
+#
+desc m2903 = A mountain kid is standing here. 
+#
+set m2903/level = 2
+#
+set m2903/level_base = 2
+#
+set m2903/vnum = "m2903"
+#
+set m2903/look_description = "The kid is playing with its siblings. "
+#
+set m2903/act_flags = ['sentinel', 'npc']
+#
+set m2903/alignment = -100
+#
+set m2903/sex = "neuter"
+#
+set m2903/race = "animal"
+#
+tag m2903 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2903 = mobile
+#
+set m2903/hitpoints[maximum] = 20
+#
+set m2903/position = "standing"
+#
+set m2903/experience_total = 268
+#
+set m2903/experience_current = 268
+#
+tel r2904
+#
+create/drop a mountain kid;black;mountain;kid;m2903; m2903-2:characters.Mobile
+#
+desc m2903-2 = A mountain kid is standing here. 
+#
+set m2903-2/level = 2
+#
+set m2903-2/level_base = 2
+#
+set m2903-2/vnum = "m2903"
+#
+set m2903-2/look_description = "The kid is playing with its siblings. "
+#
+set m2903-2/act_flags = ['sentinel', 'npc']
+#
+set m2903-2/alignment = -100
+#
+set m2903-2/sex = "neuter"
+#
+set m2903-2/race = "animal"
+#
+tag m2903-2 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2903-2 = mobile
+#
+set m2903-2/hitpoints[maximum] = 20
+#
+set m2903-2/position = "standing"
+#
+set m2903-2/experience_total = 241
+#
+set m2903-2/experience_current = 241
+#
+tel r2904
+#
+create/drop a mountain kid;black;mountain;kid;m2903; m2903-3:characters.Mobile
+#
+desc m2903-3 = A mountain kid is standing here. 
+#
+set m2903-3/level = 2
+#
+set m2903-3/level_base = 2
+#
+set m2903-3/vnum = "m2903"
+#
+set m2903-3/look_description = "The kid is playing with its siblings. "
+#
+set m2903-3/act_flags = ['sentinel', 'npc']
+#
+set m2903-3/alignment = -100
+#
+set m2903-3/sex = "neuter"
+#
+set m2903-3/race = "animal"
+#
+tag m2903-3 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2903-3 = mobile
+#
+set m2903-3/hitpoints[maximum] = 16
+#
+set m2903-3/position = "standing"
+#
+set m2903-3/experience_total = 217
+#
+set m2903-3/experience_current = 217
+#
+tel r2904
+#
+create/drop a mountain kid;black;mountain;kid;m2903; m2903-4:characters.Mobile
+#
+desc m2903-4 = A mountain kid is standing here. 
+#
+set m2903-4/level = 2
+#
+set m2903-4/level_base = 2
+#
+set m2903-4/vnum = "m2903"
+#
+set m2903-4/look_description = "The kid is playing with its siblings. "
+#
+set m2903-4/act_flags = ['sentinel', 'npc']
+#
+set m2903-4/alignment = -100
+#
+set m2903-4/sex = "neuter"
+#
+set m2903-4/race = "animal"
+#
+tag m2903-4 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2903-4 = mobile
+#
+set m2903-4/hitpoints[maximum] = 17
+#
+set m2903-4/position = "standing"
+#
+set m2903-4/experience_total = 228
+#
+set m2903-4/experience_current = 228
+#
+tel r2904
+#
+create/drop a mountain kid;black;mountain;kid;m2903; m2903-5:characters.Mobile
+#
+desc m2903-5 = A mountain kid is standing here. 
+#
+set m2903-5/level = 2
+#
+set m2903-5/level_base = 2
+#
+set m2903-5/vnum = "m2903"
+#
+set m2903-5/look_description = "The kid is playing with its siblings. "
+#
+set m2903-5/act_flags = ['sentinel', 'npc']
+#
+set m2903-5/alignment = -100
+#
+set m2903-5/sex = "neuter"
+#
+set m2903-5/race = "animal"
+#
+tag m2903-5 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2903-5 = mobile
+#
+set m2903-5/hitpoints[maximum] = 18
+#
+set m2903-5/position = "standing"
+#
+set m2903-5/experience_total = 258
+#
+set m2903-5/experience_current = 258
+#
+tel r2904
+#
+create/drop a mountain kid;black;mountain;kid;m2903; m2903-6:characters.Mobile
+#
+desc m2903-6 = A mountain kid is standing here. 
+#
+set m2903-6/level = 2
+#
+set m2903-6/level_base = 2
+#
+set m2903-6/vnum = "m2903"
+#
+set m2903-6/look_description = "The kid is playing with its siblings. "
+#
+set m2903-6/act_flags = ['sentinel', 'npc']
+#
+set m2903-6/alignment = -100
+#
+set m2903-6/sex = "neuter"
+#
+set m2903-6/race = "animal"
+#
+tag m2903-6 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2903-6 = mobile
+#
+set m2903-6/hitpoints[maximum] = 20
+#
+set m2903-6/position = "standing"
+#
+set m2903-6/experience_total = 265
+#
+set m2903-6/experience_current = 265
+#
+tel r2910
+#
+create/drop a fire newt worker;fire;newt;worker;m2904:characters.Mobile
+#
+desc m2904 = A fire newt worker is standing here. 
+#
+set m2904/level = 1
+#
+set m2904/level_base = 1
+#
+set m2904/vnum = "m2904"
+#
+set m2904/look_description = "The fire newt worker looks hot and sweaty. "
+#
+set m2904/act_flags = ['stay area', 'aggressive', 'scavenger', 'npc']
+#
+set m2904/alignment = -400
+#
+set m2904/sex = "male"
+#
+set m2904/race = "lizard"
+#
+tag m2904 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2904 = mobile
+#
+set m2904/hitpoints[maximum] = 8
+#
+set m2904/position = "standing"
+#
+set m2904/experience_total = 139
+#
+set m2904/experience_current = 139
+#
+tel r2910
+#
+create shovel;shovel;o2903:objects.Weapon
+#
+sethome o2903 = m2904
+#
+desc o2903 = A shovel lies here.
+#
+set o2903/level = 1
+#
+set o2903/level_base = 1
+#
+set o2903/vnum = "o2903"
+#
+set o2903/item_type = "weapon"
+#
+set o2903/wear_location = "wield"
+#
+set o2903/weight = 2
+#
+tag o2903 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2903 = object
+#
+set o2903/weapon_type = "pound"
+#
+set o2903/damage_low = 1
+#
+set o2903/damage_high = 7
+#
+wieldto o2903 = m2904
+#
+set m2904/experience_total = 173
+#
+set m2904/experience_current = 173
+#
+set m2904/reset_objects["o2903"] = {"location":"equipped"}
+#
+tel r2911
+#
+create/drop a fire newt guard;fire;newt;guard;m2905:characters.Mobile
+#
+desc m2905 = A fire newt guard is standing here. 
+#
+set m2905/level = 11
+#
+set m2905/level_base = 11
+#
+set m2905/vnum = "m2905"
+#
+set m2905/look_description = "The fire newt guard thinks you would be better dead. "
+#
+set m2905/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m2905/alignment = -450
+#
+set m2905/sex = "male"
+#
+set m2905/race = "lizard"
+#
+tag m2905 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2905 = mobile
+#
+set m2905/hitpoints[maximum] = 103
+#
+set m2905/position = "standing"
+#
+set m2905/experience_total = 6691
+#
+set m2905/experience_current = 6691
+#
+tel r2911
+#
+create short sword;short;sword;o2904:objects.Weapon
+#
+sethome o2904 = m2905
+#
+desc o2904 = A short sword lies here.
+#
+set o2904/level = 9
+#
+set o2904/level_base = 9
+#
+set o2904/vnum = "o2904"
+#
+set o2904/item_type = "weapon"
+#
+set o2904/wear_location = "wield"
+#
+set o2904/weight = 3
+#
+tag o2904 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2904 = object
+#
+set o2904/weapon_type = "pierce"
+#
+set o2904/damage_low = 4
+#
+set o2904/damage_high = 12
+#
+wieldto o2904 = m2905
+#
+set m2905/experience_total = 8363
+#
+set m2905/experience_current = 8363
+#
+set m2905/reset_objects["o2904"] = {"location":"equipped"}
+#
+tel r2911
+#
+create/drop a fire newt guard;fire;newt;guard;m2905; m2905-2:characters.Mobile
+#
+desc m2905-2 = A fire newt guard is standing here. 
+#
+set m2905-2/level = 11
+#
+set m2905-2/level_base = 11
+#
+set m2905-2/vnum = "m2905"
+#
+set m2905-2/look_description = "The fire newt guard thinks you would be better dead. "
+#
+set m2905-2/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m2905-2/alignment = -450
+#
+set m2905-2/sex = "male"
+#
+set m2905-2/race = "lizard"
+#
+tag m2905-2 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2905-2 = mobile
+#
+set m2905-2/hitpoints[maximum] = 169
+#
+set m2905-2/position = "standing"
+#
+set m2905-2/experience_total = 7265
+#
+set m2905-2/experience_current = 7265
+#
+tel r2911
+#
+create short sword;short;sword;o2904:objects.Weapon
+#
+sethome o2904 = m2905-2
+#
+desc o2904 = A short sword lies here.
+#
+set o2904/level = 9
+#
+set o2904/level_base = 9
+#
+set o2904/vnum = "o2904"
+#
+set o2904/item_type = "weapon"
+#
+set o2904/wear_location = "wield"
+#
+set o2904/weight = 3
+#
+tag o2904 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2904 = object
+#
+set o2904/weapon_type = "pierce"
+#
+set o2904/damage_low = 5
+#
+set o2904/damage_high = 12
+#
+wieldto o2904 = m2905-2
+#
+set m2905-2/experience_total = 9081
+#
+set m2905-2/experience_current = 9081
+#
+set m2905-2/reset_objects["o2904"] = {"location":"equipped"}
+#
+tel r2911
+#
+create/drop a fire newt guard;fire;newt;guard;m2905; m2905-3:characters.Mobile
+#
+desc m2905-3 = A fire newt guard is standing here. 
+#
+set m2905-3/level = 11
+#
+set m2905-3/level_base = 11
+#
+set m2905-3/vnum = "m2905"
+#
+set m2905-3/look_description = "The fire newt guard thinks you would be better dead. "
+#
+set m2905-3/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m2905-3/alignment = -450
+#
+set m2905-3/sex = "male"
+#
+set m2905-3/race = "lizard"
+#
+tag m2905-3 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2905-3 = mobile
+#
+set m2905-3/hitpoints[maximum] = 196
+#
+set m2905-3/position = "standing"
+#
+set m2905-3/experience_total = 8132
+#
+set m2905-3/experience_current = 8132
+#
+tel r2911
+#
+create short sword;short;sword;o2904:objects.Weapon
+#
+sethome o2904 = m2905-3
+#
+desc o2904 = A short sword lies here.
+#
+set o2904/level = 9
+#
+set o2904/level_base = 9
+#
+set o2904/vnum = "o2904"
+#
+set o2904/item_type = "weapon"
+#
+set o2904/wear_location = "wield"
+#
+set o2904/weight = 3
+#
+tag o2904 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2904 = object
+#
+set o2904/weapon_type = "pierce"
+#
+set o2904/damage_low = 3
+#
+set o2904/damage_high = 14
+#
+wieldto o2904 = m2905-3
+#
+set m2905-3/experience_total = 10165
+#
+set m2905-3/experience_current = 10165
+#
+set m2905-3/reset_objects["o2904"] = {"location":"equipped"}
+#
+tel r2912
+#
+create/drop a fire newt guard;fire;newt;guard;m2905:characters.Mobile
+#
+desc m2905 = A fire newt guard is standing here. 
+#
+set m2905/level = 11
+#
+set m2905/level_base = 11
+#
+set m2905/vnum = "m2905"
+#
+set m2905/look_description = "The fire newt guard thinks you would be better dead. "
+#
+set m2905/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m2905/alignment = -450
+#
+set m2905/sex = "male"
+#
+set m2905/race = "lizard"
+#
+tag m2905 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2905 = mobile
+#
+set m2905/hitpoints[maximum] = 90
+#
+set m2905/position = "standing"
+#
+set m2905/experience_total = 7839
+#
+set m2905/experience_current = 7839
+#
+tel r2912
+#
+create hand axe;hand;axe;o2905:objects.Weapon
+#
+sethome o2905 = m2905
+#
+desc o2905 = A hand axe lies here.
+#
+set o2905/level = 9
+#
+set o2905/level_base = 9
+#
+set o2905/vnum = "o2905"
+#
+set o2905/item_type = "weapon"
+#
+set o2905/wear_location = "wield"
+#
+set o2905/weight = 3
+#
+tag o2905 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2905 = object
+#
+set o2905/weapon_type = "slash"
+#
+set o2905/damage_low = 3
+#
+set o2905/damage_high = 15
+#
+wieldto o2905 = m2905
+#
+set m2905/experience_total = 9798
+#
+set m2905/experience_current = 9798
+#
+set m2905/reset_objects["o2905"] = {"location":"equipped"}
+#
+tel r2912
+#
+create/drop a fire newt guard;fire;newt;guard;m2905; m2905-2:characters.Mobile
+#
+desc m2905-2 = A fire newt guard is standing here. 
+#
+set m2905-2/level = 11
+#
+set m2905-2/level_base = 11
+#
+set m2905-2/vnum = "m2905"
+#
+set m2905-2/look_description = "The fire newt guard thinks you would be better dead. "
+#
+set m2905-2/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m2905-2/alignment = -450
+#
+set m2905-2/sex = "male"
+#
+set m2905-2/race = "lizard"
+#
+tag m2905-2 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2905-2 = mobile
+#
+set m2905-2/hitpoints[maximum] = 168
+#
+set m2905-2/position = "standing"
+#
+set m2905-2/experience_total = 7241
+#
+set m2905-2/experience_current = 7241
+#
+tel r2912
+#
+create short sword;short;sword;o2904:objects.Weapon
+#
+sethome o2904 = m2905-2
+#
+desc o2904 = A short sword lies here.
+#
+set o2904/level = 9
+#
+set o2904/level_base = 9
+#
+set o2904/vnum = "o2904"
+#
+set o2904/item_type = "weapon"
+#
+set o2904/wear_location = "wield"
+#
+set o2904/weight = 3
+#
+tag o2904 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2904 = object
+#
+set o2904/weapon_type = "pierce"
+#
+set o2904/damage_low = 4
+#
+set o2904/damage_high = 14
+#
+wieldto o2904 = m2905-2
+#
+set m2905-2/experience_total = 9051
+#
+set m2905-2/experience_current = 9051
+#
+set m2905-2/reset_objects["o2904"] = {"location":"equipped"}
+#
+tel r2912
+#
+create/drop a fire newt guard;fire;newt;guard;m2905; m2905-3:characters.Mobile
+#
+desc m2905-3 = A fire newt guard is standing here. 
+#
+set m2905-3/level = 11
+#
+set m2905-3/level_base = 11
+#
+set m2905-3/vnum = "m2905"
+#
+set m2905-3/look_description = "The fire newt guard thinks you would be better dead. "
+#
+set m2905-3/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m2905-3/alignment = -450
+#
+set m2905-3/sex = "male"
+#
+set m2905-3/race = "lizard"
+#
+tag m2905-3 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2905-3 = mobile
+#
+set m2905-3/hitpoints[maximum] = 175
+#
+set m2905-3/position = "standing"
+#
+set m2905-3/experience_total = 8159
+#
+set m2905-3/experience_current = 8159
+#
+tel r2912
+#
+create hand axe;hand;axe;o2905:objects.Weapon
+#
+sethome o2905 = m2905-3
+#
+desc o2905 = A hand axe lies here.
+#
+set o2905/level = 9
+#
+set o2905/level_base = 9
+#
+set o2905/vnum = "o2905"
+#
+set o2905/item_type = "weapon"
+#
+set o2905/wear_location = "wield"
+#
+set o2905/weight = 3
+#
+tag o2905 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2905 = object
+#
+set o2905/weapon_type = "slash"
+#
+set o2905/damage_low = 2
+#
+set o2905/damage_high = 13
+#
+wieldto o2905 = m2905-3
+#
+set m2905-3/experience_total = 10198
+#
+set m2905-3/experience_current = 10198
+#
+set m2905-3/reset_objects["o2905"] = {"location":"equipped"}
+#
+tel r2914
+#
+create/drop a fire newt worker;fire;newt;worker;m2904:characters.Mobile
+#
+desc m2904 = A fire newt worker is standing here. 
+#
+set m2904/level = 1
+#
+set m2904/level_base = 1
+#
+set m2904/vnum = "m2904"
+#
+set m2904/look_description = "The fire newt worker looks hot and sweaty. "
+#
+set m2904/act_flags = ['stay area', 'aggressive', 'scavenger', 'npc']
+#
+set m2904/alignment = -400
+#
+set m2904/sex = "male"
+#
+set m2904/race = "lizard"
+#
+tag m2904 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2904 = mobile
+#
+set m2904/hitpoints[maximum] = 9
+#
+set m2904/position = "standing"
+#
+set m2904/experience_total = 153
+#
+set m2904/experience_current = 153
+#
+tel r2914
+#
+create/drop a fire newt worker;fire;newt;worker;m2904; m2904-2:characters.Mobile
+#
+desc m2904-2 = A fire newt worker is standing here. 
+#
+set m2904-2/level = 1
+#
+set m2904-2/level_base = 1
+#
+set m2904-2/vnum = "m2904"
+#
+set m2904-2/look_description = "The fire newt worker looks hot and sweaty. "
+#
+set m2904-2/act_flags = ['stay area', 'aggressive', 'scavenger', 'npc']
+#
+set m2904-2/alignment = -400
+#
+set m2904-2/sex = "male"
+#
+set m2904-2/race = "lizard"
+#
+tag m2904-2 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2904-2 = mobile
+#
+set m2904-2/hitpoints[maximum] = 8
+#
+set m2904-2/position = "standing"
+#
+set m2904-2/experience_total = 148
+#
+set m2904-2/experience_current = 148
+#
+tel r2914
+#
+create shovel;shovel;o2903:objects.Weapon
+#
+sethome o2903 = m2904-2
+#
+desc o2903 = A shovel lies here.
+#
+set o2903/level = 1
+#
+set o2903/level_base = 1
+#
+set o2903/vnum = "o2903"
+#
+set o2903/item_type = "weapon"
+#
+set o2903/wear_location = "wield"
+#
+set o2903/weight = 2
+#
+tag o2903 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2903 = object
+#
+set o2903/weapon_type = "pound"
+#
+set o2903/damage_low = 1
+#
+set o2903/damage_high = 6
+#
+wieldto o2903 = m2904-2
+#
+set m2904-2/experience_total = 185
+#
+set m2904-2/experience_current = 185
+#
+set m2904-2/reset_objects["o2903"] = {"location":"equipped"}
+#
+tel r2915
+#
+create/drop a fire newt worker;fire;newt;worker;m2906:characters.Mobile
+#
+desc m2906 = A fire newt worker is standing here. 
+#
+set m2906/level = 1
+#
+set m2906/level_base = 1
+#
+set m2906/vnum = "m2906"
+#
+set m2906/look_description = "The fire newt worker looks hot and sweaty. "
+#
+set m2906/act_flags = ['sentinel', 'npc']
+#
+set m2906/alignment = -400
+#
+set m2906/sex = "female"
+#
+set m2906/spell_affects = {'detect invis': ''}
+#
+set m2906/race = "lizard"
+#
+tag m2906 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2906 = mobile
+#
+set m2906/hitpoints[maximum] = 9
+#
+set m2906/position = "standing"
+#
+set m2906/experience_total = 137
+#
+set m2906/experience_current = 137
+#
+tel r2915
+#
+create shovel;shovel;o2903:objects.Weapon
+#
+sethome o2903 = m2906
+#
+desc o2903 = A shovel lies here.
+#
+set o2903/level = 1
+#
+set o2903/level_base = 1
+#
+set o2903/vnum = "o2903"
+#
+set o2903/item_type = "weapon"
+#
+set o2903/wear_location = "wield"
+#
+set o2903/weight = 2
+#
+tag o2903 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2903 = object
+#
+set o2903/weapon_type = "pound"
+#
+set o2903/damage_low = 3
+#
+set o2903/damage_high = 7
+#
+wieldto o2903 = m2906
+#
+set m2906/experience_total = 171
+#
+set m2906/experience_current = 171
+#
+set m2906/reset_objects["o2903"] = {"location":"equipped"}
+#
+tel r2915
+#
+create/drop a fire newt worker;fire;newt;worker;m2906; m2906-2:characters.Mobile
+#
+desc m2906-2 = A fire newt worker is standing here. 
+#
+set m2906-2/level = 1
+#
+set m2906-2/level_base = 1
+#
+set m2906-2/vnum = "m2906"
+#
+set m2906-2/look_description = "The fire newt worker looks hot and sweaty. "
+#
+set m2906-2/act_flags = ['sentinel', 'npc']
+#
+set m2906-2/alignment = -400
+#
+set m2906-2/sex = "female"
+#
+set m2906-2/spell_affects = {'detect invis': ''}
+#
+set m2906-2/race = "lizard"
+#
+tag m2906-2 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2906-2 = mobile
+#
+set m2906-2/hitpoints[maximum] = 8
+#
+set m2906-2/position = "standing"
+#
+set m2906-2/experience_total = 144
+#
+set m2906-2/experience_current = 144
+#
+tel r2915
+#
+create shovel;shovel;o2903:objects.Weapon
+#
+sethome o2903 = m2906-2
+#
+desc o2903 = A shovel lies here.
+#
+set o2903/level = 1
+#
+set o2903/level_base = 1
+#
+set o2903/vnum = "o2903"
+#
+set o2903/item_type = "weapon"
+#
+set o2903/wear_location = "wield"
+#
+set o2903/weight = 2
+#
+tag o2903 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2903 = object
+#
+set o2903/weapon_type = "pound"
+#
+set o2903/damage_low = 2
+#
+set o2903/damage_high = 7
+#
+wieldto o2903 = m2906-2
+#
+set m2906-2/experience_total = 180
+#
+set m2906-2/experience_current = 180
+#
+set m2906-2/reset_objects["o2903"] = {"location":"equipped"}
+#
+tel r2915
+#
+create/drop a fire newt worker;fire;newt;worker;m2906; m2906-3:characters.Mobile
+#
+desc m2906-3 = A fire newt worker is standing here. 
+#
+set m2906-3/level = 1
+#
+set m2906-3/level_base = 1
+#
+set m2906-3/vnum = "m2906"
+#
+set m2906-3/look_description = "The fire newt worker looks hot and sweaty. "
+#
+set m2906-3/act_flags = ['sentinel', 'npc']
+#
+set m2906-3/alignment = -400
+#
+set m2906-3/sex = "female"
+#
+set m2906-3/spell_affects = {'detect invis': ''}
+#
+set m2906-3/race = "lizard"
+#
+tag m2906-3 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2906-3 = mobile
+#
+set m2906-3/hitpoints[maximum] = 8
+#
+set m2906-3/position = "standing"
+#
+set m2906-3/experience_total = 149
+#
+set m2906-3/experience_current = 149
+#
+tel r2915
+#
+create/drop a fire newt worker;fire;newt;worker;m2906; m2906-4:characters.Mobile
+#
+desc m2906-4 = A fire newt worker is standing here. 
+#
+set m2906-4/level = 1
+#
+set m2906-4/level_base = 1
+#
+set m2906-4/vnum = "m2906"
+#
+set m2906-4/look_description = "The fire newt worker looks hot and sweaty. "
+#
+set m2906-4/act_flags = ['sentinel', 'npc']
+#
+set m2906-4/alignment = -400
+#
+set m2906-4/sex = "female"
+#
+set m2906-4/spell_affects = {'detect invis': ''}
+#
+set m2906-4/race = "lizard"
+#
+tag m2906-4 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2906-4 = mobile
+#
+set m2906-4/hitpoints[maximum] = 9
+#
+set m2906-4/position = "standing"
+#
+set m2906-4/experience_total = 146
+#
+set m2906-4/experience_current = 146
+#
+tel r2915
+#
+create chainmail;chainmail;o2906:objects.Armor
+#
+sethome o2906 = r2915
+#
+desc o2906 = A chainmail shirt lies here.
+#
+set o2906/level = 1
+#
+set o2906/level_base = 1
+#
+set o2906/vnum = "o2906"
+#
+set o2906/item_type = "armor"
+#
+set o2906/wear_location = "body"
+#
+set o2906/weight = 10
+#
+tag o2906 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2906 = object
+#
+set o2906/armor = 2
+#
+drop o2906
+#
+set r2915/reset_objects["o2906"] = {"location":"inventory"}
+#
+tel r2916
+#
+create/drop a fire newt worker;fire;newt;worker;m2904:characters.Mobile
+#
+desc m2904 = A fire newt worker is standing here. 
+#
+set m2904/level = 1
+#
+set m2904/level_base = 1
+#
+set m2904/vnum = "m2904"
+#
+set m2904/look_description = "The fire newt worker looks hot and sweaty. "
+#
+set m2904/act_flags = ['stay area', 'aggressive', 'scavenger', 'npc']
+#
+set m2904/alignment = -400
+#
+set m2904/sex = "male"
+#
+set m2904/race = "lizard"
+#
+tag m2904 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2904 = mobile
+#
+set m2904/hitpoints[maximum] = 8
+#
+set m2904/position = "standing"
+#
+set m2904/experience_total = 157
+#
+set m2904/experience_current = 157
+#
+tel r2916
+#
+create shovel;shovel;o2903:objects.Weapon
+#
+sethome o2903 = m2904
+#
+desc o2903 = A shovel lies here.
+#
+set o2903/level = 1
+#
+set o2903/level_base = 1
+#
+set o2903/vnum = "o2903"
+#
+set o2903/item_type = "weapon"
+#
+set o2903/wear_location = "wield"
+#
+set o2903/weight = 2
+#
+tag o2903 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2903 = object
+#
+set o2903/weapon_type = "pound"
+#
+set o2903/damage_low = 2
+#
+set o2903/damage_high = 6
+#
+wieldto o2903 = m2904
+#
+set m2904/experience_total = 196
+#
+set m2904/experience_current = 196
+#
+set m2904/reset_objects["o2903"] = {"location":"equipped"}
+#
+tel r2917
+#
+create/drop a fire newt worker;fire;newt;worker;m2904:characters.Mobile
+#
+desc m2904 = A fire newt worker is standing here. 
+#
+set m2904/level = 1
+#
+set m2904/level_base = 1
+#
+set m2904/vnum = "m2904"
+#
+set m2904/look_description = "The fire newt worker looks hot and sweaty. "
+#
+set m2904/act_flags = ['stay area', 'aggressive', 'scavenger', 'npc']
+#
+set m2904/alignment = -400
+#
+set m2904/sex = "male"
+#
+set m2904/race = "lizard"
+#
+tag m2904 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2904 = mobile
+#
+set m2904/hitpoints[maximum] = 8
+#
+set m2904/position = "standing"
+#
+set m2904/experience_total = 150
+#
+set m2904/experience_current = 150
+#
+tel r2917
+#
+create/drop fire newt guard;fire;newt;guard;m2907:characters.Mobile
+#
+desc m2907 = A fire newt guard is standing here. 
+#
+set m2907/level = 1
+#
+set m2907/level_base = 1
+#
+set m2907/vnum = "m2907"
+#
+set m2907/look_description = "The fire newt guard wants to kill you! "
+#
+set m2907/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m2907/alignment = -450
+#
+set m2907/sex = "female"
+#
+set m2907/race = "lizard"
+#
+tag m2907 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2907 = mobile
+#
+set m2907/hitpoints[maximum] = 8
+#
+set m2907/position = "standing"
+#
+set m2907/experience_total = 144
+#
+set m2907/experience_current = 144
+#
+tel r2917
+#
+create short sword;short;sword;o2904:objects.Weapon
+#
+sethome o2904 = m2907
+#
+desc o2904 = A short sword lies here.
+#
+set o2904/level = 1
+#
+set o2904/level_base = 1
+#
+set o2904/vnum = "o2904"
+#
+set o2904/item_type = "weapon"
+#
+set o2904/wear_location = "wield"
+#
+set o2904/weight = 3
+#
+tag o2904 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2904 = object
+#
+set o2904/weapon_type = "pierce"
+#
+set o2904/damage_low = 3
+#
+set o2904/damage_high = 5
+#
+wieldto o2904 = m2907
+#
+set m2907/experience_total = 180
+#
+set m2907/experience_current = 180
+#
+set m2907/reset_objects["o2904"] = {"location":"equipped"}
+#
+tel r2918
+#
+create/drop a fire newt worker;fire;newt;worker;m2904:characters.Mobile
+#
+desc m2904 = A fire newt worker is standing here. 
+#
+set m2904/level = 1
+#
+set m2904/level_base = 1
+#
+set m2904/vnum = "m2904"
+#
+set m2904/look_description = "The fire newt worker looks hot and sweaty. "
+#
+set m2904/act_flags = ['stay area', 'aggressive', 'scavenger', 'npc']
+#
+set m2904/alignment = -400
+#
+set m2904/sex = "male"
+#
+set m2904/race = "lizard"
+#
+tag m2904 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2904 = mobile
+#
+set m2904/hitpoints[maximum] = 8
+#
+set m2904/position = "standing"
+#
+set m2904/experience_total = 138
+#
+set m2904/experience_current = 138
+#
+tel r2918
+#
+create shovel;shovel;o2903:objects.Weapon
+#
+sethome o2903 = m2904
+#
+desc o2903 = A shovel lies here.
+#
+set o2903/level = 1
+#
+set o2903/level_base = 1
+#
+set o2903/vnum = "o2903"
+#
+set o2903/item_type = "weapon"
+#
+set o2903/wear_location = "wield"
+#
+set o2903/weight = 2
+#
+tag o2903 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2903 = object
+#
+set o2903/weapon_type = "pound"
+#
+set o2903/damage_low = 2
+#
+set o2903/damage_high = 7
+#
+wieldto o2903 = m2904
+#
+set m2904/experience_total = 172
+#
+set m2904/experience_current = 172
+#
+set m2904/reset_objects["o2903"] = {"location":"equipped"}
+#
+tel r2918
+#
+create/drop fire newt guard;fire;newt;guard;m2907:characters.Mobile
+#
+desc m2907 = A fire newt guard is standing here. 
+#
+set m2907/level = 1
+#
+set m2907/level_base = 1
+#
+set m2907/vnum = "m2907"
+#
+set m2907/look_description = "The fire newt guard wants to kill you! "
+#
+set m2907/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m2907/alignment = -450
+#
+set m2907/sex = "female"
+#
+set m2907/race = "lizard"
+#
+tag m2907 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2907 = mobile
+#
+set m2907/hitpoints[maximum] = 8
+#
+set m2907/position = "standing"
+#
+set m2907/experience_total = 146
+#
+set m2907/experience_current = 146
+#
+tel r2918
+#
+create short sword;short;sword;o2904:objects.Weapon
+#
+sethome o2904 = m2907
+#
+desc o2904 = A short sword lies here.
+#
+set o2904/level = 1
+#
+set o2904/level_base = 1
+#
+set o2904/vnum = "o2904"
+#
+set o2904/item_type = "weapon"
+#
+set o2904/wear_location = "wield"
+#
+set o2904/weight = 3
+#
+tag o2904 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2904 = object
+#
+set o2904/weapon_type = "pierce"
+#
+set o2904/damage_low = 0
+#
+set o2904/damage_high = 9
+#
+wieldto o2904 = m2907
+#
+set m2907/experience_total = 182
+#
+set m2907/experience_current = 182
+#
+set m2907/reset_objects["o2904"] = {"location":"equipped"}
+#
+tel r2919
+#
+create/drop a fire newt worker;fire;newt;worker;m2904:characters.Mobile
+#
+desc m2904 = A fire newt worker is standing here. 
+#
+set m2904/level = 1
+#
+set m2904/level_base = 1
+#
+set m2904/vnum = "m2904"
+#
+set m2904/look_description = "The fire newt worker looks hot and sweaty. "
+#
+set m2904/act_flags = ['stay area', 'aggressive', 'scavenger', 'npc']
+#
+set m2904/alignment = -400
+#
+set m2904/sex = "male"
+#
+set m2904/race = "lizard"
+#
+tag m2904 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2904 = mobile
+#
+set m2904/hitpoints[maximum] = 9
+#
+set m2904/position = "standing"
+#
+set m2904/experience_total = 140
+#
+set m2904/experience_current = 140
+#
+tel r2919
+#
+create shovel;shovel;o2903:objects.Weapon
+#
+sethome o2903 = m2904
+#
+desc o2903 = A shovel lies here.
+#
+set o2903/level = 1
+#
+set o2903/level_base = 1
+#
+set o2903/vnum = "o2903"
+#
+set o2903/item_type = "weapon"
+#
+set o2903/wear_location = "wield"
+#
+set o2903/weight = 2
+#
+tag o2903 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2903 = object
+#
+set o2903/weapon_type = "pound"
+#
+set o2903/damage_low = 4
+#
+set o2903/damage_high = 6
+#
+wieldto o2903 = m2904
+#
+set m2904/experience_total = 175
+#
+set m2904/experience_current = 175
+#
+set m2904/reset_objects["o2903"] = {"location":"equipped"}
+#
+tel r2919
+#
+create/drop fire newt guard;fire;newt;guard;m2907:characters.Mobile
+#
+desc m2907 = A fire newt guard is standing here. 
+#
+set m2907/level = 1
+#
+set m2907/level_base = 1
+#
+set m2907/vnum = "m2907"
+#
+set m2907/look_description = "The fire newt guard wants to kill you! "
+#
+set m2907/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m2907/alignment = -450
+#
+set m2907/sex = "female"
+#
+set m2907/race = "lizard"
+#
+tag m2907 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2907 = mobile
+#
+set m2907/hitpoints[maximum] = 9
+#
+set m2907/position = "standing"
+#
+set m2907/experience_total = 150
+#
+set m2907/experience_current = 150
+#
+tel r2919
+#
+create hand axe;hand;axe;o2905:objects.Weapon
+#
+sethome o2905 = m2907
+#
+desc o2905 = A hand axe lies here.
+#
+set o2905/level = 1
+#
+set o2905/level_base = 1
+#
+set o2905/vnum = "o2905"
+#
+set o2905/item_type = "weapon"
+#
+set o2905/wear_location = "wield"
+#
+set o2905/weight = 3
+#
+tag o2905 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2905 = object
+#
+set o2905/weapon_type = "slash"
+#
+set o2905/damage_low = 2
+#
+set o2905/damage_high = 6
+#
+wieldto o2905 = m2907
+#
+set m2907/experience_total = 187
+#
+set m2907/experience_current = 187
+#
+set m2907/reset_objects["o2905"] = {"location":"equipped"}
+#
+tel r2920
+#
+create/drop a fire newt mother;fire;newt;mother;m2908:characters.Mobile
+#
+desc m2908 = A fire newt mother is standing here. 
+#
+set m2908/level = 1
+#
+set m2908/level_base = 1
+#
+set m2908/vnum = "m2908"
+#
+set m2908/look_description = "The fire newt mother is watching her kids. "
+#
+set m2908/act_flags = ['sentinel', 'npc']
+#
+set m2908/alignment = -355
+#
+set m2908/sex = "female"
+#
+set m2908/race = "lizard"
+#
+tag m2908 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2908 = mobile
+#
+set m2908/hitpoints[maximum] = 8
+#
+set m2908/position = "standing"
+#
+set m2908/experience_total = 144
+#
+set m2908/experience_current = 144
+#
+tel r2920
+#
+create/drop a fire newt baby;fire;newt;baby;m2909:characters.Mobile
+#
+desc m2909 = A fire newt baby is crawling here. 
+#
+set m2909/level = 3
+#
+set m2909/level_base = 3
+#
+set m2909/vnum = "m2909"
+#
+set m2909/look_description = "The fire newt baby is crawling and drooling here. "
+#
+set m2909/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m2909/alignment = -350
+#
+set m2909/sex = "neuter"
+#
+set m2909/race = "lizard"
+#
+tag m2909 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2909 = mobile
+#
+set m2909/hitpoints[maximum] = 24
+#
+set m2909/position = "standing"
+#
+set m2909/experience_total = 427
+#
+set m2909/experience_current = 427
+#
+tel r2920
+#
+create/drop a fire newt baby;fire;newt;baby;m2909; m2909-2:characters.Mobile
+#
+desc m2909-2 = A fire newt baby is crawling here. 
+#
+set m2909-2/level = 3
+#
+set m2909-2/level_base = 3
+#
+set m2909-2/vnum = "m2909"
+#
+set m2909-2/look_description = "The fire newt baby is crawling and drooling here. "
+#
+set m2909-2/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m2909-2/alignment = -350
+#
+set m2909-2/sex = "neuter"
+#
+set m2909-2/race = "lizard"
+#
+tag m2909-2 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2909-2 = mobile
+#
+set m2909-2/hitpoints[maximum] = 30
+#
+set m2909-2/position = "standing"
+#
+set m2909-2/experience_total = 382
+#
+set m2909-2/experience_current = 382
+#
+tel r2920
+#
+create/drop a fire newt baby;fire;newt;baby;m2909; m2909-3:characters.Mobile
+#
+desc m2909-3 = A fire newt baby is crawling here. 
+#
+set m2909-3/level = 3
+#
+set m2909-3/level_base = 3
+#
+set m2909-3/vnum = "m2909"
+#
+set m2909-3/look_description = "The fire newt baby is crawling and drooling here. "
+#
+set m2909-3/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m2909-3/alignment = -350
+#
+set m2909-3/sex = "neuter"
+#
+set m2909-3/race = "lizard"
+#
+tag m2909-3 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2909-3 = mobile
+#
+set m2909-3/hitpoints[maximum] = 27
+#
+set m2909-3/position = "standing"
+#
+set m2909-3/experience_total = 368
+#
+set m2909-3/experience_current = 368
+#
+tel r2920
+#
+create/drop a fire newt baby;fire;newt;baby;m2909; m2909-4:characters.Mobile
+#
+desc m2909-4 = A fire newt baby is crawling here. 
+#
+set m2909-4/level = 3
+#
+set m2909-4/level_base = 3
+#
+set m2909-4/vnum = "m2909"
+#
+set m2909-4/look_description = "The fire newt baby is crawling and drooling here. "
+#
+set m2909-4/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m2909-4/alignment = -350
+#
+set m2909-4/sex = "neuter"
+#
+set m2909-4/race = "lizard"
+#
+tag m2909-4 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2909-4 = mobile
+#
+set m2909-4/hitpoints[maximum] = 27
+#
+set m2909-4/position = "standing"
+#
+set m2909-4/experience_total = 421
+#
+set m2909-4/experience_current = 421
+#
+tel r2920
+#
+create/drop a fire newt baby;fire;newt;baby;m2909; m2909-5:characters.Mobile
+#
+desc m2909-5 = A fire newt baby is crawling here. 
+#
+set m2909-5/level = 3
+#
+set m2909-5/level_base = 3
+#
+set m2909-5/vnum = "m2909"
+#
+set m2909-5/look_description = "The fire newt baby is crawling and drooling here. "
+#
+set m2909-5/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m2909-5/alignment = -350
+#
+set m2909-5/sex = "neuter"
+#
+set m2909-5/race = "lizard"
+#
+tag m2909-5 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2909-5 = mobile
+#
+set m2909-5/hitpoints[maximum] = 32
+#
+set m2909-5/position = "standing"
+#
+set m2909-5/experience_total = 411
+#
+set m2909-5/experience_current = 411
+#
+tel r2920
+#
+create/drop a fire newt baby;fire;newt;baby;m2909; m2909-6:characters.Mobile
+#
+desc m2909-6 = A fire newt baby is crawling here. 
+#
+set m2909-6/level = 3
+#
+set m2909-6/level_base = 3
+#
+set m2909-6/vnum = "m2909"
+#
+set m2909-6/look_description = "The fire newt baby is crawling and drooling here. "
+#
+set m2909-6/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m2909-6/alignment = -350
+#
+set m2909-6/sex = "neuter"
+#
+set m2909-6/race = "lizard"
+#
+tag m2909-6 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2909-6 = mobile
+#
+set m2909-6/hitpoints[maximum] = 27
+#
+set m2909-6/position = "standing"
+#
+set m2909-6/experience_total = 366
+#
+set m2909-6/experience_current = 366
+#
+tel r2921
+#
+create/drop a fire newt worker;fire;newt;worker;m2904:characters.Mobile
+#
+desc m2904 = A fire newt worker is standing here. 
+#
+set m2904/level = 1
+#
+set m2904/level_base = 1
+#
+set m2904/vnum = "m2904"
+#
+set m2904/look_description = "The fire newt worker looks hot and sweaty. "
+#
+set m2904/act_flags = ['stay area', 'aggressive', 'scavenger', 'npc']
+#
+set m2904/alignment = -400
+#
+set m2904/sex = "male"
+#
+set m2904/race = "lizard"
+#
+tag m2904 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2904 = mobile
+#
+set m2904/hitpoints[maximum] = 9
+#
+set m2904/position = "standing"
+#
+set m2904/experience_total = 140
+#
+set m2904/experience_current = 140
+#
+tel r2921
+#
+create/drop a fire newt worker;fire;newt;worker;m2904; m2904-2:characters.Mobile
+#
+desc m2904-2 = A fire newt worker is standing here. 
+#
+set m2904-2/level = 1
+#
+set m2904-2/level_base = 1
+#
+set m2904-2/vnum = "m2904"
+#
+set m2904-2/look_description = "The fire newt worker looks hot and sweaty. "
+#
+set m2904-2/act_flags = ['stay area', 'aggressive', 'scavenger', 'npc']
+#
+set m2904-2/alignment = -400
+#
+set m2904-2/sex = "male"
+#
+set m2904-2/race = "lizard"
+#
+tag m2904-2 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2904-2 = mobile
+#
+set m2904-2/hitpoints[maximum] = 9
+#
+set m2904-2/position = "standing"
+#
+set m2904-2/experience_total = 148
+#
+set m2904-2/experience_current = 148
+#
+tel r2921
+#
+create/drop fire newt guard;fire;newt;guard;m2907:characters.Mobile
+#
+desc m2907 = A fire newt guard is standing here. 
+#
+set m2907/level = 1
+#
+set m2907/level_base = 1
+#
+set m2907/vnum = "m2907"
+#
+set m2907/look_description = "The fire newt guard wants to kill you! "
+#
+set m2907/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m2907/alignment = -450
+#
+set m2907/sex = "female"
+#
+set m2907/race = "lizard"
+#
+tag m2907 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2907 = mobile
+#
+set m2907/hitpoints[maximum] = 9
+#
+set m2907/position = "standing"
+#
+set m2907/experience_total = 156
+#
+set m2907/experience_current = 156
+#
+tel r2921
+#
+create hand axe;hand;axe;o2905:objects.Weapon
+#
+sethome o2905 = m2907
+#
+desc o2905 = A hand axe lies here.
+#
+set o2905/level = 1
+#
+set o2905/level_base = 1
+#
+set o2905/vnum = "o2905"
+#
+set o2905/item_type = "weapon"
+#
+set o2905/wear_location = "wield"
+#
+set o2905/weight = 3
+#
+tag o2905 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2905 = object
+#
+set o2905/weapon_type = "slash"
+#
+set o2905/damage_low = 1
+#
+set o2905/damage_high = 6
+#
+wieldto o2905 = m2907
+#
+set m2907/experience_total = 195
+#
+set m2907/experience_current = 195
+#
+set m2907/reset_objects["o2905"] = {"location":"equipped"}
+#
+tel r2922
+#
+create/drop a fire newt mother;fire;newt;mother;m2908:characters.Mobile
+#
+desc m2908 = A fire newt mother is standing here. 
+#
+set m2908/level = 1
+#
+set m2908/level_base = 1
+#
+set m2908/vnum = "m2908"
+#
+set m2908/look_description = "The fire newt mother is watching her kids. "
+#
+set m2908/act_flags = ['sentinel', 'npc']
+#
+set m2908/alignment = -355
+#
+set m2908/sex = "female"
+#
+set m2908/race = "lizard"
+#
+tag m2908 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2908 = mobile
+#
+set m2908/hitpoints[maximum] = 8
+#
+set m2908/position = "standing"
+#
+set m2908/experience_total = 139
+#
+set m2908/experience_current = 139
+#
+tel r2922
+#
+create/drop a fire newt baby;fire;newt;baby;m2909:characters.Mobile
+#
+desc m2909 = A fire newt baby is crawling here. 
+#
+set m2909/level = 3
+#
+set m2909/level_base = 3
+#
+set m2909/vnum = "m2909"
+#
+set m2909/look_description = "The fire newt baby is crawling and drooling here. "
+#
+set m2909/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m2909/alignment = -350
+#
+set m2909/sex = "neuter"
+#
+set m2909/race = "lizard"
+#
+tag m2909 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2909 = mobile
+#
+set m2909/hitpoints[maximum] = 29
+#
+set m2909/position = "standing"
+#
+set m2909/experience_total = 421
+#
+set m2909/experience_current = 421
+#
+tel r2922
+#
+create/drop a fire newt baby;fire;newt;baby;m2909; m2909-2:characters.Mobile
+#
+desc m2909-2 = A fire newt baby is crawling here. 
+#
+set m2909-2/level = 3
+#
+set m2909-2/level_base = 3
+#
+set m2909-2/vnum = "m2909"
+#
+set m2909-2/look_description = "The fire newt baby is crawling and drooling here. "
+#
+set m2909-2/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m2909-2/alignment = -350
+#
+set m2909-2/sex = "neuter"
+#
+set m2909-2/race = "lizard"
+#
+tag m2909-2 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2909-2 = mobile
+#
+set m2909-2/hitpoints[maximum] = 33
+#
+set m2909-2/position = "standing"
+#
+set m2909-2/experience_total = 405
+#
+set m2909-2/experience_current = 405
+#
+tel r2922
+#
+create/drop a fire newt baby;fire;newt;baby;m2909; m2909-3:characters.Mobile
+#
+desc m2909-3 = A fire newt baby is crawling here. 
+#
+set m2909-3/level = 3
+#
+set m2909-3/level_base = 3
+#
+set m2909-3/vnum = "m2909"
+#
+set m2909-3/look_description = "The fire newt baby is crawling and drooling here. "
+#
+set m2909-3/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m2909-3/alignment = -350
+#
+set m2909-3/sex = "neuter"
+#
+set m2909-3/race = "lizard"
+#
+tag m2909-3 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2909-3 = mobile
+#
+set m2909-3/hitpoints[maximum] = 26
+#
+set m2909-3/position = "standing"
+#
+set m2909-3/experience_total = 357
+#
+set m2909-3/experience_current = 357
+#
+tel r2922
+#
+create/drop a fire newt baby;fire;newt;baby;m2909; m2909-4:characters.Mobile
+#
+desc m2909-4 = A fire newt baby is crawling here. 
+#
+set m2909-4/level = 3
+#
+set m2909-4/level_base = 3
+#
+set m2909-4/vnum = "m2909"
+#
+set m2909-4/look_description = "The fire newt baby is crawling and drooling here. "
+#
+set m2909-4/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m2909-4/alignment = -350
+#
+set m2909-4/sex = "neuter"
+#
+set m2909-4/race = "lizard"
+#
+tag m2909-4 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2909-4 = mobile
+#
+set m2909-4/hitpoints[maximum] = 32
+#
+set m2909-4/position = "standing"
+#
+set m2909-4/experience_total = 432
+#
+set m2909-4/experience_current = 432
+#
+tel r2922
+#
+create/drop a fire newt baby;fire;newt;baby;m2909; m2909-5:characters.Mobile
+#
+desc m2909-5 = A fire newt baby is crawling here. 
+#
+set m2909-5/level = 3
+#
+set m2909-5/level_base = 3
+#
+set m2909-5/vnum = "m2909"
+#
+set m2909-5/look_description = "The fire newt baby is crawling and drooling here. "
+#
+set m2909-5/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m2909-5/alignment = -350
+#
+set m2909-5/sex = "neuter"
+#
+set m2909-5/race = "lizard"
+#
+tag m2909-5 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2909-5 = mobile
+#
+set m2909-5/hitpoints[maximum] = 26
+#
+set m2909-5/position = "standing"
+#
+set m2909-5/experience_total = 368
+#
+set m2909-5/experience_current = 368
+#
+tel r2922
+#
+create/drop a fire newt baby;fire;newt;baby;m2909; m2909-6:characters.Mobile
+#
+desc m2909-6 = A fire newt baby is crawling here. 
+#
+set m2909-6/level = 3
+#
+set m2909-6/level_base = 3
+#
+set m2909-6/vnum = "m2909"
+#
+set m2909-6/look_description = "The fire newt baby is crawling and drooling here. "
+#
+set m2909-6/act_flags = ['scavenger', 'sentinel', 'npc']
+#
+set m2909-6/alignment = -350
+#
+set m2909-6/sex = "neuter"
+#
+set m2909-6/race = "lizard"
+#
+tag m2909-6 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2909-6 = mobile
+#
+set m2909-6/hitpoints[maximum] = 24
+#
+set m2909-6/position = "standing"
+#
+set m2909-6/experience_total = 410
+#
+set m2909-6/experience_current = 410
+#
+tel r2923
+#
+create/drop a fire newt worker;fire;newt;worker;m2904:characters.Mobile
+#
+desc m2904 = A fire newt worker is standing here. 
+#
+set m2904/level = 1
+#
+set m2904/level_base = 1
+#
+set m2904/vnum = "m2904"
+#
+set m2904/look_description = "The fire newt worker looks hot and sweaty. "
+#
+set m2904/act_flags = ['stay area', 'aggressive', 'scavenger', 'npc']
+#
+set m2904/alignment = -400
+#
+set m2904/sex = "male"
+#
+set m2904/race = "lizard"
+#
+tag m2904 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2904 = mobile
+#
+set m2904/hitpoints[maximum] = 9
+#
+set m2904/position = "standing"
+#
+set m2904/experience_total = 164
+#
+set m2904/experience_current = 164
+#
+tel r2923
+#
+create shovel;shovel;o2903:objects.Weapon
+#
+sethome o2903 = m2904
+#
+desc o2903 = A shovel lies here.
+#
+set o2903/level = 1
+#
+set o2903/level_base = 1
+#
+set o2903/vnum = "o2903"
+#
+set o2903/item_type = "weapon"
+#
+set o2903/wear_location = "wield"
+#
+set o2903/weight = 2
+#
+tag o2903 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2903 = object
+#
+set o2903/weapon_type = "pound"
+#
+set o2903/damage_low = 3
+#
+set o2903/damage_high = 7
+#
+wieldto o2903 = m2904
+#
+set m2904/experience_total = 205
+#
+set m2904/experience_current = 205
+#
+set m2904/reset_objects["o2903"] = {"location":"equipped"}
+#
+tel r2923
+#
+create/drop fire newt guard;fire;newt;guard;m2907:characters.Mobile
+#
+desc m2907 = A fire newt guard is standing here. 
+#
+set m2907/level = 1
+#
+set m2907/level_base = 1
+#
+set m2907/vnum = "m2907"
+#
+set m2907/look_description = "The fire newt guard wants to kill you! "
+#
+set m2907/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m2907/alignment = -450
+#
+set m2907/sex = "female"
+#
+set m2907/race = "lizard"
+#
+tag m2907 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2907 = mobile
+#
+set m2907/hitpoints[maximum] = 9
+#
+set m2907/position = "standing"
+#
+set m2907/experience_total = 154
+#
+set m2907/experience_current = 154
+#
+tel r2923
+#
+create short sword;short;sword;o2904:objects.Weapon
+#
+sethome o2904 = m2907
+#
+desc o2904 = A short sword lies here.
+#
+set o2904/level = 1
+#
+set o2904/level_base = 1
+#
+set o2904/vnum = "o2904"
+#
+set o2904/item_type = "weapon"
+#
+set o2904/wear_location = "wield"
+#
+set o2904/weight = 3
+#
+tag o2904 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2904 = object
+#
+set o2904/weapon_type = "pierce"
+#
+set o2904/damage_low = 2
+#
+set o2904/damage_high = 8
+#
+wieldto o2904 = m2907
+#
+set m2907/experience_total = 192
+#
+set m2907/experience_current = 192
+#
+set m2907/reset_objects["o2904"] = {"location":"equipped"}
+#
+tel r2923
+#
+create/drop fire newt guard;fire;newt;guard;m2907; m2907-2:characters.Mobile
+#
+desc m2907-2 = A fire newt guard is standing here. 
+#
+set m2907-2/level = 1
+#
+set m2907-2/level_base = 1
+#
+set m2907-2/vnum = "m2907"
+#
+set m2907-2/look_description = "The fire newt guard wants to kill you! "
+#
+set m2907-2/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m2907-2/alignment = -450
+#
+set m2907-2/sex = "female"
+#
+set m2907-2/race = "lizard"
+#
+tag m2907-2 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2907-2 = mobile
+#
+set m2907-2/hitpoints[maximum] = 9
+#
+set m2907-2/position = "standing"
+#
+set m2907-2/experience_total = 162
+#
+set m2907-2/experience_current = 162
+#
+tel r2924
+#
+create/drop a fire newt sergeant;fire;newt;sergeant;m2910:characters.Mobile
+#
+desc m2910 = A fire newt sergeant patrols this area. 
+#
+set m2910/level = 6
+#
+set m2910/level_base = 6
+#
+set m2910/vnum = "m2910"
+#
+set m2910/look_description = "The fire newt sergeant just found something that doesn't belong here! "
+#
+set m2910/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m2910/alignment = -500
+#
+set m2910/sex = "male"
+#
+set m2910/race = "lizard"
+#
+tag m2910 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2910 = mobile
+#
+set m2910/hitpoints[maximum] = 49
+#
+set m2910/position = "standing"
+#
+set m2910/experience_total = 1361
+#
+set m2910/experience_current = 1361
+#
+tel r2924
+#
+create chainmail;chainmail;o2906:objects.Armor
+#
+sethome o2906 = m2910
+#
+desc o2906 = A chainmail shirt lies here.
+#
+set o2906/level = 4
+#
+set o2906/level_base = 4
+#
+set o2906/vnum = "o2906"
+#
+set o2906/item_type = "armor"
+#
+set o2906/wear_location = "body"
+#
+set o2906/weight = 10
+#
+tag o2906 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2906 = object
+#
+set o2906/armor = 2
+#
+wearto o2906 = m2910
+#
+set m2910/reset_objects["o2906"] = {"location":"equipped"}
+#
+tel r2924
+#
+create pick;pick;o2907:objects.Weapon
+#
+sethome o2907 = m2910
+#
+desc o2907 = A pick lies here.
+#
+set o2907/level = 4
+#
+set o2907/level_base = 4
+#
+set o2907/vnum = "o2907"
+#
+set o2907/item_type = "weapon"
+#
+set o2907/wear_location = "wield"
+#
+set o2907/weight = 2
+#
+tag o2907 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2907 = object
+#
+set o2907/weapon_type = "pierce"
+#
+set o2907/damage_low = 3
+#
+set o2907/damage_high = 9
+#
+wieldto o2907 = m2910
+#
+set m2910/experience_total = 1701
+#
+set m2910/experience_current = 1701
+#
+set m2910/reset_objects["o2907"] = {"location":"equipped"}
+#
+tel r2925
+#
+create/drop a fire newt general;fire;newt;general;m2911:characters.Mobile
+#
+desc m2911 = A fire newt general is standing here. 
+#
+set m2911/level = 8
+#
+set m2911/level_base = 8
+#
+set m2911/vnum = "m2911"
+#
+set m2911/look_description = "The fire newt general grins evilly at you. "
+#
+set m2911/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m2911/alignment = -700
+#
+set m2911/sex = "male"
+#
+set m2911/race = "lizard"
+#
+tag m2911 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2911 = mobile
+#
+set m2911/hitpoints[maximum] = 90
+#
+set m2911/position = "standing"
+#
+set m2911/experience_total = 3109
+#
+set m2911/experience_current = 3109
+#
+tel r2925
+#
+create chainmail;chainmail;o2906:objects.Armor
+#
+sethome o2906 = m2911
+#
+desc o2906 = A chainmail shirt lies here.
+#
+set o2906/level = 6
+#
+set o2906/level_base = 6
+#
+set o2906/vnum = "o2906"
+#
+set o2906/item_type = "armor"
+#
+set o2906/wear_location = "body"
+#
+set o2906/weight = 10
+#
+tag o2906 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2906 = object
+#
+set o2906/armor = 2
+#
+wearto o2906 = m2911
+#
+set m2911/reset_objects["o2906"] = {"location":"equipped"}
+#
+tel r2925
+#
+create pick;pick;o2907:objects.Weapon
+#
+sethome o2907 = m2911
+#
+desc o2907 = A pick lies here.
+#
+set o2907/level = 6
+#
+set o2907/level_base = 6
+#
+set o2907/vnum = "o2907"
+#
+set o2907/item_type = "weapon"
+#
+set o2907/wear_location = "wield"
+#
+set o2907/weight = 2
+#
+tag o2907 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2907 = object
+#
+set o2907/weapon_type = "pierce"
+#
+set o2907/damage_low = 2
+#
+set o2907/damage_high = 12
+#
+wieldto o2907 = m2911
+#
+set m2911/experience_total = 3886
+#
+set m2911/experience_current = 3886
+#
+set m2911/reset_objects["o2907"] = {"location":"equipped"}
+#
+tel r2925
+#
+create/drop a fire newt general;fire;newt;general;m2911; m2911-2:characters.Mobile
+#
+desc m2911-2 = A fire newt general is standing here. 
+#
+set m2911-2/level = 8
+#
+set m2911-2/level_base = 8
+#
+set m2911-2/vnum = "m2911"
+#
+set m2911-2/look_description = "The fire newt general grins evilly at you. "
+#
+set m2911-2/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m2911-2/alignment = -700
+#
+set m2911-2/sex = "male"
+#
+set m2911-2/race = "lizard"
+#
+tag m2911-2 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2911-2 = mobile
+#
+set m2911-2/hitpoints[maximum] = 86
+#
+set m2911-2/position = "standing"
+#
+set m2911-2/experience_total = 2949
+#
+set m2911-2/experience_current = 2949
+#
+tel r2925
+#
+create chainmail;chainmail;o2906:objects.Armor
+#
+sethome o2906 = m2911-2
+#
+desc o2906 = A chainmail shirt lies here.
+#
+set o2906/level = 6
+#
+set o2906/level_base = 6
+#
+set o2906/vnum = "o2906"
+#
+set o2906/item_type = "armor"
+#
+set o2906/wear_location = "body"
+#
+set o2906/weight = 10
+#
+tag o2906 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2906 = object
+#
+set o2906/armor = 4
+#
+wearto o2906 = m2911-2
+#
+set m2911-2/reset_objects["o2906"] = {"location":"equipped"}
+#
+tel r2925
+#
+create pick;pick;o2907:objects.Weapon
+#
+sethome o2907 = m2911-2
+#
+desc o2907 = A pick lies here.
+#
+set o2907/level = 6
+#
+set o2907/level_base = 6
+#
+set o2907/vnum = "o2907"
+#
+set o2907/item_type = "weapon"
+#
+set o2907/wear_location = "wield"
+#
+set o2907/weight = 2
+#
+tag o2907 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2907 = object
+#
+set o2907/weapon_type = "pierce"
+#
+set o2907/damage_low = 4
+#
+set o2907/damage_high = 12
+#
+wieldto o2907 = m2911-2
+#
+set m2911-2/experience_total = 3686
+#
+set m2911-2/experience_current = 3686
+#
+set m2911-2/reset_objects["o2907"] = {"location":"equipped"}
+#
+tel r2926
+#
+create/drop a fire newt leader;fire;newt;leader;m2912:characters.Mobile
+#
+desc m2912 = A fire newt leader is standing here. 
+#
+set m2912/level = 12
+#
+set m2912/level_base = 12
+#
+set m2912/vnum = "m2912"
+#
+set m2912/look_description = "The fire newt leader screams, 'I'm going to hose you!' "
+#
+set m2912/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m2912/alignment = -1000
+#
+set m2912/sex = "male"
+#
+set m2912/spell_affects = {'sanctuary': '', 'detect invis': ''}
+#
+set m2912/race = "lizard"
+#
+tag m2912 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2912 = mobile
+#
+set m2912/hitpoints[maximum] = 180
+#
+set m2912/position = "standing"
+#
+set m2912/experience_total = 15389
+#
+set m2912/experience_current = 15389
+#
+tel r2926
+#
+create broad axe;broad;axe;o2911:objects.Weapon
+#
+sethome o2911 = m2912
+#
+desc o2911 = A broad axe lies here.
+#
+set o2911/level = 10
+#
+set o2911/level_base = 10
+#
+set o2911/vnum = "o2911"
+#
+set o2911/item_type = "weapon"
+#
+set o2911/wear_location = "wield"
+#
+set o2911/weight = 15
+#
+tag o2911 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2911 = object
+#
+set o2911/alignment_restriction = ['good']
+#
+set o2911/extra_flags = ['magic']
+#
+set o2911/stat_modifiers[hitroll] = 1
+#
+set o2911/stat_modifiers[damroll] = 1
+#
+set o2911/weapon_type = "slash"
+#
+set o2911/damage_low = 6
+#
+set o2911/damage_high = 14
+#
+wieldto o2911 = m2912
+#
+set m2912/experience_total = 19236
+#
+set m2912/experience_current = 19236
+#
+set m2912/reset_objects["o2911"] = {"location":"equipped"}
+#
+tel r2926
+#
+create leather suit;leather;suit;o2912:objects.Armor
+#
+sethome o2912 = m2912
+#
+desc o2912 = A leather suit lies here.
+#
+set o2912/level = 10
+#
+set o2912/level_base = 10
+#
+set o2912/vnum = "o2912"
+#
+set o2912/item_type = "armor"
+#
+set o2912/wear_location = "body"
+#
+set o2912/weight = 3
+#
+tag o2912 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2912 = object
+#
+set o2912/extra_flags = ['magic', 'glow']
+#
+set o2912/stat_modifiers[dexterity] = 1
+#
+set o2912/armor = 4
+#
+wearto o2912 = m2912
+#
+set m2912/reset_objects["o2912"] = {"location":"equipped"}
+#
+tel r2927
+#
+create/drop a fire newt sergeant;fire;newt;sergeant;m2910:characters.Mobile
+#
+desc m2910 = A fire newt sergeant patrols this area. 
+#
+set m2910/level = 6
+#
+set m2910/level_base = 6
+#
+set m2910/vnum = "m2910"
+#
+set m2910/look_description = "The fire newt sergeant just found something that doesn't belong here! "
+#
+set m2910/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m2910/alignment = -500
+#
+set m2910/sex = "male"
+#
+set m2910/race = "lizard"
+#
+tag m2910 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2910 = mobile
+#
+set m2910/hitpoints[maximum] = 69
+#
+set m2910/position = "standing"
+#
+set m2910/experience_total = 1463
+#
+set m2910/experience_current = 1463
+#
+tel r2927
+#
+create chainmail;chainmail;o2906:objects.Armor
+#
+sethome o2906 = m2910
+#
+desc o2906 = A chainmail shirt lies here.
+#
+set o2906/level = 4
+#
+set o2906/level_base = 4
+#
+set o2906/vnum = "o2906"
+#
+set o2906/item_type = "armor"
+#
+set o2906/wear_location = "body"
+#
+set o2906/weight = 10
+#
+tag o2906 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2906 = object
+#
+set o2906/armor = 4
+#
+wearto o2906 = m2910
+#
+set m2910/reset_objects["o2906"] = {"location":"equipped"}
+#
+tel r2927
+#
+create pick;pick;o2907:objects.Weapon
+#
+sethome o2907 = m2910
+#
+desc o2907 = A pick lies here.
+#
+set o2907/level = 4
+#
+set o2907/level_base = 4
+#
+set o2907/vnum = "o2907"
+#
+set o2907/item_type = "weapon"
+#
+set o2907/wear_location = "wield"
+#
+set o2907/weight = 2
+#
+tag o2907 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2907 = object
+#
+set o2907/weapon_type = "pierce"
+#
+set o2907/damage_low = 4
+#
+set o2907/damage_high = 9
+#
+wieldto o2907 = m2910
+#
+set m2910/experience_total = 1828
+#
+set m2910/experience_current = 1828
+#
+set m2910/reset_objects["o2907"] = {"location":"equipped"}
+#
+tel r2928
+#
+create/drop a fire newt general;fire;newt;general;m2911:characters.Mobile
+#
+desc m2911 = A fire newt general is standing here. 
+#
+set m2911/level = 8
+#
+set m2911/level_base = 8
+#
+set m2911/vnum = "m2911"
+#
+set m2911/look_description = "The fire newt general grins evilly at you. "
+#
+set m2911/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m2911/alignment = -700
+#
+set m2911/sex = "male"
+#
+set m2911/race = "lizard"
+#
+tag m2911 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2911 = mobile
+#
+set m2911/hitpoints[maximum] = 81
+#
+set m2911/position = "standing"
+#
+set m2911/experience_total = 2933
+#
+set m2911/experience_current = 2933
+#
+tel r2928
+#
+create chainmail;chainmail;o2906:objects.Armor
+#
+sethome o2906 = m2911
+#
+desc o2906 = A chainmail shirt lies here.
+#
+set o2906/level = 6
+#
+set o2906/level_base = 6
+#
+set o2906/vnum = "o2906"
+#
+set o2906/item_type = "armor"
+#
+set o2906/wear_location = "body"
+#
+set o2906/weight = 10
+#
+tag o2906 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2906 = object
+#
+set o2906/armor = 4
+#
+wearto o2906 = m2911
+#
+set m2911/reset_objects["o2906"] = {"location":"equipped"}
+#
+tel r2928
+#
+create pick;pick;o2907:objects.Weapon
+#
+sethome o2907 = m2911
+#
+desc o2907 = A pick lies here.
+#
+set o2907/level = 6
+#
+set o2907/level_base = 6
+#
+set o2907/vnum = "o2907"
+#
+set o2907/item_type = "weapon"
+#
+set o2907/wear_location = "wield"
+#
+set o2907/weight = 2
+#
+tag o2907 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2907 = object
+#
+set o2907/weapon_type = "pierce"
+#
+set o2907/damage_low = 4
+#
+set o2907/damage_high = 10
+#
+wieldto o2907 = m2911
+#
+set m2911/experience_total = 3666
+#
+set m2911/experience_current = 3666
+#
+set m2911/reset_objects["o2907"] = {"location":"equipped"}
+#
+tel r2928
+#
+create/drop a fire newt general;fire;newt;general;m2911; m2911-2:characters.Mobile
+#
+desc m2911-2 = A fire newt general is standing here. 
+#
+set m2911-2/level = 8
+#
+set m2911-2/level_base = 8
+#
+set m2911-2/vnum = "m2911"
+#
+set m2911-2/look_description = "The fire newt general grins evilly at you. "
+#
+set m2911-2/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m2911-2/alignment = -700
+#
+set m2911-2/sex = "male"
+#
+set m2911-2/race = "lizard"
+#
+tag m2911-2 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2911-2 = mobile
+#
+set m2911-2/hitpoints[maximum] = 106
+#
+set m2911-2/position = "standing"
+#
+set m2911-2/experience_total = 3257
+#
+set m2911-2/experience_current = 3257
+#
+tel r2928
+#
+create chainmail;chainmail;o2906:objects.Armor
+#
+sethome o2906 = m2911-2
+#
+desc o2906 = A chainmail shirt lies here.
+#
+set o2906/level = 6
+#
+set o2906/level_base = 6
+#
+set o2906/vnum = "o2906"
+#
+set o2906/item_type = "armor"
+#
+set o2906/wear_location = "body"
+#
+set o2906/weight = 10
+#
+tag o2906 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2906 = object
+#
+set o2906/armor = 4
+#
+wearto o2906 = m2911-2
+#
+set m2911-2/reset_objects["o2906"] = {"location":"equipped"}
+#
+tel r2928
+#
+create pick;pick;o2907:objects.Weapon
+#
+sethome o2907 = m2911-2
+#
+desc o2907 = A pick lies here.
+#
+set o2907/level = 6
+#
+set o2907/level_base = 6
+#
+set o2907/vnum = "o2907"
+#
+set o2907/item_type = "weapon"
+#
+set o2907/wear_location = "wield"
+#
+set o2907/weight = 2
+#
+tag o2907 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2907 = object
+#
+set o2907/weapon_type = "pierce"
+#
+set o2907/damage_low = 4
+#
+set o2907/damage_high = 12
+#
+wieldto o2907 = m2911-2
+#
+set m2911-2/experience_total = 4071
+#
+set m2911-2/experience_current = 4071
+#
+set m2911-2/reset_objects["o2907"] = {"location":"equipped"}
+#
+tel r2928
+#
+set east/door_attributes = ['closeable']
+#
+set east/reset_door_attributes = ['closeable']
+#
+tel r2929
+#
+create/drop a fire newt priest;fire;newt;priest;m2913:characters.Mobile
+#
+desc m2913 = A fire newt priest is standing here. 
+#
+set m2913/level = 16
+#
+set m2913/level_base = 16
+#
+set m2913/vnum = "m2913"
+#
+set m2913/look_description = "The fire newt priest is preparing for worship. "
+#
+set m2913/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m2913/alignment = -1000
+#
+set m2913/sex = "male"
+#
+set m2913/spell_affects = {'detect invis': ''}
+#
+set m2913/race = "lizard"
+#
+tag m2913 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2913 = mobile
+#
+set m2913/hitpoints[maximum] = 181
+#
+set m2913/position = "standing"
+#
+set m2913/experience_total = 23565
+#
+set m2913/experience_current = 23565
+#
+set m2913/special_function = "cast_cleric"
+#
+tel r2929
+#
+create mace;mace;o2913:objects.Weapon
+#
+sethome o2913 = m2913
+#
+desc o2913 = A mace lies here.
+#
+set o2913/level = 14
+#
+set o2913/level_base = 14
+#
+set o2913/vnum = "o2913"
+#
+set o2913/item_type = "weapon"
+#
+set o2913/wear_location = "wield"
+#
+set o2913/weight = 10
+#
+tag o2913 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2913 = object
+#
+set o2913/extra_flags = ['magic', 'hum']
+#
+set o2913/stat_modifiers[hitroll] = 1
+#
+set o2913/stat_modifiers[damroll] = 2
+#
+set o2913/weapon_type = "blast"
+#
+set o2913/damage_low = 4
+#
+set o2913/damage_high = 16
+#
+wieldto o2913 = m2913
+#
+set m2913/experience_total = 29456
+#
+set m2913/experience_current = 29456
+#
+set m2913/reset_objects["o2913"] = {"location":"equipped"}
+#
+tel r2929
+#
+set west/door_attributes = ['closeable']
+#
+set west/reset_door_attributes = ['closeable']
+#
+tel r2930
+#
+create/drop a fire lizard;fire;lizard;m2914:characters.Mobile
+#
+desc m2914 = A fire lizard is crawling here. 
+#
+set m2914/level = 8
+#
+set m2914/level_base = 8
+#
+set m2914/vnum = "m2914"
+#
+set m2914/look_description = "The fire lizard flicks its tongue at you. "
+#
+set m2914/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m2914/alignment = -100
+#
+set m2914/sex = "neuter"
+#
+set m2914/spell_affects = {'detect invis': ''}
+#
+set m2914/race = "snake"
+#
+tag m2914 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2914 = mobile
+#
+set m2914/hitpoints[maximum] = 93
+#
+set m2914/position = "standing"
+#
+set m2914/experience_total = 3506
+#
+set m2914/experience_current = 3506
+#
+set m2914/special_function = "breath_fire"
+#
+tel r2930
+#
+create orange potion;potion;o2914:objects.Potion
+#
+sethome o2914 = m2914
+#
+desc o2914 = An orange potion lies here.
+#
+set o2914/level = 6
+#
+set o2914/level_base = 6
+#
+set o2914/vnum = "o2914"
+#
+set o2914/item_type = "potion"
+#
+set o2914/weight = 1
+#
+tag o2914 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2914 = object
+#
+set o2914/extra_flags = ['magic']
+#
+set o2914/spell_level = 10
+#
+set o2914/spell_level_base = 10
+#
+set o2914/spell_name_1 = "dispel evil"
+#
+set o2914/spell_name_2 = "curse"
+#
+set o2914/spell_name_3 = "heal"
+#
+give o2914 to m2914
+#
+set m2914/reset_objects["o2914"] = {"location":"inventory"}
+#
+tel r2930
+#
+create/drop a fire lizard;fire;lizard;m2914; m2914-2:characters.Mobile
+#
+desc m2914-2 = A fire lizard is crawling here. 
+#
+set m2914-2/level = 8
+#
+set m2914-2/level_base = 8
+#
+set m2914-2/vnum = "m2914"
+#
+set m2914-2/look_description = "The fire lizard flicks its tongue at you. "
+#
+set m2914-2/act_flags = ['aggressive', 'sentinel', 'npc']
+#
+set m2914-2/alignment = -100
+#
+set m2914-2/sex = "neuter"
+#
+set m2914-2/spell_affects = {'detect invis': ''}
+#
+set m2914-2/race = "snake"
+#
+tag m2914-2 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag m2914-2 = mobile
+#
+set m2914-2/hitpoints[maximum] = 122
+#
+set m2914-2/position = "standing"
+#
+set m2914-2/experience_total = 3578
+#
+set m2914-2/experience_current = 3578
+#
+set m2914-2/special_function = "breath_fire"
+#
+tel r2930
+#
+create orange potion;potion;o2914:objects.Potion
+#
+sethome o2914 = m2914-2
+#
+desc o2914 = An orange potion lies here.
+#
+set o2914/level = 6
+#
+set o2914/level_base = 6
+#
+set o2914/vnum = "o2914"
+#
+set o2914/item_type = "potion"
+#
+set o2914/weight = 1
+#
+tag o2914 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2914 = object
+#
+set o2914/extra_flags = ['magic']
+#
+set o2914/spell_level = 10
+#
+set o2914/spell_level_base = 10
+#
+set o2914/spell_name_1 = "dispel evil"
+#
+set o2914/spell_name_2 = "curse"
+#
+set o2914/spell_name_3 = "heal"
+#
+give o2914 to m2914-2
+#
+set m2914-2/reset_objects["o2914"] = {"location":"inventory"}
+#
+tel r2931
+#
+create a newt egg;egg;newt;o2915:objects.Food
+#
+sethome o2915 = r2931
+#
+desc o2915 = A newt egg lies here.
+#
+set o2915/level = 6
+#
+set o2915/level_base = 6
+#
+set o2915/vnum = "o2915"
+#
+set o2915/item_type = "food"
+#
+set o2915/weight = 1
+#
+tag o2915 = #area { 5 15 } nirrad land of the fire newts:area name
+#
+tag o2915 = object
+#
+set o2915/hours_fed = 10
+#
+set o2915/poison = 0
+#
+drop o2915
+#
+set r2931/reset_objects["o2915"] = {"location":"inventory"}
+#

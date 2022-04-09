@@ -511,7 +511,7 @@ class Item(Object):
 
         # if there is no alignment restriction on the equipment, go no further.
 
-        if not self.db.alignment_restriction:
+        if not self.db.alignment_restriction or "mobile" in caller.tags.all():
             return True
 
         # determine alignment of prospective wearer
@@ -576,7 +576,7 @@ class Equipment(Item):
             "damroll":0,
             "saving throw":0
         }
-        self.db.wear_location = ""
+        self.db.wear_location = "held, in hands"
         self.db.equipped = False
 
         # Lock to prevent characters using equipment that is more than five levels
@@ -748,7 +748,7 @@ class Light(Armor):
         # exhausted.
         self.db.light_hours = -1
 
-class Scroll(Item):
+class Scroll(Armor):
 
     """
 
@@ -811,7 +811,7 @@ class Staff(Armor):
         self.db.charges_current = 0
         self.db.spell_name = ""
 
-class Potion(Item):
+class Potion(Armor):
 
     """
 
@@ -1021,7 +1021,7 @@ class Container(Armor):
         return string
 
 
-class Drink_container(Item):
+class Drink_container(Armor):
 
     """
 
@@ -1173,7 +1173,7 @@ class Food(Item):
         self.db.hours_fed = 0
         self.db.poison = 0
 
-class Pill(Item):
+class Pill(Armor):
 
     """
 
@@ -1272,7 +1272,7 @@ class Treasure(Armor):
         self.db.extra_descriptions = {}
         self.db.wear_location = ""
 
-class Boat(Item):
+class Boat(Armor):
 
     """
 

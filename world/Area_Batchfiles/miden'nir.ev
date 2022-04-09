@@ -1,0 +1,4390 @@
+dig/tel The Inn Path; r3589
+#
+tag r3589 = miden'nir:area name
+#
+desc r3589 = You are in a light forest.  This path leads to the Woodsman's Inn, to the west, and to the beginnings of the Miden'nir forest to the east. From here, the delightful cooking smells of the inn are carried by the gentle breezes of the forest. 
+#
+desc/edit r3589
+#
+:j l
+#
+:wq
+#
+set r3589/vnum = "r3589"
+#
+set r3589/terrain = "forest"
+#
+dig/tel In the Forest; r3500
+#
+tag r3500 = miden'nir:area name
+#
+desc r3500 = Despite the patchy slivers of light illuminating the path from the north, your eyes take a moment to adjust.  Fat, healthy trees and thorny bushes prevent careless travelers from straying off the path. 
+#
+desc/edit r3500
+#
+:j l
+#
+:wq
+#
+set r3500/vnum = "r3500"
+#
+set r3500/terrain = "city"
+#
+set r3500/extra_description = {'credits author': '+-------------------------------------------------+ | This area originally written for Copper II DIKU | |   by ?                                          | | Modifications and alterations for MERCmud DIKU  | |   by VampLestat                        1 JAN 93 | | Further modification for Castle Arcanum         | |   by Ceivar and Jana                            | +-------------------------------------------------+ '}
+#
+dig/tel Through the Forest; r3501
+#
+tag r3501 = miden'nir:area name
+#
+desc r3501 = Heavily laden branches dangle low, swaying with the breeze.  The wet smell of mossy trunks hangs in the air.  The path continues to the north and south. 
+#
+desc/edit r3501
+#
+:j l
+#
+:wq
+#
+set r3501/vnum = "r3501"
+#
+set r3501/terrain = "city"
+#
+dig/tel In the Woods; r3502
+#
+tag r3502 = miden'nir:area name
+#
+desc r3502 = The darkness crowds around the path, and unfortunately, the small shafts of light cast long shadows as well. Did you hear something? 
+#
+desc/edit r3502
+#
+:j l
+#
+:wq
+#
+set r3502/vnum = "r3502"
+#
+set r3502/terrain = "city"
+#
+dig/tel In the Woods; r3503
+#
+tag r3503 = miden'nir:area name
+#
+desc r3503 = Tall, intimidating trunks line up side by side like soldiers while thousands of leaves disguise and veil the forest's secrets from view. There doesn't seem to be much choice in direction. 
+#
+desc/edit r3503
+#
+:j l
+#
+:wq
+#
+set r3503/vnum = "r3503"
+#
+set r3503/terrain = "city"
+#
+set r3503/room_flags = ['no mob']
+#
+dig/tel A Bend in the Way; r3504
+#
+tag r3504 = miden'nir:area name
+#
+desc r3504 = A wall of thick vines and twisted branches prevents further exploring straight ahead.  Shiny leaves bounce and wave mockingly. Wait, there!  A path off to the side! 
+#
+desc/edit r3504
+#
+:j l
+#
+:wq
+#
+set r3504/vnum = "r3504"
+#
+set r3504/terrain = "forest"
+#
+set r3504/extra_description = {'credits credit author': '+-------------------------------------------------+ | This area originally written for Copper II DIKU | |   by ?                                          | | Modifications and alterations for MERCmud DIKU  | |   by VampLestat                        1 JAN 93 | +-------------------------------------------------+ '}
+#
+dig/tel The Trail to Miden'nir; r3505
+#
+tag r3505 = miden'nir:area name
+#
+desc r3505 = You are in a light forest.  A path leads south, but the passage to the east is easy enough.  To the west, smoke can be seen rising above the treetops. 
+#
+desc/edit r3505
+#
+:j l
+#
+:wq
+#
+set r3505/vnum = "r3505"
+#
+set r3505/terrain = "forest"
+#
+dig/tel The Miden'nir; r3506
+#
+tag r3506 = miden'nir:area name
+#
+desc r3506 = You are in a dark forest.  From here, only the lighter forest to the west or south offer a way to travel. 
+#
+desc/edit r3506
+#
+:j l
+#
+:wq
+#
+set r3506/vnum = "r3506"
+#
+set r3506/terrain = "forest"
+#
+dig/tel The Miden'nir; r3507
+#
+tag r3507 = miden'nir:area name
+#
+desc r3507 = The forest is deep here and the wind blows through the trees and through your hair. To the north, the forest gets lighter. However, the southern and western paths place you even deeper in the wood. 
+#
+desc/edit r3507
+#
+:j l
+#
+:wq
+#
+set r3507/vnum = "r3507"
+#
+set r3507/terrain = "forest"
+#
+dig/tel On a Small Path; r3508
+#
+tag r3508 = miden'nir:area name
+#
+desc r3508 = A path is here, leading east and south through the dark woods of Miden'nir.  Rolling forested hills fill the scenery to the west of here. 
+#
+desc/edit r3508
+#
+:j l
+#
+:wq
+#
+set r3508/vnum = "r3508"
+#
+set r3508/terrain = "forest"
+#
+dig/tel The Miden'nir; r3509
+#
+tag r3509 = miden'nir:area name
+#
+desc r3509 = The trees of Miden'nir are lush and green, hiding the evil that lurks in these woods.  The trees become too thick to the west, but you may go north or south. 
+#
+desc/edit r3509
+#
+:j l
+#
+:wq
+#
+set r3509/vnum = "r3509"
+#
+set r3509/terrain = "forest"
+#
+dig/tel A Crossroads; r3510
+#
+tag r3510 = miden'nir:area name
+#
+desc r3510 = Here footworn paths meet leading north, south and east. The trees seem to be closing in on you at this point, and you can barely see the sky through the thick branches above your head. 
+#
+desc/edit r3510
+#
+:j l
+#
+:wq
+#
+set r3510/vnum = "r3510"
+#
+set r3510/terrain = "forest"
+#
+dig/tel The Trail; r3511
+#
+tag r3511 = miden'nir:area name
+#
+desc r3511 = You are on a north-south trail through the woods.  The thick woods and undergrowth prevent any movement westward. 
+#
+desc/edit r3511
+#
+:j l
+#
+:wq
+#
+set r3511/vnum = "r3511"
+#
+set r3511/terrain = "forest"
+#
+dig/tel The Miden'nir; r3512
+#
+tag r3512 = miden'nir:area name
+#
+desc r3512 = The trees of Miden'nir are lush and green, hiding the evil that lurks in these woods.  From here, you can west or south to continue in the forest. 
+#
+desc/edit r3512
+#
+:j l
+#
+:wq
+#
+set r3512/vnum = "r3512"
+#
+set r3512/terrain = "forest"
+#
+dig/tel The Miden'nir; r3513
+#
+tag r3513 = miden'nir:area name
+#
+desc r3513 = The forest is dark, and becomes even darker west.  You sense that there is something evil hidden in these woods.  The forest gets lighter to the north.  The wind kicks up as you ponder your options. To the east, a fairly well-worn trail seems to lead into a forest of gentler nature. 
+#
+desc/edit r3513
+#
+:j l
+#
+:wq
+#
+set r3513/vnum = "r3513"
+#
+set r3513/terrain = "forest"
+#
+dig/tel Deep Forest; r3514
+#
+tag r3514 = miden'nir:area name
+#
+desc r3514 = It is quite dark here, and the forest surrounds you. With each step, the forest seems to close around you, and get darker and more foreboding.  It might just be time to head back to somewhere safe. 
+#
+desc/edit r3514
+#
+:j l
+#
+:wq
+#
+set r3514/vnum = "r3514"
+#
+set r3514/terrain = "forest"
+#
+dig/tel Light Forest; r3515
+#
+tag r3515 = miden'nir:area name
+#
+desc r3515 = The forest is light here and you can easily pick your way through the trail.  To the east, the forest becomes thick and darker. South, the trail continues. To the west you can just make out a ring of mushrooms in the forest. 
+#
+desc/edit r3515
+#
+:j l
+#
+:wq
+#
+set r3515/vnum = "r3515"
+#
+set r3515/terrain = "forest"
+#
+dig/tel Muddy Ground; r3516
+#
+tag r3516 = miden'nir:area name
+#
+desc r3516 = The ground is quite muddy here and puddles are all around. Your boots make a disgusting SQUISH as you walk here. You can go in any of the four cardinal directions from here. Hopefully, it will be dryer. 
+#
+desc/edit r3516
+#
+:j l
+#
+:wq
+#
+set r3516/vnum = "r3516"
+#
+set r3516/terrain = "forest"
+#
+dig/tel Deep Forest; r3517
+#
+tag r3517 = miden'nir:area name
+#
+desc r3517 = You can only go north and west from here, as the thick forest blocks all other paths.  The dark foreboding trees seem to be closing in more with each passing minute. 
+#
+desc/edit r3517
+#
+:j l
+#
+:wq
+#
+set r3517/vnum = "r3517"
+#
+set r3517/terrain = "forest"
+#
+dig/tel The Fading Trail; r3518
+#
+tag r3518 = miden'nir:area name
+#
+desc r3518 = The trail becomes nearly impassable here. You can go north as the forest is relatively light. To the south, you can see a path. 
+#
+desc/edit r3518
+#
+:j l
+#
+:wq
+#
+set r3518/vnum = "r3518"
+#
+set r3518/terrain = "forest"
+#
+dig/tel The Dark Path; r3519
+#
+tag r3519 = miden'nir:area name
+#
+desc r3519 = You are hemmed in by trees on either side of you.  The path continues north and south, and while it is much too thick to explore west, you can head off into the woods to the east. 
+#
+desc/edit r3519
+#
+:j l
+#
+:wq
+#
+set r3519/vnum = "r3519"
+#
+set r3519/terrain = "forest"
+#
+dig/tel The Dark Forest; r3520
+#
+tag r3520 = miden'nir:area name
+#
+desc r3520 = You stomp your way through the underbrush.  The dark forest of Miden'nir get pretty thick here, and the branches high above your head are so thick that they block out all direct sunlight.  While it is much too thick to go further east, you might be able to make your way through the forest to the south and west. 
+#
+desc/edit r3520
+#
+:j l
+#
+:wq
+#
+set r3520/vnum = "r3520"
+#
+set r3520/terrain = "forest"
+#
+dig/tel Carnage; r3521
+#
+tag r3521 = miden'nir:area name
+#
+desc r3521 = Here, you see a gruesome sight. Blood is everywhere... on the trees and soaked into the ground. Two carcasses lie in front of you, seeming to look up at you. You can see the remains of a fierce battle to the south, and more of the forest north, east, and west. 
+#
+desc/edit r3521
+#
+:j l
+#
+:wq
+#
+set r3521/vnum = "r3521"
+#
+set r3521/terrain = "forest"
+#
+set r3521/extra_description = {'carcass body corpse carcasses bodies corpses': 'The corpses looked as if they have been pierced by a large, jagged spear. The damage these people sustained is simply amazing. Worse, the lips on the bodies are a light shade of blue, hinting at poison in their systems. '}
+#
+set r3521/room_flags = ['dark']
+#
+dig/tel Deep in the Forest of Miden'nir; r3522
+#
+tag r3522 = miden'nir:area name
+#
+desc r3522 = There is a sickening stench here. It smells of blood and death. To the north, you catch glimpses of daylight. To the east, you simply cannot see. The trees are close and stifling. 
+#
+desc/edit r3522
+#
+:j l
+#
+:wq
+#
+set r3522/vnum = "r3522"
+#
+set r3522/terrain = "forest"
+#
+dig/tel The Dark Forest; r3523
+#
+tag r3523 = miden'nir:area name
+#
+desc r3523 = The branches above you block out all direct sunlight, making the forest in this area rather dark.  The forest continues east, where it meets a small range of mountains.  The air is still and stuffy - a stench comes from the west and an ugly feeling causes the hair to rise on the back of your neck! 
+#
+desc/edit r3523
+#
+:j l
+#
+:wq
+#
+set r3523/vnum = "r3523"
+#
+set r3523/terrain = "forest"
+#
+dig/tel In the Dark; r3524
+#
+tag r3524 = miden'nir:area name
+#
+desc r3524 = The path curves here, leading the unwary traveler in a new direction. Even the most watchful eyes see nothing but the trail's pale body curving through the vague shadows of the forest. 
+#
+desc/edit r3524
+#
+:j l
+#
+:wq
+#
+set r3524/vnum = "r3524"
+#
+set r3524/terrain = "inside"
+#
+dig/tel Somewhere in the Woods; r3525
+#
+tag r3525 = miden'nir:area name
+#
+desc r3525 = Wet leaves drip sullenly over the path.  Soft sounds tickle at the edges of awareness, but their origins are uncertain.  Here, there is only forward or backward. 
+#
+desc/edit r3525
+#
+:j l
+#
+:wq
+#
+set r3525/vnum = "r3525"
+#
+set r3525/terrain = "inside"
+#
+dig/tel On Some Path in Some Woods, Somewhere.; r3526
+#
+tag r3526 = miden'nir:area name
+#
+desc r3526 = The path has been beaten down here with the weight of many bodies over many, many days.  Nary a stone litters the way.  A faint acrid smell of burning tickles at your nose from the south. 
+#
+desc/edit r3526
+#
+:j l
+#
+:wq
+#
+set r3526/vnum = "r3526"
+#
+set r3526/terrain = "inside"
+#
+set r3526/room_flags = ['no mob']
+#
+dig/tel Among the Pines; r3527
+#
+tag r3527 = miden'nir:area name
+#
+desc r3527 = In a place where the trees aren't so thick and pressed in together, it isn't hard to appreciate how lovely the woods can be. If there was only a little more light, wouldn't this be a grand place to be? 
+#
+desc/edit r3527
+#
+:j l
+#
+:wq
+#
+set r3527/vnum = "r3527"
+#
+set r3527/terrain = "inside"
+#
+dig/tel On the Edges of Paranoia; r3528
+#
+tag r3528 = miden'nir:area name
+#
+desc r3528 = It seems a little suspicious.  The way these trees seem to be pointing their needles right at you like that. But that's ridiculous, of course.  A tree can't point...?  Those needles look like they're sharp, not that it matters. 
+#
+desc/edit r3528
+#
+:j l
+#
+:wq
+#
+set r3528/vnum = "r3528"
+#
+set r3528/terrain = "inside"
+#
+dig/tel In the Woods; r3529
+#
+tag r3529 = miden'nir:area name
+#
+desc r3529 = A cold wind blows at your back suddenly, pushing at you to get out of this place.  The whisper of it against your neck sounds like death.  "Why have you come here?"  "Get out." "Get out!" 
+#
+desc/edit r3529
+#
+:j l
+#
+:wq
+#
+set r3529/vnum = "r3529"
+#
+set r3529/terrain = "inside"
+#
+dig/tel In the Darkness of the Woods; r3530
+#
+tag r3530 = miden'nir:area name
+#
+desc r3530 = There isn't much light, but you can see silhouettes of the tapered trees swaying in the breeze.  They creak softly as they sway.  Doesn't it sound like a horror movie?  If you close your eyes, you could believe something really awful is about to happen. 
+#
+desc/edit r3530
+#
+:j l
+#
+:wq
+#
+set r3530/vnum = "r3530"
+#
+set r3530/terrain = "inside"
+#
+set r3530/room_flags = ['no mob']
+#
+dig/tel The Deep in the Forest of Miden'nir; r3551
+#
+tag r3551 = miden'nir:area name
+#
+desc r3551 = The branches above you block out all direct sunlight, making the forest in this area very dark.  The forest continues west, but mountains block further exploration in all other directions, except south, where you notice a small tunnel dug into the mountainside. 
+#
+desc/edit r3551
+#
+:j l
+#
+:wq
+#
+set r3551/vnum = "r3551"
+#
+set r3551/terrain = "forest"
+#
+set r3551/room_flags = ['dark']
+#
+dig/tel A Tunnel in the Mountains; r3552
+#
+tag r3552 = miden'nir:area name
+#
+desc r3552 = The walls of this tunnel were carved out many years ago by the goblins of this forest.  The floor is well worn, and continues south, into the mountain, or back north out into the forest. 
+#
+desc/edit r3552
+#
+:j l
+#
+:wq
+#
+set r3552/vnum = "r3552"
+#
+set r3552/terrain = "city"
+#
+set r3552/room_flags = ['dark']
+#
+dig/tel A Tunnel in the Mountains; r3553
+#
+tag r3553 = miden'nir:area name
+#
+desc r3553 = The tunnel gets lighter to the north, presumably leading out, while to the south the passage gets smaller and smaller.  A small alcove has been carved into the east wall. 
+#
+desc/edit r3553
+#
+:j l
+#
+:wq
+#
+set r3553/vnum = "r3553"
+#
+set r3553/terrain = "city"
+#
+set r3553/room_flags = ['dark']
+#
+dig/tel A Small Alcove; r3554
+#
+tag r3554 = miden'nir:area name
+#
+desc r3554 = A small alcove has been carved out here.  There are a bunch of twigs and leaves thrown into a pile here, probably serving as a bed. 
+#
+desc/edit r3554
+#
+:j l
+#
+:wq
+#
+set r3554/vnum = "r3554"
+#
+set r3554/terrain = "city"
+#
+set r3554/extra_description = {'twigs leaves bed': 'The twigs and leaves have all been piled together as a makeshift bed for some small humanoid. '}
+#
+set r3554/room_flags = ['dark']
+#
+dig/tel A Tunnel in the Mountains; r3555
+#
+tag r3555 = miden'nir:area name
+#
+desc r3555 = As you explore further into the mountainside, the tunnel gets smaller and smaller to the south.  You almost have to hunch over to make your way thru this area.  A small archway to the south leads into a large chamber. 
+#
+desc/edit r3555
+#
+:j l
+#
+:wq
+#
+set r3555/vnum = "r3555"
+#
+set r3555/terrain = "city"
+#
+set r3555/room_flags = ['dark']
+#
+dig/tel The Goblin Headquarters; r3556
+#
+tag r3556 = miden'nir:area name
+#
+desc r3556 = The tunnel widens into a large (well, large for goblins) cavern that serves as the living quarters for the goblins of Miden'nir.  The bones of numbers woodland creatures are strewn about the room, the remnants of a recent meal. 
+#
+desc/edit r3556
+#
+:j l
+#
+:wq
+#
+set r3556/vnum = "r3556"
+#
+set r3556/terrain = "city"
+#
+set r3556/room_flags = ['dark']
+#
+dig/tel The Front of the Inn; r3570
+#
+tag r3570 = miden'nir:area name
+#
+desc r3570 = You are standing on a well-worn path which opens into a clearing. An old, wooden building is here with smoke billowing from its chimney. A painted sign is visible on the porch to the west. You could go north or south around the building or leave this place and return to the forest. 
+#
+desc/edit r3570
+#
+:j l
+#
+:wq
+#
+set r3570/vnum = "r3570"
+#
+set r3570/terrain = "forest"
+#
+set r3570/extra_description = {'sign': 'The sign reads: The Woodsman '}
+#
+dig/tel North of the Inn; r3571
+#
+tag r3571 = miden'nir:area name
+#
+desc r3571 = You are standing north of the inn. Things don't look much different from this angle.  The air here is filled with smells of smoke and cooking. South, the front porch is waiting for you... or you can see if there is a back door. 
+#
+desc/edit r3571
+#
+:j l
+#
+:wq
+#
+set r3571/vnum = "r3571"
+#
+set r3571/terrain = "forest"
+#
+dig/tel South of the Inn; r3572
+#
+tag r3572 = miden'nir:area name
+#
+desc r3572 = You are standing south of the inn.  You could easily go north and enter through the front door, or west and to the rear of the establishment.  You here some muffled cries from a tiny trail leading south of here. 
+#
+desc/edit r3572
+#
+:j l
+#
+:wq
+#
+set r3572/vnum = "r3572"
+#
+set r3572/terrain = "forest"
+#
+dig/tel Behind the Inn; r3573
+#
+tag r3573 = miden'nir:area name
+#
+desc r3573 = You now stand behind the inn. The smell here is not so pleasant as the keeper and his help throw a good deal of garbage here. A couple of piles of rubbish are to the west, but you will smell the worse for meddling there. As a clean alternative, you can go north or east around the inn. 
+#
+desc/edit r3573
+#
+:j l
+#
+:wq
+#
+set r3573/vnum = "r3573"
+#
+set r3573/terrain = "forest"
+#
+dig/tel The Woodsman Inn; r3574
+#
+tag r3574 = miden'nir:area name
+#
+desc r3574 = You are in the common room of the Woodsman Inn. A thin haze of smoke sits in the air here. The Inn is often empty, as the forest has become overrun by goblins as of late, and it is no longer safe in these parts. The bar is just north of here. If you'd rather have your own table, one is empty to the south. 
+#
+desc/edit r3574
+#
+:j l
+#
+:wq
+#
+set r3574/vnum = "r3574"
+#
+set r3574/terrain = "city"
+#
+set r3574/room_flags = ['indoors', 'no mob']
+#
+dig/tel The Ambush Point; r3575
+#
+tag r3575 = miden'nir:area name
+#
+desc r3575 = This is an overgrown foot-trail south of the inn. It leads west, but you would be hard pressed to follow it far. A number of bushes are trampled on and some medium sized branches have been knocked down.  Obviously there has been a battle here rather recently. The attacker seems to have ridden off to the west. 
+#
+desc/edit r3575
+#
+:j l
+#
+:wq
+#
+set r3575/vnum = "r3575"
+#
+set r3575/terrain = "forest"
+#
+dig/tel The Bar; r3576
+#
+tag r3576 = miden'nir:area name
+#
+desc r3576 = This is where people use to come and enjoy the food, drink and hospitality of the innkeeper, but as of late, he only serves the few adventurers that manage to survive a trip through the forest. You can leave south and return to the common room. 
+#
+desc/edit r3576
+#
+:j l
+#
+:wq
+#
+set r3576/vnum = "r3576"
+#
+set r3576/terrain = "city"
+#
+dig/tel The Bard's Table; r3577
+#
+tag r3577 = miden'nir:area name
+#
+desc r3577 = You are in a darker corner in the Inn.  A large round table with a few wooden chairs sits here.  There is a large stain on the table, the remnants of a spilled drink. 
+#
+desc/edit r3577
+#
+:j l
+#
+:wq
+#
+set r3577/vnum = "r3577"
+#
+set r3577/terrain = "city"
+#
+set r3577/room_flags = ['indoors']
+#
+dig/tel Garbage Dump; r3578
+#
+tag r3578 = miden'nir:area name
+#
+desc r3578 = You stand knee deep in garbage.  YECCH!!! It smells terrible and who knows what vermin live in these piles of filth ... 
+#
+desc/edit r3578
+#
+:j l
+#
+:wq
+#
+set r3578/vnum = "r3578"
+#
+set r3578/terrain = "forest"
+#
+dig/tel On the Trail of the Horseman; r3581
+#
+tag r3581 = miden'nir:area name
+#
+desc r3581 = The path continues east and west of here.  You notice fresh tracks in the soft ground that show the horsemen fled to the west. 
+#
+desc/edit r3581
+#
+:j l
+#
+:wq
+#
+set r3581/vnum = "r3581"
+#
+set r3581/terrain = "forest"
+#
+dig/tel On the Trail of the Horseman; r3582
+#
+tag r3582 = miden'nir:area name
+#
+desc r3582 = The path continues east and south.  You notice fresh tracks in the soft ground that show the horsemen turned, and fled south. 
+#
+desc/edit r3582
+#
+:j l
+#
+:wq
+#
+set r3582/vnum = "r3582"
+#
+set r3582/terrain = "forest"
+#
+dig/tel On the Trail of the Horseman; r3583
+#
+tag r3583 = miden'nir:area name
+#
+desc r3583 = The trail of the horsemen continues east and north along this path through the forest.  The tracks are still fresh, so they must be near. 
+#
+desc/edit r3583
+#
+:j l
+#
+:wq
+#
+set r3583/vnum = "r3583"
+#
+set r3583/terrain = "forest"
+#
+dig/tel A Dead End Trail; r3584
+#
+tag r3584 = miden'nir:area name
+#
+desc r3584 = The path comes to an abrupt end here, as the trees close around you and make any further exploration impossible.  Fresh tracks cover the ground, and end right here.  The horseman must be nearby. 
+#
+desc/edit r3584
+#
+:j l
+#
+:wq
+#
+set r3584/vnum = "r3584"
+#
+set r3584/terrain = "forest"
+#
+dig/tel A Devastated Road; r3585
+#
+tag r3585 = miden'nir:area name
+#
+desc r3585 = A fierce fighting has ravaged this road.  Trees and grasses have either been chopped up by a missed slash, burned by a stray fireball, or stomped upon by battle-frenzied warriors.  A beaten path leads eastward, the dirt trail blending into a mountainside there.  There's what looks like a significantly quieter and more peaceful section of the forest to the south of here. 
+#
+desc/edit r3585
+#
+:j l
+#
+:wq
+#
+set r3585/vnum = "r3585"
+#
+set r3585/terrain = "forest"
+#
+dig/tel Through the Pine Forest; r3586
+#
+tag r3586 = miden'nir:area name
+#
+desc r3586 = Needles and cones create a thick mat on the ground, making the path hard to distinguish. Faint woodsy sounds chirp and snap in the distance.  Looking carefully, you can continue to follow the trail. 
+#
+desc/edit r3586
+#
+:j l
+#
+:wq
+#
+set r3586/vnum = "r3586"
+#
+set r3586/terrain = "field"
+#
+dig/tel In the Pine Forest; r3587
+#
+tag r3587 = miden'nir:area name
+#
+desc r3587 = The tall, tall trees with their many, many branches begin to crowd the path from the north and the south. The sticky sweet smell in the air gets heavier and more cloying.  It might be best to hurry along. 
+#
+desc/edit r3587
+#
+:j l
+#
+:wq
+#
+set r3587/vnum = "r3587"
+#
+set r3587/terrain = "field"
+#
+dig/tel West of the Gnome Village; r3588
+#
+tag r3588 = miden'nir:area name
+#
+desc r3588 = The sweet scent of the softwoods drifts lazily in the air. Fallen needles litter the ground and stick to the slow-oozing sap on the wide trunks. East or west, traveler. 
+#
+desc/edit r3588
+#
+:j l
+#
+:wq
+#
+set r3588/vnum = "r3588"
+#
+set r3588/terrain = "field"
+#
+tel r3589
+#
+openexit east; e; e3600^ west = r3505
+#
+tag e3600 = miden'nir:area name
+#
+set e3600/door_attributes = ["open"]
+#
+set e3600/reset_door_attributes = ["open"]
+#
+desc east = More light forest. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3601^ east = r3570
+#
+tag e3601 = miden'nir:area name
+#
+set e3601/door_attributes = ["open"]
+#
+set e3601/reset_door_attributes = ["open"]
+#
+desc west = The Woodsman's Inn. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3500
+#
+openexit north; n; e3602^ south = r61103
+#
+tag e3602 = miden'nir:area name
+#
+set e3602/door_attributes = ["open"]
+#
+set e3602/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3603^ north = r3501
+#
+tag e3603 = miden'nir:area name
+#
+set e3603/door_attributes = ["open"]
+#
+set e3603/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3501
+#
+alias north = n^ e3604
+#
+tag e3604 = miden'nir:area name
+#
+set e3604/door_attributes = ["open"]
+#
+set e3604/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3605^ north = r3502
+#
+tag e3605 = miden'nir:area name
+#
+set e3605/door_attributes = ["open"]
+#
+set e3605/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3502
+#
+alias north = n^ e3606
+#
+tag e3606 = miden'nir:area name
+#
+set e3606/door_attributes = ["open"]
+#
+set e3606/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3607^ north = r3503
+#
+tag e3607 = miden'nir:area name
+#
+set e3607/door_attributes = ["open"]
+#
+set e3607/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3503
+#
+alias north = n^ e3608
+#
+tag e3608 = miden'nir:area name
+#
+set e3608/door_attributes = ["open"]
+#
+set e3608/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3609^ north = r3504
+#
+tag e3609 = miden'nir:area name
+#
+set e3609/door_attributes = ["open"]
+#
+set e3609/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3504
+#
+alias north = n^ e3610
+#
+tag e3610 = miden'nir:area name
+#
+set e3610/door_attributes = ["open"]
+#
+set e3610/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3611^ west = r3524
+#
+tag e3611 = miden'nir:area name
+#
+set e3611/door_attributes = ["open"]
+#
+set e3611/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r3505
+#
+openexit north; n; e3612^ south = r3526
+#
+tag e3612 = miden'nir:area name
+#
+set e3612/door_attributes = ["open"]
+#
+set e3612/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3613^ west = r3506
+#
+tag e3613 = miden'nir:area name
+#
+set e3613/door_attributes = ["open"]
+#
+set e3613/reset_door_attributes = ["open"]
+#
+desc east = More light forest. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3614^ north = r3507
+#
+tag e3614 = miden'nir:area name
+#
+set e3614/door_attributes = ["open"]
+#
+set e3614/reset_door_attributes = ["open"]
+#
+desc south = This path cuts through the darkness of the Miden'nir. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3615
+#
+tag e3615 = miden'nir:area name
+#
+set e3615/door_attributes = ["open"]
+#
+set e3615/reset_door_attributes = ["open"]
+#
+desc west = Path to the Woodsman's Inn. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3506
+#
+openexit south; s; e3616^ north = r3509
+#
+tag e3616 = miden'nir:area name
+#
+set e3616/door_attributes = ["open"]
+#
+set e3616/reset_door_attributes = ["open"]
+#
+desc south = The forest is darker to the south. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3617
+#
+tag e3617 = miden'nir:area name
+#
+set e3617/door_attributes = ["open"]
+#
+set e3617/reset_door_attributes = ["open"]
+#
+desc west = The forest gets lighter as you go west. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3507
+#
+alias north = n^ e3618
+#
+tag e3618 = miden'nir:area name
+#
+set e3618/door_attributes = ["open"]
+#
+set e3618/reset_door_attributes = ["open"]
+#
+desc north = The forest is lighter in this direction. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3619^ north = r3510
+#
+tag e3619 = miden'nir:area name
+#
+set e3619/door_attributes = ["open"]
+#
+set e3619/reset_door_attributes = ["open"]
+#
+desc south = More and darker woods. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3620^ east = r3508
+#
+tag e3620 = miden'nir:area name
+#
+set e3620/door_attributes = ["open"]
+#
+set e3620/reset_door_attributes = ["open"]
+#
+desc west = There is a small path leading west. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3508
+#
+alias east = e^ e3621
+#
+tag e3621 = miden'nir:area name
+#
+set e3621/door_attributes = ["open"]
+#
+set e3621/reset_door_attributes = ["open"]
+#
+desc east = Wind-swept forest. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3622^ north = r3511
+#
+tag e3622 = miden'nir:area name
+#
+set e3622/door_attributes = ["open"]
+#
+set e3622/reset_door_attributes = ["open"]
+#
+desc south = To the south, the trail continues. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3509
+#
+alias north = n^ e3623
+#
+tag e3623 = miden'nir:area name
+#
+set e3623/door_attributes = ["open"]
+#
+set e3623/reset_door_attributes = ["open"]
+#
+desc north = The trees lighten up a bit this way. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3624^ west = r3512
+#
+tag e3624 = miden'nir:area name
+#
+set e3624/door_attributes = ["open"]
+#
+set e3624/reset_door_attributes = ["open"]
+#
+desc east = The forest lightens in this direction. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3625^ north = r3514
+#
+tag e3625 = miden'nir:area name
+#
+set e3625/door_attributes = ["open"]
+#
+set e3625/reset_door_attributes = ["open"]
+#
+desc south = The forest continues. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3510
+#
+alias north = n^ e3626
+#
+tag e3626 = miden'nir:area name
+#
+set e3626/door_attributes = ["open"]
+#
+set e3626/reset_door_attributes = ["open"]
+#
+desc north = Trees as far as the eye can see. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3627^ west = r3514
+#
+tag e3627 = miden'nir:area name
+#
+set e3627/door_attributes = ["open"]
+#
+set e3627/reset_door_attributes = ["open"]
+#
+desc east = There is an especially dark part of the forest this way. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3628^ north = r3516
+#
+tag e3628 = miden'nir:area name
+#
+set e3628/door_attributes = ["open"]
+#
+set e3628/reset_door_attributes = ["open"]
+#
+desc south = There is an especially dark section of forest this way. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3511
+#
+alias north = n^ e3629
+#
+tag e3629 = miden'nir:area name
+#
+set e3629/door_attributes = ["open"]
+#
+set e3629/reset_door_attributes = ["open"]
+#
+desc north = The trail bends to the north. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3630^ north = r3515
+#
+tag e3630 = miden'nir:area name
+#
+set e3630/door_attributes = ["open"]
+#
+set e3630/reset_door_attributes = ["open"]
+#
+desc south = To the south, the path re-enters the forest. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3512
+#
+openexit south; s; e3631^ north = r3513
+#
+tag e3631 = miden'nir:area name
+#
+set e3631/door_attributes = ["open"]
+#
+set e3631/reset_door_attributes = ["open"]
+#
+desc south = A light section of forest. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3632
+#
+tag e3632 = miden'nir:area name
+#
+set e3632/door_attributes = ["open"]
+#
+set e3632/reset_door_attributes = ["open"]
+#
+desc west = The forest continues here. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3513
+#
+alias north = n^ e3633
+#
+tag e3633 = miden'nir:area name
+#
+set e3633/door_attributes = ["open"]
+#
+set e3633/reset_door_attributes = ["open"]
+#
+desc north = There is a small clearing to the north. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3634^ west = r3530
+#
+tag e3634 = miden'nir:area name
+#
+set e3634/door_attributes = ["open"]
+#
+set e3634/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3635^ east = r3514
+#
+tag e3635 = miden'nir:area name
+#
+set e3635/door_attributes = ["open"]
+#
+set e3635/reset_door_attributes = ["open"]
+#
+desc west = It gets darker and thicker this way. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3514
+#
+alias north = n^ e3636
+#
+tag e3636 = miden'nir:area name
+#
+set e3636/door_attributes = ["open"]
+#
+set e3636/reset_door_attributes = ["open"]
+#
+desc north = More forest. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3637
+#
+tag e3637 = miden'nir:area name
+#
+set e3637/door_attributes = ["open"]
+#
+set e3637/reset_door_attributes = ["open"]
+#
+desc east = Lighter forest in the distance. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3638^ north = r3517
+#
+tag e3638 = miden'nir:area name
+#
+set e3638/door_attributes = ["open"]
+#
+set e3638/reset_door_attributes = ["open"]
+#
+desc south = More trees. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3639
+#
+tag e3639 = miden'nir:area name
+#
+set e3639/door_attributes = ["open"]
+#
+set e3639/reset_door_attributes = ["open"]
+#
+desc west = The forest continues. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3515
+#
+alias north = n^ e3640
+#
+tag e3640 = miden'nir:area name
+#
+set e3640/door_attributes = ["open"]
+#
+set e3640/reset_door_attributes = ["open"]
+#
+desc north = A trail leading north-south. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3641^ west = r3516
+#
+tag e3641 = miden'nir:area name
+#
+set e3641/door_attributes = ["open"]
+#
+set e3641/reset_door_attributes = ["open"]
+#
+desc east = The trees get thicker as you go east. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3642^ north = r3518
+#
+tag e3642 = miden'nir:area name
+#
+set e3642/door_attributes = ["open"]
+#
+set e3642/reset_door_attributes = ["open"]
+#
+desc south = More trees and some small hills. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3643^ east = r8955
+#
+tag e3643 = miden'nir:area name
+#
+set e3643/door_attributes = ["open"]
+#
+set e3643/reset_door_attributes = ["open"]
+#
+desc west = A ring of mushrooms within the forest 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3516
+#
+alias north = n^ e3644
+#
+tag e3644 = miden'nir:area name
+#
+set e3644/door_attributes = ["open"]
+#
+set e3644/reset_door_attributes = ["open"]
+#
+desc north = The Miden'nir continues. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3645^ west = r3517
+#
+tag e3645 = miden'nir:area name
+#
+set e3645/door_attributes = ["open"]
+#
+set e3645/reset_door_attributes = ["open"]
+#
+desc east = More trees. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3646^ north = r3519
+#
+tag e3646 = miden'nir:area name
+#
+set e3646/door_attributes = ["open"]
+#
+set e3646/reset_door_attributes = ["open"]
+#
+desc south = The trees get VERY thick to the south. You can barely see... 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3647
+#
+tag e3647 = miden'nir:area name
+#
+set e3647/door_attributes = ["open"]
+#
+set e3647/reset_door_attributes = ["open"]
+#
+desc west = Some light trees and daylight. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3517
+#
+alias north = n^ e3648
+#
+tag e3648 = miden'nir:area name
+#
+set e3648/door_attributes = ["open"]
+#
+set e3648/reset_door_attributes = ["open"]
+#
+desc north = Many trees to the north. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias west = w^ e3649
+#
+tag e3649 = miden'nir:area name
+#
+set e3649/door_attributes = ["open"]
+#
+set e3649/reset_door_attributes = ["open"]
+#
+desc west = There is a bit of a slope downward to the west. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3518
+#
+alias north = n^ e3650
+#
+tag e3650 = miden'nir:area name
+#
+set e3650/door_attributes = ["open"]
+#
+set e3650/reset_door_attributes = ["open"]
+#
+desc north = You can see a trail this way. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3651^ north = r3522
+#
+tag e3651 = miden'nir:area name
+#
+set e3651/door_attributes = ["open"]
+#
+set e3651/reset_door_attributes = ["open"]
+#
+desc south = Dark forests. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3519
+#
+alias north = n^ e3652
+#
+tag e3652 = miden'nir:area name
+#
+set e3652/door_attributes = ["open"]
+#
+set e3652/reset_door_attributes = ["open"]
+#
+desc north = The forest gets lighter this way. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3653^ west = r3520
+#
+tag e3653 = miden'nir:area name
+#
+set e3653/door_attributes = ["open"]
+#
+set e3653/reset_door_attributes = ["open"]
+#
+desc east = The forest continues. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3654^ north = r3521
+#
+tag e3654 = miden'nir:area name
+#
+set e3654/door_attributes = ["open"]
+#
+set e3654/reset_door_attributes = ["open"]
+#
+desc south = There is a strong stench coming from this direction. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3520
+#
+openexit south; s; e3655^ north = r3523
+#
+tag e3655 = miden'nir:area name
+#
+set e3655/door_attributes = ["open"]
+#
+set e3655/reset_door_attributes = ["open"]
+#
+desc south = The thick forest continues. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3656
+#
+tag e3656 = miden'nir:area name
+#
+set e3656/door_attributes = ["open"]
+#
+set e3656/reset_door_attributes = ["open"]
+#
+desc west = The thick forest continues. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3521
+#
+alias north = n^ e3657
+#
+tag e3657 = miden'nir:area name
+#
+set e3657/door_attributes = ["open"]
+#
+set e3657/reset_door_attributes = ["open"]
+#
+desc north = Darkness... 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3658^ west = r3523
+#
+tag e3658 = miden'nir:area name
+#
+set e3658/door_attributes = ["open"]
+#
+set e3658/reset_door_attributes = ["open"]
+#
+desc east = Your light does not extend that far. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3659^ north = r3585
+#
+tag e3659 = miden'nir:area name
+#
+set e3659/door_attributes = ["open"]
+#
+set e3659/reset_door_attributes = ["open"]
+#
+desc south = A bloody path. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3660^ east = r3522
+#
+tag e3660 = miden'nir:area name
+#
+set e3660/door_attributes = ["open"]
+#
+set e3660/reset_door_attributes = ["open"]
+#
+desc west = More dark forest. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3522
+#
+alias north = n^ e3661
+#
+tag e3661 = miden'nir:area name
+#
+set e3661/door_attributes = ["open"]
+#
+set e3661/reset_door_attributes = ["open"]
+#
+desc north = You see daylight and a trail to follow. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3662
+#
+tag e3662 = miden'nir:area name
+#
+set e3662/door_attributes = ["open"]
+#
+set e3662/reset_door_attributes = ["open"]
+#
+desc east = The stench seems to be coming from this direction. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r3523
+#
+alias north = n^ e3663
+#
+tag e3663 = miden'nir:area name
+#
+set e3663/door_attributes = ["open"]
+#
+set e3663/reset_door_attributes = ["open"]
+#
+desc north = It appears to get much darker in that direction. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3664^ west = r3551
+#
+tag e3664 = miden'nir:area name
+#
+set e3664/door_attributes = ["open"]
+#
+set e3664/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3665
+#
+tag e3665 = miden'nir:area name
+#
+set e3665/door_attributes = ["open"]
+#
+set e3665/reset_door_attributes = ["open"]
+#
+desc west = The sky becomes lighter in this direction. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3524
+#
+openexit south; s; e3666^ north = r3525
+#
+tag e3666 = miden'nir:area name
+#
+set e3666/door_attributes = ["open"]
+#
+set e3666/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3667
+#
+tag e3667 = miden'nir:area name
+#
+set e3667/door_attributes = ["open"]
+#
+set e3667/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3525
+#
+alias north = n^ e3668
+#
+tag e3668 = miden'nir:area name
+#
+set e3668/door_attributes = ["open"]
+#
+set e3668/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3669^ north = r3526
+#
+tag e3669 = miden'nir:area name
+#
+set e3669/door_attributes = ["open"]
+#
+set e3669/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3526
+#
+alias north = n^ e3670
+#
+tag e3670 = miden'nir:area name
+#
+set e3670/door_attributes = ["open"]
+#
+set e3670/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3671
+#
+tag e3671 = miden'nir:area name
+#
+set e3671/door_attributes = ["open"]
+#
+set e3671/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3527
+#
+openexit east; e; e3672^ west = r3586
+#
+tag e3672 = miden'nir:area name
+#
+set e3672/door_attributes = ["open"]
+#
+set e3672/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3673^ east = r3528
+#
+tag e3673 = miden'nir:area name
+#
+set e3673/door_attributes = ["open"]
+#
+set e3673/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3528
+#
+openexit north; n; e3674^ south = r3529
+#
+tag e3674 = miden'nir:area name
+#
+set e3674/door_attributes = ["open"]
+#
+set e3674/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3675
+#
+tag e3675 = miden'nir:area name
+#
+set e3675/door_attributes = ["open"]
+#
+set e3675/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r3529
+#
+openexit north; n; e3676^ south = r3530
+#
+tag e3676 = miden'nir:area name
+#
+set e3676/door_attributes = ["open"]
+#
+set e3676/reset_door_attributes = ["open"]
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias south = s^ e3677
+#
+tag e3677 = miden'nir:area name
+#
+set e3677/door_attributes = ["open"]
+#
+set e3677/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3530
+#
+alias south = s^ e3678
+#
+tag e3678 = miden'nir:area name
+#
+set e3678/door_attributes = ["open"]
+#
+set e3678/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3679
+#
+tag e3679 = miden'nir:area name
+#
+set e3679/door_attributes = ["open"]
+#
+set e3679/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3551
+#
+openexit south; s; e3680^ north = r3552
+#
+tag e3680 = miden'nir:area name
+#
+set e3680/door_attributes = ["open"]
+#
+set e3680/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+alias west = w^ e3681
+#
+tag e3681 = miden'nir:area name
+#
+set e3681/door_attributes = ["open"]
+#
+set e3681/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3552
+#
+alias north = n^ e3682
+#
+tag e3682 = miden'nir:area name
+#
+set e3682/door_attributes = ["open"]
+#
+set e3682/reset_door_attributes = ["open"]
+#
+desc north = Outside, you see the forest of Miden'nir. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3683^ north = r3553
+#
+tag e3683 = miden'nir:area name
+#
+set e3683/door_attributes = ["open"]
+#
+set e3683/reset_door_attributes = ["open"]
+#
+desc south = The tunnel continues to the south. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3553
+#
+alias north = n^ e3684
+#
+tag e3684 = miden'nir:area name
+#
+set e3684/door_attributes = ["open"]
+#
+set e3684/reset_door_attributes = ["open"]
+#
+desc north = The tunnel gets wider in this direction. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3685^ west = r3554
+#
+tag e3685 = miden'nir:area name
+#
+set e3685/door_attributes = ["open"]
+#
+set e3685/reset_door_attributes = ["open"]
+#
+desc east = You see a small alcove. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3686^ north = r3555
+#
+tag e3686 = miden'nir:area name
+#
+set e3686/door_attributes = ["open"]
+#
+set e3686/reset_door_attributes = ["open"]
+#
+desc south = The tunnel gets smaller in this direction. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3554
+#
+alias west = w^ e3687
+#
+tag e3687 = miden'nir:area name
+#
+set e3687/door_attributes = ["open"]
+#
+set e3687/reset_door_attributes = ["open"]
+#
+desc west = You see the main passageway. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3555
+#
+alias north = n^ e3688
+#
+tag e3688 = miden'nir:area name
+#
+set e3688/door_attributes = ["open"]
+#
+set e3688/reset_door_attributes = ["open"]
+#
+desc north = The tunnel continues north. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3689^ north = r3556
+#
+tag e3689 = miden'nir:area name
+#
+set e3689/door_attributes = ["open"]
+#
+set e3689/reset_door_attributes = ["open"]
+#
+desc south = You see a small cavern. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3556
+#
+alias north = n^ e3690
+#
+tag e3690 = miden'nir:area name
+#
+set e3690/door_attributes = ["open"]
+#
+set e3690/reset_door_attributes = ["open"]
+#
+desc north = The tunnel heads north. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+tel r3570
+#
+openexit north; n; e3691^ south = r3571
+#
+tag e3691 = miden'nir:area name
+#
+set e3691/door_attributes = ["open"]
+#
+set e3691/reset_door_attributes = ["open"]
+#
+desc north = You can go north around the inn. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3692^ west = r3505
+#
+tag e3692 = miden'nir:area name
+#
+set e3692/door_attributes = ["open"]
+#
+set e3692/reset_door_attributes = ["open"]
+#
+desc east = Back through the trees to the Miden'nir. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3693^ north = r3572
+#
+tag e3693 = miden'nir:area name
+#
+set e3693/door_attributes = ["open"]
+#
+set e3693/reset_door_attributes = ["open"]
+#
+desc south = You can go south around the inn. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3694^ east = r3574
+#
+tag e3694 = miden'nir:area name
+#
+set e3694/door_attributes = ["open"]
+#
+set e3694/reset_door_attributes = ["open"]
+#
+desc west = The front door of the inn beckons. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3571
+#
+alias south = s^ e3695
+#
+tag e3695 = miden'nir:area name
+#
+set e3695/door_attributes = ["open"]
+#
+set e3695/reset_door_attributes = ["open"]
+#
+desc south = You see the front of the Inn. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3572
+#
+alias north = n^ e3696
+#
+tag e3696 = miden'nir:area name
+#
+set e3696/door_attributes = ["open"]
+#
+set e3696/reset_door_attributes = ["open"]
+#
+desc north = This way leads to the front of the inn. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit south; s; e3697^ north = r3575
+#
+tag e3697 = miden'nir:area name
+#
+set e3697/door_attributes = ["open"]
+#
+set e3697/reset_door_attributes = ["open"]
+#
+desc south = The trail heads south. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+openexit west; w; e3698^ east = r3573
+#
+tag e3698 = miden'nir:area name
+#
+set e3698/door_attributes = ["open"]
+#
+set e3698/reset_door_attributes = ["open"]
+#
+desc west = This way leads to the back of the inn. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3573
+#
+alias east = e^ e3699
+#
+tag e3699 = miden'nir:area name
+#
+set e3699/door_attributes = ["open"]
+#
+set e3699/reset_door_attributes = ["open"]
+#
+desc east = You can go around the inn this way. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3700^ east = r3578
+#
+tag e3700 = miden'nir:area name
+#
+set e3700/door_attributes = ["open"]
+#
+set e3700/reset_door_attributes = ["open"]
+#
+desc west = Only rats and fool adventurers play in garbage. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3574
+#
+openexit north; n; e3701^ south = r3576
+#
+tag e3701 = miden'nir:area name
+#
+set e3701/door_attributes = ["open"]
+#
+set e3701/reset_door_attributes = ["open"]
+#
+desc north = The bar is here, manned by the innkeeper. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+alias east = e^ e3702
+#
+tag e3702 = miden'nir:area name
+#
+set e3702/door_attributes = ["open"]
+#
+set e3702/reset_door_attributes = ["open"]
+#
+desc east = You can leave now and return to fresher air. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3703^ east = r3577
+#
+tag e3703 = miden'nir:area name
+#
+set e3703/door_attributes = ["open"]
+#
+set e3703/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3575
+#
+alias north = n^ e3704
+#
+tag e3704 = miden'nir:area name
+#
+set e3704/door_attributes = ["open"]
+#
+set e3704/reset_door_attributes = ["open"]
+#
+desc north = The inn lies to the north. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit west; w; e3705^ east = r3581
+#
+tag e3705 = miden'nir:area name
+#
+set e3705/door_attributes = ["open"]
+#
+set e3705/reset_door_attributes = ["open"]
+#
+desc west = A trail through the woods. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3576
+#
+alias south = s^ e3706
+#
+tag e3706 = miden'nir:area name
+#
+set e3706/door_attributes = ["open"]
+#
+set e3706/reset_door_attributes = ["open"]
+#
+desc south = You may retreat south back to the common room. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3577
+#
+alias east = e^ e3707
+#
+tag e3707 = miden'nir:area name
+#
+set e3707/door_attributes = ["open"]
+#
+set e3707/reset_door_attributes = ["open"]
+#
+desc east = You see the main floor of the Inn to the east. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r3578
+#
+alias east = e^ e3708
+#
+tag e3708 = miden'nir:area name
+#
+set e3708/door_attributes = ["open"]
+#
+set e3708/reset_door_attributes = ["open"]
+#
+desc east = You can return to cleaner lands this way. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r3581
+#
+alias east = e^ e3709
+#
+tag e3709 = miden'nir:area name
+#
+set e3709/door_attributes = ["open"]
+#
+set e3709/reset_door_attributes = ["open"]
+#
+desc east = Back to the ambush point. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit west; w; e3710^ east = r3582
+#
+tag e3710 = miden'nir:area name
+#
+set e3710/door_attributes = ["open"]
+#
+set e3710/reset_door_attributes = ["open"]
+#
+desc west = The trail continues. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3582
+#
+alias east = e^ e3711
+#
+tag e3711 = miden'nir:area name
+#
+set e3711/door_attributes = ["open"]
+#
+set e3711/reset_door_attributes = ["open"]
+#
+desc east = The trail continues. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3712^ north = r3583
+#
+tag e3712 = miden'nir:area name
+#
+set e3712/door_attributes = ["open"]
+#
+set e3712/reset_door_attributes = ["open"]
+#
+desc south = The tracks lead south. 
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3583
+#
+alias north = n^ e3713
+#
+tag e3713 = miden'nir:area name
+#
+set e3713/door_attributes = ["open"]
+#
+set e3713/reset_door_attributes = ["open"]
+#
+desc north = The trail continues. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit west; w; e3714^ east = r3584
+#
+tag e3714 = miden'nir:area name
+#
+set e3714/door_attributes = ["open"]
+#
+set e3714/reset_door_attributes = ["open"]
+#
+desc west = The tracks lead east. 
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3584
+#
+alias east = e^ e3715
+#
+tag e3715 = miden'nir:area name
+#
+set e3715/door_attributes = ["open"]
+#
+set e3715/reset_door_attributes = ["open"]
+#
+desc east = Back to the trail. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+tel r3585
+#
+alias north = n^ e3716
+#
+tag e3716 = miden'nir:area name
+#
+set e3716/door_attributes = ["open"]
+#
+set e3716/reset_door_attributes = ["open"]
+#
+desc north = Back to the carnage. 
+#
+objectlock north = "pick:false()"
+#
+objectlock north = "bash:false()"
+#
+objectlock north = "pass:false()"
+#
+openexit east; e; e3717^ west = r8925
+#
+tag e3717 = miden'nir:area name
+#
+set e3717/door_attributes = ["open"]
+#
+set e3717/reset_door_attributes = ["open"]
+#
+desc east = A dirt trail leads toward the mountain cave. 
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+openexit south; s; e3718^ north = r8900
+#
+tag e3718 = miden'nir:area name
+#
+set e3718/door_attributes = ["open"]
+#
+set e3718/reset_door_attributes = ["open"]
+#
+objectlock south = "pick:false()"
+#
+objectlock south = "bash:false()"
+#
+objectlock south = "pass:false()"
+#
+tel r3586
+#
+openexit east; e; e3719^ west = r3587
+#
+tag e3719 = miden'nir:area name
+#
+set e3719/door_attributes = ["open"]
+#
+set e3719/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3720
+#
+tag e3720 = miden'nir:area name
+#
+set e3720/door_attributes = ["open"]
+#
+set e3720/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3587
+#
+openexit east; e; e3721^ west = r3588
+#
+tag e3721 = miden'nir:area name
+#
+set e3721/door_attributes = ["open"]
+#
+set e3721/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3722
+#
+tag e3722 = miden'nir:area name
+#
+set e3722/door_attributes = ["open"]
+#
+set e3722/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3588
+#
+openexit east; e; e3723^ west = r1501
+#
+tag e3723 = miden'nir:area name
+#
+set e3723/door_attributes = ["open"]
+#
+set e3723/reset_door_attributes = ["open"]
+#
+objectlock east = "pick:false()"
+#
+objectlock east = "bash:false()"
+#
+objectlock east = "pass:false()"
+#
+alias west = w^ e3724
+#
+tag e3724 = miden'nir:area name
+#
+set e3724/door_attributes = ["open"]
+#
+set e3724/reset_door_attributes = ["open"]
+#
+objectlock west = "pick:false()"
+#
+objectlock west = "bash:false()"
+#
+objectlock west = "pass:false()"
+#
+tel r3504
+#
+create/drop the goblin;goblin;mountain;m3501:characters.Mobile
+#
+desc m3501 = A mountain goblin is wandering about, mumbling to himself. 
+#
+set m3501/level = 2
+#
+set m3501/level_base = 2
+#
+set m3501/vnum = "m3501"
+#
+set m3501/look_description = "You see before you a small and twisted creature with knotted muscles. "
+#
+set m3501/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m3501/alignment = -500
+#
+set m3501/sex = "male"
+#
+set m3501/race = "goblin"
+#
+tag m3501 = miden'nir:area name
+#
+tag m3501 = mobile
+#
+set m3501/hitpoints[maximum] = 17
+#
+set m3501/position = "standing"
+#
+set m3501/experience_total = 249
+#
+set m3501/experience_current = 249
+#
+tel r3506
+#
+create/drop the goblin;goblin;mountain;m3501:characters.Mobile
+#
+desc m3501 = A mountain goblin is wandering about, mumbling to himself. 
+#
+set m3501/level = 2
+#
+set m3501/level_base = 2
+#
+set m3501/vnum = "m3501"
+#
+set m3501/look_description = "You see before you a small and twisted creature with knotted muscles. "
+#
+set m3501/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m3501/alignment = -500
+#
+set m3501/sex = "male"
+#
+set m3501/race = "goblin"
+#
+tag m3501 = miden'nir:area name
+#
+tag m3501 = mobile
+#
+set m3501/hitpoints[maximum] = 16
+#
+set m3501/position = "standing"
+#
+set m3501/experience_total = 257
+#
+set m3501/experience_current = 257
+#
+tel r3506
+#
+create a wooden club;wooden;club;o3502:objects.Weapon
+#
+sethome o3502 = m3501
+#
+desc o3502 = This wooden club is not much more than a small tree branch.
+#
+set o3502/level = 1
+#
+set o3502/level_base = 1
+#
+set o3502/vnum = "o3502"
+#
+set o3502/item_type = "weapon"
+#
+set o3502/wear_location = "wield"
+#
+set o3502/weight = 1
+#
+tag o3502 = miden'nir:area name
+#
+tag o3502 = object
+#
+set o3502/weapon_type = "pound"
+#
+set o3502/damage_low = 0
+#
+set o3502/damage_high = 6
+#
+wieldto o3502 = m3501
+#
+set m3501/experience_total = 321
+#
+set m3501/experience_current = 321
+#
+set m3501/reset_objects["o3502"] = {"location":"equipped"}
+#
+tel r3509
+#
+create/drop the goblin;goblin;mountain;m3501:characters.Mobile
+#
+desc m3501 = A mountain goblin is wandering about, mumbling to himself. 
+#
+set m3501/level = 2
+#
+set m3501/level_base = 2
+#
+set m3501/vnum = "m3501"
+#
+set m3501/look_description = "You see before you a small and twisted creature with knotted muscles. "
+#
+set m3501/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m3501/alignment = -500
+#
+set m3501/sex = "male"
+#
+set m3501/race = "goblin"
+#
+tag m3501 = miden'nir:area name
+#
+tag m3501 = mobile
+#
+set m3501/hitpoints[maximum] = 18
+#
+set m3501/position = "standing"
+#
+set m3501/experience_total = 247
+#
+set m3501/experience_current = 247
+#
+tel r3509
+#
+create a wooden club;wooden;club;o3502:objects.Weapon
+#
+sethome o3502 = m3501
+#
+desc o3502 = This wooden club is not much more than a small tree branch.
+#
+set o3502/level = 1
+#
+set o3502/level_base = 1
+#
+set o3502/vnum = "o3502"
+#
+set o3502/item_type = "weapon"
+#
+set o3502/wear_location = "wield"
+#
+set o3502/weight = 1
+#
+tag o3502 = miden'nir:area name
+#
+tag o3502 = object
+#
+set o3502/weapon_type = "pound"
+#
+set o3502/damage_low = 0
+#
+set o3502/damage_high = 7
+#
+wieldto o3502 = m3501
+#
+set m3501/experience_total = 308
+#
+set m3501/experience_current = 308
+#
+set m3501/reset_objects["o3502"] = {"location":"equipped"}
+#
+tel r3509
+#
+create/drop the goblin sergeant;goblin;sergeant;m3508:characters.Mobile
+#
+desc m3508 = A goblin sergeant is here, knocking heads together. 
+#
+set m3508/level = 10
+#
+set m3508/level_base = 10
+#
+set m3508/vnum = "m3508"
+#
+set m3508/look_description = "Goblin sergeants carry forward the orders of the lieutenants, which seems to involve a lot of beating up smaller goblins. Or is that just what all goblins do? "
+#
+set m3508/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m3508/alignment = -500
+#
+set m3508/sex = "male"
+#
+set m3508/race = "goblin"
+#
+tag m3508 = miden'nir:area name
+#
+tag m3508 = mobile
+#
+set m3508/hitpoints[maximum] = 89
+#
+set m3508/position = "standing"
+#
+set m3508/experience_total = 6082
+#
+set m3508/experience_current = 6082
+#
+tel r3509
+#
+create a wooden club;wooden;club;o3502:objects.Weapon
+#
+sethome o3502 = m3508
+#
+desc o3502 = This wooden club is not much more than a small tree branch.
+#
+set o3502/level = 8
+#
+set o3502/level_base = 8
+#
+set o3502/vnum = "o3502"
+#
+set o3502/item_type = "weapon"
+#
+set o3502/wear_location = "wield"
+#
+set o3502/weight = 1
+#
+tag o3502 = miden'nir:area name
+#
+tag o3502 = object
+#
+set o3502/weapon_type = "pound"
+#
+set o3502/damage_low = 4
+#
+set o3502/damage_high = 12
+#
+wieldto o3502 = m3508
+#
+set m3508/experience_total = 7602
+#
+set m3508/experience_current = 7602
+#
+set m3508/reset_objects["o3502"] = {"location":"equipped"}
+#
+tel r3512
+#
+create/drop the goblin;goblin;mountain;m3501:characters.Mobile
+#
+desc m3501 = A mountain goblin is wandering about, mumbling to himself. 
+#
+set m3501/level = 2
+#
+set m3501/level_base = 2
+#
+set m3501/vnum = "m3501"
+#
+set m3501/look_description = "You see before you a small and twisted creature with knotted muscles. "
+#
+set m3501/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m3501/alignment = -500
+#
+set m3501/sex = "male"
+#
+set m3501/race = "goblin"
+#
+tag m3501 = miden'nir:area name
+#
+tag m3501 = mobile
+#
+set m3501/hitpoints[maximum] = 17
+#
+set m3501/position = "standing"
+#
+set m3501/experience_total = 233
+#
+set m3501/experience_current = 233
+#
+tel r3512
+#
+create/drop the goblin;goblin;mountain;m3501; m3501-2:characters.Mobile
+#
+desc m3501-2 = A mountain goblin is wandering about, mumbling to himself. 
+#
+set m3501-2/level = 2
+#
+set m3501-2/level_base = 2
+#
+set m3501-2/vnum = "m3501"
+#
+set m3501-2/look_description = "You see before you a small and twisted creature with knotted muscles. "
+#
+set m3501-2/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m3501-2/alignment = -500
+#
+set m3501-2/sex = "male"
+#
+set m3501-2/race = "goblin"
+#
+tag m3501-2 = miden'nir:area name
+#
+tag m3501-2 = mobile
+#
+set m3501-2/hitpoints[maximum] = 16
+#
+set m3501-2/position = "standing"
+#
+set m3501-2/experience_total = 254
+#
+set m3501-2/experience_current = 254
+#
+tel r3513
+#
+create/drop the goblin;goblin;mountain;m3501:characters.Mobile
+#
+desc m3501 = A mountain goblin is wandering about, mumbling to himself. 
+#
+set m3501/level = 2
+#
+set m3501/level_base = 2
+#
+set m3501/vnum = "m3501"
+#
+set m3501/look_description = "You see before you a small and twisted creature with knotted muscles. "
+#
+set m3501/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m3501/alignment = -500
+#
+set m3501/sex = "male"
+#
+set m3501/race = "goblin"
+#
+tag m3501 = miden'nir:area name
+#
+tag m3501 = mobile
+#
+set m3501/hitpoints[maximum] = 17
+#
+set m3501/position = "standing"
+#
+set m3501/experience_total = 247
+#
+set m3501/experience_current = 247
+#
+tel r3513
+#
+create a wooden club;wooden;club;o3502:objects.Weapon
+#
+sethome o3502 = m3501
+#
+desc o3502 = This wooden club is not much more than a small tree branch.
+#
+set o3502/level = 1
+#
+set o3502/level_base = 1
+#
+set o3502/vnum = "o3502"
+#
+set o3502/item_type = "weapon"
+#
+set o3502/wear_location = "wield"
+#
+set o3502/weight = 1
+#
+tag o3502 = miden'nir:area name
+#
+tag o3502 = object
+#
+set o3502/weapon_type = "pound"
+#
+set o3502/damage_low = 1
+#
+set o3502/damage_high = 9
+#
+wieldto o3502 = m3501
+#
+set m3501/experience_total = 308
+#
+set m3501/experience_current = 308
+#
+set m3501/reset_objects["o3502"] = {"location":"equipped"}
+#
+tel r3519
+#
+create/drop the goblin;goblin;mountain;m3501:characters.Mobile
+#
+desc m3501 = A mountain goblin is wandering about, mumbling to himself. 
+#
+set m3501/level = 2
+#
+set m3501/level_base = 2
+#
+set m3501/vnum = "m3501"
+#
+set m3501/look_description = "You see before you a small and twisted creature with knotted muscles. "
+#
+set m3501/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m3501/alignment = -500
+#
+set m3501/sex = "male"
+#
+set m3501/race = "goblin"
+#
+tag m3501 = miden'nir:area name
+#
+tag m3501 = mobile
+#
+set m3501/hitpoints[maximum] = 17
+#
+set m3501/position = "standing"
+#
+set m3501/experience_total = 220
+#
+set m3501/experience_current = 220
+#
+tel r3520
+#
+create/drop the goblin;goblin;mountain;m3501:characters.Mobile
+#
+desc m3501 = A mountain goblin is wandering about, mumbling to himself. 
+#
+set m3501/level = 2
+#
+set m3501/level_base = 2
+#
+set m3501/vnum = "m3501"
+#
+set m3501/look_description = "You see before you a small and twisted creature with knotted muscles. "
+#
+set m3501/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m3501/alignment = -500
+#
+set m3501/sex = "male"
+#
+set m3501/race = "goblin"
+#
+tag m3501 = miden'nir:area name
+#
+tag m3501 = mobile
+#
+set m3501/hitpoints[maximum] = 17
+#
+set m3501/position = "standing"
+#
+set m3501/experience_total = 225
+#
+set m3501/experience_current = 225
+#
+tel r3521
+#
+create/drop the wyvern;wyvern;m3500:characters.Mobile
+#
+desc m3500 = A monstrous wyvern slowly circles just above your head. 
+#
+set m3500/level = 7
+#
+set m3500/level_base = 7
+#
+set m3500/vnum = "m3500"
+#
+set m3500/look_description = "This huge, winged creature looks really menacing.  You are happy it doesn't APPEAR to be very hungry ... yet. "
+#
+set m3500/act_flags = ['stay area', 'npc']
+#
+set m3500/alignment = -200
+#
+set m3500/sex = "neuter"
+#
+set m3500/spell_affects = {'detect invis': ''}
+#
+set m3500/race = "dragon"
+#
+tag m3500 = miden'nir:area name
+#
+tag m3500 = mobile
+#
+set m3500/hitpoints[maximum] = 80
+#
+set m3500/position = "standing"
+#
+set m3500/experience_total = 2260
+#
+set m3500/experience_current = 2260
+#
+set m3500/special_function = "poison"
+#
+tel r3523
+#
+create/drop the goblin sergeant;goblin;sergeant;m3508:characters.Mobile
+#
+desc m3508 = A goblin sergeant is here, knocking heads together. 
+#
+set m3508/level = 10
+#
+set m3508/level_base = 10
+#
+set m3508/vnum = "m3508"
+#
+set m3508/look_description = "Goblin sergeants carry forward the orders of the lieutenants, which seems to involve a lot of beating up smaller goblins. Or is that just what all goblins do? "
+#
+set m3508/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m3508/alignment = -500
+#
+set m3508/sex = "male"
+#
+set m3508/race = "goblin"
+#
+tag m3508 = miden'nir:area name
+#
+tag m3508 = mobile
+#
+set m3508/hitpoints[maximum] = 87
+#
+set m3508/position = "standing"
+#
+set m3508/experience_total = 5719
+#
+set m3508/experience_current = 5719
+#
+tel r3523
+#
+create a wooden club;wooden;club;o3502:objects.Weapon
+#
+sethome o3502 = m3508
+#
+desc o3502 = This wooden club is not much more than a small tree branch.
+#
+set o3502/level = 8
+#
+set o3502/level_base = 8
+#
+set o3502/vnum = "o3502"
+#
+set o3502/item_type = "weapon"
+#
+set o3502/wear_location = "wield"
+#
+set o3502/weight = 1
+#
+tag o3502 = miden'nir:area name
+#
+tag o3502 = object
+#
+set o3502/weapon_type = "pound"
+#
+set o3502/damage_low = 4
+#
+set o3502/damage_high = 12
+#
+wieldto o3502 = m3508
+#
+set m3508/experience_total = 7148
+#
+set m3508/experience_current = 7148
+#
+set m3508/reset_objects["o3502"] = {"location":"equipped"}
+#
+tel r3527
+#
+create/drop the goblin;goblin;mountain;m3501:characters.Mobile
+#
+desc m3501 = A mountain goblin is wandering about, mumbling to himself. 
+#
+set m3501/level = 2
+#
+set m3501/level_base = 2
+#
+set m3501/vnum = "m3501"
+#
+set m3501/look_description = "You see before you a small and twisted creature with knotted muscles. "
+#
+set m3501/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m3501/alignment = -500
+#
+set m3501/sex = "male"
+#
+set m3501/race = "goblin"
+#
+tag m3501 = miden'nir:area name
+#
+tag m3501 = mobile
+#
+set m3501/hitpoints[maximum] = 18
+#
+set m3501/position = "standing"
+#
+set m3501/experience_total = 219
+#
+set m3501/experience_current = 219
+#
+tel r3527
+#
+create a wooden club;wooden;club;o3502:objects.Weapon
+#
+sethome o3502 = m3501
+#
+desc o3502 = This wooden club is not much more than a small tree branch.
+#
+set o3502/level = 1
+#
+set o3502/level_base = 1
+#
+set o3502/vnum = "o3502"
+#
+set o3502/item_type = "weapon"
+#
+set o3502/wear_location = "wield"
+#
+set o3502/weight = 1
+#
+tag o3502 = miden'nir:area name
+#
+tag o3502 = object
+#
+set o3502/weapon_type = "pound"
+#
+set o3502/damage_low = 2
+#
+set o3502/damage_high = 6
+#
+wieldto o3502 = m3501
+#
+set m3501/experience_total = 273
+#
+set m3501/experience_current = 273
+#
+set m3501/reset_objects["o3502"] = {"location":"equipped"}
+#
+tel r3551
+#
+create/drop the goblin lieutenant;goblin;lieutenant;m3506:characters.Mobile
+#
+desc m3506 = A goblin lieutenant stands here, attempting to get his men in order. 
+#
+set m3506/level = 16
+#
+set m3506/level_base = 16
+#
+set m3506/vnum = "m3506"
+#
+set m3506/look_description = "The goblin lieutenant is rather angry, and looking for one of his men to beat up upon, but maybe you will do just fine ... "
+#
+set m3506/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m3506/alignment = -600
+#
+set m3506/sex = "male"
+#
+set m3506/race = "goblin"
+#
+tag m3506 = miden'nir:area name
+#
+tag m3506 = mobile
+#
+set m3506/hitpoints[maximum] = 187
+#
+set m3506/position = "standing"
+#
+set m3506/experience_total = 20454
+#
+set m3506/experience_current = 20454
+#
+tel r3551
+#
+create a rusty shortsword;shortsword;sword;rusty;o3500:objects.Weapon
+#
+sethome o3500 = m3506
+#
+desc o3500 = This short sword seems ready to crumble to dust at any minute.
+#
+set o3500/level = 14
+#
+set o3500/level_base = 14
+#
+set o3500/vnum = "o3500"
+#
+set o3500/item_type = "weapon"
+#
+set o3500/wear_location = "wield"
+#
+set o3500/weight = 2
+#
+tag o3500 = miden'nir:area name
+#
+tag o3500 = object
+#
+set o3500/stat_modifiers[strength] = 1
+#
+set o3500/stat_modifiers[hitroll] = 1
+#
+set o3500/weapon_type = "slash"
+#
+set o3500/damage_low = 6
+#
+set o3500/damage_high = 18
+#
+wieldto o3500 = m3506
+#
+set m3506/experience_total = 25567
+#
+set m3506/experience_current = 25567
+#
+set m3506/reset_objects["o3500"] = {"location":"equipped"}
+#
+tel r3552
+#
+create/drop the wyvern;wyvern;m3500:characters.Mobile
+#
+desc m3500 = A monstrous wyvern slowly circles just above your head. 
+#
+set m3500/level = 7
+#
+set m3500/level_base = 7
+#
+set m3500/vnum = "m3500"
+#
+set m3500/look_description = "This huge, winged creature looks really menacing.  You are happy it doesn't APPEAR to be very hungry ... yet. "
+#
+set m3500/act_flags = ['stay area', 'npc']
+#
+set m3500/alignment = -200
+#
+set m3500/sex = "neuter"
+#
+set m3500/spell_affects = {'detect invis': ''}
+#
+set m3500/race = "dragon"
+#
+tag m3500 = miden'nir:area name
+#
+tag m3500 = mobile
+#
+set m3500/hitpoints[maximum] = 103
+#
+set m3500/position = "standing"
+#
+set m3500/experience_total = 2430
+#
+set m3500/experience_current = 2430
+#
+set m3500/special_function = "poison"
+#
+tel r3554
+#
+create/drop the goblin;goblin;mountain;m3501:characters.Mobile
+#
+desc m3501 = A mountain goblin is wandering about, mumbling to himself. 
+#
+set m3501/level = 2
+#
+set m3501/level_base = 2
+#
+set m3501/vnum = "m3501"
+#
+set m3501/look_description = "You see before you a small and twisted creature with knotted muscles. "
+#
+set m3501/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m3501/alignment = -500
+#
+set m3501/sex = "male"
+#
+set m3501/race = "goblin"
+#
+tag m3501 = miden'nir:area name
+#
+tag m3501 = mobile
+#
+set m3501/hitpoints[maximum] = 16
+#
+set m3501/position = "standing"
+#
+set m3501/experience_total = 262
+#
+set m3501/experience_current = 262
+#
+tel r3554
+#
+create a wooden club;wooden;club;o3502:objects.Weapon
+#
+sethome o3502 = m3501
+#
+desc o3502 = This wooden club is not much more than a small tree branch.
+#
+set o3502/level = 1
+#
+set o3502/level_base = 1
+#
+set o3502/vnum = "o3502"
+#
+set o3502/item_type = "weapon"
+#
+set o3502/wear_location = "wield"
+#
+set o3502/weight = 1
+#
+tag o3502 = miden'nir:area name
+#
+tag o3502 = object
+#
+set o3502/weapon_type = "pound"
+#
+set o3502/damage_low = 3
+#
+set o3502/damage_high = 8
+#
+wieldto o3502 = m3501
+#
+set m3501/experience_total = 327
+#
+set m3501/experience_current = 327
+#
+set m3501/reset_objects["o3502"] = {"location":"equipped"}
+#
+tel r3555
+#
+create/drop the goblin sergeant;goblin;sergeant;m3508:characters.Mobile
+#
+desc m3508 = A goblin sergeant is here, knocking heads together. 
+#
+set m3508/level = 10
+#
+set m3508/level_base = 10
+#
+set m3508/vnum = "m3508"
+#
+set m3508/look_description = "Goblin sergeants carry forward the orders of the lieutenants, which seems to involve a lot of beating up smaller goblins. Or is that just what all goblins do? "
+#
+set m3508/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m3508/alignment = -500
+#
+set m3508/sex = "male"
+#
+set m3508/race = "goblin"
+#
+tag m3508 = miden'nir:area name
+#
+tag m3508 = mobile
+#
+set m3508/hitpoints[maximum] = 178
+#
+set m3508/position = "standing"
+#
+set m3508/experience_total = 5800
+#
+set m3508/experience_current = 5800
+#
+tel r3555
+#
+create a wooden club;wooden;club;o3502:objects.Weapon
+#
+sethome o3502 = m3508
+#
+desc o3502 = This wooden club is not much more than a small tree branch.
+#
+set o3502/level = 8
+#
+set o3502/level_base = 8
+#
+set o3502/vnum = "o3502"
+#
+set o3502/item_type = "weapon"
+#
+set o3502/wear_location = "wield"
+#
+set o3502/weight = 1
+#
+tag o3502 = miden'nir:area name
+#
+tag o3502 = object
+#
+set o3502/weapon_type = "pound"
+#
+set o3502/damage_low = 4
+#
+set o3502/damage_high = 13
+#
+wieldto o3502 = m3508
+#
+set m3508/experience_total = 7250
+#
+set m3508/experience_current = 7250
+#
+set m3508/reset_objects["o3502"] = {"location":"equipped"}
+#
+tel r3556
+#
+create/drop the goblin;goblin;mountain;m3501:characters.Mobile
+#
+desc m3501 = A mountain goblin is wandering about, mumbling to himself. 
+#
+set m3501/level = 2
+#
+set m3501/level_base = 2
+#
+set m3501/vnum = "m3501"
+#
+set m3501/look_description = "You see before you a small and twisted creature with knotted muscles. "
+#
+set m3501/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m3501/alignment = -500
+#
+set m3501/sex = "male"
+#
+set m3501/race = "goblin"
+#
+tag m3501 = miden'nir:area name
+#
+tag m3501 = mobile
+#
+set m3501/hitpoints[maximum] = 20
+#
+set m3501/position = "standing"
+#
+set m3501/experience_total = 250
+#
+set m3501/experience_current = 250
+#
+tel r3556
+#
+create a wooden club;wooden;club;o3502:objects.Weapon
+#
+sethome o3502 = m3501
+#
+desc o3502 = This wooden club is not much more than a small tree branch.
+#
+set o3502/level = 1
+#
+set o3502/level_base = 1
+#
+set o3502/vnum = "o3502"
+#
+set o3502/item_type = "weapon"
+#
+set o3502/wear_location = "wield"
+#
+set o3502/weight = 1
+#
+tag o3502 = miden'nir:area name
+#
+tag o3502 = object
+#
+set o3502/weapon_type = "pound"
+#
+set o3502/damage_low = 2
+#
+set o3502/damage_high = 9
+#
+wieldto o3502 = m3501
+#
+set m3501/experience_total = 312
+#
+set m3501/experience_current = 312
+#
+set m3501/reset_objects["o3502"] = {"location":"equipped"}
+#
+tel r3556
+#
+create/drop the goblin lieutenant;goblin;lieutenant;m3506:characters.Mobile
+#
+desc m3506 = A goblin lieutenant stands here, attempting to get his men in order. 
+#
+set m3506/level = 16
+#
+set m3506/level_base = 16
+#
+set m3506/vnum = "m3506"
+#
+set m3506/look_description = "The goblin lieutenant is rather angry, and looking for one of his men to beat up upon, but maybe you will do just fine ... "
+#
+set m3506/act_flags = ['stay area', 'aggressive', 'npc']
+#
+set m3506/alignment = -600
+#
+set m3506/sex = "male"
+#
+set m3506/race = "goblin"
+#
+tag m3506 = miden'nir:area name
+#
+tag m3506 = mobile
+#
+set m3506/hitpoints[maximum] = 138
+#
+set m3506/position = "standing"
+#
+set m3506/experience_total = 22778
+#
+set m3506/experience_current = 22778
+#
+tel r3556
+#
+create a rusty shortsword;shortsword;sword;rusty;o3500:objects.Weapon
+#
+sethome o3500 = m3506
+#
+desc o3500 = This short sword seems ready to crumble to dust at any minute.
+#
+set o3500/level = 14
+#
+set o3500/level_base = 14
+#
+set o3500/vnum = "o3500"
+#
+set o3500/item_type = "weapon"
+#
+set o3500/wear_location = "wield"
+#
+set o3500/weight = 2
+#
+tag o3500 = miden'nir:area name
+#
+tag o3500 = object
+#
+set o3500/stat_modifiers[strength] = 1
+#
+set o3500/stat_modifiers[hitroll] = 1
+#
+set o3500/weapon_type = "slash"
+#
+set o3500/damage_low = 4
+#
+set o3500/damage_high = 16
+#
+wieldto o3500 = m3506
+#
+set m3506/experience_total = 28472
+#
+set m3506/experience_current = 28472
+#
+set m3506/reset_objects["o3500"] = {"location":"equipped"}
+#
+tel r3556
+#
+create/drop the goblin leader;goblin;leader;m3507:characters.Mobile
+#
+desc m3507 = The goblin leader surveys the room. 
+#
+set m3507/level = 18
+#
+set m3507/level_base = 18
+#
+set m3507/vnum = "m3507"
+#
+set m3507/look_description = "The leader doesn't look too happy that you have found him here.  He grabs for his shortsword and lunges for your neck. "
+#
+set m3507/act_flags = ['aggressive', 'scavenger', 'sentinel', 'npc']
+#
+set m3507/alignment = -900
+#
+set m3507/sex = "male"
+#
+set m3507/spell_affects = {'detect invis': ''}
+#
+set m3507/race = "goblin"
+#
+tag m3507 = miden'nir:area name
+#
+tag m3507 = mobile
+#
+set m3507/hitpoints[maximum] = 351
+#
+set m3507/position = "standing"
+#
+set m3507/experience_total = 30912
+#
+set m3507/experience_current = 30912
+#
+tel r3556
+#
+create a rusty shortsword;shortsword;sword;rusty;o3500:objects.Weapon
+#
+sethome o3500 = m3507
+#
+desc o3500 = This short sword seems ready to crumble to dust at any minute.
+#
+set o3500/level = 16
+#
+set o3500/level_base = 16
+#
+set o3500/vnum = "o3500"
+#
+set o3500/item_type = "weapon"
+#
+set o3500/wear_location = "wield"
+#
+set o3500/weight = 2
+#
+tag o3500 = miden'nir:area name
+#
+tag o3500 = object
+#
+set o3500/stat_modifiers[strength] = 1
+#
+set o3500/stat_modifiers[hitroll] = 1
+#
+set o3500/weapon_type = "slash"
+#
+set o3500/damage_low = 6
+#
+set o3500/damage_high = 19
+#
+wieldto o3500 = m3507
+#
+set m3507/experience_total = 38640
+#
+set m3507/experience_current = 38640
+#
+set m3507/reset_objects["o3500"] = {"location":"equipped"}
+#
+tel r3556
+#
+create a small wooden shield;wooden;shield;small;o3501:objects.Armor
+#
+sethome o3501 = m3507
+#
+desc o3501 = This tiny wooden shield is cracked and splintered.
+#
+set o3501/level = 16
+#
+set o3501/level_base = 16
+#
+set o3501/vnum = "o3501"
+#
+set o3501/item_type = "armor"
+#
+set o3501/wear_location = "shield"
+#
+set o3501/weight = 2
+#
+tag o3501 = miden'nir:area name
+#
+tag o3501 = object
+#
+set o3501/stat_modifiers[hitpoints] = 9
+#
+set o3501/stat_modifiers[armor class] = -3
+#
+set o3501/armor = 7
+#
+wearto o3501 = m3507
+#
+set m3507/reset_objects["o3501"] = {"location":"equipped"}
+#
+tel r3575
+#
+create/drop the small boy;boy;small;m3502:characters.Mobile
+#
+desc m3502 = A small boy sits here, licking his wounds. 
+#
+set m3502/level = 8
+#
+set m3502/level_base = 8
+#
+set m3502/vnum = "m3502"
+#
+set m3502/look_description = "The poor boy has numerous cuts and scratches, but appears to be alright. He is apparently the only survivor of the ambush. "
+#
+set m3502/act_flags = ['wimpy', 'sentinel', 'npc']
+#
+set m3502/alignment = 500
+#
+set m3502/sex = "male"
+#
+set m3502/race = "human"
+#
+tag m3502 = miden'nir:area name
+#
+tag m3502 = mobile
+#
+set m3502/hitpoints[maximum] = 74
+#
+set m3502/position = "standing"
+#
+set m3502/experience_total = 2911
+#
+set m3502/experience_current = 2911
+#
+set m3502/special_function = "thief"
+#
+tel r3576
+#
+create/drop the Innkeeper;innkeeper;m3503:characters.Mobile
+#
+desc m3503 = The Innkeeper stands here, cleaning glasses. 
+#
+set m3503/level = 13
+#
+set m3503/level_base = 13
+#
+set m3503/vnum = "m3503"
+#
+set m3503/look_description = "The Innkeeper now spends most of his days waiting for customers, while the nights are spent watching out for goblins.  His inn is no longer the happy place that it used to be in days past. "
+#
+set m3503/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m3503/alignment = 400
+#
+set m3503/sex = "male"
+#
+set m3503/race = "human"
+#
+tag m3503 = miden'nir:area name
+#
+tag m3503 = mobile
+#
+set m3503/hitpoints[maximum] = 152
+#
+set m3503/position = "standing"
+#
+set m3503/experience_total = 11529
+#
+set m3503/experience_current = 11529
+#
+tel r3577
+#
+create/drop the bard;bard;m3504:characters.Mobile
+#
+desc m3504 = A sullen bard is here, drinking away his problems. 
+#
+set m3504/level = 6
+#
+set m3504/level_base = 6
+#
+set m3504/vnum = "m3504"
+#
+set m3504/look_description = "You can smell the alcohol on his breath from across the room.  This poor bard has been sitting here quite a while, drinking himself into oblivion. "
+#
+set m3504/act_flags = ['stay area', 'sentinel', 'npc']
+#
+set m3504/alignment = 600
+#
+set m3504/sex = "male"
+#
+set m3504/spell_affects = {'detect invis': ''}
+#
+set m3504/race = "hobbit"
+#
+tag m3504 = miden'nir:area name
+#
+tag m3504 = mobile
+#
+set m3504/hitpoints[maximum] = 81
+#
+set m3504/position = "standing"
+#
+set m3504/experience_total = 1558
+#
+set m3504/experience_current = 1558
+#
+tel r3577
+#
+create a lute;lute;o3503:objects.Trash
+#
+sethome o3503 = m3504
+#
+desc o3503 = Two strings are broken on this lute.
+#
+set o3503/level = 4
+#
+set o3503/level_base = 4
+#
+set o3503/vnum = "o3503"
+#
+set o3503/item_type = "trash"
+#
+set o3503/wear_location = "held, in hands"
+#
+set o3503/weight = 2
+#
+tag o3503 = miden'nir:area name
+#
+tag o3503 = object
+#
+set o3503/stat_modifiers[intelligence] = 1
+#
+set o3503/stat_modifiers[mana] = 4
+#
+wearto o3503 = m3504
+#
+set m3504/reset_objects["o3503"] = {"location":"equipped"}
+#
+tel r3584
+#
+create/drop the dark horseman;horseman;dark;m3505:characters.Mobile
+#
+desc m3505 = A dark horseman is here, mounted on his black steed. 
+#
+set m3505/level = 8
+#
+set m3505/level_base = 8
+#
+set m3505/vnum = "m3505"
+#
+set m3505/look_description = "The man is obviously an outlaw, and has no qualms about slashing you into little bits. "
+#
+set m3505/act_flags = ['wimpy', 'stay area', 'scavenger', 'npc']
+#
+set m3505/alignment = -900
+#
+set m3505/sex = "male"
+#
+set m3505/spell_affects = {'sneak': ''}
+#
+set m3505/race = "human"
+#
+tag m3505 = miden'nir:area name
+#
+tag m3505 = mobile
+#
+set m3505/hitpoints[maximum] = 66
+#
+set m3505/position = "standing"
+#
+set m3505/experience_total = 3038
+#
+set m3505/experience_current = 3038
+#
+tel r3584
+#
+create some dark leather armor;dark;leather;armor;o3504:objects.Armor
+#
+sethome o3504 = m3505
+#
+desc o3504 = This leather armor has been dyed black.
+#
+set o3504/level = 6
+#
+set o3504/level_base = 6
+#
+set o3504/vnum = "o3504"
+#
+set o3504/item_type = "armor"
+#
+set o3504/wear_location = "body"
+#
+set o3504/weight = 5
+#
+tag o3504 = miden'nir:area name
+#
+tag o3504 = object
+#
+set o3504/stat_modifiers[dexterity] = 1
+#
+set o3504/stat_modifiers[armor class] = -2
+#
+set o3504/armor = 4
+#
+wearto o3504 = m3505
+#
+set m3505/reset_objects["o3504"] = {"location":"equipped"}
+#
+tel r3584
+#
+create a black cloak;cloak;black;o3505:objects.Armor
+#
+sethome o3505 = m3505
+#
+desc o3505 = This coarse cloak has been dyed black.
+#
+set o3505/level = 6
+#
+set o3505/level_base = 6
+#
+set o3505/vnum = "o3505"
+#
+set o3505/item_type = "armor"
+#
+set o3505/wear_location = "about body"
+#
+set o3505/weight = 2
+#
+tag o3505 = miden'nir:area name
+#
+tag o3505 = object
+#
+set o3505/stat_modifiers[wisdom] = 1
+#
+set o3505/stat_modifiers[mana] = 6
+#
+set o3505/armor = 4
+#
+wearto o3505 = m3505
+#
+set m3505/reset_objects["o3505"] = {"location":"equipped"}
+#
+tel r3584
+#
+create a longsword;longsword;sword;o3506:objects.Weapon
+#
+sethome o3506 = m3505
+#
+desc o3506 = This sharp longsword could use a good cleaning.
+#
+set o3506/level = 6
+#
+set o3506/level_base = 6
+#
+set o3506/vnum = "o3506"
+#
+set o3506/item_type = "weapon"
+#
+set o3506/wear_location = "wield"
+#
+set o3506/weight = 4
+#
+tag o3506 = miden'nir:area name
+#
+tag o3506 = object
+#
+set o3506/stat_modifiers[hitroll] = 1
+#
+set o3506/weapon_type = "slash"
+#
+set o3506/damage_low = 2
+#
+set o3506/damage_high = 10
+#
+wieldto o3506 = m3505
+#
+set m3505/experience_total = 3797
+#
+set m3505/experience_current = 3797
+#
+set m3505/reset_objects["o3506"] = {"location":"equipped"}
+#
