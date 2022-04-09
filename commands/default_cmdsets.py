@@ -97,7 +97,7 @@ from commands.spell_commands import CmdMindThrust
 from commands.spell_commands import CmdProtection
 from commands.spell_commands import CmdRefresh
 from commands.spell_commands import CmdShield
-from commands.spell_commands import CmdSleep
+from commands.spell_commands import CmdSlumber
 from commands.spell_commands import CmdSummonWeapon
 from commands.spell_commands import CmdThoughtShield
 from commands.spell_commands import CmdVentriloquate
@@ -188,6 +188,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdSetObjAlias())
         self.add(CmdShield())
         self.add(CmdSleep())
+        self.add(CmdSlumber())
         self.add(CmdSkills())
         self.add(CmdStand())
         self.add(CmdSteal())

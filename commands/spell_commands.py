@@ -1972,7 +1972,7 @@ class CmdShield(MuxCommand):
         rules_magic.do_shield(caster, target, cost)
 
 
-class CmdSleep(MuxCommand):
+class CmdSlumber(MuxCommand):
     """
     Induce a magical slumber in a target.
 
