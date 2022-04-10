@@ -218,16 +218,16 @@ class CmdArmor(MuxCommand):
            target = caster.search(self.args, candidates=targets)
 
            if not target:
-               caster.msg("There is no %s here on whom to cast %s on." % (self.args, self.key))
+               caster.msg("There is no %s here on whom to cast %s." % (self.args, self.key))
                return
 
        if target.get_affect_status(self.key):
            if target == caster:
-               subject = "You"
+               subject = "You are"
            else:
                subject = "%s is" % (target.key[0].upper() + target.key[1:])
 
-           caster.msg("%s is already affected by %s.\n" % (subject, self.key))
+           caster.msg("%s already affected by %s.\n" % (subject, self.key))
            return
 
        rules_magic.do_armor(caster, target, cost)
@@ -917,16 +917,16 @@ class CmdDetectEvil(MuxCommand):
                     targets.append(object)
             target = caster.search(self.args, candidates=targets)
             if not target:
-                caster.msg("There is no %s here on whom to cast %s on." % (self.args, self.key))
+                caster.msg("There is no %s here on whom to cast %s." % (self.args, self.key))
                 return
 
         if target.get_affect_status(self.key):
             if target == caster:
-                subject = "You"
+                subject = "You are"
             else:
                 subject = "%s is" % (target.key[0].upper() + target.key[1:])
 
-            caster.msg("%s is already affected by %s.\n" % (subject, self.key))
+            caster.msg("%s already affected by %s.\n" % (subject, self.key))
             return
 
         rules_magic.do_detect_evil(caster, target, cost)
@@ -992,7 +992,7 @@ class CmdDetectHidden(MuxCommand):
                     targets.append(object)
             target = caster.search(self.args, candidates=targets)
             if not target:
-                caster.msg("There is no %s here on whom to cast detect hidden on." % self.args)
+                caster.msg("There is no %s here on whom to cast detect hidden." % self.args)
                 return
 
         if target.get_affect_status("detect hidden"):
@@ -1143,7 +1143,7 @@ class CmdDetectMagic(MuxCommand):
                     targets.append(object)
             target = caster.search(self.args, candidates=targets)
             if not target:
-                caster.msg("There is no %s here on whom to cast detect magic on." % self.args)
+                caster.msg("There is no %s here on whom to cast detect magic." % self.args)
                 return
 
         if target.get_affect_status("detect magic"):
@@ -1298,7 +1298,7 @@ class CmdGiantStrength(MuxCommand):
 
         if target.get_affect_status(self.key):
             if target == caster:
-                subject = "You"
+                subject = "You are"
             else:
                 subject = "%s is" % (target.key[0].upper() + target.key[1:])
 
@@ -1372,11 +1372,11 @@ class CmdInfravision(MuxCommand):
 
         if target.get_affect_status(self.key):
             if target == caster:
-                subject = "You"
+                subject = "You are"
             else:
                 subject = "%s is" % (target.key[0].upper() + target.key[1:])
 
-            caster.msg("%s is already affected by %s.\n" % (subject, self.key))
+            caster.msg("%s already affected by %s.\n" % (subject, self.key))
             return
 
         rules_magic.do_infravision(caster, target, cost)
@@ -1447,11 +1447,11 @@ class CmdInvis(MuxCommand):
 
         if target.get_affect_status(self.key):
             if target == caster:
-                subject = "You"
+                subject = "You are"
             else:
                 subject = "%s is" % (target.key[0].upper() + target.key[1:])
 
-            caster.msg("%s is already affected by %s.\n" % (subject, self.key))
+            caster.msg("%s already affected by %s.\n" % (subject, self.key))
             return
 
         rules_magic.do_invis(caster, target, cost)
@@ -1980,7 +1980,8 @@ class CmdSlumber(MuxCommand):
       cast slumber <target>
       slumber <target>
 
-    Magically induce slumber in your target.
+    Magically induce slumber in your target. Will automatically
+    fail against targets of a higher leve.
 
     Colleges that can teach (level):
     Bard (8)
@@ -2026,7 +2027,7 @@ class CmdSlumber(MuxCommand):
         target = caster.search(self.args, candidates=targets)
 
         if not target:
-            caster.msg("There is no %s here on whom to bestow your protection." % self.args)
+            caster.msg("There is no %s here to put into a slumber." % self.args)
             return
 
         if target.get_affect_status(self.key):
@@ -2140,11 +2141,11 @@ class CmdThoughtShield(MuxCommand):
 
         if target.get_affect_status(self.key):
             if target == caster:
-                subject = "You"
+                subject = "You are"
             else:
                 subject = "%s is" % (target.key[0].upper() + target.key[1:])
 
-            caster.msg("%s is already affected by %s.\n" % (subject, self.key))
+            caster.msg("%s already affected by %s.\n" % (subject, self.key))
             return
 
         rules_magic.do_thought_shield(caster, target, cost)

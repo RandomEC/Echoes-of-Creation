@@ -202,6 +202,7 @@ class Room(DefaultRoom):
             **kwargs (dict): Arbitrary, optional arguments for users
                 overriding the call (unused by default).
         """
+
         if not looker:
             return ""
         # get and identify all objects
@@ -238,8 +239,18 @@ class Room(DefaultRoom):
             else:
                 # things can be pluralized
                 things[key].append(con)
-        # get description, build string
-        string = "|M%s|n\n" % self.get_display_name(looker)
+        # get description, area, build string
+
+        tag = self.tags.all(return_key_and_category=True)
+        total_tags = len(tag)
+
+        for index in range(0, total_tags):
+            if tag[index][1] == "area name":
+                area = tag[index][0]
+
+        area_string = rules.get_area_info(area)
+
+        string = "|M%s\n%s|n\n" % (self.get_display_name(looker), area_string)
         # Exits moved up from default Evennia.
         if exits:
             string += "|wExits:|n " + list_to_string(exits) + "\n"

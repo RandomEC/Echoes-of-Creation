@@ -348,14 +348,14 @@ def classes_current(character, **kwargs):
     # to make up for this. Eventually, this should be calculated,
     # rather than magic numbers.
     factor = {"psionicist": 1.00,
-              "cleric": 1.16,
-              "bard": 1.35,
-              "mage": 1.52,
-              "paladin": 1.560,
-              "ranger": 1.561,
-              "druid": 1.790,
-              "thief": 1.791,
-              "warrior": 1.792
+              "cleric": 1.070,
+              "druid": 1.314,
+              "bard": 1.394,
+              "mage": 1.394,
+              "paladin": 1.438,
+              "ranger": 1.438,
+              "thief": 1.643,
+              "warrior": 1.917
               }
     
     if not character.db.skills:
@@ -657,6 +657,92 @@ def gain_moves(character):
     else:
         return moves_gain
 
+
+def get_area_info(area_name):
+    """
+    This function takes an area name and returns the formatted
+    name of the area, and the levels it is for in parentheses.
+    """
+
+    area_dictionary = {
+        "crystalmir lake": {
+            "formatted name": "Crystalmir Lake",
+            "level range": "[  1 -  10]"
+        },
+        "dangerous neighborhood": {
+            "formatted name": "Dangerous Neighborhood",
+            "level range": "[  5 -  15]"
+        },
+        "dragon cult": {
+            "formatted name": "Dragon Cult",
+            "level range": "[  5 -  15]"
+        },
+        "dwarven daycare": {
+            "formatted name": "Dwarven Daycare",
+            "level range": "[  1 -  10]"
+        },
+        "edens grove": {
+            "formatted name": "Eden's Grove",
+            "level range": "[   All   ]"
+        },
+        "elemental canyon": {
+            "formatted name": "Elemental Canyon",
+            "level range": "[  5 -  15]"
+        },
+        "faerie ring": {
+            "formatted name": "Faerie Ring",
+            "level range": "[ 10 -  15]"
+        },
+        "fire newts": {
+            "formatted name": "Land of the Fire Newts",
+            "level range": "[  5 -  15]"
+        },
+        "gnome village": {
+            "formatted name": "Gnome Village",
+            "level range": "[  5 -  15]"
+        },
+        "graveyard": {
+            "formatted name": "Graveyard",
+            "level range": "[  5 -  10]"
+        },
+        "haon dor": {
+            "formatted name": "Haon Dor",
+            "level range": "[  5 -  10]"
+        },
+        "holy grove": {
+            "formatted name": "Holy Grove",
+            "level range": "[  5 -  15]"
+        },
+        "miden'nir": {
+            "formatted name": "Miden'nir",
+            "level range": "[  5 -  15]"
+        },
+        "smurf village": {
+            "formatted name": "Smurf Village",
+            "level range": "[  1 -  10]"
+        },
+        "the library": {
+            "formatted name": "The Library",
+            "level range": "[  1 -  10]"
+        },
+        "the rats' lair": {
+            "formatted name": "The Rats' Lair",
+            "level range": "[  1 -  10]"
+        },
+        "training tower": {
+            "formatted name": "Training Tower",
+            "level range": "[  1 -   5]"
+        },
+        "troll den": {
+            "formatted name": "Troll Den",
+            "level range": "[  10 -  15]"
+        }
+    }
+
+    if area_name in area_dictionary:
+        return "%s %s" % (area_dictionary[area_name]["formatted name"], area_dictionary[area_name]["level range"])
+    else:
+        return "Unknown [  Unknown ]"
 
 def hitpoints_cost(character):
     """

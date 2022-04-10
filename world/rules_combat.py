@@ -984,13 +984,7 @@ def do_trip(attacker, victim):
                                                           ),
             exclude=(attacker, victim))
 
-        rules.affect_apply(victim,
-                           "sitting",
-                           (wait_state * 2),
-                           "You jump back to your feet.",
-                           "%s gets back to %s feet." % ((victim.key[0].upper() + victim.key[1:]), rules.pronoun_possessive(victim)),
-                           apply_1=["position", "sitting"]
-                           )
+        victim.position = "sitting"
 
         if "mobile" in victim.tags.all():
             wait_modifier = 0
@@ -1013,13 +1007,7 @@ def do_trip(attacker, victim):
                 (attacker.key[0].upper() + attacker.key[1:]), victim.name),
                 exclude=(attacker, victim))
 
-            rules.affect_apply(attacker,
-                               "sitting",
-                               wait_state,
-                               "You jump back to your feet.",
-                               "%s gets back to %s feet." % ((victim.key[0].upper() + victim.key[1:]), rules.pronoun_possessive(victim)),
-                               apply_1=["position", "sitting"]
-                               )
+            attacker.position = "sitting"
             rules.wait_state_apply(attacker, wait_state)
 
         else:

@@ -189,24 +189,22 @@ class FixAreaNames(DefaultScript):
         self.persistent = True
 
         self.db.area_list = {
-            "smurf village": 0,
-            "graveyard": 0,
-            "haon dor": 0,
-            "dwarven daycare": 0,
-            "training tower": 0,
-            "the circus": 0,
-            "the library": 0,
-            "edens grove": 0,
-            "crystalmir lake": 0,
-            "the rats' lair": 0
+            "#area { 5 15 } nirrad land of the fire newts": 0,
+            "#area { 5 25 } sandman dragon cult": 0
         }
 
         for area in self.db.area_list:
-            objects_to_retag = search.search_tag(area, category="area names")
+
+            if area == "#area { 5 15 } nirrad land of the fire newts":
+                area_rename = "fire newts"
+            else:
+                area_rename = "dragon cult"
+
+            objects_to_retag = search.search_tag(area, category="area name")
             if objects_to_retag:
                 for object in objects_to_retag:
-                    object.tags.remove(area, category="area names")
-                    object.tags.add(area, category="area name")
+                    object.tags.remove(area, category="area name")
+                    object.tags.add(area_rename, category="area name")
 
 class TickerCleanupFixAreaNames(DefaultScript):
 

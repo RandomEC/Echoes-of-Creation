@@ -117,6 +117,24 @@ class Combat(Object):
                     # Make a free attempt to flee.
                     rules_combat.do_flee(combatant)
 
+                # Check to see if the target has been tripped, and, if so, try to stand.
+                if combatant.position == "sitting":
+                    if "mobile" in combatant.tags.all():
+                        chance = 50
+                    else:
+                        chance = 2 * combatant.dexterity
+
+                    chance -= 2 * combatant.size
+
+                    if random.randint(1, 100) <= chance:
+                        combatant.msg("You jump back to your feet.")
+                        combatant.location.msg_contents("%s jumps back to %s feet." % ((combatant.key[0].upper() + combatant.key[1:]),
+                                                                                       rules.pronoun_possessive(combatant)
+                                                                                       ), exclude=(combatant))
+                    elif random.randint(1, 100) < 30:
+                        combatant.msg("You struggle to stand up ... and fail.")
+                        combatant.location.msg_contents("%s tries to stand up, and fails." % (combatant.key[0].upper() + combatant.key[1:]), exclude=(combatant))
+
                 # Make sure this combatant and target are alive and both still in the same room.
                 if combatant.location == self.location and self.allow_attacks(combatant, self.db.combatants[combatant]["target"]):
                     attacker = self.db.combatants[combatant]["combatant"]
@@ -743,14 +761,8 @@ class CmdTrip(MuxCommand):
         elif caller == target:
             caller.msg("You fall flat on your face! What did you expect?")
             skill = rules_skills.get_skill(skill_name="trip")
-            wait_state = skill["wait state"]
-            rules.affect_apply(caller,
-                               "sitting",
-                               (wait_state * 2),
-                               "You slowly get to your feet, embarrassed at having tripped yourself.",
-                               "%s gets up after tripping %s, likely hoping no one notices." % (caller, rules.pronoun_reflexive(caller)),
-                               apply_1=["position", "sitting"]
-                               )
+            wait_state = skill["wait state"] * 2
+            caller.position = "sitting"
             return
         elif "player" in target.tags.all():
             caller.msg("You cannot attack another player.")

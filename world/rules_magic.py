@@ -35,7 +35,7 @@ def do_adrenaline_control(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["adrenaline control"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "adrenaline control", True, 2)
+            rules_skills.check_skill_improve(caster, "adrenaline control", True, 2)
 
         caster.msg("You chant 'adrenaline control'.\n")
         player_output_magic_chant(caster, "adrenaline control")
@@ -57,7 +57,7 @@ def do_adrenaline_control(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "adrenaline control", False, 2)
+            rules_skills.check_skill_improve(caster, "adrenaline control", False, 2)
         caster.msg("You chant 'adrenaline control'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "adrenaline control")
 
@@ -96,7 +96,7 @@ def do_agitation(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["agitation"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "agitation", True, 4)
+            rules_skills.check_skill_improve(caster, "agitation", True, 4)
 
         caster.msg("You chant 'agitation'.\n")
         player_output_magic_chant(caster, "agitation")
@@ -123,7 +123,7 @@ def do_agitation(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "agitation", False, 4)
+            rules_skills.check_skill_improve(caster, "agitation", False, 4)
         caster.msg("You chant 'agitation'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "agitation")
 
@@ -138,7 +138,7 @@ def do_armor(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["armor"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "armor", True, 2)
+            rules_skills.check_skill_improve(caster, "armor", True, 2)
 
         caster.msg("You chant 'armor'.\n")
         player_output_magic_chant(caster, "armor")
@@ -160,7 +160,7 @@ def do_armor(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "armor", False, 2)
+            rules_skills.check_skill_improve(caster, "armor", False, 2)
         caster.msg("You chant 'armor'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "armor")
 
@@ -175,7 +175,7 @@ def do_bless(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["bless"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "bless", True, 2)
+            rules_skills.check_skill_improve(caster, "bless", True, 2)
 
         caster.msg("You chant 'bless'.\n")
         player_output_magic_chant(caster, "bless")
@@ -198,7 +198,7 @@ def do_bless(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "bless", False, 2)
+            rules_skills.check_skill_improve(caster, "bless", False, 2)
         caster.msg("You chant 'bless'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "bless")
 
@@ -237,7 +237,7 @@ def do_burning_hands(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["burning hands"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "burning hands", True, 4)
+            rules_skills.check_skill_improve(caster, "burning hands", True, 4)
 
         caster.msg("You chant 'burning hands'.\n")
         player_output_magic_chant(caster, "burning hands")
@@ -264,7 +264,7 @@ def do_burning_hands(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "burning hands", False, 4)
+            rules_skills.check_skill_improve(caster, "burning hands", False, 4)
         caster.msg("You chant 'burning hands'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "burning hands")
 
@@ -281,7 +281,7 @@ def do_cause_light(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["cause light"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "cause light", True, 4)
+            rules_skills.check_skill_improve(caster, "cause light", True, 4)
 
         caster.msg("You chant 'cause light'.\n")
         player_output_magic_chant(caster, "cause light")
@@ -308,7 +308,7 @@ def do_cause_light(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "cause light", False, 4)
+            rules_skills.check_skill_improve(caster, "cause light", False, 4)
         caster.msg("You chant 'cause light'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "cause light")
 
@@ -347,7 +347,7 @@ def do_chill_touch(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["chill touch"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "chill touch", True, 4)
+            rules_skills.check_skill_improve(caster, "chill touch", True, 4)
 
         caster.msg("You chant 'chill touch'.\n")
         player_output_magic_chant(caster, "chill touch")
@@ -383,7 +383,7 @@ def do_chill_touch(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "chill touch", False, 4)
+            rules_skills.check_skill_improve(caster, "chill touch", False, 4)
         caster.msg("You chant 'chill touch'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "chill touch")
 
@@ -403,7 +403,7 @@ def do_continual_light(caster, mana_cost):
 
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "continual light", True, 1)
+            rules_skills.check_skill_improve(caster, "continual light", True, 1)
 
         caster.msg("You chant 'continual light'.\nYou twiddle your thumbs and %s appears." % light.key)
         player_output_magic_chant(caster, "continual light")
@@ -418,7 +418,7 @@ def do_continual_light(caster, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "continual light", False, 1)
+            rules_skills.check_skill_improve(caster, "continual light", False, 1)
         caster.msg("You chant 'continual light'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "continual light")
 
@@ -454,7 +454,7 @@ def do_create_food(caster, mana_cost):
 
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "create food", True, 1)
+            rules_skills.check_skill_improve(caster, "create food", True, 1)
         caster.msg("You chant 'create food'.\n%s suddenly appears." % (food.key[0].upper() + food.key[1:]))
         player_output_magic_chant(caster, "create food")
         caster.location.msg_contents("%s suddenly appears."
@@ -465,7 +465,7 @@ def do_create_food(caster, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "create food", False, 1)
+            rules_skills.check_skill_improve(caster, "create food", False, 1)
         caster.msg("You chant 'create food'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "create food")
 
@@ -521,7 +521,7 @@ def do_create_water(caster, mana_cost, target_container):
         target_container.db.capacity_current += water
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "create water", True, 1)
+            rules_skills.check_skill_improve(caster, "create water", True, 1)
         caster.msg(
             "You chant 'create water'.\n%s is filled." % (target_container.key[0].upper() + target_container.key[1:]))
         player_output_magic_chant(caster, "create water")
@@ -530,7 +530,7 @@ def do_create_water(caster, mana_cost, target_container):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "create water", False, 1)
+            rules_skills.check_skill_improve(caster, "create water", False, 1)
         caster.msg("You chant 'create water'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "create water")            
 
@@ -547,7 +547,7 @@ def do_cure_light(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["cure light"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "cure light", True, 1)
+            rules_skills.check_skill_improve(caster, "cure light", True, 1)
 
         caster.msg("You chant 'cure light'.\n")
         player_output_magic_chant(caster, "cure light")
@@ -571,7 +571,7 @@ def do_cure_light(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "cure light", False, 1)
+            rules_skills.check_skill_improve(caster, "cure light", False, 1)
         caster.msg("You chant 'cure light'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "cure light")
 
@@ -586,7 +586,7 @@ def do_detect_evil(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["detect evil"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "detect evil", True, 2)
+            rules_skills.check_skill_improve(caster, "detect evil", True, 2)
 
         caster.msg("You chant 'detect evil'.\n")
         player_output_magic_chant(caster, "detect evil")
@@ -607,7 +607,7 @@ def do_detect_evil(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "detect evil", False, 2)
+            rules_skills.check_skill_improve(caster, "detect evil", False, 2)
         caster.msg("You chant 'detect evil'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "detect evil")
 
@@ -622,7 +622,7 @@ def do_detect_hidden(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["detect hidden"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "detect hidden", True, 2)
+            rules_skills.check_skill_improve(caster, "detect hidden", True, 2)
 
         caster.msg("You chant 'detect hidden'.\n")
         player_output_magic_chant(caster, "detect hidden")
@@ -643,7 +643,7 @@ def do_detect_hidden(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "detect hidden", False, 2)
+            rules_skills.check_skill_improve(caster, "detect hidden", False, 2)
         caster.msg("You chant 'detect hidden'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "detect hidden")
 
@@ -658,7 +658,7 @@ def do_detect_invis(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["detect invis"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "detect invis", True, 2)
+            rules_skills.check_skill_improve(caster, "detect invis", True, 2)
 
         caster.msg("You chant 'detect invis'.\n")
         player_output_magic_chant(caster, "detect invis")
@@ -679,7 +679,7 @@ def do_detect_invis(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "detect invis", False, 2)
+            rules_skills.check_skill_improve(caster, "detect invis", False, 2)
         caster.msg("You chant 'detect invis'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "detect invis")
 
@@ -694,7 +694,7 @@ def do_detect_magic(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["detect magic"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "detect magic", True, 2)
+            rules_skills.check_skill_improve(caster, "detect magic", True, 2)
 
         caster.msg("You chant 'detect magic'.\n")
         player_output_magic_chant(caster, "detect magic")
@@ -715,7 +715,7 @@ def do_detect_magic(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "detect magic", False, 2)
+            rules_skills.check_skill_improve(caster, "detect magic", False, 2)
         caster.msg("You chant 'detect magic'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "detect magic")
 
@@ -730,7 +730,7 @@ def do_fly(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["fly"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "fly", True, 2)
+            rules_skills.check_skill_improve(caster, "fly", True, 2)
 
         caster.msg("You chant 'fly'.\n")
         player_output_magic_chant(caster, "fly")
@@ -751,7 +751,7 @@ def do_fly(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "fly", False, 2)
+            rules_skills.check_skill_improve(caster, "fly", False, 2)
         caster.msg("You chant 'fly'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "fly")
 
@@ -766,7 +766,7 @@ def do_giant_strength(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["giant strength"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "giant strength", True, 2)
+            rules_skills.check_skill_improve(caster, "giant strength", True, 2)
 
         caster.msg("You chant 'giant strength'.\n")
         player_output_magic_chant(caster, "giant strength")
@@ -796,7 +796,7 @@ def do_giant_strength(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "giant strength", False, 2)
+            rules_skills.check_skill_improve(caster, "giant strength", False, 2)
         caster.msg("You chant 'giant strength'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "giant strength")
 
@@ -811,7 +811,7 @@ def do_infravision(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["infravision"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "infravision", True, 2)
+            rules_skills.check_skill_improve(caster, "infravision", True, 2)
 
         caster.msg("You chant 'infravision'.\n")
         player_output_magic_chant(caster, "infravision")
@@ -833,7 +833,7 @@ def do_infravision(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "infravision", False, 2)
+            rules_skills.check_skill_improve(caster, "infravision", False, 2)
         caster.msg("You chant 'infravision'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "infravision")
 
@@ -849,7 +849,7 @@ def do_invis(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["invis"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "invis", True, 2)
+            rules_skills.check_skill_improve(caster, "invis", True, 2)
 
         caster.msg("You chant 'invis'.\n")
         player_output_magic_chant(caster, "invis")
@@ -869,7 +869,7 @@ def do_invis(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "invis", False, 2)
+            rules_skills.check_skill_improve(caster, "invis", False, 2)
         caster.msg("You chant 'invis'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "invis")
 
@@ -884,7 +884,7 @@ def do_levitation(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["levitation"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "levitation", True, 2)
+            rules_skills.check_skill_improve(caster, "levitation", True, 2)
 
         caster.msg("You chant 'levitation'.\n")
         player_output_magic_chant(caster, "levitation")
@@ -905,7 +905,7 @@ def do_levitation(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "levitation", False, 2)
+            rules_skills.check_skill_improve(caster, "levitation", False, 2)
         caster.msg("You chant 'levitation'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "levitation")
 
@@ -944,7 +944,7 @@ def do_magic_missile(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["magic missile"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "magic missile", True, 4)
+            rules_skills.check_skill_improve(caster, "magic missile", True, 4)
 
         caster.msg("You chant 'magic missile'.\n")
         player_output_magic_chant(caster, "magic missile")
@@ -971,7 +971,7 @@ def do_magic_missile(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "magic missile", False, 4)
+            rules_skills.check_skill_improve(caster, "magic missile", False, 4)
         caster.msg("You chant 'magic missile'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "magic missile")
 
@@ -986,7 +986,7 @@ def do_mental_barrier(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["mental barrier"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "mental barrier", True, 2)
+            rules_skills.check_skill_improve(caster, "mental barrier", True, 2)
 
         caster.msg("You chant 'mental barrier'.\n")
         player_output_magic_chant(caster, "mental barrier")
@@ -1006,7 +1006,7 @@ def do_mental_barrier(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "mental barrier", False, 2)
+            rules_skills.check_skill_improve(caster, "mental barrier", False, 2)
         caster.msg("You chant 'mental barrier'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "mental barrier")
 
@@ -1023,7 +1023,7 @@ def do_mind_thrust(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["mind thrust"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "mind thrust", True, 4)
+            rules_skills.check_skill_improve(caster, "mind thrust", True, 4)
 
         caster.msg("You chant 'mind thrust'.\n")
         player_output_magic_chant(caster, "mind thrust")
@@ -1050,7 +1050,7 @@ def do_mind_thrust(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "mind thrust", False, 4)
+            rules_skills.check_skill_improve(caster, "mind thrust", False, 4)
         caster.msg("You chant 'mind thrust'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "mind thrust")
 
@@ -1065,7 +1065,7 @@ def do_protection(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["protection"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "protection", True, 2)
+            rules_skills.check_skill_improve(caster, "protection", True, 2)
 
         caster.msg("You chant 'protection'.\n")
         player_output_magic_chant(caster, "protection")
@@ -1086,7 +1086,7 @@ def do_protection(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "protection", False, 2)
+            rules_skills.check_skill_improve(caster, "protection", False, 2)
         caster.msg("You chant 'protection'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "protection")
 
@@ -1106,7 +1106,7 @@ def do_refresh(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["refresh"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "refresh", True, 1)
+            rules_skills.check_skill_improve(caster, "refresh", True, 1)
 
         caster.msg("You chant 'refresh'.\n")
         player_output_magic_chant(caster, "refresh")
@@ -1130,7 +1130,7 @@ def do_refresh(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "refresh", False, 1)
+            rules_skills.check_skill_improve(caster, "refresh", False, 1)
         caster.msg("You chant 'refresh'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "refresh")
 
@@ -1145,7 +1145,7 @@ def do_shield(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["shield"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "shield", True, 2)
+            rules_skills.check_skill_improve(caster, "shield", True, 2)
 
         caster.msg("You chant 'shield'.\n")
         player_output_magic_chant(caster, "shield")
@@ -1167,7 +1167,7 @@ def do_shield(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "shield", False, 2)
+            rules_skills.check_skill_improve(caster, "shield", False, 2)
         caster.msg("You chant 'shield'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "shield")
 
@@ -1238,7 +1238,7 @@ def do_summon_weapon(caster, mana_cost):
 
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "summon weapon", True, 1)
+            rules_skills.check_skill_improve(caster, "summon weapon", True, 1)
 
         caster.msg("You chant 'summon weapon'.\nYou pray to the Paladin gods and %s appears." % weapon.key)
         player_output_magic_chant(caster, "summon weapon")
@@ -1252,7 +1252,7 @@ def do_summon_weapon(caster, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "summon weapon", False, 1)
+            rules_skills.check_skill_improve(caster, "summon weapon", False, 1)
         caster.msg("You chant 'summon weapon'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "summon weapon")
 
@@ -1268,7 +1268,7 @@ def do_thought_shield(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["thought shield"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-        rules_skills.check_skill_improve(caster, "thought shield", True, 2)
+            rules_skills.check_skill_improve(caster, "thought shield", True, 2)
 
         caster.msg("You chant 'thought shield'.\n")
         player_output_magic_chant(caster, "thought shield")
@@ -1288,7 +1288,7 @@ def do_thought_shield(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-        rules_skills.check_skill_improve(caster, "thought shield", False, 2)
+            rules_skills.check_skill_improve(caster, "thought shield", False, 2)
         caster.msg("You chant 'thought shield'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "thought shield")
 

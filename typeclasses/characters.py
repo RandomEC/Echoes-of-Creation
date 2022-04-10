@@ -735,7 +735,7 @@ class Character(DefaultCharacter):
 
                 if (self.hitpoints_current < (self.hitpoints_maximum * 0.5) and random.randint(1, 8) < 7) or (random.randint(1, 32) < 7):
 
-                    if "sentinel" not in self.db.act_flags and not self.nattributes.hasattr(combat_handler):
+                    if "sentinel" not in self.db.act_flags and not self.nattributes.hasattr("combat_handler"):
                         door = random.randint(1, 6)
                         if door == 1:
                             door = "north"

@@ -513,7 +513,7 @@ class CmdDrop(MuxCommand):
 
         # Check for the object being cursed to be undroppable.
 
-        if not obj.access(caller, "drop"):
+        if not obj.access(caller, "drop") and caller.level < 104:
             if obj.db.get_err_msg:
                 caller.msg(obj.db.get_err_msg)
             else:
@@ -595,7 +595,11 @@ class CmdGet(MuxCommand):
                     return
             else:
                 get_list = []
-                object = caller.search(self.lhs, location=container)
+                objects = []
+                for object in container.contents:
+                    if "object" in object.tags.all():
+                        objects.append(object)
+                object = caller.search(self.lhs, candidates=objects)
                 get_list.append(object)
                 if not object:
                     caller.msg("There is no %s in %s to get." % (self.lhs, container.key))
@@ -654,7 +658,11 @@ class CmdGet(MuxCommand):
 
             else:
                 get_list = []
-                object = caller.search(self.args, location=caller.location)
+                objects = []
+                for object in caller.location.contents:
+                    if "object" in object.tags.all():
+                        objects.append(object)
+                object = caller.search(self.args, candidates=objects)
                 get_list.append(object)
                 if not object:
                     caller.msg("There is no %s here to get." % self.args)
@@ -1247,7 +1255,7 @@ class CmdSacrifice(MuxCommand):
         if not obj:
             return
 
-        # Check for the object being cursed to be undroppable.
+        # Check for the object not being get-able, which can't be sacrificed.
 
         if not obj.access(caller, "get"):
             caller.msg("That is not available for sacrifice.")
@@ -1721,19 +1729,23 @@ class CmdStand(MuxCommand):
 
         caller = self.caller
 
-        if caller.db.position == "fighting":
+        if caller.position == "fighting":
             caller.msg("You are already standing and fighting!")
             return
-        if caller.db.position == "standing":
+        if caller.position == "standing":
             caller.msg("You can't stand any more than you are already.")
             return
 
-        if caller.db.position == "sleeping":
+        if caller.position == "sleeping":
             caller.msg("You wake up and stand up, ready for more.")
             caller.location.msg_contents("%s wakes up and stands up." % (caller.name), exclude=caller)
-        elif caller.db.position == "resting":
+        elif caller.position == "resting":
             caller.msg("You stop resting and stand up, ready for action.")
             caller.location.msg_contents("%s stands up." % (caller.name), exclude=caller)
+        else:
+            caller.msg("You stand up, ready for action.")
+            caller.location.msg_contents("%s leaps back to %s feet." % (caller.name, rules.pronoun_possessive(caller)), exclude=caller)
+
         caller.position = "standing"
 
 
