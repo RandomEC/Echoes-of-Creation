@@ -4,8 +4,33 @@ miden'nir
 elemental canyon
 gnome village
 holy grove
-
-
 dangerous neighborhood
 dragon cult
+
 fire newts
+
+
+
+Name/key: A Hole (#4395)
+Aliases: r1590
+Typeclass: Room (typeclasses.rooms.Room)
+Location: None
+Home: Choosing a Race (#2)
+Locks: 
+  call:true(); control:id(1) or perm(Admin);  delete:id(1) or perm(Admin);
+  drop:holds();  edit:id(1) or perm(Admin); examine:perm(Builder);
+  get:false(); puppet:false(); tell:perm(Admin); view:all()
+Persistent attribute(s): 
+  area_name = 
+  desc = You are in a hole. It is largely unremarkable, but for the crevice in
+the[...]
+  extra_description = {}
+  reset_objects = {}
+  room_flags = ['indoors']
+  terrain = forest
+  vnum = r1590
+Tags[category]: 
+  gnome village[area name]
+Exits (has .destination): up(#4583), east(#6332)
+Characters: Random(#1)
+Contents: a hobgoblin miner(#4700)

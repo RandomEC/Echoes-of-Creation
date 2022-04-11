@@ -140,6 +140,25 @@ class Combat(Object):
                     attacker = self.db.combatants[combatant]["combatant"]
                     victim = self.db.combatants[combatant]["target"]
 
+                    # Check on hide and invisible status and remove if attacking.
+                    if attacker.get_affect_status("hide"):
+                        pass
+
+                    if attacker.get_affect_status("invis"):
+
+                        if attacker.sex == "neuter":
+                            attack_string = "they attack"
+                        else:
+                            attack_string = "%s attacks" % rules.pronoun_subject(attacker)
+
+                        rules.affect_remove(attacker,
+                                            "invis",
+                                            "With your attack, your invisibility dissipates!",
+                                            "%s shimmers into visibility as %s %s!" % ((attacker.key[0].upper() + attacker.key[1:]),
+                                                                                       attack_string,
+                                                                                       victim.key
+                                                                                       ))
+
                     # Do the attacks for this attacker, and get output.
                     attacker_string, victim_string, room_string = rules_combat.do_one_character_attacks(attacker, victim)
 

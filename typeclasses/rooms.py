@@ -244,10 +244,13 @@ class Room(DefaultRoom):
         tag = self.tags.all(return_key_and_category=True)
         total_tags = len(tag)
 
+        area = ""
         for index in range(0, total_tags):
             if tag[index][1] == "area name":
                 area = tag[index][0]
 
+        if not area:
+            area = "unknown"
         area_string = rules.get_area_info(area)
 
         string = "|M%s\n%s|n\n" % (self.get_display_name(looker), area_string)
