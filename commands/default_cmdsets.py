@@ -17,6 +17,7 @@ own cmdsets by inheriting from them or directly from `evennia.CmdSet`.
 from evennia import default_cmds
 from commands.command import CmdAffects
 from commands.command import CmdColleges
+from commands.command import CmdCSkills
 from commands.command import CmdDestroy
 from commands.command import CmdDrop
 from commands.command import CmdGet
@@ -134,6 +135,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdCreateFood())
         self.add(CmdCreateSound())
         self.add(CmdCreateWater())
+        self.add(CmdCSkills())
         self.add(CmdCureLight())
         self.add(CmdDestroy())
         self.add(CmdDetectEvil())

@@ -2039,7 +2039,7 @@ class CmdSlumber(MuxCommand):
             caster.msg("%s already asleep.\n" % subject)
             return
 
-        rules_magic.do_sleep(caster, target, cost)
+        rules_magic.do_slumber(caster, target, cost)
 
 
 class CmdSummonWeapon(MuxCommand):

@@ -198,6 +198,7 @@ def get_skill(**kwargs):
     eligible_character - returns a dictionary of skills that
                          character is eligible to practice, and
                          the cost for that practice.
+    all - returns the entire skills dictionary.
     """
     
     skills = {
@@ -453,11 +454,7 @@ def get_skill(**kwargs):
             },
         "pick lock": {
             "classes": {
-                "warrior": 5,
-                "paladin": 7,
-                "ranger": 9,
-                "bard": 15,
-                "thief": 16
+                "thief": 5
                 },
             },
         "protection": {
@@ -547,7 +544,10 @@ def get_skill(**kwargs):
         for skill in skills:
             if skill == skill_name:
                 return skills[skill]
-            
+
+    elif "all" in kwargs:
+        return skills
+
     elif "eligible_character" in kwargs:
         eligible_character = kwargs["eligible_character"]
 

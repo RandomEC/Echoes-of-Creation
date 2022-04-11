@@ -83,7 +83,7 @@ class Combat(Object):
                 combatant_type = "player"
 
             # Check against first one. If any are different, set combat_end to False, and stop looking.
-            if combatant_type != first_combatant_type:
+            if combatant_type != first_combatant_type and combatant.position != "sleeping":
                 combat_end = False
                 break;
 
@@ -273,6 +273,14 @@ class Combat(Object):
 
         # set up back-reference
         self._init_combatant(combatant)
+
+        # Wake up the target if they are asleep.
+        if combatant_target.position != "standing":
+            combatant_target.position = "standing"
+            combatant_target.msg("An attack! You stand up to face your foe!")
+            combatant_target.location.msg_contents("%s stands up to face %s foe!" % ((combatant_target.key[0].upper() + combatant_target.key[1:]),
+                                                                                     rules.pronoun_possessive(combatant_target)
+                                                                                     ), exclude=combatant_target)
 
     def change_target(self, attacker, victim):
         self.db.combatants[attacker]["target"] = victim

@@ -624,7 +624,7 @@ class Character(DefaultCharacter):
                 if "position" in self.db.spell_affects[affect]:
                     spell_position_affect = affect
 
-        if new_value != "standing" and new_value != "sleeping" and new_value != "resting":
+        if new_value != "standing" and new_value != "sleeping" and new_value != "resting" and new_value != "sitting":
             self.msg("There was a problem setting your new position, as %s is not a valid value." % new_value)
         elif spell_position_affect:
             del self.db.spell_affects[spell_position_affect]

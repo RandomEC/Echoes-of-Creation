@@ -1172,25 +1172,25 @@ def do_shield(caster, target, mana_cost):
         player_output_magic_chant(caster, "shield")
 
 
-def do_sleep(caster, target, mana_cost):
-    """ Function implementing sleep spell"""
+def do_slumber(caster, target, mana_cost):
+    """ Function implementing slumber spell"""
 
-    spell = rules_skills.get_skill(skill_name="sleep")
+    spell = rules_skills.get_skill(skill_name="slumber")
     level = caster.level
 
     if target.level > caster.level or save_spell(caster.level, target):
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-            rules_skills.check_skill_improve(caster, "sleep", False, 1)
-        caster.msg("You chant 'sleep'.\nYou failed.\n")
-        player_output_magic_chant(caster, "sleep")
+            rules_skills.check_skill_improve(caster, "slumber", False, 1)
+        caster.msg("You chant 'slumber'.\nYou failed.\n")
+        player_output_magic_chant(caster, "slumber")
 
-    if random.randint(1, 100) <= caster.db.skills["sleep"] or "mobile" in caster.tags.all():
+    if random.randint(1, 100) <= caster.db.skills["slumber"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-            rules_skills.check_skill_improve(caster, "sleep", True, 1)
-        caster.msg("You chant 'sleep'.\nYou put %s to sleep." % (target.key[0].upper() + target.key[1:]))
-        player_output_magic_chant(caster, "sleep")
+            rules_skills.check_skill_improve(caster, "slumber", True, 1)
+        caster.msg("You chant 'slumber'.\nYou put %s into a slumber." % (target.key[0].upper() + target.key[1:]))
+        player_output_magic_chant(caster, "slumber")
         target.msg("You feel very sleepy ... zzzzzz.")
         if target.sex == "neuter":
             verb = "drift"

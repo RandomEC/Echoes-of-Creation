@@ -11,10 +11,10 @@ import random
 import time
 from evennia import create_script
 from evennia.commands.command import Command as BaseCommand
-from evennia.utils import utils, search
+from evennia.utils import utils, search, evtable
 from evennia.utils.ansi import raw as raw_ansi
 from server.conf import settings
-from world import rules
+from world import rules, rules_skills
 
 # from evennia import default_cmds
 
@@ -267,7 +267,7 @@ class CmdAffects(MuxCommand):
                             apply_amount.append(caller.db.spell_affects[affect][property])
                             index += 1
                     for apply_index in range(0, index):
-                        output_string += "     %s, for a duration of %d, which impacts %s by %d.\n" % ((affect[0].upper() + affect[1:]),
+                        output_string += "     %s, for a duration of %d, which impacts %s by %s.\n" % ((affect[0].upper() + affect[1:]),
                                                                                                     duration,
                                                                                                     apply[apply_index],
                                                                                                     apply_amount[apply_index],
@@ -320,6 +320,62 @@ class CmdColleges(MuxCommand):
             caller.msg("You have not yet learned skills in any college yet.")
         else:
             caller.msg(college_output)
+
+
+class CmdCSkills(MuxCommand):
+    """
+    Provides the skills that can be learned in each college, and
+    at what level
+
+    Usage:
+      cskills <college>
+
+    Provides a list of the levels at which skills can be learned
+    in the given college. Cannot be used without an argument.
+
+    """
+
+    key = "cskills"
+    aliases = ["csk"]
+    locks = "cmd:all()"
+
+    def func(self):
+        """Implements the command."""
+
+        caller = self.caller
+
+        if not self.args:
+            caller.msg("You must provide a college for which you want to see the skills.")
+            return
+
+        college = self.args.lower()
+
+        skill_dictionary = rules_skills.get_skill(all=True)
+        college_dictionary = {}
+
+        for skill in skill_dictionary:
+            if college in skill_dictionary[skill]["classes"]:
+                level = skill_dictionary[skill]["classes"][college]
+                if level in college_dictionary:
+                    college_dictionary[level] += ", %s" % skill
+                else:
+                    college_dictionary[level] = skill
+
+        if not college_dictionary:
+            caller.msg("There is no %s college. Please try a real college." % college.capitalize())
+        else:
+            level_output_list = []
+            skills_output_list = []
+            for level in range(1, 102):
+                if level in college_dictionary:
+                    level_output_list.append(level)
+                    skills_output_list.append(college_dictionary[level])
+
+            table = evtable.EvTable("Level", "Skill(s)", table=[level_output_list, skills_output_list], border=None, width=80)
+            table.reformat_column(0, width=7)
+
+            caller.msg("The following skills are available in the %s college:\n%s" % (college.capitalize(), table))
+
 
 class CmdDestroy(MuxCommand):
     """
