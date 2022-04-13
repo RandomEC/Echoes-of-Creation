@@ -695,6 +695,16 @@ class CmdGet(MuxCommand):
                         get_output_room = "%s takes %s from %s.\n" % (caller.name, obj.name, container.key)
                         # calling at_get hook method
                         obj.at_get(caller)
+                        
+                        # Check if the object resets in the room. If so, add the room to objects to reset
+                        # if not there already. Use caller.location since the object has already been gotten
+                        # at this point.
+                        if obj.db.vnum in caller.location.db.reset_objects:
+                            reset_script = search.script_search("reset_script")
+                            area = rules.get_area_name(caller.location)
+
+                            if caller.location not in reset_script.db.area_list[area]["resets"]:
+                                reset_script.db.area_list[area]["resets"].append(caller.location)   
 
                 caller.msg(get_output)
                 caller.location.msg_contents(
@@ -758,6 +768,16 @@ class CmdGet(MuxCommand):
                         get_output_room = "%s picks up %s.\n" % (caller.name, obj.name)
                         # calling at_get hook method
                         obj.at_get(caller)
+                        
+                        # Check if the object resets in the room. If so, add the room to objects to reset
+                        # if not there already. Use caller.location since the object has already been gotten
+                        # at this point.
+                        if obj.db.vnum in caller.location.db.reset_objects:
+                            reset_script = search.script_search("reset_script")
+                            area = rules.get_area_name(caller.location)
+
+                            if caller.location not in reset_script.db.area_list[area]["resets"]:
+                                reset_script.db.area_list[area]["resets"].append(caller.location)   
 
                 caller.msg(get_output)
                 caller.location.msg_contents(
@@ -1381,7 +1401,21 @@ class CmdSacrifice(MuxCommand):
         if obj.contents:
             for item in obj.contents:
                 item.location = None
+        
+        # Check if the object resets in the room. If so, add the room to objects to reset
+        # if not there already. Use caller.location since the object has already been gotten
+        # at this point.
+        if obj.db.vnum in obj.location.db.reset_objects:
+            reset_script = search.script_search("reset_script")
+            area = rules.get_area_name(obj.location)
+
+            if caller.location not in reset_script.db.area_list[area]["resets"]:
+                reset_script.db.area_list[area]["resets"].append(obj.location)   
+        
         obj.location = None
+        
+        
+        
         rules.remove_disintegrate_timer(obj)
         caller.location.msg_contents("%s builds a small pyre, and sacrifices %s to the gods."
                                          % (caller.name, obj.name),
