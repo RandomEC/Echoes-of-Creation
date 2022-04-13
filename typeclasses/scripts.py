@@ -110,59 +110,42 @@ class ResetScript(DefaultScript):
         # Maybe make a command to add an area to this list.
 
         self.db.area_list = {
-            "smurf village": 0,
-            "graveyard": 0,
-            "haon dor": 0,
-            "dwarven daycare": 0,
-            "training tower": 0,
-            "the circus": 0,
-            "the library": 0,
-            "edens grove": 0,
-            "crystalmir lake": 0,
-            "the rats' lair": 0,
-            "gnome village": 0,
-            "dragon cult": 0,
-            "holy grove": 0,
-            "troll den": 0,
-            "faerie ring": 0,
-            "miden'nir": 0,
-            "fire newts": 0,
-            "dangerous neighborhood": 0
+            "smurf village": {"timer": 0, "resets":[]},
+            "graveyard": {"timer": 0, "resets":[]},
+            "haon dor": {"timer": 0, "resets":[]},
+            "dwarven daycare": {"timer": 0, "resets":[]},
+            "training tower": {"timer": 0, "resets":[]},
+            "the circus": {"timer": 0, "resets":[]},
+            "the library": {"timer": 0, "resets":[]},
+            "edens grove": {"timer": 0, "resets":[]},
+            "crystalmir lake": {"timer": 0, "resets":[]},
+            "the rats' lair": {"timer": 0, "resets":[]},
+            "gnome village": {"timer": 0, "resets":[]},
+            "dragon cult": {"timer": 0, "resets":[]},
+            "holy grove": {"timer": 0, "resets":[]},
+            "troll den": {"timer": 0, "resets":[]},
+            "faerie ring": {"timer": 0, "resets":[]},
+            "miden'nir": {"timer": 0, "resets":[]},
+            "fire newts": {"timer": 0, "resets":[]},
+            "dangerous neighborhood": {"timer": 0, "resets":[]}
         }
 
-
-    def check_for_player(self, area_name):
-        """
-        This function checks to see if there are players in the area in
-        question.
-        """
-
-        # Get all the objects in the area
-        all_area_objects = search.search_tag(area_name, category="area name")
-        # Iterate through all objects to see if there are any players in rooms
-        # in the area
-        for object in all_area_objects:
-            contents = object.contents
-            for item in contents:
-                # If there is a player, return true.
-                if item.account:
-                    return True
-        return False
 
     def at_repeat(self):
 
         for area in self.db.area_list:
-            # Reset if there are no players in the area, or if counter is at 2.
-            if not rules.player_in_area(area) or self.db.area_list[area] >= 2:
-                objects_to_reset = search.search_tag(area, category="area name")
-                if objects_to_reset:
-                    for object in objects_to_reset:
+            
+            # Reset if there are things to reset.
+            if self.db.area_list[area]["resets"]:
+                
+                # But only if no players in the area, or if counter is at 2.
+                if not rules.player_in_area(area) or self.db.area_list[area]["timer"] >= 2:
+                    for object in self.db.area_list[area]["resets"]:
                         object.at_reset()
-                # Since you reset, reset the timer on the area.
-                self.db.area_list[area] = 0
+                    self.db.area_list[area]["timer] = 0
             else:
                 # Iterate up the timer toward the max of two.
-                self.db.area_list[area] += 1
+                self.db.area_list[area]["timer"] += 1
 
 
 class UpdateTimerScript(DefaultScript):
