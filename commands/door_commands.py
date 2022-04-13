@@ -57,7 +57,9 @@ def can_unlock(accessing_obj, accessed_obj, *args, **kwargs):
         return False
 """
 
+from evennia.utils import search
 from commands.command import MuxCommand
+from world import rules
 
 
 class CmdDoorOpen(MuxCommand):
@@ -120,6 +122,15 @@ class CmdDoorOpen(MuxCommand):
                 container.db.state.append("open")
                 caller.msg("You open %s." % container.key)
 
+            # Check if the container resets in the room. If so, add to objects to reset
+            # if not there already.
+            if container.db.vnum in container.location.db.reset_objects:
+                reset_script = search.script_search("reset_script")
+                area = rules.get_area_name(container)
+        
+                if container not in reset_script.db.area_list[area]["resets"]:
+                    reset_script.db.area_list[area]["resets"].append(container)        
+                
             # Call at_after_open.
             container.at_after_open(caller)
 
@@ -155,6 +166,13 @@ class CmdDoorOpen(MuxCommand):
                 door.db.door_attributes.append("open")
                 caller.msg("You open the %s." % door_string)
 
+            # Add exit to objects to reset if not there already.
+            reset_script = search.script_search("reset_script")
+            area = rules.get_area_name(door)
+            
+            if door not in reset_script.db.area_list[area]["resets"]:
+                reset_script.db.area_list[area]["resets"].append(door)        
+                
             # The next section of code is to deal with the fact that each "exit"
             # is actually two paired exits, and does the same to the door in the
             # other direction.
@@ -181,6 +199,12 @@ class CmdDoorOpen(MuxCommand):
             if "open" not in opposite_door.db.door_attributes:
                 opposite_door.db.door_attributes.append("open")
 
+            # Add exit to objects to reset if not there already.
+            reset_script = search.script_search("reset_script")
+            area = rules.get_area_name(opposite_door)
+            
+            if door not in reset_script.db.area_list[area]["resets"]:
+                reset_script.db.area_list[area]["resets"].append(opposite_door)
 
 class CmdDoorClose(MuxCommand):
     """
@@ -241,6 +265,15 @@ class CmdDoorClose(MuxCommand):
                 container.db.state.remove("open")
                 caller.msg("You close %s." % container.key)
 
+            # Check if the container resets in the room. If so, add to objects to reset
+            # if not there already.
+            if container.db.vnum in container.location.db.reset_objects:
+                reset_script = search.script_search("reset_script")
+                area = rules.get_area_name(container)
+        
+                if container not in reset_script.db.area_list[area]["resets"]:
+                    reset_script.db.area_list[area]["resets"].append(container)        
+                
             # Call at_after_close.
             container.at_after_close(caller)
 
@@ -276,6 +309,13 @@ class CmdDoorClose(MuxCommand):
                 door.db.door_attributes.remove("open")
                 caller.msg("You close the %s." % door_string)
 
+            # Add exit to objects to reset if not there already.
+            reset_script = search.script_search("reset_script")
+            area = rules.get_area_name(door)
+            
+            if door not in reset_script.db.area_list[area]["resets"]:
+                reset_script.db.area_list[area]["resets"].append(door)
+                
             # The next section of code is to deal with the fact that each "exit"
             # is actually two paired exits, and does the same to the door in the
             # other direction.
@@ -302,6 +342,12 @@ class CmdDoorClose(MuxCommand):
             if "open" in opposite_door.db.door_attributes:
                 opposite_door.db.door_attributes.remove("open")
 
+            # Add exit to objects to reset if not there already.
+            reset_script = search.script_search("reset_script")
+            area = rules.get_area_name(opposite_door)
+            
+            if door not in reset_script.db.area_list[area]["resets"]:
+                reset_script.db.area_list[area]["resets"].append(opposite_door)
 
 class CmdDoorUnlock(MuxCommand):
     """
@@ -375,6 +421,15 @@ class CmdDoorUnlock(MuxCommand):
                 container.db.state.remove("locked")
                 caller.msg("*Click* You unlock %s." % container.key)
             
+            # Check if the container resets in the room. If so, add to objects to reset
+            # if not there already.
+            if container.db.vnum in container.location.db.reset_objects:
+                reset_script = search.script_search("reset_script")
+                area = rules.get_area_name(container)
+        
+                if container not in reset_script.db.area_list[area]["resets"]:
+                    reset_script.db.area_list[area]["resets"].append(container)        
+            
         else:
             # Check to make sure it is actually a door.
             if "exit" not in door.tags.all():
@@ -421,6 +476,13 @@ class CmdDoorUnlock(MuxCommand):
                 else:
                     caller.msg("*Click* You unlock the %s." % door.key)
 
+            # Add exit to objects to reset if not there already.
+            reset_script = search.script_search("reset_script")
+            area = rules.get_area_name(door)
+            
+            if door not in reset_script.db.area_list[area]["resets"]:
+                reset_script.db.area_list[area]["resets"].append(door)
+                    
             # The next section of code is to deal with the fact that each "exit"
             # is actually two paired exits, and does the same to the door in the
             # other direction.
@@ -447,6 +509,12 @@ class CmdDoorUnlock(MuxCommand):
             if "locked" in opposite_door.db.door_attributes:
                 opposite_door.db.door_attributes.remove("locked")
 
+            # Add exit to objects to reset if not there already.
+            reset_script = search.script_search("reset_script")
+            area = rules.get_area_name(opposite_door)
+            
+            if door not in reset_script.db.area_list[area]["resets"]:
+                reset_script.db.area_list[area]["resets"].append(opposite_door)
 
 class CmdDoorLock(MuxCommand):
     """
@@ -518,7 +586,16 @@ class CmdDoorLock(MuxCommand):
             if "locked" not in container.db.state:
                 container.db.state.append("locked")
                 caller.msg("*Click* You lock %s." % container.key)
-            
+
+            # Check if the container resets in the room. If so, add to objects to reset
+            # if not there already.
+            if container.db.vnum in container.location.db.reset_objects:
+                reset_script = search.script_search("reset_script")
+                area = rules.get_area_name(container)
+        
+                if container not in reset_script.db.area_list[area]["resets"]:
+                    reset_script.db.area_list[area]["resets"].append(container)        
+                
         else:
             # Check to make sure it is actually a door.
             if "exit" not in door.tags.all():
@@ -566,6 +643,13 @@ class CmdDoorLock(MuxCommand):
                 else:
                     caller.msg("*Click* You lock the %s." % door.key)
 
+            # Add exit to objects to reset if not there already.
+            reset_script = search.script_search("reset_script")
+            area = rules.get_area_name(door)
+            
+            if door not in reset_script.db.area_list[area]["resets"]:
+                reset_script.db.area_list[area]["resets"].append(door)
+                    
             # The next section of code is to deal with the fact that each "exit"
             # is actually two paired exits, and does the same to the door in the
             # other direction.
@@ -592,5 +676,11 @@ class CmdDoorLock(MuxCommand):
             if "locked" not in opposite_door.db.door_attributes:
                 opposite_door.db.door_attributes.append("locked")
 
+            # Add exit to objects to reset if not there already.
+            reset_script = search.script_search("reset_script")
+            area = rules.get_area_name(opposite_door)
+            
+            if door not in reset_script.db.area_list[area]["resets"]:
+                reset_script.db.area_list[area]["resets"].append(opposite_door)
 
 
