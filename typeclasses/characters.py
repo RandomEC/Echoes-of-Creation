@@ -706,9 +706,16 @@ class Character(DefaultCharacter):
         if self.db.hitpoints["damaged"] > 0:
             hp_gain = rules.gain_hitpoints(self)
             self.db.hitpoints["damaged"] -= hp_gain
+        # If mobile is fully healed, remove healing ticker call.
+        else:
+            if "mobile" in self.tags.all():
+                tickerhandler.remove(store_key=self.db.heal_ticker)
+                self.db.heal_ticker = None
+            
         if self.db.mana["spent"] > 0:
             mana_gain = rules.gain_mana(self)
             self.db.mana["spent"] -= mana_gain
+            
         if self.db.moves["spent"] > 0:
             moves_gain = rules.gain_moves(self)
             self.db.moves["spent"] -= moves_gain
