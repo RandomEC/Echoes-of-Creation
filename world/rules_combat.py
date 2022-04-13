@@ -3,6 +3,7 @@ import random
 import evennia
 from evennia import create_object
 from evennia import TICKER_HANDLER as tickerhandler
+from evennia.utils import search
 from world import rules_race, rules, rules_skills
 from server.conf import settings
 
@@ -469,6 +470,12 @@ def do_death(attacker, victim, **kwargs):
         # Move victim to None location to be reset later.
         victim.location = None
 
+        # Add victim to reset list.
+        reset_script = search.script_search("reset_script")
+        area = rules.get_area_name(victim)
+        
+        reset_script.db.area_list[area]["resets"].append(victim)
+        
         # Award xp.
         if "player" in attacker.tags.all():
             experience_modified = \
