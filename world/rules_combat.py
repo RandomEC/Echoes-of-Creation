@@ -220,7 +220,18 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
 
             attacker.db.experience_total += experience_modified
 
+        # Do damage to the victim.
         victim.take_damage(damage)
+        
+        # Get the mobile victim started healing, if not already doing so. Heroes
+        # are always checked anyway.
+        if "mobile" in victim.tags.all():
+            if not victim.attributes.has("heal_ticker"):
+                heal_ticker = tickerhandler.add(30, victim.at_update)
+                victim.db.heal_ticker = heal_ticker
+            elif not victim.db.heal_ticker:
+                heal_ticker = tickerhandler.add(30, victim.at_update)
+                victim.db.heal_ticker = heal_ticker
 
         if "output" in kwargs:
             attacker.msg("%s" % kwargs["output"][0])
