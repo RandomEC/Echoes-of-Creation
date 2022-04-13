@@ -744,6 +744,21 @@ def get_area_info(area_name):
     else:
         return "Unknown [  Unknown ]"
 
+def get_area_name(object):
+    """
+    This function determines the area that an object (room, mobile, exit,
+    object) is associated with.
+    """
+    
+    tag = object.tags.all(return_key_and_category=True)
+    total_tags = len(tag)
+
+    for index in range(0, total_tags):
+        if tag[index][1] == "area name":
+            area = tag[index][0]
+    
+    return area
+    
 def hitpoints_cost(character):
     """
     This function determines the experience cost of getting an
