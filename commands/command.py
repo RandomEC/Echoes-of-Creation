@@ -566,6 +566,9 @@ class CmdDrop(MuxCommand):
         )
         if not obj:
             return
+        elif not rules.is_visible(obj, caller):
+            caller.msg("You aren't carrying %s." % self.args)
+            return
 
         # Check for the object being cursed to be undroppable.
 
@@ -630,6 +633,9 @@ class CmdGet(MuxCommand):
             if not container:
                 caller.msg("There is no %s here to get items from." % self.rhs)
                 return
+            elif not rules.is_visible(container, caller):
+                caller.msg("There is no %s here to get items from." % self.args)
+                return
             elif container.db.item_type != "container":
                 caller.msg("%s is not a container." % (container.key[0].upper() + container.key[1:]))
                 return
@@ -644,7 +650,7 @@ class CmdGet(MuxCommand):
 
             if self.lhs == "all":
                 for object in container.contents:
-                    if "object" in object.tags.all():
+                    if "object" in object.tags.all() and rules.is_visible(object, caller):
                         get_list.append(object)
                 if not get_list:
                     caller.msg("There is nothing in %s to get." % container.key)
@@ -653,7 +659,7 @@ class CmdGet(MuxCommand):
                 get_list = []
                 objects = []
                 for object in container.contents:
-                    if "object" in object.tags.all():
+                    if "object" in object.tags.all() and rules.is_visible(object, caller):
                         objects.append(object)
                 object = caller.search(self.lhs, candidates=objects)
                 get_list.append(object)
@@ -716,7 +722,7 @@ class CmdGet(MuxCommand):
             get_list = []
             if self.args == "all":
                 for object in caller.location.contents:
-                    if "object" in object.tags.all():
+                    if "object" in object.tags.all() and rules.is_visible(object, caller):
                         get_list.append(object)
                 if not get_list:
                     caller.msg("There is nothing here to get.")
@@ -726,7 +732,7 @@ class CmdGet(MuxCommand):
                 get_list = []
                 objects = []
                 for object in caller.location.contents:
-                    if "object" in object.tags.all():
+                    if "object" in object.tags.all() and rules.is_visible(object, caller):
                         objects.append(object)
                 object = caller.search(self.args, candidates=objects)
                 get_list.append(object)
@@ -814,6 +820,12 @@ class CmdGive(MuxCommand):
         )
         target = caller.search(self.rhs)
         if not (to_give and target):
+            return
+        elif not rules.is_visible(to_give, caller):
+            caller.msg("You aren't carrying %s." % self.lhs)
+            return
+        elif not rules.is_visible(to_give, target):
+            caller.msg("%s must be able to see %s to receive it." % ((target.key[0].upper() + target.key[1:]), object.key))
             return
         if target == caller:
             caller.msg("You keep %s to yourself." % to_give.key)
@@ -931,6 +943,10 @@ class CmdInspect(MuxCommand):
 
             if not object:
                 caller.msg("There is no %s here." % self.lhs)
+                return
+            elif not rules.is_visible(object, caller):
+                caller.msg("There is no %s here." % self.lhs)
+                return
             else:
                 for extra_keywords_string in object.db.extra_descriptions:
                     extra_keywords_list = extra_keywords_string.split()
@@ -964,7 +980,7 @@ class CmdInventory(MuxCommand):
         else:
             table = self.styled_table(border="header")
             for item in items:
-                if not item.db.equipped:  # So equipped items don't show up.
+                if not item.db.equipped and rules.is_visible(item, self.caller):  # So equipped items don't show up.
                     table.add_row(
                         f"|C{item.name}|n",
                         "{}|n".format(utils.crop(raw_ansi(item.db.desc), width=50) or ""),
@@ -1132,6 +1148,8 @@ class CmdLook(MuxCommand):
             target = caller.search(self.args)
             if not target:
                 return
+            elif not rules.is_visible(target, caller):
+                return
         self.msg((caller.at_look(target), {"type": "look"}), options=None)
 
         # Check to see if the target is a character (or mobile), and if so
@@ -1168,6 +1186,9 @@ class CmdPut(MuxCommand):
 
         if not to_put:
             return
+        elif not rules.is_visible(to_put, caller):
+            caller.msg("You aren't carrying %s." % self.lhs)
+            return
         
         # For ease of programming reasons, you cannot put a container in
         # another container.
@@ -1182,6 +1203,9 @@ class CmdPut(MuxCommand):
                                )
 
         if not target:
+            return
+        elif not rules.is_visible(target, caller):
+            caller.msg("There is no %s here." % self.rhs)
             return
 
         if not (to_put and target):
@@ -1329,6 +1353,9 @@ class CmdSacrifice(MuxCommand):
             multimatch_string="There is more than one %s here:" % self.args,
         )
         if not obj:
+            return
+        elif not rules.is_visible(obj, caller):
+            caller.msg("There is no %s here to sacrifice." % self.args)
             return
 
         # Check for the object not being get-able, which can't be sacrificed.
@@ -1487,7 +1514,7 @@ class CmdScan(MuxCommand):
             mobile_list = []
             for object in room.contents:
                 if "mobile" in object.tags.all():
-                    if rules.is_visible_character(object, player):
+                    if rules.is_visible(object, player):
                         mobile_list.append(object)
             return mobile_list
 
@@ -2043,6 +2070,9 @@ class CmdTalk(MuxCommand):
         )
 
         if not to_talk:
+            return
+        elif not rules.is_visible(to_talk, caller):
+            caller.msg("There is no %s here." % self.args)
             return
 
         if to_talk == caller:
