@@ -101,6 +101,10 @@ class CmdDoorOpen(MuxCommand):
         if "object" in door.tags.all():
             container = door
             
+            if not rules.is_visible(container, caller):
+                caller.msg("There is no %s here." % self.args)
+                return               
+                
             # Check to make sure it is actually a container.
             if container.db.item_type != "container":
                 caller.msg("%s is neither a container nor a door."
@@ -244,6 +248,10 @@ class CmdDoorClose(MuxCommand):
         if "object" in door.tags.all():
             container = door
 
+            if not rules.is_visible(container, caller):
+                    caller.msg("There is no %s here." % self.args)
+                    return               
+        
             # Check to make sure it is actually a container.
             if container.db.item_type != "container":
                 caller.msg("%s is neither a container nor a door."
@@ -386,6 +394,10 @@ class CmdDoorUnlock(MuxCommand):
         if "object" in door.tags.all():
             container = door
             
+            if not rules.is_visible(container, caller):
+                caller.msg("There is no %s here." % self.args)
+                return               
+                        
             # Check to make sure it is actually a container.
             if container.db.item_type != "container":
                 caller.msg("%s is neither a container nor a door."
@@ -552,6 +564,10 @@ class CmdDoorLock(MuxCommand):
         if "object" in door.tags.all():
             container = door
             
+            if not rules.is_visible(container, caller):
+                caller.msg("There is no %s here." % self.args)
+                return               
+                        
             # Check to make sure it is actually a container.
             if container.db.item_type != "container":
                 caller.msg("%s is neither a container nor a door."
