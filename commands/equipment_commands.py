@@ -129,6 +129,9 @@ class CmdIdentify(MuxCommand):
         
         if not item:
             return
+        elif not rules.is_visible(item, caller):
+            caller.msg("You do not have %s to identify." % self.args)
+            return
         
         name = item.name
         level = item.db.level
@@ -237,6 +240,9 @@ class CmdRemove(MuxCommand):
                     eq = caller.db.eq_slots[wear_location]
         
         if not eq:
+            caller.msg("You are not using a %s as armor or a weapon." % self.args)
+            return
+        elif not rules.is_visible(eq, caller):
             caller.msg("You are not using a %s as armor or a weapon." % self.args)
             return
         if caller == eq:
@@ -392,7 +398,7 @@ class CmdWear(MuxCommand):
 
         if self.args == "all":
             for object in caller.contents:
-                if not object.db.equipped:
+                if not object.db.equipped and rules.is_visible(object, caller):
                     wear_list.append(object)
             if not wear_list:
                 caller.msg("You have nothing to wear that you are not already wearing.")
@@ -402,8 +408,8 @@ class CmdWear(MuxCommand):
             equipped = search.search_object(False, attribute_name="equipped", candidates=caller.contents)
             # Then search those for the item to be worn.
             object = caller.search(self.args, candidates=equipped)
-            # object = caller.search(self.args, location=caller)
-            wear_list.append(object)
+            if rules.is_visible(object, caller):
+                wear_list.append(object)
             if not object:
                 caller.msg("You do not appear to have %s." % self.args)
                 return
@@ -669,6 +675,10 @@ class CmdWield(MuxCommand):
         weapon = caller.search(self.args, location=caller)
 
         if not weapon:
+            caller.msg("You do not have %s to wield." % self.args)
+            return
+        elif not rules.is_visible(weapon, caller):
+            caller.msg("You do not have %s to wield." % self.args)
             return
         if caller == weapon:
             caller.msg("You can't wear yourself.")
