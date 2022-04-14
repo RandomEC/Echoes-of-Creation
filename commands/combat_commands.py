@@ -355,6 +355,9 @@ class CmdAttack(MuxCommand):
         if not victim:
             attacker.msg("There is no mobile named %s here to attack." % self.args)
             return
+        elif not rules.is_visible(victim, attacker):
+            attacker.msg("There is no mobile named %s here to attack." % self.args)
+            return
         elif "player" in victim.tags.all():
             attacker.msg("You cannot attack another player!")
             return
@@ -394,6 +397,9 @@ class CmdConsider(MuxCommand):
                 mobiles.append(object)
         mobile = caller.search(self.args, candidates=mobiles)
         if not mobile:
+            caller.msg("There is no mobile named %s here to attack." % self.args)
+            return
+        elif not rules.is_visible(mobile, caller):
             caller.msg("There is no mobile named %s here to attack." % self.args)
             return
         elif "mobile" not in mobile.tags.all():
@@ -489,7 +495,10 @@ class CmdDirtKicking(MuxCommand):
                     mobiles.append(object)
             target = caller.search(self.args, candidates=mobiles)
             if not target:
-                caller.msg("There is no %s here to kick." % self.args)
+                caller.msg("There is no %s here to kick dirt at." % self.args)
+                return
+            elif not rules.is_visible(target, caller):
+                caller.msg("There is no %s here to kick dirt at." % self.args)
                 return
             else:
 
@@ -612,6 +621,9 @@ class CmdKick(MuxCommand):
                     mobiles.append(object)
             target = caller.search(self.args, candidates=mobiles)
             if not target:
+                caller.msg("There is no %s here to kick." % self.args)
+                return
+            elif not rules.is_visible(target, caller):
                 caller.msg("There is no %s here to kick." % self.args)
                 return
             else:
@@ -775,7 +787,10 @@ class CmdTrip(MuxCommand):
             if not target:
                 caller.msg("There is no %s here to trip." % self.args)
                 return
-
+            elif not rules.is_visible(target, caller):
+                caller.msg("There is no %s here to trip." % self.args)
+                return
+            
         if target.get_affect_status("fly"):
             caller.msg("It is challenging to trip %s when %s feet aren't on the ground." % (target.key, rules.pronoun_possessive(target)))
             return
