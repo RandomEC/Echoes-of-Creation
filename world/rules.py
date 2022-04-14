@@ -850,8 +850,7 @@ def intelligence_mana_bonus(character):
 
 def is_visible_character(target, looker):
     """
-    This function returns a boolean as to whether one character
-    is visible to another currently.
+    DO NOT USE ANY LONGER. HERE FOR BACKWARD COMPATIBILITY.
     """
     if looker.get_affect_status("blind"):
         return False
@@ -863,6 +862,30 @@ def is_visible_character(target, looker):
         if "total invis" in target.db.act_flags:
             return False
     
+    return True
+    
+def is_visible(target, looker):
+    """
+    This function returns a boolean as to whether one character/object
+    is visible to another currently.
+    """
+    
+    if "mobile" in target.tags.all() or "player" in target.tags.all():
+        if looker.get_affect_status("blind"):
+            return False
+        if target.get_affect_status("hide") and not looker.get_affect_status("detect hidden"):
+            return False
+        if target.get_affect_status("invisible") and not looker.get_affect_status("detect invis"):
+            return False
+        if "mobile" in target.tags.all():
+            if "total invis" in target.db.act_flags:
+                return False
+    else:
+        if looker.get_affect_status("blind"):
+            return False
+        if "invisible" in target.db.extra_flags and not looker.get_affect_status("detect invis"):
+            return False
+            
     return True
     
 def level_cost(character):
