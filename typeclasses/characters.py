@@ -709,7 +709,7 @@ class Character(DefaultCharacter):
         # If mobile is fully healed, remove healing ticker call.
         else:
             if "mobile" in self.tags.all():
-                tickerhandler.remove(store_key=self.db.heal_ticker)
+                tickerhandler.remove(30, self.at_update, self.db.heal_ticker)
                 self.db.heal_ticker = None
             
         if self.db.mana["spent"] > 0:
