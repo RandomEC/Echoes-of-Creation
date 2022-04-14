@@ -111,8 +111,6 @@ class Character(DefaultCharacter):
             "wielded, secondary":""
             }
 
-        tickerhandler.add(30, self.at_update)
-
     @property
     def hitpoints_maximum(self):
         modifier = 0
@@ -1115,6 +1113,8 @@ class Player(Character):
         self.db.holy_light = False
         
         self.tags.add("player")
+
+        tickerhandler.add(30, self.at_update)
 
     @property
     def experience_total(self):
