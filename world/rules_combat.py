@@ -1,5 +1,6 @@
 import math
 import random
+import time
 import evennia
 from evennia import create_object
 from evennia import TICKER_HANDLER as tickerhandler
@@ -228,12 +229,14 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
         # are always checked anyway.
         if "mobile" in victim.tags.all():
             if not victim.attributes.has("heal_ticker"):
-                heal_ticker = tickerhandler.add(30, victim.at_update)
-                victim.db.heal_ticker = heal_ticker
+                timestamp = victim.key + str(time.time())
+                heal_ticker = tickerhandler.add(30, victim.at_update, timestamp)
+                victim.db.heal_ticker = timestamp
             elif not victim.db.heal_ticker:
-                heal_ticker = tickerhandler.add(30, victim.at_update)
-                victim.db.heal_ticker = heal_ticker
-
+                timestamp = victim.key + str(time.time())
+                heal_ticker = tickerhandler.add(30, victim.at_update, timestamp)
+                victim.db.heal_ticker = timestamp
+                
         if "output" in kwargs:
             attacker.msg("%s" % kwargs["output"][0])
             victim.msg("%s" % kwargs["output"][1])
