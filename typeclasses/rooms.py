@@ -230,12 +230,15 @@ class Room(DefaultRoom):
                     position_string = "is here, fighting %s" % target.key
                 else:
                     position_string = "is %s here" % con.position
-                users.append("|Y%s %s.|n" % (con.key, position_string))
+                if rules.is_visible(con, looker):
+                    users.append("|Y%s %s.|n" % (con.key, position_string))
             # Below added to address mobiles and objects.
             elif "mobile" in con.tags.all():
-                mobiles.append("|Y%s%s|n" % (rules.auras_characters(looker, con), con.db.desc))
+                if rules.is_visible(con, looker):
+                    mobiles.append("|Y%s%s|n" % (rules.auras_characters(looker, con), con.db.desc))
             elif "object" in con.tags.all():
-                objects.append("|R%s%s|n" % (rules.auras_objects(looker, con), con.db.desc))
+                if rules.is_visible(con, looker):
+                    objects.append("|R%s%s|n" % (rules.auras_objects(looker, con), con.db.desc))
             else:
                 # things can be pluralized
                 things[key].append(con)
