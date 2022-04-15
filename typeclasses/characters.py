@@ -1001,7 +1001,7 @@ class Mobile(Character):
         """
         Hook used to implement various actions on a player entering the room.
         """
-        if "aggressive" in self.db.act_flags and character.level < self.level + 10:
+        if "aggressive" in self.db.act_flags and character.level < 103 and rules.is_visible(character, self):
             if not character.ndb.combat_handler and not self.ndb.combat_handler:
                 character.msg("%s jumps forward and ATTACKS you!" % (self.key[0].upper() + self.key[1:]))
                 rules_combat.create_combat(self, character)
@@ -1163,5 +1163,35 @@ class Player(Character):
         if self.location.access(self, "view"):
             self.msg(self.at_look(self.location))
             self.location.at_player_arrive(self)
+        
+        # If a player is leaving an area and entering a new area, may need to
+        # change areas where mobiles can move.
+        start_area = rules.get_area_name(source_location)
+        new_area = rules.get_area_name(self.location)
+        
+        if start_area != new_area:
+            players = search.search_tag("player")
+            
+            # Get a list of all areas with players in them.
+            player_areas = list(rules.get_area_name(player.location) for player in players if player.location)
+            
+            # Make sure that there is a mobile movement script.
+            mobile_movement_script = search.search_script("mobile_movement_script")[0]
+            if mobile_movement_script:
+                
+                # If there are no players left in the old area, clear the mobile movement list.
+                if start_area not in player_areas:
+                    mobile_movement_script.db.area_movement[start_area] = []
+                
+                # If there is no list already for the new area, make one.
+                if not mobile_movement_script.db.area_movement[new_area]:
+                    # Get all objects in area.
+                    new_area_objects = search.search_tag(new_area)
+                    # Filter for mobiles.
+                    candidate_mobiles = list(object for objects in new_area_objects if "mobile" in object.tags.all())
+                    # Filter for non-sentinel mobiles.
+                    mobiles = list(mobile for mobile in candidate_mobiles if "sentinel" not in mobile.db.act_flags)
+                    
+                    mobile_movement_script.db.area_movement[new_area] = mobiles
 
 

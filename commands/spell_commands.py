@@ -144,6 +144,9 @@ class CmdAgitation(MuxCommand):
             if not target:
                 caster.msg("There is no %s here to inflict agitation on." % self.args)
                 return
+            if not rules.is_visible(target):
+                caster.msg("There is no %s here to inflict agitation on." % self.args)
+                return
 
         if rules_combat.is_safe(target):
             caster.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
@@ -218,6 +221,9 @@ class CmdArmor(MuxCommand):
            target = caster.search(self.args, candidates=targets)
 
            if not target:
+               caster.msg("There is no %s here on whom to cast %s." % (self.args, self.key))
+               return
+           if not rules.is_visible(target):
                caster.msg("There is no %s here on whom to cast %s." % (self.args, self.key))
                return
 
@@ -295,6 +301,9 @@ class CmdBless(MuxCommand):
             target = caster.search(self.args, candidates=targets)
 
             if not target:
+                caster.msg("There is no %s here to bless." % self.args)
+                return
+            if not rules.is_visible(target):
                 caster.msg("There is no %s here to bless." % self.args)
                 return
 
@@ -375,6 +384,9 @@ class CmdBurningHands(MuxCommand):
                     mobiles.append(object)
             target = caster.search(self.args, candidates=mobiles)
             if not target:
+                caster.msg("There is no %s here to hit with your burning hands." % self.args)
+                return
+            if not rules.is_visible(target):
                 caster.msg("There is no %s here to hit with your burning hands." % self.args)
                 return
 
@@ -458,6 +470,9 @@ class CmdCauseLight(MuxCommand):
             if not target:
                 caster.msg("There is no %s here to cause light wounds to." % self.args)
                 return
+            if not rules.is_visible(target):
+                caster.msg("There is no %s here to cause light wounds to." % self.args, self.key)
+                return
 
         if rules_combat.is_safe(target):
             caster.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
@@ -538,6 +553,9 @@ class CmdChillTouch(MuxCommand):
                     mobiles.append(object)
             target = caster.search(self.args, candidates=mobiles)
             if not target:
+                caster.msg("There is no %s here to chill with your touch." % self.args)
+                return
+            if not rules.is_visible(target):
                 caster.msg("There is no %s here to chill with your touch." % self.args)
                 return
 
@@ -705,6 +723,9 @@ class CmdCreateSound(MuxCommand):
         if not target:
             caster.msg("There is no %s here to create sounds on." % self.lhs)
             return
+        if not rules.is_visible(target):
+            caster.msg("There is no %s here to create sounds on." % self.lhs)
+            return
 
         # Check whether anything about the room or affects on the caster
         # would prevent casting. Check_cast returns output for the state
@@ -771,6 +792,9 @@ class CmdCreateWater(MuxCommand):
         target_container = caster.search(self.args, location=caster)
         
         if not target_container:
+            caster.msg("You have no %s." % self.args)
+            return
+        if not rules.is_visible(target_container):
             caster.msg("You have no %s." % self.args)
             return
         
@@ -852,6 +876,9 @@ class CmdCureLight(MuxCommand):
             if not target:
                 caster.msg("There is no %s here to cure light wounds on." % self.args)
                 return
+            if not rules.is_visible(target):
+                caster.msg("There is no %s here to cure light wounds on." % self.args)
+                return
 
         if target:
             rules_magic.do_cure_light(caster, target, cost)
@@ -917,6 +944,9 @@ class CmdDetectEvil(MuxCommand):
                     targets.append(object)
             target = caster.search(self.args, candidates=targets)
             if not target:
+                caster.msg("There is no %s here on whom to cast %s." % (self.args, self.key))
+                return
+            if not rules.is_visible(target):
                 caster.msg("There is no %s here on whom to cast %s." % (self.args, self.key))
                 return
 
@@ -992,6 +1022,9 @@ class CmdDetectHidden(MuxCommand):
                     targets.append(object)
             target = caster.search(self.args, candidates=targets)
             if not target:
+                caster.msg("There is no %s here on whom to cast detect hidden." % self.args)
+                return
+            if not rules.is_visible(target):
                 caster.msg("There is no %s here on whom to cast detect hidden." % self.args)
                 return
 
@@ -1070,6 +1103,9 @@ class CmdDetectInvis(MuxCommand):
             if not target:
                 caster.msg("There is no %s here on whom to cast %s." % (self.args, self.key))
                 return
+            if not rules.is_visible(target):
+                caster.msg("There is no %s here on whom to cast %s." % (self.args, self.key))
+                return
 
         if target.get_affect_status(self.key):
             if target == caster:
@@ -1143,6 +1179,9 @@ class CmdDetectMagic(MuxCommand):
                     targets.append(object)
             target = caster.search(self.args, candidates=targets)
             if not target:
+                caster.msg("There is no %s here on whom to cast detect magic." % self.args)
+                return
+            if not rules.is_visible(target):
                 caster.msg("There is no %s here on whom to cast detect magic." % self.args)
                 return
 
@@ -1222,6 +1261,9 @@ class CmdFly(MuxCommand):
             if not target:
                 caster.msg("There is no %s here to cast fly on." % self.args)
                 return
+            if not rules.is_visible(target):
+                caster.msg("There is no %s here to cast fly on." % self.args)
+                return
 
         if target.get_affect_status("fly"):
             if target == caster:
@@ -1293,6 +1335,9 @@ class CmdGiantStrength(MuxCommand):
             target = caster.search(self.args, candidates=targets)
 
             if not target:
+                caster.msg("There is no %s here on whom to cast %s." % (self.args, self.key))
+                return
+            if not rules.is_visible(target):
                 caster.msg("There is no %s here on whom to cast %s." % (self.args, self.key))
                 return
 
@@ -1367,6 +1412,9 @@ class CmdInfravision(MuxCommand):
             target = caster.search(self.args, candidates=targets)
 
             if not target:
+                caster.msg("There is no %s here on whom to cast %s." % (self.args, self.key))
+                return
+            if not rules.is_visible(target):
                 caster.msg("There is no %s here on whom to cast %s." % (self.args, self.key))
                 return
 
@@ -1444,6 +1492,9 @@ class CmdInvis(MuxCommand):
             if not target:
                 caster.msg("There is no %s here on whom to cast %s." % (self.args, self.key))
                 return
+            if not rules.is_visible(target):
+                caster.msg("There is no %s here on whom to cast %s." % (self.args, self.key))
+                return
 
         if target.get_affect_status(self.key):
             if target == caster:
@@ -1519,6 +1570,9 @@ class CmdLevitation(MuxCommand):
             target = caster.search(self.args, candidates=targets)
 
             if not target:
+                caster.msg("There is no %s here to levitate." % self.args)
+                return
+            if not rules.is_visible(target):
                 caster.msg("There is no %s here to levitate." % self.args)
                 return
 
@@ -1599,6 +1653,9 @@ class CmdMagicMissile(MuxCommand):
                     mobiles.append(object)
             target = caster.search(self.args, candidates=mobiles)
             if not target:
+                caster.msg("There is no %s here to hit with your magic missile." % self.args)
+                return
+            if not rules.is_visible(target):
                 caster.msg("There is no %s here to hit with your magic missile." % self.args)
                 return
 
@@ -1741,6 +1798,9 @@ class CmdMindThrust(MuxCommand):
             if not target:
                 caster.msg("There is no %s here to hit with your mind thrust." % self.args)
                 return
+            if not rules.is_visible(target):
+                caster.msg("There is no %s here to hit with your mind thrust." % self.args)
+                return
 
         if rules_combat.is_safe(target):
             caster.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
@@ -1817,6 +1877,9 @@ class CmdProtection(MuxCommand):
             if not target:
                 caster.msg("There is no %s here on whom to bestow your protection." % self.args)
                 return
+            if not rules.is_visible(target):
+                caster.msg("There is no %s here on whom to bestow your protection." % self.args)
+                return
 
         if target.get_affect_status(self.key):
             if target == caster:
@@ -1891,6 +1954,9 @@ class CmdRefresh(MuxCommand):
             if not target:
                 caster.msg("There is no %s here to refresh." % self.args)
                 return
+            if not rules.is_visible(target):
+                caster.msg("There is no %s here to refresh." % self.args)
+                return
 
         if target:
             rules_magic.do_refresh(caster, target, cost)
@@ -1957,6 +2023,9 @@ class CmdShield(MuxCommand):
             target = caster.search(self.args, candidates=targets)
 
             if not target:
+                caster.msg("There is no %s here to shield." % self.args)
+                return
+            if not rules.is_visible(target):
                 caster.msg("There is no %s here to shield." % self.args)
                 return
 
@@ -2027,6 +2096,9 @@ class CmdSlumber(MuxCommand):
         target = caster.search(self.args, candidates=targets)
 
         if not target:
+            caster.msg("There is no %s here to put into a slumber." % self.args)
+            return
+        if not rules.is_visible(target):
             caster.msg("There is no %s here to put into a slumber." % self.args)
             return
 
@@ -2201,6 +2273,9 @@ class CmdVentriloquate(MuxCommand):
         target = caster.search(self.lhs, location=[caster.location], candidates=speakers)
 
         if not target:
+            caster.msg("There is no %s here to ventriloquate on." % self.lhs)
+            return
+        if not rules.is_visible(target):
             caster.msg("There is no %s here to ventriloquate on." % self.lhs)
             return
 

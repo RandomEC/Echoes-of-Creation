@@ -660,8 +660,10 @@ def gain_moves(character):
 
 def get_area_info(area_name):
     """
-    This function takes an area name and returns the formatted
-    name of the area, and the levels it is for in parentheses.
+    This function takes either a) an area name and returns the
+    formatted name of the area, and the levels it is for in
+    parentheses, or b) "all", and returns a list of all
+    unformatted area names.
     """
 
     area_dictionary = {
@@ -739,6 +741,9 @@ def get_area_info(area_name):
         }
     }
 
+    if area_name == "all":
+        return list(area for area in area_dictionary)
+    
     if area_name in area_dictionary:
         return "%s %s" % (area_dictionary[area_name]["formatted name"], area_dictionary[area_name]["level range"])
     else:
@@ -869,6 +874,18 @@ def is_visible(target, looker):
     This function returns a boolean as to whether one character/object
     is visible to another currently.
     """
+    
+    # Special visibility check for aggro mobs, who particularly care about sneak.
+    if "mobile" in looker.tags.all():
+        if "aggressive" in looker.db.act_flags:
+            if looker.get_affect_status("blind"):
+                return False
+            if target.get_affect_status("sneak") and not looker.get_affect_status("detect hidden"):
+                return False
+            if target.get_affect_status("invisible") and not looker.get_affect_status("detect invis"):
+                return False
+            
+            return True
     
     if "mobile" in target.tags.all() or "player" in target.tags.all():
         if looker.get_affect_status("blind"):
