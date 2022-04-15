@@ -875,6 +875,18 @@ def is_visible(target, looker):
     is visible to another currently.
     """
     
+    # Special visibility check for aggro mobs, who particularly care about sneak.
+    if "mobile" in looker.tags.all():
+        if "aggressive" in looker.db.act_flags:
+            if looker.get_affect_status("blind"):
+                return False
+            if target.get_affect_status("sneak") and not looker.get_affect_status("detect hidden"):
+                return False
+            if target.get_affect_status("invisible") and not looker.get_affect_status("detect invis"):
+                return False
+            
+            return True
+    
     if "mobile" in target.tags.all() or "player" in target.tags.all():
         if looker.get_affect_status("blind"):
             return False
