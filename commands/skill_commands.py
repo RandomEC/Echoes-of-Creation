@@ -191,7 +191,11 @@ class CmdPickLock(MuxCommand):
         if not target:
             caller.msg("There is no %s here pick the lock of." % self.args)
             return
-
+        
+        if not rules.is_visible(target, caller):
+            caller.msg("There is no %s here pick the lock of." % self.args)
+            return
+        
         if target.db.item_type != "container":
             caller.msg("%s is not a container." % (target.key[0].upper() + target.key[1:]))
             return
@@ -308,6 +312,9 @@ class CmdSteal(MuxCommand):
         if not target:
             caller.msg("There is no %s here to steal from." % self.args)
             return
+        if not rules.is_visible(target):
+            caller.msg("There is no %s here to steal from." % self.args)
+            return        
         elif caller == target:
             caller.msg("That seems pointless.")
             return
@@ -335,6 +342,12 @@ class CmdSteal(MuxCommand):
                 nofound_string="%s is not carrying %s." % ((target.key[0].upper() + target.key[1:]), self.lhs),
                 multimatch_string="%s carries more than one %s:" % ((target.key[0].upper() + target.key[1:]), self.lhs),
             )
+            
+            if not to_steal:
+                return
+            if not rules.is_visible(to_steal):
+                caller.msg("%s is not carrying %s." % ((target.key[0].upper() + target.key[1:]), self.lhs))
+                return
         else:
             to_steal = "gold"
             
