@@ -1379,11 +1379,13 @@ def is_safe(character):
     safe).
     """
     
-    if "act_flags" in character.db.all:
+    if character.attributes.has("act_flags"):
         if "no kill" in character.db.act_flags:
             return True
     elif "safe" in character.location.db.room_flags:
         return True
+    
+    return False
     
 def modify_experience(attacker, victim, experience):
     """
