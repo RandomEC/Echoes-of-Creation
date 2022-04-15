@@ -660,8 +660,10 @@ def gain_moves(character):
 
 def get_area_info(area_name):
     """
-    This function takes an area name and returns the formatted
-    name of the area, and the levels it is for in parentheses.
+    This function takes either a) an area name and returns the
+    formatted name of the area, and the levels it is for in
+    parentheses, or b) "all", and returns a list of all
+    unformatted area names.
     """
 
     area_dictionary = {
@@ -739,6 +741,9 @@ def get_area_info(area_name):
         }
     }
 
+    if area_name == "all":
+        return list(area for area in area_dictionary)
+    
     if area_name in area_dictionary:
         return "%s %s" % (area_dictionary[area_name]["formatted name"], area_dictionary[area_name]["level range"])
     else:
