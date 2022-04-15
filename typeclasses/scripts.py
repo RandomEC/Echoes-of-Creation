@@ -12,6 +12,7 @@ just overloads its hooks to have it perform its function.
 
 """
 
+import random
 import evennia
 from evennia import DefaultScript
 from evennia.utils import search
@@ -130,7 +131,6 @@ class ResetScript(DefaultScript):
             "dangerous neighborhood": {"timer": 0, "resets":[]}
         }
 
-
     def at_repeat(self):
 
         for area in self.db.area_list:
@@ -142,12 +142,69 @@ class ResetScript(DefaultScript):
                 if not rules.player_in_area(area) or self.db.area_list[area]["timer"] >= 2:
                     for object in self.db.area_list[area]["resets"]:
                         object.at_reset()
-                    self.db.area_list[area]["timer] = 0
+                    self.db.area_list[area]["timer"] = 0
             else:
                 # Iterate up the timer toward the max of two.
-                self.db.area_list[area]["timer"] += 1
+                self.db.area_list[area]["timer"] += 1                                            
 
+class MobileMovementScript(Script):
+    """
+    This is the script for handling all autonomous mobile
+    movement in Echoes.
+    """
 
+    def at_script_creation(self):
+        self.key = "mobile_movement_script"
+        self.desc = "Handles mobile autonomous movement"
+        self.interval = 5
+        self.persistent = True
+
+        # Get all the current areas.
+        areas = rules.get_area_info("all")
+        
+        # The below creates a dictionary of all areas then in the mud, by
+        # tag name, paired with an empty list to be populated with the
+        # mobiles potentially eligible to move.
+        self.db.area_movement = dict((area, []) for area in areas)
+        
+    def at_repeat(self):
+
+        for area in self.db.area_movement:
+            
+            # Do movement if there are mobiles to move.
+            if self.db.area_movement[area]:
+                for mobile in self.db.area_movement[area]:
+
+                    # More likely to move if hurt.
+                    if (mobile.hitpoints_current < (mobile.hitpoints_maximum * 0.5) and random.randint(1, 8) < 7) or (random.randint(1, 32) < 7):
+
+                        # No moving if in a fight, unless by wimpy through fight code.
+                        if not mobile.nattributes.has("combat_handler"):
+                            door = random.randint(1, 6)
+                            if door == 1:
+                                door = "north"
+                            elif door == 2:
+                                door = "east"
+                            elif door == 3:
+                                door = "south"
+                            elif door == 4:
+                                door = "west"
+                            elif door == 5:
+                                door = "up"
+                            else:
+                                door = "down"
+
+                            for exit in mobile.location.exits:
+                                if exit.key == door and "open" in exit.db.door_attributes:
+                                    destination = exit.destination
+
+                                    if "no mob" not in destination.db.room_flags:
+                                        if ("solitary" not in destination.db.room_flags and "private" not in destination.db.room_flags) or self.home == destination:
+                                            area_tag = area + ":area name"
+                                            if area_tag in destination.tags.all():
+                                                self.move_to(destination)
+   
+                                            
 class UpdateTimerScript(DefaultScript):
 
     # Start with scripts/start scripts.UpdateTimerScript
