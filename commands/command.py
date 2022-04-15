@@ -706,7 +706,7 @@ class CmdGet(MuxCommand):
                         # if not there already. Use caller.location since the object has already been gotten
                         # at this point.
                         if obj.db.vnum in caller.location.db.reset_objects:
-                            reset_script = search.script_search("reset_script")
+                            reset_script = search.script_search("reset_script")[0]
                             area = rules.get_area_name(caller.location)
 
                             if caller.location not in reset_script.db.area_list[area]["resets"]:
@@ -779,7 +779,7 @@ class CmdGet(MuxCommand):
                         # if not there already. Use caller.location since the object has already been gotten
                         # at this point.
                         if obj.db.vnum in caller.location.db.reset_objects:
-                            reset_script = search.script_search("reset_script")
+                            reset_script = search.script_search("reset_script")[0]
                             area = rules.get_area_name(caller.location)
 
                             if caller.location not in reset_script.db.area_list[area]["resets"]:
@@ -1433,7 +1433,7 @@ class CmdSacrifice(MuxCommand):
         # if not there already. Use caller.location since the object has already been gotten
         # at this point.
         if obj.db.vnum in obj.location.db.reset_objects:
-            reset_script = search.script_search("reset_script")
+            reset_script = search.script_search("reset_script")[0]
             area = rules.get_area_name(obj.location)
 
             if caller.location not in reset_script.db.area_list[area]["resets"]:

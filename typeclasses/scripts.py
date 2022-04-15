@@ -110,42 +110,45 @@ class ResetScript(DefaultScript):
         # Maybe make a command to add an area to this list.
 
         self.db.area_list = {
-            "smurf village": {"timer": 0, "resets":[]},
-            "graveyard": {"timer": 0, "resets":[]},
-            "haon dor": {"timer": 0, "resets":[]},
-            "dwarven daycare": {"timer": 0, "resets":[]},
-            "training tower": {"timer": 0, "resets":[]},
-            "the circus": {"timer": 0, "resets":[]},
-            "the library": {"timer": 0, "resets":[]},
-            "edens grove": {"timer": 0, "resets":[]},
-            "crystalmir lake": {"timer": 0, "resets":[]},
-            "the rats' lair": {"timer": 0, "resets":[]},
-            "gnome village": {"timer": 0, "resets":[]},
-            "dragon cult": {"timer": 0, "resets":[]},
-            "holy grove": {"timer": 0, "resets":[]},
-            "troll den": {"timer": 0, "resets":[]},
-            "faerie ring": {"timer": 0, "resets":[]},
-            "miden'nir": {"timer": 0, "resets":[]},
-            "fire newts": {"timer": 0, "resets":[]},
-            "dangerous neighborhood": {"timer": 0, "resets":[]}
+             "immortal areas": {"timer": 0, "resets": []}
+#            "smurf village": {"timer": 0, "resets":[]},
+#            "graveyard": {"timer": 0, "resets":[]},
+#            "haon dor": {"timer": 0, "resets":[]},
+#            "dwarven daycare": {"timer": 0, "resets":[]},
+#            "training tower": {"timer": 0, "resets":[]},
+#            "the circus": {"timer": 0, "resets":[]},
+#            "the library": {"timer": 0, "resets":[]},
+#            "edens grove": {"timer": 0, "resets":[]},
+#            "crystalmir lake": {"timer": 0, "resets":[]},
+#            "the rats' lair": {"timer": 0, "resets":[]},
+#            "gnome village": {"timer": 0, "resets":[]},
+#            "dragon cult": {"timer": 0, "resets":[]},
+#            "holy grove": {"timer": 0, "resets":[]},
+#            "troll den": {"timer": 0, "resets":[]},
+#            "faerie ring": {"timer": 0, "resets":[]},
+#            "miden'nir": {"timer": 0, "resets":[]},
+#            "fire newts": {"timer": 0, "resets":[]},
+#            "dangerous neighborhood": {"timer": 0, "resets":[]}
         }
 
 
     def at_repeat(self):
 
         for area in self.db.area_list:
-            
+
             # Reset if there are things to reset.
             if self.db.area_list[area]["resets"]:
                 
                 # But only if no players in the area, or if counter is at 2.
                 if not rules.player_in_area(area) or self.db.area_list[area]["timer"] >= 2:
+
                     for object in self.db.area_list[area]["resets"]:
                         object.at_reset()
-                    self.db.area_list[area]["timer] = 0
-            else:
-                # Iterate up the timer toward the max of two.
-                self.db.area_list[area]["timer"] += 1
+                    self.db.area_list[area]["timer"] = 0
+                    self.db.area_list[area]["resets"] = []
+                else:
+                    # Iterate up the timer toward the max of two.
+                    self.db.area_list[area]["timer"] += 1
 
 
 class UpdateTimerScript(DefaultScript):
@@ -189,7 +192,7 @@ class FixAreaNames(DefaultScript):
                     object.tags.remove(area, category="area name")
                     object.tags.add(area_rename, category="area name")
 
-class TickerCleanupFixAreaNames(DefaultScript):
+class TickerCleanup(DefaultScript):
 
     # Start with scripts/start scripts.FixAreaNames
 

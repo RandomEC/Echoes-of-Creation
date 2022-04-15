@@ -450,6 +450,7 @@ def do_death(attacker, victim, **kwargs):
 
         corpse.db.desc = ("The corpse of %s lies here." % victim.key)
         corpse.location = attacker.location
+
         # Set the corpse to disintegrate.
         tickerhandler.add(settings.DEFAULT_DISINTEGRATE_TIME, corpse.at_disintegrate)
 
@@ -474,7 +475,7 @@ def do_death(attacker, victim, **kwargs):
         victim.location = None
 
         # Add victim to reset list.
-        reset_script = search.script_search("reset_script")
+        reset_script = search.script_search("reset_script")[0]
         area = rules.get_area_name(victim)
         
         reset_script.db.area_list[area]["resets"].append(victim)

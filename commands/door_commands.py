@@ -129,7 +129,7 @@ class CmdDoorOpen(MuxCommand):
             # Check if the container resets in the room. If so, add the room to objects to reset
             # if not there already.
             if container.db.vnum in container.location.db.reset_objects:
-                reset_script = search.script_search("reset_script")
+                reset_script = search.script_search("reset_script")[0]
                 area = rules.get_area_name(container.location)
         
                 if container.location not in reset_script.db.area_list[area]["resets"]:
@@ -171,7 +171,7 @@ class CmdDoorOpen(MuxCommand):
                 caller.msg("You open the %s." % door_string)
 
             # Add exit to objects to reset if not there already.
-            reset_script = search.script_search("reset_script")
+            reset_script = search.script_search("reset_script")[0]
             area = rules.get_area_name(door)
             
             if door not in reset_script.db.area_list[area]["resets"]:
@@ -204,7 +204,7 @@ class CmdDoorOpen(MuxCommand):
                 opposite_door.db.door_attributes.append("open")
 
             # Add exit to objects to reset if not there already.
-            reset_script = search.script_search("reset_script")
+            reset_script = search.script_search("reset_script")[0]
             area = rules.get_area_name(opposite_door)
             
             if door not in reset_script.db.area_list[area]["resets"]:
@@ -276,7 +276,7 @@ class CmdDoorClose(MuxCommand):
             # Check if the container resets in the room. If so, add the room to objects to reset
             # if not there already.
             if container.db.vnum in container.location.db.reset_objects:
-                reset_script = search.script_search("reset_script")
+                reset_script = search.script_search("reset_script")[0]
                 area = rules.get_area_name(container.location)
         
                 if container.location not in reset_script.db.area_list[area]["resets"]:
@@ -318,7 +318,8 @@ class CmdDoorClose(MuxCommand):
                 caller.msg("You close the %s." % door_string)
 
             # Add exit to objects to reset if not there already.
-            reset_script = search.script_search("reset_script")
+            reset_script = search.script_search("reset_script")[0]
+
             area = rules.get_area_name(door)
             
             if door not in reset_script.db.area_list[area]["resets"]:
@@ -351,7 +352,7 @@ class CmdDoorClose(MuxCommand):
                 opposite_door.db.door_attributes.remove("open")
 
             # Add exit to objects to reset if not there already.
-            reset_script = search.script_search("reset_script")
+            reset_script = search.script_search("reset_script")[0]
             area = rules.get_area_name(opposite_door)
             
             if door not in reset_script.db.area_list[area]["resets"]:
@@ -436,7 +437,7 @@ class CmdDoorUnlock(MuxCommand):
             # Check if the container resets in the room. If so, add the room to objects to reset
             # if not there already.
             if container.db.vnum in container.location.db.reset_objects:
-                reset_script = search.script_search("reset_script")
+                reset_script = search.script_search("reset_script")[0]
                 area = rules.get_area_name(container.location)
         
                 if container.location not in reset_script.db.area_list[area]["resets"]:
@@ -489,7 +490,7 @@ class CmdDoorUnlock(MuxCommand):
                     caller.msg("*Click* You unlock the %s." % door.key)
 
             # Add exit to objects to reset if not there already.
-            reset_script = search.script_search("reset_script")
+            reset_script = search.script_search("reset_script")[0]
             area = rules.get_area_name(door)
             
             if door not in reset_script.db.area_list[area]["resets"]:
@@ -522,7 +523,7 @@ class CmdDoorUnlock(MuxCommand):
                 opposite_door.db.door_attributes.remove("locked")
 
             # Add exit to objects to reset if not there already.
-            reset_script = search.script_search("reset_script")
+            reset_script = search.script_search("reset_script")[0]
             area = rules.get_area_name(opposite_door)
             
             if door not in reset_script.db.area_list[area]["resets"]:
@@ -606,7 +607,7 @@ class CmdDoorLock(MuxCommand):
             # Check if the container resets in the room. If so, add the room to objects to reset
             # if not there already.
             if container.db.vnum in container.location.db.reset_objects:
-                reset_script = search.script_search("reset_script")
+                reset_script = search.script_search("reset_script")[0]
                 area = rules.get_area_name(container.location)
         
                 if container.location not in reset_script.db.area_list[area]["resets"]:
@@ -660,7 +661,7 @@ class CmdDoorLock(MuxCommand):
                     caller.msg("*Click* You lock the %s." % door.key)
 
             # Add exit to objects to reset if not there already.
-            reset_script = search.script_search("reset_script")
+            reset_script = search.script_search("reset_script")[0]
             area = rules.get_area_name(door)
             
             if door not in reset_script.db.area_list[area]["resets"]:
@@ -693,7 +694,7 @@ class CmdDoorLock(MuxCommand):
                 opposite_door.db.door_attributes.append("locked")
 
             # Add exit to objects to reset if not there already.
-            reset_script = search.script_search("reset_script")
+            reset_script = search.script_search("reset_script")[0]
             area = rules.get_area_name(opposite_door)
             
             if door not in reset_script.db.area_list[area]["resets"]:
