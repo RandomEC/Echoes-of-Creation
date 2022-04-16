@@ -261,6 +261,7 @@ class TickerCleanup(DefaultScript):
         self.desc = "Cleans up old tickers"
         self.persistent = True
 
+        tickerhandler.clear(interval=30)
         tickerhandler.clear(interval=900)
         tickerhandler.clear(interval=1800)
         tickerhandler.save()
