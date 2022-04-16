@@ -227,15 +227,14 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
         
         # Get the mobile victim started healing, if not already doing so. Heroes
         # are always checked anyway.
-        if "mobile" in victim.tags.all():
-            if not victim.attributes.has("heal_ticker"):
-                timestamp = victim.key + str(time.time())
-                heal_ticker = tickerhandler.add(30, victim.at_update, timestamp)
-                victim.db.heal_ticker = timestamp
-            elif not victim.db.heal_ticker:
-                timestamp = victim.key + str(time.time())
-                heal_ticker = tickerhandler.add(30, victim.at_update, timestamp)
-                victim.db.heal_ticker = timestamp
+        if not victim.attributes.has("heal_ticker"):
+            timestamp = victim.key + str(time.time())
+            tickerhandler.add(30, victim.at_update, timestamp)
+            victim.db.heal_ticker = timestamp
+        elif not victim.db.heal_ticker:
+            timestamp = victim.key + str(time.time())
+            tickerhandler.add(30, victim.at_update, timestamp)
+            victim.db.heal_ticker = timestamp
                 
         if "output" in kwargs:
             attacker.msg("%s" % kwargs["output"][0])
@@ -452,7 +451,7 @@ def do_death(attacker, victim, **kwargs):
         corpse.location = attacker.location
 
         # Set the corpse to disintegrate.
-        tickerhandler.add(settings.DEFAULT_DISINTEGRATE_TIME, corpse.at_disintegrate)
+        rules.set_disintegrate_timer(corpse)
 
         # Move all victim items to corpse.
         for item in victim.contents:
@@ -471,8 +470,14 @@ def do_death(attacker, victim, **kwargs):
         if victim.ndb.wait_state:
             rules.wait_state_remove(victim)
 
+        # Reset damage.
+        victim.db.hitpoints["damaged"] = 0
+
         # Move victim to None location to be reset later.
         victim.location = None
+
+        # Return victim to standing.
+        victim.db.position = "standing"
 
         # Add victim to reset list.
         reset_script = search.script_search("reset_script")[0]
@@ -567,7 +572,7 @@ def do_death(attacker, victim, **kwargs):
 
         corpse.db.desc = ("The corpse of %s lies here." % victim.key)
         corpse.location = attacker.location
-        tickerhandler.add(settings.PC_CORPSE_DISINTEGRATE_TIME, corpse.at_disintegrate)
+        rules.set_disintegrate_timer(corpse)
 
         # Increment hero deaths.
         victim.db.died += 1

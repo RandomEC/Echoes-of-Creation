@@ -117,14 +117,22 @@ class Combat(Object):
                     # Make a free attempt to flee.
                     rules_combat.do_flee(combatant)
 
+                players = search.search_tag("player")
+                for player in players:
+                    if player.key == "Random":
+                        Random = player
+
                 # Check to see if the target has been tripped, and, if so, try to stand.
                 if combatant.position == "sitting":
+                    Random.msg("In stand test")
                     if "mobile" in combatant.tags.all():
                         chance = 50
                     else:
                         chance = 2 * combatant.dexterity
 
+                    Random.msg("Chance = %d" % chance)
                     chance -= 2 * combatant.size
+                    Random.msg("Chance = %d" % chance)
 
                     if random.randint(1, 100) <= chance:
                         combatant.msg("You jump back to your feet.")
@@ -134,6 +142,8 @@ class Combat(Object):
                     elif random.randint(1, 100) < 30:
                         combatant.msg("You struggle to stand up ... and fail.")
                         combatant.location.msg_contents("%s tries to stand up, and fails." % (combatant.key[0].upper() + combatant.key[1:]), exclude=(combatant))
+                    else:
+                        Random.msg("No luck this time around.")
 
                 # Make sure this combatant and target are alive and both still in the same room.
                 if combatant.location == self.location and self.allow_attacks(combatant, self.db.combatants[combatant]["target"]):

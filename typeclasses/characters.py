@@ -701,22 +701,28 @@ class Character(DefaultCharacter):
         character.
         """
 
+        healing = 0
         if self.db.hitpoints["damaged"] > 0:
             hp_gain = rules.gain_hitpoints(self)
             self.db.hitpoints["damaged"] -= hp_gain
-        # If mobile is fully healed, remove healing ticker call.
         else:
-            if "mobile" in self.tags.all():
-                tickerhandler.remove(30, self.at_update, self.db.heal_ticker)
-                self.db.heal_ticker = None
-            
+            healing += 1
+
         if self.db.mana["spent"] > 0:
             mana_gain = rules.gain_mana(self)
             self.db.mana["spent"] -= mana_gain
-            
+        else:
+            healing += 1
+
         if self.db.moves["spent"] > 0:
             moves_gain = rules.gain_moves(self)
             self.db.moves["spent"] -= moves_gain
+        else:
+            healing += 1
+
+        if healing == 3:
+            tickerhandler.remove(30, self.at_update, self.db.heal_ticker)
+            self.db.heal_ticker = None
 
         if "mobile" in self.tags.all():
             if self.db.experience_current != self.db.experience_total:
@@ -858,9 +864,10 @@ class Mobile(Character):
         self.db.quests = {}
 
     def at_reset(self):
-        
+
         # Check to see if mobile is dead, and at "none".
         if self.location == None:
+
             self.move_to(self.home, quiet=True)
 
             # Reset spell affects on the mobile.

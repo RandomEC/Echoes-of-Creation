@@ -111,24 +111,25 @@ class ResetScript(DefaultScript):
         # Maybe make a command to add an area to this list.
 
         self.db.area_list = {
-            "smurf village": {"timer": 0, "resets":[]},
-            "graveyard": {"timer": 0, "resets":[]},
-            "haon dor": {"timer": 0, "resets":[]},
-            "dwarven daycare": {"timer": 0, "resets":[]},
-            "training tower": {"timer": 0, "resets":[]},
-            "the circus": {"timer": 0, "resets":[]},
-            "the library": {"timer": 0, "resets":[]},
-            "edens grove": {"timer": 0, "resets":[]},
-            "crystalmir lake": {"timer": 0, "resets":[]},
-            "the rats' lair": {"timer": 0, "resets":[]},
-            "gnome village": {"timer": 0, "resets":[]},
-            "dragon cult": {"timer": 0, "resets":[]},
-            "holy grove": {"timer": 0, "resets":[]},
-            "troll den": {"timer": 0, "resets":[]},
-            "faerie ring": {"timer": 0, "resets":[]},
-            "miden'nir": {"timer": 0, "resets":[]},
-            "fire newts": {"timer": 0, "resets":[]},
-            "dangerous neighborhood": {"timer": 0, "resets":[]}
+            "immortal areas": {"timer": 0, "resets": []},
+            "smurf village": {"timer": 0, "resets": []},
+            "graveyard": {"timer": 0, "resets": []},
+            "haon dor": {"timer": 0, "resets": []},
+            "dwarven daycare": {"timer": 0, "resets": []},
+            "training tower": {"timer": 0, "resets": []},
+            "the circus": {"timer": 0, "resets": []},
+            "the library": {"timer": 0, "resets": []},
+            "edens grove": {"timer": 0, "resets": []},
+            "crystalmir lake": {"timer": 0, "resets": []},
+            "the rats' lair": {"timer": 0, "resets": []},
+            "gnome village": {"timer": 0, "resets": []},
+            "dragon cult": {"timer": 0, "resets": []},
+            "holy grove": {"timer": 0, "resets": []},
+            "troll den": {"timer": 0, "resets": []},
+            "faerie ring": {"timer": 0, "resets": []},
+            "miden'nir": {"timer": 0, "resets": []},
+            "fire newts": {"timer": 0, "resets": []},
+            "dangerous neighborhood": {"timer": 0, "resets": []}
         }
 
     def at_repeat(self):
@@ -262,3 +263,4 @@ class TickerCleanup(DefaultScript):
 
         tickerhandler.clear(interval=900)
         tickerhandler.clear(interval=1800)
+        tickerhandler.save()

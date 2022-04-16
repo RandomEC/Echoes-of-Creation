@@ -1058,11 +1058,13 @@ def remove_disintegrate_timer(obj):
     object.
     """
 
-    if "pc corpse" in obj.tags.all() and "disintegrating" in obj.tags.all():
-        tickerhandler.remove(settings.PC_CORPSE_DISINTEGRATE_TIME, obj.at_disintegrate)
+    if "pc corpse" in obj.tags.all():
+        tickerhandler.remove(settings.PC_CORPSE_DISINTEGRATE_TIME, obj.at_disintegrate, obj.db.disintegrate_ticker)
+        obj.db.disintegrate_ticker = ""
         obj.tags.remove("disintegrating")
-    elif "disintegrating" in obj.tags.all():
-        tickerhandler.remove(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
+    else:
+        tickerhandler.remove(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate, obj.db.disintegrate_ticker)
+        obj.db.disintegrate_ticker = ""
         obj.tags.remove("disintegrating")
 
 
@@ -1081,10 +1083,14 @@ def set_disintegrate_timer(obj):
     """
 
     if "pc corpse" in obj.tags.all():
-        tickerhandler.set(settings.PC_CORPSE_DISINTEGRATE_TIME, obj.at_disintegrate)
+        timestamp = obj.key + str(time.time())
+        tickerhandler.add(settings.PC_CORPSE_DISINTEGRATE_TIME, obj.at_disintegrate, timestamp)
+        obj.db.disintegrate_ticker = timestamp
         obj.tags.add("disintegrating")
     else:
-        tickerhandler.add(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate)
+        timestamp = obj.key + str(time.time())
+        tickerhandler.add(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate, timestamp)
+        obj.db.disintegrate_ticker = timestamp
         obj.tags.add("disintegrating")
 
 
