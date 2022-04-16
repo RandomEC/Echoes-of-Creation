@@ -86,7 +86,7 @@ class CmdEquipment(MuxCommand):
             # calling a method on the character that returns a formatted table of
             # all the equipment it is wearing.
 
-            equipment_table = caller.get_equipment_table()
+            equipment_table = caller.get_equipment_table(caller)
 
             caller.msg("You are wearing:\n")
 
@@ -447,7 +447,10 @@ class CmdWear(MuxCommand):
                 # If there is no location open for the eq to be worn, we must try to remove.
                 if not check_wear_location(caller, wear_location):
 
-                    if not check_cursed_remove(caller, wear_location):
+                    if not rules.is_visible(caller.db.eq_slots[wear_location], caller):
+                        caller.msg("The equipment in %s's location is invisible, and cannot be seen to be removed." % eq.key)
+
+                    elif not check_cursed_remove(caller, wear_location):
                         caller.msg("The object in %s's location is cursed, and cannot be removed." % eq.key)
                     else:
                         # If the eq in the slot is not cursed.

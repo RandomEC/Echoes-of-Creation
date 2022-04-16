@@ -661,10 +661,10 @@ class Character(DefaultCharacter):
             self.db.level, self.db.age, self.db.wimpy, self.items,\
             self.weight_carried, self.db.damage_maximum_mobile, self.db.kill_experience_maximum_mobile
 
-    def get_equipment_table(self):
+    def get_equipment_table(self, looker):
         """
         Method that cycles through worn equipment and returns a formatted table
-        string.
+        string, based on the looker looking at the equipment.
         """
 
         equipment_output = ""
@@ -690,7 +690,13 @@ class Character(DefaultCharacter):
 
                 output_string = wear_string + wear_location + ":"
                 space_buffer = 26 - len(output_string)
-                output_string = output_string + " " * space_buffer + self.db.eq_slots[wear_location].key + "\n"
+
+                if rules.is_visible(self.db.eq_slots[wear_location], looker):
+                    equipment = self.db.eq_slots[wear_location].key
+                else:
+                    equipment = "something"
+
+                output_string = output_string + " " * space_buffer + equipment + "\n"
                 equipment_output += output_string
 
         return equipment_output
@@ -998,7 +1004,7 @@ class Mobile(Character):
 
         if not all(value == "" for value in self.db.eq_slots.values()):
 
-            equipment_list = self.get_equipment_table()
+            equipment_list = self.get_equipment_table(looker)
 
             string += "%s is wearing:\n%s" % ((self.key[0].upper() + self.key[1:]), equipment_list)
 
