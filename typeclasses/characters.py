@@ -865,20 +865,26 @@ def announce_move_from(self, destination, msg=None, mapping=None, **kwargs):
 
     Random.msg("Hey there!")
 
-
-    if not self.location:
-        return
-    if msg:
-        string = msg
-    else:
-        string = "{object} leaves {exit}."
-
     location = self.location
     exits = [
         o for o in location.contents if o.location is location and o.destination is destination
     ]
     if not mapping:
         mapping = {}
+
+    if exits[0] == "north" or exits[0] == "east" or exits[0] == "south" or exits[0] == "west":
+        exit_string = "to the %s" % exits[0]
+    elif exits[0] == "up" or exits[0] == "down":
+        exit_string = "%swards" % exits[0]
+    else:
+        exit_string = "from the %s" % exits[0]
+        
+    if not self.location:
+        return
+    if msg:
+        string = msg
+    else:
+        string = "%s leaves %s." % (self.key[0].upper() + self.key[1:], exit_string)
 
     mapping.update(
         {
@@ -889,7 +895,14 @@ def announce_move_from(self, destination, msg=None, mapping=None, **kwargs):
         }
     )
 
-    location.msg_contents(string, exclude=(self,), from_obj=self, mapping=mapping)
+    # Build a list of characters that cannot see the character's departure.
+    cannot_see = [self]
+    for object in location.contents:
+        if "mobile" in object.tags.all() or "player" in object.tags.all():
+            if not rules.is_visible(self, object, arrive=True):
+                cannot_see.append(object)                                    
+    
+    location.msg_contents(string, exclude=cannot_see, from_obj=self, mapping=mapping)
 
 
 
@@ -920,14 +933,6 @@ def announce_move_to(self, source_location, msg=None, mapping=None, **kwargs):
         self.location.msg(string)
         return
 
-    if source_location:
-        if msg:
-            string = msg
-        else:
-            string = "{object} arrives to {destination} from {origin}."
-    else:
-        string = "{object} arrives to {destination}."
-
     origin = source_location
     destination = self.location
     exits = []
@@ -937,6 +942,23 @@ def announce_move_to(self, source_location, msg=None, mapping=None, **kwargs):
             for o in destination.contents
             if o.location is destination and o.destination is origin
         ]
+   
+    if exits[0] == "north" or exits[0] == "east" or exits[0] == "south" or exits[0] == "west":
+        exit_string = "from the %s" % exits[0]
+    elif exits[0] == "up":
+        exit_string = "from above"
+    elif exits[0] == "down":
+        exit_string = "from below"
+    else:
+        exit_string = "from the %s" % exits[0]
+    
+    if source_location:
+        if msg:
+            string = msg
+        else:
+            string = "%s arrives %s." % (self.key[0].upper() + self.key[1:], exit_string)
+    else:
+        string = "$s suddenly appears." % (self.key[0].upper() + self.key[1:])
 
     if not mapping:
         mapping = {}
@@ -950,7 +972,15 @@ def announce_move_to(self, source_location, msg=None, mapping=None, **kwargs):
         }
     )
 
-    destination.msg_contents(string, exclude=(self,), from_obj=self, mapping=mapping)
+    
+    # Build a list of characters that cannot see the character's departure.
+    cannot_see = [self]
+    for object in destination.contents:
+        if "mobile" in object.tags.all() or "player" in object.tags.all():
+            if not rules.is_visible(self, object, arrive=True):
+                cannot_see.append(object)                                    
+        
+    destination.msg_contents(string, exclude=cannot_see, from_obj=self, mapping=mapping)
 
 
 class Mobile(Character):
