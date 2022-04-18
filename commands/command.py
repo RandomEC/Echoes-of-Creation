@@ -947,7 +947,7 @@ class CmdGive(MuxCommand):
                         giver = "Someone"
 
                     # Address visibility of object dropped.
-                    if rules.is_visible(looker, obj):
+                    if rules.is_visible(to_give, looker):
                         given = to_give.key
                     else:
                         given = "something"
@@ -959,7 +959,7 @@ class CmdGive(MuxCommand):
                         receiver = "someone"
                         
                     # As long as something was visible, give output.
-                    if dropper != "Someone" or dropped != "something" or receiver != "someone":
+                    if giver != "Someone" or given != "something" or receiver != "someone":
                         looker.msg("%s gives %s to %s" % (giver, given, receiver))
             
             # Call the target's at_give() method.
@@ -1257,7 +1257,7 @@ class CmdLook(MuxCommand):
                 return
         else:
             possible_candidates = caller.location.contents + caller.contents            
-            visible_candidates = list(object for object in candidates if rules.is_visible(object, caller)
+            visible_candidates = list(object for object in candidates if rules.is_visible(object, caller))            
             
             target = caller.search(self.args, candidates=visible_candidates)
             if not target:
@@ -1289,17 +1289,15 @@ class CmdPut(MuxCommand):
         if not self.args or not self.rhs:
             caller.msg("Usage: put <inventory object> in <target>")
             return
+        visible_candidates = list(object for object in caller.contents if rules.is_visible(object, caller))
         to_put = caller.search(
             self.lhs,
-            location=caller,
+            candidates=visible_candidates,
             nofound_string="You aren't carrying %s." % self.lhs,
             multimatch_string="You carry more than one %s:" % self.lhs,
         )
 
         if not to_put:
-            return
-        elif not rules.is_visible(to_put, caller):
-            caller.msg("You aren't carrying %s." % self.lhs)
             return
         
         # For ease of programming reasons, you cannot put a container in
@@ -1308,23 +1306,26 @@ class CmdPut(MuxCommand):
             caller.msg("You cannot put a container with items in it in another container.")
             return
 
+        possible_candidates = caller.contents + caller.location.contents
+        visible_candidates = list(object for object in possible_candidates if rules.is_visible(object, caller))
         target = caller.search(self.rhs, 
-                               location=[caller, caller.location],
+                               candidates=visible_candidates,
                                nofound_string="There is no %s here." % self.rhs,
                                multimatch_string="There is more than one %s here:" % self.rhs
                                )
 
         if not target:
             return
-        elif not rules.is_visible(target, caller):
-            caller.msg("There is no %s here." % self.rhs)
-            return
 
         if not (to_put and target):
             return
-        if "object" not in target.tags.all() or target.db.item_type != "container":
+        if "object" not in target.tags.all():
             caller.msg("%s is not a container." % (target.key[0].upper() + target.key[1:]))
             return
+        if target.db.item_type != "container":
+            caller.msg("%s is not a container." % (target.key[0].upper() + target.key[1:]))
+            return
+
 
         # Check to see if the locks for put are met, and give corrective
         # output if not.
@@ -1345,6 +1346,34 @@ class CmdPut(MuxCommand):
             caller.msg("This could not be put there.")
         else:
             caller.msg("You put %s in %s." % (to_put.key, target.key))
+                        
+            # Deal with invisible objects/characters for output.
+            # Assemble a list of all possible lookers.
+            lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+            for looker in lookers:
+                # Exclude the caller, who got their output above.
+                if looker != caller:
+                    # Address visibility of character putting.
+                    if rules.is_visible(caller, looker):
+                        putter = (caller.key[0].upper() + caller.key[1:])
+                    else:
+                        putter = "Someone"
+
+                    # Address visibility of object put.
+                    if rules.is_visible(to_put, looker):
+                        put = to_put.key
+                    else:
+                        put = "something"
+
+                    # Address visibility of container receiving.
+                    if rules.is_visible(target, looker):
+                        container = (target.key[0].upper() + target.key[1:])
+                    else:
+                        container = "something"
+                        
+                    # As long as something was visible, give output.
+                    if putter != "Someone" or put != "something" or container != "something":
+                        looker.msg("%s put %s in %s" % (putter, put, container))
 
 
 class CmdRepop(MuxCommand):
