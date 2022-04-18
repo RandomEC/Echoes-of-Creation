@@ -873,24 +873,29 @@ def is_visible_character(target, looker):
     
     return True
     
-def is_visible(target, looker):
+def is_visible(target, looker, **kwargs):
     """
     This function returns a boolean as to whether one character/object
     is visible to another currently.
+    
+    Kwargs:
+    arrive = True - If arrive is flagged as true, the function will let
+    you know whether someone's arrival in the room is visible (sneak vs.
+    hide).    
     """
     
-    # Special visibility check for aggro mobs, who particularly care about sneak.
-    if "mobile" in looker.tags.all():
-        if "aggressive" in looker.db.act_flags:
-            if looker.get_affect_status("blind"):
-                return False
-            if target.get_affect_status("sneak") and not looker.get_affect_status("detect hidden"):
-                return False
-            if target.get_affect_status("invisible") and not looker.get_affect_status("detect invis"):
-                return False
-            
-            return True
-    
+    # Dealing with arrival visibility.
+    if "arrive" in kwargs:
+        if looker.get_affect_status("blind"):
+            return False
+        if target.get_affect_status("sneak") and not looker.get_affect_status("detect hidden"):
+            return False
+        if target.get_affect_status("invisible") and not looker.get_affect_status("detect invis"):
+            return False        
+        
+        return True
+
+    # Dealing with character visibility.
     if "mobile" in target.tags.all() or "player" in target.tags.all():
         if looker.get_affect_status("blind"):
             return False
@@ -901,6 +906,8 @@ def is_visible(target, looker):
         if "mobile" in target.tags.all():
             if "total invis" in target.db.act_flags:
                 return False
+    
+    # Dealing with object visibility.
     else:
         if looker.get_affect_status("blind"):
             return False
