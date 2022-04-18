@@ -705,7 +705,7 @@ class CmdGet(MuxCommand):
             for obj in get_list:
 
                 get_output = ""
-                get_output_room = ""
+                get_output_room = dict((cont, "") for cont in caller.location.contents if ("mobile" in cont.tags.all() or "player" in cont.tags.all()) and cont != caller)
 
                 if caller == obj:
                     get_output += "You can't get yourself.\n"
@@ -733,7 +733,30 @@ class CmdGet(MuxCommand):
                     else:
                         rules.remove_disintegrate_timer(obj)
                         get_output += "You take %s from %s.\n" % (obj.name, container.key)
-                        get_output_room += "%s takes %s from %s.\n" % (caller.name, obj.name, container.key)
+                        for looker in get_output_room:
+                            
+                            # Address visibility of character getting.
+                            if rules.is_visible(looker, caller):
+                                getter = (caller.key[0].upper() + caller.key[1:])
+                            else:
+                                getter = "Someone"
+
+                            # Address visibility of object gotten.
+                            if rules.is_visible(looker, obj):
+                                gotten = obj.key
+                            else:
+                                gotten = "something"
+
+                            # Address visibility of container.
+                            if rules.is_visible(looker, container):
+                                got_from = container.key
+                            else:
+                                got_from = "something"
+
+                            # As long as something was visible, give output.
+                            if getter != "Someone" or gotten != "something" or got_from != "something":
+                                get_output_room[looker] += ("%s takes %s from %s." % (getter, gotten, got_from))
+
                         # calling at_get hook method
                         obj.at_get(caller)
                         
@@ -748,10 +771,9 @@ class CmdGet(MuxCommand):
                                 reset_script.db.area_list[area]["resets"].append(caller.location)   
 
                 caller.msg(get_output)
-                caller.location.msg_contents(
-                    get_output_room, exclude=caller
-                )
-
+                for looker in get_output_room:
+                    looker.msg(get_output_room[looker])
+                
         # If just a regular get command.
         else:
             get_list = []
@@ -778,7 +800,7 @@ class CmdGet(MuxCommand):
             for obj in get_list:
 
                 get_output = ""
-                get_output_room = ""
+                get_output_room = dict((cont, "") for cont in caller.location.contents if ("mobile" in cont.tags.all() or "player" in cont.tags.all()) and cont != caller)
 
                 if caller == obj:
                     get_output += "You can't get yourself.\n"
@@ -806,7 +828,25 @@ class CmdGet(MuxCommand):
                     else:
                         rules.remove_disintegrate_timer(obj)
                         get_output += "You pick up %s.\n" % obj.name
-                        get_output_room = "%s picks up %s.\n" % (caller.name, obj.name)
+
+                        for looker in get_output_room:
+                            
+                            # Address visibility of character getting.
+                            if rules.is_visible(looker, caller):
+                                getter = (caller.key[0].upper() + caller.key[1:])
+                            else:
+                                getter = "Someone"
+
+                            # Address visibility of object gotten.
+                            if rules.is_visible(looker, obj):
+                                gotten = obj.key
+                            else:
+                                gotten = "something"
+
+                            # As long as something was visible, give output.
+                            if getter != "Someone" or gotten != "something":
+                                get_output_room[looker] += ("%s picks up %s." % (getter, gotten))
+
                         # calling at_get hook method
                         obj.at_get(caller)
                         
@@ -821,9 +861,8 @@ class CmdGet(MuxCommand):
                                 reset_script.db.area_list[area]["resets"].append(caller.location)   
 
                 caller.msg(get_output)
-                caller.location.msg_contents(
-                    get_output_room, exclude=caller
-                )
+                for looker in get_output_room:
+                    looker.msg(get_output_room[looker])
 
 
 class CmdGive(MuxCommand):
