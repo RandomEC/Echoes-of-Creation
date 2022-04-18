@@ -1354,4 +1354,83 @@ class Player(Character):
 
                     mobile_movement_script.db.area_movement[new_area] = mobiles
 
+    def at_post_puppet(self, **kwargs):
+        """
+        Called just after puppeting has been completed and all
+        Account<->Object links have been established.
+        Args:
+            **kwargs (dict): Arbitrary, optional arguments for users
+                overriding the call (unused by default).
+        Note:
+            You can use `self.account` and `self.sessions.get()` to get
+            account and sessions at this point; the last entry in the
+            list from `self.sessions.get()` is the latest Session
+            puppeting this Object.
+        """
+        self.msg("\nYou become |c%s|n.\n" % self.name)
+        self.msg((self.at_look(self.location), {"type": "look"}), options=None)
+
+        def message(obj, from_obj):
+            obj.msg("%s has entered the game." % self.get_display_name(obj), from_obj=from_obj)
+
+        self.location.for_contents(message, exclude=[self], from_obj=self)
+        
+        # Make sure that there is a mobile movement script.
+        mobile_movement_script = search.search_script("mobile_movement_script")[0]
+        if mobile_movement_script:
+
+            new_area = rules.get_area_name(self.location)
+            
+            # If there is no list already for your area, make one.
+            if not mobile_movement_script.db.area_movement[new_area]:
+                # Get all objects in area.
+                new_area_objects = search.search_tag(new_area, category="area name")
+
+                # Filter for mobiles.
+                candidate_mobiles = list(object for object in new_area_objects if "mobile" in object.tags.all())
+                # Filter for non-sentinel mobiles.
+                mobiles = list(mobile for mobile in candidate_mobiles if "sentinel" not in mobile.db.act_flags)
+
+                mobile_movement_script.db.area_movement[new_area] = mobiles
+
+    def at_post_unpuppet(self, account, session=None, **kwargs):
+        """
+        We stove away the character when the account goes ooc/logs off,
+        otherwise the character object will remain in the room also
+        after the account logged off ("headless", so to say).
+        Args:
+            account (Account): The account object that just disconnected
+                from this object.
+            session (Session): Session controlling the connection that
+                just disconnected.
+            **kwargs (dict): Arbitrary, optional arguments for users
+                overriding the call (unused by default).
+        """
+        if not self.sessions.count():
+            # only remove this char from grid if no sessions control it anymore.
+            if self.location:
+
+                # If a player is leaving an area, may need to
+                # change areas where mobiles can move.
+                start_area = rules.get_area_name(self.location)
+
+                players = search.search_tag("player")
+
+                # Get a list of all areas with players in them.
+                player_areas = list(rules.get_area_name(player.location) for player in players if player.location)
+
+                # Make sure that there is a mobile movement script.
+                mobile_movement_script = search.search_script("mobile_movement_script")[0]
+                if mobile_movement_script:
+
+                    # If there are no players left in the old area, clear the mobile movement list.
+                    if start_area not in player_areas:
+                        mobile_movement_script.db.area_movement[start_area] = []
+              
+                def message(obj, from_obj):
+                    obj.msg("%s has left the game." % self.get_display_name(obj), from_obj=from_obj)
+
+                self.location.for_contents(message, exclude=[self], from_obj=self)
+                self.db.prelogout_location = self.location
+                self.location = None
 
