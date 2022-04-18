@@ -1320,7 +1320,7 @@ class Player(Character):
                 # If there is no list already for the new area, make one.
                 if not mobile_movement_script.db.area_movement[new_area]:
                     # Get all objects in area.
-                    new_area_objects = search.search_tag(new_area)
+                    new_area_objects = search.search_tag(new_area, category="area name")
 
                     self.msg("New area objects %s" % new_area_objects)
                     # Filter for mobiles.
