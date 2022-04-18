@@ -915,6 +915,19 @@ def is_visible(target, looker, **kwargs):
             return False
             
     return True
+
+def is_visible_output_list(character, object):
+    """
+    This function determines who in the room can see the object
+    being interacted with, and who cannot. Returns two lists -
+    visible, invisible.
+    """
+    
+    lookers = list(obj for obj in character.contents if "mobile" in obj.tags.all() or "player" in obj.tags.all())
+    visible_lookers = list(looker for looker in lookers if is_visible(looker, object))
+    invisible_lookers = list(looker for looker in lookers if not is_visible(looker, object))
+    
+    return (visible, invisible)
     
 def level_cost(character):
     """
