@@ -865,12 +865,12 @@ class Character(DefaultCharacter):
         if not mapping:
             mapping = {}
 
-        if exits[0] == "north" or exits[0] == "east" or exits[0] == "south" or exits[0] == "west":
-            exit_string = "to the %s" % exits[0]
-        elif exits[0] == "up" or exits[0] == "down":
-            exit_string = "%swards" % exits[0]
+        if exits[0].key == "north" or exits[0].key == "east" or exits[0].key == "south" or exits[0].key == "west":
+            exit_string = "to the %s" % exits[0].key
+        elif exits[0].key == "up" or exits[0].key == "down":
+            exit_string = "%swards" % exits[0].key
         else:
-            exit_string = "from the %s" % exits[0]
+            exit_string = "from the %s" % exits[0].key
 
         if not self.location:
             return
@@ -936,14 +936,14 @@ class Character(DefaultCharacter):
                 if o.location is destination and o.destination is origin
             ]
 
-        if exits[0] == "north" or exits[0] == "east" or exits[0] == "south" or exits[0] == "west":
-            exit_string = "from the %s" % exits[0]
-        elif exits[0] == "up":
+        if exits[0].key == "north" or exits[0].key == "east" or exits[0].key == "south" or exits[0].key == "west":
+            exit_string = "from the %s" % exits[0].key
+        elif exits[0].key == "up":
             exit_string = "from above"
-        elif exits[0] == "down":
+        elif exits[0].key == "down":
             exit_string = "from below"
         else:
-            exit_string = "from the %s" % exits[0]
+            exit_string = "from the %s" % exits[0].key
 
         if source_location:
             if msg:
