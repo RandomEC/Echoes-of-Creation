@@ -198,14 +198,23 @@ class MobileMovementScript(Script):
                             Random.msg("Door = %s" % door)
 
                             for exit in mobile.location.exits:
+                                Random.msg("Now checking %s exit" % exit.key)
                                 if exit.key == door and "open" in exit.db.door_attributes:
+
+                                    Random.msg("Door meets requirements.")
                                     destination = exit.destination
 
-                                    if "no mob" not in destination.db.room_flags:
-                                        if ("solitary" not in destination.db.room_flags and "private" not in destination.db.room_flags) or mobile.home == destination:
-                                            area_tag = area + ":area name"
-                                            if area_tag in destination.tags.all():
-                                                mobile.move_to(destination)
+                                    Random.msg("%s" % destination.tags.all())
+
+                                    area_tag = area + ":area name"
+                                    if area_tag in destination.tags.all():
+                                        if destination.db.room_flags:
+                                            if "no mob" not in destination.db.room_flags:
+                                                if ("solitary" not in destination.db.room_flags and "private" not in destination.db.room_flags) or mobile.home == destination:
+                                                    if area_tag in destination.tags.all():
+                                                        mobile.move_to(destination)
+                                        else:
+                                            mobile.move_to(destination)
    
                                             
 class UpdateTimerScript(DefaultScript):
