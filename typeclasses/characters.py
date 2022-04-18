@@ -838,85 +838,17 @@ class Character(DefaultCharacter):
             pass
 
 
-def announce_move_from(self, destination, msg=None, mapping=None, **kwargs):
-    """
-    Called if the move is to be announced. This is
-    called while we are still standing in the old
-    location.
-    Args:
-        destination (Object): The place we are going to.
-        msg (str, optional): a replacement message.
-        mapping (dict, optional): additional mapping objects.
-        **kwargs (dict): Arbitrary, optional arguments for users
-            overriding the call (unused by default).
-    You can override this method and call its parent with a
-    message to simply change the default message.  In the string,
-    you can use the following as mappings (between braces):
-        object: the object which is moving.
-        exit: the exit from which the object is moving (if found).
-        origin: the location of the object before the move.
-        destination: the location of the object after moving.
-    """
-
-    players = search.search_tag("player")
-    for player in players:
-        if player.key == "Random":
-            Random = player
-
-    Random.msg("Hey there!")
-
-    location = self.location
-    exits = [
-        o for o in location.contents if o.location is location and o.destination is destination
-    ]
-    if not mapping:
-        mapping = {}
-
-    if exits[0] == "north" or exits[0] == "east" or exits[0] == "south" or exits[0] == "west":
-        exit_string = "to the %s" % exits[0]
-    elif exits[0] == "up" or exits[0] == "down":
-        exit_string = "%swards" % exits[0]
-    else:
-        exit_string = "from the %s" % exits[0]
-        
-    if not self.location:
-        return
-    if msg:
-        string = msg
-    else:
-        string = "%s leaves %s." % (self.key[0].upper() + self.key[1:], exit_string)
-
-    mapping.update(
-        {
-            "object": self,
-            "exit": exits[0] if exits else "somewhere",
-            "origin": location or "nowhere",
-            "destination": destination or "nowhere",
-        }
-    )
-
-    # Build a list of characters that cannot see the character's departure.
-    cannot_see = [self]
-    for object in location.contents:
-        if "mobile" in object.tags.all() or "player" in object.tags.all():
-            if not rules.is_visible(self, object, arrive=True):
-                cannot_see.append(object)                                    
-    
-    location.msg_contents(string, exclude=cannot_see, from_obj=self, mapping=mapping)
-
-
-
-def announce_move_to(self, source_location, msg=None, mapping=None, **kwargs):
-    """
-    Called after the move if the move was not quiet. At this point
-    we are standing in the new location.
-    Args:
-        source_location (Object): The place we came from
-        msg (str, optional): the replacement message if location.
-        mapping (dict, optional): additional mapping objects.
-        **kwargs (dict): Arbitrary, optional arguments for users
-            overriding the call (unused by default).
-    Notes:
+    def announce_move_from(self, destination, msg=None, mapping=None, **kwargs):
+        """
+        Called if the move is to be announced. This is
+        called while we are still standing in the old
+        location.
+        Args:
+            destination (Object): The place we are going to.
+            msg (str, optional): a replacement message.
+            mapping (dict, optional): additional mapping objects.
+            **kwargs (dict): Arbitrary, optional arguments for users
+                overriding the call (unused by default).
         You can override this method and call its parent with a
         message to simply change the default message.  In the string,
         you can use the following as mappings (between braces):
@@ -924,63 +856,124 @@ def announce_move_to(self, source_location, msg=None, mapping=None, **kwargs):
             exit: the exit from which the object is moving (if found).
             origin: the location of the object before the move.
             destination: the location of the object after moving.
-    """
+        """
 
-    if not source_location and self.location.has_account:
-        # This was created from nowhere and added to an account's
-        # inventory; it's probably the result of a create command.
-        string = "You now have %s in your possession." % self.get_display_name(self.location)
-        self.location.msg(string)
-        return
-
-    origin = source_location
-    destination = self.location
-    exits = []
-    if origin:
+        location = self.location
         exits = [
-            o
-            for o in destination.contents
-            if o.location is destination and o.destination is origin
+            o for o in location.contents if o.location is location and o.destination is destination
         ]
-   
-    if exits[0] == "north" or exits[0] == "east" or exits[0] == "south" or exits[0] == "west":
-        exit_string = "from the %s" % exits[0]
-    elif exits[0] == "up":
-        exit_string = "from above"
-    elif exits[0] == "down":
-        exit_string = "from below"
-    else:
-        exit_string = "from the %s" % exits[0]
-    
-    if source_location:
+        if not mapping:
+            mapping = {}
+
+        if exits[0] == "north" or exits[0] == "east" or exits[0] == "south" or exits[0] == "west":
+            exit_string = "to the %s" % exits[0]
+        elif exits[0] == "up" or exits[0] == "down":
+            exit_string = "%swards" % exits[0]
+        else:
+            exit_string = "from the %s" % exits[0]
+
+        if not self.location:
+            return
         if msg:
             string = msg
         else:
-            string = "%s arrives %s." % (self.key[0].upper() + self.key[1:], exit_string)
-    else:
-        string = "$s suddenly appears." % (self.key[0].upper() + self.key[1:])
+            string = "%s leaves %s." % (self.key[0].upper() + self.key[1:], exit_string)
 
-    if not mapping:
-        mapping = {}
+        mapping.update(
+            {
+                "object": self,
+                "exit": exits[0] if exits else "somewhere",
+                "origin": location or "nowhere",
+                "destination": destination or "nowhere",
+            }
+        )
 
-    mapping.update(
-        {
-            "object": self,
-            "exit": exits[0] if exits else "somewhere",
-            "origin": origin or "nowhere",
-            "destination": destination or "nowhere",
-        }
-    )
+        # Build a list of characters that cannot see the character's departure.
+        cannot_see = [self]
+        for object in location.contents:
+            if "mobile" in object.tags.all() or "player" in object.tags.all():
+                if not rules.is_visible(self, object, arrive=True):
+                    cannot_see.append(object)
 
-    
-    # Build a list of characters that cannot see the character's departure.
-    cannot_see = [self]
-    for object in destination.contents:
-        if "mobile" in object.tags.all() or "player" in object.tags.all():
-            if not rules.is_visible(self, object, arrive=True):
-                cannot_see.append(object)                                    
-        
-    destination.msg_contents(string, exclude=cannot_see, from_obj=self, mapping=mapping)
+        location.msg_contents(string, exclude=cannot_see, from_obj=self, mapping=mapping)
+
+
+
+    def announce_move_to(self, source_location, msg=None, mapping=None, **kwargs):
+        """
+        Called after the move if the move was not quiet. At this point
+        we are standing in the new location.
+        Args:
+            source_location (Object): The place we came from
+            msg (str, optional): the replacement message if location.
+            mapping (dict, optional): additional mapping objects.
+            **kwargs (dict): Arbitrary, optional arguments for users
+                overriding the call (unused by default).
+        Notes:
+            You can override this method and call its parent with a
+            message to simply change the default message.  In the string,
+            you can use the following as mappings (between braces):
+                object: the object which is moving.
+                exit: the exit from which the object is moving (if found).
+                origin: the location of the object before the move.
+                destination: the location of the object after moving.
+        """
+
+        if not source_location and self.location.has_account:
+            # This was created from nowhere and added to an account's
+            # inventory; it's probably the result of a create command.
+            string = "You now have %s in your possession." % self.get_display_name(self.location)
+            self.location.msg(string)
+            return
+
+        origin = source_location
+        destination = self.location
+        exits = []
+        if origin:
+            exits = [
+                o
+                for o in destination.contents
+                if o.location is destination and o.destination is origin
+            ]
+
+        if exits[0] == "north" or exits[0] == "east" or exits[0] == "south" or exits[0] == "west":
+            exit_string = "from the %s" % exits[0]
+        elif exits[0] == "up":
+            exit_string = "from above"
+        elif exits[0] == "down":
+            exit_string = "from below"
+        else:
+            exit_string = "from the %s" % exits[0]
+
+        if source_location:
+            if msg:
+                string = msg
+            else:
+                string = "%s arrives %s." % (self.key[0].upper() + self.key[1:], exit_string)
+        else:
+            string = "$s suddenly appears." % (self.key[0].upper() + self.key[1:])
+
+        if not mapping:
+            mapping = {}
+
+        mapping.update(
+            {
+                "object": self,
+                "exit": exits[0] if exits else "somewhere",
+                "origin": origin or "nowhere",
+                "destination": destination or "nowhere",
+            }
+        )
+
+
+        # Build a list of characters that cannot see the character's departure.
+        cannot_see = [self]
+        for object in destination.contents:
+            if "mobile" in object.tags.all() or "player" in object.tags.all():
+                if not rules.is_visible(self, object, arrive=True):
+                    cannot_see.append(object)
+
+        destination.msg_contents(string, exclude=cannot_see, from_obj=self, mapping=mapping)
 
 
 class Mobile(Character):

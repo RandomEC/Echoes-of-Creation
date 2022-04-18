@@ -160,25 +160,15 @@ class MobileMovementScript(Script):
         self.db.area_movement = dict((area, []) for area in areas)
         
     def at_repeat(self):
-        players = search.search_tag("player")
-        for player in players:
-            if player.key == "Random":
-                Random = player
 
         for area in self.db.area_movement:
 
             # Do movement if there are mobiles to move.
             if self.db.area_movement[area]:
 
-                Random.msg("Area with movement = %s" % area)
-
                 for mobile in self.db.area_movement[area]:
-
-                    Random.msg("Mobile = %s" % mobile.key)
                     # More likely to move if hurt.
                     if (mobile.hitpoints_current < (mobile.hitpoints_maximum * 0.5) and random.randint(1, 8) < 7) or (random.randint(1, 32) < 7):
-
-                        Random.msg("Going to move = %s" % mobile.key)
                         # No moving if in a fight, unless by wimpy through fight code.
                         if not mobile.nattributes.has("combat_handler"):
                             door = random.randint(1, 6)
@@ -195,17 +185,9 @@ class MobileMovementScript(Script):
                             else:
                                 door = "down"
 
-                            Random.msg("Door = %s" % door)
-
                             for exit in mobile.location.exits:
-                                Random.msg("Now checking %s exit" % exit.key)
                                 if exit.key == door and "open" in exit.db.door_attributes:
-
-                                    Random.msg("Door meets requirements.")
                                     destination = exit.destination
-
-                                    Random.msg("%s" % destination.tags.all())
-
                                     if area in destination.tags.all():
                                         if destination.db.room_flags:
                                             if "no mob" not in destination.db.room_flags:
