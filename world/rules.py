@@ -738,6 +738,10 @@ def get_area_info(area_name):
         "troll den": {
             "formatted name": "Troll Den",
             "level range": "[  10 -  15]"
+        },
+        "the circus": {
+            "formatted name": "The Circus",
+            "level range": "[   1 -  10]"
         }
     }
 
