@@ -1130,14 +1130,14 @@ class Mobile(Character):
         """
         Hook used to implement various actions on a player entering the room.
         """
-        if "aggressive" in self.db.act_flags and character.level < 103 and rules.is_visible(character, self):
+        if "aggressive" in self.db.act_flags and character.level < 103 and rules.is_visible(character, self, arrive=True):
             if not character.ndb.combat_handler and not self.ndb.combat_handler:
                 character.msg("%s jumps forward and ATTACKS you!" % (self.key[0].upper() + self.key[1:]))
                 rules_combat.create_combat(self, character)
             if not self.ndb.combat_handler:
                 combat = character.ndb.combat_handler
                 combat.add_combatant(self, character)
-        if "talk on enter" in self.tags.all():
+        if "talk on enter" in self.tags.all() and rules.is_visible(character, self, arrive=True):
             character.msg('On entering the room, %s says to you, "%s"' % (self.key, self.db.talk))
 
     def at_death(self, player):
