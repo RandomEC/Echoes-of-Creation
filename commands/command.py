@@ -570,7 +570,7 @@ class CmdDrop(MuxCommand):
         inventory = search.search_object(False, attribute_name="equipped", candidates=caller.contents)
         inventory = list(inventory)
         for item in caller.contents:
-            if not item.attributes.has("equipped"):
+            if not item.attributes.has("equipped") and rules.is_visible(item, caller):
                 inventory.append(item)
         # Then search those for the item to be dropped.
         obj = caller.search(
@@ -580,9 +580,6 @@ class CmdDrop(MuxCommand):
             multimatch_string="You carry more than one %s:" % self.args,
         )
         if not obj:
-            return
-        elif not rules.is_visible(obj, caller):
-            caller.msg("You aren't carrying %s." % self.args)
             return
 
         # Check for the object being cursed to be undroppable.
@@ -613,13 +610,13 @@ class CmdDrop(MuxCommand):
                 # Exclude the caller, who got their output above.
                 if looker != caller:
                     # Address visibility of character dropping.
-                    if rules.is_visible(looker, caller):
+                    if rules.is_visible(caller, looker):
                         dropper = (caller.key[0].upper() + caller.key[1:])
                     else:
                         dropper = "Someone"
 
                     # Address visibility of object dropped.
-                    if rules.is_visible(looker, obj):
+                    if rules.is_visible(obj, looker):
                         dropped = obj.key
                     else:
                         dropped = "something"
@@ -736,19 +733,19 @@ class CmdGet(MuxCommand):
                         for looker in get_output_room:
                             
                             # Address visibility of character getting.
-                            if rules.is_visible(looker, caller):
+                            if rules.is_visible(caller, looker):
                                 getter = (caller.key[0].upper() + caller.key[1:])
                             else:
                                 getter = "Someone"
 
                             # Address visibility of object gotten.
-                            if rules.is_visible(looker, obj):
+                            if rules.is_visible(obj, looker):
                                 gotten = obj.key
                             else:
                                 gotten = "something"
 
                             # Address visibility of container.
-                            if rules.is_visible(looker, container):
+                            if rules.is_visible(container, looker):
                                 got_from = container.key
                             else:
                                 got_from = "something"
@@ -832,13 +829,13 @@ class CmdGet(MuxCommand):
                         for looker in get_output_room:
                             
                             # Address visibility of character getting.
-                            if rules.is_visible(looker, caller):
+                            if rules.is_visible(caller, looker):
                                 getter = (caller.key[0].upper() + caller.key[1:])
                             else:
                                 getter = "Someone"
 
                             # Address visibility of object gotten.
-                            if rules.is_visible(looker, obj):
+                            if rules.is_visible(obj, looker):
                                 gotten = obj.key
                             else:
                                 gotten = "something"
@@ -886,9 +883,12 @@ class CmdGive(MuxCommand):
         if not self.args or not self.rhs:
             caller.msg("Usage: give <inventory object> to <target>")
             return
+
+        possible_candidates = caller.contents
+        visible_candidates = list(object for object in possible_candidates if rules.is_visible(object, caller))
         to_give = caller.search(
             self.lhs,
-            location=caller,
+            candidates=visible_candidates,
             nofound_string="You aren't carrying %s." % self.lhs,
             multimatch_string="You carry more than one %s:" % self.lhs,
         )
@@ -926,7 +926,42 @@ class CmdGive(MuxCommand):
         else:
             caller.msg("You give %s to %s." % (to_give.key, target.key))
             if "player" in target.tags.all():
-                target.msg("%s gives you %s." % (caller.key, to_give.key))
+                if rules.is_visible(caller, target):
+                    giver = (caller.key[0].upper() + caller.key[1:])
+                else:
+                    giver = "Someone"
+                
+                target.msg("%s gives you %s." % (giver, to_give.key))
+
+            
+            # Deal with invisible objects/characters for output.
+            # Assemble a list of all possible lookers.
+            lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+            for looker in lookers:
+                # Exclude the caller, who got their output above.
+                if looker != caller:
+                    # Address visibility of character dropping.
+                    if rules.is_visible(caller, looker):
+                        giver = (caller.key[0].upper() + caller.key[1:])
+                    else:
+                        giver = "Someone"
+
+                    # Address visibility of object dropped.
+                    if rules.is_visible(looker, obj):
+                        given = to_give.key
+                    else:
+                        given = "something"
+
+                    # Address visibility of character receiving.
+                    if rules.is_visible(target, looker):
+                        receiver = (target.key[0].upper() + target.key[1:])
+                    else:
+                        receiver = "someone"
+                        
+                    # As long as something was visible, give output.
+                    if dropper != "Someone" or dropped != "something" or receiver != "someone":
+                        looker.msg("%s gives %s to %s" % (giver, given, receiver))
+            
             # Call the target's at_give() method.
             target.at_give(caller, to_give)
             # Call the object's at_give() method.
@@ -1012,7 +1047,9 @@ class CmdInspect(MuxCommand):
             caller.msg("You see nothing special about the %s." % self.args)
             return
         else:
-            object = caller.search(self.rhs, location=(caller, caller.location))
+            possible_candidates = caller.contents + caller.location.contents
+            visible_candidates = list(object for object in possible_candidates if rules.is_visible(object, caller))
+            object = caller.search(self.rhs, candidates=visible_candidates)
             aspect = self.lhs
 
             if not object:
@@ -1219,10 +1256,11 @@ class CmdLook(MuxCommand):
                 caller.msg("You have no location to look at!")
                 return
         else:
-            target = caller.search(self.args)
+            possible_candidates = caller.location.contents + caller.contents            
+            visible_candidates = list(object for object in candidates if rules.is_visible(object, caller)
+            
+            target = caller.search(self.args, candidates=visible_candidates)
             if not target:
-                return
-            elif not rules.is_visible(target, caller):
                 return
         self.msg((caller.at_look(target), {"type": "look"}), options=None)
 
