@@ -225,8 +225,7 @@ def do_attack(attacker, victim, eq_slot, **kwargs):
         # Do damage to the victim.
         victim.take_damage(damage)
         
-        # Get the mobile victim started healing, if not already doing so. Heroes
-        # are always checked anyway.
+        # Get the victim started healing, if not already.
         if not victim.attributes.has("heal_ticker"):
             timestamp = victim.key + str(time.time())
             tickerhandler.add(30, victim.at_update, timestamp)
