@@ -1324,7 +1324,7 @@ class Player(Character):
 
                     self.msg("New area objects %s" % new_area_objects)
                     # Filter for mobiles.
-                    candidate_mobiles = list(object for objects in new_area_objects if "mobile" in object.tags.all())
+                    candidate_mobiles = list(object for object in new_area_objects if "mobile" in object.tags.all())
                     self.msg("Candidate mobiles %s" % candidate_mobiles)
                     # Filter for non-sentinel mobiles.
                     mobiles = list(mobile for mobile in candidate_mobiles if "sentinel" not in mobile.db.act_flags)
