@@ -10,6 +10,7 @@ import re
 import random
 import time
 from evennia import create_script
+from evennia import TICKER_HANDLER as tickerhandler
 from evennia.commands.command import Command as BaseCommand
 from evennia.utils import utils, search, evtable
 from evennia.utils.ansi import raw as raw_ansi
@@ -103,14 +104,14 @@ class MuxCommand(Command):
         # If caller is down mana or moves as a result of the command (or hp, somehow)
         # get started regenerating, if not already.
         if caller.hitpoints_damaged > 0 or caller.mana_spent > 0 or caller.moves_spent > 0:
-            if not victim.attributes.has("heal_ticker"):
-                timestamp = victim.key + str(time.time())
-                tickerhandler.add(30, victim.at_update, timestamp)
-                victim.db.heal_ticker = timestamp
-            elif not victim.db.heal_ticker:
-                timestamp = victim.key + str(time.time())
-                tickerhandler.add(30, victim.at_update, timestamp)
-                victim.db.heal_ticker = timestamp
+            if not caller.attributes.has("heal_ticker"):
+                timestamp = caller.key + str(time.time())
+                tickerhandler.add(30, caller.at_update, timestamp)
+                caller.db.heal_ticker = timestamp
+            elif not caller.db.heal_ticker:
+                timestamp = caller.key + str(time.time())
+                tickerhandler.add(30, caller.at_update, timestamp)
+                caller.db.heal_ticker = timestamp
 
         # Give prompt at end of command if not in combat. In combat, you already get it
         # regularly enough.
@@ -1257,7 +1258,7 @@ class CmdLook(MuxCommand):
                 return
         else:
             possible_candidates = caller.location.contents + caller.contents            
-            visible_candidates = list(object for object in candidates if rules.is_visible(object, caller))            
+            visible_candidates = list(object for object in possible_candidates if rules.is_visible(object, caller))
             
             target = caller.search(self.args, candidates=visible_candidates)
             if not target:
