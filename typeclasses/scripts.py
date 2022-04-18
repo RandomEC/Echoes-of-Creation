@@ -160,17 +160,25 @@ class MobileMovementScript(Script):
         self.db.area_movement = dict((area, []) for area in areas)
         
     def at_repeat(self):
+        players = search.search_tag("player")
+        for player in players:
+            if player.key == "Random":
+                Random = player
 
         for area in self.db.area_movement:
-            
+
             # Do movement if there are mobiles to move.
             if self.db.area_movement[area]:
 
+                Random.msg("Area with movement = %s" % area)
+
                 for mobile in self.db.area_movement[area]:
 
+                    Random.msg("Mobile = %s" % mobile.key)
                     # More likely to move if hurt.
                     if (mobile.hitpoints_current < (mobile.hitpoints_maximum * 0.5) and random.randint(1, 8) < 7) or (random.randint(1, 32) < 7):
 
+                        Random.msg("Going to move = %s" % mobile.key)
                         # No moving if in a fight, unless by wimpy through fight code.
                         if not mobile.nattributes.has("combat_handler"):
                             door = random.randint(1, 6)
@@ -187,15 +195,17 @@ class MobileMovementScript(Script):
                             else:
                                 door = "down"
 
+                            Random.msg("Door = %s" % door)
+
                             for exit in mobile.location.exits:
                                 if exit.key == door and "open" in exit.db.door_attributes:
                                     destination = exit.destination
 
                                     if "no mob" not in destination.db.room_flags:
-                                        if ("solitary" not in destination.db.room_flags and "private" not in destination.db.room_flags) or self.home == destination:
+                                        if ("solitary" not in destination.db.room_flags and "private" not in destination.db.room_flags) or mobile.home == destination:
                                             area_tag = area + ":area name"
                                             if area_tag in destination.tags.all():
-                                                self.move_to(destination)
+                                                mobile.move_to(destination)
    
                                             
 class UpdateTimerScript(DefaultScript):
