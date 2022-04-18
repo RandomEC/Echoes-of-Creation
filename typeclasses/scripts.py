@@ -175,19 +175,10 @@ class MobileMovementScript(Script):
         
     def at_repeat(self):
 
-        players = search.search_tag("player")
-        for player in players:
-            if player.key == "Random":
-                Random = player
-
-        Random.msg("Areas %s" % self.db.area_movement.keys())
-
         for area in self.db.area_movement:
             
             # Do movement if there are mobiles to move.
             if self.db.area_movement[area]:
-
-                Random.msg("Mobiles %s" % self.db.area_movement[area])
 
                 for mobile in self.db.area_movement[area]:
 

@@ -1298,15 +1298,11 @@ class Player(Character):
         start_area = rules.get_area_name(source_location)
         new_area = rules.get_area_name(self.location)
 
-        self.msg("Old area - %s, new area - %s" % (start_area, new_area))
-
         if start_area != new_area:
-            self.msg("Areas not the same")
             players = search.search_tag("player")
             
             # Get a list of all areas with players in them.
             player_areas = list(rules.get_area_name(player.location) for player in players if player.location)
-            self.msg("Player areas - %s" % player_areas)
 
             # Make sure that there is a mobile movement script.
             mobile_movement_script = search.search_script("mobile_movement_script")[0]
@@ -1314,7 +1310,6 @@ class Player(Character):
                 
                 # If there are no players left in the old area, clear the mobile movement list.
                 if start_area not in player_areas:
-                    self.msg("No one in old area.")
                     mobile_movement_script.db.area_movement[start_area] = []
                 
                 # If there is no list already for the new area, make one.
@@ -1322,13 +1317,10 @@ class Player(Character):
                     # Get all objects in area.
                     new_area_objects = search.search_tag(new_area, category="area name")
 
-                    self.msg("New area objects %s" % new_area_objects)
                     # Filter for mobiles.
                     candidate_mobiles = list(object for object in new_area_objects if "mobile" in object.tags.all())
-                    self.msg("Candidate mobiles %s" % candidate_mobiles)
                     # Filter for non-sentinel mobiles.
                     mobiles = list(mobile for mobile in candidate_mobiles if "sentinel" not in mobile.db.act_flags)
-                    self.msg("Mobile mobiles %s" % mobiles)
 
                     mobile_movement_script.db.area_movement[new_area] = mobiles
 
