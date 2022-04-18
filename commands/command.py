@@ -605,9 +605,29 @@ class CmdDrop(MuxCommand):
             if caller.db.level < 103:
                 rules.set_disintegrate_timer(obj)
             caller.msg("You drop %s." % (obj.name,))
-            caller.location.msg_contents("%s drops %s."
-                                         % (caller.name, obj.name),
-                                         exclude=caller)
+            
+            # Deal with invisible objects/characters for output.
+            # Assemble a list of all possible lookers.
+            lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+            for looker in lookers:
+                # Exclude the caller, who got their output above.
+                if looker != caller:
+                    # Address visibility of character dropping.
+                    if rules.is_visible(looker, caller):
+                        dropper = (caller.key[0].upper() + caller.key[1:])
+                    else:
+                        dropper = "Someone"
+
+                    # Address visibility of object dropped.
+                    if rules.is_visible(looker, obj):
+                        dropped = obj.key
+                    else:
+                        dropped = "something"
+
+                    # As long as something was visible, give output.
+                    if dropper != "Someone" or dropped != "something":
+                        looker.msg("%s drops %s" % (dropper, dropped))
+
             # Call the object script's at_drop() method.
             obj.at_drop(caller)
 
@@ -713,7 +733,7 @@ class CmdGet(MuxCommand):
                     else:
                         rules.remove_disintegrate_timer(obj)
                         get_output += "You take %s from %s.\n" % (obj.name, container.key)
-                        get_output_room = "%s takes %s from %s.\n" % (caller.name, obj.name, container.key)
+                        get_output_room += "%s takes %s from %s.\n" % (caller.name, obj.name, container.key)
                         # calling at_get hook method
                         obj.at_get(caller)
                         
