@@ -99,6 +99,21 @@ class MuxCommand(Command):
         (after self.func()).
         """
         caller = self.caller
+        
+        # If caller is down mana or moves as a result of the command (or hp, somehow)
+        # get started regenerating, if not already.
+        if caller.hitpoints_damaged > 0 or caller.mana_spent > 0 or caller.moves_spent > 0:
+            if not victim.attributes.has("heal_ticker"):
+                timestamp = victim.key + str(time.time())
+                tickerhandler.add(30, victim.at_update, timestamp)
+                victim.db.heal_ticker = timestamp
+            elif not victim.db.heal_ticker:
+                timestamp = victim.key + str(time.time())
+                tickerhandler.add(30, victim.at_update, timestamp)
+                victim.db.heal_ticker = timestamp
+
+        # Give prompt at end of command if not in combat. In combat, you already get it
+        # regularly enough.
         if "combat_handler" not in caller.ndb.all:
             if "wait_state" not in caller.ndb.all:
                 prompt_wait = "|gReady!|n"
