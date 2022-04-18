@@ -165,6 +165,60 @@ def do_armor(caster, target, mana_cost):
         player_output_magic_chant(caster, "armor")
 
 
+def do_bamf(caster, target, mana_cost):
+    """ Function implementing bamf spell"""
+
+    spell = rules_skills.get_skill(skill_name="bamf")
+
+    level = caster.level
+    location = caster.location
+
+    caster.msg("You chant 'bamf'.\n")
+    player_output_magic_chant(caster, "bamf")
+
+    area_objects = search.search_tag(key=rules.get_area_name(location), category="area name")
+    # Assemble a list of rooms in the area.
+    rooms = list(object for object in area_objects if object.db.vnum[0] == "r" and object != location)
+    eligible_rooms = list(room for room in rooms if "private" not in room.db.room_flags and "solitary" not in room.db.room_flags and "no magic" not in room.db.room_flags)
+
+    if "no recall" in location.db.room_flags or\
+            "safe" in location.db.room_flags or\
+            target.get_affect_status("curse") or\
+            save_spell(caster.level, target) or\
+            "no kill" in target.db.act_flags or\
+            not eligible_rooms:
+        caster.msg("You failed.")
+        return
+
+    if random.randint(1, 100) <= caster.db.skills["bamf"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+            rules_skills.check_skill_improve(caster, "bamf", True, 1)
+
+        if target.nattributes.has("combat_handler"):
+            target.ndb.combat_handler.remove_combatant(target)
+
+        new_location = eligible_rooms[random.randint(0, (len(eligible_rooms) - 1))]
+
+        target.move_to(new_location, quiet=True)
+
+        caster.location.msg_contents("%s disappears in a blue puff of smoke!"
+                                     % (target.key[0].upper() + target.key[1:])
+                                     )
+
+        new_location.msg_contents("%s appears in a blue puff of smoke!"
+                                     % (target.key[0].upper() + target.key[1:])
+                                     )
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+            rules_skills.check_skill_improve(caster, "bamf", False, 1)
+        caster.msg("You lost your concentration.\n")
+
+
 def do_bless(caster, target, mana_cost):
     """Implements the bless spell."""
 
@@ -720,6 +774,107 @@ def do_detect_magic(caster, target, mana_cost):
         player_output_magic_chant(caster, "detect magic")
 
 
+def do_firebolt(caster, target, mana_cost):
+    """ Function implementing firebolt spell"""
+
+    spell = rules_skills.get_skill(skill_name="firebolt")
+
+    level = caster.level
+
+    # This list creates a seed for how high damage will be,
+    # with the caster's level corresponding to the list
+    # index.
+    damage_seed = [0,
+                   0, 0, 0, 0, 0, 0, 0, 0, 25, 28,
+                   31, 34, 37, 40, 40, 41, 42, 42, 43, 44,
+                   44, 45, 46, 46, 47, 48, 48, 49, 50, 50,
+                   51, 52, 52, 53, 54, 54, 55, 56, 56, 57,
+                   58, 58, 59, 60, 60, 61, 62, 62, 63, 64
+                   ]
+
+    # Make sure you do not exceed the list boundaries.
+    if level > len(damage_seed):
+        level = len(damage_seed)
+    elif level < 0:
+        level = 0
+
+    repeats = 1
+
+    if caster.level >= 20:
+        repeats += int((caster.level - 10) / 10)
+
+    if repeats > 5:
+        repeats = 5
+
+    damage = 0
+    attacker_output = ""
+    victim_output = ""
+    room_output = ""
+
+    if random.randint(1, 100) <= caster.db.skills["firebolt"] or "mobile" in caster.tags.all():
+
+        for repeat in range(0, repeats):
+
+            # Create the damage factor for the repeat you are on.
+            if repeat < 5:
+                damage_factor = 2 ** repeat
+            else:
+                damage_factor = 16
+
+            # Use the seed to create a damage range from seed/2 up to
+            # seed*2, then get a value randomly in that range.
+            dam = ((random.randint(int(damage_seed[level] / 2), int(damage_seed[level] * 2))) / damage_factor)
+
+            if save_spell(caster.level, target):
+                dam = int(damage / 2)
+
+            damage += dam
+
+            if repeat > 0:
+                attacker_output += ("Another bolt of fire flares from your fingers!")
+
+            attacker_output += ("You |g%s|n %s with your firebolt.\n" % (rules_combat.get_damagestring("attacker", dam),
+                                                                         target.key
+                                                                         ))
+
+            if repeat > 0:
+                victim_output += ("Another bolt of fire flares from %s's fingers!" % caster.key)
+
+            victim_output += ("%s |r%s|n you with %s firebolt.\n" % ((caster.key[0].upper() + caster.key[1:]),
+                                                                     rules_combat.get_damagestring("victim", dam),
+                                                                     rules.pronoun_possessive(caster)
+                                                                     ))
+
+            if repeat > 0:
+                room_output += ("Another bolt of fire flares from %s's fingers!" % caster.key)
+
+            room_output += ("%s |r%s|n %s with %s firebolt.\n" % ((caster.key[0].upper() + caster.key[1:]),
+                                                                  rules_combat.get_damagestring("victim", dam),
+                                                                  target.key,
+                                                                  rules.pronoun_possessive(caster)
+                                                                  ))
+
+        output = [attacker_output, victim_output, room_output]
+
+        caster.msg("You chant 'firebolt'.\n")
+        player_output_magic_chant(caster, "firebolt")
+
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+            rules_skills.check_skill_improve(caster, "firebolt", True, 4)
+
+        rules_combat.do_attack(caster, target, None, hit=True, damage=damage, output=output, type="firebolt")
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "firebolt", False, 4)
+        caster.msg("You chant 'firebolt'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "firebolt")
+
+
 def do_fly(caster, target, mana_cost):
     """Implements the fly spell."""
 
@@ -1170,6 +1325,72 @@ def do_shield(caster, target, mana_cost):
             rules_skills.check_skill_improve(caster, "shield", False, 2)
         caster.msg("You chant 'shield'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "shield")
+
+
+def do_shocking_grasp(caster, target, mana_cost):
+    """ Function implementing shocking grasp spell"""
+
+    spell = rules_skills.get_skill(skill_name="shocking grasp")
+
+    level = caster.level
+
+    # This list creates a seed for how high damage will be,
+    # with the caster's level corresponding to the list
+    # index.
+    damage_seed = [0,
+                   0, 0, 0, 0, 0, 0, 20, 25, 29, 33,
+                   36, 39, 39, 39, 40, 40, 41, 41, 42, 42,
+                   43, 43, 44, 44, 45, 45, 46, 46, 47, 47,
+                   48, 48, 49, 49, 50, 50, 51, 51, 52, 52,
+                   53, 53, 54, 54, 55, 55, 56, 56, 57, 57
+                   ]
+
+    # Make sure you do not exceed the list boundaries.
+    if level > len(damage_seed):
+        level = len(damage_seed)
+    elif level < 0:
+        level = 0
+
+    # Use the seed to create a damage range from seed/2 up to
+    # seed*2, then get a value randomly in that range.
+    damage = random.randint(int(damage_seed[level] / 2), int(damage_seed[level] * 2))
+
+    if save_spell(caster.level, target):
+        damage = int(damage / 2)
+
+    if random.randint(1, 100) <= caster.db.skills["shocking grasp"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        rules_skills.check_skill_improve(caster, "shocking grasp", True, 4)
+
+        caster.msg("You chant 'shocking grasp'.\n")
+        player_output_magic_chant(caster, "shocking grasp")
+
+        attacker_output = ("You |g%s|n %s with your shocking grasp.\n" % (rules_combat.get_damagestring("attacker", damage),
+                                                                          target.key
+                                                                          ))
+        victim_output = ("%s |r%s|n you with %s shocking grasp.\n" % ((caster.key[0].upper() + caster.key[1:]),
+                                                                      rules_combat.get_damagestring("victim", damage),
+                                                                      rules.pronoun_possessive(caster)
+                                                                      ))
+        room_output = ("%s |r%s|n %s with %s shocking grasp.\n" % ((caster.key[0].upper() + caster.key[1:]),
+                                                                   rules_combat.get_damagestring("victim", damage),
+                                                                   target.key,
+                                                                   rules.pronoun_possessive(caster)
+                                                                   ))
+
+        output = [attacker_output, victim_output, room_output]
+
+        rules_combat.do_attack(caster, target, None, hit=True, damage=damage, output=output, type="shocking grasp")
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+        rules_skills.check_skill_improve(caster, "shocking grasp", False, 4)
+        caster.msg("You chant 'shocking grasp'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "shocking grasp")
 
 
 def do_slumber(caster, target, mana_cost):

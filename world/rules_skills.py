@@ -47,6 +47,32 @@ def check_skill_improve(character, skill_name, success, learn_factor):
                 skill_increase = random.randint(1, 2)
                 character.db.skills[skill_name] += skill_increase
 
+def do_chameleon_power(character):
+    """
+    This is the function that does the actual mechanics of the
+    chameleon power skill.
+    """
+    skill = get_skill(skill_name="chameleon power")
+
+    character.msg("You attempt to blend in with your surroundings.")
+    if random.randint(1, 100) <= character.db.skills["chameleon power"] or "mobile" in character.tags.all():
+        if "player" in character.tags.all():
+            check_skill_improve(character, "chameleon power", True, 2)
+
+        rules.affect_apply(character,
+                           "hide",
+                           character.level,
+                           "You no longer blend in with your surroundings.",
+                           "%s appears from nowhere." % (character.key[0].upper() + character.key[1:])
+                           )
+
+        rules.wait_state_apply(character, skill["wait state"])
+
+    else:
+        if "player" in character.tags.all():
+            check_skill_improve(character, "chameleon power", False, 2)
+
+
 def do_dowse(character):
     """
     This is the function that does the actual mechanics of the
@@ -63,7 +89,6 @@ def do_dowse(character):
     tickerhandler.add(timer, spring.at_disintegrate)
 
 
-
 def do_forage(character):
     """
     This is the function that does the actual mechanics of the
@@ -77,6 +102,33 @@ def do_forage(character):
 
     mushroom.db.hours_fed = 5 + character.level
     rules.set_disintegrate_timer(mushroom)
+
+
+def do_hide(character):
+    """
+    This is the function that does the actual mechanics of the
+    hide skill.
+    """
+    skill = get_skill(skill_name="hide")
+
+    character.msg("You attempt to hide.")
+    if random.randint(1, 100) <= character.db.skills["hide"] or "mobile" in character.tags.all():
+        if "player" in character.tags.all():
+            check_skill_improve(character, "hide", True, 2)
+
+        rules.affect_apply(character,
+                           "hide",
+                           character.level,
+                           "You are no longer hidden.",
+                           "%s appears from hiding." % (character.key[0].upper() + character.key[1:])
+                           )
+
+        rules.wait_state_apply(character, skill["wait state"])
+
+    else:
+        if "player" in character.tags.all():
+            check_skill_improve(character, "hide", False, 2)
+
 
 def do_pick_lock(character, target, target_type):
     """
@@ -111,6 +163,58 @@ def do_pick_lock(character, target, target_type):
         character.location.msg_contents("%s picks the %s." % ((character.key[0].upper() + character.key[1:]), target_string),
                                         exclude=(character))
         target.db.door_attributes.remove("locked")
+
+
+def do_shadow_form(character):
+    """
+    This is the function that does the actual mechanics of the
+    shadow form skill.
+    """
+    skill = get_skill(skill_name="shadow form")
+
+    character.msg("You attempt to move in the shadows.")
+    if random.randint(1, 100) <= character.db.skills["shadow form"] or "mobile" in character.tags.all():
+        if "player" in character.tags.all():
+            check_skill_improve(character, "shadow form", True, 2)
+
+        rules.affect_apply(character,
+                           "sneak",
+                           character.level,
+                           "You are no longer moving in the shadows.",
+                           ""
+                           )
+
+        rules.wait_state_apply(character, skill["wait state"])
+
+    else:
+        if "player" in character.tags.all():
+            check_skill_improve(character, "shadow form", False, 2)
+
+
+def do_sneak(character):
+    """
+    This is the function that does the actual mechanics of the
+    sneak skill.
+    """
+    skill = get_skill(skill_name="sneak")
+
+    character.msg("You attempt to move silently.")
+    if random.randint(1, 100) <= character.db.skills["sneak"] or "mobile" in character.tags.all():
+        if "player" in character.tags.all():
+            check_skill_improve(character, "sneak", True, 2)
+
+        rules.affect_apply(character,
+                           "sneak",
+                           character.level,
+                           "You are no longer moving silently.",
+                           ""
+                           )
+
+        rules.wait_state_apply(character, skill["wait state"])
+
+    else:
+        if "player" in character.tags.all():
+            check_skill_improve(character, "sneak", False, 2)
 
 
 def do_steal(thief, target, to_steal):
@@ -226,6 +330,14 @@ def get_skill(**kwargs):
             "minimum cost": 5,
             "wait state": 12
             },
+        "bamf": {
+            "classes": {
+                "mage": 6,
+                "bard": 15
+                },
+            "minimum cost": 5,
+            "wait state": 12
+            },
         "bless": {
             "classes": {
                 "cleric": 6,
@@ -247,6 +359,12 @@ def get_skill(**kwargs):
                 "paladin": 15
                 },
             "minimum cost": 15,
+            "wait state": 12
+            },
+        "chameleon power": {
+            "classes": {
+                "psionicist": 10
+                },
             "wait state": 12
             },
         "chill touch": {
@@ -365,6 +483,13 @@ def get_skill(**kwargs):
                 "paladin": 11
                 }
             },
+        "firebolt": {
+            "classes": {
+                "mage": 10
+                },
+            "minimum cost": 15,
+            "wait state": 12
+            },
         "fly": {
             "classes": {
                 "mage": 9
@@ -387,6 +512,15 @@ def get_skill(**kwargs):
                 "warrior": 66
                 },
             "minimum cost": 20,
+            "wait state": 12
+            },
+        "hide": {
+            "classes": {
+                "thief": 8,
+                "ranger": 9,
+                "bard": 10,
+                "druid": 16
+                },
             "wait state": 12
             },
         "infravision": {
@@ -482,13 +616,11 @@ def get_skill(**kwargs):
                 },
             "wait state": 12
             },
-        "steal": {
+        "shadow form": {
             "classes": {
-                "thief": 3,
-                "bard": 13
+                "psionicist": 8
                 },
-            "minimum cost": 5,
-            "wait state": 24
+            "wait state": 12
             },
         "shield": {
             "classes": {
@@ -497,12 +629,35 @@ def get_skill(**kwargs):
             "minimum cost": 12,
             "wait state": 18
             },
+        "shocking grasp": {
+            "classes": {
+                "mage": 8
+                },
+            "minimum cost": 15,
+            "wait state": 12
+            },
         "slumber": {
             "classes": {
                 "bard": 8
                 },
             "minimum cost": 15,
             "wait state": 12
+            },
+        "sneak": {
+            "classes": {
+                "thief": 6,
+                "ranger": 7,
+                "bard": 8
+                },
+            "wait state": 12
+            },
+        "steal": {
+            "classes": {
+                "thief": 3,
+                "bard": 13
+                },
+            "minimum cost": 5,
+            "wait state": 24
             },
         "summon weapon": {
             "classes": {

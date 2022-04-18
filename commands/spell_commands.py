@@ -13,7 +13,7 @@ command-handling part.
 """
 import random
 from commands.command import MuxCommand
-from world import rules_skills, rules_magic, rules_combat
+from world import rules, rules_skills, rules_magic, rules_combat
 
 
 class CmdAdrenalineControl(MuxCommand):
@@ -237,6 +237,85 @@ class CmdArmor(MuxCommand):
            return
 
        rules_magic.do_armor(caster, target, cost)
+
+
+class CmdBamf(MuxCommand):
+    """
+    Cast a spell to banish a mobile from the room.
+
+    Usage:
+      cast bamf <target>
+      bamf <target>
+
+    Bamf banishes a mobile from the room to another
+    room in the same area.
+
+    Colleges that can teach (level):
+    Mage (6), Bard (15)
+    """
+
+    key = "bamf"
+    aliases = ["cast bamf"]
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement bamf"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+
+        caster = self.caller
+
+        if "bamf" not in caster.db.skills:
+            caster.msg("You do not know the spell 'bamf' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+
+        cost = rules_magic.mana_cost(caster, spell)
+
+        caster.msg("Casting cost is %d" % cost)
+
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast bamf!")
+            return
+
+        if not self.args:
+
+            if not caster.ndb.combat_handler:
+                caster.msg("You are not in combat, so you must choose a target for your spell.")
+                return
+            else:
+                combat = caster.ndb.combat_handler
+                target = combat.get_target(caster)
+
+        else:
+            mobiles = []
+            for object in caster.location.contents:
+                if "mobile" in object.tags.all():
+                    mobiles.append(object)
+            target = caster.search(self.args, candidates=mobiles)
+            if not target:
+                caster.msg("There is no %s here to bamf." % self.args)
+                return
+            if not rules.is_visible(target):
+                caster.msg("There is no %s here to bamf." % self.args)
+                return
+
+        if rules_combat.is_safe(target):
+            caster.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
+            return
+
+        rules_magic.do_bamf(caster, target, cost)
 
 
 class CmdBless(MuxCommand):
@@ -1197,6 +1276,92 @@ class CmdDetectMagic(MuxCommand):
         rules_magic.do_detect_magic(caster, target, cost)
 
 
+class CmdFirebolt(MuxCommand):
+    """
+    Cast a spell to cause magical damage to an enemy.
+
+    Usage:
+      cast firebolt <target>
+      firebolt <target>
+
+    Firebolt simply does damage to your enemy. At level
+    20, firebolt will flare for an additional hit (albeit at lower
+    damage), and again each 10 levels after that up to level
+    50.
+
+    Colleges that can teach (level):
+    Mage (10)
+    """
+
+    key = "firebolt"
+    aliases = ["cast firebolt"]
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement firebolt"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+
+        caster = self.caller
+
+        if "firebolt" not in caster.db.skills:
+            caster.msg("You do not know the spell 'firebolt' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+
+        cost = rules_magic.mana_cost(caster, spell)
+
+        caster.msg("Casting cost is %d" % cost)
+
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast firebolt!")
+            return
+
+        if not self.args:
+
+            if not caster.ndb.combat_handler:
+                caster.msg("You are not in combat, so you must choose a target for your spell.")
+                return
+            else:
+                combat = caster.ndb.combat_handler
+                target = combat.get_target(caster)
+
+        else:
+            mobiles = []
+            for object in caster.location.contents:
+                if "mobile" in object.tags.all():
+                    mobiles.append(object)
+            target = caster.search(self.args, candidates=mobiles)
+            if not target:
+                caster.msg("There is no %s here to hit with your firebolt." % self.args)
+                return
+            if not rules.is_visible(target):
+                caster.msg("There is no %s here to hit with your firebolt." % self.args)
+                return
+
+        if rules_combat.is_safe(target):
+            caster.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
+            return
+
+        if not caster.ndb.combat_handler:
+            combat = rules_combat.create_combat(caster, target)
+            rules_magic.do_burning_hands(caster, target, cost)
+            combat.at_repeat()
+        else:
+            rules_magic.do_firebolt(caster, target, cost)
+
+
 class CmdFly(MuxCommand):
     """
     Enable yourself or a target to fly.
@@ -2039,6 +2204,88 @@ class CmdShield(MuxCommand):
             return
 
         rules_magic.do_shield(caster, target, cost)
+
+
+class CmdShockingGrasp(MuxCommand):
+    """
+    Cast a spell to cause magical damage to an enemy.
+
+    Usage:
+      cast shocking grasp <target>
+      shocking grasp <target>
+
+    Shocking grasp simply does damage to your enemy.
+    Colleges that can teach (level):
+    Mage (8)
+    """
+
+    key = "shocking grasp"
+    aliases = ["cast shocking grasp"]
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement shocking grasp"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+
+        caster = self.caller
+
+        if "shocking grasp" not in caster.db.skills:
+            caster.msg("You do not know the spell 'shocking grasp' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+
+        cost = rules_magic.mana_cost(caster, spell)
+
+        caster.msg("Casting cost is %d" % cost)
+
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast shocking grasp!")
+            return
+
+        if not self.args:
+
+            if not caster.ndb.combat_handler:
+                caster.msg("You are not in combat, so you must choose a target for your spell.")
+                return
+            else:
+                combat = caster.ndb.combat_handler
+                target = combat.get_target(caster)
+
+        else:
+            mobiles = []
+            for object in caster.location.contents:
+                if "mobile" in object.tags.all():
+                    mobiles.append(object)
+            target = caster.search(self.args, candidates=mobiles)
+            if not target:
+                caster.msg("There is no %s here to hit with your shocking grasp." % self.args)
+                return
+            if not rules.is_visible(target):
+                caster.msg("There is no %s here to hit with your shocking grasp." % self.args)
+                return
+
+        if rules_combat.is_safe(target):
+            caster.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
+            return
+
+        if not caster.ndb.combat_handler:
+            combat = rules_combat.create_combat(caster, target)
+            rules_magic.do_burning_hands(caster, target, cost)
+            combat.at_repeat()
+        else:
+            rules_magic.do_shocking_grasp(caster, target, cost)
 
 
 class CmdSlumber(MuxCommand):

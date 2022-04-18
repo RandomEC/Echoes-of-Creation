@@ -3,13 +3,60 @@ from evennia.utils import search
 from commands.command import MuxCommand
 from world import rules_skills, rules_combat, rules
 
+class CmdChameleonPower(MuxCommand):
+    """
+    Attempt to blend into your surroundings.
+
+    Usage:
+      chameleon power
+
+    Tries to blend into the surroundings. Approximates the hide
+    skill.
+
+    Colleges that can teach (level):
+    Psionicist (10)
+    """
+
+    key = "chameleon power"
+    locks = "cmd:all()"
+    arg_regex = r"$"
+
+    def func(self):
+        """Implement chameleon power"""
+
+        caller = self.caller
+
+        if self.args:
+            caller.msg("Usage: chameleon power")
+            return
+
+        if "chameleon power" not in caller.db.skills:
+            caller.msg("You do not have the power to blend in.")
+            return
+
+        if caller.position != "standing":
+            caller.msg("You can't blend in on the ground, try standing.")
+            return
+
+        if caller.get_affect_status("hide"):
+            caller.msg("You are already hidden.")
+            return
+
+        rules_skills.do_chameleon_power(caller)
+
+
 class CmdDowse(MuxCommand):
     """
     Attempt to find a water source.
+
     Usage:
       dowse
+
     Tries to find a water source, if you have the skill. Not possible
     when indoors, or in a city.
+
+    Colleges that can teach (level):
+    Ranger (3)
     """
 
     key = "dowse"
@@ -69,10 +116,15 @@ class CmdDowse(MuxCommand):
 class CmdForage(MuxCommand):
     """
     Attempt to find some food.
+
     Usage:
       forage
+
     Tries to find some food, if you have the skill. Not possible
     when indoors, or in a city.
+
+    Colleges that can teach (level):
+    Ranger (3), Druid (6), Bard (9)
     """
 
     key = "forage"
@@ -129,6 +181,49 @@ class CmdForage(MuxCommand):
             caller.location.msg_contents("%s roots around a bit, and finds some food."
                                          % caller.name, exclude=caller)
 
+
+class CmdHide(MuxCommand):
+    """
+    Attempt to hide.
+
+    Usage:
+      hide
+
+    Tries to hide among various terrain elements and objects to be
+    unseen in a room.
+
+    Colleges that can teach (level):
+    Thief (8), Ranger (9), Bard (10), Druid (16)
+    """
+
+    key = "hide"
+    locks = "cmd:all()"
+    arg_regex = r"$"
+
+    def func(self):
+        """Implement hide"""
+
+        caller = self.caller
+
+        if self.args:
+            caller.msg("Usage: hide")
+            return
+
+        if "hide" not in caller.db.skills:
+            caller.msg("You do not know how to hide!")
+            return
+
+        if caller.position != "standing":
+            caller.msg("You can't hide while on the ground, try standing.")
+            return
+
+        if caller.get_affect_status("hide"):
+            caller.msg("You are already hidden.")
+            return
+
+        rules_skills.do_hide(caller)
+
+
 class CmdPickLock(MuxCommand):
     """
     Pick a lock to unlock a door or container.
@@ -139,6 +234,9 @@ class CmdPickLock(MuxCommand):
       
     Makes an attempt to pick a lock on a door in a given direction,
     or the lock on a container.
+
+    Colleges that can teach (level):
+    Thief (5), Bard (14)
     """
 
     key = "pick lock"
@@ -211,6 +309,48 @@ class CmdPickLock(MuxCommand):
         rules_skills.do_pick_lock(caller, target, "container")
 
             
+class CmdShadowForm(MuxCommand):
+    """
+    Attempt to take a shadowy form.
+
+    Usage:
+      shadow form
+
+    Tries to take the form of the shadows. Approximates the sneak
+    skill, allowing you to move silently.
+
+    Colleges that can teach (level):
+    Psionicist (8)
+    """
+
+    key = "shadow form"
+    locks = "cmd:all()"
+    arg_regex = r"$"
+
+    def func(self):
+        """Implement shadow form"""
+
+        caller = self.caller
+
+        if self.args:
+            caller.msg("Usage: shadow form")
+            return
+
+        if "shadow form" not in caller.db.skills:
+            caller.msg("You do not have the power to take the form of the shadows.")
+            return
+
+        if caller.position != "standing":
+            caller.msg("You can't take shadow form on the ground, try standing.")
+            return
+
+        if caller.get_affect_status("sneak"):
+            caller.msg("You are already sneaking.")
+            return
+
+        rules_skills.do_shadow_form(caller)
+
+
 class CmdSkills(MuxCommand):
     """
     List the skills you know, and the percentage you have learned of each.
@@ -268,16 +408,61 @@ class CmdSkills(MuxCommand):
         
         caller.msg(output_string)
 
+class CmdSneak(MuxCommand):
+    """
+    Attempt to sneak.
+
+    Usage:
+      sneak
+
+    Tries to sneak, which allows you to move silently between rooms.
+
+    Colleges that can teach (level):
+    Thief (6), Ranger (7), Bard (8)
+    """
+
+    key = "sneak"
+    locks = "cmd:all()"
+    arg_regex = r"$"
+
+    def func(self):
+        """Implement sneak"""
+
+        caller = self.caller
+
+        if self.args:
+            caller.msg("Usage: sneak")
+            return
+
+        if "sneak" not in caller.db.skills:
+            caller.msg("You do not know how to sneak!")
+            return
+
+        if caller.position != "standing":
+            caller.msg("You can't sneak while on the ground, try standing.")
+            return
+
+        if caller.get_affect_status("sneak"):
+            caller.msg("You are already sneaking.")
+            return
+
+        rules_skills.do_sneak(caller)
+
 class CmdSteal(MuxCommand):
     """
     Steal gold or an item from a mobile.
+
     Usage:
       steal gold from <mobile>
       steal <item name> from <mobile>
+
     Makes an attempt to steal either gold or an item from a mobile.
     Stealing is NOT permitted (and not possible) from other players.
     It is also not possible to steal items that cannot be dropped,
     and worn equipment that cannot be removed.
+
+    Colleges that can teach (level):
+    Thief (3), Bard (3)
     """
 
     key = "steal"
