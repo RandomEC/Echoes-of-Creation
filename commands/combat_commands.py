@@ -359,13 +359,10 @@ class CmdAttack(MuxCommand):
 
         mobiles = []
         for object in attacker.location.contents:
-            if "mobile" in object.tags.all():
+            if "mobile" in object.tags.all() and rules.is_visible(object, attacker):
                 mobiles.append(object)
         victim = attacker.search(self.args, candidates=mobiles)
         if not victim:
-            attacker.msg("There is no mobile named %s here to attack." % self.args)
-            return
-        elif not rules.is_visible(victim, attacker):
             attacker.msg("There is no mobile named %s here to attack." % self.args)
             return
         elif "player" in victim.tags.all():
@@ -403,13 +400,10 @@ class CmdConsider(MuxCommand):
 
         mobiles = []
         for object in caller.location.contents:
-            if "mobile" in object.tags.all():
+            if "mobile" in object.tags.all() and rules.is_visible(object, caller):
                 mobiles.append(object)
         mobile = caller.search(self.args, candidates=mobiles)
         if not mobile:
-            caller.msg("There is no mobile named %s here to attack." % self.args)
-            return
-        elif not rules.is_visible(mobile, caller):
             caller.msg("There is no mobile named %s here to attack." % self.args)
             return
         elif "mobile" not in mobile.tags.all():
@@ -501,13 +495,10 @@ class CmdDirtKicking(MuxCommand):
         else:
             mobiles = []
             for object in caller.location.contents:
-                if "mobile" in object.tags.all():
+                if "mobile" in object.tags.all() and rules.is_visible(object, caller):
                     mobiles.append(object)
             target = caller.search(self.args, candidates=mobiles)
             if not target:
-                caller.msg("There is no %s here to kick dirt at." % self.args)
-                return
-            elif not rules.is_visible(target, caller):
                 caller.msg("There is no %s here to kick dirt at." % self.args)
                 return
             else:
@@ -627,13 +618,10 @@ class CmdKick(MuxCommand):
         else:
             mobiles = []
             for object in caller.location.contents:
-                if "mobile" in object.tags.all():
+                if "mobile" in object.tags.all() and rules.is_visible(object, caller):
                     mobiles.append(object)
             target = caller.search(self.args, candidates=mobiles)
             if not target:
-                caller.msg("There is no %s here to kick." % self.args)
-                return
-            elif not rules.is_visible(target, caller):
                 caller.msg("There is no %s here to kick." % self.args)
                 return
             else:
@@ -702,7 +690,8 @@ class CmdRescue(MuxCommand):
 
         else:
             players = search.search_object_by_tag("player")
-            target = caller.search(self.args, location=caller.location, candidates=players)
+            visible_candidates = list(player for player in players if player.location == caller.location and rules.is_visible(player, caller))
+            target = caller.search(self.args, candidates=visible_candidates)
             if not target:
                 caller.msg("There is no player named %s here to rescue." % self.args)
                 return
@@ -791,15 +780,13 @@ class CmdTrip(MuxCommand):
         else:
             mobiles = []
             for object in caller.location.contents:
-                if "mobile" in object.tags.all():
+                if "mobile" in object.tags.all() and rules.is_visible(object, caller):
                     mobiles.append(object)
             target = caller.search(self.args, candidates=mobiles)
             if not target:
                 caller.msg("There is no %s here to trip." % self.args)
                 return
-            elif not rules.is_visible(target, caller):
-                caller.msg("There is no %s here to trip." % self.args)
-                return
+
             
         if target.get_affect_status("fly"):
             caller.msg("It is challenging to trip %s when %s feet aren't on the ground." % (target.key, rules.pronoun_possessive(target)))
