@@ -125,6 +125,28 @@ class CmdDoorOpen(MuxCommand):
             if "open" not in container.db.state:
                 container.db.state.append("open")
                 caller.msg("You open %s." % container.key)
+                
+                # Deal with invisible objects/characters for output.
+                # Assemble a list of all possible lookers.
+                lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+                for looker in lookers:
+                    # Exclude the caller, who got their output above.
+                    if looker != caller:
+                        # Address visibility of character opening.
+                        if rules.is_visible(caller, looker):
+                            opener = (caller.key[0].upper() + caller.key[1:])
+                        else:
+                            opener = "Someone"
+
+                        # Address visibility of object opened.
+                        if rules.is_visible(container, looker):
+                            opened = container.key
+                        else:
+                            opened = "something"
+
+                        # As long as something was visible, give output.
+                        if opener != "Someone" or opened != "something":
+                            looker.msg("%s opens %s" % (opener, opened))
 
             # Check if the container resets in the room. If so, add the room to objects to reset
             # if not there already.
@@ -170,6 +192,21 @@ class CmdDoorOpen(MuxCommand):
                 door.db.door_attributes.append("open")
                 caller.msg("You open the %s." % door_string)
 
+                # Deal with invisible objects/characters for output.
+                # Assemble a list of all possible lookers.
+                lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+                for looker in lookers:
+                    # Exclude the caller, who got their output above.
+                    if looker != caller:
+                        # Address visibility of character opening.
+                        if rules.is_visible(caller, looker):
+                            opener = (caller.key[0].upper() + caller.key[1:])
+                        else:
+                            opener = "Someone"
+
+                        # As long as something was visible, give output.
+                        looker.msg("%s opens %s." % (opener, door_string))
+                
             # Add exit to objects to reset if not there already.
             reset_script = search.script_search("reset_script")[0]
             area = rules.get_area_name(door)
@@ -200,9 +237,22 @@ class CmdDoorOpen(MuxCommand):
             opposite_door = caller.search(opposite_direction,
                                           location=door.destination)
 
+            # This is making the grammatical string for referring to the opposite door in
+            # output.
+            if opposite_door.key == "north" or opposite_door.key == "east" or opposite_door.key == "south" \
+                    or opposite_door.key == "west":
+                opposite_door_string = ("door to the %s" % opposite_door.key)
+            elif opposite_door.key == "up" or opposite_door.key == "down":
+                opposite_door_string = ("door %s" % opposite_door.key)
+            else:
+                opposite_door_string = ("%s" % opposite_door.key)
+            
             if "open" not in opposite_door.db.door_attributes:
                 opposite_door.db.door_attributes.append("open")
 
+            # Give output in that room
+            door.destination.msg_contents("The %s opens." % opposite_door_string)
+                
             # Add exit to objects to reset if not there already.
             reset_script = search.script_search("reset_script")[0]
             area = rules.get_area_name(opposite_door)
@@ -273,6 +323,29 @@ class CmdDoorClose(MuxCommand):
                 container.db.state.remove("open")
                 caller.msg("You close %s." % container.key)
 
+                # Deal with invisible objects/characters for output.
+                # Assemble a list of all possible lookers.
+                lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+                for looker in lookers:
+                    # Exclude the caller, who got their output above.
+                    if looker != caller:
+                        # Address visibility of character opening.
+                        if rules.is_visible(caller, looker):
+                            closer = (caller.key[0].upper() + caller.key[1:])
+                        else:
+                            closer = "Someone"
+
+                        # Address visibility of object opened.
+                        if rules.is_visible(container, looker):
+                            closed = container.key
+                        else:
+                            closed = "something"
+
+                        # As long as something was visible, give output.
+                        if closer != "Someone" or closed != "something":
+                            looker.msg("%s closes %s" % (closer, closed))
+
+                
             # Check if the container resets in the room. If so, add the room to objects to reset
             # if not there already.
             if container.db.vnum in container.location.db.reset_objects:
@@ -317,6 +390,22 @@ class CmdDoorClose(MuxCommand):
                 door.db.door_attributes.remove("open")
                 caller.msg("You close the %s." % door_string)
 
+                # Deal with invisible objects/characters for output.
+                # Assemble a list of all possible lookers.
+                lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+                for looker in lookers:
+                    # Exclude the caller, who got their output above.
+                    if looker != caller:
+                        # Address visibility of character opening.
+                        if rules.is_visible(caller, looker):
+                            closer = (caller.key[0].upper() + caller.key[1:])
+                        else:
+                            closer = "Someone"
+
+                        # As long as something was visible, give output.
+                        looker.msg("%s closes %s" % (closer, door_string))
+
+                
             # Add exit to objects to reset if not there already.
             reset_script = search.script_search("reset_script")[0]
 
@@ -347,10 +436,23 @@ class CmdDoorClose(MuxCommand):
 
             opposite_door = caller.search(opposite_direction,
                                           location=door.destination)
-
+         
+            # This is making the grammatical string for referring to the opposite door in
+            # output.
+            if opposite_door.key == "north" or opposite_door.key == "east" or opposite_door.key == "south" \
+                    or opposite_door.key == "west":
+                opposite_door_string = ("door to the %s" % opposite_door.key)
+            elif opposite_door.key == "up" or opposite_door.key == "down":
+                opposite_door_string = ("door %s" % opposite_door.key)
+            else:
+                opposite_door_string = ("%s" % opposite_door.key)
+            
             if "open" in opposite_door.db.door_attributes:
                 opposite_door.db.door_attributes.remove("open")
 
+            # Give output in that room.
+            door.destination.msg_contents("The %s closes." % opposite_door_string)
+                
             # Add exit to objects to reset if not there already.
             reset_script = search.script_search("reset_script")[0]
             area = rules.get_area_name(opposite_door)
@@ -433,6 +535,29 @@ class CmdDoorUnlock(MuxCommand):
             if "locked" in container.db.state:
                 container.db.state.remove("locked")
                 caller.msg("*Click* You unlock %s." % container.key)
+                
+                # Deal with invisible objects/characters for output.
+                # Assemble a list of all possible lookers.
+                lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+                for looker in lookers:
+                    # Exclude the caller, who got their output above.
+                    if looker != caller:
+                        # Address visibility of character opening.
+                        if rules.is_visible(caller, looker):
+                            unlocker = (caller.key[0].upper() + caller.key[1:])
+                        else:
+                            unlocker = "Someone"
+
+                        # Address visibility of object opened.
+                        if rules.is_visible(container, looker):
+                            unlocked = container.key
+                        else:
+                            unlocked = "something"
+
+                        # As long as something was visible, give output.
+                        if unlocker != "Someone" or unlocked != "something":
+                            looker.msg("*Click* %s unlocks %s" % (unlocker, unlocked))
+
             
             # Check if the container resets in the room. If so, add the room to objects to reset
             # if not there already.
@@ -483,11 +608,27 @@ class CmdDoorUnlock(MuxCommand):
                 door.db.door_attributes.remove("locked")
                 if door.key == "north" or door.key == "east" or door.key \
                         == "south" or door.key == "west":
-                    caller.msg("*Click* You unlock the door to the %s." % door.key)
+                    door_string = "door to the %s" % door.key
                 elif door.key == "up" or door.key == "down":
-                    caller.msg("*Click* You unlock the door %s." % door.key)
+                    door_string = "door %s" % door.key
                 else:
-                    caller.msg("*Click* You unlock the %s." % door.key)
+                    door_string = "%s" % door.key
+                caller.msg("*Click* You unlock the %s." % door_string)
+                
+                # Deal with invisible objects/characters for output.
+                # Assemble a list of all possible lookers.
+                lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+                for looker in lookers:
+                    # Exclude the caller, who got their output above.
+                    if looker != caller:
+                        # Address visibility of character opening.
+                        if rules.is_visible(caller, looker):
+                            unlocker = (caller.key[0].upper() + caller.key[1:])
+                        else:
+                            unlocker = "Someone"
+
+                        # As long as something was visible, give output.
+                        looker.msg("*Click* %s unlocks %s." % (opener, door_string))
 
             # Add exit to objects to reset if not there already.
             reset_script = search.script_search("reset_script")[0]
@@ -519,9 +660,22 @@ class CmdDoorUnlock(MuxCommand):
             opposite_door = caller.search(opposite_direction,
                                           location=door.destination)
 
+            # This is making the grammatical string for referring to the opposite door in
+            # output.
+            if opposite_door.key == "north" or opposite_door.key == "east" or opposite_door.key == "south" \
+                    or opposite_door.key == "west":
+                opposite_door_string = ("door to the %s" % opposite_door.key)
+            elif opposite_door.key == "up" or opposite_door.key == "down":
+                opposite_door_string = ("door %s" % opposite_door.key)
+            else:
+                opposite_door_string = ("%s" % opposite_door.key)
+            
             if "locked" in opposite_door.db.door_attributes:
                 opposite_door.db.door_attributes.remove("locked")
 
+            # Give output in that room.
+            door.destination.msg_contents("*Click* The %s was unlocked." % opposite_door_string)
+                
             # Add exit to objects to reset if not there already.
             reset_script = search.script_search("reset_script")[0]
             area = rules.get_area_name(opposite_door)
@@ -604,6 +758,29 @@ class CmdDoorLock(MuxCommand):
                 container.db.state.append("locked")
                 caller.msg("*Click* You lock %s." % container.key)
 
+                # Deal with invisible objects/characters for output.
+                # Assemble a list of all possible lookers.
+                lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+                for looker in lookers:
+                    # Exclude the caller, who got their output above.
+                    if looker != caller:
+                        # Address visibility of character opening.
+                        if rules.is_visible(caller, looker):
+                            locker = (caller.key[0].upper() + caller.key[1:])
+                        else:
+                            locker = "Someone"
+
+                        # Address visibility of object opened.
+                        if rules.is_visible(container, looker):
+                            locked = container.key
+                        else:
+                            locked = "something"
+
+                        # As long as something was visible, give output.
+                        if locker != "Someone" or locked != "something":
+                            looker.msg("*Click* %s locks %s" % (locker, locked))
+
+                
             # Check if the container resets in the room. If so, add the room to objects to reset
             # if not there already.
             if container.db.vnum in container.location.db.reset_objects:
@@ -654,12 +831,28 @@ class CmdDoorLock(MuxCommand):
                 door.db.door_attributes.append("locked")
                 if door.key == "north" or door.key == "east" or door.key \
                         == "south" or door.key == "west":
-                    caller.msg("*Click* You lock the door to the %s." % door.key)
+                    door_string = "door to the %s" % door.key
                 elif door.key == "up" or door.key == "down":
-                    caller.msg("*Click* You lock the door %s." % door.key)
+                    door_string = "door %s" % door.key
                 else:
-                    caller.msg("*Click* You lock the %s." % door.key)
+                    door_string = "%s" % door.key
+                caller.msg("*Click* You lock the %s." % door_string)
+                
+                # Deal with invisible objects/characters for output.
+                # Assemble a list of all possible lookers.
+                lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+                for looker in lookers:
+                    # Exclude the caller, who got their output above.
+                    if looker != caller:
+                        # Address visibility of character opening.
+                        if rules.is_visible(caller, looker):
+                            locker = (caller.key[0].upper() + caller.key[1:])
+                        else:
+                            locker = "Someone"
 
+                        # As long as something was visible, give output.
+                        looker.msg("*Click* %s locks %s" % (locker, door_string))
+                    
             # Add exit to objects to reset if not there already.
             reset_script = search.script_search("reset_script")[0]
             area = rules.get_area_name(door)
@@ -690,9 +883,22 @@ class CmdDoorLock(MuxCommand):
             opposite_door = caller.search(opposite_direction,
                                           location=door.destination)
 
+            # This is making the grammatical string for referring to the opposite door in
+            # output.
+            if opposite_door.key == "north" or opposite_door.key == "east" or opposite_door.key == "south" \
+                    or opposite_door.key == "west":
+                opposite_door_string = ("door to the %s" % opposite_door.key)
+            elif opposite_door.key == "up" or opposite_door.key == "down":
+                opposite_door_string = ("door %s" % opposite_door.key)
+            else:
+                opposite_door_string = ("%s" % opposite_door.key)
+            
             if "locked" not in opposite_door.db.door_attributes:
                 opposite_door.db.door_attributes.append("locked")
 
+            # Give output in that room.
+            door.destination.msg_contents("*Click* The %s was locked." % opposite_door_string)
+                
             # Add exit to objects to reset if not there already.
             reset_script = search.script_search("reset_script")[0]
             area = rules.get_area_name(opposite_door)
