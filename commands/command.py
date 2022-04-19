@@ -1453,15 +1453,21 @@ class CmdRest(MuxCommand):
             caller.msg("If you want to rest more, try sleeping.")
             return
 
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        cannot_see = list(looker for looker in lookers if not rules.is_visible(caller, looker))
+        cannot_see.append(caller)
+        
         if caller.position == "standing":
             caller.msg("You sit down and rest your tired bones.")
-            caller.location.msg_contents("%s sits down and rests." % (caller.name), exclude=caller)
+            caller.location.msg_contents("%s sits down and rests." % (caller.name), exclude=cannot_see)
         elif caller.position == "sitting":
             caller.msg("You convert from a seated position into a more comfortable rest.")
-            caller.location.msg_contents("%s readjusts and rests." % (caller.name), exclude=caller)
+            caller.location.msg_contents("%s readjusts and rests." % (caller.name), exclude=cannot_see)
         else:
             caller.msg("You wake, sit up and rest.")
-            caller.location.msg_contents("%s awakens and sits up to rest." % (caller.name), exclude=caller)
+            caller.location.msg_contents("%s awakens and sits up to rest." % (caller.name), exclude=cannot_see)
         caller.position = "resting"
 
 
@@ -1488,9 +1494,11 @@ class CmdSacrifice(MuxCommand):
             caller.msg("What would you like to sacrifice?")
             return
 
+        visible_candidates = list(object for object in caller.location.contents if "object" in object.tags.all() and rules.is_visible(object, caller))
+                
         obj = caller.search(
             self.args,
-            location=caller.location,
+            candidates = visible_candidates,
             nofound_string="There is no %s here to sacrifice." % self.args,
             multimatch_string="There is more than one %s here:" % self.args,
         )
@@ -1514,9 +1522,29 @@ class CmdSacrifice(MuxCommand):
             caller.msg("The gods appreciate your addition to their feast table.")
             obj.location = None
             rules.remove_disintegrate_timer(obj)
-            caller.location.msg_contents("%s sacrifices %s to the gods."
-                                         % (caller.name, obj.name),
-                                         exclude=caller)
+            
+            # Deal with invisible objects/characters for output.
+            # Assemble a list of all possible lookers.
+            lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+            for looker in lookers:
+                # Exclude the caller, who got their output above.
+                if looker != caller:
+                    # Address visibility of character dropping.
+                    if rules.is_visible(caller, looker):
+                        sacrificer = (caller.key[0].upper() + caller.key[1:])
+                    else:
+                        sacrificer = "Someone"
+
+                    # Address visibility of object sacrificed.
+                    if rules.is_visible(obj, looker):
+                        sacrificed = obj.key
+                    else:
+                        sacrificed = "something"
+
+                    # As long as something was visible, give output.
+                    if sacrificer != "Someone" or sacrificed != "something":
+                        looker.msg("%s builds a small pyre, and sacrifices %s to the gods." % (sacrificer, sacrificed))                      
+
             return
 
 
@@ -1586,10 +1614,28 @@ class CmdSacrifice(MuxCommand):
         
         
         rules.remove_disintegrate_timer(obj)
-        caller.location.msg_contents("%s builds a small pyre, and sacrifices %s to the gods."
-                                         % (caller.name, obj.name),
-                                         exclude=caller)
 
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for looker in lookers:
+            # Exclude the caller, who got their output above.
+            if looker != caller:
+                # Address visibility of character dropping.
+                if rules.is_visible(caller, looker):
+                    sacrificer = (caller.key[0].upper() + caller.key[1:])
+                else:
+                    sacrificer = "Someone"
+
+                # Address visibility of object sacrificed.
+                if rules.is_visible(obj, looker):
+                    sacrificed = obj.key
+                else:
+                    sacrificed = "something"
+
+                # As long as something was visible, give output.
+                if sacrificer != "Someone" or sacrificed != "something":
+                    looker.msg("%s builds a small pyre, and sacrifices %s to the gods." % (sacrificer, sacrificed))  
 
 class CmdSay(MuxCommand):
     """
@@ -1957,12 +2003,18 @@ class CmdSleep(MuxCommand):
             caller.msg("You are sleeping as well as you can already.")
             return
 
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        cannot_see = list(looker for looker in lookers if not rules.is_visible(caller, looker))
+        cannot_see.append(caller)
+                    
         if caller.db.position == "standing":
             caller.msg("You find a comfortable spot, lay your head down, and drift off to sleep.")
-            caller.location.msg_contents("%s lays down and falls asleep." % (caller.name), exclude=caller)
+            caller.location.msg_contents("%s lays down and falls asleep." % (caller.name), exclude=cannot_see)
         else:
             caller.msg("More tired than you thought, you lay your head down, and drift off to sleep.")
-            caller.location.msg_contents("%s lays down and falls asleep." % (caller.name), exclude=caller)
+            caller.location.msg_contents("%s lays down and falls asleep." % (caller.name), exclude=cannot_see)
 
         caller.position = "sleeping"
 
@@ -1995,15 +2047,21 @@ class CmdStand(MuxCommand):
             caller.msg("You can't stand any more than you are already.")
             return
 
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        cannot_see = list(looker for looker in lookers if not rules.is_visible(caller, looker))
+        cannot_see.append(caller)
+        
         if caller.position == "sleeping":
             caller.msg("You wake up and stand up, ready for more.")
-            caller.location.msg_contents("%s wakes up and stands up." % (caller.name), exclude=caller)
+            caller.location.msg_contents("%s wakes up and stands up." % (caller.name), exclude=cannot_see)
         elif caller.position == "resting":
             caller.msg("You stop resting and stand up, ready for action.")
-            caller.location.msg_contents("%s stands up." % (caller.name), exclude=caller)
+            caller.location.msg_contents("%s stands up." % (caller.name), exclude=cannot_see)
         else:
             caller.msg("You stand up, ready for action.")
-            caller.location.msg_contents("%s leaps back to %s feet." % (caller.name, rules.pronoun_possessive(caller)), exclude=caller)
+            caller.location.msg_contents("%s leaps back to %s feet." % (caller.name, rules.pronoun_possessive(caller)), exclude=cannot_see)
 
         caller.position = "standing"
 
