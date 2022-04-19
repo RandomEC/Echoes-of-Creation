@@ -891,15 +891,14 @@ class Character(DefaultCharacter):
         )
 
         # Build a list of characters that cannot see the character's departure.
-        cannot_see = [self]
-        for object in location.contents:
-            if "mobile" in object.tags.all() or "player" in object.tags.all():
-                if not rules.is_visible(self, object, arrive=True):
-                    cannot_see.append(object)
+
+        if location.contents:
+            possible_candidates = list(object for object in location.contents if "mobile" in object.tags.all() or "player" in object.tags.all())
+            if possible_candidates:
+                cannot_see = list(character for character in possible_candidates if not rules.is_visible(self, character, arrive=True))
+                cannot_see.append(self)
 
         location.msg_contents(string, exclude=cannot_see, from_obj=self, mapping=mapping)
-
-
 
     def announce_move_to(self, source_location, msg=None, mapping=None, **kwargs):
         """
@@ -975,6 +974,13 @@ class Character(DefaultCharacter):
                 if not rules.is_visible(self, object, arrive=True):
                     cannot_see.append(object)
 
+        
+        if destination.contents:
+            possible_candidates = list(object for object in destination.contents if "mobile" in object.tags.all() or "player" in object.tags.all())
+            if possible_candidates:
+                cannot_see = list(character for character in possible_candidates if not rules.is_visible(self, character, arrive=True))
+                cannot_see.append(self)
+                    
         destination.msg_contents(string, exclude=cannot_see, from_obj=self, mapping=mapping)
 
 
