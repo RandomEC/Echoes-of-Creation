@@ -116,7 +116,7 @@ class ResetScript(DefaultScript):
         # The below creates a dictionary of all areas then in the mud, by
         # tag name, paired with a timer and an empty list of resets, to 
         # be used as below.
-        self.db.area_list = dict((area, {"timer": 0, "resets": []}) for area in areas)
+        self.db.area_list = dict((area, {"timer": 0, "resets": [], "repop message": areas[area]["repop message"]}) for area in areas)
         
     def at_repeat(self):
 
@@ -132,6 +132,13 @@ class ResetScript(DefaultScript):
                         object.at_reset()
                     self.db.area_list[area]["timer"] = 0
                     self.db.area_list[area]["resets"] = []
+
+                    players = search.search_tag("player")
+                    players_in_area = list(player for player in players if rules.get_area_name(player.location) == area)
+                    if players_in_area:
+                        for player in players_in_area:
+                            player.msg(self.db.area_list[area]["repop message"])
+
                 else:
                     # Iterate up the timer toward the max of two.
                     self.db.area_list[area]["timer"] += 1

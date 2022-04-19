@@ -497,7 +497,7 @@ class CmdSteal(MuxCommand):
         if not target:
             caller.msg("There is no %s here to steal from." % self.args)
             return
-        if not rules.is_visible(target):
+        if not rules.is_visible(target, caller):
             caller.msg("There is no %s here to steal from." % self.args)
             return        
         elif caller == target:
@@ -530,7 +530,7 @@ class CmdSteal(MuxCommand):
             
             if not to_steal:
                 return
-            if not rules.is_visible(to_steal):
+            if not rules.is_visible(to_steal, caller):
                 caller.msg("%s is not carrying %s." % ((target.key[0].upper() + target.key[1:]), self.lhs))
                 return
         else:

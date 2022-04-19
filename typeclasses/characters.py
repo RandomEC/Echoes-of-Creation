@@ -876,8 +876,10 @@ class Character(DefaultCharacter):
             return
         if msg:
             string = msg
-        else:
+        elif exit_string:
             string = "%s leaves %s." % (self.key[0].upper() + self.key[1:], exit_string)
+        else:
+            string = "%s disappears!" % (self.key[0].upper() + self.key[1:], exit_string)
 
         mapping.update(
             {
@@ -948,7 +950,7 @@ class Character(DefaultCharacter):
         if source_location:
             if msg:
                 string = msg
-            else:
+            elif exit_string:
                 string = "%s arrives %s." % (self.key[0].upper() + self.key[1:], exit_string)
         else:
             string = "$s suddenly appears." % (self.key[0].upper() + self.key[1:])

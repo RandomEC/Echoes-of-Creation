@@ -669,79 +669,98 @@ def get_area_info(area_name):
     area_dictionary = {
         "crystalmir lake": {
             "formatted name": "Crystalmir Lake",
-            "level range": "[  1 -  10]"
+            "level range": "[  1 -  10]",
+            "repop message": "The wind blows through the fields and across the lake."
         },
         "dangerous neighborhood": {
             "formatted name": "Dangerous Neighborhood",
-            "level range": "[  5 -  15]"
+            "level range": "[  5 -  15]",
+            "repop message": "Still more hoodlums emerge from the wasted landscape."
         },
         "dragon cult": {
             "formatted name": "Dragon Cult",
-            "level range": "[  5 -  15]"
+            "level range": "[  5 -  15]",
+            "repop message": "A too-smiling man says 'Do you know of the dragon rapture?'"
         },
         "dwarven daycare": {
             "formatted name": "Dwarven Daycare",
-            "level range": "[  1 -  10]"
+            "level range": "[  1 -  10]",
+            "repop message": "Small children run everywhere, as teachers sigh."
         },
         "edens grove": {
             "formatted name": "Eden's Grove",
-            "level range": "[   All   ]"
+            "level range": "[   All   ]",
+            "repop message": "All returns to normal in Eden's Grove."
         },
         "elemental canyon": {
             "formatted name": "Elemental Canyon",
-            "level range": "[  5 -  15]"
+            "level range": "[  5 -  15]",
+            "repop message": "The many elements combine to restore the canyon."
         },
         "faerie ring": {
             "formatted name": "Faerie Ring",
-            "level range": "[ 10 -  15]"
+            "level range": "[ 10 -  15]",
+            "repop message": "What's that, flitting through the mushrooms???"
         },
         "fire newts": {
             "formatted name": "Land of the Fire Newts",
-            "level range": "[  5 -  15]"
+            "level range": "[  5 -  15]",
+            "repop message": "Small gouts of fire spew out from the very rock."
         },
         "gnome village": {
             "formatted name": "Gnome Village",
-            "level range": "[  5 -  15]"
+            "level range": "[  5 -  15]",
+            "repop message": "The happy sounds of gnomish life surround you."
         },
         "graveyard": {
             "formatted name": "Graveyard",
-            "level range": "[  5 -  10]"
+            "level range": "[  5 -  10]",
+            "repop message": "A cold breeze groans its way through the graves."
         },
         "haon dor": {
             "formatted name": "Haon Dor",
-            "level range": "[  5 -  10]"
+            "level range": "[  5 -  10]",
+            "repop message": "The trees creak, and you see eyes peering out of the darkness."
         },
         "holy grove": {
             "formatted name": "Holy Grove",
-            "level range": "[  5 -  15]"
+            "level range": "[  5 -  15]",
+            "repop message": "The tranquillity of the grove is broken by slight sounds of activity."
         },
         "miden'nir": {
             "formatted name": "Miden'nir",
-            "level range": "[  5 -  15]"
+            "level range": "[  5 -  15]",
+            "repop message": "The sounds of rampant goblin savagery filter through the forest."
         },
         "smurf village": {
             "formatted name": "Smurf Village",
-            "level range": "[  1 -  10]"
+            "level range": "[  1 -  10]",
+            "repop message": "La, la, lalalala, la, la, lala, LA!!!!!!!"
         },
         "the library": {
             "formatted name": "The Library",
-            "level range": "[  1 -  10]"
+            "level range": "[  1 -  10]",
+            "repop message": "The sounds of unusual activity echo through the stacks."
         },
         "the rats' lair": {
             "formatted name": "The Rats' Lair",
-            "level range": "[  1 -  10]"
+            "level range": "[  1 -  10]",
+            "repop message": "The sound of maddened scrabbling echoes through the walls."
         },
         "training tower": {
             "formatted name": "Training Tower",
-            "level range": "[  1 -   5]"
+            "level range": "[  1 -   5]",
+            "repop message": "The sounds of learning and active training fill the tower."
         },
         "troll den": {
             "formatted name": "Troll Den",
-            "level range": "[  10 -  15]"
+            "level range": "[  10 -  15]",
+            "repop message": "Roaring and, is that cracking, fill the air."
         },
         "the circus": {
             "formatted name": "The Circus",
-            "level range": "[   1 -  10]"
+            "level range": "[   1 -  10]",
+            "repop message": "Clowns, clowns, and still more clowns caper by."
         }
     }
 
