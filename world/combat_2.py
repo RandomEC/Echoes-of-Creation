@@ -222,42 +222,152 @@ class Combat_2(Object):
                             
 ################# NEW COMBAT RULES ##############################
 
+def do_flee(character):
+    
+    if character.db.position == "sitting":
+        character.msg("You had better stand up to try to flee!")
+        return
+
+    success = False
+    for attempt in range(1, 6):
+        direction = random.randint(1, 6)
+
+        if direction == 1:
+            direction = "north"
+        elif direction == 2:
+            direction = "east"
+        elif direction == 3:
+            direction = "south"
+        elif direction == 4:
+            direction = "west"
+        elif direction == 5:
+            direction = "up"
+        else:
+            direction = "down"
+
+        for exit in character.location.contents:
+            if exit.destination and exit.key == direction and exit.access(character, "traverse"):
+                success = True
+                break
+
+        if success:
+            if "mobile" in character.tags.all():
+                if random.randint(1, 2) == 2:
+                    success = False
+            break
+
+    if success:
+        # Remove character from combat, and check if combat ends.
+        combat = character.ndb.combat_handler
+        combat.combatant_remove(character)
+        combat.combat_end_check()
+        
+        # Check to see if this ends combat.
+
+        # Only do experience loss if the character is past level 5.
+        if character.level > 5:
+            experience_loss = int(settings.EXPERIENCE_LOSS_FLEE * rules.experience_loss_base(character))
+        
+            character.db.experience_total -= experience_loss
+
+            character.msg("You show a good pair of heels and flee %s out of combat!\nYou lose %d experience for fleeing." % (direction, experience_loss))
+            character.location.msg_contents("%s tucks tail and flees %s out of combat!"
+                                         % ((character.name[0].upper() + character.name[1:]), direction),
+                                         exclude=character)
+        else:
+            character.msg(
+                "You show a good pair of heels and flee %s out of combat!" % direction)
+            character.location.msg_contents("%s tucks tail and flees %s out of combat!"
+                                            % ((character.name[0].upper() + character.name[1:]), direction),
+                                            exclude=character)
+
+        character.move_to(exit.destination, quiet=True)
+        
+    else:
+        # Only do experience loss if the character is past level 5.
+        if character.level > 5:
+            experience_loss = int(settings.EXPERIENCE_LOSS_FLEE_FAIL * rules.experience_loss_base(character))
+            character.db.experience_total -= experience_loss
+        
+            character.msg("You fail to flee from combat!\nYou lose %d experience for the attempt." % experience_loss)
+            character.location.msg_contents("%s looks around frantically for an escape, but can't get away!"
+                                         % (character.name[0].upper() + character.name[1:]),
+                                         exclude=character)
+        else:
+            character.msg("You fail to flee from combat!")
+            character.location.msg_contents("%s looks around frantically for an escape, but can't get away!"
+                                            % (character.name[0].upper() + character.name[1:]),
+                                            exclude=character)
+
+
+
+
+
+
+
 def do_one_character_combat_turn(attacker, victim, combat):
     """
     This handles everything that needs to happen in one round of
     combat for a character.
     """
+    
+    # First, check to see if the attacker is below their wimpy.
+    if attacker.hitpoints_current > 0 and (("player" in attacker.tags.all() and
+        attacker.hitpoints_current <= attacker.db.wimpy) or \
+            ("mobile" in attacker.tags.all() and
+             "wimpy" in attacker.db.act_flags and
+             attacker.hitpoints_current <= (0.15 * attacker.hitpoints_maximum
+             ))):
 
+        # If so, make a free attempt to flee.
+        do_flee(attacker)
+        
+    # Check to see if the target has been tripped, and, if so, try to stand.
+    if attacker.position == "sitting":
+        
+        if "mobile" in attacker.tags.all():
+            chance = 50
+        else:
+            chance = 2 * attacker.dexterity
+
+        chance -= 2 * attacker.size
+
+        if random.randint(1, 100) <= chance:
+            attacker.msg("You jump back to your feet.")
+            attacker.location.msg_contents("%s jumps back to %s feet." % ((combatant.key[0].upper() + combatant.key[1:]),
+                                                                           rules.pronoun_possessive(combatant)
+                                                                           ), exclude=(combatant))
+        elif random.randint(1, 100) < 30:
+            attacker.msg("You struggle to stand up ... and fail.")
+            attacker.location.msg_contents("%s tries to stand up, and fails." % (combatant.key[0].upper() + combatant.key[1:]), exclude=(combatant))
+        
+    # Check on hide and invisible status and remove if attacking.
+    if attacker.get_affect_status("hide"):
+        pass
+
+    if attacker.get_affect_status("invis"):
+
+        if attacker.sex == "neuter":
+            attack_string = "they attack"
+        else:
+            attack_string = "%s attacks" % rules.pronoun_subject(attacker)
+
+        rules.affect_remove(attacker,
+                            "invis",
+                            "With your attack, your invisibility dissipates!",
+                            "%s shimmers into visibility as %s %s!" % ((attacker.key[0].upper() + attacker.key[1:]),
+                                                                       attack_string,
+                                                                       victim.key
+                                                                       ))
+    # Now, on to actual attacks.
 
     # Do base attacks.
-    if victim.hitpoints_current > 0 and victim.location == attacker.location:
-        new_attacker_string, new_victim_string, new_room_string = \
-            do_one_weapon_attacks(attacker, victim, "wielded, primary")
-        attacker_string += new_attacker_string
-        victim_string += new_victim_string
-        room_string += new_room_string
+    do_one_weapon_attacks(attacker, victim, "wielded, primary", combat)
     
-    # Check for dual wield.
-    if victim.hitpoints_current > 0 and victim.location == attacker.location:
-        if attacker.db.eq_slots["wielded, primary"] and \
-                attacker.db.eq_slots["wielded, secondary"]:
-            new_attacker_string, new_victim_string, new_room_string = \
-                do_one_weapon_attacks(attacker, victim, "wielded, secondary")
-            attacker_string += new_attacker_string
-            victim_string += new_victim_string
-            room_string += new_room_string
-
-    if victim.hitpoints_current <= 0 and victim.location == attacker.location:
-        new_attacker_string, new_victim_string, new_room_string = \
-            do_death(attacker, victim)
-        attacker_string += new_attacker_string
-        victim_string += new_victim_string
-        room_string += new_room_string
-
-    # In combat handler, need to use these strings to create the full output
-    # block reporting the results of everyone's attacks to all players only.
-    return (attacker_string, victim_string, room_string)
-
+    # Check for dual wield, and do attacks if needed.
+    if attacker.db.eq_slots["wielded, primary"] and \
+            attacker.db.eq_slots["wielded, secondary"]:
+        do_one_weapon_attacks(attacker, victim, "wielded, secondary", combat)
 
 def do_one_weapon_attacks(attacker, victim, eq_slot):
     """
