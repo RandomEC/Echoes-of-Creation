@@ -4,6 +4,7 @@ This rules file is to handle anything related to non-combat skills.
 
 import math
 import random
+import time
 from evennia import TICKER_HANDLER as tickerhandler
 from server.conf import settings
 from world import rules, rules_combat
@@ -68,6 +69,17 @@ def do_chameleon_power(character):
 
         rules.wait_state_apply(character, skill["wait state"])
 
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in character.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for looker in lookers:
+            # Exclude the character, who got their output above.
+            if looker != character:
+
+                # Give output to those who can no longer see the character.
+                if not rules.is_visible(character, looker):
+                    looker.msg("%s blends into %s surroundings and disappears!" % (character.key, rules.pronoun_possessive(character)))
+        
     else:
         if "player" in character.tags.all():
             check_skill_improve(character, "chameleon power", False, 2)
@@ -86,8 +98,11 @@ def do_dowse(character):
 
     # put a timer on the spring equal to skill level
     timer = character.level * settings.TICK_OBJECT_TIMER
-    tickerhandler.add(timer, spring.at_disintegrate)
-
+    timestamp = spring.key + str(time.time())
+    tickerhandler.add(timer, spring.at_disintegrate, timestamp)
+    spring.db.disintegrate_ticker = timestamp
+    obj.tags.add("disintegrating")
+    
 
 def do_forage(character):
     """
@@ -124,7 +139,18 @@ def do_hide(character):
                            )
 
         rules.wait_state_apply(character, skill["wait state"])
+        
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in character.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for looker in lookers:
+            # Exclude the character, who got their output above.
+            if looker != character:
 
+                # Give output to those who can no longer see the character.
+                if not rules.is_visible(character, looker):
+                    looker.msg("%s hides and disappears!" % character.key)
+        
     else:
         if "player" in character.tags.all():
             check_skill_improve(character, "hide", False, 2)
@@ -157,11 +183,46 @@ def do_pick_lock(character, target, target_type):
     character.msg("*Click*")
 
     if target_type == "container":
-        character.location.msg_contents("%s picks %s." % ((character.key[0].upper() + character.key[1:]), target.key), exclude=(character))
+        
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for looker in lookers:
+            # Exclude the caller, who got their output above.
+            if looker != character:
+                # Address visibility of character picking.
+                if rules.is_visible(character, looker):
+                    picker = (character.key[0].upper() + character.key[1:])
+                else:
+                    picker = "Someone"
+
+                # Address visibility of object picked.
+                if rules.is_visible(target, looker):
+                    picked = target.key
+                else:
+                    picked = "something"
+
+                # As long as something was visible, give output.
+                if picker != "Someone" or picked != "something":
+                    looker.msg("%s picks %s" % (picker, target.key))
+
         target.db.state.remove("locked")
     else:
-        character.location.msg_contents("%s picks the %s." % ((character.key[0].upper() + character.key[1:]), target_string),
-                                        exclude=(character))
+        
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for looker in lookers:
+            # Exclude the caller, who got their output above.
+            if looker != character:
+                # Address visibility of character picking.
+                if rules.is_visible(character, looker):
+                    picker = (character.key[0].upper() + character.key[1:])
+                else:
+                    picker = "Someone"
+
+                looker.msg("%s picks the %s" % (picker, target_string))
+        
         target.db.door_attributes.remove("locked")
 
 
