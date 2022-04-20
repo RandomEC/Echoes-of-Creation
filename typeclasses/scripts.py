@@ -112,19 +112,21 @@ class ResetScript(DefaultScript):
 
         # Get all the current areas.
         areas = rules.get_area_info("all")
-        
+
         # The below creates a dictionary of all areas then in the mud, by
         # tag name, paired with a timer and an empty list of resets, to 
         # be used as below.
         self.db.area_list = dict((area, {"timer": 0, "resets": [], "repop message": areas[area]["repop message"]}) for area in areas)
-        
+
     def at_repeat(self):
+
+        players = search.search_tag("player")
 
         for area in self.db.area_list:
 
             # Reset if there are things to reset.
             if self.db.area_list[area]["resets"]:
-                
+
                 # But only if no players in the area, or if counter is at 2.
                 if not rules.player_in_area(area) or self.db.area_list[area]["timer"] >= 2:
 
@@ -133,8 +135,12 @@ class ResetScript(DefaultScript):
                     self.db.area_list[area]["timer"] = 0
                     self.db.area_list[area]["resets"] = []
 
-                    players = search.search_tag("player")
-                    players_in_area = list(player for player in players if rules.get_area_name(player.location) == area)
+                    players_in_area = []
+                    for player in players:
+                        if player.location:
+                            if rules.get_area_name(player.location) == area:
+                                players_in_area.append(player)
+
                     if players_in_area:
                         for player in players_in_area:
                             player.msg(self.db.area_list[area]["repop message"])
@@ -255,7 +261,7 @@ class TickerCleanup(DefaultScript):
         self.desc = "Cleans up old tickers"
         self.persistent = True
 
-        tickerhandler.clear(interval=30)
-        tickerhandler.clear(interval=900)
-        tickerhandler.clear(interval=1800)
+        tickerhandler.clear()
         tickerhandler.save()
+
+

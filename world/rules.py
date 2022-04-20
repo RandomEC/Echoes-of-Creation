@@ -765,7 +765,7 @@ def get_area_info(area_name):
     }
 
     if area_name == "all":
-        return list(area for area in area_dictionary)
+        return area_dictionary
     
     if area_name in area_dictionary:
         return "%s %s" % (area_dictionary[area_name]["formatted name"], area_dictionary[area_name]["level range"])

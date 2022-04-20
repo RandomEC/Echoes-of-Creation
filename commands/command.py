@@ -729,7 +729,9 @@ class CmdGet(MuxCommand):
                     if not success:
                         get_output += "%s can't be picked up.\n" % (obj.key[0].upper() + obj.key[1:])
                     else:
-                        rules.remove_disintegrate_timer(obj)
+                        if obj.attributes.has("disintegrate_ticker"):
+                            if obj.db.disintegrate_ticker:
+                                rules.remove_disintegrate_timer(obj)
                         get_output += "You take %s from %s.\n" % (obj.name, container.key)
                         for looker in get_output_room:
                             
@@ -824,7 +826,9 @@ class CmdGet(MuxCommand):
                     if not success:
                         get_output += "%s can't be picked up.\n" % (obj.key[0].upper() + obj.key[1:])
                     else:
-                        rules.remove_disintegrate_timer(obj)
+                        if obj.attributes.has("disintegrate_ticker"):
+                            if obj.db.disintegrate_ticker:
+                                rules.remove_disintegrate_timer(obj)
                         get_output += "You pick up %s.\n" % obj.name
 
                         for looker in get_output_room:
@@ -1498,7 +1502,7 @@ class CmdSacrifice(MuxCommand):
                 
         obj = caller.search(
             self.args,
-            candidates = visible_candidates,
+            candidates=visible_candidates,
             nofound_string="There is no %s here to sacrifice." % self.args,
             multimatch_string="There is more than one %s here:" % self.args,
         )
@@ -1521,8 +1525,10 @@ class CmdSacrifice(MuxCommand):
         if obj.db.item_type == "food":
             caller.msg("The gods appreciate your addition to their feast table.")
             obj.location = None
-            rules.remove_disintegrate_timer(obj)
-            
+            if obj.attributes.has("disintegrate_ticker"):
+                if obj.db.disintegrate_ticker:
+                    rules.remove_disintegrate_timer(obj)
+
             # Deal with invisible objects/characters for output.
             # Assemble a list of all possible lookers.
             lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
@@ -1546,8 +1552,6 @@ class CmdSacrifice(MuxCommand):
                         looker.msg("%s builds a small pyre, and sacrifices %s to the gods." % (sacrificer, sacrificed))                      
 
             return
-
-
 
         award = random.randint(1, 3)
 
@@ -1610,10 +1614,10 @@ class CmdSacrifice(MuxCommand):
                 reset_script.db.area_list[area]["resets"].append(obj.location)   
         
         obj.location = None
-        
-        
-        
-        rules.remove_disintegrate_timer(obj)
+
+        if obj.attributes.has("disintegrate_ticker"):
+            if obj.db.disintegrate_ticker:
+                rules.remove_disintegrate_timer(obj)
 
         # Deal with invisible objects/characters for output.
         # Assemble a list of all possible lookers.

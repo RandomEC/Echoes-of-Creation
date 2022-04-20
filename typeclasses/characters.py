@@ -865,7 +865,9 @@ class Character(DefaultCharacter):
         if not mapping:
             mapping = {}
 
-        if exits[0].key == "north" or exits[0].key == "east" or exits[0].key == "south" or exits[0].key == "west":
+        if not exits:
+            exit_string = ""
+        elif exits[0].key == "north" or exits[0].key == "east" or exits[0].key == "south" or exits[0].key == "west":
             exit_string = "to the %s" % exits[0].key
         elif exits[0].key == "up" or exits[0].key == "down":
             exit_string = "%swards" % exits[0].key
@@ -879,7 +881,7 @@ class Character(DefaultCharacter):
         elif exit_string:
             string = "%s leaves %s." % (self.key[0].upper() + self.key[1:], exit_string)
         else:
-            string = "%s disappears!" % (self.key[0].upper() + self.key[1:], exit_string)
+            string = "%s disappears!" % (self.key[0].upper() + self.key[1:])
 
         mapping.update(
             {
@@ -937,12 +939,12 @@ class Character(DefaultCharacter):
                 if o.location is destination and o.destination is origin
             ]
 
-        if exits[0].key == "north" or exits[0].key == "east" or exits[0].key == "south" or exits[0].key == "west":
+        if not exits:
+            exit_string = ""
+        elif exits[0].key == "north" or exits[0].key == "east" or exits[0].key == "south" or exits[0].key == "west":
             exit_string = "from the %s" % exits[0].key
-        elif exits[0].key == "up":
-            exit_string = "from above"
-        elif exits[0].key == "down":
-            exit_string = "from below"
+        elif exits[0].key == "up" or exits[0].key == "down":
+            exit_string = "%swards" % exits[0].key
         else:
             exit_string = "from the %s" % exits[0].key
 
@@ -950,9 +952,11 @@ class Character(DefaultCharacter):
             if msg:
                 string = msg
             elif exit_string:
-                string = "%s arrives %s." % (self.key[0].upper() + self.key[1:], exit_string)
+                string = "%s arrives %s." % ((self.key[0].upper() + self.key[1:]), exit_string)
+            else:
+                string = "%s suddenly appears." % (self.key[0].upper() + self.key[1:])
         else:
-            string = "$s suddenly appears." % (self.key[0].upper() + self.key[1:])
+            string = "%s suddenly appears." % (self.key[0].upper() + self.key[1:])
 
         if not mapping:
             mapping = {}
@@ -966,7 +970,6 @@ class Character(DefaultCharacter):
             }
         )
 
-
         # Build a list of characters that cannot see the character's departure.
         cannot_see = [self]
         for object in destination.contents:
@@ -974,15 +977,13 @@ class Character(DefaultCharacter):
                 if not rules.is_visible(self, object, arrive=True):
                     cannot_see.append(object)
 
-        
         if destination.contents:
             possible_candidates = list(object for object in destination.contents if "mobile" in object.tags.all() or "player" in object.tags.all())
             if possible_candidates:
                 cannot_see = list(character for character in possible_candidates if not rules.is_visible(self, character, arrive=True))
                 cannot_see.append(self)
-                    
-        destination.msg_contents(string, exclude=cannot_see, from_obj=self, mapping=mapping)
 
+        destination.msg_contents(string, exclude=cannot_see, from_obj=self, mapping=mapping)
 
 class Mobile(Character):
     """
