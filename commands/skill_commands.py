@@ -110,8 +110,18 @@ class CmdDowse(MuxCommand):
                 caller.moves_spent = caller.moves_maximum
 
             caller.msg("You dig a bit, and water flows from the ground.")
-            caller.location.msg_contents("%s digs a bit, and water flows from the ground."
-                                         % caller.name, exclude=caller)
+
+            # Deal with invisible objects/characters for output.
+            # Assemble a list of all possible lookers.
+            lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+            for looker in lookers:
+                # Exclude the caller, who got their output above.
+                if looker != caller:
+                    # Address visibility of character wearing.
+                    if rules.is_visible(caller, looker):
+                        looker.msg("%s digs a bit, and water flows from the ground." % caller.name)
+                    else:
+                        looker.msg("Water suddenly begins to flow from the ground.")
 
 class CmdForage(MuxCommand):
     """
@@ -178,10 +188,18 @@ class CmdForage(MuxCommand):
                 caller.moves_spent = caller.moves_maximum
 
             caller.msg("You root around a bit, and find some food.")
-            caller.location.msg_contents("%s roots around a bit, and finds some food."
-                                         % caller.name, exclude=caller)
+            
+            # Deal with invisible objects/characters for output.
+            # Assemble a list of all possible lookers.
+            lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+            for looker in lookers:
+                # Exclude the caller, who got their output above.
+                if looker != caller:
+                    # Address visibility of character wearing.
+                    if rules.is_visible(caller, looker):
+                        looker.msg("%s roots around a bit, and finds some food." % caller.name)
 
-
+                        
 class CmdHide(MuxCommand):
     """
     Attempt to hide.
