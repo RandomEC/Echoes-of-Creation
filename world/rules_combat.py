@@ -8,6 +8,22 @@ from evennia.utils import search
 from world import rules_race, rules, rules_skills
 from server.conf import settings
 
+def allow_attacks(combatant, target, combat):
+    """
+    Checks whether the combatant and target for this round are still alive, returns
+    True if so, False if not.
+    """
+
+    # Are both the attacker and target alive?
+    if combatant.hitpoints_current <= 0 or if target.hitpoints_current <= 0:
+        return False
+
+    # Are both the combatant and target in the same room as the combat?
+    if combatant.location != combat.location or target.location != combat.location:
+        return False
+
+    return True
+    
 
 def create_combat(attacker, victim):
     """Create a combat, if needed, returns the combat object."""
