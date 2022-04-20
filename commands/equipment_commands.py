@@ -592,19 +592,19 @@ class CmdWear(MuxCommand):
                                     if looker != caller:
                                         # Address visibility of character wearing.
                                         if rules.is_visible(caller, looker):
-                                            wearer = (caller.key[0].upper() + caller.key[1:])
+                                            remover = (caller.key[0].upper() + caller.key[1:])
                                         else:
-                                            wearer = "Someone"
+                                            remover = "Someone"
 
                                         # Address visibility of object worn.
                                         if rules.is_visible(eq, looker):
-                                            worn = eq.key
+                                            removed = eq.key
                                         else:
-                                            worn = "something"
+                                            removed = "something"
 
                                         # As long as something was visible, give output.
-                                        if wearer != "Someone" or worn != "something":
-                                            looker.msg("%s extinguishes %s and no longer uses it as a light." % (wearer, worn))
+                                        if remover != "Someone" or removed != "something":
+                                            looker.msg("%s extinguishes %s and no longer uses it as a light." % (remover, removed))
                             elif eq_current.db.wear_location == "shield":
                                 caller.msg("You no longer use %s as a shield." % eq_current.name)
                                 
@@ -616,19 +616,19 @@ class CmdWear(MuxCommand):
                                     if looker != caller:
                                         # Address visibility of character wearing.
                                         if rules.is_visible(caller, looker):
-                                            wearer = (caller.key[0].upper() + caller.key[1:])
+                                            remover = (caller.key[0].upper() + caller.key[1:])
                                         else:
-                                            wearer = "Someone"
+                                            remover = "Someone"
 
                                         # Address visibility of object worn.
                                         if rules.is_visible(eq, looker):
-                                            worn = eq.key
+                                            removed = eq.key
                                         else:
-                                            worn = "something"
+                                            removed = "something"
 
                                         # As long as something was visible, give output.
-                                        if wearer != "Someone" or worn != "something":
-                                            looker.msg("%s no longer uses %s as a shield." % (wearer, worn))
+                                        if remover != "Someone" or removed != "something":
+                                            looker.msg("%s no longer uses %s as a shield." % (remover, removed))
                                 
                             elif eq_current.db.wear_location == "about body":
                                 caller.msg("You remove %s from about your body." % eq_current.name)
@@ -641,22 +641,47 @@ class CmdWear(MuxCommand):
                                     if looker != caller:
                                         # Address visibility of character wearing.
                                         if rules.is_visible(caller, looker):
-                                            wearer = (caller.key[0].upper() + caller.key[1:])
-                                            wearer_possessive = rules.pronoun_possessive(caller)
+                                            remover = (caller.key[0].upper() + caller.key[1:])
+                                            remover_possessive = rules.pronoun_possessive(caller)
                                         else:
-                                            wearer = "Someone"
-                                            wearer_possessive = "their"
+                                            remover = "Someone"
+                                            remover_possessive = "their"
 
                                         # Address visibility of object worn.
                                         if rules.is_visible(eq, looker):
-                                            worn = eq.key
+                                            removed = eq.key
                                         else:
-                                            worn = "something"
+                                            removed = "something"
 
                                         # As long as something was visible, give output.
-                                        if wearer != "Someone" or worn != "something":
-                                            looker.msg("%s removes %s from about %s body." % (wearer, worn, wearer_possessive))   
+                                        if remover != "Someone" or removed != "something":
+                                            looker.msg("%s removes %s from about %s body." % (remover, removed, remover_possessive))   
 
+                            elif eq_current.dg.wear_location == "pride":
+                                caller.msg("You unpin %s and remove it from its place of pride." % eq_current.name)
+
+                                # Deal with invisible objects/characters for output.
+                                # Assemble a list of all possible lookers.
+                                lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+                                for looker in lookers:
+                                    # Exclude the caller, who got their output above.
+                                    if looker != caller:
+                                        # Address visibility of character wearing.
+                                        if rules.is_visible(caller, looker):
+                                            remover = (caller.key[0].upper() + caller.key[1:])
+                                        else:
+                                            remover = "Someone"
+
+                                        # Address visibility of object worn.
+                                        if rules.is_visible(eq, looker):
+                                            removed = eq.key
+                                        else:
+                                            removed = "something"
+
+                                        # As long as something was visible, give output.
+                                        if remover != "Someone" or removed != "something":
+                                            looker.msg("%s upnins %s and removes it from its place of pride." % (remover, removed))      
+                                
                             elif eq_current.db.wear_location == "held, in hands":
                                 caller.msg("You no longer hold %s in your hands." % eq_current.name)
 
@@ -668,21 +693,21 @@ class CmdWear(MuxCommand):
                                     if looker != caller:
                                         # Address visibility of character wearing.
                                         if rules.is_visible(caller, looker):
-                                            wearer = (caller.key[0].upper() + caller.key[1:])
-                                            wearer_possessive = rules.pronoun_possessive(caller)
+                                            remover = (caller.key[0].upper() + caller.key[1:])
+                                            remover_possessive = rules.pronoun_possessive(caller)
                                         else:
-                                            wearer = "Someone"
-                                            wearer_possessive = "their"
+                                            remover = "Someone"
+                                            remover_possessive = "their"
 
                                         # Address visibility of object worn.
                                         if rules.is_visible(eq, looker):
-                                            worn = eq.key
+                                            removed = eq.key
                                         else:
-                                            worn = "something"
+                                            removed = "something"
 
                                         # As long as something was visible, give output.
-                                        if wearer != "Someone" or worn != "something":
-                                            looker.msg("%s no longer holds %s in %s hands." % (wearer, worn, wearer_possessive))      
+                                        if remover != "Someone" or removed != "something":
+                                            looker.msg("%s no longer holds %s in %s hands." % (remover, removed, remover_possessive))      
                             else:
                                 caller.msg("You remove %s from your %s." % (eq_current.name, eq_current.db.wear_location))
                                 # Deal with invisible objects/characters for output.
@@ -693,21 +718,21 @@ class CmdWear(MuxCommand):
                                     if looker != caller:
                                         # Address visibility of character wearing.
                                         if rules.is_visible(caller, looker):
-                                            wearer = (caller.key[0].upper() + caller.key[1:])
-                                            wearer_possessive = rules.pronoun_possessive(caller)
+                                            remover = (caller.key[0].upper() + caller.key[1:])
+                                            remover_possessive = rules.pronoun_possessive(caller)
                                         else:
-                                            wearer = "Someone"
-                                            wearer_possessive = "their"
+                                            remover = "Someone"
+                                            remover_possessive = "their"
 
                                         # Address visibility of object worn.
                                         if rules.is_visible(eq, looker):
-                                            worn = eq.key
+                                            removed = eq.key
                                         else:
-                                            worn = "something"
+                                            removed = "something"
 
                                         # As long as something was visible, give output.
-                                        if wearer != "Someone" or worn != "something":
-                                            looker.msg("%s removes %s from %s %s." % (wearer, worn, wearer_possessive, eq.db.wear_location))        
+                                        if remover != "Someone" or removed != "something":
+                                            looker.msg("%s removes %s from %s %s." % (remover, removed, remover_possessive, eq.db.wear_location))        
 
                 # If a location is open, just wear it.
                 success = eq.wear_to(caller)
@@ -715,44 +740,187 @@ class CmdWear(MuxCommand):
                     caller.msg("You cannot wear %s." % eq.key)
                 else:
                     if wear_location == "light":
-                        room_wear_string = "%s holds %s as a %s." % (caller.name, eq.name, wear_location)
-                        self_wear_string = "You hold %s as a %s." % (eq.name, wear_location)
+                        caller.msg("You light %s and hold it as a %s." % (eq.name, wear_location))
+                        # Deal with invisible objects/characters for output.
+                        # Assemble a list of all possible lookers.
+                        lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+                        for looker in lookers:
+                            # Exclude the caller, who got their output above.
+                            if looker != caller:
+                                # Address visibility of character wearing.
+                                if rules.is_visible(caller, looker):
+                                    wearer = (caller.key[0].upper() + caller.key[1:])
+                                else:
+                                    wearer = "Someone"
+
+                                # Address visibility of object worn.
+                                if rules.is_visible(eq, looker):
+                                    worn = eq.key
+                                else:
+                                    worn = "something"
+
+                                # As long as something was visible, give output.
+                                if wearer != "Someone" or worn != "something":
+                                    looker.msg("%s lights %s, and holds it as a light." % (wearer, worn))                             
+                        
                     elif wear_location == "neck" or wear_location == "wrist" or wear_location == "waist":
-                        room_wear_string = "%s wears %s around %s %s." % (caller.name,
-                                                                          eq.name,
-                                                                          rules.pronoun_possessive(caller),
-                                                                          wear_location
-                                                                          )
-                        self_wear_string = "You wear %s around your %s." % (eq.name, wear_location)
+                        caller.msg("You wear %s around your %s." % (eq.name, wear_location))
+                        
+                        # Deal with invisible objects/characters for output.
+                        # Assemble a list of all possible lookers.
+                        lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+                        for looker in lookers:
+                            # Exclude the caller, who got their output above.
+                            if looker != caller:
+                                # Address visibility of character wearing.
+                                if rules.is_visible(caller, looker):
+                                    wearer = (caller.key[0].upper() + caller.key[1:])
+                                    wearer_possessive = rules.pronoun_possessive(caller)
+                                else:
+                                    wearer = "Someone"
+                                    wearer_possessive = "their"
+
+                                # Address visibility of object worn.
+                                if rules.is_visible(eq, looker):
+                                    worn = eq.key
+                                else:
+                                    worn = "something"
+
+                                # As long as something was visible, give output.
+                                if wearer != "Someone" or worn != "something":
+                                    looker.msg("%s wears %s around %s %s." % (wearer, worn, wearer_possessive, wear_location))                             
+                        
                     elif wear_location == "about body":
-                        room_wear_string = "%s wears %s about %s body." % (caller.name,
-                                                                           eq.name,
-                                                                           rules.pronoun_possessive(caller)
-                                                                           )
-                        self_wear_string = "You wear %s about your body." % (eq.name)
+                        caller.msg("You wear %s about your body." % (eq.name))
+                        
+                        # Deal with invisible objects/characters for output.
+                        # Assemble a list of all possible lookers.
+                        lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+                        for looker in lookers:
+                            # Exclude the caller, who got their output above.
+                            if looker != caller:
+                                # Address visibility of character wearing.
+                                if rules.is_visible(caller, looker):
+                                    wearer = (caller.key[0].upper() + caller.key[1:])
+                                    wearer_possessive = rules.pronoun_possessive(caller)
+                                else:
+                                    wearer = "Someone"
+                                    wearer_possessive = "their"
+
+                                # Address visibility of object worn.
+                                if rules.is_visible(eq, looker):
+                                    worn = eq.key
+                                else:
+                                    worn = "something"
+
+                                # As long as something was visible, give output.
+                                if wearer != "Someone" or worn != "something":
+                                    looker.msg("%s wears %s about %s body." % (wearer, worn, wearer_possessive))                             
+                        
                     elif wear_location == "pride":
-                        room_wear_string = "%s pins on %s and wears it with pride." % (caller.name, eq.name)
-                        self_wear_string = "You pin on %s and wear it with pride." % (eq.name)
+                        caller.msg("You pin on %s and wear it with pride." % (eq.name))
+                        
+                        # Deal with invisible objects/characters for output.
+                        # Assemble a list of all possible lookers.
+                        lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+                        for looker in lookers:
+                            # Exclude the caller, who got their output above.
+                            if looker != caller:
+                                # Address visibility of character wearing.
+                                if rules.is_visible(caller, looker):
+                                    wearer = (caller.key[0].upper() + caller.key[1:])
+                                else:
+                                    wearer = "Someone"
+                                
+                                # Address visibility of object worn.
+                                if rules.is_visible(eq, looker):
+                                    worn = eq.key
+                                else:
+                                    worn = "something"
+
+                                # As long as something was visible, give output.
+                                if wearer != "Someone" or worn != "something":
+                                    looker.msg("%s pins on %s and wears it with pride." % (wearer, worn))                             
+                        
                     elif wear_location == "shield":
-                        room_wear_string = "%s holds %s as a shield." % (caller.name, eq.name)
-                        self_wear_string = "You hold %s as a shield." % (eq.name)
+                        caller.msg("You hold %s as a shield." % (eq.name))
+                        # Deal with invisible objects/characters for output.
+                        # Assemble a list of all possible lookers.
+                        lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+                        for looker in lookers:
+                            # Exclude the caller, who got their output above.
+                            if looker != caller:
+                                # Address visibility of character wearing.
+                                if rules.is_visible(caller, looker):
+                                    wearer = (caller.key[0].upper() + caller.key[1:])
+                                else:
+                                    wearer = "Someone"
+                                
+                                # Address visibility of object worn.
+                                if rules.is_visible(eq, looker):
+                                    worn = eq.key
+                                else:
+                                    worn = "something"
+
+                                # As long as something was visible, give output.
+                                if wearer != "Someone" or worn != "something":
+                                    looker.msg("%s holds %s as a shield." % (wearer, worn))                             
+                        
                     elif wear_location == "held, in hands":
-                        room_wear_string = "%s holds %s in %s hands." % (caller.name,
-                                                                         eq.name,
-                                                                         rules.pronoun_possessive(caller)
-                                                                         )
                         self_wear_string = "You hold %s in your hands." % (eq.name)
+                        
+                        # Deal with invisible objects/characters for output.
+                        # Assemble a list of all possible lookers.
+                        lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+                        for looker in lookers:
+                            # Exclude the caller, who got their output above.
+                            if looker != caller:
+                                # Address visibility of character wearing.
+                                if rules.is_visible(caller, looker):
+                                    wearer = (caller.key[0].upper() + caller.key[1:])
+                                    wearer_possessive = rules.pronoun_possessive(caller)
+                                else:
+                                    wearer = "Someone"
+                                    wearer_possessive = "their"
+
+                                # Address visibility of object worn.
+                                if rules.is_visible(eq, looker):
+                                    worn = eq.key
+                                else:
+                                    worn = "something"
+
+                                # As long as something was visible, give output.
+                                if wearer != "Someone" or worn != "something":
+                                    looker.msg("%s holds %s in %s hands." % (wearer, worn, wearer_possessive))     
+                        
                     else:
-                        room_wear_string = "%s wears %s on %s %s." % (caller.name,
-                                                                      eq.name,
-                                                                      rules.pronoun_possessive(caller),
-                                                                      eq.db.wear_location
-                                                                      )
                         self_wear_string = "You wear %s on your %s." % (eq.name, eq.db.wear_location)
+                        
+                        
+                        # Deal with invisible objects/characters for output.
+                        # Assemble a list of all possible lookers.
+                        lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+                        for looker in lookers:
+                            # Exclude the caller, who got their output above.
+                            if looker != caller:
+                                # Address visibility of character wearing.
+                                if rules.is_visible(caller, looker):
+                                    wearer = (caller.key[0].upper() + caller.key[1:])
+                                    wearer_possessive = rules.pronoun_possessive(caller)
+                                else:
+                                    wearer = "Someone"
+                                    wearer_possessive = "their"
 
-                    caller.msg(self_wear_string)
-                    caller.location.msg_contents(room_wear_string, exclude=caller)
+                                # Address visibility of object worn.
+                                if rules.is_visible(eq, looker):
+                                    worn = eq.key
+                                else:
+                                    worn = "something"
 
+                                # As long as something was visible, give output.
+                                if wearer != "Someone" or worn != "something":
+                                    looker.msg("%s wears %s on %s %s." % (wearer, worn, wearer_possessive, eq.db.wear_location))     
+                                    
                     if not eq.at_after_equip(caller):
                         return
 
@@ -895,12 +1063,13 @@ class CmdWield(MuxCommand):
             caller.msg("What do you want to wield?")
             return
         
-        weapon = caller.search(self.args, location=caller)
+        # First search for items on the caller that are not equipped.
+        not_equipped = search.search_object(False, attribute_name="equipped", candidates=caller.contents)
+        visible_candidates = list(object for object in not_equipped if rules.is_visible(object, caller))
+        # Then search those for the item to be worn.
+        weapon = caller.search(self.args, candidates=visible_candidates)
 
         if not weapon:
-            caller.msg("You do not have %s to wield." % self.args)
-            return
-        elif not rules.is_visible(weapon, caller):
             caller.msg("You do not have %s to wield." % self.args)
             return
         if caller == weapon:
@@ -912,13 +1081,6 @@ class CmdWield(MuxCommand):
             caller.msg("%s is not a weapon. Try wearing it or holding it instead." % (weapon.key[0].upper() + weapon.key[1:]))
             return
         
-        # check to make sure character is not already wearing the equipment.
-        
-        if weapon.db.equipped:
-            caller.msg("You are already wielding that!")
-            return
-        
-
        # check for whether character is high enough level to wield
         
         if not weapon.access(caller, "equip"):
@@ -947,21 +1109,56 @@ class CmdWield(MuxCommand):
                     caller.msg("You cannot remove this.")
                 else:
                     caller.msg("You no longer wield %s as a weapon." % eq.name)
-                    caller.location.msg_contents("%s no longer wields %s as a weapon."
-                                                 % (
-                                                    caller.name,
-                                                    eq.name
-                                                    ), exclude=caller
-                                                 )
+
+                    # Deal with invisible objects/characters for output.
+                    # Assemble a list of all possible lookers.
+                    lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+                    for looker in lookers:
+                        # Exclude the caller, who got their output above.
+                        if looker != caller:
+                            # Address visibility of character wearing.
+                            if rules.is_visible(caller, looker):
+                                wearer = (caller.key[0].upper() + caller.key[1:])
+                            else:
+                                wearer = "Someone"
+
+                            # Address visibility of object worn.
+                            if rules.is_visible(eq, looker):
+                                worn = eq.key
+                            else:
+                                worn = "something"
+
+                            # As long as something was visible, give output.
+                            if wearer != "Someone" or worn != "something":
+                                looker.msg("%s no longer wields %s as a weapon." % (wearer, worn))         
 
         success = weapon.wield_to(caller)
         if not success:
             caller.msg("You cannot wield this.")
         else:
             caller.msg("You wield %s as a weapon." % weapon.name)
-            caller.location.msg_contents(
-                "%s wields a %s as a weapon." % (caller.name, weapon.name), exclude=caller
-            )
+
+            # Deal with invisible objects/characters for output.
+            # Assemble a list of all possible lookers.
+            lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+            for looker in lookers:
+                # Exclude the caller, who got their output above.
+                if looker != caller:
+                    # Address visibility of character wearing.
+                    if rules.is_visible(caller, looker):
+                        wearer = (caller.key[0].upper() + caller.key[1:])
+                    else:
+                        wearer = "Someone"
+
+                    # Address visibility of object worn.
+                    if rules.is_visible(eq, looker):
+                        worn = weapon.key
+                    else:
+                        worn = "something"
+
+                    # As long as something was visible, give output.
+                    if wearer != "Someone" or worn != "something":
+                        looker.msg("%s wields %s as a weapon." % (wearer, worn))         
 
         if not weapon.at_after_equip(caller):
             return
