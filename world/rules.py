@@ -319,7 +319,29 @@ def check_ready_to_level(character):
         return True
     else:
         return False
+
+def check_return_visible(character):
+    """
+    This function is designed to be used with offensive spells
+    or attacks to determine whether the character is hidden or
+    invisible, and, if so, cancel that state and give appropriate
+    output to the character's room that they are returning to
+    visibility.
+    """
     
+    if character.get_affect_status("hide"):
+        rules.affect_remove(character,
+                            "hide",
+                            "You are no longer hidden.",
+                            "%s emerges from the shadows." % (character.key[0].upper() + character.key[1:])
+                            )
+    
+    if character.get_affect_status("invisible"):
+        rules.affect_remove(character,
+                            "invisible",
+                            "You are no longer invisible.",
+                            "%s shimmers and appears visible." % (character.key[0].upper() + character.key[1:])
+                            )
 
 def classes_current(character, **kwargs):
     """
