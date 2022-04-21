@@ -340,7 +340,7 @@ def check_return_visible(character):
         rules.affect_remove(character,
                             "invisible",
                             "You are no longer invisible.",
-                            "%s shimmers and appears visible." % (character.key[0].upper() + character.key[1:])
+                            "A roughly-humanoid shape shimmers and %s becomes visible." % (character.key[0].upper() + character.key[1:])
                             )
 
 def classes_current(character, **kwargs):
