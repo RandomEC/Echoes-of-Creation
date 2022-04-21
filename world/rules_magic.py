@@ -41,8 +41,18 @@ def do_adrenaline_control(caster, target, mana_cost):
         player_output_magic_chant(caster, "adrenaline control")
 
         target.msg("You have given yourself an adrenaline rush!")
-        caster.location.msg_contents("%s has given %s an adrenaline rush!" % ((target.key[0].upper() + target.key[1:]), rules.pronoun_reflexive(target)), exclude=caster)
+        
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in character.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for looker in lookers:
+            # Exclude the character, who got their output above.
+            if looker != character:
 
+                # Give output to those who can see the caster.
+                if rules.is_visible(caster, looker):
+                    looker.msg("%s has given %s an adrenaline rush!" % ((caster.key[0].upper() + caster.key[1:]), rules.pronoun_reflexive(caster)))
+        
         rules.affect_apply(target,
                            "adrenaline control",
                            (caster.level - 5),
@@ -101,6 +111,8 @@ def do_agitation(caster, target, mana_cost):
         caster.msg("You chant 'agitation'.\n")
         player_output_magic_chant(caster, "agitation")
 
+        rules.check_return_visible(caster)
+        
         attacker_output = ("You |g%s|n %s with your molecular agitation.\n" % (rules_combat.get_damagestring("attacker", damage),
                                                                           target.key
                                                                           ))
