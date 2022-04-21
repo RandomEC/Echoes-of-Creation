@@ -39,38 +39,43 @@ class Combat_2(Object):
         Checks to see whether the combat should end.
         """
 
-        # Default is to end the combat.
-        combat_end = True
-        
-        # Compile a list of all combatants.
-        combatant_list = list(combatant for combatant in self.db.combatants)
+        try:
+            # Default is to end the combat.
+            combat_end = True
 
-        # Check to see what type of combatant the first one is, to check the remainder against
-        if "mobile" in combatant_list[0].tags.all():
-            first_combatant_type = "mobile"
-        else:
-            first_combatant_type = "player"
+            # Compile a list of all combatants.
+            combatant_list = list(combatant for combatant in self.db.combatants)
 
-        # Cycle through combatants.
-        for combatant in combatant_list:
-            
-            # Get the combatant type.
-            if "mobile" in combatant.tags.all():
-                combatant_type = "mobile"
+            # Check to see what type of combatant the first one is, to check the remainder against
+            if "mobile" in combatant_list[0].tags.all():
+                first_combatant_type = "mobile"
             else:
-                combatant_type = "player"
+                first_combatant_type = "player"
 
-            # Check type against first one. If any awake combatants are different, set 
-            # combat_end to False, and stop looking.
-            if combatant_type != first_combatant_type and combatant.position != "sleeping":
-                combat_end = False
-                break;
+            # Cycle through combatants.
+            for combatant in combatant_list:
 
-        # If it should end after all that, stop the combat and delete the combat object.
-        if combat_end == True:
-            self.at_stop()
-            self.delete()
+                # Get the combatant type.
+                if "mobile" in combatant.tags.all():
+                    combatant_type = "mobile"
+                else:
+                    combatant_type = "player"
 
+                # Check type against first one. If any awake combatants are different, set 
+                # combat_end to False, and stop looking.
+                if combatant_type != first_combatant_type and combatant.position != "sleeping":
+                    combat_end = False
+                    break;
+
+            # If it should end after all that, stop the combat and delete the combat object.
+            if combat_end == True:
+                self.at_stop()
+                self.delete()
+
+        except Exception:
+            logger.log_file("Error in combat end check.", filename="combat.log")
+
+                
     def combatant_add(self, combatant, combatant_target):
 
         # Add combatant to handler
