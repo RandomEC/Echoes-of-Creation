@@ -15,7 +15,7 @@ def allow_attacks(combatant, target, combat):
     """
 
     # Are both the attacker and target alive?
-    if combatant.hitpoints_current <= 0 or if target.hitpoints_current <= 0:
+    if combatant.hitpoints_current <= 0 or target.hitpoints_current <= 0:
         return False
 
     # Are both the combatant and target in the same room as the combat?
