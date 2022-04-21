@@ -796,7 +796,9 @@ def get_visual_output(object, looker, **kwargs):
     
     Supports the following kwargs:
     possessive=True - if a mobile or player is the object, will return
-                      the correct possessive pronoun output.    
+                      the correct possessive pronoun output.
+    reflexive=True - if a mobile or player is the object, will return
+                      the correct possessive pronoun output.
     """
     
     if "mobile" in object.tags.all() or "player" in object.tags.all():
@@ -806,6 +808,13 @@ def get_visual_output(object, looker, **kwargs):
                     return possessive_pronoun(object)
                 else:
                     return "their"
+                
+        if "reflexive" in kwargs;
+            if kwargs["reflexive"]:
+                if is_visible(object, looker):
+                    return reflexive_pronoun(object)
+                else:
+                    return "themselves"        
         
         if is_visible(object, looker):
             return object.key
