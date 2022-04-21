@@ -74,7 +74,7 @@ class Combat_2(Object):
 
         except Exception:
             logger.log_file("Error in combat end check.", filename="combat.log")
-
+            logger.log_trace("Error in combat end check.")
                 
     def combatant_add(self, combatant, combatant_target):
 
@@ -181,6 +181,7 @@ class Combat_2(Object):
                         combatant.msg(prompt=prompt)
             except Exception:
                 logger.log_file("Error in trying to give end of round output.", filename="combat.log")
+                logger.log_trace("Error in trying to give end of round output.")
 
         if self.db.combatants:
             self.db.rounds += 1
@@ -224,6 +225,7 @@ class Combat_2(Object):
                                 break
         except Exception:
             logger.log_file("Error in checking to have mobiles jump in.", filename="combat.log")
+            logger.log_trace("Error in checking to have mobiles jump in.")
 
 
                             
@@ -253,7 +255,8 @@ def allow_attacks(combatant, target, combat):
 
     except Exception:
         logger.log_file("Error in checking whether attacks are allowed. Combatant = %s, target = %s, combat = %s." % (combatant.key, target.key, combat.key), filename="combat.log")
-
+        logger.log_trace("Error in checking whether attacks are allowed.")
+        
 def do_attack(attacker, victim, eq_slot, combat, **kwargs):
     """
     This function implements the effects of a single hit. It
@@ -378,6 +381,7 @@ def do_attack(attacker, victim, eq_slot, combat, **kwargs):
                             rules_skills.check_skill_improve(victim, "parry", True, 5)
         except Exception:
             logger.log_file("Error in doing parry and dodge tests. Attacker = %s, victim = %s." % (attacker.key, victim.key), filename="combat.log")
+            logger.log_trace("Error in doing parry and dodge tests.")
 
     # Get the damage type next.
     if "type" in kwargs:
@@ -449,13 +453,14 @@ def do_attack(attacker, victim, eq_slot, combat, **kwargs):
             
         except Exception:
             logger.log_file("Error in doing experience award in do_attack. Attacker = %s, victim = %s" % (attacker.key, victim.key), filename="combat.log")
+            logger.log_trace("Error in doing experience award in do_attack.")
             
         # Do damage to the victim.
         try:
             victim.take_damage(damage)
         except Exception:
             logger.log_file("Error in damaging victim in do_attack, victim = %s" % victim.key, filename="combat.log")
-            
+            logger.log_trace("Error in damaging victim in do_attack.")
 
         # Get the victim started healing, if not already.
         try:
@@ -469,6 +474,7 @@ def do_attack(attacker, victim, eq_slot, combat, **kwargs):
                 victim.db.heal_ticker = timestamp
         except Exception:
             logger.log_file("Error in checking if healing needed in do_attack, victim = %s" % victim.key, filename="combat.log")
+            logger.log_trace("Error in checking if healing needed in do_attack.")
             
         # Step three - give output.
         try:
@@ -500,6 +506,7 @@ def do_attack(attacker, victim, eq_slot, combat, **kwargs):
                                )
         except Exception:
             logger.log_file("Error in giving hit output in do_attack. Attacker = %s, victim = %s." % (attacker.key, victim.key), filename="combat.log")
+            logger.log_trace("Error in giving hit output in do_attack.")
         
         try:
             if "hit" in kwargs:
@@ -518,7 +525,7 @@ def do_attack(attacker, victim, eq_slot, combat, **kwargs):
                                             % (damage_type, damage))
         except Exception:
             logger.log_file("Error in checking for single-hit record in do_attack. Attacker = %s" % attacker.key, filename="combat.log")
-                        
+            logger.log_trace("Error in checking for single-hit record in do_attack.")            
         # Check at the end of processing hit to see if the victim is dead.
         if victim.hitpoints_current <= 0:
             # If dead as a result of a special attack.
@@ -666,7 +673,8 @@ def do_death(attacker, victim, combat, **kwargs):
                                        exclude=(attacker, victim))
     except Exception:
         logger.log_file("Error in giving output of death in do_death. Attacker = %s, victim = %s." % (attacker.key, victim.key), filename="combat.log")
-
+        logger.log_trace("Error in giving output of death in do_death.")
+        
     if "mobile" in victim.tags.all():
 
         # Step 1 of mobile death - handle the corpse.
@@ -684,7 +692,7 @@ def do_death(attacker, victim, combat, **kwargs):
                     break
         except Exception:
             logger.log_file("Error in finding mobile corpse in do_death. Victim = %s." % victim.key, filename="combat.log")
-                    
+            logger.log_trace("Error in finding mobile corpse in do_death.")        
         # 1(b) If no ready corpse, make one.
         try:
             if not corpse:
@@ -696,13 +704,15 @@ def do_death(attacker, victim, combat, **kwargs):
             corpse.location = attacker.location
         except Exception:
             logger.log_file("Error in creating mobile corpse in do_death. Victim = %s" % victim.key, filename="combat.log")
-
+            logger.log_trace("Error in creating mobile corpse in do_death.")
+            
         # 1(c) Set the corpse to disintegrate.
         try:
             rules.set_disintegrate_timer(corpse)
         except Exception:
             logger.log_file("Error in setting mobile corpse disintegrate in do_death.", filename="combat.log")
-
+            logger.log_trace("Error in setting mobile corpse disintegrate in do_death.")
+            
         # 1(d) Move all victim items to corpse, if any.
         try:
             for item in victim.contents:
@@ -711,6 +721,7 @@ def do_death(attacker, victim, combat, **kwargs):
                 item.move_to(corpse, quiet=True)
         except Exception:
             logger.log_file("Error in moving items to mobile corpse. Victim = %s." % victim.key, filename="combat.log")
+            logger.log_trace("Error in moving items to mobile corpse.")
         
         # Step 2 - Clean up the mobile.
         try: 
@@ -734,6 +745,7 @@ def do_death(attacker, victim, combat, **kwargs):
 
         except Exception:
             logger.log_file("Error in cleaning up mobile in do_death. Victim = %s." % victim.key, filename="combat.log")
+            logger.log_trace("Error in cleaning up mobile in do_death.")
             
         # Step 3 Add victim to reset list.
         try:
@@ -745,6 +757,7 @@ def do_death(attacker, victim, combat, **kwargs):
             
         except Exception:
             logger.log_file("Error in adding dead mobile to reset list in do_death. Victim = %s." % victim.key, filename="combat.log")
+            logger.log_trace("Error in adding dead mobile to reset list in do_death.")
 
         # Step 4 Handle death experience.
         
@@ -763,6 +776,7 @@ def do_death(attacker, victim, combat, **kwargs):
 
         except Exception:
             logger.log_file("Error in awarding death experience in do_death. Attacker = %s." % attacker.key, filename="combat.log")
+            logger.log_trace("Error in awarding death experience in do_death.")
                 
         # 4(b) Check if experience was more than previous best kill.
         try:
@@ -778,13 +792,15 @@ def do_death(attacker, victim, combat, **kwargs):
                                  "from %s.\n" % (victim.db.experience_total, victim.key))
         except Exception:
             logger.log_file("Error in checking if experience exceeded best kill on mobile death. Attacker = %s." % attacker.key, filename="combat.log")
-
+            logger.log_trace("Error in checking if experience exceeded best kill on mobile death.")
+            
         # Step 5 Give the attacker a look at the corpse after it dies
         try:
             corpse_look = attacker.at_look(corpse)
             attacker.msg("%s\n" % corpse_look)
         except Exception:
             logger.log_file("Error in giving look at mobile corpse. Attacker = %s, corpse = %s." % (attacker.key, corpse.key), filename="combat.log")
+            logger.log_trace("Error in giving look at mobile corpse.")
             
         # Step 6 Increment player kills.
         attacker.db.kills += 1
@@ -809,6 +825,7 @@ def do_death(attacker, victim, combat, **kwargs):
                                                   )
         except Exception:
             logger.log_file("Error in updating player alignment in do_death. Attacker = %s." % attacker.key, filename="combat.log")
+            logger.log_trace("Error in updating player alignment in do_death.")
 
         # Figure out how to calculate gold on mobile and award.
 
