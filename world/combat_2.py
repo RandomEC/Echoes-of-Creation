@@ -243,11 +243,11 @@ def allow_attacks(combatant, target, combat):
         # Are both the combatant and target in the same room as the combat?
         if combatant.location != combat.location or target.location != combat.location:
             return False
+       
+        return True
+
     except Exception:
         logger.log_file("Error in checking whether attacks are allowed. Combatant = %s, target = %s, combat = %s." % (combatant.key, target.key, combat.key), filename="combat.log")
-
-        
-    return True
 
 def do_attack(attacker, victim, eq_slot, combat, **kwargs):
     """
@@ -708,79 +708,102 @@ def do_death(attacker, victim, combat, **kwargs):
             logger.log_file("Error in moving items to mobile corpse. Victim = %s." % victim.key, filename="combat.log")
         
         # Step 2 - Clean up the mobile.
-        # Clear spell affects and return calls.
-        if victim.db.spell_affects:
-            for affect_name in victim.db.spell_affects:
-                rules.affect_remove(victim, affect_name, "", "")
+        try: 
+            # Clear spell affects and return calls.
+            if victim.db.spell_affects:
+                for affect_name in victim.db.spell_affects:
+                    rules.affect_remove(victim, affect_name, "", "")
 
-        # Clear wait state.
-        if victim.ndb.wait_state:
-            rules.wait_state_remove(victim)
+            # Clear wait state.
+            if victim.ndb.wait_state:
+                rules.wait_state_remove(victim)
 
-        # Reset damage.
-        victim.db.hitpoints["damaged"] = 0
+            # Reset damage.
+            victim.db.hitpoints["damaged"] = 0
 
-        # Move victim to None location to be reset later.
-        victim.location = None
+            # Return victim to standing.
+            victim.db.position = "standing"
 
-        # Return victim to standing.
-        victim.db.position = "standing"
+            # Move victim to None location to be reset later.
+            victim.location = None
 
+        except Exception:
+            logger.log_file("Error in cleaning up mobile in do_death. Victim = %s." % victim.key, filename="combat.log")
+            
         # Step 3 Add victim to reset list.
-        reset_script = search.script_search("reset_script")[0]
-        area = rules.get_area_name(victim)
+        try:
+            
+            reset_script = search.script_search("reset_script")[0]
+            area = rules.get_area_name(victim)
 
-        reset_script.db.area_list[area]["resets"].append(victim)
+            reset_script.db.area_list[area]["resets"].append(victim)
+            
+        except Exception:
+            logger.log_file("Error in adding dead mobile to reset list in do_death. Victim = %s." % victim.key, filename="combat.log")
 
         # Step 4 Handle death experience.
-        # 4(a) Award death experience.
-        if "player" in attacker.tags.all():
-            experience_modified = \
-                modify_experience(attacker,
-                                  victim,
-                                  victim.db.experience_current
-                                  )
-            attacker.db.experience_total += experience_modified
+        
+        try:
+            # 4(a) Award death experience.
+            if "player" in attacker.tags.all():
+                experience_modified = \
+                    modify_experience(attacker,
+                                      victim,
+                                      victim.db.experience_current
+                                      )
+                attacker.db.experience_total += experience_modified
 
-            attacker.msg("You receive %s experience as a result of "
-                             "your kill!\n" % experience_modified)
+                attacker.msg("You receive %s experience as a result of "
+                                 "your kill!\n" % experience_modified)
 
+        except Exception:
+            logger.log_file("Error in awarding death experience in do_death. Attacker = %s." % attacker.key, filename="combat.log")
+                
         # 4(b) Check if experience was more than previous best kill.
-        total_modified_experience = modify_experience(attacker, victim, victim.db.experience_total)
+        try:
+            total_modified_experience = modify_experience(attacker, victim, victim.db.experience_total)
 
-        if total_modified_experience > attacker.db.kill_experience_maximum:
-            attacker.db.kill_experience_maximum = total_modified_experience
-            attacker.db.kill_experience_maximum_mobile = victim.key
+            if total_modified_experience > attacker.db.kill_experience_maximum:
+                attacker.db.kill_experience_maximum = total_modified_experience
+                attacker.db.kill_experience_maximum_mobile = victim.key
 
-            attacker.msg("That kill is your new record for most "
-                             "experience obtained for a kill!\n"
-                             "You received a total of %d experience "
-                             "from %s.\n" % (victim.db.experience_total, victim.key))
+                attacker.msg("That kill is your new record for most "
+                                 "experience obtained for a kill!\n"
+                                 "You received a total of %d experience "
+                                 "from %s.\n" % (victim.db.experience_total, victim.key))
+        except Exception:
+            logger.log_file("Error in checking if experience exceeded best kill on mobile death. Attacker = %s." % attacker.key, filename="combat.log")
 
         # Step 5 Give the attacker a look at the corpse after it dies
-        corpse_look = attacker.at_look(corpse)
-        attacker.msg("%s\n" % corpse_look)
-
+        try:
+            corpse_look = attacker.at_look(corpse)
+            attacker.msg("%s\n" % corpse_look)
+        except Exception:
+            logger.log_file("Error in giving look at mobile corpse. Attacker = %s, corpse = %s." % (attacker.key, corpse.key), filename="combat.log")
+            
         # Step 6 Increment player kills.
         attacker.db.kills += 1
 
         # Step 7 Update player alignment.
-        if "player" in attacker.tags.all():
-            if victim.db.alignment > 0:
-                directional_modifier = 1
-            else:
-                directional_modifier = -1
+        try:
+            if "player" in attacker.tags.all():
+                if victim.db.alignment > 0:
+                    directional_modifier = 1
+                else:
+                    directional_modifier = -1
 
-            attacker.db.alignment = math.ceil(attacker.db.alignment -
-                                              victim.db.alignment *
-                                              (1000 +
-                                               directional_modifier *
-                                               attacker.db.alignment
-                                               ) *
-                                              (1000 +
-                                               abs(attacker.db.alignment)
-                                               ) / 50000000
-                                              )
+                attacker.db.alignment = math.ceil(attacker.db.alignment -
+                                                  victim.db.alignment *
+                                                  (1000 +
+                                                   directional_modifier *
+                                                   attacker.db.alignment
+                                                   ) *
+                                                  (1000 +
+                                                   abs(attacker.db.alignment)
+                                                   ) / 50000000
+                                                  )
+        except Exception:
+            logger.log_file("Error in updating player alignment in do_death. Attacker = %s." % attacker.key, filename="combat.log")
 
         # Figure out how to calculate gold on mobile and award.
 
