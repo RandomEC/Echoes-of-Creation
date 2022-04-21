@@ -1350,16 +1350,20 @@ def get_damagestring(combatant, damage):
 
 
 def get_damagetype(attacker):
-    if attacker.db.eq_slots["wielded, primary"]:
-        weapon = attacker.db.eq_slots["wielded, primary"]
-        damagetype = weapon.db.weapon_type
-    else:
-        if "damage message" in rules_race.get_race(attacker.race):
-            damagetype = rules_race.get_race(attacker.race)["damage message"]
+    try:
+        if attacker.db.eq_slots["wielded, primary"]:
+            weapon = attacker.db.eq_slots["wielded, primary"]
+            damagetype = weapon.db.weapon_type
         else:
-            damagetype = "punch"
+            if "damage message" in rules_race.get_race(attacker.race):
+                damagetype = rules_race.get_race(attacker.race)["damage message"]
+            else:
+                damagetype = "punch"
 
-    return damagetype
+        return damagetype
+    except Exception:
+        logger.log_file("Error in get_damage_type. Attacker = %s." % attacker.key, filename="combat.log")
+        logger.log_trace("Error in get_damage_type.")                 
 
 
 def get_health_string(combatant):
@@ -1397,34 +1401,51 @@ def get_health_string(combatant):
 
 def get_hit_chance(attacker, victim):
 
-    hit_chance = int(100 * (get_hitskill(attacker, victim) +
-                            attacker.db.level -
-                            victim.db.level) /
-                     (get_hitskill(attacker, victim) + get_avoidskill(victim))
-                     )
+    try:
+        hit_chance = int(100 * (get_hitskill(attacker, victim) +
+                                attacker.db.level -
+                                victim.db.level) /
+                         (get_hitskill(attacker, victim) + get_avoidskill(victim))
+                         )
 
-    if hit_chance > 95:
-        return 95
-    elif hit_chance < 5:
-        return 5
-    else:
-        return hit_chance
+        if hit_chance > 95:
+            return 95
+        elif hit_chance < 5:
+            return 5
+        else:
+            return hit_chance
+    except Exception:
+        logger.log_file("Error in get_hit_chance. Attacker = %s, victim = %s." % (attacker.key, victim.key), filename="combat.log")
+        logger.log_trace("Error in get_hit_chance.")                 
 
 
 def get_hitskill(attacker, victim):
     # Make sure that hitroll does not include hitroll from weapon if can't
     # wield it.
-    hitskill = get_warskill(attacker) + attacker.hitroll + \
-        get_race_hitbonus(attacker, victim) + 10*(attacker.dexterity - 10)
-    if hitskill > 1:
-        return hitskill
-    else:
-        return 1
+    try:
+        hitskill = get_warskill(attacker) + attacker.hitroll + \
+            get_race_hitbonus(attacker, victim) + 10*(attacker.dexterity - 10)
+        if hitskill > 1:
+            return hitskill
+        else:
+            return 1
+    except Exception:
+        logger.log_file("Error in get_hitskill. Attacker = %s, victim = %s." % (attacker.key, victim.key), filename="combat.log")
+        logger.log_trace("Error in get_hitskill.")                 
 
 
 def get_race_hitbonus(attacker, victim):
-    hitbonus = victim.size - attacker.size
-    return hitbonus
+    """
+    Determines a hit bonus based on comparative race sizes of
+    combatants.
+    """
+
+    try:
+        hitbonus = victim.size - attacker.size
+        return hitbonus
+    except Exception:
+        logger.log_file("Error in get_race_hitbonus. Attacker = %s, victim = %s." % (attacker.key, victim.key), filename="combat.log")
+        logger.log_trace("Error in get_race_hitbonus.")                 
 
 
 def get_warskill(combatant):
@@ -1434,48 +1455,52 @@ def get_warskill(combatant):
     colleges they are specializing in.
     """
 
-    if "mobile" in combatant.tags.all():
-        warskill_factor = combatant.db.level / 101
-        warskill = int(120 * warskill_factor)
-        return warskill
-    else:
-        colleges = rules.classes_current(combatant)
-        max_warskill = 0
+    try:
+        if "mobile" in combatant.tags.all():
+            warskill_factor = combatant.db.level / 101
+            warskill = int(120 * warskill_factor)
+            return warskill
+        else:
+            colleges = rules.classes_current(combatant)
+            max_warskill = 0
 
-        for college in colleges:
-            if college == "default" and len(colleges) == 1:
-                max_warskill = 120
-            elif college == "mage":
-                if max_warskill < 65:
-                    max_warskill = 65
-            elif college == "cleric":
-                if max_warskill < 85:
-                    max_warskill = 85
-            elif college == "thief":
-                if max_warskill < 120:
+            for college in colleges:
+                if college == "default" and len(colleges) == 1:
                     max_warskill = 120
-            elif college == "warrior":
-                if max_warskill < 180:
-                    max_warskill = 180
-            elif college == "psionicist":
-                if max_warskill < 50:
-                    max_warskill = 50
-            elif college == "druid":
-                if max_warskill < 100:
-                    max_warskill = 100
-            elif college == "ranger":
-                if max_warskill < 140:
-                    max_warskill = 140
-            elif college == "paladin":
-                if max_warskill < 160:
-                    max_warskill = 160
-            elif college == "bard":
-                if max_warskill < 100:
-                    max_warskill = 100
+                elif college == "mage":
+                    if max_warskill < 65:
+                        max_warskill = 65
+                elif college == "cleric":
+                    if max_warskill < 85:
+                        max_warskill = 85
+                elif college == "thief":
+                    if max_warskill < 120:
+                        max_warskill = 120
+                elif college == "warrior":
+                    if max_warskill < 180:
+                        max_warskill = 180
+                elif college == "psionicist":
+                    if max_warskill < 50:
+                        max_warskill = 50
+                elif college == "druid":
+                    if max_warskill < 100:
+                        max_warskill = 100
+                elif college == "ranger":
+                    if max_warskill < 140:
+                        max_warskill = 140
+                elif college == "paladin":
+                    if max_warskill < 160:
+                        max_warskill = 160
+                elif college == "bard":
+                    if max_warskill < 100:
+                        max_warskill = 100
 
-        warskill_factor = combatant.db.level / 101
-        warskill = int(max_warskill * warskill_factor)
-        return warskill
+            warskill_factor = combatant.db.level / 101
+            warskill = int(max_warskill * warskill_factor)
+            return warskill
+    except Exception:
+        logger.log_file("Error in get_warskill. Attacker = %s." % combatant.key, filename="combat.log")
+        logger.log_trace("Error in get_warskill.")                 
 
 
 def hit_check(attacker, victim):
@@ -1484,11 +1509,15 @@ def hit_check(attacker, victim):
     hits.
     """
 
-    hit_chance = get_hit_chance(attacker, victim)
-    if random.randint(1, 100) <= hit_chance:
-        return True
-    else:
-        return False
+    try:
+        hit_chance = get_hit_chance(attacker, victim)
+        if random.randint(1, 100) <= hit_chance:
+            return True
+        else:
+            return False
+    except Exception:
+        logger.log_file("Error in hit_check. Attacker = %s, victim = %s." % (attacker.key, victim.key), filename="combat.log")
+        logger.log_trace("Error in hit_check.")                 
 
 
 def modify_experience(attacker, victim, experience):
