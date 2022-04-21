@@ -786,7 +786,39 @@ def get_area_name(object):
             area = tag[index][0]
     
     return area
+
+def get_visual_output(object, looker, **kwargs):
+    """
+    This function will take an object and a character looking at
+    that object, and return the appropriate output for that object-
+    looker pair. Output will have to be capitalized, as appropriate,
+    on the back-end.
     
+    Supports the following kwargs:
+    possessive=True - if a mobile or player is the object, will return
+                      the correct possessive pronoun output.    
+    """
+    
+    if "mobile" in object.tags.all() or "player" in object.tags.all():
+        if "possessive" in kwargs:
+            if kwargs["possessive"]:
+                if is_visible(object, looker):
+                    return possessive_pronoun(object)
+                else:
+                    return "their"
+        
+        if is_visible(object, looker):
+            return object.key
+        else:
+            return "someone"
+    
+    if "object" in object.tags.all():
+        if is_visible(object, looker):
+            return object.key
+        else:
+            return "something"
+        
+
 def hitpoints_cost(character):
     """
     This function determines the experience cost of getting an
