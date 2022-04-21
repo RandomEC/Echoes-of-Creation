@@ -3,6 +3,7 @@ import random
 import time
 from objects import Object
 from evennia import create_object
+from evennia import logger
 from evennia import TICKER_HANDLER as tickerhandler
 from evennia.utils import search
 from server.conf import settings
@@ -138,79 +139,86 @@ class Combat_2(Object):
             # First, check to make sure that combatant is still in the combat at this point.
             if combatant in self.db.combatants:
 
-                do_one_character_combat_turn(combatant, self.db.combatants[combatant], self)
+                try:
+                    do_one_character_combat_turn(combatant, self.db.combatants[combatant], self)
+                except Exception:
+                    logger.log_file("Error in trying to do_one_character_combat_turn", filename="combat.log")
 
         # At the end of the round, if the player and their target are still alive, and in combat,
         # tell them the status of their target.
-        for combatant in round_combatants_list:
-            
-            # Combatant is in the combat, and a player (no point in output to mobiles).
-            if combatant in self.db.combatants and "player" in combatant.tags.all():
-                
-                # Target's location is the same as combat.
-                if self.db.combatants[combatant].location == self.location:
-                    target = self.db.combatants[combatant]
-                    combat_message = ("%s %s\n" % ((target.key[0].upper() + target.key[1:]), get_health_string(target)))
-                    combatant.msg(combat_message)
+        try:
+            for combatant in round_combatants_list:
 
-                    if "wait_state" not in combatant.ndb.all:
-                        prompt_wait = "|gReady!|n"
-                    elif combatant.ndb.wait_state >= 12:
-                        prompt_wait = "|rCompleting action!"
-                    elif combatant.ndb.wait_state > 0:
-                        prompt_wait = "|yRecovering.|n"
-                    else:
-                        prompt_wait = "|gReady!|n"
-                    prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n %s>\n" % (combatant.hitpoints_current,
-                                                                                             combatant.hitpoints_maximum,
-                                                                                             combatant.mana_current,
-                                                                                             combatant.mana_maximum,
-                                                                                             combatant.moves_current,
-                                                                                             combatant.moves_maximum,
-                                                                                             prompt_wait)
-                    combatant.msg(prompt=prompt)
+                # Combatant is in the combat, and a player (no point in output to mobiles).
+                if combatant in self.db.combatants and "player" in combatant.tags.all():
 
+                    # Target's location is the same as combat.
+                    if self.db.combatants[combatant].location == self.location:
+                        target = self.db.combatants[combatant]
+                        combat_message = ("%s %s\n" % ((target.key[0].upper() + target.key[1:]), get_health_string(target)))
+                        combatant.msg(combat_message)
+
+                        if "wait_state" not in combatant.ndb.all:
+                            prompt_wait = "|gReady!|n"
+                        elif combatant.ndb.wait_state >= 12:
+                            prompt_wait = "|rCompleting action!"
+                        elif combatant.ndb.wait_state > 0:
+                            prompt_wait = "|yRecovering.|n"
+                        else:
+                            prompt_wait = "|gReady!|n"
+                        prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n %s>\n" % (combatant.hitpoints_current,
+                                                                                                 combatant.hitpoints_maximum,
+                                                                                                 combatant.mana_current,
+                                                                                                 combatant.mana_maximum,
+                                                                                                 combatant.moves_current,
+                                                                                                 combatant.moves_maximum,
+                                                                                                 prompt_wait)
+                        combatant.msg(prompt=prompt)
+            except Exception:
+                logger.log_file("Error in trying to give end of round output.", filename="combat.log")
 
         if self.db.combatants:
             self.db.rounds += 1
 
             self.combat_end_check()
+        try:
+            if self.db.combatants:
+                # Check to see if any other mobiles in the room jump in before the next round.
 
-        if self.db.combatants:
-            # Check to see if any other mobiles in the room jump in before the next round.
+                # Get all possible assisting mobiles.
+                possible_assists = []
+                for object in self.location.contents:
+                    if "mobile" in object.tags.all():
+                        if not object.ndb.combat_handler:
+                            possible_assists.append(object)
 
-            # Get all possible assisting mobiles.
-            possible_assists = []
-            for object in self.location.contents:
-                if "mobile" in object.tags.all():
-                    if not object.ndb.combat_handler:
-                        possible_assists.append(object)
+                # Get players that are in combat.
+                possible_targets = []
+                for combatant in self.db.combatants:
+                    if "player" in combatant.tags.all():
+                        possible_targets.append(combatant)
 
-            # Get players that are in combat.
-            possible_targets = []
-            for combatant in self.db.combatants:
-                if "player" in combatant.tags.all():
-                    possible_targets.append(combatant)
+                # Run through possible assisting mobiles.
+                for candidate in possible_assists:
 
-            # Run through possible assisting mobiles.
-            for candidate in possible_assists:
-
-                # Get a random seen player from those found.
-                seen_targets = []
-                for target in possible_targets:
-                    if rules.can_see(target, candidate):
-                        seen_targets.append(target)
-                if seen_targets:
-                    random_player = seen_targets[random.randint(0, (len(seen_targets) - 1))]
-                    if (candidate.level - 7) < random_player.level < (candidate.level + 7) and not (
-                            random_player.alignment > 333 and candidate.alignment > 333):
-                        to_be_assisted = self.db.combatants[random_player]["target"]
-                        if candidate.db.vnum == to_be_assisted.db.vnum:
-                            self.add_combatant(candidate, random_player)
-                            break
-                        elif random.randint(1, 8) == 1:
-                            self.add_combatant(candidate, random_player)
-                            break
+                    # Get a random seen player from those found.
+                    seen_targets = []
+                    for target in possible_targets:
+                        if rules.can_see(target, candidate):
+                            seen_targets.append(target)
+                    if seen_targets:
+                        random_player = seen_targets[random.randint(0, (len(seen_targets) - 1))]
+                        if (candidate.level - 7) < random_player.level < (candidate.level + 7) and not (
+                                random_player.alignment > 333 and candidate.alignment > 333):
+                            to_be_assisted = self.db.combatants[random_player]["target"]
+                            if candidate.db.vnum == to_be_assisted.db.vnum:
+                                self.add_combatant(candidate, random_player)
+                                break
+                            elif random.randint(1, 8) == 1:
+                                self.add_combatant(candidate, random_player)
+                                break
+        except Exception:
+            logger.log_file("Error in checking to have mobiles jump in.", filename="combat.log")
 
 
                             
@@ -227,15 +235,18 @@ def allow_attacks(combatant, target, combat):
     Checks whether the combatant and target for this round are still alive, returns
     True if so, False if not.
     """
+    try:
+        # Are both the attacker and target alive?
+        if combatant.hitpoints_current <= 0 or target.hitpoints_current <= 0:
+            return False
 
-    # Are both the attacker and target alive?
-    if combatant.hitpoints_current <= 0 or target.hitpoints_current <= 0:
-        return False
+        # Are both the combatant and target in the same room as the combat?
+        if combatant.location != combat.location or target.location != combat.location:
+            return False
+    except Exception:
+        logger.log_file("Error in checking whether attacks are allowed. Combatant = %s, target = %s, combat = %s." % (combatant.key, target.key, combat.key), filename="combat.log")
 
-    # Are both the combatant and target in the same room as the combat?
-    if combatant.location != combat.location or target.location != combat.location:
-        return False
-
+        
     return True
 
 def do_attack(attacker, victim, eq_slot, combat, **kwargs):
@@ -268,97 +279,100 @@ def do_attack(attacker, victim, eq_slot, combat, **kwargs):
     else:
         hit = hit_check(attacker, victim)
 
-        # Do checks for parry and dodge here, as they do not apply
-        # to special attacks like kick, fireball, etc. This will
-        # potentially turn hit to False from True, and create a
-        # True variable of either dodge or parry.
-        if hit:
-            chance = 0
-            # Randomize order of parry and dodge check - this way checks parry
-            # first, then dodge.
-            if random.randint(1, 2) > 1:
-                if "player" in victim.tags.all():
-                    if "parry" in victim.db.skills:
+        try:
+            # Do checks for parry and dodge here, as they do not apply
+            # to special attacks like kick, fireball, etc. This will
+            # potentially turn hit to False from True, and create a
+            # True variable of either dodge or parry.
+            if hit:
+                chance = 0
+                # Randomize order of parry and dodge check - this way checks parry
+                # first, then dodge.
+                if random.randint(1, 2) > 1:
+                    if "player" in victim.tags.all():
+                        if "parry" in victim.db.skills:
+                            if not victim.db.eq_slots["wielded, primary"]:
+                                if not victim.db.eq_slots["wielded, secondary"]:
+                                    chance = 0
+                                else:
+                                    chance = victim.db.skills["parry"] / 4
+                            else:
+                                chance = victim.db.skills["parry"] / 2
+
+                    elif "mobile" in victim.tags.all():
+                        chance = 2 * victim.level
+                        if chance > 57:
+                            chance = 57
                         if not victim.db.eq_slots["wielded, primary"]:
                             if not victim.db.eq_slots["wielded, secondary"]:
-                                chance = 0
+                                chance /= 2
                             else:
-                                chance = victim.db.skills["parry"] / 4
-                        else:
-                            chance = victim.db.skills["parry"] / 2
+                                chance = chance * 3 / 4
 
-                elif "mobile" in victim.tags.all():
-                    chance = 2 * victim.level
-                    if chance > 57:
-                        chance = 57
-                    if not victim.db.eq_slots["wielded, primary"]:
-                        if not victim.db.eq_slots["wielded, secondary"]:
-                            chance /= 2
-                        else:
-                            chance = chance * 3 / 4
+                    if random.randint(1, 100) <= (chance + victim.level - attacker.level) and chance > 0:
+                        hit = False
+                        parry = True
+                        if "player" in victim.tags.all():
+                            rules_skills.check_skill_improve(victim, "parry", True, 5)
 
-                if random.randint(1, 100) <= (chance + victim.level - attacker.level) and chance > 0:
-                    hit = False
-                    parry = True
                     if "player" in victim.tags.all():
-                        rules_skills.check_skill_improve(victim, "parry", True, 5)
+                        if "dodge" in victim.db.skills and parry == False:
+                            chance = victim.db.skills["dodge"] / 2
 
-                if "player" in victim.tags.all():
-                    if "dodge" in victim.db.skills and parry == False:
-                        chance = victim.db.skills["dodge"] / 2
+                    elif "mobile" in victim.tags.all() and parry == False:
+                        chance = 2 * victim.level
+                        if chance > 55:
+                            chance = 55
 
-                elif "mobile" in victim.tags.all() and parry == False:
-                    chance = 2 * victim.level
-                    if chance > 55:
-                        chance = 55
-
-                if random.randint(1, 100) <= (chance + victim.level - attacker.level) and parry == False and chance > 0:
-                    hit = False
-                    dodge = True
+                    if random.randint(1, 100) <= (chance + victim.level - attacker.level) and parry == False and chance > 0:
+                        hit = False
+                        dodge = True
+                        if "player" in victim.tags.all():
+                            rules_skills.check_skill_improve(victim, "dodge", True, 5)
+                # The other alternative - checking dodge, then parry.
+                else:
                     if "player" in victim.tags.all():
-                        rules_skills.check_skill_improve(victim, "dodge", True, 5)
-            # The other alternative - checking dodge, then parry.
-            else:
-                if "player" in victim.tags.all():
-                    if "dodge" in victim.db.skills:
-                        chance = victim.db.skills["dodge"] / 2
+                        if "dodge" in victim.db.skills:
+                            chance = victim.db.skills["dodge"] / 2
 
-                elif "mobile" in victim.tags.all():
-                    chance = 2 * victim.level
-                    if chance > 55:
-                        chance = 55
+                    elif "mobile" in victim.tags.all():
+                        chance = 2 * victim.level
+                        if chance > 55:
+                            chance = 55
 
-                if random.randint(1, 100) <= (chance + victim.level - attacker.level) and chance > 0:
-                    hit = False
-                    dodge = True
-                    if "player" in victim.tags.all():
-                        rules_skills.check_skill_improve(victim, "dodge", True, 5)
+                    if random.randint(1, 100) <= (chance + victim.level - attacker.level) and chance > 0:
+                        hit = False
+                        dodge = True
+                        if "player" in victim.tags.all():
+                            rules_skills.check_skill_improve(victim, "dodge", True, 5)
+            
+                    if "player" in victim.tags.all() and dodge == False:
+                        if "parry" in victim.db.skills:
+                            if not victim.db.eq_slots["wielded, primary"]:
+                                if not victim.db.eq_slots["wielded, secondary"]:
+                                    chance = 0
+                                else:
+                                    chance = victim.db.skills["parry"] / 4
+                            else:
+                                chance = victim.db.skills["parry"] / 2
 
-                if "player" in victim.tags.all() and dodge == False:
-                    if "parry" in victim.db.skills:
+                    elif "mobile" in victim.tags.all() and dodge == False:
+                        chance = 2 * victim.level
+                        if chance > 57:
+                            chance = 57
                         if not victim.db.eq_slots["wielded, primary"]:
                             if not victim.db.eq_slots["wielded, secondary"]:
-                                chance = 0
+                                chance /= 2
                             else:
-                                chance = victim.db.skills["parry"] / 4
-                        else:
-                            chance = victim.db.skills["parry"] / 2
+                                chance = chance * 3 / 4
 
-                elif "mobile" in victim.tags.all() and dodge == False:
-                    chance = 2 * victim.level
-                    if chance > 57:
-                        chance = 57
-                    if not victim.db.eq_slots["wielded, primary"]:
-                        if not victim.db.eq_slots["wielded, secondary"]:
-                            chance /= 2
-                        else:
-                            chance = chance * 3 / 4
-
-                if random.randint(1, 100) <= (chance + victim.level - attacker.level) and dodge == False and chance > 0:
-                    hit = False
-                    parry = True
-                    if "player" in victim.tags.all():
-                        rules_skills.check_skill_improve(victim, "parry", True, 5)
+                    if random.randint(1, 100) <= (chance + victim.level - attacker.level) and dodge == False and chance > 0:
+                        hit = False
+                        parry = True
+                        if "player" in victim.tags.all():
+                            rules_skills.check_skill_improve(victim, "parry", True, 5)
+        except Exception:
+            logger.log_file("Error in doing parry and dodge tests. Attacker = %s, victim = %s." % (attacker.key, victim.key), filename="combat.log")
 
     # Get the damage type next.
     if "type" in kwargs:
@@ -385,104 +399,121 @@ def do_attack(attacker, victim, eq_slot, combat, **kwargs):
         # Step 2(a) is to determine experience from a hit as a factor of
         # the total experience the mobile has to give.
 
-        # Make sure we aren't giving out experience for more damage than
-        # the mobile has hitpoints remaining.
-        if damage > victim.hitpoints_current:
-            experience_damage = victim.hitpoints_current
-        else:
-            experience_damage = damage
+        try:
+            # Make sure we aren't giving out experience for more damage than
+            # the mobile has hitpoints remaining.
+            if damage > victim.hitpoints_current:
+                experience_damage = victim.hitpoints_current
+            else:
+                experience_damage = damage
 
-        # Experience awarded for a hit is dependent on damage done as a
-        # percent of total hitpoints.
-        percent_damage = experience_damage / victim.hitpoints_maximum
+            # Experience awarded for a hit is dependent on damage done as a
+            # percent of total hitpoints.
+            percent_damage = experience_damage / victim.hitpoints_maximum
 
-        if percent_damage > 1:
-            percent_damage = 1
+            if percent_damage > 1:
+                percent_damage = 1
 
-        # Don't give out all the experience through single hits, to
-        # preserve some to be awarded on kill. Amount awarded decreases
-        # round by round. Because of this, ALWAYS BE SURE combat is
-        # started before calling do_attack on a special attack!!!
+            # Don't give out all the experience through single hits, to
+            # preserve some to be awarded on kill. Amount awarded decreases
+            # round by round. Because of this, ALWAYS BE SURE combat is
+            # started before calling do_attack on a special attack!!!
 
-        round = combat.db.rounds
-        round_fraction = (1 / (1 + round / 10))
+            round = combat.db.rounds
+            round_fraction = (1 / (1 + round / 10))
 
-        experience_raw = int(round_fraction *
-                             percent_damage *
-                             victim.db.experience_total
-                             )
+            experience_raw = int(round_fraction *
+                                 percent_damage *
+                                 victim.db.experience_total
+                                 )
 
-        # Reduce the mobile's current experience based on the
-        # amount calculated.
-        victim.db.experience_current -= experience_raw
+            # Reduce the mobile's current experience based on the
+            # amount calculated.
+            victim.db.experience_current -= experience_raw
 
-        # Step 2(b) is to modify the base experience granted by the
-        # mobile by the alignment and race of the attacker with
-        # regard to the alignment and race of the mobile.
+            # Step 2(b) is to modify the base experience granted by the
+            # mobile by the alignment and race of the attacker with
+            # regard to the alignment and race of the mobile.
 
-        experience_modified = int(modify_experience(attacker,
-                                                    victim,
-                                                    experience_raw
-                                                    ))
+            experience_modified = int(modify_experience(attacker,
+                                                        victim,
+                                                        experience_raw
+                                                        ))
 
-        attacker.db.experience_total += experience_modified
-
+            attacker.db.experience_total += experience_modified
+            
+        except Exception:
+            logger.log_file("Error in doing experience award in do_attack. Attacker = %s, victim = %s" % (attacker.key, victim.key), filename="combat.log")
+            
         # Do damage to the victim.
-        victim.take_damage(damage)
+        try:
+            victim.take_damage(damage)
+        except Exception:
+            logger.log_file("Error in damaging victim in do_attack, victim = %s" % victim.key, filename="combat.log")
+            
 
         # Get the victim started healing, if not already.
-        if not victim.attributes.has("heal_ticker"):
-            timestamp = victim.key + str(time.time())
-            tickerhandler.add(30, victim.at_update, timestamp)
-            victim.db.heal_ticker = timestamp
-        elif not victim.db.heal_ticker:
-            timestamp = victim.key + str(time.time())
-            tickerhandler.add(30, victim.at_update, timestamp)
-            victim.db.heal_ticker = timestamp
-
+        try:
+            if not victim.attributes.has("heal_ticker"):
+                timestamp = victim.key + str(time.time())
+                tickerhandler.add(30, victim.at_update, timestamp)
+                victim.db.heal_ticker = timestamp
+            elif not victim.db.heal_ticker:
+                timestamp = victim.key + str(time.time())
+                tickerhandler.add(30, victim.at_update, timestamp)
+                victim.db.heal_ticker = timestamp
+        except Exception:
+            logger.log_file("Error in checking if healing needed in do_attack, victim = %s" % victim.key, filename="combat.log")
+            
         # Step three - give output.
-        # Special output from special attacks.
-        if "output" in kwargs:
-            attacker.msg("%s" % kwargs["output"][0])
-            victim.msg("%s" % kwargs["output"][1])
-            attacker.location.msg_contents("%s" % kwargs["output"][2], exclude=(attacker, victim))
+        try:
+            # Special output from special attacks.
+            if "output" in kwargs:
+                attacker.msg("%s" % kwargs["output"][0])
+                victim.msg("%s" % kwargs["output"][1])
+                attacker.location.msg_contents("%s" % kwargs["output"][2], exclude=(attacker, victim))
 
-        else:
-            attacker.msg("You |g%s|n %s with your %s.\n"
-                               % (get_damagestring("attacker", damage),
+            else:
+                attacker.msg("You |g%s|n %s with your %s.\n"
+                                   % (get_damagestring("attacker", damage),
+                                      victim.key,
+                                      damage_type
+                                      )
+                                   )
+                victim.msg("%s |r%s|n you with its %s.\n"
+                                 % (attacker.key,
+                                    get_damagestring("victim", damage),
+                                    damage_type
+                                    )
+                                 )
+                attacker.location.msg_contents("%s %s %s with its %s.\n"
+                               % (attacker.key,
+                                  get_damagestring("victim", damage),
                                   victim.key,
                                   damage_type
                                   )
                                )
-            victim.msg("%s |r%s|n you with its %s.\n"
-                             % (attacker.key,
-                                get_damagestring("victim", damage),
-                                damage_type
-                                )
-                             )
-            attacker.location.msg_contents("%s %s %s with its %s.\n"
-                           % (attacker.key,
-                              get_damagestring("victim", damage),
-                              victim.key,
-                              damage_type
-                              )
-                           )
-
-        if "hit" in kwargs:
-            if "player" in attacker.tags.all():
-                if damage > attacker.db.damage_maximum:
-                    attacker.db.damage_maximum = damage
-                    attacker.db.damage_maximum_mobile = victim.key
-                    attacker.msg(
-                        "Your %s for %d damage is your record for damage in one hit!!!\n" % (damage_type, damage))
-        else:
-            if "player" in attacker.tags.all():
-                if damage > attacker.db.damage_maximum:
-                    attacker.db.damage_maximum = damage
-                    attacker.db.damage_maximum_mobile = victim.key
-                    attacker.msg("Your %s for %d damage is your record for damage in one hit!!!\n"
-                                        % (damage_type, damage))
-
+        except Exception:
+            logger.log_file("Error in giving hit output in do_attack. Attacker = %s, victim = %s." % (attacker.key, victim.key), filename="combat.log")
+        
+        try:
+            if "hit" in kwargs:
+                if "player" in attacker.tags.all():
+                    if damage > attacker.db.damage_maximum:
+                        attacker.db.damage_maximum = damage
+                        attacker.db.damage_maximum_mobile = victim.key
+                        attacker.msg(
+                            "Your %s for %d damage is your record for damage in one hit!!!\n" % (damage_type, damage))
+            else:
+                if "player" in attacker.tags.all():
+                    if damage > attacker.db.damage_maximum:
+                        attacker.db.damage_maximum = damage
+                        attacker.db.damage_maximum_mobile = victim.key
+                        attacker.msg("Your %s for %d damage is your record for damage in one hit!!!\n"
+                                            % (damage_type, damage))
+        except Exception:
+            logger.log_file("Error in checking for single-hit record in do_attack. Attacker = %s" % attacker.key, filename="combat.log")
+                        
         # Check at the end of processing hit to see if the victim is dead.
         if victim.hitpoints_current <= 0:
             # If dead as a result of a special attack.
@@ -620,47 +651,62 @@ def do_death(attacker, victim, combat, **kwargs):
         damage_type = get_damagetype(attacker)
 
     # Give death output.
-    attacker.msg("With your final %s, %s falls to the ground, DEAD!!!\n"
-                 % (damage_type, victim.key))
-    victim.msg("You have been |rKILLED|n!!!\n You awaken again at your "
-               "home location.\n")
-    attacker.location.msg_contents("%s has been KILLED by %s!!!\n"
-                                   % ((victim.key[0].upper() + victim.key[1:0]), attacker.key),
-                                   exclude=(attacker, victim))
+    try:
+        attacker.msg("With your final %s, %s falls to the ground, DEAD!!!\n"
+                     % (damage_type, victim.key))
+        victim.msg("You have been |rKILLED|n!!!\n You awaken again at your "
+                   "home location.\n")
+        attacker.location.msg_contents("%s has been KILLED by %s!!!\n"
+                                       % ((victim.key[0].upper() + victim.key[1:0]), attacker.key),
+                                       exclude=(attacker, victim))
+    except Exception:
+        logger.log_file("Error in giving output of death in do_death. Attacker = %s, victim = %s." % (attacker.key, victim.key), filename="combat.log")
 
     if "mobile" in victim.tags.all():
 
         # Step 1 of mobile death - handle the corpse.
         # 1(a) Check none to see if there is a handy corpse, already made.
 
-        object_candidates = search.search_tag("npc corpse")
+        try:
+            object_candidates = search.search_tag("npc corpse")
 
-        corpse = False
+            corpse = False
 
-        for object in object_candidates:
-            if not object.location:
-                corpse = object
-                corpse.key = "the corpse of %s" % victim.key
-                break
-
+            for object in object_candidates:
+                if not object.location:
+                    corpse = object
+                    corpse.key = "the corpse of %s" % victim.key
+                    break
+        except Exception:
+            logger.log_file("Error in finding mobile corpse in do_death. Victim = %s." % victim.key, filename="combat.log")
+                    
         # 1(b) If no ready corpse, make one.
-        if not corpse:
-            # Create corpse.
-            corpse = create_object("objects.NPC_Corpse", key=("the corpse of %s"
-                                                              % victim.key))
+        try:
+            if not corpse:
+                # Create corpse.
+                corpse = create_object("objects.NPC_Corpse", key=("the corpse of %s"
+                                                                  % victim.key))
 
-        corpse.db.desc = ("The corpse of %s lies here." % victim.key)
-        corpse.location = attacker.location
+            corpse.db.desc = ("The corpse of %s lies here." % victim.key)
+            corpse.location = attacker.location
+        except Exception:
+            logger.log_file("Error in creating mobile corpse in do_death. Victim = %s" % victim.key, filename="combat.log")
 
         # 1(c) Set the corpse to disintegrate.
-        rules.set_disintegrate_timer(corpse)
+        try:
+            rules.set_disintegrate_timer(corpse)
+        except Exception:
+            logger.log_file("Error in setting mobile corpse disintegrate in do_death.", filename="combat.log")
 
         # 1(d) Move all victim items to corpse, if any.
-        for item in victim.contents:
-            if item.db.equipped:
-                item.remove_from(victim)
-            item.move_to(corpse, quiet=True)
-
+        try:
+            for item in victim.contents:
+                if item.db.equipped:
+                    item.remove_from(victim)
+                item.move_to(corpse, quiet=True)
+        except Exception:
+            logger.log_file("Error in moving items to mobile corpse. Victim = %s." % victim.key, filename="combat.log")
+        
         # Step 2 - Clean up the mobile.
         # Clear spell affects and return calls.
         if victim.db.spell_affects:
