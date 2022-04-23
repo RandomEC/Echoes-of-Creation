@@ -742,42 +742,43 @@ class Character(DefaultCharacter):
                     self.db.experience_current += experience_gain
 
             # Check to see if the mobile is going to move.
-            tag = self.location.tags.all(return_key_and_category=True)
-            total_tags = len(tag)
+            if self.location:
+                tag = self.location.tags.all(return_key_and_category=True)
+                total_tags = len(tag)
 
-            for index in range(0, total_tags):
-                if tag[index][1] == "area name":
-                    area = tag[index][0]
+                for index in range(0, total_tags):
+                    if tag[index][1] == "area name":
+                        area = tag[index][0]
 
-            if rules.player_in_area(area):
+                if rules.player_in_area(area):
 
-                if (self.hitpoints_current < (self.hitpoints_maximum * 0.5) and random.randint(1, 8) < 7) or (random.randint(1, 32) < 7):
+                    if (self.hitpoints_current < (self.hitpoints_maximum * 0.5) and random.randint(1, 8) < 7) or (random.randint(1, 32) < 7):
 
-                    if "sentinel" not in self.db.act_flags and not self.nattributes.hasattr("combat_handler"):
-                        door = random.randint(1, 6)
-                        if door == 1:
-                            door = "north"
-                        elif door == 2:
-                            door = "east"
-                        elif door == 3:
-                            door = "south"
-                        elif door == 4:
-                            door = "west"
-                        elif door == 5:
-                            door = "up"
-                        else:
-                            door = "down"
+                        if "sentinel" not in self.db.act_flags and not self.nattributes.hasattr("combat_handler"):
+                            door = random.randint(1, 6)
+                            if door == 1:
+                                door = "north"
+                            elif door == 2:
+                                door = "east"
+                            elif door == 3:
+                                door = "south"
+                            elif door == 4:
+                                door = "west"
+                            elif door == 5:
+                                door = "up"
+                            else:
+                                door = "down"
 
-                        for exit in self.location.exits:
-                            if exit.key == door and "open" in exit.db.door_attributes:
-                                destination = exit.destination
+                            for exit in self.location.exits:
+                                if exit.key == door and "open" in exit.db.door_attributes:
+                                    destination = exit.destination
 
-                                if "no mob" not in destination.db.room_flags:
-                                    if ("solitary" not in destination.db.room_flags and "private" not in destination.db.room_flags) or self.home == destination:
-                                        for tag in self.location.tags.all():
+                                    if "no mob" not in destination.db.room_flags:
+                                        if ("solitary" not in destination.db.room_flags and "private" not in destination.db.room_flags) or self.home == destination:
+                                            for tag in self.location.tags.all():
 
-                                            if tag in destination.tags.all():
-                                                self.move_to(destination)
+                                                if tag in destination.tags.all():
+                                                    self.move_to(destination)
 
     def at_before_move(self, destination):
         """

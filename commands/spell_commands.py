@@ -155,7 +155,8 @@ class CmdAgitation(MuxCommand):
         if not caster.ndb.combat_handler:
             combat = rules_combat.create_combat(caster, target)
             rules_magic.do_agitation(caster, target, cost)
-            combat.at_repeat()
+            if combat in caster.location.contents:
+                combat.at_repeat()
         else:
             rules_magic.do_agitation(caster, target, cost)
 
@@ -441,8 +442,6 @@ class CmdBurningHands(MuxCommand):
 
         cost = rules_magic.mana_cost(caster, spell)
 
-        caster.msg("Casting cost is %d" % cost)
-
         if caster.mana_current < cost:
             caster.msg("You do not have sufficient mana to cast burning hands!")
             return
@@ -476,7 +475,8 @@ class CmdBurningHands(MuxCommand):
         if not caster.ndb.combat_handler:
             combat = rules_combat.create_combat(caster, target)
             rules_magic.do_burning_hands(caster, target, cost)
-            combat.at_repeat()
+            if combat in caster.location.contents:
+                combat.at_repeat()
         else:
             rules_magic.do_burning_hands(caster, target, cost)
 
@@ -560,7 +560,8 @@ class CmdCauseLight(MuxCommand):
         if not caster.ndb.combat_handler:
             combat = rules_combat.create_combat(caster, target)
             rules_magic.do_cause_light(caster, target, cost)
-            combat.at_repeat()
+            if combat in caster.location.contents:
+                combat.at_repeat()
         else:
             rules_magic.do_cause_light(caster, target, cost)
 
@@ -645,7 +646,8 @@ class CmdChillTouch(MuxCommand):
         if not caster.ndb.combat_handler:
             combat = rules_combat.create_combat(caster, target)
             rules_magic.do_chill_touch(caster, target, cost)
-            combat.at_repeat()
+            if combat in caster.location.contents:
+                combat.at_repeat()
         else:
             rules_magic.do_chill_touch(caster, target, cost)
 
@@ -1357,7 +1359,8 @@ class CmdFirebolt(MuxCommand):
         if not caster.ndb.combat_handler:
             combat = rules_combat.create_combat(caster, target)
             rules_magic.do_burning_hands(caster, target, cost)
-            combat.at_repeat()
+            if combat in caster.location.contents:
+                combat.at_repeat()
         else:
             rules_magic.do_firebolt(caster, target, cost)
 
@@ -1831,7 +1834,8 @@ class CmdMagicMissile(MuxCommand):
         if not caster.ndb.combat_handler:
             combat = rules_combat.create_combat(caster, target)
             rules_magic.do_magic_missile(caster, target, cost)
-            combat.at_repeat()
+            if combat in caster.location.contents:
+                combat.at_repeat()
         else:
             rules_magic.do_magic_missile(caster, target, cost)
 
@@ -1974,7 +1978,8 @@ class CmdMindThrust(MuxCommand):
         if not caster.ndb.combat_handler:
             combat = rules_combat.create_combat(caster, target)
             rules_magic.do_burning_hands(caster, target, cost)
-            combat.at_repeat()
+            if combat in caster.location.contents:
+                combat.at_repeat()
         else:
             rules_magic.do_mind_thrust(caster, target, cost)
 
@@ -2283,7 +2288,8 @@ class CmdShockingGrasp(MuxCommand):
         if not caster.ndb.combat_handler:
             combat = rules_combat.create_combat(caster, target)
             rules_magic.do_burning_hands(caster, target, cost)
-            combat.at_repeat()
+            if combat in caster.location.contents:
+                combat.at_repeat()
         else:
             rules_magic.do_shocking_grasp(caster, target, cost)
 

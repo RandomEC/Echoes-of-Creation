@@ -330,18 +330,18 @@ def check_return_visible(character):
     """
     
     if character.get_affect_status("hide"):
-        rules.affect_remove(character,
-                            "hide",
-                            "You are no longer hidden.",
-                            "%s emerges from the shadows." % (character.key[0].upper() + character.key[1:])
-                            )
-    
+        affect_remove(character,
+                        "hide",
+                        "You are no longer hidden.",
+                        "%s emerges from the shadows." % (character.key[0].upper() + character.key[1:])
+                        )
+
     if character.get_affect_status("invisible"):
-        rules.affect_remove(character,
-                            "invisible",
-                            "You are no longer invisible.",
-                            "A roughly-humanoid shape shimmers and %s becomes visible." % (character.key[0].upper() + character.key[1:])
-                            )
+        affect_remove(character,
+                        "invisible",
+                        "You are no longer invisible.",
+                        "A roughly-humanoid shape shimmers and %s becomes visible." % (character.key[0].upper() + character.key[1:])
+                        )
 
 def classes_current(character, **kwargs):
     """
@@ -533,11 +533,14 @@ def gain_experience(mobile, hp_gain):
     hit point gain.
     """
 
-    percent_hp_recovered = hp_gain / mobile.db.hitpoints["damaged"]
-    experience_awarded = math.ceil(mobile.db.experience_total -
-                                   mobile.db.experience_current)
+    if hp_gain > 0:
+        percent_hp_recovered = hp_gain / mobile.db.hitpoints["damaged"]
+        experience_awarded = math.ceil(mobile.db.experience_total -
+                                       mobile.db.experience_current)
 
-    experience_gain = int(percent_hp_recovered * experience_awarded)
+        experience_gain = int(percent_hp_recovered * experience_awarded)
+    else:
+        experience_gain = 0
 
     return experience_gain
 
@@ -827,14 +830,14 @@ def get_visual_output(object, looker, **kwargs):
         if "possessive" in kwargs:
             if kwargs["possessive"]:
                 if is_visible(object, looker):
-                    return possessive_pronoun(object)
+                    return pronoun_possessive(object)
                 else:
                     return "their"
                 
-        if "reflexive" in kwargs;
+        if "reflexive" in kwargs:
             if kwargs["reflexive"]:
                 if is_visible(object, looker):
-                    return reflexive_pronoun(object)
+                    return pronoun_reflexive(object)
                 else:
                     return "themselves"        
         
@@ -1159,6 +1162,31 @@ def remove_disintegrate_timer(obj):
         tickerhandler.remove(settings.DEFAULT_DISINTEGRATE_TIME, obj.at_disintegrate, obj.db.disintegrate_ticker)
         obj.db.disintegrate_ticker = ""
         obj.tags.remove("disintegrating")
+
+
+def send_prompt(character):
+    """
+    This function builds and then sends a prompt to the
+    character.
+    """
+
+    if "wait_state" not in character.ndb.all:
+        prompt_wait = "|gReady!|n"
+    elif character.ndb.wait_state >= 12:
+        prompt_wait = "|rCompleting action!"
+    elif character.ndb.wait_state > 0:
+        prompt_wait = "|yRecovering.|n"
+    else:
+        prompt_wait = "|gReady!|n"
+    prompt = "<|r%d|n/|R%d hp |b%d|n/|B%d mana |y%d|n/|Y%d moves|n %s>\n" % (
+        character.hitpoints_current,
+        character.hitpoints_maximum,
+        character.mana_current,
+        character.mana_maximum,
+        character.moves_current,
+        character.moves_maximum,
+        prompt_wait)
+    character.msg(prompt=prompt)
 
 
 def set_armor(level):

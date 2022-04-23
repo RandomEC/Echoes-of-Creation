@@ -44,10 +44,10 @@ def do_adrenaline_control(caster, target, mana_cost):
         
         # Deal with invisible objects/characters for output.
         # Assemble a list of all possible lookers.
-        lookers = list(cont for cont in character.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        lookers = list(cont for cont in caster.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
         for looker in lookers:
             # Exclude the character, who got their output above.
-            if looker != character:
+            if looker != caster:
 
                 # Give output to those who can see the caster.
                 if rules.is_visible(caster, looker):
@@ -323,7 +323,7 @@ def do_burning_hands(caster, target, mana_cost):
 
         output = [attacker_output, victim_output, room_output]
 
-        rules_combat.do_attack(caster, target, None, hit=True, damage=damage, output=output, type="burning hands")
+        rules_combat.do_attack(caster, target, None, caster.ndb.combat_handler, hit=True, damage=damage, output=output, type="burning hands")
 
         rules.wait_state_apply(caster, spell["wait state"])
 
