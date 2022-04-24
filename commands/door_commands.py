@@ -628,7 +628,7 @@ class CmdDoorUnlock(MuxCommand):
                             unlocker = "Someone"
 
                         # As long as something was visible, give output.
-                        looker.msg("*Click* %s unlocks %s." % (opener, door_string))
+                        looker.msg("*Click* %s unlocks %s." % (unlocker, door_string))
 
             # Add exit to objects to reset if not there already.
             reset_script = search.script_search("reset_script")[0]
