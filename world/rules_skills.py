@@ -101,7 +101,7 @@ def do_dowse(character):
     timestamp = spring.key + str(time.time())
     tickerhandler.add(timer, spring.at_disintegrate, timestamp)
     spring.db.disintegrate_ticker = timestamp
-    obj.tags.add("disintegrating")
+    spring.tags.add("disintegrating")
     
 
 def do_forage(character):
@@ -186,7 +186,7 @@ def do_pick_lock(character, target, target_type):
         
         # Deal with invisible objects/characters for output.
         # Assemble a list of all possible lookers.
-        lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        lookers = list(cont for cont in character.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
         for looker in lookers:
             # Exclude the caller, who got their output above.
             if looker != character:
@@ -211,7 +211,7 @@ def do_pick_lock(character, target, target_type):
         
         # Deal with invisible objects/characters for output.
         # Assemble a list of all possible lookers.
-        lookers = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        lookers = list(cont for cont in character.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
         for looker in lookers:
             # Exclude the caller, who got their output above.
             if looker != character:
@@ -311,12 +311,13 @@ def do_steal(thief, target, to_steal):
     if percent < random.randint(1, 100):
         thief.msg("Oops! That was NOT a success!\n")
         check_skill_improve(thief, "steal", False, 4)
-        if not thief.ndb.combat_handler and not target.ndb.combat_handler:
-            thief.msg("%s is not pleased with your attempt to steal, and jumps forward and ATTACKS you!" % (target.key[0].upper() + target.key[1:]))
-            rules_combat.create_combat(target, thief)
-        if not thief.ndb.combat_handler:
-            combat = thief.ndb.combat_handler
-            combat.add_combatant(target, thief)
+        if rules.is_visible(thief, target):
+            if not thief.ndb.combat_handler and not target.ndb.combat_handler:
+                thief.msg("%s is not pleased with your attempt to steal, and jumps forward and ATTACKS you!" % (target.key[0].upper() + target.key[1:]))
+                rules_combat.create_combat(target, thief)
+            if not thief.ndb.combat_handler:
+                combat = thief.ndb.combat_handler
+                combat.add_combatant(target, thief)
     else:
         if to_steal == "gold":
             amount = math.ceil(target.db.gold * random.randint(1, 10) / 100)

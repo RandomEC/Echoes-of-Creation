@@ -879,7 +879,7 @@ def do_death(attacker, victim, combat, **kwargs):
         # Step 5 Give the attacker a look at the corpse after it dies
         try:
             corpse_look = attacker.at_look(corpse)
-            attacker.msg("%s\n" % corpse_look)
+            attacker.msg("%s" % corpse_look)
         except Exception:
             logger.log_file(
                 "Error in giving look at mobile corpse. Attacker = %s, corpse = %s." % (attacker.key, corpse.key),

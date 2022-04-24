@@ -1169,7 +1169,7 @@ class Mobile(Character):
                 rules_combat.create_combat(self, character)
             if not self.ndb.combat_handler:
                 combat = character.ndb.combat_handler
-                combat.add_combatant(self, character)
+                combat.combatant_add(self, character)
         if "talk on enter" in self.tags.all() and rules.is_visible(character, self, arrive=True):
             character.msg('On entering the room, %s says to you, "%s"' % (self.key, self.db.talk))
 
@@ -1195,6 +1195,30 @@ class Mobile(Character):
                         quest_script.quest_death()
         else:
             pass
+
+
+    def at_after_move(self, source_location, **kwargs):
+        """
+        Called after move has completed, regardless of quiet mode or
+        not.  Allows changes to the object due to the location it is
+        now in. For mobiles, checks to see if it is aggro, then looks
+        for heroes in the room.
+        Args:
+            source_location (Object): Wwhere we came from. This may be `None`.
+            **kwargs (dict): Arbitrary, optional arguments for users
+                overriding the call (unused by default).
+        """
+        if "aggressive" in self.db.act_flags:
+            players = list(con for con in self.location.contents if "player" in con.tags.all())
+            for player in players:
+                if player.level < 103 and rules.is_visible(player, self):
+                    if not player.ndb.combat_handler and not self.ndb.combat_handler:
+                        player.msg("%s jumps forward and ATTACKS you!" % (self.key[0].upper() + self.key[1:]))
+                        rules_combat.create_combat(self, player)
+                    if not self.ndb.combat_handler:
+                        combat = player.ndb.combat_handler
+                        combat.combatant_add(self, player)
+
 
 class Player(Character):
     """
