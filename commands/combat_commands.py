@@ -231,8 +231,8 @@ class CmdFlee(MuxCommand):
 
     key = "flee"
     locks = "cmd:all()"
-    arg_regex = r"\s|$"
-        
+    arg_regex = r"$"
+
     def func(self):
         """Implement flee"""        
 
@@ -327,6 +327,32 @@ class CmdKick(MuxCommand):
                         return
 
                     rules_combat.do_kick(caller, target)
+
+class CmdPeace(MuxCommand):
+    """
+    Remove all incidents of combat from a room.
+    Usage:
+      peace
+    Destroys any combat objects in the room, and runs through and
+    removes any combat_handlers from any mobiles in the room.
+    """
+
+    key = "peace"
+    locks = "cmd:perm(peace) or perm(Builder)"
+    arg_regex = r"$"
+
+    def func(self):
+        caller = self.caller
+        location = caller.location
+
+        combat = caller.search("combat", candidates=location.contents)
+        if combat:
+            combat.delete()
+
+        fighters = (con for con in location if "mobile" in con.tags.all() or "player" in con.tags.all())
+        for fighter in fighters:
+            if fighter.nattributes.has("combat_handler"):
+                del fighter.ndb.combat_handler
 
 class CmdRescue(MuxCommand):
     """

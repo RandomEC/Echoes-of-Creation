@@ -50,6 +50,7 @@ from commands.combat_commands import CmdConsider
 from commands.combat_commands import CmdDirtKicking
 from commands.combat_commands import CmdFlee
 from commands.combat_commands import CmdKick
+from commands.combat_commands import CmdPeace
 from commands.combat_commands import CmdTrip
 from commands.combat_commands import CmdWimpy
 from commands.door_commands import CmdDoorClose
@@ -183,6 +184,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdMindThrust())
         self.add(CmdName())
         self.add(CmdOpen())
+        self.add(CmdPeace())
         self.add(CmdPickLock())
         self.add(CmdPractice())
         self.add(CmdProtection())
