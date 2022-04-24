@@ -657,7 +657,7 @@ class CmdWear(MuxCommand):
                                         if remover != "Someone" or removed != "something":
                                             looker.msg("%s removes %s from about %s body." % (remover, removed, remover_possessive))   
 
-                            elif eq_current.dg.wear_location == "pride":
+                            elif eq_current.db.wear_location == "pride":
                                 caller.msg("You unpin %s and remove it from its place of pride." % eq_current.name)
 
                                 # Deal with invisible objects/characters for output.
@@ -680,7 +680,7 @@ class CmdWear(MuxCommand):
 
                                         # As long as something was visible, give output.
                                         if remover != "Someone" or removed != "something":
-                                            looker.msg("%s upnins %s and removes it from its place of pride." % (remover, removed))      
+                                            looker.msg("%s unpins %s and removes it from its place of pride." % (remover, removed))
                                 
                             elif eq_current.db.wear_location == "held, in hands":
                                 caller.msg("You no longer hold %s in your hands." % eq_current.name)
