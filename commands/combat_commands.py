@@ -195,7 +195,8 @@ class CmdDirtKicking(MuxCommand):
                 if not caller.ndb.combat_handler:
                     combat = rules_combat.create_combat(caller, target)
                     rules_combat.do_dirt_kicking(caller, target)
-                    combat.db.combatants[caller]["wait state"] = self.wait_state
+                    rules.wait_state_apply(caller, self.wait_state)
+
                     if combat in caller.location.contents:
                         combat.at_repeat()
                     return

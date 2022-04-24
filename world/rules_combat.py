@@ -538,19 +538,19 @@ def do_attack(attacker, victim, eq_slot, combat, **kwargs):
                 combat.location.msg_contents("%s" % kwargs["output"][2], exclude=(attacker, victim))
 
             else:
-                attacker.msg("You |g%s|n %s with your %s.\n"
+                attacker.msg("You |g%s|n %s with your %s."
                              % (get_damagestring("attacker", damage),
                                 victim.key,
                                 damage_type
                                 )
                              )
-                victim.msg("%s |r%s|n you with its %s.\n"
+                victim.msg("%s |r%s|n you with its %s."
                            % (attacker.key,
                               get_damagestring("victim", damage),
                               damage_type
                               )
                            )
-                combat.location.msg_contents("%s %s %s with its %s.\n"
+                combat.location.msg_contents("%s %s %s with its %s."
                                              % (attacker.key,
                                                 get_damagestring("victim", damage),
                                                 victim.key,
@@ -570,13 +570,13 @@ def do_attack(attacker, victim, eq_slot, combat, **kwargs):
                         attacker.db.damage_maximum = damage
                         attacker.db.damage_maximum_mobile = victim.key
                         attacker.msg(
-                            "Your %s for %d damage is your record for damage in one hit!!!\n" % (damage_type, damage))
+                            "Your %s for %d damage is your record for damage in one hit!!!" % (damage_type, damage))
             else:
                 if "player" in attacker.tags.all():
                     if damage > attacker.db.damage_maximum:
                         attacker.db.damage_maximum = damage
                         attacker.db.damage_maximum_mobile = victim.key
-                        attacker.msg("Your %s for %d damage is your record for damage in one hit!!!\n"
+                        attacker.msg("Your %s for %d damage is your record for damage in one hit!!!"
                                      % (damage_type, damage))
         except Exception:
             logger.log_file("Error in checking for single-hit record in do_attack. Attacker = %s" % attacker.key,
@@ -597,36 +597,36 @@ def do_attack(attacker, victim, eq_slot, combat, **kwargs):
             victim.msg("%s" % kwargs["output"][1])
             combat.location.msg_contents("%s" % kwargs["output"][2], exclude=(attacker, victim))
         elif parry == True:
-            attacker.msg("%s parries your %s.\n" % ((victim.key[0].upper() + victim.key[1:]),
+            attacker.msg("%s parries your %s." % ((victim.key[0].upper() + victim.key[1:]),
                                                     damage_type
                                                     ))
-            victim.msg("You parry %s's %s.\n" % (attacker.key,
+            victim.msg("You parry %s's %s." % (attacker.key,
                                                  damage_type
                                                  ))
-            combat.location.msg_contents("%s parries %s's %s.\n" % ((victim.key[0].upper() + victim.key[1:]),
+            combat.location.msg_contents("%s parries %s's %s." % ((victim.key[0].upper() + victim.key[1:]),
                                                                     attacker.key,
                                                                     damage_type
                                                                     ), exclude=(attacker, victim))
         elif dodge == True:
-            attacker.msg("%s dodges your %s.\n" % ((victim.key[0].upper() + victim.key[1:]),
+            attacker.msg("%s dodges your %s." % ((victim.key[0].upper() + victim.key[1:]),
                                                    damage_type
                                                    ))
-            victim.msg("You dodge %s's %s.\n" % (attacker.key,
+            victim.msg("You dodge %s's %s." % (attacker.key,
                                                  damage_type
                                                  ))
-            combat.location.msg_contents("%s dodges %s's %s.\n" % ((victim.key[0].upper() + victim.key[1:]),
+            combat.location.msg_contents("%s dodges %s's %s." % ((victim.key[0].upper() + victim.key[1:]),
                                                                    attacker.key,
                                                                    damage_type
                                                                    ), exclude=(attacker, victim))
         else:
-            attacker.msg("You miss %s with your %s.\n" % (victim.key,
+            attacker.msg("You miss %s with your %s." % (victim.key,
                                                           damage_type
                                                           ))
-            victim.msg("%s misses you with %s %s.\n" % (attacker.key,
+            victim.msg("%s misses you with %s %s." % (attacker.key,
                                                         rules.pronoun_possessive(attacker),
                                                         damage_type
                                                         ))
-            combat.location.msg_contents("%s misses %s with %s %s.\n" % (attacker.key,
+            combat.location.msg_contents("%s misses %s with %s %s." % (attacker.key,
                                                                          victim.key,
                                                                          rules.pronoun_possessive(attacker),
                                                                          damage_type
@@ -737,11 +737,11 @@ def do_death(attacker, victim, combat, **kwargs):
 
     # Give death output.
     try:
-        attacker.msg("With your final %s, %s falls to the ground, DEAD!!!\n"
+        attacker.msg("With your final %s, %s falls to the ground, DEAD!!!"
                      % (damage_type, victim.key))
         victim.msg("You have been |rKILLED|n!!!\n You awaken again at your "
-                   "home location.\n")
-        attacker.location.msg_contents("%s has been KILLED by %s!!!\n"
+                   "home location.")
+        attacker.location.msg_contents("%s has been KILLED by %s!!!"
                                        % ((victim.key[0].upper() + victim.key[1:0]), attacker.key),
                                        exclude=(attacker, victim))
     except Exception:
@@ -851,7 +851,7 @@ def do_death(attacker, victim, combat, **kwargs):
                 attacker.db.experience_total += experience_modified
 
                 attacker.msg("You receive %s experience as a result of "
-                             "your kill!\n" % experience_modified)
+                             "your kill!" % experience_modified)
 
         except Exception:
             logger.log_file("Error in awarding death experience in do_death. Attacker = %s." % attacker.key,
@@ -869,7 +869,7 @@ def do_death(attacker, victim, combat, **kwargs):
                 attacker.msg("That kill is your new record for most "
                              "experience obtained for a kill!\n"
                              "You received a total of %d experience "
-                             "from %s.\n" % (victim.db.experience_total, victim.key))
+                             "from %s." % (victim.db.experience_total, victim.key))
         except Exception:
             logger.log_file(
                 "Error in checking if experience exceeded best kill on mobile death. Attacker = %s." % attacker.key,
