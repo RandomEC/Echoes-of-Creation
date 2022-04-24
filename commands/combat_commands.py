@@ -437,7 +437,7 @@ class CmdRescue(MuxCommand):
 
                 if not caller.ndb.combat_handler:
                     attack_target = combat.combatants[target]["target"]
-                    combat.add_combatant(caller, attack_target)
+                    combat.combatant_add(caller, attack_target)
 
                 rules_combat.do_rescue(caller, target, victim)
                 rules.wait_state_apply(caller, self.wait_state)
