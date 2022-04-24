@@ -989,15 +989,17 @@ def is_visible(target, looker, **kwargs):
         if target.get_affect_status("invisible") and not looker.get_affect_status("detect invis"):
             return False
         if "mobile" in target.tags.all():
-            if "total invis" in target.db.act_flags:
-                return False
-    
+            if target.db.act_flags:
+                if "total invis" in target.db.act_flags:
+                    return False
+
     # Dealing with object visibility.
     else:
         if looker.get_affect_status("blind"):
             return False
-        if "invisible" in target.db.extra_flags and not looker.get_affect_status("detect invis"):
-            return False
+        if target.db.extra_flags:
+            if "invisible" in target.db.extra_flags and not looker.get_affect_status("detect invis"):
+                return False
             
     return True
 
