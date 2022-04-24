@@ -1041,6 +1041,7 @@ def do_dirt_kicking(attacker, victim):
     
     skill = rules_skills.get_skill(skill_name="dirt kicking")
     wait_state = skill["wait state"]
+    combat = attacker.ndb.combat_handler
     
     # Build basic chance of success.
     chance = attacker.db.skills["dirt kicking"]
@@ -1100,7 +1101,7 @@ def do_dirt_kicking(attacker, victim):
 
         output = [attacker_output, victim_output, room_output]
 
-        do_attack(attacker, victim, None, hit=True, damage=damage, output=output, type="dirt kick")
+        do_attack(attacker, victim, None, combat, hit=True, damage=damage, output=output, type="dirt kick")
 
         rules.affect_apply(victim,
                            "blind",
@@ -1204,6 +1205,7 @@ def do_kick(attacker, victim):
 
     skill = rules_skills.get_skill(skill_name="kick")
     wait_state = skill["wait state"]
+    combat = attacker.ndb.combat_handler
 
     if random.randint(1, 100) <= attacker.db.skills["kick"] or "mobile" in attacker.tags.all():
         if "player" in attacker.tags.all():
@@ -1224,7 +1226,7 @@ def do_kick(attacker, victim):
 
         output = [attacker_output, victim_output, room_output]
 
-        do_attack(attacker, victim, None, hit=True, damage=damage, output=output, type="kick")
+        do_attack(attacker, victim, None, combat, hit=True, damage=damage, output=output, type="kick")
 
         rules.wait_state_apply(attacker, wait_state)
 
@@ -1239,7 +1241,7 @@ def do_kick(attacker, victim):
 
         output = [attacker_output, victim_output, room_output]
 
-        do_attack(attacker, victim, None, hit=False, output=output, type="kick")
+        do_attack(attacker, victim, None, combat, hit=False, output=output, type="kick")
 
 
 def do_one_character_combat_turn(attacker, victim, combat):
@@ -1424,6 +1426,7 @@ def do_trip(attacker, victim):
 
     skill = rules_skills.get_skill(skill_name="trip")
     wait_state = skill["wait state"]
+    combat = attacker.ndb.combat_handler
 
     # Build basic chance of success.
     chance = (attacker.size - victim.size) * 10
@@ -1495,7 +1498,7 @@ def do_trip(attacker, victim):
 
             output = [attacker_output, victim_output, room_output]
 
-            do_attack(attacker, victim, None, hit=True, damage=damage, output=output, type="accidental kick")
+            do_attack(attacker, victim, None, combat, hit=True, damage=damage, output=output, type="accidental kick")
 
             rules.wait_state_apply(attacker, (wait_state * 2 / 3))
 

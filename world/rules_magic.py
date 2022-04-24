@@ -78,6 +78,7 @@ def do_agitation(caster, target, mana_cost):
     spell = rules_skills.get_skill(skill_name="agitation")
 
     level = caster.level
+    combat = caster.ndb.combat_handler
 
     # This list creates a seed for how high damage will be,
     # with the caster's level corresponding to the list
@@ -128,7 +129,7 @@ def do_agitation(caster, target, mana_cost):
 
         output = [attacker_output, victim_output, room_output]
 
-        rules_combat.do_attack(caster, target, None, hit=True, damage=damage, output=output, type="molecular agitation")
+        rules_combat.do_attack(caster, target, None, combat, hit=True, damage=damage, output=output, type="molecular agitation")
 
         rules.wait_state_apply(caster, spell["wait state"])
 
@@ -275,6 +276,7 @@ def do_burning_hands(caster, target, mana_cost):
     spell = rules_skills.get_skill(skill_name="burning hands")
 
     level = caster.level
+    combat = caster.ndb.combat_handler
 
     # This list creates a seed for how high damage will be,
     # with the caster's level corresponding to the list
@@ -323,7 +325,7 @@ def do_burning_hands(caster, target, mana_cost):
 
         output = [attacker_output, victim_output, room_output]
 
-        rules_combat.do_attack(caster, target, None, caster.ndb.combat_handler, hit=True, damage=damage, output=output, type="burning hands")
+        rules_combat.do_attack(caster, target, None, combat, hit=True, damage=damage, output=output, type="burning hands")
 
         rules.wait_state_apply(caster, spell["wait state"])
 
@@ -341,6 +343,7 @@ def do_cause_light(caster, target, mana_cost):
     spell = rules_skills.get_skill(skill_name="cause light")
 
     level = caster.level
+    combat = caster.ndb.combat_handler
 
     damage = random.randint(1, 8) + int(caster.level / 3)
 
@@ -367,7 +370,7 @@ def do_cause_light(caster, target, mana_cost):
 
         output = [attacker_output, victim_output, room_output]
 
-        rules_combat.do_attack(caster, target, None, hit=True, damage=damage, output=output, type="invocation")
+        rules_combat.do_attack(caster, target, None, combat, hit=True, damage=damage, output=output, type="invocation")
 
         rules.wait_state_apply(caster, spell["wait state"])
 
@@ -385,6 +388,7 @@ def do_chill_touch(caster, target, mana_cost):
     spell = rules_skills.get_skill(skill_name="chill touch")
 
     level = caster.level
+    combat = caster.ndb.combat_handler
 
     # This list creates a seed for how high damage will be,
     # with the caster's level corresponding to the list
@@ -433,7 +437,7 @@ def do_chill_touch(caster, target, mana_cost):
 
         output = [attacker_output, victim_output, room_output]
 
-        rules_combat.do_attack(caster, target, None, hit=True, damage=damage, output=output, type="chilling touch")
+        rules_combat.do_attack(caster, target, None, combat, hit=True, damage=damage, output=output, type="chilling touch")
 
         if not target.get_affect_status("chill touch"):
             rules.affect_apply(target,
@@ -792,6 +796,7 @@ def do_firebolt(caster, target, mana_cost):
     spell = rules_skills.get_skill(skill_name="firebolt")
 
     level = caster.level
+    combat = caster.ndb.combat_handler
 
     # This list creates a seed for how high damage will be,
     # with the caster's level corresponding to the list
@@ -875,7 +880,7 @@ def do_firebolt(caster, target, mana_cost):
             caster.mana_spent += mana_cost
             rules_skills.check_skill_improve(caster, "firebolt", True, 4)
 
-        rules_combat.do_attack(caster, target, None, hit=True, damage=damage, output=output, type="firebolt")
+        rules_combat.do_attack(caster, target, None, combat, hit=True, damage=damage, output=output, type="firebolt")
 
         rules.wait_state_apply(caster, spell["wait state"])
 
@@ -1083,6 +1088,7 @@ def do_magic_missile(caster, target, mana_cost):
     spell = rules_skills.get_skill(skill_name="magic missile")
 
     level = caster.level
+    combat = caster.ndb.combat_handler
 
     # This list creates a seed for how high damage will be,
     # with the caster's level corresponding to the list
@@ -1131,7 +1137,7 @@ def do_magic_missile(caster, target, mana_cost):
 
         output = [attacker_output, victim_output, room_output]
 
-        rules_combat.do_attack(caster, target, None, hit=True, damage=damage, output=output, type="magic missile")
+        rules_combat.do_attack(caster, target, None, combat, hit=True, damage=damage, output=output, type="magic missile")
 
         rules.wait_state_apply(caster, spell["wait state"])
 
@@ -1184,6 +1190,7 @@ def do_mind_thrust(caster, target, mana_cost):
     spell = rules_skills.get_skill(skill_name="mind thrust")
 
     level = caster.level
+    combat = caster.ndb.combat_handler
 
     damage = random.randint(1, 10) + level / 2
 
@@ -1210,7 +1217,7 @@ def do_mind_thrust(caster, target, mana_cost):
 
         output = [attacker_output, victim_output, room_output]
 
-        rules_combat.do_attack(caster, target, None, hit=True, damage=damage, output=output, type="mind thrust")
+        rules_combat.do_attack(caster, target, None, combat, hit=True, damage=damage, output=output, type="mind thrust")
 
         rules.wait_state_apply(caster, spell["wait state"])
 
@@ -1345,6 +1352,7 @@ def do_shocking_grasp(caster, target, mana_cost):
     spell = rules_skills.get_skill(skill_name="shocking grasp")
 
     level = caster.level
+    combat = caster.ndb.combat_handler
 
     # This list creates a seed for how high damage will be,
     # with the caster's level corresponding to the list
@@ -1393,7 +1401,7 @@ def do_shocking_grasp(caster, target, mana_cost):
 
         output = [attacker_output, victim_output, room_output]
 
-        rules_combat.do_attack(caster, target, None, hit=True, damage=damage, output=output, type="shocking grasp")
+        rules_combat.do_attack(caster, target, None, combat, hit=True, damage=damage, output=output, type="shocking grasp")
 
         rules.wait_state_apply(caster, spell["wait state"])
 
