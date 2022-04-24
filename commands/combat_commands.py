@@ -349,7 +349,7 @@ class CmdPeace(MuxCommand):
         if combat:
             combat.delete()
 
-        fighters = (con for con in location if "mobile" in con.tags.all() or "player" in con.tags.all())
+        fighters = (con for con in location.contents if "mobile" in con.tags.all() or "player" in con.tags.all())
         for fighter in fighters:
             if fighter.nattributes.has("combat_handler"):
                 del fighter.ndb.combat_handler
