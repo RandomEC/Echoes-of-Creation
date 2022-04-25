@@ -1070,18 +1070,18 @@ def do_infravision(caster, target, mana_cost):
         player_output_magic_chant(caster, "infravision")
 
 
-def do_invis(caster, target, mana_cost):
-    """Implements the invis spell."""
+def do_invisible(caster, target, mana_cost):
+    """Implements the invisible spell."""
 
-    spell = rules_skills.get_skill(skill_name="invis")
+    spell = rules_skills.get_skill(skill_name="invisible")
     level = caster.level
     wait_state = spell["wait state"]
 
 
-    if random.randint(1, 100) <= caster.db.skills["invis"] or "mobile" in caster.tags.all():
+    if random.randint(1, 100) <= caster.db.skills["invisible"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-            rules_skills.check_skill_improve(caster, "invis", True, 2)
+            rules_skills.check_skill_improve(caster, "invisible", True, 2)
 
         caster.msg("You chant 'invisible'.\n")
         player_output_magic_chant(caster, "invisible")
@@ -1112,9 +1112,9 @@ def do_invis(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-            rules_skills.check_skill_improve(caster, "invis", False, 2)
-        caster.msg("You chant 'invis'.\nYou lost your concentration.\n")
-        player_output_magic_chant(caster, "invis")
+            rules_skills.check_skill_improve(caster, "invisible", False, 2)
+        caster.msg("You chant 'invisible'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "invisible")
 
 
 def do_levitation(caster, target, mana_cost):
