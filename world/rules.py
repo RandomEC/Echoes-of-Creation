@@ -70,9 +70,18 @@ def affect_remove(character, affect_name, character_message, room_message):
         if character_message:
             character.msg(character_message)
         if room_message:
-            character.location.msg_contents(room_message, exclude=character)
+            # Deal with invisible objects/characters for output.
+            # Assemble a list of all possible lookers.
+            lookers = list(cont for cont in character.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+            for looker in lookers:
+                # Exclude the character, who got their output above.
+                if looker != character:
 
-
+                    # Give output to those who can no longer see the character.
+                    if not rules.is_visible(character, looker):
+                        looker.msg(room_message)
+                        
+                        
 def attributes_cost(character):
     """
     This function determines the experience cost of getting an
