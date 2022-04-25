@@ -545,6 +545,13 @@ def get_skill(**kwargs):
                 "paladin": 11
                 }
             },
+        "faerie fog": {
+            "classes": {
+                "druid": 6
+                },
+            "minimum cost": 12,
+            "wait state": 12
+            },
         "firebolt": {
             "classes": {
                 "mage": 10
