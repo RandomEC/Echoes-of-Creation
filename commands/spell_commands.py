@@ -1649,7 +1649,7 @@ class CmdInfravision(MuxCommand):
         rules_magic.do_infravision(caster, target, cost)
 
 
-class CmdInvis(MuxCommand):
+class CmdInvisible(MuxCommand):
     """
     Make yourself or a target become invisible.
 
@@ -1658,7 +1658,7 @@ class CmdInvis(MuxCommand):
       cast invisible
       invisible
 
-    Invis will allow either you or a target to become invisible.
+    Invisible will allow either you or a target to become invisible.
     Cast without a target, it targets the caster.
 
     Colleges that can teach (level):
