@@ -41,18 +41,7 @@ def do_adrenaline_control(caster, target, mana_cost):
         player_output_magic_chant(caster, "adrenaline control")
 
         target.msg("You have given yourself an adrenaline rush!")
-        
-        # Deal with invisible objects/characters for output.
-        # Assemble a list of all possible lookers.
-        lookers = list(cont for cont in caster.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
-        for looker in lookers:
-            # Exclude the character, who got their output above.
-            if looker != caster:
 
-                # Give output to those who can see the caster.
-                if rules.is_visible(caster, looker):
-                    looker.msg("%s has given %s an adrenaline rush!" % ((caster.key[0].upper() + caster.key[1:]), rules.pronoun_reflexive(caster)))
-        
         rules.affect_apply(target,
                            "adrenaline control",
                            (caster.level - 5),
@@ -219,10 +208,17 @@ def do_bamf(caster, target, mana_cost):
                                      % (target.key[0].upper() + target.key[1:])
                                      )
 
-        new_location.msg_contents("%s appears in a blue puff of smoke!"
-                                     % (target.key[0].upper() + target.key[1:])
-                                     )
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in caster.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for looker in lookers:
+            # Exclude the character, who got their output above.
+            if looker != caster:
 
+                target_string = rules.get_visual_output(target, looker)
+                # Give output.
+                looker.msg("%s appears in a blue puff of smoke!" % (target_string[0].upper() + target_string[1:]))
+        
         rules.wait_state_apply(caster, spell["wait state"])
 
     else:
@@ -477,11 +473,21 @@ def do_continual_light(caster, mana_cost):
 
         caster.msg("You chant 'continual light'.\nYou twiddle your thumbs and %s appears." % light.key)
         player_output_magic_chant(caster, "continual light")
-        caster.location.msg_contents("%s twiddles %s thumbs and %s appears."
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in caster.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for looker in lookers:
+            # Exclude the character, who got their output above.
+            if looker != caster:
+
+                # Give output to those who can see the caster.
+                if rules.is_visible(caster, looker):
+                    looker.msg("%s twiddles %s thumbs and %s appears."
                                      % ((caster.key[0].upper() + caster.key[1:]),
                                         rules.pronoun_possessive(caster),
-                                        light.key),
-                                     exclude=caster)
+                                        light.key))
+                else:
+                    looker.msg("%s suddenly appears." % light.key)
 
         rules.wait_state_apply(caster, spell["wait state"])
 
@@ -557,10 +563,13 @@ def do_create_sound(caster, mana_cost, target, sound):
             if object == target and object.db.position != "sleeping":
                 object.msg("A sound seemingly emanates from you saying '%s'" % sound)
             elif ("player" in object.tags.all() or "mobile" in object.tags.all()) and object != caster and object.db.position != "sleeping":
+                caster_string = rules.get_visible_output(caster, object)
+                target_string = rules.get_visible_output(target, object)
                 if save_spell(level, target):
-                    object.msg("%s makes %s say '%s'" % ((caster.key[0].upper() + caster.key[1:]), target, sound))
+                    object.msg("%s makes %s say '%s'" % ((caster_string[0].upper() + caster_string[1:]), target_string, sound))
                 else:
-                    object.msg("%s says '%s'" % ((target.key[0].upper() + target.key[1:]), sound))
+                    object.msg("%s says '%s'" % ((target_string[0].upper() + target_string[1:]), sound))
+        
         rules.wait_state_apply(caster, spell["wait state"])
 
     else:
@@ -911,6 +920,17 @@ def do_fly(caster, target, mana_cost):
             caster.msg("%s's feet rise off the ground." % (target.key[0].upper() + target.key[1:]))
         target.msg("Your feet rise off the ground.")
 
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in caster.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for looker in lookers:
+            # Exclude the character, who got their output above.
+            if looker != caster:
+
+                # Give output to those who can see the target.
+                if rules.is_visible(target, looker):
+                    looker.msg("%s's feet rise off the ground." % (target.key[0].upper() + target.key[1:]))
+        
         rules.affect_apply(target,
                            "fly",
                            (caster.level + 3),
@@ -992,6 +1012,17 @@ def do_infravision(caster, target, mana_cost):
             caster.msg("%s's eyes glow red." % (target.key[0].upper() + target.key[1:]))
         target.msg("Your eyes glow red.")
 
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in caster.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for looker in lookers:
+            # Exclude the character, who got their output above.
+            if looker != caster:
+
+                # Give output to those who can see the caster.
+                if rules.is_visible(target, looker):
+                    looker.msg("%s's eyes begin to glow red." % (target.key[0].upper() + target.key[1:]))
+        
         rules.affect_apply(target,
                            "infravision",
                            (caster.level * 2),
@@ -1029,13 +1060,24 @@ def do_invis(caster, target, mana_cost):
         target.msg("You fade out of existence.")
         caster.location.msg_contents("%s fades out of existence." % ((target.key[0].upper() + target.key[1:]), rules.pronoun_reflexive(target)), exclude=target)
 
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in caster.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for looker in lookers:
+            # Exclude the character, who got their output above.
+            if looker != caster:
+
+                # Give output to those who can see the caster.
+                if rules.is_visible(caster, looker) and not looker.get_affect_status("detect invis"):
+                    looker.msg("%s fades out of existence." % (caster.key[0].upper() + caster.key[1:]))
+                
         rules.affect_apply(target,
                            "invis",
                            24,
                            "You are no longer invisible.",
                            "%s is no longer invisible." % (target.key[0].upper() + target.key[1:])
                           )
-
+        
         rules.wait_state_apply(caster, spell["wait state"])
 
     else:
@@ -1065,6 +1107,17 @@ def do_levitation(caster, target, mana_cost):
             caster.msg("%s's feet rise off the ground." % (target.key[0].upper() + target.key[1:]))
         target.msg("Your feet rise off the ground.")
 
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in caster.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for looker in lookers:
+            # Exclude the character, who got their output above.
+            if looker != caster:
+
+                # Give output to those who can see the target.
+                if rules.is_visible(target, looker):
+                    looker.msg("%s's feet rise off the ground." % (target.key[0].upper() + target.key[1:]))        
+        
         rules.affect_apply(target,
                            "fly",
                            (caster.level + 3),
@@ -1328,6 +1381,17 @@ def do_shield(caster, target, mana_cost):
             caster.msg("%s is surrounded by a force shield." % (target.key[0].upper() + target.key[1:]))
         target.msg("You are surrounded by a force shield.")
 
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in caster.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for looker in lookers:
+            # Exclude the character, who got their output above.
+            if looker != caster:
+
+                # Give output to those who can see the target.
+                if rules.is_visible(target, looker):
+                    looker.msg("%s is surrounded by a force shield." % (target.key[0].upper() + target.key[1:]))
+        
         rules.affect_apply(target,
                            "shield",
                            (8 + caster.level),
@@ -1437,11 +1501,20 @@ def do_slumber(caster, target, mana_cost):
             verb = "drift"
         else:
             verb = "drifts"
-        caster.location.msg_contents("%s's eyes close and %s slowly %s off to sleep."
-                                     % ((caster.key[0].upper() + caster.key[1:]),
+            
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in caster.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for looker in lookers:
+            # Exclude the character, who got their output above.
+            if looker != caster:
+
+                # Give output to those who can see the target.
+                if rules.is_visible(target, looker):
+                    looker.msg("%s's eyes close and %s slowly %s off to sleep."
+                                     % ((target.key[0].upper() + target.key[1:]),
                                         rules.pronoun_subject(target),
-                                        verb),
-                                     exclude=(caster, target))
+                                        verb))
 
         rules.affect_apply(target,
                            "sleep",
@@ -1483,10 +1556,21 @@ def do_summon_weapon(caster, mana_cost):
 
         caster.msg("You chant 'summon weapon'.\nYou pray to the Paladin gods and %s appears." % weapon.key)
         player_output_magic_chant(caster, "summon weapon")
-        caster.location.msg_contents("%s prays to the Paladin gods and %s appears."
+        
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in caster.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for looker in lookers:
+            # Exclude the character, who got their output above.
+            if looker != caster:
+
+                # Give output to those who can see the caster.
+                if rules.is_visible(caster, looker):
+                    looker.msg("%s prays to the Paladin gods and %s appears."
                                      % ((caster.key[0].upper() + caster.key[1:]),
-                                        weapon.key),
-                                     exclude=caster)
+                                        weapon.key))
+                else:
+                    looker.msg("%s suddenly appears." % weapon.key)
 
         rules.wait_state_apply(caster, spell["wait state"])
 
@@ -1551,10 +1635,12 @@ def do_ventriloquate(caster, mana_cost, target, sound):
             if object == target and object.db.position != "sleeping":
                 object.msg("A sound seemingly emanates from you saying '%s'" % sound)
             elif ("player" in object.tags.all() or "mobile" in object.tags.all()) and object != caster and object.db.position != "sleeping":
+                caster_string = rules.get_visible_output(caster, object)
+                target_string = rules.get_visible_output(target, object)
                 if save_spell(level, target):
-                    object.msg("%s makes %s say '%s'" % ((caster.key[0].upper() + caster.key[1:]), target, sound))
+                    object.msg("%s makes %s say '%s'" % ((caster_string[0].upper() + caster_string[1:]), target_string, sound))
                 else:
-                    object.msg("%s says '%s'" % ((target.key[0].upper() + target.key[1:]), sound))
+                    object.msg("%s says '%s'" % ((target_string[0].upper() + target_string[1:]), sound))
         rules.wait_state_apply(caster, spell["wait state"])
 
     else:
