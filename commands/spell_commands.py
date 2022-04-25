@@ -1277,6 +1277,57 @@ class CmdDetectMagic(MuxCommand):
 
         rules_magic.do_detect_magic(caster, target, cost)
 
+        
+class CmdFaerieFog(MuxCommand):
+    """
+    Create a magical fog to reveal hidden characters.
+
+    Usage:
+      cast faerie fog
+      faerie fog
+
+    Create a magical fog that will cause hidden, sneaking and invisible
+    characters to become visible to all in the room.
+
+    Colleges that can teach (level):
+    Druid (6)
+    """
+
+    key = "faerie fog"
+    aliases = ["cast faerie fog"]
+    locks = "cmd:all()"
+    arg_regex = r"$"
+
+    def func(self):
+        """Implement faerie fog"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+
+        caster = self.caller
+
+        if "faerie fog" not in caster.db.skills:
+            caster.msg("You do not know the spell 'faerie fog' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+
+        cost = rules_magic.mana_cost(caster, spell)
+
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast faerie fog!")
+            return
+
+        rules_magic.do_faerie_fog(caster, cost)
+
 
 class CmdFirebolt(MuxCommand):
     """
