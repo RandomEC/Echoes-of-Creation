@@ -1654,9 +1654,9 @@ class CmdInvis(MuxCommand):
     Make yourself or a target become invisible.
 
     Usage:
-      cast invis <target>
-      cast invis
-      invis
+      cast invisible <target>
+      cast invisible
+      invisible
 
     Invis will allow either you or a target to become invisible.
     Cast without a target, it targets the caster.
@@ -1665,8 +1665,8 @@ class CmdInvis(MuxCommand):
     Mage (10), Druid (35), Thief (60)
     """
 
-    key = "invis"
-    aliases = ["cast invis"]
+    key = "invisible"
+    aliases = ["cast invisible", "invis", "cast invis"]
     locks = "cmd:all()"
     arg_regex = r"\s|$"
 
@@ -1715,7 +1715,7 @@ class CmdInvis(MuxCommand):
                 caster.msg("There is no %s here on whom to cast %s." % (self.args, self.key))
                 return
 
-        if target.get_affect_status(self.key):
+        if target.get_affect_status("invisible"):
             if target == caster:
                 subject = "You are"
             else:
