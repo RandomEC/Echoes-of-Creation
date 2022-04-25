@@ -798,7 +798,36 @@ def do_detect_magic(caster, target, mana_cost):
         caster.msg("You chant 'detect magic'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "detect magic")
 
+        
+def do_faerie_fog(caster, mana_cost):
+    """ Function implementing faerie fog spell"""
 
+    spell = rules_skills.get_skill(skill_name="faerie fog")
+
+    level = caster.level
+
+    if random.randint(1, 100) <= caster.db.skills["continual light"] or "mobile" in caster.tags.all():
+        
+        targets = list(cont for cont in caster.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for target in targets:
+            if not save_spell(caster.level, target):
+                if target.get_affect_status("hide"):
+                    rules.affect_remove(target, "hide", "You are no longer hidden!", "%s appears from hiding." % (target.key[0].upper() + target.key[1:]))
+                if target.get_affect_status("invisible"):
+                    rules.affect_remove(target, "invisible", "You are no longer invisible!", "%s is no longer invisible." % (target.key[0].upper() + target.key[1:]))
+                if target.get_affect_status("sneak"):
+                    rules.affect_remove(target, "sneak", "You are no longer moving silently!", "%s is no longer moving silently." % (target.key[0].upper() + target.key[1:]))
+                    
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+            rules_skills.check_skill_improve(caster, "faerie fog", False, 1)
+        caster.msg("You chant 'faerie fog'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "faerie fog")
+
+        
 def do_firebolt(caster, target, mana_cost):
     """ Function implementing firebolt spell"""
 
@@ -1054,8 +1083,8 @@ def do_invis(caster, target, mana_cost):
             caster.mana_spent += mana_cost
             rules_skills.check_skill_improve(caster, "invis", True, 2)
 
-        caster.msg("You chant 'invis'.\n")
-        player_output_magic_chant(caster, "invis")
+        caster.msg("You chant 'invisible'.\n")
+        player_output_magic_chant(caster, "invisible")
 
         target.msg("You fade out of existence.")
         caster.location.msg_contents("%s fades out of existence." % ((target.key[0].upper() + target.key[1:]), rules.pronoun_reflexive(target)), exclude=target)
@@ -1072,7 +1101,7 @@ def do_invis(caster, target, mana_cost):
                     looker.msg("%s fades out of existence." % (caster.key[0].upper() + caster.key[1:]))
                 
         rules.affect_apply(target,
-                           "invis",
+                           "invisible",
                            24,
                            "You are no longer invisible.",
                            "%s is no longer invisible." % (target.key[0].upper() + target.key[1:])
