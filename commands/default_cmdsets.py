@@ -98,7 +98,7 @@ from commands.spell_commands import CmdFirebolt
 from commands.spell_commands import CmdFly
 from commands.spell_commands import CmdGiantStrength
 from commands.spell_commands import CmdInfravision
-from commands.spell_commands import CmdInvis
+from commands.spell_commands import CmdInvisible
 from commands.spell_commands import CmdLevitation
 from commands.spell_commands import CmdMagicMissile
 from commands.spell_commands import CmdMentalBarrier
@@ -176,7 +176,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdInfravision())
         self.add(CmdInspect())
         self.add(CmdInventory())
-        self.add(CmdInvis())
+        self.add(CmdInvisible())
         self.add(CmdKick())
         self.add(CmdLevitation())
         self.add(CmdLock())
