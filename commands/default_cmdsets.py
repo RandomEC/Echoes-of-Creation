@@ -93,6 +93,7 @@ from commands.spell_commands import CmdDetectEvil
 from commands.spell_commands import CmdDetectHidden
 from commands.spell_commands import CmdDetectInvis
 from commands.spell_commands import CmdDetectMagic
+from commands.spell_commands import CmdFaerieFog
 from commands.spell_commands import CmdFirebolt
 from commands.spell_commands import CmdFly
 from commands.spell_commands import CmdGiantStrength
@@ -161,6 +162,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdDowse())
         self.add(CmdDrop())
         self.add(CmdEquipment())
+        self.add(CmdFaerieFog())
         self.add(CmdFirebolt())
         self.add(CmdFlee())
         self.add(CmdFly())
