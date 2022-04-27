@@ -466,6 +466,15 @@ def get_skill(**kwargs):
             "minimum cost": 5,
             "wait state": 12
             },
+        "cure blindness": {
+            "classes": {
+                "cleric": 8,
+                "paladin": 25,
+                "ranger": 30
+                },
+            "minimum cost": 5,
+            "wait state": 12
+            },
         "cure light": {
             "classes": {
                 "cleric": 5,
@@ -600,7 +609,7 @@ def get_skill(**kwargs):
             "minimum cost": 5,
             "wait state": 18
             },
-        "invis": {
+        "invisible": {
             "classes": {
                 "mage": 10,
                 "druid": 35,
@@ -616,6 +625,14 @@ def get_skill(**kwargs):
                 "paladin": 12
                 },
             "wait state": 6
+            },
+        "know alignment": {
+            "classes": {
+                "cleric": 9,
+                "paladin": 15
+                },
+            "minimum cost": 9,
+            "wait state": 12
             },
         "levitation": {
             "classes": {
@@ -668,6 +685,13 @@ def get_skill(**kwargs):
                 },
             "minimum cost": 12,
             "wait state": 18
+            },
+        "psychic heal": {
+            "classes": {
+                "psionicist": 6
+                },
+            "minimum cost": 20,
+            "wait state": 12
             },
         "refresh": {
             "classes": {
