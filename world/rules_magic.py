@@ -613,6 +613,33 @@ def do_create_water(caster, mana_cost, target_container):
         caster.msg("You chant 'create water'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "create water")            
 
+
+def do_cure_blindness(caster, target, mana_cost):
+    """ Function implementing cure blindness spell"""
+
+    spell = rules_skills.get_skill(skill_name="cure blindness")
+
+    level = caster.level
+
+    if random.randint(1, 100) <= caster.db.skills["cure blindness"] or "mobile" in caster.tags.all():
+        
+        caster.msg("You chant 'cure blindness'.")
+        player_output_magic_chant(caster, "cure blindness")
+        rules_skills.check_skill_improve(caster, "cure blindness", True, 1)
+        
+        if caster != target:
+            caster.msg("You cure %s's blindness." % (target.key[0].upper() + target.key[1:]))
+        rules.affect_remove(target, "blind", "Your vision returns!", "")
+                    
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+            rules_skills.check_skill_improve(caster, "faerie fog", False, 1)
+        caster.msg("You chant 'faerie fog'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "faerie fog")
+        
         
 def do_cure_light(caster, target, mana_cost):
     """ Function implementing cure light wounds spell"""
@@ -626,7 +653,7 @@ def do_cure_light(caster, target, mana_cost):
     if random.randint(1, 100) <= caster.db.skills["cure light"] or "mobile" in caster.tags.all():
         if "player" in caster.tags.all():
             caster.mana_spent += mana_cost
-            rules_skills.check_skill_improve(caster, "cure light", True, 1)
+            rules_skills.check_skill_improve(caster, "cure light", True, 4)
 
         caster.msg("You chant 'cure light'.\n")
         player_output_magic_chant(caster, "cure light")
@@ -650,7 +677,7 @@ def do_cure_light(caster, target, mana_cost):
     else:
         if "player" in caster.tags.all():
             caster.mana_spent += int(mana_cost / 2)
-            rules_skills.check_skill_improve(caster, "cure light", False, 1)
+            rules_skills.check_skill_improve(caster, "cure light", False, 4)
         caster.msg("You chant 'cure light'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "cure light")
 
@@ -806,8 +833,12 @@ def do_faerie_fog(caster, mana_cost):
 
     level = caster.level
 
-    if random.randint(1, 100) <= caster.db.skills["continual light"] or "mobile" in caster.tags.all():
+    if random.randint(1, 100) <= caster.db.skills["faerie fog"] or "mobile" in caster.tags.all():
         
+        caster.msg("You chant 'faerie fog'.")
+        player_output_magic_chant(caster, "faerie fog")
+        rules_skills.check_skill_improve(caster, "faerie fog", True, 1)
+                
         targets = list(cont for cont in caster.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
         for target in targets:
             if not save_spell(caster.level, target):
@@ -1117,6 +1148,46 @@ def do_invisible(caster, target, mana_cost):
         player_output_magic_chant(caster, "invisible")
 
 
+def do_know_alignment(caster, target, mana_cost):
+    """ Function implementing know alignment spell"""
+
+    spell = rules_skills.get_skill(skill_name="know alignment")
+
+    level = caster.level
+
+    if random.randint(1, 100) <= caster.db.skills["know alignment"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+            rules_skills.check_skill_improve(caster, "know alignment", True, 2)
+
+        caster.msg("You chant 'know alignment'.\n")
+        player_output_magic_chant(caster, "know alignment")
+            
+        if target.alignment > 666:
+            caster.msg("%s has an aura as white as the driven snow." % (target.key[0].upper() + target.key[1:]))
+        elif target.alignment > 333:
+            caster.msg("%s is as sweet as sugar." % (target.key[0].upper() + target.key[1:]))
+        elif target.alignment > 100:
+            caster.msg("%s helps little old ladies across the street, but only if it's convenient." % (target.key[0].upper() + target.key[1:]))
+        elif target.alignment > -100:
+            caster.msg("%s doesn't have a firm moral commitment." % (target.key[0].upper() + target.key[1:]))
+        elif target.alignment > -333:
+            caster.msg("%s lies to %s friends." % ((target.key[0].upper() + target.key[1:]), rules.pronoun_possessive(target)))
+        elif target.alignment > -666:
+            caster.msg("%s idolizes Attila the Hun and Richard Nixon." % (target.key[0].upper() + target.key[1:]))
+        else:
+            caster.msg("%s worships all things evil! Even ... BARNEY!!! Argh!!!!!!!" % (target.key[0].upper() + target.key[1:]))
+        
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+            rules_skills.check_skill_improve(caster, "know alignment", False, 2)
+        caster.msg("You chant 'know alignment'.\nYou lost your concentration.")
+        player_output_magic_chant(caster, "know alignment")
+
+        
 def do_levitation(caster, target, mana_cost):
     """Implements the levitation spell."""
 
@@ -1345,6 +1416,39 @@ def do_protection(caster, target, mana_cost):
             rules_skills.check_skill_improve(caster, "protection", False, 2)
         caster.msg("You chant 'protection'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "protection")
+
+        
+def do_psychic_heal(caster, mana_cost):
+    """ Function implementing psychic heal spell"""
+
+    spell = rules_skills.get_skill(skill_name="psychic heal")
+
+    level = caster.level
+
+    heal = random.randint(3, 6) + (2 * caster.level / 3)
+
+    if random.randint(1, 100) <= caster.db.skills["psychic heal"] or "mobile" in caster.tags.all():
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+            rules_skills.check_skill_improve(caster, "psychic heal", True, 4)
+
+        caster.msg("You chant 'psychic heal'.\n")
+        player_output_magic_chant(caster, "psychic heal")
+
+        caster.msg("You feel better!")
+                
+        if heal >= caster.hitpoints_damaged:
+            heal = caster.hitooints_damaged
+        caster.hitpoints_damaged -= heal
+        
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+            rules_skills.check_skill_improve(caster, "psychic heal", False, 1)
+        caster.msg("You chant 'psychic heal'.\nYou lost your concentration.")
+        player_output_magic_chant(caster, "psychic heal")
 
 
 def do_refresh(caster, target, mana_cost):
