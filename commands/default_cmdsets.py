@@ -88,6 +88,7 @@ from commands.spell_commands import CmdContinualLight
 from commands.spell_commands import CmdCreateFood
 from commands.spell_commands import CmdCreateSound
 from commands.spell_commands import CmdCreateWater
+from commands.spell_commands import CmdCureBlindness
 from commands.spell_commands import CmdCureLight
 from commands.spell_commands import CmdDetectEvil
 from commands.spell_commands import CmdDetectHidden
@@ -99,11 +100,13 @@ from commands.spell_commands import CmdFly
 from commands.spell_commands import CmdGiantStrength
 from commands.spell_commands import CmdInfravision
 from commands.spell_commands import CmdInvisible
+from commands.spell_commands import CmdKnowAlignment
 from commands.spell_commands import CmdLevitation
 from commands.spell_commands import CmdMagicMissile
 from commands.spell_commands import CmdMentalBarrier
 from commands.spell_commands import CmdMindThrust
 from commands.spell_commands import CmdProtection
+from commands.spell_commands import CmdPsychicHeal
 from commands.spell_commands import CmdRefresh
 from commands.spell_commands import CmdShield
 from commands.spell_commands import CmdShockingGrasp
@@ -147,6 +150,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdCreateSound())
         self.add(CmdCreateWater())
         self.add(CmdCSkills())
+        self.add(CmdCureBlindness())
         self.add(CmdCureLight())
         self.add(CmdDestroy())
         self.add(CmdDetectEvil())
@@ -178,6 +182,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdInventory())
         self.add(CmdInvisible())
         self.add(CmdKick())
+        self.add(CmdKnowAlignment())
         self.add(CmdLevitation())
         self.add(CmdLock())
         self.add(CmdLook())
@@ -190,6 +195,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdPickLock())
         self.add(CmdPractice())
         self.add(CmdProtection())
+        self.add(CmdPsychicHeal())
         self.add(CmdPut())
         self.add(CmdQuestList())
         self.add(CmdRefresh())
