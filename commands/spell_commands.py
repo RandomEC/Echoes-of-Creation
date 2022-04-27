@@ -752,6 +752,7 @@ class CmdCreateFood(MuxCommand):
 
         rules_magic.do_create_food(caster, cost)
 
+        
 class CmdCreateSound(MuxCommand):
     """
     A spell that puts words in the mouths of other players and
@@ -894,6 +895,80 @@ class CmdCreateWater(MuxCommand):
             return
 
         rules_magic.do_create_water(caster, cost, target_container)
+
+        
+class CmdCureBlindness(MuxCommand):
+    """
+    Cure blindness in yourself or a target.
+
+    Usage:
+      cast cure blindness <target>
+      cast cure blindness
+      cure blindness
+
+    Cure blindness will heal blindness from yourself or a
+    target from any cause.
+
+    Colleges that can teach (level):
+    Cleric (8), Paladin (25), Ranger (30)
+    """
+
+    key = "cure blindness"
+    aliases = ["cast cure blindness"]
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement cure blindness"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+
+        caster = self.caller
+
+        if "cure blindness" not in caster.db.skills:
+            caster.msg("You do not know the spell 'cure blindness' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+
+        cost = rules_magic.mana_cost(caster, spell)
+
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast cure blindness!")
+            return
+
+        if not self.args:
+            target = caster
+
+        else:
+            targets = []
+            for object in caster.location.contents:
+                if "mobile" in object.tags.all() or "player" in object.tags.all() and rules.is_visible(object, caster):
+                    targets.append(object)
+            target = caster.search(self.args, candidates=targets)
+            if not target:
+                caster.msg("There is no %s here on whom to cast detect magic." % self.args)
+                return
+
+        if not target.get_affect_status("blind"):
+            if target == caster:
+                subject = "You are"
+            else:
+                subject = "%s is" % (target.key[0].upper() + target.key[1:])
+
+            caster.msg("%s not blind.\n" % subject)
+            return
+
+        rules_magic.do_cure_blindness(caster, target, cost)
 
         
 class CmdCureLight(MuxCommand):
@@ -1677,7 +1752,7 @@ class CmdInvisible(MuxCommand):
         caster = self.caller
         cost = rules_magic.mana_cost(caster, spell)
 
-        if "invis" not in caster.db.skills:
+        if "invisible" not in caster.db.skills:
             caster.msg("You do not know the spell '%s' yet!" % self.key)
             return
 
@@ -1725,6 +1800,72 @@ class CmdInvisible(MuxCommand):
             return
 
         rules_magic.do_invis(caster, target, cost)
+
+        
+class CmdKnowAlignment(MuxCommand):
+    """
+    Obtain a rough estimate of the alignment of a target.
+
+    Usage:
+      cast know alignment <target>
+      cast know alignment
+      know alignment
+
+    Know alignment will return a short, descriptive message
+    correlating with the alignment of the target of the spell.
+
+    Colleges that can teach (level):
+    Cleric (9), Paladin (15)
+    """
+
+    key = "know alignment"
+    aliases = ["cast know alignment"]
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement know alignment"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+        caster = self.caller
+        cost = rules_magic.mana_cost(caster, spell)
+
+        if "know alignment" not in caster.db.skills:
+            caster.msg("You do not know the spell '%s' yet!" % self.key)
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast %s!" % self.key)
+            return
+
+        if not self.args:
+            target = caster
+
+        else:
+
+            targets = []
+            for object in caster.location.contents:
+                if "mobile" in object.tags.all() or "player" in object.tags.all() and rules.is_visible(target, caster):
+                    targets.append(object)
+
+            target = caster.search(self.args, candidates=targets)
+
+            if not target:
+                caster.msg("There is no %s here on whom to cast %s." % (self.args, self.key))
+                return
+
+        rules_magic.do_know_alignment(caster, cost)
 
 
 class CmdLevitation(MuxCommand):
@@ -2113,7 +2254,61 @@ class CmdProtection(MuxCommand):
 
         rules_magic.do_protection(caster, target, cost)
 
+class CmdPsychicHeal(MuxCommand):
+    """
+    Heal yourself using your mental powers.
 
+    Usage:
+      cast psychic heal
+      psychic heal
+
+    Heal yourself using your mental powers. As this is not as
+    efficient as cleric healing, the cost is substantially higher.
+    
+    Colleges that can teach (level):
+    Psionicist (6)
+    """
+
+    key = "psychic heal"
+    aliases = ["cast psychic heal"]
+    locks = "cmd:all()"
+    arg_regex = r"$"
+
+    def func(self):
+        """Implement psychic heal"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+
+        caster = self.caller
+
+        if "psychic heal" not in caster.db.skills:
+            caster.msg("You do not know the spell 'psychic heal' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+
+        cost = rules_magic.mana_cost(caster, spell)
+
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast psychic heal!")
+            return
+
+        if caster.hitpoints_damaged == 0:
+            caster.msg("You are already fully healed!")
+            return
+        
+        rules_magic.do_psychic_heal(caster, cost)
+
+        
 class CmdRefresh(MuxCommand):
     """
     Cast a spell to restore movement points to a target.
