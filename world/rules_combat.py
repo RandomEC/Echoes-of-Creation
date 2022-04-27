@@ -22,7 +22,6 @@ class Combat(Object):
         # This will be a dictionary with key of combatant and value of target.
         self.db.combatants = {}
         self.db.rounds = 0
-        self.x = 1
         timestamp = self.key + str(time.time())
         self.db.timer_ticker = timestamp
         tickerhandler.add(2, self.at_repeat, timestamp)
