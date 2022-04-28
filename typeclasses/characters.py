@@ -639,7 +639,7 @@ class Character(DefaultCharacter):
         Method to use to do damage to a character.
         """
         
-        self.db.hitpoints["damaged"] += damage
+        self.hitpoints_damaged += damage
         
     def get_score_info(self): # add caller into score command
         """
