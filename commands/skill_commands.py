@@ -11,7 +11,9 @@ class CmdBashDoor(MuxCommand):
       bash door <direction of door>      
       
     Makes an attempt to bash in a door in a given direction.
-    Be aware that some doors are bash proof!
+    Be aware that you will take damage from bashing a door,
+    even from a successful bash, and even more if the door
+    cannot be bashed!
 
     Colleges that can teach (level):
     Warrior (8)
