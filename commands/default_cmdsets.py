@@ -68,6 +68,7 @@ from commands.equipment_commands import CmdWieldTo
 from commands.growth_commands import CmdPractice
 from commands.growth_commands import CmdTrain
 from commands.quest_commands import CmdQuestList
+from commands.skill_commands import CmdBashDoor
 from commands.skill_commands import CmdChameleonPower
 from commands.skill_commands import CmdDowse
 from commands.skill_commands import CmdForage
@@ -137,6 +138,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdAgitation())
         self.add(CmdAttack())
         self.add(CmdBamf())
+        self.add(CmdBashDoor())
         self.add(CmdBless())
         self.add(CmdBurningHands())
         self.add(CmdCauseLight())
