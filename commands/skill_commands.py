@@ -353,15 +353,22 @@ class CmdPickLock(MuxCommand):
                 caller.msg("That door is not locked.")
                 return
 
+            # Check for door being guarded.
+            mobiles = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all() and rules.is_visible(caller, mobile))
+            for mobile in mobiles:
+                if mobile.position != "sleeping" and (caller.level + 5) < mobile.level:
+                    caller.msg("%s is standing too close to the lock." % (mobile.key[0].upper() + mobile.key[1:]))
+                    return
+            
             rules_skills.do_pick_lock(caller, target, "door")
             return
         
         objects = []
         for object in caller.location.contents:
-            if "object" in object.tags.all():
+            if "object" in object.tags.all() and rules.is_visible(object, caller):
                 objects.append(object)
         for object in caller.contents:
-            if "object" in object.tags.all():
+            if "object" in object.tags.all() and rules.is_visible(object, caller):
                 objects.append(object)
                 
         target = caller.search(self.args, candidates=objects)
@@ -370,13 +377,18 @@ class CmdPickLock(MuxCommand):
             caller.msg("There is no %s here pick the lock of." % self.args)
             return
         
-        if not rules.is_visible(target, caller):
-            caller.msg("There is no %s here pick the lock of." % self.args)
-            return
-        
         if target.db.item_type != "container":
             caller.msg("%s is not a container." % (target.key[0].upper() + target.key[1:]))
             return
+        
+        # If the container is in the caller's room (instead of their inventory),
+        # check for it being guarded.
+        if target in caller.location.contents:
+            mobiles = list(cont for cont in caller.location.contents if "mobile" in cont.tags.all())
+            for mobile in mobiles:
+                if mobile.position != "sleeping" and (caller.level + 5) < mobile.level and rules.is_visible(caller, mobile):
+                    caller.msg("%s is standing too close to the lock." % (mobile.key[0].upper() + mobile.key[1:]))
+                    return            
         
         if "locked" not in target.db.state:
             caller.msg("%s is not locked." % (target.key[0].upper() + target.key[1:]))
