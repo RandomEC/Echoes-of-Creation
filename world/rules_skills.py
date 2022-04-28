@@ -73,7 +73,8 @@ def do_bash_door(character, target):
 
             check_skill_improve(character, "bash door", TRUE, 3)
 
-
+            rules.wait_state_apply(character, skill["wait state"])
+            
             # Handle output in the character's room.
             character.msg("Crash! You bashed open the the %s!" % target_string)
 
@@ -381,9 +382,35 @@ def do_pick_lock(character, target, target_type):
 
                 looker.msg("%s picks the %s" % (picker, target_string))
         
+        # Unlock the exit in the character's room.
         target.db.door_attributes.remove("locked")
+        
+        # Unlock the exit in the destination room.
+        # Fetch the exit in the opposite direction from the destination room.
+        if target.key == "north":
+            opposite_direction = "south"
+        elif target.key == "east":
+            opposite_direction = "west"
+        elif target.key == "south":
+            opposite_direction = "north"
+        elif target.key == "west":
+            opposite_direction = "east"
+        elif target.key == "up":
+            opposite_direction = "down"
+        elif target.key == "down":
+            opposite_direction = "up"
+        else:
+            opposite_direction = door.key
 
+        opposite_door = character.search(opposite_direction,
+                                         location=target.destination)
 
+        # Modify opposite door attributes as above.
+        if "locked" in opposite_door.db.door_attributes:
+            target.db.door_attributes.remove("locked")
+
+    rules.wait_state_apply(character, skill["wait state"])
+        
 def do_shadow_form(character):
     """
     This is the function that does the actual mechanics of the
