@@ -9,6 +9,164 @@ from evennia import TICKER_HANDLER as tickerhandler
 from server.conf import settings
 from world import rules, rules_combat
 
+def do_bash_door(character, target):
+    """
+    This is the function that does the actual mechanics of
+    bashing a door.
+    """
+    skill = get_skill(skill_name="bash door")
+
+    if target.key == "up" or target.key == "down":
+        target_string = "door %s" % target.key
+    else:
+        target_string = "%s door" % target.key
+
+    if not target.access(character, "bash"):
+        character.msg("WHAAAAM!!!  You bash against the %s, but it doesn't budge. That HURT!" % target_string)
+        
+        # Deal with invisible characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in character.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for looker in lookers:
+            # Exclude the caller, who got their output above.
+            if looker != character:
+                basher_string = rules.get_visible_output(character, looker)
+                looker.msg("WHAAAAM!!! %s bashes against the %s, but it holds strong." % ((basher_string[0].upper() + basher_string[1:]), target_string))
+        return
+    
+        rules.do_damage_noncombat(character,
+                                  "Your",
+                                  (character.key + "'s"),
+                                  (character.hitpoints_maximum / 5),
+                                  "bash"
+                                  )                                  
+                                  
+        check_skill_improve(character, "bash door", FALSE, 3)
+    else:
+
+        if "player" in character.tags.all():
+            chance = character.db.skills["bash door"] / 2
+        # As of right now, mobiles can't bash doors.
+        else:
+            chance = 0
+
+        if "locked" in target.db.door_attributes:
+            chance /= 2
+
+        # Successful door bash.
+        if character.strength >= 20 and random.randint(1, 100) < (chance + 4 * (character.strength - 20)):
+
+            # Modify door attributes as needed to be open, not locked and not closeable.
+            if "locked" in target.db.door_attributes:
+                target.db.door_attributes.remove("locked")
+            if "closeable" in target.db.door_attributes:
+                target.db.door_attributes.remove("closeable")
+            if "open" not in target.db.door_attributes:
+                target.db.door_attributes.append("open")
+
+            rules.do_damage_noncombat(character,
+                                      "Your",
+                                      (character.key + "'s"),
+                                      (character.hitpoints_maximum / 20),
+                                      "bash"
+                                      )                                  
+
+            check_skill_improve(character, "bash door", TRUE, 3)
+
+
+            # Handle output in the character's room.
+            character.msg("Crash! You bashed open the the %s!" % target_string)
+
+            # Deal with invisible characters for output.
+            # Assemble a list of all possible lookers.
+            lookers = list(cont for cont in character.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+            for looker in lookers:
+                # Exclude the caller, who got their output above.
+                if looker != character:
+                    basher_string = rules.get_visible_output(character, looker)
+                    looker.msg("%s bashes open the %s." % ((character_string[0].upper() + character_string[1:]), target_string))
+
+            # Fetch the exit in the opposite direction from the destination room.
+            if target.key == "north":
+                opposite_direction = "south"
+            elif target.key == "east":
+                opposite_direction = "west"
+            elif target.key == "south":
+                opposite_direction = "north"
+            elif target.key == "west":
+                opposite_direction = "east"
+            elif target.key == "up":
+                opposite_direction = "down"
+            elif target.key == "down":
+                opposite_direction = "up"
+            else:
+                opposite_direction = door.key
+
+            opposite_door = character.search(opposite_direction,
+                                             location=target.destination)
+
+            # Build output string for opposite door.
+            if opposite_door.key == "north" or opposite_door.key == "east" or opposite_door.key == "south" \
+                    or opposite_door.key == "west":
+                opposite_door_string = ("door to the %s" % opposite_door.key)
+            elif opposite_door.key == "up" or opposite_door.key == "down":
+                opposite_door_string = ("door %s" % opposite_door.key)
+            else:
+                opposite_door_string = ("%s" % opposite_door.key)
+
+            # Modify opposite door attributes as above.
+            if "locked" in opposite_door.db.door_attributes:
+                target.db.door_attributes.remove("locked")
+            if "closeable" in opposite_door.db.door_attributes:
+                target.db.door_attributes.remove("closeable")
+            if "open" not in opposite_door.db.door_attributes:
+                target.db.door_attributes.append("open")
+
+            # Handle output in the opposite room.
+            target.destination.contents.msg("The %s crashes open!" % opposite_door_string)
+
+        # Unsuccessful door bash.
+        else:
+
+            rules.do_damage_noncombat(character,
+                                      "Your",
+                                      (character.key + "'s"),
+                                      (character.hitpoints_maximum / 10),
+                                      "bash"
+                                      )                                  
+
+            check_skill_improve(character, "bash door", FALSE, 3)
+
+            # Handle output in the character's room.
+            character.msg("OW! You bash against the %s, but it doesn't budge." % target_string)
+
+            # Deal with invisible characters for output.
+            # Assemble a list of all possible lookers.
+            lookers = list(cont for cont in character.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+            for looker in lookers:
+                # Exclude the caller, who got their output above.
+                if looker != character:
+                    basher_string = rules.get_visible_output(character, looker)
+                    looker.msg("%s bashes against the %s, but it holds strong." % ((character_string[0].upper() + character_string[1:]), target_string))
+
+    # If the character didn't die, check for whether any of the mobiles in the
+    # room worry about the character's show of aggression. 25% chance a mobile
+    # will attack.
+    if character.location == target.location and character.hitpoints_current > 1:
+        mobiles = list(cont for cont in character.location.contents if "mobile" in cont.tags.all())
+        for mobile in mobiles:
+            if (mobile.position != "sleeping"
+                    and not mobile.nattributes.has("combat_handler")
+                    and rules.is_visible(character, mobile)
+                    and character.level - mobile.level <= 4
+                    and random.randint(1, 4) > 3):
+                if character.nattributes.has("combat_handler"):
+                    combat = character.ndb.combat_handler
+                    combat.combatant_add(mobile, character)
+                else:
+                    combat = rules_combat.create_combat(mobile, character)
+                    combat.at_repeat()
+
 def check_skill_improve(character, skill_name, success, learn_factor):
     if "mobile" in character.tags.all():
         return False
