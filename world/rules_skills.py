@@ -38,7 +38,7 @@ def do_bash_door(character, target):
                                   "Your",
                                   (character.key + "'s"),
                                   (character.hitpoints_maximum / 5),
-                                  "bash"
+                                  "powerful bash"
                                   )                                  
                                   
         check_skill_improve(character, "bash door", FALSE, 3)
@@ -68,7 +68,7 @@ def do_bash_door(character, target):
                                       "Your",
                                       (character.key + "'s"),
                                       (character.hitpoints_maximum / 20),
-                                      "bash"
+                                      "powerful bash"
                                       )                                  
 
             check_skill_improve(character, "bash door", TRUE, 3)
@@ -132,7 +132,7 @@ def do_bash_door(character, target):
                                       "Your",
                                       (character.key + "'s"),
                                       (character.hitpoints_maximum / 10),
-                                      "bash"
+                                      "powerful bash"
                                       )                                  
 
             check_skill_improve(character, "bash door", FALSE, 3)
