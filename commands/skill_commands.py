@@ -3,6 +3,65 @@ from evennia.utils import search
 from commands.command import MuxCommand
 from world import rules_skills, rules_combat, rules
 
+class CmdBashDoor(MuxCommand):
+    """
+    Bash in a door to allow progress through.
+    
+    Usage:
+      bash door <direction of door>      
+      
+    Makes an attempt to bash in a door in a given direction.
+    Be aware that some doors are bash proof!
+
+    Colleges that can teach (level):
+    Warrior (8)
+    """
+
+    key = "bash door"
+    aliases = ["bash"]    
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement bash door"""
+
+        caller = self.caller
+        
+        if "bash door" not in caller.db.skills:
+            caller.msg("You're not enough of a warrior to bash doors!")
+            return
+
+        if not self.args:
+            caller.msg("Bash a door in what direction?")
+            return
+        
+        if caller.position != "standing":
+            caller.msg("You aren't bashing anything from the ground, stand up first.")
+            return
+
+        if caller.nattributes.has("combat_handler"):
+            caller.msg("You can't do that in the middle of a fight.")
+            return
+        
+        target = ""
+        if caller.location.exits:
+            for exit in caller.location.exits:
+                if self.args == exit.key:
+                    target = exit
+        
+        if target:
+        
+            if "closed" not in target.db.door_attributes:
+                caller.msg("That door is not closed.")
+                return
+            
+        else:
+            caller.msg("There is no door to bash called '%s'." % self.args)
+            return
+        
+        rules_skills.do_bash_door(caller, target)
+
+            
 class CmdChameleonPower(MuxCommand):
     """
     Attempt to blend into your surroundings.
