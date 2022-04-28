@@ -41,7 +41,7 @@ def do_bash_door(character, target):
                                   "powerful bash"
                                   )                                  
                                   
-        check_skill_improve(character, "bash door", FALSE, 3)
+        check_skill_improve(character, "bash door", False, 3)
     else:
 
         if "player" in character.tags.all():
@@ -71,7 +71,7 @@ def do_bash_door(character, target):
                                       "powerful bash"
                                       )                                  
 
-            check_skill_improve(character, "bash door", TRUE, 3)
+            check_skill_improve(character, "bash door", True, 3)
 
             rules.wait_state_apply(character, skill["wait state"])
             
@@ -136,7 +136,7 @@ def do_bash_door(character, target):
                                       "powerful bash"
                                       )                                  
 
-            check_skill_improve(character, "bash door", FALSE, 3)
+            check_skill_improve(character, "bash door", False, 3)
 
             # Handle output in the character's room.
             character.msg("OW! You bash against the %s, but it doesn't budge." % target_string)
@@ -337,6 +337,7 @@ def do_pick_lock(character, target, target_type):
 
     if random.randint(1, 100) > character.db.skills["pick lock"]:
         character.msg("You failed.")
+        check_skill_improve(character, "pick lock", False, 3)
         return
 
     character.msg("*Click*")
@@ -366,6 +367,7 @@ def do_pick_lock(character, target, target_type):
                     looker.msg("%s picks %s" % (picker, target.key))
 
         target.db.state.remove("locked")
+        
     else:
         
         # Deal with invisible objects/characters for output.
@@ -410,6 +412,7 @@ def do_pick_lock(character, target, target_type):
             target.db.door_attributes.remove("locked")
 
     rules.wait_state_apply(character, skill["wait state"])
+    check_skill_improve(character, "pick lock", True, 3)
         
 def do_shadow_form(character):
     """
