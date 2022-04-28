@@ -2,7 +2,7 @@ import math
 import random
 import time
 from server.conf import settings
-from world import rules_race, rules_skills
+from world import rules_race, rules_skills, rules_combat
 from evennia import TICKER_HANDLER as tickerhandler
 from evennia import utils
 from evennia.utils import search
@@ -504,6 +504,170 @@ def current_experience_step(character, extra_step):
     
     return experience_cost
 
+def do_damage_noncombat(victim, victim_source, looker_source, damage, damage_type):
+    """
+    This function is used to do damage outside of combat.
+    """
+    
+        try:
+            victim.take_damage(damage)
+        except Exception:
+            logger.log_trace("Error in damaging character in do_damage_noncombat.")
+
+        # Get the victim started healing, if not already.
+        try:
+            if not victim.attributes.has("heal_ticker"):
+                timestamp = victim.key + str(time.time())
+                tickerhandler.add(30, victim.at_update, timestamp)
+                victim.db.heal_ticker = timestamp
+            elif not victim.db.heal_ticker:
+                timestamp = victim.key + str(time.time())
+                tickerhandler.add(30, victim.at_update, timestamp)
+                victim.db.heal_ticker = timestamp
+        except Exception:
+            logger.log_trace("Error in checking if healing needed in do_damage_noncombat.")
+
+        # Give output.
+        try:
+            if source == victim:
+                source_name = "Your"
+            else:
+            
+            victim.msg("%s %s %s you."
+                           % (victim_source,
+                              damage_type,
+                              rules_combat.get_damagestring("victim", damage)                              
+                              )
+                           )
+            
+            # Deal with invisible characters for output.
+            # Assemble a list of all possible lookers.
+            lookers = list(cont for cont in victim.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+            for looker in lookers:
+                # Exclude the victim, who got their output above.
+                if looker != victim:
+                    if is_visible(victim, looker):
+                        looker.msg("%s %s %s %s."
+                                             % ((looker_source[0].upper() + looker_source[1:]),
+                                                damage_type,
+                                                rules_combat.get_damagestring("victim", damage),
+                                                victim.key
+                                                )
+                                             )
+        except Exception:
+            logger.log_trace("Error in giving output in do_damage_noncombat.")
+
+        # Check at the end of processing damage to see if the victim is dead.
+        if victim.hitpoints_current <= 0:
+            do_death_noncombat(victim, victim_source, looker_source, damage_type)
+
+def do_death_noncombat(victim, victim_source, looker_source, damage_type):
+    """
+    This handles non-cobmat death and returns some output. For now,
+    only handles player death.
+    """
+
+    # Give death output.
+    try:
+        victim.msg("You have been |rKILLED|n!!!\n You awaken again at your "
+                   "home location.")
+
+        # Deal with invisible characters for output.
+        # Assemble a list of all possible lookers.
+        lookers = list(cont for cont in victim.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+        for looker in lookers:
+            # Exclude the victim, who got their output above.
+            if looker != victim:
+                if is_visible(victim, looker):
+                    looker.msg("%s %s has KILLED %s!!!"
+                                            % (looker_source[0].upper() + looker_source[1:]),
+                                               damage_type,
+                                               victim.key
+                                               )
+                                         )
+    except Exception:
+        logger.log_trace("Error in giving output of death in do_death_noncombat.")
+
+    # Handle player death.
+
+    # Step 1 Make a corpse.
+    corpse = False
+
+    # 1(a) Check at none to see if there is an existing corpse.
+    try:
+        object_candidates = search.search_tag("pc corpse")
+
+        for object in object_candidates:
+            if not object.location:
+                corpse = object
+                corpse.key = "the corpse of %s" % victim.key
+                break
+
+    except Exception:
+        logger.log_trace("Error in finding player corpse in do_death_noncombat.")
+
+    # 1(b) If not a ready corpse, make one.
+    try:
+        if not corpse:
+            # Create corpse.
+            corpse = create_object("objects.PC_Corpse", key=("the corpse of %s"
+                                                             % victim.key))
+    except Exception:
+        logger.log_trace("Error in creating player corpse in do_death_noncombat.")
+
+    corpse.db.desc = ("The corpse of %s lies here." % victim.key)
+    corpse.location = victim.location
+
+    try:
+        rules.set_disintegrate_timer(corpse)
+    except Exception:
+        logger.log_trace("Error setting disintegrage timer for player corpse in do_death_noncombat.")
+
+    # Step 2 Increment hero deaths.
+    victim.db.died += 1
+
+    # Heroes keep their items.
+
+    # Step 3 Cleanup the hero.
+    try:
+        # 3(a) Clear wait state.
+        if victim.ndb.wait_state:
+            wait_state_remove(victim)
+
+        # 3(b) Clear spell affects and return calls.
+        if victim.db.spell_affects:
+            for affect_name in victim.db.spell_affects:
+                affect_remove(victim, affect_name, "", "")
+
+    except Exception:
+        logger.log_trace("Error in cleaning up player in do_death_noncombat.")
+
+    # Step 4 Do xp penalty, if above level 5.
+    try:
+        if victim.level > 5:
+            experience_loss = int(settings.EXPERIENCE_LOSS_DEATH * rules.experience_loss_base(victim))
+            victim.db.experience_total -= experience_loss
+
+            victim.msg("You lose %s experience as a result of your death!" % experience_loss)
+
+    except Exception:
+        logger.log_trace("Error in finding player corpse in do_death_noncombat.")
+
+        # Do gold penalty, after figuring out how much it should be.
+
+    # Step 5 Reset dead players to one hitpoint, and move to home.
+    try:
+        victim.hitpoints_damaged = victim.hitpoints_maximum - 1
+        victim.move_to(victim.home, quiet=True)
+
+        victim.location.msg_contents("A beaten and bedraggled %s rises from the dead."
+                                     % victim.key,
+                                     exclude=victim)
+    except Exception:
+        logger.log_trace("Error in resetting player ot one hp and moving home in do_death_noncombat.")
+
+    send_prompt(victim)
+          
 
 def experience_loss_base(character):
     """
