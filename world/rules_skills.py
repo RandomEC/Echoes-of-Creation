@@ -558,6 +558,13 @@ def get_skill(**kwargs):
             "minimum cost": 5,
             "wait state": 12
             },
+        "bash door": {
+            "classes": {
+                "warrior": 8
+                },
+            "minimum cost": 5,
+            "wait state": 24
+            },
         "bless": {
             "classes": {
                 "cleric": 6,
