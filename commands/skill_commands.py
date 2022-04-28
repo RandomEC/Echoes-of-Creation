@@ -13,7 +13,8 @@ class CmdBashDoor(MuxCommand):
     Makes an attempt to bash in a door in a given direction.
     Be aware that you will take damage from bashing a door,
     even from a successful bash, and even more if the door
-    cannot be bashed!
+    cannot be bashed! Your strength must be at least 20 to
+    have a chance of success.
 
     Colleges that can teach (level):
     Warrior (8)
