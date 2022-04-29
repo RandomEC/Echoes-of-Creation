@@ -1057,18 +1057,43 @@ class Mobile(Character):
 
                     reset_object = reset_object.lower()
                     new_object = ""
+                    location = self.db.reset_objects[reset_object]["location"]
 
-                    # Search the mobile's inventory for the object already existing.
-                    for object in self.contents:
-                        aliases = object.aliases.get()
-                        if aliases:
-                            if reset_object in aliases:
-                                new_object = object
+                    # Search the mobile's inventory for the object already existing, if 
+                    # it should be in inventory or equipped.
+                    if location == "inventory" or location == "equipped":
+                        for object in self.contents:
+                            aliases = object.aliases.get()
+                            if aliases:
+                                if reset_object in aliases:
+                                    new_object = object
+                    
+                    # If the object does not belong in mobile inventory, find the
+                    # object that the reset object should reset in, WHICH MUST
+                    # ALWAYS RESET BEFORE IT.
+                    else:
+                        for object in self.contents:
+                            aliases = object.aliases.get()
+                            if aliases:
+                                # Check if the onum of the location is in the
+                                # object's aliases.
+                                if location in aliases:
+                                    # Set the object as the container, for later.
+                                    container = object
 
-                    # If the object does not already exist on the mobile/in the room,
-                    # continue on.
+                                    # Iterate through objects in each container.
+                                    if object.contents:
+                                        for contained_object in object.contents:
+                                            aliases = contained_object.aliases.get()
+                                            if aliases:
+                                                if reset_object in aliases:
+                                                    # If you found the object in the
+                                                    # correct container, you're good.
+                                                    new_object = contained_object
+
+                    # If the object does not already exist on the mobile in the correct
+                    # location, continue on.
                     if not new_object:
-
 
                         # First, search for all objects of that type and pull out
                         # any that are at "None".
@@ -1090,8 +1115,11 @@ class Mobile(Character):
                                 new_object.db.equipped = False
                             new_object.home = self
 
-                        # Either way, bring the new object to the mobile.
-                        new_object.location = self
+                        # Either way, bring the new object to the mobile or container.
+                        if location == "inventory" or location == "equipped":
+                            new_object.location = self
+                        else:
+                            new_object.location = container
 
                     # Clear any enchantment/poison/other affects.
                     new_object.db.spell_affects = {}
