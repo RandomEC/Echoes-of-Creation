@@ -442,7 +442,92 @@ class CmdRescue(MuxCommand):
                 rules_combat.do_rescue(caller, target, victim)
                 rules.wait_state_apply(caller, self.wait_state)
 
+class CmdSnare(MuxCommand):
+    """
+    Make an attempt to hold an enemy in place.
+    
+    Usage:
+      snare <target>
+      snare
+      
+    Makes an an attempt to snare an opponent (or soon to be opponent) in
+    place, preventing them from fleeing. Can only be used without a
+    target in combat, where it will attack your current target.
+    
+    Colleges that can teach (level):
+    Ranger (8), Thief (8)
+    """
 
+    key = "kick"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        caller = self.caller
+
+        if "kick" not in caller.db.skills:
+            caller.msg("Better stick to tying your shoes until you learn more.")
+            return
+
+        if caller.position != "standing":
+            caller.msg("You can't ensnare unless standing.")
+            return
+        
+        if not self.args:
+
+            if not caller.ndb.combat_handler:
+                caller.msg("Ensnare whom?")
+                return
+            else:
+                combat = caller.ndb.combat_handler
+                target = combat.get_target(caller)
+                
+                if target.get_affect_status("snare"):
+                    caller.msg("%s is already snared." % (target.key[0].upper() + target.key[1:]))
+                    return
+                
+                rules_combat.do_snare(caller, target)
+
+        else:
+            mobiles = []
+            for object in caller.location.contents:
+                if "mobile" in object.tags.all() and rules.is_visible(object, caller):
+                    mobiles.append(object)
+            target = caller.search(self.args, candidates=mobiles)
+            if not target:
+                caller.msg("There is no %s here to ensnare." % self.args)
+                return
+            else:
+
+                if "player" in target.tags.all():
+                    caller.msg("You cannot attack another player.")
+                    return
+
+                if rules_combat.is_safe(target):
+                    caller.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
+                    return
+
+                if target.get_affect_status("snare"):
+                    caller.msg("%s is already snared." % (target.key[0].upper() + target.key[1:]))
+                    return
+                                
+                if not caller.ndb.combat_handler:
+                    combat = rules_combat.create_combat(caller, target)
+                    rules_combat.do_snare(caller, target)
+                    if combat in caller.location.contents:
+                        combat.at_repeat()
+                    return
+
+                else:
+                    combat = caller.ndb.combat_handler
+
+                    if target != combat.get_target(caller):
+                        caller.msg("Take care of who you are fighting first!")
+                        return
+
+                    rules_combat.do_snare(caller, target)
+
+                    
 class CmdTrip(MuxCommand):
     """
     Make an aggressive tripping strike at an enemy
