@@ -1417,7 +1417,46 @@ def do_rescue(attacker, to_rescue, victim):
         attacker.location.msg_contents("%s tries to get between %s and %s and fails.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.key, to_rescue.key), exclude=(attacker, victim, to_rescue))
         to_rescue.msg("%s tries to get get between you and your attacker and fails!" % (attacker.key[0].upper() + attacker.key[1:]))
 
+def do_snare(attacker, victim):
+    """
+    This does the action of the snare command.
+    """
 
+    skill = rules_skills.get_skill(skill_name="snare")
+    wait_state = skill["wait state"]
+    combat = attacker.ndb.combat_handler
+
+    if random.randint(1, 100) <= attacker.db.skills["snare"] or "mobile" in attacker.tags.all():
+        attacker.msg("You have ensnared %s!" % victim.key)
+        victim.msg("%s has ensnared you!" % (attacker.key[0].upper() + attacker.key[1:]))
+        attacker.location.msg_contents(
+            "%s has ensnared %s." % ((attacker.key[0].upper() + attacker.key[1:]),
+                                      victim.name
+                                      ),
+            exclude=(attacker, victim))
+        
+        rules.affect_apply(victim,
+                           "snare",
+                           3 + (attacker.level / 8),
+                           "You are no longer ensnared.",
+                           "",
+                           armor_class=-20
+                           )
+        
+        rules.wait_state_apply(attacker, skill["wait state"])
+        if "player" in attacker.tags.all():
+            rules_skills.check_skill_improve(attacker, "snare", True, 3)
+            
+    else:
+        attacker.msg("You failed to ensnare %s. Uh oh!" % victim.key)
+        victim.msg("%s tried to ensnare you! Get %s!" % ((attacker.key[0].upper() + attacker.key[1:]), rules.pronoun_object(attacker)))
+        attacker.location.msg_contents(
+            "%s attempted to ensnare %s, but failed!" % (
+            (attacker.key[0].upper() + attacker.key[1:]), victim.name),
+            exclude=(attacker, victim))
+        rules_skills.check_skill_improve(attacker, "snare", False, 3)
+        
+        
 def do_trip(attacker, victim):
     """
     This does the action of the trip command.
