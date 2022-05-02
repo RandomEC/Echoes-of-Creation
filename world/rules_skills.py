@@ -653,6 +653,13 @@ def get_skill(**kwargs):
             "minimum cost": 5,
             "wait state": 12
             },
+        "create spring": {
+            "classes": {
+                "druid": 10
+                },
+            "minimum cost": 20,
+            "wait state": 12
+            },
         "create water": {
             "classes": {
                 "cleric": 3,
