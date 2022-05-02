@@ -1,5 +1,6 @@
 import math
 import random
+import time
 from evennia.utils import search
 from world import rules, rules_combat, rules_skills
 
@@ -578,6 +579,46 @@ def do_create_sound(caster, mana_cost, target, sound):
             rules_skills.check_skill_improve(caster, "create sound", False, 1)
         caster.msg("You chant 'create sound'.\nYou lost your concentration.\n")
         player_output_magic_chant(caster, "create sound")
+
+        
+def do_create_spring(caster, mana_cost):
+    """ Function implementing create spring spell"""
+
+    spell = rules_skills.get_skill(skill_name="create spring")
+
+    level = caster.level
+
+    if random.randint(1, 100) <= caster.db.skills["create spring"] or "mobile" in caster.tags.all():
+        spring = rules.make_object(caster.location, False, "o22")
+
+        spring.db.cost = 0
+        rules.set_disintegrate_timer(light)
+
+        # put a timer on the spring equal to skill level
+        timer = caster.level * settings.TICK_OBJECT_TIMER
+        timestamp = spring.key + str(time.time())
+        tickerhandler.add(timer, spring.at_disintegrate, timestamp)
+        spring.db.disintegrate_ticker = timestamp
+        spring.tags.add("disintegrating")        
+
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+            rules_skills.check_skill_improve(caster, "create spring", True, 3)
+
+        caster.msg("You chant 'create spring'.\nWater flows from the ground.")
+        player_output_magic_chant(caster, "create spring")
+        # Deal with invisible objects/characters for output.
+        # Assemble a list of all possible lookers.
+        caster.location.contents.msg("Water flows from the ground.", exclude=caster)
+        
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+            rules_skills.check_skill_improve(caster, "create spring", False, 3)
+        caster.msg("You chant 'create spring'.\nYou lost your concentration.\n")
+        player_output_magic_chant(caster, "create spring")
 
 
 def do_create_water(caster, mana_cost, target_container):
