@@ -824,6 +824,56 @@ class CmdCreateSound(MuxCommand):
 
         rules_magic.do_create_sound(caster, cost, target, self.rhs)
 
+        
+class CmdCreateSpring(MuxCommand):
+    """
+    Create a spring to be used to get water.
+
+    Usage:
+      cast create spring
+      create spring
+
+    Causes a spring of water to well up from the ground for a time.
+
+    Colleges that can teach (level):
+    Druid (10)
+    """
+
+    key = "create spring"
+    aliases = ["cast create spring"]
+    locks = "cmd:all()"
+    arg_regex = r"$"
+
+    def func(self):
+        """Implement create spring"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+
+        caster = self.caller
+
+        if "create spring" not in caster.db.skills:
+            caster.msg("You do not know the spell 'create spring' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+
+        cost = rules_magic.mana_cost(caster, spell)
+
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast create spring!")
+            return
+
+        rules_magic.do_continual_light(caster, cost)
+
 
 class CmdCreateWater(MuxCommand):
     """
