@@ -88,6 +88,7 @@ from commands.spell_commands import CmdChillTouch
 from commands.spell_commands import CmdContinualLight
 from commands.spell_commands import CmdCreateFood
 from commands.spell_commands import CmdCreateSound
+from commands.spell_commands import CmdCreateSpring
 from commands.spell_commands import CmdCreateWater
 from commands.spell_commands import CmdCureBlindness
 from commands.spell_commands import CmdCureLight
@@ -150,6 +151,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdCreate())
         self.add(CmdCreateFood())
         self.add(CmdCreateSound())
+        self.add(CmdCreateSpring())
         self.add(CmdCreateWater())
         self.add(CmdCSkills())
         self.add(CmdCureBlindness())
