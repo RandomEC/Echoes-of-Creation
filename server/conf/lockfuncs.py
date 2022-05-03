@@ -155,14 +155,4 @@ def not_private(accessing_obj, accessed_obj, *args, **kwargs):
 
     return True
 
-def not_snared(accessing_obj, accessed_obj, *args, **kwargs):
-    """
-    Lock function for checking whether the accessing_obj (player/mobile)
-    is snared or can move.
-    """
-    
-    if accessing_obj.get_affect_status("snare"):
-        accessing_obj.msg("You cannot move - you are caught in a snare!")
-        return False
-        
-    return True
+
