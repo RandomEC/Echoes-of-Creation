@@ -32,50 +32,6 @@ lock functions from evennia.locks.lockfuncs.
 # lock function for checking whether a character is of sufficient level to
 # wear/wield equipment
 
-def equipment_level_check(accessing_obj, accessed_obj, *args, **kwargs):
-    """
-    lockstring called with equipment_level_check().
-    checks to make sure user is of correct level.
-    """
-
-    if accessing_obj.db.level >= (accessed_obj.db.level - 5):
-        return True
-    return False
-
-def is_open(accessing_obj, accessed_obj, *args, **kwargs):
-    """
-    Lock function for checking whether a door or container is open.
-    """
-
-    if "object" in accessed_obj.tags.all():
-        if "open" in accessed_obj.db.state:
-            return True
-        else:
-            return False
-    else:
-        if "open" in accessed_obj.db.door_attributes:
-            return True
-        else:
-            accessing_obj.msg("The door is closed in that direction.")
-            return False
-
-def can_open(accessing_obj, accessed_obj, *args, **kwargs):
-    """
-    Lock function for checking whether a character can open a door or
-    container.
-    """
-
-    if "object" in accessed_obj.tags.all():
-        if not "open" in accessed_obj.db.state and not "locked" in \
-                accessed_obj.db.state:
-            return True
-        return False
-    else:
-        if not "open" in accessed_obj.db.door_attributes and not "locked" in \
-           accessed_obj.db.door_attributes:
-                return True
-        return False
-
 def can_close(accessing_obj, accessed_obj, *args, **kwargs):
     """
     Lock function for checking whether a character can close a door or
@@ -114,6 +70,23 @@ def can_lock(accessing_obj, accessed_obj, *args, **kwargs):
         else:
             return False
 
+def can_open(accessing_obj, accessed_obj, *args, **kwargs):
+    """
+    Lock function for checking whether a character can open a door or
+    container.
+    """
+
+    if "object" in accessed_obj.tags.all():
+        if not "open" in accessed_obj.db.state and not "locked" in \
+                accessed_obj.db.state:
+            return True
+        return False
+    else:
+        if not "open" in accessed_obj.db.door_attributes and not "locked" in \
+           accessed_obj.db.door_attributes:
+                return True
+        return False
+
 def can_unlock(accessing_obj, accessed_obj, *args, **kwargs):
     """
     Lock function for checking whether a character can unlock a door.
@@ -132,3 +105,64 @@ def can_unlock(accessing_obj, accessed_obj, *args, **kwargs):
             return True
         else:
             return False
+
+def equipment_level_check(accessing_obj, accessed_obj, *args, **kwargs):
+    """
+    lockstring called with equipment_level_check().
+    checks to make sure user is of correct level.
+    """
+
+    if accessing_obj.db.level >= (accessed_obj.db.level - 5):
+        return True
+    return False
+
+def is_open(accessing_obj, accessed_obj, *args, **kwargs):
+    """
+    Lock function for checking whether a door or container is open.
+    """
+
+    if "object" in accessed_obj.tags.all():
+        if "open" in accessed_obj.db.state:
+            return True
+        else:
+            return False
+    else:
+        if "open" in accessed_obj.db.door_attributes:
+            return True
+        else:
+            accessing_obj.msg("The door is closed in that direction.")
+            return False
+
+def not_private(accessing_obj, accessed_obj, *args, **kwargs):
+    """
+    Lock function for checking whether the destination of the accessed_obj
+    (exit) can be accessed by the accessing_obj (player/mobile) or whether
+    it is private.
+    """
+    
+    destination = accessed_obj.destination
+    
+    characters = 0
+    for object in destination.contents:
+        if "player" in object.tags.all() or "mobile" in object.tags.all():
+            characters += 1
+            if characters > 1 and "private" in target_location.db.room_flags:
+                accessing_obj.msg("That room is private right now.")
+                return False
+            if characters > 0 and "solitary" in target_location.db.room_flags:
+                accessing_obj.msg("That room is private right now.")
+                return False
+
+    return True
+
+def not_snared(accessing_obj, accessed_obj, *args, **kwargs):
+    """
+    Lock function for checking whether the accessing_obj (player/mobile)
+    is snared or can move.
+    """
+    
+    if accessing_obj.get_affect_status("snare"):
+        accessing_obj.msg("You cannot move - you are caught in a snare!")
+        return False
+        
+    return True
