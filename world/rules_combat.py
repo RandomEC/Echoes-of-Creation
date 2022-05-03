@@ -1127,6 +1127,11 @@ def do_flee(character):
         character.msg("You had better stand up to try to flee!")
         return
 
+    if character.get_affect_status("snare"):
+        character.msg("You cannot flee! You are caught in a snare!")
+        character.location.contents.msg("%s attempts to flee, but is caught in a snare!" % (character.key[0].upper() + character.key[1:]))
+        return
+    
     success = False
     for attempt in range(1, 6):
         direction = random.randint(1, 6)
