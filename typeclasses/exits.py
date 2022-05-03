@@ -54,7 +54,7 @@ class Exit(DefaultExit):
         self.db.reset_door_attributes = ["open",]
 
         # locks that go along with the above attributes
-        self.locks.add("traverse: is_open() and not_private() and not_snared();open: can_open();close: can_close();lock: can_lock();unlock: can_unlock()")
+        self.locks.add("traverse: is_open() and not_private();open: can_open();close: can_close();lock: can_lock();unlock: can_unlock()")
 
     def at_reset(self):
         """
