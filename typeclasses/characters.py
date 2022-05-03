@@ -786,7 +786,7 @@ class Character(DefaultCharacter):
         prevent you from moving is dealt with here.
         """
     
-        if self.db.position == "fighting":
+        if self.nattributes.has("combat_handler"):
             self.msg("You can only move from a fight by successfully fleeing!")
             return False
         elif self.db.position == "sleeping":
@@ -794,6 +794,9 @@ class Character(DefaultCharacter):
             return False
         elif self.db.position == "sitting" or self.db.position == "resting":
             self.msg("Perhaps you should try standing first, before moving.")
+            return False
+        elif self.get_affect_status("snare"):
+            self.msg("You cannot move - you are caught in a snare!")
             return False
         
         # Add movement cost function here, after check for all the reasons why you couldn't move.
