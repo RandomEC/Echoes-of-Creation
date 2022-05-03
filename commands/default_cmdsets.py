@@ -51,6 +51,7 @@ from commands.combat_commands import CmdDirtKicking
 from commands.combat_commands import CmdFlee
 from commands.combat_commands import CmdKick
 from commands.combat_commands import CmdPeace
+from commands.combat_commands import CmdSnare
 from commands.combat_commands import CmdTrip
 from commands.combat_commands import CmdWimpy
 from commands.door_commands import CmdDoorClose
@@ -216,9 +217,10 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdShadowForm())
         self.add(CmdShield())
         self.add(CmdShockingGrasp())
+        self.add(CmdSkills())
         self.add(CmdSleep())
         self.add(CmdSlumber())
-        self.add(CmdSkills())
+        self.add(CmdSnare())
         self.add(CmdSneak())
         self.add(CmdStand())
         self.add(CmdSteal())
