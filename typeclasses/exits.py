@@ -54,7 +54,7 @@ class Exit(DefaultExit):
         self.db.reset_door_attributes = ["open",]
 
         # locks that go along with the above attributes
-        self.locks.add("traverse: is_open();open: can_open();close: can_close();lock: can_lock();unlock: can_unlock()")
+        self.locks.add("traverse: is_open() and not_private() and not_snared();open: can_open();close: can_close();lock: can_lock();unlock: can_unlock()")
 
     def at_reset(self):
         """
@@ -78,17 +78,6 @@ class Exit(DefaultExit):
 
         """
         source_location = traversing_object.location
-
-        characters = 0
-        for object in target_location.contents:
-            if "player" in object.tags.all() or "mobile" in object.tags.all():
-                characters += 1
-                if characters > 1 and "private" in target_location.db.room_flags:
-                    traversing_object.msg("That room is private right now.")
-                    return
-                if characters > 0 and "solitary" in target_location.db.room_flags:
-                    traversing_object.msg("That room is private right now.")
-                    return
 
         terrain = source_location.db.terrain
         
