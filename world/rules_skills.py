@@ -938,6 +938,13 @@ def get_skill(**kwargs):
             "minimum cost": 15,
             "wait state": 12
             },
+        "snare":
+            "classes": {
+                "thief": 8,
+                "ranger": 8,
+                },
+            "wait state": 12
+            },
         "sneak": {
             "classes": {
                 "thief": 6,
