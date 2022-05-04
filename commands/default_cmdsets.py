@@ -97,6 +97,7 @@ from commands.spell_commands import CmdDetectEvil
 from commands.spell_commands import CmdDetectHidden
 from commands.spell_commands import CmdDetectInvis
 from commands.spell_commands import CmdDetectMagic
+from commands.spell_commands import CmdDispelEvil
 from commands.spell_commands import CmdFaerieFog
 from commands.spell_commands import CmdFirebolt
 from commands.spell_commands import CmdFly
@@ -164,6 +165,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
         self.add(CmdDetectMagic())
         self.add(CmdDig())
         self.add(CmdDirtKicking())
+        self.add(CmdDispelEvil())
         self.add(CmdDoorClose())
         self.add(CmdDoorLock())
         self.add(CmdDoorOpen())
