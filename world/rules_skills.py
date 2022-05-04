@@ -733,6 +733,14 @@ def get_skill(**kwargs):
             "minimum cost": 5,
             "wait state": 12
             },
+        "dispel evil": {
+            "classes": {
+                "cleric": 10,
+                "paladin": 22
+                },
+            "minimum cost": 15,
+            "wait state": 12
+            },
         "dodge": {
             "classes": {
                 "thief": 6,
