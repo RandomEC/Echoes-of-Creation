@@ -1,6 +1,7 @@
+import random
 from evennia.utils import search
 from commands.command import MuxCommand
-from world import rules
+from world import rules, rules_magic
 
 def check_wear_location(caller, wear_location):
     """Checks the relevant wear location(s), and returns True if empty"""
@@ -98,13 +99,18 @@ class CmdEquipment(MuxCommand):
 class CmdIdentify(MuxCommand):
 
     """
-    Examine an item in your inventory or worn/wielded by you to determine its
-    statistics.
+    Examine an item to determine its statistics.
 
     Usage:
         identify <obj>
 
     Displays a formatted string showing the relevant statistics of an item.
+    Can be used by anyone to check items in your possession. Can also be
+    learned as a skill, when it can be cast to try to extend its reach to
+    items in the room you are in.
+    
+    Colleges that can teach (level):
+    Bard (10), Mage (15)
     """
 
     key = "identify"
@@ -121,16 +127,66 @@ class CmdIdentify(MuxCommand):
             caller.msg("What do you want to identify?")
             return
         
-        visible_candidates = list(object for object in caller.contents if rules.is_visible(object, caller))
-        
-        item = caller.search(self.args, 
-                             candidates=visible_candidates, 
-                             nofound_string="You do not have %s to identify." % self.args,
-                             multimatch_string="You carry more than one %s, which do you want to identify:" % self.args
-                             )
-        
+        if "identify" not in caller.db.skills:
+            visible_candidates = list(object for object in caller.contents if rules.is_visible(object, caller))
+
+            item = caller.search(self.args, 
+                     candidates=visible_candidates, 
+                     nofound_string="You do not have %s to identify." % self.args,
+                     multimatch_string="You carry more than one %s, which do you want to identify:" % self.args
+                     )
+
+        else:
+            visible_candidates = list(object for object in caller.contents if rules.is_visible(object, caller))
+            visible_room_candidates = list(object for object in caller.location.contents if rules.is_visible(object, caller))
+            visible_candidates.extend(visible_room_candidates)
+
+            item = caller.search(self.args, 
+                         candidates=visible_candidates, 
+                         nofound_string="There is no %s here or in your possession to identify." % self.args,
+                         multimatch_string="There is more than one %s here, which do you want to identify:" % self.args
+                         )
+            
         if not item:
             return
+        
+        # If the chosen item is not in the caller's possession, this needs to be
+        # treated like a spell.
+        if item.location != caller:
+            spell = rules_skills.get_skill(skill_name="identify")
+            caster = self.caller
+            cost = rules_magic.mana_cost(caster, spell)
+
+            if caster.position != "standing":
+                caster.msg("You have to stand to concentrate enough to cast.")
+                return
+
+            # Check whether anything about the room or affects on the caster
+            # would prevent casting. Check_cast returns output for the state
+            # if true, False if not.
+
+            if rules_magic.check_cast(caster):
+                caster.msg(rules_magic.check_cast(caster))
+                return
+            if caster.mana_current < cost:
+                caster.msg("You do not have sufficient mana to cast %s!" % self.key)
+                return
+
+            if random.randint(1, 100) <= caster.db.skills["identify"]:
+                caster.mana_spent += mana_cost
+                rules_skills.check_skill_improve(caster, "identify", True, 4)
+
+                caster.msg("You chant 'identify'.")
+                rules_magic.player_output_magic_chant(caster, "identify")
+
+                rules.wait_state_apply(caster, spell["wait state"])
+
+            else:
+                caster.mana_spent += int(mana_cost / 2)
+                rules_skills.check_skill_improve(caster, "identify", False, 4)
+                caster.msg("You chant 'identify'.\nYou lost your concentration.\n")
+                rules_magic.player_output_magic_chant(caster, "identify")
+                return
         
         name = item.name
         level = item.db.level
