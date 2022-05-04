@@ -24,7 +24,7 @@ class CmdAdrenalineControl(MuxCommand):
       cast adrenaline control
       adrenaline control
 
-   Adrenaline control will allow you to increase both your dexterity and
+    Adrenaline control will allow you to increase both your dexterity and
     constitution.
 
     Colleges that can teach (level):
