@@ -811,6 +811,14 @@ def get_skill(**kwargs):
                 },
             "wait state": 12
             },
+        "identify": {
+            "classes": {
+                "bard": 10,
+                "mage": 15
+                },
+            "minimum cost": 12,
+            "wait state": 12
+            },
         "infravision": {
             "classes": {
                 "druid": 9,
