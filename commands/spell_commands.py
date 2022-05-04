@@ -1403,6 +1403,87 @@ class CmdDetectMagic(MuxCommand):
         rules_magic.do_detect_magic(caster, target, cost)
 
         
+class CmdDispelEvil(MuxCommand):
+    """
+    Cast a spell to do damage to evil targets.
+
+    Usage:
+      cast dispel evil <target>
+      dispel evil <target>
+
+    Dispel evil will do damage to an evil target, but only if the
+    caster is not evil as well.
+
+    Colleges that can teach (level):
+    Cleric (10), Paladin (22)
+    """
+
+    key = "dispel evil"
+    aliases = ["cast dispel evil"]
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+
+    def func(self):
+        """Implement dispel evil"""
+
+        spell = rules_skills.get_skill(skill_name=self.key)
+
+        caster = self.caller
+
+        if "dispel evil" not in caster.db.skills:
+            caster.msg("You do not know the spell 'dispel evil' yet!")
+            return
+
+        if caster.position != "standing":
+            caster.msg("You have to stand to concentrate enough to cast.")
+            return
+
+        # Check whether anything about the room or affects on the caster
+        # would prevent casting. Check_cast returns output for the state
+        # if true, False if not.
+        if rules_magic.check_cast(caster):
+            caster.msg(rules_magic.check_cast(caster))
+            return
+
+        cost = rules_magic.mana_cost(caster, spell)
+
+        if caster.mana_current < cost:
+            caster.msg("You do not have sufficient mana to cast dispel evil!")
+            return
+
+        if not self.args:
+
+            if not caster.ndb.combat_handler:
+                caster.msg("You are not in combat, so you must choose a target for your spell.")
+                return
+            else:
+                combat = caster.ndb.combat_handler
+                target = combat.get_target(caster)
+
+        else:
+            mobiles = []
+            for object in caster.location.contents:
+                if "mobile" in object.tags.all() and is_visible(target, caster):
+                    mobiles.append(object)
+            target = caster.search(self.args, candidates=mobiles)
+            if not target:
+                caster.msg("There is no %s here to dispel the evil of." % self.args)
+                return
+
+        if rules_combat.is_safe(target):
+            caster.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
+            return
+        
+        if not caster.ndb.combat_handler:
+            if caster.alignment >= -333 and target.alignment < -333:
+                combat = rules_combat.create_combat(caster, target)
+            rules_magic.do_dispel_evil(caster, target, cost)
+            if combat in caster.location.contents and caster.alignment >= -333 and target.alignment < -333:
+                combat.at_repeat()
+        else:
+            rules_magic.do_dispel_evil(caster, target, cost)
+            
+            
 class CmdFaerieFog(MuxCommand):
     """
     Create a magical fog to reveal hidden characters.
