@@ -867,6 +867,69 @@ def do_detect_magic(caster, target, mana_cost):
         player_output_magic_chant(caster, "detect magic")
 
         
+def do_dispel_evil(caster, target, mana_cost):
+    """ Function implementing dispel evil spell"""
+
+    spell = rules_skills.get_skill(skill_name="dispel evil")
+
+    level = caster.level
+    combat = caster.ndb.combat_handler
+    
+    if caster.alignment < -333:
+        caster.msg("You are too EVIL to cast this.")
+        return
+
+    damage = 0
+    
+    for int in range (0, level):
+        damage += random.randint(1, 4)
+
+    if save_spell(caster.level, target):
+        damage = int(damage / 2)
+
+    if random.randint(1, 100) <= caster.db.skills["dispel evil"] or "mobile" in caster.tags.all():
+        caster.msg("You chant 'dispel evil'.\n")
+        player_output_magic_chant(caster, "dispel evil")
+
+        if "player" in caster.tags.all():
+            caster.mana_spent += mana_cost
+        
+        if target.alignment >= -333:
+            caster.msg("%s does not seem to be affected." % (target.key[0].upper() + target.key[1:]))
+            return
+
+        if "player" in caster.tags.all():
+            rules_skills.check_skill_improve(caster, "dispel evil", True, 4)
+        
+        rules.check_return_visible(caster)
+        
+        attacker_output = ("You |g%s|n %s with your holy fire.\n" % (rules_combat.get_damagestring("attacker", damage),
+                                                                          target.key
+                                                                          ))
+        victim_output = ("%s |r%s|n you with %s holy fire.\n" % ((caster.key[0].upper() + caster.key[1:]),
+                                                                      rules_combat.get_damagestring("victim", damage),
+                                                                      rules.pronoun_possessive(caster)
+                                                                      ))
+        room_output = ("%s |r%s|n %s with %s holy fire.\n" % ((caster.key[0].upper() + caster.key[1:]),
+                                                                   rules_combat.get_damagestring("victim", damage),
+                                                                   target.key,
+                                                                   rules.pronoun_possessive(caster)
+                                                                   ))
+
+        output = [attacker_output, victim_output, room_output]
+
+        rules_combat.do_attack(caster, target, None, combat, hit=True, damage=damage, output=output, type="holy fire")
+
+        rules.wait_state_apply(caster, spell["wait state"])
+
+    else:
+        if "player" in caster.tags.all():
+            caster.mana_spent += int(mana_cost / 2)
+            rules_skills.check_skill_improve(caster, "dispel evil", False, 4)
+        caster.msg("You chant 'dispel evil'.\nYou lost your concentration.")
+        player_output_magic_chant(caster, "dispel evil")
+
+        
 def do_faerie_fog(caster, mana_cost):
     """ Function implementing faerie fog spell"""
 
