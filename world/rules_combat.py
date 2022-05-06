@@ -251,6 +251,26 @@ def allow_attacks(combatant, target, combat):
         logger.log_file("Error in checking whether attacks are allowed. Combatant = %s, target = %s, combat = %s." % (combatant.key, target.key, combat.key), filename="combat.log")
         logger.log_trace("Error in checking whether attacks are allowed.")
 
+def check_weapon(checked_character, checking_character):
+    """
+    Checks for whether the checked character has a visible weapon.
+    Returns primary slot weapon first, secondary slot weapon
+    otherwise, or False if neither.
+    """
+    
+    weapon = ""
+    
+    if checked_character.db.eq_slots["wielded, primary"]:
+        weapon = checked_character.db.eq_slots["wielded, primary"]
+        if rules.is_visible(weapon, checking_character):
+            return checked_character.db.eq_slots["wielded, primary"]
+    
+    if checked_character.db.eq_slots["wielded, secondary"]:
+        weapon = checked_character.db.eq_slots["wielded, secondary"]
+        if rules.is_visible(weapon, checking_character):
+            return checked_character.db.eq_slots["wielded, secondary"]
+    
+    return False
 
 def create_combat(attacker, victim):
     """Create a combat, if needed, returns the combat object."""
@@ -1121,6 +1141,59 @@ def do_dirt_kicking(attacker, victim):
         victim.msg("%s kicks dirt over your shoulder.\n" % (attacker.key[0].upper() + attacker.key[1:]))
         attacker.location.msg_contents("%s kicks dirt past %s.\n" % ((attacker.key[0].upper() + attacker.key[1:]), victim.name), exclude=(attacker, victim))
 
+def do_disarm(attacker, victim, weapon):
+    """
+    This does the disarm command.
+    """
+    
+    skill = rules_skills.get_skill(skill_name="disarm")
+    wait_state = skill["wait state"]
+    combat = attacker.ndb.combat_handler
+    
+    if not weapon.access(attacker, "remove") or not weapon.access(attacker, "drop"):
+        attacker.msg("A magical field flares around %s's weapon." % victim.key)
+        victim.msg("A magical field flares on your weapon, as %s tries to disarm you." % attacker.key)
+        attacker.location.contents.msg("A magical field flares on %s's weapon, as %s's disarm fails!" % (victim.key, attacker.key), exclude=(attacker, victim))
+        return
+    
+    if attacker.size - victim.size < -2:
+        attacker.msg("%s is too massive for you to disarm!" % (victim.key[0].upper() + victim.key[1:]))
+        return
+    
+    # Build basic chance of success.
+    chance = random.randint(1, 100) + victim.level - attacker.level
+    
+    #Half as likely do disarm with only a secondary weapon.
+    if not attacker.db.eq_slots["wielded, primary"]:
+        chance *= 2
+    if "player" in attacker.tags.all() and chance > (attacker.db.skills["disarm"] * 2 / 3):
+        
+        rules_skills.check_skill_improve(attacker, "disarm", False, 1)
+        attacker.msg("You fail to disarm %s." % victim.key)
+        victim.msg("%s tries to disarm you, but fails." % (attacker.key[0].upper() + attacker.key[1:]))
+        attacker.location.msg_contents("%s tries to disarm %s, but fails." % ((attacker.key[0].upper() + attacker.key[1:]), victim.name), exclude=(attacker, victim))
+    
+    else:
+        
+        if "player" in attacker.tags.all():
+            rules_skills.check_skill_improve(attacker, "disarm", True, 1)
+
+        attacker.msg("You disarm %s!" % victim.key)
+        victim.msg("%s disarms you!" % (attacker.key[0].upper() + attacker.key[1:]))
+        attacker.location.msg_contents("%s disarms %s." % ((attacker.key[0].upper() + attacker.key[1:]), victim.key), exclude=(attacker, victim))
+        
+        
+        if victim.db.eq_slots["wielded, primary"] == weapon and rules.is_visible(weapon, attacker):
+            victim.db.eq_slots["wielded, primary"] = ""            
+        else:
+            victim.db.eq_slots["wielded, secondary"] = ""
+        
+        weapon.db.equipped = False
+        weapon.location = victim.location
+        
+
+
+        rules.wait_state_apply(attacker, wait_state)
 
 def do_flee(character):
     if character.db.position == "sitting":
