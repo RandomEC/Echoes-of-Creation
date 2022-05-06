@@ -216,7 +216,97 @@ class CmdDirtKicking(MuxCommand):
             return
                     
         rules_combat.do_dirt_kicking(caller, target)
+
+class CmdDisarm(MuxCommand):
+    """
+    Attempt to disarm an enemy of their weapon.
+    
+    Usage:
+      disarm <mobile>
+      
+    Makes an attempt to make the enemy lose the use of the weapon that they have
+    equipped. Will not work on weapons that are cursed and unable to be dropped
+    or removed, or on weapons that you cannot see.
+    
+    Colleges that can teach (level):
+    Warrior (8), Paladin (16)
+    """
+
+    key = "disarm"
+    locks = "cmd:all()"
+    arg_regex = r"\s|$"
+    wait_state = 12
+
+    def func(self):
+        caller = self.caller
+
+        if self.key not in caller.db.skills:
+            caller.msg("You don't know how to disarm opponents.")
+            return
+
+        if caller.position != "standing":
+            caller.msg("You cannot disarm anyone while you are on the ground.")
+            return
+
+        if not self.args:
+
+            if not caller.ndb.combat_handler:
+                caller.msg("You are not in combat.")
+                return
+            else:
+                combat = caller.ndb.combat_handler
+                target = combat.get_target(caller)
+
+        else:
+            mobiles = []
+            for object in caller.location.contents:
+                if "mobile" in object.tags.all() and rules.is_visible(object, caller):
+                    mobiles.append(object)
+            target = caller.search(self.args, candidates=mobiles)
+            if not target:
+                caller.msg("There is no %s here to disarm." % self.args)
+                return
+            else:
+
+                if "player" in target.tags.all():
+                    caller.msg("You cannot attack another player.")
+                    return
+
+                if not caller.db.eq_slots["wielded, primary"] and not caller.db.eq_slots["wielded, secondary"]:
+                    caller.msg("You must be wielding a weapon yourself to disarm another!")
+                    return
+                
+                if rules_combat.is_safe(target):
+                    caller.msg("%s is protected by the gods." % (target.key[0].upper() + target.key[1:]))
+                    return
+
+                if caller.ndb.combat_handler:
+                    combat = caller.ndb.combat_handler
+                    if combat.get_target(caller) != target:
+                        caller.msg("You are not currently fighting %s!" % target.key)
+                        return
+                    
+                # Check whether the target has a visible weapon.
+                weapon = rules_combat.check_weapon(target, caller)
+                   
+                if not weapon:
+                    caller.msg("%s is not wielding a weapon!" % (target.key[0].upper() + target.key[1:]))
+                    return
+                
+                if not caller.ndb.combat_handler:
+                    combat = rules_combat.create_combat(caller, target)
+                    rules_combat.do_disarm(caller, target, weapon)
+
+                    if combat in caller.location.contents:
+                        combat.at_repeat()
+                    return
+
+                else:
+                    combat = caller.ndb.combat_handler
+                    
+        rules_combat.do_disarm(caller, target, weapon)
             
+        
 class CmdFlee(MuxCommand):
     """
     Attempt to flee from combat.
