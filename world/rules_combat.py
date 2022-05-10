@@ -1160,6 +1160,11 @@ def do_disarm(attacker, victim, weapon):
         attacker.msg("%s is too massive for you to disarm!" % (victim.key[0].upper() + victim.key[1:]))
         return
     
+    # This check is for mobiles disarming, fail half the time if not wielding a weapon.
+    if not attacker.db.eq_slots["wielded, primary"] and not attacker.db.eq_slots["wielded, secondary"] and random.randint(1, 2) == 1:
+        return
+        
+    
     # Build basic chance of success.
     chance = random.randint(1, 100) + victim.level - attacker.level
     
@@ -1182,17 +1187,84 @@ def do_disarm(attacker, victim, weapon):
         victim.msg("%s disarms you!" % (attacker.key[0].upper() + attacker.key[1:]))
         attacker.location.msg_contents("%s disarms %s." % ((attacker.key[0].upper() + attacker.key[1:]), victim.key), exclude=(attacker, victim))
         
+        # Figure out what happens as a result of the disarm.
+        chance = 0
         
-        if victim.db.eq_slots["wielded, primary"] == weapon and rules.is_visible(weapon, attacker):
-            victim.db.eq_slots["wielded, primary"] = ""            
+        if "mobile" in victim.tags.all():
+            chance += 45
         else:
-            victim.db.eq_slots["wielded, secondary"] = ""
+            if "irongrip" in victim.db.skills:
+                if victim.db.skills["irongrip"] > 70:
+                    chance += victim.db.skills["irongrip"] / 2
+                else:
+                    chance += 35
+            else:
+                chance += 35
+                
+        chance += victim.dexterity * 2
         
-        weapon.db.equipped = False
-        weapon.location = victim.location
+        chance += random.randint(1, 100)      # Add some randomness.
         
+        if chance > 145 and rules.is_visible(weapon, attacker):
+            victim.msg("You get %s back and REARM!" % weapon.key)
+            attacker.msg("%s recovers %s and REARMS!" % ((victim.key[0].upper() + victim.key[1:]), get_visual_output(weapon, attacker)))
+            # Deal with invisible weapons for room output.
+            # Assemble a list of all possible lookers.
+            lookers = list(cont for cont in victim.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+            for looker in lookers:
+                # Exclude the victim and attacker, who got their output above.
+                if looker != victim and looker != attacker:
+                    if is_visible(victim, looker):
+                        looker.msg(%s recovers %s and REARMS!"
+                                             % ((victim.key[0].upper() + victim.key[1:]),
+                                                get_visual_output(weapon, looker)
+                                                )
+                                             )
+        elif chance > 125 and rules.is_visible(weapon, attacker):
+            victim.msg("You get %s back." % weapon.key)
+            attacker.msg("%s gets %s back." % ((victim.key[0].upper() + victim.key[1:]), get_visual_output(weapon, attacker)))
+            # Deal with invisible weapons for room output.
+            # Assemble a list of all possible lookers.
+            lookers = list(cont for cont in victim.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+            for looker in lookers:
+                # Exclude the victim and attacker, who got their output above.
+                if looker != victim and looker != attacker:
+                    looker.msg(%s gets %s back."
+                                         % ((victim.key[0].upper() + victim.key[1:]),
+                                            get_visual_output(weapon, looker)
+                                            )
+                                         )
 
+            if victim.db.eq_slots["wielded, primary"] == weapon and rules.is_visible(weapon, attacker):
+                victim.db.eq_slots["wielded, primary"] = ""            
+            else:
+                victim.db.eq_slots["wielded, secondary"] = ""
+        
+            weapon.db.equipped = False
+            
+        else:
+            victim.msg("And your %s goes FLYING!!!" % weapon.key)
+            attacker.msg("You send %s's %s FLYING!!!" % ((victim.key[0].upper() + victim.key[1:]), get_visual_output(weapon, attacker)))
+            # Deal with invisible weapons for room output.
+            # Assemble a list of all possible lookers.
+            lookers = list(cont for cont in victim.location.contents if "mobile" in cont.tags.all() or "player" in cont.tags.all())
+            for looker in lookers:
+                # Exclude the victim and attacker, who got their output above.
+                if looker != victim and looker != attacker:
+                    looker.msg(%s's %s goes FLYING!!!"
+                                         % ((victim.key[0].upper() + victim.key[1:]),
+                                            get_visual_output(weapon, looker)
+                                            )
+                                         )
 
+            if victim.db.eq_slots["wielded, primary"] == weapon and rules.is_visible(weapon, attacker):
+                victim.db.eq_slots["wielded, primary"] = ""            
+            else:
+                victim.db.eq_slots["wielded, secondary"] = ""
+        
+            weapon.db.equipped = False
+            weapon.location = victim.location
+            
         rules.wait_state_apply(attacker, wait_state)
 
 def do_flee(character):
